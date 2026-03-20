@@ -881,7 +881,6 @@ export default function audioSessionManagerTest() {
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         if (6800301 == Number(err.code)) {
             expect(Number(err.code)).assertEqual(6800301);
@@ -909,7 +908,6 @@ export default function audioSessionManagerTest() {
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         if (6800301 == Number(err.code)) {
             expect(Number(err.code)).assertEqual(6800301);
@@ -933,11 +931,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADSET);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -957,11 +954,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.WIRED_HEADPHONES);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -981,11 +977,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_SCO);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1005,11 +1000,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.BLUETOOTH_A2DP);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1030,11 +1024,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.MIC);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1054,11 +1047,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.USB_HEADSET);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1078,11 +1070,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DISPLAY_PORT);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1102,11 +1093,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.REMOTE_CAST);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1126,11 +1116,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.USB_DEVICE);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1150,11 +1139,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.HDMI);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1174,11 +1162,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.LINE_DIGITAL);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1198,11 +1185,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.REMOTE_DAUDIO);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1222,11 +1208,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.HEARING_AID);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1246,11 +1231,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.NEARLINK);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1270,11 +1254,10 @@ export default function audioSessionManagerTest() {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.SYSTEM_PRIVATE);
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
@@ -1298,14 +1281,14 @@ export default function audioSessionManagerTest() {
         expect(false).assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         expect(Number(err.code)).assertEqual(6800101);
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
       }
       done();
     })
-        /**
+
+    /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0200
     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0200
     * @tc.desc   inputAudioDevice

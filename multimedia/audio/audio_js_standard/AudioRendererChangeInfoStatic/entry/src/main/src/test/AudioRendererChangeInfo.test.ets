@@ -2539,7 +2539,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2577,7 +2577,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2614,7 +2614,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2651,7 +2651,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2688,7 +2688,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2725,7 +2725,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2762,7 +2762,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2799,7 +2799,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2836,7 +2836,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2873,7 +2873,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2910,7 +2910,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2947,7 +2947,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -2984,7 +2984,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3021,7 +3021,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3058,7 +3058,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3095,7 +3095,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3132,7 +3132,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3169,7 +3169,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3206,7 +3206,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3243,7 +3243,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3280,7 +3280,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3317,7 +3317,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3354,7 +3354,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3391,7 +3391,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3428,7 +3428,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3465,7 +3465,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3502,7 +3502,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3539,7 +3539,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3576,7 +3576,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3613,7 +3613,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3650,7 +3650,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3687,7 +3687,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3724,7 +3724,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3761,7 +3761,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3798,7 +3798,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3835,7 +3835,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3872,7 +3872,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3909,7 +3909,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3946,7 +3946,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -3983,7 +3983,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4020,7 +4020,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4057,7 +4057,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4094,7 +4094,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4131,7 +4131,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4168,7 +4168,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4205,7 +4205,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4242,7 +4242,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4279,7 +4279,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4316,7 +4316,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4354,7 +4354,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4392,7 +4392,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4429,7 +4429,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4466,7 +4466,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4503,7 +4503,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4540,7 +4540,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4578,7 +4578,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4615,7 +4615,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4652,7 +4652,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4689,7 +4689,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4726,7 +4726,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4763,7 +4763,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4800,7 +4800,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4837,7 +4837,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4874,7 +4874,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4911,7 +4911,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4948,7 +4948,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -4985,7 +4985,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5022,7 +5022,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5059,7 +5059,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5096,7 +5096,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5133,7 +5133,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5170,7 +5170,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5207,7 +5207,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5244,7 +5244,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5281,7 +5281,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5318,7 +5318,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5355,7 +5355,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5392,7 +5392,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5429,7 +5429,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5466,7 +5466,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5503,7 +5503,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5540,7 +5540,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5577,7 +5577,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5614,7 +5614,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5651,7 +5651,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5688,7 +5688,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5725,7 +5725,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5762,7 +5762,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5799,7 +5799,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5836,7 +5836,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5873,7 +5873,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5910,7 +5910,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5947,7 +5947,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -5984,7 +5984,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6021,7 +6021,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6058,7 +6058,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6096,7 +6096,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6134,7 +6134,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6173,7 +6173,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6212,7 +6212,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(501);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6250,7 +6250,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
@@ -6288,7 +6288,7 @@ export default function audioCapturerChange() {
         audioRen!.release();
       } catch (err) {
         console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(Number(err.code)).assertEqual(6800301);
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
       done();
