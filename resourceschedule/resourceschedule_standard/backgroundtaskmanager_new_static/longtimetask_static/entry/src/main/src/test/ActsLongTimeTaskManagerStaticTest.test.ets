@@ -1208,7 +1208,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
 
           delegator.getCurrentTopAbility().then((ability: UIAbility) => {
             hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning getCurrentTopAbility success.');
-            let bgModeList = ["location"]
+            let bgModeList = ["location"];
+            let includeSuspended = true;
             backgroundTaskManager.startBackgroundRunning(ability.context, bgModeList, want).then((res) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise run success.');
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
@@ -1222,7 +1223,6 @@ export default function ActsLongTimeTaskManagerStaticTest() {
                   console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. backgroundSubModes: ` + JSON.stringify(res[0].backgroundSubModes.length));
                   console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentBundleName: ` + JSON.stringify(res[0].wantAgentBundleName));
                   console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentAbilityName: ` + JSON.stringify(res[0].wantAgentAbilityName));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. suspendState: ` + JSON.stringify(res[0].suspendState));
                   let type: string = "location"
                   expect(res.length).assertLarger(0);
                   expect(res[0].abilityName == "EntryAbility").assertTrue();
