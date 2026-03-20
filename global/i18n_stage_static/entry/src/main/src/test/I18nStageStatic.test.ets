@@ -2011,7 +2011,7 @@ export default function i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('getTimezoneFromCity_nullString_test_Static_0100', Level.LEVEL3, () => {
-      let value: string = i18n.TimeZone.getTimezoneFromCity('');
+      let value: i18n.TimeZone = i18n.TimeZone.getTimezoneFromCity('');
       console.log('getTimezoneFromCity_nullString_test_Static_0100 value:', value);
       expect(value != null).assertTrue();
     })
