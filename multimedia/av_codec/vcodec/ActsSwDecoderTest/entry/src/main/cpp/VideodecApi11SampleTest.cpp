@@ -33,10 +33,13 @@ constexpr uint8_t H264_START_CODE_3[] = { 0x00, 0x00, 0x01 };
 constexpr uint8_t H264_START_CODE_4[] = { 0x00, 0x00, 0x00, 0x01 };
 constexpr uint32_t H264_START_CODE_3_LEN = 3;
 constexpr uint32_t H264_START_CODE_4_LEN = 4;
+constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_0 = 0U;
+constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_1 = 1U;
+constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_2 = 2U;
+constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_3 = 3U;
+constexpr uint32_t H264_START_CODE_3_BYTE_INDEX_0 = 0U;
+constexpr uint32_t H264_START_CODE_3_BYTE_INDEX_1 = 1U;
 constexpr uint32_t K_H264_START_CODE_THIRD_BYTE_OFFSET = 2;
-constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_1 = 1;
-constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_2 = 2;
-constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_3 = 3;
 constexpr int32_t MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD = 2;
 constexpr uint32_t MILLION = 1000000;
 constexpr int32_t THREE = 3;
@@ -84,14 +87,16 @@ static uint32_t FindH264StartCode(const uint8_t* data, uint32_t start, uint32_t 
 {
     *outLen = 0;
     for (uint32_t i = start; i + H264_START_CODE_3_LEN <= endOffset; i++) {
-        if (i + H264_START_CODE_4_LEN <= endOffset && data[i] == H264_START_CODE_4[0] &&
-            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_1] == H264_START_CODE_4[1] &&
-            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_2] == H264_START_CODE_4[2] &&
-            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_3] == H264_START_CODE_4[3]) {
+        if (i + H264_START_CODE_4_LEN <= endOffset &&
+            data[i + H264_START_CODE_4_BYTE_INDEX_0] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_0] &&
+            data[i + H264_START_CODE_4_BYTE_INDEX_1] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_1] &&
+            data[i + H264_START_CODE_4_BYTE_INDEX_2] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_2] &&
+            data[i + H264_START_CODE_4_BYTE_INDEX_3] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_3]) {
             *outLen = H264_START_CODE_4_LEN;
             return i;
         }
-        if (data[i] == H264_START_CODE_3[0] && data[i + 1] == H264_START_CODE_3[1] &&
+        if (data[i + H264_START_CODE_3_BYTE_INDEX_0] == H264_START_CODE_3[H264_START_CODE_3_BYTE_INDEX_0] &&
+            data[i + H264_START_CODE_3_BYTE_INDEX_1] == H264_START_CODE_3[H264_START_CODE_3_BYTE_INDEX_1] &&
             data[i + K_H264_START_CODE_THIRD_BYTE_OFFSET] == H264_START_CODE_3[H264_START_CODE_3_LEN - 1]) {
             *outLen = H264_START_CODE_3_LEN;
             return i;
@@ -712,7 +717,7 @@ void VDecAPI11Sample::GetBufferSize()
     mpegUnit_->resize(bufferSize);
 }
 
-void VDecAPI11Sample::InputFuncTest_ApplyRepeatControls()
+void VDecAPI11Sample::InputFuncTestApplyRepeatControls()
 {
     if (repeatStartFlushBeforeEos > 0) {
         repeatStartFlushBeforeEos--;
@@ -737,8 +742,8 @@ bool VDecAPI11Sample::InputFuncTest_FinishIterationAfterPush(int ret, uint32_t i
     }
     if (ret == K_PUSH_DATA_RETRY) {
         inputPushRetryCount_++;
-        constexpr uint32_t K_MAX_INPUT_PUSH_RETRY = 500U;
-        if (inputPushRetryCount_ > K_MAX_INPUT_PUSH_RETRY) {
+        constexpr uint32_t kMaxInputPushRetry = 500U;
+        if (inputPushRetryCount_ > kMaxInputPushRetry) {
             cout << "Input push retry exceeded (no valid NALU or input anomaly), force EOS" << endl;
             errCount++;
             SetEOS(index, buffer);
@@ -765,7 +770,7 @@ void VDecAPI11Sample::InputFuncTest()
             flag = false;
             break;
         }
-        InputFuncTest_ApplyRepeatControls();
+        InputFuncTestApplyRepeatControls();
         uint32_t index;
         unique_lock<mutex> lock(signal_->inMutex_);
         signal_->inCond_.wait(lock, [this]() {
@@ -823,9 +828,8 @@ void VDecAPI11Sample::SyncInputFunc()
         }
         if (ret == K_PUSH_DATA_RETRY) {
             int last = K_PUSH_DATA_RETRY;
-            constexpr uint32_t K_MAX_SYNC_INPUT_PUSH_RETRY = 500U;
-            for (uint32_t syncRetry = 0; syncRetry < K_MAX_SYNC_INPUT_PUSH_RETRY && last == K_PUSH_DATA_RETRY;
-                 syncRetry++) {
+            constexpr uint32_t kMaxSyncInputPushRetry = 500U;
+            for (uint32_t syncRetry = 0; syncRetry < kMaxSyncInputPushRetry && last == K_PUSH_DATA_RETRY; syncRetry++) {
                 usleep(K_USLEEP_RETRY_DELAY_US);
                 last = PushData(index, buffer);
             }

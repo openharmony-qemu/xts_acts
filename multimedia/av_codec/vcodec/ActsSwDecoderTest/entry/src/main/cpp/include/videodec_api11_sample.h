@@ -182,7 +182,7 @@ private:
     bool H264AnnexBHandleNextScPastEnd(uint32_t nalStart);
     void H264AnnexBCopyNalAndFinish(uint32_t nalStart, uint32_t nextSc);
     void FinishOutputFuncTestOnEos(uint32_t index, OH_AVBuffer *buffer, OH_AVCodecBufferAttr &attr, bool &runFlag);
-    void InputFuncTest_ApplyRepeatControls();
+    void InputFuncTestApplyRepeatControls();
     bool InputFuncTest_FinishIterationAfterPush(int ret, uint32_t index, OH_AVBuffer *buffer, bool &flag);
     bool OutputFuncTest_WaitAndPop(OH_AVCodecBufferAttr &attr, uint32_t &index, OH_AVBuffer *&buffer);
     bool ProcessSegmentCopy(unsigned char **pBuffer, uint32_t &bufferSize,
