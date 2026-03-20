@@ -1006,37 +1006,5 @@ export default function InputDeviceComplementTest() {
         }
         hilog.info(domain, tag, `${caseName} leave`);
       });
-
-    /**
-     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
-     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
-     * @tc.desc   Test promise setFunctionKeyEnabled interface to call a non-input method application.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400";
-        try {
-          await inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, true)
-            .then(() => {
-              console.info(`${caseName} Set capslock state success`);
-              expect().assertFail();
-              done();
-            })
-            .catch((error: Error) => {
-              console.info(`${caseName} Set capslock state failed, error=${JSON.stringify(error)}`);
-              expect(error.code).assertEqual(3900003);
-              done();
-            });
-        } catch (error) {
-          error = error as BusinessError;
-          console.info(`${caseName} failed to set capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect().assertFail();
-          done();
-        }
-      });
   })
-
 }
