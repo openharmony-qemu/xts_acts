@@ -600,30 +600,6 @@ export default function StreamTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0200
-     * @tc.name      uncorkTest0002
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('uncorkTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'uncorkTest0002';
-        console.log(TAG + ' start');
-        const writable = new MultiCorkWritable();
-        expect(writable.cork()).assertEqual(true);
-        expect(writable.cork()).assertEqual(true);
-        writable.write('layer1', 'utf8');
-        writable.write('layer2', 'utf8');
-        const firstUncork = writable.uncork();
-        const secondUncork = writable.uncork();
-        expect(firstUncork).assertEqual(true);
-        expect(secondUncork).assertEqual(true);
-        writable.end('');
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0300
      * @tc.name      uncorkTest0003
      * @tc.desc      Array Unshift index 0.

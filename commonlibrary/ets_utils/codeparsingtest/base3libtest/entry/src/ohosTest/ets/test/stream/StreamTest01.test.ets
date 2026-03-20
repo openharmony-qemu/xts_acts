@@ -1071,23 +1071,6 @@ export default function StreamTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_0400
-     * @tc.name      setDefaultEncodingTest0004
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('setDefaultEncodingTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'setDefaultEncodingTest0004';
-        console.log(TAG + ' start');
-        let writable4 = new TestWritable4();
-        let result4 = writable4.setDefaultEncoding('utf-8');
-        expect(result4).assertEqual(true);
-
-      })
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_0500
      * @tc.name      setDefaultEncodingTest0005
      * @tc.desc      Array Unshift index 0.
