@@ -14,23 +14,29 @@
  */
 
 #include "include/ActsFuncTest.h"
-#include "include/videodec_api11_sample.h"
 #include <memory>
-#include <string>
-#include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <multimedia/player_framework/native_averrors.h>
+#include <string>
+#include "include/videodec_api11_sample.h"
 
 using namespace std;
 using namespace OHOS::Media;
 
 namespace {
 constexpr int SWDEC_SUCCESS = 0;
-const char* INP_DIR_720_30 =
-    "/data/storage/el2/base/haps/entry_test/files/1280_720_30_10Mb.h264";
-const char* INP_DIR_1080_30 =
-    "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
+// G.CNS.02: resolution/framerate constants to avoid magic numbers
+constexpr uint32_t kWidth1920 = 1920;
+constexpr uint32_t kWidth1280 = 1280;
+constexpr uint32_t kWidth1104 = 1104;
+constexpr uint32_t kHeight1080 = 1080;
+constexpr uint32_t kHeight720 = 720;
+constexpr uint32_t kHeight622 = 622;
+constexpr double kFrameRate30 = 30.0;
+const char* INP_DIR_720_30 = "/data/storage/el2/base/haps/entry_test/files/1280_720_30_10Mb.h264";
+const char* INP_DIR_1080_30 = "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
 const char* CODEC_NAME_AVC = "OH.Media.Codec.Decoder.Video.AVC";
 
 OH_AVCapability* g_cap = nullptr;
@@ -67,9 +73,9 @@ int VideoSwdecFunction0300()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     int ret = vDecSample->RunVideoDec(CODEC_NAME_AVC);
     if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
@@ -91,9 +97,9 @@ int VideoSwdecFunction0400()
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
     vDecSample->surfaceOutput = true;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     int ret = vDecSample->RunVideoDecSurface(CODEC_NAME_AVC);
     if (ret == AV_ERR_SURFACE_UNAVAILABLE_SKIP || ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
         return SWDEC_SUCCESS;
@@ -113,9 +119,9 @@ int VideoSwdecFunction0700()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
@@ -144,9 +150,9 @@ int VideoSwdecFunction0800()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->beforeEosInput = true;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
@@ -176,9 +182,9 @@ int VideoSwdecFunction4000()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = true;
     vDecSample->beforeEosInput = true;
     int ret = vDecSample->RunVideoDecSurface(CODEC_NAME_AVC);
@@ -200,16 +206,15 @@ int VideoSwdecFunction1000()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     vDecSample->afterEosDestoryCodec = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK || vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -226,8 +231,7 @@ int VideoSwdecFunction1000()
     if (vDecSample->Reset() != AV_ERR_OK) {
         return -1;
     }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK || vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
         return -1;
     }
     ret = vDecSample->StartVideoDecoder();
@@ -249,16 +253,15 @@ int VideoSwdecFunction1100()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     // Avoid std::terminate when StartVideoDecoder() is called twice.
     // We need WaitForEOS() to join inputLoop_ instead of leaving it joinable.
     vDecSample->afterEosDestoryCodec = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -273,8 +276,7 @@ int VideoSwdecFunction1100()
         return -1;
     }
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     ret = vDecSample->StartVideoDecoder();
@@ -296,14 +298,13 @@ int VideoSwdecFunction1200()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     vDecSample->repeatStartStopBeforeEos = 5;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -325,14 +326,13 @@ int VideoSwdecFunction1300()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     vDecSample->repeatStartFlushBeforeEos = 5;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -354,13 +354,12 @@ int VideoSwdecFunction1400()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_720_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -382,13 +381,12 @@ int VideoSwdecFunction1500()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1280;
-    vDecSample->defaultHeight = 720;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1280;
+    vDecSample->defaultHeight = kHeight720;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -412,13 +410,12 @@ int VideoSwdecFunction1600()
     // 与 Test.json PushKit 推送目标一致，否则设备上读不到文件
     vDecSample->inpDir =
         "/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/resolutionChange.h264";
-    vDecSample->defaultWidth = 1104;
-    vDecSample->defaultHeight = 622;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1104;
+    vDecSample->defaultHeight = kHeight622;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
-        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK ||
-        vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
+        vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
     }
     int ret = vDecSample->StartVideoDecoder();
@@ -440,9 +437,9 @@ int VideoDecodeSyncSw264Func0010()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     vDecSample->afterEosDestoryCodec = false;
@@ -470,9 +467,9 @@ int VideoDecodeSyncSw264Func0020()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
     vDecSample->afterEosDestoryCodec = false;
@@ -500,9 +497,9 @@ int VideoDecodeSyncSw264Func0040()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     vDecSample->afterEosDestoryCodec = false;
@@ -530,9 +527,9 @@ int VideoSwdecodeBlankFrame0010()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = INP_DIR_1080_30;
-    vDecSample->defaultWidth = 1920;
-    vDecSample->defaultHeight = 1080;
-    vDecSample->defaultFrameRate = 30.0;
+    vDecSample->defaultWidth = kWidth1920;
+    vDecSample->defaultHeight = kHeight1080;
+    vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->enbleBlankFrame = 1;
     vDecSample->surfaceOutput = false;
     int ret = vDecSample->RunVideoDec(g_codecNameAvc);

@@ -14,20 +14,19 @@
  */
 
 #include "include/ActsStateTest.h"
-#include "include/videodec_api11_sample.h"
 #include <memory>
-#include <string>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
+#include <string>
+#include "include/videodec_api11_sample.h"
 
 using namespace std;
 using namespace OHOS::Media;
 
 namespace {
 constexpr int SWDEC_SUCCESS = 0;
-const char* INP_DIR =
-    "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
+const char* INP_DIR = "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
 const char* CODEC_NAME_AVC = "OH.Media.Codec.Decoder.Video.AVC";
 
 // Returns configured VDecAPI11Sample (CreateVideoDecoder, SetVideoDecoderCallback, ConfigureVideoDecoder, inpDir).
@@ -56,11 +55,17 @@ std::shared_ptr<VDecAPI11Sample> CreateConfiguredStateSample()
 namespace Acts {
 namespace SwDecoder {
 
-#define EXPECT_RET(a, b) do { if ((a) != (b)) return -1; } while (0)
+#define EXPECT_RET(a, b) \
+    do {                 \
+        if ((a) != (b))  \
+            return -1;   \
+    } while (0)
 
-int VideoSwdecState0100() {
+int VideoSwdecState0100()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_INVALID_STATE);
     ret = vDecSample->SetVideoDecoderCallback();
@@ -68,17 +73,21 @@ int VideoSwdecState0100() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0101() {
+int VideoSwdecState0101()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Stop();
     EXPECT_RET(ret, AV_ERR_OK);
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0200() {
+int VideoSwdecState0200()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Stop();
@@ -88,9 +97,11 @@ int VideoSwdecState0200() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0300() {
+int VideoSwdecState0300()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Stop();
@@ -100,9 +111,11 @@ int VideoSwdecState0300() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0400() {
+int VideoSwdecState0400()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Stop();
@@ -112,9 +125,11 @@ int VideoSwdecState0400() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0500() {
+int VideoSwdecState0500()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Stop();
@@ -126,15 +141,20 @@ int VideoSwdecState0500() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0600() {
+int VideoSwdecState0600()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     vDecSample->afterEosDestoryCodec = false;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Stop();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Start();
@@ -142,15 +162,20 @@ int VideoSwdecState0600() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0700() {
+int VideoSwdecState0700()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Stop();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Release();
@@ -158,15 +183,20 @@ int VideoSwdecState0700() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0800() {
+int VideoSwdecState0800()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Stop();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Reset();
@@ -174,29 +204,39 @@ int VideoSwdecState0800() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState0900() {
+int VideoSwdecState0900()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_OK);
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1000() {
+int VideoSwdecState1000()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Start();
@@ -204,15 +244,20 @@ int VideoSwdecState1000() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1100() {
+int VideoSwdecState1100()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Stop();
@@ -220,15 +265,20 @@ int VideoSwdecState1100() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1200() {
+int VideoSwdecState1200()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Reset();
@@ -236,15 +286,20 @@ int VideoSwdecState1200() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1300() {
+int VideoSwdecState1300()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Flush();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Release();
@@ -254,15 +309,20 @@ int VideoSwdecState1300() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1400() {
+int VideoSwdecState1400()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Reset();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->ConfigureVideoDecoder();
@@ -270,15 +330,20 @@ int VideoSwdecState1400() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1500() {
+int VideoSwdecState1500()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Reset();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Release();
@@ -286,15 +351,20 @@ int VideoSwdecState1500() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1600() {
+int VideoSwdecState1600()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) return SWDEC_SUCCESS;
-    if (ret != AV_ERR_OK) return -1;
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP)
+        return SWDEC_SUCCESS;
+    if (ret != AV_ERR_OK)
+        return -1;
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0) return SWDEC_SUCCESS;  // env skip when decode reports errors
+    if (vDecSample->errCount != 0)
+        return SWDEC_SUCCESS; // env skip when decode reports errors
     ret = vDecSample->Reset();
     EXPECT_RET(ret, AV_ERR_OK);
     int32_t r = vDecSample->Start();
@@ -306,9 +376,11 @@ int VideoSwdecState1600() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1700() {
+int VideoSwdecState1700()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -320,9 +392,11 @@ int VideoSwdecState1700() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1800() {
+int VideoSwdecState1800()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -334,9 +408,11 @@ int VideoSwdecState1800() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState1900() {
+int VideoSwdecState1900()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -348,9 +424,11 @@ int VideoSwdecState1900() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2000() {
+int VideoSwdecState2000()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -362,9 +440,11 @@ int VideoSwdecState2000() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2100() {
+int VideoSwdecState2100()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -380,9 +460,11 @@ int VideoSwdecState2100() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2200() {
+int VideoSwdecState2200()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -394,9 +476,11 @@ int VideoSwdecState2200() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2300() {
+int VideoSwdecState2300()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -408,9 +492,11 @@ int VideoSwdecState2300() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2400() {
+int VideoSwdecState2400()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -422,9 +508,11 @@ int VideoSwdecState2400() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2500() {
+int VideoSwdecState2500()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -438,9 +526,11 @@ int VideoSwdecState2500() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2600() {
+int VideoSwdecState2600()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -452,9 +542,11 @@ int VideoSwdecState2600() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2700() {
+int VideoSwdecState2700()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -466,9 +558,11 @@ int VideoSwdecState2700() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2800() {
+int VideoSwdecState2800()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Flush();
@@ -486,9 +580,11 @@ int VideoSwdecState2800() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState2900() {
+int VideoSwdecState2900()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Reset();
@@ -498,9 +594,11 @@ int VideoSwdecState2900() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState3000() {
+int VideoSwdecState3000()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Reset();
@@ -510,9 +608,11 @@ int VideoSwdecState3000() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState3100() {
+int VideoSwdecState3100()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->Reset();
@@ -528,9 +628,11 @@ int VideoSwdecState3100() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState3200() {
+int VideoSwdecState3200()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Start();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->ConfigureVideoDecoder();
@@ -542,9 +644,11 @@ int VideoSwdecState3200() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState3300() {
+int VideoSwdecState3300()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Reset();
     EXPECT_RET(ret, AV_ERR_OK);
     ret = vDecSample->ConfigureVideoDecoder();
@@ -552,9 +656,11 @@ int VideoSwdecState3300() {
     return SWDEC_SUCCESS;
 }
 
-int VideoSwdecState3400() {
+int VideoSwdecState3400()
+{
     auto vDecSample = CreateConfiguredStateSample();
-    if (!vDecSample) return SWDEC_SUCCESS;
+    if (!vDecSample)
+        return SWDEC_SUCCESS;
     int32_t ret = vDecSample->Release();
     EXPECT_RET(ret, AV_ERR_OK);
     return SWDEC_SUCCESS;
