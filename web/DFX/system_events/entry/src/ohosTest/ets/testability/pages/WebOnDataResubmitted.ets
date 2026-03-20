@@ -105,8 +105,7 @@ struct WebOnDataResubmitted {
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.title = ''
                 this.isPageEnd =-1;
-                // await Utils.clickComponent(driver, 'WebOnDataResubmittedTestWebView')
-                Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestWebView", "this.str");
+                this.controller.runJavaScript("testClick()");
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.isPageEnd = -1;
                 this.controller.refresh();
@@ -125,8 +124,7 @@ struct WebOnDataResubmitted {
                 this.title = ''
                 this.resend = false
                 this.isPageEnd =-1;
-                // await Utils.clickComponent(driver, 'WebOnDataResubmittedTestWebView')
-                Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestWebView", "this.str");
+                this.controller.runJavaScript("testClick()");
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.isOnDataResubmittedEnd = -1;
                 this.controller.refresh();
