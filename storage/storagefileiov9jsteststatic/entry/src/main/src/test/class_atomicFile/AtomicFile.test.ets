@@ -147,7 +147,7 @@ export default function atomicFileTest() {
           if (data == null) {
             return;
           }
-          let context = data.toString();
+          let context = (data as Object).toString();
           expect(context === FILE_CONTENT).assertTrue();
         });
       } catch (e) {
