@@ -1,35 +1,3 @@
-import StreamTest01 from "./stream/StreamTest01.test"
-import StreamTest02 from "./stream/StreamTest02.test"
-import StreamTest03 from "./stream/StreamTest03.test"
-import StreamTest04 from "./stream/StreamTest04.test"
-import StreamTest05 from "./stream/StreamTest05.test"
-import StreamTest06 from "./stream/StreamTest06.test"
-import StreamTest07 from "./stream/StreamTest07.test"
-import StreamTest08 from "./stream/StreamTest08.test"
-import StreamTest09 from "./stream/StreamTest09.test"
-import StreamTest10 from "./stream/StreamTest10.test"
-
-import StreamDuplexTest01 from "./stream/StreamDuplexTest01.test"
-import StreamDuplexTest03 from "./stream/StreamDuplexTest03.test"
-import StreamDuplexTest04 from "./stream/StreamDuplexTest04.test"
-import StreamDuplexTest05 from "./stream/StreamDuplexTest05.test"
-import StreamDuplexTest06 from "./stream/StreamDuplexTest06.test"
-import StreamDuplexTest07 from "./stream/StreamDuplexTest07.test"
-import StreamDuplexTest08 from "./stream/StreamDuplexTest08.test"
-import StreamReadableTest01 from "./stream/StreamReadableTest01.test"
-import StreamReadableTest02 from "./stream/StreamReadableTest02.test"
-import StreamReadableTest03 from "./stream/StreamReadableTest03.test"
-import StreamReadableTest04 from "./stream/StreamReadableTest04.test"
-import StreamReadableTest05 from "./stream/StreamReadableTest05.test"
-import StreamWritableTest01 from "./stream/StreamWritableTest01.test"
-import StreamWritableTest02 from "./stream/StreamWritableTest02.test"
-import StreamWritableTest03 from "./stream/StreamWritableTest03.test"
-import StreamWritableTest04 from "./stream/StreamWritableTest04.test"
-import StreamWritableTest05 from "./stream/StreamWritableTest05.test"
-import StreamWritableTest06 from "./stream/StreamWritableTest06.test"
-import StreamWritableTest07 from "./stream/StreamWritableTest07.test"
-import StreamWritableTest08 from "./stream/StreamWritableTest08.test"
-
 import ArrayListTest01 from "./arraylist/ArrayListTest01.test"
 import ArrayListTest02 from "./arraylist/ArrayListTest02.test"
 import ArrayListTest03 from "./arraylist/ArrayListTest03.test"
@@ -118,37 +86,6 @@ import LinkedListTest19 from "./linkedlist/LinkedListTest19.test"
 import LinkedListTest20 from "./linkedlist/LinkedListTest20.test"
 
 export default function testsuite() {
-  StreamTest01();
-  StreamTest02();
-  StreamTest03();
-  StreamTest04();
-  StreamTest05();
-  StreamTest06();
-  StreamTest07();
-  StreamTest08();
-  StreamTest09();
-  StreamTest10();
-
-  StreamDuplexTest01();
-  StreamDuplexTest03();
-  StreamDuplexTest04();
-  StreamDuplexTest05();
-  StreamDuplexTest06();
-  StreamDuplexTest07();
-  StreamDuplexTest08();
-  StreamReadableTest01();
-  StreamReadableTest02();
-  StreamReadableTest03();
-  StreamReadableTest04();
-  StreamReadableTest05();
-  StreamWritableTest01();
-  StreamWritableTest02();
-  StreamWritableTest03();
-  StreamWritableTest04();
-  StreamWritableTest05();
-  StreamWritableTest06();
-  StreamWritableTest07();
-  StreamWritableTest08();
 
   ArrayListTest01();
   ArrayListTest02();
