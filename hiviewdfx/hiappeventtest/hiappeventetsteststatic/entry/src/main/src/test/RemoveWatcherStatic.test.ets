@@ -11,7 +11,7 @@ export default function removeWatcherStrongTest() {
     hilog.info(domain, tag, 'describe start');
     /**
      * @tc.name   testRemoveWatcher001
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher001
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters数组为空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -37,7 +37,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher002
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher002
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters数组非空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher003
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher003
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters数组非空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher004
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher004
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-domain为空,返回错误值11102002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher005
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher005
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher006
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher006
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为hiAppEvent.EventType.STATISTIC,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher007
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher007
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为hiAppEvent.EventType.SECURITY,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher008
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher008
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为hiAppEvent.EventType.BEHAVIOR,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function removeWatcherStrongTest() {
     })
     /**
      * @tc.name   testRemoveWatcher009
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testRemoveWatcher009
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-names数组为空数组,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
