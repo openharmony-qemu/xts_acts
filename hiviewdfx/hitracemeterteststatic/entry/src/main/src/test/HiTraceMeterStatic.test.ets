@@ -9,12 +9,12 @@ export default function hiTraceMeterStrongTest() {
   describe("hiTraceMeterStrongTest", (): void => {
     hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.INFO);
     /*
-        * @tc.number: SUB_HiTracMeter_finishSyncTrace_0100
-        * @tc.name: SUB_HiTracMeter_finishSyncTrace_0100
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.number SUB_HiTracMeter_finishSyncTrace_0100
+        * @tc.name SUB_HiTracMeter_finishSyncTrace_0100
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
     it("SUB_HiTracMeter_finishSyncTrace_0100",TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done :() => void): Promise<void> => {
       await Utils.msSleep(1000)
@@ -27,14 +27,14 @@ export default function hiTraceMeterStrongTest() {
     })
     hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL);
     /*
-        * @tc.number: SUB_HiTracMeter_finishSyncTrace_0110
-        * @tc.name: SUB_HiTracMeter_finishSyncTrace_0110
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.number SUB_HiTracMeter_finishSyncTrace_0110
+        * @tc.name SUB_HiTracMeter_finishSyncTrace_0110
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL0
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
-    it("SUB_HiTracMeter_finishSyncTrace_0110",TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done :() => void): Promise<void> => {
+    it("SUB_HiTracMeter_finishSyncTrace_0110",TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done :() => void): Promise<void> => {
       await Utils.msSleep(1000)
       hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL);
       let a:int = 1;
