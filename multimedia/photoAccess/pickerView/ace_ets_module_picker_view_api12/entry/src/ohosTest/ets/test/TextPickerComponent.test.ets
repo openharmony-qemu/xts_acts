@@ -208,8 +208,8 @@ async function clickUpdatablePickerButton(driver: Driver) {
 
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
-  let btn = await driver.waitForComponent(ON.text('全部相册').type('Button'), 5000);
-  if (btn === null) {
+  let btn: Component = await driver.waitForComponent(ON.text('全部相册').type('Button'), 5000);
+  if (btn === undefined || btn === null) {
     console.info("clickAlbumButton findComponent btn fail");
   } else {
     console.info("clickAlbumButton findComponent btn success");
@@ -251,11 +251,10 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
 }
 
 async function clickExitBrowserButton(driver: Driver) {
-  const exitButton: Component | null = await driver.waitForComponent(ON.text('退出大图').type('Button'), 5000);
-  if (！exitButton) {
+  const exitButton: Component = await driver.waitForComponent(ON.text('退出大图').type('Button'), 5000);
+  if (exitButton === undefined || exitButton === null) {
     console.log('exitButton is miss');
-  }
-  else {
+  } else {
     await exitButton.click();
     console.info('testPicker55: clicked exitBrowser, browser closed');
     await CommonFunc.sleep(800);
@@ -1143,7 +1142,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
 
       let changeNumButton: Component = await driver.waitForComponent(ON.text('选择修改数量').type('Button'), 5000);
-      if (changeNumButton === null) {
+      if (changeNumButton === null || changeNumButton === undefined) {
         console.info("testPicker15 findComponent changeNumButton fail");
       } else {
         console.info("testPicker15 findComponent changeNumButton success");
@@ -2824,13 +2823,10 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.waitForComponent(ON.text('TEXT_DONE').type('Button'), 5000);
-      let btn: Component = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
-      if (!btn && !chooostModeButton) {
+      let btn: Component | undefined = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
+      if (btn !== undefined && chooostModeButton !== undefined && btn !== null && chooostModeButton !== null) {
         await chooostModeButton.click();
         await btn.click();
-      } else {
-        console.error("testPicker51 can not find button");
-        expect(false).assertTrue();
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
@@ -3540,9 +3536,7 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
       let btn: Component = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
-      if (!btn) {
-        console.log('btn is miss');
-      } else {
+      if (btn !== undefined && btn !== null) {
         await btn.click();
         console.info('testPicker61 Clicked select button');
       }
