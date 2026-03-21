@@ -30,12 +30,12 @@ export default function hiTraceChainStrongTest() {
 
     hiTraceChain.createSpan();
     /*
-        * @tc.number: SUB_HiTraceChain_createSpan_0200
-        * @tc.name: SUB_HiTraceChain_createSpan_0200
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.name  SUB_HiTraceChain_createSpan_0200
+        * @tc.number SUB_HiTraceChain_createSpan_0200
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
     it("SUB_HiTraceChain_createSpan_0200",TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done :() => void): Promise<void> =>{
       await Utils.msSleep(1000)
