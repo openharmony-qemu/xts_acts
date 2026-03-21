@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import SelectionManagerTest from './SelectionManagerTest.test.ets'
-import SelectionManagerCanIUseTest from './SelectionManagerCanIUseTest.test.ets'
+import SelectionManagerTest from './SelectionManagerTest.test'
+import SelectionManagerCanIUseTest from './SelectionManagerCanIUseTest.test'
 
 export default function testsuite() {
   if (canIUse("SystemCapability.SelectionInput.Selection")){
