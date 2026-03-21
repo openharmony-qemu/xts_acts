@@ -32,7 +32,7 @@
 #define PARAM_9 9
 #define PARAM_202 202
 #define PARAM_1400002 1400002
-uint64 g_areaCount;
+uint64_t g_areaCount;
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
