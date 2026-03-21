@@ -58,10 +58,10 @@ export default function FaultLogExtensionAbilityTest(){
       done();
     })
 
-    //FaultLogExtensionAbility.onFaultReportReady();
+    
     /*
-       * @tc.number SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
-         @tc.name  SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
+       * @tc.name SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
+         @tc.number  SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
        * @tc.desc  Check start ability by bundl
        * @tc.level LEVEL1
        * @tc.size MEDIUMTEST
