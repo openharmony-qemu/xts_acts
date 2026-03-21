@@ -100,8 +100,8 @@ export class KeyboardControllerStatic {
     }
 
     inputMethodAbility!.createPanel(this.mContext!, panelInfo, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
-      if(err !== undefined){
-        console.info(`${TAG} ====> Failed to create panel. err.code: ${err.code}, err.message: ${err.message}`);
+      if(err){
+        console.info(`${TAG} ====> Failed to create panel. err.code: ${err?.code}, err.message: ${err?.message}`);
       }
       this.softKeyboardPanel = panel as inputMethodEngine.Panel;
       console.info(`${TAG} ====> Succeed in creating panel.  panel: ${JSON.stringify(this.softKeyboardPanel)}`);
@@ -204,7 +204,7 @@ export class KeyboardControllerStatic {
     console.debug(`${TAG} ====>publish commonevent Succeed`);      
   }
 
-  private async wrapAssertWithTwoIn1Judgement(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>>{
+  private async wrapAssertWithTwoIn1Judgement1(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>>{
     try{
       return ()=> assertRunnable();
     } catch (err) {
@@ -259,6 +259,7 @@ export class KeyboardControllerStatic {
             console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel: ${JSON.stringify(panel)}`);
           };
           if (panel !== undefined) {
+            this.STATUS_BARPanel = panel as inputMethodEngine.Panel;
             inputMethodAbility!.destroyPanel(panel);
           }
           commonEventManager.publish('Sub_InputMethod_IME_createPanelCallback_static_0100', commonEventPublishData, this.publishCallback);
@@ -567,7 +568,7 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 success');
     if (this.softKeyboardPanel !== null) {
       try {
-        this.softKeyboardPanel!.setUiContent('pages/Second', (err, data) => {
+        this.softKeyboardPanel!.setUiContent('pages/Second', (err) => {
         console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 setUiContent');
         if (err) {
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 setUiContent error: ' + JSON.stringify(err));
@@ -2331,7 +2332,7 @@ export class KeyboardControllerStatic {
         fluidLightMode: inputMethodEngine.FluidLightMode.NONE
       }
       this.softKeyboardPanel!.setImmersiveEffect(effect);
-      console.info(`${TAG} ====>Sub_InputMethod_IME_setImmersiveEffect_0100 ImmersiveMode ` + JSON.stringify(effect));
+      console.info(`${TAG} ====>Sub_InputMethod_IME_setImmersiveEffect_0200 ImmersiveMode ` + JSON.stringify(effect));
     } catch(err) {
       if (err.code === 801) {
         commonEventPublishData = {
@@ -2343,9 +2344,9 @@ export class KeyboardControllerStatic {
           data: 'SUCCESS'
         };
       };
-      console.info(`${TAG} ====>Sub_InputMethod_IME_setImmersiveEffect_0100 catch err` + JSON.stringify(err));
+      console.info(`${TAG} ====>Sub_InputMethod_IME_setImmersiveEffect_0200 catch err` + JSON.stringify(err));
     };
-    commonEventManager.publish('Sub_InputMethod_IME_setImmersiveEffect_0100', commonEventPublishData, this.publishCallback);
+    commonEventManager.publish('Sub_InputMethod_IME_setImmersiveEffect_0200', commonEventPublishData, this.publishCallback);
   }
 
   private async Sub_InputMethod_IME_setImmersiveEffect_0300(): Promise<void> {
@@ -2490,7 +2491,7 @@ export class KeyboardControllerStatic {
           data: 'SUCCESS'
         };
       };
-      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0500 cathch err: ' + JSON.stringify(err));
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0500 catch err: ' + JSON.stringify(err));
     };
     commonEventManager.publish('Sub_InputMethod_IME_Streamer_0500', commonEventPublishData, this.publishCallback);
   }
@@ -2647,23 +2648,23 @@ export class KeyboardControllerStatic {
   }
 
   async inputMethodEngine_test_exitCurrentInputType_static_0100(): void {
-    console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentUnputType_static_0100 data`); 
+    console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentInputType_static_0100 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
-      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentUnputType_static_0100 exitCurrentInputType start`); 
+      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentInputType_static_0100 exitCurrentInputType start`); 
       await this.keyboardController!!.exitCurrentInputType();
-      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentUnputType_static_0100 exitCurrentInputType success`); 
+      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentInputType_static_0100 exitCurrentInputType success`); 
     } catch (err) {
-      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentUnputType_static_0100 exitCurrentInputType catch err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentInputType_static_0100 exitCurrentInputType catch err: ${JSON.stringify(err)}`);
       if (err.code === 12800010) {
         commonEventPublishData = {
           data: 'SUCCESS'
         }
       }
     }
-    commonEventManager.publish('inputMethodEngine_test_exitCurrentUnputType_static_0100', commonEventPublishData, this.publishCallback);
+    commonEventManager.publish('inputMethodEngine_test_exitCurrentInputType_static_0100', commonEventPublishData, this.publishCallback);
   }
 
   private inputMethodAbility_test_getSecurityMode_static_0100(): void {
@@ -2693,7 +2694,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      this.InputClient!.snedKeyFunction(1).then((result: boolean) => {
+      this.InputClient!.sendKeyFunction(1).then((result: boolean) => {
         if (result) {
           console.info(`${TAG} ====>Sub_InputMethod_IME_InputClientsendKeyFunctionCallback_static_0100 success in key function`); 
           commonEventPublishData = {
@@ -2711,30 +2712,30 @@ export class KeyboardControllerStatic {
     }    
   }
 
-  private SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0190(): Promise<void> {
-    console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 data`);     
+  private SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
+    console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 data`);     
     try {
       inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.keyboardController, InputClient: inputMethodEngine.InputClient): void => {
-        console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 inputStart`); 
+        console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 inputStart`); 
         inputMethodAbility!.offInputStart((): void => {});
         if(InputClient == null) {
-          console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient is null`); 
+          console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient is null`); 
         } else {
           setTimeout(async (): void => {
             InputClient.sendKeyFunction(0).then((result: boolean) => {
               if(result){
-                console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient success in key function`); 
+                console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient success in key function`); 
               }else{
-                console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient Failed in key function`); 
+                console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient Failed in key function`); 
               }
             }).catch((err) => {
-              console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100  catch err: ${err.code}`);
+              console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100  catch err: ${err.code}`);
             })
           }, 500);
         }
       })
     } catch (err) {
-      console.info(`${TAG} ====>Sub_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 try catch err: ${err.code}`);
+      console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 try catch err: ${err.code}`);
     }
   }
 
@@ -2743,7 +2744,7 @@ export class KeyboardControllerStatic {
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };  
-    let value: boolean = await this.InputClient!.snedKeyFunction(1);
+    let value: boolean = await this.InputClient!.sendKeyFunction(1);
     console.info(`${TAG} ====>inputMethodEngine_test_static_029 value: ${JSON.stringify(value)}`); 
     if (value) {
       console.info(`${TAG} ====>inputMethodEngine_test_static_029 success in key function`); 
@@ -2778,7 +2779,7 @@ export class KeyboardControllerStatic {
     }
   }
 
-  private inputMethodAbility_test_static_030(): void {
+  private inputMethodAbility_test_static_030() {
     console.info(`${TAG} ====>inputMethodAbility_test_static_030 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -2798,7 +2799,7 @@ export class KeyboardControllerStatic {
     })
   }
 
-  async inputMethodAbility_test_static_031(): void {
+  async inputMethodAbility_test_static_031() {
     console.info(`${TAG} ====>inputMethodAbility_test_static_031 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -3499,8 +3500,8 @@ export class KeyboardControllerStatic {
           commonEventPublishData = {
             data: 'SUCCESS'
           };
-          commonEventManager.publish('inputMethodEngine_test_exitCurrentInputType_static_0200', commonEventPublishData, this.publishCallback);
         }
+        commonEventManager.publish('inputMethodEngine_test_exitCurrentInputType_static_0200', commonEventPublishData, this.publishCallback);
       });
     } catch (err) {
       console.info(TAG + '====>inputMethodEngine_test_exitCurrentInputType_static_0200 deleteBackwardSync  err ');
@@ -3898,7 +3899,7 @@ export class KeyboardControllerStatic {
     let count1 = 0;
     let count2 = 0;
     let callback1 = (): void => {
-      console.info(TAG + `====> ${caseName}  callback1  is success`);
+      console.info(TAG + ``====> ${caseName}  callback1  is success`);
       ++count1;
     };
     let callback2 = (): void => {
