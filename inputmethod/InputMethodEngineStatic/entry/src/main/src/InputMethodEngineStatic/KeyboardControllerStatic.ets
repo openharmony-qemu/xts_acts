@@ -3898,7 +3898,7 @@ export class KeyboardControllerStatic {
     let count1 = 0;
     let count2 = 0;
     let callback1 = (): void => {
-      console.info(TAG + ``====> ${caseName}  callback1  is success`);
+      console.info(TAG + `====> ${caseName}  callback1  is success`);
       ++count1;
     };
     let callback2 = (): void => {
