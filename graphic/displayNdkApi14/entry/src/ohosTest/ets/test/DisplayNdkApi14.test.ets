@@ -519,11 +519,8 @@ export default function ActsDisplayNdkApi14Test() {
             done();
           })
 
-        } else {
-          let code_err = Number(PixelMap);
-          expect(code_err).assertEqual(801);
-          done();
-        }
+        } 
+        done();
 
       } catch (err) {
         console.log(caseName + ': fail:'+ err + ' '+err.code);

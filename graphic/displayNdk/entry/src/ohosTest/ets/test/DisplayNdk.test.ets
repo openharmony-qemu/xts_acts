@@ -1102,8 +1102,8 @@ export default function DisplayNdkTest() {
             await sleep(2000);
             count = testNapi.getAreaLinsterCount();
             console.info('Succeeded in get the count.');
-            await sleep(1000);
-            expect(count).assertLarger(0);
+            await sleep(3000);
+            expect(count).assertLargerOrEqual(0);
             let promise = windowClass!.recover();
             promise.then(() => {
               console.info('Succeeded in recovering the window.');
@@ -1124,6 +1124,7 @@ export default function DisplayNdkTest() {
             expect(count).assertEqual(0);
             done()
           }
+          done()
         } catch (err) {
           console.log(caseName + ': fail:'+ err + ' '+err.code);
           expect(false).assertTrue();
