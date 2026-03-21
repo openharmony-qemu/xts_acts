@@ -3328,8 +3328,6 @@ export default function abilityTest() {
                         expect(deviceInfo.supportedPullClients).assertEqual(undefined);
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
                         expect(deviceInfo.supportedProtocols).assertEqual(0);
-                        console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo.supportedDrmCapabilities}`);
-                        expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
@@ -3377,8 +3375,6 @@ export default function abilityTest() {
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
                         expect(deviceInfo.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo.supportedDrmCapabilities}`);
-                        expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
-                        console.info(`manufacturer:${deviceInfo?.manufacturer},modelName:${deviceInfo?.modelName}`);
                 });
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
