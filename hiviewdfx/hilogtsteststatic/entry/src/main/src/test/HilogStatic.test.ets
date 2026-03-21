@@ -44,8 +44,8 @@ export default function HilogStrongTest(){
     })
     hilog.setLogLevel(hilog.LogLevel.INFO,hilog.PreferStrategy.PREFER_OPEN_LOG);
     /*
-     * @tc.name   SUB_Hilog_setLogLevel_INFO_0200
-     * @tc.number SUB_Hilog_setLogLevel_INFO_0200
+     * @tc.name   SUB_Hilog_setLogLevel_INFO_0210
+     * @tc.number SUB_Hilog_setLogLevel_INFO_0210
      * @tc.desc   setLogLevel函数异常值覆盖INFO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,14 +62,14 @@ export default function HilogStrongTest(){
     })
     hilog.setLogLevel(hilog.LogLevel.FATAL,hilog.PreferStrategy.PREFER_OPEN_LOG);
     /*
-     * @tc.name   SUB_Hilog_setLogLevel_FATAL_0200
-     * @tc.number SUB_Hilog_setLogLevel_FATAL_0200
+     * @tc.name   SUB_Hilog_setLogLevel_FATAL_0220
+     * @tc.number SUB_Hilog_setLogLevel_FATAL_0220
      * @tc.desc   setLogLevel函数异常值覆盖FATAL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Hilog_setLogLevel_FATAL_0220', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_Hilog_setLogLevel_FATAL_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
       hilog.setLogLevel(hilog.LogLevel.FATAL,hilog.PreferStrategy.PREFER_OPEN_LOG);
       let a:int = 1;
