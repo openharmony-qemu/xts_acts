@@ -22,7 +22,7 @@
                 "power-shell setmode 602",
                 "uitest dumpLayout",
                 "param set sys.selection.switch on",
-                "param set sys.selection.app com.acts.selection.test/MainAbility"
+                "param set sys.selection.app com.acts.selection.test/EntryAbility"
             ]
         }
     ]
