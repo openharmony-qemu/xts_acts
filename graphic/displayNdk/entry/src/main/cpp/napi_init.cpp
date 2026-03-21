@@ -32,7 +32,7 @@
 #define PARAM_9 9
 #define PARAM_202 202
 #define PARAM_1400002 1400002
-uint64_t areaCount;
+uint64 g_areaCount;
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -538,17 +538,15 @@ static napi_value GetDisplayPosition_ErrCode140004(napi_env env, napi_callback_i
 void AvailableAreaChangeCallback(uint64_t displayId)
 {
     OH_LOG_INFO(LOG_APP, "AvailableAreaChangeCallback displayId=%{public}lu.", displayId);
-    AreaCount++;
-    OH_LOG_INFO(LOG_APP, "Area count :%{public}d", AreaCount);
+    g_areaCount++;
+    OH_LOG_INFO(LOG_APP, "Area count :%{public}d", g_areaCount);
 }
 
 static napi_value getAreaLinsterCount(napi_env env, napi_callback_info info)
 {
-    uint32_t registerAreaIndex;
-    registerAreaIndex = AreaCount;
     napi_value index;
-    OH_LOG_INFO(LOG_APP, "DisplayAreaChangeCallback count:%{public}d", registerAreaIndex);
-    napi_create_uint32(env, registerAreaIndex, &index);
+    OH_LOG_INFO(LOG_APP, "DisplayAreaChangeCallback count:%{public}d", g_areaCount);
+    napi_create_uint32(env, g_areaCount, &index);
     return index;
 }
 
