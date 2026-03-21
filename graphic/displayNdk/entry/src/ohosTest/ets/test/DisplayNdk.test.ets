@@ -1099,25 +1099,18 @@ export default function DisplayNdkTest() {
             windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
             // 调用setTitleAndDockHoverShown接口，隐藏标题栏和dock栏。
             windowClass!.setTitleAndDockHoverShown(false, false);
-            await sleep(2000);
+            await sleep(1000);
             count = testNapi.getAreaLinsterCount();
             console.info('Succeeded in get the count.');
-            await sleep(3000);
+            await sleep(1000);
             expect(count).assertLargerOrEqual(0);
-            let promise = windowClass!.recover();
-            promise.then(() => {
-              console.info('Succeeded in recovering the window.');
-            }).catch((err: BusinessError) => {
-              console.error(`Failed to recover the window. Cause code: ${err.code}, message: ${err.message}`);
-            });
-            await sleep(2000);
             done()
           } else if (deviceType === 'tablet') {
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-            await sleep(2000);
+            await sleep(1000);
             count = testNapi.getAreaLinsterCount();
             expect(count).assertLargerOrEqual(0);
-            await sleep(2000);
+            await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             done();
           } else {

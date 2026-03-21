@@ -32,7 +32,7 @@
 #define PARAM_9 9
 #define PARAM_202 202
 #define PARAM_1400002 1400002
-uint64_t AreaCount;
+uint64_t areaCount;
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -806,8 +806,7 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "unregisterFoldDisplayModeChange", nullptr, UnregisterFoldDisplayModeChangeListener, nullptr, nullptr,
             nullptr, napi_default, nullptr },
-        { "getAreaLinsterCount", nullptr, getAreaLinsterCount, nullptr, nullptr,
-        nullptr, napi_default, nullptr },
+        { "getAreaLinsterCount", nullptr, getAreaLinsterCount, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
