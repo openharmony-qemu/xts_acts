@@ -10,6 +10,7 @@ import util from '@ohos.util';
 import { window } from '@kit.ArkUI';
 import Want from '@ohos.app.ability.Want';
 import { LocalStorage } from '@ohos.arkui.stateManagement';
+import Utils from '../test/Util.test';
 let domain: int = 0x0000;
 let TAG: string = 'keyboardControllerStatic';
 
@@ -87,7 +88,7 @@ export class KeyboardControllerStatic {
     commonEventManager.publish(testName, commonEventPublishData, this.publishCallback);
   }
 
-  private async wrapAssertWithTwoIn1Judgement(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>> {
+  private async wrapAssertWithTwoIn1Judgement1(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>> {
     return () => assertRunnable();
   }
 
@@ -100,8 +101,8 @@ export class KeyboardControllerStatic {
     }
 
     inputMethodAbility!.createPanel(this.mContext!, panelInfo, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
-      if(err){
-        console.info(`${TAG} ====> Failed to create panel. err.code: ${err?.code}, err.message: ${err?.message}`);
+      if(err !== undefined){
+        console.info(`${TAG} ====> Failed to create panel. err.code: ${err!.code}, err.message: ${err!.message}`);
       }
       this.softKeyboardPanel = panel as inputMethodEngine.Panel;
       console.info(`${TAG} ====> Succeed in creating panel.  panel: ${JSON.stringify(this.softKeyboardPanel)}`);
@@ -568,7 +569,7 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 success');
     if (this.softKeyboardPanel !== null) {
       try {
-        this.softKeyboardPanel!.setUiContent('pages/Second', (err) => {
+        this.softKeyboardPanel!.setUiContent('pages/Second', (err, data) => {
         console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 setUiContent');
         if (err) {
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_setUiContentCallback_0050 setUiContent error: ' + JSON.stringify(err));
@@ -2647,7 +2648,7 @@ export class KeyboardControllerStatic {
     commonEventManager.publish('inputMethodEngine_test_getKeyboardDelegate_static_0100', commonEventPublishData, this.publishCallback);
   }
 
-  async inputMethodEngine_test_exitCurrentInputType_static_0100(): void {
+  async inputMethodEngine_test_exitCurrentInputType_static_0100(): Promise<void> {
     console.info(`${TAG} ====>inputMethodEngine_test_exitCurrentInputType_static_0100 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -2688,7 +2689,7 @@ export class KeyboardControllerStatic {
     }    
   }
 
-  async Sub_InputMethod_IME_InputClientsendKeyFunctionCallback_static_0100(): void {
+  async Sub_InputMethod_IME_InputClientsendKeyFunctionCallback_static_0100(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_InputClientsendKeyFunctionCallback_static_0100 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -2779,18 +2780,18 @@ export class KeyboardControllerStatic {
     }
   }
 
-  private inputMethodAbility_test_static_030() {
+  private inputMethodAbility_test_static_030(): void {
     console.info(`${TAG} ====>inputMethodAbility_test_static_030 data`); 
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
-    this.InputClient!.deleteForward(1, (err: BusinessError | null, value: boolean | undefined) => {
+    this.InputClient!.deleteForward(1, (err: BusinessError | null, value: boolean | undefined): void => {
       if (err) {
         console.info(`${TAG} ====>inputMethodAbility_test_static_030 deleteForward err: ${JSON.stringify(err)}`);
       } else {
         console.info(`${TAG} ====>inputMethodAbility_test_static_030 deleteForward value: ${JSON.stringify(value)}`);
         if (typeof value === 'boolean') {
-          commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          commonEventPublishData = {
             data: 'SUCCESS'
           };
         }
@@ -2806,7 +2807,7 @@ export class KeyboardControllerStatic {
     };
     let value: boolean = await this.InputClient!.deleteForward(1);
     if (typeof value === 'boolean') {
-      commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      commonEventPublishData = {
         data: 'SUCCESS'
       };
     }
@@ -3411,10 +3412,9 @@ export class KeyboardControllerStatic {
       inputMethodAbility!.offKeyboardHide();
       console.info(TAG + '====>inputMethodAbility.off("keyboardHide") count: ' + count);
     });
-    setTimeout(async () => {
-      await this.keyboardController!.hideKeyboard();
-      console.info(TAG + '====>inputMethodAbility_test_071 hideKeyboard success');
-    }, 500);
+    await Utils.msSleep(500)
+    await this.keyboardController!.hide();
+    console.info(TAG + '====>inputMethodAbility_test_071 hideKeyboard success');
     setTimeout(() => {
       if (count === 1) {
         commonEventPublishData = {
@@ -3669,28 +3669,24 @@ export class KeyboardControllerStatic {
     try {
       if (this.softKeyboardPanel !== null) {
         console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 this.softKeyboardPanel:' + this.softKeyboardPanel);
-        let t = setTimeout(async () => {
-          clearTimeout(t);
-          try {
-            let WindowInfo = await this.InputClient.getCallingWindowInfo();
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo WindowInfo:' + JSON.stringify(WindowInfo));
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo  rect: ' + JSON.stringify(WindowInfo.rect));
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo  status: ' + JSON.stringify(WindowInfo.status));
-            if (typeof (WindowInfo) === 'object' && typeof (WindowInfo.rect) === 'object' && typeof (WindowInfo.status) === 'int') {
-              commonEventPublishData = {
-                data: 'SUCCESS'
-              };
+        try {
+          await Utils.msSleep(500);
+          let WindowInfo = await this.InputClient!.getCallingWindowInfo();
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo WindowInfo:' + JSON.stringify(WindowInfo));
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo  rect: ' + JSON.stringify(WindowInfo!.rect));
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo  status: ' + JSON.stringify(WindowInfo!.status));
+          if (typeof (WindowInfo) === 'object' && typeof (WindowInfo!.rect) === 'object' && typeof (WindowInfo!.status) === 'int') {
+            commonEventPublishData = {
+              data: 'SUCCESS'
             };
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo WindowInfo:  success');
-          } catch (err) {
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInf0 err: ' + JSON.stringify(err.message));
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInf0 err: ' + JSON.stringify(err.code));
-            console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfO err: ' + err);
           };
-          commonEventManager.publish('SUB_InputMethod_IME_SplitScreen_0100', commonEventPublishData, this.publishCallback);
-
-        }, 500);
-
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo WindowInfo:  success');
+        } catch (err) {
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInf0 err: ' + JSON.stringify(err.message));
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInf0 err: ' + JSON.stringify(err.code));
+          console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfO err: ' + err);
+        };
+        commonEventManager.publish('SUB_InputMethod_IME_SplitScreen_0100', commonEventPublishData, this.publishCallback);
       } else {
         console.info(TAG + '====>SUB_InputMethod_IME_SplitScreen_0100 getCallingWindowInfo softKeyboardPanel is null ');
       };
@@ -3709,7 +3705,7 @@ export class KeyboardControllerStatic {
     };
     let range: inputMethodEngine.Range = { start: -1, end: -4 }
     try {
-      this.InputClient.setPreviewTextSync('adc|03', range);
+      this.InputClient!.setPreviewTextSync('adc|03', range);
       console.info(TAG + '====>SUB_InputMethod_IsTextPreviewSupport_0100 setPreviewText success:');
       commonEventPublishData = {
         data: "FAILED"
@@ -3734,7 +3730,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      await this.InputClient.finishTextPreview();
+      await this.InputClient!.finishTextPreview();
       console.info(TAG + '====>SUB_InputMethod_IsTextPreviewSupport_0300 finishTextPreview success');
       commonEventPublishData = {
         data: "SUCCESS"
@@ -3753,7 +3749,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      this.InputClient.finishTextPreviewSync();
+      this.InputClient!.finishTextPreviewSync();
       console.info(TAG + '====>SUB_InputMethod_IsTextPreviewSupport_0400 finishTextPreviewSync success');
       commonEventPublishData = {
         data: "SUCCESS"
@@ -3772,8 +3768,8 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     console.info(TAG + '====>receive SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 success');
-    inputKeyboardDelegate.on('keyEvent', (KeyEvents) => {
-      inputKeyboardDelegate.off("keyEvent");
+    inputKeyboardDelegate!.onKeyEvent((KeyEvents) => {
+      inputKeyboardDelegate!.offKeyEvent();
       console.info(TAG + "====>inputKeyboardDelegate.on('keyEvent')");
       try {
         console.info(TAG + "====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 keyEvent: " + KeyEvents.action);
@@ -3788,8 +3784,7 @@ export class KeyboardControllerStatic {
       }
       return true;
     });
-    let t = setTimeout(() => {
-      clearTimeout(t);
+    setTimeout(() => {
       commonEventManager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0010", commonEventPublishData,
         this.publishCallback);
     }, 800);
@@ -3802,7 +3797,7 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel.on('sizeChange', async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
+        this.softKeyboardPanel.onSizeChange(async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
           if (typeof (keyboardArea.top) === 'int' && typeof (keyboardArea.bottom) === 'int' && typeof (keyboardArea.left) === 'int' && typeof (keyboardArea.right) === 'int') {
             commonEventPublishData = {
                 data: 'SUCCESS'
@@ -3813,11 +3808,11 @@ export class KeyboardControllerStatic {
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 offSizeChange');
           commonEventManager.publish('Sub_Misc_inputMethod_Panel_onSizeChange_static_0100', commonEventPublishData, this.publishCallback);
         });
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 display_info.width1: ' + this.display_info.width);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 display_info.height1: ' + this.display_info.height);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width1: ' + this.displayInfo.width);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height1: ' + this.displayInfo.height);
         await this.softKeyboardPanel.resize(200, 100);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 display_info.width2: ' + this.display_info.width);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 display_info.height2: ' + this.display_info.height);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width2: ' + this.displayInfo.width);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height2: ' + this.displayInfo.height);
       } else {
         commonEventPublishData = {
           data: 'FAILED'
@@ -3843,9 +3838,9 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel.onSizeChange(async (size: window.Size): void => {
+        this.softKeyboardPanel.onSizeChange((size: window.Size) => {
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 onSizeChange');
-          this.softKeyboardPanel.off('sizeChange');
+          this.softKeyboardPanel.offSizeChange();
           count += 1;
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 off SizeChange count: ' + count);
         });
@@ -3854,13 +3849,13 @@ export class KeyboardControllerStatic {
         intervalID = setInterval(async () => {
           if (flage === true) {
             flage = false;
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 display_info.width: ' + this.display_info.width);
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 display_info.height: ' + this.display_info.height);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo.width);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo.height);
             await this.softKeyboardPanel.resize(200, 120);
           } else {
             flage = true;
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 display_info.width: ' + this.display_info.width);
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 display_info.height: ' + this.display_info.height);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo.width);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo.height);
             await this.softKeyboardPanel.resize(200, 130);
           };
           timeCount += 1;
@@ -3929,8 +3924,8 @@ export class KeyboardControllerStatic {
     try {
       let attachOptions = this.InputClient.getAttachOptions();
       console.info(TAG + `====>${caseName}  attachOptions is ` + JSON.stringify(attachOptions));
-      let result:inputmethodengine.RequestKeyboardReason = attachOptions!.requestKeyboardReason!;
-      if (result === inputmethodengine.RequestKeyboardReason.NONE) {
+      let result:inputMethodEngine.RequestKeyboardReason = attachOptions!.requestKeyboardReason!;
+      if (result === inputMethodEngine.RequestKeyboardReason.NONE) {
         commonEventPublishData = {
           data: 'SUCCESS'
         };
@@ -3948,10 +3943,10 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      this.InputClient.onAttachOptionsDidChange((newAttachOptions: inputmethodengine.AttachOptions) => {
+      this.InputClient!.onAttachOptionsDidChange((newAttachOptions: inputMethodEngine.AttachOptions) => {
           console.info(TAG + `====>${caseName}  newAttachOptions is ` + JSON.stringify(newAttachOptions));
-          let result:inputmethodengine.RequestKeyboardReason = newAttachOptions!.requestKeyboardReason!;
-          if (result === inputmethodengine.RequestKeyboardReason.TOUCH) {
+          let result:inputMethodEngine.RequestKeyboardReason = newAttachOptions!.requestKeyboardReason!;
+          if (result === inputMethodEngine.RequestKeyboardReason.TOUCH) {
             commonEventPublishData = {
               data: 'SUCCESS'
             };
