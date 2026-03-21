@@ -59,7 +59,7 @@ export default function removeWatcherStrongTest() {
         done()
       } catch (error) {
         hilog.error(domain, tag, `testRemoveWatcher002  > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       hilog.info(domain, tag, 'testRemoveWatcher002 end')
@@ -88,7 +88,7 @@ export default function removeWatcherStrongTest() {
         done()
       } catch (error) {
         hilog.error(domain, tag, `testRemoveWatcher003  > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       hilog.info(domain, tag, 'testRemoveWatcher003 end')
@@ -147,7 +147,7 @@ export default function removeWatcherStrongTest() {
         done()
       } catch (error) {
         hilog.error(domain, tag, `testRemoveWatcher005  > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       hilog.info(domain, tag, 'testRemoveWatcher005 end')
