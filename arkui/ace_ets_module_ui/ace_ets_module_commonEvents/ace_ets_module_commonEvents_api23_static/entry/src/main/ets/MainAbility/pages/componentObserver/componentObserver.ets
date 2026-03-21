@@ -22,7 +22,8 @@ import {
   Text,
   Entry,
   Component,
-  ClickEvent
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -46,11 +47,12 @@ struct componentObserver {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test ComponentObserver - onLayout')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('布局')
         .id('btnOnLayout')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .fontSize(10)
         .onClick(() => {
           try {
             let componentObserver = AppStorage.get<inspector.ComponentObserver>('componentObserver');
@@ -67,8 +69,9 @@ struct componentObserver {
 
       Button('Test ComponentObserver - onDraw')
         .id('btnOnDraw')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .constraintSize({ minHeight: 0, maxHeight: '18%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             let componentObserver = AppStorage.get<inspector.ComponentObserver>('componentObserver');
@@ -83,10 +86,11 @@ struct componentObserver {
           }
         })
 
-      Button('Test ComponentObserver - onLayoutChildren')
+      Button('子布局+')
         .id('btnOnLayoutChildren')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .fontSize(10)
         .onClick(() => {
           try {
             let componentObserver = AppStorage.get<inspector.ComponentObserver>('componentObserver');
@@ -103,8 +107,9 @@ struct componentObserver {
 
       Button('Test ComponentObserver - offLayoutChildren')
         .id('btnOffLayoutChildren')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .constraintSize({ minHeight: 0, maxHeight: '18%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             let componentObserver = AppStorage.get<inspector.ComponentObserver>('componentObserver');
@@ -117,14 +122,16 @@ struct componentObserver {
           }
         })
 
-      Text('Test component')
+      Text('目标')
         .id('testComponent')
-        .fontSize(20)
-        .width(200)
-        .height(50)
+        .fontSize(11)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

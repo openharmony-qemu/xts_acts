@@ -32,7 +32,9 @@ import {
   Color,
   TouchEvent,
   ResourceStr,
-  Resource
+  Resource,
+  TextAlign,
+  FlexAlign
 } from '@ohos.arkui.component';
 import {
   ArcButtonOptions,
@@ -114,14 +116,18 @@ struct ArcButtonIndex {
 
   build() {
     Column() {
-      Text('ArcButton')
-        .fontSize(36)
-        .width('300')
-        .height('100')
-      
+      Text('ArcBtn')
+        .fontSize(12)
+        .width('100%')
+        .textAlign(TextAlign.Center)
+        .layoutWeight(0)
+
       ArcButton({ options: this.allPropertiesOptions })
         .key('arcButtonAllProperties')
         .id('arcButtonAllProperties')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '28%' })
 
       ArcButton({
         options: new ArcButtonOptions({
@@ -133,12 +139,20 @@ struct ArcButtonIndex {
       })
         .key('arcButtonBottomEdge')
         .id('arcButtonBottomEdge')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '28%' })
 
       ArcButton({ options: this.progressArcOptions })
         .key('arcButtonProgressConfig')
         .id('arcButtonProgressConfig')
-
-    }.width('100%')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '28%' })
+    }
+    .width('100%')
     .height('100%')
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
