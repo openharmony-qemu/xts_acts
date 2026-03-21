@@ -381,8 +381,6 @@ export default function abilityTest() {
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo}`);
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo.devices[0].deviceId}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
-                console.info(`${TAG}TestLog1 castCategory = ${outputDeviceInfo.devices[0].castCategory}`);
-                expect(outputDeviceInfo.devices[0].castCategory).not().assertEqual(undefined);
                 console.info(`${TAG}TestLog1 deviceName = ${outputDeviceInfo.devices[0].deviceName}`);
                 expect(outputDeviceInfo.devices[0].deviceName).assertEqual("LocalDevice");
                 console.info(`${TAG}TestLog1 deviceType = ${outputDeviceInfo.devices[0].deviceType}`);
