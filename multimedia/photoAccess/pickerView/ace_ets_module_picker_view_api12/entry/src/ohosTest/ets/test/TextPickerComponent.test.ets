@@ -2833,7 +2833,7 @@ export default function TextPicker() {
       if (checkbox !== undefined && checkbox !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
-        const finishBtn: Component = await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
+        const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
         await finishBtn.click();
         await CommonFunc.sleep(1000);
       }
