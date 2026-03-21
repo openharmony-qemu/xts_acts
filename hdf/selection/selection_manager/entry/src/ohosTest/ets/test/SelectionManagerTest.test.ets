@@ -48,6 +48,7 @@ export default function SelectionManagerTest() {
         selectionManager.on('selectionCompleted',(info) => {
           expect(info != null).assertTrue();
         });
+        done();
       } catch(error) {
         console.error(`Code is ${error.code}, message is ${error.message}`)
       }
