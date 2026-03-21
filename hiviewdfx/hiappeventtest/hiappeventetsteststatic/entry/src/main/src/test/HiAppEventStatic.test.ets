@@ -19,14 +19,14 @@ export default function Hiviewdfx_HiAppEventTest(){
 
     hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params);
     /*
-        * @tc.number: SUB_HiAppEvent_setEventConfig_0100
-        * @tc.name: SUB_HiAppEvent_setEventConfig_0100
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.name SUB_HiAppEvent_setEventConfig_0100
+        * @tc.number SUB_HiAppEvent_setEventConfig_0100
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL0
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
-    it("SUB_HiAppEvent_setEventConfig_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async (done: () => void): Promise<void> =>{
+    it("SUB_HiAppEvent_setEventConfig_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
       hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params);
       let a:int = 1;
@@ -38,12 +38,12 @@ export default function Hiviewdfx_HiAppEventTest(){
 
     //hiAppEvent.write(hiAppEvent.EventType.STATISTIC);覆盖枚举STATISTIC
     /*
-        * @tc.number: SUB_HiAppEvent_write_0200
-        * @tc.name: SUB_HiAppEvent_write_0200
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.name SUB_HiAppEvent_write_0200
+        * @tc.number SUB_HiAppEvent_write_0200
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
     it("SUB_HiAppEvent_write_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
@@ -67,12 +67,12 @@ export default function Hiviewdfx_HiAppEventTest(){
     })
     //hiAppEvent.write(hiAppEvent.EventType.SECURITY);覆盖枚举SECURITY
     /*
-        * @tc.number: SUB_HiAppEvent_write_0210
-        * @tc.name: SUB_HiAppEvent_write_0210
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.number SUB_HiAppEvent_write_0210
+        * @tc.name SUB_HiAppEvent_write_0210
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
     it("SUB_HiAppEvent_write_0210", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
@@ -94,7 +94,6 @@ export default function Hiviewdfx_HiAppEventTest(){
       done()
       hiAppEvent.write(eventInfo);
     })
-    //hiAppEvent.write(hiAppEvent.EventType.BEHAVIOR);覆盖枚举BEHAVIOR
     /*
         * @tc.number: SUB_HiAppEvent_write_0220
         * @tc.name: SUB_HiAppEvent_write_0220
@@ -123,14 +122,13 @@ export default function Hiviewdfx_HiAppEventTest(){
       done()
       hiAppEvent.write(eventInfo);
     })
-    //hiAppEvent.SUB_HiAppEvent_configEventPolicy_0300(hiAppEvent.EventType.BEHAVIOR);
     /*
-        * @tc.number: SUB_HiAppEvent_configEventPolicy_0300
-        * @tc.name: SUB_HiAppEvent_configEventPolicy_0300
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.number SUB_HiAppEvent_configEventPolicy_0300
+        * @tc.name SUB_HiAppEvent_configEventPolicy_0300
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        */
     it("SUB_HiAppEvent_configEventPolicy_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
