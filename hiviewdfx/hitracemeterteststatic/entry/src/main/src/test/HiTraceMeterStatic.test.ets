@@ -10,11 +10,11 @@ export default function hiTraceMeterStrongTest() {
     hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.INFO);
     /*
         * @tc.number SUB_HiTracMeter_finishSyncTrace_0100
-        * @tc.name SUB_HiTracMeter_finishSyncTrace_0100
-        * @tc.desc  Check start ability by bundl
-        * @tc.level LEVEL1
-        * @tc.size MEDIUMTEST
-        * @tc.type FUNCTION
+        * @tc.name   SUB_HiTracMeter_finishSyncTrace_0100
+        * @tc.desc   Check start ability by bundl
+        * @tc.level  LEVEL1
+        * @tc.size   MEDIUMTEST
+        * @tc.type   FUNCTION
        */
     it("SUB_HiTracMeter_finishSyncTrace_0100",TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done :() => void): Promise<void> => {
       await Utils.msSleep(1000)
