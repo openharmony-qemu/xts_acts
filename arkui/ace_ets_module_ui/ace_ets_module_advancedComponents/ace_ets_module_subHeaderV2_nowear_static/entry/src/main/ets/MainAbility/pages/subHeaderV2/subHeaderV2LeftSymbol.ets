@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { Entry, ComponentV2, $r, Column, SymbolGlyphModifier, SymbolEffectStrategy, Local } from '@kit.ArkUI';
+import { Entry, ComponentV2, $r, Column, SymbolEffectStrategy, Local } from '@kit.ArkUI';
+import { SymbolGlyphModifier, TextModifier } from '@ohos.arkui.modifier';
 import {
   SubHeaderV2OperationType, SubHeaderV2, SubHeaderV2Title, SubHeaderV2OperationItem
 } from '@ohos.arkui.advanced.SubHeaderV2';
