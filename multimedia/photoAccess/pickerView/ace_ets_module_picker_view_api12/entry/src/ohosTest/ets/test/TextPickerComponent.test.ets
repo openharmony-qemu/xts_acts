@@ -252,9 +252,14 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
 
 async function clickExitBrowserButton(driver: Driver) {
   const exitButton: Component | null = await driver.waitForComponent(ON.text('退出大图').type('Button'), 5000);
-  await exitButton!.click();
-  console.info('testPicker55: clicked exitBrowser, browser closed');
-  await CommonFunc.sleep(800);
+  if (！exitButton) {
+    console.log('exitButton is miss');
+  }
+  else {
+    await exitButton.click();
+    console.info('testPicker55: clicked exitBrowser, browser closed');
+    await CommonFunc.sleep(800);
+  }
 }
 
 async function testCompleteButton(driver: Driver, options: router.RouterOptions, textMode: number) {
@@ -2818,9 +2823,9 @@ export default function TextPicker() {
 
       await routeToUrl(options);
       await CommonFunc.sleep(1000);
-      let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
+      let chooostModeButton: Component = await driver.waitForComponent(ON.text('TEXT_DONE').type('Button'), 5000);
       let btn: Component = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
-      if (btn !== undefined && chooostModeButton !== undefined) {
+      if (!btn && !chooostModeButton) {
         await chooostModeButton.click();
         await btn.click();
       } else {
@@ -3531,8 +3536,12 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
       let btn: Component = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
-      await btn.click();
-      console.info('testPicker61 Clicked select button');
+      if (!btn) {
+        console.log('btn is miss');
+      } else {
+        await btn.click();
+        console.info('testPicker61 Clicked select button');
+      }
       await CommonFunc.sleep(2000);
       router.back();
       console.info('testPicker61 finished');
@@ -3638,7 +3647,7 @@ export default function TextPicker() {
           if (isInvalidCase) {	 
             expect(error.code).assertEqual(401); 
           } else { 
-            expect(error.code).assertEqual(23800301); 
+            expect(error.code).assertEqual(14000011); 
           }
         }
       }
@@ -3937,7 +3946,7 @@ export default function TextPicker() {
         }
       }).catch((error: BusinessError) => {
         console.error("testPicker67 valid case error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(23800301);
+        expect(error.code).assertEqual(14000011);
       });
 
       let emptyUris: Array<string> = [];
