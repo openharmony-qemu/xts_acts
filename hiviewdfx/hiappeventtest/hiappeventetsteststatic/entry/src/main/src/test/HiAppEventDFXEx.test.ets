@@ -13,8 +13,8 @@ export default function hiAppEventStrongTest() {
   describe('hiAppEventStrongTest', (): void => {
     hilog.info(domain, tag, 'describe start');
     /**
-     * @tc.name   HidebugStrongTest_0001
-     * @tc.number DFX_DFT_HiviewKit_HidebugStrongTest_0001
+     * @tc.name   hiAppEventStrongTest_0001
+     * @tc.number hiAppEventStrongTest_0001
      * @tc.desc   验证startJsCpuProfiling接口测试-覆盖第一个参数为空字符串值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
