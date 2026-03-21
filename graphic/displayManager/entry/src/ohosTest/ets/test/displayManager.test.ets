@@ -92,6 +92,7 @@ export default function displayTest() {
     let isSupportRotate = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let displayClass = display.getDefaultDisplaySync();
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -2452,29 +2453,46 @@ export default function displayTest() {
       console.log(msgStr + 'begin.');
       try {
         let result = display.isFoldable();
+        let cap:string = displayClass.getDisplayCapability();
         console.log(`${caseName} isFoldable: ${result}`);
         let defaultDisplay = display.getDefaultDisplaySync();
         console.log(`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
+        let mode: display.FoldDisplayMode = display.getFoldDisplayMode();
+        console.info(msgStr + `Succeeded in obtaining fold display mode. Data: ${mode}`);
         let region = defaultDisplay.getLiveCreaseRegion();
         console.log(`${caseName} region: ${JSON.stringify(region)}`);
         expect(region.displayId).assertEqual(0)
-        if (result) {
-          if (region.creaseRects.length == 0) {
-            done();
-          } else {
-            for (let i = 0; i < region.creaseRects.length; i++) {
-              expect(region.creaseRects[i].left).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].top).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].width).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].height).assertLargerOrEqual(0);
-              done();
-            }
+        if (deviceType === '2in1' && result) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
           }
+          done();
+        } else if (deviceType === 'phone' && result && JSON.parse(cap).foldScreenType.split(',').map(Number)[0] !== 2 && mode === 1) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+          }
+          done();
+        } else if (deviceType === 'phone' && result && JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 2 && mode === 2) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+          }
+          done();
         } else {
           expect(region.creaseRects.length).assertEqual(0)
           done();
         }
-
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
