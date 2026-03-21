@@ -672,6 +672,144 @@ export default function audioManagerApi9() {
     })
 
     /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0200
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0200
+     * @tc.desc   OnRingMode - RINGER_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        try {
+            let audioVolumeManager = audioManager!.getVolumeManager();
+            let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+            groupManager.offRingerModeChange();
+            let ringerModeChangeCallback = (ringerMode: audio.AudioRingMode) => {
+                console.info(`Updated ringermode: ${ringerMode}`);
+                if (ringerMode == audio.AudioRingMode.RINGER_MODE_SILENT){
+                    console.info(`Promise: getRingerMode : PASS:` + ringerMode);
+                    expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+                }
+                else if (ringerMode == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+                    console.info(`Promise: getRingerMode : PASS:` + ringerMode);
+                    expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+                }
+                else if (ringerMode == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+                    console.info(`Promise: getRingerMode : PASS:` + ringerMode);
+                    expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
+                } else {
+                    console.info(`Promise: getRingerMode : FAIL: ` + ringerMode);
+                    expect(false).assertTrue();
+                }
+            };
+            groupManager.onRingerModeChange(ringerModeChangeCallback);
+            groupManager.offRingerModeChange(ringerModeChangeCallback);
+            done();
+        } catch (err) {
+            console.info('AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0200 err :' + err.message)
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100
+     * @tc.desc   isMicrophoneMute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        groupManager.isMicrophoneMute((err: BusinessError<void> | null, data) => {
+            if (err) {
+                console.error(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100: failed: ${err.message}`);
+                expect(false).assertTrue();
+            } else {
+                if (data == true) {
+                    console.log(`Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                    expect(data).assertTrue();
+                } else if (data == false) {
+                    console.log(`Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                    expect(data).assertFalse();
+                } else {
+                    console.log(`Callback: isMicrophoneMute: TRUE: FAIL: ${data}`);
+                    expect(false).assertTrue();
+                }
+            }
+            done();
+        })
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0200
+     * @tc.desc   Enable mic mute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+            let audioVolumeManager = audioManager.getVolumeManager();
+            let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+            let data = await groupManager.isMicrophoneMute();
+            if (data == true) {
+                console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(data).assertTrue();
+            } else if (data == false) {
+                console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(data).assertFalse();
+            } else {
+                console.log(`Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
+                expect(false).assertTrue();
+            }
+            done();
+        } catch (err) {
+            console.log('err :' + err.message);
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_OFF_MICSTATECHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_OFF_MICSTATECHANGE_STATIC_0200
+     * @tc.desc   micStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_OFF_MICSTATECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+            let audioVolumeManager = audioManager.getVolumeManager();
+            let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+            audioVolumeGroupManager.offMicStateChange();
+            let micStateChangeCallback = (micStateChange: audio.MicStateChangeEvent) => {
+                console.info(`Succeeded in using on or off function. MicStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
+                if (micStateChange.mute == true) {
+                    expect(micStateChange.mute).assertTrue();
+                } else if (micStateChange.mute == false) {
+                    expect(micStateChange.mute).assertFalse();
+                } else {
+                    expect(false).assertTrue();
+                }
+            };
+            audioVolumeGroupManager.onMicStateChange(micStateChangeCallback);
+            audioVolumeGroupManager.offMicStateChange(micStateChangeCallback);
+            done();
+        } catch (err) {
+            console.log('err :' + err.message);
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    })
+    
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
      * @tc.desc   isActive - Media - Promise - When stream is NOT playing

@@ -2235,5 +2235,152 @@ export default function audioRoutingManager() {
         done();
       }
     })
+    /**
+     * @tc.name   AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_001
+     * @tc.number AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_001
+     * @tc.desc   on/off DeviceChange OUTPUT_DEVICES_FLAG - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        try {
+            audioRoutingManager.offDeviceChange();
+            audioRoutingManager.onDeviceChange(audio.DeviceFlag.OUTPUT_DEVICES_FLAG, (deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+            audioRoutingManager.offDeviceChange((deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+        } catch (err) {
+            console.log(`AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_001 on deviceChange err: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    });
+    /**
+     * @tc.name   AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_002
+     * @tc.number AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_002
+     * @tc.desc   on/off DeviceChange INPUT_DEVICES_FLAG - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        try {
+            audioRoutingManager.offDeviceChange();
+            audioRoutingManager.onDeviceChange(audio.DeviceFlag.INPUT_DEVICES_FLAG, (deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+            audioRoutingManager.offDeviceChange((deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+        } catch (err) {
+            console.log(`AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_002 on deviceChange err: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    });
+    /**
+     * @tc.name   AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_003
+     * @tc.number AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_003
+     * @tc.desc   on/off DeviceChange ALL_DEVICES_FLAG - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        try {
+            audioRoutingManager.offDeviceChange();
+            audioRoutingManager.onDeviceChange(audio.DeviceFlag.ALL_DEVICES_FLAG, (deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+            audioRoutingManager.offDeviceChange((deviceChanged: audio.DeviceChangeAction) => {
+                console.info(`deviceChange event received: ${JSON.stringify(deviceChanged)}`);
+                expect(deviceChanged.type).assertLargerOrEqual(0);
+                expect(deviceChanged.deviceDescriptors != null).assertTrue();
+            });
+        } catch (err) {
+            console.log(`AUDIO_ROUTING_MANAGER_ON_OFF_DEVICE_CHANGE_TYPE_STATIC_003 on deviceChange err: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
+        }
+        done();
+    });
+    /**
+     * @tc.name   AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001
+     * @tc.number AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001
+     * @tc.desc   On/Off prefer output device - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+        let rendererInfo: audio.AudioRendererInfo = {
+            usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+            rendererFlags: 0
+        };
+        try {
+            audioRoutingManager.onPreferOutputDeviceChangeForRendererInfo(rendererInfo, (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+                console.info(`Succeeded in using on function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+            });
+            audioRoutingManager.offPreferOutputDeviceChangeForRendererInfo((data: audio.AudioDeviceDescriptors) => {
+            });
+            console.info(`AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001 SUCCESS`);
+        } catch (e) {
+            console.error(`AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001 ERROR: ${e.message}`);
+            expect().assertFail();
+            done();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001
+     * @tc.number AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_001
+     * @tc.desc   On/Off prefer input device - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_ROUTINGMANAGER_ON_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+        let capturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        };
+        try {
+            audioRoutingManager.offPreferredInputDeviceChangeForCapturerInfo();
+            audioRoutingManager.onPreferredInputDeviceChangeForCapturerInfo(capturerInfo, (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+                console.info(`Succeeded in using on function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+            });
+            audioRoutingManager.offPreferredInputDeviceChangeForCapturerInfo((data: audio.AudioDeviceDescriptors) => {
+            });
+            console.info(`AUDIO_ROUTINGMANAGER_ON_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_STATIC_001 SUCCESS`);
+        } catch (e) {
+            console.error(`AUDIO_ROUTINGMANAGER_ON_OFF_PREFERREDINPUTDEVICECHANGEFORCAPTURERINFO_STATIC_001 ERROR: ${e.message}`);
+            expect().assertFail();
+            done();
+        }
+        done();
+    })
   })
 }
