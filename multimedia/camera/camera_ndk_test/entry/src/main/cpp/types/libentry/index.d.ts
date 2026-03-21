@@ -214,6 +214,8 @@ export const getSupportedFullOutputCapability: () => cameraOutputCapability;
 
 export const createPreviewOutput: () => number;
 
+export const createDeferredPreviewOutput: () => number;
+
 export const adjustHeifIdx: (idx: number) => number;
 
 export const createPhotoOutput: (surfaceId: string) => number;
@@ -437,6 +439,8 @@ export const oHVideoOutputDeleteProfile: (index:number) => number;
 export const oHPreviewOutputGetActiveProfile: (index:number) => number;
 
 export const oHPreviewOutputDeleteProfile: (index:number) => number;
+
+export const oHPreviewOutputAddDeferredSurface: (index:number, surfaceId: string) => number;
 
 export const oHPhotoOutputGetActiveProfile: (index:number) => number;
 
