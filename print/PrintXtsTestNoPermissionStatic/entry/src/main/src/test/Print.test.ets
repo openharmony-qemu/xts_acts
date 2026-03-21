@@ -46,6 +46,13 @@ class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
   };
 }
 
+class MyPrintPageSize implements print.PrintPageSize {
+  id: string = '0';
+  name: string = '0';
+  width: int = 210;
+  height: int = 297;
+}
+
 export default function printTest() {
 
   describe("printTest", (): void => {
@@ -657,6 +664,108 @@ export default function printTest() {
       }
       hilog.info(domain, tag, '%{public}s', 'print_function_1900 end');
     })
+
+    /**
+     * @tc.name   print_function_2000
+     * @tc.number print_function_2000
+     * @tc.desc   check startPrint function without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_2000 start');
+      try {
+        let pageSize: print.PrintPageSize = new MyPrintPageSize();
+        pageSize.id = '0';
+        pageSize.name = '0';
+        pageSize.width = 210;
+        pageSize.height = 297;
+        let jobData: print.PrintJobData = {
+          printerId: 'testPrinterId',
+          jobName: 'testJobName',
+          documentFormat: print.PrintDocumentFormat.DOCUMENT_FORMAT_PDF,
+          docFlavor: print.DocFlavor.FILE_DESCRIPTOR,
+          copyNumber: 1,
+          isLandscape: false,
+          colorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+          duplexMode: print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          pageSize: pageSize,
+        };
+        print.startPrint(jobData).then(() => {
+          hilog.info(domain, tag, 'print_function_2000 success');
+          done();
+        }).catch((err: Object | null | undefined) => {
+          let error = err as BusinessError;
+          expect(error.code).assertEqual(201);
+          hilog.error(domain, tag, 'print_function_2000 error, %{public}s', JSON.stringify(error));
+          done();
+        });
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_2000 error');
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_2000 end');
+    })
+
+    /**
+     * @tc.name   print_function_2100
+     * @tc.number print_function_2100
+     * @tc.desc   check the printTask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_2100', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_2100 start');
+      try {
+        const fileList = new Array<string>();
+        fileList.push('file://data/print/a.png');
+        fileList.push('file://data/print/b.png');
+        hilog.info(domain, tag, 'begin test print');
+        print.print(fileList, (err: BusinessError<void>|null, printTask: print.PrintTask | undefined) => {
+          hilog.info(domain, tag, '%{public}s', 'enter print callback');
+          if (printTask != undefined) {
+            try {
+              printTask.onBlock(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on block');
+              })
+              printTask.onSucceed(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on succeed');
+              })
+              printTask.onFail(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on fail');
+              })
+              printTask.onCancel(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on cancel');
+              })
+              printTask.offBlock(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off block');
+              })
+              printTask.offSucceed(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off succeed');
+              })
+              printTask.offFail(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off fail');
+              })
+              printTask.offCancel(() => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off cancel');
+              })
+            } catch(err) {
+              let error = err as BusinessError;
+              expect(error.code).assertEqual(201);
+            }
+          }
+        })
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_2100 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_2100 end');
+    })
+
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });
 }
