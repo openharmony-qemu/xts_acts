@@ -3,6 +3,7 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/datePicker/DataPickerCanLoop",
     "MainAbility/pages/datePicker/DataPickerCanLoopModifier",
-    "MainAbility/pages/DataPanelDatePicker/DataPanelDatePicker"
+    "MainAbility/pages/datePicker/DataPicker",
+    "MainAbility/pages/DataPanel/DataPanel"
   ]
 }
