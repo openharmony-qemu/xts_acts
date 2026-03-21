@@ -19,7 +19,7 @@ export default function configEventPolicyStrongTest() {
     hilog.info(domain, tag, 'describe start');
     /**
      * @tc.name   testHiAppEventconfigEventPolicy020
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1000
+     * @tc.number testHiAppEventconfigEventPolicy020
      * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-MainThreadJank-autoStopSampling为false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,7 +49,7 @@ export default function configEventPolicyStrongTest() {
       })
     /**
      * @tc.name   testHiAppEventconfigEventPolicy021
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1000
+     * @tc.number testHiAppEventconfigEventPolicy021
      * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank为undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
