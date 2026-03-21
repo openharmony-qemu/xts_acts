@@ -2132,14 +2132,16 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             session!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                session!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                flag = true;
             })
+
             await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`TestLog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2175,14 +2177,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                controller!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                flag = true;
             })
             await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`TestLog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 

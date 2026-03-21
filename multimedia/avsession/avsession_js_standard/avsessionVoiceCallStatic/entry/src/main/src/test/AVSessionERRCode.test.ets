@@ -50,9 +50,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED
-            if (err_code == 6611000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611000) {
                 console.info("ERR_CODE_CAST_CONTROL_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -70,9 +68,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_REMOTE_ERROR
-            if (err_code == 6611001) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611001) {
                 console.info("ERR_CODE_CAST_CONTROL_REMOTE_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -90,9 +86,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW
-            if (err_code == 6611002) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611002) {
                 console.info("ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -110,9 +104,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_TIMEOUT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_TIMEOUT
-            if (err_code == 6611003) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611003) {
                 console.info("ERR_CODE_CAST_CONTROL_TIMEOUT", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -131,9 +123,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED
-            if (err_code == 6611004) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611004) {
                 console.info("ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -151,9 +141,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING
-            if (err_code == 6611100) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611100) {
                 console.info("ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -172,9 +160,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED
-            if (err_code == 6611101) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611101) {
                 console.info("ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -193,9 +179,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET
-            if (err_code == 6611102) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611102) {
                 console.info("ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -214,9 +198,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED
-            if (err_code == 6611103) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611103) {
                 console.info("ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -235,9 +217,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED
-            if (err_code == 6611104) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611104) {
                 console.info("ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -255,9 +235,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DEVICE_MISSING
-            if (err_code == 6611105) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611105) {
                 console.info("ERR_CODE_CAST_CONTROL_DEVICE_MISSING", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -275,9 +253,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_INVALID_PARAM
-            if (err_code == 6611106) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611106) {
                 console.info("ERR_CODE_CAST_CONTROL_INVALID_PARAM", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -295,9 +271,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_NO_MEMORY
-            if (err_code == 6611107) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611107) {
                 console.info("ERR_CODE_CAST_CONTROL_NO_MEMORY", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -316,9 +290,7 @@ export default function abilityTest() {
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED
-            if (err_code == 6611108) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6611108) {
                 console.info("ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -336,9 +308,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED
-            if (err_code == 6612000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612000) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -357,9 +327,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
                 let err_code: avSession.AVSessionErrorCode =
                     avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED
-                if (err_code == 6612001) {
-                    expect(true).assertTrue();
-                } else {
+                if (err_code != 6612001) {
                     console.info("ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED", err_code, typeof err_code);
                     expect(false).assertTrue();
                 }
@@ -378,9 +346,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
                 let err_code: avSession.AVSessionErrorCode =
                     avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT
-                if (err_code == 6612002) {
-                    expect(true).assertTrue();
-                } else {
+                if (err_code != 6612002) {
                     console.info("ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT", err_code, typeof err_code);
                     expect(false).assertTrue();
                 }
@@ -399,9 +365,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
                 let err_code: avSession.AVSessionErrorCode =
                     avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE
-                if (err_code == 6612003) {
-                    expect(true).assertTrue();
-                } else {
+                if (err_code != 6612003) {
                     console.info("ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE", err_code, typeof err_code);
                     expect(false).assertTrue();
                 }
@@ -419,9 +383,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS
-            if (err_code == 6612004) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612004) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -439,9 +401,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND
-            if (err_code == 6612005) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612005) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -459,9 +419,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION
-            if (err_code == 6612006) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612006) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -480,9 +438,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED
-            if (err_code == 6612007) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612007) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -501,9 +457,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE
-            if (err_code == 6612008) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612008) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -521,9 +475,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS
-            if (err_code == 6612100) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612100) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -541,9 +493,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_READ_ERROR
-            if (err_code == 6612101) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612101) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_READ_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -561,9 +511,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY
-            if (err_code == 6612102) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612102) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -581,9 +529,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED
-            if (err_code == 6612103) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612103) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -601,9 +547,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN
-            if (err_code == 6612104) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612104) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -621,9 +565,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED
-            if (err_code == 6612105) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612105) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -642,9 +584,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES
-            if (err_code == 6612106) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612106) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -663,9 +603,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED
-            if (err_code == 6612107) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6612107) {
                 console.info("ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -684,9 +622,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED
-            if (err_code == 6613000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6613000) {
                 console.info("ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -705,9 +641,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED
-            if (err_code == 6613001) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6613001) {
                 console.info("ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -726,9 +660,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED
-            if (err_code == 6613002) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6613002) {
                 console.info("ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -747,9 +679,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED
-            if (err_code == 6613003) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6613003) {
                 console.info("ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -768,9 +698,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED
-            if (err_code == 6613004) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6613004) {
                 console.info("ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -789,9 +717,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED
-            if (err_code == 6614000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614000) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -810,9 +736,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED
-            if (err_code == 6614001) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614001) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -831,9 +755,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED
-            if (err_code == 6614002) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614002) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -851,9 +773,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FAILED
-            if (err_code == 6614003) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614003) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -872,9 +792,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES
-            if (err_code == 6614004) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614004) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -893,9 +811,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED
-            if (err_code == 6614005) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6614005) {
                 console.info("ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -914,9 +830,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED
-            if (err_code == 6615000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6615000) {
                 console.info("ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -935,9 +849,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED
-            if (err_code == 6615001) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6615001) {
                 console.info("ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -956,9 +868,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED
-            if (err_code == 6615002) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6615002) {
                 console.info("ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -976,9 +886,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED
-            if (err_code == 6616000) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616000) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -997,9 +905,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED
-            if (err_code == 6616001) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616001) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1018,9 +924,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED
-            if (err_code == 6616002) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616002) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1038,9 +942,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR
-            if (err_code == 6616003) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616003) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1059,9 +961,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED
-            if (err_code == 6616004) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616004) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1080,9 +980,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION
-            if (err_code == 6616005) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616005) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1100,9 +998,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR
-            if (err_code == 6616006) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616006) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1120,9 +1016,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED
-            if (err_code == 6616007) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616007) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1141,9 +1035,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED
-            if (err_code == 6616008) {
-                expect(true).assertTrue();
-            } else {
+            if (err_code != 6616008) {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
@@ -1181,12 +1073,8 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
             let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_AVC;
-            if (decoderType.toString() == "video/avc") {
-                expect(true).assertTrue();
-            } else {
-                console.info(`DecoderType_video/avc enum :${decoderType}`);
-                expect(false).assertTrue();
-            }
+            console.info(`DecoderType_video/avc enum :${decoderType}`);
+            expect(decoderType.toString()).assertEqual("video/avc");
             done();
         })
 
@@ -1200,12 +1088,8 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
             let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
-            if (decoderType.toString() == "video/hevc") {
-                expect(true).assertTrue();
-            } else {
-                console.info(`DecoderType_video/hevc enum :${decoderType}`);
-                expect(false).assertTrue();
-            }
+            console.info(`DecoderType_video/hevc enum :${decoderType}`);
+            expect(decoderType.toString()).assertEqual("video/hevc");
             done();
         })
 
@@ -1219,12 +1103,8 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
             let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_AUDIO_VIVID;
-            if (decoderType.toString() == "audio/av3a") {
-                expect(true).assertTrue();
-            } else {
-                console.info(`DecoderType_audio/av3a enum :${decoderType}`);
-                expect(false).assertTrue();
-            }
+            console.info(`DecoderType_audio/av3a enum :${decoderType}`);
+            expect(decoderType.toString()).assertEqual("audio/av3a");
             done();
         })
 	
