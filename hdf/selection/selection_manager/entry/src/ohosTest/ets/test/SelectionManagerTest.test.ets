@@ -49,7 +49,7 @@ export default function SelectionManagerTest() {
           expect(info != null).assertTrue();
         });
       } catch(error) {
-        console.error('Code is ${error.code}, message is ${error.message}')
+        console.error(`Code is ${error.code}, message is ${error.message}`)
       }
       console.info(TAG, '*************testSelectionManagerTest0100 end*************');
     });
