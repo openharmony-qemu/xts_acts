@@ -3414,7 +3414,11 @@ export default function TextPicker() {
             let callback = (event: events_emitter.EventData) => {
               let result: ItemInfo = event?.data?.msg;
               console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
-              expect(result.videoMode).assertUndefined();
+              if (result.mimeType.includes('video')) {
+                expect(result.videoMode).not().assertUndefined();
+              } else {
+                expect(result.videoMode).assertUndefined();
+              }
             }
 
             let event: events_emitter.InnerEvent = {
