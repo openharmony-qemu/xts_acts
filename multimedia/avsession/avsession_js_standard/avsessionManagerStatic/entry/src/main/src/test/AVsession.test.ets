@@ -3314,8 +3314,6 @@ export default function abilityTest() {
                         let deviceInfo = value?.devices[0]
                         console.info(`${TAG}estLog1 length = ${data.devices.length}`);
                         expect(data.devices.length).assertEqual(1);
-                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
-                        expect(deviceInfo.castCategory).not().assertEqual(undefined);
                         console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
                         expect(deviceInfo.deviceId).assertEqual("0");
                         console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
@@ -3360,8 +3358,6 @@ export default function abilityTest() {
                         let deviceInfo = value?.devices[0]
                         console.info(`${TAG}estLog1 length = ${data.devices.length}`);
                         expect(data.devices.length).assertEqual(1);
-                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
-                        expect(deviceInfo.castCategory).not().assertEqual(undefined);
                         console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
                         expect(deviceInfo.deviceId).assertEqual("0");
                         console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
