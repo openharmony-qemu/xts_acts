@@ -2830,12 +2830,11 @@ export default function TextPicker() {
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      if (checkbox !== undefined && checkbox !== null) {
+      const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
+      if (checkbox !== undefined && checkbox !== null && finishBtn !== undefined && finishBtn !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
-        const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
         await finishBtn.click();
-        await CommonFunc.sleep(1000);
       }
 
       router.back();
