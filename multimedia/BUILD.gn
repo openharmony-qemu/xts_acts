@@ -29,6 +29,7 @@ group("multimedia") {
       "image/image_ets_standard/imageXtsSupplement:imageXts_supp_ets_hap",
       "image/image_ets_standard/imageNDKSupplement:ActsMediaImageNDKSupplementTest",
       "image/image_ets_standard/imageframework:ActsImageFramework20Test",
+      "image/image_ets_standard/ImageXtsStatic:imageXts_ets_static_hap",
       "image/image_js_standard/imageReceiverMultiThread:image_receiver_multi_thread_hap",
       "image/image_js_standard/imageReceiverNDK:image_receiver_ndk_js_hap",
       "camera/camera_ndk_xts_supplement:ActsCameraXTSNdkSupplementTest",
