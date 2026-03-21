@@ -723,7 +723,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let audioVolumeManager = audioManager!.getVolumeManager();
-        let groupManager = audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.isMicrophoneMute((err: BusinessError<void> | null, data) => {
             if (err) {
                 console.error(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0100: failed: ${err.message}`);
@@ -755,7 +755,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try {
             let audioVolumeManager = audioManager!.getVolumeManager();
-            let groupManager = audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+            let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
             let data = groupManager.isMicrophoneMute();
             if (data == true) {
                 console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
@@ -786,7 +786,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_OFF_MICSTATECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try {
             let audioVolumeManager = audioManager!.getVolumeManager();
-            let audioVolumeGroupManager = audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+            let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
             audioVolumeGroupManager.offMicStateChange();
             let micStateChangeCallback = (micStateChange: audio.MicStateChangeEvent) => {
                 console.info(`Succeeded in using on or off function. MicStateChangeEvent: ${JSON.stringify(micStateChange)}.`);
