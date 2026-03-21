@@ -381,6 +381,20 @@ export default function abilityTest() {
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo}`);
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo.devices[0].deviceId}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
+                console.info(`${TAG}TestLog1 castCategory = ${outputDeviceInfo.devices[0].castCategory}`);
+                expect(outputDeviceInfo.devices[0].castCategory).not().assertEqual(undefined);
+                console.info(`${TAG}TestLog1 deviceName = ${outputDeviceInfo.devices[0].deviceName}`);
+                expect(outputDeviceInfo.devices[0].deviceName).assertEqual("LocalDevice");
+                console.info(`${TAG}TestLog1 deviceType = ${outputDeviceInfo.devices[0].deviceType}`);
+                expect(outputDeviceInfo.devices[0].deviceType).assertEqual(0);
+                console.info(`${TAG}TestLog1 modelName = ${outputDeviceInfo.devices[0].modelName}`);
+                expect(outputDeviceInfo.devices[0].modelName).assertEqual("");
+                console.info(`${TAG}TestLog1 supportedPullClients = ${outputDeviceInfo.devices[0].supportedPullClients}`);
+                expect(outputDeviceInfo.devices[0].supportedPullClients).assertEqual(undefined);
+                console.info(`${TAG}TestLog1 supportedProtocols = ${outputDeviceInfo.devices[0].supportedProtocols}`);
+                expect(outputDeviceInfo.devices[0].supportedProtocols).assertEqual(0);
+                console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${outputDeviceInfo.devices[0].supportedDrmCapabilities}`);
+                expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
             } catch (err) {
                 expect(true).assertFalse();
             }
