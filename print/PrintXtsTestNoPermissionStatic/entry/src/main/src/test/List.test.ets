@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import printTest from './Print.test'
+import scanTest from './Scan.test'
 export default function testsuite() {
   printTest();
+  scanTest();
 }
