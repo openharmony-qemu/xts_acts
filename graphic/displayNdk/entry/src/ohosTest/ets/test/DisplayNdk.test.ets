@@ -40,8 +40,8 @@ export default function DisplayNdkTest() {
     let code:number;
     let displayFoldStatus:number;
     let DISPLAY_MANAGER_OK = 0;
-    let deviceType: string = deviceInfo.deviceType;
     let windowStage: window.WindowStage;
+    let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;

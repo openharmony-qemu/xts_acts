@@ -79,9 +79,9 @@ export default function ActsDisplayNdkApi14Test() {
     let orientation:string[];
     let code:number = 0;
     let displayFoldStatus:number;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
-      let deviceType: string = deviceInfo.deviceType;
-      console.info(`deviceType: ${deviceType}`);
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
