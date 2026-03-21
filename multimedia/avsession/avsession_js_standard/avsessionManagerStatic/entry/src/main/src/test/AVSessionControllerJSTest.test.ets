@@ -1663,5 +1663,34 @@ export default function abilityTest() {
             }
             done();
         })
+        
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing on off playbackstate change callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            try{
+                let filter: Array<string> = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
+                    'volume','maxVolume','muted','duration','videoWidth','videoHeight','extras'];
+                controller!.offPlaybackStateChange();   
+                controller!.onPlaybackStateChange(filter, (playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                });
+                controller!.offPlaybackStateChange((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`offPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                }); 
+                controller!.onPlaybackStateChangeAll((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChangeAll success : ${playbackstate}`)
+                });
+            }catch(err){
+                console.info(`playbackStateChange failed : ${err.code}  ${err.message}`)
+                expect().assertFail()
+            }
+            done();
+        })
     })
 }
