@@ -64,8 +64,7 @@ export default function Hiviewdfx_HiAppEventTest(){
       expect(a).assertEqual(b);
       done()
       hiAppEvent.write(eventInfo);
-    })
-    //hiAppEvent.write(hiAppEvent.EventType.SECURITY);覆盖枚举SECURITY
+    });
     /*
         * @tc.number SUB_HiAppEvent_write_0210
         * @tc.name SUB_HiAppEvent_write_0210
