@@ -60,6 +60,9 @@
       },
       {
         "name": "ohos.permission.CONNECT_IME_ABILITY"
+      },
+      {
+        "name": "ohos.permission.PRIVACY_WINDOW"
       }
     ]
   }
