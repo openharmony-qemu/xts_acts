@@ -108,6 +108,7 @@ struct OverlayManagerIndex {
     Column({ space: 10 } as ColumnOptions) {
       Button('addComponentContent')
         .id('addContent')
+        .height('6%')
         .onClick(() => {
           try {
             this.safeAddA();
@@ -118,10 +119,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.addStatus).key('addStatus');
+      Text(this.addStatus).key('addStatus').height('4%');
 
       Button('addComponentContentWithOrder')
         .id('addContentWithOrder')
+        .height('6%')
         .onClick(() => {
           try {
             this.safeAddB();
@@ -132,10 +134,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.addOrderStatus).key('addOrderStatus');
+      Text(this.addOrderStatus).key('addOrderStatus').height('4%');
 
       Button('hideComponentContent')
         .id('hideContent')
+        .height('6%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -148,10 +151,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.hideStatus).key('hideStatus');
+      Text(this.hideStatus).key('hideStatus').height('4%');
 
       Button('showAllComponentContents')
         .id('showAllContents')
+        .height('6%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -164,10 +168,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.showAllStatus).key('showAllStatus');
+      Text(this.showAllStatus).key('showAllStatus').height('4%');
 
       Button('removeComponentContent')
         .id('removeContent')
+        .height('6%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -181,7 +186,7 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.removeStatus).key('removeStatus');
+      Text(this.removeStatus).key('removeStatus').height('4%');
     }
     .width('100%')
     .height('100%');

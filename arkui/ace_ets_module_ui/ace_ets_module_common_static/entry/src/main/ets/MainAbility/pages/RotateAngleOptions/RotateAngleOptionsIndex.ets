@@ -34,36 +34,43 @@ struct RotateAngleOptionsIndex {
       Text('RotateAngleOptionsangleX')
         .id('RotateAngleOptionsangleX')
         .key('RotateAngleOptionsangleX')
+        .height('5%')
         .rotate({ angleX: 10 });
 
       Text('RotateAngleOptionsangleY')
         .id('RotateAngleOptionsangleY')
         .key('RotateAngleOptionsangleY')
+        .height('5%')
         .rotate({ angleY: 20 });
 
       Text('RotateAngleOptionsangleZ')
         .id('RotateAngleOptionsangleZ')
         .key('RotateAngleOptionsangleZ')
+        .height('5%')
         .rotate({ angleZ: 30 });
 
       Text('RotateAngleOptionscenterX')
         .id('RotateAngleOptionscenterX')
         .key('RotateAngleOptionscenterX')
+        .height('5%')
         .rotate({ centerX: 20 });
 
       Text('RotateAngleOptionscenterY')
         .id('RotateAngleOptionscenterY')
         .key('RotateAngleOptionscenterY')
+        .height('5%')
         .rotate({ centerY: 30 });
 
       Text('RotateAngleOptionscenterZ')
         .id('RotateAngleOptionscenterZ')
         .key('RotateAngleOptionscenterZ')
+        .height('5%')
         .rotate({ centerZ: 10 });
 
       Text('RotateAngleOptionsperspective')
         .id('RotateAngleOptionsperspective')
         .key('RotateAngleOptionsperspective')
+        .height('5%')
         .rotate({ perspective: 1 });
     }
     .width('100%')

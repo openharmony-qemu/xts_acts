@@ -55,6 +55,7 @@ struct CommonMethodIndex {
       Button('responseRegionList')
         .id('commonMethodResponseRegionListBtn')
         .key('commonMethodResponseRegionListBtnKey')
+        .height('8%')
         .responseRegion([{
           x: '0vp',
           y: '0vp',
@@ -65,6 +66,7 @@ struct CommonMethodIndex {
       Button('backgroundColor')
         .id('commonMethodBackgroundColorBtn')
         .key('commonMethodBackgroundColorBtnKey')
+        .height('8%')
         .backgroundColor('#ff0000')
 
       Column()
@@ -75,23 +77,27 @@ struct CommonMethodIndex {
         .id('materialId')
 
       Image($r('app.media.icon')).id('commonMethodTransform3DBtn').key('commonMethodTransform3DBtnKey')
-        .width(50)
-        .height(50)
+        .width('5%')
+        .height('5%')
         .transform3D(undefined)
 
       Text('layoutGravity').id('commonMethodLayoutGravityBtn').key('commonMethodLayoutGravityBtnKey')
+        .height('5%')
         .layoutGravity(LocalizedAlignment.TOP_START)
 
       Text('bindContextMenuWithResponse').id('commonMethodBindContextMenuWithResponseBtn')
         .key('commonMethodBindContextMenuWithResponseBtnKey')
+        .height('5%')
         .bindContextMenuWithResponse(this.commonMenuBuilder)
 
       Text('accessibilityStateDescription').id('commonMethodAccessibilityStateDescriptionBtn')
         .key('commonMethodAccessibilityStateDescriptionBtnKey')
+        .height('5%')
         .accessibilityStateDescription('state_desc')
 
       Text('accessibilityActionOptions').id('commonMethodAccessibilityActionOptionsBtn')
         .key('commonMethodAccessibilityActionOptionsBtnKey')
+        .height('5%')
         .accessibilityActionOptions(undefined)
 
     }

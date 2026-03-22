@@ -34,7 +34,7 @@ struct RectChangeReasonIndex {
 
   build() {
     Column() {
-      Text(this.hostWindowRectChangeValue).key('rectChangeReasonHostWindowRectChangeValue');
+      Text(this.hostWindowRectChangeValue).key('rectChangeReasonHostWindowRectChangeValue').height('5%');
     }
     .width('100%')
     .height('100%');

@@ -37,11 +37,12 @@ struct CustomKeyboardContinueFeatureIndex {
 
   build() {
     Column() {
-      Text(this.enabledValue).key('customKeyboardEnabledValue');
-      Text(this.disabledValue).key('customKeyboardDisabledValue');
+      Text(this.enabledValue).key('customKeyboardEnabledValue').height('5%');
+      Text(this.disabledValue).key('customKeyboardDisabledValue').height('5%');
 
       Button('setEnabled')
         .id('setCustomKeyboardEnabledBtn')
+        .height('8%')
         .onClick(() => {
           try {
             this.getUIContext().setCustomKeyboardContinueFeature(CustomKeyboardContinueFeature.ENABLED);
@@ -51,10 +52,11 @@ struct CustomKeyboardContinueFeatureIndex {
             console.error('set ENABLED error: ' + error);
           }
         });
-      Text(this.setEnabledStatus).key('setEnabledStatus');
+      Text(this.setEnabledStatus).key('setEnabledStatus').height('5%');
 
       Button('setDisabled')
         .id('setCustomKeyboardDisabledBtn')
+        .height('8%')
         .onClick(() => {
           try {
             this.getUIContext().setCustomKeyboardContinueFeature(CustomKeyboardContinueFeature.DISABLED);
@@ -64,7 +66,7 @@ struct CustomKeyboardContinueFeatureIndex {
             console.error('set DISABLED error: ' + error);
           }
         });
-      Text(this.setDisabledStatus).key('setDisabledStatus');
+      Text(this.setDisabledStatus).key('setDisabledStatus').height('5%');
     }
     .width('100%')
     .height('100%');

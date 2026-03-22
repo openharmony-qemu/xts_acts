@@ -41,13 +41,13 @@ struct EventFlagIndex {
 
   build() {
     Column() {
-      Text(this.eventNone).key('eventNoneValue');
-      Text(this.eventPanGestureLeft).key('eventPanGestureLeftValue');
-      Text(this.eventPanGestureRight).key('eventPanGestureRightValue');
-      Text(this.eventPanGestureUp).key('eventPanGestureUpValue');
-      Text(this.eventPanGestureDown).key('eventPanGestureDownValue');
-      Text(this.eventClick).key('eventClickValue');
-      Text(this.eventLongPress).key('eventLongPressValue');
+      Text(this.eventNone).key('eventNoneValue').height('5%');
+      Text(this.eventPanGestureLeft).key('eventPanGestureLeftValue').height('5%');
+      Text(this.eventPanGestureRight).key('eventPanGestureRightValue').height('5%');
+      Text(this.eventPanGestureUp).key('eventPanGestureUpValue').height('5%');
+      Text(this.eventPanGestureDown).key('eventPanGestureDownValue').height('5%');
+      Text(this.eventClick).key('eventClickValue').height('5%');
+      Text(this.eventLongPress).key('eventLongPressValue').height('5%');
     }
     .width('100%')
     .height('100%');
