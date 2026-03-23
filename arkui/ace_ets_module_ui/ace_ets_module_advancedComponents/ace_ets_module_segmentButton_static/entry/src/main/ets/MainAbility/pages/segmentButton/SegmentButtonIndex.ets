@@ -73,8 +73,7 @@ struct SegmentButtonIndex {
 
   build() {
     Scroll() {
-      Column() {
-        Column({ space: 25 } as ColumnOptions) {
+      Column({ space: 25 } as ColumnOptions) {
           Button(this.mCreateText)
             .id('btnCreateText')
             .onClick(() => {
@@ -236,8 +235,6 @@ struct SegmentButtonIndex {
             selectedIndexes: this.selectedIndexes
           })
         }
-      }
-      .space(10)
       .width('100%')
       .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
