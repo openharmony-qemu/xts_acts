@@ -55,12 +55,6 @@ let TEST_VALUE_44 = false;
 let TEST_VALUE_55 = true;
 let TEST_VALUE_66 = "string66";
 
-
-const config: factory.KVManagerConfig = {
-    bundleName: TEST_BUNDLE_NAME,
-    context: context!
-};
-
 const g_options: factory.Options = {
     createIfMissing: true,
     encrypt: true,
