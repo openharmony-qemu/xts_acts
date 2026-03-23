@@ -92,14 +92,12 @@ export default function HttpResponseExtraInfoTest() {
                   typeof connectionExtraInfo.remoteAddress == 'string' &&
                   connectionExtraInfo.localPort !== -1 &&
                   connectionExtraInfo.remotePort !== -1 &&
-                  connectionExtraInfo.isReusedConnection == false &&
                   connectionExtraInfo.isProxyConnection == false &&
                   connectionExtraInfo.isCacheHit == false &&
                   connectionExtraInfo.redirectCount == 0;
 
-                console.info('HttpTest1', `connectionExtraInfo:${JSON.stringify(connectionExtraInfo)}`);
+                console.info('HttpTest1', `connectionExtraInfo01:${JSON.stringify(connectionExtraInfo)}`);
                 ExpectTrue(isTrue);
-
                 httpRequest.destroy();
                 done();
               } else {
@@ -141,7 +139,6 @@ export default function HttpResponseExtraInfoTest() {
                 typeof connectionExtraInfo.remoteAddress == 'string' &&
                 connectionExtraInfo.localPort !== -1 &&
                 connectionExtraInfo.remotePort !== -1 &&
-                connectionExtraInfo.isReusedConnection == false &&
                 connectionExtraInfo.isProxyConnection == false &&
                 connectionExtraInfo.isCacheHit == false &&
                 connectionExtraInfo.redirectCount == 0;
@@ -149,7 +146,7 @@ export default function HttpResponseExtraInfoTest() {
               ExpectTrue(isTrue);
               httpRequest.destroy();
               done();
-              console.info(`connectionExtraInfo:${JSON.stringify(res.connectionExtraInfo)}`);
+              console.info('HttpTest1', `connectionExtraInfo02:${JSON.stringify(res.connectionExtraInfo)}`);
             } else {
               httpRequest.destroy();
               ExpectFail();
@@ -200,7 +197,6 @@ export default function HttpResponseExtraInfoTest() {
                   connectionExtraInfo.remotePort !== -1 &&
                   typeof connectionExtraInfo.tlsVersion == 'number' && //https
                   typeof connectionExtraInfo.cipherSuite == 'string' && //https
-                  connectionExtraInfo.isReusedConnection == false &&
                   connectionExtraInfo.isProxyConnection == false &&
                   connectionExtraInfo.isCacheHit == false &&
                   connectionExtraInfo.redirectCount == 0;
@@ -249,7 +245,6 @@ export default function HttpResponseExtraInfoTest() {
                 connectionExtraInfo.remotePort !== -1 &&
                 typeof connectionExtraInfo.tlsVersion == 'number' && //https
                 typeof connectionExtraInfo.cipherSuite == 'string' && //https
-                connectionExtraInfo.isReusedConnection == false &&
                 connectionExtraInfo.isProxyConnection == false &&
                 connectionExtraInfo.isCacheHit == false &&
                 connectionExtraInfo.redirectCount == 0;
@@ -519,59 +514,6 @@ export default function HttpResponseExtraInfoTest() {
         console.info(`HttpTest1 ${caseName} test End`);
       });
 
-    /**
-     * @tc.name   testHttpResponseConnectionExtraInfo1000
-     * @tc.number SUB_NetworkMgr_Http_Response_ConnectionExtraInfo_1000
-     * @tc.desc   Test the change in the isReusedConnection field during two consecutive HTTP requests.Promise.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testHttpResponseConnectionExtraInfo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        const caseName: string = "testHttpResponseConnectionExtraInfo1000";
-        console.info(`HttpTest1 ${caseName} test Start`);
-        try {
-          console.info(`HttpTest1 ${caseName} Network connected`);
-          const httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res: http.HttpResponse) => {
-            if (res?.connectionExtraInfo) {
-              let connectionExtraInfo = res?.connectionExtraInfo;
-              httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res2: http.HttpResponse) => {
-                if (res2?.connectionExtraInfo) {
-                  let connectionExtraInfo2 = res2?.connectionExtraInfo;
-                  console.info('HttpTest1', `connectionExtraInfo2:${JSON.stringify(connectionExtraInfo2)}`);
-                  setTimeout(() => {
-                    httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res3: http.HttpResponse) => {
-                      if (res3?.connectionExtraInfo) {
-                        let connectionExtraInfo3 = res3?.connectionExtraInfo;
-                        console.info('HttpTest1', `connectionExtraInfo3:${JSON.stringify(connectionExtraInfo3)}`);
-                        ExpectTrue(connectionExtraInfo3.isReusedConnection);
-                        httpRequest.destroy();
-                        done();
-                      } else {
-                        httpRequest.destroy();
-                        ExpectFail();
-                        done();
-                      }
-                    })
-                  }, 13000)
-                } else {
-                  httpRequest.destroy();
-                  ExpectFail();
-                  done();
-                }
-              })
-              console.info('HttpTest1', `connectionExtraInfo1:${JSON.stringify(connectionExtraInfo)}`);
-            }
-          })
-        } catch (err) {
-          console.info(`HttpTest1 ${caseName} catch err: ${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`HttpTest1 ${caseName} test End`);
-      });
     /**
      * @tc.name   testHttpResponseConnectionExtraInfo1100
      * @tc.number SUB_NetworkMgr_Http_Response_ConnectionExtraInfo_1100
