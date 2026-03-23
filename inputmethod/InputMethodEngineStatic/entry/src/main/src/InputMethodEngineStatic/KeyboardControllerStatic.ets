@@ -3095,7 +3095,11 @@ export class KeyboardControllerStatic {
       '====>Sub_Misc_inputMethod_getEditorAttribute_sync_0230 getEditorAttributeSync isTextPreviewSupported: ' +
     JSON.stringify(obj!.isTextPreviewSupported!));
     if (typeof (obj!.enterKeyType) === 'int' && typeof (obj!.inputPattern) === 'int' &&
-      typeof (obj!.isTextPreviewSupported) === 'boolean') {
+      typeof (obj!.isTextPreviewSupported) === 'boolean' && typeof (obj!.windowId) === 'int' &&
+      typeof (obj!.placeholder) === 'string' && typeof (obj!.immersiveMode) === 'int' &&
+      typeof (obj!.gradientMode) === 'int' && typeof (obj!.extraConfig) === 'object' &&
+      typeof (obj!.capitalizeMode) === 'int' && typeof (obj!.bundleName) === 'string' &&
+      typeof (obj!.displayId) === 'long' && typeof (obj!.abilityName) === 'string') {
       commonEventPublishData = {
         data: "SUCCESS"
       };
@@ -3925,6 +3929,7 @@ export class KeyboardControllerStatic {
       let attachOptions = this.InputClient!.getAttachOptions();
       console.info(TAG + `====>${caseName}  attachOptions is ` + JSON.stringify(attachOptions));
       let result:inputMethodEngine.RequestKeyboardReason = attachOptions!.requestKeyboardReason!;
+      let result1:boolean = attachOptions!.isSimpleKeyboardEnabled!;
       if (result === inputMethodEngine.RequestKeyboardReason.NONE) {
         commonEventPublishData = {
           data: 'SUCCESS'
