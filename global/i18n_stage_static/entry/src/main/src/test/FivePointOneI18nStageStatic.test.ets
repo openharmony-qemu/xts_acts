@@ -716,6 +716,501 @@ export default function FivePointOne_i18nStageTest() {
       expect(numberFormatted == "1.23E+6").assertTrue();
     })
 
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_Static_0100
+     * @tc.number i18n_HolidayInfoItem_test_Static_0100
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[0].baseName);
+        console.log('i18n_HolidayInfoItem_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_Static_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_Static_0200
+     * @tc.number i18n_HolidayInfoItem_test_Static_0200
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[1].year);
+        console.log('i18n_HolidayInfoItem_test_Static_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_Static_0200 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_Static_0300
+     * @tc.number i18n_HolidayInfoItem_test_Static_0300
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_Static_0300', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[2].month);
+        console.log('i18n_HolidayInfoItem_test_Static_0300 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_Static_0300 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_Static_0400
+     * @tc.number i18n_HolidayInfoItem_test_Static_0400
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_Static_0400', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[3].day);
+        console.log('i18n_HolidayInfoItem_test_Static_0400 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_Static_0400 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_Static_0100
+     * @tc.number i18n_HolidayLocalName_test_Static_0100
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[0].localNames![1].language);
+        console.log('i18n_HolidayLocalName_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_Static_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_Static_0200
+     * @tc.number i18n_HolidayLocalName_test_Static_0200
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item: i18n.HolidayInfoItem[] = holiday.getHolidayInfoItemArray(2023);
+        let value: string = JSON.stringify(item[0].localNames![1].name);
+        console.log('i18n_HolidayLocalName_test_Static_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_Static_0200 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0100
+     * @tc.number AdvancedMeasureFormat_test_Static_0100
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_AGRICULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0100', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_AGRICULT});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0100 value:', value);
+      expect(value).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0200
+     * @tc.number AdvancedMeasureFormat_test_Static_0200
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_AGRICULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0200', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_COMMERCL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0200 value:', value);
+      expect(value).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0300
+     * @tc.number AdvancedMeasureFormat_test_Static_0300
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_RESIDNTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0300', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_RESIDNTL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0300 value:', value);
+      expect(value).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0400
+     * @tc.number AdvancedMeasureFormat_test_Static_0400
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0400', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON});
+      let value: string = aft.format(2)
+      console.log('AdvancedMeasureFormat_test_Static_0400 value:', value);
+      expect(value).assertEqual("78.74 in")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0500
+     * @tc.number AdvancedMeasureFormat_test_Static_0500
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0500', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL});
+      let value: string = aft.format(2)
+      console.log('AdvancedMeasureFormat_test_Static_0500 value:', value);
+      expect(value).assertEqual("78.74 in")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0600
+     * @tc.number AdvancedMeasureFormat_test_Static_0600
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_RAINFALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0600', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_RAINFALL});
+      let value: string = aft.format(2)
+      console.log('AdvancedMeasureFormat_test_Static_0600 value:', value);
+      expect(value).assertEqual("2 mL")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0700
+     * @tc.number AdvancedMeasureFormat_test_Static_0700
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0700', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0700 value:', value);
+      expect(value).assertEqual("0.062 mi")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0800
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0800
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0800', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_SMALL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0800 value:', value);
+      expect(value).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_0900
+     * @tc.number AdvancedMeasureFormat_test_Static_0900
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_SNOWFALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_0900', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_SNOWFALL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_0900 value:', value);
+      expect(value).assertEqual("100 mL")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1000
+     * @tc.number AdvancedMeasureFormat_test_Static_1000
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VEHICLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1000', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VEHICLE});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1000 value:', value);
+      expect(value).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1100
+     * @tc.number AdvancedMeasureFormat_test_Static_1100
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VISIBLTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1100', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1100 value:', value);
+      expect(value).assertEqual("0.062 mi")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1200
+     * @tc.number AdvancedMeasureFormat_test_Static_1200
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VISIBLTY_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1200', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY_SMALL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1200 value:', value);
+      expect(value).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1300
+     * @tc.number AdvancedMeasureFormat_test_Static_1300
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1300', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_INFORMAL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1300 value:', value);
+      expect(value).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1400
+     * @tc.number AdvancedMeasureFormat_test_Static_1400
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_SMALL_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1400', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL_INFORMAL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1400 value:', value);
+      expect(value).assertEqual("100 m")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1500
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1500
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1500', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_INFORMAL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1500 value:', value);
+      expect(value).assertEqual("100 m")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1600
+     * @tc.number AdvancedMeasureFormat_test_Static_1600
+     * @tc.desc   AdvancedMeasureFormat  with SPEED_ROAD_TRAVEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1600', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_ROAD_TRAVEL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1600 value:', value);
+      expect(value).assertEqual("100 m")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1700
+     * @tc.number AdvancedMeasureFormat_test_Static_1700
+     * @tc.desc   AdvancedMeasureFormat  with SPEED_WIND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1700', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_WIND});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1700 value:', value);
+      expect(value).assertEqual("100米")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1800
+     * @tc.number AdvancedMeasureFormat_test_Static_1800
+     * @tc.desc   AdvancedMeasureFormat  with TEMPERATURE_PERSON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1800', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_PERSON});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1800 value:', value);
+      expect(value).assertEqual("37.778°C")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_1900
+     * @tc.number AdvancedMeasureFormat_test_Static_1900
+     * @tc.desc   AdvancedMeasureFormat  with TEMPERATURE_WEATHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_1900', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_WEATHER});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_1900 value:', value);
+      expect(value).assertEqual("37.778°C")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_2000
+     * @tc.number AdvancedMeasureFormat_test_Static_2000
+     * @tc.desc   AdvancedMeasureFormat  with VOLUME_VEHICLE_FUEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_2000', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "liter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.VOLUME_VEHICLE_FUEL});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_2000 value:', value);
+      expect(value).assertEqual("26.417 gal")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_2100
+     * @tc.number AdvancedMeasureFormat_test_Static_2100
+     * @tc.desc   AdvancedMeasureFormat  with ELAPSED_TIME_SECOND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_2100', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "day", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.ELAPSED_TIME_SECOND});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_2100 value:', value);
+      expect(value).assertEqual("3个月前")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_2200
+     * @tc.number AdvancedMeasureFormat_test_Static_2200
+     * @tc.desc   AdvancedMeasureFormat  with SIZE_FILE_BYTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_2200', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "bit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_FILE_BYTE});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_2200 value:', value);
+      expect(value).assertEqual("100 bit")
+    })
+
+    /**
+     * @tc.name   AdvancedMeasureFormat_test_Static_2300
+     * @tc.number AdvancedMeasureFormat_test_Static_2300
+     * @tc.desc   AdvancedMeasureFormat  with SIZE_SHORTFILE_BYTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AdvancedMeasureFormat_test_Static_2300', Level.LEVEL2, () => {
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "terabit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_SHORTFILE_BYTE});
+      let value: string = aft.format(100)
+      console.log('AdvancedMeasureFormat_test_Static_2300 value:', value);
+      expect(value).assertEqual("100 Tb")
+    })
+
+
     console.log('*************end FivePointOne_i18nStageTest*************');
   })
 }
