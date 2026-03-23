@@ -16,7 +16,7 @@
             "useNormalizedOHMUrl": true
           }
         },
-        "targetSdkVersion":24
+        "targetSdkVersion":
       }
     ],
     "buildModeSet": [
