@@ -22,8 +22,9 @@ import {
   Row,
   Button,
   Scroll,
-  $r
-} from '@ohos.arkui.component';
+  $r,
+  ColumnOptions
+} from '@kit.ArkUI';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import {
@@ -73,169 +74,168 @@ struct SegmentButtonIndex {
   build() {
     Scroll() {
       Column() {
+        Column({ space: 25 } as ColumnOptions) {
+          Button(this.mCreateText)
+            .id('btnCreateText')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              this.mCreateText = 'create_text:' + arr.length;
+            })
 
-        // --- create 系列：create() 是静态工厂方法 ---
-        Button(this.mCreateText)
-          .id('btnCreateText')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            this.mCreateText = 'create_text:' + arr.length;
+          Button(this.mCreateIcon)
+            .id('btnCreateIcon')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock') } as SegmentButtonIconItem,
+                { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock') } as SegmentButtonIconItem
+              ] as Array<SegmentButtonIconItem>);
+              this.mCreateIcon = 'create_icon:' + arr.length;
+            })
+
+          Button(this.mCreateIconText)
+            .id('btnCreateIconText')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock'), text: 'A' } as SegmentButtonIconTextItem,
+                { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock'), text: 'B' } as SegmentButtonIconTextItem
+              ] as Array<SegmentButtonIconTextItem>);
+              this.mCreateIconText = 'create_icontext:' + arr.length;
+            })
+
+          // --- push 系列：操作 SegmentButtonOptions.buttons ---
+          Button(this.mPush2)
+            .id('btnPush2')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              let newLen: int = arr.push(
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem
+              );
+              this.mPush2 = 'push2:' + newLen;
+            })
+
+          Button(this.mPush3)
+            .id('btnPush3')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              let newLen: int = arr.push(
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem,
+                { text: 'E' } as SegmentButtonTextItem
+              );
+              this.mPush3 = 'push3:' + newLen;
+            })
+
+          // --- pop/shift ---
+          Button(this.mPop)
+            .id('btnPop')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem,
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              arr.pop();
+              this.mPop = 'pop:' + arr.length;
+            })
+
+          Button(this.mShift)
+            .id('btnShift')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem,
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              arr.shift();
+              this.mShift = 'shift:' + arr.length;
+            })
+
+          // --- unshift 系列 ---
+          Button(this.mUnshift1)
+            .id('btnUnshift1')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              let newLen: int = arr.unshift({ text: 'Z' } as SegmentButtonTextItem);
+              this.mUnshift1 = 'unshift1:' + newLen;
+            })
+
+          Button(this.mUnshift2)
+            .id('btnUnshift2')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              let newLen: int = arr.unshift(
+                { text: 'Y' } as SegmentButtonTextItem,
+                { text: 'Z' } as SegmentButtonTextItem
+              );
+              this.mUnshift2 = 'unshift2:' + newLen;
+            })
+
+          Button(this.mUnshift3)
+            .id('btnUnshift3')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              let newLen: int = arr.unshift(
+                { text: 'X' } as SegmentButtonTextItem,
+                { text: 'Y' } as SegmentButtonTextItem,
+                { text: 'Z' } as SegmentButtonTextItem
+              );
+              this.mUnshift3 = 'unshift3:' + newLen;
+            })
+
+          // --- splice 系列 ---
+          Button(this.mSpliceDel)
+            .id('btnSpliceDel')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem,
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              arr.splice(1, 2);
+              this.mSpliceDel = 'splice_del:' + arr.splice(1, 2).length + ':' + arr.length;
+            })
+
+          Button(this.mSpliceIns)
+            .id('btnSpliceIns')
+            .onClick(() => {
+              let arr = SegmentButtonItemOptionsArray.create([
+                { text: 'A' } as SegmentButtonTextItem,
+                { text: 'B' } as SegmentButtonTextItem,
+                { text: 'C' } as SegmentButtonTextItem,
+                { text: 'D' } as SegmentButtonTextItem
+              ] as Array<SegmentButtonTextItem>);
+              arr.push({ text: 'X' } as SegmentButtonTextItem);
+              this.mSpliceIns = 'splice_ins:' + arr.splice(1, 1).length + ':' + arr.length;
+            })
+
+          // 真实 SegmentButton 组件
+          SegmentButton({
+            options: this.tabOpts,
+            selectedIndexes: this.selectedIndexes
           })
-
-        Button(this.mCreateIcon)
-          .id('btnCreateIcon')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock') } as SegmentButtonIconItem,
-              { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock') } as SegmentButtonIconItem
-            ] as Array<SegmentButtonIconItem>);
-            this.mCreateIcon = 'create_icon:' + arr.length;
-          })
-
-        Button(this.mCreateIconText)
-          .id('btnCreateIconText')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock'), text: 'A' } as SegmentButtonIconTextItem,
-              { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock'), text: 'B' } as SegmentButtonIconTextItem
-            ] as Array<SegmentButtonIconTextItem>);
-            this.mCreateIconText = 'create_icontext:' + arr.length;
-          })
-
-        // --- push 系列：操作 SegmentButtonOptions.buttons ---
-        Button(this.mPush2)
-          .id('btnPush2')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            let newLen: int = arr.push(
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem
-            );
-            this.mPush2 = 'push2:' + newLen;
-          })
-
-        Button(this.mPush3)
-          .id('btnPush3')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            let newLen: int = arr.push(
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem,
-              { text: 'E' } as SegmentButtonTextItem
-            );
-            this.mPush3 = 'push3:' + newLen;
-          })
-
-        // --- pop/shift ---
-        Button(this.mPop)
-          .id('btnPop')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem,
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            arr.pop();
-            this.mPop = 'pop:' + arr.length;
-          })
-
-        Button(this.mShift)
-          .id('btnShift')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem,
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            arr.shift();
-            this.mShift = 'shift:' + arr.length;
-          })
-
-        // --- unshift 系列 ---
-        Button(this.mUnshift1)
-          .id('btnUnshift1')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            let newLen: int = arr.unshift({ text: 'Z' } as SegmentButtonTextItem);
-            this.mUnshift1 = 'unshift1:' + newLen;
-          })
-
-        Button(this.mUnshift2)
-          .id('btnUnshift2')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            let newLen: int = arr.unshift(
-              { text: 'Y' } as SegmentButtonTextItem,
-              { text: 'Z' } as SegmentButtonTextItem
-            );
-            this.mUnshift2 = 'unshift2:' + newLen;
-          })
-
-        Button(this.mUnshift3)
-          .id('btnUnshift3')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            let newLen: int = arr.unshift(
-              { text: 'X' } as SegmentButtonTextItem,
-              { text: 'Y' } as SegmentButtonTextItem,
-              { text: 'Z' } as SegmentButtonTextItem
-            );
-            this.mUnshift3 = 'unshift3:' + newLen;
-          })
-
-        // --- splice 系列 ---
-        Button(this.mSpliceDel)
-          .id('btnSpliceDel')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem,
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            arr.splice(1, 2);
-            this.mSpliceDel = 'splice_del:' + arr.splice(1, 2).length + ':' + arr.length;
-          })
-
-        Button(this.mSpliceIns)
-          .id('btnSpliceIns')
-          .onClick(() => {
-            let arr = SegmentButtonItemOptionsArray.create([
-              { text: 'A' } as SegmentButtonTextItem,
-              { text: 'B' } as SegmentButtonTextItem,
-              { text: 'C' } as SegmentButtonTextItem,
-              { text: 'D' } as SegmentButtonTextItem
-            ] as Array<SegmentButtonTextItem>);
-            arr.push({ text: 'X' } as SegmentButtonTextItem);
-            this.mSpliceIns = 'splice_ins:' + arr.splice(1, 1).length + ':' + arr.length;
-          })
-
-        // 真实 SegmentButton 组件
-        SegmentButton({
-          options: this.tabOpts,
-          selectedIndexes: this.selectedIndexes
-        })
-
+        }
       }
       .space(10)
       .width('100%')
