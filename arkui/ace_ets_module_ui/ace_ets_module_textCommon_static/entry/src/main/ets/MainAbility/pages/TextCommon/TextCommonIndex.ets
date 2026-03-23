@@ -72,32 +72,26 @@ struct TextCommonIndex {
             this.mMenuDistinct = 'menu_distinct:' + (a !== b ? 'true' : 'false');
           })
 
-        // SelectedDragPreviewStyle.color: Color.Blue
         Text('Drag Preview Blue')
           .selectedDragPreviewStyle({ color: Color.Blue } as SelectedDragPreviewStyle)
           .key('textCommonDragPreviewBlue')
 
-        // SelectedDragPreviewStyle.color: undefined
         Text('Drag Preview Undefined')
           .selectedDragPreviewStyle(undefined)
           .key('textCommonDragPreviewUndef')
 
-        // LineSpacingOptions.onlyBetweenLines = true
         Text('Line Spacing onlyBetweenLines true')
           .lineSpacing(LengthMetrics.vp(8), { onlyBetweenLines: true } as LineSpacingOptions)
           .key('textCommonLineSpacingTrue')
 
-        // LineSpacingOptions.onlyBetweenLines = false
         Text('Line Spacing onlyBetweenLines false')
           .lineSpacing(LengthMetrics.vp(8), { onlyBetweenLines: false } as LineSpacingOptions)
           .key('textCommonLineSpacingFalse')
 
-        // MaxLinesOptions.overflowMode = MaxLinesMode.CLIP (0)
         TextArea({ text: 'line1\nline2\nline3\nline4\nline5' })
           .maxLines(3, { overflowMode: MaxLinesMode.CLIP } as MaxLinesOptions)
           .key('textCommonMaxLinesClip')
 
-        // MaxLinesOptions.overflowMode = MaxLinesMode.SCROLL (1)
         TextArea({ text: 'line1\nline2\nline3\nline4\nline5' })
           .maxLines(3, { overflowMode: MaxLinesMode.SCROLL } as MaxLinesOptions)
           .key('textCommonMaxLinesScroll')
