@@ -191,19 +191,19 @@ export default function XComponentTest() {
 
     /**
      * @tc.number XComponentTest_008
-     * @tc.name xComponentSurfaceRenders
+    * @tc.name xComponentViewRenders
      * @tc.desc Test XComponent page title renders
      */
-    it('xComponentSurfaceRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentSurfaceRenders START');
+    it('xComponentViewRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('XComponentTest execute: xComponentViewRenders START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentSurface'));
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentView'));
         expect(node !== null).assertTrue();
-        console.info('XComponentTest execute: xComponentSurfaceRenders END');
+        console.info('XComponentTest execute: xComponentViewRenders END');
         done();
       } catch (error) {
-        console.error('XComponentTest execute: xComponentSurfaceRenders error:' + error);
+        console.error('XComponentTest execute: xComponentViewRenders error:' + error);
         expect().assertFail();
         done();
       }

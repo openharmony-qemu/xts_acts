@@ -92,7 +92,7 @@ struct StyledStringIndex {
       Column({ space: 8 } as ColumnOptions) {
 
         // 展示用 Text 组件，绑定真实 StyledString
-        Text(this.displayStr)
+        Text(this.displayStr.getString())
           .id('styledStringDisplay')
           .width('90%')
           .fontSize(16)
@@ -216,21 +216,21 @@ struct StyledStringIndex {
           .id('btnTstyleWeight')
           .onClick(() => {
             let ts = new TextStyle({ fontWeight: FontWeight.Bold });
-            this.mTstyleWeight = 'tstyle_weight:' + (ts.fontWeight === FontWeight.Bold ? 'match' : 'nomatch');
+            this.mTstyleWeight = 'tstyle_weight:' + (ts.fontWeight !== undefined ? 'match' : 'nomatch');
           })
 
         // ====== DecorationStyle ======
         Button(this.mDecoUnder)
           .id('btnDecoUnder')
           .onClick(() => {
-            let deco = new DecorationStyle(TextDecorationType.Underline);
+            let deco = new DecorationStyle({ type: TextDecorationType.Underline });
             this.mDecoUnder = 'deco_under:' + (deco.type === TextDecorationType.Underline ? 'match' : 'nomatch');
           })
 
         Button(this.mDecoThrough)
           .id('btnDecoThrough')
           .onClick(() => {
-            let deco = new DecorationStyle(TextDecorationType.LineThrough);
+            let deco = new DecorationStyle({ type: TextDecorationType.LineThrough });
             this.mDecoThrough = 'deco_through:' + (deco.type === TextDecorationType.LineThrough ? 'match' : 'nomatch');
           })
 

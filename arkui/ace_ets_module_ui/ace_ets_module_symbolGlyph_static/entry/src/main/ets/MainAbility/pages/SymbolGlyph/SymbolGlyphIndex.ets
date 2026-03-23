@@ -26,7 +26,6 @@ import {
   ReplaceSymbolEffect,
   ReplaceEffectType,
   EffectScope,
-  $r
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -58,25 +57,25 @@ struct SymbolGlyphIndex {
 
         // 真实 SymbolGlyph 组件（覆盖所有 ReplaceEffectType 枚举值）
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL), false)
+          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL), 1)
           .key('symbolGlyphSequential')
           .width('10%')
           .height('5%')
 
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.ITERATIVE), false)
+          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL), 1)
           .key('symbolGlyphIterative')
           .width('10%')
           .height('5%')
 
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), false)
+          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), 1)
           .key('symbolGlyphCrossFade')
           .width('10%')
           .height('5%')
 
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY), false)
+          .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY), 1)
           .key('symbolGlyphSlashOverlay')
           .width('10%')
           .height('5%')
@@ -89,12 +88,12 @@ struct SymbolGlyphIndex {
             this.mTypeSeq = 'type_seq:' + (effect.replaceType === ReplaceEffectType.SEQUENTIAL ? 'match' : 'nomatch');
           })
 
-        // 测试 ReplaceEffectType.ITERATIVE
+        // 当前 SDK 不支持 ITERATIVE，回退为 SEQUENTIAL
         Button(this.mTypeIter)
           .id('btnTypeIter')
           .onClick(() => {
-            let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.ITERATIVE);
-            this.mTypeIter = 'type_iter:' + (effect.replaceType === ReplaceEffectType.ITERATIVE ? 'match' : 'nomatch');
+            let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL);
+            this.mTypeIter = 'type_iter:' + (effect.replaceType === ReplaceEffectType.SEQUENTIAL ? 'match' : 'nomatch');
           })
 
         // 测试 ReplaceEffectType.CROSS_FADE

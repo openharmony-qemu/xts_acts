@@ -29,6 +29,7 @@ import {
   MaxLinesMode,
   MaxLinesOptions
 } from '@ohos.arkui.component';
+import { ComponentContent, wrapBuilder } from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import { LengthMetrics } from '@ohos.arkui.node';
@@ -46,6 +47,7 @@ function textAreaCustomKeyboardBuilder() {
 @Entry
 @Component
 struct TextAreaAttributeIndex {
+  private textAreaKeyboard: ComponentContent<[]> = new ComponentContent(this.getUIContext(), wrapBuilder(textAreaCustomKeyboardBuilder));
 
   aboutToAppear() {
     try {
@@ -107,7 +109,7 @@ struct TextAreaAttributeIndex {
           .customKeyboard(undefined)
           .key('textAreaCustomKbdUndefined')
         TextArea({ placeholder: 'customKbd builder' })
-          .customKeyboard(wrapBuilder(textAreaCustomKeyboardBuilder))
+          .customKeyboard(this.textAreaKeyboard)
           .key('textAreaCustomKbdBuilder')
 
         // ---------- lineSpacing ----------

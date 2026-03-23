@@ -26,6 +26,7 @@ import {
   Color,
   SelectedDragPreviewStyle
 } from '@ohos.arkui.component';
+import { ComponentContent, wrapBuilder } from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
@@ -42,6 +43,7 @@ function textInputCustomKeyboardBuilder() {
 @Entry
 @Component
 struct TextInputAttributeIndex {
+  private textInputKeyboard: ComponentContent<[]> = new ComponentContent(this.getUIContext(), wrapBuilder(textInputCustomKeyboardBuilder));
 
   aboutToAppear() {
     try {
@@ -97,7 +99,7 @@ struct TextInputAttributeIndex {
           .customKeyboard(undefined)
           .key('textInputCustomKbdUndefined')
         TextInput({ placeholder: 'customKbd builder' })
-          .customKeyboard(wrapBuilder(textInputCustomKeyboardBuilder))
+          .customKeyboard(this.textInputKeyboard)
           .key('textInputCustomKbdBuilder')
 
         // ---------- TextInputAttribute.includeFontPadding ----------

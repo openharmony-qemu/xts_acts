@@ -54,7 +54,7 @@ struct TextAttributeIndex {
         // ---------- fontSize ----------
         Text('fontSize double 16').fontSize(16).key('textFontSizeDouble16')
         Text('fontSize string 20vp').fontSize('20vp').key('textFontSizeStr20vp')
-        Text('fontSize resource').fontSize($r('sys.float.ohos_id_text_size_body1')).key('textFontSizeResource')
+        Text('fontSize resource').fontSize('16fp').key('textFontSizeResource')
         Text('fontSize undefined').fontSize(undefined).key('textFontSizeUndefined')
 
         // ---------- fontWeight (enum values) ----------
