@@ -12,15 +12,14 @@ interface GeneratedObjectLiteralInterface_1 {}
 
 export default function FaultLogExtensionAbilityTest(){
   describe("FaultLogExtensionAbilityTest", (): void =>{
-    //FaultLogExtensionAbility.onConnect();
-    /*
+    /**
        * @tc.number  SUB_FaultLogExtension_FaultLogExtensionAbility_onConnect_0100
        * @tc.name  SUB_FaultLogExtension_FaultLogExtensionAbility_onConnect_0100
        * @tc.desc  Check start ability by bundl
        * @tc.level  LEVEL1
        * @tc.size  MEDIUMTEST
        * @tc.type  FUNCTION
-      */
+      **/
     it("SUB_FaultLogExtension_FaultLogExtensionAbility_onConnect_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
       // 使用显式的类型定义
@@ -35,15 +34,15 @@ export default function FaultLogExtensionAbilityTest(){
       done();
     })
 
-    //FaultLogExtensionAbility.onDisconnect();
-    /*
+    
+    /**
        * @tc.number SUB_FaultLogExtension_FaultLogExtensionAbility_onDisconnect_0200
        * @tc.name  SUB_FaultLogExtension_FaultLogExtensionAbility_onDisconnect_0200
        * @tc.desc  Check start ability by bundl
        * @tc.level LEVEL1
        * @tc.size MEDIUMTEST
        * @tc.type FUNCTION
-      */
+      **/
     it("SUB_FaultLogExtension_FaultLogExtensionAbility_onDisconnect_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
       // 使用显式的类型定义
@@ -59,14 +58,14 @@ export default function FaultLogExtensionAbilityTest(){
     })
 
     
-    /*
+    /**
        * @tc.name SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
          @tc.number  SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300
        * @tc.desc  Check start ability by bundl
        * @tc.level LEVEL1
        * @tc.size MEDIUMTEST
        * @tc.type FUNCTION
-      */
+      **/
     it("SUB_FaultLogExtension_FaultLogExtensionAbility_onFaultReportReady_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
       // 使用显式的类型定义
