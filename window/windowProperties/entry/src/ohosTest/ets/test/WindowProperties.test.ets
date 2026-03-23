@@ -1068,13 +1068,13 @@ export default function windowPropertiesTest() {
       done();
     });
     /**
-    * @tc.name   testSetGestureBackEnabledTrue
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8000
-    * @tc.desc   Set whether to disable the gesture back function.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   testSetGestureBackEnabledTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8000
+     * @tc.desc   Set whether to disable the gesture back function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSetGestureBackEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'TestSetGestureBackEnabledTrue';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -1145,13 +1145,13 @@ export default function windowPropertiesTest() {
       done()
     })
     /**
-    * @tc.name   testSetGestureBackEnabledFalse
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8100
-    * @tc.desc   Set whether to disable the gesture back function.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   testSetGestureBackEnabledFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8100
+     * @tc.desc   Set whether to disable the gesture back function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSetGestureBackEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'TestSetGestureBackEnabledFalse';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
