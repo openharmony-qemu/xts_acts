@@ -641,8 +641,8 @@ export default function ConnectionPublicTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_NetworkMgr_Connection_CreateNetConnection_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const caseName: string = "SUB_NetworkMgr_Connection_CreateNetConnection_1900";
+    it('testNetworkMgrConnectionCreateNetConnection_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1900";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netCon: connection.NetConnection = connection.createNetConnection({
