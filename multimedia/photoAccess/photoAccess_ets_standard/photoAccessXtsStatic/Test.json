@@ -1,9 +1,9 @@
 {
-    "description": "Configuration for camerastandard Tests",
+    "description": "Configuration for photoAccessXtsStatic Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "3000000",
-        "bundle-name": "ohos.acts.multamedia.photoAccessXtsStatic",
+        "bundle-name": "ohos.acts.multimedia.photoaccess.xts.static",
         "shell-timeout": "600000",
         "testcase-timeout": 300000,
         "module-name": "entry"
