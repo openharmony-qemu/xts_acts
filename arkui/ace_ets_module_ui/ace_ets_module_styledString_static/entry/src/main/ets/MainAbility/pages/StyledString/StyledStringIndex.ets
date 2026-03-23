@@ -268,7 +268,7 @@ struct StyledStringIndex {
         Button(this.mUrl)
           .id('btnUrl')
           .onClick(() => {
-            let urlStyle = new UrlStyle('https://www.baidu.com');
+            let urlStyle = new UrlStyle('local_resource_link');
             this.mUrl = 'url:' + urlStyle.url;
           })
 
