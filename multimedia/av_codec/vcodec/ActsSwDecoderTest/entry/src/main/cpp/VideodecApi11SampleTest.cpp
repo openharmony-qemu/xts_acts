@@ -686,6 +686,39 @@ void VDecAPI11Sample::GetH264AnnexBUnit()
     }
 }
 
+void VDecAPI11Sample::GetH264LengthPrefixedNal()
+{
+    mpegUnit_->resize(0);
+    if (inFile_ == nullptr || !inFile_->is_open()) {
+        return;
+    }
+    uint8_t lenBuf[4];
+    inFile_->read(reinterpret_cast<char*>(lenBuf), 4);
+    const std::streamsize lenRead = inFile_->gcount();
+    if (lenRead < 4) {
+        return;
+    }
+    const uint32_t nalLen = (static_cast<uint32_t>(lenBuf[0]) << 24) | (static_cast<uint32_t>(lenBuf[1]) << 16) |
+                            (static_cast<uint32_t>(lenBuf[2]) << 8) | static_cast<uint32_t>(lenBuf[3]);
+    if (nalLen == 0 || nalLen > MAX_NALU_SIZE) {
+        return;
+    }
+    const uint32_t outSize = H264_START_CODE_4_LEN + nalLen;
+    if (outSize < nalLen) {
+        return;
+    }
+    mpegUnit_->resize(outSize);
+    if (SecureMemcpy(mpegUnit_->data(), outSize, H264_START_CODE_4, H264_START_CODE_4_LEN) != EOK) {
+        mpegUnit_->resize(0);
+        return;
+    }
+    inFile_->read(reinterpret_cast<char*>(mpegUnit_->data() + H264_START_CODE_4_LEN),
+                  static_cast<std::streamsize>(nalLen));
+    if (static_cast<uint32_t>(inFile_->gcount()) != nalLen) {
+        mpegUnit_->resize(0);
+    }
+}
+
 void VDecAPI11Sample::GetBufferSize()
 {
     auto pBuffer = mpegUnit_->data();
@@ -865,6 +898,27 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         beforeEosInputInput = false;
     }
+    if (useH264LengthPrefixed) {
+        if (inFile_->eof() && finishLastPush) {
+            SetEOS(index, buffer);
+            mpegUnit_->resize(0);
+            return K_PUSH_DATA_EOS;
+        }
+        GetH264LengthPrefixedNal();
+        bufferSize = static_cast<uint32_t>(mpegUnit_->size());
+        if (bufferSize == 0) {
+            if (inFile_->eof()) {
+                SetEOS(index, buffer);
+                return K_PUSH_DATA_EOS;
+            }
+            return K_PUSH_DATA_RETRY;
+        }
+        if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
+            cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
+            return K_PUSH_DATA_EOS;
+        }
+        return static_cast<int32_t>(SendData(bufferSize, index, buffer));
+    }
     if (inFile_->tellg() == 0) {
         inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + START_CODE_SIZE), PREREAD_BUFFER_SIZE);
         prereadBufferSize_ = inFile_->gcount() + START_CODE_SIZE;
@@ -925,7 +979,7 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
     } else {
         return K_PUSH_DATA_RETRY;
     }
-    if (pPrereadBuffer_ == prereadBufferSize_ && inFile_->eof()) {
+    if ((pPrereadBuffer_ == prereadBufferSize_ && inFile_->eof()) || (useH264LengthPrefixed && inFile_->eof())) {
         finishLastPush = true;
     }
     if (SecureMemcpy(fileBuffer, bufferSize, mpegUnit_->data(), bufferSize) != EOK) {

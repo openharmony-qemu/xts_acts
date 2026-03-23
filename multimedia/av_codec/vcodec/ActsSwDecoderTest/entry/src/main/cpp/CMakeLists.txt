@@ -30,6 +30,7 @@ add_library(swdecoder_test SHARED
     ActsStateTest.cpp
     SecurecTest.cpp
     VideodecApi11SampleTest.cpp
+    videodec_ndk_sample.cpp
 )
 
 # Link name from SDK (native log); split to satisfy wording scan on literal token.

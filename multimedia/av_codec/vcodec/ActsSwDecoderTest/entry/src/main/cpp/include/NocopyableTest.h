@@ -33,6 +33,6 @@ private:
     NoCopyable& operator=(NoCopyable&&) = delete;
 };
 
-}
+} // namespace OHOS
 
 #endif
