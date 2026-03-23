@@ -214,7 +214,13 @@ export default function geolocationTest_geo2() {
         try {
             geolocations.getLocation(null);
         } catch (error) {
-            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            console.error("[lbs_js] null SUB_HSS_LocationSystem_systemapi_0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocations.getLocation(undefined);
+        } catch (error) {
+            console.error("[lbs_js] undefined SUB_HSS_LocationSystem_systemapi_0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
@@ -232,7 +238,13 @@ export default function geolocationTest_geo2() {
         try {
             geolocations.subscribe(null);
         } catch (error) {
-            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            console.error("[lbs_js] null SUB_HSS_LocationSystem_systemapi_0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocations.subscribe(undefined);
+        } catch (error) {
+            console.error("[lbs_js] undefined SUB_HSS_LocationSystem_systemapi_0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
@@ -250,7 +262,13 @@ export default function geolocationTest_geo2() {
         try {
             geolocations.getLocationType(null);
         } catch (error) {
-            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0700:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            console.error("[lbs_js] null SUB_HSS_LocationSystem_systemapi_0700:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocations.getLocationType(undefined);
+        } catch (error) {
+            console.error("[lbs_js] undefined SUB_HSS_LocationSystem_systemapi_0700:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
