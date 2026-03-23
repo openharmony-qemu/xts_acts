@@ -19,8 +19,8 @@
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <string>
-#include "include/videodec_api11_sample.h"
-#include "include/videodec_ndk_sample.h"
+#include "include/VideodecApi11SampleTest.h"
+#include "include/VideodecNdkSampleTest.h"
 
 using namespace std;
 using namespace OHOS::Media;

@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include "include/VideodecApi11SampleTest.h"
 #include <arpa/inet.h>
 #include <native_window/external_window.h>
 #include <sys/time.h>
 #include <unistd.h>
 #include <utility>
 #include "include/Sha512StubTest.h"
-#include "include/videodec_api11_sample.h"
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
