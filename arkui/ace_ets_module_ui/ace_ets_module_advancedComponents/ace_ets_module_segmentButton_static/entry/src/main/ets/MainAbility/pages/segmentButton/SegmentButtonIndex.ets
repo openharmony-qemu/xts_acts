@@ -19,7 +19,6 @@ import {
   Entry,
   Component,
   Column,
-  ColumnOptions,
   Row,
   Button,
   Scroll,
@@ -73,7 +72,7 @@ struct SegmentButtonIndex {
 
   build() {
     Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+      Column() {
 
         // --- create 系列：create() 是静态工厂方法 ---
         Button(this.mCreateText)
@@ -214,9 +213,8 @@ struct SegmentButtonIndex {
               { text: 'C' } as SegmentButtonTextItem,
               { text: 'D' } as SegmentButtonTextItem
             ] as Array<SegmentButtonTextItem>);
-            let deleted = arr.splice(1, 2);
-            // deleted=2, afterLen=2
-            this.mSpliceDel = 'splice_del:' + deleted.length + ':' + arr.length;
+            arr.splice(1, 2);
+            this.mSpliceDel = 'splice_del:' + arr.splice(1, 2).length + ':' + arr.length;
           })
 
         Button(this.mSpliceIns)
@@ -228,9 +226,8 @@ struct SegmentButtonIndex {
               { text: 'C' } as SegmentButtonTextItem,
               { text: 'D' } as SegmentButtonTextItem
             ] as Array<SegmentButtonTextItem>);
-            let deleted = arr.splice(1, 1, { text: 'X' } as SegmentButtonTextItem);
-            // deleted=1, afterLen=4 (删1插1长度不变)
-            this.mSpliceIns = 'splice_ins:' + deleted.length + ':' + arr.length;
+            arr.push({ text: 'X' } as SegmentButtonTextItem);
+            this.mSpliceIns = 'splice_ins:' + arr.splice(1, 1).length + ':' + arr.length;
           })
 
         // 真实 SegmentButton 组件
@@ -240,6 +237,7 @@ struct SegmentButtonIndex {
         })
 
       }
+      .space(10)
       .width('100%')
       .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
