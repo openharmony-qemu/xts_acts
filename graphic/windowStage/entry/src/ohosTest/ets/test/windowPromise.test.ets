@@ -1061,13 +1061,13 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-    * @tc.name   testSetPreferredOrientation_Promise
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
-    * @tc.desc   Sets the display direction property of the window
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
+     * @tc.name   testSetPreferredOrientation_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetPreferredOrientation_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetPreferredOrientation_Promise';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
