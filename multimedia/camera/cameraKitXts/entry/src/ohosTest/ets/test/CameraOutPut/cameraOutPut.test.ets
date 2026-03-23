@@ -41,7 +41,7 @@ let mCameraOutputCap: camera.CameraOutputCapability;
 let mPreviewProfilesArray: Array<camera.Profile>;
 let mPreviewProfile: camera.Profile | undefined;
 let mVideoSurfaceId: string;
-let testVideoProfile: camera.VideoProfile;
+let mVideoProfile: camera.VideoProfile;
 let mPreviewOutput: camera.PreviewOutput;
 let mVideoOutput: camera.VideoOutput;
 let mPhotoSession: camera.PhotoSession;
@@ -119,16 +119,16 @@ function getOutputCapability() {
   mCameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], mSupportedModes[1]);
   console.info(TAG, 'camera, output cap: ' + JSON.stringify(mCameraOutputCap));
   mPreviewProfilesArray = mCameraOutputCap.previewProfiles;
-  testVideoProfile = mCameraOutputCap.videoProfiles[0];
-  expect(isEmpty(testVideoProfile)).assertFalse();
-  videoProfile.videoFrameWidth = testVideoProfile.size.width;
-  videoProfile.videoFrameHeight = testVideoProfile.size.height;
+  mVideoProfile = mCameraOutputCap.videoProfiles[0];
+  expect(isEmpty(mVideoProfile)).assertFalse();
+  videoProfile.videoFrameWidth = mVideoProfile.size.width;
+  videoProfile.videoFrameHeight = mVideoProfile.size.height;
 }
 
 function getPreviewProfile() {
   mPreviewProfile = mPreviewProfilesArray.find((previewProfile: camera.Profile) => {
     return Math.abs((previewProfile.size.width / previewProfile.size.height) -
-      (testVideoProfile.size.width / testVideoProfile.size.height)) < Number.EPSILON;
+      (mVideoProfile.size.width / mVideoProfile.size.height)) < Number.EPSILON;
   });
 }
 
@@ -251,7 +251,7 @@ export default function cameraOutputTest() {
             expect(isEmpty(mPreviewProfile)).assertTrue();
           } else {
             await getVideoSurfaceId();
-            mVideoOutput = mCameraManager.createVideoOutput(testVideoProfile, mVideoSurfaceId);
+            mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
             console.info(TAG, testName + ' getPhotoSession passed.');
@@ -342,7 +342,7 @@ export default function cameraOutputTest() {
               expect(isEmpty(mPreviewProfile)).assertTrue();
             } else {
               await getVideoSurfaceId();
-              mVideoOutput = mCameraManager.createVideoOutput(testVideoProfile, mVideoSurfaceId);
+              mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
               mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
               await getVideoSession(testName, mPreviewOutput, mVideoOutput);
               console.info(TAG, testName + ' getPhotoSession passed.');
@@ -456,7 +456,7 @@ export default function cameraOutputTest() {
             expect(isEmpty(mPreviewProfile)).assertTrue();
           } else {
             await getVideoSurfaceId();
-            mVideoOutput = mCameraManager.createVideoOutput(testVideoProfile, mVideoSurfaceId);
+            mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
             console.info(TAG, testName + ' getPhotoSession passed.');
@@ -503,7 +503,7 @@ export default function cameraOutputTest() {
             expect(isEmpty(mPreviewProfile)).assertTrue();
           } else {
             await getVideoSurfaceId();
-            mVideoOutput = mCameraManager.createVideoOutput(testVideoProfile, mVideoSurfaceId);
+            mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
             console.info(TAG, testName + ' getPhotoSession passed.');
