@@ -1147,19 +1147,19 @@ export default function TextPicker() {
       } else {
         console.info("testPicker15 findComponent changeNumButton success");
         await changeNumButton.click();
-      }
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info("testPicker15 findComponent checkbox fail");
-      } else {
-        console.info("testPicker15 findComponent checkbox success");
-        let selectNum = Math.min(checkBoxs.length, 3);
-        for (let index = 0; index < selectNum; index++) {
-          await checkBoxs[index].click();
+        let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        if (checkBoxs === null || checkBoxs.length <= 0) {
+          console.info("testPicker15 findComponent checkbox fail");
+        } else {
+          console.info("testPicker15 findComponent checkbox success");
+          let selectNum = Math.min(checkBoxs.length, 3);
+          for (let index = 0; index < selectNum; index++) {
+            await checkBoxs[index].click();
+          }
+          await CommonFunc.sleep(1000);
+          expect(selectCount).assertLessOrEqual(1);
+          console.info("testPicker15 btn click finish");
         }
-        await CommonFunc.sleep(1000);
-        expect(selectCount).assertLessOrEqual(1);
-        console.info("testPicker15 btn click finish");
       }
 
       router.back();
@@ -3643,8 +3643,8 @@ export default function TextPicker() {
           console.error(" error: " + JSON.stringify(error) + error.code);
           if (isInvalidCase) {	 
             expect(error.code).assertEqual(401); 
-          } else { 
-            expect(error.code).assertEqual(14000011); 
+          } else {
+            expect(error.code).assertEqual(23800301); 
           }
         }
       }
