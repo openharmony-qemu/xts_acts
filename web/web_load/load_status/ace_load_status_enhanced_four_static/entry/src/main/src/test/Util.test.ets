@@ -68,29 +68,6 @@ export default class Utils{
     }
   }
 
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
-    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
-    console.info(`[${testCaseName}] START`);
-    try {
-      let callBack = (backData: events_emitter.EventData) => {
-        try {
-          console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
-          expectFunction(backData, expected);
-        } catch (err) {
-          console.info(`[${testCaseName}] err:` + JSON.stringify(err));
-        }
-        done()
-      }
-      let innerEvent: events_emitter.InnerEvent = {
-        eventId: eventId,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(innerEvent, callBack)
-    } catch (err) {
-      console.info(`[${testCaseName}] err:` + JSON.stringify(err));
-    }
-  }
-
 
 
 }
