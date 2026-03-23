@@ -271,15 +271,11 @@ export default function ResmgrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getMediaContent_test_static_003', Level.LEVEL0, async (): Promise<void> => {
+    it('getMediaContent_test_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContent_test_static_003 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContent_test_static_003 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContent_test_static_003 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
+        done();
       })
     })
 
@@ -308,13 +304,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContentBase64_test_static_003', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContentBase64_test_static_003 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContentBase64_test_static_003 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContentBase64_test_static_003 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -882,13 +873,8 @@ export default function ResmgrTest() {
      */
     it('getMediaByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('background', (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaByName_test_static_001 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaByName_test_static_001 value:' + value);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -903,17 +889,12 @@ export default function ResmgrTest() {
      */
     it('getMediaByName_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('foreground', 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaByName_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-          done();
-        } else {
-          console.log('getMediaByName_test_static_0100 Failed');
-          expect().assertFail();
-          done();
-        }
+        console.log('getMediaByName_test_static_0100 value:' + value);
+        expect(value!.length > 0).assertTrue();
+        done();
       })
     })
+
     /**
      * @tc.name   getMediaByName_test_static_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2900
@@ -939,13 +920,8 @@ export default function ResmgrTest() {
      */
     it('getMediaBase64ByName_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaBase64ByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaBase64ByName_test_static_001 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaBase64ByName_test_static_001 value:' + value);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -1020,25 +996,19 @@ export default function ResmgrTest() {
         done();
       })
       /**
-       * @tc.name   getfloatByName_test_static_001
+       * @tc.name   getFloatByName_test_static_001
        * @tc.number SUB_GLOBAL_RESMGR_JS_static_4100
        * @tc.desc   test getDoubleByName with float
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-      it('getfloatByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let value = res?.getDoubleByName('page_text_font_size');
-        console.log('getfloatByName_test_static_001 ' + value);
-        if (value) {
-          console.log('getfloatByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getfloatByName_test_static_001 Failed');
-          expect().assertFail();
-        }
-        done();
-      })
+    it('getFloatByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDoubleByName('page_text_font_size');
+      console.log('getFloatByName_test_static_001 ' + value);
+      expect(value == 50).assertTrue();
+      done();
+    })
 
     /**
      * @tc.name   getRawFileList_test_static_0100
@@ -1134,13 +1104,8 @@ export default function ResmgrTest() {
      */
     it('getMediaBase64ByName_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', 0, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaBase64ByName_test_static_0100 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaBase64ByName_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaBase64ByName_test_static_0100 value:' + value);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -1970,13 +1935,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContent_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContent_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContent_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContent_test_static_0100 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -2082,13 +2042,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContentBase64_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, 0, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContentBase64_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContentBase64_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContentBase64_test_static_0100 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -2761,6 +2716,250 @@ export default function ResmgrTest() {
             done();
           })
         })
+
+    /**
+     * @tc.number   getMediaByName_test_static_003
+     * @tc.name     getMediaByName_test_static_003
+     * @tc.desc     normal in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getMediaByName_test_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res!.getMediaByName('startIcon', 0).then((value) => {
+        console.log('getMediaByName_test_static_003 value:' + value);
+        expect(value!.length > 0).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getMediaBase64ByName_test_static_003
+     * @tc.name     getMediaBase64ByName_test_static_003
+     * @tc.desc     normal in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getMediaBase64ByName_test_static_003', Level.LEVEL0, async (): Promise<void> => {
+      res?.getMediaBase64ByName('startIcon', 0).then((value: string): void => {
+        console.log('getMediaBase64ByName_test_static_003 value:' + value);
+        expect(value.length > 0).assertTrue();
+      })
+    })
+
+    /**
+     * @tc.number   getRawFileList_test_static_0300
+     * @tc.name     getRawFileList_test_static_0300
+     * @tc.desc     input void in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFileList_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getRawFileList("").then((value: Array<string>): void => {
+        console.log('getRawFileList_test_static_0300 value:' + value);
+        expect(value).assertContain('rawfiletest.xml');
+        done();
+      }).catch((error: Error): void => {
+        console.log('getRawFileList_test_static_0300 error.code' + error.code);
+        console.log('getRawFileList_test_static_0300 error.message' + error.message);
+        expect(error.code).assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByName_test_static_0160
+     * @tc.name     getColorByName_test_static_0160
+     * @tc.desc     input void in callback mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByName_test_static_0160', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColorByName('', (err: BusinessError<void> | null, value: long | undefined) => {
+        console.log('getColorByName_test_static_0160 err.code' + err?.code);
+        console.log('getColorByName_test_static_0160 err.message' + err?.message);
+        expect(err?.code == 9001003).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByName_test_static_0170
+     * @tc.name     getColorByName_test_static_0170
+     * @tc.desc     input void in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByName_test_static_0170', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColorByName('').then((value: long) => {
+        console.log('getColorByName_test_static_0170 value:' + value);
+        expect(value).assertFail();
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        console.log('getColorByName_test_static_0170 err.code ' + error.code);
+        console.log('getColorByName_test_static_0170 err.message ' + error.message);
+        expect(error.code == 9001003).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByNameSync_test_static_008
+     * @tc.name     getColorByNameSync_test_static_008
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByNameSync_test_static_008', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getColorByNameSync('');
+      } catch (err) {
+        console.log('getColorByNameSync_test_static_008 err.code' + err.code);
+        console.log('getColorByNameSync_test_static_008 err.message' + err.message);
+        expect(err.code).assertEqual(9001003);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   addResource_test_static_003
+     * @tc.name     addResource_test_static_003
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('addResource_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.addResource('');
+      } catch (err) {
+        let error = err as BusinessError
+        console.log('addResource_test_static_003 err.code' + error.code);
+        expect(error.code).assertEqual(9001010);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   removeResource_test_static_003
+     * @tc.name     removeResource_test_static_003
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('removeResource_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.removeResource('');
+      } catch (err) {
+        let error = err as BusinessError
+        console.log('removeResource_test_static_003 err.code' + error.code);
+        expect(error.code).assertEqual(9001010);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   getDrawableDescriptor_test_static_0900
+     * @tc.name     getDrawableDescriptor_test_static_0900
+     * @tc.desc     id density type
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getDrawableDescriptor_test_static_0900', Level.LEVEL0, () => {
+      let value = res?.getDrawableDescriptor(0x01000001, 0, 1);
+      console.log('getDrawableDescriptor_test_static_0900 ' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.number   getDrawableDescriptor_test_static_2100
+     * @tc.name     getDrawableDescriptor_test_static_2100
+     * @tc.desc     id density type
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getDrawableDescriptor_test_static_2100', Level.LEVEL0, () => {
+      let value = res?.getDrawableDescriptorByName('startIcon', 0, 1);
+      console.log('getDrawableDescriptor_test_static_2100 ' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0200
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0200
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res?.getDoublePluralStringByNameSync('test_cyc', 2.1, 'test');
+      } catch (err) {
+        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0300
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0300
+     * @tc.desc     9001008
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res?.getDoublePluralStringByNameSync('string_format7', 2.1, 'test');
+      } catch (err) {
+        console.log('getDoublePluralStringByNameSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0200
+     * @tc.name     getIntPluralStringByNameSync_test_static_0200
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res?.getIntPluralStringByNameSync('test_cyc', 1, 10);
+      } catch (err) {
+        console.log('getIntPluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0300
+     * @tc.name     getIntPluralStringByNameSync_test_static_0300
+     * @tc.desc     9001008
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res?.getIntPluralStringByNameSync('string_format7', 1, 'test');
+      } catch (err) {
+        console.log('getIntPluralStringByNameSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
 
       console.log('*************end ResmgrTest*************');
     })
