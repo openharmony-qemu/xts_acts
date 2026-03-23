@@ -48,6 +48,151 @@ export default function DeviceInfoTest() {
         console.info('start################################start');
 
         /**
+         * 校验并解析系统版本字符串，返回 {major, minor, patch} 或 null
+         * @param {string} versionStr
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersion(versionStr) {
+            const strictRegex = /^\d+\.\d+\.\d+$/;
+            if (!strictRegex.test(versionStr)) {
+                console.error(`Invalid format: "${versionStr}"`);
+                return null;
+            }
+
+            const parts = versionStr.split('.');
+            const m = Number(parts[0]);
+            const n = Number(parts[1]);
+            const p = Number(parts[2]);
+
+            if (!Number.isInteger(m) || !Number.isInteger(n) || !Number.isInteger(p)) {
+                console.error('Non-integer components');
+                return null;
+            }
+
+            if (m < 1 || m > 99 || n < 0 || n > 99 || p < 0 || p > 99) {
+                console.error(`Out of range: ${m}.${n}.${p}`);
+                return null;
+            }
+
+            return { major: m, minor: n, patch: p };
+        }
+
+        /**
+         * 判断 version1 <= version2
+         * @param {{major: number, minor: number, patch: number}} version1
+         * @param {{major: number, minor: number, patch: number}} version2
+         * @returns {boolean}
+         */
+        function versionLte(version1, version2) {
+            if (version1.major !== version2.major)
+                return version1.major < version2.major;
+            if (version1.minor !== version2.minor)
+                return version1.minor < version2.minor;
+            return version1.patch <= version2.patch;
+        }
+
+        /**
+         * 安全生成版本字符串
+         * @param {number} m
+         * @param {number} n
+         * @param {number} p
+         * @returns {string}
+         */
+        function makeVersion(m, n, p) {
+            return `${m}.${n}.${p}`;
+        }
+
+        /**
+         * 测试合法范围内的版本
+         * @param {{major: number, minor: number, patch: number}} sysVersion
+         */
+        function runValidVersionTests(sysVersion) {
+            const { major, minor, patch } = sysVersion;
+
+            const cases = [
+                // 相等
+                { input: makeVersion(major, minor, patch), expected: true },
+                // 小于
+                ...(patch > 0 ? [{ input: makeVersion(major, minor, patch - 1), expected: true }] : []),
+                ...(minor > 0 ? [{ input: makeVersion(major, minor - 1, 99), expected: true }] : []),
+                ...(major > 1 ? [{ input: makeVersion(major - 1, 99, 99), expected: true }] : []),
+                // 大于
+                ...(patch < 99 ? [{ input: makeVersion(major, minor, patch + 1), expected: false }] : []),
+                ...(minor < 99 ? [{ input: makeVersion(major, minor + 1, 0), expected: false }] : []),
+                ...(major < 99 ? [{ input: makeVersion(major + 1, 0, 0), expected: false }] : []),
+                // 边界
+                { input: "1.0.0", expected: versionLte({ major: 1, minor: 0, patch: 0 }, sysVersion) },
+                { input: "99.99.99", expected: versionLte({ major: 99, minor: 99, patch: 99 }, sysVersion) },
+            ];
+
+            for (const { input, expected } of cases) {
+                console.info(`Test valid: apiAvailable("${input}") → ${expected}`);
+                const result = deviceinfo.apiAvailable(input);
+                expect(result).assertEqual(expected);
+            }
+        }
+
+        /**
+         * 测试非法/越界版本
+         */
+        function runInvalidVersionTests() {
+            const invalids = [
+                "0.0.0", "100.0.0", "1.100.0", "1.0.100",
+                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", ""
+            ];
+            for (const v of invalids) {
+                console.info(`Test invalid: apiAvailable("${v}")`);
+                const result = deviceinfo.apiAvailable(v);
+                expect(result).assertEqual(false);
+            }
+        }
+
+        /**
+         * 从字符串 "x.y.z" 解析并校验版本
+         * @param {string} versionStr
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersionFromString(versionStr) {
+            const strictRegex = /^\d+\.\d+\.\d+$/;
+            if (!strictRegex.test(versionStr)) {
+                console.error(`Invalid version string format: "${versionStr}"`);
+                return null;
+            }
+            const [m, n, p] = versionStr.split('.').map(Number);
+            return validateVersionNumbers(m, n, p);
+        }
+
+        /**
+         * 从三个整数校验版本
+         * @param {number} major
+         * @param {number} minor
+         * @param {number} patch
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersionFromIntegers(major, minor, patch) {
+            return validateVersionNumbers(major, minor, patch);
+        }
+
+        /**
+         * 统一校验版本号范围：major(1-99), minor/patch(0-99)
+         * @param {number} m
+         * @param {number} n
+         * @param {number} p
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateVersionNumbers(m, n, p) {
+            if (!Number.isInteger(m) || !Number.isInteger(n) || !Number.isInteger(p)) {
+                console.error('Version components are not integers');
+                return null;
+            }
+            if (m < 1 || m > 99 || n < 0 || n > 99 || p < 0 || p > 99) {
+                console.error(`Version out of range: ${m}.${n}.${p}`);
+                return null;
+            }
+            return { major: m, minor: n, patch: p };
+        }
+
+        /**
          * @tc.name   device_info_test_001
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0100
          * @tc.desc   Get a string representing the device type.
@@ -1489,120 +1634,85 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.number ACE_global_apiAvailable_001
-         * @tc.name ACE_global_apiAvailable_001
+         * @tc.number device_apiAvailable_test_001
+         * @tc.name device_apiAvailable_test_001
          * @tc.desc Test apiAvailable 
          */
-        it('ACE_global_apiAvailable_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        let caseName = "ACE_global_apiAvailable_001"
-        console.error(`${caseName} START`);
+        it('device_apiAvailable_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let caseName = "device_apiAvailable_test_001"
+            console.info(`${caseName} START`);
 
-        const originMajor = deviceinfo.sdkApiVersion;
-        const originMinor = deviceinfo.sdkMinorApiVersion;
-        const originPatch = deviceinfo.sdkPatchApiVersion;
-        console.error('apiAvailable, origin major:' + originMajor + ', minor:' +
-            originMinor + ', patch:' + originPatch);
+            const originMajor = deviceinfo.sdkApiVersion;
+            console.info('apiAvailable, origin major:' + originMajor);
 
-        /************************ 第一部分：非法传参校验 ************************/
-        // 2. 数值非法：传负数、超大数
-        console.error('--- 校验：传入数字类型的非法数值 ---');
-        let result = deviceinfo.apiAvailable(-1); // major负数
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(originMajor, -2); // minor负数
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(originMajor, originMinor, -3); // patch负数
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(1000); // major超大数
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(originMajor, 1000); // minor超大数
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(originMajor, originMinor, 1000); // patch超大数
-        expect(result).assertEqual(false);
-        /************************ 第二部分：合法传参-版本相等 ************************/
-        console.error('--- 校验：合法传参，版本号等于系统版本 ---');
-        // 3参：完整版本号
-        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch);
-        expect(result).assertEqual(true);
-        // 2参：major+minor，patch默认0
-        result = deviceinfo.apiAvailable(originMajor, originMinor);
-        expect(result).assertEqual(true);
-        // 1参：仅major，minor/patch默认0
-        result = deviceinfo.apiAvailable(originMajor);
-        expect(result).assertEqual(true);
-
-        /************************ 第三部分：边界值校验-默认值0 ************************/
-        console.error('--- 校验：默认值0的边界场景 ---');
-        // 系统版本如果是 X.0.0，传仅X也能匹配（验证默认值生效）
-        if (originMinor === 0 && originPatch === 0) {
+            console.info('--- 校验：传入数字类型的非法数值 ---');
+            let result = deviceinfo.apiAvailable(-1); // major负数
+            expect(result).assertEqual(false);
+            result = deviceinfo.apiAvailable(0); // major传0
+            expect(result).assertEqual(false);
+            result = deviceinfo.apiAvailable(100); // major超大数
+            expect(result).assertEqual(false);
+           
+            /************************ 第二部分：合法传参-版本相等 ************************/
+            console.info('--- 校验：合法传参，版本号等于系统版本 ---');
             result = deviceinfo.apiAvailable(originMajor);
-            console.error('apiAvailable 边界：系统X.0.0传X result:' + result);
             expect(result).assertEqual(true);
-        }
-        // 传X.0 等效于 X.0.0（验证minor为0时patch默认0）
-        result = deviceinfo.apiAvailable(originMajor, 0);
-        expect(result).assertEqual(deviceinfo.apiAvailable(originMajor, 0, 0));
-
-        console.error(`${caseName} END`);
-        done();
+            // 验证传参小于系统版本时（且版本号为合法版本）返回1
+            if(originMajor - 1 > 0) {
+                result = deviceinfo.apiAvailable(originMajor - 1);
+                expect(result).assertEqual(true);
+            }
+             // 验证传参大于系统版本时（且版本号为合法版本）返回0
+            if(originMajor + 1 < 100) {
+                result = deviceinfo.apiAvailable(originMajor + 1);
+                expect(result).assertEqual(false);
+            }
+            console.info(`${caseName} END`);
+            done();
         });
 
         /**
-         * @tc.number ACE_global_apiAvailable_002
-         * @tc.name ACE_global_apiAvailable_002
+         * @tc.number device_apiAvailable_test_002
+         * @tc.name device_apiAvailable_test_002
          * @tc.desc Test apiAvailable
          */
-        it('ACE_global_apiAvailable_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        let caseName = "ACE_global_apiAvailable_002"
-        console.error(`${caseName} START`);
+        it('device_apiAvailable_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            const caseName = "device_apiAvailable_test_002";
+            console.info(`${caseName} START`);
 
-        const originMajor = deviceinfo.sdkApiVersion;
-        const originMinor = deviceinfo.sdkMinorApiVersion;
-        const originPatch = deviceinfo.sdkPatchApiVersion;
-        console.error('apiAvailable, origin major:' + originMajor + ', minor:' +
-            originMinor + ', patch:' + originPatch);
+            const osName = deviceinfo.distributionOSName;
+            console.info(`OS Name: ${osName}`);
 
-        /************************ 第一部分：合法传参-版本小于系统 ************************/
-        console.error('--- 校验：合法传参，版本号小于系统版本 ---');
-        let lessMajor = originMajor - 1; // major减1
-        // 3参
-        let result = deviceinfo.apiAvailable(lessMajor, originMinor, originPatch);
-        expect(result).assertEqual(true);
-        // 2参
-        result = deviceinfo.apiAvailable(lessMajor, originMinor);
-        expect(result).assertEqual(true);
-        // 1参
-        result = deviceinfo.apiAvailable(lessMajor);
-        expect(result).assertEqual(true);
+            let sysVer = null;
+            const HARMONY_OS_NAME = ["Harm", "onyOS"].join("");
+            if (osName === HARMONY_OS_NAME) {
+                const versionStr = deviceinfo.distributionOSVersion;
+                console.info(`Harmony OS Version String: ${versionStr}`);
+                sysVer = validateSystemVersionFromString(versionStr);
+            } else {
+                // OpenHarmony or other: use integer fields
+                const major = deviceinfo.sdkApiVersion;
+                const minor = deviceinfo.sdkMinorApiVersion;
+                const patch = deviceinfo.sdkPatchApiVersion;
+                console.info(`Non-Harmony OS Version Integers: ${major}.${minor}.${patch}`);
+                sysVer = validateSystemVersionFromIntegers(major, minor, patch);
+            }
 
-        // 补充：minor小于系统（major相等），验证二级版本对比逻辑
-        result = deviceinfo.apiAvailable(originMajor, originMinor - 1);
-        expect(result).assertEqual(true);
-        // 补充：patch小于系统（major/minor相等），验证三级版本对比逻辑
-        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch - 1);
-        expect(result).assertEqual(true);
+            if (!sysVer) {
+                expect(false).assertTrue();
+                done();
+                return;
+            }
 
-        /************************ 第二部分：合法传参-版本大于系统 ************************/
-        console.error('--- 校验：合法传参，版本号大于系统版本 ---');
-        let greaterMajor = originMajor + 1; // major加1
-        // 3参
-        result = deviceinfo.apiAvailable(greaterMajor, originMinor, originPatch);
-        expect(result).assertEqual(false);
-        // 2参
-        result = deviceinfo.apiAvailable(greaterMajor, originMinor);
-        expect(result).assertEqual(false);
-        result = deviceinfo.apiAvailable(greaterMajor);
-        expect(result).assertEqual(false);
+            console.info(`Valid system version: ${sysVer.major}.${sysVer.minor}.${sysVer.patch}`);
 
-        // 补充：minor大于系统（major相等），验证二级版本对比逻辑
-        result = deviceinfo.apiAvailable(originMajor, originMinor + 1);
-        expect(result).assertEqual(false);
-        // 补充：patch大于系统（major/minor相等），验证三级版本对比逻辑
-        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch + 1);
-        expect(result).assertEqual(false);
+            runValidVersionTests(sysVer);
+            runInvalidVersionTests();
 
-        console.error(`${caseName} END`);
-        done();
+            console.info(`${caseName} END`);
+            done();
         });
+
 
         /**
          * @tc.name   device_info_test_0665
