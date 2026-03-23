@@ -205,7 +205,7 @@ export class KeyboardControllerStatic {
     console.debug(`${TAG} ====>publish commonevent Succeed`);      
   }
 
-  private async wrapAssertWithTwoIn1Judgement1(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>>{
+  private async wrapAssertWithTwoIn1Judgement(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>>{
     try{
       return ()=> assertRunnable();
     } catch (err) {
@@ -2716,7 +2716,7 @@ export class KeyboardControllerStatic {
   private SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
     console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 data`);     
     try {
-      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.keyboardController, InputClient: inputMethodEngine.InputClient): void => {
+      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {
         console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 inputStart`); 
         inputMethodAbility!.offInputStart((): void => {});
         if(InputClient == null) {
@@ -2759,7 +2759,7 @@ export class KeyboardControllerStatic {
   private Sub_Misc_inputMethod_onDeleteLeft_static_0100(): void {
     console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 data`);     
     try {
-      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.keyboardController, InputClient: inputMethodEngine.InputClient): void => {
+      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {
         console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 inputStart`); 
         inputMethodAbility!.offInputStart((): void => {});
         if(InputClient == null) {
@@ -2817,7 +2817,7 @@ export class KeyboardControllerStatic {
   private Sub_Misc_inputMethod_onDeleteRight_static_0210(): void {
     console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteRight_static_0210 data`);     
     try {
-      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.keyboardController, InputClient: inputMethodEngine.InputClient): void => {
+      inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {
         console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteRight_static_0210 inputStart`); 
         inputMethodAbility!.offInputStart((): void => {});
         if(InputClient == null) {
@@ -3797,22 +3797,22 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel.onSizeChange(async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
-          if (typeof (keyboardArea.top) === 'int' && typeof (keyboardArea.bottom) === 'int' && typeof (keyboardArea.left) === 'int' && typeof (keyboardArea.right) === 'int') {
+        this.softKeyboardPanel!.onSizeChange(async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
+          if (typeof (keyboardArea!.top) === 'int' && typeof (keyboardArea!.bottom) === 'int' && typeof (keyboardArea!.left) === 'int' && typeof (keyboardArea!.right) === 'int') {
             commonEventPublishData = {
                 data: 'SUCCESS'
             };
           };
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 onSizeChange');
-          this.softKeyboardPanel.off('sizeChange', ()=>{});
+          this.softKeyboardPanel!.offSizeChange(()=>{});
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 offSizeChange');
           commonEventManager.publish('Sub_Misc_inputMethod_Panel_onSizeChange_static_0100', commonEventPublishData, this.publishCallback);
         });
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width1: ' + this.displayInfo.width);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height1: ' + this.displayInfo.height);
-        await this.softKeyboardPanel.resize(200, 100);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width2: ' + this.displayInfo.width);
-        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height2: ' + this.displayInfo.height);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width1: ' + this.displayInfo!.width);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height1: ' + this.displayInfo!.height);
+        await this.softKeyboardPanel!.resize(200, 100);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.width2: ' + this.displayInfo!.width);
+        console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 displayInfo.height2: ' + this.displayInfo!.height);
       } else {
         commonEventPublishData = {
           data: 'FAILED'
@@ -3838,9 +3838,9 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel.onSizeChange((size: window.Size) => {
+        this.softKeyboardPanel!.onSizeChange((size: window.Size) => {
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 onSizeChange');
-          this.softKeyboardPanel.offSizeChange();
+          this.softKeyboardPanel!.offSizeChange();
           count += 1;
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 off SizeChange count: ' + count);
         });
@@ -3849,14 +3849,14 @@ export class KeyboardControllerStatic {
         intervalID = setInterval(async () => {
           if (flage === true) {
             flage = false;
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo.width);
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo.height);
-            await this.softKeyboardPanel.resize(200, 120);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo!.width);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo!.height);
+            await this.softKeyboardPanel!.resize(200, 120);
           } else {
             flage = true;
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo.width);
-            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo.height);
-            await this.softKeyboardPanel.resize(200, 130);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.width: ' + this.displayInfo!.width);
+            console.info(TAG + '====>Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 displayInfo.height: ' + this.displayInfo!.height);
+            await this.softKeyboardPanel!.resize(200, 130);
           };
           timeCount += 1;
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0200 timeCount: ' + timeCount);
@@ -3922,7 +3922,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      let attachOptions = this.InputClient.getAttachOptions();
+      let attachOptions = this.InputClient!.getAttachOptions();
       console.info(TAG + `====>${caseName}  attachOptions is ` + JSON.stringify(attachOptions));
       let result:inputMethodEngine.RequestKeyboardReason = attachOptions!.requestKeyboardReason!;
       if (result === inputMethodEngine.RequestKeyboardReason.NONE) {
@@ -3951,7 +3951,7 @@ export class KeyboardControllerStatic {
               data: 'SUCCESS'
             };
           }
-          this.InputClient.offAttachOptionsDidChange();
+          this.InputClient!.offAttachOptionsDidChange();
           commonEventManager.publish(caseName, commonEventPublishData, this.publishCallback);
         });
     } catch (err) {

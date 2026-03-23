@@ -153,7 +153,7 @@ export default function inputMethodEngineStatic() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800', Level.LEVEL3, async (done: () => void): Promise<void> {
+        it('Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
             const CASE_NAME = '====>Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800';
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {
