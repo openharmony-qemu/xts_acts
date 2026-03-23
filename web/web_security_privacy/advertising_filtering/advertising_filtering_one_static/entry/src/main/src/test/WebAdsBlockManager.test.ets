@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-import Utils from '../../src/test/Utils.test';
+import Utils from '../test/Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -30,26 +30,26 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ActsAceWebAdsBlockManager() {
   describe('ActsAceWebAdsBlockManager', () => {
     beforeAll(async (): Promise<void> => {
-      console.log("App start")
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      console.log('App start')
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void=> {
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
+        onAbilityCreate: (abilitys : UIAbility) : void => {
           testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
+          console.log('onAbilityCreate end')
         },
-      }, (err: BusinessError<void> | null): void => {
-        if (err != null) {
-          console.log("-----" + err.code)
+      }, (err : BusinessError | null) : void => {
+        if (err != null ) {
+          console.log('-----' + err.code)
         }
-        console.log("BusinessError  end")
+        console.log('BusinessError  end')
       });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.advertisingfilteringonetest.static")
-      await Utils.msSleep(2000)
-      console.log("beforeAll end,%s", "Succeed!")
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.advertisingfilteringonetest.static')
+      await Utils.msSleep(4000);
+      console.log('beforeAll end,%s', 'Succeed!')
     });
+
     /**
      * @tc.name   testEnableAdsBlockStatic
      * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0001
@@ -59,7 +59,7 @@ export default function ActsAceWebAdsBlockManager() {
      * @tc.level  LEVEL0
      */
     it('testEnableAdsBlockStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(4000);
       emitKey = "emitEnableAdsBlock"
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);
@@ -104,6 +104,26 @@ export default function ActsAceWebAdsBlockManager() {
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);
       Utils.registerEvent("testIsAdsBlockEnabledForCurPage", true, 1003, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSetAdsBlockRulesEmptyStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_00031
+     * @tc.desc   test SetAdsBlockRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetAdsBlockRulesEmptyStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey = "emitSetAdsBlockRulesEmpty"
+      Utils.emitEvent(emitKey, 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testSetAdsBlockRulesEmpty", true, 10031, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);
@@ -171,6 +191,26 @@ export default function ActsAceWebAdsBlockManager() {
     })
 
     /**
+     * @tc.name   testAddAdsBlockDisallowedListEmptyStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_00061
+     * @tc.desc   test AddAdsBlockDisallowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAddAdsBlockDisallowedListEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>{
+      await Utils.msSleep(2000);
+      emitKey = "emitAddAdsBlockDisallowedListEmpty"
+      Utils.emitEvent(emitKey, 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testAddAdsBlockDisallowedListEmpty", true, 10061, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
      * @tc.name   testRemoveAdsBlockDisallowedListStatic
      * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0007
      * @tc.desc   test RemoveAdsBlockDisallowedList
@@ -184,6 +224,26 @@ export default function ActsAceWebAdsBlockManager() {
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);
       Utils.registerEvent("testRemoveAdsBlockDisallowedList", true, 1007, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testRemoveAdsBlockDisallowedListEmptyStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_00071
+     * @tc.desc   test RemoveAdsBlockDisallowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRemoveAdsBlockDisallowedListEmptyStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey = "emitRemoveAdsBlockDisallowedListEmpty"
+      Utils.emitEvent(emitKey, 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testRemoveAdsBlockDisallowedListEmpty", true, 10071, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);
@@ -231,6 +291,25 @@ export default function ActsAceWebAdsBlockManager() {
     })
 
     /**
+     * @tc.name   testAddAdsBlockAllowedListEmptyStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_00091
+     * @tc.desc   test AddAdsBlockAllowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAddAdsBlockAllowedListEmptyStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey = "emitAddAdsBlockAllowedListEmpty"
+      Utils.emitEvent(emitKey, 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testAddAdsBlockAllowedListEmpty", true, 10091, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+    /**
      * @tc.name   testRemoveAdsBlockAllowedListStatic
      * @tc.number SUB_ACE_WEB_AdsBlockManager_API_0010
      * @tc.desc   test RemoveAdsBlockAllowedList
@@ -244,6 +323,26 @@ export default function ActsAceWebAdsBlockManager() {
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);
       Utils.registerEvent("testRemoveAdsBlockAllowedList", true, 1010, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   testRemoveAdsBlockAllowedListEmptyStatic
+     * @tc.number SUB_ACE_WEB_AdsBlockManager_API_00101
+     * @tc.desc   test RemoveAdsBlockAllowedList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRemoveAdsBlockAllowedListEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey = "emitRemoveAdsBlockAllowedListEmpty"
+      Utils.emitEvent(emitKey, 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testRemoveAdsBlockAllowedListEmpty", true, 10101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewSdkSchemeHandler', 10, '');
       await Utils.msSleep(2000);

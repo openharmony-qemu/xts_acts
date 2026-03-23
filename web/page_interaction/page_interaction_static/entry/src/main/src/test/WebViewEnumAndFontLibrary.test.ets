@@ -225,6 +225,96 @@ export default function WebViewEnumAndFontLibrary() {
         done()
       })
 
+    /**
+     * @tc.name        testWebContextMenuResultPasteStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTE_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testWebContextMenuResultPasteStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultPaste', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultPaste', 'paste', 12521, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testWebContextMenuResultRedoStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREDO_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testWebContextMenuResultRedoStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultRedo', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultRedo', 'redo', 12522, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testWebContextMenuResultUndoStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTUNDO_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testWebContextMenuResultUndoStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultUndo', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultUndo', 'undo', 12523, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        emitWebContextMenuResultPasteAndMatchStyleStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTEANDMATCHSTYLE_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('emitWebContextMenuResultPasteAndMatchStyleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultPasteAndMatchStyle', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultPasteAndMatchStyle', 'pasteAndMatchStyle', 12524, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        emitWebContextMenuResultRequestPasswordAutoFillStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREQUESTPASSWORDAUTOFILL_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('emitWebContextMenuResultRequestPasswordAutoFillStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultRequestPasswordAutoFill', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultRequestPasswordAutoFill', 'requestPasswordAutoFill', 12524, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
     afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)
