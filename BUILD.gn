@@ -11,12 +11,90 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#import("//hit/build/suite.gni")
-import("test_packages.gni")
+import("//test/xts/tools/build/target_filter.gni")
+import("test_targets.gni")
+
 if (os_level == "standard") {
+  assert(XTS_SUITENAME != "")
+  if (build_xts == true && XTS_SUITENAME == "acts") {
+    action("init_ark_jsvm") {
+      script = "init_ark_runtime_jsvm.py"
+      _output_stamp = "${target_gen_dir}/init_ark_runtime_jsvm.stamp"
+      args = [
+        "--root-path",
+        rebase_path("//test/xts/acts/"),
+        "--output",
+        rebase_path(_output_stamp),
+      ]
+      outputs = [ _output_stamp ]
+    }
+
+    _subsystem_conf_path =
+        "${root_build_dir}/build_configs/subsystem_info/src_subsystem_info.json"
+
+    xts_target_filter("build_targets_std") {
+      xts_suite_root_path = ACTS_ROOT
+      build_targets = all_test_targets
+      subsystem_conf_path = _subsystem_conf_path
+      extra_deps = [
+        ":init_ark_jsvm",
+        "${XTS_ROOT}/tools/others/query:libQuery",
+        "testtools:deploy_testtools",
+      ]
+    }
+
+    xts_target_filter("build_targets_ivi") {
+      xts_suite_root_path = ACTS_ROOT
+      build_targets = all_test_targets_ivi
+      subsystem_conf_path = _subsystem_conf_path
+      extra_deps = [
+        ":init_ark_jsvm",
+        "testtools:deploy_testtools",
+      ]
+    }
+
+    xts_target_filter("build_targets_intellitv") {
+      xts_suite_root_path = ACTS_ROOT
+      build_targets = all_test_targets_intellitv
+      subsystem_conf_path = _subsystem_conf_path
+      extra_deps = [
+        ":init_ark_jsvm",
+        "testtools:deploy_testtools",
+      ]
+    }
+
+    xts_target_filter("build_targets_wearable") {
+      xts_suite_root_path = ACTS_ROOT
+      build_targets = all_test_targets_wearable
+      subsystem_conf_path = _subsystem_conf_path
+      extra_deps = [
+        ":init_ark_jsvm",
+        "testtools:deploy_testtools",
+      ]
+    }
+  } else {
+    print("ACTS build is not enabled.")
+
+    group("build_targets_std") {
+      deps = []
+    }
+
+    group("build_targets_ivi") {
+      deps = []
+    }
+
+    group("build_targets_intellitv") {
+      deps = []
+    }
+
+    group("build_targets_wearable") {
+      deps = []
+    }
+  }
+
   merge_xts_notice("acts_opensource_process") {
     target = "acts"
-    deps = selected_packages
+    deps = [ ":build_targets_std" ]
     if (make_osp) {
       deps += [ "//build/ohos/packages:open_source_package" ]
     }
@@ -27,14 +105,14 @@ if (os_level == "standard") {
   }
 
   ohos_test_suite("acts_ivi") {
-    deps = selected_packages_ivi
+    deps = [ ":build_targets_ivi" ]
   }
 
   ohos_test_suite("acts_intellitv") {
-    deps = selected_packages_intellitv
+    deps = [ ":build_targets_intellitv" ]
   }
 
   ohos_test_suite("acts_wearable") {
-    deps = selected_packages_wearable
+    deps = [ ":build_targets_wearable" ]
   }
 }
