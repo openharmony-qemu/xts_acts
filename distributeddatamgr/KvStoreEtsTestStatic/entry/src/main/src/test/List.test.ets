@@ -62,11 +62,12 @@ export default function testsuite() {
   SingleKvStoreErrCodeEtsTestStatic();
   KvStoreEtsTestStatic();
   KVManagerPromiseTest();
-  SingleKvStoreKVConcurrencyEtsTestStatic();
+  
   DeviceKvStoreNullEtsTestStatic();
   SingleKvStoreNullEtsTestStatic();
   QueryNull();
   SingleKvStoreNull();
   KVManagerRootDir();
   KVManagerRootDirEntry();
+  SingleKvStoreKVConcurrencyEtsTestStatic();
 }
