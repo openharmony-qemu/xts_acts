@@ -77,7 +77,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         isFreeWindowMode = windowClass.isInFreeWindowMode();
         //isFreeWindowMode == true 自由窗口模式
         //isFreeWindowMode == false 非自由窗口模式
-        console.info(isFreeWindowMode: ${isFreeWindowMode});
+        console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.name   testListener_Sys_AvoidAreaChange_Promise
