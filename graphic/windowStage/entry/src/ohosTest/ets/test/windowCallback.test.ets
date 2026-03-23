@@ -81,7 +81,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         isFreeWindowMode = windowClass.isInFreeWindowMode();
         //isFreeWindowMode == true 自由窗口模式
         //isFreeWindowMode == false 非自由窗口模式
-        console.info(isFreeWindowMode: ${isFreeWindowMode});
+        console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.name   testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback
