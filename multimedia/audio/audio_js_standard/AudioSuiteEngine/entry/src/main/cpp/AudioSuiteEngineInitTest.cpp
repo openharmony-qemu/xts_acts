@@ -4095,7 +4095,7 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_001(napi_env env, napi_ca
                 return result;
             }
         } while (!g_finishedFlag);
-    }    
+    }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
@@ -4177,7 +4177,7 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_004(napi_env env, napi_ca
         AudioSuiteRAII audioSuite;
         do {
             OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
-                                                &g_finishedFlag);
+                                                 &g_finishedFlag);
         } while (!g_finishedFlag);
         OH_AudioSuiteEngine_StopPipeline(audioSuite.audioSuitePipeline);
         OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
@@ -4214,7 +4214,7 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_005(napi_env env, napi_ca
         AudioSuiteRAII audioSuite;
         do {
             OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
-                                                &g_finishedFlag);
+                                                 &g_finishedFlag);
         } while (!g_finishedFlag);
         OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
                                                                         &responseSize, &g_finishedFlag);
