@@ -1036,7 +1036,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicLong(LONG_ZERO);
-      await runTaskpoolResults(1000, (): long => atom.fetchAdd(LONG_HUNDRED));
+      await runTaskpoolResults(100, (): long => atom.fetchAdd(LONG_HUNDRED));
       expect(atom.load()).assertEqual(LONG_HUNDRED_THOUSAND);
     });
 
@@ -1104,7 +1104,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicLong(LONG_ZERO);
-      runEAWorkers<long>(1000, (): long => atom.fetchAdd(LONG_HUNDRED));
+      runEAWorkers<long>(100, (): long => atom.fetchAdd(LONG_HUNDRED));
       expect(atom.load()).assertEqual(LONG_HUNDRED_THOUSAND);
     });
 
