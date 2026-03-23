@@ -74,11 +74,11 @@ int VideoSwdecFunction0300()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
     int ret = vDecSample->RunVideoDec(CODEC_NAME_AVC);
     if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
         return SWDEC_SUCCESS;
@@ -97,12 +97,12 @@ int VideoSwdecFunction0400()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->SURFACE_OUTPUT = true;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    int ret = vDecSample->RunVideoDec_Surface(CODEC_NAME_AVC);
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->surfaceOutput = true;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    int ret = vDecSample->RunVideoDecSurface(CODEC_NAME_AVC);
     if (ret == AV_ERR_SURFACE_UNAVAILABLE_SKIP || ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
         return SWDEC_SUCCESS;
     }
@@ -127,10 +127,10 @@ int VideoSwdecFunction0700()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
@@ -158,11 +158,11 @@ int VideoSwdecFunction0800()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->BEFORE_EOS_INPUT = true;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->beforeEosInput = true;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
@@ -190,13 +190,13 @@ int VideoSwdecFunction4000()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = true;
-    vDecSample->BEFORE_EOS_INPUT = true;
-    int ret = vDecSample->RunVideoDec_Surface(CODEC_NAME_AVC);
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = true;
+    vDecSample->beforeEosInput = true;
+    int ret = vDecSample->RunVideoDecSurface(CODEC_NAME_AVC);
     if (ret == AV_ERR_SURFACE_UNAVAILABLE_SKIP || ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
         return SWDEC_SUCCESS;
     }
@@ -214,12 +214,12 @@ int VideoSwdecFunction1000()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
+    vDecSample->afterEosDestoryCodec = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK) {
         return -1;
     }
@@ -261,12 +261,12 @@ int VideoSwdecFunction1100()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
-    vDecSample->AFTER_EOS_DESTORY_CODEC = false;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
+    vDecSample->afterEosDestoryCodec = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -304,12 +304,12 @@ int VideoSwdecFunction1200()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
-    vDecSample->REPEAT_START_STOP_BEFORE_EOS = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
+    vDecSample->repeatStartStopBeforeEos = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -332,12 +332,12 @@ int VideoSwdecFunction1300()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
-    vDecSample->REPEAT_START_FLUSH_BEFORE_EOS = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
+    vDecSample->repeatStartFlushBeforeEos = K_REPEAT_START_STOP_OR_FLUSH_BEFORE_EOS_COUNT;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -360,11 +360,11 @@ int VideoSwdecFunction1400()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_720_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1920;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_1080;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
+    vDecSample->inpDir = INP_DIR_720_30;
+    vDecSample->defaultWidth = K_WIDTH_1920;
+    vDecSample->defaultHeight = K_HEIGHT_1080;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -387,11 +387,11 @@ int VideoSwdecFunction1500()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR = INP_DIR_1080_30;
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1280;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_720;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = K_WIDTH_1280;
+    vDecSample->defaultHeight = K_HEIGHT_720;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -414,12 +414,12 @@ int VideoSwdecFunction1600()
         return SWDEC_SUCCESS;
     }
     auto vDecSample = make_shared<VDecNdkSample>();
-    vDecSample->INP_DIR =
+    vDecSample->inpDir =
         "/data/app/el2/100/base/com.example.actsswdecodertest/haps/entry_test/files/resolutionChange.h264";
-    vDecSample->DEFAULT_WIDTH = K_WIDTH_1104;
-    vDecSample->DEFAULT_HEIGHT = K_HEIGHT_622;
-    vDecSample->DEFAULT_FRAME_RATE = 30U;
-    vDecSample->SURFACE_OUTPUT = false;
+    vDecSample->defaultWidth = K_WIDTH_1104;
+    vDecSample->defaultHeight = K_HEIGHT_622;
+    vDecSample->defaultFrameRate = 30U;
+    vDecSample->surfaceOutput = false;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
