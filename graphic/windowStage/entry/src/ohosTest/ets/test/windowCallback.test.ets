@@ -1393,13 +1393,13 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     })
     /**
-    * @tc.name   testSetPreferredOrientation_Callback
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1170
-    * @tc.desc   Sets the display direction property of the window
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
+     * @tc.name   testSetPreferredOrientation_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1170
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetPreferredOrientation_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetPreferredOrientation_Callback';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
