@@ -25,6 +25,7 @@ group("multimedia") {
       "image/image_ets_standard/imageXts:imageXts_ets_hap",
       "media/media_ets_standard/mediaXts:media_xts_hap",
       "camera/camera_ets_standard/cameraXtsSupplements:cameraXts_supp_ets_hap",
+      "camera/camera_ets_standard/cameraXtsStatic:cameraXts_ets_static_hap",
       "media/media_ets_standard/mediaXtsSupplement:mediaXts_supp_ets_hap",
       "image/image_ets_standard/imageXtsSupplement:imageXts_supp_ets_hap",
       "image/image_ets_standard/imageNDKSupplement:ActsMediaImageNDKSupplementTest",
