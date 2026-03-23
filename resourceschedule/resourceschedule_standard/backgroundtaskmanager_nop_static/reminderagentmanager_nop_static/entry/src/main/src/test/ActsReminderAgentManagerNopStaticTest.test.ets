@@ -176,30 +176,30 @@ export default function ActsReminderAgentManagerNopStaticTest() {
             console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_006----after----');
         })
 
-        // /**
-        //  * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007
-        //  * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007
-        //  * @tc.desc   Using the updateReminder then method without permission
-        //  * @tc.level  LEVEL0
-        //  * @tc.type   FUNCTION
-        //  * @tc.size   MEDIUMTEST
-        //  */
-        //  it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        //     console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007----before----');
-        //     let reminderId: int = 1;
-        //     let timer: reminderAgentManager.ReminderRequestTimer = {
-        //         reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-        //         triggerTimeInSeconds: 10 as long
-        //     }
-        //     reminderAgentManager.updateReminder(reminderId, timer).then(() => {
-        //         console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007 updateReminder promise");
-        //     }).catch((err: Error) => {
-        //         console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007 promise err code:" + err.code + " message:" + err.message);
-        //         expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
-        //         done();
-        //     });
-        //     console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007----after----');
-        //  })
+        /**
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007
+         * @tc.desc   Using the updateReminder then method without permission
+         * @tc.level  LEVEL0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         */
+         it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007----before----');
+            let reminderId: int = 1;
+            let timer: reminderAgentManager.ReminderRequestTimer = {
+                reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10 as long
+            }
+            reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+                console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007 updateReminder promise");
+            }).catch((err: Error) => {
+                console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007 promise err code:" + err.code + " message:" + err.message);
+                expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+                done();
+            });
+            console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_007----after----');
+         })
 
     })
 }

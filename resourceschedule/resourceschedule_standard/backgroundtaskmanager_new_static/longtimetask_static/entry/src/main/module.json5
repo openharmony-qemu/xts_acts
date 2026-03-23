@@ -47,7 +47,10 @@
           "location",
           "bluetoothInteraction",
           "audioRecording",
-          "dataTransfer"
+          "dataTransfer",
+          "multiDeviceConnection",
+          "voip",
+          "taskKeeping",
         ]
       }
     ],

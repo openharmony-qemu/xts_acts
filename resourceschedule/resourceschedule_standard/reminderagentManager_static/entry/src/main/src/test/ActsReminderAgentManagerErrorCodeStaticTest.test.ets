@@ -200,5 +200,137 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008
+     * @tc.desc   test updateReminder promise function with reminderId is not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.info('----------------------SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008---------------------------');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 cancelAllReminders promise")
+      }).catch((err) => {
+        console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 promise err code:" + err.code + " message:" + err.message);
+        expect(false).assertTrue()
+      });
+      const reminderId = 1231;
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10
+      }
+      try {
+        reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 update reminder succeed");
+          expect(false).assertTrue();
+        }).catch((err) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 promise err code:" + err.code + " message:" + err.message);
+          expect(err.code).assertEqual(1700003);
+          done();
+        });
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 publishReminder error.code:" + error.code);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009
+     * @tc.desc   test updateReminder promise function with reminderId is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.info('----------------------SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009---------------------------');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 cancelAllReminders promise")
+      }).catch((err) => {
+        console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 promise err code:" + err.code + " message:" + err.message);
+        expect(false).assertTrue()
+      });
+      const reminderId = -1;
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10
+      }
+      try {
+        reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 update reminder succeed");
+          expect(false).assertTrue();
+        }).catch((err) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 promise err code:" + err.code + " message:" + err.message);
+          expect(err.code).assertEqual(1700007);
+          done();
+        });
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 publishReminder error.code:" + error.code);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010
+     * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is -1 and errCode is 1700007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.info('----------------------SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010---------------------------');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010 cancelAllReminders promise")
+      }).catch((err) => {
+        console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010 promise err code:" + err.code + " message:" + err.message);
+        expect(false).assertTrue()
+      });
+      const reminderId = -1;
+      try {
+        reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010 update reminder succeed");
+          expect(false).assertTrue();
+        }).catch((err) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010 promise err code:" + err.code + " message:" + err.message);
+          expect(err.code).assertEqual(1700007);
+          done();
+        });
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_010 cancelReminderOnDisplay error.code:" + error.code);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011
+     * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is 1221 and errCode is 1700003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.info('----------------------SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011---------------------------');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011 cancelAllReminders promise")
+      }).catch((err) => {
+        console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011 promise err code:" + err.code + " message:" + err.message);
+        expect(false).assertTrue()
+      });
+      const reminderId = 1221;
+      try {
+        reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011 reminderErrorCode_1000 update reminder succeed");
+          expect(false).assertTrue();
+        }).catch((err) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011 promise err code:" + err.code + " message:" + err.message);
+          expect(err.code).assertEqual(1700003);
+          done();
+        });
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_011 cancelReminderOnDisplay error.code:" + error.code);
+      }
+    })
+
   })
 }

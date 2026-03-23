@@ -1507,6 +1507,773 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_043 end---');
     })
 
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with DATA_TRANSFER and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.DATA_TRANSFER;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_044 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with LOCATION and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.LOCATION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with BLUETOOTH_INTERACTION and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.BLUETOOTH_INTERACTION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_046 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with MULTI_DEVICE_CONNECTION and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.MULTI_DEVICE_CONNECTION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_047 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with VOIP and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.VOIP;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_048 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with TASK_KEEPING and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 begin---');
+
+      let callbackFlag = 0;
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            let bgMode = backgroundTaskManager.BackgroundMode.TASK_KEEPING;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want,
+              (error: BusinessError | null) => {
+                callbackFlag = 1;
+                if (error) {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 startBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                  expect(error.code).assertEqual(9800005);
+                  done();
+                } else {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 startBackgroundRunning callback run success.');
+                  expect(callbackFlag).assertEqual(1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context, (error: BusinessError | null) => {
+                    callbackFlag = 2;
+                    if (error) {
+                      hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 stopBackgroundRunning callback error: %{public}s', JSON.stringify(error));
+                    } else {
+                      hilog.info(DOMAIN, TAG,
+                        'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 stopBackgroundRunning callback run success.');
+                      expect(callbackFlag).assertEqual(2);
+                      done();
+                    }
+                  })
+                }
+              })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_049 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with DATA_TRANSFER and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.DATA_TRANSFER;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with AUDIO_RECORDING and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.AUDIO_RECORDING;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_051 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with LOCATION and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.LOCATION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_052 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with BLUETOOTH_INTERACTION and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.BLUETOOTH_INTERACTION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_053 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with MULTI_DEVICE_CONNECTION and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.MULTI_DEVICE_CONNECTION;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_054 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with VOIP and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.VOIP;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with TASK_KEEPING and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 begin---');
+
+      try {
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed: %{public}s' + JSON.stringify(error));
+            });
+
+            let bgMode = backgroundTaskManager.BackgroundMode.TASK_KEEPING;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgMode, want).then(() => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 startBackgroundRunning promise run success.');
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 stopBackgroundRunning promise run success.');
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 Operation stopBackgroundRunning promise failed: %{public}s', JSON.stringify(error));
+              });
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              expect(error.code).assertEqual(9800005);
+              done();
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 getWantAgent error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 end---');
+    })
+
 
     /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
