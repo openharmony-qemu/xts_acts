@@ -45,6 +45,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 
 class StringFields {
@@ -124,6 +125,12 @@ struct WebViewEnumAndFontLibrary {
                 Utils.emitEvent(0, 861)
               break;
             }
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebInitTest' })
+                console.log('push URL success')
+              }
 
           }
         })

@@ -141,14 +141,14 @@ export default function InjectOfflineResourcesTest() {
       })
 
     /**
-     * @tc.name   testOfflineResourceTypeStatic002
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0200
-     * @tc.desc   test OfflineResourceType
+     * @tc.name   SwitchNextPage
+     * @tc.number SwitchNextPage_20006
+     * @tc.desc   SwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOfflineResourceTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitonSwitchNextPage", 10)

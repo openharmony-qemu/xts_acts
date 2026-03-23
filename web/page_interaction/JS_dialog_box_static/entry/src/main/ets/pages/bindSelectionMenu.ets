@@ -19,7 +19,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import {Entry, Component, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
+import {Entry, Component, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent, WebDarkMode} from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback } from '@ohos.base'
@@ -160,6 +160,7 @@ struct WebComponent {
 
       Web({ src: "resource://rawfile/bindSelectionMenu.html", controller: this.controller }).key('bindSelectionMenuType')
         .height(150).width(150).border({ width: 2, color: Color.Red })
+        .darkMode(WebDarkMode.OFF)
         .bindSelectionMenu(WebElementType.IMAGE, this.MenuBuilder, WebResponseType.LONG_PRESS,
           {
             onAppear: () => {},

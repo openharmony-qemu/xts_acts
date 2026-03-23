@@ -215,5 +215,23 @@ export default function WebBlanklessErrorCodeJsunit() {
       await Utils.msSleep(2000)
       done();
     })
+
+    /**
+     * @tc.name   SwitchNextPage
+     * @tc.number SwitchNextPage_20260323
+     * @tc.desc   SwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebBlanklessErrorCodeButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }
