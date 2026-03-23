@@ -1157,7 +1157,7 @@ export default function ActsReminderAgentManagerStaticTest() {
 
     /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025
-     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025
      * @tc.desc   Test  ringChannel  RING_CHANNEL_MEDIA is 2
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
