@@ -191,6 +191,9 @@ private:
     bool OutputFuncTest_WaitAndPop(OH_AVCodecBufferAttr& attr, uint32_t& index, OH_AVBuffer*& buffer);
     bool ProcessSegmentCopy(unsigned char** pBuffer, uint32_t& bufferSize, uint32_t size, uint32_t size1, bool& error);
     bool RefillPrereadBuffer(unsigned char** pBuffer, uint32_t& bufferSize);
+    bool PushDataHandleEarlyEos(uint32_t index, OH_AVBuffer* buffer);
+    int32_t PushDataLengthPrefixedPath(uint32_t index, OH_AVBuffer* buffer);
+    int32_t PushDataAnnexBOrMpeg2Path(uint32_t index, OH_AVBuffer* buffer);
     std::unique_ptr<uint8_t[]> prereadBuffer_;
     std::unique_ptr<std::vector<uint8_t>> mpegUnit_;
     std::unique_ptr<std::ifstream> inFile_;
