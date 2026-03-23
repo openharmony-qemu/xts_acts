@@ -479,9 +479,9 @@ const DNGExifReadWriteValidationRules = new Map<string, ModifyRuleDNG>([
   ["HwMnoteCaptureMode",                  { key: "captureMode", oldExpectValue: 'default_exif_value',          newExpectValue: undefined                   }],
 ]);    
 
-interface DngRule {
+interface ReadOnlyMetaDataRule {
   key: string;
-  newExpectValue: string | number | number[] | object;
+  newExpectValue: string | object | boolean | number | number[] | number[][];
 }
 
 const linearizationTable: number[] = [];
@@ -489,7 +489,7 @@ for (let i: number = 0; i < 16384; i++) {
   linearizationTable.push(i);
 }
 
-const dngMetadataMap = new Map<image.DngPropertyKey, DngRule>([
+const dngMetadataMap = new Map<image.DngPropertyKey, ReadOnlyMetaDataRule>([
   [image.DngPropertyKey.DNG_VERSION,                      { key: "dngVersion",                newExpectValue: [1, 4, 0, 0] }],
   [image.DngPropertyKey.DNG_BACKWARD_VERSION,             { key: "dngBackwardVersion",        newExpectValue: [1, 4, 0, 0] }],
   [image.DngPropertyKey.UNIQUE_CAMERA_MODEL,              { key: "uniqueCameraModel",         newExpectValue: "FakeCamera ModelX" }],
@@ -579,6 +579,14 @@ const dngMetadataMap = new Map<image.DngPropertyKey, DngRule>([
   [image.DngPropertyKey.NEW_RAW_IMAGE_DIGEST,             { key: "newRawImageDigest",         newExpectValue: "CE70B9D6BAA1207B3ABBA6C9FFF84924" }],
   [image.DngPropertyKey.RAW_TO_PREVIEW_GAIN,              { key: "rawToPreviewGain",          newExpectValue: 1 }],
   [image.DngPropertyKey.DEFAULT_USER_CROP,                { key: "defaultUserCrop",           newExpectValue: [0, 0, 1, 1] }]
+]);
+
+const webpMetadataMap = new Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>([
+  [image.WebPPropertyKey.CANVAS_WIDTH,         { key: "canvasWidth",        newExpectValue: [64,64,64]    }],
+  [image.WebPPropertyKey.CANVAS_HEIGHT,        { key: "canvasHeight",       newExpectValue: [63,63,63]    }],
+  [image.WebPPropertyKey.DELAY_TIME,           { key: "delayTime",          newExpectValue: [100,100,150] }],
+  [image.WebPPropertyKey.UNCLAMPED_DELAY_TIME, { key: "unclampedDelayTime", newExpectValue: [100,1,150]   }],
+  [image.WebPPropertyKey.LOOP_COUNT,           { key: "loopCount",          newExpectValue: [9,9,9]       }]
 ]);
 
 let imageOnlyMakerNoteHwMetadata: string[] = [
@@ -970,5 +978,7 @@ export {
   testExifMetadata, 
   testHuaweiMakerNoteMetadata, 
   exifWriteExpectedValueRules,
-  dngMetadataMap
+  ReadOnlyMetaDataRule,
+  dngMetadataMap,
+  webpMetadataMap
 };
