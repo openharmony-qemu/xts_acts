@@ -696,6 +696,39 @@ export default function httpJsunit() {
         done();
       }
     });
+     /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0400
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("testNetworkMgrUDPSocketSetLoopbackModePromise0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetLoopbackModePromise0400";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setLoopbackMode(undefined, (err: BusinessError) => {
+          if (err) {
+            console.log(`${caseName} setLoopbackMode failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} setLoopbackMode success`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        expectTrue(error.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0100
      * @tc.number SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0100
