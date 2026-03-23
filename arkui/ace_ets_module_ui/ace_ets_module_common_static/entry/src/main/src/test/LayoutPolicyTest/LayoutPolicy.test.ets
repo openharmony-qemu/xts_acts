@@ -15,7 +15,7 @@
 
 'use static';
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
