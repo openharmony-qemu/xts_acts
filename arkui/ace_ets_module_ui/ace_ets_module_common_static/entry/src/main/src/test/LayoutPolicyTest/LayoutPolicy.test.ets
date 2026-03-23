@@ -15,7 +15,7 @@
 
 'use static';
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from ''@ohos/hypium';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -32,7 +32,7 @@ export default function LayoutPolicyTest() {
     beforeAll(async (): Promise<void> => {
       console.info("LayoutPolicyTest beforeAll start");
       await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.layoutPolicy.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.ets.module.common.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
