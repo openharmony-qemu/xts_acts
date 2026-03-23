@@ -46,7 +46,7 @@ export default function webAttributeEnhancedTest() {
       } catch (err) {
         console.error("push WebAttributeEnhancedTest page error: " + err);
       }
-      await driver.waitForComponent(ON.id('OnTitleReceiveIsRealTitleButton'),10000);
+      await Utils.waitForComponent(driver, 'OnTitleReceiveIsRealTitleButton');
       console.log('waitForComponent OnTitleReceiveIsRealTitleButton==>');
       done()
     });

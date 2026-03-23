@@ -45,7 +45,7 @@ export default function webAttributeTest() {
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
-      await driver.waitForComponent(ON.id('WebAttributeTestButton'),10000);
+      await Utils.waitForComponent(driver, 'WebAttributeTestButton');
       console.log('waitForComponent WebAttributeTestButton==>');
       done()
     });
