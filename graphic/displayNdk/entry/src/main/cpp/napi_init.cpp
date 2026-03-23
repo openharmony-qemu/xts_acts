@@ -559,7 +559,6 @@ static napi_value RegisterAvailableAreaChangeListener(napi_env env, napi_callbac
     OH_LOG_INFO(LOG_APP, "errorCode=%{public}d", errCode);
     napi_value errorCode;
     napi_create_int32(env, errCode, &errorCode);
-    //OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener(listenerIndex);
     return errorCode;
 }
 
