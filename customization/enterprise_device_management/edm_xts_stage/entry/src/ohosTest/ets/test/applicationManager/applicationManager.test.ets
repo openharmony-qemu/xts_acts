@@ -4930,7 +4930,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
-        expect(ret == null).assertTrue();
+        expect(ret != null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
