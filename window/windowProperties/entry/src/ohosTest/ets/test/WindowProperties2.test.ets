@@ -3069,13 +3069,13 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-    * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
-    * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
-    * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level 0
-    */
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
+     * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
     it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
       let windowStageStart = await startAbility3(caseName, context);
