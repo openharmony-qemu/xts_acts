@@ -33,8 +33,8 @@ function sleep(delay: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
 }
 
-export default function btBleNopUiJsunit2Test() {
-  describe('btBleNopUiJsunit2Test', () => {
+export default function btNopUiJsunitCoverageTest() {
+  describe('btNopUiJsunitCoverageTest', () => {
     beforeAll(async (done: Function) => {
       a2dpSrc = a2dp.createA2dpSrcProfile();
       gattServer = ble.createGattServer();
