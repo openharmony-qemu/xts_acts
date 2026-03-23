@@ -11,6 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import("//test/xts/tools/build/suite.gni")
+
 ohos_js_app_static_suite("cameraXts_ets_static_hap") {
   # test_hap = true
   # testonly = true
