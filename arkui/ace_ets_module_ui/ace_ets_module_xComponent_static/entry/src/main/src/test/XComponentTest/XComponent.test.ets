@@ -192,6 +192,7 @@ export default function XComponentTest() {
     /**
      * @tc.number XComponentTest_008
      * @tc.name xComponentSurfaceRenders
+     * @tc.desc Test XComponent page title renders
      */
     it('xComponentSurfaceRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('XComponentTest execute: xComponentSurfaceRenders START');

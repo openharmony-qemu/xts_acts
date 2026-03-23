@@ -50,7 +50,7 @@ struct XComponentIndex {
           .fontSize(16)
           .key('xComponentPageTitle')
 
-        XComponent({ type: XComponentType.SURFACE, controller: this.xController })
+        XComponent({ type: XComponentType.COMPONENT, controller: this.xController })
           .key('xComponentSurface')
           .height('20%')
           .width('100%')
