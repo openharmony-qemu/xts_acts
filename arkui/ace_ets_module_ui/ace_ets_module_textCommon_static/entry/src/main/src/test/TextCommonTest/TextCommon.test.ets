@@ -208,10 +208,6 @@ export default function TextCommonTest() {
       done();
     });
 
-    // ============================================================
-    // LineSpacingOptions.onlyBetweenLines (from textCommon.d.ets)
-    // ============================================================
-
     /**
      * @tc.number TextCommonTest_016
      * @tc.name lineSpacingOptionsOnlyBetweenLinesTrue
@@ -236,12 +232,8 @@ export default function TextCommonTest() {
       done();
     });
 
-    // ============================================================
-    // MaxLinesOptions.overflowMode (from textCommon.d.ets)
-    // ============================================================
-
     /**
-     * @tc.number TextCommonTest_019
+     * @tc.number TextCommonTest_018
      * @tc.name maxLinesOptionsOverflowModeClip
      * @tc.desc Test MaxLinesOptions.overflowMode with MaxLinesMode.CLIP
      */

@@ -131,7 +131,7 @@ export default function TextCommonUITest() {
     });
 
     /**
-     * @tc.number TextCommonUITest_002
+     * @tc.number TextCommonUITest_004
      * @tc.name textCommonDragPreviewUndef
      * @tc.desc Test SelectedDragPreviewStyle with undefined (resets to default)
      */
@@ -151,7 +151,7 @@ export default function TextCommonUITest() {
     });
 
     /**
-     * @tc.number TextCommonUITest_003
+     * @tc.number TextCommonUITest_005
      * @tc.name textCommonLineSpacingTrue
      * @tc.desc Test LineSpacingOptions.onlyBetweenLines=true applied to Text component
      */
@@ -175,7 +175,7 @@ export default function TextCommonUITest() {
     });
 
     /**
-     * @tc.number TextCommonUITest_004
+     * @tc.number TextCommonUITest_006
      * @tc.name textCommonLineSpacingFalse
      * @tc.desc Test LineSpacingOptions.onlyBetweenLines=false applied to Text component
      */
@@ -199,7 +199,7 @@ export default function TextCommonUITest() {
     });
 
     /**
-     * @tc.number TextCommonUITest_005
+     * @tc.number TextCommonUITest_007
      * @tc.name textCommonMaxLinesClip
      * @tc.desc Test MaxLinesOptions.overflowMode=MaxLinesMode.CLIP applied to TextArea
      */
@@ -223,7 +223,7 @@ export default function TextCommonUITest() {
     });
 
     /**
-     * @tc.number TextCommonUITest_006
+     * @tc.number TextCommonUITest_008
      * @tc.name textCommonMaxLinesScroll
      * @tc.desc Test MaxLinesOptions.overflowMode=MaxLinesMode.SCROLL applied to TextArea
      */

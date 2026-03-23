@@ -63,14 +63,10 @@ struct TextAttributeIndex {
         Text('fontWeight Medium').fontWeight(FontWeight.Medium).key('textFontWeightMedium')
         Text('fontWeight Lighter').fontWeight(FontWeight.Lighter).key('textFontWeightLighter')
         Text('fontWeight Bolder').fontWeight(FontWeight.Bolder).key('textFontWeightBolder')
-        // fontWeight (int)
         Text('fontWeight int 700').fontWeight(700).key('textFontWeightInt700')
         Text('fontWeight int 400').fontWeight(400).key('textFontWeightInt400')
-        // fontWeight (ResourceStr)
         Text('fontWeight str bold').fontWeight('bold').key('textFontWeightStrBold')
-        // fontWeight (undefined)
         Text('fontWeight undefined').fontWeight(undefined).key('textFontWeightUndefined')
-        // fontWeight with FontSettingOptions (new optional param)
         Text('fontWeight with options').fontWeight(FontWeight.Bold,
           { enableVariableFontWeight: false } as FontSettingOptions
         ).key('textFontWeightWithOptions')
