@@ -317,7 +317,7 @@ export default function HttpResponseExtraInfoTest() {
       });
 
     /**
-     * @tc.name   testHttpResponseConnectionExtraInfo00600
+     * @tc.name   testHttpResponseConnectionExtraInfo0600
      * @tc.number SUB_NetworkMgr_Http_Response_ConnectionExtraInfo_0600
      * @tc.desc   Test the value of the networkProtocolName field in HTTPS requests.Promise.
      * @tc.type   FUNCTION
