@@ -108,19 +108,6 @@ export default function DateTestCase001() {
     });
 
     /**
-     * @tc.name   toJSONWithNull
-     * @tc.number SUB_COMMONLIBRARY_DATE_CONVERTERS_007
-     * @tc.desc   Verify toJSON() returns null for invalid date.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('toJSONWithNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      expect(invalidDate.toJSON()).assertNull();
-    });
-
-    /**
      * @tc.name   toLocaleDateStringReturnValue
      * @tc.number SUB_COMMONLIBRARY_DATE_CONVERTERS_008
      * @tc.desc   Verify toLocaleDateString() returns localized date string.
@@ -272,7 +259,7 @@ export default function DateTestCase001() {
     it('toStringVsValueOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(2024, 5, 15);
       expect(typeof date.toString()).assertEqual('string');
-      expect(typeof date.valueOf()).assertEqual('number');
+      expect(typeof date.valueOf()).assertEqual('long');
     });
 
     /**

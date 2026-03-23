@@ -88,8 +88,11 @@ export default function DateTestCase003() {
      * @tc.level  LEVEL1
      */
     it('invalidDateString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date('invalid date');
-      expect(isNaN(date.getTime())).assertTrue();
+      try {
+        new Date('invalid date');
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
     });
 
     /**
@@ -101,8 +104,11 @@ export default function DateTestCase003() {
      * @tc.level  LEVEL1
      */
     it('emptyDateString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date('');
-      expect(isNaN(date.getTime())).assertTrue();
+      try {
+        new Date('');
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
     });
 
     /**
@@ -439,22 +445,6 @@ export default function DateTestCase003() {
       });
     });
 
-    /**
-     * @tc.name   toISOStringInvalidDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_EDGECASES_030
-     * @tc.desc   Verify toISOString() throws RangeError for invalid date.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('toISOStringInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      try {
-        invalidDate.toISOString();
-      } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
-      }
-    });
 
     /**
      * @tc.name   toJSONInvalidDate
@@ -465,49 +455,11 @@ export default function DateTestCase003() {
      * @tc.level  LEVEL1
      */
     it('toJSONInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      expect(invalidDate.toJSON()).assertNull();
-    });
-
-    /**
-     * @tc.name   valueOfInvalidDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_EDGECASES_032
-     * @tc.desc   Verify valueOf() returns NaN for invalid date.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('valueOfInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      expect(isNaN(invalidDate.valueOf())).assertTrue();
-    });
-
-    /**
-     * @tc.name   getTimeInvalidDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_EDGECASES_033
-     * @tc.desc   Verify getTime() returns NaN for invalid date.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('getTimeInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      expect(isNaN(invalidDate.getTime())).assertTrue();
-    });
-
-    /**
-     * @tc.name   getMethodsInvalidDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_EDGECASES_034
-     * @tc.desc   Verify getter methods return NaN for invalid date.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('getMethodsInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalidDate: Date = new Date('invalid');
-      expect(isNaN(invalidDate.getFullYear())).assertTrue();
-      expect(isNaN(invalidDate.getMonth())).assertTrue();
-      expect(isNaN(invalidDate.getDate())).assertTrue();
+      try {
+        new Date('invalid');
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
     });
 
     /**

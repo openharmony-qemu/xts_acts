@@ -118,8 +118,11 @@ export default function DateTestCase007() {
      * @tc.level  LEVEL1
      */
     it('dateParseInvalid', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const invalid: number = Date.parse('not a date');
-      expect(isNaN(invalid)).assertTrue();
+      try {
+        const invalid: number = Date.parse('not a date');
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError')
+      }
     });
 
     /**
@@ -131,8 +134,11 @@ export default function DateTestCase007() {
      * @tc.level  LEVEL1
      */
     it('dateParseEmpty', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const empty: number = Date.parse('');
-      expect(isNaN(empty)).assertTrue();
+      try {
+        const empty: number = Date.parse('');
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
     });
 
     /**

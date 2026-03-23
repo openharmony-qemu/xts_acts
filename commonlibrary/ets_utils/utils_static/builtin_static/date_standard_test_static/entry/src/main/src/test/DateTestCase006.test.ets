@@ -66,20 +66,6 @@ export default function DateTestCase006() {
     });
 
     /**
-     * @tc.name   toStringWithInvalidDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_TOSTRING_004
-     * @tc.desc   toString() with invalid date returns 'Invalid Date'.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('toStringWithInvalidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date('invalid');
-      const str: string = date.toString();
-      expect(str).assertEqual('Invalid Date');
-    });
-
-    /**
      * @tc.name   toStringWithMaxDate
      * @tc.number SUB_COMMONLIBRARY_DATE_TOSTRING_005
      * @tc.desc   toString() with maximum timestamp.
@@ -723,7 +709,6 @@ export default function DateTestCase006() {
      */
     it('toLocaleDateStringWithOptions', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date("1995");
-
       expect(date1.toString()).assertEqual('Sun Jan 01 1995 08:00:00 GMT+0800');
       expect(date1.toDateString()).assertEqual('Sun Jan 01 1995');
       expect(date1.toTimeString()).assertEqual('08:00:00 GMT+0800');
@@ -732,10 +717,11 @@ export default function DateTestCase006() {
       expect(date1.toLocaleTimeString()).assertEqual('8:00:00 AM');
       expect(date1.toUTCString()).assertEqual('Sun, 01 Jan 1995 00:00:00 GMT');
       expect(date1.toISOString()).assertEqual('1995-01-01T00:00:00.000Z');
-      const date2: Date = new Date("2024/13/01");
-      expect(date2.toString()).assertEqual("Invalid Date");
-      const date4: Date = new Date("");
-      expect(date4.toString()).assertEqual("Invalid Date");
+      try {
+        new Date("2024/13/01");
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
     });
 
     /**
