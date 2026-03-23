@@ -5795,9 +5795,9 @@ export default function soundPoolTest() {
         soundPool!!.onErrorOccurred((errorInfo_: ErrorInfo) => {
           expect(errorInfo_).not().assertNull;
           console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorCode.message}`);
-          console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorType}`);
+          console.error(`${TAG}: onErrorOccurred called! error happened, errorType is: ${errorInfo_.errorType}`);
           let errType = errorInfo_.errorType as ErrorType;
-          isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.PLAY_ERROR &&
+          isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.LOAD_ERROR &&
             errorInfo_.errorCode.code == 5400103;
         })
         await soundPool!!.load(uri5).then((soundId_: int) => {
