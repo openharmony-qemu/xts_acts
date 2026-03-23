@@ -94,12 +94,12 @@ export default function Hiviewdfx_HiAppEventTest(){
       hiAppEvent.write(eventInfo);
     })
     /**
-        * @tc.number: SUB_HiAppEvent_write_0220
-        * @tc.name: SUB_HiAppEvent_write_0220
-        * @tc.desc:  Check start ability by bundl
-        * @tc.level: LEVEL1
-        * @tc.size: MEDIUMTEST
-        * @tc.type: FUNCTION
+        * @tc.number SUB_HiAppEvent_write_0220
+        * @tc.name SUB_HiAppEvent_write_0220
+        * @tc.desc  Check start ability by bundl
+        * @tc.level LEVEL1
+        * @tc.size MEDIUMTEST
+        * @tc.type FUNCTION
        **/
     it("SUB_HiAppEvent_write_0220", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
