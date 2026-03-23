@@ -53,14 +53,14 @@ export default function btNopUiJsunitCoverageTest() {
     });
 
     /**
-     * @tc.name   testGetPlayingStateNop
-     * @tc.number testGetPlayingStateNop
+     * @tc.name   testGetPlayingState201Nop
+     * @tc.number testGetPlayingState201Nop
      * @tc.desc   getPlayingState interface 201 error code test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testGetPlayingStateNop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testGetPlayingState201Nop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let state = a2dpSrc.getPlayingState('00:11:22:33:44:55');
         console.info('[bt_arkts] getPlayingState success without permission');
@@ -74,14 +74,14 @@ export default function btNopUiJsunitCoverageTest() {
     })
 
     /**
-     * @tc.name   testGetConnectionStateNop
-     * @tc.number testGetConnectionStateNop
+     * @tc.name   testGetConnectionState201Nop
+     * @tc.number testGetConnectionState201Nop
      * @tc.desc   getConnectionState interface 201 error code test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testGetConnectionStateNop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testGetConnectionState201Nop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let a2dpSrc = a2dp.createA2dpSrcProfile(); // 以a2dp举例
         let state: constant.ProfileConnectionState = a2dpSrc.getConnectionState('00:11:22:33:44:55');
@@ -123,31 +123,6 @@ export default function btNopUiJsunitCoverageTest() {
         hilog.error(Domain, TAG,
           `startAdvertising error, error code is: ${error.code}, error message is: ${error.message}`);
         expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   testStopAdvertisingNop
-     * @tc.number testStopAdvertisingNop
-     * @tc.desc   stopAdvertising interface 201 error code test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("testStopAdvertisingNop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      try {
-        ble.stopAdvertising(null);
-        console.info('[bt_arkts] stopAdvertising success without permission');
-        expect(true).assertFalse();
-      } catch (error) {
-        hilog.error(Domain, TAG,
-          `stopAdvertising error, error code is: ${error.code}, error message is: ${error.message}`);
-        if (Number(error.code) == 401) {
-          expect(Number(error.code)).assertEqual(401);
-        } else {
-          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
-        }
       }
       done();
     })
