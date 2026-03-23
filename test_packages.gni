@@ -57,7 +57,6 @@ _all_test_packages = [
   "${ACTS_ROOT}/advertising:advertising",
   "${ACTS_ROOT}/customization:customization",
   "${ACTS_ROOT}/pcs:pcs",
-  "${ACTS_ROOT}/appbuild:appbuild",
   "${ACTS_ROOT}/window:window",
   "${ACTS_ROOT}/print:print",
   "${ACTS_ROOT}/distributedhardware:distributedhardware",
