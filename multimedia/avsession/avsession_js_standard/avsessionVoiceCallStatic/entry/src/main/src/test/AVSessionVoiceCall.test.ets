@@ -824,12 +824,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 2 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -861,12 +859,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 0 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -898,12 +894,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 1 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -935,12 +929,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 3 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -972,12 +964,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 4 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1009,12 +999,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 5 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1046,12 +1034,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 6 && data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
+                expect(data.muted).assertTrue();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1083,12 +1069,10 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                if (data.state === 0 && !data.muted) {
-                    console.info(`${TAG}: getAVCallState successfully`);
-                } else {
-                    console.info(`${TAG}: getAVCallState failed`);
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                expect(data.muted).assertFalse();
+                console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1151,12 +1135,8 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState without session test fail, get successful!`);
                     expect(false).assertTrue();
                 }).catch((err: Error) => {
-                    if (err.code == 6600102) {
-                        console.info(`${TAG}: getCallMetadata without session test success, error: code: ${err.code}, message: ${err.message}`);
-                    } else {
-                        console.info(`${TAG}: getCallMetadata errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
-                        expect(false).assertTrue();
-                    }
+                    console.info(`${TAG}: getCallMetadata without session test success, error: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600102);
                 });
                 session = null;
                 done();
@@ -1195,12 +1175,8 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState without controller test fail, get successful!`);
                     expect(false).assertTrue();
                 }catch(err){
-                    if (err.code == 6600103) {
-                        console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
-                    } else {
-                        console.info(`${TAG}: getCallMetadata errorCode != 6600103, error: code: ${err.code}, message: ${err.message}`);
-                        expect(false).assertTrue();
-                    }
+                    console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600103);
                 };
 
                 done();
@@ -1237,11 +1213,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_ACTIVE && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1280,11 +1256,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_IDLE && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1323,11 +1299,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_INCOMING && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1366,11 +1342,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_DIALING && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1409,11 +1385,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_WAITING && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1452,11 +1428,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_HOLDING && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1495,11 +1471,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_DISCONNECTING && data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
+                                expect(data.muted).assertTrue();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1538,11 +1514,11 @@ export default function abilityTest() {
                             if (err?.code) {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
-                            } else if (data?.state === avSession.CallState.CALL_STATE_IDLE && !data?.muted) {
-                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             } else {
-                                console.info(`${TAG}: getAVCallStateCallback failed`);
-                                expect(false).assertTrue();
+                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
+                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                                expect(data.muted).assertFalse();
+                                console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
                         })
@@ -1606,12 +1582,8 @@ export default function abilityTest() {
                 await session!.destroy();
                 controller!.getAVCallState((err: BusinessError | null, data: avSession.AVCallState | undefined) => {
                 if (err) {
-                    if (err.code == 6600102) {
                     console.info(`${TAG}: getAVCallStateCallback without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                    } else {
-                    console.info(`${TAG}: getAVCallStateCallback errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
-                    expect(false).assertTrue();
-                    }
+                    expect(err.code).assertEqual(6600102);
                 } else {
                     console.info(`${TAG}: getAVCallStateCallback without avsession test fail, get successful!`);
                     expect(false).assertTrue();
@@ -1640,12 +1612,8 @@ export default function abilityTest() {
                 await controller!.destroy();
                 controller!.getAVCallState((err: BusinessError | null, data: avSession.AVCallState|undefined) => {
                     if (err?.code) {
-                        if (err?.code == 6600103) {
-                            console.info(`${TAG}: getAVCallStateCallback without controller test success, error: code: ${err?.code}, message: ${err?.message}`);
-                        } else {
-                            console.info(`${TAG}: getAVCallStateCallback errorCode != 6600102, error: code: ${err?.code}, message: ${err?.message}`);
-                            expect(false).assertTrue();
-                        }
+                        console.info(`${TAG}: getAVCallStateCallback without controller test success, error: code: ${err?.code}, message: ${err?.message}`);
+                        expect(err?.code).assertEqual(6600103);
                     } else {
                         console.info(`${TAG}: getAVCallStateCallback without controller test fail, get successful!`);
                         expect(false).assertTrue();

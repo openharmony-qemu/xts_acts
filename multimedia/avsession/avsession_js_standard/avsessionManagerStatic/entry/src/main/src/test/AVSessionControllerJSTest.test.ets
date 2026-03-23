@@ -1033,7 +1033,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1076,7 +1075,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1119,7 +1117,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1227,7 +1224,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1283,7 +1279,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1334,8 +1329,8 @@ export default function abilityTest() {
                 await session!.setAVPlaybackState(playbackState);
                 Utils.msSleep(200);
                 let currentPlaybackState = controller!.getAVPlaybackStateSync();
-                console.log(`Get playback state: ${playbackState}`);
-                expect(currentPlaybackState.state).assertEqual(0);
+                console.log(`Get playback state: ${playbackState.state}`);
+                expect(currentPlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_INITIAL);
             } catch (err) {
                 expect(true).assertFalse();
             }
@@ -1429,6 +1424,18 @@ export default function abilityTest() {
                 let outputDeviceInfo = controller!.getOutputDeviceSync();
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
+                console.info(`${TAG}TestLog1 deviceId = ${outputDeviceInfo.deviceId}`);
+                expect(outputDeviceInfo.deviceId).assertEqual("0");
+                console.info(`${TAG}TestLog1 deviceName = ${outputDeviceInfo.deviceName}`);
+                expect(outputDeviceInfo.deviceName).assertEqual("LocalDevice");
+                console.info(`${TAG}TestLog1 deviceType = ${outputDeviceInfo.deviceType}`);
+                expect(outputDeviceInfo.deviceType).assertEqual(0);
+                console.info(`${TAG}TestLog1 modelName = ${outputDeviceInfo.modelName}`);
+                expect(outputDeviceInfo.modelName).assertEqual("");
+                console.info(`${TAG}TestLog1 supportedPullClients = ${outputDeviceInfo.supportedPullClients}`);
+                expect(outputDeviceInfo.supportedPullClients).assertEqual(undefined);
+                console.info(`${TAG}TestLog1 supportedProtocols = ${outputDeviceInfo.supportedProtocols}`);
+                expect(outputDeviceInfo.supportedProtocols).assertEqual(0);
             } catch (err) {
                 expect(true).assertFalse();
             }
