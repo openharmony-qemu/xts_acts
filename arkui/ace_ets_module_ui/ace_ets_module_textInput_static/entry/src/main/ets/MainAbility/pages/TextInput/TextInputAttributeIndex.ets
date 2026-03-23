@@ -43,7 +43,8 @@ function textInputCustomKeyboardBuilder() {
 @Entry
 @Component
 struct TextInputAttributeIndex {
-  private textInputKeyboard: ComponentContent<[]> = new ComponentContent(this.getUIContext(), wrapBuilder(textInputCustomKeyboardBuilder));
+  private textInputKeyboard: ComponentContent<[]> = new ComponentContent(this.getUIContext(),
+    wrapBuilder(textInputCustomKeyboardBuilder));
 
   aboutToAppear() {
     try {
