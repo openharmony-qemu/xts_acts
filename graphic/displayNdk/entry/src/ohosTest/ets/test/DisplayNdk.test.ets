@@ -50,12 +50,12 @@ export default function DisplayNdkTest() {
       let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
       let promise2 = mainWindowClass!.getWindowStateSnapshot();
       promise2.then((data) => {
-      let jsonObj: object = JSON.parse(data);
-      console.info(beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]});
-      isPCMode = jsonObj["isPcMode"];
-      isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
       }).catch((err: BusinessError) => {
-      console.error(beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message});
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
       try{
         displayFoldStatus = display.getFoldStatus();
