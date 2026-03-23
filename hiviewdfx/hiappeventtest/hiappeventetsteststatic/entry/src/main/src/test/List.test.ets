@@ -24,7 +24,7 @@ import addProcessorTestFromConfigTest from "./AddProcessorFromConfig.test";
 import configEventPolicyTest from "./ConfigEventPolicy.test";
 import configEventPolicyStrongTest from "./HiappeventConfigEventPolicy.test"
 import hiAppEventStrongTest from "./HiAppEventDFXEx.test"
-import Hiviewdfx_HiAppEventTest from "./Hiviewdfx_HiAppEvent.test"
+import Hiviewdfx_HiAppEventTest from "./HiAppEventStatic.test"
 import removeProcessorStrongTest from "./RemoveProcessorStatic.test"
 import removeWatcherStrongTest from "./RemoveWatcherStatic.test"
 import setEventConfigStrongTest from "./SetEventConfigStatic.test"

@@ -11,7 +11,7 @@ export default function removeProcessorStrongTest() {
 
     /**
      * @tc.name   testRemoveProcessor01
-     * @tc.number SUB_DFX_DFT_HiAppEvent_RemoveProcessor_0100
+     * @tc.number testRemoveProcessor01
      * @tc.desc   验证removeProcessor接口移除数据处理者，processor已存在，删除成功，不存在、非法，删除失败
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

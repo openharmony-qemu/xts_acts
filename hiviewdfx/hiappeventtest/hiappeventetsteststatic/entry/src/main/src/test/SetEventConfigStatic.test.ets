@@ -11,7 +11,7 @@ export default function setEventConfigStrongTest() {
     hilog.info(domain, tag, 'describe start');
     /**
      * @tc.name   testsetEventConfig001
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number testsetEventConfig001
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-names数组为空数组,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
