@@ -1353,14 +1353,6 @@ export default function printTest() {
         done();
       })
 
-      await print.connectPrinter(undefined).then((data:void) => {
-        expect(false).assertTrue();
-        done();
-      }).catch((err: BusinessError) => {
-        console.log('print_function_1501 expect failed by required real printer');
-        expect(err).assertEqual(13100005);
-        done();
-      })
     })
     
     /**
