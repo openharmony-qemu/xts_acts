@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1417,6 +1417,192 @@ export default function DeviceInfoTest() {
 
             console.info('testGetSecurityPatchTag02 : end');
         })
+
+        /**
+         * @tc.name      device_info_test_062
+         * @tc.number    testGetSdkMinorApiVersion01
+         * @tc.desc      Get the Minor API version number, which return value type is number and return value is greater than or equal to 0.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('device_info_test_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetSdkMinorApiVersion01 start');
+            let ret = false;
+            let sdkMinorApiVersionInfo = deviceinfo.sdkMinorApiVersion;
+            console.info('the value of the deviceinfo sdkMinorApiVersion is :' + sdkMinorApiVersionInfo);
+
+            expect(sdkMinorApiVersionInfo).assertInstanceOf('Number');
+            if (sdkMinorApiVersionInfo >= 0) {
+                ret = true;
+                expect(ret).assertTrue();
+                done();
+            } else {
+                console.info('the return value sdkMinorApiVersion is not greater than 0.');
+                expect(false).assertTrue();
+                done();
+            }
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = sdkMinorApiVersionInfo.toString().match(str);
+            let substr = arr.join('');
+            let numstr = parseInt(substr);
+            console.info('the value of the bufferstr is :' + numstr);
+            expect(sdkMinorApiVersionInfo).assertEqual(numstr);
+
+            console.info('testGetSdkMinorApiVersion01 ：end');
+        })
+
+        /**
+         * @tc.name      device_info_test_063
+         * @tc.number    testGetSdkPatchApiVersion01
+         * @tc.desc      Get the Patch API version number, which return value type is number and return value is greater than or equal to 0.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('device_info_test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetSdkPatchApiVersion01 start');
+            let ret = false;
+            let sdkPatchApiVersionInfo = deviceinfo.sdkPatchApiVersion;
+            console.info('the value of the deviceinfo sdkPatchApiVersion is :' + sdkPatchApiVersionInfo);
+
+            expect(sdkPatchApiVersionInfo).assertInstanceOf('Number');
+            if (sdkPatchApiVersionInfo >= 0) {
+                ret = true;
+                expect(ret).assertTrue();
+                done();
+            } else {
+                console.info('the return value sdkPatchApiVersion is not greater than 0.');
+                expect(false).assertTrue();
+                done();
+            }
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = sdkPatchApiVersionInfo.toString().match(str);
+            let substr = arr.join('');
+            let numstr = parseInt(substr);
+            console.info('the value of the bufferstr is :' + numstr);
+            expect(sdkPatchApiVersionInfo).assertEqual(numstr);
+
+            console.info('testGetSdkPatchApiVersion01 ：end');
+        })
+
+        /**
+         * @tc.number ACE_global_apiAvailable_001
+         * @tc.name ACE_global_apiAvailable_001
+         * @tc.desc Test apiAvailable 
+         */
+        it('ACE_global_apiAvailable_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        let caseName = "ACE_global_apiAvailable_001"
+        console.error(`${caseName} START`);
+
+        const originMajor = deviceinfo.sdkApiVersion;
+        const originMinor = deviceinfo.sdkMinorApiVersion;
+        const originPatch = deviceinfo.sdkPatchApiVersion;
+        console.error('apiAvailable, origin major:' + originMajor + ', minor:' +
+            originMinor + ', patch:' + originPatch);
+
+        /************************ 第一部分：非法传参校验 ************************/
+        // 2. 数值非法：传负数、超大数
+        console.error('--- 校验：传入数字类型的非法数值 ---');
+        let result = deviceinfo.apiAvailable(-1); // major负数
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(originMajor, -2); // minor负数
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(originMajor, originMinor, -3); // patch负数
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(1000); // major超大数
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(originMajor, 1000); // minor超大数
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(originMajor, originMinor, 1000); // patch超大数
+        expect(result).assertEqual(false);
+        /************************ 第二部分：合法传参-版本相等 ************************/
+        console.error('--- 校验：合法传参，版本号等于系统版本 ---');
+        // 3参：完整版本号
+        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch);
+        expect(result).assertEqual(true);
+        // 2参：major+minor，patch默认0
+        result = deviceinfo.apiAvailable(originMajor, originMinor);
+        expect(result).assertEqual(true);
+        // 1参：仅major，minor/patch默认0
+        result = deviceinfo.apiAvailable(originMajor);
+        expect(result).assertEqual(true);
+
+        /************************ 第三部分：边界值校验-默认值0 ************************/
+        console.error('--- 校验：默认值0的边界场景 ---');
+        // 系统版本如果是 X.0.0，传仅X也能匹配（验证默认值生效）
+        if (originMinor === 0 && originPatch === 0) {
+            result = deviceinfo.apiAvailable(originMajor);
+            console.error('apiAvailable 边界：系统X.0.0传X result:' + result);
+            expect(result).assertEqual(true);
+        }
+        // 传X.0 等效于 X.0.0（验证minor为0时patch默认0）
+        result = deviceinfo.apiAvailable(originMajor, 0);
+        expect(result).assertEqual(deviceinfo.apiAvailable(originMajor, 0, 0));
+
+        console.error(`${caseName} END`);
+        done();
+        });
+
+        /**
+         * @tc.number ACE_global_apiAvailable_002
+         * @tc.name ACE_global_apiAvailable_002
+         * @tc.desc Test apiAvailable
+         */
+        it('ACE_global_apiAvailable_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        let caseName = "ACE_global_apiAvailable_002"
+        console.error(`${caseName} START`);
+
+        const originMajor = deviceinfo.sdkApiVersion;
+        const originMinor = deviceinfo.sdkMinorApiVersion;
+        const originPatch = deviceinfo.sdkPatchApiVersion;
+        console.error('apiAvailable, origin major:' + originMajor + ', minor:' +
+            originMinor + ', patch:' + originPatch);
+
+        /************************ 第一部分：合法传参-版本小于系统 ************************/
+        console.error('--- 校验：合法传参，版本号小于系统版本 ---');
+        let lessMajor = originMajor - 1; // major减1
+        // 3参
+        let result = deviceinfo.apiAvailable(lessMajor, originMinor, originPatch);
+        expect(result).assertEqual(true);
+        // 2参
+        result = deviceinfo.apiAvailable(lessMajor, originMinor);
+        expect(result).assertEqual(true);
+        // 1参
+        result = deviceinfo.apiAvailable(lessMajor);
+        expect(result).assertEqual(true);
+
+        // 补充：minor小于系统（major相等），验证二级版本对比逻辑
+        result = deviceinfo.apiAvailable(originMajor, originMinor - 1);
+        expect(result).assertEqual(true);
+        // 补充：patch小于系统（major/minor相等），验证三级版本对比逻辑
+        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch - 1);
+        expect(result).assertEqual(true);
+
+        /************************ 第二部分：合法传参-版本大于系统 ************************/
+        console.error('--- 校验：合法传参，版本号大于系统版本 ---');
+        let greaterMajor = originMajor + 1; // major加1
+        // 3参
+        result = deviceinfo.apiAvailable(greaterMajor, originMinor, originPatch);
+        expect(result).assertEqual(false);
+        // 2参
+        result = deviceinfo.apiAvailable(greaterMajor, originMinor);
+        expect(result).assertEqual(false);
+        result = deviceinfo.apiAvailable(greaterMajor);
+        expect(result).assertEqual(false);
+
+        // 补充：minor大于系统（major相等），验证二级版本对比逻辑
+        result = deviceinfo.apiAvailable(originMajor, originMinor + 1);
+        expect(result).assertEqual(false);
+        // 补充：patch大于系统（major/minor相等），验证三级版本对比逻辑
+        result = deviceinfo.apiAvailable(originMajor, originMinor, originPatch + 1);
+        expect(result).assertEqual(false);
+
+        console.error(`${caseName} END`);
+        done();
+        });
 
         /**
          * @tc.name   device_info_test_0665
