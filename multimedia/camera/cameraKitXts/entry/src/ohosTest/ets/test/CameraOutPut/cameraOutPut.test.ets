@@ -380,15 +380,15 @@ export default function cameraOutputTest() {
       })
 
     /**
-     * @tc.name   CAMERA_OUTPUT_VIDEO_CALLBACK_003
-     * @tc.number CAMERA_OUTPUT_VIDEO_CALLBACK_003
+     * @tc.name   CAMERA_OUTPUT_VIDEO_CALLBACK_004
+     * @tc.number CAMERA_OUTPUT_VIDEO_CALLBACK_004
      * @tc.desc   abnormal scenarios-preview output release-callback, realease twice, error code is: 7400201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_OUTPUT_VIDEO_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
-        const testName = 'CAMERA_OUTPUT_VIDEO_CALLBACK_002';
+    it('CAMERA_OUTPUT_VIDEO_CALLBACK_004', Level.LEVEL0, async (done: Function) => {
+        const testName = 'CAMERA_OUTPUT_VIDEO_CALLBACK_004';
         console.info(TAG, testName + ' begin.');
         try {
           if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
