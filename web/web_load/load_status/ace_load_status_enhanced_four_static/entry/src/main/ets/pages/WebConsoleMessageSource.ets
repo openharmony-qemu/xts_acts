@@ -105,7 +105,7 @@ struct WebConsoleMessageSource {
           .onConsole((event): boolean => {
             if (event) {
               if (this.testConsole) {
-                console.log("event.message.getSource()", event.message.getSource());
+                console.log('event.message.getSource()', event.message.getSource());
                 Utils.emitEvent(event.message.getSource(), 119100)
                 this.testConsole = false
               }

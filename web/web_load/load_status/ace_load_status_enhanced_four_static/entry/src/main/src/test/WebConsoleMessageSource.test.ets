@@ -54,6 +54,7 @@ export default function WebConsoleMessageSource() {
     it('testWebConsoleMessageGetSourceStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void):Promise<void> => {
       Utils.emitEvent("emitWebConsoleMessageGetSource0001", 119060)
       Utils.registerEvent("testWebConsoleMessageGetSource0001", ConsoleMessageSource.CONSOLE_API, 119100, done);
+      expect(ConsoleMessageSource.CONSOLE_API).assertEqual(3);
       inspector.sendEventByKey('WebConsoleMessageGetSourceButton', 10, '');
       await Utils.msSleep(2000);
       done();
