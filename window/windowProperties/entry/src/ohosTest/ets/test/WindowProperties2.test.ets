@@ -3069,32 +3069,78 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
-     * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
-     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
+    * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
+    * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
+    * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 0
+    */
     it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
       let windowStageStart = await startAbility3(caseName, context);
-      try {
-        let windowClass = windowStageStart.getMainWindowSync();
-        windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+
+      let testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess = async () => {
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+            await terminateAbility3(caseName);
+            done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
           await terminateAbility3(caseName);
-          done();
-      } catch (err) {
-        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
-        await terminateAbility3(caseName);
-        if (err.code == 801) {
-          expect(err.code).assertEqual(801)
-          done();
-        } else {
-          expect().assertFail()
-          done();
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801)
+            expect().assertFail()
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
         }
       }
+
+      let testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801 = async () => {
+        console.error(msgStr + 'Failed to enable SetWindowContainerColor Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType));
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+            await terminateAbility3(caseName);
+            expect(true).assertFail()
+            done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+          await terminateAbility3(caseName);
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
+        }
+      }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+
+      done();
     });
 
     /**
