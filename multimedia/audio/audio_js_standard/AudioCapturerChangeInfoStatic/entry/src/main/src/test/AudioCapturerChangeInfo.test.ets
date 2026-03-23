@@ -138,7 +138,11 @@ export default function audioCapturerChange() {
           }
           if (devDescriptor != null) {
             audioStreamManager!.offAudioCapturerChange();
-            expect(true).assertTrue();
+            done();
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0100 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
             done();
           }
         }
@@ -214,6 +218,11 @@ export default function audioCapturerChange() {
                 console.info(`${Tag}: ${Tag}: Capturer release:ERROR :${err.message}`);
               }
             }
+            else {
+              console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0200 devDescriptor is null: ${devDescriptor}`);
+              expect(false).assertTrue();
+              done();
+            }
           }
         })
       });
@@ -285,6 +294,11 @@ export default function audioCapturerChange() {
           if (devDescriptor != null) {
             resultFlag = true;
             console.info(`${Tag}: ${Tag}: [CAPTURER-CHANGE-ON-003] ResultFlag for element ${i} is: ${resultFlag}`);
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0300 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
           }
         }
       });
@@ -384,6 +398,11 @@ export default function audioCapturerChange() {
             resultFlag = true;
             console.info(`${Tag}: ${Tag}: [CAPTURER-CHANGE-ON-004] ResultFlag for element ${i} is: ${resultFlag}`);
           }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0400 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       });
       await Utils.msSleep(100);
@@ -444,7 +463,11 @@ export default function audioCapturerChange() {
           }
           if (AudioCapturerChangeInfoArray[i].capturerInfo.source == 0 && devDescriptor != null) {
             audioStreamManager!.offAudioCapturerChange();
-            expect(true).assertTrue();
+            done();
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0500 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
             done();
           }
         }
@@ -559,7 +582,11 @@ export default function audioCapturerChange() {
           }
           if (AudioCapturerChangeInfoArray[i].streamId != undefined && devDescriptor != null) {
             audioStreamManager!.offAudioCapturerChange();
-            expect(true).assertTrue();
+            done();
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0700 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
             done();
           }
         }
@@ -611,7 +638,11 @@ export default function audioCapturerChange() {
           }
           if (clientUid != undefined && capFlags == 0 && devDescriptor != null) {
             audioStreamManager!.offAudioCapturerChange();
-            expect(true).assertTrue();
+            done();
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0800 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
             done();
           }
         }
@@ -676,7 +707,6 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
               audioStreamManager!.offAudioCapturerChange();
-              expect(true).assertTrue();
               done();
             }
           }
@@ -726,8 +756,6 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager!.offAudioCapturerChange();
-          expect(true).assertTrue();
-          done();
         }
       });
 
@@ -739,6 +767,7 @@ export default function audioCapturerChange() {
         expect(false).assertTrue();
         done();
       }
+      done();
     })
 
     /**
@@ -784,8 +813,6 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager!.offAudioCapturerChange();
-          expect(true).assertTrue();
-          done();
         }
       });
       await Utils.msSleep(100);
@@ -795,6 +822,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release :ERROR :` + JSON.stringify(err));
       }
+      done();
     })
 
     /**
@@ -841,8 +869,6 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager!.offAudioCapturerChange();
-          expect(true).assertTrue();
-          done();
         }
       });
       await Utils.msSleep(100);
@@ -853,6 +879,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release:ERROR :${err.message}`);
       }
+      done();
     })
 
     /**
@@ -899,8 +926,6 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
           }
           audioStreamManager!.offAudioCapturerChange();
-          expect(true).assertTrue();
-          done();
         }
       });
       await Utils.msSleep(100);
@@ -911,6 +936,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
       }
+      done();
     })
 
     /**
@@ -964,7 +990,11 @@ export default function audioCapturerChange() {
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
               audioStreamManager!.offAudioCapturerChange();
-              expect(true).assertTrue();
+              done();
+            }
+            else {
+              console.info(`SUB_MULTIMEDIA_AUDIO_OFF_CAPTURER_CHANGE_0500 fail`);
+              expect(false).assertTrue();
               done();
             }
           }
@@ -978,6 +1008,7 @@ export default function audioCapturerChange() {
         expect(false).assertTrue();
         done();
       }
+      done();
     })
 
     /**
@@ -1033,9 +1064,13 @@ export default function audioCapturerChange() {
                 console.info(`${Tag}: audioCapturerChange off Success `);
                 audioCap!.release().then(() => {
                   console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                  expect(true).assertTrue();
                   done();
                 })
+              }
+              else {
+                console.info(`SUB_MULTIMEDIA_AUDIO_OFF_CAPTURER_CHANGE_0500 devDescriptor is null: ${devDescriptor}`);
+                expect(false).assertTrue();
+                done();
               }
             }
           }
@@ -1109,7 +1144,6 @@ export default function audioCapturerChange() {
               try {
                 await audioCap!.release();
                 console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               } catch (err) {
                 console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1202,7 +1236,6 @@ export default function audioCapturerChange() {
               try {
                 await audioCap!.release();
                 console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               } catch (err) {
                 console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1304,7 +1337,6 @@ export default function audioCapturerChange() {
               try {
                 await audioCap!.release();
                 console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                expect(true).assertTrue();
                 done();
               } catch (err) {
                 console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1392,7 +1424,6 @@ export default function audioCapturerChange() {
                 try {
                   await audioCap!.release();
                   console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                  expect(true).assertTrue();
                   done();
                 } catch (err) {
                   console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1478,7 +1509,6 @@ export default function audioCapturerChange() {
                   try {
                     await audioCap!.release();
                     console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                    expect(true).assertTrue();
                     done();
                   } catch (err) {
                     console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
@@ -1575,7 +1605,6 @@ export default function audioCapturerChange() {
                   try {
                     await audioCap!.release();
                     console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
-                    expect(true).assertTrue();
                     done();
                   } catch (err) {
                     console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);

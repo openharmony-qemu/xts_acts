@@ -375,7 +375,6 @@ export default function audioRendererTest() {
           try {
             await audioRen!.setVolume(data);
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${data}`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -529,7 +528,6 @@ export default function audioRendererTest() {
           try {
             await audioRen!.setVolume(data);
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${data}`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -679,7 +677,6 @@ export default function audioRendererTest() {
           try {
             waitForCompletion(async () => {await audioRen!.setVolume(maxVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.info(`${TagFrmwkRender}:  setVolume ERROR! : code: ${err.code}, mesage: ${err.message}`);

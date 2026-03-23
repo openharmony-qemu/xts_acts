@@ -86,7 +86,6 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -111,7 +110,6 @@ export default function audioRendererTest() {
       await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -148,7 +146,6 @@ export default function audioRendererTest() {
       expect(speed).assertEqual(4);
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -165,7 +162,6 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -174,8 +170,8 @@ export default function audioRendererTest() {
       await audioRen!.getRendererInfo().then((data: audio.AudioRendererInfo)=> {
         if (data.usage == audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION) {
           console.info(`${TagFrmwkRender}: AudioRender's streamUsage is equal to STREAM_USAGE_VIDEO_COMMUNICATION: ${audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION}`);
-          expect(true).assertTrue();
-        } else {
+        } 
+        else {
           console.info(`${TagFrmwkRender}: AudioRender's streamUsage: ${data.usage} is not equal to STREAM_USAGE_VIDEO_COMMUNICATION: ${audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION}`);
           expect(false).assertTrue();
           done();
@@ -188,7 +184,6 @@ export default function audioRendererTest() {
       await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -214,7 +209,6 @@ export default function audioRendererTest() {
               console.info(`${TagFrmwkRender}: outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
               if (outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
                 console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is SPEAKER`);
-                expect(true).assertTrue();
               } else {
                 console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is not SPEAKER`);
                 expect(false).assertTrue();
@@ -255,7 +249,6 @@ export default function audioRendererTest() {
 
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -280,7 +273,6 @@ export default function audioRendererTest() {
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
         let sampleFormat = AudioRendererOptions.streamInfo.sampleFormat;
         if ((sampleFormat == LE24 || sampleFormat == LE32) && err.code == 202) {
-          expect(true).assertTrue();
           done();
         }
         expect(false).assertTrue();
@@ -1287,7 +1279,6 @@ export default function audioRendererTest() {
       audioRen!.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         audioRen!.offMarkReach();
-        expect(true).assertTrue();
       });
       let markReachCallback = (position: long) => {
         if (position == 100) {
@@ -1587,7 +1578,6 @@ export default function audioRendererTest() {
       audioRen!.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
-        expect(true).assertTrue();
         audioRen!.offPeriodReach();
 
       });
@@ -1599,7 +1589,6 @@ export default function audioRendererTest() {
       audioRen!.onPeriodReach(100, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
-        expect(true).assertTrue();
         audioRen!.offPeriodReach(periodReachCallback);
       });
 
@@ -2001,7 +1990,6 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2014,7 +2002,6 @@ export default function audioRendererTest() {
       await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2042,7 +2029,6 @@ export default function audioRendererTest() {
 
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2053,7 +2039,6 @@ export default function audioRendererTest() {
 
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2071,7 +2056,6 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2084,7 +2068,6 @@ export default function audioRendererTest() {
       await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2112,7 +2095,6 @@ export default function audioRendererTest() {
 
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2123,7 +2105,6 @@ export default function audioRendererTest() {
 
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2141,7 +2122,6 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2154,7 +2134,6 @@ export default function audioRendererTest() {
       await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2184,7 +2163,6 @@ export default function audioRendererTest() {
 
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2195,7 +2173,6 @@ export default function audioRendererTest() {
 
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
@@ -2235,7 +2212,7 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: changeReason: ${JSON.stringify(deviceChangeInfo.changeReason)}`);
       });
       await audioRender!.release();
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_48000);
       done();
     })
 
@@ -2292,7 +2269,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_48000);
       done();
     })
 
@@ -2325,7 +2302,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_8000);
       done();
     })
     /**
@@ -2357,7 +2334,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -2390,7 +2367,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_24000);
       done();
     })
 
@@ -2423,7 +2400,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_44100);
       done();
     })
 
@@ -2456,7 +2433,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_48000);
       done();
     })
 
@@ -2489,7 +2466,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_8000);
       done();
     })
     /**
@@ -2521,7 +2498,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -2554,7 +2531,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_24000);
       done();
     })
 
@@ -2587,7 +2564,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_44100);
       done();
     })
 
@@ -2620,7 +2597,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_44100);
       done();
     })
 
@@ -2991,7 +2968,6 @@ export default function audioRendererTest() {
       try {
         let data = audioRenderer!.getAudioStreamIdSync();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_0200 OUT OF BORDER PROMISE: SUCCESS ${data}`);
-        expect(true).assertTrue();
         try {
           await audioRenderer!.release();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
@@ -3814,7 +3790,6 @@ export default function audioRendererTest() {
             done();
           }
           console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: SUCCESS`);
-          expect(true).assertTrue();
           await audioRenderer!.release();
           done();
         })
@@ -3855,7 +3830,6 @@ export default function audioRendererTest() {
             done();
           }
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS`);
-          expect(true).assertTrue();
           await audioRenderer!.release();
           done();
         })
@@ -3889,7 +3863,6 @@ export default function audioRendererTest() {
       let mode = audio.InterruptMode.SHARE_MODE;
       await audioRenderer!.setInterruptMode(mode).then(() => {
         console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE PROMISE: SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error)=> {
         console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE PROMISE: error: ${err.message}`);
         expect(false).assertTrue();
@@ -3925,7 +3898,6 @@ export default function audioRendererTest() {
       let mode = audio.InterruptMode.INDEPENDENT_MODE;
       await audioRenderer!.setInterruptMode(mode).then(() => {
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE PROMISE: SUCCESS`);
-        expect(true).assertTrue();
       }).catch((err: Error)=> {
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE PROMISE: error: ${err.message}`);
         expect(false).assertTrue();
@@ -3961,7 +3933,6 @@ export default function audioRendererTest() {
       try {
         let data = await audioRenderer!.getAudioStreamId();
         console.info(`${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_getAudioStreamId_0100 OUT OF BORDER PROMISE: SUCCESS ${data}`);
-        expect(true).assertTrue();
         await audioRenderer!.release().then(() => {
           console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         }).catch((err: Error) => {
@@ -4017,7 +3988,6 @@ export default function audioRendererTest() {
             done();
           }
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS ${data}`);
-          expect(true).assertTrue();
           await audioRenderer!.release().then(() => {
             console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
           }).catch((err: Error) => {
@@ -4062,7 +4032,6 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK : ${err?.message}`);
           if (err?.code == 6800103) {
             console.log(`${TagFrmwkRender}:SetInterruptMode : SUCCESS`);
-            expect(true).assertTrue();
           } else {
             console.log(`${TagFrmwkRender}: SetInterruptMode : error : ${err?.code}`);
             expect(false).assertTrue();
@@ -4112,7 +4081,6 @@ export default function audioRendererTest() {
         let inputVolume = 0;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -4170,7 +4138,6 @@ export default function audioRendererTest() {
         let inputVolume = 0.5;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -4233,7 +4200,6 @@ export default function audioRendererTest() {
         } catch (err) {
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 : OK`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
@@ -4295,7 +4261,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -4354,7 +4319,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -4411,7 +4375,6 @@ export default function audioRendererTest() {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 : OK`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
               expect(false).assertTrue();
@@ -9565,7 +9528,6 @@ export default function audioRendererTest() {
         let inputVolume = 0;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -9623,7 +9585,6 @@ export default function audioRendererTest() {
         let inputVolume = 1;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -9686,7 +9647,6 @@ export default function audioRendererTest() {
         } catch (err) {
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
@@ -9748,7 +9708,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -9807,7 +9766,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -9864,7 +9822,6 @@ export default function audioRendererTest() {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 : OK`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
               expect(false).assertTrue();
@@ -9926,7 +9883,6 @@ export default function audioRendererTest() {
         let inputVolume = 0;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -9989,7 +9945,6 @@ export default function audioRendererTest() {
         } catch (err) {
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
@@ -10047,7 +10002,6 @@ export default function audioRendererTest() {
         let inputVolume = 1;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
         } catch (err) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -10110,7 +10064,6 @@ export default function audioRendererTest() {
         } catch (err) {
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
@@ -10172,7 +10125,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -10229,7 +10181,6 @@ export default function audioRendererTest() {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to -1 : OK`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
               expect(false).assertTrue();
@@ -10295,7 +10246,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -10352,7 +10302,6 @@ export default function audioRendererTest() {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 : OK`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
               expect(false).assertTrue();
@@ -10406,7 +10355,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playbackPromise_92(AudioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_8000);
       done();
     })
 
@@ -10439,7 +10388,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playWithVideoStream(AudioRendererOptions, filePath, done);
       await Utils.msSleep(2000);
-      expect(true).assertTrue();
+      expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -10480,7 +10429,6 @@ export default function audioRendererTest() {
         let inputVolume = 0;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
           let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0100 SUCCESS: ${data}`);
@@ -10541,7 +10489,6 @@ export default function audioRendererTest() {
         let inputVolume = 0.5;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
           let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0200 SUCCESS: ${data}`);
@@ -10602,7 +10549,6 @@ export default function audioRendererTest() {
         let inputVolume = 1;
         try {
           await audioRen!.setVolume(inputVolume);
-          expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
           let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0300 SUCCESS: ${data}`);
@@ -10722,7 +10668,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -10784,7 +10729,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -10846,7 +10790,6 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           } else {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-            expect(true).assertTrue();
           }
         });
       } catch (error) {
@@ -10995,7 +10938,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playbackWriteDataCallback_001(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -11028,7 +10971,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playbackWriteDataCallback_002(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(true).assertTrue();
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -11319,7 +11262,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -11356,7 +11298,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange()
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         error = error as BusinessError;
@@ -11384,7 +11325,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.SPEAKER)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);

@@ -153,7 +153,6 @@ export default function audioManagerApi9() {
         let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
-          expect(true).assertTrue();
           done();
         } else {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
@@ -204,7 +203,6 @@ export default function audioManagerApi9() {
         let groupManager = audioVolumeManager.getAppVolumePercentage();
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  PASS');
-          expect(true).assertTrue();
           done();
         } else {
           console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  FAIL');
@@ -227,6 +225,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
       try {
         let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager: audio.AudioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(numParams);
@@ -240,9 +239,10 @@ export default function audioManagerApi9() {
         done();
       } catch (err) {
         console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
-        expect(true).assertTrue();
+        flag = true;
         done();
       }
+      expect(flag).assertTrue();
     })
 
     /**
@@ -263,7 +263,6 @@ export default function audioManagerApi9() {
         } else {
           if ((typeof groupManager) == 'object') {
             console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
-            expect(true).assertTrue();
           } else {
             console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
             expect(false).assertTrue();
@@ -288,7 +287,6 @@ export default function audioManagerApi9() {
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
-          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
           expect(false).assertTrue();
@@ -320,7 +318,6 @@ export default function audioManagerApi9() {
             expect(false).assertTrue();
           } else if (value! >= minVol && value! <= maxVolPc) {
             console.info('audioManagerApi9Test: callback : Meida getVolume: PASS :' + value);
-            expect(true).assertTrue();
           } else {
             console.info('audioManagerApi9Test: callback : Meida getVolume: FAIL :' + value);
             expect(false).assertTrue();
@@ -349,7 +346,6 @@ export default function audioManagerApi9() {
         let value = await groupManager.getVolume(audio.AudioVolumeType.MEDIA);
         if (value >= minVol && value <= maxVolPc) {
           console.info('audioManagerApi9Test: callback : Meida getVolume: PASS :' + value);
-          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: callback : Meida getVolume: FAIL :' + value);
           expect(false).assertTrue();
@@ -381,10 +377,8 @@ export default function audioManagerApi9() {
           } else {
             if (data == maxVol) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
-              expect(true).assertTrue();
             } else if (data == maxVolPc) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
-              expect(true).assertTrue();
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -414,10 +408,8 @@ export default function audioManagerApi9() {
         let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.RINGTONE);
         if (maxVolume == maxVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
-          expect(true).assertTrue();
         } else if (maxVolume == maxVolPc) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
-          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: FAIL :' + maxVolume);
           expect(false).assertTrue();
@@ -448,7 +440,6 @@ export default function audioManagerApi9() {
           } else {
             if (data == minVol) {
               console.info('audioManagerApi9Test: callback : Ringtone getMinVolume: PASS :' + data);
-              expect(true).assertTrue();
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMinVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -478,7 +469,6 @@ export default function audioManagerApi9() {
         let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.RINGTONE);
         if (minVolume == minVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMinVolume: PASS :' + minVolume);
-          expect(true).assertTrue();
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMinVolume: FAIL :' + minVolume);
           expect(false).assertTrue();
@@ -510,7 +500,6 @@ export default function audioManagerApi9() {
           } else {
             console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
                     Is Stream GroupManager Mute RINGTONE: FALSE: PASS:` + data);
-            expect(true).assertTrue();
           }
           done();
         })
@@ -537,7 +526,6 @@ export default function audioManagerApi9() {
           let data = await groupManager.isMute(audio.AudioVolumeType.RINGTONE);
           console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
                     Is Stream GroupManager Mute RINGTONE: FALSE: PASS:` + data);
-          expect(true).assertTrue();
           done();
         } catch (err) {
           console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
@@ -662,7 +650,6 @@ export default function audioManagerApi9() {
           }
         };
         groupManager.onRingerModeChange(ringerModeChangeCallback);
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.info('err :' + err.message)
@@ -686,7 +673,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -715,7 +701,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -738,7 +723,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audioMedia)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -783,11 +767,9 @@ export default function audioManagerApi9() {
         if (flag == true && value == true) {
           console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-          expect(true).assertTrue();
         } else if (flag == false && value == true) {
           console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
@@ -832,11 +814,9 @@ export default function audioManagerApi9() {
           if (flag == true && value == true) {
             console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            expect(true).assertTrue();
           } else if (flag == false && value == true) {
             console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
                         isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
@@ -887,7 +867,6 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
             } else if (value == true && flag == true) {
               console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-              expect(true).assertTrue();
             } else if (value == true && flag == false) {
               console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
             } else {
@@ -959,7 +938,6 @@ export default function audioManagerApi9() {
         audioManager!.onAudioSceneChange((audioScene) => {
           console.info(`AudioSceneChange event: ${audioScene} `);
         });
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)
@@ -985,7 +963,6 @@ export default function audioManagerApi9() {
         audioManager!.offAudioSceneChange(cb);
         audioManager!.onAudioSceneChange(cb);
         audioManager!.offAudioSceneChange();
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log('err :' + err.message)

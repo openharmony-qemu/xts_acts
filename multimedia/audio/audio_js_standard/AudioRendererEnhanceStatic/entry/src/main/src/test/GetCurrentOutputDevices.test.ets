@@ -184,7 +184,6 @@ export default function audioRendererTest() {
         error = error as BusinessError;
         console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
         if (error.code === 5400106) {
-          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
