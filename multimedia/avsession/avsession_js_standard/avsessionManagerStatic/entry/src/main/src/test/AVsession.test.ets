@@ -3647,7 +3647,7 @@ export default function abilityTest() {
             try {
                 data = await controller!.getAVMetadata();
                 console.info(`TestLog:rewindSkipIntervals - ${data.rewindSkipIntervals}`);
-                except(data.rewindSkipIntervals).assertEqual(metadata.rewindSkipIntervals);
+                expect(data.rewindSkipIntervals).assertEqual(metadata.rewindSkipIntervals);
                 console.info('TestLog: get rewindSkipIntervals successfully');
             } catch (err) {
                 console.info(`TestLog: Get rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
