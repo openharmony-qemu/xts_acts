@@ -55,13 +55,13 @@ export default function SaveButtonTest() {
         url: 'MainAbility/pages/SaveButton/SaveButton',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
+        const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("SaveButtonTest state pages: " + JSON.stringify(pages));
         console.info("SaveButtonTest state pages.name: " + pages.name);
-        if (pages.name !== "SaveButtonIndex") {
-          routerInstance.replaceUrl(options);
+        if (pages.name !== "SaveButton") {
+          router.pushUrl(options);
         }
         // Wait for page to load
         await Utils.sleep(500);

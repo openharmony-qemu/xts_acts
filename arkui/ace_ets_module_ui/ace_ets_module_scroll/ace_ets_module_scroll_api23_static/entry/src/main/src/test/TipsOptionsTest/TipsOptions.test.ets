@@ -47,7 +47,7 @@ export default function TipsOptionsTest() {
       await UtilsTest.startAbility('com.arkui.ace.scroll.api23.static', 'EntryAbility');
     });
 
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('TipsOptionsTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TipsOptions/TipsOptions',
@@ -58,7 +58,7 @@ export default function TipsOptionsTest() {
         let pages = routerInstance.getState();
         console.info('TipsOptionsTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'TipsOptions') {
-          routerInstance.replaceUrl(options);
+          router.pushUrl(options);
         }
       } catch (err) {
         console.error('TipsOptionsTest replaceUrl error: ' + err);
@@ -66,7 +66,8 @@ export default function TipsOptionsTest() {
       }
     });
 
-    afterEach((): void => {
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME);
       console.info('TipsOptionsTest after each called');
     });
 
