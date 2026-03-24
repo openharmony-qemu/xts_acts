@@ -3678,8 +3678,12 @@ export default function abilityTest() {
             let data: avSession.AVMetadata;
             try {
                 data = await controller!.getAVMetadata();
-                console.info(`${TAG}TestLog:fastForwardSkipIntervals = ${data.fastForwardSkipIntervals} `);
-                except(data.fastForwardSkipIntervals).assertEqual(metadata.fastForwardSkipIntervals);
+                if (data.fastForwardSkipIntervals === metadata.fastForwardSkipIntervals) {
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get fastForwardSkipIntervals failed');
+                    expect(false).assertTrue();
+                }
             } catch (err) {
                 console.info(`TestLog: Get fastForwardSkipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3697,25 +3701,28 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            let TAG = "[SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_2600]";
             let metadata: avSession.AVMetadata = {
                 assetId: '121278',
                 rewindSkipIntervals: avSession.SkipIntervals.SECONDS_10
             };
             try {
                 await session!.setAVMetadata(metadata);
-                console.info(`${TAG}TestLog: Set rewindSkipIntervals successfully`);
+                console.info('TestLog: Set rewindSkipIntervals successfully');
             } catch (err) {
-                console.info(`${TAG}TestLog: Set rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                console.info(`TestLog: Set rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
             let data: avSession.AVMetadata;
             try {
                 data = await controller!.getAVMetadata();
-                console.info(`${TAG}TestLog: rewindSkipIntervals = ${data.rewindSkipIntervals}`);
-                expect(data.rewindSkipIntervals).assertEqual(metadata.rewindSkipIntervals);
+                if (data.rewindSkipIntervals === metadata.rewindSkipIntervals) {
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get rewindSkipIntervals failed');
+                    expect(false).assertTrue();
+                }
             } catch (err) {
-                console.info(`${TAG}TestLog: Get rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
+                console.info(`TestLog: Get rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
             done();
