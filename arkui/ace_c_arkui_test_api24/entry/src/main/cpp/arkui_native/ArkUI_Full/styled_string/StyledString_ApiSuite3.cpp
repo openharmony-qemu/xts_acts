@@ -1,0 +1,316 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../../common/common.h"
+#include <arkui/styled_string.h>
+#include <native_drawing/drawing_text_typography.h>
+
+namespace ArkUICapiTest {
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachment *, ArkUI_Margin *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_438(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    ArkUI_Margin marginOut1{};
+    auto ec = OH_ArkUI_ImageAttachment_GetPadding(obj, &marginOut1);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_SetBorderRadiuses(OH_ArkUI_ImageAttachment *, float, float, float, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_439(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    auto ec = OH_ArkUI_ImageAttachment_SetBorderRadiuses(obj, 0.0f, 0.0f, 0.0f, 0.0f);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageAttachment *, float *, float *, float *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_440(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    float v1 = 0.0f;
+    float v2 = 0.0f;
+    float v3 = 0.0f;
+    float v4 = 0.0f;
+    auto ec = OH_ArkUI_ImageAttachment_GetBorderRadiuses(obj, &v1, &v2, &v3, &v4);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_SetColorFilter(OH_ArkUI_ImageAttachment *, const float *, uint32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_ImageAttachment_SetColorFilter(obj, &v1, 0U);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAttachment *, float **, uint32_t, uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    float * holder1 = nullptr;
+    float ** outPtr1 = &holder1;
+    uint32_t v3 = 0U;
+    auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 0U, &v3);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_SetDrawingColorFilter(OH_ArkUI_ImageAttachment *, const OH_Drawing_ColorFilter *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_443(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, static_cast<const OH_Drawing_ColorFilter *>(nullptr));
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetDrawingColorFilter(const OH_ArkUI_ImageAttachment *, OH_Drawing_ColorFilter *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    auto ec = OH_ArkUI_ImageAttachment_GetDrawingColorFilter(obj, static_cast<OH_Drawing_ColorFilter *>(nullptr));
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_SetSyncLoad(OH_ArkUI_ImageAttachment *, bool)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_445(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    auto ec = OH_ArkUI_ImageAttachment_SetSyncLoad(obj, false);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetSyncLoad(const OH_ArkUI_ImageAttachment *, bool *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_446(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    bool v1 = false;
+    auto ec = OH_ArkUI_ImageAttachment_GetSyncLoad(obj, &v1);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_SetSupportSvg(OH_ArkUI_ImageAttachment *, bool)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_447(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    auto ec = OH_ArkUI_ImageAttachment_SetSupportSvg(obj, false);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_ImageAttachment_GetSupportSvg(const OH_ArkUI_ImageAttachment *, bool *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_448(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_NOTNULL(obj);
+    bool v1 = false;
+    auto ec = OH_ArkUI_ImageAttachment_GetSupportSvg(obj, &v1);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_ImageAttachment_Destroy(obj);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_TextEditorChangeEvent *, uint32_t *, uint32_t *)
+ * 预期效果: 空 changeEvent 时返回空指针。
+ * 实际测试: 传 nullptr 校验返回。
+ */
+static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    uint32_t v1 = 0U;
+    uint32_t v2 = 0U;
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), &v1, &v2);
+    ASSERT_OBJ(p, nullptr);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent *, ArkUI_StyledString_Descriptor *)
+ * 预期效果: 空 changeEvent 时返回空指针。
+ * 实际测试: 传 nullptr 校验返回。
+ */
+static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+    ASSERT_OBJ(p, nullptr);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent *, ArkUI_StyledString_Descriptor *)
+ * 预期效果: 空 changeEvent 时返回空指针。
+ * 实际测试: 传 nullptr 校验返回。
+ */
+static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+    ASSERT_OBJ(p, nullptr);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkUI_TextLayoutManager *, double, double, OH_Drawing_PositionAndAffinity **)
+ * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
+ * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
+ */
+static napi_value TestArkUICapi_452(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    OH_Drawing_PositionAndAffinity * holder3 = nullptr;
+    OH_Drawing_PositionAndAffinity ** outPtr3 = &holder3;
+    auto ec = OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(nullptr, 0.0, 0.0, outPtr3);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *, OH_Drawing_Range **, OH_Drawing_Range **)
+ * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
+ * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
+ */
+static napi_value TestArkUICapi_453(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    OH_Drawing_Range * holder2 = nullptr;
+    OH_Drawing_Range ** outPtr2 = &holder2;
+    OH_Drawing_Range * holder3 = nullptr;
+    OH_Drawing_Range ** outPtr3 = &holder3;
+    auto ec = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(nullptr, static_cast<OH_Drawing_Range *>(nullptr), outPtr2, outPtr3);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+/*
+ * 测试接口: OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *, OH_Drawing_Range **, OH_Drawing_Range **)
+ * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
+ * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
+ */
+static napi_value TestArkUICapi_454(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    OH_Drawing_Range * holder2 = nullptr;
+    OH_Drawing_Range ** outPtr2 = &holder2;
+    OH_Drawing_Range * holder3 = nullptr;
+    OH_Drawing_Range ** outPtr3 = &holder3;
+    auto ec = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(nullptr, static_cast<OH_Drawing_Range *>(nullptr), outPtr2, outPtr3);
+    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+} // namespace ArkUICapiTest
