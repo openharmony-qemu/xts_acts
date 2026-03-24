@@ -1069,7 +1069,7 @@ export default function ActsReminderAgentManagerStaticTest() {
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 begin---');
-      reminderAgentManager.cancelAllReminders().then(() => {
+      reminderAgentManager.cancelAllReminders().then(async () => {
         console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 cancelAllReminders success');
         // 获取当前时间戳（毫秒）
         const nowTimestamp = Date.now();
@@ -1093,26 +1093,30 @@ export default function ActsReminderAgentManagerStaticTest() {
           ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_NOTIFICATION
         }
         let callbakFlag = 0;
+        let newId: int = 0;
         try {
           reminderAgentManager.publishReminder(calendar, (err: BusinessError<void>|null, reminderId: int|undefined) => {
-            await Utils.msSleep(5000)
             if (err) {
               console.error('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 callback err.code is :' + err.code);
             } else {
               console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 callback reminderId = ' + reminderId);
-              if(reminderId != undefined){
-                reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
-                  console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 cancelReminderOnDisplay reminder succeed");
-                  expect(callbakFlag).assertEqual(0);
-                  done();
-                }).catch((err) => {
-                  console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 promise err code:" + err.code + " message:" + err.message);
-                  expect(false).assertTrue();
-                  done();
-                });
+              if (reminderId !== undefined) {
+                newId = reminderId;
               }
             }
           })
+
+          await Utils.msSleep(5000)
+
+          reminderAgentManager.cancelReminderOnDisplay(newId).then(() => {
+            console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 cancelReminderOnDisplay reminder succeed");
+            expect(callbakFlag).assertEqual(0);
+            done();
+          }).catch((err) => {
+            console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 promise err code:" + err.code + " message:" + err.message);
+            expect(false).assertTrue();
+            done();
+          });
         } catch (error) {
           console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 publishReminder error.code:" + error.code);
         }
