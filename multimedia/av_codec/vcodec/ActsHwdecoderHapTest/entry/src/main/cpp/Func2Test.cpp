@@ -1353,7 +1353,7 @@ int VIDEO_DECODE_ANOTHER_0010()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VideoCapabilityConfig0010Test()
+int VIDEO_CAPABILITY_CONFIG_0010()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     OH_AVCodec* vdec = nullptr;
@@ -1397,7 +1397,7 @@ int VideoCapabilityConfig0010Test()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VideoCapabilityConfig0020Test()
+int VIDEO_CAPABILITY_CONFIG_0020()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     OH_AVCodec* vdec = nullptr;
@@ -1434,7 +1434,7 @@ int VideoCapabilityConfig0020Test()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VideoCapabilityConfig0030Test()
+int VIDEO_CAPABILITY_CONFIG_0030()
 {
     cap_vvc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VVC, false, HARDWARE);
     OH_AVCodec* vdec = nullptr;
