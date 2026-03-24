@@ -474,7 +474,7 @@ export default function HttpResponseExtraInfoTest() {
     /**
      * @tc.name   testHttpResponseConnectionExtraInfo0900
      * @tc.number SUB_NetworkMgr_Http_Response_ConnectionExtraInfo_0900
-     * @tc.desc   Test the change in the isReusedConnection field during two consecutive HTTP requests.Promise.
+     * @tc.desc   Test the change in the isReusedConnection field during two consecutive HTTP requests.Callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -482,6 +482,67 @@ export default function HttpResponseExtraInfoTest() {
     it('testHttpResponseConnectionExtraInfo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         const caseName: string = "testHttpResponseConnectionExtraInfo0900";
+        console.info(`HttpTest1 ${caseName} test Start`);
+        try {
+          console.info(`HttpTest1 ${caseName} Network connected`);
+          const httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.request(ADDR_TEST_DOMAIN_HTTP, (err: BusinessError, res: http.HttpResponse) => {
+            if (err) {
+              console.error(' failed ' + JSON.stringify(err));
+              ExpectFail();
+              done();
+            } else {
+              if (res?.connectionExtraInfo) {
+                let connectionExtraInfo = res?.connectionExtraInfo;
+                try {
+                  httpRequest.request(ADDR_TEST_DOMAIN_HTTP, (err: BusinessError, res: http.HttpResponse) => {
+                    if (err) {
+                      console.error(' failed ' + JSON.stringify(err));
+                      ExpectFail();
+                      done();
+                    } else {
+                      if (res?.connectionExtraInfo) {
+                        let connectionExtraInfoTwo = res?.connectionExtraInfo;
+                        console.info('HttpTest1', `connectionExtraInfo2:${JSON.stringify(connectionExtraInfoTwo)}`);
+
+                        ExpectTrue(connectionExtraInfoTwo.isReusedConnection);
+                        httpRequest.destroy();
+                        done();
+                      } else {
+                        httpRequest.destroy();
+                        ExpectFail();
+                        done();
+                      }
+                    }
+                  })
+                } catch (err) {
+                  console.info(`HttpTest1 ${caseName} catch err: ${JSON.stringify(err)}`);
+                  ExpectFail();
+                  done();
+                }
+                console.info('HttpTest1', `connectionExtraInfo1:${JSON.stringify(connectionExtraInfo)}`);
+              }
+            }
+          })
+        } catch (err) {
+          console.info(`HttpTest1 ${caseName} catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`HttpTest1 ${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpResponseConnectionExtraInfo1000
+     * @tc.number SUB_NetworkMgr_Http_Response_ConnectionExtraInfo_1000
+     * @tc.desc   Test the change in the isReusedConnection field during two consecutive HTTP requests.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpResponseConnectionExtraInfo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = "testHttpResponseConnectionExtraInfo1000";
         console.info(`HttpTest1 ${caseName} test Start`);
         try {
           console.info(`HttpTest1 ${caseName} Network connected`);
@@ -576,7 +637,7 @@ export default function HttpResponseExtraInfoTest() {
                         });
                         if (res?.connectionExtraInfo) {
                           let connectionExtraInfo2 = res?.connectionExtraInfo;
-                          ExpectTrue(!connectionExtraInfo.isCacheHit);
+                          ExpectTrue(connectionExtraInfo2.isCacheHit);
                           httpRequest.destroy();
                           done();
                           console.info(`HttpTest1 connectionExtraInfo2:${JSON.stringify(connectionExtraInfo2.isCacheHit)}`);
