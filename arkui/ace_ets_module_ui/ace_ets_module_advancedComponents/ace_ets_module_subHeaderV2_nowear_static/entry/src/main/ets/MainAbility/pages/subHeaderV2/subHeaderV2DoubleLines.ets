@@ -32,6 +32,8 @@ struct SubHeaderExample {
   aboutToAppear(): void {
     this.title = new SubHeaderV2Title({
       primaryTitle: '一级标题',
+      id: 'SubHeaderV2TitleId',
+      titleAccessibilityText: 'subHeader titlt Text',
       secondaryTitle: '二级标题'
     });
     this.operationItems = [new SubHeaderV2OperationItem({

@@ -17,7 +17,7 @@
 import { Entry, ComponentV2, $r, Column, ResourceStr, Resource, Color, Local } from '@kit.ArkUI';
 import { SymbolGlyphModifier, TextModifier } from '@ohos.arkui.modifier';
 import { 
-  SubHeaderV2OperationType, SubHeaderV2, SubHeaderV2Title, SubHeaderV2OperationItem
+  SubHeaderV2OperationType, SubHeaderV2, SubHeaderV2Title, SubHeaderV2OperationItem, SubHeaderV2TitleOptions
 } from '@ohos.arkui.advanced.SubHeaderV2';
 
 @Entry
@@ -36,12 +36,14 @@ struct SubHeaderExample {
   @Local secondaryModifier: TextModifier = new TextModifier().fontColor(Color.Red);
   @Local subHeaderOperationType: SubHeaderV2OperationType = SubHeaderV2OperationType.BUTTON;
   @Local operationItems: SubHeaderV2OperationItem[] = [];
+  @Local subHeaderV2TitleOptions: SubHeaderV2TitleOptions = {
+      primaryTitle: this.primaryTitle,
+      id: 'subHeaderV2TitleOptionsId',
+      secondaryTitle: this.secondaryTitle,
+  };
 
   aboutToAppear(): void {
-    this.title = new SubHeaderV2Title({
-      primaryTitle: this.primaryTitle,
-      secondaryTitle: this.secondaryTitle,
-    });
+    this.title = new SubHeaderV2Title(this.subHeaderV2TitleOptions);
     this.operationItems = [new SubHeaderV2OperationItem({
       content: '操作',
       action: () => {

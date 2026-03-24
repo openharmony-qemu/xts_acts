@@ -36,7 +36,8 @@ struct SubHeaderExample {
 
     this.title = new SubHeaderV2Title({
       primaryTitle: '一级标题',
-      secondaryTitle: '二级标题'
+      secondaryTitle: '二级标题',
+      titleAccessibilityText: '自定义内容'
     });
 
     this.select = new SubHeaderV2Select({
