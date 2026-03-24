@@ -17,7 +17,7 @@ import errorCodeTest from './matrix4/ErrorCodeTest.test'
 import EnableClickSoundEffectTest from './enableClickSoundEffect/EnableClickSoundEffectTest.test'
 import arkuiNativeCapiDragAndDrop from './arkui_native/ArkUICapiGenerated_drag_and_drop.test'
 import arkuiNativeCapiDrawableDescriptor from './arkui_native/ArkUICapiGenerated_drawable_descriptor.test'
-import arkuiNativeCapiNativeInterfaceAccessibility from './arkui_native/ArkUICapiGenerated_native_interface_accessibility.test'
+import arkuiNativeCapiNativeInterfaceA11y from './arkui_native/ArkUICapiGenerated_native_interface_a11y.test'
 import arkuiNativeCapiNativeNode from './arkui_native/ArkUICapiGenerated_native_node.test'
 import arkuiNativeCapiNativeType from './arkui_native/ArkUICapiGenerated_native_type.test'
 import arkuiNativeCapiStyledString from './arkui_native/ArkUICapiGenerated_styled_string.test'
@@ -29,7 +29,7 @@ export default function testsuite() {
   EnableClickSoundEffectTest();
   arkuiNativeCapiDragAndDrop();
   arkuiNativeCapiDrawableDescriptor();
-  arkuiNativeCapiNativeInterfaceAccessibility();
+  arkuiNativeCapiNativeInterfaceA11y();
   arkuiNativeCapiNativeNode();
   arkuiNativeCapiNativeType();
   arkuiNativeCapiStyledString();

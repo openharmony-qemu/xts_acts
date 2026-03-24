@@ -28,7 +28,8 @@ static napi_value TestArkUICapi_003(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME), expected);
     NAPI_END;
 }
 
@@ -41,7 +42,8 @@ static napi_value TestArkUICapi_004(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME), expected);
     NAPI_END;
 }
 

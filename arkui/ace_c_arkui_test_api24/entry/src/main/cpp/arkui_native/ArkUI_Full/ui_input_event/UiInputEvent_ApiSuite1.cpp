@@ -27,7 +27,8 @@ static napi_value TestArkUICapi_455(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), 5);
+    constexpr int32_t expected = 5;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), expected);
     NAPI_END;
 }
 
@@ -40,7 +41,8 @@ static napi_value TestArkUICapi_456(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UNKNOWN), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UNKNOWN), expected);
     NAPI_END;
 }
 
@@ -53,7 +55,8 @@ static napi_value TestArkUICapi_457(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UPDATE), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UPDATE), expected);
     NAPI_END;
 }
 
@@ -66,7 +69,8 @@ static napi_value TestArkUICapi_458(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_END), 2);
+    constexpr int32_t expected = 2;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_END), expected);
     NAPI_END;
 }
 
@@ -989,7 +993,9 @@ static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
-    ASSERT_EQ(OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(
+        OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN),
+        ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_NOTNULL(uiEvent);
     auto v = OH_ArkUI_DigitalCrownEvent_GetEventTime(uiEvent);
     (void)v;
@@ -1008,7 +1014,9 @@ static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
-    ASSERT_EQ(OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(
+        OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN),
+        ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_NOTNULL(uiEvent);
     auto v = OH_ArkUI_DigitalCrownEvent_GetAngularVelocity(uiEvent);
     (void)v;
@@ -1027,7 +1035,9 @@ static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
-    ASSERT_EQ(OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(
+        OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN),
+        ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_NOTNULL(uiEvent);
     auto v = OH_ArkUI_DigitalCrownEvent_GetDegree(uiEvent);
     (void)v;
@@ -1046,7 +1056,9 @@ static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
-    ASSERT_EQ(OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(
+        OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN),
+        ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_NOTNULL(uiEvent);
     auto v = OH_ArkUI_DigitalCrownEvent_GetAction(uiEvent);
     (void)v;
@@ -1065,7 +1077,9 @@ static napi_value TestArkUICapi_500(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
-    ASSERT_EQ(OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(
+        OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN),
+        ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_NOTNULL(uiEvent);
     auto ec = OH_ArkUI_DigitalCrownEvent_SetStopPropagation(uiEvent, false);
     if (ec != ARKUI_ERROR_CODE_NO_ERROR) {

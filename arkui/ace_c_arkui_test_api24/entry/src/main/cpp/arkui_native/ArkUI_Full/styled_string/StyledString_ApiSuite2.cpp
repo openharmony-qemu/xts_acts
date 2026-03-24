@@ -632,7 +632,9 @@ static napi_value TestArkUICapi_373(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_GestureStyle_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(obj, static_cast<void (*)(ArkUI_GestureEvent *)>(nullptr));
+    auto ec = OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(
+        obj,
+        static_cast<void (*)(ArkUI_GestureEvent *)>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_GestureStyle_Destroy(obj);
     NAPI_END;
@@ -705,7 +707,9 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle *, OH_ArkUI_ShadowOptions **, uint32_t, uint32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
+ *     uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextShadowStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1205,7 +1209,9 @@ static napi_value TestArkUICapi_407(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_BackgroundColorStyle *, float *, float *, float *, float *)
+ * 测试接口:
+ *     OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_BackgroundColorStyle *, float *, float *, float *,
+ *     float *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_BackgroundColorStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1399,14 +1405,18 @@ static napi_value TestArkUICapi_419(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_CustomSpan_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(obj, static_cast<ArkUI_CustomSpanMetrics *(*)(float)>(nullptr));
+    auto ec = OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(
+        obj,
+        static_cast<ArkUI_CustomSpanMetrics *(*)(float)>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_CustomSpan_Destroy(obj);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan *, void (*)(ArkUI_DrawContext *, ArkUI_CustomSpanDrawInfo *))
+ * 测试接口:
+ *     OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan *, void (*)(ArkUI_DrawContext *,
+ *     ArkUI_CustomSpanDrawInfo *))
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_CustomSpan_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1416,7 +1426,9 @@ static napi_value TestArkUICapi_420(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_CustomSpan_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_CustomSpan_RegisterOnDrawCallback(obj, static_cast<void (*)(ArkUI_DrawContext *, ArkUI_CustomSpanDrawInfo *)>(nullptr));
+    auto ec = OH_ArkUI_CustomSpan_RegisterOnDrawCallback(
+        obj,
+        static_cast<void (*)(ArkUI_DrawContext *, ArkUI_CustomSpanDrawInfo *)>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_CustomSpan_Destroy(obj);
     NAPI_END;

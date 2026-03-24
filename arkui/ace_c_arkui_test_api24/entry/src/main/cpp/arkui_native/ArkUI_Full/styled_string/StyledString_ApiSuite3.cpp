@@ -55,7 +55,8 @@ static napi_value TestArkUICapi_439(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageAttachment *, float *, float *, float *, float *)
+ * 测试接口:
+ *     OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageAttachment *, float *, float *, float *, float *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -228,13 +229,16 @@ static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
     (void)info;
     uint32_t v1 = 0U;
     uint32_t v2 = 0U;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), &v1, &v2);
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(
+        static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), &v1, &v2);
     ASSERT_OBJ(p, nullptr);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent *, ArkUI_StyledString_Descriptor *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent *,
+ *     ArkUI_StyledString_Descriptor *)
  * 预期效果: 空 changeEvent 时返回空指针。
  * 实际测试: 传 nullptr 校验返回。
  */
@@ -242,13 +246,17 @@ static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(
+        static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
+        static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
     ASSERT_OBJ(p, nullptr);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent *, ArkUI_StyledString_Descriptor *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent *,
+ *     ArkUI_StyledString_Descriptor *)
  * 预期效果: 空 changeEvent 时返回空指针。
  * 实际测试: 传 nullptr 校验返回。
  */
@@ -256,13 +264,17 @@ static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+    auto *p = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(
+        static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
+        static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
     ASSERT_OBJ(p, nullptr);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkUI_TextLayoutManager *, double, double, OH_Drawing_PositionAndAffinity **)
+ * 测试接口:
+ *     OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkUI_TextLayoutManager *, double, double,
+ *     OH_Drawing_PositionAndAffinity **)
  * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
  * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
  */
@@ -278,7 +290,9 @@ static napi_value TestArkUICapi_452(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *, OH_Drawing_Range **, OH_Drawing_Range **)
+ * 测试接口:
+ *     OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *,
+ *     OH_Drawing_Range **, OH_Drawing_Range **)
  * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
  * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
  */
@@ -290,13 +304,19 @@ static napi_value TestArkUICapi_453(napi_env env, napi_callback_info info)
     OH_Drawing_Range ** outPtr2 = &holder2;
     OH_Drawing_Range * holder3 = nullptr;
     OH_Drawing_Range ** outPtr3 = &holder3;
-    auto ec = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(nullptr, static_cast<OH_Drawing_Range *>(nullptr), outPtr2, outPtr3);
+    auto ec = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(
+        nullptr,
+        static_cast<OH_Drawing_Range *>(nullptr),
+        outPtr2,
+        outPtr3);
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *, OH_Drawing_Range **, OH_Drawing_Range **)
+ * 测试接口:
+ *     OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(ArkUI_TextLayoutManager *, OH_Drawing_Range *,
+ *     OH_Drawing_Range **, OH_Drawing_Range **)
  * 预期效果: layoutManager 为 nullptr 时返回 PARAM_INVALID。
  * 实际测试: 首参传 nullptr，断言 ARKUI_ERROR_CODE_PARAM_INVALID。
  */
@@ -308,7 +328,11 @@ static napi_value TestArkUICapi_454(napi_env env, napi_callback_info info)
     OH_Drawing_Range ** outPtr2 = &holder2;
     OH_Drawing_Range * holder3 = nullptr;
     OH_Drawing_Range ** outPtr3 = &holder3;
-    auto ec = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(nullptr, static_cast<OH_Drawing_Range *>(nullptr), outPtr2, outPtr3);
+    auto ec = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(
+        nullptr,
+        static_cast<OH_Drawing_Range *>(nullptr),
+        outPtr2,
+        outPtr3);
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }

@@ -27,7 +27,8 @@ static napi_value TestArkUICapi_008(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR), 22);
+    constexpr int32_t expected = 22;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR), expected);
     NAPI_END;
 }
 
@@ -40,7 +41,8 @@ static napi_value TestArkUICapi_009(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT), 2003);
+    constexpr int32_t expected = 2003;
+    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT), expected);
     NAPI_END;
 }
 
@@ -53,7 +55,8 @@ static napi_value TestArkUICapi_010(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT), 2004);
+    constexpr int32_t expected = 2004;
+    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT), expected);
     NAPI_END;
 }
 
@@ -66,7 +69,8 @@ static napi_value TestArkUICapi_011(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE), 7042);
+    constexpr int32_t expected = 7042;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE), expected);
     NAPI_END;
 }
 
@@ -79,7 +83,8 @@ static napi_value TestArkUICapi_012(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW), 7049);
+    constexpr int32_t expected = 7049;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW), expected);
     NAPI_END;
 }
 
@@ -92,7 +97,8 @@ static napi_value TestArkUICapi_013(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE), 8038);
+    constexpr int32_t expected = 8038;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE), expected);
     NAPI_END;
 }
 
@@ -105,7 +111,8 @@ static napi_value TestArkUICapi_014(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING), 8043);
+    constexpr int32_t expected = 8043;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING), expected);
     NAPI_END;
 }
 
@@ -118,7 +125,8 @@ static napi_value TestArkUICapi_015(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW), 8046);
+    constexpr int32_t expected = 8046;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW), expected);
     NAPI_END;
 }
 
@@ -131,7 +139,8 @@ static napi_value TestArkUICapi_016(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE), 22000);
+    constexpr int32_t expected = 22000;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE), expected);
     NAPI_END;
 }
 
@@ -144,7 +153,8 @@ static napi_value TestArkUICapi_017(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR), 22001);
+    constexpr int32_t expected = 22001;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR), expected);
     NAPI_END;
 }
 
@@ -157,7 +167,8 @@ static napi_value TestArkUICapi_018(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR), 22002);
+    constexpr int32_t expected = 22002;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR), expected);
     NAPI_END;
 }
 
@@ -170,7 +181,8 @@ static napi_value TestArkUICapi_019(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE), 22003);
+    constexpr int32_t expected = 22003;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE), expected);
     NAPI_END;
 }
 
@@ -183,7 +195,8 @@ static napi_value TestArkUICapi_020(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR), 22004);
+    constexpr int32_t expected = 22004;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR), expected);
     NAPI_END;
 }
 
@@ -196,7 +209,8 @@ static napi_value TestArkUICapi_021(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG), 22005);
+    constexpr int32_t expected = 22005;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG), expected);
     NAPI_END;
 }
 
@@ -209,7 +223,8 @@ static napi_value TestArkUICapi_022(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS), 22006);
+    constexpr int32_t expected = 22006;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS), expected);
     NAPI_END;
 }
 
@@ -222,7 +237,8 @@ static napi_value TestArkUICapi_023(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER), 22007);
+    constexpr int32_t expected = 22007;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER), expected);
     NAPI_END;
 }
 
@@ -235,7 +251,8 @@ static napi_value TestArkUICapi_024(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER), 22008);
+    constexpr int32_t expected = 22008;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER), expected);
     NAPI_END;
 }
 
@@ -248,7 +265,8 @@ static napi_value TestArkUICapi_025(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT), 22009);
+    constexpr int32_t expected = 22009;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT), expected);
     NAPI_END;
 }
 
@@ -261,7 +279,8 @@ static napi_value TestArkUICapi_026(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER), 22010);
+    constexpr int32_t expected = 22010;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER), expected);
     NAPI_END;
 }
 
@@ -274,7 +293,8 @@ static napi_value TestArkUICapi_027(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR), 22011);
+    constexpr int32_t expected = 22011;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR), expected);
     NAPI_END;
 }
 
@@ -287,7 +307,8 @@ static napi_value TestArkUICapi_028(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR), 22012);
+    constexpr int32_t expected = 22012;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR), expected);
     NAPI_END;
 }
 
@@ -300,7 +321,8 @@ static napi_value TestArkUICapi_029(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS), 22013);
+    constexpr int32_t expected = 22013;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS), expected);
     NAPI_END;
 }
 
@@ -313,7 +335,8 @@ static napi_value TestArkUICapi_030(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH), 22014);
+    constexpr int32_t expected = 22014;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH), expected);
     NAPI_END;
 }
 
@@ -326,7 +349,8 @@ static napi_value TestArkUICapi_031(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES), 22015);
+    constexpr int32_t expected = 22015;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES), expected);
     NAPI_END;
 }
 
@@ -339,7 +363,8 @@ static napi_value TestArkUICapi_032(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK), 22016);
+    constexpr int32_t expected = 22016;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK), expected);
     NAPI_END;
 }
 
@@ -352,7 +377,8 @@ static napi_value TestArkUICapi_033(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS), 22017);
+    constexpr int32_t expected = 22017;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS), expected);
     NAPI_END;
 }
 
@@ -365,7 +391,8 @@ static napi_value TestArkUICapi_034(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE), 22018);
+    constexpr int32_t expected = 22018;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE), expected);
     NAPI_END;
 }
 
@@ -378,7 +405,8 @@ static napi_value TestArkUICapi_035(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS), 22019);
+    constexpr int32_t expected = 22019;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS), expected);
     NAPI_END;
 }
 
@@ -391,7 +419,8 @@ static napi_value TestArkUICapi_036(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING), 22020);
+    constexpr int32_t expected = 22020;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING), expected);
     NAPI_END;
 }
 
@@ -404,7 +433,8 @@ static napi_value TestArkUICapi_037(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD), 22021);
+    constexpr int32_t expected = 22021;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD), expected);
     NAPI_END;
 }
 
@@ -417,7 +447,8 @@ static napi_value TestArkUICapi_038(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU), 22022);
+    constexpr int32_t expected = 22022;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU), expected);
     NAPI_END;
 }
 
@@ -430,7 +461,8 @@ static napi_value TestArkUICapi_039(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING), 22023);
+    constexpr int32_t expected = 22023;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING), expected);
     NAPI_END;
 }
 
@@ -443,7 +475,8 @@ static napi_value TestArkUICapi_040(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING), 22024);
+    constexpr int32_t expected = 22024;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING), expected);
     NAPI_END;
 }
 
@@ -456,7 +489,8 @@ static napi_value TestArkUICapi_041(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION), 22025);
+    constexpr int32_t expected = 22025;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION), expected);
     NAPI_END;
 }
 
@@ -469,7 +503,8 @@ static napi_value TestArkUICapi_042(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE), 22026);
+    constexpr int32_t expected = 22026;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE), expected);
     NAPI_END;
 }
 
@@ -482,7 +517,8 @@ static napi_value TestArkUICapi_043(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE), 22027);
+    constexpr int32_t expected = 22027;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE), expected);
     NAPI_END;
 }
 
@@ -495,7 +531,8 @@ static napi_value TestArkUICapi_044(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_DIGITAL_CROWN), 33);
+    constexpr int32_t expected = 33;
+    ASSERT_EQ(static_cast<int32_t>(NODE_ON_DIGITAL_CROWN), expected);
     NAPI_END;
 }
 
@@ -508,7 +545,8 @@ static napi_value TestArkUICapi_045(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL), 34);
+    constexpr int32_t expected = 34;
+    ASSERT_EQ(static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL), expected);
     NAPI_END;
 }
 
@@ -521,7 +559,8 @@ static napi_value TestArkUICapi_046(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL), 35);
+    constexpr int32_t expected = 35;
+    ASSERT_EQ(static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL), expected);
     NAPI_END;
 }
 
@@ -534,7 +573,8 @@ static napi_value TestArkUICapi_047(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD), 36);
+    constexpr int32_t expected = 36;
+    ASSERT_EQ(static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD), expected);
     NAPI_END;
 }
 
@@ -547,7 +587,8 @@ static napi_value TestArkUICapi_048(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE), 22000);
+    constexpr int32_t expected = 22000;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE), expected);
     NAPI_END;
 }
 
@@ -560,7 +601,8 @@ static napi_value TestArkUICapi_049(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY), 22001);
+    constexpr int32_t expected = 22001;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY), expected);
     NAPI_END;
 }
 
@@ -573,7 +615,8 @@ static napi_value TestArkUICapi_050(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE), 22002);
+    constexpr int32_t expected = 22002;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE), expected);
     NAPI_END;
 }
 
@@ -586,7 +629,8 @@ static napi_value TestArkUICapi_051(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE), 22003);
+    constexpr int32_t expected = 22003;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE), expected);
     NAPI_END;
 }
 
@@ -599,7 +643,8 @@ static napi_value TestArkUICapi_052(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT), 22004);
+    constexpr int32_t expected = 22004;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT), expected);
     NAPI_END;
 }
 
@@ -612,7 +657,8 @@ static napi_value TestArkUICapi_053(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT), 22005);
+    constexpr int32_t expected = 22005;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT), expected);
     NAPI_END;
 }
 
@@ -625,7 +671,8 @@ static napi_value TestArkUICapi_054(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY), 22006);
+    constexpr int32_t expected = 22006;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY), expected);
     NAPI_END;
 }
 
@@ -638,7 +685,8 @@ static napi_value TestArkUICapi_055(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE), 22007);
+    constexpr int32_t expected = 22007;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE), expected);
     NAPI_END;
 }
 
@@ -651,7 +699,8 @@ static napi_value TestArkUICapi_056(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE), 22008);
+    constexpr int32_t expected = 22008;
+    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE), expected);
     NAPI_END;
 }
 

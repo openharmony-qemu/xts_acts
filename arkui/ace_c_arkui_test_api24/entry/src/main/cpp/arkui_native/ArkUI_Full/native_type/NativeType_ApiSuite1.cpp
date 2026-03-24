@@ -27,7 +27,8 @@ static napi_value TestArkUICapi_059(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_ELLIPSIS_MODE_MULTILINE_START), 3);
+    constexpr int32_t expected = 3;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_ELLIPSIS_MODE_MULTILINE_START), expected);
     NAPI_END;
 }
 
@@ -40,7 +41,8 @@ static napi_value TestArkUICapi_060(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_ELLIPSIS_MODE_MULTILINE_CENTER), 4);
+    constexpr int32_t expected = 4;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_ELLIPSIS_MODE_MULTILINE_CENTER), expected);
     NAPI_END;
 }
 
@@ -53,7 +55,8 @@ static napi_value TestArkUICapi_061(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_TEXT_MENU_ITEM_ID_AUTO_FILL), 16);
+    constexpr int32_t expected = 16;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_TEXT_MENU_ITEM_ID_AUTO_FILL), expected);
     NAPI_END;
 }
 
@@ -66,7 +69,8 @@ static napi_value TestArkUICapi_062(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_TEXT_MENU_ITEM_ID_PASSWORD_VAULT), 17);
+    constexpr int32_t expected = 17;
+    ASSERT_EQ(static_cast<int32_t>(ARKUI_TEXT_MENU_ITEM_ID_PASSWORD_VAULT), expected);
     NAPI_END;
 }
 
@@ -79,7 +83,8 @@ static napi_value TestArkUICapi_063(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_DISABLED), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_DISABLED), expected);
     NAPI_END;
 }
 
@@ -92,7 +97,8 @@ static napi_value TestArkUICapi_064(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_ENABLED), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_ENABLED), expected);
     NAPI_END;
 }
 
@@ -105,7 +111,8 @@ static napi_value TestArkUICapi_065(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_AUTO), 2);
+    constexpr int32_t expected = 2;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_HAPTIC_FEEDBACK_MODE_AUTO), expected);
     NAPI_END;
 }
 
@@ -118,7 +125,8 @@ static napi_value TestArkUICapi_066(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_TEXT), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_TEXT), expected);
     NAPI_END;
 }
 
@@ -131,7 +139,8 @@ static napi_value TestArkUICapi_067(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_IMAGE), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_IMAGE), expected);
     NAPI_END;
 }
 
@@ -144,7 +153,8 @@ static napi_value TestArkUICapi_068(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_MIXED), 2);
+    constexpr int32_t expected = 2;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_MIXED), expected);
     NAPI_END;
 }
 
@@ -157,7 +167,8 @@ static napi_value TestArkUICapi_069(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_BUILDER), 3);
+    constexpr int32_t expected = 3;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_BUILDER), expected);
     NAPI_END;
 }
 
@@ -170,7 +181,8 @@ static napi_value TestArkUICapi_070(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_DEFAULT), 4);
+    constexpr int32_t expected = 4;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SPAN_TYPE_DEFAULT), expected);
     NAPI_END;
 }
 
@@ -183,7 +195,8 @@ static napi_value TestArkUICapi_071(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_RIGHT_CLICK), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_RIGHT_CLICK), expected);
     NAPI_END;
 }
 
@@ -196,7 +209,8 @@ static napi_value TestArkUICapi_072(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_LONG_PRESS), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_LONG_PRESS), expected);
     NAPI_END;
 }
 
@@ -209,7 +223,8 @@ static napi_value TestArkUICapi_073(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_SELECT), 2);
+    constexpr int32_t expected = 2;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_SELECT), expected);
     NAPI_END;
 }
 
@@ -222,7 +237,8 @@ static napi_value TestArkUICapi_074(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_DEFAULT), 3);
+    constexpr int32_t expected = 3;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_RESPONSE_TYPE_DEFAULT), expected);
     NAPI_END;
 }
 
@@ -235,7 +251,8 @@ static napi_value TestArkUICapi_075(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SELECTION_MENU), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_SELECTION_MENU), expected);
     NAPI_END;
 }
 
@@ -248,7 +265,8 @@ static napi_value TestArkUICapi_076(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_PREVIEW_MENU), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_TEXT_EDITOR_PREVIEW_MENU), expected);
     NAPI_END;
 }
 
@@ -261,7 +279,8 @@ static napi_value TestArkUICapi_077(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_GREEDY), 0);
+    constexpr int32_t expected = 0;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_GREEDY), expected);
     NAPI_END;
 }
 
@@ -274,7 +293,8 @@ static napi_value TestArkUICapi_078(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_HIGH_QUALITY), 1);
+    constexpr int32_t expected = 1;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_HIGH_QUALITY), expected);
     NAPI_END;
 }
 
@@ -287,7 +307,8 @@ static napi_value TestArkUICapi_079(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_BALANCE), 2);
+    constexpr int32_t expected = 2;
+    ASSERT_EQ(static_cast<int32_t>(OH_ARKUI_LINE_BREAK_STRATEGY_BALANCE), expected);
     NAPI_END;
 }
 
@@ -322,7 +343,9 @@ static napi_value TestArkUICapi_081(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_DecorationStyleOptions *, ArkUI_TextDecorationType)
+ * 测试接口:
+ *     OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_DecorationStyleOptions *,
+ *     ArkUI_TextDecorationType)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_DecorationStyleOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -339,7 +362,9 @@ static napi_value TestArkUICapi_082(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_DecorationStyleOptions *, ArkUI_TextDecorationType *)
+ * 测试接口:
+ *     OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_DecorationStyleOptions *,
+ *     ArkUI_TextDecorationType *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_DecorationStyleOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -349,7 +374,9 @@ static napi_value TestArkUICapi_083(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_DecorationStyleOptions_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(obj, static_cast<ArkUI_TextDecorationType *>(nullptr));
+    auto ec = OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(
+        obj,
+        static_cast<ArkUI_TextDecorationType *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_DecorationStyleOptions_Destroy(obj);
     NAPI_END;
@@ -391,7 +418,9 @@ static napi_value TestArkUICapi_085(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions *, ArkUI_TextDecorationStyle)
+ * 测试接口:
+ *     OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions *,
+ *     ArkUI_TextDecorationStyle)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_DecorationStyleOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -408,7 +437,9 @@ static napi_value TestArkUICapi_086(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions *, ArkUI_TextDecorationStyle *)
+ * 测试接口:
+ *     OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions *,
+ *     ArkUI_TextDecorationStyle *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_DecorationStyleOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -418,7 +449,9 @@ static napi_value TestArkUICapi_087(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_DecorationStyleOptions_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(obj, static_cast<ArkUI_TextDecorationStyle *>(nullptr));
+    auto ec = OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(
+        obj,
+        static_cast<ArkUI_TextDecorationStyle *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_DecorationStyleOptions_Destroy(obj);
     NAPI_END;
@@ -490,7 +523,9 @@ static napi_value TestArkUICapi_091(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetectorConfig *, const ArkUI_TextDataDetectorType *, int32_t)
+ * 测试接口:
+ *     OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetectorConfig *, const ArkUI_TextDataDetectorType *,
+ *     int32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -500,14 +535,19 @@ static napi_value TestArkUICapi_092(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextDataDetectorConfig_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextDataDetectorConfig_SetTypes(obj, static_cast<const ArkUI_TextDataDetectorType *>(nullptr), 0);
+    auto ec = OH_ArkUI_TextDataDetectorConfig_SetTypes(
+        obj,
+        static_cast<const ArkUI_TextDataDetectorType *>(nullptr),
+        0);
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetectorConfig *, ArkUI_TextDataDetectorType *, int32_t, int32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetectorConfig *, ArkUI_TextDataDetectorType *,
+ *     int32_t, int32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -525,7 +565,9 @@ static napi_value TestArkUICapi_093(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback(OH_ArkUI_TextDataDetectorConfig *, void *, void (*)(const char *, int32_t, void *))
+ * 测试接口:
+ *     OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback(OH_ArkUI_TextDataDetectorConfig *, void *,
+ *     void (*)(const char *, int32_t, void *))
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -535,7 +577,10 @@ static napi_value TestArkUICapi_094(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextDataDetectorConfig_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback(obj, static_cast<void *>(nullptr), static_cast<void (*)(const char *, int32_t, void *)>(nullptr));
+    auto ec = OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback(
+        obj,
+        static_cast<void *>(nullptr),
+        static_cast<void (*)(const char *, int32_t, void *)>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     NAPI_END;
@@ -577,7 +622,9 @@ static napi_value TestArkUICapi_096(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *, OH_ArkUI_DecorationStyleOptions *)
+ * 测试接口:
+ *     OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *,
+ *     OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -587,14 +634,18 @@ static napi_value TestArkUICapi_097(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextDataDetectorConfig_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto ec = OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(
+        obj,
+        static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *, OH_ArkUI_DecorationStyleOptions *)
+ * 测试接口:
+ *     OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *,
+ *     OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -604,7 +655,9 @@ static napi_value TestArkUICapi_098(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextDataDetectorConfig_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto ec = OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(
+        obj,
+        static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     NAPI_END;
@@ -694,7 +747,9 @@ static napi_value TestArkUICapi_103(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEditorPlaceholderOptions *, char *, int32_t, int32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEditorPlaceholderOptions *, char *, int32_t,
+ *     int32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorPlaceholderOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -801,7 +856,9 @@ static napi_value TestArkUICapi_109(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_TextEditorPlaceholderOptions *, char *, int32_t, int32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_TextEditorPlaceholderOptions *, char *, int32_t,
+ *     int32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorPlaceholderOptions_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -936,7 +993,8 @@ static napi_value TestArkUICapi_117(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkUI_TextEditorStyledStringController *, int32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkUI_TextEditorStyledStringController *, int32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -954,7 +1012,9 @@ static napi_value TestArkUICapi_118(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_TextEditorStyledStringController *, uint32_t, uint32_t, ArkUI_MenuPolicy)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_TextEditorStyledStringController *, uint32_t,
+ *     uint32_t, ArkUI_MenuPolicy)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -999,14 +1059,16 @@ static napi_value TestArkUICapi_121(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorStyledStringController_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorStyledStringController_StopEditing(obj, );
+    auto ec = OH_ArkUI_TextEditorStyledStringController_StopEditing(obj);
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkUI_TextEditorStyledStringController *, uint32_t *, char *, int32_t, int32_t *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkUI_TextEditorStyledStringController *,
+ *     uint32_t *, char *, int32_t, int32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1026,7 +1088,8 @@ static napi_value TestArkUICapi_122(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_TextEditorStyledStringController *, ArkUI_Rect *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_TextEditorStyledStringController *, ArkUI_Rect *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1053,7 +1116,7 @@ static napi_value TestArkUICapi_124(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorStyledStringController_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorStyledStringController_DeleteBackward(obj, );
+    auto ec = OH_ArkUI_TextEditorStyledStringController_DeleteBackward(obj);
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
     NAPI_END;
@@ -1124,7 +1187,9 @@ static napi_value TestArkUICapi_128(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle *, struct OH_PixelmapNative *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle *,
+ *     struct OH_PixelmapNative *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1134,14 +1199,18 @@ static napi_value TestArkUICapi_129(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorParagraphStyle_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(obj, static_cast<OH_PixelmapNative *>(nullptr));
+    auto ec = OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(
+        obj,
+        static_cast<OH_PixelmapNative *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorParagraphStyle_Destroy(obj);
     NAPI_END;
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle *, struct OH_PixelmapNative **)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle *,
+ *     struct OH_PixelmapNative **)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1264,7 +1333,9 @@ static napi_value TestArkUICapi_136(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle *, OH_ArkUI_LineBreakStrategy)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle *,
+ *     OH_ArkUI_LineBreakStrategy)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1281,7 +1352,9 @@ static napi_value TestArkUICapi_137(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle *, OH_ArkUI_LineBreakStrategy *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle *,
+ *     OH_ArkUI_LineBreakStrategy *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1291,7 +1364,9 @@ static napi_value TestArkUICapi_138(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorParagraphStyle_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(obj, static_cast<OH_ArkUI_LineBreakStrategy *>(nullptr));
+    auto ec = OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(
+        obj,
+        static_cast<OH_ArkUI_LineBreakStrategy *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorParagraphStyle_Destroy(obj);
     NAPI_END;
@@ -1333,7 +1408,9 @@ static napi_value TestArkUICapi_140(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle *, ArkUI_TextVerticalAlignment)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle *,
+ *     ArkUI_TextVerticalAlignment)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1350,7 +1427,9 @@ static napi_value TestArkUICapi_141(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle *, ArkUI_TextVerticalAlignment *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle *,
+ *     ArkUI_TextVerticalAlignment *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1360,7 +1439,9 @@ static napi_value TestArkUICapi_142(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorParagraphStyle_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(obj, static_cast<ArkUI_TextVerticalAlignment *>(nullptr));
+    auto ec = OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(
+        obj,
+        static_cast<ArkUI_TextVerticalAlignment *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorParagraphStyle_Destroy(obj);
     NAPI_END;
@@ -1402,7 +1483,9 @@ static napi_value TestArkUICapi_144(napi_env env, napi_callback_info info)
 }
 
 /*
- * 测试接口: OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(OH_ArkUI_TextEditorStyledStringController *, OH_ArkUI_TextEditorParagraphStyle *)
+ * 测试接口:
+ *     OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(OH_ArkUI_TextEditorStyledStringController *,
+ *     OH_ArkUI_TextEditorParagraphStyle *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -1412,7 +1495,9 @@ static napi_value TestArkUICapi_145(napi_env env, napi_callback_info info)
     (void)info;
     auto *obj = OH_ArkUI_TextEditorStyledStringController_Create();
     ASSERT_NOTNULL(obj);
-    auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(obj, static_cast<OH_ArkUI_TextEditorParagraphStyle *>(nullptr));
+    auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(
+        obj,
+        static_cast<OH_ArkUI_TextEditorParagraphStyle *>(nullptr));
     ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
     NAPI_END;

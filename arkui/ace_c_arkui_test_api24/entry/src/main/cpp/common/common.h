@@ -164,9 +164,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         if ((result) != (expect)) {                                                                                    \
             std::string assertStr = "assert equal failed, expect is " + std::to_string(expect) + " and result is " +   \
                                     std::to_string(result);                                                            \
-            char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
-            napi_throw_error((env), nullptr, assertChars);                                                             \
+            (void)napi_throw_error((env), nullptr, assertStr.c_str());                                                 \
             napi_value errorResult = nullptr;                                                                          \
             napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
             return errorResult;                                                                                        \
@@ -178,9 +176,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         if ((result) == (expect)) {                                                                                    \
             std::string assertStr = "assert not equal failed, expect is " + std::to_string(expect) +                   \
                                     " and result is " + std::to_string(result);                                        \
-            char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
-            napi_throw_error((env), nullptr, assertChars);                                                             \
+            (void)napi_throw_error((env), nullptr, assertStr.c_str());                                               \
             napi_value errorResult = nullptr;                                                                          \
             napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
             return errorResult;                                                                                        \
@@ -203,7 +199,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         decltype(res1) res2 = (expect);                                                                                \
         std::string str1 = res1;                                                                                       \
         std::string str2 = res2;                                                                                       \
-        if (::strcmp(res1, res2) != 0) {                                                                               \
+        if (str1 != str2) {                                                                                            \
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STREQ",                                         \
                          "assert equal failed, expect is %{public}s and result is %{public}s", res2, res1);            \
             napi_value errorResult = nullptr;                                                                          \
@@ -218,7 +214,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         decltype(res1) res2 = (expect);                                                                                \
         std::string str1 = res1;                                                                                       \
         std::string str2 = res2;                                                                                       \
-        if (::strcmp(res1, res2) == 0) {                                                                               \
+        if (str1 == str2) {                                                                                            \
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STRNE",                                         \
                          "assert not equal failed, expect is %{public}s and result is %{public}s", res2, res1);        \
             napi_value errorResult = nullptr;                                                                          \
