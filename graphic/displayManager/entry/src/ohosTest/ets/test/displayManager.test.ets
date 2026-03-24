@@ -3225,7 +3225,8 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
-          display.makeUnique(displayId).then(async () => {
+          if(deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet'){
+            display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
@@ -3234,6 +3235,7 @@ export default function displayTest() {
             let windowClass = windowStageStart.getMainWindowSync();
             await windowClass.setWindowFocusable(true);
             await terminateAbility(caseName);
+            await display.destroyVirtualScreen(displayId);
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
@@ -3246,6 +3248,11 @@ export default function displayTest() {
               done();
             }
           })
+          }else{
+            await display.destroyVirtualScreen(displayId);
+            done();
+          }
+          
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport || deviceType === 'wearable') {
@@ -3286,7 +3293,8 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
-          display.makeUnique(displayId).then(async () => {
+          if(deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet'){
+            display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
@@ -3295,6 +3303,7 @@ export default function displayTest() {
             let windowClass = windowStageStart.getMainWindowSync();
             await windowClass.setWindowFocusable(true);
             await terminateAbility(caseName);
+            await display.destroyVirtualScreen(displayId);
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
@@ -3307,6 +3316,11 @@ export default function displayTest() {
               done();
             }
           })
+          }else{
+            await display.destroyVirtualScreen(displayId);
+            done();
+          }
+          
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport|| deviceType === 'wearable') {
@@ -3346,7 +3360,8 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
-          display.makeUnique(displayId).then(async () => {
+          if(deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet'){
+            display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
@@ -3355,6 +3370,7 @@ export default function displayTest() {
             let windowClass = windowStageStart.getMainWindowSync();
             await windowClass.setWindowFocusable(true);
             await terminateAbility(caseName);
+            await display.destroyVirtualScreen(displayId);
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
@@ -3367,6 +3383,11 @@ export default function displayTest() {
               done();
             }
           })
+          }else{
+            await display.destroyVirtualScreen(displayId);
+            done();
+          }
+          
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport|| deviceType === 'wearable') {
@@ -3407,7 +3428,8 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
-          display.makeUnique(displayId).then(async () => {
+          if(deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet'){
+            display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
@@ -3416,6 +3438,7 @@ export default function displayTest() {
             let windowClass = windowStageStart.getMainWindowSync();
             await windowClass.setWindowFocusable(true);
             await terminateAbility(caseName);
+            await display.destroyVirtualScreen(displayId);
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
@@ -3428,6 +3451,11 @@ export default function displayTest() {
               done();
             }
           })
+          }else{
+           await display.destroyVirtualScreen(displayId);
+           done();
+          }
+          
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport|| deviceType === 'wearable') {
