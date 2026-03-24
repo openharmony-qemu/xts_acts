@@ -207,6 +207,7 @@ group("multimedia") {
       "photoAccess/photoAccess:photoAccess_js_hap",
       "photoAccess/photoAccessSendable:photoAccess_sendable_hap",
       "photoAccess/photoAccess_ets_standard/photoAccessXts:photoAccessXts_ets_hap",
+      "photoAccess/photoAccess_ets_standard/photoAccessXtsStatic:photoAccessXts_ets_static_hap",
       "photoAccess/mediaLibraryTestApi20:ActsMediaLibraryApi20Test",
       "photoAccess/photoAccessSupplement:photoAccessXts_supp_ets_hap",
       "photoAccess/photoAccessStatic:photoAccess_js_static_hap",
