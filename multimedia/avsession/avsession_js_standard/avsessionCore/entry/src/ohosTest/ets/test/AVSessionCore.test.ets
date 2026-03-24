@@ -1988,6 +1988,47 @@ export default function abilityTest() {
         done();
       });
 
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100
+     * @tc.desc   test setBackgroundPlayMode - set mode as enable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100]';
+      await session.setBackgroundPlayMode(0).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      await sleep(300);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200
+     * @tc.desc   test setBackgroundPlayMode - set mode as disable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200]';
+      await session.setBackgroundPlayMode(1).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, DISABLE_BACKGROUND_PLAY set successful!`);
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      await sleep(300);
+      done();
+    })
+
   })
 }
 
