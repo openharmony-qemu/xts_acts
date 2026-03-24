@@ -1239,5 +1239,75 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.number SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.desc   query all osAccount Ids getOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0100 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag, "data: " + dataArray);
+        if (dataArray.length > 0) {
+          expect(dataArray.length).assertEqual(1);
+          expect(dataArray[0]).assertEqual(100);
+        } else {
+          expect(dataArray.length).assertEqual(0);
+        }
+        console.info(tag, "end====");
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+      };
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.name     SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.desc     Verify to obtain the local IDs of all os accounts created getOsAccountLocalIds promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0200 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      let isEnable = await accountManager.checkMultiOsAccountEnabled();
+      if (isEnable != true) {
+        console.info(tag + "not support multiple osaccouts====");
+        done();
+        return;
+      }
+      let options = {
+        shortName: "Ids",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
+      console.info(tag + "start CreateAccount");
+      let osAccountFir = await CreateAccount("osAccountIds", osaccount.OsAccountType.NORMAL, options);
+      console.info(tag + "create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+      let localIdFir = osAccountFir.localId;
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag + "data: " + dataArray);
+        expect(dataArray.length >= 1).assertTrue();
+      } catch (err) {
+        console.info(tag + "err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await RemoveAccount(localIdFir);
+      console.info(tag + "remove localId: " + localIdFir);
+      console.info(tag + "end====");
+      done();
+    });
   })
 }
