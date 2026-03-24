@@ -1100,6 +1100,202 @@ export default function KVManagerRootDirEntry() {
         });
 
         /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir__Entry_backupEx_04001
+         * @tc.name SingleKv_rootDir_backupEx_04001
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  rootDirBackup异常，目录为空，rootDirBackup=null/undefined  err=15100000，BackupExDir，RestoreExDir,DeleteBackup
+         */
+        it('SingleKv_rootDir_backupEx_04001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + ' ------ SingleKv_rootDir_backupEx_04001');
+            try {
+                g_optionsDir.rootDir = g_rootDir;
+                g_backupConfig.filePath = g_rootDir;
+                console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
+                console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
+
+                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    kvStore = store;
+                    expect(store != undefined && store != null).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                try{
+                    await kvStore!.backupEx(null).then(() => {
+                        console.info(TAG + ' backupEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' backupEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, backupEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+                try{
+                    await kvStore!.restoreEx(null).then(() => {
+                        console.info(TAG + ' restoreEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' restoreEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, restoreEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+                try{
+                    await kvStore!.deleteBackupEx(null).then(() => {
+                        console.info(TAG + ' deleteBackupEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' deleteBackupEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, deleteBackupEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+
+                console.info(TAG + ' ---end. closeKVStore,deleteKVStore---');
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    kvStore = null;
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' deleteKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' catch e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir__Entry_backupEx_04002
+         * @tc.name SingleKv_rootDir_backupEx_04002
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  rootDirBackup异常，目录为空，rootDirBackup=null/undefined  err=15100000，BackupExDir，RestoreExDir,DeleteBackup
+         */
+        it('SingleKv_rootDir_backupEx_04002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + ' ------ SingleKv_rootDir_backupEx_04002');
+            try {
+                g_optionsDir.rootDir = g_rootDir;
+                g_backupConfig.filePath = g_rootDir;
+                console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
+                console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
+
+                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    kvStore = store;
+                    expect(store != undefined && store != null).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                try{
+                    await kvStore!.backupEx(undefined).then(() => {
+                        console.info(TAG + ' backupEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' backupEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, backupEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+                try{
+                    await kvStore!.restoreEx(undefined).then(() => {
+                        console.info(TAG + ' restoreEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' restoreEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, restoreEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+                try{
+                    await kvStore!.deleteBackupEx(undefined).then(() => {
+                        console.info(TAG + ' deleteBackupEx success');
+                        expect(null).assertFail();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.error(TAG + ' deleteBackupEx err ' + `, code=${err.code}, message=${err.message}`);
+                        expect(null).assertFail();
+                        done();
+                    });
+                }catch(e){
+                    console.error(TAG + ' catch, deleteBackupEx err ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100000);
+                }
+
+
+                console.info(TAG + ' ---end. closeKVStore,deleteKVStore---');
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    kvStore = null;
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' deleteKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' catch e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_Entry_backupEx_0401
          * @tc.name SingleKv_rootDir_backupEx_0401
          * @tc.type: FUNC
