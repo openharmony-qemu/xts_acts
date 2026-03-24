@@ -35,7 +35,6 @@ export default function arkuiNativeCapiNativeInterfaceAccessibility() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_007', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_007()).assertEqual(0)
       done()

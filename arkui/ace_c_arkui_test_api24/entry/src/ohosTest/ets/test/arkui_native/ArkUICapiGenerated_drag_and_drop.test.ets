@@ -34,7 +34,6 @@ export default function arkuiNativeCapiDragAndDrop() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_001', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_001()).assertEqual(0)
       done()
@@ -49,7 +48,6 @@ export default function arkuiNativeCapiDragAndDrop() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_002', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_002()).assertEqual(0)
       done()

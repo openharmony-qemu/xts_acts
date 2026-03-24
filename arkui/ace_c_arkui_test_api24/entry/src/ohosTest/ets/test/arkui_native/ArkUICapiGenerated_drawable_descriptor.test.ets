@@ -33,7 +33,6 @@ export default function arkuiNativeCapiDrawableDescriptor() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_003', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_003()).assertEqual(0)
       done()
@@ -47,7 +46,6 @@ export default function arkuiNativeCapiDrawableDescriptor() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_004', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_004()).assertEqual(0)
       done()
@@ -62,7 +60,6 @@ export default function arkuiNativeCapiDrawableDescriptor() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_005', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_005()).assertEqual(0)
       done()
@@ -77,7 +74,6 @@ export default function arkuiNativeCapiDrawableDescriptor() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_006', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_006()).assertEqual(0)
       done()

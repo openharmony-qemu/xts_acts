@@ -34,7 +34,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_455', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_455()).assertEqual(0)
       done()
@@ -49,7 +48,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_456', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_456()).assertEqual(0)
       done()
@@ -64,7 +62,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_457', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_457()).assertEqual(0)
       done()
@@ -79,7 +76,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_458', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_458()).assertEqual(0)
       done()
@@ -94,7 +90,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_459', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_459()).assertEqual(0)
       done()
@@ -109,7 +104,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_460', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_460()).assertEqual(0)
       done()
@@ -124,7 +118,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_461', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_461()).assertEqual(0)
       done()
@@ -139,7 +132,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_462', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_462()).assertEqual(0)
       done()
@@ -154,7 +146,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_463', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_463()).assertEqual(0)
       done()
@@ -169,7 +160,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_464', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_464()).assertEqual(0)
       done()
@@ -184,7 +174,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_465', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_465()).assertEqual(0)
       done()
@@ -199,7 +188,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_466', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_466()).assertEqual(0)
       done()
@@ -214,7 +202,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_467', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_467()).assertEqual(0)
       done()
@@ -229,7 +216,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_468', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_468()).assertEqual(0)
       done()
@@ -244,7 +230,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_469', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_469()).assertEqual(0)
       done()
@@ -259,7 +244,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_470', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_470()).assertEqual(0)
       done()
@@ -274,7 +258,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_471', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_471()).assertEqual(0)
       done()
@@ -289,7 +272,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_472', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_472()).assertEqual(0)
       done()
@@ -304,7 +286,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_473', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_473()).assertEqual(0)
       done()
@@ -319,7 +300,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_474', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_474()).assertEqual(0)
       done()
@@ -334,7 +314,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_475', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_475()).assertEqual(0)
       done()
@@ -349,7 +328,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_476', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_476()).assertEqual(0)
       done()
@@ -364,7 +342,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_477', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_477()).assertEqual(0)
       done()
@@ -379,7 +356,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_478', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_478()).assertEqual(0)
       done()
@@ -394,7 +370,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_479', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_479()).assertEqual(0)
       done()
@@ -409,7 +384,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_480', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_480()).assertEqual(0)
       done()
@@ -424,7 +398,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_481', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_481()).assertEqual(0)
       done()
@@ -439,7 +412,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_482', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_482()).assertEqual(0)
       done()
@@ -454,7 +426,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_483', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_483()).assertEqual(0)
       done()
@@ -469,7 +440,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_484', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_484()).assertEqual(0)
       done()
@@ -484,7 +454,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_485', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_485()).assertEqual(0)
       done()
@@ -499,7 +468,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_486', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_486()).assertEqual(0)
       done()
@@ -514,7 +482,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_487', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_487()).assertEqual(0)
       done()
@@ -529,7 +496,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_488', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_488()).assertEqual(0)
       done()
@@ -544,7 +510,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_489', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_489()).assertEqual(0)
       done()
@@ -559,7 +524,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_490', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_490()).assertEqual(0)
       done()
@@ -574,7 +538,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_491', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_491()).assertEqual(0)
       done()
@@ -589,7 +552,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_492', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_492()).assertEqual(0)
       done()
@@ -604,7 +566,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_493', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_493()).assertEqual(0)
       done()
@@ -619,7 +580,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_494', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_494()).assertEqual(0)
       done()
@@ -634,7 +594,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_495', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_495()).assertEqual(0)
       done()
@@ -649,7 +608,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_496', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_496()).assertEqual(0)
       done()
@@ -664,7 +622,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_497', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_497()).assertEqual(0)
       done()
@@ -679,7 +636,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_498', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_498()).assertEqual(0)
       done()
@@ -694,7 +650,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_499', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_499()).assertEqual(0)
       done()
@@ -709,7 +664,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
-
     it('TestArkUICapi_500', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_500()).assertEqual(0)
       done()
