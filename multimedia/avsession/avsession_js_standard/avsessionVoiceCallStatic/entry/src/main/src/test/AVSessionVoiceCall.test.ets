@@ -824,9 +824,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -859,9 +859,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -894,9 +894,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -929,9 +929,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -964,9 +964,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -999,9 +999,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -1034,9 +1034,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
-                expect(data.muted).assertTrue();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
+                expect(data?.muted).assertTrue();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -1069,9 +1069,9 @@ export default function abilityTest() {
             let data: avSession.AVCallState;
             try{
                 data = await controller!.getAVCallState()
-                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
-                expect(data.muted).assertFalse();
+                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                expect(data?.muted).assertFalse();
                 console.info(`${TAG}: getAVCallState successfully`);
             }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
@@ -1214,9 +1214,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_ACTIVE);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1257,9 +1257,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1300,9 +1300,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_INCOMING);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1343,9 +1343,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_DIALING);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1386,9 +1386,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_WAITING);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1429,9 +1429,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_HOLDING);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1472,9 +1472,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
-                                expect(data.muted).assertTrue();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_DISCONNECTING);
+                                expect(data?.muted).assertTrue();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
@@ -1515,9 +1515,9 @@ export default function abilityTest() {
                                 console.info(`${TAG}: getAVCallStateCallback error: code: ${err?.code}, message: ${err?.message}`);
                                 expect(false).assertTrue();
                             } else {
-                                console.info(`TestLog:state = ${data.state},muted = ${data.muted}`);
-                                expect(data.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
-                                expect(data.muted).assertFalse();
+                                console.info(`TestLog:state = ${data?.state},muted = ${data?.muted}`);
+                                expect(data?.state).assertEqual(avSession.CallState.CALL_STATE_IDLE);
+                                expect(data?.muted).assertFalse();
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
                             }
                             done();
