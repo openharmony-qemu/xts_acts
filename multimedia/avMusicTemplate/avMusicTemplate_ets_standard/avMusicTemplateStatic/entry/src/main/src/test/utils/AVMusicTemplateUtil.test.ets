@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
 import { CommonUtils } from './CommonUtil.test';
 
 const TAG = 'AVMusicTemplateUtil';
-const TEMPLATE_TYPE = 'smartCar' as avMusicTemplate.AVMusicTemplateType;
+const TEMPLATE_TYPE = avMusicTemplate.AVMusicTemplateType.fromValue('smartCar');
 export const BUNDLE_NAME = 'com.example.myapplication';
 
 export class AVMusicTemplateUtil {

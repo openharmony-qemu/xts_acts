@@ -1119,15 +1119,15 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             console.info(`TestLog: RESOLUTION_480P is ${avSession.ResolutionLevel.RESOLUTION_480P}`);
-            expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(0 as avSession.ResolutionLevel);
+            expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(avSession.ResolutionLevel.fromValue(0));
             console.info(`TestLog: RESOLUTION_720P is ${avSession.ResolutionLevel.RESOLUTION_720P}`);
-            expect(avSession.ResolutionLevel.RESOLUTION_720P).assertEqual(1 as avSession.ResolutionLevel);
+            expect(avSession.ResolutionLevel.RESOLUTION_720P).assertEqual(avSession.ResolutionLevel.fromValue(1));
             console.info(`TestLog: RESOLUTION_1080P is ${avSession.ResolutionLevel.RESOLUTION_1080P}`);
-            expect(avSession.ResolutionLevel.RESOLUTION_1080P).assertEqual(2 as avSession.ResolutionLevel);
+            expect(avSession.ResolutionLevel.RESOLUTION_1080P).assertEqual(avSession.ResolutionLevel.fromValue(2));
             console.info(`TestLog: RESOLUTION_2K is ${avSession.ResolutionLevel.RESOLUTION_2K}`);
-            expect(avSession.ResolutionLevel.RESOLUTION_2K).assertEqual(3 as avSession.ResolutionLevel);
+            expect(avSession.ResolutionLevel.RESOLUTION_2K).assertEqual(avSession.ResolutionLevel.fromValue(3));
             console.info(`TestLog: RESOLUTION_4K is ${avSession.ResolutionLevel.RESOLUTION_4K}`);
-            expect(avSession.ResolutionLevel.RESOLUTION_4K).assertEqual(4 as avSession.ResolutionLevel);
+            expect(avSession.ResolutionLevel.RESOLUTION_4K).assertEqual(avSession.ResolutionLevel.fromValue(4));
             done();
         })
 
@@ -1160,13 +1160,13 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_CALLTYPE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
             console.info(`TestLog: TYPE_CAST is ${avSession.CallerType.TYPE_CAST}`);
-            expect(avSession.CallerType.TYPE_CAST).assertEqual('cast' as avSession.CallerType);
+            expect(avSession.CallerType.TYPE_CAST).assertEqual(avSession.CallerType.fromValue('cast'));
             console.info(`TestLog: TYPE_APP is ${avSession.CallerType.TYPE_APP}`);
-            expect(avSession.CallerType.TYPE_APP).assertEqual('app' as avSession.CallerType);
+            expect(avSession.CallerType.TYPE_APP).assertEqual(avSession.CallerType.fromValue('app'));
             console.info(`TestLog: TYPE_BLUETOOTH is ${avSession.CallerType.TYPE_BLUETOOTH}`);
-            expect(avSession.CallerType.TYPE_BLUETOOTH).assertEqual('bluetooth' as avSession.CallerType);
+            expect(avSession.CallerType.TYPE_BLUETOOTH).assertEqual(avSession.CallerType.fromValue('bluetooth'));
             console.info(`TestLog: TYPE_NEARLINK is ${avSession.CallerType.TYPE_NEARLINK}`);
-            expect(avSession.CallerType.TYPE_NEARLINK).assertEqual('nearlink' as avSession.CallerType);
+            expect(avSession.CallerType.TYPE_NEARLINK).assertEqual(avSession.CallerType.fromValue('nearlink'));
             done();
         })
     })
