@@ -56,7 +56,7 @@ export default function SliderTest() {
         let pages = routerInstance.getState();
         console.info("SliderTest state pages: " + JSON.stringify(pages));
         console.info("SliderTest state pages.name: " + pages.name);
-        if (pages.name !== "SliderIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
       } catch (err) {

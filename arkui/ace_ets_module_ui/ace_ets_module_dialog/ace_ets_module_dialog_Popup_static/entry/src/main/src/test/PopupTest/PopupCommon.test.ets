@@ -56,7 +56,7 @@ export default function PopupCommonTest() {
         let pages = routerInstance.getState();
         console.info("PopupCommonTest state pages: " + JSON.stringify(pages));
         console.info("PopupCommonTest state pages.name: " + pages.name);
-        if (pages.name !== "PopupCommonOptions") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
       } catch (err) {

@@ -59,7 +59,7 @@ export default function SliderCustomContentOptionsTest() {
         let pages = routerInstance.getState();
         console.info("SliderCustomContentOptionsTest state pages: " + JSON.stringify(pages));
         console.info("SliderCustomContentOptionsTest state pages.name: " + pages.name);
-        if (pages.name !== "SliderCustomContentOptionsIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
