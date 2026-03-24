@@ -144,7 +144,7 @@ export default function fileIODfsConnect() {
       expect(false).assertTrue();
     } catch (e) {
       console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
-      if(e.code != 13900004){
+      if(e.code !== 13900004){
         expect(e.code === 801).assertTrue();
       }else{
         expect(e.code === 13900004).assertTrue();
@@ -169,7 +169,7 @@ export default function fileIODfsConnect() {
       expect(false).assertTrue();
     } catch (e) {
       console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
-      if(e.code != 13900004){
+      if(e.code !== 13900004){
         expect(e.code === 801).assertTrue();
       }else{
         expect(e.code === 13900004).assertTrue();
@@ -239,7 +239,7 @@ export default function fileIODfsConnect() {
         console.log(testNum + "Success to connectDfs");
       }).catch((err) => {
         console.log(testNum + 'connectDfs failed with error code: ' + err.code + 'message: ' + err.message);
-        if(err.code != 13900004){
+        if(err.code !== 13900004){
           expect(err.code === 801).assertTrue();
         }else{
           expect(err.code === 13900004).assertTrue();
@@ -275,7 +275,7 @@ export default function fileIODfsConnect() {
         console.log(testNum + "Success to connectDfs");
       }).catch((err) => {
         console.log(testNum + 'connectDfs failed with error code: ' + err.code + 'message: ' + err.message);
-        if(err.code != 13900004){
+        if(err.code !== 13900004){
           expect(err.code === 801).assertTrue();
         }else{
           expect(err.code === 13900004).assertTrue();
