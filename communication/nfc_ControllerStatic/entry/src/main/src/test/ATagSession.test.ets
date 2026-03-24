@@ -97,6 +97,7 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         if ((nfcAtag != null) && (nfcAtag != undefined)) {
           try {
             nfcAtag.connect();
@@ -133,6 +134,7 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         try {
           nfcAtag.resetConnection();
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0200 resetConnection pass ');
@@ -193,6 +195,7 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
             let timeoutMs: int = 1000;
@@ -229,6 +232,7 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         let gettime: int;
         try {
           gettime = nfcAtag.getTimeout();
@@ -342,6 +346,7 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         let mazSendLen: int;
         try {
             mazSendLen  = nfcAtag.getMaxTransmitSize();

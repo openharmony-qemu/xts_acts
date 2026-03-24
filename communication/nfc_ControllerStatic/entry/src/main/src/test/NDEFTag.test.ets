@@ -149,6 +149,39 @@ export default function nfcNDEFTagTest() {
       }
       done();
     })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0101
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0101
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0101', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let uri: string = "";
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0101 ndefMessage is: ' + ndefMessage);
+          let makeUriRecord: tag.NdefRecord = tag.ndef.makeUriRecord(uri);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0101 makeUriRecord is: ' + makeUriRecord);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0101 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0101 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
     
     /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0200
@@ -169,6 +202,40 @@ export default function nfcNDEFTagTest() {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 error is ' + error + " - " + error.code);
           expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0201
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0201
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let text: string = "";
+          let locale: string = "";
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0201 ndefMessage is: ' + ndefMessage);
+          let makeTRecords: tag.NdefRecord = tag.ndef.makeTextRecord(text, locale);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0201 makeTRecords is: ' + makeTRecords);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0201 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0201 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
         }
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
@@ -213,6 +280,46 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0301
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0301
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0301', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let bundleName: string = "";
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 ndefMessage is: ' + ndefMessage);
+          let makeApplicationRecord: tag.NdefRecord = tag.ndef.makeApplicationRecord(bundleName);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 makeApplicationRecord is: ' + makeApplicationRecord);
+          if (makeApplicationRecord != undefined) {
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 makeApplicationRecord rtdType: ' + makeApplicationRecord.rtdType);
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 makeApplicationRecord payload: ' +  makeApplicationRecord.payload);
+          } else {
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 makeApplicationRecord ndefRecord: ' + makeApplicationRecord);
+            expect().assertFail();
+          }
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0301 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0400
      * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0400
      * @tc.desc Check whether the NFC function is enabled.
@@ -233,6 +340,40 @@ export default function nfcNDEFTagTest() {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0400 error is ' + error + " - " + error.code);
           expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0401
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0401
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mimeType: string = "";
+      let mimeData: Array<int> = [];
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0401 ndefMessage is: ' + ndefMessage);
+          let makeMimeRecord: tag.NdefRecord = tag.ndef.makeMimeRecord(mimeType, mimeData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0401 makeMimeRecord is: ' + makeMimeRecord);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0401 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0401 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
         }
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
@@ -269,6 +410,41 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0501
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0501
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0501', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let domainName: string = "";
+          let type: string = "";
+          let externalData: Array<int> = [];
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0501 ndefMessage is: ' + ndefMessage);
+          let makeExternalRecord: tag.NdefRecord = tag.ndef.makeExternalRecord(domainName, type, externalData);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0501 makeExternalRecord is: ' + makeExternalRecord);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0501 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0501 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0600
      * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0600
      * @tc.desc Check whether the NFC function is enabled.
@@ -285,6 +461,37 @@ export default function nfcNDEFTagTest() {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0600 error is ' + error + " - " + error.code);
           expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0601
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0601
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let data: Array<int> = [];
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(data);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0601 ndefMessage: ' + ndefMessage);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0601 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0601 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
         }
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
@@ -325,6 +532,42 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0701
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0701
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0701', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByRecords(ndefRecords);
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0701 ndefMessage: ' + ndefMessage);
+          if (ndefMessage != null && ndefMessage != undefined) {
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0701 ndefMessage: ' + ndefMessage);
+          } else  {
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefMessage = null & = undefined:');
+            expect().assertFail();
+          }
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0701 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0701 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0800
      * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0800
      * @tc.desc Check whether the NFC function is enabled.
@@ -343,6 +586,36 @@ export default function nfcNDEFTagTest() {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0800 error is ' + error + " - " + error.code);
           expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0801
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0801
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_0801', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        try {
+          let ndefRecords: Array<tag.NdefRecord> = [];
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(ndefRecords);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0801 error is ' + error + " - " + error.code);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0801 error is ' + error + " - " + error.code);
+            expect().assertFail();
+          }
         }
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
@@ -392,6 +665,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefTagType: tag.NfcForumType = ndefTag.getNdefTagType();
         expect(tag.NfcForumType.NFC_FORUM_TYPE_1).assertEqual(ndefTagType);
@@ -411,6 +685,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         try {
           let getMessage: tag.NdefMessage = ndefTag.getNdefMessage();
@@ -437,6 +712,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let data: boolean = ndefTag.isNdefWritable();
         if (data == true) {
@@ -462,6 +738,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         try {
           await ndefTag.readNdef().then((data) => {
@@ -499,6 +776,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
           error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
@@ -538,6 +816,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         try {
@@ -576,6 +855,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
@@ -616,6 +896,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         try {
           let canSetReadOnly: boolean = ndefTag.canSetReadOnly();
@@ -656,6 +937,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         try {
           await ndefTag.setReadOnly().then((data) => {
@@ -694,6 +976,7 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let AsyncCallback:(error: BusinessError<void> | null, data: undefined) => void = (error: BusinessError<void> | null, data: undefined) => {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900  ');
@@ -732,9 +1015,90 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 0
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_1);
         hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2000 ndefTypeString is :' + ndefTypeString);
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2001
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2001
+     * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum.
+     * @tc.size since 9
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_2);
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2001 ndefTypeString is :' + ndefTypeString);
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2002
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2002
+     * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum.
+     * @tc.size since 9
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_2002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_3);
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2002 ndefTypeString is :' + ndefTypeString);
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2003
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2003
+     * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum.
+     * @tc.size since 9
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_2003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_4);
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2003 ndefTypeString is :' + ndefTypeString);
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_2004
+     * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_2004
+     * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum.
+     * @tc.size since 9
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_2004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefTypeString: string = ndefTag.getNdefTagTypeString(tag.NfcForumType.MIFARE_CLASSIC);
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2004 ndefTypeString is :' + ndefTypeString);
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
         expect().assertFail();
@@ -790,6 +1154,8 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      let ndefFormatable: tag.NdefFormatableTag = tag.getNdefFormatable(NdefFormatableTag);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
@@ -830,6 +1196,8 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      let ndefFormatable: tag.NdefFormatableTag = tag.getNdefFormatable(NdefFormatableTag);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         try {
@@ -868,6 +1236,8 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let ndefTag = tag.getNdef(ndefTagInfo);
+      let ndefFormatable: tag.NdefFormatableTag = tag.getNdefFormatable(NdefFormatableTag);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
