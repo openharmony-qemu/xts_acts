@@ -68,6 +68,9 @@ import MeasureUtilsTest from './MeasureUtils.test';
 import TextMenuControllerTest from './TextMenuController.test';
 import UIContextFontRegisterFontTest from './UIContext/UIContextFontRegisterFont.test';
 import TextMethodsNull2Test from './TextTest/TextMethodsNull2.test';
+import TextAreaEllipsisModeTest from './EllipsisModeTest/TextAreaEllipsisModeTest.test';
+import TextEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
+import TextInputEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -123,4 +126,7 @@ export default function testsuite() {
   TextMenuControllerTest();
   UIContextFontRegisterFontTest();
   TextMethodsNull2Test();
+  TextAreaEllipsisModeTest();
+  TextEllipsisModeTest();
+  TextInputEllipsisModeTest()
 }
