@@ -5546,7 +5546,7 @@ export default function audioCapturer() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5586,7 +5586,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5626,7 +5626,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5666,7 +5666,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5706,7 +5706,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5746,7 +5746,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5786,7 +5786,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5826,7 +5826,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5866,7 +5866,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5907,7 +5907,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -5949,7 +5949,7 @@ export default function audioCapturer() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE__SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,

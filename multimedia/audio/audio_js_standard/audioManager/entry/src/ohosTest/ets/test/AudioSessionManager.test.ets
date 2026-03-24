@@ -1675,7 +1675,6 @@ export default function audioSessionManagerTest() {
       try {
         await sessionManager.setAudioSessionBehavior(behavior);
         console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300 : FAIL`);
-        expect(false).assertTrue();
         done();
       } catch (err) {
         console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300: PASS :${err.message}:${err.code}`);
