@@ -44,7 +44,7 @@ const VALUE_TEST_BOOLEAN_ELEMENT = true;
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 
 const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
-const TEST_STORE_ID = 'storeId';
+const TEST_STORE_ID = 'SingleKvStoreConcurrencyTesWBId';
 let kvManager: factory.KVManager | null = null;
 let kvStore: factory.SingleKVStore | null = null;
 let context: common.UIAbilityContext;
@@ -1171,16 +1171,16 @@ export default function SingleKvStoreConcurrencyTest() {
             resultSet = result;
             expect(resultSet!.getCount() == 10).assertTrue();
             count--;
+            kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+              console.info('SINGLEKVSTORE_CONCURRENCY_GETRESULTSET_PROMISE_0100 closeResultSet end, count=' + count);
+            }).catch((err: Error) => {
+              console.error('SINGLEKVSTORE_CONCURRENCY_GETRESULTSET_PROMISE_0100 closeResultSet fail ' +
+                `, error code is ${err.code}, message is ${err.message}`);
+              expect(null).assertFail();
+              done();
+            });
+
             if (count == 0) {
-              kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
-                console.info('SINGLEKVSTORE_CONCURRENCY_GETRESULTSET_PROMISE_0100 closeResultSet end');
-                done();
-              }).catch((err: Error) => {
-                console.error('SINGLEKVSTORE_CONCURRENCY_GETRESULTSET_PROMISE_0100 closeResultSet fail ' +
-                  `, error code is ${err.code}, message is ${err.message}`);
-                expect(null).assertFail();
-                done();
-              });
               console.info('SINGLEKVSTORE_CONCURRENCY_GETRESULTSET_PROMISE_0100 getResultSet end');
               done();
             }
