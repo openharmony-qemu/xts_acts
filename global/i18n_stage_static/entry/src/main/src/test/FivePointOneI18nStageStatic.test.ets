@@ -1279,14 +1279,14 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.name   StyledDateTimeFormat_format_test_Static_0100
-     * @tc.number StyledDateTimeFormat_format_test_Static_0100
+     * @tc.name   i18n_StyledDateTimeFormat_format_test_Static_0100
+     * @tc.number i18n_StyledDateTimeFormat_format_test_Static_0100
      * @tc.desc   getMilliseconds with styledDateFormat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('StyledDateTimeFormat_format_test_Static_0100', Level.LEVEL3, () => {
+    it('i18n_StyledDateTimeFormat_format_test_Static_0100', Level.LEVEL3, () => {
       let yearTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Blue,
         fontFamily: "Sans",
