@@ -697,8 +697,8 @@ export default function httpJsunit() {
       }
     });
      /**
-     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0400
-     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0400
+     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0400
      * @tc.desc   Test setMulticastTTL401 property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
