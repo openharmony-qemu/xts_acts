@@ -142,7 +142,7 @@ export default function ActsLongTimeTaskNopStaticTest() {
               expect(error.code === 801).assertTrue();
               done();
             }else{
-              expect(error.code == PERMISSION_DENIED_CODE).assertTrue();
+              expect(error.code === PERMISSION_DENIED_CODE).assertTrue();
               done();
             }
           })

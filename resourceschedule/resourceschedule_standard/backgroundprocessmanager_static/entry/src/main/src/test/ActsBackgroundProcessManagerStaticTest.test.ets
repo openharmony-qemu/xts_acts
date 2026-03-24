@@ -295,8 +295,8 @@ export default function ActsBackgroundProcessManagerStaticTest() {
             done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 promise err code:" + err?.code + " message:" + err?.message);
-            if (err.code == 801) {
-              expect(err.code == 801).assertTrue();
+            if (err.code === 801) {
+              expect(err.code === 801).assertTrue();
               done();
             }else{
               expect(false).assertTrue();
@@ -331,8 +331,8 @@ export default function ActsBackgroundProcessManagerStaticTest() {
             done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 promise err code:" + err?.code + " message:" + err?.message);
-            if (err.code == 801) {
-              expect(err.code == 801).assertTrue();
+            if (err.code === 801) {
+              expect(err.code === 801).assertTrue();
               done();
             }else{
               expect(false).assertTrue();
@@ -368,8 +368,8 @@ export default function ActsBackgroundProcessManagerStaticTest() {
             done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 promise err code:" + err?.code + " message:" + err?.message);
-            if (err.code == 801) {
-              expect(err.code == 801).assertTrue();
+            if (err.code === 801) {
+              expect(err.code === 801).assertTrue();
               done();
             }else{
               expect(false).assertTrue();
@@ -379,13 +379,6 @@ export default function ActsBackgroundProcessManagerStaticTest() {
         } catch (error) {
           let e: Error = error as Error;
           console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 isPowerSaveMode failed, errCode: ${e.code}, message: ${e.message}`);
-          if (error.code == 801) {
-            expect(error.code == 801).assertTrue();
-            done();
-          }else{
-            expect(false).assertTrue();
-            done();
-          }
         }
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 end---');
@@ -411,8 +404,8 @@ export default function ActsBackgroundProcessManagerStaticTest() {
             done();
           }).catch((error: Error) => {
             console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 promise err code:" + error?.code + " message:" + error?.message);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
+            if (error.code === 801) {
+              expect(error.code === 801).assertTrue();
               done();
             }else{
               expect(false).assertTrue();
