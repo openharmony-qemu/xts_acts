@@ -843,8 +843,8 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
-        if(data != undefined){
-          ExpectTrue(data.netId != 0);
+        if(netHandle != undefined){
+          ExpectTrue(netHandle.netId != 0);
         }else{
           ExpectFail();
         }
@@ -1668,21 +1668,21 @@ export default function ConnectionPublicTest() {
         let connectionProperties: connection.ConnectionProperties = connection.getConnectionPropertiesSync(netHandle);
         hilog.info(domain, tag, '%{public}s', caseName +': GetConnectionPropertiesSync data ->'+JSON.stringify(connectionProperties));
         if(connectionProperties != undefined){
-          ExpectTrue(data.interfaceName != null);
-          ExpectTrue(data.domains != null);
-          ExpectTrue(data.mtu != null);
-          if(data.linkAddresses != undefined){
-            ExpectTrue(data.linkAddresses.length > 0);
+          ExpectTrue(connectionProperties.interfaceName != null);
+          ExpectTrue(connectionProperties.domains != null);
+          ExpectTrue(connectionProperties.mtu != null);
+          if(connectionProperties.linkAddresses != undefined){
+            ExpectTrue(connectionProperties.linkAddresses.length > 0);
           }else{
             ExpectFail();
           }
-          if(data.dnses != undefined){
-            ExpectTrue(data.dnses.length > 0);
+          if(connectionProperties.dnses != undefined){
+            ExpectTrue(connectionProperties.dnses.length > 0);
           }else{
             ExpectFail();
           }
-          if(data.routes != undefined){
-            ExpectTrue(data.routes.length > 0);
+          if(connectionProperties.routes != undefined){
+            ExpectTrue(connectionProperties.routes.length > 0);
           }else{
             ExpectFail();
           }
@@ -4434,6 +4434,7 @@ export default function ConnectionPublicTest() {
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
+          });
         });
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -4442,8 +4443,6 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
-
-
 
   })
 }
