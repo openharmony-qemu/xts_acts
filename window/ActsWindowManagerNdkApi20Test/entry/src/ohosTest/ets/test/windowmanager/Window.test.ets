@@ -893,24 +893,23 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetAllMainWindowInfo_0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
-        try {
-          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 start<====`);
-          let windowClass = windowStage.getMainWindowSync();
-          let windowId = windowClass.getWindowProperties().id;
-          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 windowId: ${windowId}`);
-          let displayId = display.getDefaultDisplaySync().id;
-          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
-          let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
-          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
+       try {
+        console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 windowId: ${windowId}`);
+        let displayId = display.getDefaultDisplaySync().id;
+        console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
+        let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
+        console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
+        if (isPCStatus != '') {
           expect(Result).assertEqual(WS_OK);
-          done()
-        } catch (err) {
-          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
-          expect(false).assertEqual(err);
-          done()
+        } else {
+          expect(Result).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
         }
-      } else {
+      } catch (err) {
+        console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
+        expect(false).assertEqual(err);
         done()
       }
     })
@@ -1105,24 +1104,25 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0800', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
-        try {
+     try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 start<====`);
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 windowId: ${windowId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0800(windowId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 Result: ${Result}`);
+        if (isPCStatus != '') {
           expect(Result).assertEqual(WS_OK);
-          done()
-        } catch (err) {
-          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 catch err: ` + err);
-          expect(false).assertEqual(err);
-          done()
+        } else {
+          expect(Result).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
         }
-      } else {
+        done()
+      } catch (err) {
+        console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 catch err: ` + err);
+        expect(false).assertEqual(err);
         done()
       }
+
     })
 
     /**
