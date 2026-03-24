@@ -4316,28 +4316,41 @@ export default function windowPropertiesTest() {
       console.log(msgStr + 'begin');
       try {
         let mainWindow = windowStage.getMainWindowSync();
-        let promise = mainWindow.startMoving(100, 50)
-        promise.then(() => {
-          console.info(`${caseName} :Succeeded startMoving `);
-
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            expect(err.message != null).assertTrue();
+        if(isFreeWindowMode){
+          let promise = mainWindow.startMoving(100, 50)
+          promise.then(() => {
+            console.info(`${caseName} :Succeeded startMoving `);
             done();
-          } else {
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
             done();
-          }
-        });
+          });
+        }else{
+          let promise = mainWindow.startMoving(100, 50)
+          promise.then(() => {
+            console.info(`${caseName} :Succeeded startMoving `);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code === 801).assertTrue();
+              done();
+            }else if (err.code == 1300002) {
+              expect(err.code = 1300002).assertTrue();
+              done();
+            }else {
+              expect().assertFail();
+              done();
+            }
+          });
+        }
       } catch (err) {
         console.error(`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
         expect().assertFail();
         done();
-
       }
-
     });
 
     /**
