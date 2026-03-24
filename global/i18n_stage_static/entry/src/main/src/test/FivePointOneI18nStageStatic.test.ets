@@ -32,7 +32,8 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 import { TextStyle, StyledString } from 'arkui.component.styledString'
-import { SpanStyle, Color, FontStyle, FontWeight } from 'arkui.component.enums'
+import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
+import { SpanStyle } from '@ohos.arkui.component';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -360,7 +361,7 @@ export default function FivePointOne_i18nStageTest() {
       };
       let numfmt: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN", numOptions);
       let numberFormatted: string = numfmt.format(123.456);
-      console.log('numberFormatted:' + numberFormatted);
+      console.log('numberFormatted:'+numberFormatted);
       expect(numberFormatted == "123.456").assertTrue();
       done();
     })
@@ -424,13 +425,13 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_GLOBAL_refinedFormat_static_0630', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_GLOBAL_refinedFormat_static_0630', Level.LEVEL0,  async (done: () => void): Promise<void> => {
       let numOptions: intl.NumberOptions = {
         roundingMode: "halfExpand", maximumSignificantDigits: 5
       };
       let numfmt: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN", numOptions);
       let numberFormatted: string = numfmt.format(123.454);
-      console.log('numberFormatted:' + numberFormatted);
+      console.log('numberFormatted:'+numberFormatted);
       expect(numberFormatted == "123.45").assertTrue();
       done();
     })
@@ -851,9 +852,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0100', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "hectare", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.AREA_LAND_AGRICULT });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_AGRICULT});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0100 value:', value);
       expect(value).assertEqual("247.105 ac")
@@ -868,9 +868,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0200', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "hectare", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.AREA_LAND_COMMERCL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_COMMERCL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0200 value:', value);
       expect(value).assertEqual("247.105 ac")
@@ -885,9 +884,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0300', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "hectare", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.AREA_LAND_RESIDNTL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_RESIDNTL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0300 value:', value);
       expect(value).assertEqual("247.105 ac")
@@ -902,9 +900,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0400', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_PERSON });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON});
       let value: string = aft.format(2)
       console.log('AdvancedMeasureFormat_test_Static_0400 value:', value);
       expect(value).assertEqual("78.74 in")
@@ -919,9 +916,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0500', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_PERSON_SMALL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL});
       let value: string = aft.format(2)
       console.log('AdvancedMeasureFormat_test_Static_0500 value:', value);
       expect(value).assertEqual("78.74 in")
@@ -936,9 +932,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0600', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "milliliter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_RAINFALL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_RAINFALL});
       let value: string = aft.format(2)
       console.log('AdvancedMeasureFormat_test_Static_0600 value:', value);
       expect(value).assertEqual("2 mL")
@@ -953,9 +948,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0700', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_ROAD });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0700 value:', value);
       expect(value).assertEqual("0.062 mi")
@@ -970,9 +964,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0800', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_ROAD_SMALL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_SMALL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0800 value:', value);
       expect(value).assertEqual("328.084 ft")
@@ -987,9 +980,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_0900', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "milliliter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_SNOWFALL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_SNOWFALL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_0900 value:', value);
       expect(value).assertEqual("100 mL")
@@ -1004,9 +996,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1000', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_VEHICLE });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VEHICLE});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1000 value:', value);
       expect(value).assertEqual("328.084 ft")
@@ -1021,9 +1012,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1100', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_VISIBLTY });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1100 value:', value);
       expect(value).assertEqual("0.062 mi")
@@ -1038,9 +1028,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1200', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_VISIBLTY_SMALL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY_SMALL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1200 value:', value);
       expect(value).assertEqual("328.084 ft")
@@ -1055,9 +1044,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1300', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_PERSON_INFORMAL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_INFORMAL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1300 value:', value);
       expect(value).assertEqual("328.084 ft")
@@ -1072,9 +1060,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1400', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_PERSON_SMALL_INFORMAL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL_INFORMAL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1400 value:', value);
       expect(value).assertEqual("100 m")
@@ -1089,9 +1076,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1500', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.LENGTH_ROAD_INFORMAL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_INFORMAL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1500 value:', value);
       expect(value).assertEqual("100 m")
@@ -1106,9 +1092,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1600', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.SPEED_ROAD_TRAVEL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_ROAD_TRAVEL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1600 value:', value);
       expect(value).assertEqual("100 m")
@@ -1123,9 +1108,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1700', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('zh-Hans-CN', { style: "unit", unit: "meter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.SPEED_WIND });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_WIND});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1700 value:', value);
       expect(value).assertEqual("100米")
@@ -1140,9 +1124,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1800', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('zh-Hans-CN', { style: "unit", unit: "fahrenheit", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_PERSON});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1800 value:', value);
       expect(value).assertEqual("37.778°C")
@@ -1157,9 +1140,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_1900', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "fahrenheit", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.TEMPERATURE_WEATHER });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_WEATHER});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_1900 value:', value);
       expect(value).assertEqual("37.778°C")
@@ -1174,9 +1156,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_2000', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('en-US', { style: "unit", unit: "liter", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.VOLUME_VEHICLE_FUEL });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "liter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.VOLUME_VEHICLE_FUEL});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_2000 value:', value);
       expect(value).assertEqual("26.417 gal")
@@ -1191,9 +1172,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_2100', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('zh-Hans-CN', { style: "unit", unit: "day", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.ELAPSED_TIME_SECOND });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "day", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.ELAPSED_TIME_SECOND});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_2100 value:', value);
       expect(value).assertEqual("3个月前")
@@ -1208,8 +1188,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_2200', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', { style: "unit", unit: "bit", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.SIZE_FILE_BYTE });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('en-US', {style:"unit", unit: "bit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_FILE_BYTE});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_2200 value:', value);
       expect(value).assertEqual("100 bit")
@@ -1224,9 +1204,8 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level  LEVEL2
      */
     it('AdvancedMeasureFormat_test_Static_2300', Level.LEVEL2, () => {
-      let nft: Intl.NumberFormat =
-        new Intl.NumberFormat('zh-Hans-CN', { style: "unit", unit: "terabit", unitDisplay: "short" });
-      let aft = new i18n.AdvancedMeasureFormat(nft, { unitUsage: i18n.UnitUsage.SIZE_SHORTFILE_BYTE });
+      let nft: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "terabit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_SHORTFILE_BYTE});
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_2300 value:', value);
       expect(value).assertEqual("100 Tb")
@@ -1278,16 +1257,18 @@ export default function FivePointOne_i18nStageTest() {
       let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
       let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
       let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
-      let numFmt: Intl.NumberFormat = new i18n.StyledNumberFormat(numFmt, {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh',{ style: 'unit', unit: 'percent' });
+      let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
         integer: integerTextStyle,
         decimal: decimalTextStyle,
         fraction: fractionTextStyle,
         unit: unitTextStyle
       });
       let formattedNumber: StyledString = styledNumFmt.format(1234.5678);
+      expect(formattedNumber.getString()).assertEqual('1,234.568%')
       let locale: Intl.Locale = new Intl.Locale('zh');
       let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
-      let StyledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
+      let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
         integer: integerTextStyle,
         decimal: decimalTextStyle,
         fraction: fractionTextStyle,
@@ -1367,8 +1348,7 @@ export default function FivePointOne_i18nStageTest() {
         fontStyle: FontStyle.Normal
       });
       let date: Date = new Date(2025, 6, 17, 3, 24, 30);
-      let locale: Intl.Locale = new Intl.locale("zh-Hans-CN");
-      let formatter: Intl.DateTimeFormat = new Inlt.DateTimeFormat('zh-CN', {
+      let formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-CN', {
         dateStyle: 'long',
         timeStyle: 'long'
       });
@@ -1386,6 +1366,7 @@ export default function FivePointOne_i18nStageTest() {
       let formattedDate: StyledString = styledDateFormat.format(date);
       expect(formattedDate.getString()).assertContain('2025年7月17日 GMT+8 03:24:30')
     })
+
 
     console.log('*************end FivePointOne_i18nStageTest*************');
   })
