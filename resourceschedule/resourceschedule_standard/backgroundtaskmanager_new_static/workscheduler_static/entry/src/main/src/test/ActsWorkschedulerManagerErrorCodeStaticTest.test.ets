@@ -108,7 +108,7 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003 begin---');
       try{
-        workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+        workScheduler.getWorkStatus(2000, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
           if (err) {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
             expect(Number(err.code)).assertEqual(9700004);
