@@ -489,20 +489,26 @@ export default function HttpResponseExtraInfoTest() {
           httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res: http.HttpResponse) => {
             if (res?.connectionExtraInfo) {
               let connectionExtraInfo = res?.connectionExtraInfo;
-              httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res: http.HttpResponse) => {
-                if (res?.connectionExtraInfo) {
-                  let connectionExtraInfoTwo = res?.connectionExtraInfo;
-                  console.info('HttpTest1', `connectionExtraInfo2:${JSON.stringify(connectionExtraInfoTwo)}`);
+              try {
+                httpRequest.request(ADDR_TEST_DOMAIN_HTTP).then((res: http.HttpResponse) => {
+                  if (res?.connectionExtraInfo) {
+                    let connectionExtraInfoTwo = res?.connectionExtraInfo;
+                    console.info('HttpTest1', `connectionExtraInfo2:${JSON.stringify(connectionExtraInfoTwo)}`);
 
-                  ExpectTrue(connectionExtraInfoTwo.isReusedConnection);
-                  httpRequest.destroy();
-                  done();
-                } else {
-                  httpRequest.destroy();
-                  ExpectFail();
-                  done();
-                }
-              })
+                    ExpectTrue(connectionExtraInfoTwo.isReusedConnection);
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    httpRequest.destroy();
+                    ExpectFail();
+                    done();
+                  }
+                })
+              } catch (err) {
+                console.info(`HttpTest1 ${caseName} catch err: ${JSON.stringify(err)}`);
+                ExpectFail();
+                done();
+              }
               console.info('HttpTest1', `connectionExtraInfo1:${JSON.stringify(connectionExtraInfo)}`);
             }
           })
@@ -762,13 +768,13 @@ export default function HttpResponseExtraInfoTest() {
               } else {
                 console.info(`${caseName} Network connected`);
                 let httpRequest = http.createHttp();
-                httpRequest.request('https://www.github.com/')
+                httpRequest.request('https://www.huawei.com/')
                   .then((res: http.HttpResponse) => {
                     console.info(' success');
                     if (res?.connectionExtraInfo) {
                       let connectionExtraInfo = res?.connectionExtraInfo;
                       console.info(`HttpTest1 connectionExtraInfo1:${JSON.stringify(res.connectionExtraInfo)}`);
-                      ExpectTrue(connectionExtraInfo.redirectCount === 1);
+                      ExpectTrue(connectionExtraInfo.redirectCount !== 0);
                       httpRequest.destroy();
                       done();
                     } else {

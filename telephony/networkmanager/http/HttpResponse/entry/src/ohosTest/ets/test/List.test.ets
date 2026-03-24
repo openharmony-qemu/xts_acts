@@ -28,11 +28,11 @@ export default function testsuite() {
     if(netHandle.netId != 0){
       HttpResponseCodeTest();
       HttpResponsePropertiesTest();
+      HttpResponseExtraInfoTest();
     } else {
       EmptyTestCheckNetwork();
     }
   }else{
     EmptyTestCheckCard();
-    HttpResponseExtraInfoTest();
   }
 }
