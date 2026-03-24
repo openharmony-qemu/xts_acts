@@ -30,12 +30,14 @@ struct openCustomDialog1 {
           promptAction.closeCustomDialog(this.customDialogComponentId)
         })
       }
-    }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
+    }.height(100).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('OpenCustomDialog_Options001')
         .id('OpenCustomDialog_Options001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.openCustomDialog({
             builder: () => {
@@ -57,6 +59,8 @@ struct openCustomDialog1 {
         })
       Button('OpenCustomDialog_Options002')
         .id('OpenCustomDialog_Options002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.openCustomDialog({
             builder: () => {
@@ -76,6 +80,8 @@ struct openCustomDialog1 {
         })
       Button('OpenCustomDialog_Options003')
         .id('OpenCustomDialog_Options003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.openCustomDialog({
             builder: () => {
@@ -98,5 +104,8 @@ struct openCustomDialog1 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

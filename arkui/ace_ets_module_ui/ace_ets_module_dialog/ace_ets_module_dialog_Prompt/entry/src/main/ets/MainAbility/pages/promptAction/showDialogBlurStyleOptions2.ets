@@ -18,9 +18,11 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct showDialog3 {
   build() {
-    Column({ space: 10 }){
-      Button('ShowDialog_Callback_Options001')
+    Row(){
+      Button('Options001')
         .id('ShowDialog_Callback_Options001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -59,8 +61,10 @@ struct showDialog3 {
             console.error(`showDialog args error code is ${code}, message is ${message}`);
           };
         })
-      Button('ShowDialog_Callback_Options002')
+      Button('Options002')
         .id('ShowDialog_Callback_Options002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -97,8 +101,10 @@ struct showDialog3 {
             console.error(`showDialog args error code is ${code}, message is ${message}`);
           };
         })
-      Button('ShowDialog_Callback_Options003')
+      Button('Options003')
         .id('ShowDialog_Callback_Options003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -138,7 +144,10 @@ struct showDialog3 {
     }
     .height('100%')
     .width('100%')
+    .margin({top:30})
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

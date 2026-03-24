@@ -32,12 +32,14 @@ struct UIOpenCustomDialog2 {
           this.promptAction.closeCustomDialog(this.customDialogComponentId)
         })
       }
-    }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
+    }.height(100).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('UIOpenCustomDialog_Effect001')
         .id('UIOpenCustomDialog_Effect001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.openCustomDialog({
             builder: () => {
@@ -61,6 +63,8 @@ struct UIOpenCustomDialog2 {
         })
       Button('UIOpenCustomDialog_Effect002')
         .id('UIOpenCustomDialog_Effect002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.openCustomDialog({
             builder: () => {
@@ -82,6 +86,8 @@ struct UIOpenCustomDialog2 {
         })
       Button('UIOpenCustomDialog_Effect003')
         .id('UIOpenCustomDialog_Effect003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.openCustomDialog({
             builder: () => {
@@ -106,5 +112,8 @@ struct UIOpenCustomDialog2 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

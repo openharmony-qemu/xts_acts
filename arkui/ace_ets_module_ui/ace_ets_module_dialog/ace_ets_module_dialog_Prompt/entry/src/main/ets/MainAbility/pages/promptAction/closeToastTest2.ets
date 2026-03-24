@@ -62,6 +62,6 @@ struct closeToastTest {
             }
           }, 4500)
         })
-    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+    }.height('100%').width('100%').justifyContent(FlexAlign.Start)
   }
 }
