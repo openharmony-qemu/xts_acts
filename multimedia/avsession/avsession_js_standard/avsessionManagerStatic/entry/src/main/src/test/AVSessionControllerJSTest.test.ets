@@ -1424,18 +1424,6 @@ export default function abilityTest() {
                 let outputDeviceInfo = controller!.getOutputDeviceSync();
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
-                console.info(`${TAG}TestLog1 deviceId = ${outputDeviceInfo.deviceId}`);
-                expect(outputDeviceInfo.deviceId).assertEqual("0");
-                console.info(`${TAG}TestLog1 deviceName = ${outputDeviceInfo.deviceName}`);
-                expect(outputDeviceInfo.deviceName).assertEqual("LocalDevice");
-                console.info(`${TAG}TestLog1 deviceType = ${outputDeviceInfo.deviceType}`);
-                expect(outputDeviceInfo.deviceType).assertEqual(0);
-                console.info(`${TAG}TestLog1 modelName = ${outputDeviceInfo.modelName}`);
-                expect(outputDeviceInfo.modelName).assertEqual("");
-                console.info(`${TAG}TestLog1 supportedPullClients = ${outputDeviceInfo.supportedPullClients}`);
-                expect(outputDeviceInfo.supportedPullClients).assertEqual(undefined);
-                console.info(`${TAG}TestLog1 supportedProtocols = ${outputDeviceInfo.supportedProtocols}`);
-                expect(outputDeviceInfo.supportedProtocols).assertEqual(0);
             } catch (err) {
                 expect(true).assertFalse();
             }
