@@ -1344,6 +1344,93 @@ export default function deviceSettingsTest() {
       console.info(' --- setValue_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   setValue_test_003
+     * @tc.number setValue_test_003
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_003  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, null, 'bundleName');
+        console.info(' --- setValue_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_004
+     * @tc.number setValue_test_004
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_004  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, undefined, 'bundleName');
+        console.info(' --- setValue_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_005
+     * @tc.number setValue_test_005
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_005  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, null);
+        console.info(' --- setValue_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_006
+     * @tc.number setValue_test_006
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_006  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, undefined);
+        console.info(' --- setValue_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_006  -------- END --------');
+    })
 
     /**
      * @tc.name   getValue_test_001
@@ -1390,6 +1477,49 @@ export default function deviceSettingsTest() {
       console.info(' --- getValue_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   getValue_test_003
+     * @tc.number getValue_test_003
+     * @tc.desc   getValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_003  -------- START --------');
+      try {
+        deviceSettings.getValue(SELFWANT, null);
+        console.info(' --- getValue_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getValue_test_004
+     * @tc.number getValue_test_004
+     * @tc.desc   getValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_004  -------- START --------');
+      try {
+        deviceSettings.getValue(SELFWANT, undefined);
+        console.info(' --- getValue_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_004  -------- END --------');
+    })
 
     /**
      * @tc.name   setHomeWallpaper_test_001
