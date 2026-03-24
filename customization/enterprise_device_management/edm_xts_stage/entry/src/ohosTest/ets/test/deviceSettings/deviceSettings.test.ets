@@ -2563,6 +2563,31 @@ export default function deviceSettingsTest() {
     });
 
     /**
+     * @tc.name   test_device_settings_remove_hidden_settings_menu_0108
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_REMOVE_HIDDEN_SETTINGS_MENU_JS_0108
+     * @tc.desc   test remove hidden settings menu with empty data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_remove_hidden_settings_menu_0108", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.removeHiddenSettingsMenu(SELFWANT, []);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   test_device_settings_get_hidden_settings_menu_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_HIDDEN_SETTINGS_MENU_JS_0100
      * @tc.desc   test get hidden settings menu without admin

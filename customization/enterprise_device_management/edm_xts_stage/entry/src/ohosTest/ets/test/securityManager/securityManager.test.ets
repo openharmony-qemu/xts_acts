@@ -3083,6 +3083,54 @@ function testInstallEnterpriseReSignatureCertificate() {
     }
     done();
   });
+
+  /**
+    * @tc.name   test_install_enterprise_re_signature_certificate_0111
+    * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0111
+    * @tc.desc   test securityManager installEnterpriseReSignatureCertificate with null certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_install_enterprise_re_signature_certificate_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withCertificateFile((fd: number) => {
+        securityManager.installEnterpriseReSignatureCertificate(
+          SELFWANT, null, fd, INT_VALID_ACCOUNTID);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_install_enterprise_re_signature_certificate_0112
+    * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0112
+    * @tc.desc   test securityManager installEnterpriseReSignatureCertificate with undefined certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_install_enterprise_re_signature_certificate_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withCertificateFile((fd: number) => {
+        securityManager.installEnterpriseReSignatureCertificate(
+          SELFWANT, undefined, fd, INT_VALID_ACCOUNTID);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUninstallEnterpriseReSignatureCertificate() {
@@ -3261,6 +3309,50 @@ function testUninstallEnterpriseReSignatureCertificate() {
       expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);	 
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_uninstall_enterprise_re_signature_certificate_0108
+    * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0108
+    * @tc.desc   test securityManager uninstallEnterpriseReSignatureCertificate with null certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_uninstall_enterprise_re_signature_certificate_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.uninstallEnterpriseReSignatureCertificate(
+        SELFWANT, null, INT_VALID_ACCOUNTID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_uninstall_enterprise_re_signature_certificate_0109
+    * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0109
+    * @tc.desc   test securityManager uninstallEnterpriseReSignatureCertificate with undefined certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_uninstall_enterprise_re_signature_certificate_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.uninstallEnterpriseReSignatureCertificate(
+        SELFWANT, undefined, INT_VALID_ACCOUNTID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
