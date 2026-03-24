@@ -3475,7 +3475,7 @@ function testSetActivationLockDisabled() {
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL2
   */
-  it("test_set_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+  it("test_set_activation_lock_disabled_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       systemManager.setActivationLockDisabled(SELFWANT, true, null);
