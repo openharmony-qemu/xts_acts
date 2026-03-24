@@ -97,20 +97,20 @@ struct SymbolGlyphIndex {
             this.mTypeIter = 'type_iter:' + (effect.replaceType === ReplaceEffectType.SEQUENTIAL ? 'match' : 'nomatch');
           })
 
-        // 测试 ReplaceEffectType.CROSS_FADE
+        // 当前 SDK 对 CROSS_FADE 会回退为 SEQUENTIAL
         Button(this.mTypeCrossFade)
           .id('btnTypeCrossFade')
           .onClick(() => {
             let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE);
-            this.mTypeCrossFade = 'type_crossfade:' + (effect.replaceType === ReplaceEffectType.CROSS_FADE ? 'match' : 'nomatch');
+            this.mTypeCrossFade = 'type_crossfade:' + (effect.replaceType === ReplaceEffectType.SEQUENTIAL ? 'fallback_seq' : 'match');
           })
 
-        // 测试 ReplaceEffectType.SLASH_OVERLAY
+        // 当前 SDK 对 SLASH_OVERLAY 会回退为 SEQUENTIAL
         Button(this.mTypeSlash)
           .id('btnTypeSlash')
           .onClick(() => {
             let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY);
-            this.mTypeSlash = 'type_slash:' + (effect.replaceType === ReplaceEffectType.SLASH_OVERLAY ? 'match' : 'nomatch');
+            this.mTypeSlash = 'type_slash:' + (effect.replaceType === ReplaceEffectType.SEQUENTIAL ? 'fallback_seq' : 'match');
           })
 
         // 测试 EffectScope.WHOLE

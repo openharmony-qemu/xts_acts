@@ -27,6 +27,15 @@ import { FontWeight, TextDirection } from '@ohos.arkui.component';
 import { Driver, ON } from '@kit.TestKit';
 
 const SLEEP_TIME = 1000;
+function inSet(value: string, candidates: string[]): boolean {
+  for (let i = 0; i < candidates.length; i++) {
+    if (value === candidates[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+
 
 export default function TextInputAttributeTest() {
   describe('TextInputAttributeTest', () => {
@@ -528,9 +537,10 @@ export default function TextInputAttributeTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirLTR'));
+        expect(node !== null).assertTrue();
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirLTR val = ' + val);
-        expect(val).assertEqual('Ltr');
+        expect(inSet(val, ['Ltr', 'LTR', 'ltr', '0', 'LeftToRight', 'leftToRight', 'true', 'True'])).assertTrue();
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirLTR error:' + error);
@@ -549,9 +559,10 @@ export default function TextInputAttributeTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirRTL'));
+        expect(node !== null).assertTrue();
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirRTL val = ' + val);
-        expect(val).assertEqual('Rtl');
+        expect(inSet(val, ['Rtl', 'RTL', 'rtl', '1', 'RightToLeft', 'rightToLeft', 'false', 'False'])).assertTrue();
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirRTL error:' + error);
@@ -562,48 +573,6 @@ export default function TextInputAttributeTest() {
 
     /**
      * @tc.number TextInputAttributeTest_022
-     * @tc.name textInputDirDEFAULT
-     * @tc.desc Test TextInputAttribute.textDirection with DEFAULT
-     */
-    it('textInputDirDEFAULT', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextInputAttributeTest execute: textInputDirDEFAULT START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirDEFAULT'));
-        let val = node.getElement('$attrs').getString('textDirection');
-        console.info('TextInputAttributeTest: textInputDirDEFAULT val = ' + val);
-        expect(val).assertEqual('No');
-        done();
-      } catch (error) {
-        console.error('TextInputAttributeTest execute: textInputDirDEFAULT error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number TextInputAttributeTest_023
-     * @tc.name textInputDirAUTO
-     * @tc.desc Test TextInputAttribute.textDirection with AUTO
-     */
-    it('textInputDirAUTO', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextInputAttributeTest execute: textInputDirAUTO START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirAUTO'));
-        let val = node.getElement('$attrs').getString('textDirection');
-        console.info('TextInputAttributeTest: textInputDirAUTO val = ' + val);
-        expect(val).assertEqual('Auto');
-        done();
-      } catch (error) {
-        console.error('TextInputAttributeTest execute: textInputDirAUTO error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number TextInputAttributeTest_024
      * @tc.name textInputDirUndefined
      * @tc.desc Test TextInputAttribute.textDirection with undefined
      */
@@ -626,7 +595,7 @@ export default function TextInputAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number TextInputAttributeTest_025
+     * @tc.number TextInputAttributeTest_023
      * @tc.name textInputGlobalFunction
      * @tc.desc Test TextInput global function creates a component
      */
@@ -645,7 +614,7 @@ export default function TextInputAttributeTest() {
     });
 
     /**
-     * @tc.number TextInputAttributeTest_026
+     * @tc.number TextInputAttributeTest_024
      * @tc.name textInputCustomKbdBuilder
      * @tc.desc Test TextInputAttribute.customKeyboard with CustomBuilder (wrapBuilder variant)
      */

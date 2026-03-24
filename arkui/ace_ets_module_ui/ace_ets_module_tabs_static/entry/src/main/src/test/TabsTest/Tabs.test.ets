@@ -225,10 +225,18 @@ export default function TabsTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        let comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        for (let i: number = 0; !comp && i < 4; i++) {
+          // Scroll down page to bring bottom Tabs into viewport.
+          await Utils.drag(360, 1100, 360, 350, 12);
+          await CommonFunc.sleep(300);
+          comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        }
         expect(!!comp).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('tabsOnContentDidScrollUndefined'));
         expect(node != null).assertTrue();
+        let attrs = node.getElement('$attrs');
+        expect(attrs != null).assertTrue();
         console.info('TabsTest execute: tabsOnContentDidScrollUndefined END');
         done();
       } catch (error) {

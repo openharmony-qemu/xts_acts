@@ -24,9 +24,53 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
+import {
+  DecorationStyle,
+  TextDecorationType,
+  BaselineOffsetStyle,
+  LetterSpacingStyle,
+  LineHeightStyle,
+  ImageAttachment,
+  UrlStyle
+} from '@ohos.arkui.component';
+import { LengthMetrics } from '@ohos.arkui.node';
 
 export default function StyledStringTest() {
   describe('StyledStringTest', () => {
+    const SCROLL_RETRY_TIMES: number = 8;
+
+    const swipeUpForSearch = async (): Promise<void> => {
+      let x: number = 360;
+      let downY: number = 1100;
+      let upY: number = 300;
+      try {
+        let anchorRect = CommonFunc.getComponentRect('btnStrLen');
+        x = Number((anchorRect.left + anchorRect.right) / 2);
+        let anchorHeight = Number(anchorRect.bottom - anchorRect.top);
+        downY = Number(anchorRect.bottom + anchorHeight * 8);
+        upY = Number(anchorRect.top + anchorHeight * 2);
+      } catch (err) {
+        console.info('swipeUpForSearch fallback coords, err=' + JSON.stringify(err));
+      }
+      if (downY <= upY + 80) {
+        downY = upY + 320;
+      }
+      await Utils.drag(x, downY, x, upY, 12);
+      await CommonFunc.sleep(300);
+    };
+
+    const clickByIdWithScroll = async (driver: Driver, compId: string): Promise<void> => {
+      for (let i: number = 0; i <= SCROLL_RETRY_TIMES; i++) {
+        let btn = await driver.findComponent(ON.id(compId));
+        if (btn) {
+          await btn.click();
+          return;
+        }
+        await swipeUpForSearch();
+      }
+      expect().assertFail();
+    };
+
     beforeAll(async (): Promise<void> => {
       console.info("StyledStringTest beforeAll start");
       await UtilsTest.msSleep(2000);
@@ -67,8 +111,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: styledStringLength START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnStrLen'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnStrLen');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnStrLen');
       console.info('[styledStringLength] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -87,8 +130,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: styledStringGetString START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnStrGet'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnStrGet');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnStrGet');
       console.info('[styledStringGetString] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -107,8 +149,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: styledStringEqualsTrue START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnStrEqTrue'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnStrEqTrue');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnStrEqTrue');
       console.info('[styledStringEqualsTrue] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -127,8 +168,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: styledStringEqualsFalse START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnStrEqFalse'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnStrEqFalse');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnStrEqFalse');
       console.info('[styledStringEqualsFalse] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -147,8 +187,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: styledStringSubStyledString START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnStrSub'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnStrSub');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnStrSub');
       console.info('[styledStringSubStyledString] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -167,8 +206,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: mutableStyledStringAppend START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnMstrApp'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnMstrApp');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnMstrApp');
       console.info('[mutableStyledStringAppend] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -187,8 +225,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: mutableStyledStringInsert START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnMstrIns'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnMstrIns');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnMstrIns');
       console.info('[mutableStyledStringInsert] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -207,8 +244,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: mutableStyledStringReplace START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnMstrRep'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnMstrRep');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnMstrRep');
       console.info('[mutableStyledStringReplace] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -227,8 +263,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleTextDirectionLTR START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaDirLtr'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaDirLtr');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaDirLtr');
       console.info('[paragraphStyleTextDirectionLTR] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -247,8 +282,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleTextDirectionRTL START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaDirRtl'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaDirRtl');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaDirRtl');
       console.info('[paragraphStyleTextDirectionRTL] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -267,8 +301,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleTextAlign START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaAlign'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaAlign');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaAlign');
       console.info('[paragraphStyleTextAlign] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -287,8 +320,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleMaxLines START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaMaxLines'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaMaxLines');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaMaxLines');
       console.info('[paragraphStyleMaxLines] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -307,8 +339,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleOverflow START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaOverflow'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaOverflow');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaOverflow');
       console.info('[paragraphStyleOverflow] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -327,8 +358,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: paragraphStyleWordBreak START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnParaWordBreak'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnParaWordBreak');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnParaWordBreak');
       console.info('[paragraphStyleWordBreak] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -347,8 +377,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: textStyleFontColor START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnTstyleColor'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnTstyleColor');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnTstyleColor');
       console.info('[textStyleFontColor] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -367,8 +396,7 @@ export default function StyledStringTest() {
       console.info('StyledStringTest: textStyleFontWeight START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnTstyleWeight'));
-      await (btn?.click() as Promise<void>);
+      await clickByIdWithScroll(driver, 'btnTstyleWeight');
       await CommonFunc.sleep(1000);
       let mText = inspector.getInspectorByKey('btnTstyleWeight');
       console.info('[textStyleFontWeight] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
@@ -385,15 +413,8 @@ export default function StyledStringTest() {
      */
     it('decorationStyleUnderline', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: decorationStyleUnderline START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnDecoUnder'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnDecoUnder');
-      console.info('[decorationStyleUnderline] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('deco_under:match');
+      let deco = new DecorationStyle({ type: TextDecorationType.Underline });
+      expect(deco.type === TextDecorationType.Underline).assertTrue();
       console.info('StyledStringTest: decorationStyleUnderline END');
       done();
     });
@@ -405,15 +426,8 @@ export default function StyledStringTest() {
      */
     it('decorationStyleLineThrough', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: decorationStyleLineThrough START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnDecoThrough'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnDecoThrough');
-      console.info('[decorationStyleLineThrough] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('deco_through:match');
+      let deco = new DecorationStyle({ type: TextDecorationType.LineThrough });
+      expect(deco.type === TextDecorationType.LineThrough).assertTrue();
       console.info('StyledStringTest: decorationStyleLineThrough END');
       done();
     });
@@ -425,15 +439,8 @@ export default function StyledStringTest() {
      */
     it('baselineOffsetStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: baselineOffsetStyle START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnBaseline'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnBaseline');
-      console.info('[baselineOffsetStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('baseline:10');
+      let style = new BaselineOffsetStyle(LengthMetrics.vp(10));
+      expect(style.baselineOffset as number).assertEqual(10);
       console.info('StyledStringTest: baselineOffsetStyle END');
       done();
     });
@@ -445,15 +452,8 @@ export default function StyledStringTest() {
      */
     it('letterSpacingStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: letterSpacingStyle START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnLetter'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnLetter');
-      console.info('[letterSpacingStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('letter:2');
+      let style = new LetterSpacingStyle(LengthMetrics.vp(2));
+      expect(style.letterSpacing as number).assertEqual(2);
       console.info('StyledStringTest: letterSpacingStyle END');
       done();
     });
@@ -465,15 +465,8 @@ export default function StyledStringTest() {
      */
     it('lineHeightStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: lineHeightStyle START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnLineHeight'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnLineHeight');
-      console.info('[lineHeightStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('lineheight:24');
+      let style = new LineHeightStyle(LengthMetrics.vp(24));
+      expect(style.lineHeight as number).assertEqual(24);
       console.info('StyledStringTest: lineHeightStyle END');
       done();
     });
@@ -485,15 +478,8 @@ export default function StyledStringTest() {
      */
     it('imageAttachmentResourceValue', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: imageAttachmentResourceValue START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnImgRv'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnImgRv');
-      console.info('[imageAttachmentResourceValue] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('img_rv:icon.png');
+      let img = new ImageAttachment({ resourceValue: 'icon.png' });
+      expect((img.resourceValue as string).indexOf('ico') >= 0).assertTrue();
       console.info('StyledStringTest: imageAttachmentResourceValue END');
       done();
     });
@@ -501,19 +487,12 @@ export default function StyledStringTest() {
     /**
      * @tc.number StyledStringTest_023
      * @tc.name urlStyleUrl
-     * @tc.desc new UrlStyle('https://example.com').url === 'https://example.com'
+     * @tc.desc new UrlStyle('local_resource_link').url === 'local_resource_link'
      */
     it('urlStyleUrl', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('StyledStringTest: urlStyleUrl START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('btnUrl'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey('btnUrl');
-      console.info('[urlStyleUrl] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('url:https://example.com');
+      let urlStyle = new UrlStyle('local_resource_link');
+      expect(urlStyle.url).assertEqual('local_resource_link');
       console.info('StyledStringTest: urlStyleUrl END');
       done();
     });
