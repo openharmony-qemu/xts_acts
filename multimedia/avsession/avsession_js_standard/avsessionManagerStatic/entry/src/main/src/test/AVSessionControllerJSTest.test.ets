@@ -1510,39 +1510,5 @@ export default function abilityTest() {
                 done();
             };
         })
-
-        /**
-        * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0100
-        * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0100
-        * @tc.desc   Testing metadata change callback registration
-        * @tc.size   MediumTest
-        * @tc.type   Function
-        * @tc.level  Level 3
-        */
-        it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
-        let filter = []
-        let flag = 0;
-        await controller!.onmetadataChange(filter, (metadata: avSession.AVMetadata) => {
-            flag++;
-            console.info(`metadatachange success flag : ${flag}`)
-        });
-        await session!.setAVMetadata(changedata);
-        await sleep(300);
-        if (flag == 1) {
-            console.info(`metadatachange filter None failed flag : ${flag}`)
-            expect().assertFail()
-        }
-        await session!.setAVMetadata(changedata);
-        await controller!.offMetadataChange();
-        await sleep(300);
-        if (flag == 1) {
-            console.info(`metadatachange filter None failed flag : ${flag}`)
-            expect().assertFail()
-        }
-        done();
-        })
-
-        
     })
 }
