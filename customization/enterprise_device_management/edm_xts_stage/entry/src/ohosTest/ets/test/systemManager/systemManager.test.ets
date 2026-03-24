@@ -3421,9 +3421,9 @@ function testSetActivationLockDisabled() {
     let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
     await systemManager.setActivationLockDisabled(SELFWANT, false, "").then(()=>{
       if (info == "true") {
-        expect(true).assertTrue();
+        expect(info === "true").assertTrue();
       } else {
-        expect(false).assertTrue();
+        expect(info === "false").assertTrue();
       }
     }).catch ((error: BusinessError)=> {
       if (info == "true") {
@@ -3438,6 +3438,57 @@ function testSetActivationLockDisabled() {
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0006
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0006
+  * @tc.desc   test systemManager setActivationLockDisabled with null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let credential: string = "test";
+      systemManager.setActivationLockDisabled(null, true, credential);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0007
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0007
+  * @tc.desc   test systemManager setActivationLockDisabled with null credential
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setActivationLockDisabled(SELFWANT, true, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
     done();
   });
 }
@@ -3485,6 +3536,31 @@ function testIsActivationLockDisabled() {
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
+    done();
+  });
+
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0003
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0003
+  * @tc.desc   test systemManager IsActivationLockDisabled with null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.isActivationLockDisabled(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
     done();
   });
 }
