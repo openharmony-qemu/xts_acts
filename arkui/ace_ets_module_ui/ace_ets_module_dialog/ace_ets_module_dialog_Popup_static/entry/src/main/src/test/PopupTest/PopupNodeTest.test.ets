@@ -44,7 +44,7 @@ export default function PopupNodeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get PopupTest state pages:" + JSON.stringify(pages));
-        if (!('TextLineSpacing' == pages.name)) {
+        if (!("PopupIndex" == pages.name)) {
           console.info("get PopupTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(SLEEP_TIME);

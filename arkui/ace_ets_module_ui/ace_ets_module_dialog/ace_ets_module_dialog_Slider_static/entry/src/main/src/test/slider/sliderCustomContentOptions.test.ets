@@ -1,10 +1,10 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,7 +51,7 @@ export default function SliderCustomContentOptionsTest() {
     beforeEach(async (): Promise<void> => {
       console.info("SliderCustomContentOptionsTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/slider/sliderCustomContentOptionsIndex',
+        url: 'MainAbility/pages/slider/SliderCustomContentOptionsIndex',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;
@@ -59,7 +59,7 @@ export default function SliderCustomContentOptionsTest() {
         let pages = routerInstance.getState();
         console.info("SliderCustomContentOptionsTest state pages: " + JSON.stringify(pages));
         console.info("SliderCustomContentOptionsTest state pages.name: " + pages.name);
-        if (!('TextLineSpacing' == pages.name)) {
+        if (pages.name !== "SliderCustomContentOptionsIndex") {
           routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
