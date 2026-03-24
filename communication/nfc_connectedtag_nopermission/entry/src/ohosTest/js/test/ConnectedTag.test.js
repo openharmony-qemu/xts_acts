@@ -62,7 +62,7 @@ export default function ConnectedTagTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0100 init failed,code is ${error.code}, message is ${error.message}");
-                    expect(error.code==201).assertTrue();
+                    expect(error.code===201).assertTrue();
                 }
             }
             done();
@@ -90,7 +90,7 @@ export default function ConnectedTagTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0800 initialize failed,code is ${error.code}, message is ${error.message}");
-                    expect(error.code==201).assertTrue();
+                    expect(error.code===201).assertTrue();
                 }
             }
             done();
@@ -118,7 +118,7 @@ export default function ConnectedTagTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0900 uninitialize failed,code is ${error.code}, message is ${error.message}");
-                    expect(error.code==201).assertTrue();
+                    expect(error.code===201).assertTrue();
                 }
             }
             done();
@@ -147,7 +147,7 @@ export default function ConnectedTagTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1000 read failed,code is ${error.code}, message is ${error.message}");
-                    expect(error.code==201).assertTrue();
+                    expect(error.code===201).assertTrue();
                 }
             }
             done();
@@ -175,7 +175,7 @@ export default function ConnectedTagTest() {
                       connectedTag.read((err, result)=> {
                           if (err) {                              
                               console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read err: " + err);
-                              expect(err.code==201).assertTrue()
+                              expect(err.code===201).assertTrue()
                               reject(err);
                           } else {
                               console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read success result: " + result);
@@ -216,7 +216,7 @@ export default function ConnectedTagTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1200 write failed,code is ${error.code}, message is ${error.message}");
-                    expect(error.code==201).assertTrue();
+                    expect(error.code===201).assertTrue();
                 }
             }
             done();
@@ -245,7 +245,7 @@ export default function ConnectedTagTest() {
                         connectedTag.write(rawData,(err, result)=> {
                             if (err) {
                                 console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1300 write err: " + err);
-                                expect(err.code==201).assertTrue()
+                                expect(err.code===201).assertTrue()
                                 reject(err);
                             } else {
                                 console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1300 write success result: " + result);
