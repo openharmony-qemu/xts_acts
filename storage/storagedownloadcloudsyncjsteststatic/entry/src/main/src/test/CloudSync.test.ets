@@ -1918,6 +1918,56 @@ export default function cloudCloudSyncTest() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   test_cloudSync_State_static_081
+     * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_8100
+     * @tc.desc   function of API, on_progress, ErrorType.REMOTE_SERVER_ABNORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSync_State_static_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+     
+      try {
+        let fileSync = new cloudSync.FileSync();
+        let callback = (pg: cloudSync.SyncProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_081 file sync state：" + pg.state + "error type:" + pg.error);
+          expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        }
+      fileSync.onProgress(callback);
+      fileSync.offProgress(callback);
+     } catch (err) {
+       hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_081 has failed for' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
+     }
+     done();
+   });
+
+   /**
+     * @tc.name   test_cloudSync_State_static_082
+     * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_8200
+     * @tc.desc   function of API, CloudFileCache.stop, Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSync_State_static_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stop("", true).then(() => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_082 stop download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_082 stop download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13600001).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_082 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'cloud_sync_test end');
 
