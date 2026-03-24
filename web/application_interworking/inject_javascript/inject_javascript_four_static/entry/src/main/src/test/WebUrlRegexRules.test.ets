@@ -52,6 +52,7 @@ export default function WebUrlRegexRules() {
      */
     it('testUrlRegexRulesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void):Promise<void> => {
         Utils.emitEvent('testUrlRegexRules001', 251224)
+        await Utils.msSleep(7000);
         Utils.registerBaseEvent('testUrlRegexRules001', 'scriptHead:http urlRegexRules ok', 25122401, done,
           (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
