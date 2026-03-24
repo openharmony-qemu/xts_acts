@@ -30,11 +30,10 @@ export default function SearchStyleTest() {
   describe('SearchStyleTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('SearchStyleTest beforeAll start');
-      await CommonFunc.sleep(SLEEP_TIME);
       await UtilsTest.startAbility('com.arkui.ace.search.static', 'EntryAbility');
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach((): void => {
       console.info('SearchStyleTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SearchStyle/SearchStyle',
@@ -45,7 +44,7 @@ export default function SearchStyleTest() {
         let pages = routerInstance.getState();
         console.info('SearchStyleTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'SearchStyle') {
-          router.pushUrl(options);
+          routerInstance.replaceUrl(options);
         }
       } catch (err) {
         console.error('SearchStyleTest replaceUrl error: ' + err);
@@ -53,8 +52,7 @@ export default function SearchStyleTest() {
       }
     });
 
-    afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+    afterEach((): void => {
       console.info('SearchStyleTest after each called');
     });
 

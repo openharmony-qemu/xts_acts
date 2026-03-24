@@ -31,7 +31,7 @@ export default function GridTest(): void {
       await UtilsTest.startAbility('com.arkui.ace.layout.grid.static', 'EntryAbility');
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach((): void => {
       console.info('GridTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Grid/Grid',
@@ -42,7 +42,7 @@ export default function GridTest(): void {
         let pages = routerInstance.getState();
         console.info('GridTest state pages: ' + JSON.stringify(pages));
         if (!('Grid' == pages.name)) {
-          router.pushUrl(options);
+          routerInstance.replaceUrl(options);
         }
       } catch (err) {
         console.error('GridTest beforeEach error: ' + err);
@@ -50,8 +50,7 @@ export default function GridTest(): void {
       }
     });
 
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
+    afterEach((): void => {
     });
 
     /**

@@ -33,7 +33,7 @@ export default function SaveScrollSearchTest() {
       await UtilsTest.startAbility('com.arkui.ace.scroll.api23.static', 'EntryAbility');
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach((): void => {
       console.info('SaveScrollSearchTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SaveScrollSearch/SaveScrollSearch',
@@ -43,19 +43,15 @@ export default function SaveScrollSearchTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('SaveScrollSearchTest state pages: ' + JSON.stringify(pages));
-        if (!('SaveScrollSearch' == pages.name)) {
-          console.info('get SaveScrollSearchTest pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
+        // Always replace to avoid state carry-over across cases/suites.
+        routerInstance.replaceUrl(options);
       } catch (err) {
         console.error('SaveScrollSearchTest replaceUrl error: ' + err);
         expect().assertFail();
       }
     });
 
-    afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+    afterEach((): void => {
       console.info('SaveScrollSearchTest after each called');
     });
 

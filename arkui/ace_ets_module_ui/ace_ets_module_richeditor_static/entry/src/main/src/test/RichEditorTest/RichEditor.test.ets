@@ -34,7 +34,7 @@ export default function RichEditorTest() {
       await UtilsTest.startAbility('com.arkui.ace.richeditor.static', 'EntryAbility');
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach((): void => {
       console.info('RichEditorTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/RichEditor/RichEditor',
@@ -45,7 +45,7 @@ export default function RichEditorTest() {
         let pages = routerInstance.getState();
         console.info('RichEditorTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'RichEditor') {
-          router.pushUrl(options);
+          routerInstance.replaceUrl(options);
         }
       } catch (err) {
         console.error('RichEditorTest replaceUrl error: ' + err);
@@ -53,8 +53,7 @@ export default function RichEditorTest() {
       }
     });
 
-    afterEach(async ()=> {
-      await CommonFunc.sleep(1000);
+    afterEach((): void => {
       console.info('RichEditorTest after each called');
     });
 
