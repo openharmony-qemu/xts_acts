@@ -274,6 +274,156 @@ export default function ActsBackgroundProcessManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_009 end---');
       })
 
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010
+     * @tc.desc    PowerSaveMode of DEFAULT_MODE
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 begin---');
+        let childProcessPid = StdProcess.pid();
+        let callbackFlag = 0;
+        try {
+          backgroundProcessManager.setPowerSaveMode(childProcessPid, backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE).then(() => {
+            console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 backgroundTaskManager setPowerSaveMode: ' + childProcessPid);
+            callbackFlag = 1;
+            expect(callbackFlag).assertEqual(1);
+            done();
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 promise err code:" + err?.code + " message:" + err?.message);
+            if (err.code == 801) {
+              expect(err.code == 801).assertTrue();
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          let e: Error = error as Error;
+          console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 setPowerSaveMode failed, errCode: ${e.code}, message: ${e.message}`);
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_010 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011
+     * @tc.desc    PowerSaveMode of DEFAULT_MODE
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 begin---');
+        let childProcessPid = StdProcess.pid();
+        let callbackFlag = 0;
+        try {
+          backgroundProcessManager.setPowerSaveMode(childProcessPid, backgroundProcessManager.PowerSaveMode.DEFAULT_MODE).then(() => {
+            console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 backgroundTaskManager setPowerSaveMode: ' + childProcessPid);
+            callbackFlag = 1;
+            expect(callbackFlag).assertEqual(1);
+            done();
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 promise err code:" + err?.code + " message:" + err?.message);
+            if (err.code == 801) {
+              expect(err.code == 801).assertTrue();
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 setPowerSaveMode failed, errCode: ${(error as Error).code}, message: ${(error as Error).message}`);
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_011 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012
+     * @tc.desc    isPowerSaveMode
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 begin---');
+
+        let childProcessPid = StdProcess.pid();
+        let callbackFlag = 0;
+        try {
+          backgroundProcessManager.isPowerSaveMode(childProcessPid).then((result: boolean) => {
+            console.info("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 isPowerSaveMode: " + result.toString());
+            console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 backgroundTaskManager childProcessPid: ' + childProcessPid);
+            callbackFlag = 1;
+            expect(callbackFlag).assertEqual(1);
+            done();
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 promise err code:" + err?.code + " message:" + err?.message);
+            if (err.code == 801) {
+              expect(err.code == 801).assertTrue();
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (error) {
+          let e: Error = error as Error;
+          console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 isPowerSaveMode failed, errCode: ${e.code}, message: ${e.message}`);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+            done();
+          }else{
+            expect(false).assertTrue();
+            done();
+          }
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_012 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013
+     * @tc.desc    isPowerSaveMode  31800002
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 begin---');
+        try {
+          let pid = StdProcess.pid();
+          console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 backgroundTaskManager pid: ' + pid);
+          backgroundProcessManager.getPowerSaveMode(pid).then((res: backgroundProcessManager.PowerSaveMode) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 getPowerSaveMode promise res: %{public}s', JSON.stringify(res));
+            expect(res === backgroundProcessManager.PowerSaveMode.DEFAULT_MODE).assertTrue();
+            done();
+          }).catch((error: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 promise err code:" + error?.code + " message:" + error?.message);
+            if (error.code == 801) {
+              expect(error.code == 801).assertTrue();
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        } catch (error) {}
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 end---');
+      })
+
   })
 
 }
