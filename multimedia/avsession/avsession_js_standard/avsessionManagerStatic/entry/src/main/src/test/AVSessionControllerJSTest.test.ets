@@ -1519,7 +1519,7 @@ export default function abilityTest() {
         * @tc.type   Function
         * @tc.level  Level 3
         */
-        it("SUB_MULTIMEDIA_AVSESSION_ONMETADATACHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
         let filter = []
         let flag = 0;
