@@ -26,6 +26,7 @@ import {
   ReplaceSymbolEffect,
   ReplaceEffectType,
   EffectScope,
+  $r
 } from '@kit.ArkUI';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';

@@ -22,6 +22,7 @@ import {
   Scroll,
   Text,
   XComponent,
+  XComponentOptions,
   XComponentType,
   XComponentController
 } from '@kit.ArkUI';
@@ -50,7 +51,7 @@ struct XComponentIndex {
           .fontSize(16)
           .key('xComponentPageTitle')
 
-        XComponent({ id: 'xComponentView', type: XComponentType.TEXTURE, controller: this.xController })
+        XComponent({ id: 'xComponentView', type: XComponentType.TEXTURE, controller: this.xController } as XComponentOptions)
           .key('xComponentView')
           .height('20%')
           .width('100%')
