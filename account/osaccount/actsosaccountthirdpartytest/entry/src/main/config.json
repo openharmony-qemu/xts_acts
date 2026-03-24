@@ -39,6 +39,10 @@
       {
         "name": "ohos.permission.DISTRIBUTED_DATASYNC",
         "reason": "ceshi"
+      },
+      {
+        "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION",
+        "reason": "ceshi"
       }
     ],
     "abilities": [

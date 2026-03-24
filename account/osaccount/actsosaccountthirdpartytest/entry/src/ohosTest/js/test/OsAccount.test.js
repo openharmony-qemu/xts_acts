@@ -14,6 +14,7 @@
  */
 import osAccount from '@ohos.account.osAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 export default function ActsOsAccountTest() {
     describe('ActsOsAccountTest', function () {
@@ -24,7 +25,7 @@ export default function ActsOsAccountTest() {
             for (let i = 0; i < accounts.length; i++) {
                 let localId = accounts[i].localId
                 if (localId != 100) {
-                    await osAccountManager.removeOsAccount(localId);
+                    await RemoveAccount(localId);
                 }
             }
             done();
