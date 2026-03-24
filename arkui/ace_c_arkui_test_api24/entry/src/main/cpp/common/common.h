@@ -187,6 +187,16 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
+#define ASSERT_TRUE(cond)                                                                                              \
+    do {                                                                                                               \
+        if (!(cond)) {                                                                                                 \
+            napi_throw_error((env), nullptr, "assert true failed");                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                  \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
 #define ASSERT_STREQ(result, expect)                                                                                   \
     do {                                                                                                               \
         auto *res1 = (result);                                                                                         \

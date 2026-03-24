@@ -21,6 +21,10 @@ add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
 )
 
+add_library(arkuicapigen SHARED
+    NapiArkUICapiGenModule.cpp
+)
+
 find_library(
     # Sets the name of the path variable.
     hilog-lib
@@ -57,3 +61,5 @@ target_link_libraries(nativerender PUBLIC
         libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
 target_link_libraries(nativefunc PUBLIC
  	    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+target_link_libraries(arkuicapigen PUBLIC
+        libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
