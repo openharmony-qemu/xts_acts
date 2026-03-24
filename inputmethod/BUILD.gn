@@ -28,5 +28,6 @@ group("inputmethod") {
     "InputMethodAuthorityTestStatic:ActsInputMethodAuthorityStaticTest",
     "InputMethodEditBox:ActsInputMethodEditBoxTest",
     "InputMethodEngineStatic:ActsInputMethodEngineStaticTest",
+    "InputMethodListTestStatic:ActsInputMethodListStaticTest",
   ]
 }
