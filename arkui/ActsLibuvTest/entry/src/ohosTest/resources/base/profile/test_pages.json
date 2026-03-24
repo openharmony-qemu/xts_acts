@@ -1,6 +1,5 @@
 {
   "src": [
-    "testability/pages/Index",
-    "MainAbility/pages/SegmentButtonOptions/SegmentButtonOptions"
+    "testability/pages/Index"
   ]
 }
