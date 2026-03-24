@@ -15,7 +15,6 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import backgroundProcessManager from '@ohos.resourceschedule.backgroundProcessManager';
 import { BusinessError } from "@ohos.base"
 import Utils from './Util.test';
@@ -66,11 +65,11 @@ export default function ActsLongTimeTaskNopStaticTest() {
             done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_PROCESS_MANAGER_NOP_STATIC_XTS_001 promise err code:" + err?.code + " message:" + err?.message);
-            if (err.code == 801) {
-              expect(err.code == 801).assertTrue();
+            if (err.code === 801) {
+              expect(err.code === 801).assertTrue();
               done();
             }else{
-              expect(err.code == PERMISSION_DENIED_CODE).assertTrue();
+              expect(err.code === PERMISSION_DENIED_CODE).assertTrue();
               done();
             }
           });
@@ -103,24 +102,17 @@ export default function ActsLongTimeTaskNopStaticTest() {
             done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_PROCESS_MANAGER_NOP_STATIC_XTS_002 promise err code:" + err?.code + " message:" + err?.message);
-            if (err.code == 801) {
-              expect(err.code == 801).assertTrue();
+            if (err.code === 801) {
+              expect(err.code === 801).assertTrue();
               done();
             }else{
-              expect(false).assertTrue();
+              expect(err.code === PERMISSION_DENIED_CODE).assertTrue();
               done();
             }
           });
         } catch (error) {
           let e: Error = error as Error;
           console.error(`SUB_RESOURCESCHEDULE_PROCESS_MANAGER_NOP_STATIC_XTS_002 isPowerSaveMode failed, errCode: ${e.code}, message: ${e.message}`);
-          if (error.code == 801) {
-            expect(error.code == 801).assertTrue();
-            done();
-          }else{
-            expect(error.code == PERMISSION_DENIED_CODE).assertTrue();
-            done();
-          }
         }
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_PROCESS_MANAGER_NOP_STATIC_XTS_002 end---');
@@ -146,8 +138,8 @@ export default function ActsLongTimeTaskNopStaticTest() {
             done();
           }).catch((error: Error) => {
             console.error("SUB_RESOURCESCHEDULE_PROCESS_MANAGER_NOP_STATIC_XTS_003 promise err code:" + error?.code + " message:" + error?.message);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
+            if (error.code === 801) {
+              expect(error.code === 801).assertTrue();
               done();
             }else{
               expect(error.code == PERMISSION_DENIED_CODE).assertTrue();
