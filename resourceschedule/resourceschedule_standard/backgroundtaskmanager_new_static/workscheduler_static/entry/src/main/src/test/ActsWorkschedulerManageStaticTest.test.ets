@@ -723,7 +723,7 @@ export default function WorkSchedulerJsTest() {
             });
             done();
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -774,7 +774,7 @@ export default function WorkSchedulerJsTest() {
             });
             done();
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -821,7 +821,7 @@ export default function WorkSchedulerJsTest() {
             });
             done();
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -869,7 +869,7 @@ export default function WorkSchedulerJsTest() {
             });
             done();
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -923,7 +923,7 @@ export default function WorkSchedulerJsTest() {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
           })
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -972,7 +972,7 @@ export default function WorkSchedulerJsTest() {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
           })
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -1018,7 +1018,7 @@ export default function WorkSchedulerJsTest() {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
           })
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -1059,10 +1059,10 @@ export default function WorkSchedulerJsTest() {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
           })
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
-        }
+          }
         })
 
     /**
@@ -1084,6 +1084,7 @@ export default function WorkSchedulerJsTest() {
             networkType: workScheduler.NetworkType.NETWORK_TYPE_ETHERNET,
             isCharging: false,
         }
+
         try{
             workScheduler.startWork(workInfo)
             hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032---startWork success---');
@@ -1101,7 +1102,7 @@ export default function WorkSchedulerJsTest() {
             console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
           })
         }catch(err){
-        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 failed. code is ${err.code} message is ${err.message}`);
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 failed. code is ${err.code} message is ${err.message}`);
           expect(false).assertTrue();
           done();
         }
