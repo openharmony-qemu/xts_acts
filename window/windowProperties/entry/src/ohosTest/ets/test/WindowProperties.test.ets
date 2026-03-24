@@ -1077,24 +1077,72 @@ export default function windowPropertiesTest() {
      */
     it('testSetGestureBackEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'TestSetGestureBackEnabledTrue';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
       let windowClass = windowStage.getMainWindowSync();
-      windowClass.setGestureBackEnabled(true).then(() => {
-        console.info(`${caseName} Succeeded in setting gesture back enabled true.`);
-        const isGestureBackEnabled = windowClass.isGestureBackEnabled();
-        console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
-        expect(isGestureBackEnabled).assertTrue();
-        done();
-      }).catch((err: BusinessError) => {
-        console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
-          expect(err.message != null).assertTrue();
+      let windowProperties = windowClass.getWindowProperties()
+      console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+      let isFullScreen = windowProperties.isFullScreen;
+
+      let testSetGestureBackEnabledTrue_CheckReturnSuccess = () => {
+        windowClass.setGestureBackEnabled(true).then(() => {
+          console.info(`${caseName} Succeeded in setting gesture back enabled true.`);
+          const isGestureBackEnabled = windowClass.isGestureBackEnabled();
+          console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
+          expect(isGestureBackEnabled).assertTrue();
           done();
-        } else {
-          expect().assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
+            console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
+            expect(err.message != null).assertTrue();
+            expect(true).assertFail();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+
+      let testSetGestureBackEnabledTrue_CheckReturnFail801 = () => {
+        console.error(msgStr + 'Failed to enable setGestureBackEnabled Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: '+ JSON.stringify(isFreeWindowMode));
+        windowClass.setGestureBackEnabled(true).then(() => {
+          console.info(`${caseName} Succeeded in setting gesture back enabled true.`);
+          const isGestureBackEnabled = windowClass.isGestureBackEnabled();
+          console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
+          expect(true).assertFail();
           done();
-        }
-      });
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
+            expect(err.message !== null).assertTrue();
+            done();            
+          } else {
+            done();
+          }
+        });
+      }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetGestureBackEnabledTrue_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'phone') {
+        testSetGestureBackEnabledTrue_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetGestureBackEnabledTrue_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetGestureBackEnabledTrue_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        testSetGestureBackEnabledTrue_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetGestureBackEnabledTrue_CheckReturnSuccess();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+
+      done()
     })
     /**
      * @tc.name   testSetGestureBackEnabledFalse
@@ -1106,24 +1154,72 @@ export default function windowPropertiesTest() {
      */
     it('testSetGestureBackEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'TestSetGestureBackEnabledFalse';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
       let windowClass = windowStage.getMainWindowSync();
-      windowClass.setGestureBackEnabled(false).then(async () => {
-        console.info(`${caseName} Succeeded in setting gesture back enabled false.`);
-        const isGestureBackEnabled = windowClass.isGestureBackEnabled();
-        console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
-        expect(isGestureBackEnabled).assertFalse();
-        done();
-      }).catch((err: BusinessError) => {
-        console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
-          expect(err.message != null).assertTrue();
+      let windowProperties = windowClass.getWindowProperties()
+      console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+      let isFullScreen = windowProperties.isFullScreen;
+
+      let testSetGestureBackEnabledFalse_CheckReturnSuccess = () => {
+        windowClass.setGestureBackEnabled(false).then(() => {
+          console.info(`${caseName} Succeeded in setting gesture back enabled false.`);
+          const isGestureBackEnabled = windowClass.isGestureBackEnabled();
+          console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
+          expect(isGestureBackEnabled === false).assertTrue();
           done();
-        } else {
-          expect().assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
+            console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
+            expect(err.message != null).assertTrue();
+            expect(true).assertFail();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+
+      let testSetGestureBackEnabledFalse_CheckReturnFail801 = () => {
+        console.error(msgStr + 'Failed to enable setGestureBackEnabled Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: '+ JSON.stringify(isFreeWindowMode));
+        windowClass.setGestureBackEnabled(false).then(() => {
+          console.info(`${caseName} Succeeded in setting gesture back enabled true.`);
+          const isGestureBackEnabled = windowClass.isGestureBackEnabled();
+          console.info(`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
+          expect(true).assertFail();
           done();
-        }
-      });
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            console.info(`${caseName} The current device type does not support to setGestureBackEnabled`);
+            expect(err.message !== null).assertTrue();
+            done();            
+          } else {
+            done();
+          }
+        });
+      }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetGestureBackEnabledFalse_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'phone') {
+        testSetGestureBackEnabledFalse_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetGestureBackEnabledFalse_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetGestureBackEnabledFalse_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        testSetGestureBackEnabledFalse_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetGestureBackEnabledFalse_CheckReturnSuccess();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+
+      done()
     })
     /**
      * @tc.name   testSetGestureBackEnabledInSubWindow
