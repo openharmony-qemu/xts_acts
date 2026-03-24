@@ -660,5 +660,49 @@ export default function Func2Test() {
       expect(result).assertEqual(0);
       done();
     })
+
+    /**
+     * @tc.name   VIDEO_CAPABILITY_CONFIG_0010
+     * @tc.number VIDEO_CAPABILITY_CONFIG_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('VIDEO_CAPABILITY_CONFIG_0010', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Func2_Test(45);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   VIDEO_CAPABILITY_CONFIG_0020
+     * @tc.number VIDEO_CAPABILITY_CONFIG_0020
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('VIDEO_CAPABILITY_CONFIG_0020', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Func2_Test(46);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   VIDEO_CAPABILITY_CONFIG_0030
+     * @tc.number VIDEO_CAPABILITY_CONFIG_0030
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('VIDEO_CAPABILITY_CONFIG_0030', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Func2_Test(47);
+      expect(result).assertEqual(0);
+      done();
+    })
+    
+    
   })
 }
