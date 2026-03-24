@@ -49,11 +49,8 @@ export default function LRUCacheTest() {
      * @tc.level    Level 2
      */
     it("testLRUCacheConstructorPositive0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const lruCache: util.LRUCache<string, string> = new util.LRUCache<string, string>(5);
-
         expect(lruCache != undefined && lruCache.length === 0).assertTrue();
-        
       });
 
     /**
