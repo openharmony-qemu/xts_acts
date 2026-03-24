@@ -16,18 +16,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/bbshen/.ohos/config/openharmony/default_inject_javascript_four_static_qMj8bG3AJKyq7OMdCCWhyVMSpdMbPVxfEM8SrlGCliY=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BAD26951FAD6ADDA3AB8DE00081F520559DB98F3E10593D0C273A1B85531ECDA164D36E19C53E7A",
-          "profile": "C:/Users/bbshen/.ohos/config/openharmony/default_inject_javascript_four_static_qMj8bG3AJKyq7OMdCCWhyVMSpdMbPVxfEM8SrlGCliY=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/bbshen/.ohos/config/openharmony/default_inject_javascript_four_static_qMj8bG3AJKyq7OMdCCWhyVMSpdMbPVxfEM8SrlGCliY=.p12",
-          "storePassword": "0000001B9F586739E23A160C1BD56C7E8E6A30B59660816545802E9F64D37D4797A9BB7478BCFCAC1B5C3E"
-        }
-      }
     ],
     "products": [
       {
@@ -42,8 +30,7 @@
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        },
-        "targetSdkVersion": "20"
+        }
       }
     ],
     "buildModeSet": [
