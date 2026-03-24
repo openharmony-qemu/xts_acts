@@ -54,7 +54,7 @@ struct RichEditorAttributeStrings008 {
   @State spans: string = '';
   @State finalSpans: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   mutableStyledString: MutableStyledString = new MutableStyledString('ab12',
     [{
       start: 0,

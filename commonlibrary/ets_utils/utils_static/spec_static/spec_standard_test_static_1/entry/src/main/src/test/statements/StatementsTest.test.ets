@@ -289,10 +289,8 @@ class CIterator implements Iterator<string> {
     this.base = base;
   }
   next(): IteratorResult<string> {
-    return {
-      done: this.index >= this.base.data.length,
-      value: this.index >= this.base.data.length ? undefined : this.base.data[this.index++]
-    }
+    return new IteratorResult<string>(this.index >= this.base.data.length,
+      this.index >= this.base.data.length ? undefined : this.base.data[this.index++]);
   }
 }
 function foo21<T extends String>(s: T): T[] {
