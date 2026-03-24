@@ -1996,51 +1996,32 @@ export default function KVManagerRootDir() {
                     expect(null).assertFail();
                     done();
                 });
+                await kvStore!.backupEx(g_backupConfig).then(() => {
+                    console.info(TAG + ' backupEx success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: Error) => {
+                    console.error(TAG + ' backupEx err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(15100000);
+                });
 
-                try{
-                    await kvStore!.backupEx(g_backupConfig).then(() => {
-                        console.info(TAG + ' backupEx success');
-                        expect(null).assertFail();
-                        done();
-                    }).catch((err: Error) => {
-                        console.error(TAG + ' backupEx err ' + `, code=${err.code}, message=${err.message}`);
-                        expect(null).assertFail();
-                        done();
-                    });
-                }catch(e){
-                    console.error(TAG + ' catch, backupEx err ' + `, code=${e.code}, message=${e.message}`);
-                    expect(e.code).assertEqual(15100000);
-                }
+                await kvStore!.restoreEx(g_backupConfig).then(() => {
+                    console.info(TAG + ' restoreEx success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: Error) => {
+                    console.error(TAG + ' restoreEx err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(15100000);
+                });
 
-                try{
-                    await kvStore!.restoreEx(g_backupConfig).then(() => {
-                        console.info(TAG + ' restoreEx success');
-                        expect(null).assertFail();
-                        done();
-                    }).catch((err: Error) => {
-                        console.error(TAG + ' restoreEx err ' + `, code=${err.code}, message=${err.message}`);
-                        expect(null).assertFail();
-                        done();
-                    });
-                }catch(e){
-                    console.error(TAG + ' catch, restoreEx err ' + `, code=${e.code}, message=${e.message}`);
-                    expect(e.code).assertEqual(15100000);
-                }
-
-                try{
-                    await kvStore!.deleteBackupEx(g_backupConfig).then(() => {
-                        console.info(TAG + ' deleteBackupEx success');
-                        expect(null).assertFail();
-                        done();
-                    }).catch((err: Error) => {
-                        console.error(TAG + ' deleteBackupEx err ' + `, code=${err.code}, message=${err.message}`);
-                        expect(null).assertFail();
-                        done();
-                    });
-                }catch(e){
-                    console.error(TAG + ' catch, deleteBackupEx err ' + `, code=${e.code}, message=${e.message}`);
-                    expect(e.code).assertEqual(15100000);
-                }
+                await kvStore!.deleteBackupEx(g_backupConfig).then(() => {
+                    console.info(TAG + ' deleteBackupEx success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: Error) => {
+                    console.error(TAG + ' deleteBackupEx err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(15100000);
+                });
 
                 console.info(TAG + ' ---end. closeKVStore,deleteKVStore---');
                 await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(async () => {
