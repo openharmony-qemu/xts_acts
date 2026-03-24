@@ -38,6 +38,7 @@ let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPreviewProfile: camera.Profile;
+let mPhotoProfile: camera.Profile;
 let mPhotoOutput: camera.PhotoOutput;
 let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
@@ -139,6 +140,7 @@ function createPhotoOutput() {
   console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
   mPreviewProfile = previewProfile;
+  mPhotoProfile = photoProfile;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
