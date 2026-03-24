@@ -25,7 +25,18 @@ export default function arkuiNativeCapiNativeInterfaceAccessibility() {
       done();
     });
 
-    it('TestArkUICapi_007', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_007
+     * @tc.name    TestArkUICapi_007
+     * @tc.desc    Case: TestArkUICapi_007. API: OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier,
+     *             OH_ArkUI_CreateAccessibilityElementInfo. Note: non-ASCII details are in the workbook and native C++
+     *             comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_007', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_007()).assertEqual(0)
       done()
     })

@@ -25,12 +25,32 @@ export default function arkuiNativeCapiDragAndDrop() {
       done();
     });
 
-    it('TestArkUICapi_001', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_001
+     * @tc.name    TestArkUICapi_001
+     * @tc.desc    Case: TestArkUICapi_001. API: OH_ArkUI_NotifySuggestedDropOperation, ArkUI_DropOperation. Note:
+     *             non-ASCII details are in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_001', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_001()).assertEqual(0)
       done()
     })
 
-    it('TestArkUICapi_002', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_002
+     * @tc.name    TestArkUICapi_002
+     * @tc.desc    Case: TestArkUICapi_002. API: OH_ArkUI_NotifyDisableDefaultDropAnimation. Note: non-ASCII details are
+     *             in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_002', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_002()).assertEqual(0)
       done()
     })

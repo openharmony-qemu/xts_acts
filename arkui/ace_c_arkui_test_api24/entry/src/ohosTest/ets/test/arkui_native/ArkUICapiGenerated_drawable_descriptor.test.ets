@@ -25,22 +25,60 @@ export default function arkuiNativeCapiDrawableDescriptor() {
       done();
     });
 
-    it('TestArkUICapi_003', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_003
+     * @tc.name    TestArkUICapi_003
+     * @tc.desc    Case: TestArkUICapi_003. Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_003', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_003()).assertEqual(0)
       done()
     })
 
-    it('TestArkUICapi_004', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_004
+     * @tc.name    TestArkUICapi_004
+     * @tc.desc    Case: TestArkUICapi_004. Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_004', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_004()).assertEqual(0)
       done()
     })
 
-    it('TestArkUICapi_005', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_005
+     * @tc.name    TestArkUICapi_005
+     * @tc.desc    Case: TestArkUICapi_005. API: OH_ArkUI_DrawableDescriptor_SetAnimationStopMode. Note: non-ASCII
+     *             details are in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_005', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_005()).assertEqual(0)
       done()
     })
 
-    it('TestArkUICapi_006', Level.LEVEL3, async (done: Function) => {
+    /**
+     * @tc.number  TestArkUICapi_006
+     * @tc.name    TestArkUICapi_006
+     * @tc.desc    Case: TestArkUICapi_006. API: OH_ArkUI_DrawableDescriptor_GetAnimationStopMode. Note: non-ASCII
+     *             details are in the workbook and native C++ comments
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+
+    it('TestArkUICapi_006', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_006()).assertEqual(0)
       done()
     })
