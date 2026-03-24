@@ -382,7 +382,7 @@ function testSetOtaUpdatePolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     let policy: systemManager.OtaUpdatePolicy = {
       "policyType": systemManager.PolicyType.POSTPONE,
-      "version": UPDATE_VERSION,
+      "version": "",
     }
     try {
       systemManager.setOtaUpdatePolicy(SELFWANT, policy);
@@ -905,6 +905,63 @@ function testGetUpdateResult() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_update_result_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0005
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_update_result_0005", Level.LEVEL2, async (done: Function) => {
+    try {
+      await systemManager.getUpdateResult(SELFWANT, undefined).then((data: systemManager.UpdateResult) => {
+        expect(false).assertTrue();
+      })
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_update_result_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0006
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_update_result_0006", Level.LEVEL2, async (done: Function) => {
+    try {
+      await systemManager.getUpdateResult(SELFWANT, "").then((data: systemManager.UpdateResult) => {
+        expect(false).assertTrue();
+      })
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_update_result_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UPDATE_RESULT_JS_0007
+   * @tc.desc   test systemManager getOtaUpdatePolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_update_result_0007", Level.LEVEL2, async (done: Function) => {
+    try {
+      await systemManager.getUpdateResult(INVALID_WANT, null).then((data: systemManager.UpdateResult) => {
+        expect(false).assertTrue();
+      })
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
 }
 
 function testGetUpdateAuthData() {
@@ -1109,6 +1166,56 @@ function testSetAutoUnlockAfterReboot() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_auto_unlock_after_reboot_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0006
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_auto_unlock_after_reboot_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setAutoUnlockAfterReboot(null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_auto_unlock_after_reboot_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_AUTO_UNLOCK_AFTER_REBOOT_JS_0007
+   * @tc.desc   test systemManager setAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_auto_unlock_after_reboot_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setAutoUnlockAfterReboot(undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetAutoUnlockAfterReboot() {
@@ -1171,6 +1278,56 @@ function testGetAutoUnlockAfterReboot() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       systemManager.getAutoUnlockAfterReboot(INVALID_WANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_auto_unlock_after_reboot_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0004
+   * @tc.desc   test systemManager getAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_auto_unlock_after_reboot_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getAutoUnlockAfterReboot(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_auto_unlock_after_reboot_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_AUTO_UNLOCK_AFTER_REBOOT_JS_0005
+   * @tc.desc   test systemManager getAutoUnlockAfterReboot with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_auto_unlock_after_reboot_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getAutoUnlockAfterReboot(undefined);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
@@ -1283,6 +1440,106 @@ function testGetDisallowedNearLinkProtocols() {
       expect(protocols1.length == nearlinkProtocols.length).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_near_link_protocols_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0005
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_get_disallowed_near_link_protocols_0005', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(
+        null, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_near_link_protocols_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0006
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_get_disallowed_near_link_protocols_0006', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(
+        undefined, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_near_link_protocols_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0007
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_get_disallowed_near_link_protocols_0007', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(
+        SELFWANT, null);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_near_link_protocols_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0008
+   * @tc.desc   test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_get_disallowed_near_link_protocols_0008', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(
+        SELFWANT, undefined);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1420,6 +1677,162 @@ function testAddDisallowedNearLinkProtocols() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0006
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0006', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(null, nearlinkProtocols, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0007
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0007', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(undefined, nearlinkProtocols, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0008
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0008', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, null, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0009
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0009', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, undefined, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0010
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0010', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, null);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_nearlink_protocols_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0011
+   * @tc.desc   test systemManager addDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_add_disallowed_nearlink_protocols_0011', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, undefined);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveDisallowedNearLinkProtocols() {
@@ -1551,6 +1964,168 @@ function testRemoveDisallowedNearLinkProtocols() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0006
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0006', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(null, nearlinkProtocols, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0007
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0007', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(undefined, nearlinkProtocols, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0008
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0008', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(SELFWANT, null, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0009
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0009', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(SELFWANT, undefined, DEFAULT_USER_ID);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0010
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0010', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, null);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_nearlink_protocols_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0011
+   * @tc.desc   test systemManager removeDisallowedNearLinkProtocols with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('test_remove_disallowed_nearlink_protocols_0011', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let nearlinkProtocols: Array<number> = new Array();
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+    nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+    try {
+      systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, undefined);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testSetInstallLocalEnterpriseAppEnabled() {
@@ -1646,6 +2221,56 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       expect(result).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_005
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabled(null, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_006
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabled with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabled(undefined, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2234,6 +2859,72 @@ function testStartCollectLog() {
   });
 
   /**
+   * @tc.name   test_start_collect_log_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_COLLECT_LOG_JS_0004
+   * @tc.desc   test systemManager startCollectLog success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_collect_log_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await systemManager.startCollectLog(null).then(result=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      });
+      systemManager.finishLogCollected(SELFWANT);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_start_collect_log_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_COLLECT_LOG_JS_0005
+   * @tc.desc   test systemManager startCollectLog success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_collect_log_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await systemManager.startCollectLog(undefined).then(result=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      });
+      systemManager.finishLogCollected(SELFWANT);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
    * @tc.name   setNTPServer_test_001
    * @tc.number setNTPServer_test_001
    * @tc.desc   setNTPServer with null parameter admin
@@ -2278,6 +2969,75 @@ function testStartCollectLog() {
     console.info(' --- setNTPServer_test_002  -------- END --------');
   })
 
+  /**
+   * @tc.name   setNTPServer_test_003
+   * @tc.number setNTPServer_test_003
+   * @tc.desc   setNTPServer with undefined parameter admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setNTPServer_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setNTPServer_test_003  -------- START --------');
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let ret = systemManager.setNTPServer(SELFWANT, '');
+      console.info(' --- setNTPServer_test_003 error is expected, but it done.');
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- setNTPServer_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- setNTPServer_test_003  -------- END --------');
+  })
+
+
+  /**
+   * @tc.name   setNTPServer_test_004
+   * @tc.number setNTPServer_test_004
+   * @tc.desc   setNTPServer with undefined parameter admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setNTPServer_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setNTPServer_test_004  -------- START --------');
+    try {
+      systemManager.setNTPServer(SELFWANT, null);
+      console.info(' --- setNTPServer_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setNTPServer_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setNTPServer_test_004  -------- END --------');
+  })
+
+  /**
+   * @tc.name   setNTPServer_test_005
+   * @tc.number setNTPServer_test_005
+   * @tc.desc   setNTPServer with undefined parameter admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setNTPServer_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setNTPServer_test_005  -------- START --------');
+    try {
+      systemManager.setNTPServer(SELFWANT, undefined);
+      console.info(' --- setNTPServer_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setNTPServer_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setNTPServer_test_005  -------- END --------');
+  })
 
   /**
    * @tc.name   getNTPServer_test_001
@@ -2496,8 +3256,8 @@ function testStartCollectLog() {
         "path": "path"
       }]
       let updatePackageInfo: systemManager.UpdatePackageInfo = {
-        "version" : UPDATE_VERSION,
-        "packages" : updatePaskageInfo,
+        "version" : "",
+        "packages" : [],
         "description" : description,
         "authInfo" : "invalid authinfo",
       };
@@ -3150,6 +3910,56 @@ function testFinishLogCollected() {
         expect(Number(error.code) === 801).assertTrue();
       } else {
         expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_finish_log_collected_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_FINISH_LOG_COLLECTED_JS_0003
+   * @tc.desc   test systemManager finishLogCollected with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_finish_log_collected_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.finishLogCollected(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_finish_log_collected_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_FINISH_LOG_COLLECTED_JS_0004
+   * @tc.desc   test systemManager finishLogCollected with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_finish_log_collected_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.finishLogCollected(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
