@@ -17,8 +17,8 @@ let permission: Permissions[] = [
   'ohos.permission.CAMERA',
   'ohos.permission.MICROPHONE',
   'ohos.permission.MEDIA_LOCATION',
-  'ohos.permission.READ_MEDIA',
-  'ohos.permission.WRITE_MEDIA'
+  "ohos.permission.READ_IMAGEVIDEO",
+  "ohos.permission.WRITE_IMAGEVIDEO"
 ];
 
 // 接收图片资产的回调函数
