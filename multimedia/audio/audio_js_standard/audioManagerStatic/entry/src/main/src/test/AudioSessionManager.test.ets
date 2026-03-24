@@ -308,5 +308,47 @@ export default function audioSessionManagerTest() {
         }
         done();
       })
+
+    /**
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        sessionManager!.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200 
+    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200  
+    * @tc.desc   setAudioSessionBehavior
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        sessionManager!.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200: setAudioSessionBehavior with DEFALUT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
   })
 }
