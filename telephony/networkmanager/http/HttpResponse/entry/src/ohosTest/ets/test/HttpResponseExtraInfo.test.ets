@@ -768,7 +768,7 @@ export default function HttpResponseExtraInfoTest() {
               } else {
                 console.info(`${caseName} Network connected`);
                 let httpRequest = http.createHttp();
-                httpRequest.request('https://www.huawei.com/')
+                httpRequest.request('https://www.microsoft.com')
                   .then((res: http.HttpResponse) => {
                     console.info(' success');
                     if (res?.connectionExtraInfo) {
