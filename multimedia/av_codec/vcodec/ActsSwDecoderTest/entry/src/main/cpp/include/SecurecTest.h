@@ -16,8 +16,8 @@
 #ifndef SECUREC_H
 #define SECUREC_H
 
-#include <cerrno>
 #include <cstddef>
+#include <cerrno>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,8 +39,8 @@ extern "C" {
 #define SECUREC_MEM_MAX_LEN 0x7fffffffUL
 #endif
 
-int SecureMemset(void* dest, size_t destMax, int c, size_t count);
-int SecureMemcpy(void* dest, size_t destMax, const void* src, size_t count);
+int SecureMemset(void *dest, size_t destMax, int c, size_t count);
+int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count);
 
 #ifdef __cplusplus
 }

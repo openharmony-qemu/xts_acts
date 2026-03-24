@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef VIDEODEC_NDK_SAMPLE_TEST_H
-#define VIDEODEC_NDK_SAMPLE_TEST_H
+#ifndef VIDEODEC_VIDEO_NATIVE_SAMPLE_TEST_H
+#define VIDEODEC_VIDEO_NATIVE_SAMPLE_TEST_H
 
 #include <atomic>
 #include <cstdio>
@@ -139,4 +139,4 @@ void VdecOutputDataReady(OH_AVCodec* codec,
                          OH_AVCodecBufferAttr* attr,
                          void* userData);
 
-#endif // VIDEODEC_NDK_SAMPLE_TEST_H
+#endif // VIDEODEC_VIDEO_NATIVE_SAMPLE_TEST_H
