@@ -19,8 +19,6 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {
-    "@ohos/hypium": "1.0.26"
-  }
+  "dependencies": {}
 }
 
