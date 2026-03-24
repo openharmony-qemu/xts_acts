@@ -24,7 +24,7 @@ import {
   XComponent,
   XComponentType,
   XComponentController
-} from '@ohos.arkui.component';
+} from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 

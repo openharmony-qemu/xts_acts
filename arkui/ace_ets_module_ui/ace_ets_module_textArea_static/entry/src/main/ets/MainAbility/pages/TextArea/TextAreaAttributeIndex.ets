@@ -47,7 +47,7 @@ function textAreaCustomKeyboardBuilder() {
 @Entry
 @Component
 struct TextAreaAttributeIndex {
-  private textAreaKeyboard: ComponentContent<[]> = new ComponentContent(this.getUIContext(),
+  private textAreaKeyboard: ComponentContent<undefined> = new ComponentContent(this.getUIContext(),
     wrapBuilder(textAreaCustomKeyboardBuilder));
 
   aboutToAppear() {
