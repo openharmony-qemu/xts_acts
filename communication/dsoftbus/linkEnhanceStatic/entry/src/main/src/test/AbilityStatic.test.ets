@@ -1263,6 +1263,37 @@ export default function LinkEnhanceAPI() {
       hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0200----------------");
     });
     /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300
+     * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300
+     * @tc.desc   linkEnhance.connection.offconnectResult接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300----------------");
+      try {
+        let connection: linkEnhance.Connection = linkEnhance.createConnection("00:11:22:33:44:55", "demo");
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300 connection is" + connection);
+        expect(typeof(connection)).assertEqual('object');
+        try {
+          hilog.info(domain, tag, '[CALLBACK]clientconnectionChangeStateOnCallback!!!');
+          connection.offConnectResult();
+        }catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300 error.code is:" + error.code);
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300 error.message is:" + error.message);
+          expect().assertFail(); 
+          }
+        connection.close();  
+      }catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300 createConnection error.code is:" + error.code);
+        expect().assertFail(); 
+        }
+      hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_connectResult_0300----------------");
+    });
+    /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0100
      * @tc.desc   linkEnhance.connection.onDisconnected接口调用
@@ -1329,6 +1360,37 @@ export default function LinkEnhanceAPI() {
         expect().assertFail(); 
         }
       hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0200----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300
+     * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300
+     * @tc.desc   linkEnhance.connection.offDisconnected接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300----------------");
+      try {
+        let connection: linkEnhance.Connection = linkEnhance.createConnection("00:11:22:33:44:55", "demo");
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300 connection is" + connection);
+        expect(typeof(connection)).assertEqual('object');
+        try {
+          hilog.info(domain, tag, '[CALLBACK]clientconnectionChangeStateOnCallback!!!');
+          connection.offDisconnected();
+        }catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300 error.code is:" + error.code);
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300 error.message is:" + error.message);
+          expect().assertFail(); 
+          }
+        connection.close(); 
+      }catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300 createConnection error.code is:" + error.code);
+        expect().assertFail(); 
+        }
+      hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_disConnected_0300----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0100
@@ -1399,6 +1461,37 @@ export default function LinkEnhanceAPI() {
       hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0200----------------");
     });
     /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300
+     * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300
+     * @tc.desc   linkEnhance.connection.onDisconnected接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+      it('SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300----------------");
+        try {
+          let connection: linkEnhance.Connection = linkEnhance.createConnection("00:11:22:33:44:55", "demo");
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300 connection is" + connection);
+          expect(typeof(connection)).assertEqual('object');
+          try {
+            hilog.info(domain, tag, '[CALLBACK]clientconnectionChangeStateOnCallback!!!');
+            connection.offDataReceived();
+          }catch (error) {
+            error = error as BusinessError;
+            hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300 error.code is:" + error.code);
+            hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300 error.message is:" + error.message);
+            expect().assertFail(); 
+            }
+          connection.close(); 
+        }catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300 createConnection error.code is:" + error.code);
+          expect().assertFail(); 
+          }
+        hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_dataReceived_0300----------------");
+      });
+    /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0100
      * @tc.desc   linkEnhance.onConnectionAccepted接口调用
@@ -1457,6 +1550,32 @@ export default function LinkEnhanceAPI() {
         hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0200----------------");
         });
     /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300
+     * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300
+     * @tc.desc   linkEnhance.offConnectionAccepte接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300----------------");
+      try {
+        let server: linkEnhance.Server = linkEnhance.createServer("demo");
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300 server is" + server);
+        try {
+          server.offConnectionAccepted();
+        }catch (error) {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300 error.code is:" + error.code);
+          expect().assertFail();
+        }
+        server.close();
+      }catch (error) {
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300 createServer error.code is:" + error.code);
+        expect().assertFail();     
+    }
+    hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_ConnectionAccepted_0300----------------");
+    });
+    /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0100
      * @tc.desc   linkEnhance.onServerStopped接口调用
@@ -1513,6 +1632,32 @@ export default function LinkEnhanceAPI() {
         expect().assertFail();     
     }
     hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0200----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300
+     * @tc.number SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300
+     * @tc.desc   linkEnhance.offConnectionAccepte接口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300----------------");
+      try {
+        let server: linkEnhance.Server = linkEnhance.createServer("demo");
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300 server is" + server);
+        try {
+          server.offServerStopped();
+        }catch (error) {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300 error.code is:" + error.code);
+          expect().assertFail();
+        }
+        server.close();
+      }catch (error) {
+        hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300 createServer error.code is:" + error.code);
+        expect().assertFail();     
+    }
+    hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhanceStatic_API_ServerStopped_0300----------------");
     });
   })
 }  
