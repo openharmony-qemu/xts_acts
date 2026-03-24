@@ -394,6 +394,7 @@ export default function abilityTest() {
                 console.info(`${TAG}TestLog1 supportedProtocols = ${outputDeviceInfo.devices[0].supportedProtocols}`);
                 expect(outputDeviceInfo.devices[0].supportedProtocols).assertEqual(0);
                 console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${outputDeviceInfo.devices[0].supportedDrmCapabilities}`);
+                expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
             } catch (err) {
                 expect(true).assertFalse();
             }
