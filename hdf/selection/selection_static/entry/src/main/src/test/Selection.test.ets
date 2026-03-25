@@ -20,7 +20,7 @@ import Utils from './Util.test';
 import { PanelInfo, PanelType } from '@ohos.selectionInput.SelectionPanel';
 import selectionManager from '@ohos.selectionInput.selectionManager';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Want } from '@kit.abilityKit';
+import { Want } from '@kit.AbilityKit';
 import SelectionExtensionContext from '@ohos.selectionInput.SelectionExtensionContext';
 import SelectionExtensionAbility from '@ohos.selectionInput.SelectionExtensionAbility';
 
