@@ -134,14 +134,25 @@ export default function webOnPermissionRequest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testPermissionRequestGrantGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    // it('testPermissionRequestGrantGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    //   Utils.emitEvent("emitPermissionRequestGrant004", 160860)
+    //   Utils.registerBaseEvent("testPermissionRequestGrantGroup004", '"grant"', 160940,
+    //     done, (backData: events_emitter.EventData, expected: Object) => {
+    //       expect(backData?.data?.ACTION).assertEqual(expected);
+    //     });
+    //   await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+    // })
+
+    it('testPermissionRequestGrantGroup004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitPermissionRequestGrant004", 160860)
-      Utils.registerBaseEvent("testPermissionRequestGrantGroup004", '"grant"', 160940,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+      let isReturn = false;
+      Utils.registerEvent("testPermissionRequestGrantGroup004",'"grant"', 160940, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+      await Utils.waitForExist(() => isReturn, "testPermissionRequestGrantGroup004" + '_returnCheck', true, 1000);
+      done();
     })
+
+
 
   })
 }
