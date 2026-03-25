@@ -81,10 +81,21 @@ struct TabContentIndex {
         }
         .key('tabsDrawableIndicator')
         .width('100%')
-        .height(200)
+        .height('30%')
+
+        Tabs({ index: this.currentIndex }) {
+          TabContent() {
+            Text('D1').key('tabContentDrawable1Text')
+          }
+          .tabBar(SubTabBarStyle.of('DTab').indicator({ width: 40, height: 4, borderRadius: 2, marginTop: 8 } as SubTabBarIndicatorStyle))
+          .key('tabContentDrawableItem')
+        }
+        .key('tabsDrawableProperty')
+        .width('100%')
+        .height('30%')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')
