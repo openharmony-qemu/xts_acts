@@ -166,7 +166,7 @@ static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &vide
 }
 
 static void SetAudioValueLocal(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame,
-                int &aKeyCount)
+    int &aKeyCount)
 {
     if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
         audioIsEnd = true;
@@ -539,12 +539,24 @@ static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIs
     return 0;
 }
 
-// 辅助函数：处理单个轨道的读取和处理（AudioTrack0140版本）
-static int ProcessSingleTrackAudio0140(int32_t index, bool videoIsEnd1, bool videoIsEnd2, bool videoIsEnd3,
-    OH_AVCodecBufferAttr &bufferAttr, bool &outEnd1, bool &outEnd2, bool &outEnd3,
-    int &frame1, int &frame2, int &frame3, const char *funcName)
+struct AudioTrack0140Params {
+    int32_t index;
+    bool videoIsEnd1;
+    bool videoIsEnd2;
+    bool videoIsEnd3;
+    OH_AVCodecBufferAttr &bufferAttr;
+    bool &outEnd1;
+    bool &outEnd2;
+    bool &outEnd3;
+    int &frame1;
+    int &frame2;
+    int &frame3;
+    const char *funcName;
+};
+
+static int ProcessSingleTrackAudio0140(AudioTrack0140Params &params)
 {
-    trackFormat = OH_AVSource_GetTrackFormat(source, index);
+    trackFormat = OH_AVSource_GetTrackFormat(source, params.index);
     if (trackFormat == nullptr) {
         return -1;
     }
@@ -553,17 +565,16 @@ static int ProcessSingleTrackAudio0140(int32_t index, bool videoIsEnd1, bool vid
         return -1;
     }
     
-    if ((videoIsEnd1 && (index == TRACKNUM_1)) ||
-        (videoIsEnd2 && (index == TRACKNUM_2)) ||
-        (videoIsEnd3 && (index == TRACKNUM_3))) {
+    if ((params.videoIsEnd1 && (params.index == TRACKNUM_1)) ||
+        (params.videoIsEnd2 && (params.index == TRACKNUM_2)) ||
+        (params.videoIsEnd3 && (params.index == TRACKNUM_3))) {
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return 1;
     }
     
-    OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer);
-    
-    if (!HandleReadSampleError(readResult, index, funcName, trackFormat)) {
+    OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, params.index, avBuffer);
+    if (!HandleReadSampleError(readResult, params.index, params.funcName, trackFormat)) {
         return -1;
     }
     
@@ -575,12 +586,13 @@ static int ProcessSingleTrackAudio0140(int32_t index, bool videoIsEnd1, bool vid
         return -1;
     }
     
-    if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &params.bufferAttr) != AV_ERR_OK) {
         return -1;
     }
     
-    TrackState state = {&outEnd1, &outEnd2, &outEnd3, &frame1, &frame2, &frame3};
-    if (ProcessTrackByType0140(index, g_trackType, bufferAttr, state, funcName) != 0) {
+    TrackState state = {&params.outEnd1, &params.outEnd2, &params.outEnd3,
+                        &params.frame1, &params.frame2, &params.frame3};
+    if (ProcessTrackByType0140(params.index, g_trackType, params.bufferAttr, state, params.funcName) != 0) {
         return -1;
     }
     
@@ -653,7 +665,6 @@ static int ValidateVttTrack6100()
     sourceFormat = OH_AVSource_GetSourceFormat(source);
     trackFormat = OH_AVSource_GetTrackFormat(source, 0);
     if (trackFormat == nullptr) {
-        
         return -1;
     }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &mimeType))) {
@@ -1820,9 +1831,10 @@ int DemuxerFunctionAudioTrack0140()
     
     while (!videoIsEnd1 || !videoIsEnd2 || !videoIsEnd3) {
         for (int32_t index = 0; index < g_trackCount; index++) {
-            int result = ProcessSingleTrackAudio0140(index, videoIsEnd1, videoIsEnd2, videoIsEnd3,
+            AudioTrack0140Params params = {index, videoIsEnd1, videoIsEnd2, videoIsEnd3,
                 bufferAttr, videoIsEnd1, videoIsEnd2, videoIsEnd3,
-                videoFrame1, videoFrame2, videoFrame3, "AUDIO_TRACK_0140");
+                videoFrame1, videoFrame2, videoFrame3, "AUDIO_TRACK_0140"};
+            int result = ProcessSingleTrackAudio0140(params);
             if (result < 0) {
                 return -1;
             }
