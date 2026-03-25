@@ -53,10 +53,10 @@ struct Page1 {
           this.pageSample.father = obj
         })
     }
-    .padding({top: "5%", left: "5%", right: "5%", bottom:"5%"})
+    .padding({top: '5%', left: '5%', right: '5%', bottom:'5%'})
   }
 }
 
 class Cls {
-  n1:number= 0
+  public n1:number= 0
 }
