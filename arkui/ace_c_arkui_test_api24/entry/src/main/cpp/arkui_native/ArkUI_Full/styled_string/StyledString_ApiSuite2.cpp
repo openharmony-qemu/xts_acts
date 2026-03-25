@@ -515,8 +515,8 @@ static napi_value TestArkUICapi_357(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    struct OH_PixelmapNative * holder1 = nullptr;
-    struct OH_PixelmapNative ** outPtr1 = &holder1;
+    struct OH_PixelmapNative* holder1 = nullptr;
+    struct OH_PixelmapNative** outPtr1 = &holder1;
     auto ec = OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(obj, outPtr1);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1016,8 +1016,8 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions * holder1 = nullptr;
-    OH_ArkUI_ShadowOptions ** outPtr1 = &holder1;
+    OH_ArkUI_ShadowOptions* holder1 = nullptr;
+    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
     auto ec = OH_ArkUI_TextShadowStyle_SetTextShadow(obj, outPtr1, 0U);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1046,8 +1046,8 @@ static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions * holder1 = nullptr;
-    OH_ArkUI_ShadowOptions ** outPtr1 = &holder1;
+    OH_ArkUI_ShadowOptions* holder1 = nullptr;
+    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, outPtr1, 0U, &v3);
     {
@@ -1941,8 +1941,8 @@ static napi_value TestArkUICapi_416(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    void * holder1 = nullptr;
-    void ** outPtr1 = &holder1;
+    void* holder1 = nullptr;
+    void** outPtr1 = &holder1;
     auto ec = OH_ArkUI_UserDataSpan_GetUserData(obj, outPtr1);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -2125,8 +2125,8 @@ static napi_value TestArkUICapi_424(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    struct OH_PixelmapNative * holder1 = nullptr;
-    struct OH_PixelmapNative ** outPtr1 = &holder1;
+    struct OH_PixelmapNative* holder1 = nullptr;
+    struct OH_PixelmapNative** outPtr1 = &holder1;
     auto ec = OH_ArkUI_ImageAttachment_GetPixelMap(obj, outPtr1);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));

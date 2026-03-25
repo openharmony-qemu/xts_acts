@@ -19,8 +19,8 @@
 namespace ArkUICapiTest {
 
 /*
- * 测试接口: 元素信息 SetComponentIdentifier（见 arkui 对应 C 头声明）
- * 预期效果: 无障碍元素设置组件标识成功。
+ * 测试接口: OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier（见 native_interface_accessibility.h）
+ * 预期效果: 对元素信息对象设置组件标识字符串成功。
  * 实际测试: 创建元素信息对象，设置 identifier，断言 SUCCESS，再销毁。
  */
 static napi_value TestArkUICapi_007(napi_env env, napi_callback_info info)

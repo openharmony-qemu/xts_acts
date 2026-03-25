@@ -157,8 +157,8 @@ template<typename T, typename U>
     if ((result) == (expect)) {
         return nullptr;
     }
-    std::string assertStr = std::string("assert equal failed, expect is ") + std::to_string(expect) + " and result is " +
-        std::to_string(result);
+    std::string assertStr = std::string("assert equal failed, expect is ") + std::to_string(expect) +
+        " and result is " + std::to_string(result);
     (void)napi_throw_error(env, nullptr, assertStr.c_str());
     napi_value errorResult = nullptr;
     napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
@@ -227,20 +227,6 @@ template<typename T, typename U>
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-/** 与 Matrix 错误码等用例一致：ASSERT_EQ + NAPI_END；实现委托 EqFailed，避免重复拼装错误信息。 */
-#define ASSERT_EQ(result, expect)                                                                                      \
-    do {                                                                                                               \
-        napi_value assertEqErr = EqFailed(env, (result), (expect));                                                   \
-        if (assertEqErr != nullptr) {                                                                                  \
-            return assertEqErr;                                                                                        \
-        }                                                                                                              \
-    } while (0)
-
-#define NAPI_END                                                                                                       \
-    do {                                                                                                               \
-        return NapiReturnSuccessInt32(env);                                                                            \
-    } while (0)
 
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H

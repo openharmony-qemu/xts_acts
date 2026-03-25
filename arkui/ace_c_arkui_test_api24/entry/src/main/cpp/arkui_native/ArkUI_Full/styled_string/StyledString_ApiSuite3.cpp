@@ -144,8 +144,8 @@ static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    float * holder1 = nullptr;
-    float ** outPtr1 = &holder1;
+    float* holder1 = nullptr;
+    float** outPtr1 = &holder1;
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 0U, &v3);
     {
@@ -390,8 +390,8 @@ static napi_value TestArkUICapi_452(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Drawing_PositionAndAffinity * holder3 = nullptr;
-    OH_Drawing_PositionAndAffinity ** outPtr3 = &holder3;
+    OH_Drawing_PositionAndAffinity* holder3 = nullptr;
+    OH_Drawing_PositionAndAffinity** outPtr3 = &holder3;
     auto ec = OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(nullptr, 0.0, 0.0, outPtr3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
@@ -414,10 +414,10 @@ static napi_value TestArkUICapi_453(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Drawing_Range * holder2 = nullptr;
-    OH_Drawing_Range ** outPtr2 = &holder2;
-    OH_Drawing_Range * holder3 = nullptr;
-    OH_Drawing_Range ** outPtr3 = &holder3;
+    OH_Drawing_Range* holder2 = nullptr;
+    OH_Drawing_Range** outPtr2 = &holder2;
+    OH_Drawing_Range* holder3 = nullptr;
+    OH_Drawing_Range** outPtr3 = &holder3;
     auto ec = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(
         nullptr,
         static_cast<OH_Drawing_Range *>(nullptr),
@@ -444,10 +444,10 @@ static napi_value TestArkUICapi_454(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Drawing_Range * holder2 = nullptr;
-    OH_Drawing_Range ** outPtr2 = &holder2;
-    OH_Drawing_Range * holder3 = nullptr;
-    OH_Drawing_Range ** outPtr3 = &holder3;
+    OH_Drawing_Range* holder2 = nullptr;
+    OH_Drawing_Range** outPtr2 = &holder2;
+    OH_Drawing_Range* holder3 = nullptr;
+    OH_Drawing_Range** outPtr3 = &holder3;
     auto ec = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(
         nullptr,
         static_cast<OH_Drawing_Range *>(nullptr),

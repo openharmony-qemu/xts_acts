@@ -415,8 +415,8 @@ static napi_value TestArkUICapi_174(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions * holder1 = nullptr;
-    OH_ArkUI_ShadowOptions ** outPtr1 = &holder1;
+    OH_ArkUI_ShadowOptions* holder1 = nullptr;
+    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
     auto ec = OH_ArkUI_TextEditorTextStyle_SetTextShadows(obj, outPtr1, 0);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -445,8 +445,8 @@ static napi_value TestArkUICapi_175(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions * holder1 = nullptr;
-    OH_ArkUI_ShadowOptions ** outPtr1 = &holder1;
+    OH_ArkUI_ShadowOptions* holder1 = nullptr;
+    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetTextShadows(obj, outPtr1, 0U, &v3);
     {

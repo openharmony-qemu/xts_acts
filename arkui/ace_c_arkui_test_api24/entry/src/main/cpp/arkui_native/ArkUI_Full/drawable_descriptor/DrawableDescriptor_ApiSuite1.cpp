@@ -30,7 +30,10 @@ static napi_value TestArkUICapi_003(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 0;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -50,7 +53,10 @@ static napi_value TestArkUICapi_004(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 1;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -133,11 +139,7 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
     OH_PixelmapNative *pm1 = nullptr;
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm0);
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm1);
-    if (((pm0)) == nullptr) {
-        return nullptr;
-    }
-
-    if (((pm1)) == nullptr) {
+    if (((pm0)) == nullptr || ((pm1)) == nullptr) {
         return nullptr;
     }
 
@@ -148,8 +150,10 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
     }
 
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(
-                  dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -165,7 +169,10 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
     }
 
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(mode)), (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(mode)),
+            (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }

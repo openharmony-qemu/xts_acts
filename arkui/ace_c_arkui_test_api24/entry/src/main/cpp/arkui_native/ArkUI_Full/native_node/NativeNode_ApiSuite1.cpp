@@ -29,7 +29,10 @@ static napi_value TestArkUICapi_008(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -49,7 +52,10 @@ static napi_value TestArkUICapi_009(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 2003;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_SPAN_FONT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_SPAN_FONT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -69,7 +75,10 @@ static napi_value TestArkUICapi_010(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 2004;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -89,7 +98,10 @@ static napi_value TestArkUICapi_011(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 7042;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -109,7 +121,10 @@ static napi_value TestArkUICapi_012(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 7049;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -129,7 +144,10 @@ static napi_value TestArkUICapi_013(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 8038;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -149,7 +167,10 @@ static napi_value TestArkUICapi_014(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 8043;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -169,7 +190,10 @@ static napi_value TestArkUICapi_015(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 8046;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -189,7 +213,10 @@ static napi_value TestArkUICapi_016(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22000;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -209,7 +236,10 @@ static napi_value TestArkUICapi_017(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22001;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -229,7 +259,10 @@ static napi_value TestArkUICapi_018(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22002;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -249,7 +282,10 @@ static napi_value TestArkUICapi_019(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22003;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -269,7 +305,10 @@ static napi_value TestArkUICapi_020(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22004;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -289,7 +328,10 @@ static napi_value TestArkUICapi_021(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22005;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -309,7 +351,10 @@ static napi_value TestArkUICapi_022(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22006;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -329,7 +374,10 @@ static napi_value TestArkUICapi_023(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22007;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -349,7 +397,10 @@ static napi_value TestArkUICapi_024(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22008;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -369,7 +420,10 @@ static napi_value TestArkUICapi_025(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22009;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -389,7 +443,10 @@ static napi_value TestArkUICapi_026(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22010;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -409,7 +466,10 @@ static napi_value TestArkUICapi_027(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22011;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -429,7 +489,10 @@ static napi_value TestArkUICapi_028(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22012;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -449,7 +512,10 @@ static napi_value TestArkUICapi_029(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22013;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -469,7 +535,10 @@ static napi_value TestArkUICapi_030(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22014;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -489,7 +558,10 @@ static napi_value TestArkUICapi_031(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22015;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -509,7 +581,10 @@ static napi_value TestArkUICapi_032(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22016;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -529,7 +604,10 @@ static napi_value TestArkUICapi_033(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22017;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -549,7 +627,10 @@ static napi_value TestArkUICapi_034(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22018;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -569,7 +650,10 @@ static napi_value TestArkUICapi_035(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22019;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -589,7 +673,10 @@ static napi_value TestArkUICapi_036(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22020;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -609,7 +696,10 @@ static napi_value TestArkUICapi_037(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22021;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -629,7 +719,10 @@ static napi_value TestArkUICapi_038(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22022;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -649,7 +742,10 @@ static napi_value TestArkUICapi_039(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22023;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -669,7 +765,10 @@ static napi_value TestArkUICapi_040(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22024;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -689,7 +788,10 @@ static napi_value TestArkUICapi_041(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22025;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -709,7 +811,10 @@ static napi_value TestArkUICapi_042(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22026;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -729,7 +834,10 @@ static napi_value TestArkUICapi_043(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22027;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -749,7 +857,10 @@ static napi_value TestArkUICapi_044(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 33;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_DIGITAL_CROWN)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_ON_DIGITAL_CROWN)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -769,7 +880,10 @@ static napi_value TestArkUICapi_045(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 34;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -789,7 +903,10 @@ static napi_value TestArkUICapi_046(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 35;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -809,7 +926,10 @@ static napi_value TestArkUICapi_047(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 36;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -829,7 +949,10 @@ static napi_value TestArkUICapi_048(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22000;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -849,7 +972,10 @@ static napi_value TestArkUICapi_049(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22001;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -869,7 +995,10 @@ static napi_value TestArkUICapi_050(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22002;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -889,7 +1018,10 @@ static napi_value TestArkUICapi_051(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22003;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -909,7 +1041,10 @@ static napi_value TestArkUICapi_052(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22004;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -929,7 +1064,10 @@ static napi_value TestArkUICapi_053(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22005;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -949,7 +1087,10 @@ static napi_value TestArkUICapi_054(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22006;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -969,7 +1110,10 @@ static napi_value TestArkUICapi_055(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22007;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -989,7 +1133,10 @@ static napi_value TestArkUICapi_056(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 22008;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }

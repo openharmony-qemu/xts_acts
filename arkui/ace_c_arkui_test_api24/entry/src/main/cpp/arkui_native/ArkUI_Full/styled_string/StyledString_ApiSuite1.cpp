@@ -29,7 +29,10 @@ static napi_value TestArkUICapi_238(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = -1;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_UNSPECIFIED)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_UNSPECIFIED)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -49,7 +52,10 @@ static napi_value TestArkUICapi_239(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 0;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_FONT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_FONT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -69,7 +75,10 @@ static napi_value TestArkUICapi_240(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 1;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_DECORATION)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_DECORATION)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -89,7 +98,10 @@ static napi_value TestArkUICapi_241(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 2;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_BASELINE_OFFSET)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_BASELINE_OFFSET)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -109,7 +121,10 @@ static napi_value TestArkUICapi_242(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 3;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_LETTER_SPACING)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_LETTER_SPACING)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -129,7 +144,10 @@ static napi_value TestArkUICapi_243(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 4;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_TEXT_SHADOW)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_TEXT_SHADOW)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -149,7 +167,10 @@ static napi_value TestArkUICapi_244(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 5;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_LINE_HEIGHT)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_LINE_HEIGHT)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -169,7 +190,10 @@ static napi_value TestArkUICapi_245(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 6;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_BACKGROUND_COLOR)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_BACKGROUND_COLOR)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -189,7 +213,10 @@ static napi_value TestArkUICapi_246(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 7;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_URL)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_URL)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -209,7 +236,10 @@ static napi_value TestArkUICapi_247(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 100;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_GESTURE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_GESTURE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -229,7 +259,10 @@ static napi_value TestArkUICapi_248(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 200;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_PARAGRAPH_STYLE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_PARAGRAPH_STYLE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -249,7 +282,10 @@ static napi_value TestArkUICapi_249(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 300;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_IMAGE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_IMAGE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -269,7 +305,10 @@ static napi_value TestArkUICapi_250(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 400;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_CUSTOM_SPAN)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_CUSTOM_SPAN)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -289,7 +328,10 @@ static napi_value TestArkUICapi_251(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 500;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_USER_DATA)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(OH_ARKUI_STYLEDSTRINGKEY_USER_DATA)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -499,8 +541,8 @@ static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_SpanStyle * holder4 = nullptr;
-    OH_ArkUI_SpanStyle ** outPtr4 = &holder4;
+    OH_ArkUI_SpanStyle* holder4 = nullptr;
+    OH_ArkUI_SpanStyle** outPtr4 = &holder4;
     uint32_t v6 = 0U;
     auto ec = OH_ArkUI_StyledString_Descriptor_GetStyles(
         obj,
