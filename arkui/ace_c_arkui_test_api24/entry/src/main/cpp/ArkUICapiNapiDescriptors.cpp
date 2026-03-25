@@ -522,7 +522,7 @@ const napi_property_descriptor kArkUICapiTestPropertyDescriptors[] = {
     {"TestArkUICapi_500", nullptr, TestArkUICapi_500, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
-const size_t kArkUICapiTestPropertyDescriptorsCount =
+const size_t K_ARK_UI_CAPI_TEST_PROPERTY_DESCRIPTORS_COUNT =
     sizeof(kArkUICapiTestPropertyDescriptors) / sizeof(kArkUICapiTestPropertyDescriptors[0]);
 
 } // namespace ArkUICapiTest

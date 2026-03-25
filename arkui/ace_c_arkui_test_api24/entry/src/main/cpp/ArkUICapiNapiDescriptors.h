@@ -22,7 +22,7 @@
 namespace ArkUICapiTest {
 
 extern const napi_property_descriptor kArkUICapiTestPropertyDescriptors[];
-extern const size_t kArkUICapiTestPropertyDescriptorsCount;
+extern const size_t K_ARK_UI_CAPI_TEST_PROPERTY_DESCRIPTORS_COUNT;
 
 } // namespace ArkUICapiTest
 

@@ -117,6 +117,55 @@ static napi_value TestArkUICapi_005(napi_env env, napi_callback_info info)
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
+struct TwoFrameAnimatedDd {
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    OH_PixelmapNative *pm0 = nullptr;
+    OH_PixelmapNative *pm1 = nullptr;
+    OH_ArkUI_DrawableDescriptor *dd = nullptr;
+};
+
+static void DisposeTwoFrameAnimatedDd(TwoFrameAnimatedDd *fixture)
+{
+    if (fixture->dd != nullptr) {
+        OH_ArkUI_DrawableDescriptor_Dispose(fixture->dd);
+        fixture->dd = nullptr;
+    }
+    if (fixture->pm0 != nullptr) {
+        (void)OH_PixelmapNative_Destroy(&fixture->pm0);
+    }
+    if (fixture->pm1 != nullptr) {
+        (void)OH_PixelmapNative_Destroy(&fixture->pm1);
+    }
+    if (fixture->opts != nullptr) {
+        (void)OH_PixelmapInitializationOptions_Release(fixture->opts);
+        fixture->opts = nullptr;
+    }
+}
+
+static bool BuildTwoFrameAnimatedDd(TwoFrameAnimatedDd *fixture)
+{
+    (void)OH_PixelmapInitializationOptions_Create(&fixture->opts);
+    if (fixture->opts == nullptr) {
+        return false;
+    }
+    (void)OH_PixelmapInitializationOptions_SetWidth(fixture->opts, 1);
+    (void)OH_PixelmapInitializationOptions_SetHeight(fixture->opts, 1);
+    (void)OH_PixelmapInitializationOptions_SetPixelFormat(fixture->opts, PIXEL_FORMAT_BGRA_8888);
+    (void)OH_PixelmapNative_CreateEmptyPixelmap(fixture->opts, &fixture->pm0);
+    (void)OH_PixelmapNative_CreateEmptyPixelmap(fixture->opts, &fixture->pm1);
+    if (fixture->pm0 == nullptr || fixture->pm1 == nullptr) {
+        DisposeTwoFrameAnimatedDd(fixture);
+        return false;
+    }
+    OH_PixelmapNative *frames[2] = {fixture->pm0, fixture->pm1};
+    fixture->dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
+    if (fixture->dd == nullptr) {
+        DisposeTwoFrameAnimatedDd(fixture);
+        return false;
+    }
+    return true;
+}
+
 /*
  * 测试接口: OH_ArkUI_DrawableDescriptor_GetAnimationStopMode
  * 预期效果: Get 读到与 Set 一致的动图停止模式。
@@ -126,44 +175,29 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Pixelmap_InitializationOptions *opts = nullptr;
-    (void)OH_PixelmapInitializationOptions_Create(&opts);
-    if (((opts)) == nullptr) {
-        return nullptr;
-    }
-
-    (void)OH_PixelmapInitializationOptions_SetWidth(opts, 1);
-    (void)OH_PixelmapInitializationOptions_SetHeight(opts, 1);
-    (void)OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_BGRA_8888);
-    OH_PixelmapNative *pm0 = nullptr;
-    OH_PixelmapNative *pm1 = nullptr;
-    (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm0);
-    (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm1);
-    if (((pm0)) == nullptr || ((pm1)) == nullptr) {
-        return nullptr;
-    }
-
-    OH_PixelmapNative *frames[2] = {pm0, pm1};
-    auto *dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
-    if (((dd)) == nullptr) {
+    TwoFrameAnimatedDd fixture = {};
+    if (!BuildTwoFrameAnimatedDd(&fixture)) {
         return nullptr;
     }
 
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)),
+            (OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(
+                fixture.dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            DisposeTwoFrameAnimatedDd(&fixture);
             return napiAssertErr;
         }
     }
 
     DrawableDescriptor_AnimationStopMode mode = DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME;
-    auto rc = OH_ArkUI_DrawableDescriptor_GetAnimationStopMode(dd, &mode);
+    auto rc = OH_ArkUI_DrawableDescriptor_GetAnimationStopMode(fixture.dd, &mode);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            DisposeTwoFrameAnimatedDd(&fixture);
             return napiAssertErr;
         }
     }
@@ -174,14 +208,12 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
             (static_cast<int32_t>(mode)),
             (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)));
         if (napiAssertErr != nullptr) {
+            DisposeTwoFrameAnimatedDd(&fixture);
             return napiAssertErr;
         }
     }
 
-    OH_ArkUI_DrawableDescriptor_Dispose(dd);
-    (void)OH_PixelmapNative_Destroy(&pm0);
-    (void)OH_PixelmapNative_Destroy(&pm1);
-    (void)OH_PixelmapInitializationOptions_Release(opts);
+    DisposeTwoFrameAnimatedDd(&fixture);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 

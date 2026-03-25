@@ -27,8 +27,8 @@ static napi_value Init(napi_env env, napi_value exports)
         return nullptr;
     }
 
-    if (napi_define_properties(env, exports, kArkUICapiTestPropertyDescriptorsCount,
-            kArkUICapiTestPropertyDescriptors) != napi_ok) {
+    if (napi_define_properties(env, exports, K_ARK_UI_CAPI_TEST_PROPERTY_DESCRIPTORS_COUNT,
+        kArkUICapiTestPropertyDescriptors) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;
     }
