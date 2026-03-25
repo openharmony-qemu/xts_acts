@@ -1690,17 +1690,19 @@ export default function TextPicker() {
 
       for (let i = 0; i < cases.length; i++) {
         let item = cases[i];
-
+        console.log(`testPicker25 index = ${i}`)
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
-
+          console.log(`testPicker25 createPromise`)
           await driveFn();
 
           let result = await createPromise;
+          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
 
         } catch(error) {
           let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
           expect(isValidErrorCode).assertTrue();
         }
 
@@ -3084,7 +3086,7 @@ export default function TextPicker() {
       if (movingBtn === null) {
         console.log("Any button found! Fail!");
         await clickExitBrowserButton(driver);
-      } else {
+      } else { 
         await movingBtn!.click();
         await CommonFunc.sleep(3000);
         console.info('testPicker55: clicked "Moving picture" button');
