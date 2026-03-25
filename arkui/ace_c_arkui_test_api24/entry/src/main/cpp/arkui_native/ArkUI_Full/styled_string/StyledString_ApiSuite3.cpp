@@ -29,12 +29,21 @@ static napi_value TestArkUICapi_438(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     ArkUI_Margin marginOut1{};
     auto ec = OH_ArkUI_ImageAttachment_GetPadding(obj, &marginOut1);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -47,11 +56,20 @@ static napi_value TestArkUICapi_439(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_ImageAttachment_SetBorderRadiuses(obj, 0.0f, 0.0f, 0.0f, 0.0f);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -65,15 +83,24 @@ static napi_value TestArkUICapi_440(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     float v1 = 0.0f;
     float v2 = 0.0f;
     float v3 = 0.0f;
     float v4 = 0.0f;
     auto ec = OH_ArkUI_ImageAttachment_GetBorderRadiuses(obj, &v1, &v2, &v3, &v4);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -86,12 +113,21 @@ static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     float v1 = 0.0f;
     auto ec = OH_ArkUI_ImageAttachment_SetColorFilter(obj, &v1, 0U);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -104,14 +140,23 @@ static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     float * holder1 = nullptr;
     float ** outPtr1 = &holder1;
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 0U, &v3);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -124,11 +169,20 @@ static napi_value TestArkUICapi_443(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, static_cast<const OH_Drawing_ColorFilter *>(nullptr));
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -141,11 +195,20 @@ static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_ImageAttachment_GetDrawingColorFilter(obj, static_cast<OH_Drawing_ColorFilter *>(nullptr));
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -158,11 +221,20 @@ static napi_value TestArkUICapi_445(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_ImageAttachment_SetSyncLoad(obj, false);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -175,12 +247,21 @@ static napi_value TestArkUICapi_446(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     bool v1 = false;
     auto ec = OH_ArkUI_ImageAttachment_GetSyncLoad(obj, &v1);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -193,11 +274,20 @@ static napi_value TestArkUICapi_447(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_ImageAttachment_SetSupportSvg(obj, false);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -210,12 +300,21 @@ static napi_value TestArkUICapi_448(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *obj = OH_ArkUI_ImageAttachment_Create();
-    ASSERT_NOTNULL(obj);
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
     bool v1 = false;
     auto ec = OH_ArkUI_ImageAttachment_GetSupportSvg(obj, &v1);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_ImageAttachment_Destroy(obj);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -231,8 +330,11 @@ static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
     uint32_t v2 = 0U;
     auto *p = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), &v1, &v2);
-    ASSERT_OBJ(p, nullptr);
-    NAPI_END;
+    if (((p)) != ((nullptr))) {
+        return nullptr;
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -249,8 +351,11 @@ static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
     auto *p = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
-    ASSERT_OBJ(p, nullptr);
-    NAPI_END;
+    if (((p)) != ((nullptr))) {
+        return nullptr;
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -267,8 +372,11 @@ static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
     auto *p = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
-    ASSERT_OBJ(p, nullptr);
-    NAPI_END;
+    if (((p)) != ((nullptr))) {
+        return nullptr;
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -285,8 +393,14 @@ static napi_value TestArkUICapi_452(napi_env env, napi_callback_info info)
     OH_Drawing_PositionAndAffinity * holder3 = nullptr;
     OH_Drawing_PositionAndAffinity ** outPtr3 = &holder3;
     auto ec = OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(nullptr, 0.0, 0.0, outPtr3);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -309,8 +423,14 @@ static napi_value TestArkUICapi_453(napi_env env, napi_callback_info info)
         static_cast<OH_Drawing_Range *>(nullptr),
         outPtr2,
         outPtr3);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -333,8 +453,14 @@ static napi_value TestArkUICapi_454(napi_env env, napi_callback_info info)
         static_cast<OH_Drawing_Range *>(nullptr),
         outPtr2,
         outPtr3);
-    ASSERT_EQ(ec, ARKUI_ERROR_CODE_PARAM_INVALID);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 } // namespace ArkUICapiTest
