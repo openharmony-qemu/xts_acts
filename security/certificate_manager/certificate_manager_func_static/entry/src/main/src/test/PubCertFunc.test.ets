@@ -280,5 +280,122 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError):void => {
+          if(err.code !== 801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + err.code);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + error.code);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError):void => {
+          if(err.code !== 801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + err.code);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + error.code);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError):void => {
+          if(err.code !== 801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + err.code);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + error.code);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError):void => {
+          if(err.code !== 801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + err.code);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + error.code);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013 end');
+      done();
+    });
   })
 }
