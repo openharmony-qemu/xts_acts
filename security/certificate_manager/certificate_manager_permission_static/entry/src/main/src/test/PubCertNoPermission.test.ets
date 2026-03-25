@@ -166,7 +166,7 @@ export default function pubCertJsAPINoPermissionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 start');
       let ukeyProvider: string = 'testProvider'; 
       let ukeyInfo: certManager.UkeyInfo = { 
