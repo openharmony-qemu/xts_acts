@@ -315,6 +315,163 @@ export default function httpRequestErrorCodeTest() {
             }
         })
 
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode_static_0900
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0900
+     * @tc.desc   test http request(url, callback) with request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpRequestMethodErrorCode_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done: () => void): Promise<void> => {
+      let caseName: string = 'testHttpRequestMethodErrorCode_static_0900';
+      hilog.info(domain, tag, '%{public}s', caseName + ' start');
+      try {
+        connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+          if (data?.netId == 0) {
+            hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request('http://baidu.com',
+              (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                if (err?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                  httpRequest.destroy();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
+                  ExpectTrue(typeof data?.result == 'string');
+                  ExpectTrue(typeof data?.resultType == 'int');
+                  ExpectTrue(typeof data?.responseCode == 'int');
+                  ExpectTrue(typeof data?.header == 'object');
+                  ExpectTrue(typeof data?.cookies == 'string');
+                  ExpectTrue(typeof data?.performanceTiming == 'object');
+                  ExpectTrue(typeof data?.performanceTiming.dnsTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.tcpTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.tlsTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.totalTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.redirectTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.firstSendTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.totalFinishTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.responseBodyTiming == 'number');
+                  ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming == 'number');
+                  httpRequest.destroy();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                  done();
+                }
+              });
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName + ' end');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode_static_1000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1000
+     * @tc.desc   test http request(url, callback) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpRequestMethodErrorCode_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpRequestMethodErrorCode_static_1000';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('127.0.0.1',
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300007);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode_static_1100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1100
+     * @tc.desc   test http request(url, callback) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpRequestMethodErrorCode_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpRequestMethodErrorCode_static_1100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('https://hao123.com',
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300060);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
     })
 
