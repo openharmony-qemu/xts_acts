@@ -24,8 +24,8 @@ let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 const PERMISSION_DENIED_CODE = 201
 
-export default function ActsLongTimeTaskNopStaticTest() {
-  describe('ActsLongTimeTaskNopStaticTest', () => {
+export default function ActsBackgroundProcessManagerNopStaticTest() {
+  describe('ActsBackgroundProcessManagerNopStaticTest', () => {
 
 
     beforeAll(() => {
