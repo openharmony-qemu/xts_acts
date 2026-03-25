@@ -18,15 +18,15 @@ struct CustomDialogExampleTwo2 {
   build() {
     Column() {
       Text('我是第二个弹窗')
-        .fontSize(30)
-        .height(100)
+        .fontSize(10)
+
       Button('点我关闭第二个弹窗')
         .onClick(() => {
           if (this.controllerTwo != undefined) {
             this.controllerTwo.close()
           }
         })
-        .margin(20)
+
     }
   }
 }
@@ -67,12 +67,12 @@ struct CustomDialogExample22 {
   }
   build() {
     Column() {
-      Text('Change text').fontSize(20).margin({ top: 10, bottom: 10 })
-      TextInput({ placeholder: '', text: this.textValue1 }).height(60).width('90%')
+      Text('Change text').fontSize(10)
+      TextInput({ placeholder: '', text: this.textValue1 }).height(40).width('90%')
         .onChange((value: string) => {
           this.textValue1 = value
         })
-      Text('Whether to change a text?').fontSize(16).margin({ bottom: 10 })
+      Text('Whether to change a text?').fontSize(12)
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
         Button('cancel')
           .onClick(() => {
@@ -89,7 +89,7 @@ struct CustomDialogExample22 {
               this.confirm()
             }
           }).backgroundColor(0xffffff).fontColor(Color.Red)
-      }.margin({ bottom: 10 })
+      }
 
       Button('点我打开第二个弹窗')
         .onClick(() => {
@@ -97,7 +97,7 @@ struct CustomDialogExample22 {
             this.dialogControllerTwo1.open()
           }
         })
-        .margin(20)
+
     }.borderRadius(10)
     // 如果需要使用border属性或cornerRadius属性，请和borderRadius属性一起使用。
   }
@@ -180,9 +180,10 @@ struct CustomDialogUser22 {
     console.info('Click the callback in the blank area')
   }
   build() {
-    Column() {
+    Row() {
       Button(this.inputValue1)
         .id('CustomDialog_Effect001')
+        .height('5%')
         .onClick(() => {
           if (this.dialogController1 != null) {
             this.dialogController1.open()
@@ -190,6 +191,7 @@ struct CustomDialogUser22 {
         }).backgroundColor(0x317aff)
 
       Button(this.inputValue2)
+        .height('5%')
         .id('CustomDialog_Effect002')
         .onClick(() => {
           if (this.dialogController2 != null) {
@@ -201,5 +203,8 @@ struct CustomDialogUser22 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

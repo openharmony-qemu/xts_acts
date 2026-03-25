@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ struct Stack_ZIndex {
     let callback: Callback<number|Alignment> = (message: Message<number|Alignment>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'addZIndex') {
-        this.addZIndex = message.value as int;
+        this.addZIndex = (message.value as number).toInt();
       }
       if (message.name == 'addAlignContent') {
         this.addAlignContent = message.value as Alignment;

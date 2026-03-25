@@ -166,7 +166,7 @@ export default function asyncRunnerTest() {
         try {
           // asyncRunner.execute(task, 4);
           const fourInt: int = 4;
-          const badPriority: taskpool.Priority = fourInt as taskpool.Priority;
+          const badPriority: taskpool.Priority = taskpool.Priority.fromValue(fourInt);
 
           asyncRunner.execute(task, badPriority);
 

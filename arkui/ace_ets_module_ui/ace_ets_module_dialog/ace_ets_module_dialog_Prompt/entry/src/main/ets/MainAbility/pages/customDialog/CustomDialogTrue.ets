@@ -45,7 +45,7 @@ struct CustomDialogTrueExample {
     cancel: this.existApp,
     autoCancel: true,
     alignment: DialogAlignment.Center,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: 20 },
     gridCount: 4,
     showInSubWindow: true,
     isModal: true,
@@ -72,7 +72,7 @@ struct CustomDialogTrueExample {
   build() {
     Column() {
       Button('click me')
-        .margin(100)
+
         .id("CustomDialogTrue")
         .onClick(() => {
           if (this.dialogController != null) {

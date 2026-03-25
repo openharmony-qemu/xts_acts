@@ -24,8 +24,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import { Curve, TabsOptions } from '@ohos.arkui.component';
-import { CommonModifier } from '@ohos.arkui.modifier';
+import { Curve } from '@ohos.arkui.component';
 
 const SLEEP_TIME = 1000;
 
@@ -63,50 +62,8 @@ export default function TabsTest() {
     });
 
     // ============================================================
-    // TabsOptions.barModifier (pure JS property test)
+    // TabsAttribute.animationCurve - enum coverage start
     // ============================================================
-
-    /**
-     * @tc.number TabsTest_001
-     * @tc.name tabsOptionsBarModifierUndefined
-     * @tc.desc Test TabsOptions.barModifier property accepts undefined (optional CommonModifier)
-     */
-    it('tabsOptionsBarModifierUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TabsTest execute: tabsOptionsBarModifierUndefined START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // barModifier is an optional property on TabsOptions: barModifier?: CommonModifier
-        let opts: TabsOptions = { barModifier: undefined };
-        expect(opts.barModifier === undefined).assertTrue();
-        console.info('TabsTest execute: tabsOptionsBarModifierUndefined END');
-        done();
-      } catch (error) {
-        console.error('TabsTest execute: tabsOptionsBarModifierUndefined error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number TabsTest_002
-     * @tc.name tabsOptionsBarModifierNotUndefined
-     * @tc.desc Test TabsOptions.barModifier property accepts non-undefined value
-     */
-    it('tabsOptionsBarModifierNotUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TabsTest execute: tabsOptionsBarModifierNotUndefined START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // Verify barModifier can hold a non-undefined CommonModifier value
-        let opts: TabsOptions = { barModifier: {} as CommonModifier };
-        expect(opts.barModifier !== undefined).assertTrue();
-        console.info('TabsTest execute: tabsOptionsBarModifierNotUndefined END');
-        done();
-      } catch (error) {
-        console.error('TabsTest execute: tabsOptionsBarModifierNotUndefined error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
 
     // ============================================================
     // TabsAttribute.animationCurve
@@ -268,10 +225,18 @@ export default function TabsTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        let comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        for (let i: number = 0; !comp && i < 4; i++) {
+          // Scroll down page to bring bottom Tabs into viewport.
+          await Utils.drag(360, 1100, 360, 350, 12);
+          await CommonFunc.sleep(300);
+          comp = await driver.findComponent(ON.id('tabsOnContentDidScrollUndefined'));
+        }
         expect(!!comp).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('tabsOnContentDidScrollUndefined'));
         expect(node != null).assertTrue();
+        let attrs = node.getElement('$attrs');
+        expect(attrs != null).assertTrue();
         console.info('TabsTest execute: tabsOnContentDidScrollUndefined END');
         done();
       } catch (error) {

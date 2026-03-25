@@ -156,6 +156,7 @@ export default function WindowLifecycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
+    let isPCMode: boolean = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
@@ -177,6 +178,15 @@ export default function WindowLifecycle() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      let promise = windowClass.getWindowStateSnapshot();
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: isPCMode=${isPCMode}`);
       await getPermision();
       await sleep(300);
       await ClickButtonDriver();
@@ -2579,6 +2589,17 @@ export default function WindowLifecycle() {
     it("testGetAllMainWindowInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetAllMainWindowInfo_0200";
       console.log(caseName + " begin");
+      let getAllMainWindowInfo_Failed = async (done: Function) => {
+        try {
+          let windowInfoArray = await window.getAllMainWindowInfo();
+          console.info(caseName + ' windowInfoArray: ' + JSON.stringify(windowInfoArray));
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+          done();
+        }
+      }
       if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
@@ -2637,7 +2658,7 @@ export default function WindowLifecycle() {
           done();
         }
       } else {
-        done();
+        await getAllMainWindowInfo_Failed(done)
       }
     });
 
@@ -2985,27 +3006,41 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_1100";
       console.log(caseName + " begin");
-      if (deviceType === '2in1') {
+      let windowClass = windowStage.getMainWindowSync();
+      let windowId = windowClass.getWindowProperties().id;
+      console.info(caseName + ' windowId: ' + windowId);
+      let windowIdArray = [windowId];
+      let configs: window.WindowSnapshotConfiguration = {
+        useCache: false
+      }
+      let getMainWindowSnapshot_Success = async (done: Function) => {
         try {
-          let windowClass = windowStage.getMainWindowSync();
-          let windowId = windowClass.getWindowProperties().id;
-          console.info(caseName + ' windowId: ' + windowId);
-          let windowIdArray = [windowId];
-          let configs: window.WindowSnapshotConfiguration = {
-            useCache: false
-          }
           let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
           console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
           console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
           expect(pixelMapArray.length).assertEqual(1);
-          done()
-        } catch (err) {
-          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(true).assertFail();
           done();
         }
+      }
+      let getMainWindowSnapshot_Failed = async (done: Function) => {
+        try {
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+          done();
+        }
+      }
+      if (deviceType === '2in1') {
+        await getMainWindowSnapshot_Success(done);
       } else {
-        done();
+        await getMainWindowSnapshot_Failed(done);
       }
     });
 
@@ -3018,29 +3053,42 @@ export default function WindowLifecycle() {
      * @tc.level  LEVEL0
      */
     it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = "testGetMainWindowSnapshot_1200";
+      let caseName = "testGetMainWindowSnapshot_1100";
       console.log(caseName + " begin");
-      if (deviceType === '2in1') {
+      let windowClass = windowStage.getMainWindowSync();
+      let windowId = windowClass.getWindowProperties().id;
+      console.info(caseName + ' windowId: ' + windowId);
+      let windowIdArray = [windowId];
+      let configs: window.WindowSnapshotConfiguration = {
+        useCache: true
+      }
+      let getMainWindowSnapshot_Success = async (done: Function) => {
         try {
-          let windowClass = windowStage.getMainWindowSync();
-          let windowId = windowClass.getWindowProperties().id;
-          console.info(caseName + ' windowId: ' + windowId);
-          let windowIdArray = [windowId];
-          let configs: window.WindowSnapshotConfiguration = {
-            useCache: true
-          }
           let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
           console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
           console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
           expect(pixelMapArray.length).assertEqual(1);
-          done()
-        } catch (err) {
-          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(true).assertFail();
           done();
         }
+      }
+      let getMainWindowSnapshot_Failed = async (done: Function) => {
+        try {
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+        } catch (exception) {
+          console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+          done();
+        }
+      }
+      if (deviceType === '2in1') {
+        await getMainWindowSnapshot_Success(done);
       } else {
-        done();
+        await getMainWindowSnapshot_Failed(done);
       }
     });
     /**
@@ -3676,6 +3724,194 @@ export default function WindowLifecycle() {
       }
     })
 
+    /**
+     * @tc.name test_WindowClass_createSubWindowWithOptions_Device_Differences_0100
+     * @tc.number test_WindowClass_createSubWindowWithOptions_Device_Differences_0100
+     * @tc.desc test_WindowClass_createSubWindowWithOptions_Device_Differences_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_WindowClass_createSubWindowWithOptions_Device_Differences_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        const message = 'test_WindowClass_createSubWindowWithOptions_Device_Differences_0100';
+        let windowClass = windowStage.getMainWindowSync();
+        try {
+          let options: window.SubWindowOptions = {
+            title: 'title',
+            decorEnabled: true,
+            isModal: true,
+            modalityType: window.ModalityType.WINDOW_MODALITY
+          };
+          let promise =
+          windowClass.createSubWindowWithOptions('test_WindowClass_createSubWindowWithOptions_Device_Differences_0100',
+            options);
+          if (isFreeWindowMode) {
+            promise.then(async (data) => {
+              console.info(message + `Succeeded in creating the subwindow. Data: ${JSON.stringify(data)}`);
+              expect(data !== null).assertTrue();
+              await data.destroyWindow();
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(message +
+              `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          } else {
+             expect(promise === undefined).assertTrue();
+             done();
+          }
+        } catch (exception) {
+          if (exception.code == 801) {
+            console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
+            done();
+          } else {
+            console.error(`${message} Failed to createSubWindowWithOptions. Cause code: ${exception.code}, message: ${exception.message}`)
+            expect(true).assertFail();
+            done();
+          }
+        }
+      })
+
+
+    /**
+     * @tc.name   test_setParentWindow_Device_Differences_0100
+     * @tc.number test_setParentWindow_Device_Differences_0100
+     * @tc.desc   test_setParentWindow_Device_Differences_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_setParentWindow_Device_Differences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let message = "testgetParentWindow";
+        let msgStr = 'jsunittest ' + message + ' ';
+        console.log(msgStr + 'begin.');
+        let windowStageStart = await startAbility(message, context);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let windowId = mainWindow.getWindowProperties().id;
+        console.info(msgStr + 'windowId :' + windowId);
+        let setParentWindow_Success = async (done: Function) => {
+          try {
+            let subWindowClass = await windowStage.createSubWindow('test_getParentWindow');
+            subWindowClass.setParentWindow(windowId).then(async () => {
+              console.info(msgStr + 'Succeeded in  setParentWindow window.')
+              let parentClass = subWindowClass.getParentWindow();
+              let parentId = parentClass.getWindowProperties().id;
+              console.info(msgStr + 'parentId :' + parentId)
+              expect(parentId).assertEqual(windowId);
+              await subWindowClass.destroyWindow();
+              await terminateAbility(message)
+              done()
+            }).catch(async (e: BusinessError) => {
+              console.error(msgStr + `Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
+              await terminateAbility(message)
+              expect(true).assertFail();
+              done();
+            });
+          } catch (e) {
+            console.error(msgStr + `Failed to setParentWindow. Cause: ${e.code}, message: ${e.message}`);
+            await terminateAbility(message)
+            expect(false).assertFail();
+            done();
+          }
+        }
+        let setParentWindow_Failed = async (done: Function) => {
+          try {
+            let windowStageStart = await startAbility(message, context);
+            let mainWindow = windowStageStart.getMainWindowSync();
+            let windowId = mainWindow.getWindowProperties().id;
+            console.info(msgStr + 'windowId :' + windowId);
+            let subWindowClass = await windowStage.createSubWindow('test_getParentWindow');
+            subWindowClass.setParentWindow(windowId).then(async () => {
+              await subWindowClass.destroyWindow();
+              await terminateAbility(message)
+              done()
+            }).catch(async (e: BusinessError) => {
+              console.error(msgStr + `Failed to setParentWindow 1. Cause code: ${e.code}, message: ${e.message}`);
+              await terminateAbility(message)
+              expect(e.code).assertEqual(801);
+              expect(e.message)
+                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
+              done();
+            });
+          } catch (e) {
+            console.error(msgStr + `Failed to setParentWindow 2. Cause: ${e.code}, message: ${e.message}`);
+            await terminateAbility(message)
+            expect(true).assertFail();
+            done();
+          }
+        }
+        if (isFreeWindowMode) {
+          await setParentWindow_Success(done);
+        } else {
+          await setParentWindow_Failed(done);
+        }
+      })
+
+    /**
+     * @tc.name   test_Restore_Device_Differences_0100
+     * @tc.number test_Restore_Device_Differences_0100
+     * @tc.desc   test_Restore_Device_Differences_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_Restore_Device_Differences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = 'test_Restore_Device_Differences_0100';
+        let windowClass = windowStage.getMainWindowSync();
+        let restore_Success = async (done: Function) => {
+          try {
+            let mainWindowStatus = windowClass.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
+            await windowClass.minimize();
+            await sleep(2000);
+            windowClass.restore().then(async () => {
+              console.info(`${caseName} Succeeded in restoring the window.`);
+              await sleep(1000);
+              let windowStatus = windowClass.getWindowStatus();
+              console.info(`${caseName} Succeeded in getting the window status. Data: ${windowStatus}`);
+              expect(windowStatus).assertEqual(mainWindowStatus);
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} Unauthorized operation. Cause code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFail();
+              done();
+            });
+          } catch (exception) {
+            console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(true).assertFail();
+            done();
+          }
+        };
+
+        let restore_Failed = async (done: Function) => {
+          try {
+            windowClass.restore().then(async () => {
+              console.info(`${caseName} Succeeded in restoring the window.`);
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} restore_Failed. Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(801);
+              expect(err.message)
+                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][restore]msg: Window restore failed.');
+              done();
+            });
+          } catch (exception) {
+            console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(true).assertFail();
+            done();
+          }
+        };
+
+        if (deviceType === '2in1' || isPCMode) {
+          await restore_Success(done);
+        } else {
+          await restore_Failed(done);
+        }
+      })
 
 
 

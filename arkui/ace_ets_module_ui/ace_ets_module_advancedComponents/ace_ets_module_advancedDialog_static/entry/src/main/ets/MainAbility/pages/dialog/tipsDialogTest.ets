@@ -25,6 +25,7 @@ import {
   CustomDialogController,
   Entry,
   FlexAlign,
+  TextAlign,
   ThemeColorMode,
   ResourceColor,
   ClickEvent
@@ -138,6 +139,7 @@ struct TipsDialogTest {
       },
     }),
   })
+
   dialogControllerTips: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       checkTips: 'checkTips',
@@ -154,6 +156,90 @@ struct TipsDialogTest {
       secondaryButton: {
         value: '删除',
         role: ButtonRole.ERROR,
+        action: () => {
+          console.info('Callback when the second button is clicked')
+        }
+      },
+      onCheckedChange: () => {
+        console.info('Callback when the checkbox is clicked')
+      }
+    }),
+  })
+
+  dialogControllerTipsTextAlign: CustomDialogController = new CustomDialogController({
+    builder: TipsDialog({
+      checkTips: 'checkTips',
+      isChecked: true,
+      checkAction: () => {
+        console.log('checkAction')
+      },
+      primaryButton: {
+        value: '取消',
+        textAlign: TextAlign.Center,
+        action: () => {
+          console.info('Callback when the first button is clicked')
+        },
+      },
+      secondaryButton: {
+        value: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.Start,
+        action: () => {
+          console.info('Callback when the second button is clicked')
+        }
+      },
+      onCheckedChange: () => {
+        console.info('Callback when the checkbox is clicked')
+      }
+    }),
+  })
+
+  dialogControllerTipsTextAlign2: CustomDialogController = new CustomDialogController({
+    builder: TipsDialog({
+      checkTips: 'checkTips',
+      isChecked: true,
+      checkAction: () => {
+        console.log('checkAction')
+      },
+      primaryButton: {
+        value: '取消',
+        textAlign: TextAlign.End,
+        action: () => {
+          console.info('Callback when the first button is clicked')
+        },
+      },
+      secondaryButton: {
+        value: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.JUSTIFY,
+        action: () => {
+          console.info('Callback when the second button is clicked')
+        }
+      },
+      onCheckedChange: () => {
+        console.info('Callback when the checkbox is clicked')
+      }
+    }),
+  })
+
+    dialogControllerTipsTextAlign3: CustomDialogController = new CustomDialogController({
+    builder: TipsDialog({
+      checkTips: 'checkTips',
+      isChecked: true,
+      checkAction: () => {
+        console.log('checkAction')
+      },
+      primaryButton: {
+        value: '取消',
+        textAlign: TextAlign.LEFT,
+        action: () => {
+          console.info('Callback when the first button is clicked')
+        },
+      },
+      secondaryButton: {
+        value: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.RIGHT,
         action: () => {
           console.info('Callback when the second button is clicked')
         }
@@ -181,9 +267,27 @@ struct TipsDialogTest {
         .onClick((e:ClickEvent) => {
           this.dialogControllerTips.open()
         })
+
+      Button('TipsDialogTipsTextAlign')
+        .width(96)
+        .onClick((e:ClickEvent) => {
+          this.dialogControllerTipsTextAlign.open()
+        })
+
+      Button('TipsDialogTipsTextAlign2')
+        .width(96)
+        .onClick((e:ClickEvent) => {
+          this.dialogControllerTipsTextAlign2.open()
+        })
+
+      Button('TipsDialogTipsTextAlign3')
+        .width(96)
+        .onClick((e:ClickEvent) => {
+          this.dialogControllerTipsTextAlign3.open()
+        })
     }
     .width('100%')
     .height('100%')
     .justifyContent(FlexAlign.Center)
   }
-}
+} 

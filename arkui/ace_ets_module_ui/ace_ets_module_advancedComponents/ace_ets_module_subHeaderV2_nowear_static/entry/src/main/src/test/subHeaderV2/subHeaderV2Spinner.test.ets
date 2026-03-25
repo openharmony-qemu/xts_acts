@@ -79,5 +79,25 @@ it('subHeaderV2Spinner_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       console.info('[subHeaderV2Spinner_static_0100] END');
       done();
     });
+
+    /**
+     * @tc.number   subHeaderV2Spinner_static_0200
+     * @tc.name     subHeaderV2Spinner_static_0200
+     * @tc.desc     subHeaderV2Spinner_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('subHeaderV2Spinner_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[subHeaderV2Spinner_static_0200] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      // subHeaderV2Spinner是否存在以下入口。
+      let selectDemo = await driver.findComponent(ON.text('selectDemo2'));
+      expect(selectDemo !== null).assertTrue();
+      await driver.delayMs(1000);
+      console.info('[subHeaderV2Spinner_static_0200] END');
+      done();
+    });
+
+
   })
 }

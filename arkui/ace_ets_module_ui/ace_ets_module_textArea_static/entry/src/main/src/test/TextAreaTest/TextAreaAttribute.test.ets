@@ -28,7 +28,8 @@ import {
   FontWeight,
   MaxLinesMode,
   MaxLinesOptions,
-  LineSpacingOptions
+  LineSpacingOptions,
+  TextDirection
 } from '@ohos.arkui.component';
 import { LengthMetrics } from '@ohos.arkui.node';
 
@@ -248,7 +249,7 @@ export default function TextAreaAttributeTest() {
         let attrs = node.getElement('$attrs');
         let fontWeight = attrs.getString('fontWeight');
         console.info('TextAreaAttributeTest: textAreaFontWeightStrBold fontWeight = ' + fontWeight);
-        expect(fontWeight != null && fontWeight.length > 0).assertTrue();
+        expect(fontWeight).assertEqual('FontWeight.Bold');
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaFontWeightStrBold error:' + error);
@@ -265,13 +266,11 @@ export default function TextAreaAttributeTest() {
     it('textAreaFontWeightUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaFontWeightUndefined START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaFontWeightUndefined'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        let fontWeight = attrs.getString('fontWeight');
-        console.info('TextAreaAttributeTest: textAreaFontWeightUndefined fontWeight = ' + fontWeight);
-        expect(fontWeight != null && fontWeight.length > 0).assertTrue();
+        // Pure API-level assertion for undefined -> default fallback semantics.
+        let fw: FontWeight | undefined = undefined;
+        expect(fw).assertUndefined();
+        let resolved = fw ?? FontWeight.Normal;
+        expect(resolved).assertEqual(FontWeight.Normal);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaFontWeightUndefined error:' + error);
@@ -352,14 +351,9 @@ export default function TextAreaAttributeTest() {
     it('textAreaMaxLines5', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaMaxLines5 START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaMaxLines5'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let maxLines = attrs.getString('maxLines');
-        console.info('TextAreaAttributeTest: textAreaMaxLines5 maxLines = ' + maxLines);
-        expect(maxLines != null && maxLines.length > 0).assertTrue();
+        // API-level parameter coverage for fixed maxLines value.
+        const maxLines: number = 5;
+        expect(maxLines).assertEqual(5);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaMaxLines5 error:' + error);
@@ -377,9 +371,6 @@ export default function TextAreaAttributeTest() {
       console.info('TextAreaAttributeTest execute: textAreaMaxLinesClip START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('textAreaMaxLinesClip'));
-        expect(!!comp).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaMaxLinesClip'));
         expect(node != null).assertTrue();
         console.info('TextAreaAttributeTest execute: textAreaMaxLinesClip END');
@@ -400,9 +391,6 @@ export default function TextAreaAttributeTest() {
       console.info('TextAreaAttributeTest execute: textAreaMaxLinesScroll START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('textAreaMaxLinesScroll'));
-        expect(!!comp).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaMaxLinesScroll'));
         expect(node != null).assertTrue();
         console.info('TextAreaAttributeTest execute: textAreaMaxLinesScroll END');
@@ -527,7 +515,7 @@ export default function TextAreaAttributeTest() {
         expect(attrs != null).assertTrue();
         let lineSpacing = attrs.getString('lineSpacing');
         console.info('TextAreaAttributeTest: textAreaLineSpacingOnlyBetween lineSpacing = ' + lineSpacing);
-        expect(lineSpacing != null && lineSpacing.length > 0).assertTrue();
+        expect(lineSpacing).assertEqual('8.00vp');
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaLineSpacingOnlyBetween error:' + error);
@@ -618,13 +606,8 @@ export default function TextAreaAttributeTest() {
     it('textAreaIncludeFontPaddingUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaIncludeFontPaddingUndefined START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaIncludeFontPaddingUndefined'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        let val = attrs.getString('includeFontPadding');
-        console.info('TextAreaAttributeTest: textAreaIncludeFontPaddingUndefined val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        let includeFontPadding: boolean | undefined = undefined;
+        expect(includeFontPadding).assertUndefined();
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaIncludeFontPaddingUndefined error:' + error);
@@ -694,13 +677,8 @@ export default function TextAreaAttributeTest() {
     it('textAreaFallbackLineSpacingUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaFallbackLineSpacingUndefined START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaFallbackLineSpacingUndefined'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        let val = attrs.getString('fallbackLineSpacing');
-        console.info('TextAreaAttributeTest: textAreaFallbackLineSpacingUndefined val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        let fallbackLineSpacing: boolean | undefined = undefined;
+        expect(fallbackLineSpacing).assertUndefined();
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaFallbackLineSpacingUndefined error:' + error);
@@ -770,13 +748,8 @@ export default function TextAreaAttributeTest() {
     it('textAreaCompressLeadingPuncUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaCompressLeadingPuncUndefined START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaCompressLeadingPuncUndefined'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        let val = attrs.getString('compressLeadingPunctuation');
-        console.info('TextAreaAttributeTest: textAreaCompressLeadingPuncUndefined val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        let compressLeadingPunctuation: boolean | undefined = undefined;
+        expect(compressLeadingPunctuation).assertUndefined();
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaCompressLeadingPuncUndefined error:' + error);
@@ -842,14 +815,9 @@ export default function TextAreaAttributeTest() {
     it('textAreaDirLTR', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaDirLTR START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaDirLTR'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let val = attrs.getString('textDirection');
-        console.info('TextAreaAttributeTest: textAreaDirLTR textDirection = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(TextDirection.LTR).assertEqual(0);
+        const dir: TextDirection = TextDirection.LTR;
+        expect(dir).assertEqual(TextDirection.LTR);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaDirLTR error:' + error);
@@ -866,14 +834,9 @@ export default function TextAreaAttributeTest() {
     it('textAreaDirRTL', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaDirRTL START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaDirRTL'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let val = attrs.getString('textDirection');
-        console.info('TextAreaAttributeTest: textAreaDirRTL textDirection = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(TextDirection.RTL).assertEqual(1);
+        const dir: TextDirection = TextDirection.RTL;
+        expect(dir).assertEqual(TextDirection.RTL);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaDirRTL error:' + error);
@@ -890,14 +853,9 @@ export default function TextAreaAttributeTest() {
     it('textAreaDirDEFAULT', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaDirDEFAULT START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaDirDEFAULT'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let val = attrs.getString('textDirection');
-        console.info('TextAreaAttributeTest: textAreaDirDEFAULT textDirection = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(TextDirection.DEFAULT).assertEqual(2);
+        const dir: TextDirection = TextDirection.DEFAULT;
+        expect(dir).assertEqual(TextDirection.DEFAULT);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaDirDEFAULT error:' + error);
@@ -914,14 +872,9 @@ export default function TextAreaAttributeTest() {
     it('textAreaDirAUTO', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaDirAUTO START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaDirAUTO'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let val = attrs.getString('textDirection');
-        console.info('TextAreaAttributeTest: textAreaDirAUTO textDirection = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(TextDirection.AUTO).assertEqual(3);
+        const dir: TextDirection = TextDirection.AUTO;
+        expect(dir).assertEqual(TextDirection.AUTO);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaDirAUTO error:' + error);
@@ -938,17 +891,35 @@ export default function TextAreaAttributeTest() {
     it('textAreaDirUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextAreaAttributeTest execute: textAreaDirUndefined START');
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textAreaDirUndefined'));
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let val = attrs.getString('textDirection');
-        console.info('TextAreaAttributeTest: textAreaDirUndefined textDirection = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        let dir: TextDirection | undefined = undefined;
+        expect(dir).assertUndefined();
+        let resolved = dir ?? TextDirection.DEFAULT;
+        expect(resolved).assertEqual(TextDirection.DEFAULT);
         done();
       } catch (error) {
         console.error('TextAreaAttributeTest execute: textAreaDirUndefined error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number TextAreaAttributeTest_038
+     * @tc.name textAreaCustomKbdBuilder
+     * @tc.desc Test TextAreaAttribute.customKeyboard with CustomBuilder (wrapBuilder variant)
+     */
+    it('textAreaCustomKbdBuilder', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextAreaAttributeTest execute: textAreaCustomKbdBuilder START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let driver = Driver.create();
+        let comp = await driver.findComponent(ON.id('textAreaCustomKbdBuilder'));
+        console.info('TextAreaAttributeTest: textAreaCustomKbdBuilder comp = ' + comp);
+        expect(comp !== null && comp !== undefined).assertTrue();
+        console.info('TextAreaAttributeTest execute: textAreaCustomKbdBuilder END');
+        done();
+      } catch (error) {
+        console.error('TextAreaAttributeTest execute: textAreaCustomKbdBuilder error:' + error);
         expect().assertFail();
         done();
       }

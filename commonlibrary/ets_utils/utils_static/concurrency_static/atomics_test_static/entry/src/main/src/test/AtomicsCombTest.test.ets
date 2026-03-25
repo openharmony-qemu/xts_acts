@@ -813,20 +813,20 @@ export default function atomicsCombTest() {
 
 
       // 初始化状态和数据
-      Atomics.store(view, 0, State.INIT as long); // 状态
+      Atomics.store(view, 0, Int.toLong(State.INIT)); // 状态
       Atomics.store(view, 1, 0); // 计数器
       Atomics.store(view, 2, 100); // 数据
       Atomics.store(view, 3, 0); // 结果
 
       // 状态转换和原子操作
-      Atomics.compareExchange(view, 0, State.INIT as long, State.LOADING);
+      Atomics.compareExchange(view, 0, Int.toLong(State.INIT), State.LOADING);
 
       // 处理数据
       const oldValue: number = Atomics.sub(view, 2, 58); // 100 - 58 = 42
       Atomics.store(view, 3, oldValue - 58 as long); // 100 - 58 = 42
 
       // 完成处理
-      Atomics.compareExchange(view, 0, State.LOADING as long, State.COMPLETED);
+      Atomics.compareExchange(view, 0, Int.toLong(State.LOADING), State.COMPLETED);
 
       const result = Atomics.load(view, 3);
       expect(result).assertEqual(42);
@@ -1219,20 +1219,20 @@ export default function atomicsCombTest() {
 
 
       // 初始化状态和数据
-      Atomics.store(view, 0, State40.INIT as long); // 状态
+      Atomics.store(view, 0, Int.toLong(State40.INIT)); // 状态
       Atomics.store(view, 1, 0); // 计数器
       Atomics.store(view, 2, 100); // 数据
       Atomics.store(view, 3, 0); // 结果
 
       // 状态转换和原子操作
-      Atomics.compareExchange(view, 0, State40.INIT as long, State40.LOADING);
+      Atomics.compareExchange(view, 0, Int.toLong(State40.INIT), State40.LOADING);
 
       // 处理数据
       const oldValue: number = Atomics.sub(view, 2, 58); // 100 - 58 = 42
       Atomics.store(view, 3, oldValue - 58 as long); // 100 - 58 = 42
 
       // 完成处理
-      Atomics.compareExchange(view, 0, State40.LOADING as long, State40.COMPLETED);
+      Atomics.compareExchange(view, 0, Int.toLong(State40.LOADING), State40.COMPLETED);
 
       const result = Atomics.load(view, 3);
       expect(result).assertEqual(42);

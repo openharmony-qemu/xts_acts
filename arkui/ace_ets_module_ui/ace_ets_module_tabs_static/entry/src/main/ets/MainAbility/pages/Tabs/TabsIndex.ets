@@ -52,7 +52,7 @@ struct TabsIndex {
         }
         .animationCurve(Curve.Linear)
         .key('tabsAnimCurveLinear')
-        .height(80)
+        .height('13%')
         .width('100%')
 
         // ---------- TabsAttribute.animationCurve - Curve.Ease ----------
@@ -62,7 +62,7 @@ struct TabsIndex {
         }
         .animationCurve(Curve.Ease)
         .key('tabsAnimCurveEase')
-        .height(80)
+        .height('13%')
         .width('100%')
 
         // ---------- TabsAttribute.animationCurve - Curve.EaseIn ----------
@@ -72,7 +72,7 @@ struct TabsIndex {
         }
         .animationCurve(Curve.EaseIn)
         .key('tabsAnimCurveEaseIn')
-        .height(80)
+        .height('13%')
         .width('100%')
 
         // ---------- TabsAttribute.animationCurve - undefined ----------
@@ -82,7 +82,7 @@ struct TabsIndex {
         }
         .animationCurve(undefined)
         .key('tabsAnimCurveUndefined')
-        .height(80)
+        .height('13%')
         .width('100%')
 
         // ---------- TabsAttribute.onContentDidScroll - with callback ----------
@@ -95,7 +95,7 @@ struct TabsIndex {
             ' pos=' + position + ' len=' + mainAxisLength);
         })
         .key('tabsOnContentDidScroll')
-        .height(80)
+        .height('13%')
         .width('100%')
 
         // ---------- TabsAttribute.onContentDidScroll - undefined ----------
@@ -105,11 +105,11 @@ struct TabsIndex {
         }
         .onContentDidScroll(undefined)
         .key('tabsOnContentDidScrollUndefined')
-        .height(80)
+        .height('13%')
         .width('100%')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

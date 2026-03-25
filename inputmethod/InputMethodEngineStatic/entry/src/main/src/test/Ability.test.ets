@@ -20,10 +20,11 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest'
-import { BusinessError } from '@ohos.base'
-import util from '@ohos.util'
+import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest';
+import { BusinessError } from '@ohos.base';
+import util from '@ohos.util';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext } from '@ohos.arkui.UIContext';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -143,6 +144,39 @@ export default function inputMethodEngineStatic() {
               done();
             }
         })
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800
+         * @tc.number Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const CASE_NAME = '====>Sub_InputMethod_IMF_attachWithUIContextPromise_static_0800';
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute: {
+                    textInputType: inputMethod.TextInputType.MULTILINE, enterKeyType: inputMethod.EnterKeyType.GO
+                },
+                newEditBox: false,
+                capitalizeMode: inputMethod.CapitalizeMode.SENTENCES
+            };
+            let attachOptions: inputMethod.AttachOptions = {
+                requestKeyboardReason: inputMethod.RequestKeyboardReason.TOUCH,
+                showKeyboard: false
+            };
+            try {
+                let uiContext:UIContext = UIContext.getCallingScopeUIContext()!;
+                await inputMethod.getController().attachWithUIContext(uiContext, ATTRIBUTE, attachOptions);
+                console.info(`${CASE_NAME} attach success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect(error.code).assertEqual(0);
+                done();
+            }
+        });
 
         /**
          * @tc.name   inputMethodEngine_test_static_038
@@ -495,6 +529,67 @@ export default function inputMethodEngineStatic() {
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
             testTemplate('Sub_InputMethod_IME_Custom_static_0902', 12, done)
+        });
+
+        /** 
+        * @tc.name   Sub_InputMethod_IMF_sendMessagePromise_static_0300 
+        * @tc.number Sub_InputMethod_IMF_sendMessagePromise_static_0300 
+        * @tc.desc   Function test 
+        * @tc.type   FUNCTION 
+        * @tc.size   MEDIUMTEST 
+        * @tc.level  LEVEL3 
+        */ 
+        it('Sub_InputMethod_IMF_sendMessagePromise_static_0300', Level.LEVEL3, async (done: () => void) => { 
+            const testName = 'Sub_InputMethod_IMF_sendMessagePromise_static_0300'; 
+            const ATTRIBUTE: inputMethod.TextConfig = { 
+                inputAttribute: { 
+                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED 
+                } 
+            }; 
+            await inputMethod.getController().attach(true, ATTRIBUTE); 
+            console.info(`====>${testName} attach success.`); 
+            try { 
+                let msgParam: ArrayBuffer = new ArrayBuffer(128); 
+                await inputMethod.getController().sendMessage('', msgParam); 
+                console.info(`====>${testName} sendMessage success.`); 
+                done(); 
+            } catch (err) { 
+                console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`) 
+                await inputMethod.getController().detach(); 
+                expect().assertFail();
+                done(); 
+            }; 
+        });
+
+        /**
+        * @tc.name   Sub_InputMethod_IME_Custom_static_0903
+        * @tc.number Sub_InputMethod_IME_Custom_static_0903
+        * @tc.desc   Switch current input method subtype.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('Sub_InputMethod_IME_Custom_static_0903', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const testName = 'Sub_InputMethod_IME_Custom_static_0903'; 
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            let value:string = 'B';
+            let placeholderValue = value.repeat(255);
+            let abilityNameValue = value.repeat(127);
+            ATTRIBUTE.inputAttribute.placeholder = placeholderValue;
+            ATTRIBUTE.inputAttribute.abilityName = abilityNameValue;
+            try {
+                await inputMethod.getController().attach(false, ATTRIBUTE);
+                expect(true).assertTrue();
+                done();
+            } catch (err) {
+                console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`) 
+                expect().assertFail();
+                done(); 
+            }
         });
 
 
