@@ -561,6 +561,37 @@ export default function inputMethodEngineStatic() {
             }; 
         });
 
+        /**
+        * @tc.name   Sub_InputMethod_IME_Custom_static_0903
+        * @tc.number Sub_InputMethod_IME_Custom_static_0903
+        * @tc.desc   Switch current input method subtype.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('Sub_InputMethod_IME_Custom_static_0903', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const testName = 'Sub_InputMethod_IME_Custom_static_0903'; 
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            let value:string = 'B';
+            let placeholderValue = value.repeat(255);
+            let abilityNameValue = value.repeat(127);
+            ATTRIBUTE.inputAttribute.placeholder = placeholderValue;
+            ATTRIBUTE.inputAttribute.abilityName = abilityNameValue;
+            try {
+                await inputMethod.getController().attach(false, ATTRIBUTE);
+                expect(true).assertTrue();
+                done();
+            } catch (err) {
+                console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`) 
+                expect().assertFail();
+                done(); 
+            }
+        });
+
 
     })
 }
