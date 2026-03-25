@@ -132,8 +132,6 @@ export default function audioCapturerChange() {
             console.info(`${Tag}: : SR: ${i}  ${AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates}`);
             console.info(`${Tag}: : C: ${i}  ${AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts}`);
 
-            // console.info(`${Tag}: : SR: ${i}  ${AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0]}`);
-            // console.info(`${Tag}: : C: ${i}  ${AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0]}`);
             console.info(`${Tag}: : CM: ${i}  ${AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelMasks}`);
           }
           if (devDescriptor != null) {
