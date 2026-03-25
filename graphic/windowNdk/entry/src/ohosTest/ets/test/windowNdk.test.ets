@@ -1657,6 +1657,8 @@ export default function windowNdk() {
     */
     it('test_mainWindow_setWindowStatusBarEnabled_avoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowStatusBarEnabled_avoidAreaChange";
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
       await sleep(3000);
@@ -1674,7 +1676,7 @@ export default function windowNdk() {
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result2: ${result2}`);
       await sleep(200);
-      if (deviceType === 'default' ||deviceType === 'phone' || (deviceType === 'tablet' && isFreeWindowMode === false)) {
+      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false)) {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
