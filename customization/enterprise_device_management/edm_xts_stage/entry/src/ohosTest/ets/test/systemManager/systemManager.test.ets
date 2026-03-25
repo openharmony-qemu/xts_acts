@@ -3453,14 +3453,13 @@ function testSetActivationLockDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let credential: string = "test";
-      systemManager.setActivationLockDisabled(null, true, credential);
-      expect(false).assertTrue();
+      await systemManager.setActivationLockDisabled(null, true, credential).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
     } catch (error) {
-      if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -3478,7 +3477,81 @@ function testSetActivationLockDisabled() {
   it("test_set_activation_lock_disabled_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.setActivationLockDisabled(SELFWANT, true, null);
+      await systemManager.setActivationLockDisabled(SELFWANT, true, null).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0008
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0008
+  * @tc.desc   test systemManager setActivationLockDisabled with undefined credential
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await systemManager.setActivationLockDisabled(SELFWANT, true, undefined).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0009
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0009
+  * @tc.desc   test systemManager setActivationLockDisabled with undefined admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let credential: string = "test";
+      await systemManager.setActivationLockDisabled(undefined, true, credential).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_00010
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_00010
+  * @tc.desc   test systemManager setActivationLockDisabled with undefined isdisable
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_00010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let credential: string = "test";
+      systemManager.setActivationLockDisabled(SELFWANT, undefined, credential);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
@@ -3550,14 +3623,37 @@ function testIsActivationLockDisabled() {
   it("test_is_activation_lock_disabled_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.isActivationLockDisabled(null);
+      await systemManager.isActivationLockDisabled(null).then(()=>{
       expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
     } catch (error) {
-      if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0004
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0004
+  * @tc.desc   test systemManager IsActivationLockDisabled with null undefined
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await systemManager.isActivationLockDisabled(undefined).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
