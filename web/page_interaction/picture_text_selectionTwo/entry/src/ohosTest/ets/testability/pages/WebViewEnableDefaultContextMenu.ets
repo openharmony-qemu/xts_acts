@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,45 +30,6 @@ const driver = Driver.create();
   @Entry
   @Component
   struct BindMenuTest {
-
-  // onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
-  //   let items = menuItems.filter((menuItem) => {
-  //     // 过滤用户需要的系统按键
-  //     console.info(`onCreateMenu menuItem. Code: ${menuItem.content}, ${menuItem.id}`);
-  //     return true;
-  //   });
-  //   let customItem1: TextMenuItem = {
-  //     content: 'custom',
-  //     id: TextMenuItemId.of('customItem'),
-  //     icon: $r('app.media.startIcon'),
-  //     labelInfo: "不知道"
-  //   };
-  //   items.push(customItem1); // 在选项列表后添加新选项
-  //   return items;
-  // }
-  //
-  // onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
-  //   if (menuItem.id.equals(TextMenuItemId.CUT)) {
-  //     // 用户自定义行为
-  //     console.info("拦截 id：CUT")
-  //     return false; // 返回true不执行系统回调
-  //   } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
-  //     // 用户自定义行为
-  //     console.info("不拦截 id：COPY")
-  //     return false; // 返回false执行系统回调
-  //   } else if (menuItem.id.equals(TextMenuItemId.of('customItem1'))) {
-  //     // 用户自定义行为
-  //     console.info("拦截 id：customItem1")
-  //     return false; // 用户自定义菜单选项返回true时点击后不关闭菜单，返回false时关闭菜单
-  //   } else if (menuItem.id.equals(TextMenuItemId.of('customItem2'))) {
-  //     // 用户自定义行为
-  //     console.info("拦截 id：customItem2")
-  //     return false;
-  //   }
-  //   return false; // 返回默认值false
-  // }
-
-  // @State EditMenuOptions: EditMenuOptions = { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick }
   @State enableDefaultMenu: boolean  = true
   @State enableContextMenuShow: boolean  = false
   pageInfos: NavPathStack = new NavPathStack();
