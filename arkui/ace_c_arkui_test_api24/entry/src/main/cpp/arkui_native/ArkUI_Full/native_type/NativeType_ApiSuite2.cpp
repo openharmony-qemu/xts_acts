@@ -35,9 +35,9 @@ static napi_value TestArkUICapi_159(napi_env env, napi_callback_info info)
     bool v1 = false;
     auto ec = OH_ArkUI_ShadowOptions_GetFill(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -97,9 +97,9 @@ static napi_value TestArkUICapi_162(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontColor(obj, 0U);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -124,9 +124,9 @@ static napi_value TestArkUICapi_163(napi_env env, napi_callback_info info)
     uint32_t v1 = 0U;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontColor(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -150,9 +150,9 @@ static napi_value TestArkUICapi_164(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontSize(obj, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -177,9 +177,9 @@ static napi_value TestArkUICapi_165(napi_env env, napi_callback_info info)
     float v1 = 0.0f;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontSize(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -203,9 +203,9 @@ static napi_value TestArkUICapi_166(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontStyle(obj, static_cast<ArkUI_FontStyle>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -229,9 +229,9 @@ static napi_value TestArkUICapi_167(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontStyle(obj, static_cast<ArkUI_FontStyle *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -255,9 +255,9 @@ static napi_value TestArkUICapi_168(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontWeight(obj, 0U);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -282,9 +282,9 @@ static napi_value TestArkUICapi_169(napi_env env, napi_callback_info info)
     uint32_t v1 = 0U;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontWeight(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -309,9 +309,9 @@ static napi_value TestArkUICapi_170(napi_env env, napi_callback_info info)
     char buf1[32] = {0};
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontFamily(obj, buf1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -337,9 +337,9 @@ static napi_value TestArkUICapi_171(napi_env env, napi_callback_info info)
     int32_t v3 = 0;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFamily(obj, buf1, 0, &v3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -363,9 +363,9 @@ static napi_value TestArkUICapi_172(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetDecoration(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -389,9 +389,9 @@ static napi_value TestArkUICapi_173(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_GetDecoration(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -419,9 +419,9 @@ static napi_value TestArkUICapi_174(napi_env env, napi_callback_info info)
     OH_ArkUI_ShadowOptions ** outPtr1 = &holder1;
     auto ec = OH_ArkUI_TextEditorTextStyle_SetTextShadows(obj, outPtr1, 0);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -450,9 +450,9 @@ static napi_value TestArkUICapi_175(napi_env env, napi_callback_info info)
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetTextShadows(obj, outPtr1, 0U, &v3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -476,9 +476,9 @@ static napi_value TestArkUICapi_176(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetLineHeight(obj, 0);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -503,9 +503,9 @@ static napi_value TestArkUICapi_177(napi_env env, napi_callback_info info)
     int32_t v1 = 0;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetLineHeight(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -529,9 +529,9 @@ static napi_value TestArkUICapi_178(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetLetterSpacing(obj, 0);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -556,9 +556,9 @@ static napi_value TestArkUICapi_179(napi_env env, napi_callback_info info)
     int32_t v1 = 0;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetLetterSpacing(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -583,9 +583,9 @@ static napi_value TestArkUICapi_180(napi_env env, napi_callback_info info)
     char buf1[32] = {0};
     auto ec = OH_ArkUI_TextEditorTextStyle_SetFontFeature(obj, buf1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -611,9 +611,9 @@ static napi_value TestArkUICapi_181(napi_env env, napi_callback_info info)
     int32_t v3 = 0;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFeature(obj, buf1, 0, &v3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -637,9 +637,9 @@ static napi_value TestArkUICapi_182(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetHalfLeading(obj, false);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -664,9 +664,9 @@ static napi_value TestArkUICapi_183(napi_env env, napi_callback_info info)
     bool v1 = false;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetHalfLeading(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -690,9 +690,9 @@ static napi_value TestArkUICapi_184(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor(obj, 0U);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -717,9 +717,9 @@ static napi_value TestArkUICapi_185(napi_env env, napi_callback_info info)
     uint32_t v1 = 0U;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -744,9 +744,9 @@ static napi_value TestArkUICapi_186(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius(obj, 0.0f, 0.0f, 0.0f, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -776,9 +776,9 @@ static napi_value TestArkUICapi_187(napi_env env, napi_callback_info info)
     float v4 = 0.0f;
     auto ec = OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius(obj, &v1, &v2, &v3, &v4);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -806,9 +806,9 @@ static napi_value TestArkUICapi_188(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_TextEditorTextStyle *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -836,9 +836,9 @@ static napi_value TestArkUICapi_189(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_TextEditorTextStyle *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -900,9 +900,9 @@ static napi_value TestArkUICapi_192(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType(obj, static_cast<OH_ArkUI_TextEditorSpanType>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -930,9 +930,9 @@ static napi_value TestArkUICapi_193(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_TextEditorSpanType *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -958,9 +958,9 @@ static napi_value TestArkUICapi_194(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(obj, static_cast<ArkUI_NodeHandle>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -986,9 +986,9 @@ static napi_value TestArkUICapi_195(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(obj, static_cast<ArkUI_NodeHandle *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1016,9 +1016,9 @@ static napi_value TestArkUICapi_196(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_TextEditorResponseType>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1046,9 +1046,9 @@ static napi_value TestArkUICapi_197(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_TextEditorResponseType *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1074,9 +1074,9 @@ static napi_value TestArkUICapi_198(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType(obj, static_cast<OH_ArkUI_TextMenuType>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1102,9 +1102,9 @@ static napi_value TestArkUICapi_199(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(obj, static_cast<OH_ArkUI_TextMenuType *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1133,9 +1133,9 @@ static napi_value TestArkUICapi_200(napi_env env, napi_callback_info info)
         static_cast<void *>(nullptr),
         static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1164,9 +1164,9 @@ static napi_value TestArkUICapi_201(napi_env env, napi_callback_info info)
         static_cast<void *>(nullptr),
         static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1195,9 +1195,9 @@ static napi_value TestArkUICapi_202(napi_env env, napi_callback_info info)
         static_cast<void *>(nullptr),
         static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1226,9 +1226,9 @@ static napi_value TestArkUICapi_203(napi_env env, napi_callback_info info)
         static_cast<void *>(nullptr),
         static_cast<void (*)(void *)>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1256,9 +1256,9 @@ static napi_value TestArkUICapi_204(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_HapticFeedbackMode>(0));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1286,9 +1286,9 @@ static napi_value TestArkUICapi_205(napi_env env, napi_callback_info info)
         obj,
         static_cast<OH_ArkUI_HapticFeedbackMode *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1312,9 +1312,9 @@ static napi_value TestArkUICapi_206(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu(obj);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1342,9 +1342,9 @@ static napi_value TestArkUICapi_207(napi_env env, napi_callback_info info)
     uint32_t v2 = 0U;
     auto ec = OH_ArkUI_TextEditorStyledStringController_GetSelection(obj, &v1, &v2);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1372,9 +1372,9 @@ static napi_value TestArkUICapi_208(napi_env env, napi_callback_info info)
         obj,
         static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1402,9 +1402,9 @@ static napi_value TestArkUICapi_209(napi_env env, napi_callback_info info)
         obj,
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1432,9 +1432,9 @@ static napi_value TestArkUICapi_210(napi_env env, napi_callback_info info)
         obj,
         static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1476,9 +1476,9 @@ static napi_value TestArkUICapi_212(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4ScaleOptions_SetCenterY(obj, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1538,9 +1538,9 @@ static napi_value TestArkUICapi_215(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4TranslationOptions_SetZ(obj, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1626,9 +1626,9 @@ static napi_value TestArkUICapi_219(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Invert(m);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1657,9 +1657,9 @@ static napi_value TestArkUICapi_220(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Combine(a, b);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1689,9 +1689,9 @@ static napi_value TestArkUICapi_221(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Translate(m, tr);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1721,9 +1721,9 @@ static napi_value TestArkUICapi_222(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Scale(m, sc);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1753,9 +1753,9 @@ static napi_value TestArkUICapi_223(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Rotate(m, ro);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1780,9 +1780,9 @@ static napi_value TestArkUICapi_224(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_Matrix4_Skew(m, 0.0f, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1808,9 +1808,9 @@ static napi_value TestArkUICapi_225(napi_env env, napi_callback_info info)
     ArkUI_PointF dst = {0.0f, 0.0f};
     auto ec = OH_ArkUI_Matrix4_TransformPoint(m, &src, &dst);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1836,9 +1836,9 @@ static napi_value TestArkUICapi_226(napi_env env, napi_callback_info info)
     ArkUI_PointF dst[4] = {{0.0f, 0.0f}, {100.0f, 0.0f}, {0.0f, 100.0f}, {100.0f, 100.0f}};
     auto ec = OH_ArkUI_Matrix4_SetPolyToPoly(m, src, dst, 4U);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -1863,9 +1863,9 @@ static napi_value TestArkUICapi_227(napi_env env, napi_callback_info info)
     float out[16] = {0};
     auto ec = OH_ArkUI_Matrix4_GetElements(m, out);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
