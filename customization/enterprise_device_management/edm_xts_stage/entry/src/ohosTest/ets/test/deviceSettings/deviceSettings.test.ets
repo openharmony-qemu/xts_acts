@@ -1773,7 +1773,6 @@ export default function deviceSettingsTest() {
       console.info(' --- setValueForAccount_test_003  -------- END --------');
     })
 
-
     /**
      * @tc.name   setValueForAccount_test_004
      * @tc.number setValueForAccount_test_004
@@ -1796,6 +1795,71 @@ export default function deviceSettingsTest() {
       console.info(' --- setValueForAccount_test_004  -------- END --------');
     })
 
+    /**
+     * @tc.name   setValueForAccount_test_005
+     * @tc.number setValueForAccount_test_005
+     * @tc.desc   setValueForAccount with null parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_005  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, null);
+        console.info(' --- setValueForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValueForAccount_test_006
+     * @tc.number setValueForAccount_test_006
+     * @tc.desc   setValueForAccount with undefined parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_006  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, undefined);
+        console.info(' --- setValueForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValueForAccount_test_007
+     * @tc.number setValueForAccount_test_007
+     * @tc.desc   setValueForAccount with undefined parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_007  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, '');
+        console.info(' --- setValueForAccount_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_007 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_007  -------- END --------');
+    })
 
     /**
      * @tc.name   getValueForAccount_test_001
