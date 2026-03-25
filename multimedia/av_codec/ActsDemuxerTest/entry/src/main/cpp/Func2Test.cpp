@@ -166,7 +166,7 @@ static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &vide
 }
 
 static void SetAudioValueLocal(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame,
-                                int &aKeyCount)
+                int &aKeyCount)
 {
     if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
         audioIsEnd = true;
@@ -546,31 +546,22 @@ static int ProcessSingleTrackAudio0140(int32_t index, bool videoIsEnd1, bool vid
 {
     trackFormat = OH_AVSource_GetTrackFormat(source, index);
     if (trackFormat == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetTrackFormat failed for index=%{public}d", funcName, index);
         return -1;
     }
     
     if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetIntValue failed for index=%{public}d", funcName, index);
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[%{public}s] Processing index=%{public}d, trackType=%{public}d",
-        funcName, index, g_trackType);
     
     if ((videoIsEnd1 && (index == TRACKNUM_1)) ||
         (videoIsEnd2 && (index == TRACKNUM_2)) ||
         (videoIsEnd3 && (index == TRACKNUM_3))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Skipping ended track %{public}d", funcName, index);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return 1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[%{public}s] About to call ReadSampleBuffer for index=%{public}d", funcName, index);
     OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer);
-    OH_LOG_INFO(LOG_APP, "[%{public}s] ReadSampleBuffer returned: %{public}d for index=%{public}d",
-        funcName, readResult, index);
     
     if (!HandleReadSampleError(readResult, index, funcName, trackFormat)) {
         return -1;
@@ -581,12 +572,10 @@ static int ProcessSingleTrackAudio0140(int32_t index, bool videoIsEnd1, bool vid
     }
     
     if (avBuffer == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] avBuffer is nullptr for index=%{public}d", funcName, index);
         return -1;
     }
     
     if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetBufferAttr failed for index=%{public}d", funcName, index);
         return -1;
     }
     
@@ -646,15 +635,12 @@ static int ProcessSingleTrackSimple(SingleTrackSimpleParams &params)
 static int InitVttDemuxer6100(int &fd, const char *file)
 {
     int64_t size = GET_FILE_SIZE(file);
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] File: %{public}s, fd=%{public}d, size=%{public}lld", file, fd, (long long)size);
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] CreateWithFD failed");
         return -1;
     }
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] CreateWithSource failed");
         return -1;
     }
     return 0;
@@ -667,40 +653,31 @@ static int ValidateVttTrack6100()
     sourceFormat = OH_AVSource_GetSourceFormat(source);
     trackFormat = OH_AVSource_GetTrackFormat(source, 0);
     if (trackFormat == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] GetTrackFormat failed");
+        
         return -1;
     }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &mimeType))) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] GetStringValue CODEC_MIME failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] mimeType=%{public}s, expected=%{public}s",
-        mimeType, OH_AVCODEC_MIMETYPE_SUBTITLE_WEBVTT);
+    
     if (strcmp(mimeType, OH_AVCODEC_MIMETYPE_SUBTITLE_WEBVTT) != 0) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] mimeType mismatch!");
         return -1;
     }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] GetIntValue TRACK_COUNT failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] trackCount=%{public}d, expected=1", g_trackCount);
+
     if (g_trackCount != 1) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] trackCount mismatch!");
         return -1;
     }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] SelectTrackByID failed");
         return -1;
     }
     int tarckType = 0;
     if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &tarckType))) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] GetIntValue TRACK_TYPE failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] trackType=%{public}d, expected=%{public}d", tarckType, MEDIA_TYPE_SUBTITLE);
     if (tarckType != MEDIA_TYPE_SUBTITLE) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] trackType mismatch!");
         return -1;
     }
     return 0;
@@ -2125,39 +2102,27 @@ int DemuxerFunctionAdd0020()
 
 int DemuxerFunctionAdd0030()
 {
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] START");
-
     // 初始化 memory (需要用于 OH_AVDemuxer_ReadSample)
     int32_t width = 3840;
     int32_t height = 2160;
     memory = OH_AVMemory_Create(width * height);
     if (memory == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[ADD_0030] OH_AVMemory_Create failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] Memory created successfully");
-
     const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_2, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[ADD_0030] InitFile failed");
         OH_AVMemory_Destroy(memory);
         memory = nullptr;
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] InitFile success, trackCount=%{public}d", g_trackCount);
-
     OH_AVCodecBufferAttr attr;
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] Calling ReadSample with track 1, expecting AV_ERR_UNKNOWN");
     int result = OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr);
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] ReadSample returned: %{public}d, expected: AV_ERR_UNKNOWN", result);
-
     OH_AVMemory_Destroy(memory);
     memory = nullptr;
 
     if (result != AV_ERR_UNKNOWN) {
-        OH_LOG_INFO(LOG_APP, "[ADD_0030] Result mismatch!");
         if (fd >= 0) {
             close(fd);
             fd = -1;
@@ -2165,7 +2130,6 @@ int DemuxerFunctionAdd0030()
         return -1;
     }
 
-    OH_LOG_INFO(LOG_APP, "[ADD_0030] SUCCESS");
     if (fd >= 0) {
         close(fd);
         fd = -1;
