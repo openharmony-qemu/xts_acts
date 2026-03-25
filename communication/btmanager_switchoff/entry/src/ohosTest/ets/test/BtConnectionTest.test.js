@@ -628,5 +628,34 @@ export default function btConnectionSwitchOffTest() {
             }
             done();
         })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100
+         * @tc.desc   Test pairDevice when bluetooth is disabled (error code 2900003)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if (!closeUnsupport) {
+                let hashValue = "c10b57deb2e1aafd255596e0d4fd6789";
+                try {
+                    connection.getVirtualAddressByHash(connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+                    expect().assertFail();
+                } catch (err) {
+                    console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+                    if (err.code === 801) {
+                        console.info('[bluetooth_js] RK板 is not support');
+                        expect(err.code === 801).assertTrue();
+                    } else {
+                        console.info('[bluetooth_js] getVirtualAddressByHash fail 201');
+                        expect(Number(err.code)).assertEqual(2900003);
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
     })
 }
