@@ -37,12 +37,12 @@ export default function webOnPermissionRequest() {
         if (!("WebDoubleInnerNucleus" == pages.name)) {
           console.info("get WebDoubleInnerNucleus state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebviewDoubleInnerNucleus"),10000);
           console.info("push WebDoubleInnerNucleus page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebDoubleInnerNucleus page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebviewDoubleInnerNucleus"),10000);
       done()
     });
     beforeEach(async (done: Function) => {
