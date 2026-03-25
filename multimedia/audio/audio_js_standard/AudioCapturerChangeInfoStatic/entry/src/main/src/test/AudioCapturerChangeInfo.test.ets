@@ -1701,7 +1701,6 @@ export default function audioCapturerChange() {
           } else {
             if (AudioCapturerChangeInfoArray != null) {
               for (let i = 0; i < AudioCapturerChangeInfoArray.length; i++) {
-                // console.info(`${Tag}: ${Tag}: ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i])}`);
                 let devDescriptor = AudioCapturerChangeInfoArray[i].deviceDescriptors;
                 for (let j = 0; j < AudioCapturerChangeInfoArray[i].deviceDescriptors.length; j++) {
                   console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);

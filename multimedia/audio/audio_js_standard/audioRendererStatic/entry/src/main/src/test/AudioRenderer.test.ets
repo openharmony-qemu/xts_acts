@@ -12930,7 +12930,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -12967,7 +12966,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13004,7 +13002,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13041,7 +13038,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13078,7 +13074,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13115,7 +13110,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13152,7 +13146,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13189,7 +13182,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13226,7 +13218,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13263,7 +13254,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13300,7 +13290,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13337,7 +13326,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13374,7 +13362,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13400,7 +13387,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_UNKNOWN;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.INVALID)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13427,7 +13413,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.EARPIECE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13454,7 +13439,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.WIRED_HEADSET)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13481,7 +13465,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_ALARM;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.WIRED_HEADPHONES)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13508,7 +13491,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.BLUETOOTH_SCO)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13535,7 +13517,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_RINGTONE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.BLUETOOTH_A2DP)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13562,7 +13543,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.MIC)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13589,7 +13569,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.USB_HEADSET)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13616,7 +13595,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MOVIE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.DISPLAY_PORT)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13643,7 +13621,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_GAME;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.REMOTE_CAST)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13670,7 +13647,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_AUDIOBOOK;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.USB_DEVICE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13697,7 +13673,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NAVIGATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.HDMI)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13724,7 +13699,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.LINE_DIGITAL)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13751,7 +13725,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.REMOTE_DAUDIO)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13778,7 +13751,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.HEARING_AID)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13805,7 +13777,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.NEARLINK)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13832,7 +13803,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.SYSTEM_PRIVATE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13859,7 +13829,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.DEFAULT)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);

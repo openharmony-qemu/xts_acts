@@ -1213,7 +1213,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: VOICE_CALL: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1242,7 +1241,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1267,7 +1265,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: RINGTONE: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: RINGTONE: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1296,7 +1293,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1320,7 +1316,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: ALARM: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: ALARM: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1349,7 +1344,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1373,7 +1367,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1402,7 +1395,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1426,7 +1418,6 @@ export default function audioManagerApi9() {
         let data = await PROMISE;
         if (data == false) {
           console.info(`${TagFrmwk}: Promise: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Promise: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1455,7 +1446,6 @@ export default function audioManagerApi9() {
           expect().assertFail();
         } else if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1478,7 +1468,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audio.AudioVolumeType.VOICE_CALL)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1506,7 +1495,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audio.AudioVolumeType.RINGTONE)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1534,7 +1522,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audio.AudioVolumeType.ALARM)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1562,7 +1549,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audio.AudioVolumeType.ACCESSIBILITY)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -1590,7 +1576,6 @@ export default function audioManagerApi9() {
         let data = streamManager!.isActiveSync(audio.AudioVolumeType.VOICE_ASSISTANT)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
