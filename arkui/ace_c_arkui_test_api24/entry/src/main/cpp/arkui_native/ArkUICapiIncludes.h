@@ -13,8 +13,14 @@
  * limitations under the License.
  */
 
-#ifndef ARKUICAPIINCLUDES_H
-#define ARKUICAPIINCLUDES_H
+/*
+ * 说明：本文件不是「类型声明头文件」（与 matrix4/Matrix4Test.h 等不同）。
+ * 仅用于在 NapiArkUICapiGenModule 所在翻译单元内，按顺序 #include 各 ArkUI C API XTS 用例 .cpp，
+ * 以便与 CMake 中仅编译单个 GenModule 源文件的方式配合。用例实现仍各自 #include common.h 等。
+ */
+
+#ifndef ARKUI_CAPI_XTS_ARKUICAPI_INCLUDES_H
+#define ARKUI_CAPI_XTS_ARKUICAPI_INCLUDES_H
 
 #include "arkui_native/ArkUI_Full/drag_and_drop/DragAndDrop_ApiSuite1.cpp"
 #include "arkui_native/ArkUI_Full/drawable_descriptor/DrawableDescriptor_ApiSuite1.cpp"
@@ -27,4 +33,4 @@
 #include "arkui_native/ArkUI_Full/styled_string/StyledString_ApiSuite3.cpp"
 #include "arkui_native/ArkUI_Full/ui_input_event/UiInputEvent_ApiSuite1.cpp"
 
-#endif // ARKUICAPIINCLUDES_H
+#endif // ARKUI_CAPI_XTS_ARKUICAPI_INCLUDES_H
