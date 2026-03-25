@@ -422,29 +422,27 @@ export default function KVManagerRootDirEntry() {
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
                 await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
-                    expect(null).assertFail();
-                    done();
+                    expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
                     console.error(TAG + ' getKVStore e ' + `, code=${err.code}, message=${err.message}`);
-                    expect(err.code).assertEqual(401);
+                    expect(null).assertFail();
+                    done();
                 });
 
                 await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(async () => {
                     console.info(TAG + ' closeKVStore success');
-                    expect(null).assertFail();
-                    done();
                 }).catch((err: Error) => {
                     console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
-                    expect(err.code).assertEqual(401);
+                    expect(null).assertFail();
+                    done();
                 });
 
                 await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, g_optionsDir).then(() => {
                     console.info(TAG + ' deleteKVStore success');
-                    expect(null).assertFail();
                     done();
                 }).catch((err: Error) => {
                     console.error(TAG + ' deleteKVStore err ' + `, code=${err.code}, message=${err.message}`);
-                    expect(err.code).assertEqual(401);
+                    expect(null).assertFail();
                     done();
                 });
 
