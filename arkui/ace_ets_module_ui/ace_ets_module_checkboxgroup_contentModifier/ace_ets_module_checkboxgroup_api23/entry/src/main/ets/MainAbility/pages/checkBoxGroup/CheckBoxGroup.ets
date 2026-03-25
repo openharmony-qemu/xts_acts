@@ -59,7 +59,7 @@ class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration
 @Builder
 function buildCheckBoxGroup(config: CheckBoxGroupConfiguration) {
   AppStorage.setOrCreate<string>('checkboxGroupCfgName', config.name);
-  AppStorage.setOrCreate<number>('checkboxGroupCfgStatus', config.status as number);
+  AppStorage.setOrCreate<number>('checkboxGroupCfgStatus', config.status);
   AppStorage.setOrCreate<boolean>('checkboxGroupCfgEnabled', config.enabled);
   let strokeColor: Color = Color.Red;
   let mod = config.contentModifier as MyCheckboxGroupStyle;
