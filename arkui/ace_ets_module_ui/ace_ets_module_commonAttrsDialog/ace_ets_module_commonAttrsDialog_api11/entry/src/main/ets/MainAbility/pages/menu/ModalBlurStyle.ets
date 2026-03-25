@@ -1,4 +1,4 @@
-  /**
+/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,36 +12,112 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 @Entry
 @Component
-struct menuBlurStyleExample {
+struct SheetTransitionExample {
+  @State isShow1: boolean = false;
+  @State isShow2: boolean = false;
+  @State isShow3: boolean = false;
+  @State isShow4: boolean = false;
+  @State isShow5: boolean = false;
+
   @Builder
-  MyMenu() {
-    Menu() {
-      MenuItem({ startIcon: $r("app.media.icon"), content: '菜单选项' })
-      MenuItem({ startIcon: $r("app.media.icon"), content: '菜单选项' })
-      MenuItem({ startIcon: $r("app.media.icon"), content: '菜单选项' })
+  myBuilder() {
+    Column() {
+      Button("content1")
+        .fontSize(20)
+      Button("content2")
+        .fontSize(20)
     }
+    .width('100%')
+    .height(40)
   }
 
   build() {
-    Column({ space: 50 }) {
+    Scroll() {
       Column() {
-        Column() {
-          Text('menuBlurStyle')
-            .key('menu_blurStyle')
-            .width(200)
-            .height(80)
-            .textAlign(TextAlign.Center)
-            .fontSize(25)
-            .bindContextMenu(this.MyMenu, ResponseType.LongPress,
-              { placement: Placement.Bottom,
-                backgroundBlurStyle: BlurStyle.Thin
+        Row(){
+          Button('init').key("blurStyle_init").fontSize(10).height('5%')
+          Button("BlurStyle 1")
+            .key("blurStyle_1")
+            .onClick(() => {
+              this.isShow1 = true
+            })
+            .fontSize(10)
+            .height('5%')
+            .bindSheet($$this.isShow1, this.myBuilder(), {
+              height: 150,
+              backgroundColor: Color.Gray,
+              blurStyle: BlurStyle.COMPONENT_ULTRA_THIN,
+              showClose: true,
+              title: { title: "title", subtitle: "subtitle" },
+              shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+                console.log("bind sheet shouldDismiss")
+                sheetDismiss.dismiss()
               })
-            .backgroundColor("#ff3df2f5")
+            })
+
+          Button("BlurStyle 2")
+            .key("blurStyle_2")
+            .onClick(() => {
+              this.isShow2 = true
+            })
+            .fontSize(10)
+            .height('5%')
+            .bindSheet($$this.isShow2, this.myBuilder(), {
+              height: 150,
+              backgroundColor: Color.Gray,
+              blurStyle: BlurStyle.COMPONENT_THIN,
+              showClose: true,
+              title: { title: "title", subtitle: "subtitle" },
+              shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+                console.log("bind sheet shouldDismiss")
+                sheetDismiss.dismiss()
+              })
+            })
         }
-      }.width('100%')
+        Row(){
+          Button("BlurStyle 3")
+            .key("blurStyle_3")
+            .onClick(() => {
+              this.isShow3 = true
+            })
+            .fontSize(10)
+            .height('5%')
+            .bindSheet($$this.isShow3, this.myBuilder(), {
+              height: 150,
+              backgroundColor: Color.Gray,
+              blurStyle: BlurStyle.COMPONENT_REGULAR,
+              showClose: true,
+              title: { title: "title", subtitle: "subtitle" },
+              shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+                console.log("bind sheet shouldDismiss")
+                sheetDismiss.dismiss()
+              })
+            })
+
+          Button("BlurStyle 4")
+            .key("blurStyle_4")
+            .onClick(() => {
+              this.isShow4 = true
+            })
+            .fontSize(10)
+            .height('5%')
+            .bindSheet($$this.isShow4, this.myBuilder(), {
+              height: 150,
+              backgroundColor: Color.Gray,
+              blurStyle: BlurStyle.COMPONENT_THICK,
+              showClose: true,
+              title: { title: "title", subtitle: "subtitle" },
+              shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+                console.log("bind sheet shouldDismiss")
+                sheetDismiss.dismiss()
+              })
+            })
+        }
+      }
+
     }
+    .margin({top:30,left:30})
   }
 }
