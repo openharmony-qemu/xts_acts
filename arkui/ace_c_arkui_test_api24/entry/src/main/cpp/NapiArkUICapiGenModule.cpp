@@ -13,13 +13,11 @@
  * limitations under the License.
  */
 
+#include "ArkUICapiNapiDescriptors.h"
 #include "common/common.h"
 #include "arkui_native/ArkUICapiIncludes.h"
 
 namespace ArkUICapiTest {
-
-extern const napi_property_descriptor kArkUICapiTestPropertyDescriptors[];
-extern const size_t kArkUICapiTestPropertyDescriptorsCount;
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
