@@ -625,6 +625,61 @@ export default function httpMultiFormDataListTest() {
             }
         })
 
+        /**
+         * @tc.name   testHttpMultiFormDataList_static_1100
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1100
+         * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testHttpMultiFormDataList_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testHttpMultiFormDataList_static_1100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+                        ExpectFail();
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        let httpRequestOptions_noParm: http.HttpRequestOptions = {
+                            method: http.RequestMethod.POST,
+                            header: { "Content-type": "multipart/form-data" } as Record<string,string>,
+                            multiFormDataList: [],
+                        };
+                        httpRequest.request(
+                            ADDR_TEST_DOMAIN_HTTPS,
+                            httpRequestOptions_noParm,
+                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
+                                if (err?.code != 0) {
+                                    hilog.info(domain, tag, '%{public}s', caseName +' httpRequest fail, get error is '+JSON.stringify(err));
+                                    ExpectFail();
+                                    httpRequest.destroy();
+                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                                    done();
+                                } else {
+                                    hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success  : data ->'+JSON.stringify(data));
+                                    ExpectTrue(data?.responseCode == 200);
+                                    httpRequest.destroy();
+                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                                    done();
+                                }
+                            });
+                    }
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+
     })
 
 }
