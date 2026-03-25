@@ -98,7 +98,7 @@ export default function CloudFileTest(): void {
       fileCache.onBatchDownload(callback);
       fileCache.startBatch(uris, fileType).then((): void => {
         hilog.info(domain, tag, '%{public}s', "startBatch Download successfully");
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_003 startBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code === 22400005).assertTrue();
         done();
@@ -130,7 +130,7 @@ export default function CloudFileTest(): void {
       fileCache.onBatchDownload(callback);
       fileCache.stopBatch(downloadId, needClean).then((): void => {
         hilog.info(domain, tag, '%{public}s', "stopBatch Download successfully");
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code === 13600001).assertTrue();
         done();
@@ -228,7 +228,7 @@ export default function CloudFileTest(): void {
         expect(cloudSync.DownloadFileType.CONTENT == 0).assertTrue();
         expect(cloudSync.DownloadFileType.THUMBNAIL == 1).assertTrue();
         expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_007 startBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code === 22400005).assertTrue();
         done();

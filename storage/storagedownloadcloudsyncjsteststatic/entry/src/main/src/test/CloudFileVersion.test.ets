@@ -47,7 +47,7 @@ export default function CloudFileVersionTest(): void {
             hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_001 get history versionId: " + versionList[i].versionId);
             expect(versionList[i].versionId !== undefined).assertTrue(); // 验证versionId不为undefined
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_001 get history version failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done();
@@ -78,7 +78,7 @@ export default function CloudFileVersionTest(): void {
           for(let i = 0, len = versionList.length; i < len; i++) {
             hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_002 get history versionId: " + versionList[i].versionId);
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_002 get history version failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done();
@@ -117,7 +117,7 @@ export default function CloudFileVersionTest(): void {
             expect(HistoryVersion.sha256 == '').assertTrue();
             expect(HistoryVersion.autoResolved == false).assertTrue();
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_003 get history version failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 13900020).assertTrue();
           done();
@@ -157,7 +157,7 @@ export default function CloudFileVersionTest(): void {
         fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_004 success to begin download, downloadFileUri: " + fileUri);
           expect(fileUri !== undefined && fileUri !== '').assertTrue(); // 验证返回的fileUri不为空
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_004 download history version file failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done();
@@ -197,7 +197,7 @@ export default function CloudFileVersionTest(): void {
       try {
         fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_005 success to begin download, downloadFileUri: " + fileUri);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_005 download history version file failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 13900020).assertTrue();
           done();
@@ -226,7 +226,7 @@ export default function CloudFileVersionTest(): void {
       try {
         fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then((): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_006 replaceFileWithHistoryVersion success");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_006 replaceFileWithHistoryVersion failed with error: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done()
@@ -255,7 +255,7 @@ export default function CloudFileVersionTest(): void {
         fileVersion.isFileConflict(uri).then((isConflict: boolean): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_007 current file is conflict: " + isConflict);
           expect(typeof isConflict === 'boolean').assertTrue(); // 验证返回的是布尔值类型
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_007 get current file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done();
@@ -283,7 +283,7 @@ export default function CloudFileVersionTest(): void {
       try {
         fileVersion.clearFileConflict(uri).then((): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_008 clean file conflict flag success");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error) => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_FileVersion_static_008 clean file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
           expect(err.code === 22400001).assertTrue();
           done();

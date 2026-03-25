@@ -1434,7 +1434,7 @@ export default function cloudCloudSyncTest() {
           expect(downloadId >= 0).assertTrue();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_057 start batch download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          expect(err.code === 22400005).assertTrue();
           done();
         });
       } catch (e) {
@@ -1462,7 +1462,7 @@ export default function cloudCloudSyncTest() {
           expect(downloadId >= 0).assertTrue();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_058 start batch download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          expect(err.code === 22400005).assertTrue();
           done();
         });
       } catch (e) {
@@ -1490,7 +1490,7 @@ export default function cloudCloudSyncTest() {
           expect(downloadId >= 0).assertTrue();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_059 start batch download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          expect(err.code === 22400005).assertTrue();
           done();
         });
       } catch (e) {
@@ -1518,7 +1518,7 @@ export default function cloudCloudSyncTest() {
           expect(downloadId >= 0).assertTrue();
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_060 start batch download failed: " + err.message + ", error code: " + err.code);
-          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          expect(err.code === 22400005).assertTrue();
           done();
         });
       } catch (e) {
