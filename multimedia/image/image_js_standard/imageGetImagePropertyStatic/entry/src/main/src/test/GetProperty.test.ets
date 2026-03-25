@@ -136,7 +136,7 @@ export default function imageGetImageProperty() {
         try {
           let data = await imageSourceApi.getImageProperties(args);
           for (let i = 0; i < args.length; i++) {
-            logger.log("getImageProperties data: " + data[args[i] as string]);
+            logger.log("getImageProperties data: " + data[args[i].valueOf()]);
           }
           expect(true).assertTrue();
           done();
@@ -254,7 +254,7 @@ export default function imageGetImageProperty() {
         try {
           let data = await imageSourceApi.getImageProperties(arrayArgs);
           for (let i = 0; i < arrayArgs.length; i++) {
-            console.info(`${testNum} ${arrayArgs} ` + data[arrayArgs[i] as string]);
+            console.info(`${testNum} ${arrayArgs} ` + data[arrayArgs[i].valueOf()]);
           }
           expect(data['GIFLoopCount'] == loopCase).assertTrue();
           done();

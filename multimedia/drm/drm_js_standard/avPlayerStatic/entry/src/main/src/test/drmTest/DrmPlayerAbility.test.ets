@@ -210,7 +210,7 @@ export default function abilityTest() {
         let metric = mediaKeySystem!.getStatistics();
         for (let item of metric) {
           console.log("XX TEST metric" + item.name + ':' + item.value);
-          if (item.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item.value).assertEqual('0');
           }
         }
@@ -221,7 +221,7 @@ export default function abilityTest() {
         let metric2 = mediaKeySystem!.getStatistics();
         for (let item2 of metric2) {
           console.log("XX TEST metric2" + item2.name + ':' + item2.value);
-          if (item2.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item2.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item2.value).assertEqual('64');
           }
         }
@@ -231,7 +231,7 @@ export default function abilityTest() {
         let metric3 = mediaKeySystem!.getStatistics();
         for (let item3 of metric3) {
           console.log("XX TEST metric3" + item3.name + ':' + item3.value);
-          if (item3.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item3.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item3.value).assertEqual('32');
           }
         }
@@ -1012,7 +1012,7 @@ export default function abilityTest() {
             name: "optionalDataName",
             value: "optionalDataValue"
           }];
-          session!.generateMediaKeyRequest("1111/2222", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE as int, optionalData).then((DrmRequest) => {
+          session!.generateMediaKeyRequest("1111/2222", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then((DrmRequest) => {
             console.log("XX DRM_AVPLAYER_0300 generateMediaKeyRequest success", DrmRequest.mediaKeyRequestType,
               DrmRequest.data, DrmRequest.defaultURL);
             session!.destroy();

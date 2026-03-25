@@ -33,6 +33,7 @@ import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 import { TextStyle, StyledString } from 'arkui.component.styledString'
 import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
+import { SpanStyle } from '@ohos.arkui.component';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -111,7 +112,7 @@ export default function FivePointOne_i18nStageTest() {
       let formattedRange: string = numFormat.formatRange(9, 0);
       expect(formattedRange == "").assertTrue();
     })
-    
+
     /**
      * @tc.name   I18N_test_getTemperatureName_static_0100
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0100
@@ -364,7 +365,7 @@ export default function FivePointOne_i18nStageTest() {
       expect(numberFormatted == "123.456").assertTrue();
       done();
     })
-    
+
     /**
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0320
      * @tc.number SUB_GLOBAL_refinedFormat_static_0320
@@ -1208,6 +1209,162 @@ export default function FivePointOne_i18nStageTest() {
       let value: string = aft.format(100)
       console.log('AdvancedMeasureFormat_test_Static_2300 value:', value);
       expect(value).assertEqual("100 Tb")
+    })
+
+    /**
+     * @tc.name   i18n_getMilliseconds_test_Static_0100
+     * @tc.number i18n_getMilliseconds_test_Static_0100
+     * @tc.desc   getMilliseconds with Africa/Cairo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('i18n_getMilliseconds_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Africa/Cairo');
+      let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+      let date: Date = new Date(2025, 3, 13);
+      let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(date.getTime());
+      let sj: long = zoneOffsetTransition.getMilliseconds() as long;
+      console.log('i18n_getMilliseconds_test_Static_0100 sj:', sj);
+      let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-CN', {
+        timeZone: 'Africa/Cairo',
+        dateStyle: 'long',
+        timeStyle: 'long',
+        hour12: false
+      });
+      let date2: Date = new Date(sj);
+      let dateFormat = dateTimeFormat.format(date2);
+      let sj2 = zoneOffsetTransition.getOffsetAfter() / 3600000;
+      let sj3 = zoneOffsetTransition.getOffsetBefore() / 3600000;
+      console.log('i18n_getMilliseconds_test_Static_0100 value:', dateFormat);
+      console.log('i18n_getMilliseconds_test_Static_0100 sj2:', sj2);
+      console.log('i18n_getMilliseconds_test_Static_0100 sj3:', sj3);
+      expect(dateFormat).assertEqual('2025年4月25日 GMT+3 01:00:00');
+      expect(sj2).assertEqual(3);
+      expect(sj3).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   i18n_StyledNumberFormat_test_Static_0100
+     * @tc.number i18n_StyledNumberFormat_test_Static_0100
+     * @tc.desc   getMilliseconds with simpleNumFmt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('i18n_StyledNumberFormat_test_Static_0100', Level.LEVEL3, () => {
+      let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+      let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
+      let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+      let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh',{ style: 'unit', unit: 'percent' });
+      let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
+        integer: integerTextStyle,
+        decimal: decimalTextStyle,
+        fraction: fractionTextStyle,
+        unit: unitTextStyle
+      });
+      let formattedNumber: StyledString = styledNumFmt.format(1234.5678);
+      expect(formattedNumber.getString()).assertEqual('1,234.568%')
+      let locale: Intl.Locale = new Intl.Locale('zh');
+      let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
+      let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
+        integer: integerTextStyle,
+        decimal: decimalTextStyle,
+        fraction: fractionTextStyle,
+        unit: unitTextStyle
+      });
+      let formattedSimpleNumber: StyledString = styledSimpleNumFmt.format(1234.5678);
+      expect(formattedSimpleNumber.getString()).assertContain('1,234.5678%')
+    })
+
+    /**
+     * @tc.name   i18n_StyledDateTimeFormat_format_test_Static_0100
+     * @tc.number i18n_StyledDateTimeFormat_format_test_Static_0100
+     * @tc.desc   getMilliseconds with styledDateFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('i18n_StyledDateTimeFormat_format_test_Static_0100', Level.LEVEL3, () => {
+      let yearTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Sans",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let monthTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      });
+      let dayTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Sans",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let hourTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      });
+      let minuteTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Sans",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let secondTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      });
+      let weekdayTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Sans",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let eraTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      });
+      let dayPeriodTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Sans",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let timeZoneNameTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      });
+      let date: Date = new Date(2025, 6, 17, 3, 24, 30);
+      let formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-CN', {
+        dateStyle: 'long',
+        timeStyle: 'long'
+      });
+      let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(formatter, {
+        year: yearTextStyle,
+        month: monthTextStyle,
+        hour: hourTextStyle,
+        minute: minuteTextStyle,
+        second: secondTextStyle,
+        weekday: weekdayTextStyle,
+        era: eraTextStyle,
+        dayPeriod: dayPeriodTextStyle,
+        timeZoneName: timeZoneNameTextStyle
+      });
+      let formattedDate: StyledString = styledDateFormat.format(date);
+      expect(formattedDate.getString()).assertContain('2025年7月17日 GMT+8 03:24:30')
     })
 
 

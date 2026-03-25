@@ -42,13 +42,13 @@ struct closeDialogTest {
     Column({ space: 5 }) {
       Button('customDialog')
         .id('customDialog')
-        .height('8%')
+        .height('5%')
         .onClick(() => {
           promptAction.openCustomDialog({
             builder: () => {
               this.customDialogComponent()
             },
-            alignment: DialogAlignment.Bottom,
+            //alignment: DialogAlignment.Bottom,
             onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
               console.info('reason' + JSON.stringify(dismissDialogAction.reason))
               console.log('dialog onWillDismiss')
@@ -96,6 +96,7 @@ struct closeDialogTest {
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .margin({top:20})
+    .justifyContent(FlexAlign.Start)
   }
 }

@@ -381,7 +381,7 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsMd5.update(new Uint8Array(b).buffer);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
@@ -423,7 +423,7 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsSha1.update(new Uint8Array(b).buffer);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
@@ -465,7 +465,7 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsSha256.update(new Uint8Array(b).buffer);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));

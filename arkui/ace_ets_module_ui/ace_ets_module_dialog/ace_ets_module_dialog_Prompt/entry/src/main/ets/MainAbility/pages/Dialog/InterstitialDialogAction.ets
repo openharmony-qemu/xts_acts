@@ -23,6 +23,7 @@ struct InterstitialDialogAction1 {
   build() {
     Column() {
       Button(this.dialogFlag).id('interstitialDialogAction_id')
+        .margin({top:20})
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
           let ctx: UIContext | null = this.getUIContext();
@@ -48,7 +49,7 @@ struct InterstitialDialogAction1 {
           }, 4000)
         })
     }
-    .justifyContent(FlexAlign.Center)
+    .justifyContent(FlexAlign.Start)
     .width('100%')
     .height('100%')
     .backgroundColor('rgba(0, 0, 0, 0.1)')

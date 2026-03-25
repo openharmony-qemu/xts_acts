@@ -29,6 +29,9 @@
       },
       {
         "name": "ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS"
+      },
+      {
+        "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
       }
     ],
     "abilities": [

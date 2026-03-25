@@ -20,12 +20,12 @@ struct showDialogTrueExample {
   build() {
     Column({ space: 5 }) {
       Button('showDialogTrue')
-        .margin(100)
         .id("showDialogTrue")
         .onClick(() => {
           promptAction.showDialog({
             title: 'Title Info',
             message: 'Message Info',
+            offset:{dx:0, dy:10},
             showInSubWindow: true,
             buttons: [
               {

@@ -441,7 +441,7 @@ export default function LocalSocketTest() {
           return client.getSocketFd()
         }).then((data: number) => {
           console.info('fd' + data)
-          expectTrue(true)
+          expectTrue(data !=null)
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()

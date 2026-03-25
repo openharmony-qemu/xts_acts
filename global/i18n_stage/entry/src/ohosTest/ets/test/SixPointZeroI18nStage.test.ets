@@ -4692,5 +4692,22 @@ export default function SixPointZeroI18nStageTest() {
       expect(aft.format(100)).assertEqual("100 Tb")
     })
 
+    /**
+     * @tc.name dateTimeFormat_resolvedOptions_test_0100
+     * @tc.number dateTimeFormat_resolvedOptions_test_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('dateTimeFormat_resolvedOptions_test_0100', Level.LEVEL3, () => {
+      let date: Date = new Date(2020, 11, 20, 14, 23, 16);
+      let option: intl.DateTimeOptions = {dateStyle: 'medium', timeStyle: 'medium'};
+      let datefmt = new intl.DateTimeFormat('zh-CN', option);
+      console.log('dateTimeFormat_resolvedOptions_test_0100 value:', datefmt.resolvedOptions().dateStyle);
+      expect(datefmt.resolvedOptions().dateStyle).assertEqual('medium');
+      expect(datefmt.format(date)).assertContain('2020年12月20日');
+    })
+
   })
 }

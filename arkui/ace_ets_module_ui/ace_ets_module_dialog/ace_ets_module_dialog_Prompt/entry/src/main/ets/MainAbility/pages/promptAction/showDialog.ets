@@ -20,7 +20,6 @@ struct showDialogExample {
   build() {
     Column({ space: 5 }) {
       Button('showDialog')
-        .margin(100)
         .id("showDialog")
         .onClick(() => {
           promptAction.showDialog({

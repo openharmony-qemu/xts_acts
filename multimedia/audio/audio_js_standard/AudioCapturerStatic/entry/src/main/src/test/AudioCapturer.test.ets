@@ -1008,6 +1008,620 @@ export default function audioCapturer() {
     })
 
     /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001
+     * @tc.desc   SOURCE_TYPE_MIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_001 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_MIC);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002
+     * @tc.desc   SOURCE_TYPE_VOICE_RECOGNITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_002 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003
+     * @tc.desc   SOURCE_TYPE_VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_003 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004
+     * @tc.desc   SOURCE_TYPE_VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_004 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005
+     * @tc.desc   SOURCE_TYPE_CAMCORDER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_005 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_CAMCORDER);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006
+     * @tc.number AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006
+     * @tc.desc   SOURCE_TYPE_UNPROCESSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006 AudioCapturer Created : Success : SUCCESS');
+                data!.getCapturerInfo((err: BusinessError<void> | null, capturerInfo: audio.AudioCapturerInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                        console.error(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006 Failed to get capture info: ${err}`);
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETCAPTURERINFO_STATIC_006 Capturer getCapturerInfo:${JSON.stringify(capturerInfo)}`);
+                        expect(capturerInfo!.source).assertEqual(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
+                        expect(capturerInfo!.capturerFlags).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001
+     * @tc.number AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001
+     * @tc.desc   getStreamInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001 AudioCapturer Created : Success : SUCCESS');
+                data!.getStreamInfo((err: BusinessError<void> | null, streamInfo: audio.AudioStreamInfo | undefined | null) => {
+                    if (err) {
+                        data!.release();
+                        console.error(`AUDIO_CAPTURER_GETSTREAMINFO_STATIC_001 Failed to get stream info: ${err}`);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info(`Capturer GetStreamInfo:${JSON.stringify(streamInfo)}`);
+                        expect(streamInfo != null).assertEqual(true);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_START_STOP_STATIC_001
+     * @tc.number AUDIO_CAPTURER_START_STOP_STATIC_001
+     * @tc.desc   start_stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_START_STOP_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_START_STOP_STATIC_001 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_START_STOP_STATIC_001 AudioCapturer Created : Success : SUCCESS');
+                data!.start((err: BusinessError | null) => {
+                    if (err) {
+                        console.error(`AUDIO_CAPTURER_START_STOP_STATIC_001 Capturer start failed.${err}`);
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('AUDIO_CAPTURER_START_STOP_STATIC_001 Capturer start success.');
+                        data!.stop((err: BusinessError | null) => {
+                        if (err) {
+                          console.error('AUDIO_CAPTURER_START_STOP_STATIC_001 Capturer stop failed');
+                          data!.release();
+                          expect(false).assertTrue();
+                          done();
+                        } else {
+                          console.info('AUDIO_CAPTURER_START_STOP_STATIC_001 Capturer stopped.');
+                          data!.release();
+                        }
+                      });                        
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001
+     * @tc.number AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001
+     * @tc.desc   getAudioTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001 AudioCapturer Created : Success : SUCCESS');
+                data!.getAudioTime((err: BusinessError | null, timestamp: long | undefined | null) => {
+                    if (err) {
+                        console.error(`AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001 getAudioTime failed.${err}`);
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETAUDIOTIME_STATIC_001 success Current timestamp: ${timestamp}`);
+                        expect(timestamp).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001
+     * @tc.number AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001
+     * @tc.desc   getBufferSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        }
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+            if (err) {
+                expect(false).assertTrue();
+                done();
+                console.error(`AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001 AudioCapturer Created : Error: ${err}`);
+            } else {
+                console.info('AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001 AudioCapturer Created : Success : SUCCESS');
+                data!.getBufferSize((err: BusinessError | null, bufferSize: long | undefined | null) => {
+                    if (err) {
+                        console.error(`AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001 Failed to get buffer size. Code: ${err.code}, message: ${err.message}`);
+                        data!.release();
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info(`AUDIO_CAPTURER_GETBUFFERSIZE_STATIC_001 Succeeded in getting buffer size, BufferSize: ${bufferSize}.`);
+                        expect(bufferSize).assertLargerOrEqual(0);
+                        data!.release();
+                    }
+                });
+            }
+        });
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_MARKREACH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_MARKREACH_STATIC_0100
+     * @tc.desc   on_off_MarkReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_MARKREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        };
+
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        };
+
+        let audioCapturerOptions:audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        };
+
+        let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(audioCapturerOptions);
+        let flag: boolean = false;
+
+        try {
+            audioCapturer!.offMarkReach();
+            
+            let markReachCallback = (position: long) => {
+                expect(position).assertEqual(1000);
+                console.info(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_MARKREACH_STATIC_0100 ON Triggered successfully${position}`);
+            };
+
+            audioCapturer!.onMarkReach(1000, markReachCallback);
+
+            audioCapturer!.offMarkReach(markReachCallback);
+            await audioCapturer!.release();
+            flag = true;
+        } catch(error){
+            console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_MARKREACH_STATIC_0100 error : ${error.message}, Code:${error.code}`);
+            expect(false).assertTrue();
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_STATIC_0100
+     * @tc.desc   on_off_AudioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        };
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        };
+        let audioCapturerOptions:audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        };
+        let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(audioCapturerOptions);
+        let flag: boolean = false;
+        try {
+            let audioInterruptback = (interruptEvent: audio.InterruptEvent) => {
+                console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_STATIC_0100 interruptEvent : ${JSON.stringify(interruptEvent)}`);
+                expect(interruptEvent.eventType).assertLargerOrEqual(0);
+                expect(interruptEvent.forceType).assertLargerOrEqual(0);
+                expect(interruptEvent.hintType).assertLargerOrEqual(0);
+            }
+            audioCapturer!.onAudioInterrupt(audioInterruptback);
+            audioCapturer!.offAudioInterrupt();
+            await audioCapturer!.release();
+            flag = true;
+        } catch(error){
+            console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_AUDIOINTERRUPT_STATIC_0100 error : ${error.message}, Code:${error.code}`);
+            expect(false).assertTrue();
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_STATIC_0100
+     * @tc.desc   on_off_InputDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        };
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+        };
+        let audioCapturerOptions:audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+        };
+        let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(audioCapturerOptions);
+        let flag: boolean = false;
+        try {
+            audioCapturer!.offInputDeviceChange();
+            let inputDeviceChangeCallback = (deviceChangeInfo: audio.AudioDeviceDescriptors) => {
+                console.info(`inputDevice id: ${deviceChangeInfo[0].id}`);
+                console.info(`inputDevice deviceRole: ${deviceChangeInfo[0].deviceRole}`);
+                console.info(`inputDevice deviceType: ${deviceChangeInfo[0].deviceType}`);
+            };
+            audioCapturer!.onInputDeviceChange(inputDeviceChangeCallback);
+            audioCapturer!.offInputDeviceChange(inputDeviceChangeCallback);
+            await audioCapturer!.release();
+            flag = true;
+        } catch(error){
+            console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_STATIC_0100 error : ${error.message}, Code:${error.code}`);
+            expect(false).assertTrue();
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+    
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
      * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
      * @tc.desc   record audio with parameter set 2

@@ -17,10 +17,12 @@ import workerTest from "./EAWorker.test";
 import NewEAWorkerTest from "./NewEAWorker.test";
 import NewEAWorkerTest2 from "./NewEAWorker2.test";
 import EAWorkerPostToMainTest from "./EAWorkerPostToMain.test";
+import attachThreadFfrtTest from './AttachThreadFfrt.test';
 
 export default function testsuite() {
   workerTest();
   NewEAWorkerTest();
   NewEAWorkerTest2();
   EAWorkerPostToMainTest();
+  attachThreadFfrtTest();
 }

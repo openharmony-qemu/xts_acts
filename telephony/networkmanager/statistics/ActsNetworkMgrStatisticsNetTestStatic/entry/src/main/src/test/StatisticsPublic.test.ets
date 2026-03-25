@@ -559,8 +559,521 @@ export default function statisticsHasNetTest() {
             }
         })
 
+        /**
+         * @tc.name   testManagergetUidRxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getUidRxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidRxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let uid :int = 1;
+                statistics.getUidRxBytes(uid).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103005);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
 
+        /**
+         * @tc.name   testManagergetUidRxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getUidRxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidRxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let uid :int = 1;
+                statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2103005);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
 
+        /**
+         * @tc.name   testManagergetUidTxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getUidTxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidTxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let uid :int = 1;
+                statistics.getUidTxBytes(uid).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103005);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetUidTxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getUidTxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidTxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let uid :int = 1;
+                statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2103005);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+        /**
+         * @tc.name   testManagergetSockfdRxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getSockfdRxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdRxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = 1;
+                statistics.getSockfdRxBytes(sockfd).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100002);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdRxBytesPromise_static_0200
+         * @tc.number SUB_Manager_getSockfdRxBytes_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdRxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdRxBytesPromise_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = -1;
+                statistics.getSockfdRxBytes(sockfd).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100001);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdRxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getSockfdRxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdRxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = 1;
+                statistics.getSockfdRxBytes(sockfd, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2100002);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdRxBytesAsync_static_0200
+         * @tc.number SUB_Manager_getSockfdRxBytes_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdRxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdRxBytesAsync_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = -1;
+                statistics.getSockfdRxBytes(sockfd, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2100001);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })        
+
+        /**
+         * @tc.name   testManagergetSockfdTxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getSockfdTxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdTxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = 1;
+                statistics.getSockfdTxBytes(sockfd).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100002);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdTxBytesPromise_static_0200
+         * @tc.number SUB_Manager_getSockfdTxBytes_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdTxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdTxBytesPromise_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = -1;
+                statistics.getSockfdTxBytes(sockfd).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100001);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdTxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getSockfdTxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdTxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = 1;
+                statistics.getSockfdTxBytes(sockfd, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2100002);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetSockfdTxBytesAsync_static_0200
+         * @tc.number SUB_Manager_getSockfdTxBytes_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetSockfdTxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetSockfdTxBytesAsync_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                let sockfd :int = -1;
+                statistics.getSockfdTxBytes(sockfd, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2100001);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetCellularRxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getCellularRxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularRxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularRxBytes().then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103012);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetCellularRxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getCellularRxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularRxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2103012);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetCellularTxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getCellularTxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularTxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularTxBytes().then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2103012);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetCellularTxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getCellularTxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularTxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getCellularTxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectTrue(err.code == 2103012);
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectFail();
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
 
     })
+
 }

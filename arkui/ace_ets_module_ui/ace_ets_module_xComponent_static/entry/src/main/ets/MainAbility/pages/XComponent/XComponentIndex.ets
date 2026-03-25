@@ -22,10 +22,10 @@ import {
   Scroll,
   Text,
   XComponent,
+  XComponentParameters,
   XComponentType,
-  XComponentController,
-  XComponentOptions
-} from '@ohos.arkui.component';
+  XComponentController
+} from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
@@ -52,15 +52,17 @@ struct XComponentIndex {
           .key('xComponentPageTitle')
 
         XComponent({
+          id: 'xComponentView',
           type: XComponentType.TEXTURE,
+          nativeXComponentHandler: (_nativeXComponent: long): void => {},
           controller: this.xController
-        } as XComponentOptions)
-          .key('xComponentTexture')
-          .height(100)
-          .width(100)
+        } as XComponentParameters)
+          .key('xComponentView')
+          .height('20%')
+          .width('100%')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

@@ -18,15 +18,15 @@ struct CustomDialogTwo {
   build() {
     Column() {
       Text('我是第二个弹窗')
-        .fontSize(30)
-        .height(100)
+        .fontSize(10)
+        .height(20)
       Button('点我关闭第二个弹窗')
         .onClick(() => {
           if (this.controllerTwo != undefined) {
             this.controllerTwo.close()
           }
         })
-        .margin(20)
+
     }
   }
 }
@@ -37,7 +37,7 @@ struct CustomDialogOne {
   dialogControllerTwo: CustomDialogController | null = new CustomDialogController({
     builder: CustomDialogTwo(),
     alignment: DialogAlignment.Bottom,
-    offset: { dx: 0, dy: -25 } })
+    offset: { dx: 0, dy: -10 } })
   controller?: CustomDialogController
   cancel: () => void = () => {
   }
@@ -46,8 +46,8 @@ struct CustomDialogOne {
 
   build() {
     Column() {
-      Text('Change text').fontSize(20).margin({ top: 10, bottom: 10 })
-      TextInput({ placeholder: '', text: this.textValue }).height(60).width('90%')
+      Text('Change text').fontSize(10).margin({ top: 10, bottom: 10 })
+      TextInput({ placeholder: '', text: this.textValue }).height(20).width('90%')
         .onChange((value: string) => {
           this.textValue = value
         })
@@ -76,7 +76,7 @@ struct CustomDialogOne {
             this.dialogControllerTwo.open()
           }
         })
-        .margin(20)
+
     }.borderRadius(10)
   }
 }
@@ -95,7 +95,7 @@ struct CustomDialogExampleA2 {
     cancel: this.exitApp,
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: -10 },
     gridCount: 4,
     customStyle: false,
     cornerRadius: 10,
@@ -119,7 +119,7 @@ struct CustomDialogExampleA2 {
   build() {
     Column() {
       Button(this.inputValue)
-        .margin(100)
+
         .id("CustomDialog123")
         .onClick(() => {
           if (this.dialogController != null) {

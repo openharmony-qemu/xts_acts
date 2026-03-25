@@ -85,13 +85,13 @@ export default function imagePackToData() {
       const Color = new ArrayBuffer(96);
       if (pixFormat == 2) {
         opts = {
-          editable: true, pixelFormat: 2 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: {
             height: 4, width: 6
           }
         };
       } else {
         opts = {
-          editable: true, pixelFormat: 5 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(5), size: {
             height: 4, width: 6
           }
         };
@@ -143,13 +143,13 @@ export default function imagePackToData() {
       let opts: image.InitializationOptions
       if (pixFormat == 2) {
         opts = {
-          editable: true, pixelFormat: 2 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: {
             height: 4, width: 6
           }
         };
       } else {
         opts = {
-          editable: true, pixelFormat: 5 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(5), size: {
             height: 4, width: 6
           }
         };

@@ -15,6 +15,8 @@ add_library(nativerender SHARED
     NapiRenderInitTest.cpp
     matrix4/Matrix4Test.cpp
     enableClickSoundEffect/EnableClickSoundEffectTest.cpp
+    EllipsisMode/EllipsisModeCenterTest.cpp
+    EllipsisMode/EllipsisModeStartTest.cpp
 )
 
 add_library(nativefunc SHARED

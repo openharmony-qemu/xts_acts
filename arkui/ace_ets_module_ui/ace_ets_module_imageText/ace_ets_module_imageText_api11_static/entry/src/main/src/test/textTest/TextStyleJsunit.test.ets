@@ -259,7 +259,7 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_013] START');
       try {
         AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
-          name: 'fontStyle', value: 0x7FFFFFFF as FontStyle
+          name: 'fontStyle', value: FontStyle.fromValue(0x7FFFFFFF.toInt())
         });
         await CommonFunc.sleep(2000);
       } catch (err) {
@@ -311,7 +311,7 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_015] START');
       try {
         AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
-          name: 'fontStyle', value: (0x80000000.toInt()) as FontStyle
+          name: 'fontStyle', value: FontStyle.fromValue(0x80000000.toInt())
         });
         await CommonFunc.sleep(2000);
       } catch (err) {

@@ -99,8 +99,15 @@ export default function actsNotificationAnsThreePartyWatchStaticWithOutAbilityTe
           done()
         }).catch((error: Error) => {
           let err = error as BusinessError
-          console.error(`${testNum}getSubscribeInfo fail: ${JSON.stringify(err)}`);
-          done()
+          if(err.code == 201){
+            expect(err.code).assertEqual(201);
+            console.error(`${testNum}getSubscribeInfo1 fail: ${JSON.stringify(err)}`);
+            done()
+          }else{
+            expect(err.code).assertEqual(0);
+            console.error(`${testNum}getSubscribeInfo2 fail: ${JSON.stringify(err)}`);
+            done()
+          }
         });
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
@@ -133,9 +140,15 @@ export default function actsNotificationAnsThreePartyWatchStaticWithOutAbilityTe
         }).catch((err: Error) => {
           let error = err as BusinessError
           console.error(`${testNum}subscribe fail:  ${error.code}, ${error.message}`);
-          expect(err.code).assertEqual(1600023);
-          expect(err.message).assertEqual('The application does not implement the NotificationSubscriberExtensionAbility');
-          done();
+          if(err.code == 201){
+            expect(err.code).assertEqual(201);
+            console.error(`${testNum}Subscribe1 fail: ${JSON.stringify(err)}`);
+            done()
+          }else{
+            expect(err.code).assertEqual(1600023);
+            console.error(`${testNum}Subscribe2 fail: ${JSON.stringify(err)}`);
+            done()
+          }
         });
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);

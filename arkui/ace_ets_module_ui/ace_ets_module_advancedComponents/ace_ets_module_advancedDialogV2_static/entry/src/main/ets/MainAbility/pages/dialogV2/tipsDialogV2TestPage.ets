@@ -111,6 +111,96 @@ struct Index {
     })
   }
 
+  @Builder
+  dialogBuilderTextAlign(): void {
+    TipsDialogV2({
+      imageRes: $r('sys.media.ohos_ic_public_voice'),
+      content: '想要卸载这个APP嘛?',
+      title: 'TipsDialogV2',
+      checkTips: '不再提示',
+      checked: this.checked,
+      primaryButton: new AdvancedDialogV2Button({
+        content: '取消',
+        textAlign: TextAlign.Center,
+        action: () => {
+          console.info('Callback when the first button is clicked');
+        },
+      }),
+      secondaryButton: new AdvancedDialogV2Button({
+        content: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.Start,
+        action: () => {
+          console.info('Callback when the second button is clicked');
+        }
+      }),
+      onCheckedChange: (checked: boolean) => {
+        console.info('Callback when the checkbox is clicked');
+        this.checked = checked;
+      }
+    })
+  }
+
+  @Builder
+  dialogBuilderTextAlign2(): void {
+    TipsDialogV2({
+      imageRes: $r('sys.media.ohos_ic_public_voice'),
+      content: '想要卸载这个APP嘛?',
+      title: 'TipsDialogV2',
+      checkTips: '不再提示',
+      checked: this.checked,
+      primaryButton: new AdvancedDialogV2Button({
+        content: '取消',
+        textAlign: TextAlign.End,
+        action: () => {
+          console.info('Callback when the first button is clicked');
+        },
+      }),
+      secondaryButton: new AdvancedDialogV2Button({
+        content: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.JUSTIFY,
+        action: () => {
+          console.info('Callback when the second button is clicked');
+        }
+      }),
+      onCheckedChange: (checked: boolean) => {
+        console.info('Callback when the checkbox is clicked');
+        this.checked = checked;
+      }
+    })
+  }
+
+  @Builder
+  dialogBuilderTextAlign3(): void {
+    TipsDialogV2({
+      imageRes: $r('sys.media.ohos_ic_public_voice'),
+      content: '想要卸载这个APP嘛?',
+      title: 'TipsDialogV2',
+      checkTips: '不再提示',
+      checked: this.checked,
+      primaryButton: new AdvancedDialogV2Button({
+        content: '取消',
+        textAlign: TextAlign.RIGHT,
+        action: () => {
+          console.info('Callback when the first button is clicked');
+        },
+      }),
+      secondaryButton: new AdvancedDialogV2Button({
+        content: '删除',
+        role: ButtonRole.ERROR,
+        textAlign: TextAlign.LEFT,
+        action: () => {
+          console.info('Callback when the second button is clicked');
+        }
+      }),
+      onCheckedChange: (checked: boolean) => {
+        console.info('Callback when the checkbox is clicked');
+        this.checked = checked;
+      }
+    })
+  }
+
   build() {
     Row() {
       Stack() {
@@ -131,6 +221,31 @@ struct Index {
                 builder: this.borderImageDialogBuilder,
               } as promptAction.CustomDialogOptions);
             })
+          Button('TipsDialogTextAlign')
+            .width(96)
+            .height(40)
+            .onClick((e: ClickEvent) => {
+              this.uiContext.getPromptAction().openCustomDialog({
+                builder: this.dialogBuilderTextAlign,
+              } as promptAction.CustomDialogOptions);
+            })
+          Button('TipsDialogTextAlign2')
+            .width(96)
+            .height(40)
+            .onClick((e: ClickEvent) => {
+              this.uiContext.getPromptAction().openCustomDialog({
+                builder: this.dialogBuilderTextAlign2,
+              } as promptAction.CustomDialogOptions);
+            })
+          Button('TipsDialogTextAlign3')
+            .width(96)
+            .height(40)
+            .onClick((e: ClickEvent) => {
+              this.uiContext.getPromptAction().openCustomDialog({
+                builder: this.dialogBuilderTextAlign3,
+              } as promptAction.CustomDialogOptions);
+            })
+
         }.margin({ bottom: 300 } as Margin)
       }.align(Alignment.Bottom)
       .width('100%').height('100%')
