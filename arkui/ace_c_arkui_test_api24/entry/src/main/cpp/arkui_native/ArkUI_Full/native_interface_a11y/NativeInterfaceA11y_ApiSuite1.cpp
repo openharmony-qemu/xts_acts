@@ -34,9 +34,9 @@ static napi_value TestArkUICapi_007(napi_env env, napi_callback_info info)
 
     auto rc = OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(a11yElem, "xts_capi");
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 

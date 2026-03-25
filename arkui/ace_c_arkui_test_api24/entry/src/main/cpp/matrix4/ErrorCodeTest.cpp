@@ -25,79 +25,43 @@ namespace ArkUICapiTest {
 static napi_value TestErrorCode001(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Invert(nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode002(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Combine(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode003(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Translate(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode004(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Scale(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode005(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Rotate(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode006(napi_env env, napi_callback_info info)
 {
 	auto error = OH_ArkUI_Matrix4_Skew(nullptr, PARAM_1, PARAM_1);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode007(napi_env env, napi_callback_info info)
@@ -105,14 +69,8 @@ static napi_value TestErrorCode007(napi_env env, napi_callback_info info)
 	ArkUI_PointF originPoint = {SIZE_50, SIZE_50};
 	ArkUI_PointF resultPoint = {PARAM_0, PARAM_0};
 	auto error = OH_ArkUI_Matrix4_TransformPoint(nullptr, &originPoint, &resultPoint);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode008(napi_env env, napi_callback_info info)
@@ -120,14 +78,8 @@ static napi_value TestErrorCode008(napi_env env, napi_callback_info info)
 	ArkUI_PointF src1[PARAM_4] = {{PARAM_0, PARAM_0}, {PARAM_100, PARAM_0}, {PARAM_0, PARAM_100}, {PARAM_100, PARAM_100}};
 	ArkUI_PointF dst1[PARAM_4] = {{SIZE_50, PARAM_0}, {SIZE_150, PARAM_0}, {SIZE_50, PARAM_100}, {SIZE_150, PARAM_100}};
 	auto error = OH_ArkUI_Matrix4_SetPolyToPoly(nullptr, src1, dst1, PARAM_0);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode009(napi_env env, napi_callback_info info)
@@ -139,14 +91,8 @@ static napi_value TestErrorCode009(napi_env env, napi_callback_info info)
 		0.0f, 0.0f, 0.0f, 1.0f
 	};
 	auto error = OH_ArkUI_Matrix4_GetElements(nullptr, result);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode010(napi_env env, napi_callback_info info)
@@ -157,49 +103,13 @@ static napi_value TestErrorCode010(napi_env env, napi_callback_info info)
 	auto error4 = OH_ArkUI_Matrix4TranslationOptions_GetX(nullptr, nullptr);
 	auto error5 = OH_ArkUI_Matrix4TranslationOptions_GetY(nullptr, nullptr);
 	auto error6 = OH_ArkUI_Matrix4TranslationOptions_GetZ(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error1), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error2), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error3), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error4), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error5), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error6), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error1, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error2, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error3, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error4, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error5, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error6, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode011(napi_env env, napi_callback_info info)
@@ -214,77 +124,17 @@ static napi_value TestErrorCode011(napi_env env, napi_callback_info info)
 	auto error8 = OH_ArkUI_Matrix4ScaleOptions_GetZ(nullptr, nullptr);
 	auto error9 = OH_ArkUI_Matrix4ScaleOptions_GetCenterX(nullptr, nullptr);
 	auto error10 = OH_ArkUI_Matrix4ScaleOptions_GetCenterY(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error1), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error2), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error3), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error4), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error5), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error6), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error7), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error8), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error9), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error10), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error1, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error2, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error3, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error4, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error5, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error6, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error7, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error8, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error9, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error10, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 
 static napi_value TestErrorCode012(napi_env env, napi_callback_info info)
@@ -301,90 +151,18 @@ static napi_value TestErrorCode012(napi_env env, napi_callback_info info)
 	auto error10 = OH_ArkUI_Matrix4RotationOptions_GetCenterX(nullptr, nullptr);
 	auto error11 = OH_ArkUI_Matrix4RotationOptions_GetCenterY(nullptr, nullptr);
 	auto error12 = OH_ArkUI_Matrix4RotationOptions_GetAngle(nullptr, nullptr);
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error1), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error2), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error3), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error4), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error5), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error6), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error7), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error8), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error9), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error10), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error11), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	{
-	    napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (error12), (ARKUI_ERROR_CODE_PARAM_INVALID));
-	    if (__napi_assert_tmp != nullptr) {
-	        return __napi_assert_tmp;
-	    }
-	}
-
-	return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+	ASSERT_EQ(error1, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error2, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error3, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error4, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error5, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error6, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error7, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error8, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error9, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error10, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error11, ARKUI_ERROR_CODE_PARAM_INVALID);
+	ASSERT_EQ(error12, ARKUI_ERROR_CODE_PARAM_INVALID);
+	NAPI_END;
 }
 } // namespace ArkUICapiTest
