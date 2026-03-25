@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsIntelligentSceneEtsNopTestStatic.hap"
+            "ActsIntelligentSceneEtsNopStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
