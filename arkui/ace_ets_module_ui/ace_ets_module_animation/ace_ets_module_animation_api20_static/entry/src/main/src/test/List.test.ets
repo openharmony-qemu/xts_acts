@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 import ParticleEmitter from './ParticleEmitter.test';
+import RippleFieldsTest from './RippleFieldsTest.test';
+import VelocityFieldsTest from './VelocityFieldsTest.test';
 
 export default function testsuite() {
   ParticleEmitter();
+  RippleFieldsTest();
+  VelocityFieldsTest();
 }

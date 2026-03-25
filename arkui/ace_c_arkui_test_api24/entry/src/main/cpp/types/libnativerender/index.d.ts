@@ -15,3 +15,7 @@
 export const matrix4Test: (a: string) => void;
 
 export const EnableClickSoundEffectTest: (a: string) => void;
+
+export const EllipsisModeCenterTest: (a: string) => void;
+
+export const EllipsisModeStartTest: (a: string) => void;
