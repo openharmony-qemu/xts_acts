@@ -20,6 +20,9 @@ import Utils from './Util.test';
 import { PanelInfo, PanelType } from '@ohos.selectionInput.SelectionPanel';
 import selectionManager from '@ohos.selectionInput.selectionManager';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Want } from '@kit.abilityKit';
+import SelectionExtensionContext from '@ohos.selectionInput.SelectionExtensionContext';
+import SelectionExtensionAbility from '@ohos.selectionInput.SelectionExtensionAbility';
 
 // Preconditions:
 // hdc shell param set sys.selection.switch on
@@ -84,6 +87,32 @@ export default function selectionTest() {
     });
 
     /**
+     * @tc.name   selectionfwk_offSelectionComplete_002
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_3600
+     * @tc.desc   verify offSelectionComplete result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_offSelectionComplete_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
+      console.info('************* selectionfwk_offSelectionComplete_002*************');
+      let selectionChangeCallback = (info:selectionManager.SelectionInfo) => {
+        console.info(`SelectionInfo: ${JSON.stringify(info)}`);
+      };
+      try {
+        selectionManager.onSelectionComplete(selectionChangeCallback);
+        selectionManager.offSelectionComplete(selectionChangeCallback);
+        console.info(`selectionfwk_offSelectionComplete_002 is success`);
+        done();
+      } catch(error) {
+        console.error(`Failed to query device. Code is ${error.code}, message is ${error.message}`);
+        expect(false).assertTrue();
+        console.info('************* selectionfwk_offSelectionComplete_002 Test end*************');
+        done();
+      }
+    });
+
+    /**
      * @tc.name   selectionfwk_createPanel_001
      * @tc.number SUB_Driver_Seletion_StaticAPIFunc_0300
      * @tc.desc   verify createPanel result
@@ -106,6 +135,7 @@ export default function selectionTest() {
           height: 100
         }
         let panel: selectionManager.Panel = await selectionManager.createPanel(context, panelInfo)
+        expect(panel != null).assertTrue();
         if (panel !== undefined) {
           await selectionManager.destroyPanel(panel);
           console.info('************* selectionfwk_createPanel_001 Test end*************');
@@ -116,6 +146,35 @@ export default function selectionTest() {
         console.info(`selectionfwk_createPanel_001 throw error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         console.info('************* selectionfwk_createPanel_001 Test end*************');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   selectionfwk_startAbility_001
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_3700
+     * @tc.desc   verify startAbility result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_startAbility_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_startAbility_001 Test start*************');
+      let ability = new SelectionExtensionAbility;
+      try {
+        let wantAbility: Want = {
+          bundleName: "com.acts.selection.function.static",
+          abilityName: "EntryAbility",
+        };
+        ability.context.startAbility(wantAbility).then(() => {
+          console.info('startAbility success');
+        }).catch((error) => {
+          expect(false).assertTrue();
+          console.info(`selectionfwk_startAbility_001 throw error: [${error.code}, ${error.message}]`);
+        })
+      }catch(error){
+        console.info(`selectionfwk_startAbility_001 throw error: [${error.code}, ${error.message}]`);
+        console.info('************* selectionfwk_startAbility_001 Test end*************');
         done();
       }
     });
@@ -512,6 +571,49 @@ export default function selectionTest() {
     });
 
     /**
+     * @tc.name   selectionfwk_panel_offdestroyed_001
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_3800
+     * @tc.desc   verify panel offDestroy result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_panel_offdestroyed_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_panel_offdestroyed_001*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MENU_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let onPanelDestroyCallback = () => {
+        console.info('panel has destroy.');
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        if (panel !== undefined) {
+          panel.onDestroy(onPanelDestroyCallback);
+          panel.offDestroy(onPanelDestroyCallback);
+        }
+      } catch(error) {
+        console.info(`selectionfwk_destroyPanel_001 throw error: [${error.code}, ${error.message}]`);
+        expect(false).assertTrue();
+      } finally {
+        if (panel !== undefined) {
+          await selectionManager.destroyPanel(panel);
+        }
+        console.info('************* selectionfwk_panel_offdestroyed_001 Test end*************');
+        done();
+      }
+    });
+
+    /**
      * @tc.name   selectionfwk_panel_on_hidden_001
      * @tc.number SUB_Driver_Seletion_StaticAPIFunc_1300
      * @tc.desc   verify panel on hidden result
@@ -589,6 +691,49 @@ export default function selectionTest() {
           await selectionManager.destroyPanel(panel);
         }
         console.info('************* selectionfwk_panel_off_hidden_001 Test end*************');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   selectionfwk_panel_off_hidden_002
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_3900
+     * @tc.desc   verify panel off hidden result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_panel_off_hidden_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_panel_off_hidden_002*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MAIN_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      let onPanelHideCallback = () => {
+        console.info('panel has Hide.');
+      };
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        if (panel !== undefined) {
+          panel.onHide(onPanelHideCallback);
+          panel.offHide(onPanelHideCallback);
+        }
+      } catch(error) {
+        console.info(`selectionfwk_panel_off_hidden_002 throw error: [${error.code}, ${error.message}]`);
+        expect(false).assertTrue();
+      } finally {
+        if (panel !== undefined) {
+          await selectionManager.destroyPanel(panel);
+        }
+        console.info('************* selectionfwk_panel_off_hidden_002 Test end*************');
         done();
       }
     });
@@ -1128,6 +1273,92 @@ export default function selectionTest() {
       }
       expect(panel.height == 600).assertTrue();
       console.info('************* selectionfwk_PanelInfo_006 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   selectionfwk_GetSelectionContent_001
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_4000
+     * @tc.desc   verify GetSelectionContent errcode 33600005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_GetSelectionContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_GetSelectionContent_001 Test start*************');
+      try {
+        let content: string = await selectionManager.getSelectionContent();
+        expect(typeof(content)).assertEqual('string');
+        expect().assertFail();
+      } catch (error) {
+        console.info(`selectionfwk_GetSelectionContent_001 throw error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(33600005);
+      }
+      await Utils.msSleep(500);
+      console.info('************* selectionfwk_GetSelectionContent_001 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   selectionfwk_GetSelectionContent_002
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_4100
+     * @tc.desc   verify GetSelectionContent errcode 33600004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_GetSelectionContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_GetSelectionContent_002 Test start*************');
+      for (let i = 0; i < 50; ++i) {
+        try {
+          let content: string = await selectionManager.getSelectionContent();
+          expect().assertFail();
+        } catch (error) {
+          console.info(`selectionfwk_GetSelectionContent_002 throw error: [${error.code}, ${error.message}]`);
+          expect(error.code).assertEqual(33600005);
+        }
+      }
+      try {
+        let content: string = await selectionManager.getSelectionContent();
+        expect().assertFail();
+      } catch (error) {
+        console.info(`selectionfwk_GetSelectionContent_002 throw error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(33600004);
+      }
+      await Utils.msSleep(500);
+      console.info('************* selectionfwk_GetSelectionContent_002 Test end*************');
+      done();
+    });
+
+    /**
+     * @tc.name   selectionfwk_GetSelectionContent_003
+     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_4200
+     * @tc.desc   verify GetSelectionContent errcode 33600005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('selectionfwk_GetSelectionContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_GetSelectionContent_003 Test start*************');
+      for (let i = 0; i < 50; ++i) {
+        try {
+          let content: string = await selectionManager.getSelectionContent();
+          expect().assertFail();
+        } catch (error) {
+          console.info(`selectionfwk_GetSelectionContent_003 throw error: [${error.code}, ${error.message}]`);
+          expect(error.code).assertEqual(33600005);
+        }
+      }
+      await Utils.msSleep(500);
+      try {
+        let content: string = await selectionManager.getSelectionContent();
+        expect().assertFail();
+      } catch (error) {
+        console.info(`selectionfwk_GetSelectionContent_003 throw error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(33600005);
+      }
+      await Utils.msSleep(500);
+      console.info('************* selectionfwk_GetSelectionContent_003 Test end***`**********');
       done();
     });
   })
