@@ -547,7 +547,7 @@ export default function btConnectionSwitchOffTest() {
 
 
         /**
-         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILES_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0100
          * @tc.desc Test connectAllowedProfiles callback when bluetooth is disabled (error code 2900003)
          * @tc.type FUNCTION
