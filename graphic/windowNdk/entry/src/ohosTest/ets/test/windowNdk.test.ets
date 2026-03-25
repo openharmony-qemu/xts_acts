@@ -1658,7 +1658,7 @@ export default function windowNdk() {
     it('test_mainWindow_setWindowStatusBarEnabled_avoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowStatusBarEnabled_avoidAreaChange";
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
-      console.info(`${ caseName }: result: ${ result }`);
+      console.info(`${caseName}: result: ${result}`);
       await sleep(3000);
       let areaChange: window.AvoidArea | undefined = undefined;
       let areaChangeType: window.AvoidAreaType | undefined = undefined;
@@ -1672,7 +1672,7 @@ export default function windowNdk() {
       });
       await sleep(100);
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
-      console.info(`${ caseName }: result2: ${ result2 }`);
+      console.info(`${caseName}: result2: ${result2}`);
       await sleep(200);
       if (deviceType === 'phone' || (deviceType === 'tablet' && isFreeWindowMode === false)) {
         expect(result2).assertEqual(0);
@@ -1690,6 +1690,50 @@ export default function windowNdk() {
       } else {
         WindowClass.off('avoidAreaChange');
         expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+    * @tc.name test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange
+    * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6600
+    * @tc.desc test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL2
+    */
+    it('test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange";
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
+      console.info(`${ caseName }: result: ${ result }`);
+      await sleep(3000);
+      let areaChange: window.AvoidArea | undefined = undefined;
+      let areaChangeType: window.AvoidAreaType | undefined = undefined;
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info('Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+        areaChange = data.area;
+        areaChangeType = data.type;
+      });
+      await sleep(300);
+      let result2 = windowNdkTest.setWindowNavigationBarEnabled(windowId, true, true);
+      console.info(`${ caseName }: result2: ${ result2 }`);
+      await sleep(200);
+      if (!canIUseRes) {
+        expect(result2).assertEqual(0);
+        expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
+        expect(flag).assertEqual(true);
+        expect(areaChange!.bottomRect.width).assertLarger(0);
+        expect(areaChange!.bottomRect.height).assertLarger(0);
+        WindowClass.off('avoidAreaChange');
+        done();
+      } else {
+        expect(result2).assertEqual(0);
+        expect(flag).assertEqual(false);
+        WindowClass.off('avoidAreaChange');
         done();
       }
     })
