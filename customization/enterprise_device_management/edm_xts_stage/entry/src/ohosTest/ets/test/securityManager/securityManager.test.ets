@@ -1236,6 +1236,48 @@ function testUninstallUserCertificate() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_uninstall_user_certificate_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0105
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid path
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_uninstall_user_certificate_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.uninstallUserCertificate(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_uninstall_user_certificate_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0106
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid path
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_uninstall_user_certificate_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.uninstallUserCertificate(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testSetClipboardPolicy() {
@@ -1828,6 +1870,160 @@ function testSetClipboardPolicyByBundleName() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1400
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1500
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(undefined, SELFHAPNAME, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1600
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1700
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, undefined, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1800
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, '', CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1900
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, null,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_2000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_2000
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_2000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, undefined,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 
@@ -1922,6 +2118,60 @@ function testGetClipboardPolicyByBundleName() {
   it("test_get_clipboard_policy_by_bundle_name_0500", Level.LEVEL2, async (done: Function) => {
     try {
       securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0600
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(undefined, SELFHAPNAME, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0700
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, undefined, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0800
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, undefined);
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 401).assertTrue();
@@ -2397,6 +2647,53 @@ function testSetPermissionManagedState() {
       expect(managedState == securityManager.PermissionManagedState.GRANTED).assertTrue();
     } catch(error) {
       expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_permission_managed_state_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1100
+   * @tc.desc   test securityManager setPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_permission_managed_state_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      const instance: securityManager.ApplicationInstance = {
+          appIdentifier: '',
+          appIndex: 0,
+          accountId: 100
+        }
+      securityManager.setPermissionManagedState(SELFWANT, instance, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_permission_managed_state_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1200
+   * @tc.desc   test securityManager setPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_permission_managed_state_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, [], TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -4269,6 +4566,105 @@ function testUninstallEnterpriseReSignatureCertificate() {
       console.info(' --- getPermissionManagedState_test_004  -------- END --------');
     })
 
+    /**
+     * @tc.name   getPermissionManagedState_test_005
+     * @tc.number getPermissionManagedState_test_005
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_005  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        const instance: securityManager.ApplicationInstance = {
+          appIdentifier: '',
+          appIndex: 0,
+          accountId: 100
+        }
+        securityManager.getPermissionManagedState(SELFWANT, instance, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_006
+     * @tc.number getPermissionManagedState_test_006
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_006  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, null);
+        console.info(' --- getPermissionManagedState_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_007
+     * @tc.number getPermissionManagedState_test_007
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_007  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, undefined);
+        console.info(' --- getPermissionManagedState_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_008
+     * @tc.number getPermissionManagedState_test_008
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_008  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, '');
+        console.info(' --- getPermissionManagedState_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_008  -------- END --------');
+    })
+
 
     /**
      * @tc.name   setWatermarkImage_test_001
@@ -4386,6 +4782,94 @@ function testUninstallEnterpriseReSignatureCertificate() {
 
 
     /**
+     * @tc.name   setWatermarkImage_test_007
+     * @tc.number setWatermarkImage_test_007
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_007  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, null, PIXEL_MAP, 100);
+        console.info(' --- setWatermarkImage_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_008
+     * @tc.number setWatermarkImage_test_008
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_008  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, undefined, PIXEL_MAP, 100);
+        console.info(' --- setWatermarkImage_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_008  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_009
+     * @tc.number setWatermarkImage_test_009
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_009", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_009  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, '', 'testpath', 100);
+        console.info(' --- setWatermarkImage_test_009 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_009 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_009  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_010
+     * @tc.number setWatermarkImage_test_010
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_010", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_010  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, '', 100);
+        console.info(' --- setWatermarkImage_test_010 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_010 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_010  -------- END --------');
+    })
+
+    /**
      * @tc.name   setWatermarkImage_test_006
      * @tc.number setWatermarkImage_test_006
      * @tc.desc   setWatermarkImage with undefined parameter accountId
@@ -4499,6 +4983,74 @@ function testUninstallEnterpriseReSignatureCertificate() {
       console.info(' --- cancelWatermarkImage_test_004  -------- END --------');
     })
 
+    /**
+     * @tc.name   cancelWatermarkImage_test_005
+     * @tc.number cancelWatermarkImage_test_005
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_005  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_006
+     * @tc.number cancelWatermarkImage_test_006
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_006  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_007
+     * @tc.number cancelWatermarkImage_test_007
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_007  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        securityManager.cancelWatermarkImage(SELFWANT, '', DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_007  -------- END --------');
+    })
 
     /**
      * @tc.name   setExternalSourceExtensionsPolicy_test_001

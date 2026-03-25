@@ -5755,11 +5755,11 @@ export default function bundleManagerTest() {
      */
     it("install_test_006_1", Level.LEVEL2, async (done: Function) => {
       console.info(' --- install_test_006_1  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         await bundleManager.install(SELFWANT, [], EDM_INSTALL_PARAM)
           .then(result => {
-            expect(result === undefined).assertTrue()
+            expect(result === null).assertTrue()
           }).catch((error:BusinessError) => {
             console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
             error.code);
@@ -5767,6 +5767,7 @@ export default function bundleManagerTest() {
           })
       } catch (error) {
         console.info(' --- install_test_006_1 done is expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
