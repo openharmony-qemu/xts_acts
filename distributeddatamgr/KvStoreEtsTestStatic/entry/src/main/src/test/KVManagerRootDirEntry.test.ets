@@ -1994,6 +1994,7 @@ export default function KVManagerRootDirEntry() {
                     expect(null).assertFail();
                     done();
                 });
+
                 await kvStore!.backupEx(g_backupConfig).then(() => {
                     console.info(TAG + ' backupEx success');
                     expect(null).assertFail();
