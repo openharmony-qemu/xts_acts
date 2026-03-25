@@ -1,7 +1,14 @@
 'use static'
 
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
-import sleep from './Util.test';
+
+export function sleep(time: int): Promise<number> {
+  return new Promise<number>((re, je): void => {
+    setTimeout(() => {
+      re(1)
+    }, time)
+  })
+}
 
 export class TaskInfoClass {
   private count: int = 0;

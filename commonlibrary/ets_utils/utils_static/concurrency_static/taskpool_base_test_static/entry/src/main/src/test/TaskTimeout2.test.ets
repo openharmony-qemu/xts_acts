@@ -54,11 +54,21 @@ import {
   timeoutDemo,
   timeoutWithLongTask
 } from '../utils/TimeoutFuncList';
-import sleep from './Util.test';
+
 import { SendableClassTest, sendableFunc } from '../utils/sendable';
 import { level2Task } from '../utils/TimeoutFunc2';
 import { nestPeriodicTaskInner } from '../utils/TimeoutFunc3';
 import hilog from '@ohos.hilog';
+
+
+export function sleep(time: int): Promise<number> {
+  return new Promise<number>((re, je): void => {
+    setTimeout(() => {
+      re(1)
+    }, time)
+  })
+}
+
 
 export default function TaskTimeout2Test() {
   describe('ActTaskTimeout2Test', () => {
