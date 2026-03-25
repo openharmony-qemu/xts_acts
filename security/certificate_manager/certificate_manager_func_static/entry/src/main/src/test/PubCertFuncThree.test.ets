@@ -238,7 +238,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList("", ukeyInfo);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020: e.code " + error.code);
         expect(error.code).assertEqual(17500001);
         }
