@@ -66,5 +66,7 @@ extern int DemuxerFunctionAudioTrack0190();
 extern int DemuxerFunctionAdd0010();
 extern int DemuxerFunctionAdd0020();
 extern int DemuxerFunctionAdd0030();
+extern int DemuxerSkipSampleFunc0010();
+extern int DemuxerSkipSampleFunc0020();
 
 #endif // FUNC2_TEST_H

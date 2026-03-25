@@ -93,6 +93,10 @@ static constexpr int EXPECTED_AUDIO_FRAMES_26 = 26;
 static constexpr int EXPECTED_AUDIO_FRAMES_59 = 59;
 static constexpr int EXPECTED_AUDIO_FRAMES_1876 = 1876;
 static constexpr int EXPECTED_SEEK_TIME_2487 = 2487;
+static constexpr int EXPECTED_SKIP_SAMPLE_COUNT_MP3 = 2;
+static constexpr int EXPECTED_AUDIO_FRAMES_3052 = 3052;
+static constexpr int EXPECTED_SKIP_SAMPLE_COUNT_OGG = 1;
+static constexpr int EXPECTED_AUDIO_FRAMES_6863 = 6863;
 
 static int64_t GET_FILE_SIZE(const char *fileName)
 {
@@ -172,6 +176,160 @@ static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &vide
         cout << "video track !!!!!" << endl;
     }
 }
+
+static void SetAudioValue(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame,
+                          int &aKeyCount)
+{
+    if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
+        audioIsEnd = true;
+    } else {
+        audioFrame++;
+        if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_SYNC_FRAME) {
+            aKeyCount++;
+        }
+    }
+}
+
+static void CleanupSkipSampleResources(OH_AVFormat *format, int fd)
+{
+    if (format != nullptr) {
+        OH_AVFormat_Destroy(format);
+    }
+    if (memory != nullptr) {
+        OH_AVMemory_Destroy(memory);
+        memory = nullptr;
+    }
+    if (fd >= 0) {
+        close(fd);
+    }
+}
+
+struct SkipSampleParams {
+    const char *file;
+    int &fd;
+    int64_t &size;
+    int32_t trackNum;
+};
+
+struct SkipSampleReadParams {
+    int64_t size;
+    OH_AVCodecBufferAttr &attr;
+    OH_AVFormat *&format;
+};
+
+static int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *expected)
+{
+    if (buffSize != 10) {
+        return -1;
+    }
+    for (size_t i = 0; i < buffSize; i++) {
+        if (addr[i] != expected[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+static int InitSkipSampleFile(SkipSampleParams &params)
+{
+    params.fd = open(params.file, O_RDONLY);
+    if (params.fd < 0) {
+        return -1;
+    }
+    params.size = GET_FILE_SIZE(params.file);
+    source = OH_AVSource_CreateWithFD(params.fd, 0, params.size);
+    if (source == nullptr) {
+        close(params.fd);
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        close(params.fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) {
+        close(params.fd);
+        return -1;
+    }
+    return 0;
+}
+
+static int ReadSkipSampleBuffer(SkipSampleReadParams &params)
+{
+    params.format = OH_AVSource_GetTrackFormat(source, 0);
+    if (params.format == nullptr) {
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &params.attr) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(params.format);
+        return -1;
+    }
+    return 0;
+}
+
+struct SkipSampleValidationParams {
+    int audioFrame;
+    uint8_t *addr;
+    size_t buffSize;
+    int fd;
+};
+
+static int ValidateMp3SkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
+{
+    if (params.audioFrame == 0) {
+        uint8_t expected0[] = {0x51, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected0) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    } else if (params.audioFrame == 3051) {
+        uint8_t expected3051[] = {0x00, 0x00, 0x00, 0x00, 0xa3, 0x01, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected3051) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    }
+    return 0;
+}
+
+static int ValidateOggSkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
+{
+    if (params.audioFrame == 6862) {
+        uint8_t expected6862[] = {0x00, 0x00, 0x00, 0x00, 0xf4, 0x00, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected6862) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    }
+    return 0;
+}
+
+struct SkipSampleResultParams {
+    int skipSampleCounts;
+    int audioFrame;
+    int aKeyCount;
+    int expectedSkipCount;
+    int expectedFrameCount;
+    int fd;
+};
+
+static int ValidateSkipSampleResults(SkipSampleResultParams &params)
+{
+    if (params.skipSampleCounts != params.expectedSkipCount) {
+        CleanupSkipSampleResources(nullptr, params.fd);
+        return -1;
+    }
+    if (params.audioFrame != params.expectedFrameCount) {
+        CleanupSkipSampleResources(nullptr, params.fd);
+        return -1;
+    }
+    if (params.aKeyCount != params.expectedFrameCount) {
+        CleanupSkipSampleResources(nullptr, params.fd);
+        return -1;
+    }
+    return 0;
+}
+
 static int InitFile(const char *file, int32_t trackNum, int &fd)
 {
     g_initResult = false;
@@ -2077,5 +2235,162 @@ int DemuxerFunctionAdd0030()
         close(fd);
         fd = -1;
     }
+    return 0;
+}
+
+int DemuxerSkipSampleFunc0010()
+{
+    OH_AVCodecBufferAttr attr;
+    bool audioIsEnd = false;
+    int audioFrame = 0;
+    int skipSampleCounts = 0;
+    int aKeyCount = 0;
+    const char *file = "/data/storage/el2/base/files/media/audio/MP3_8K_1.mp3";
+    int fd = 0;
+    int64_t size = 0;
+    
+    SkipSampleParams params = {file, fd, size, 1};
+    if (InitSkipSampleFile(params) != 0) {
+        return -1;
+    }
+    
+    uint8_t* addr = nullptr;
+    size_t buffSize = 0;
+    OH_AVFormat *format = nullptr;
+    OH_AVBuffer *avBuffer = nullptr;
+    
+    while (!audioIsEnd) {
+        avBuffer = OH_AVBuffer_Create(size);
+        if (avBuffer == nullptr) {
+            close(fd);
+            return -1;
+        }
+        
+        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        if (OH_AVBuffer_GetBufferAttr(avBuffer, &attr) != AV_ERR_OK) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        format = OH_AVBuffer_GetParameter(avBuffer);
+        if (format == nullptr) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        OH_AVBuffer_Destroy(avBuffer);
+        avBuffer = nullptr;
+        
+        if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+            skipSampleCounts++;
+            SkipSampleValidationParams validParams = {audioFrame, addr, buffSize, fd};
+            if (ValidateMp3SkipData(validParams, format) != 0) {
+                return -1;
+            }
+        }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+        OH_AVFormat_Destroy(format);
+        format = nullptr;
+    }
+    
+    if (skipSampleCounts != EXPECTED_SKIP_SAMPLE_COUNT_MP3) {
+        close(fd);
+        return -1;
+    }
+    if (audioFrame != EXPECTED_AUDIO_FRAMES_3052) {
+        close(fd);
+        return -1;
+    }
+    if (aKeyCount != EXPECTED_AUDIO_FRAMES_3052) {
+        close(fd);
+        return -1;
+    }
+    
+    close(fd);
+    return 0;
+}
+
+int DemuxerSkipSampleFunc0020()
+{
+    OH_AVCodecBufferAttr attr;
+    int skipSampleCounts = 0;
+    bool audioIsEnd = false;
+    int audioFrame = 0;
+    int aKeyCount = 0;
+    const char *file = "/data/storage/el2/base/files/media/audio/OGG_8K_1.ogg";
+    int fd = 0;
+    int64_t size = 0;
+
+    SkipSampleParams params = {file, fd, size, 1};
+    if (InitSkipSampleFile(params) != 0) {
+        return -1;
+    }
+    
+    uint8_t *addr = nullptr;
+    size_t buffSize = 0;
+    OH_AVFormat *format = nullptr;
+    OH_AVBuffer *avBuffer = nullptr;
+
+    while (!audioIsEnd) {
+        avBuffer = OH_AVBuffer_Create(size);
+        if (avBuffer == nullptr) {
+            close(fd);
+            return -1;
+        }
+        
+        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        if (OH_AVBuffer_GetBufferAttr(avBuffer, &attr) != AV_ERR_OK) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        format = OH_AVBuffer_GetParameter(avBuffer);
+        if (format == nullptr) {
+            OH_AVBuffer_Destroy(avBuffer);
+            close(fd);
+            return -1;
+        }
+        
+        OH_AVBuffer_Destroy(avBuffer);
+        avBuffer = nullptr;
+        
+        if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+            skipSampleCounts++;
+            SkipSampleValidationParams validParams = {audioFrame, addr, buffSize, fd};
+            if (ValidateOggSkipData(validParams, format) != 0) {
+                return -1;
+            }
+        }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+        OH_AVFormat_Destroy(format);
+        format = nullptr;
+    }
+    if (skipSampleCounts != EXPECTED_SKIP_SAMPLE_COUNT_OGG) {
+        close(fd);
+        return -1;
+    }
+    if (audioFrame != EXPECTED_AUDIO_FRAMES_6863) {
+        close(fd);
+        return -1;
+    }
+    if (aKeyCount != EXPECTED_AUDIO_FRAMES_6863) {
+        close(fd);
+        return -1;
+    }
+    
+    close(fd);
     return 0;
 }

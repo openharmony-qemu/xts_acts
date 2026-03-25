@@ -374,5 +374,278 @@ export default function DemuxerApiTestTest() {
       expect(result).assertEqual(0);
     });
 
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_1800
+     * @tc.number DEMUXER_ILLEGAL_PARA_1800
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_1800', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(20);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_1900
+     * @tc.number DEMUXER_ILLEGAL_PARA_1900
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_1900', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(21);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2100
+     * @tc.number DEMUXER_ILLEGAL_PARA_2100
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2100', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(22);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2200
+     * @tc.number DEMUXER_ILLEGAL_PARA_2200
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2200', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(23);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2400
+     * @tc.number DEMUXER_ILLEGAL_PARA_2400
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2400', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(24);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2500
+     * @tc.number DEMUXER_ILLEGAL_PARA_2500
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2500', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(25);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2600
+     * @tc.number DEMUXER_ILLEGAL_PARA_2600
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2600', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(26);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2700
+     * @tc.number DEMUXER_ILLEGAL_PARA_2700
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2700', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(27);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2800
+     * @tc.number DEMUXER_ILLEGAL_PARA_2800
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2800', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(28);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_2900
+     * @tc.number DEMUXER_ILLEGAL_PARA_2900
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_2900', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(29);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_ILLEGAL_PARA_3000
+     * @tc.number DEMUXER_ILLEGAL_PARA_3000
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_ILLEGAL_PARA_3000', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(30);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_0300
+     * @tc.number DEMUXER_API_0300
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_0300', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(32);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_0500
+     * @tc.number DEMUXER_API_0500
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_0500', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(33);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_0700
+     * @tc.number DEMUXER_API_0700
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_0700', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(34);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_1000
+     * @tc.number DEMUXER_API_1000
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_1000', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(35);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_1200
+     * @tc.number DEMUXER_API_1200
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_1200', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(37);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_1300
+     * @tc.number DEMUXER_API_1300
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_1300', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(38);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_1400
+     * @tc.number DEMUXER_API_1400
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_1400', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(39);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_2300
+     * @tc.number DEMUXER_API_2300
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_2300', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(40);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_2400
+     * @tc.number DEMUXER_API_2400
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_2400', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(41);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_API_2500
+     * @tc.number DEMUXER_API_2500
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_API_2500', Level.LEVEL0, () => {
+      let result:number = testNapi.runApiTest(42);
+      expect(result).assertEqual(0);
+    });
+
   });
 }
