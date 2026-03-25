@@ -37,12 +37,12 @@ export default function webOnPermissionRequest() {
         if (!("WebOnPermissionRequest" == pages.name)) {
           console.info("get WebOnPermissionRequest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebOnPermissionRequestTestButton"), 10000);
           console.info("push WebOnPermissionRequest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnPermissionRequest page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebOnPermissionRequestTestButton"), 10000);
       console.log("waitForComponent WebOnPermissionRequestTestButton");
       done()
     });
