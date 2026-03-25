@@ -197,10 +197,8 @@ export default function audioCapturerChange() {
       audioStreamManagerCB!.onAudioCapturerChange((AudioCapturerChangeInfoArray: Array<Readonly<audio.AudioCapturerChangeInfo>>) => {
         waitForCompletion(async () => {
           for (let i = 0; i < AudioCapturerChangeInfoArray.length; i++) {
-            // console.info(`${Tag}: ${Tag}: CapChange on is called for element ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i])}`);
             let devDescriptor = AudioCapturerChangeInfoArray[i].deviceDescriptors;
             for (let j = 0; j < AudioCapturerChangeInfoArray[i].deviceDescriptors.length; j++) {
-              // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             }
             if (devDescriptor != null) {
               resultFlag = true;
