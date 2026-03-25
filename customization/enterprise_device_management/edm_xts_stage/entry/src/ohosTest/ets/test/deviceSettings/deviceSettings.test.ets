@@ -1724,7 +1724,7 @@ export default function deviceSettingsTest() {
         console.info(' --- setValueForAccount_test_007 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- setValueForAccount_test_007 error 9200012 is expected, actually catch: ' + error.code);
+        console.info(' --- setValueForAccount_test_007 error 9200001 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
