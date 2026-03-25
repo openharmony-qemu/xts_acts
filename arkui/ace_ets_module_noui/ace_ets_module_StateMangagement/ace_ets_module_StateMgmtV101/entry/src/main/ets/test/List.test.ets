@@ -51,6 +51,7 @@ import LocalStorageProp0320TestJsunit from './localStorage/LocalStorageProp0320T
 import LocalStorageAbsTestJsunit from './localStorage/LocalStorageAbsTestJsunit.test';
 
 import PersistentStoragePersistPropJsunit from './persistentStorage/PersistentStoragePersistPropJsunit.test.ets';
+import persistentStorageNotMatchTypeTest from './persistentStorage/PersistentStorageNotMatchType.test';
 import environmentNullUndefinedTest from './Environment/EnvironmentNullUndefinedTest.test';
 
 
@@ -90,6 +91,7 @@ export default function testsuite() {
     LocalStorageAbsTestJsunit();
     PersistentStoragePersistPropJsunit();
     stateManagementNullUndefinedTest();
+    persistentStorageNotMatchTypeTest();
     environmentNullUndefinedTest();
 
 }
