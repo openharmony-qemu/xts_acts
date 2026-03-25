@@ -4254,5 +4254,30 @@ describe('btConnectionTest', () => {
         }
         done();
     })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500
+     * @tc.desc   Test getVirtualAddressByHash 参数格式与规范不一致 api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        let hashValue: string = "c10b57deb2e1aafd255596e0d4fd67891";
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
+                expect(Number(err.code)).assertEqual(2900015);
+            }
+        }
+        done();
+    })
 })
 }
