@@ -228,5 +228,19 @@ template<typename T, typename U>
     return result;
 }
 
+/** 与 Matrix 错误码等用例一致：ASSERT_EQ + NAPI_END；实现委托 EqFailed，避免重复拼装错误信息。 */
+#define ASSERT_EQ(result, expect)                                                                                      \
+    do {                                                                                                               \
+        napi_value assertEqErr = EqFailed(env, (result), (expect));                                                   \
+        if (assertEqErr != nullptr) {                                                                                  \
+            return assertEqErr;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define NAPI_END                                                                                                       \
+    do {                                                                                                               \
+        return NapiReturnSuccessInt32(env);                                                                            \
+    } while (0)
+
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H
