@@ -5785,6 +5785,7 @@ export default function soundPoolTest() {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100 in`);
       try {
         let soundId = 1;
+        let streamId = 0;
         let isExpected = false;
         await createSoundPool();
         if (!soundPool) {
@@ -5798,7 +5799,7 @@ export default function soundPoolTest() {
           console.error(`${TAG}: onErrorOccurred called! error happened, errorType is: ${errorInfo_.errorType}`);
           let errType = errorInfo_.errorType as ErrorType;
           isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.LOAD_ERROR &&
-            errorInfo_.errorCode.code == 5400103;
+            errorInfo_.errorCode.code == 5400103 && errorInfo_.streamId == streamId;
         })
         await soundPool!!.load(uri5).then((soundId_: int) => {
           if (soundId_ > 0) {
