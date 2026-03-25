@@ -1866,7 +1866,7 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-    * @tc.name   test_setWindowShadowEnabled
+    * @tc.name    test_setWindowShadowEnabled
     * @tc.number  SUB_BASIC_WMS_SetWindowShadowEnabled
     * @tc.desc    SetWindowShadowEnabled多设备
     * @tc.type    FUNCTION
