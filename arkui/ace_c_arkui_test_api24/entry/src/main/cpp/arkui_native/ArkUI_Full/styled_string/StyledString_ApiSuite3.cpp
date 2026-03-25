@@ -36,9 +36,9 @@ static napi_value TestArkUICapi_438(napi_env env, napi_callback_info info)
     ArkUI_Margin marginOut1{};
     auto ec = OH_ArkUI_ImageAttachment_GetPadding(obj, &marginOut1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -62,9 +62,9 @@ static napi_value TestArkUICapi_439(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ImageAttachment_SetBorderRadiuses(obj, 0.0f, 0.0f, 0.0f, 0.0f);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -93,9 +93,9 @@ static napi_value TestArkUICapi_440(napi_env env, napi_callback_info info)
     float v4 = 0.0f;
     auto ec = OH_ArkUI_ImageAttachment_GetBorderRadiuses(obj, &v1, &v2, &v3, &v4);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -120,9 +120,9 @@ static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
     float v1 = 0.0f;
     auto ec = OH_ArkUI_ImageAttachment_SetColorFilter(obj, &v1, 0U);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -149,9 +149,9 @@ static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
     uint32_t v3 = 0U;
     auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 0U, &v3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -175,9 +175,9 @@ static napi_value TestArkUICapi_443(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, static_cast<const OH_Drawing_ColorFilter *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -201,9 +201,9 @@ static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ImageAttachment_GetDrawingColorFilter(obj, static_cast<OH_Drawing_ColorFilter *>(nullptr));
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -227,9 +227,9 @@ static napi_value TestArkUICapi_445(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ImageAttachment_SetSyncLoad(obj, false);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -254,9 +254,9 @@ static napi_value TestArkUICapi_446(napi_env env, napi_callback_info info)
     bool v1 = false;
     auto ec = OH_ArkUI_ImageAttachment_GetSyncLoad(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -280,9 +280,9 @@ static napi_value TestArkUICapi_447(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ImageAttachment_SetSupportSvg(obj, false);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -307,9 +307,9 @@ static napi_value TestArkUICapi_448(napi_env env, napi_callback_info info)
     bool v1 = false;
     auto ec = OH_ArkUI_ImageAttachment_GetSupportSvg(obj, &v1);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -394,9 +394,9 @@ static napi_value TestArkUICapi_452(napi_env env, napi_callback_info info)
     OH_Drawing_PositionAndAffinity ** outPtr3 = &holder3;
     auto ec = OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(nullptr, 0.0, 0.0, outPtr3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -424,9 +424,9 @@ static napi_value TestArkUICapi_453(napi_env env, napi_callback_info info)
         outPtr2,
         outPtr3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
@@ -454,9 +454,9 @@ static napi_value TestArkUICapi_454(napi_env env, napi_callback_info info)
         outPtr2,
         outPtr3);
     {
-        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-        if (__napi_assert_tmp != nullptr) {
-            return __napi_assert_tmp;
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
         }
     }
 
