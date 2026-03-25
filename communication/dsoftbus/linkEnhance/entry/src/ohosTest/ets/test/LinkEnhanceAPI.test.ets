@@ -915,6 +915,9 @@ export default function LinkEnhanceAPI() {
         console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 connection is" + connection);
         try {
           console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 connect_on  start");
+          connection.on('connectResult', (result: linkEnhance.ConnectResult): void => {
+            console.info(logTag + 'clientConnectResultCallback result = ' + result.success);
+          });
           connection.off('connectResult');
         }catch (error) {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 error.code is " + error.code);
@@ -985,6 +988,9 @@ export default function LinkEnhanceAPI() {
         console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 connection is" + connection);
         try {
           console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 connect_on  start");
+          connection.on('disconnected', (number: number)=> {
+            console.info(logTag + TAG, 'connection disconnected reason = ' + number);
+        });
           connection.off('disconnected');
         }catch (error) {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 error.code is " + error.code);
@@ -1055,6 +1061,9 @@ export default function LinkEnhanceAPI() {
         console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 connection is" + connection);
         try {
           console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 connect_on  start");
+          connection.on('dataReceived', (data: ArrayBuffer)=> {
+            console.info(logTag +'recv dataLen = ' + data.byteLength);
+        });
           connection.off('dataReceived');
         }catch (error) {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 error.code is " + error.code);
@@ -1457,6 +1466,9 @@ export default function LinkEnhanceAPI() {
         let server: linkEnhance.Server = linkEnhance.createServer("demo");
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 server is" + server);
         try {
+          server.on('connectionAccepted', (connection: linkEnhance.Connection): void => {
+            console.info(logTag + 'accept new connection');
+          });
           server.off('connectionAccepted');
         }catch (error) {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 error.code is:" + error.code);
@@ -1519,6 +1531,9 @@ export default function LinkEnhanceAPI() {
         let server: linkEnhance.Server = linkEnhance.createServer("demo");
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 server is" + server);
         try {
+          server.on('serverStopped', (reason: number): void => {
+            console.info(logTag + 'serverStopped， reason= ' + reason);
+          });
           server.off('serverStopped');
         }catch (error) {
           flag = true;
@@ -1539,25 +1554,34 @@ export default function LinkEnhanceAPI() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
-     */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");
-      try {
-        let server: linkEnhance.Server = linkEnhance.createServer("demo");
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 server is" + server);
-        try {
-          server.off('serverStopped');
-        }catch (error) {
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.code is:" + error.code);
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.message is:" + error.message);
-          expect().assertFail();
-        }
-        server.close();
-      }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 createServer error.code is:" + error.code);
-        expect().assertFail();
-    }
-    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");
+     */	 
+    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {	 
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");	 
+      let flag = false; 
+      try {	 
+        let server: linkEnhance.Server = linkEnhance.createServer("demo");	 
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 server is" + server);	 
+        try {	 
+          server.off('serverStopped', undefined);	 
+        }catch (error) {	 
+          flag = true; 
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.code is:" + error.code);	 
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.message is:" + error.message);	 
+          expect(error.code == 32390206).assertTrue();	 
+          expect(error.message != null).assertTrue();	 
+        }finally {	 
+          if(flag == false){ 
+            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 off(type: 'serverStopped') success,expect faile"); 
+          } 
+          expect(flag == true).assertTrue(); 
+          server.close(); 
+          console.info(logTag + "reclaim done"); 
+          } 
+      }catch (error) {	 
+        expect(error.message == null).assertTrue(); 
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 createServer error.code is:" + error.code);	 
+    }	 
+    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");	 
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100
