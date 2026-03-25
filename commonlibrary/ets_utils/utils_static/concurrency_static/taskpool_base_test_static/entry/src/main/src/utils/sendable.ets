@@ -1,8 +1,3 @@
-// 'use static'
-
-
-
-
 export class SendableClass {
   num: number;
   para: undefined;
@@ -24,13 +19,13 @@ export class SimpleSendable {
 }
 
 
-class sendableArrayClass {
-  arr : Array<number>  = new Array<number>(100);
+class SendableArrayClass {
+  arr : number[]  = new Array<number>(100);
 }
 
 
 function sendableArrayFunc() : number {
-  let arr : Array<number> = new Array<number>(100);
+  let arr : number[] = new Array<number>(100);
   return arr[0];
 }
 
@@ -54,7 +49,7 @@ export class SendableClassTest {
   }
 }
 
-function SendableFunctionTop() {
+function sendableFunctionTop() {
   let num: int = 100;
   return num;
 }
@@ -69,11 +64,11 @@ class SendableClassTop {
 
 
 export function sendableFunc() : number{
-  let num : number = SendableFunctionTop();
+  let num : number = sendableFunctionTop();
   const class1 = new SendableClassTop();
   num += class1.say();
   num += sendableArrayFunc();
-  let arr = new sendableArrayClass().arr;
+  let arr = new SendableArrayClass().arr;
   num += arr[0]
   return num;
 }
@@ -88,7 +83,7 @@ export class TaskInfoClass {
   private executeFailed: number = 0;
   private executeSuccess: number = 0;
 
-  lock_: AsyncLock = new AsyncLock();
+  public lock_: AsyncLock = new AsyncLock();
 
   public async getCount(): Promise<number> {
     return this.lock_.lockAsync(() => {

@@ -1,7 +1,5 @@
-// 'use static'
-
-import { asyncSleep } from "./exportFunclist";
-import { level3Task } from "./TimeoutFuncList";
+import { asyncSleep } from './exportFunclist';
+import { level3Task } from './TimeoutFuncList';
 
 
 export function timeoutDemo2 (time: number): number {
