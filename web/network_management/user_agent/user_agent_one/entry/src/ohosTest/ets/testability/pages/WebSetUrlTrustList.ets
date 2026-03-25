@@ -67,7 +67,6 @@ struct webSetUrlTrustList {
             await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
-            this.isPageEnd = -1;
             this.isSearchEnd = -1;
             this.searchTotalNumber = -1;
             switch (this.emitKey) {
