@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import SelectTest from './SelectTest/Select.test';
+import CheckBoxGroupTest from './CheckBoxGroupTest/CheckBoxGroup.test';
 
 export default function testsuite() {
-  SelectTest();
+  CheckBoxGroupTest();
 }
