@@ -36,7 +36,7 @@ class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
     try {
       // windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
-        windowStage.loadContent('MainAbility/pages/popup/popup', (err: BusinessError<void> | null): void => {
+        windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
 
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
