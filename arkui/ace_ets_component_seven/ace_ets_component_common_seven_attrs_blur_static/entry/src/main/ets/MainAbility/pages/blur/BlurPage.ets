@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,259 +42,259 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
@@ -315,238 +315,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 //     instance.blur(this.mBlur)
 //   }
 // }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)

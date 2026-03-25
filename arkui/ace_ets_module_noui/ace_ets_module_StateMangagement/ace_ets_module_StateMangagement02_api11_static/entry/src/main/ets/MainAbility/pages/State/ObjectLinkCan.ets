@@ -53,7 +53,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-@Observed class ClassAN {
+@Observed export class ClassAN {
   public numA: number = 1
   public classB: ClassBN = new ClassBN(1)
 
@@ -64,7 +64,7 @@ import common from '@ohos.app.ability.common';
 }
 
 @Observed
-class ClassBN {
+export class ClassBN {
   public numB: number = 1
 
   constructor(aValue: number = 0) {

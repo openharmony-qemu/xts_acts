@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,471 +42,471 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
 import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: BadgeAttribute): void {
     instance.scale(this.scale)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: BlankAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.scale(this.scale)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: CheckboxAttribute): void {
     instance.scale(this.scale)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     instance.scale(this.scale)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: CounterAttribute): void {
     instance.scale(this.scale)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: DataPanelAttribute): void {
     instance.scale(this.scale)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: DividerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: FlexAttribute): void {
     instance.scale(this.scale)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: FlowItemAttribute): void {
     instance.scale(this.scale)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: FormComponentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.scale(this.scale)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: GaugeAttribute): void {
     instance.scale(this.scale)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: GridAttribute): void {
     instance.scale(this.scale)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: GridColAttribute): void {
     instance.scale(this.scale)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: GridItemAttribute): void {
     instance.scale(this.scale)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: GridRowAttribute): void {
     instance.scale(this.scale)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ListItemAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     instance.scale(this.scale)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     instance.scale(this.scale)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: MarqueeAttribute): void {
     instance.scale(this.scale)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: MenuAttribute): void {
     instance.scale(this.scale)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: MenuItemAttribute): void {
     instance.scale(this.scale)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     instance.scale(this.scale)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     instance.scale(this.scale)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.scale(this.scale)
   }
 }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PatternLockAttribute): void {
     instance.scale(this.scale)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: QRCodeAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RadioAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RatingAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RefreshAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RichTextAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RowAttribute): void {
     instance.scale(this.scale)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RowSplitAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     instance.scale(this.scale)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: SearchAttribute): void {
     instance.scale(this.scale)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: SelectAttribute): void {
     instance.scale(this.scale)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.scale(this.scale)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: StackAttribute): void {
     instance.scale(this.scale)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: SwiperAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TabContentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TabsAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextPickerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TextTimerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: TimePickerAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ToggleAttribute): void {
     instance.scale(this.scale)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.scale(this.scale)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: WebAttribute): void {
     instance.scale(this.scale)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: XComponentAttribute): void {
     instance.scale(this.scale)
   }
 }
-class PolylineModifier implements AttributeModifier<PolylineAttribute>{
+export class PolylineModifier implements AttributeModifier<PolylineAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PolylineAttribute): void {
     instance.scale(this.scale)
   }
 }
-class PolygonModifier implements AttributeModifier<PolygonAttribute>{
+export class PolygonModifier implements AttributeModifier<PolygonAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PolygonAttribute): void {
     instance.scale(this.scale)
   }
 }
 
-class PathModifier implements AttributeModifier<PathAttribute>{
+export class PathModifier implements AttributeModifier<PathAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: PathAttribute): void {
     instance.scale(this.scale)
   }
 }
 
-class RectModifier implements AttributeModifier<RectAttribute>{
+export class RectModifier implements AttributeModifier<RectAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: RectAttribute): void {
     instance.scale(this.scale)
   }
 }
-class ShapeModifier implements AttributeModifier<ShapeAttribute>{
+export class ShapeModifier implements AttributeModifier<ShapeAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: ShapeAttribute): void {
     instance.scale(this.scale)
   }
 }
-class EllipseModifier implements AttributeModifier<EllipseAttribute>{
+export class EllipseModifier implements AttributeModifier<EllipseAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: EllipseAttribute): void {
     instance.scale(this.scale)
   }
 }
-class LineModifier implements AttributeModifier<LineAttribute>{
+export class LineModifier implements AttributeModifier<LineAttribute>{
   scale: ScaleOptions = { x: 1, y: 1 }
   applyNormalAttribute(instance: LineAttribute): void {
     instance.scale(this.scale)

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,15 +36,15 @@ import {
 } from '@ohos.arkui.stateManagement'
 
 @ObservedV2
-class Pencil{
+export class Pencil{
   @Trace length:number = 18
 }
-class Bag{
+export class Bag{
   width:number=50
   height:number=60
   pencil:Pencil=new Pencil()
 }
-class Son7{
+export class Son7{
   age:number=5
   bag:Bag=new Bag()
 }

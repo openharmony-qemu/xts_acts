@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement';
 
 import events_emitter from '@ohos.events.emitter'
 import { RecordData } from '@ohos.base';
-class TransitionModifier1 implements AttributeModifier<ButtonAttribute> {
+export class TransitionModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // instance.transition({ type: TransitionType.Insert, scale: { x: 0, y: 1.0, z: 1.0 }, opacity: 1 });
   }

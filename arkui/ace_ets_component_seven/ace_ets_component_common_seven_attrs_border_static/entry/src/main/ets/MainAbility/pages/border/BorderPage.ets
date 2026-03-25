@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -60,7 +60,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 	}
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -78,7 +78,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	}
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -96,7 +96,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	}
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -114,7 +114,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 	}
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -132,7 +132,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 	}
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -150,7 +150,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	}
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -168,7 +168,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	}
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -186,7 +186,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 	}
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -204,7 +204,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 	}
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -222,7 +222,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	}
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -240,7 +240,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	}
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -258,7 +258,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 	}
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -276,7 +276,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	}
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -294,7 +294,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	}
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -312,7 +312,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 	}
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -330,7 +330,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	}
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -348,7 +348,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 	}
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -366,7 +366,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	}
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -384,7 +384,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	}
 }
 
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -402,7 +402,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	}
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -420,7 +420,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 	}
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -438,7 +438,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 	}
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -456,7 +456,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	}
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -474,7 +474,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	}
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -492,7 +492,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	}
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -510,7 +510,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 	}
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -528,7 +528,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 	}
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -546,7 +546,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 	}
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -564,7 +564,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 	}
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -582,7 +582,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	}
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -600,7 +600,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 	}
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -618,7 +618,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 	}
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -636,7 +636,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	}
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -654,7 +654,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 	}
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -672,7 +672,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	}
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -690,7 +690,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 	}
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -708,7 +708,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 	}
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -780,7 +780,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -798,7 +798,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 	}
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -816,7 +816,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	}
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -834,7 +834,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	}
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -852,7 +852,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	}
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -870,7 +870,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	}
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -888,7 +888,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 	}
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -906,7 +906,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 	}
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -924,7 +924,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 	}
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -942,7 +942,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	}
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -960,7 +960,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 	}
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -978,7 +978,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	}
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -996,7 +996,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	}
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1014,7 +1014,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	}
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1032,7 +1032,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 	}
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1050,7 +1050,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	}
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1068,7 +1068,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	}
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1086,7 +1086,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	}
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1104,7 +1104,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 	}
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1122,7 +1122,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 	}
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1140,7 +1140,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	}
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1158,7 +1158,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 	}
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1176,7 +1176,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 	}
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1194,7 +1194,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1212,7 +1212,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1230,7 +1230,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	}
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1248,7 +1248,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	}
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1266,7 +1266,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 	}
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1284,7 +1284,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 	}
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1302,7 +1302,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	}
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1320,7 +1320,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	}
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1338,7 +1338,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	}
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1356,7 +1356,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	}
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1374,7 +1374,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	}
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1392,7 +1392,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	}
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1410,7 +1410,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	}
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1428,7 +1428,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 	}
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1446,7 +1446,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	}
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1464,7 +1464,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 	}
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },
@@ -1482,7 +1482,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	}
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	border: BorderOptions = {
 		width: { left: 3, right: 6, top: 10, bottom: 15 },
 		color: { left: '#FF000000', right: '#FF000000', top: '#FF0F0F0F', bottom: '#FFF0F0F0' },

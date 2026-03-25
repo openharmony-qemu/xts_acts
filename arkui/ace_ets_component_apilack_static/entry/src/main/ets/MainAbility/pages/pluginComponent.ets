@@ -39,7 +39,7 @@ import { State, StorageLink } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
 // import plugin from "../common/plugin_component.js"
-class ObjPlugin {
+export class ObjPlugin {
   source: string = '';
   bundleName: string = '';
 }

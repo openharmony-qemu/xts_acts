@@ -55,7 +55,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Observed
-class StrClassA {
+export class StrClassA {
   public name: string = '';
   public num: number = 1;
   public flag: Boolean = false;
