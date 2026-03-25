@@ -277,6 +277,7 @@ export default function MetaDataSetBlobTest() {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
+          // 这里改一下。
           await metaData.exifMetadata.getProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
