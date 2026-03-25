@@ -138,6 +138,10 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0100 ndefMessage is: ' + ndefMessage);
           let makeUriRecord: tag.NdefRecord = tag.ndef.makeUriRecord("D4010354787473");
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0100 makeUriRecord is: ' + makeUriRecord);
+          expect(makeUriRecord.tnf).assertEqual(1);
+          expect(makeUriRecord.rtdType.length > 0).assertTrue();
+          expect(makeUriRecord.id.length == 0).assertTrue();
+          expect(makeUriRecord.payload.length > 0).assertTrue();
         } catch (error) {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0100 error is ' + error + " - " + error.code);
@@ -198,6 +202,10 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 ndefMessage is: ' + ndefMessage);
           let makeTRecords: tag.NdefRecord = tag.ndef.makeTextRecord("test112HW", "test");
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 makeTRecords is: ' + makeTRecords);
+          expect(makeTRecords.tnf).assertEqual(1);
+          expect(makeTRecords.rtdType.length > 0).assertTrue();
+          expect(makeTRecords.id.length == 0).assertTrue();
+          expect(makeTRecords.payload.length > 0).assertTrue();
         } catch (error) {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 error is ' + error + " - " + error.code);
@@ -260,6 +268,10 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 ndefMessage is: ' + ndefMessage);
           let makeApplicationRecord: tag.NdefRecord = tag.ndef.makeApplicationRecord(bundleName);
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 makeApplicationRecord is: ' + makeApplicationRecord);
+          expect(makeApplicationRecord.tnf).assertEqual(4);
+          expect(makeApplicationRecord.rtdType.length > 0).assertTrue();
+          expect(makeApplicationRecord.id.length == 0).assertTrue();
+          expect(makeApplicationRecord.payload.length > 0).assertTrue();
           if (makeApplicationRecord != undefined) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 makeApplicationRecord rtdType: ' + makeApplicationRecord.rtdType);
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 makeApplicationRecord payload: ' +  makeApplicationRecord.payload);
@@ -336,6 +348,10 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0400 ndefMessage is: ' + ndefMessage);
           let makeMimeRecord: tag.NdefRecord = tag.ndef.makeMimeRecord(mimeType, mimeData);
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0400 makeMimeRecord is: ' + makeMimeRecord);
+          expect(makeMimeRecord.tnf).assertEqual(2);
+          expect(makeMimeRecord.rtdType.length > 0).assertTrue();
+          expect(makeMimeRecord.id.length == 0).assertTrue();
+          expect(makeMimeRecord.payload.length > 0).assertTrue();
         } catch (error) {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0400 error is ' + error + " - " + error.code);
@@ -397,6 +413,10 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0500 ndefMessage is: ' + ndefMessage);
           let makeExternalRecord: tag.NdefRecord = tag.ndef.makeExternalRecord("NFC", "NFCtest", [0x01, 0x02]);
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0500 makeExternalRecord is: ' + makeExternalRecord);
+          expect(makeExternalRecord.tnf).assertEqual(4);
+          expect(makeExternalRecord.rtdType.length > 0).assertTrue();
+          expect(makeExternalRecord.id.length == 0).assertTrue();
+          expect(makeExternalRecord.payload.length > 0).assertTrue();
         } catch (error) {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0500 error is ' + error + " - " + error.code);
@@ -605,8 +625,8 @@ export default function nfcNDEFTagTest() {
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_0801', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       if (ndefTag != null && ndefTag != undefined) {
         try {
-          let ndefRecords: Array<tag.NdefRecord> = [];
-          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(ndefRecords);
+          let rawData: Array<int> = [];
+          let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
         } catch (error) {
           error = error as BusinessError;
           if (error.code === 401) {
@@ -668,7 +688,7 @@ export default function nfcNDEFTagTest() {
       let ndefTag = tag.getNdef(ndefTagInfo);
       if (ndefTag != null && ndefTag != undefined) {
         let ndefTagType: tag.NfcForumType = ndefTag.getNdefTagType();
-        expect(tag.NfcForumType.NFC_FORUM_TYPE_1).assertEqual(ndefTagType);
+        expect(ndefTagType).assertEqual(tag.NfcForumType.NFC_FORUM_TYPE_1);
       } else {
         hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
         expect().assertFail();

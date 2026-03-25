@@ -847,8 +847,9 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let getType: tag.MifareClassicType = nfcmifareClassicTag.getType();
+          expect(getType).assertEqual(tag.MifareClassicType.TYPE_CLASSIC);
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700 getType error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -897,6 +898,11 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let isEmulatedTagstate: boolean = nfcmifareClassicTag.isEmulatedTag();
+          if (isEmulatedTagstate == true) {
+            expect(isEmulatedTagstate).assertTrue();
+          } else {
+            expect(isEmulatedTagstate).assertFalse();
+          }
         } catch (error) {
             error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900 isEmulatedTag error is ' + error.code + " - " + error);

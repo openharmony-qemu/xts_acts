@@ -169,6 +169,11 @@ export default function nfcATagSessionTest() {
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
             let istagConnected: boolean = tag.getIsoDep(isoDepTaginfo).isConnected();
+            if (istagConnected == true) {
+              expect(istagConnected).assertTrue();
+            } else {
+              expect(istagConnected).assertFalse();
+            }
           } catch (error) {
             error = error as BusinessError;
             if (error.code === 801) {

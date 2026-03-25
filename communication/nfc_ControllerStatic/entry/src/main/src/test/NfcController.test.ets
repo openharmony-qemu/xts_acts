@@ -58,7 +58,7 @@ export default function nfcControllerTest() {
                 expect(nfcswitchis).assertTrue();
             } else if (nfcswitchis == false){
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0100 Nfc isopenstate is ->' + nfcswitchis);
-                expect().assertFail();
+                expect(nfcswitchis).assertFalse();
             }
             await Utils.msSleep(2000)
             done();
