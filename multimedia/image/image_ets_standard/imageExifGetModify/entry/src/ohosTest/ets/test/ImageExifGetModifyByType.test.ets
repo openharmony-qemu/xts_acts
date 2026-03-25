@@ -3916,7 +3916,7 @@ export default function imageExifGetModifyByTypeTest() {
      * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600
      * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_0600
      * @tc.desc        Verify reading EXIF_METADATA from DNG file
-     *                 1.Create image source from test_exif_v2.dng using fd
+     *                 1.Create image source from HW_CAMERA.dng using fd
      *                 2.Call readImageMetadataByType with EXIF_METADATA type and index 0
      *                 3.Verify that the EXIF metadata values are consistent with the expected values.
      * @tc.size        MEDIUM
@@ -3929,15 +3929,15 @@ export default function imageExifGetModifyByTypeTest() {
       const metadataTypes: Array<image.MetadataType> = [
         image.MetadataType.EXIF_METADATA
       ];
-      const imageValue = await testReadImageMetadataByType(testTag, "test_exif_v2.dng", "fd", metadataTypes, 0);
+      const imageValue = await testReadImageMetadataByType(testTag, "HW_CAMERA.dng", "fd", metadataTypes, 0);
       if (!imageValue) {
         console.error(`${testTag} imageValue is null or undefined`);
         result = false;
       } else {
         if (imageValue.exifMetadata) {
           console.info(`${testTag} imageValue.exifMetadata: ${JSON.stringify(imageValue.exifMetadata)}`);
-          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 256);
-          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [8,8,8]);
+          result = result && compareValues(imageValue.exifMetadata["imageWidth"], 4096);
+          result = result && compareValues(imageValue.exifMetadata["bitsPerSample"], [16]);
           result = result && compareValues(imageValue.exifMetadata["make"], 'HUAWEI');
         }
       }
