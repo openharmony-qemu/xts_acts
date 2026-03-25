@@ -3150,6 +3150,138 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_018
+     * @tc.name    test_get_installed_bundle_list_018
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_018", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(null,
+          DEFAULT_USER_ID, bundleInfoGetFlag);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_019
+     * @tc.name    test_get_installed_bundle_list_019
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_019", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(undefined,
+          DEFAULT_USER_ID, bundleInfoGetFlag);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_020
+     * @tc.name    test_get_installed_bundle_list_020
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_020", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+          null, bundleInfoGetFlag);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_021
+     * @tc.name    test_get_installed_bundle_list_021
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_021", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+          undefined, bundleInfoGetFlag);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_022
+     * @tc.name    test_get_installed_bundle_list_022
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_022", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+          DEFAULT_USER_ID, null);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_023
+     * @tc.name    test_get_installed_bundle_list_023
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_023", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+          DEFAULT_USER_ID, undefined);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_install_market_apps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_001
      * @tc.desc   test install market apps method without admin
@@ -4414,6 +4546,71 @@ export default function bundleManagerTest() {
       console.info(' --- uninstall_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   uninstall_test_003
+     * @tc.number uninstall_test_003
+     * @tc.desc   uninstall with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstall_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstall_test_003  -------- START --------');
+      try {
+        bundleManager.uninstall(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- uninstall_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstall_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstall_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstall_test_004
+     * @tc.number uninstall_test_004
+     * @tc.desc   uninstall with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstall_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstall_test_004  -------- START --------');
+      try {
+        bundleManager.uninstall(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- uninstall_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstall_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstall_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstall_test_005
+     * @tc.number uninstall_test_005
+     * @tc.desc   uninstall with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstall_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstall_test_005  -------- START --------');
+      try {
+        bundleManager.uninstall(SELFWANT, BUNDLENAME1, DEFAULT_USER_ID);
+        console.info(' --- uninstall_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstall_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstall_test_005  -------- END --------');
+    })
 
     /**
      * @tc.name   install_test_001
@@ -4642,6 +4839,28 @@ export default function bundleManagerTest() {
       }
       done();
       console.info(' --- getInstalledBundleList_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getInstalledBundleList_test_005
+     * @tc.number getInstalledBundleList_test_005
+     * @tc.desc   getInstalledBundleList with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_005  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID, null);
+        console.info(' --- getInstalledBundleList_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_005  -------- END --------');
     })
 
     /**
@@ -5274,7 +5493,7 @@ export default function bundleManagerTest() {
     it("getInstalledBundleList_test_058", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getInstalledBundleList_test_058  -------- START --------');
       try {
-        bundleManager.getInstalledBundleList(undefined, DEFAULT_USER_ID);
+        bundleManager.getInstalledBundleList(undefined, DEFAULT_USER_ID, );
         console.info(' --- getInstalledBundleList_test_058 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {

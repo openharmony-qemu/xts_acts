@@ -2833,6 +2833,96 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addKeepAliveApps_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_007
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        applicationManager.addKeepAliveApps(null, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_007 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_008
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        applicationManager.addKeepAliveApps(undefined, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_008 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_009
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_009", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, null, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_009 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_010
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_010", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, undefined, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_010 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeKeepAliveApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEKEEPALIVEAPPS_001
      * @tc.desc   test removeKeepAliveApps method with unActive admin

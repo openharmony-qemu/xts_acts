@@ -3495,6 +3495,139 @@ function testUninstallEnterpriseReSignatureCertificate() {
     })
 
     /**
+     * @tc.name   installUserCertificate_test_005
+     * @tc.number installUserCertificate_test_005
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_005  -------- START --------');
+      try {
+        securityManager.installUserCertificate(null, CERTIFICATE, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_006
+     * @tc.number installUserCertificate_test_006
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_006  -------- START --------');
+      try {
+        securityManager.installUserCertificate(undefined, CERTIFICATE, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_007
+     * @tc.number installUserCertificate_test_007
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_007  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_008
+     * @tc.number installUserCertificate_test_008
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_008  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_008  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_009
+     * @tc.number installUserCertificate_test_009
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_009", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_009  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, CERTIFICATE, null);
+        console.info(' --- installUserCertificate_test_009 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_009 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_009  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_010
+     * @tc.number installUserCertificate_test_010
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_010", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_010  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, CERTIFICATE, undefined);
+        console.info(' --- installUserCertificate_test_010 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_010 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_010  -------- END --------');
+    })
+
+
+    /**
      * @tc.name   getUserCertificates_test_001
      * @tc.number getUserCertificates_test_001
      * @tc.desc   getUserCertificates with null parameter admin
@@ -4733,6 +4866,49 @@ function testUninstallEnterpriseReSignatureCertificate() {
       console.info(' --- uninstallUserCertificate_test_016  -------- END --------');
     })
 
+    /**
+     * @tc.name   uninstallUserCertificate_test_017
+     * @tc.number uninstallUserCertificate_test_017
+     * @tc.desc   uninstallUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_017", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_017  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(SELFWANT, null);
+        console.info(' --- uninstallUserCertificate_test_017 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_017 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_017  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstallUserCertificate_test_018
+     * @tc.number uninstallUserCertificate_test_018
+     * @tc.desc   uninstallUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_018", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_018  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(SELFWANT, undefined);
+        console.info(' --- uninstallUserCertificate_test_018 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_018 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_018  -------- END --------');
+    })
 
     /**
      * @tc.name   getUserCertificates_test_029
