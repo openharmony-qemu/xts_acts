@@ -17,12 +17,15 @@ import { promptAction } from '@kit.ArkUI';
 @Component
 struct showDialog1 {
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('ShowDialog_Options001')
         .id('ShowDialog_Options001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.showDialog({
             title: 'Title Info',
+            offset: { dx: 0, dy: 10 },
             message: 'Message Info',
             buttons: [
               {
@@ -48,9 +51,12 @@ struct showDialog1 {
         })
       Button('ShowDialog_Options002')
         .id('ShowDialog_Options002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.showDialog({
             title: 'Title Info',
+            offset: { dx: 0, dy: 10 },
             message: 'Message Info',
             buttons: [
               {
@@ -74,9 +80,12 @@ struct showDialog1 {
         })
       Button('ShowDialog_Options003')
         .id('ShowDialog_Options003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           promptAction.showDialog({
             title: 'Title Info',
+            offset: { dx: 0, dy: 10 },
             message: 'Message Info',
             buttons: [
               {
@@ -103,5 +112,8 @@ struct showDialog1 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }
