@@ -1696,7 +1696,7 @@ export default function windowNdk() {
     /**
     * @tc.name testMainWindowSetNavigationBarEnabledAvoidAreaChange
     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6600
-    * @tc.desc testMainWindowWindowNavigationBarEnabledAvoidAreaChange
+    * @tc.desc testMainWindowSetNavigationBarEnabledAvoidAreaChange
     * @tc.type FUNCTION
     * @tc.size MEDIUMTEST
     * @tc.level LEVEL2
