@@ -456,25 +456,16 @@ export default function EAWorker3Test(): void {
           });
 
           job.Await();
-          await Utils.msSleep(500);
-
-          // Some implementations may not allow nested worker creation
-          if (innerWorkerCreated) {
-            console.info(`${TAG} Nested worker creation is supported`);
-          } else {
-            console.info(`${TAG} Nested worker creation might not be supported`);
-          }
-
           outerWorker.quit();
           while (outerWorker.isAlive()) {
             await Utils.msSleep(10);
           }
 
-          expect(true).assertTrue();
+          expect(innerWorkerCreated).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           // If exception is thrown, implementation may not support nested creation
-          expect(true).assertTrue();
+          expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -484,7 +475,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0012
      * @tc.name jobMultipleAwait
-     * @tc.desc EAWorker job multiple await test. 
+     * @tc.desc EAWorker job multiple await test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level1
@@ -532,7 +523,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0013
      * @tc.name jobReturnValueTypes
-     * @tc.desc EAWorker job return value types test. 
+     * @tc.desc EAWorker job return value types test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level0
@@ -597,7 +588,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0014
      * @tc.name jobReturnNull
-     * @tc.desc EAWorker job return null test. 
+     * @tc.desc EAWorker job return null test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level0
@@ -636,7 +627,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0015
      * @tc.name jobWithArrayReturn
-     * @tc.desc EAWorker job with array return test. 
+     * @tc.desc EAWorker job with array return test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level1
@@ -682,7 +673,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0016
      * @tc.name jobWithComplexParameters
-     * @tc.desc EAWorker job with complex parameters test. 
+     * @tc.desc EAWorker job with complex parameters test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level1
@@ -730,7 +721,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0017
      * @tc.name jobLongRunningTask
-     * @tc.desc EAWorker job long running task test. 
+     * @tc.desc EAWorker job long running task test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -780,7 +771,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0018
      * @tc.name multipleJobsSameWorker
-     * @tc.desc EAWorker multiple jobs same worker test. 
+     * @tc.desc EAWorker multiple jobs same worker test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level1
@@ -834,7 +825,7 @@ export default function EAWorker3Test(): void {
     /**
      * @tc.number EAWorker3Test_0023
      * @tc.name workerInTaskpool
-     * @tc.desc EAWorker worker in taskpool test. 
+     * @tc.desc EAWorker worker in taskpool test.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level1
@@ -868,7 +859,7 @@ export default function EAWorker3Test(): void {
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           // Some implementations may not allow creating worker in taskpool
-          expect(true).assertTrue();
+          expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`);
           done();

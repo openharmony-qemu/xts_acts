@@ -265,211 +265,6 @@ export default function TaskTimeout2Test() {
         done()
       })
 
-    /**
-     * @tc.name   TaskTimeout2TestClass008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0346
-     * @tc.desc   taskpool.execute mixed taskGroup timeout test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskTimeout2TestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName = 'TaskTimeout2TestClass008';
-        console.info(`${caseName} start.`);
-        let isTerminate = false;
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup.addTask(timeoutDemo, 100.0);
-        taskGroup.addTask(timeoutDemo, 500.0);
-        taskGroup.addTask(timeoutDemo, 1200.0);
-        taskpool.execute(taskGroup, { timeout: 1000 }).then((res) => {
-          console.info(`${caseName} then`);
-        }).catch((e: Error) => {
-          console.info(`${caseName} catch: ${e.message}`);
-          isTerminate = true;
-        });
-        while (!isTerminate) {
-          await sleep(100);
-        }
-        expect(isTerminate).assertEqual(true);
-        console.info(`${caseName} end.`);
-        done()
-      })
-
-    /**
-     * @tc.name   TaskTimeout2TestClass009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0347
-     * @tc.desc   taskpool.execute multiple timeout tasks concurrent test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskTimeout2TestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName = 'TaskTimeout2TestClass009';
-        console.info(`${caseName} start.`);
-        let count: int = 0;
-        let isTerminate = false;
-        let task1: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
-        let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
-        let task3: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
-
-        taskpool.execute(task1, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} task1 then`);
-        }).catch((e: Error) => {
-          count++;
-          if (count >= 3) {
-            isTerminate = true;
-          }
-        })
-        taskpool.execute(task2, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} task2 then`);
-        }).catch((e: Error) => {
-          count++;
-          if (count >= 3) {
-            isTerminate = true;
-          }
-        })
-        taskpool.execute(task3, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} task3 then`);
-        }).catch((e: Error) => {
-          count++;
-          if (count >= 3) {
-            isTerminate = true;
-          }
-        });
-
-        while (!isTerminate) {
-          await sleep(100);
-        }
-        expect(isTerminate).assertEqual(true);
-        console.info(`${caseName} end.`);
-        done()
-      })
-
-    /**
-     * @tc.name   TaskTimeout2TestClass010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0348
-     * @tc.desc   taskpool.execute timeout task normal task concurrent test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskTimeout2TestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName = 'TaskTimeout2TestClass010';
-        console.info(`${caseName} start.`);
-        let count: int = 0;
-        let isTerminate = false;
-        let task1: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
-        let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100.0);
-
-        taskpool.execute(task1, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} task1 then`);
-        }).catch((e: Error) => {
-          console.info(`${caseName} catch: ${e.message}`);
-          count++;
-
-          if (count >= 2) {
-            isTerminate = true;
-          }
-        })
-        taskpool.execute(task2).then(() => {
-          count++;
-          console.info(`${caseName} then`);
-          if (count >= 2) {
-            isTerminate = true;
-          }
-        }).catch((e: Error) => {
-          console.info(`${caseName} error: ${e.code}, ${e.message}`)
-        });
-
-        while (!isTerminate) {
-          await sleep(100);
-        }
-        expect(isTerminate).assertEqual(true);
-        console.info(`${caseName} end.`);
-        done()
-      })
-
-    /**
-     * @tc.name   TaskTimeout2TestClass011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0349
-     * @tc.desc   taskpool.execute multiple taskGroups concurrent timeout test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskTimeout2TestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName = 'TaskTimeout2TestClass011';
-        console.info(`${caseName} start.`);
-        let count: int = 0;
-        let isTerminate = false;
-        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
-        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup1.addTask(timeoutDemo, 200.0);
-        taskGroup2.addTask(timeoutDemo, 200.0);
-
-        taskpool.execute(taskGroup1, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} then1`);
-        }).catch((e: Error) => {
-          console.info(`${caseName} catch taskGroup1: ${e.message}`);
-          count++;
-
-          if (count >= 2) {
-            isTerminate = true;
-          }
-        })
-        taskpool.execute(taskGroup2, { timeout: 100 }).then((res) => {
-          console.info(`${caseName} then2`);
-        }).catch((e: Error) => {
-          console.info(`${caseName} catch taskGroup2: ${e.message}`);
-          count++;
-
-          if (count >= 2) {
-            isTerminate = true;
-          }
-        });
-
-        while (!isTerminate) {
-          await sleep(100);
-        }
-        expect(isTerminate).assertEqual(true);
-        console.info(`${caseName} end.`);
-        done()
-      })
-
-    /**
-     * @tc.name   TaskTimeout2TestClass012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0350
-     * @tc.desc   taskpool.execute timeout task ArrayBuffer parameters test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskTimeout2TestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName = 'TaskTimeout2TestClass012';
-        console.info(`${caseName} start.`);
-        let isTerminate = false;
-        let task = new taskpool.Task(setTransferListTestWithTime, new Uint8Array(new ArrayBuffer(8)),
-          new Uint8Array(new ArrayBuffer(8)), 500.0);
-        taskpool.execute(task, { timeout: 1000 }).then((res) => {
-          isTerminate = true;
-          console.info(`${caseName} then`);
-          expect(res).assertEqual(16);
-        }).catch((e: Error) => {
-          console.info(`${caseName} catch: ${e.message}`);
-          isTerminate = true;
-        });
-        while (!isTerminate) {
-          await sleep(100);
-        }
-        expect(isTerminate).assertEqual(true);
-        console.info(`${caseName} end.`);
-        done()
-      })
 
     /**
      * @tc.name   TaskTimeout2TestClass007
@@ -647,7 +442,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0345
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0351
      * @tc.desc   taskpool.execute timeout task await multiple timeout tasks test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -734,7 +529,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0346
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0350
      * @tc.desc   taskpool.AsyncRunner execute nested timeout taskGroup test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -763,7 +558,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0347
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0351
      * @tc.desc   taskpool.SequenceRunner execute nested timeout taskGroup test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -792,7 +587,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0348
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0352
      * @tc.desc   taskpool.AsyncRunner onReceiveData nested timeout task test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -830,7 +625,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0349
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0353
      * @tc.desc   taskpool.execute timeout task nested in onExecutionSucceeded test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -868,7 +663,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0367
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0354
      * @tc.desc   taskpool.execute timeout task nested in onExecutionFailed test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -904,7 +699,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0368
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0355
      * @tc.desc   taskpool.execute timeout task nested in onReceiveData test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -942,51 +737,16 @@ export default function TaskTimeout2Test() {
         done()
       })
 
-    /**
-     * @tc.name   TaskTimeout2TestClass022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0369
-     * @tc.desc   taskpool.execute timeout task nested in onEnqueued test.
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('TaskTimeout2TestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: () => void): Promise<void> => {
-    //     let caseName = 'TaskTimeout2TestClass022';
-    //     console.info(`${caseName} start.`);
-    //     let isTerminate = false;
-    //     let task1 = new taskpool.Task(timeoutDemo, 100.0);
-    //     task1.onEnqueued(() => {
-    //       let innerTask = new taskpool.Task(timeoutDemo, 300.0);
-    //       taskpool.execute(innerTask, { timeout: 200 }).then((res) => {
-    //         console.info(`${caseName} then`);
-    //       }).catch((e: Error) => {
-    //         console.info(`${caseName} catch innerTask: ${e.message}`);
-    //         isTerminate = true;
-    //       })
-    //     })
-    //     taskpool.execute(task1).then(() => {
-    //       console.info(`${caseName} execute task1 then`);
-    //     }).catch((e: Error) => {
-    //       console.info(`${caseName} catch task1: ${e.message}`);
-    //     });
-    //     while (!isTerminate) {
-    //       await sleep(100);
-    //     }
-    //     expect(isTerminate).assertEqual(true);
-    //     console.info(`${caseName} end.`);
-    //     done()
-    //   })
 
     /**
-     * @tc.name   TaskTimeout2TestClass023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0370
+     * @tc.name   TaskTimeout2TestClass022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0356
      * @tc.desc   taskpool.execute timeout task nested in onStartExecution test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskTimeout2TestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskTimeout2TestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName = 'TaskTimeout2TestClass023';
         console.info(`${caseName} start.`);
@@ -1015,14 +775,14 @@ export default function TaskTimeout2Test() {
       })
 
     /**
-     * @tc.name   TaskTimeout2TestClass024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0371
+     * @tc.name   TaskTimeout2TestClass023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0357
      * @tc.desc   taskpool.execute timeout task nested in Promise.then test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskTimeout2TestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskTimeout2TestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName = 'TaskTimeout2TestClass024';
         console.info(`${caseName} start.`);
@@ -1048,14 +808,14 @@ export default function TaskTimeout2Test() {
       })
 
     /**
-     * @tc.name   TaskTimeout2TestClass025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0372
+     * @tc.name   TaskTimeout2TestClass024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0358
      * @tc.desc   taskpool.execute timeout task nested in Promise.catch test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskTimeout2TestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskTimeout2TestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName = 'TaskTimeout2TestClass025';
         console.info(`${caseName} start.`);
@@ -1081,14 +841,14 @@ export default function TaskTimeout2Test() {
       })
 
     /**
-     * @tc.name   TaskTimeout2TestClass026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0378
+     * @tc.name   TaskTimeout2TestClass025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0359
      * @tc.desc   taskpool.execute Worker onReceiveData nested timeout task test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskTimeout2TestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskTimeout2TestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName = 'TaskTimeout2TestClass026';
         console.info(`${caseName} start.`);
@@ -1552,7 +1312,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass041
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0395
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0448
      * @tc.desc   taskpool.cancel partial timeout taskGroup test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1594,7 +1354,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass042
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0396
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0449
      * @tc.desc   taskpool.cancel timeout happen simultaneously test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1629,7 +1389,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass043
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0397
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0450
      * @tc.desc   taskpool.execute canceled timeout task again test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1639,23 +1399,20 @@ export default function TaskTimeout2Test() {
       async (done: () => void): Promise<void> => {
         let caseName = 'TaskTimeout2TestClass043';
         console.info(`${caseName} start.`);
-        let task = new taskpool.Task(timeoutDemo, 2000.0);
-        taskpool.execute(task, { timeout: 5000 }).then((res) => {
+        let task = new taskpool.Task(timeoutDemo, 1000.0);
+        taskpool.execute(task, { timeout: 2000 }).then((res) => {
           console.info(`${caseName} then`);
         }).catch((e: Error) => {
           console.info(`${caseName} catch first execute: ${e.message}`);
         });
-        await sleep(100);
-        taskpool.cancel(task);
-        await sleep(100);
         try {
-          taskpool.execute(task, { timeout: 5000 }).then(() => {
-            expect(true).assertEqual(true);
-          }).catch((e: Error) => {
-            console.info(`${caseName} error: ${e.code}, ${e.message}`)
-          });
+          await sleep(100);
+          taskpool.cancel(task);
+          await sleep(100);
+          await taskpool.execute(task, { timeout: 5000 })
+          expect().assertFail();
         } catch (e) {
-          console.info(`${caseName} catch second execute: ${e.message}`);
+          expect(e.code).assertEqual(10200057);
         }
         console.info(`${caseName} end.`);
         done()
@@ -1663,7 +1420,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass044
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0398
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0451
      * @tc.desc   taskpool.cancel outer timeout inner cancel test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1697,7 +1454,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass045
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0399
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0452
      * @tc.desc   taskpool.cancel outer cancel inner timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1732,7 +1489,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass046
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0453
      * @tc.desc   taskpool.cancel outer cancel inner complete test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1767,7 +1524,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass047
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0401
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0454
      * @tc.desc   taskpool.cancel inner cancel outer timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1802,7 +1559,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass048
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0402
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0455
      * @tc.desc   taskpool.cancel inner cancel outer complete test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1832,7 +1589,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass049
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0403
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0456
      * @tc.desc   taskpool.cancel multi-layer nested sequential test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1882,7 +1639,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass050
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0405
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0457
      * @tc.desc   taskpool.cancel nested task in taskGroup test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1919,7 +1676,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass051
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0406
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0458
      * @tc.desc   taskpool.cancel nested timeout task in queue task test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1954,7 +1711,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass052
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0408
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0459
      * @tc.desc   taskpool.execute task exception before timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1982,7 +1739,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass053
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0409
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0460
      * @tc.desc   taskpool.execute timeout before task exception test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2010,7 +1767,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass054
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0410
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0461
      * @tc.desc   taskpool.execute exception timeout simultaneously test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2038,7 +1795,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass055
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0411
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0462
      * @tc.desc   taskpool.execute nested task inner exception outer timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2067,7 +1824,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass056
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0412
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0463
      * @tc.desc   taskpool.execute nested task outer exception inner timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2095,7 +1852,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass057
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0413
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0464
      * @tc.desc   taskpool.execute taskGroup partial exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2125,7 +1882,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass058
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0414
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0465
      * @tc.desc   taskpool.execute taskGroup all exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2155,7 +1912,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass059
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0415
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0466
      * @tc.desc   taskpool.execute async task reject before timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2183,7 +1940,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass060
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0416
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0467
      * @tc.desc   taskpool.execute async task reject before timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2211,7 +1968,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass061
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0417
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0468
      * @tc.desc   taskpool.execute timeout before async task reject test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2239,7 +1996,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass062
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0418
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0469
      * @tc.desc   taskpool.cancel before exception before timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2270,7 +2027,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass063
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0419
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0470
      * @tc.desc   taskpool.cancel exception before cancel before timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2304,7 +2061,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass064
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0420
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0471
      * @tc.desc   taskpool.cancel timeout before cancel before exception test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2339,7 +2096,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass065
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0421
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0472
      * @tc.desc   taskpool.cancel nested scenario exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2373,7 +2130,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass066
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0422
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0473
      * @tc.desc   taskpool.cancel taskGroup exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2412,7 +2169,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass067
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0423
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0474
      * @tc.desc   taskpool.cancel queue task exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2449,7 +2206,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass068
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0424
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0475
      * @tc.desc   taskpool.execute nested scenario exception timeout test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2500,7 +2257,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass069
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0425
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0476
      * @tc.desc   taskpool.AsyncRunner inner timeout shorter than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2529,7 +2286,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass070
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0426
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0477
      * @tc.desc   taskpool.SequenceRunner inner timeout shorter than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2558,7 +2315,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass071
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0427
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0478
      * @tc.desc   taskpool.AsyncRunner inner timeout longer than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2586,7 +2343,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass072
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0428
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0479
      * @tc.desc   taskpool.SequenceRunner inner timeout longer than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2614,7 +2371,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass073
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0429
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0480
      * @tc.desc   taskGroup nested AsyncRunner inner timeout shorter than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2646,7 +2403,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass074
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0430
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0481
      * @tc.desc   taskGroup nested SequenceRunner inner timeout shorter than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2678,7 +2435,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass075
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0431
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0482
      * @tc.desc   taskGroup nested AsyncRunner inner timeout longer than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2711,7 +2468,7 @@ export default function TaskTimeout2Test() {
 
     /**
      * @tc.name   TaskTimeout2TestClass076
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0414
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0483
      * @tc.desc   taskGroup nested SequenceRunner inner timeout longer than outer test.
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -2730,6 +2487,213 @@ export default function TaskTimeout2Test() {
         group.addTask(taskGroupSequenceRunnerInnerLongOuterShort);
         taskpool.execute(group, { timeout: 200 }).then((res) => {
           console.info(`${caseName} then`);
+        }).catch((e: Error) => {
+          console.info(`${caseName} catch: ${e.message}`);
+          isTerminate = true;
+        });
+        while (!isTerminate) {
+          await sleep(100);
+        }
+        expect(isTerminate).assertEqual(true);
+        console.info(`${caseName} end.`);
+        done()
+      })
+
+
+    /**
+     * @tc.name   TaskTimeout2TestClass077
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0484
+     * @tc.desc   taskpool.execute mixed taskGroup timeout test.
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskTimeout2TestClass077';
+        console.info(`${caseName} start.`);
+        let isTerminate = false;
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup.addTask(timeoutDemo, 100.0);
+        taskGroup.addTask(timeoutDemo, 500.0);
+        taskGroup.addTask(timeoutDemo, 1200.0);
+        taskpool.execute(taskGroup, { timeout: 1000 }).then((res) => {
+          console.info(`${caseName} then`);
+        }).catch((e: Error) => {
+          console.info(`${caseName} catch: ${e.message}`);
+          isTerminate = true;
+        });
+        while (!isTerminate) {
+          await sleep(100);
+        }
+        expect(isTerminate).assertEqual(true);
+        console.info(`${caseName} end.`);
+        done()
+      })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass078
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0485
+     * @tc.desc   taskpool.execute multiple timeout tasks concurrent test.
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskTimeout2TestClass078';
+        console.info(`${caseName} start.`);
+        let count: int = 0;
+        let isTerminate = false;
+        let task1: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
+        let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
+
+        taskpool.execute(task1, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} task1 then`);
+        }).catch((e: Error) => {
+          count++;
+          if (count >= 3) {
+            isTerminate = true;
+          }
+        })
+        taskpool.execute(task2, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} task2 then`);
+        }).catch((e: Error) => {
+          count++;
+          if (count >= 3) {
+            isTerminate = true;
+          }
+        })
+        taskpool.execute(task3, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} task3 then`);
+        }).catch((e: Error) => {
+          count++;
+          if (count >= 3) {
+            isTerminate = true;
+          }
+        });
+
+        while (!isTerminate) {
+          await sleep(100);
+        }
+        expect(isTerminate).assertEqual(true);
+        console.info(`${caseName} end.`);
+        done()
+      })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass079
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0486
+     * @tc.desc   taskpool.execute timeout task normal task concurrent test.
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskTimeout2TestClass079';
+        console.info(`${caseName} start.`);
+        let count: int = 0;
+        let isTerminate = false;
+        let task1: taskpool.Task = new taskpool.Task(timeoutDemo, 200.0);
+        let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100.0);
+
+        taskpool.execute(task1, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} task1 then`);
+        }).catch((e: Error) => {
+          console.info(`${caseName} catch: ${e.message}`);
+          count++;
+
+          if (count >= 2) {
+            isTerminate = true;
+          }
+        })
+        taskpool.execute(task2).then(() => {
+          count++;
+          console.info(`${caseName} then`);
+          if (count >= 2) {
+            isTerminate = true;
+          }
+        }).catch((e: Error) => {
+          console.info(`${caseName} error: ${e.code}, ${e.message}`)
+        });
+
+        while (!isTerminate) {
+          await sleep(100);
+        }
+        expect(isTerminate).assertEqual(true);
+        console.info(`${caseName} end.`);
+        done()
+      })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0487
+     * @tc.desc   taskpool.execute multiple taskGroups concurrent timeout test.
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskTimeout2TestClass080';
+        console.info(`${caseName} start.`);
+        let count: int = 0;
+        let isTerminate = false;
+        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup1.addTask(timeoutDemo, 200.0);
+        taskGroup2.addTask(timeoutDemo, 200.0);
+
+        taskpool.execute(taskGroup1, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} then1`);
+        }).catch((e: Error) => {
+          console.info(`${caseName} catch taskGroup1: ${e.message}`);
+          count++;
+
+          if (count >= 2) {
+            isTerminate = true;
+          }
+        })
+        taskpool.execute(taskGroup2, { timeout: 100 }).then((res) => {
+          console.info(`${caseName} then2`);
+        }).catch((e: Error) => {
+          console.info(`${caseName} catch taskGroup2: ${e.message}`);
+          count++;
+
+          if (count >= 2) {
+            isTerminate = true;
+          }
+        });
+
+        while (!isTerminate) {
+          await sleep(100);
+        }
+        expect(isTerminate).assertEqual(true);
+        console.info(`${caseName} end.`);
+        done()
+      })
+
+    /**
+     * @tc.name   TaskTimeout2TestClass081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0488
+     * @tc.desc   taskpool.execute timeout task ArrayBuffer parameters test.
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TaskTimeout2TestClass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskTimeout2TestClass081';
+        console.info(`${caseName} start.`);
+        let isTerminate = false;
+        let task = new taskpool.Task(setTransferListTestWithTime, new Uint8Array(new ArrayBuffer(8)),
+          new Uint8Array(new ArrayBuffer(8)), 500.0);
+        taskpool.execute(task, { timeout: 1000 }).then((res) => {
+          isTerminate = true;
+          console.info(`${caseName} then`);
+          expect(res).assertEqual(16);
         }).catch((e: Error) => {
           console.info(`${caseName} catch: ${e.message}`);
           isTerminate = true;
