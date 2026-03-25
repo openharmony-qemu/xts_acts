@@ -31,8 +31,8 @@ struct webSetUrlTrustList {
   @State isReceive: number = -1;
   @State isSearchEnd: number = -1;
   @State searchTotalNumber: number = -1;
-  urlWildcardList: string = "{\"UrlPermissionList\":" +
-    "[{\"scheme\":\"https\", \"host\":\"*.example.com\", \"path\":\"*\"}]}"
+  urlWildcardList: string = '{\"UrlPermissionList\":' +
+    '[{\"scheme\":\"https\", \"host\":\"*.example.com\", \"path\":\"*\"}]}';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
