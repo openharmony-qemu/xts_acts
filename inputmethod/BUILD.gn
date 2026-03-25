@@ -29,5 +29,6 @@ group("inputmethod") {
     "InputMethodEditBox:ActsInputMethodEditBoxTest",
     "InputMethodEngineStatic:ActsInputMethodEngineStaticTest",
     "InputMethodListTestStatic:ActsInputMethodListStaticTest",
+    "InputMethodWindManageStatic:ActsInputMethodWindManageStaticTest",
   ]
 }

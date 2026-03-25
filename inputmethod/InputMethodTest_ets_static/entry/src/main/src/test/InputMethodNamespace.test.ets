@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import InputMethodMethod from '@ohos.InputMethodSubtype';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
-import { inputMethodEngine } from '@kit.IMEKit';
+import { Pattern, PatternOptions, inputMethodEngine } from '@kit.IMEKit';
 
 const INVALID_INPUT_PARAMETER: int = 401;
 const INVALID_INPUT_METHOD_CLIENT_DETACHED: int = 12800009;
@@ -400,6 +400,9 @@ export default function inputMethodNamespaceTest() {
             const CASE_NAME: string = 'SUB_Misc_inputMethod_onAttachmentDidFail_static_0100';
             let callback: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
                 console.info(`${CASE_NAME} attachment failed, reason: ${reason}`);
+                expect(typeof(reason.CALLER_NOT_FOCUSED)).assertEqual('int');
+                expect(typeof(reason.IME_ABNORMAL)).assertEqual('int');
+                expect(typeof(reason.IME_ABNORMAL)).assertEqual('int');
             };
             try {
                 inputMethod.onAttachmentDidFail(callback);
@@ -438,6 +441,31 @@ export default function inputMethodNamespaceTest() {
         });
 
         /**
+ 	          * @tc.name   SUB_Misc_inputMethod_offAttachmentDidFail_static_0200
+ 	          * @tc.number SUB_Misc_inputMethod_offAttachmentDidFail_static_0200
+ 	          * @tc.desc   Test offAttachmentDidFail interface
+ 	          * @tc.type   FUNCTION
+ 	          * @tc.size   MEDIUMTEST
+ 	          * @tc.level  LEVEL2
+ 	          */
+ 	         it('SUB_Misc_inputMethod_offAttachmentDidFail_static_0200', Level.LEVEL2, async (done: () => void) => {
+ 	             const CASE_NAME: string = 'SUB_Misc_inputMethod_offAttachmentDidFail_static_02100';
+ 	             let callback: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
+ 	                 console.info(`${CASE_NAME} attachment failed, reason: ${reason}`);
+ 	             };
+ 	             try {
+ 	                 inputMethod.onAttachmentDidFail(callback);
+ 	                 inputMethod.offAttachmentDidFail();
+ 	                 console.info(`${CASE_NAME} execution success`);
+ 	                 done();
+ 	             } catch (error) {
+ 	                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+ 	                 expect().assertFail();
+ 	                 done();
+ 	             }
+ 	         });
+
+        /**
          * @tc.name   SUB_Misc_inputMethod_MAX_TYPE_NUM_static_0100
          * @tc.number SUB_Misc_inputMethod_MAX_TYPE_NUM_static_0100
          * @tc.desc   Test MAX_TYPE_NUM constant
@@ -453,13 +481,13 @@ export default function inputMethodNamespaceTest() {
         });
 
         /**
-         * @tc.name   SUB_Misc_inputMethod_property_static_0100
-         * @tc.number SUB_Misc_inputMethod_property_static_0100
-         * @tc.desc   Test MAX_TYPE_NUM constant
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
+        * @tc.name   SUB_Misc_inputMethod_property_static_0100
+        * @tc.number SUB_Misc_inputMethod_property_static_0100
+        * @tc.desc   Test MAX_TYPE_NUM constant
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL1
+        */
         it('SUB_Misc_inputMethod_property_static_0100', Level.LEVEL1, async (done: () => void) => {
             const CASE_NAME: string = 'SUB_Misc_inputMethod_property_static_0100';
             console.info(`${CASE_NAME} CapitalizeMode.WORDS: ${inputMethodEngine.CapitalizeMode.WORDS}`);
@@ -504,13 +532,13 @@ export default function inputMethodNamespaceTest() {
         });
 
         /**
-         * @tc.name   SUB_Misc_inputMethod_property_static_0200
-         * @tc.number SUB_Misc_inputMethod_property_static_0200
-         * @tc.desc   Test MAX_TYPE_NUM constant
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
+        * @tc.name   SUB_Misc_inputMethod_property_static_0200
+        * @tc.number SUB_Misc_inputMethod_property_static_0200
+        * @tc.desc   Test MAX_TYPE_NUM constant
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL1
+        */
         it('SUB_Misc_inputMethod_property_static_0200', Level.LEVEL1, async (done: () => void) => {
             const CASE_NAME: string = 'SUB_Misc_inputMethod_property_static_0200';
             console.info(`${CASE_NAME} WINDOW_TYPE_INPUT_METHOD_FLOAT: ${inputMethodEngine.WINDOW_TYPE_INPUT_METHOD_FLOAT}`);
@@ -591,5 +619,96 @@ export default function inputMethodNamespaceTest() {
             expect(inputMethodEngine.CURSOR_DOWN === 2).assertTrue();
             done();
         });
+
+
+
+        /**
+ 	      * @tc.name   Sub_Misc_inputMethod_CapitalizeMode_static_0100
+ 	      * @tc.number Sub_Misc_inputMethod_CapitalizeMode_static_0100
+ 	      * @tc.desc   Function test
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('Sub_Misc_inputMethod_CapitalizeMode_static_0100', Level.LEVEL2, async (done: () => void) => {
+ 	       let none = inputMethod.CapitalizeMode.NONE;
+ 	       console.info("====>Sub_Misc_inputMethod_CapitalizeMode_static_0100 none:" + none);
+ 	       expect(none).assertEqual(0);
+ 	       let sentences = inputMethod.CapitalizeMode.SENTENCES;
+ 	       console.info("====>Sub_Misc_inputMethod_CapitalizeMode_static_0100 test:" + sentences);
+ 	       expect(sentences).assertEqual(1);
+ 	       let words = inputMethod.CapitalizeMode.WORDS;
+ 	       console.info("====>Sub_Misc_inputMethod_CapitalizeMode_static_0100 nultiline:" + words);
+ 	       expect(words).assertEqual(2);
+ 	       let characters = inputMethod.CapitalizeMode.CHARACTERS;
+ 	       console.info("====>Sub_Misc_inputMethod_CapitalizeMode_static_0100 number:" + characters);
+ 	       expect(characters).assertEqual(3);
+ 	 
+ 	       done();
+ 	     });
+ 	     /**
+ 	      * @tc.name   Sub_Misc_inputMethod_AttachFailureReason_static_0100
+ 	      * @tc.number Sub_Misc_inputMethod_AttachFailureReason_static_0100
+ 	      * @tc.desc   Function test
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('Sub_Misc_inputMethod_AttachFailureReason_static_0100', Level.LEVEL2, async (done: () => void) => {
+ 	       let caller_not_focused = inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED;
+ 	       console.info("====>Sub_Misc_inputMethod_AttachFailureReason_static_100 none:" + caller_not_focused);
+ 	       expect(caller_not_focused).assertEqual(0);
+ 	       let ime_abnormal = inputMethod.AttachFailureReason.IME_ABNORMAL;
+ 	       console.info("====>Sub_Misc_inputMethod_AttachFailureReason_static_0100 test:" + ime_abnormal);
+ 	       expect(ime_abnormal).assertEqual(1);
+ 	       let service_abnormal = inputMethod.AttachFailureReason.SERVICE_ABNORMAL;
+ 	       console.info("====>Sub_Misc_inputMethod_AttachFailureReason_static_0100 nultiline:" + service_abnormal);
+ 	       expect(service_abnormal).assertEqual(2);
+ 	       done();
+ 	     });
+ 	 
+ 	     /**
+ 	      * @tc.name   Sub_InputMethod_IMF_AttachOptions_static_0100
+ 	      * @tc.number Sub_InputMethod_IMF_AttachOptions_static_0100
+ 	      * @tc.desc   Function test
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL3
+ 	      */
+ 	     it('Sub_InputMethod_IMF_AttachOptions_static_0100', Level.LEVEL3, async (done: () => void) => {
+ 	         const CASE_NAME = '====>Sub_InputMethod_IMF_AttachOptions_static_0100';
+ 	         let attachOptions: inputMethod.AttachOptions = {
+ 	           requestKeyboardReason: inputMethod.RequestKeyboardReason.NONE,
+ 	           showKeyboard: true
+ 	          };
+ 	         expect(attachOptions.requestKeyboardReason).assertEqual(0);
+ 	         expect(attachOptions.showKeyboard).assertTrue();
+ 	         done();
+ 	     });
+ 	   
+ 	     /**
+ 	     * @tc.name   Sub_InputMethod_IMF_TextConfig_static_0100
+ 	     * @tc.number Sub_InputMethod_IMF_TextConfig_static_0100
+ 	     * @tc.desc   Function test
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL3
+ 	     */
+ 	    it('Sub_InputMethod_IMF_TextConfig_static_0100', Level.LEVEL3, async (done: () => void) => {
+ 	        const CASE_NAME = '====>Sub_InputMethod_IMF_TextConfig_static_0100';
+            let attribute: inputMethod.InputAttribute = {
+                textInputType: inputMethod.TextInputType.TEXT,
+                enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+ 	        let ATTRIBUTE: inputMethod.TextConfig = {
+ 	         inputAttribute:attribute,
+ 	         newEditBox: true,
+ 	         capitalizeMode: inputMethod.CapitalizeMode.NONE
+ 	     }
+ 	        expect(typeof(ATTRIBUTE.inputAttribute)).assertEqual('object');
+ 	        expect(typeof(ATTRIBUTE.newEditBox)).assertEqual('boolean');
+ 	        expect(typeof(ATTRIBUTE.capitalizeMode)).assertEqual('int');
+ 	        done();
+ 	    });
     })
 }

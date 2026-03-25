@@ -18,6 +18,7 @@ import inputMethodAttachTest from "./InputMethodAttach.test";
 import inputMethodController from "./InputMethodController.test";
 import inputMethodSetting from "./InputMethodSetting.test";
 import inputMethodNamespace from "./InputMethodNamespace.test";
+import inputMethodNoAttachTest from "./InputMethodNoAttach.test";
 export default function testsuite() {
     inputMethodTest();
     inputMethodShowHideTest();
@@ -25,5 +26,6 @@ export default function testsuite() {
     inputMethodController();
     inputMethodSetting();
     inputMethodNamespace();
+    inputMethodNoAttachTest();
 }
 
