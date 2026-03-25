@@ -15,15 +15,15 @@
 
 @Observed
 export class SampleChild1 {
-  @Track childId: number = 0;
-  groupId: number = 1;
-  @Track set: Set<number> = new Set([5, 6]);
+  @Track public childId: number = 0;
+  public groupId: number = 1;
+  @Track public set: Set<number> = new Set([5, 6]);
 
 }
 
 @Observed
 export class Sample1 {
-  @Track father: SampleChild1 = new SampleChild1();
+  @Track public father: SampleChild1 = new SampleChild1();
 }
 
 @Entry
