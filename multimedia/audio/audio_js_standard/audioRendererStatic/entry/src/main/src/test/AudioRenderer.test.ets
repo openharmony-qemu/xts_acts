@@ -13991,5 +13991,325 @@ export default function audioRendererTest() {
       expect(flag).assertTrue();
       done();
     })
+
+    /**
+     * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 
+     * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 
+     * @tc.desc   setIndependentAudioSessionStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+    
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 
+    * @tc.desc   setIndependentAudioSessionStrategy--CONCURRENCY_DUCK_OTHERS--DEFALUT
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
   })
 }
