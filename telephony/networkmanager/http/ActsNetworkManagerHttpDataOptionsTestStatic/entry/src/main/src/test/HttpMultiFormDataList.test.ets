@@ -679,6 +679,56 @@ export default function httpMultiFormDataListTest() {
             }
         })
 
+        /**
+         * @tc.name   testHttpMultiFormDataList_static_1500
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1500
+         * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testHttpMultiFormDataList_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testHttpMultiFormDataList_static_1500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+                    if (data?.netId == 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+                        ExpectFail();
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
+                        let httpRequest: http.HttpRequest = http.createHttp();
+                        let httpRequestOptions_noParm: http.HttpRequestOptions = {
+                            method: http.RequestMethod.POST,
+                            header: { "Content-type": "multipart/form-data" } as Record<string,string>,
+                            multiFormDataList: [],
+                        };
+                        let promise = httpRequest.request('http://baidu.com', httpRequestOptions_noParm);
+                        promise.then((data:http.HttpResponse) => {
+                            hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse ->'+JSON.stringify(data));
+                            ExpectTrue(data != null);
+                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                            httpRequest.destroy();
+                            done();
+                        }).catch((error: Error) => {
+                            let err = error as BusinessError;
+                            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                            httpRequest.destroy();
+                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                            done();
+                        });
+                    }
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
 
     })
 
