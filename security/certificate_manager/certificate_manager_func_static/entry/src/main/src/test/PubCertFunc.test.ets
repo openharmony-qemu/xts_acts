@@ -296,16 +296,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
       }
       try {
-        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
-        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
-        }).catch((err: BusinessError):void => {
-          if(err.code !== 801){
-          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + err.code);
-          expect(err.code).assertEqual(17500001);
-          }
-        })
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + error.code);
+        if(error.code !== 801 ){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010 end');
       done();
@@ -325,16 +321,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
       }
       try {
-        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
-        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
-        }).catch((err: BusinessError):void => {
-          if(err.code !== 801){
-          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + err.code);
-          expect(err.code).assertEqual(17500001);
-          }
-        })
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + error.code);
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011 end');
       done();
@@ -354,16 +346,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       }
       try {
-        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
-        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
-        }).catch((err: BusinessError):void => {
-          if(err.code !== 801){
-          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + err.code);
-          expect(err.code).assertEqual(17500001);
-          }
-        })
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + error.code);
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012 end');
       done();
@@ -383,16 +371,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
       }
       try {
-        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
-        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
-        }).catch((err: BusinessError):void => {
-          if(err.code !== 801){
-          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + err.code);
-          expect(err.code).assertEqual(17500001);
-          }
-        })
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + error.code);
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013 end');
       done();
