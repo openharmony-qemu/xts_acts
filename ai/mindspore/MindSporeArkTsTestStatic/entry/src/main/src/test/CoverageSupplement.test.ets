@@ -4019,15 +4019,15 @@ export default function coverageSupplementTest() {
     });
 
     /**
-     * @tc.name   loadModelFromFileContextCallbackModelEmptyString001
+     * @tc.name   loadModelFromFileContextCallbackModelEmptyStringStatic001
      * @tc.number CoverageSupplement2Test_010
      * @tc.desc   loadModelFromFile Context Callback model empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('loadModelFromFileContextCallbackModelEmptyString001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "CoverageSupplement2Test: loadModelFromFileContextCallbackModelEmptyString001");
+    it('loadModelFromFileContextCallbackModelEmptyStringStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement2Test: loadModelFromFileContextCallbackModelEmptyStringStatic001");
       try {
         let context: mindSporeLite.Context = {};
         context.target = ["cpu"]
@@ -4042,7 +4042,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, "loadModelFromFileContextCallbackModelEmptyString001 error: " + error);
+        hilog.info(domain, tag, "loadModelFromFileContextCallbackModelEmptyStringStatic001 error: " + error);
         hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
         expect(error.code).assertEqual(1000000);
         done();
@@ -4051,15 +4051,15 @@ export default function coverageSupplementTest() {
 
 
     /**
-     * @tc.name   modelPredictCallbackInputsEmptyArray001
+     * @tc.name   modelPredictCallbackInputsEmptyArrayStatic001
      * @tc.number CoverageSupplement2Test_066
      * @tc.desc   Model predict Callback inputs empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('modelPredictCallbackInputsEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "CoverageSupplement2Test: modelPredictCallbackInputsEmptyArray001");
+    it('modelPredictCallbackInputsEmptyArrayStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement2Test: modelPredictCallbackInputsEmptyArrayStatic001");
       try {
         let context: mindSporeLite.Context = {};
         context.target = ["cpu"]
@@ -4078,7 +4078,7 @@ export default function coverageSupplementTest() {
                 done();
               });
             } catch (error) {
-              hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArray001 predict error: " + error);
+              hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArrayStatic001 predict error: " + error);
               hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
               expect(false).assertTrue();
               done();
@@ -4089,7 +4089,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArray001 error: " + error);
+        hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArrayStatic001 error: " + error);
         hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
         expect(false).assertTrue();
         done();
@@ -4098,15 +4098,15 @@ export default function coverageSupplementTest() {
 
     // 2. loadModelFromFile API 测试 - Callback 版本 - Context 属性覆盖
     /**
-     * @tc.name   loadModelFromFileCallbackContextTargetEmptyArray001
+     * @tc.name   loadModelFromFileCallbackContextTargetEmptyArrayStatic001
      * @tc.number CoverageSupplement3Test_017
      * @tc.desc   loadModelFromFile Callback Context target empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('loadModelFromFileCallbackContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "CoverageSupplement3Test: loadModelFromFileCallbackContextTargetEmptyArray001");
+    it('loadModelFromFileCallbackContextTargetEmptyArrayStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement3Test: loadModelFromFileCallbackContextTargetEmptyArrayStatic001");
       try {
         let model_file = abilityContext.filesDir + "/" + "ml_face_isface.ms";
         let context: mindSporeLite.Context = {};
@@ -4122,7 +4122,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, "loadModelFromFileCallbackContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, "loadModelFromFileCallbackContextTargetEmptyArrayStatic001 error: " + error);
         hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
         expect(error.code).assertEqual(1000001);
         done();
@@ -4132,15 +4132,15 @@ export default function coverageSupplementTest() {
 
     // 1. loadModelFromBuffer API 测试 - Callback 版本 - Context 属性覆盖
     /**
-     * @tc.name   loadModelFromBufferContextTargetEmptyArray001
+     * @tc.name   loadModelFromBufferCallbackContextTargetEmptyArrayStatic001
      * @tc.number CoverageSupplement4Test_001
      * @tc.desc   loadModelFromBuffer Context target empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('loadModelFromBufferContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromBufferContextTargetEmptyArray001");
+    it('loadModelFromBufferCallbackContextTargetEmptyArrayStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromBufferCallbackContextTargetEmptyArrayStatic001");
       try {
         let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let context: mindSporeLite.Context = {};
@@ -4156,7 +4156,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, "loadModelFromBufferContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, "loadModelFromBufferCallbackContextTargetEmptyArrayStatic001 error: " + error);
         hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
         expect(error.code).assertEqual(1000001);
         done();
@@ -4165,15 +4165,15 @@ export default function coverageSupplementTest() {
 
     // 3. loadModelFromFd API 测试 - 3 参数 Callback 版本 - Context 属性覆盖
     /**
-     * @tc.name   loadModelFromFdContextTargetEmptyArray001
+     * @tc.name   loadModelFromFdCallbackContextTargetEmptyArrayStatic001
      * @tc.number CoverageSupplement4Test_009
      * @tc.desc   loadModelFromFd Context target empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('loadModelFromFdContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromFdContextTargetEmptyArray001");
+    it('loadModelFromFdCallbackContextTargetEmptyArrayStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromFdCallbackContextTargetEmptyArrayStatic001");
       try {
         let model_file = abilityContext.filesDir + "/" + "ml_face_isface.ms";
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
@@ -4191,7 +4191,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, "loadModelFromFdContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, "loadModelFromFdCallbackContextTargetEmptyArrayStatic001 error: " + error);
         hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
         expect(error.code).assertEqual(1000001);
         done();
