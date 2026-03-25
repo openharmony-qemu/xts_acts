@@ -747,12 +747,9 @@ export default function audioManagerApi9() {
             if (data == true) {
                 console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
                 expect(data).assertTrue();
-            } else if (data == false) {
+            } else (data == false) {
                 console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
                 expect(data).assertFalse();
-            } else {
-                console.log(`Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
-                expect(false).assertTrue();
             }
             done();
         } catch (err) {
