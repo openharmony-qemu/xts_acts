@@ -350,7 +350,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_HiCollie_Report_Remote", nullptr, OH_HiCollie_Report_Remote, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "OH_HiCollie_ReportInputBlock_Main", nullptr, OH_HiCollie_ReportInputBlock_Main, nullptr, nullptr, nullptr,
-            napi_default, nullptr }
+            napi_default, nullptr },
         { "OH_HiCollie_ReportInputBlock_Remote", nullptr, OH_HiCollie_ReportInputBlock_Remote, nullptr, nullptr,
             nullptr, napi_default, nullptr }
     };
