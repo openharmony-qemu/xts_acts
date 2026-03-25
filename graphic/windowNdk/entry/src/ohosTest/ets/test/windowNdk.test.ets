@@ -1694,15 +1694,15 @@ export default function windowNdk() {
       }
     })
     /**
-    * @tc.name test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange
+    * @tc.name testMainWindowSetNavigationBarEnabledAvoidAreaChange
     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6600
-    * @tc.desc test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange
+    * @tc.desc testMainWindowWindowNavigationBarEnabledAvoidAreaChange
     * @tc.type FUNCTION
     * @tc.size MEDIUMTEST
     * @tc.level LEVEL2
     */
-    it('test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = "test_mainWindow_setWindowNavigationBarEnabled_avoidAreaChange";
+    it('testMainWindowSetNavigationBarEnabledAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "testMainWindowSetNavigationBarEnabledAvoidAreaChange";
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
