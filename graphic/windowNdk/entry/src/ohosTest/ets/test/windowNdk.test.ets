@@ -1674,7 +1674,7 @@ export default function windowNdk() {
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result2: ${result2}`);
       await sleep(200);
-      if (deviceType === 'phone' || (deviceType === 'tablet' && isFreeWindowMode === false)) {
+      if (deviceType === 'default' ||deviceType === 'phone' || (deviceType === 'tablet' && isFreeWindowMode === false)) {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
