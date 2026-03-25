@@ -97,6 +97,70 @@ struct runJavaScriptErrorCode {
               }
               break;
             }
+            case 'emitRunJavaScriptCallbackSetEmpty001': {
+              try {
+                this.controller.runJavaScript(
+                  '',
+                  (error, result) => {
+                    if (error) {
+                      console.error('runJavaScript callback ErrorCode:' + error.code + ' Message:' + error.message);
+                      console.error('ErrorCode type:' + typeof(error.code));
+                      Utils.emitEvent(error.code, 26032501);
+                      return;
+                    }
+                    if (result) {
+                      console.info('runJavaScript callback result: ' + result);
+                      Utils.emitEvent(result, 26032501);
+                    }
+                  })
+              } catch (error) {
+                console.log('catch errorCode:' + error.code + 'message:' + error.message);
+                Utils.emitEvent(error.code, 26032501);
+              }
+              break;
+            }
+            case 'emitRunJavaScriptCallbackSetNull001': {
+              try {
+                this.controller.runJavaScript(
+                  null,
+                  (error, result) => {
+                    if (error) {
+                      console.error('runJavaScript callback ErrorCode:' + error.code + ' Message:' + error.message);
+                      console.error('ErrorCode type:' + typeof(error.code));
+                      Utils.emitEvent(error.code, 26032502);
+                      return;
+                    }
+                    if (result) {
+                      console.info('runJavaScript callback result: ' + result);
+                    }
+                  })
+              } catch (error) {
+                console.log('catch errorCode:' + error.code + 'message:' + error.message);
+                Utils.emitEvent(error.code, 26032502);
+              }
+              break;
+            }
+            case 'emitRunJavaScriptCallbackSetUndefined001': {
+              try {
+                this.controller.runJavaScript(
+                  undefined,
+                  (error, result) => {
+                    if (error) {
+                      console.error('runJavaScript callback ErrorCode:' + error.code + ' Message:' + error.message);
+                      console.error('ErrorCode type:' + typeof(error.code));
+                      Utils.emitEvent(error.code, 26032503);
+                      return;
+                    }
+                    if (result) {
+                      console.info('runJavaScript callback result: ' + result);
+                    }
+                  })
+              } catch (error) {
+                console.log('catch errorCode:' + error.code + 'message:' + error.message);
+                Utils.emitEvent(error.code, 26032503);
+              }
+              break;
+            }
 
           }
         })

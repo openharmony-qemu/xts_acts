@@ -55,8 +55,8 @@ struct webUserAgentMetadata {
         Button('webUserAgentMetadata click')
           .key('WebUserAgentMetadataWow64Button')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {

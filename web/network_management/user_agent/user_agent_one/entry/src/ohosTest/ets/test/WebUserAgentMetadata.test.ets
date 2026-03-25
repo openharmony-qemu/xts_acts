@@ -112,6 +112,21 @@ export default function webUserAgentMetadata() {
       });
       sendEventByKey('WebUserAgentMetadataButton', 10, '');
     })
+    /**
+     * @tc.name   testSetUserAgentMetadataFirstParamEmpty
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTMETADATA_EMPTY_PARAMS_0100
+     * @tc.desc   test setUserAgentMetadata first param empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetUserAgentMetadataFirstParamEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitSetUserAgentMetadataFirstParamEmpty', 174180);
+      Utils.registerBaseEvent('testSetUserAgentMetadataFirstParamEmpty', 'no_error', 26032507, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebUserAgentMetadataButton', 10, '');
+    })
 
     /**
      * @tc.name   testSetUserAgentMetadataSecondParamNull
@@ -188,6 +203,21 @@ export default function webUserAgentMetadata() {
     it('testGetUserAgentMetadataParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetUserAgentMetadataParamUndefined', 174180);
       Utils.registerBaseEvent('testGetUserAgentMetadataParamUndefined', '401', 174260, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebUserAgentMetadataButton', 10, '');
+    })
+    /**
+     * @tc.name   testGetUserAgentMetadataParamEmpty
+     * @tc.number SUB_ACE_WEB_GETUSERAGENTMETADATA_EMPTY_PARAMS_0100
+     * @tc.desc   test getUserAgentMetadata param empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetUserAgentMetadataParamEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitGetUserAgentMetadataParamEmpty', 174180);
+      Utils.registerBaseEvent('testGetUserAgentMetadataParamEmpty', 'no_error', 26032508, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataButton', 10, '');

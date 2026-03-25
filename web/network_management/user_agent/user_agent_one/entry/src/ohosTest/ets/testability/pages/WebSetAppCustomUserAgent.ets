@@ -57,8 +57,8 @@ struct webSetAppCustomUserAgent {
         Button('setAppCustomUserAgent click')
           .key('WebSetAppCustomUserAgentButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
@@ -70,7 +70,7 @@ struct webSetAppCustomUserAgent {
                   webView.WebviewController.setAppCustomUserAgent(customUserAgent);
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('userAgentTwo.html'))
-                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
