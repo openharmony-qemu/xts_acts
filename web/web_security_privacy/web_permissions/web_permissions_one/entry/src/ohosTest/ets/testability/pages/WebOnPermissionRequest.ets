@@ -21,7 +21,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import {waitForExist} from '../../test/WaitTest.test';
-
+const driver = Driver.create();
 @Entry
 @Component
 struct WebOnPermissionRequest {
@@ -142,7 +142,6 @@ struct WebOnPermissionRequest {
                         }
                       })
 
-                    let driver = Driver.create();
  
                     await waitForExist(async () => {
                       try {
@@ -220,7 +219,7 @@ struct WebOnPermissionRequest {
                         }
                       })
 
-                    let driver = Driver.create();
+
 
                     await waitForExist(async () => {
                       try {
@@ -298,7 +297,6 @@ struct WebOnPermissionRequest {
                         }
                       })
 
-                    let driver = Driver.create();
 
                     await waitForExist(async () => {
                       try {
@@ -376,7 +374,6 @@ struct WebOnPermissionRequest {
                         }
                       })
 
-                    let driver = Driver.create();
 
                     await waitForExist(async () => {
                       try {
