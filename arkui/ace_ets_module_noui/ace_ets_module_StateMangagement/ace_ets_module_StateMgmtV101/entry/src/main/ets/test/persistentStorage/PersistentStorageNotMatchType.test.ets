@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Driver, ON } from '@ohos.UiTest';
+import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
 let driver: Driver;
@@ -31,7 +32,7 @@ export default function PersistentStorageNotMatchTypeTest() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("Persistent0040" == pages.name)) {
+        if (!("PersistentStorageNotMatchType" == pages.name)) {
           console.info("get PersistentStorageNotMatchTypeTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
