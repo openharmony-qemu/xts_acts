@@ -29,7 +29,10 @@ static napi_value TestArkUICapi_455(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 5;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -49,7 +52,10 @@ static napi_value TestArkUICapi_456(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 0;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UNKNOWN)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UNKNOWN)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -69,7 +75,10 @@ static napi_value TestArkUICapi_457(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 1;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UPDATE)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_UPDATE)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -89,7 +98,10 @@ static napi_value TestArkUICapi_458(napi_env env, napi_callback_info info)
     (void)info;
     constexpr int32_t expected = 2;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_END)), (expected));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (static_cast<int32_t>(ARKUI_CROWNEVENT_ACTION_END)),
+            (expected));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -109,7 +121,10 @@ static napi_value TestArkUICapi_459(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *evt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&evt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&evt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -121,7 +136,10 @@ static napi_value TestArkUICapi_459(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloned = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(evt, &cloned)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(evt, &cloned)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -173,7 +191,10 @@ static napi_value TestArkUICapi_461(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -207,7 +228,10 @@ static napi_value TestArkUICapi_462(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -219,7 +243,10 @@ static napi_value TestArkUICapi_462(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -255,7 +282,10 @@ static napi_value TestArkUICapi_463(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -267,7 +297,10 @@ static napi_value TestArkUICapi_463(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -303,7 +336,10 @@ static napi_value TestArkUICapi_464(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -315,7 +351,10 @@ static napi_value TestArkUICapi_464(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -351,7 +390,10 @@ static napi_value TestArkUICapi_465(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -363,7 +405,10 @@ static napi_value TestArkUICapi_465(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -399,7 +444,10 @@ static napi_value TestArkUICapi_466(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -411,7 +459,10 @@ static napi_value TestArkUICapi_466(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -447,7 +498,10 @@ static napi_value TestArkUICapi_467(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -459,7 +513,10 @@ static napi_value TestArkUICapi_467(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -495,7 +552,10 @@ static napi_value TestArkUICapi_468(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -507,7 +567,10 @@ static napi_value TestArkUICapi_468(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -543,7 +606,10 @@ static napi_value TestArkUICapi_469(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -555,7 +621,10 @@ static napi_value TestArkUICapi_469(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -591,7 +660,10 @@ static napi_value TestArkUICapi_470(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -603,7 +675,10 @@ static napi_value TestArkUICapi_470(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -639,7 +714,10 @@ static napi_value TestArkUICapi_471(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -651,7 +729,10 @@ static napi_value TestArkUICapi_471(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -687,7 +768,10 @@ static napi_value TestArkUICapi_472(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -699,7 +783,10 @@ static napi_value TestArkUICapi_472(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -735,7 +822,10 @@ static napi_value TestArkUICapi_473(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -747,7 +837,10 @@ static napi_value TestArkUICapi_473(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -782,7 +875,10 @@ static napi_value TestArkUICapi_474(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -794,7 +890,10 @@ static napi_value TestArkUICapi_474(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -830,7 +929,10 @@ static napi_value TestArkUICapi_475(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -842,7 +944,10 @@ static napi_value TestArkUICapi_475(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -878,7 +983,10 @@ static napi_value TestArkUICapi_476(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -890,7 +998,10 @@ static napi_value TestArkUICapi_476(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -926,7 +1037,10 @@ static napi_value TestArkUICapi_477(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -938,7 +1052,10 @@ static napi_value TestArkUICapi_477(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -974,7 +1091,10 @@ static napi_value TestArkUICapi_478(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -986,7 +1106,10 @@ static napi_value TestArkUICapi_478(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1022,7 +1145,10 @@ static napi_value TestArkUICapi_479(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1034,7 +1160,10 @@ static napi_value TestArkUICapi_479(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1070,7 +1199,10 @@ static napi_value TestArkUICapi_480(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1082,7 +1214,10 @@ static napi_value TestArkUICapi_480(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1118,7 +1253,10 @@ static napi_value TestArkUICapi_481(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1130,7 +1268,10 @@ static napi_value TestArkUICapi_481(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1167,7 +1308,10 @@ static napi_value TestArkUICapi_482(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1179,7 +1323,10 @@ static napi_value TestArkUICapi_482(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1215,7 +1362,10 @@ static napi_value TestArkUICapi_483(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1227,7 +1377,10 @@ static napi_value TestArkUICapi_483(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1263,7 +1416,10 @@ static napi_value TestArkUICapi_484(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1275,7 +1431,10 @@ static napi_value TestArkUICapi_484(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1311,7 +1470,10 @@ static napi_value TestArkUICapi_485(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1323,7 +1485,10 @@ static napi_value TestArkUICapi_485(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1359,7 +1524,10 @@ static napi_value TestArkUICapi_486(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1371,7 +1539,10 @@ static napi_value TestArkUICapi_486(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1407,7 +1578,10 @@ static napi_value TestArkUICapi_487(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1419,7 +1593,10 @@ static napi_value TestArkUICapi_487(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1455,7 +1632,10 @@ static napi_value TestArkUICapi_488(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1467,7 +1647,10 @@ static napi_value TestArkUICapi_488(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1503,7 +1686,10 @@ static napi_value TestArkUICapi_489(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1515,7 +1701,10 @@ static napi_value TestArkUICapi_489(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1551,7 +1740,10 @@ static napi_value TestArkUICapi_490(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1563,7 +1755,10 @@ static napi_value TestArkUICapi_490(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1599,7 +1794,10 @@ static napi_value TestArkUICapi_491(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1611,7 +1809,10 @@ static napi_value TestArkUICapi_491(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1647,7 +1848,10 @@ static napi_value TestArkUICapi_492(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1659,7 +1863,10 @@ static napi_value TestArkUICapi_492(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1695,7 +1902,10 @@ static napi_value TestArkUICapi_493(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1707,7 +1917,10 @@ static napi_value TestArkUICapi_493(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1743,7 +1956,10 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1755,7 +1971,10 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1791,7 +2010,10 @@ static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1803,7 +2025,10 @@ static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
 
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1839,7 +2064,10 @@ static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1867,7 +2095,10 @@ static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1895,7 +2126,10 @@ static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1923,7 +2157,10 @@ static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1951,7 +2188,10 @@ static napi_value TestArkUICapi_500(napi_env env, napi_callback_info info)
     (void)info;
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env,
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
