@@ -18,6 +18,7 @@ import NewEAWorkerTest from "./NewEAWorker.test";
 import NewEAWorkerTest2 from "./NewEAWorker2.test";
 import EAWorkerPostToMainTest from "./EAWorkerPostToMain.test";
 import attachThreadFfrtTest from './AttachThreadFfrt.test';
+import EAWorker3Test from './EAWorker3.test';
 
 export default function testsuite() {
   workerTest();
@@ -25,4 +26,5 @@ export default function testsuite() {
   NewEAWorkerTest2();
   EAWorkerPostToMainTest();
   attachThreadFfrtTest();
+  EAWorker3Test();
 }
