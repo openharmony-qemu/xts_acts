@@ -59,7 +59,7 @@ export default function SelectTest() {
         let pages = routerInstance.getState();
         console.info("SelectTest state pages: " + JSON.stringify(pages));
         console.info("SelectTest state pages.name: " + pages.name);
-        if (pages.name !== "SelectIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
