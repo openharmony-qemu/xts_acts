@@ -44,6 +44,7 @@ struct DrawModifierIndex {
     Column() {
       Button('drawOverlay')
         .id('drawModifierOverlayBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let modifier = new DemoDrawModifier();
@@ -53,7 +54,7 @@ struct DrawModifierIndex {
             this.drawOverlayStatus = 'drawOverlay_fail';
           }
         });
-      Text(this.drawOverlayStatus).key('drawModifierOverlayStatus');
+      Text(this.drawOverlayStatus).key('drawModifierOverlayStatus').height('5%');
     }
     .width('100%')
     .height('100%');

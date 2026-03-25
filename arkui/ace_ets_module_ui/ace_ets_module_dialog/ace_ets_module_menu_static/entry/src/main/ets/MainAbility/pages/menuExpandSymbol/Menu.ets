@@ -21,6 +21,7 @@ import {
   Entry,
   Column,
   Component,
+  ColumnOptions,
   Builder,
   Button,
   Text,
@@ -47,7 +48,7 @@ import { ResourceStr } from '@ohos.arkui.component';
 
 @Entry
 @Component
-struct Index {
+struct MenuPage {
   @State startIconModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
   @State endIconModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_mic'))
   @State expandSymbolModifier: SymbolGlyphModifier =
@@ -94,8 +95,18 @@ struct Index {
   }
 
   build() {
-    Button('click to show menu')
-      .position({ top: 40, left: 40 })
-      .bindMenu(this.MyMenu)
+    Column({ space: 8 } as ColumnOptions) {
+      Button('click to show menu')
+        .id('btnMenuPageOpen')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '90%' })
+        .fontSize(10)
+        .bindMenu(this.MyMenu)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

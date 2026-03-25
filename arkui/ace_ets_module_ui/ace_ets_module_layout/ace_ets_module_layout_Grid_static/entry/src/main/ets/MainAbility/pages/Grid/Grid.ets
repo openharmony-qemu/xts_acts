@@ -34,14 +34,14 @@ struct GridPage {
         .id('gridColTplStr')
         .key('gridColTplStr')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate(undefined)
         .id('gridColTplUndef')
         .key('gridColTplUndef')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate('1fr')
@@ -49,7 +49,7 @@ struct GridPage {
         .id('gridSbcColor')
         .key('gridSbcColor')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate('1fr')
@@ -57,7 +57,7 @@ struct GridPage {
         .id('gridSbcInt')
         .key('gridSbcInt')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate('1fr')
@@ -65,7 +65,7 @@ struct GridPage {
         .id('gridSbcStr')
         .key('gridSbcStr')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate('1fr')
@@ -73,7 +73,7 @@ struct GridPage {
         .id('gridSbcRes')
         .key('gridSbcRes')
         .width('100%')
-        .height(40)
+        .height('12%')
 
       Grid()
         .columnsTemplate('1fr')
@@ -81,7 +81,7 @@ struct GridPage {
         .id('gridSbcUndef')
         .key('gridSbcUndef')
         .width('100%')
-        .height(40)
+        .height('12%')
     }
     .width('100%')
     .height('100%')

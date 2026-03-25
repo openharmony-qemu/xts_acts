@@ -31,6 +31,7 @@ import certFrameworkCertCmsTestUnit from './CertCms.test';
 import certFrameworkCertCheckCrlTestUnit from './CertLocalCRLVerification.test';
 import certFrameworkCmsVerifyTestUnit from './CmsVerify.test';
 import certFrameworkCmsDecryptTestUnit from './CmsDecrypt.test';
+import certExtensionFuncTestUnit from './CertExtension.test';
 
 export default function testsuite() {
   certFrameworkSelectCertsJsAPIFunctionTestUnit();
@@ -53,4 +54,5 @@ export default function testsuite() {
   certFrameworkCertCheckCrlTestUnit();
   certFrameworkCmsVerifyTestUnit();
   certFrameworkCmsDecryptTestUnit();
+  certExtensionFuncTestUnit();
 }

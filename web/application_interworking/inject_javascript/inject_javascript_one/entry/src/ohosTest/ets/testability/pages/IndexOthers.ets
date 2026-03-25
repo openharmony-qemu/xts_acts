@@ -112,8 +112,8 @@ struct Index {
     Column() {
       Row() {
         Button('web click').key('registerJavaScriptProxyAsyncMethodListButton').onClick(async () => {
-          await waitForExist(()=>this.isReceive, this.str, 0);
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await waitForExist(()=>this.isReceive, this.str, 0, 1000);
+          await waitForExist(()=>this.isPageEnd, this.str, 0, 1000);
           console.info('key==>' + this.str);
           this.isReceive = -1;
           this.isPageEnd = -1;

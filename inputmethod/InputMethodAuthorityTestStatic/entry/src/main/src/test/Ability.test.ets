@@ -267,4 +267,57 @@ export default function inputMethodAuthorityJSUnit() {
         });
     })
 
+    /**
+    * @tc.name   inputmethodNomal_test_showSoftKeyboard_static_003
+    * @tc.number inputmethodNomal_test_showSoftKeyboard_static_003
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('inputmethodNomal_test_showSoftKeyboard_static_003', Level.LEVEL0, async (done: () => void) => {
+        const CASE_NAME: string = 'inputmethodNomal_test_showSoftKeyboard_static_003';
+        console.info(`${CASE_NAME} start`);
+        let inputMethodCtrl = inputMethod.getController()
+        inputMethodCtrl.showSoftKeyboard((err, data) => {
+            try {
+                if (err) {
+                    console.info(`${CASE_NAME} execution fail, error: [${err.code}, ${err.message}]`);
+                    expect().assertFail();
+                    done();
+                } else {
+                    console.info(`${CASE_NAME} execution success`);
+                    done();
+                }
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+    });
+
+    /**
+    * @tc.name   inputmethodNomal_test_showSoftKeyboard_static_004
+    * @tc.number inputmethodNomal_test_showSoftKeyboard_static_004
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('inputmethodNomal_test_showSoftKeyboard_static_004', Level.LEVEL2, async (done: () => void) => {
+        const CASE_NAME: string = 'inputmethodNomal_test_showSoftKeyboard_static_004';
+        console.info(`${CASE_NAME} start`);
+        let inputMethodCtrl = inputMethod.getController();
+        try {
+            await inputMethodCtrl.showSoftKeyboard();
+            console.info(`${CASE_NAME} execution success`);
+            done();
+        } catch (error) {
+            console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+            expect().assertFail();
+            done();
+        }
+    });
+
 }

@@ -46,14 +46,15 @@ struct ScrollResultIndex {
     Column() {
       Scroll() {
         Text('scroll_result_content')
-          .height(400);
+          .height('500%');
       }
       .id('scrollResultTarget')
       .key('scrollResultTargetKey')
-      .height(80);
+      .height('10%');
 
       Button('setOffsetRemain')
         .id('scrollResultSetOffsetRemainBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let scrollResult: ScrollResult = { offsetRemain: 0 };
@@ -65,10 +66,11 @@ struct ScrollResultIndex {
             this.setOffsetRemainStatus = 'setOffsetRemain_fail';
           }
         });
-      Text(this.setOffsetRemainStatus).key('scrollResultSetOffsetRemainStatus');
+      Text(this.setOffsetRemainStatus).key('scrollResultSetOffsetRemainStatus').height('5%');
 
       Button('getOffsetRemain')
         .id('scrollResultGetOffsetRemainBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let scrollResult: ScrollResult = { offsetRemain: 66 };
@@ -79,8 +81,8 @@ struct ScrollResultIndex {
             this.getOffsetRemainStatus = 'getOffsetRemain_fail';
           }
         });
-      Text(this.getOffsetRemainStatus).key('scrollResultGetOffsetRemainStatus');
-      Text(this.offsetRemainValue.toString()).key('scrollResultOffsetRemainValue');
+      Text(this.getOffsetRemainStatus).key('scrollResultGetOffsetRemainStatus').height('5%');
+      Text(this.offsetRemainValue.toString()).key('scrollResultOffsetRemainValue').height('5%');
     }
     .width('100%')
     .height('100%');

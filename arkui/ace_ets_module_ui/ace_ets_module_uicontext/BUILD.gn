@@ -23,6 +23,7 @@ group("ActsAceEtsModuleUIContextTest") {
       "ace_ets_module_UIContext02:ActsAceBasicContext02Test",
       "ace_ets_module_uicontext_api12_static:ActsAceBasicContextStaticTest",
       "ace_ets_module_uicontext_api13_static:ActsAceBasicContext13StaticTest",
+      "ace_ets_module_uicontext_static:ActsAceEtsModuleUiContextStaticTest",
     ]
   } else {
     deps = [
@@ -34,6 +35,7 @@ group("ActsAceEtsModuleUIContextTest") {
       "ace_ets_module_UIContext02:ActsAceBasicContext02Test",
       "ace_ets_module_uicontext_api12_static:ActsAceBasicContextStaticTest",
       "ace_ets_module_uicontext_api13_static:ActsAceBasicContext13StaticTest",
+      "ace_ets_module_uicontext_static:ActsAceEtsModuleUiContextStaticTest",
     ]
   }
 }

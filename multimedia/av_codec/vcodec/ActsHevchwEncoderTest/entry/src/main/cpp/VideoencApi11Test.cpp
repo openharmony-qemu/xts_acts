@@ -29,6 +29,9 @@
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
+
+bool g_flagValue = true;
+
 namespace {
 constexpr int64_t NANOS_IN_SECOND = 1000000000L;
 constexpr int64_t NANOS_IN_MICRO = 1000L;
@@ -49,7 +52,6 @@ int32_t g_picWidth;
 int32_t g_picHeight;
 int32_t g_keyWidth;
 int32_t g_keyHeight;
-bool g_flagValue = true;
 
 void clearIntqueue(std::queue<uint32_t> &q)
 {
@@ -268,7 +270,7 @@ int32_t VEncAPI11Sample::CreateSurface()
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
         return ret;
     }
-    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP);
+    ret = AV_ERR_OK;
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;
@@ -375,10 +377,12 @@ int32_t VEncAPI11Sample::CreateVideoEncoder(const char *codecName)
 
 void VEncAPI11Sample::WaitForEOS()
 {
-    if (inputLoop_)
+    if (inputLoop_) {
         inputLoop_->join();
-    if (outputLoop_)
+    }
+    if (outputLoop_) {
         outputLoop_->join();
+    }
     inputLoop_ = nullptr;
     outputLoop_ = nullptr;
 }

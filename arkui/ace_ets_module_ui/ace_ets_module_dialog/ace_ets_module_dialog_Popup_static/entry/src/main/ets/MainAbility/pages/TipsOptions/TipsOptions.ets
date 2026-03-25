@@ -26,8 +26,7 @@ import {
   FlexAlign,
   ResourceStr,
   TipsAnchorType,
-  $r,
-  Scroll
+  $r
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -37,9 +36,12 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 struct TipsExample {
   build() {
     Column() {
-      Button('Hover Tips')
+      Button('Tips1')
         .key('tips1')
-        .margin({ bottom:20 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '44%' })
+        .fontSize(10)
         .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
@@ -49,8 +51,12 @@ struct TipsExample {
           showAtAnchor: TipsAnchorType.TARGET
         })
 
-      Button('Hover Tips')
+      Button('Tips2')
         .key('tips2')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '44%' })
+        .fontSize(10)
         .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
@@ -59,6 +65,10 @@ struct TipsExample {
           enableArrow: true,
           showAtAnchor: TipsAnchorType.TARGET
         })
-    }.width('100%').padding({ top: 5 })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

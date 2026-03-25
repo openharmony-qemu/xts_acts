@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -129,7 +129,7 @@ export default function AvPlayerEnumTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      expect(media.PlaybackSpeed.SPEED_FORWARD_0_25_X as number).assertEqual(8);
+      expect(Number(media.PlaybackSpeed.SPEED_FORWARD_0_25_X)).assertEqual(8);
       expect(Number(media.PlaybackSpeed.SPEED_FORWARD_0_125_X)).assertEqual(9);
       done();
     });

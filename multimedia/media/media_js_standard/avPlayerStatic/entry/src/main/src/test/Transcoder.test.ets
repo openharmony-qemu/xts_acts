@@ -40,6 +40,7 @@ const PAUSEAVTRANSCODER_PROMISE_EVENT = 'pausePromise';
 const RESUMEAVTRANSCODER_PROMISE_EVENT = 'resumePromise';
 const CANCELAVTRANSCODER_PROMISE_EVENT = 'cancelPromise';
 const RELEASEAVTRANSCODER_PROMISE_EVENT = 'releasePromise';
+const RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT = 'releasePromiseWithParam';
 const ERROR_EVENT = 'error';
 const END_EVENT = 'end';
 
@@ -153,12 +154,51 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
     case RELEASEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
       avTranscoder?.offComplete();
+      avTranscoder?.offError();
       avTranscoder?.offProgressUpdate();
         avTranscoder?.release().then(() => {
           console.info('release AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }).catch((err: Error) => {
           console.info('release AVTranscoder failed and catch error is ' + err.message);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        });
+      break;
+    case RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT:
+      steps.shift();
+      avTranscoder?.offComplete(() => {
+        console.info('avTranscoder complete');
+        toNextStep(avTranscoder, config, pauseTime, steps, done);
+      });
+      avTranscoder?.offError((err: BusinessError) => {
+        try {
+          console.error('error ocConstantSourceNode, error message is ' + err);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        } catch (error) {
+          // 处理错误
+          console.error('when error on execute releaseRecorderPromise error message is ' + error);
+        }
+      });
+      avTranscoder?.offProgressUpdate((progress: int) => {
+        console.info('avTranscoder progressUpdate = ' + progress);
+        // to pause
+        if (progress > 100) {
+          console.info('avTranscoder progressUpdate');
+          expect(steps[0]).assertEqual(ERROR_EVENT);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        }
+        if (progress >= pauseProgress && times == 0) {
+          console.info('avTranscoder progressUpdate');
+          times++;
+          expect(steps[0]).assertEqual(PAUSEAVTRANSCODER_PROMISE_EVENT);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        }
+      })
+        avTranscoder?.release().then(() => {
+          console.info('release AVTranscoder with param success');
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        }).catch((err: Error) => {
+          console.info('release AVTranscoder with param failed and catch error is ' + err.message);
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         });
       break;
@@ -372,6 +412,74 @@ export default function AVTransCoderTest() {
         END_EVENT);
       toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0200 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0300
+     * @tc.desc   Transcoder start-pause-resume-stop-releaseWithParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_0300 start');
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      expect(outputFdObject).not().assertNull();
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_0300 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0400
+     * @tc.desc   Transcoder start-pause-resume-cancel-releaseWithParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_0400 start');
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_0400 end');
     });
   })
 }

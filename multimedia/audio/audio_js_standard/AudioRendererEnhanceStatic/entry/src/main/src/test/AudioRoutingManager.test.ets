@@ -253,7 +253,6 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.offAvailableDeviceChange((data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -275,7 +274,6 @@ export default function AudioRoutingManagerTest() {
           console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
         });
         audioRoutingManager.offAvailableDeviceChange();
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -302,7 +300,6 @@ export default function AudioRoutingManagerTest() {
             if (deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.BLOCKED ||
               deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.UNBLOCKED) {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -310,7 +307,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.offMicBlockStatusChanged(micBlockStatusCallback)
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
@@ -338,7 +334,6 @@ export default function AudioRoutingManagerTest() {
               console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
               expect(audioDevices[0].id).assertLargerOrEqual(0);
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -346,7 +341,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.offMicBlockStatusChanged()
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
@@ -354,5 +348,257 @@ export default function AudioRoutingManagerTest() {
       done();
     });
 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_INPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.ALL_MEDIA_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.CALL_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.CALL_INPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.ALL_CALL_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0100
+     * @tc.desc   AudioRenderer-getLatency with LATENCY_TYPE_ALL using movie stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let audioStreamInfo:audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererInfo:audio.AudioRendererInfo = {
+            usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+            rendererFlags: 0
+        }
+        let audioRendererOptions:audio.AudioRendererOptions = {
+            streamInfo: audioStreamInfo,
+            rendererInfo: audioRendererInfo
+        }
+        let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+        try {
+            await audioRenderer!.start();
+            let otLatency = 0;
+            let latency = audioRenderer!.getLatency(audio.AudioLatencyType.LATENCY_TYPE_ALL);
+            console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0100 getLatency ALL: ${latency}`);
+            expect(latency).assertLargerOrEqual(otLatency);
+        } catch (error) {
+            console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0100 getLatency all error: ${JSON.stringify(error)}`);
+            expect(false).assertTrue();
+        } finally {
+            await audioRenderer!.release();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0200
+     * @tc.desc   AudioRenderer-getLatency with software and hardware latency types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let audioStreamInfo:audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererInfo:audio.AudioRendererInfo = {
+            usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+            rendererFlags: 0
+        }
+        let audioRendererOptions:audio.AudioRendererOptions = {
+            streamInfo: audioStreamInfo,
+            rendererInfo: audioRendererInfo
+        }
+        let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+        try {
+            await audioRenderer!.start();
+            let softLatency = 0;
+            let hardLatency = 0;
+            let swLatency = audioRenderer!.getLatency(audio.AudioLatencyType.LATENCY_TYPE_SOFTWARE);
+            let hwLatency = audioRenderer!.getLatency(audio.AudioLatencyType.LATENCY_TYPE_HARDWARE);
+            console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0200 getLatency software: ${swLatency}, hardware: ${hwLatency}`);
+            expect(swLatency).assertLargerOrEqual(softLatency);
+            expect(hwLatency).assertLargerOrEqual(hardLatency);
+        } catch (error) {
+            console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0200 getLatency subtype error: ${JSON.stringify(error)}`);
+            expect(false).assertTrue();
+        } finally {
+            await audioRenderer!.release();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0400
+     * @tc.desc   AudioRenderer-getLatency Released state check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let audioStreamInfo:audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererInfo:audio.AudioRendererInfo = {
+            usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+            rendererFlags: 0
+        }
+        let audioRendererOptions:audio.AudioRendererOptions = {
+            streamInfo: audioStreamInfo,
+            rendererInfo: audioRendererInfo
+        }
+        let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+        try {
+            await audioRenderer!.start();
+            await audioRenderer!.release();
+            audioRenderer!.getLatency(audio.AudioLatencyType.LATENCY_TYPE_ALL);
+            expect(false).assertTrue();
+        } catch (error) {
+            expect(Number(error.code)).assertEqual(6800103);
+            console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0400 getLatency subtype error: ${error},${error.code}`);
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0500
+     * @tc.desc   AudioRenderer-Latency types check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let allLatency = 0;
+        let swLatency = 1;
+        let hdLatency = 2;
+        try {
+            expect(audio.AudioLatencyType.LATENCY_TYPE_ALL).assertEqual(allLatency);
+            console.info(`allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_ALL}`);
+            expect(audio.AudioLatencyType.LATENCY_TYPE_SOFTWARE).assertEqual(swLatency);
+            console.info(`allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_SOFTWARE}`);
+            expect(audio.AudioLatencyType.LATENCY_TYPE_HARDWARE).assertEqual(hdLatency);
+            console.info(`allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_HARDWARE}`);
+        } catch (error) {
+            console.info("SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_STATIC_0500 obtained delay type does not match the enumeration value.");
+            expect(false).assertTrue();
+        }
+        done();
+    })
   })
 }

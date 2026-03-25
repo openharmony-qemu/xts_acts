@@ -1033,7 +1033,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1076,7 +1075,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1119,7 +1117,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1227,7 +1224,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1283,7 +1279,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1334,8 +1329,8 @@ export default function abilityTest() {
                 await session!.setAVPlaybackState(playbackState);
                 Utils.msSleep(200);
                 let currentPlaybackState = controller!.getAVPlaybackStateSync();
-                console.log(`Get playback state: ${playbackState}`);
-                expect(currentPlaybackState.state).assertEqual(0);
+                console.log(`Get playback state: ${playbackState.state}`);
+                expect(currentPlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_INITIAL);
             } catch (err) {
                 expect(true).assertFalse();
             }
@@ -1429,6 +1424,7 @@ export default function abilityTest() {
                 let outputDeviceInfo = controller!.getOutputDeviceSync();
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
+                expect(outputDeviceInfo.devices[0].castCategory).assertEqual(0);
             } catch (err) {
                 expect(true).assertFalse();
             }
@@ -1509,6 +1505,187 @@ export default function abilityTest() {
                 expect(true).assertFalse();
                 done();
             };
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001
+         * @tc.desc   controller test on(outputDeviceChange) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onOutputDeviceChange(() => {
+                    console.info('on outputDeviceChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002
+         * @tc.desc   controller test on(outputDeviceChange) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onOutputDeviceChange(() => {
+                    console.info('on outputDeviceChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003
+         * @tc.desc   controller test on(outputDeviceChange)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => { 
+            try {
+                controller!.offOutputDeviceChange();
+                controller!.onOutputDeviceChange((state: avSession.ConnectionState, device: avSession.OutputDeviceInfo) => {
+                    console.info(`on outputDeviceChange state: ${state}, device : ${device}`);
+                    expect(state).assertLargerOrEqual(0);
+                });
+                controller!.offOutputDeviceChange((state: avSession.ConnectionState, device: avSession.OutputDeviceInfo) => {
+                    console.info(`on outputDeviceChange state: ${state}, device : ${device}`);
+                    expect(state).assertLargerOrEqual(0);
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001
+         * @tc.desc   controller test on(ValidCommandChange) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onValidCommandChange(() => {
+                    console.info('on ValidCommandChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002
+         * @tc.desc   controller test on(ValidCommandChange) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onValidCommandChange(() => {
+                    console.info('on ValidCommandChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003
+         * @tc.desc   controller test on(ValidCommandChange)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                controller!.offValidCommandChange();
+                controller!.onValidCommandChange((validCommands: avSession.AVControlCommandType[]) => {
+                    console.info(`validCommandChange : SUCCESS : size : ${validCommands.length}`);
+                    console.info(`validCommandChange : SUCCESS : validCommands : ${validCommands.values()}`);
+                    expect(validCommands.values()).assertInstanceOf('String');
+                });
+                controller!.offValidCommandChange((validCommands: avSession.AVControlCommandType[]) => {
+                    console.info(`validCommandChange : SUCCESS : size : ${validCommands.length}`);
+                    console.info(`validCommandChange : SUCCESS : validCommands : ${validCommands.values()}`);
+                    expect(validCommands.values()).assertInstanceOf('String');
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+        
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing on off playbackstate change callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            try{
+                let filter: Array<string> = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
+                    'volume','maxVolume','muted','duration','videoWidth','videoHeight','extras'];
+                controller!.offPlaybackStateChange();   
+                controller!.onPlaybackStateChange(filter, (playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                });
+                controller!.offPlaybackStateChange((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`offPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                }); 
+                controller!.onPlaybackStateChangeAll((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChangeAll success : ${playbackstate}`)
+                });
+            }catch(err){
+                console.info(`playbackStateChange failed : ${err.code}  ${err.message}`)
+                expect().assertFail()
+            }
+            done();
         })
     })
 }

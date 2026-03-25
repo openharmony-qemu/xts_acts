@@ -190,6 +190,14 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PointerStyle.LOADING == 42);
           ExpectTrue(pointer.PointerStyle.RUNNING == 43);
           ExpectTrue(pointer.PointerStyle.MIDDLE_BTN_EAST_WEST == 44);
+          expect(pointer.PointerStyle.RUNNING_LEFT).assertEqual(45);
+          expect(pointer.PointerStyle.RUNNING_RIGHT).assertEqual(46);
+          expect(pointer.PointerStyle.AECH_DEVELOPER_DEFINED_ICON).assertEqual(47);
+          expect(pointer.PointerStyle.SCREENRECORDER_CURSOR).assertEqual(48);
+          expect(pointer.PointerStyle.LASER_CURSOR).assertEqual(49);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT).assertEqual(50);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT_RED).assertEqual(51);
+          expect(pointer.PointerStyle.DEVELOPER_DEFINED_ICON).assertEqual(-100);
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);

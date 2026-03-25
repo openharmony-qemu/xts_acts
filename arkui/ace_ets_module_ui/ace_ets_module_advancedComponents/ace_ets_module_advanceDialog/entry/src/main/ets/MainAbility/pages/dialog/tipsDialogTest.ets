@@ -42,6 +42,7 @@ struct TipsDialogTest {
       themeColorMode: ThemeColorMode.LIGHT,
       primaryButton: {
         value: '取消',
+        textAlign: TextAlign.Start,
         action: () => {
           console.info('Callback when the first button is clicked')
         },
@@ -49,6 +50,7 @@ struct TipsDialogTest {
       secondaryButton: {
         value: '删除',
         role: ButtonRole.ERROR,
+        textAlign: TextAlign.Center,
         action: () => {
           console.info('Callback when the second button is clicked')
         }

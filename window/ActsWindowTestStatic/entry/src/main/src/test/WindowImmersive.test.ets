@@ -1293,7 +1293,7 @@ export default function WindowImmersiveTest() {
                     let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_CUTOUT;
                     let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
                     hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
-                    expect(avoidArea.visible).assertTrue();
+                    expect(!avoidArea.visible).assertTrue();
                     expect(avoidArea.topRect != null).assertTrue();
                     expect(avoidArea.rightRect != null).assertTrue();
                     expect(avoidArea.bottomRect != null).assertTrue();

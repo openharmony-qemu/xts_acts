@@ -40,6 +40,7 @@ struct ContentCoverOptionsIndex {
       Button('change SafeArea')
         .fontSize(20)
         .id('Button1')
+        .height('8%')
         .onClick(() => {
           this.safeArea = !this.safeArea;
         });
@@ -74,6 +75,7 @@ struct ContentCoverOptionsIndex {
         })
         .id('Button')
         .fontSize(20)
+        .height('8%')
         .margin(10)
         .bindContentCover(this.isShowContentCover, this.contentCoverBuilder, coverOptions);
     }

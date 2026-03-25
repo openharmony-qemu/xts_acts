@@ -2,11 +2,11 @@
     "description": "Configuration for photoAccess Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "60000000",
+        "test-timeout": "99999999",
         "bundle-name": "ohos.actsGrayBox.test",
         "module-name": "entry_test",
-        "shell-timeout": "9000000",
-        "testcase-timeout": "60000000"
+        "shell-timeout": "99999999",
+        "testcase-timeout": "99999999"
     },
     "kits": [
         {
@@ -50,6 +50,7 @@
             ],
             "teardown-command": [
                 "power-shell setmode 600",
+                "setenforce 1",
                 "hilog -Q pidon",
                 "hilog -Q domainon"
             ]

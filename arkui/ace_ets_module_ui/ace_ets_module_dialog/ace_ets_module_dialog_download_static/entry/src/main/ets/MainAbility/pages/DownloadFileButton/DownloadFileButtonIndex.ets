@@ -21,7 +21,9 @@ import {
   Component,
   Blank,
   Color,
-  Text
+  Text,
+  TextAlign,
+  FlexAlign
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -43,9 +45,9 @@ struct DownloadFileButtonIndex {
   } as DownloadContentOptions;
 
   @State fullFilledStyleOptions: DownloadStyleOptions = {
-    iconSize: '28vp',
+    iconSize: '16vp',
     layoutDirection: DownloadLayoutDirection.HORIZONTAL,
-    fontSize: '24fp',
+    fontSize: '12fp',
     fontColor: Color.Black,
     iconColor: '#ffffffff',
     textIconSpace: '4vp'
@@ -76,19 +78,24 @@ struct DownloadFileButtonIndex {
 
   build() {
     Column() {
-      Text('DownloadFileButton')
-        .fontSize(30)
-        .margin({ top:40, bottom:40 })
+      Text('DlBtn')
+        .fontSize(10)
+        .width('100%')
+        .textAlign(TextAlign.Center)
+        .margin({ top: '1%', bottom: '1%' })
       DownloadFileButton({
         contentOptions: this.fullFilledContentOptions,
         styleOptions: this.fullFilledStyleOptions
       })
-        .width('100')
-        .height(40)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '38%' })
         .key('downloadFileButtonFullFilled')
     }
     .width('100%')
     .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '2%' })
     .backgroundColor(Color.White)
   }
 }
