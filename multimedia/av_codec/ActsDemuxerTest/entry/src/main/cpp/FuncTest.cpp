@@ -260,7 +260,7 @@ int DemuxerFunction0200()
 {
     const char *uri = "http://10.174.172.228:8080/share/audio/AAC_48000_1.aac";
     source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
-    if(source != nullptr) {
+    if (source != nullptr) {
         return -1;
     }
     return 0;
@@ -270,7 +270,7 @@ int DemuxerFunction0300()
 {
     const char *uri = "http://invalidPath/invalid.mp4";
     source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
-    if(source != nullptr) {
+    if (source != nullptr) {
         return -1;
     }
     return 0;

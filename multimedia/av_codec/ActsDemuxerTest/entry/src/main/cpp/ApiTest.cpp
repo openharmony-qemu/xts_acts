@@ -33,6 +33,8 @@ static constexpr int32_t MEMORY_BUFFER_WIDTH = 3840;
 static constexpr int32_t MEMORY_BUFFER_HEIGHT = 2160;
 static constexpr int INVALID_FD_2 = 2;
 static constexpr int INVALID_FD_3 = 3;
+static constexpr int32_t MEMORY_SIZE_1KB = 1024;
+static constexpr int32_t MEMORY_SIZE_SMALL = 2;
 
 static int32_t g_width = MEMORY_BUFFER_WIDTH;
 static int32_t g_height = MEMORY_BUFFER_HEIGHT;
@@ -867,12 +869,12 @@ int DemuxerApi1400()
 int DemuxerApi2300()
 {
     TestSetUp();
-    memory = OH_AVMemory_Create(1024);
+    memory = OH_AVMemory_Create(MEMORY_SIZE_1KB);
     if (memory == nullptr) {
         TestTearDown();
         return -1;
     }
-    memory = OH_AVMemory_Create(2);
+    memory = OH_AVMemory_Create(MEMORY_SIZE_SMALL);
     if (memory == nullptr) {
         TestTearDown();
         return -1;
@@ -884,7 +886,7 @@ int DemuxerApi2300()
 int DemuxerApi2400()
 {
     TestSetUp();
-    memory = OH_AVMemory_Create(2);
+    memory = OH_AVMemory_Create(MEMORY_SIZE_SMALL);
     if (OH_AVMemory_Destroy(memory) != AV_ERR_OK) {
         TestTearDown();
         return -1;

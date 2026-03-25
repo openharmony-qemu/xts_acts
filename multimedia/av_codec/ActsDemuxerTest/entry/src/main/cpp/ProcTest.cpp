@@ -1366,7 +1366,7 @@ int SubMediaDemuxerProcess2500()
 {
     const char *uri = "http://192.168.3.11:8080/share/index.m3u8";
     source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
-    if(source != nullptr) {
+    if (source != nullptr) {
         return -1;
     }
     return 0;
