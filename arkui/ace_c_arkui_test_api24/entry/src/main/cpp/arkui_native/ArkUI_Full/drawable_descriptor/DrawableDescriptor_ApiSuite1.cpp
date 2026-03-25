@@ -29,8 +29,14 @@ static napi_value TestArkUICapi_003(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 0;
-    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -43,8 +49,14 @@ static napi_value TestArkUICapi_004(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 1;
-    ASSERT_EQ(static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -58,7 +70,10 @@ static napi_value TestArkUICapi_005(napi_env env, napi_callback_info info)
     (void)info;
     OH_Pixelmap_InitializationOptions *opts = nullptr;
     (void)OH_PixelmapInitializationOptions_Create(&opts);
-    ASSERT_NOTNULL(opts);
+    if (((opts)) == nullptr) {
+        return nullptr;
+    }
+
     (void)OH_PixelmapInitializationOptions_SetWidth(opts, 1);
     (void)OH_PixelmapInitializationOptions_SetHeight(opts, 1);
     (void)OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_BGRA_8888);
@@ -66,19 +81,34 @@ static napi_value TestArkUICapi_005(napi_env env, napi_callback_info info)
     OH_PixelmapNative *pm1 = nullptr;
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm0);
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm1);
-    ASSERT_NOTNULL(pm0);
-    ASSERT_NOTNULL(pm1);
+    if (((pm0)) == nullptr) {
+        return nullptr;
+    }
+
+    if (((pm1)) == nullptr) {
+        return nullptr;
+    }
+
     OH_PixelmapNative *frames[2] = {pm0, pm1};
     auto *dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
-    ASSERT_NOTNULL(dd);
+    if (((dd)) == nullptr) {
+        return nullptr;
+    }
+
     auto rc = OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(
         dd, DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME);
-    ASSERT_EQ(rc, ARKUI_ERROR_CODE_NO_ERROR);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_DrawableDescriptor_Dispose(dd);
     (void)OH_PixelmapNative_Destroy(&pm0);
     (void)OH_PixelmapNative_Destroy(&pm1);
     (void)OH_PixelmapInitializationOptions_Release(opts);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -92,7 +122,10 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
     (void)info;
     OH_Pixelmap_InitializationOptions *opts = nullptr;
     (void)OH_PixelmapInitializationOptions_Create(&opts);
-    ASSERT_NOTNULL(opts);
+    if (((opts)) == nullptr) {
+        return nullptr;
+    }
+
     (void)OH_PixelmapInitializationOptions_SetWidth(opts, 1);
     (void)OH_PixelmapInitializationOptions_SetHeight(opts, 1);
     (void)OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_BGRA_8888);
@@ -100,24 +133,49 @@ static napi_value TestArkUICapi_006(napi_env env, napi_callback_info info)
     OH_PixelmapNative *pm1 = nullptr;
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm0);
     (void)OH_PixelmapNative_CreateEmptyPixelmap(opts, &pm1);
-    ASSERT_NOTNULL(pm0);
-    ASSERT_NOTNULL(pm1);
+    if (((pm0)) == nullptr) {
+        return nullptr;
+    }
+
+    if (((pm1)) == nullptr) {
+        return nullptr;
+    }
+
     OH_PixelmapNative *frames[2] = {pm0, pm1};
     auto *dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
-    ASSERT_NOTNULL(dd);
-    ASSERT_EQ(OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(
-                  dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME),
-        ARKUI_ERROR_CODE_NO_ERROR);
+    if (((dd)) == nullptr) {
+        return nullptr;
+    }
+
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(
+                  dd, DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     DrawableDescriptor_AnimationStopMode mode = DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME;
     auto rc = OH_ArkUI_DrawableDescriptor_GetAnimationStopMode(dd, &mode);
-    ASSERT_EQ(rc, ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(static_cast<int32_t>(mode),
-        static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME));
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(mode)), (static_cast<int32_t>(DRAWABLE_DESCRIPTOR_ANIMATION_LAST_FRAME)));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_DrawableDescriptor_Dispose(dd);
     (void)OH_PixelmapNative_Destroy(&pm0);
     (void)OH_PixelmapNative_Destroy(&pm1);
     (void)OH_PixelmapInitializationOptions_Release(opts);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 } // namespace ArkUICapiTest

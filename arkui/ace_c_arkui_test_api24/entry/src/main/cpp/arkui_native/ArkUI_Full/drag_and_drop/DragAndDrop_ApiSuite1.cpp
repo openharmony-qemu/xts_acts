@@ -29,10 +29,16 @@ static napi_value TestArkUICapi_001(napi_env env, napi_callback_info info)
     (void)info;
     auto rc = OH_ArkUI_NotifySuggestedDropOperation(
         0, static_cast<ArkUI_DropOperation>(ARKUI_DROP_OPERATION_COPY));
-    ASSERT_TRUE(rc == ARKUI_ERROR_CODE_NO_ERROR ||
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::TrueFailed(env, (rc == ARKUI_ERROR_CODE_NO_ERROR ||
         rc == ARKUI_ERROR_CODE_PARAM_INVALID ||
-        rc == ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED);
-    NAPI_END;
+        rc == ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -45,10 +51,16 @@ static napi_value TestArkUICapi_002(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto rc = OH_ArkUI_NotifyDisableDefaultDropAnimation(0, false);
-    ASSERT_TRUE(rc == ARKUI_ERROR_CODE_NO_ERROR ||
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::TrueFailed(env, (rc == ARKUI_ERROR_CODE_NO_ERROR ||
         rc == ARKUI_ERROR_CODE_PARAM_INVALID ||
-        rc == ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED);
-    NAPI_END;
+        rc == ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 } // namespace ArkUICapiTest

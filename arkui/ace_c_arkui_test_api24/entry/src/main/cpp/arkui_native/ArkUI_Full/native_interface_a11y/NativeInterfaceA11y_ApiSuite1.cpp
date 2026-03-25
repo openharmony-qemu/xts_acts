@@ -28,11 +28,20 @@ static napi_value TestArkUICapi_007(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *a11yElem = OH_ArkUI_CreateAccessibilityElementInfo();
-    ASSERT_NOTNULL(a11yElem);
+    if (((a11yElem)) == nullptr) {
+        return nullptr;
+    }
+
     auto rc = OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(a11yElem, "xts_capi");
-    ASSERT_EQ(rc, ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL);
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (rc), (ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
     OH_ArkUI_DestoryAccessibilityElementInfo(a11yElem);
-    NAPI_END;
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 } // namespace ArkUICapiTest

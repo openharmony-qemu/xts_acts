@@ -28,8 +28,14 @@ static napi_value TestArkUICapi_008(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22;
-    ASSERT_EQ(static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(ARKUI_NODE_TEXT_EDITOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -42,8 +48,14 @@ static napi_value TestArkUICapi_009(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 2003;
-    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_SPAN_FONT)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -56,8 +68,14 @@ static napi_value TestArkUICapi_010(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 2004;
-    ASSERT_EQ(static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_SPAN_FONT_WEIGHT)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -70,8 +88,14 @@ static napi_value TestArkUICapi_011(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 7042;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_INPUT_ELLIPSIS_MODE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -84,8 +108,14 @@ static napi_value TestArkUICapi_012(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 7049;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_INPUT_TEXT_OVERFLOW)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -98,8 +128,14 @@ static napi_value TestArkUICapi_013(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 8038;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_ELLIPSIS_MODE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -112,8 +148,14 @@ static napi_value TestArkUICapi_014(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 8043;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_HORIZONTAL_SCROLLING)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -126,8 +168,14 @@ static napi_value TestArkUICapi_015(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 8046;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_AREA_TEXT_OVERFLOW)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -140,8 +188,14 @@ static napi_value TestArkUICapi_016(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22000;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENTER_KEY_TYPE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -154,8 +208,14 @@ static napi_value TestArkUICapi_017(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22001;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_CARET_COLOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -168,8 +228,14 @@ static napi_value TestArkUICapi_018(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22002;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SCROLL_BAR_COLOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -182,8 +248,14 @@ static napi_value TestArkUICapi_019(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22003;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_BAR_STATE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -196,8 +268,14 @@ static napi_value TestArkUICapi_020(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22004;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -210,8 +288,14 @@ static napi_value TestArkUICapi_021(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22005;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -224,8 +308,14 @@ static napi_value TestArkUICapi_022(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22006;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -238,8 +328,14 @@ static napi_value TestArkUICapi_023(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22007;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_PLACEHOLDER)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -252,8 +348,14 @@ static napi_value TestArkUICapi_024(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22008;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -266,8 +368,14 @@ static napi_value TestArkUICapi_025(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22009;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -280,8 +388,14 @@ static napi_value TestArkUICapi_026(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22010;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_LAYOUT_MANAGER)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -294,8 +408,14 @@ static napi_value TestArkUICapi_027(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22011;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -308,8 +428,14 @@ static napi_value TestArkUICapi_028(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22012;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -322,8 +448,14 @@ static napi_value TestArkUICapi_029(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22013;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -336,8 +468,14 @@ static napi_value TestArkUICapi_030(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22014;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LENGTH)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -350,8 +488,14 @@ static napi_value TestArkUICapi_031(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22015;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_MAX_LINES)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -364,8 +508,14 @@ static napi_value TestArkUICapi_032(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22016;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -378,8 +528,14 @@ static napi_value TestArkUICapi_033(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22017;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_COPY_OPTIONS)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -392,8 +548,14 @@ static napi_value TestArkUICapi_034(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22018;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -406,8 +568,14 @@ static napi_value TestArkUICapi_035(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22019;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_STOP_BACK_PRESS)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -420,8 +588,14 @@ static napi_value TestArkUICapi_036(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22020;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -434,8 +608,14 @@ static napi_value TestArkUICapi_037(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22021;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_CUSTOM_KEYBOARD)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -448,8 +628,14 @@ static napi_value TestArkUICapi_038(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22022;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_BIND_SELECTION_MENU)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -462,8 +648,14 @@ static napi_value TestArkUICapi_039(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22023;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -476,8 +668,14 @@ static napi_value TestArkUICapi_040(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22024;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -490,8 +688,14 @@ static napi_value TestArkUICapi_041(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22025;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -504,8 +708,14 @@ static napi_value TestArkUICapi_042(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22026;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -518,8 +728,14 @@ static napi_value TestArkUICapi_043(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22027;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_SINGLE_LINE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -532,8 +748,14 @@ static napi_value TestArkUICapi_044(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 33;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_DIGITAL_CROWN), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_DIGITAL_CROWN)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -546,8 +768,14 @@ static napi_value TestArkUICapi_045(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 34;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_CUSTOM_OVERFLOW_SCROLL)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -560,8 +788,14 @@ static napi_value TestArkUICapi_046(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 35;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_STACK_OVERFLOW_SCROLL)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -574,8 +808,14 @@ static napi_value TestArkUICapi_047(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 36;
-    ASSERT_EQ(static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_ON_NEED_SOFTKEYBOARD)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -588,8 +828,14 @@ static napi_value TestArkUICapi_048(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22000;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SELECTION_CHANGE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -602,8 +848,14 @@ static napi_value TestArkUICapi_049(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22001;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_READY)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -616,8 +868,14 @@ static napi_value TestArkUICapi_050(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22002;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_PASTE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -630,8 +888,14 @@ static napi_value TestArkUICapi_051(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22003;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_EDITING_CHANGE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -644,8 +908,14 @@ static napi_value TestArkUICapi_052(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22004;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_SUBMIT)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -658,8 +928,14 @@ static napi_value TestArkUICapi_053(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22005;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_CUT)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -672,8 +948,14 @@ static napi_value TestArkUICapi_054(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22006;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_COPY)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -686,8 +968,14 @@ static napi_value TestArkUICapi_055(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22007;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_WILL_CHANGE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -700,8 +988,14 @@ static napi_value TestArkUICapi_056(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     constexpr int32_t expected = 22008;
-    ASSERT_EQ(static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE), expected);
-    NAPI_END;
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::EqFailed(env, (static_cast<int32_t>(NODE_TEXT_EDITOR_ON_DID_CHANGE)), (expected));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -714,8 +1008,11 @@ static napi_value TestArkUICapi_057(napi_env env, napi_callback_info info)
     (void)env;
     (void)info;
     auto *p = OH_ArkUI_NodeEvent_GetTextEditorOnWillChangeEvent(nullptr);
-    ASSERT_OBJ(p, nullptr);
-    NAPI_END;
+    if (((p)) != ((nullptr))) {
+        return nullptr;
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
@@ -730,11 +1027,20 @@ static napi_value TestArkUICapi_058(napi_env env, napi_callback_info info)
     ArkUI_NodeHandle root = nullptr;
     auto rc = OH_ArkUI_NativeModule_GetPageRootNodeHandleByContext(
         static_cast<ArkUI_ContextHandle>(nullptr), &root);
-    ASSERT_TRUE(rc == ARKUI_ERROR_CODE_PARAM_INVALID ||
+    {
+        napi_value __napi_assert_tmp = ::ArkUICapiTest::TrueFailed(env, (rc == ARKUI_ERROR_CODE_PARAM_INVALID ||
         rc == ARKUI_ERROR_CODE_UI_CONTEXT_INVALID ||
-        rc == ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
-    ASSERT_OBJ(root, nullptr);
-    NAPI_END;
+        rc == ARKUI_ERROR_CODE_CAPI_INIT_ERROR));
+        if (__napi_assert_tmp != nullptr) {
+            return __napi_assert_tmp;
+        }
+    }
+
+    if (((root)) != ((nullptr))) {
+        return nullptr;
+    }
+
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 } // namespace ArkUICapiTest
