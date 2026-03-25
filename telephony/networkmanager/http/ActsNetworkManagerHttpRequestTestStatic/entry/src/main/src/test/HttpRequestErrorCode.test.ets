@@ -473,6 +473,115 @@ export default function httpRequestErrorCodeTest() {
         }
       })
 
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode_static_1200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1200
+     * @tc.desc   test http request(url, options, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpRequestMethodErrorCode_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpRequestMethodErrorCode_static_1200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('http://baidu.com', {
+                method: http.RequestMethod.POST, usingCache: false
+              }, (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                if (err?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                  httpRequest.destroy();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
+                  ExpectTrue(typeof data?.result == 'string');
+                  httpRequest.destroy();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                  done();
+                }
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode_static_1300
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1300
+     * @tc.desc   test http request(url, options, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpRequestMethodErrorCode_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpRequestMethodErrorCode_static_1300';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+
+              let httpRequest: http.HttpRequest = http.createHttp();
+              const certPath_legitimate: string = "xtsTest";
+              const keyPath_legitimate: string = "xtsTest";
+              const pwd: string = "";
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.POST,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                }
+              }
+              httpRequest.request('http://baidu.com', httpRequestOptions,
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
+                    ExpectTrue(typeof data?.result == 'string');
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
     })
 
 }
