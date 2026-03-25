@@ -20,6 +20,7 @@
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
 #include "include/DemuxerHelperTest.h"
+#include "include/FuncHelperTest.h"
 #include <hilog/log.h>
 
 #include <iostream>
@@ -38,13 +39,7 @@ using namespace std;
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "DemuxerFunc2Test"
 
-// 全局变量声明
-static OH_AVSource *source = nullptr;
-static OH_AVDemuxer *demuxer = nullptr;
-static OH_AVFormat *sourceFormat = nullptr;
-static OH_AVFormat *trackFormat = nullptr;
-static OH_AVMemory *memory = nullptr;
-static int32_t g_trackCount = 0;
+// 全局变量声明（部分在FuncHelperTest.h中已声明为extern）
 static bool g_initResult = false;
 static OH_AVBuffer *avBuffer = nullptr;
 static bool g_isRefult = false;
@@ -101,17 +96,7 @@ static constexpr size_t SKIP_SAMPLE_BUFFER_SIZE = 10;
 static constexpr int MP3_SKIP_FRAME_INDEX_3051 = 3051;
 static constexpr int OGG_SKIP_FRAME_INDEX_6862 = 6862;
 
-static int64_t GET_FILE_SIZE(const char *fileName)
-{
-    int64_t fileSize = 0;
-    if (fileName != nullptr) {
-        struct stat fileStatus {};
-        if (stat(fileName, &fileStatus) == 0) {
-            fileSize = static_cast<int64_t>(fileStatus.st_size);
-        }
-    }
-    return fileSize;
-}
+// GET_FILE_SIZE 已在 FuncHelperTest.h 中定义为宏
 
 static int OpenFile(const char *fileName, int fd, OH_AVSource **src, OH_AVDemuxer **audioDemuxer)
 {
@@ -180,8 +165,8 @@ static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &vide
     }
 }
 
-static void SetAudioValue(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame,
-                          int &aKeyCount)
+static void SetAudioValueLocal(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame,
+                                int &aKeyCount)
 {
     if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
         audioIsEnd = true;
@@ -190,20 +175,6 @@ static void SetAudioValue(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audi
         if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_SYNC_FRAME) {
             aKeyCount++;
         }
-    }
-}
-
-static void CleanupSkipSampleResources(OH_AVFormat *format, int fd)
-{
-    if (format != nullptr) {
-        OH_AVFormat_Destroy(format);
-    }
-    if (memory != nullptr) {
-        OH_AVMemory_Destroy(memory);
-        memory = nullptr;
-    }
-    if (fd >= 0) {
-        close(fd);
     }
 }
 
@@ -219,19 +190,6 @@ struct SkipSampleReadParams {
     OH_AVCodecBufferAttr &attr;
     OH_AVFormat *&format;
 };
-
-static int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *expected)
-{
-    if (buffSize != SKIP_SAMPLE_BUFFER_SIZE) {
-        return -1;
-    }
-    for (size_t i = 0; i < buffSize; i++) {
-        if (addr[i] != expected[i]) {
-            return -1;
-        }
-    }
-    return 0;
-}
 
 static int InitSkipSampleFile(SkipSampleParams &params)
 {
@@ -266,43 +224,6 @@ static int ReadSkipSampleBuffer(SkipSampleReadParams &params)
     if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &params.attr) != AV_ERR_OK) {
         OH_AVFormat_Destroy(params.format);
         return -1;
-    }
-    return 0;
-}
-
-struct SkipSampleValidationParams {
-    int audioFrame;
-    uint8_t *addr;
-    size_t buffSize;
-    int fd;
-};
-
-static int ValidateMp3SkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
-{
-    if (params.audioFrame == 0) {
-        uint8_t expected0[] = {0x51, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected0) != 0) {
-            CleanupSkipSampleResources(format, params.fd);
-            return -1;
-        }
-    } else if (params.audioFrame == MP3_SKIP_FRAME_INDEX_3051) {
-        uint8_t expected3051[] = {0x00, 0x00, 0x00, 0x00, 0xa3, 0x01, 0x00, 0x00, 0x00, 0x00};
-        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected3051) != 0) {
-            CleanupSkipSampleResources(format, params.fd);
-            return -1;
-        }
-    }
-    return 0;
-}
-
-static int ValidateOggSkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
-{
-    if (params.audioFrame == OGG_SKIP_FRAME_INDEX_6862) {
-        uint8_t expected6862[] = {0x00, 0x00, 0x00, 0x00, 0xf4, 0x00, 0x00, 0x00, 0x00, 0x00};
-        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected6862) != 0) {
-            CleanupSkipSampleResources(format, params.fd);
-            return -1;
-        }
     }
     return 0;
 }
@@ -695,6 +616,7 @@ static int ProcessSingleTrackSimple(SingleTrackSimpleParams &params)
     if (trackFormat == nullptr ||
         !(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
         OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
         return -1;
     }
     
@@ -820,6 +742,7 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
         OH_LOG_INFO(LOG_APP, "[%{public}s] GetIntValue TRACK_TYPE failed for track %{public}d",
             funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
         return -1;
     }
     
@@ -829,6 +752,7 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
     if (g_trackType != expectedType) {
         OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d type mismatch!", funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
         return -1;
     }
     
@@ -837,6 +761,7 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
         OH_LOG_INFO(LOG_APP, "[%{public}s] GetStringValue TRACK_DESCRIPTION failed for track %{public}d",
             funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
         return -1;
     }
     
@@ -846,10 +771,12 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
     if (strcmp(trackdescription, expectedDesc.c_str()) != 0) {
         OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d description mismatch!", funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
         return -1;
     }
     
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
     return 0;
 }
 
@@ -1065,6 +992,7 @@ int DemuxerFunctionTrack0020()
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE, &trackRefType))) { return -1; }
     if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) { return -1; }
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1125,6 +1053,7 @@ int DemuxerFunctionTrack0040()
         &trackIdsDepth, &bufferSize))) { return -1; }
     if (bufferSize != bufferSizeResult) { return -1; }
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1631,6 +1560,7 @@ int DemuxerFunctionAudioTrack0020()
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE, &trackRefType))) { return -1; }
     if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) { return -1; }
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1659,6 +1589,7 @@ int DemuxerFunctionAudioTrack0030()
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION, &trackdescription))) { return -1; }
     if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) { return -1; }
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1691,6 +1622,7 @@ int DemuxerFunctionAudioTrack0040()
         &trackIdsDepth, &bufferSize))) { return -1; }
     if (bufferSize != bufferSizeResult) { return -1; }
     OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -2241,45 +2173,6 @@ int DemuxerFunctionAdd0030()
     return 0;
 }
 
-static int ProcessMp3SkipSampleFrame(int64_t size, OH_AVCodecBufferAttr &attr, int &audioFrame,
-                                     int &skipSampleCounts, int &aKeyCount, bool &audioIsEnd, int fd)
-{
-    OH_AVBuffer *avBuffer = OH_AVBuffer_Create(size);
-    if (avBuffer == nullptr) {
-        close(fd);
-        return -1;
-    }
-    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    if (OH_AVBuffer_GetBufferAttr(avBuffer, &attr) != AV_ERR_OK) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
-    if (format == nullptr) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    OH_AVBuffer_Destroy(avBuffer);
-    uint8_t *addr = nullptr;
-    size_t buffSize = 0;
-    if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
-        skipSampleCounts++;
-        SkipSampleValidationParams validParams = {audioFrame, addr, buffSize, fd};
-        if (ValidateMp3SkipData(validParams, format) != 0) {
-            return -1;
-        }
-    }
-    SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
-    OH_AVFormat_Destroy(format);
-    return 0;
-}
-
 int DemuxerSkipSampleFunc0010()
 {
     OH_AVCodecBufferAttr attr;
@@ -2294,8 +2187,9 @@ int DemuxerSkipSampleFunc0010()
     if (InitSkipSampleFile(params) != 0) {
         return -1;
     }
+    SkipSampleFrameContext ctx = {size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd};
     while (!audioIsEnd) {
-        if (ProcessMp3SkipSampleFrame(size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd) != 0) {
+        if (ProcessMp3SkipSampleFrame(ctx) != 0) {
             return -1;
         }
     }
@@ -2305,45 +2199,6 @@ int DemuxerSkipSampleFunc0010()
         return -1;
     }
     close(fd);
-    return 0;
-}
-
-static int ProcessOggSkipSampleFrame(int64_t size, OH_AVCodecBufferAttr &attr, int &audioFrame,
-                                     int &skipSampleCounts, int &aKeyCount, bool &audioIsEnd, int fd)
-{
-    OH_AVBuffer *avBuffer = OH_AVBuffer_Create(size);
-    if (avBuffer == nullptr) {
-        close(fd);
-        return -1;
-    }
-    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    if (OH_AVBuffer_GetBufferAttr(avBuffer, &attr) != AV_ERR_OK) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
-    if (format == nullptr) {
-        OH_AVBuffer_Destroy(avBuffer);
-        close(fd);
-        return -1;
-    }
-    OH_AVBuffer_Destroy(avBuffer);
-    uint8_t *addr = nullptr;
-    size_t buffSize = 0;
-    if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
-        skipSampleCounts++;
-        SkipSampleValidationParams validParams = {audioFrame, addr, buffSize, fd};
-        if (ValidateOggSkipData(validParams, format) != 0) {
-            return -1;
-        }
-    }
-    SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
-    OH_AVFormat_Destroy(format);
     return 0;
 }
 
@@ -2361,8 +2216,9 @@ int DemuxerSkipSampleFunc0020()
     if (InitSkipSampleFile(params) != 0) {
         return -1;
     }
+    SkipSampleFrameContext ctx = {size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd};
     while (!audioIsEnd) {
-        if (ProcessOggSkipSampleFrame(size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd) != 0) {
+        if (ProcessOggSkipSampleFrame(ctx) != 0) {
             return -1;
         }
     }
