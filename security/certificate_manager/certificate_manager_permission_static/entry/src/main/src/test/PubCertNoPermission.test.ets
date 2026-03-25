@@ -173,14 +173,14 @@ export default function pubCertJsAPINoPermissionTestUnit() {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
       }
       try {
-        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+        certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
         if(error.code !== 801){
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 Failed  Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
         }
       }
-	  hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 end');
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 end');
       done();
     });
   })

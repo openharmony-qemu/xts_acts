@@ -281,13 +281,14 @@ export default function api16CertNoPermissionTestUnit() {
         certFormat: certManager.CertFileFormat.PEM_DER,
         certScope: certManager.CertScope.CURRENT_USER
       };
-      try {
-          await certManager.installUserTrustedCertificate(certBlob);
-      } catch (error) {
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 Failed  Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      try{
+        certManager.installUserTrustedCertificate(certBlob);
+      }catch(err){
+        err = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 Failed  Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
-	  hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 end');
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 end');
       done();
     });
   })
