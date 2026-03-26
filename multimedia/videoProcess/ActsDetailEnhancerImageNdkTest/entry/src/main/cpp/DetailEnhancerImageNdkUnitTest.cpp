@@ -79,6 +79,45 @@ void CreateEmptyPixelmap(OH_PixelmapNative** pixelMap, int32_t width, int32_t he
     (void)OH_PixelmapNative_CreateEmptyPixelmap(options, pixelMap);
 }
 
+bool ValidateColorSpaceParam(const ImageProcessing_ColorSpaceInfo& param,
+                              int expectedMetadataType,
+                              OH_NativeBuffer_ColorSpace expectedColorSpace,
+                              OH_NativeBuffer_Format expectedPixelFormat)
+{
+    if (param.metadataType != expectedMetadataType) {
+        return false;
+    }
+    if (param.colorSpace != expectedColorSpace) {
+        return false;
+    }
+    if (param.pixelFormat != expectedPixelFormat) {
+        return false;
+    }
+    return true;
+}
+
+bool ValidateAllColorSpaceParams()
+{
+    if (!ValidateColorSpaceParam(param_srgb, 0, OH_COLORSPACE_SRGB_FULL, NATIVEBUFFER_PIXEL_FMT_RGBA_8888)) {
+        return false;
+    }
+    if (!ValidateColorSpaceParam(param_p3, 0, OH_COLORSPACE_P3_FULL, NATIVEBUFFER_PIXEL_FMT_RGBA_8888)) {
+        return false;
+    }
+    if (!ValidateColorSpaceParam(param_bt709, 0, OH_COLORSPACE_BT709_FULL, NATIVEBUFFER_PIXEL_FMT_RGBA_8888)) {
+        return false;
+    }
+    if (!ValidateColorSpaceParam(param_not_support, 0, OH_COLORSPACE_BT601_EBU_FULL,
+                                 NATIVEBUFFER_PIXEL_FMT_BGRX_8888)) {
+        return false;
+    }
+    if (!ValidateColorSpaceParam(param5, 0, OH_COLORSPACE_BT2020_PQ_LIMIT,
+                                 NATIVEBUFFER_PIXEL_FMT_RGBA_1010102)) {
+        return false;
+    }
+    return true;
+}
+
 bool IsSupportImageSR()
 {
     if (!access("/sys_prod/lib64/VideoProcessingEngine/libdisplay_aipq_imagesr.so", 0) &&
@@ -99,50 +138,8 @@ bool IsSupportImageSR()
  * @tc.level  LEVEL1
  */
 int VpeImageNdk01()
-{   
-    if (param_srgb.metadataType != 0) {
-        return -1;
-    }
-    if (param_srgb.colorSpace != OH_COLORSPACE_SRGB_FULL) {
-        return -1;
-    }
-    if (param_srgb.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
-        return -1;
-    }
-    if (param_p3.metadataType != 0) {
-        return -1;
-    }
-    if (param_p3.colorSpace != OH_COLORSPACE_P3_FULL) {
-        return -1;
-    }
-    if (param_p3.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
-        return -1;
-    }
-    if (param_bt709.metadataType != 0) {
-        return -1;
-    }
-    if (param_bt709.colorSpace != OH_COLORSPACE_BT709_FULL) {
-        return -1;
-    }
-    if (param_bt709.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
-        return -1;
-    }
-    if (param_not_support.metadataType != 0) {
-        return -1;
-    }
-    if (param_not_support.colorSpace != OH_COLORSPACE_BT601_EBU_FULL) {
-        return -1;
-    }
-    if (param_not_support.pixelFormat != NATIVEBUFFER_PIXEL_FMT_BGRX_8888) {
-        return -1;
-    }
-    if (param5.metadataType != 0) {
-        return -1;
-    }
-    if (param5.colorSpace != OH_COLORSPACE_BT2020_PQ_LIMIT) {
-        return -1;
-    }
-    if (param5.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_1010102) {
+{
+    if (!ValidateAllColorSpaceParams()) {
         return -1;
     }
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
@@ -1213,8 +1210,8 @@ int VpeImageNdk48()
     OH_ImageProcessing* instance = nullptr;
     OH_PixelmapNative* srcImg = nullptr;
     OH_PixelmapNative* dstImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    CreateEmptyPixelmap(&dstImg, 1440, 1920, PIXEL_FORMAT_RGBA_8888);
+    CreateEmptyPixelmap(&srcImg, TEST_IMAGE_WIDTH, TEST_IMAGE_HEIGHT, PIXEL_FORMAT_RGBA_8888);
+    CreateEmptyPixelmap(&dstImg, ENHANCED_IMAGE_WIDTH, ENHANCED_IMAGE_HEIGHT, PIXEL_FORMAT_RGBA_8888);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_EnhanceDetail(instance, srcImg, dstImg);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
     OH_ImageProcessing_Destroy(instance);
