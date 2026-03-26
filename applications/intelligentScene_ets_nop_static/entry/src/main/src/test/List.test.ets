@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import intelligentSceneNopJsunit from './IntelligentSceneUiJsunit.test'
+import intelligentSceneNopStaticJsunit from './IntelligentSceneUiJsunit.test'
 import canNotUse from './CanNotUse.test';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -33,7 +33,7 @@ function isDeviceSupport(): boolean {
 
 export default function testsuite() {
   if (isDeviceSupport()) {
-    intelligentSceneNopJsunit();
+    intelligentSceneNopStaticJsunit();
   } else {
     console.info("Current device does not support this test");
     canNotUse();

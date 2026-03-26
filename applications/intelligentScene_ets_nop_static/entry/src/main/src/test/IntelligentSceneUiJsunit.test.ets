@@ -16,9 +16,9 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import intelligentScene from '@ohos.intelligentScene';
 
-export default function intelligentSceneNopJsunit() {
-  describe('IntelligentSceneNopTest', (): void => {
-    console.log("************* intelligentSceneNop Test start*************");
+export default function intelligentSceneNopStaticJsunit() {
+  describe('IntelligentSceneNopTestStatic', (): void => {
+    console.log("************* intelligentSceneNopStatic Test start*************");
     /**
      * @tc.name   Test_isDoNotDisturbEnabled_001
      * @tc.number SUB_Applications_IntelligentScene_IsDoNotDisturbEnabled_001
