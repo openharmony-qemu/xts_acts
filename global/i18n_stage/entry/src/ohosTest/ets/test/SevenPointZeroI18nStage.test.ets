@@ -33,7 +33,7 @@ export default function SevenPointZeroI18nStageTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_detectEncoding_test_0100', Level.LEVEL2, () => {
-      let uint8Array = new Uint8Array([0xE4,0xB8, 0xE5, 0x9B, 0xBD]);
+      let uint8Array = new Uint8Array([0xE4,0xB8, 0xAD, 0xE5, 0x9B, 0xBD]);
       let info = i18n.Unicode.detectEncoding(uint8Array);
       console.log('SUB_GLOBAL_detectEncoding_test_0100 value:', info.encodingName);
       console.log('SUB_GLOBAL_detectEncoding_test_0100 value:', info.confidence);
@@ -197,18 +197,18 @@ export default function SevenPointZeroI18nStageTest() {
     })
 
     /**
-     * @tc.name SUB_GLOBAL_detectEncoding_test_1000
-     * @tc.number SUB_GLOBAL_detectEncoding_test_1000
+     * @tc.name SUB_GLOBAL_detectEncoding_test_1100
+     * @tc.number SUB_GLOBAL_detectEncoding_test_1100
      * @tc.desc with detectEncoding
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
-    it('SUB_GLOBAL_detectEncoding_test_1000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_detectEncoding_test_1100', Level.LEVEL2, () => {
       let uint8Array = new Uint8Array(0x000000000);
       let info = i18n.Unicode.detectEncoding(uint8Array);
-      console.log('SUB_GLOBAL_detectEncoding_test_1000 value:', info.encodingName);
-      console.log('SUB_GLOBAL_detectEncoding_test_1000 value:', info.confidence);
+      console.log('SUB_GLOBAL_detectEncoding_test_1100 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_test_1100 value:', info.confidence);
       expect(info.encodingName).assertEqual('');
       expect(info.confidence).assertEqual(0);
     })
