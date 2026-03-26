@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import buffer from '@ohos.buffer';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
+import * as signVerifyCallback from './utils/signAndVerify/signVerifyCallback';
 
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
@@ -278,14 +279,11 @@ export default function api16CertFuncTestUnit() {
           padding: certManager.CmKeyPadding.CM_PADDING_PSS,
           digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
         }
-        certManager.init(keyUri,signSpec,(err:Error,CMHandle:certManager.CMHandle)=>{
-          console.info("Security_CertManager_InstallPrivateCertificate_Func_0010 init success");
-          expect(CMHandle.handle != null).assertTrue();
-        })
+        let signHandle:certManager.handle = await signVerifyCallback.initProcess(keyUri,signSpec);
+        expect(signHandle != null).assertTrue();
       } catch (e) {
-        console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: e.code " + e.code);
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: failed. e.code " + e.code);
       }
-
       if (keyUri != undefined) {
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
