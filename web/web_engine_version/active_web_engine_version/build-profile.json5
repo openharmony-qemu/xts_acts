@@ -22,7 +22,7 @@
         "compatibleSdkVersion": 20,
         "runtimeOS": "OpenHarmony",
 
-        "compileSdkVersion": 24
+        "compileSdkVersion": 26
       }
     ],
     "buildModeSet": [
