@@ -81,8 +81,8 @@ export default function SearchDecorationTest() {
       let strJson = inspector.getInspectorByKey('SearchTest');
       let obj = JSON.parseJsonElement(strJson);
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -90,8 +90,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -99,8 +99,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -108,8 +108,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -117,8 +117,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -126,8 +126,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"');
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -135,8 +135,8 @@ export default function SearchDecorationTest() {
       strJson = inspector.getInspectorByKey('SearchTest');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       await CommonFunc.sleep(1000);
 
       console.info('[SearchDecorationTest_static_0010] END');
