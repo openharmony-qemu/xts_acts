@@ -319,8 +319,8 @@ static napi_value TestArkUICapi_448(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_TextEditorChangeEvent *, uint32_t *, uint32_t *)
- * 预期效果: 空 changeEvent 时返回空指针。
- * 实际测试: 传 nullptr 校验返回。
+ * 预期效果: 空 changeEvent 时返回参数非法类错误码（API 24 起返回 ArkUI_ErrorCode）。
+ * 实际测试: 传 nullptr 校验错误码。
  */
 static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
 {
@@ -328,10 +328,13 @@ static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
     (void)info;
     uint32_t v1 = 0U;
     uint32_t v2 = 0U;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(
+    auto ec = OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr), &v1, &v2);
-    if (((p)) != ((nullptr))) {
-        return nullptr;
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
     }
 
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
@@ -341,18 +344,21 @@ static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
  * 测试接口:
  *     OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent *,
  *     ArkUI_StyledString_Descriptor *)
- * 预期效果: 空 changeEvent 时返回空指针。
- * 实际测试: 传 nullptr 校验返回。
+ * 预期效果: 空 changeEvent 时返回参数非法类错误码（API 24 起返回 ArkUI_ErrorCode）。
+ * 实际测试: 传 nullptr 校验错误码。
  */
 static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(
+    auto ec = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
-    if (((p)) != ((nullptr))) {
-        return nullptr;
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
     }
 
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
@@ -362,18 +368,21 @@ static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
  * 测试接口:
  *     OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent *,
  *     ArkUI_StyledString_Descriptor *)
- * 预期效果: 空 changeEvent 时返回空指针。
- * 实际测试: 传 nullptr 校验返回。
+ * 预期效果: 空 changeEvent 时返回参数非法类错误码（API 24 起返回 ArkUI_ErrorCode）。
+ * 实际测试: 传 nullptr 校验错误码。
  */
 static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *p = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(
+    auto ec = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
-    if (((p)) != ((nullptr))) {
-        return nullptr;
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
     }
 
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);

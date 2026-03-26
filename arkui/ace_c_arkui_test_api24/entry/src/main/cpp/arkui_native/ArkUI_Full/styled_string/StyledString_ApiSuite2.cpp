@@ -1016,9 +1016,8 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions* holder1 = nullptr;
-    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
-    auto ec = OH_ArkUI_TextShadowStyle_SetTextShadow(obj, outPtr1, 0U);
+    const OH_ArkUI_ShadowOptions *holder1 = nullptr;
+    auto ec = OH_ArkUI_TextShadowStyle_SetTextShadow(obj, &holder1, 0U);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {

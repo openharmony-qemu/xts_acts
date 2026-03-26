@@ -99,8 +99,9 @@ static napi_value TestArkUICapi_005(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_PixelmapNative *frames[2] = {pm0, pm1};
-    auto *dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
+    OH_PixelmapNative *frames[K_ANIMATED_DRAWABLE_PIXELMAP_FRAME_COUNT] = {pm0, pm1};
+    auto *dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(
+        frames, K_ANIMATED_DRAWABLE_PIXELMAP_FRAME_COUNT);
     if (((dd)) == nullptr) {
         return nullptr;
     }
@@ -125,7 +126,7 @@ struct TwoFrameAnimatedDd {
     OH_Pixelmap_InitializationOptions *opts = nullptr;
     OH_PixelmapNative *pm0 = nullptr;
     OH_PixelmapNative *pm1 = nullptr;
-    OH_ArkUI_DrawableDescriptor *dd = nullptr;
+    ArkUI_DrawableDescriptor *dd = nullptr;
 };
 
 static void DisposeTwoFrameAnimatedDd(TwoFrameAnimatedDd *fixture)
