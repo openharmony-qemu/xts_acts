@@ -1066,8 +1066,8 @@ export default function api16CertFuncTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_CertManager_getCertificateStorePath_0020
-     * @tc.number SUB_Security_CertManager_getCertificateStorePath_0020
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0020
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0020
      * @tc.desc   abnormal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1088,7 +1088,42 @@ export default function api16CertFuncTestUnit() {
         expect(error.code).assertEqual(401);
       }
       done();
+    });    
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0021
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0021
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0021 start');
+      try {
+        await certManager.installUserTrustedCertificate(null);
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0021 failed. code:${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0022
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0022
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0022 start');
+      try {
+        await certManager.installUserTrustedCertificate(undefined);
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0022 failed. code:${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
   })
 }
