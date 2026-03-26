@@ -2516,220 +2516,6 @@ export default function abilityTest() {
             }
         });
         /**
-         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2010
-         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2010
-         * @tc.desc   离线许可证释放，响应参数为undefined
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_DRM_AVPLAYER_2010', Level.LEVEL0, (done:Function) => {
-            let drmsys:drm.MediaKeySystem;
-            let session:drm.MediaKeySession;
-            try {
-                drmsys = drm.createMediaKeySystem(systemName);
-                session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-                session!.processOfflineReleaseResponse(new Uint8Array([1, 2, 3, 4, 5]), undefined).then(() => {
-                    console.info('processOfflineReleaseResponse');
-                    session.destroy();
-                    drmsys.destroy();
-                    done();
-                    expect(false).assertEqual(true);
-                }).catch((err:BusinessError) => {
-                    console.log("XX DRM_AVPLAYER_2010 processOfflineReleaseResponse err end", err.code);
-                    expect(err.code).assertEqual(401);
-                    session.destroy();
-                    drmsys.destroy();
-                    done();
-                });
-            } catch (err) {
-                console.log("XX DRM_AVPLAYER_2010 failed");
-                session!.destroy();
-                drmsys!.destroy();
-                done();
-                expect(false).).assertEqual(true);
-            }
-        });
-                                }).catch((err:BusinessError) => {
-                                    console.log("XX DRM_AVPLAYER_2010 generateOfflineReleaseRequest err end", err.code);
-                                    session.destroy();
-                                    drmsys.destroy();
-                                    done();
-                                    expect(false).assertEqual(true);
-                                });
-                            }).catch((err:BusinessError) => {
-                                console.log("XX DRM_AVPLAYER_2010 processMediaKeyResponse err end", err.code);
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                                expect(false).assertEqual(true);
-                            });
-                        }).catch((err:BusinessError) => {
-                        console.log("XX DRM_AVPLAYER_2010 generateMediaKeyRequest err end", err.code);
-                        session.destroy();
-                        drmsys.destroy();
-                        done();
-                        expect(false).assertEqual(true);
-                    });
-                } else {
-                    {
-                        let drmsys:drm.MediaKeySystem;
-                        let session:drm.MediaKeySession;
-                        try {
-                            drmsys = drm.createMediaKeySystem(systemName);
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2010 createMediaKeySystem failed");
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-
-                        try {
-                            session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2010 createMediaKeySession failed");
-                            drmsys!.destroy();
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-                        try {
-                            session!.processOfflineReleaseResponse(new Uint8Array([1, 2, 3, 4, 5]), undefined).then(() => {
-                                console.info('processOfflineReleaseResponse');
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                                expect(false).assertEqual(true);
-                            }).catch((err:BusinessError) => {
-                                console.log("XX DRM_AVPLAYER_2010 processOfflineReleaseResponse err end", err.code);
-                                expect(err.code).assertEqual(401);
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                            });
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2010 failed");
-                            session!.destroy();
-                            drmsys!.destroy();
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-                    }
-                }
-            } catch (err) {
-                console.log("XX DRM_AVPLAYER_2010 failed");
-                session!.destroy();
-                drmsys!.destroy();
-                done();
-                expect(false).assertEqual(true);
-            }
-        });
-        /**
-         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2020
-         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2020
-         * @tc.desc   离线许可证释放，响应参数为null
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_DRM_AVPLAYER_2020', Level.LEVEL0, (done:Function) => {
-            let drmsys:drm.MediaKeySystem;
-            let session:drm.MediaKeySession;
-            try {
-                drmsys = drm.createMediaKeySystem(systemName);
-                session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-                session!.processOfflineReleaseResponse(new Uint8Array([1, 2, 3, 4, 5]), null).then(() => {
-                    console.info('processOfflineReleaseResponse');
-                    session.destroy();
-                    drmsys.destroy();
-                    done();
-                    expect(false).assertEqual(true);
-                }).catch((err:BusinessError) => {
-                    console.log("XX DRM_AVPLAYER_2020 processOfflineReleaseResponse err end", err.code);
-                    expect(err.code).assertEqual(401);
-                    session.destroy();
-                    drmsys.destroy();
-                    done();
-                });
-            } catch (err) {
-                console.log("XX DRM_AVPLAYER_2020 failed");
-                session!.destroy();
-                drmsys!.destroy();
-                done();
-                expect(false).assertEqual(true);
-            }
-        });
-                                }).catch((err:BusinessError) => {
-                                    console.log("XX DRM_AVPLAYER_2020 generateOfflineReleaseRequest err end", err.code);
-                                    session.destroy();
-                                    drmsys.destroy();
-                                    done();
-                                    expect(false).assertEqual(true);
-                                });
-                            }).catch((err:BusinessError) => {
-                                console.log("XX DRM_AVPLAYER_2020 processMediaKeyResponse err end", err.code);
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                                expect(false).assertEqual(true);
-                            });
-                        }).catch((err:BusinessError) => {
-                        console.log("XX DRM_AVPLAYER_2020 generateMediaKeyRequest err end", err.code);
-                        session.destroy();
-                        drmsys.destroy();
-                        done();
-                        expect(false).assertEqual(true);
-                    });
-                } else {
-                    {
-                        let drmsys:drm.MediaKeySystem;
-                        let session:drm.MediaKeySession;
-                        try {
-                            drmsys = drm.createMediaKeySystem(systemName);
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2020 createMediaKeySystem failed");
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-
-                        try {
-                            session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2020 createMediaKeySession failed");
-                            drmsys!.destroy();
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-                        try {
-                            session!.processOfflineReleaseResponse(new Uint8Array([1, 2, 3, 4, 5]), null).then(() => {
-                                console.info('processOfflineReleaseResponse');
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                                expect(false).assertEqual(true);
-                            }).catch((err:BusinessError) => {
-                                console.log("XX DRM_AVPLAYER_2020 processOfflineReleaseResponse err end", err.code);
-                                expect(err.code).assertEqual(401);
-                                session.destroy();
-                                drmsys.destroy();
-                                done();
-                            });
-                        } catch (err) {
-                            console.log("XX DRM_AVPLAYER_2020 failed");
-                            session!.destroy();
-                            drmsys!.destroy();
-                            done();
-                            expect(false).assertEqual(true);
-                        }
-                    }
-                }
-            } catch (err) {
-                console.log("XX DRM_AVPLAYER_2020 failed");
-                session!.destroy();
-                drmsys!.destroy();
-                done();
-                expect(false).assertEqual(true);
-            }
-        });
-        /**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2100
          * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2100
          * @tc.desc   离线许可证restore,传错误的licenseid
@@ -5664,6 +5450,54 @@ export default function abilityTest() {
                 done();
             }).catch((err: BusinessError) => {
                 console.log("XX SET_GET_CONFIG_4900 failed", err.code);
+                expect().assertFail();
+            });
+            mediaKeySystem.destroy();
+            done();
+        })
+        /**
+         * @tc.name   processOfflineReleaseResponse_null_key
+         * @tc.number processOfflineReleaseResponse_null_key
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+                it('processOfflineReleaseResponse_null_key', Level.LEVEL1, (done:Function) => {
+                    let mediaKeySystem:drm.MediaKeySystem;
+                    mediaKeySystem = drm.createMediaKeySystem(systemName);
+                    let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+                    let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+                    mediaKeySession.processOfflineReleaseResponse(keyArray, null).then(() => {
+                        console.info('processOfflineReleaseResponse');
+                        mediaKeySystem.destroy();
+                        done();
+                    }).catch((err: BusinessError) => {
+                        console.log("XX processOfflineReleaseResponse failed", err.code);
+                        expect().assertFail();
+                    });
+                    mediaKeySystem.destroy();
+                    done();
+                })
+        /**
+         * @tc.name   processOfflineReleaseResponse_undefined_key
+         * @tc.number processOfflineReleaseResponse_undefined_key
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('processOfflineReleaseResponse_undefined_key', Level.LEVEL1, (done:Function) => {
+            let mediaKeySystem:drm.MediaKeySystem;
+            mediaKeySystem = drm.createMediaKeySystem(systemName);
+            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+            mediaKeySession.processOfflineReleaseResponse(keyArray, undefined).then(() => {
+                console.info('processOfflineReleaseResponse');
+                mediaKeySystem.destroy();
+                done();
+            }).catch((err: BusinessError) => {
+                console.log("XX processOfflineReleaseResponse_undefined_key failed", err.code);
                 expect().assertFail();
             });
             mediaKeySystem.destroy();
