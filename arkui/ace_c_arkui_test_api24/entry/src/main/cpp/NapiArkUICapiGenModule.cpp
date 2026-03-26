@@ -15,7 +15,6 @@
 
 #include "ArkUICapiNapiDescriptors.h"
 #include "common/common.h"
-#include "arkui_native/ArkUICapiIncludes.h"
 
 namespace ArkUICapiTest {
 

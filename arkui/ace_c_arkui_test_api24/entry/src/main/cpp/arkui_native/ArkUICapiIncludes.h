@@ -15,8 +15,8 @@
 
 /*
  * 说明：本文件不是「类型声明头文件」（与 matrix4/Matrix4Test.h 等不同）。
- * 仅用于在 NapiArkUICapiGenModule 所在翻译单元内，按顺序 #include 各 ArkUI C API XTS 用例 .cpp，
- * 以便与 CMake 中仅编译单个 GenModule 源文件的方式配合。用例实现仍各自 #include common.h 等。
+ * 仅用于在 ArkUICapiNapiDescriptors.cpp 翻译单元内，按顺序 #include 各 ArkUI C API XTS 用例 .cpp，
+ * 与 NapiArkUICapiGenModule.cpp（仅模块 Init + 注册）分离，避免用例代码被重复编译。用例实现仍各自 #include common.h 等。
  */
 
 #ifndef ARKUI_CAPI_XTS_ARKUICAPI_INCLUDES_H
