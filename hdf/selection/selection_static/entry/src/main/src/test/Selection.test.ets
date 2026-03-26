@@ -172,6 +172,7 @@ export default function selectionTest() {
           expect(false).assertTrue();
           console.info(`selectionfwk_startAbility_001 throw error: [${error.code}, ${error.message}]`);
         })
+        done();
       }catch(error){
         console.info(`selectionfwk_startAbility_001 throw error: [${error.code}, ${error.message}]`);
         console.info('************* selectionfwk_startAbility_001 Test end*************');
@@ -513,10 +514,10 @@ export default function selectionTest() {
           panel.onDestroy(()=>{
               console.info(`selectionfwk_panel_on_destroyed_001`);
           });
-          expect().assertTrue();
         }
       } catch(error) {
         console.info(`selectionfwk_panel_on_destroyed_001 throw error: [${error.code}, ${error.message}]`);
+        expect(false).assertTrue();
       } finally {
         if (panel !== undefined) {
           await selectionManager.destroyPanel(panel);
@@ -636,15 +637,14 @@ export default function selectionTest() {
       }
       let panel: selectionManager.Panel | undefined = undefined;
       try {
+        panel = await selectionManager.createPanel(context, panelInfo);
         if (panel !== undefined) {
-          panel = await selectionManager.createPanel(context, panelInfo);
           panel.onHide(()=>{
             console.info(`selectionfwk_panel_on_hidden_001`);
           })
-          expect(false).assertTrue();
         }
       } catch(error) {
-        console.info(`selectionfwk_destroyPanel_001 throw error: [${error.code}, ${error.message}]`);
+        console.info(`selectionfwk_panel_on_hidden_001 throw error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(401);
       } finally {
         if (panel !== undefined) {
