@@ -15,6 +15,7 @@
 
 #include "../../../common/common.h"
 #include <arkui/styled_string.h>
+#include <native_drawing/drawing_color_filter.h>
 #include <native_drawing/drawing_text_typography.h>
 
 namespace ArkUICapiTest {
@@ -173,14 +174,23 @@ static napi_value TestArkUICapi_443(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, static_cast<const OH_Drawing_ColorFilter *>(nullptr));
+    OH_Drawing_ColorFilter *cf = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
+    if (cf == nullptr) {
+        OH_ArkUI_ImageAttachment_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, cf);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_Drawing_ColorFilterDestroy(cf);
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_Drawing_ColorFilterDestroy(cf);
     OH_ArkUI_ImageAttachment_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -199,14 +209,42 @@ static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_ImageAttachment_GetDrawingColorFilter(obj, static_cast<OH_Drawing_ColorFilter *>(nullptr));
+    OH_Drawing_ColorFilter *cfSet = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
+    if (cfSet == nullptr) {
+        OH_ArkUI_ImageAttachment_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ImageAttachment_SetDrawingColorFilter(obj, cfSet);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_Drawing_ColorFilterDestroy(cfSet);
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_Drawing_ColorFilter *cfGet = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
+    if (cfGet == nullptr) {
+        OH_Drawing_ColorFilterDestroy(cfSet);
+        OH_ArkUI_ImageAttachment_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec2 = OH_ArkUI_ImageAttachment_GetDrawingColorFilter(obj, cfGet);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec2), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_Drawing_ColorFilterDestroy(cfGet);
+            OH_Drawing_ColorFilterDestroy(cfSet);
+            OH_ArkUI_ImageAttachment_Destroy(obj);
+            return napiAssertErr;
+        }
+    }
+
+    OH_Drawing_ColorFilterDestroy(cfGet);
+    OH_Drawing_ColorFilterDestroy(cfSet);
     OH_ArkUI_ImageAttachment_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -345,22 +383,29 @@ static napi_value TestArkUICapi_449(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent *,
  *     ArkUI_StyledString_Descriptor *)
  * 预期效果: 空 changeEvent 时返回参数非法类错误码（API 24 起返回 ArkUI_ErrorCode）。
- * 实际测试: 传 nullptr 校验错误码。
+ * 实际测试: changeEvent 传 nullptr，descriptor 为合法对象，避免部分实现先解引用输出再判空。
  */
 static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    auto *desc = OH_ArkUI_StyledString_Descriptor_Create();
+    if (desc == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
-        static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+        desc);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(desc);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(desc);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -369,22 +414,29 @@ static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent *,
  *     ArkUI_StyledString_Descriptor *)
  * 预期效果: 空 changeEvent 时返回参数非法类错误码（API 24 起返回 ArkUI_ErrorCode）。
- * 实际测试: 传 nullptr 校验错误码。
+ * 实际测试: changeEvent 传 nullptr，descriptor 为合法对象，避免部分实现先解引用输出再判空。
  */
 static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    auto *desc = OH_ArkUI_StyledString_Descriptor_Create();
+    if (desc == nullptr) {
+        return nullptr;
+    }
+
     auto ec = OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(
         static_cast<const OH_ArkUI_TextEditorChangeEvent *>(nullptr),
-        static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
+        desc);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(desc);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(desc);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 

@@ -477,18 +477,24 @@ static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    if (other == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
     bool v2 = false;
-    auto ec = OH_ArkUI_StyledString_Descriptor_IsEqual(
-        obj,
-        static_cast<const ArkUI_StyledString_Descriptor *>(nullptr),
-        &v2);
+    auto ec = OH_ArkUI_StyledString_Descriptor_IsEqual(obj, other, &v2);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(other);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(other);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -509,18 +515,23 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_SubStyledString(
-        obj,
-        static_cast<ArkUI_StyledString_Descriptor *>(nullptr),
-        0U,
-        0U);
+    auto *outDesc = OH_ArkUI_StyledString_Descriptor_Create();
+    if (outDesc == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_SubStyledString(obj, outDesc, 0U, 0U);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(outDesc);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(outDesc);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -685,14 +696,23 @@ static napi_value TestArkUICapi_264(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_ReplaceStyle(obj, static_cast<const OH_ArkUI_SpanStyle *>(nullptr));
+    auto *style = OH_ArkUI_SpanStyle_Create();
+    if (style == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_ReplaceStyle(obj, style);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(style);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_SpanStyle_Destroy(style);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -711,14 +731,23 @@ static napi_value TestArkUICapi_265(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_SetStyle(obj, static_cast<const OH_ArkUI_SpanStyle *>(nullptr));
+    auto *style = OH_ArkUI_SpanStyle_Create();
+    if (style == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_SetStyle(obj, style);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(style);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_SpanStyle_Destroy(style);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -793,18 +822,23 @@ static napi_value TestArkUICapi_268(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(
-        obj,
-        0U,
-        0U,
-        static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
+    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    if (other == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(obj, 0U, 0U, other);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(other);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(other);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -825,17 +859,23 @@ static napi_value TestArkUICapi_269(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_InsertStyledString(
-        obj,
-        0U,
-        static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
+    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    if (other == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_InsertStyledString(obj, 0U, other);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(other);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(other);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -856,16 +896,23 @@ static napi_value TestArkUICapi_270(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_AppendStyledString(
-        obj,
-        static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
+    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    if (other == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_StyledString_Descriptor_AppendStyledString(obj, other);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(other);
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_StyledString_Descriptor_Destroy(other);
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1249,10 +1296,12 @@ static napi_value TestArkUICapi_286(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextStyle_GetFontStyle(obj, static_cast<ArkUI_FontStyle *>(nullptr));
+    ArkUI_FontStyle outFs = static_cast<ArkUI_FontStyle>(0);
+    auto ec = OH_ArkUI_TextStyle_GetFontStyle(obj, &outFs);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1407,10 +1456,12 @@ static napi_value TestArkUICapi_292(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextStyle_GetSuperscript(obj, static_cast<OH_ArkUI_SuperscriptStyle *>(nullptr));
+    OH_ArkUI_SuperscriptStyle outSs = static_cast<OH_ArkUI_SuperscriptStyle>(0);
+    auto ec = OH_ArkUI_TextStyle_GetSuperscript(obj, &outSs);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1469,10 +1520,12 @@ static napi_value TestArkUICapi_295(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetStyledKey(obj, static_cast<OH_ArkUI_StyledStringKey *>(nullptr));
+    OH_ArkUI_StyledStringKey outKey = static_cast<OH_ArkUI_StyledStringKey>(0);
+    auto ec = OH_ArkUI_SpanStyle_GetStyledKey(obj, &outKey);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1601,14 +1654,23 @@ static napi_value TestArkUICapi_300(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetTextStyle(obj, static_cast<const OH_ArkUI_TextStyle *>(nullptr));
+    auto *sub = OH_ArkUI_TextStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetTextStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1627,14 +1689,23 @@ static napi_value TestArkUICapi_301(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetTextStyle(obj, static_cast<OH_ArkUI_TextStyle *>(nullptr));
+    auto *sub = OH_ArkUI_TextStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetTextStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1653,14 +1724,23 @@ static napi_value TestArkUICapi_302(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetParagraphStyle(obj, static_cast<const OH_ArkUI_ParagraphStyle *>(nullptr));
+    auto *sub = OH_ArkUI_ParagraphStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetParagraphStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ParagraphStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1679,14 +1759,23 @@ static napi_value TestArkUICapi_303(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetParagraphStyle(obj, static_cast<OH_ArkUI_ParagraphStyle *>(nullptr));
+    auto *sub = OH_ArkUI_ParagraphStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetParagraphStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ParagraphStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1705,14 +1794,23 @@ static napi_value TestArkUICapi_304(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetGestureStyle(obj, static_cast<const OH_ArkUI_GestureStyle *>(nullptr));
+    auto *sub = OH_ArkUI_GestureStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetGestureStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_GestureStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_GestureStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1731,14 +1829,23 @@ static napi_value TestArkUICapi_305(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetGestureStyle(obj, static_cast<OH_ArkUI_GestureStyle *>(nullptr));
+    auto *sub = OH_ArkUI_GestureStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetGestureStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_GestureStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_GestureStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1757,14 +1864,23 @@ static napi_value TestArkUICapi_306(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetTextShadowStyle(obj, static_cast<const OH_ArkUI_TextShadowStyle *>(nullptr));
+    auto *sub = OH_ArkUI_TextShadowStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetTextShadowStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextShadowStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextShadowStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1783,14 +1899,23 @@ static napi_value TestArkUICapi_307(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetTextShadowStyle(obj, static_cast<OH_ArkUI_TextShadowStyle *>(nullptr));
+    auto *sub = OH_ArkUI_TextShadowStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetTextShadowStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextShadowStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextShadowStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1809,14 +1934,23 @@ static napi_value TestArkUICapi_308(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetDecorationStyle(obj, static_cast<const OH_ArkUI_DecorationStyle *>(nullptr));
+    auto *sub = OH_ArkUI_DecorationStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetDecorationStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1835,14 +1969,23 @@ static napi_value TestArkUICapi_309(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetDecorationStyle(obj, static_cast<OH_ArkUI_DecorationStyle *>(nullptr));
+    auto *sub = OH_ArkUI_DecorationStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetDecorationStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1861,16 +2004,23 @@ static napi_value TestArkUICapi_310(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(
-        obj,
-        static_cast<const OH_ArkUI_BaselineOffsetStyle *>(nullptr));
+    auto *sub = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1889,14 +2039,23 @@ static napi_value TestArkUICapi_311(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(obj, static_cast<OH_ArkUI_BaselineOffsetStyle *>(nullptr));
+    auto *sub = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1915,14 +2074,23 @@ static napi_value TestArkUICapi_312(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetLetterSpacingStyle(obj, static_cast<const OH_ArkUI_LetterSpacingStyle *>(nullptr));
+    auto *sub = OH_ArkUI_LetterSpacingStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetLetterSpacingStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LetterSpacingStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_LetterSpacingStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1941,14 +2109,23 @@ static napi_value TestArkUICapi_313(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetLetterSpacingStyle(obj, static_cast<OH_ArkUI_LetterSpacingStyle *>(nullptr));
+    auto *sub = OH_ArkUI_LetterSpacingStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetLetterSpacingStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LetterSpacingStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_LetterSpacingStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1967,14 +2144,23 @@ static napi_value TestArkUICapi_314(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetLineHeightStyle(obj, static_cast<const OH_ArkUI_LineHeightStyle *>(nullptr));
+    auto *sub = OH_ArkUI_LineHeightStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetLineHeightStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LineHeightStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_LineHeightStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -1993,14 +2179,23 @@ static napi_value TestArkUICapi_315(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetLineHeightStyle(obj, static_cast<OH_ArkUI_LineHeightStyle *>(nullptr));
+    auto *sub = OH_ArkUI_LineHeightStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetLineHeightStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LineHeightStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_LineHeightStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2019,14 +2214,23 @@ static napi_value TestArkUICapi_316(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetUrlStyle(obj, static_cast<const OH_ArkUI_UrlStyle *>(nullptr));
+    auto *sub = OH_ArkUI_UrlStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetUrlStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UrlStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_UrlStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2045,14 +2249,23 @@ static napi_value TestArkUICapi_317(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetUrlStyle(obj, static_cast<OH_ArkUI_UrlStyle *>(nullptr));
+    auto *sub = OH_ArkUI_UrlStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetUrlStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UrlStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_UrlStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2071,16 +2284,23 @@ static napi_value TestArkUICapi_318(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetBackgroundColorStyle(
-        obj,
-        static_cast<const OH_ArkUI_BackgroundColorStyle *>(nullptr));
+    auto *sub = OH_ArkUI_BackgroundColorStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetBackgroundColorStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_BackgroundColorStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2099,14 +2319,23 @@ static napi_value TestArkUICapi_319(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetBackgroundColorStyle(obj, static_cast<OH_ArkUI_BackgroundColorStyle *>(nullptr));
+    auto *sub = OH_ArkUI_BackgroundColorStyle_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetBackgroundColorStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_BackgroundColorStyle_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2125,14 +2354,23 @@ static napi_value TestArkUICapi_320(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetUserDataSpan(obj, static_cast<const OH_ArkUI_UserDataSpan *>(nullptr));
+    auto *sub = OH_ArkUI_UserDataSpan_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetUserDataSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UserDataSpan_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_UserDataSpan_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2151,14 +2389,23 @@ static napi_value TestArkUICapi_321(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetUserDataSpan(obj, static_cast<OH_ArkUI_UserDataSpan *>(nullptr));
+    auto *sub = OH_ArkUI_UserDataSpan_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetUserDataSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UserDataSpan_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_UserDataSpan_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2177,14 +2424,23 @@ static napi_value TestArkUICapi_322(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetCustomSpan(obj, static_cast<const OH_ArkUI_CustomSpan *>(nullptr));
+    auto *sub = OH_ArkUI_CustomSpan_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetCustomSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_CustomSpan_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_CustomSpan_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2203,14 +2459,23 @@ static napi_value TestArkUICapi_323(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetCustomSpan(obj, static_cast<OH_ArkUI_CustomSpan *>(nullptr));
+    auto *sub = OH_ArkUI_CustomSpan_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetCustomSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_CustomSpan_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_CustomSpan_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2229,14 +2494,23 @@ static napi_value TestArkUICapi_324(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_SetImageAttachment(obj, static_cast<const OH_ArkUI_ImageAttachment *>(nullptr));
+    auto *sub = OH_ArkUI_ImageAttachment_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_SetImageAttachment(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ImageAttachment_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -2255,14 +2529,23 @@ static napi_value TestArkUICapi_325(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_SpanStyle_GetImageAttachment(obj, static_cast<OH_ArkUI_ImageAttachment *>(nullptr));
+    auto *sub = OH_ArkUI_ImageAttachment_Create();
+    if (sub == nullptr) {
+        OH_ArkUI_SpanStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_SpanStyle_GetImageAttachment(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(sub);
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ImageAttachment_Destroy(sub);
     OH_ArkUI_SpanStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }

@@ -350,7 +350,7 @@ static napi_value TestArkUICapi_171(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_TextEditorTextStyle_SetDecoration(OH_ArkUI_TextEditorTextStyle *, OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorTextStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建 TextEditorTextStyle 与 DecorationStyleOptions，SetDecoration；勿对第二参传 nullptr（易在实现内崩溃）。
  */
 static napi_value TestArkUICapi_172(napi_env env, napi_callback_info info)
 {
@@ -361,14 +361,23 @@ static napi_value TestArkUICapi_172(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorTextStyle_SetDecoration(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto *dec = OH_ArkUI_DecorationStyleOptions_Create();
+    if (((dec)) == nullptr) {
+        OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextEditorTextStyle_SetDecoration(obj, dec);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
+            OH_ArkUI_TextEditorTextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -376,7 +385,7 @@ static napi_value TestArkUICapi_172(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_TextEditorTextStyle_GetDecoration(OH_ArkUI_TextEditorTextStyle *, OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorTextStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建输出用 DecorationStyleOptions 再 GetDecoration；第二参勿传 nullptr。
  */
 static napi_value TestArkUICapi_173(napi_env env, napi_callback_info info)
 {
@@ -387,14 +396,23 @@ static napi_value TestArkUICapi_173(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorTextStyle_GetDecoration(obj, static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto *dec = OH_ArkUI_DecorationStyleOptions_Create();
+    if (((dec)) == nullptr) {
+        OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextEditorTextStyle_GetDecoration(obj, dec);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
+            OH_ArkUI_TextEditorTextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }

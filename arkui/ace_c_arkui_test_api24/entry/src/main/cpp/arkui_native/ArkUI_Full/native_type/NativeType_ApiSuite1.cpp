@@ -944,7 +944,7 @@ static napi_value TestArkUICapi_096(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *,
  *     OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建配置与 DecorationStyleOptions，Set 成功码为 NO_ERROR；第二参勿传 nullptr（实现侧会解引用导致崩溃）。
  */
 static napi_value TestArkUICapi_097(napi_env env, napi_callback_info info)
 {
@@ -955,16 +955,23 @@ static napi_value TestArkUICapi_097(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(
-        obj,
-        static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto *dec = OH_ArkUI_DecorationStyleOptions_Create();
+    if (((dec)) == nullptr) {
+        OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(obj, dec);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
+            OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -974,7 +981,7 @@ static napi_value TestArkUICapi_097(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig *,
  *     OH_ArkUI_DecorationStyleOptions *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextDataDetectorConfig_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建配置与输出用 DecorationStyleOptions，Get 成功码为 NO_ERROR；第二参勿传 nullptr（易触发空指针解引用）。
  */
 static napi_value TestArkUICapi_098(napi_env env, napi_callback_info info)
 {
@@ -985,16 +992,23 @@ static napi_value TestArkUICapi_098(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(
-        obj,
-        static_cast<OH_ArkUI_DecorationStyleOptions *>(nullptr));
+    auto *dec = OH_ArkUI_DecorationStyleOptions_Create();
+    if (((dec)) == nullptr) {
+        OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(obj, dec);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
+            OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
