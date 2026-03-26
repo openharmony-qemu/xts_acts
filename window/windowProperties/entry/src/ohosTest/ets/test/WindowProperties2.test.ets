@@ -1873,7 +1873,6 @@ export default function windowPropertiesTest2() {
     * @tc.size    MEDIUMTEST
     * @tc.level   LEVEL0
     */
-
     it('test_setWindowShadowEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_setWindowShadowEnabled';
       let msgStr = 'jsunittest ' + caseName + ' ';
