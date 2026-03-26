@@ -387,14 +387,9 @@ static bool HandleReadSampleError(OH_AVErrCode readResult, int32_t index, const 
         return true;
     }
     
-    OH_LOG_INFO(LOG_APP, "[%{public}s] ReadSampleBuffer failed for index=%{public}d, error=%{public}d",
-        funcName, index, readResult);
-    
     if (index != TRACKNUM_0) {
         return false;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[%{public}s] Ignoring track 0 read failure, continuing...", funcName);
     OH_AVFormat_Destroy(trackFormat);
     trackFormat = nullptr;
     return true;
@@ -405,17 +400,14 @@ static int ProcessTrackByType(int32_t index, int32_t trackType, OH_AVCodecBuffer
     TrackState &state, const char *funcName)
 {
     if (index == TRACKNUM_1 && trackType == MEDIA_TYPE_AUXILIARY) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 1 (depth)", funcName);
         GetDepthAndIdsTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd1, *state.frame1);
     } else if (index == TRACKNUM_2 && trackType == MEDIA_TYPE_AUXILIARY) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 2 (prey/auxl)", funcName);
         GetPreyAndIdsTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd2, *state.frame2);
     } else if (index == TRACKNUM_3 && trackType == MEDIA_TYPE_TIMED_METADATA) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 3 (timed metadata)", funcName);
         GetTimedMetaTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd3, *state.frame3);
@@ -428,17 +420,14 @@ static int ProcessTrackByType0140(int32_t index, int32_t trackType, OH_AVCodecBu
     TrackState &state, const char *funcName)
 {
     if (index == TRACKNUM_1 && trackType == MEDIA_TYPE_AUXILIARY) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 1 (depth)", funcName);
         GetDepthTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd1, *state.frame1);
     } else if (index == TRACKNUM_2 && trackType == MEDIA_TYPE_AUXILIARY) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 2 (prey)", funcName);
         GetPreyTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd2, *state.frame2);
     } else if (index == TRACKNUM_3 && trackType == MEDIA_TYPE_TIMED_METADATA) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Processing track 3 (timed metadata)", funcName);
         GetTimedMetaTrack();
         if (!(g_isRefult)) { return -1; }
         SetVideoValue(bufferAttr, *state.isEnd3, *state.frame3);
@@ -450,8 +439,6 @@ static int ProcessTrackByType0140(int32_t index, int32_t trackType, OH_AVCodecBu
 static int ValidateSingleFrame(int frame, int expected, const char *name, const char *funcName)
 {
     if (frame != expected) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] %{public}s mismatch: %{public}d != %{public}d",
-            funcName, name, frame, expected);
         return -1;
     }
     return 0;
@@ -485,31 +472,22 @@ static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIs
 {
     trackFormat = OH_AVSource_GetTrackFormat(source, index);
     if (trackFormat == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetTrackFormat failed for index=%{public}d", funcName, index);
         return -1;
     }
     
     if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetIntValue failed for index=%{public}d", funcName, index);
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[%{public}s] Processing index=%{public}d, trackType=%{public}d",
-        funcName, index, g_trackType);
     
     if ((videoIsEnd1 && (index == TRACKNUM_1)) ||
         (videoIsEnd2 && (index == TRACKNUM_2)) ||
         (videoIsEnd3 && (index == TRACKNUM_3))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Skipping ended track %{public}d", funcName, index);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return 1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[%{public}s] About to call ReadSampleBuffer for index=%{public}d", funcName, index);
     OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer);
-    OH_LOG_INFO(LOG_APP, "[%{public}s] ReadSampleBuffer returned: %{public}d for index=%{public}d",
-        funcName, readResult, index);
     
     if (!HandleReadSampleError(readResult, index, funcName, trackFormat)) {
         return -1;
@@ -520,12 +498,10 @@ static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIs
     }
     
     if (avBuffer == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] avBuffer is nullptr for index=%{public}d", funcName, index);
         return -1;
     }
     
     if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetBufferAttr failed for index=%{public}d", funcName, index);
         return -1;
     }
     
@@ -701,17 +677,14 @@ static int ReadVttSamples6100(OH_AVCodecBufferAttr &attr)
     bool isEnd = false;
     while (!isEnd) {
         if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) {
-            OH_LOG_INFO(LOG_APP, "[VTT_6100] ReadSample failed at frame %{public}d", frameCount);
             return -1;
         }
         if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
-            OH_LOG_INFO(LOG_APP, "[VTT_6100] EOS reached, total frames=%{public}d", frameCount);
             isEnd = true;
             break;
         }
         uint8_t *data = OH_AVMemory_GetAddr(memory);
         frameCount++;
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] Frame %{public}d read successfully", frameCount);
     }
     return 0;
 }
@@ -722,23 +695,16 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
 {
     trackFormat = OH_AVSource_GetTrackFormat(source, trackIndex);
     if (trackFormat == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetTrackFormat failed for track %{public}d", funcName, trackIndex);
         return -1;
     }
     
     if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetIntValue TRACK_TYPE failed for track %{public}d",
-            funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d type=%{public}d, expected=%{public}d",
-        funcName, trackIndex, g_trackType, expectedType);
-    
     if (g_trackType != expectedType) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d type mismatch!", funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return -1;
@@ -746,18 +712,12 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
     
     const char *trackdescription = nullptr;
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION, &trackdescription))) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] GetStringValue TRACK_DESCRIPTION failed for track %{public}d",
-            funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d description=%{public}s, expected=%{public}s",
-        funcName, trackIndex, trackdescription, expectedDesc.c_str());
-    
     if (strcmp(trackdescription, expectedDesc.c_str()) != 0) {
-        OH_LOG_INFO(LOG_APP, "[%{public}s] Track %{public}d description mismatch!", funcName, trackIndex);
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return -1;
@@ -770,15 +730,12 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
 
 int SubMediaDemuxerVtt6100()
 {
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] START");
     int32_t width = 3840;
     int32_t height = 2160;
     memory = OH_AVMemory_Create(width * height);
     if (memory == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[VTT_6100] OH_AVMemory_Create failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] Memory created successfully");
 
     OH_AVCodecBufferAttr attr;
     const char *file = "/data/storage/el2/base/files/media/vtt_6100.vtt";
@@ -804,7 +761,6 @@ int SubMediaDemuxerVtt6100()
     OH_AVMemory_Destroy(memory);
     memory = nullptr;
     close(fd);
-    OH_LOG_INFO(LOG_APP, "[VTT_6100] SUCCESS");
     return 0;
 }
 
@@ -997,15 +953,12 @@ int DemuxerFunctionTrack0020()
 
 int DemuxerFunctionTrack0030()
 {
-    OH_LOG_INFO(LOG_APP, "[TRACK_0030] START");
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_4, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[TRACK_0030] InitFile failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[TRACK_0030] InitFile success, trackCount=%{public}d", g_trackCount);
 
     if (ValidateTrackDescription(TRACKNUM_1, MEDIA_TYPE_AUXILIARY, AUXILIARY_DEPTH_TRACK_KEY, "TRACK_0030") != 0) {
         return -1;
@@ -1019,7 +972,6 @@ int DemuxerFunctionTrack0030()
         close(fd);
         fd = -1;
     }
-    OH_LOG_INFO(LOG_APP, "[TRACK_0030] SUCCESS");
     return 0;
 }
 
@@ -1194,15 +1146,12 @@ int DemuxerFunctionTrack0090()
 
 int DemuxerFunctionTrack0130()
 {
-    OH_LOG_INFO(LOG_APP, "[DEMUXER_FUNCTION_TRACK_0130] START");
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_4, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[DEMUXER_FUNCTION_TRACK_0130] InitFile failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[DEMUXER_FUNCTION_TRACK_0130] InitFile success, trackCount=%{public}d", g_trackCount);
     
     bool videoIsEnd1 = false;
     bool videoIsEnd2 = false;
@@ -1234,7 +1183,6 @@ int DemuxerFunctionTrack0130()
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[DEMUXER_FUNCTION_TRACK_0130] SUCCESS");
     if (fd >= 0) {
         close(fd);
         fd = -1;
@@ -1244,15 +1192,12 @@ int DemuxerFunctionTrack0130()
 
 int DemuxerFunctionTrack0140()
 {
-    OH_LOG_INFO(LOG_APP, "[TRACK_0140] START");
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_01.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_4, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[TRACK_0140] InitFile failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[TRACK_0140] InitFile success, trackCount=%{public}d", g_trackCount);
     
     bool videoIsEnd1 = false;
     bool videoIsEnd2 = false;
@@ -1288,7 +1233,6 @@ int DemuxerFunctionTrack0140()
         close(fd);
         fd = -1;
     }
-    OH_LOG_INFO(LOG_APP, "[TRACK_0140] SUCCESS");
     return 0;
 }
 
@@ -1763,15 +1707,12 @@ int DemuxerFunctionAudioTrack0090()
 
 int DemuxerFunctionAudioTrack0130()
 {
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0130] START");
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_4, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0130] InitFile failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0130] InitFile success, trackCount=%{public}d", g_trackCount);
 
     bool videoIsEnd1 = false;
     bool videoIsEnd2 = false;
@@ -1801,7 +1742,6 @@ int DemuxerFunctionAudioTrack0130()
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0130] SUCCESS");
     if (fd >= 0) {
         close(fd);
         fd = -1;
@@ -1811,15 +1751,12 @@ int DemuxerFunctionAudioTrack0130()
 
 int DemuxerFunctionAudioTrack0140()
 {
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0140] START");
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_03.mp4";
     int fd = 0;
     InitFile(file, TRACKNUM_4, fd);
     if (!(g_initResult)) {
-        OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0140] InitFile failed");
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0140] InitFile success, trackCount=%{public}d", g_trackCount);
 
     bool videoIsEnd1 = false;
     bool videoIsEnd2 = false;
@@ -1850,7 +1787,6 @@ int DemuxerFunctionAudioTrack0140()
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[AUDIO_TRACK_0140] SUCCESS");
     if (fd >= 0) {
         close(fd);
         fd = -1;
