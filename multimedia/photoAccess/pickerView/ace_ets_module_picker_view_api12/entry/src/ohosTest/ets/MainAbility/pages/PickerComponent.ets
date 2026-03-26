@@ -111,6 +111,7 @@ struct PickerComponent {
     result.autoPlayScenes = this.pickerOptions.autoPlayScenes ?? [];
     result.appAlbumFilters = this.pickerOptions.appAlbumFilters ?? [];
     result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
+    result.backgroundOpacity = this.pickerOptions.backgroundOpacity ?? undefined;
     return result;
   }
 
@@ -135,6 +136,7 @@ struct PickerComponent {
     result.preselectedUris = config.preselectedUris ?? [];
     result.autoPlayScenes = config.autoPlayScenes ?? [];
     result.appAlbumFilters = config.appAlbumFilters ?? [];
+    result.backgroundOpacity = config.backgroundOpacity;
     return result;
   }
 
@@ -380,6 +382,7 @@ struct PickerComponent {
         ];
         updatedOptions.appAlbumFilters =
           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];
+        updatedOptions.backgroundOpacity = 0.75;
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);

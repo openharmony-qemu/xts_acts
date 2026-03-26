@@ -3106,6 +3106,7 @@ export default function TextPicker() {
         ];
         let expectedAppAlbumFilters: Array<string> =
           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2',];
+        let expectedBackgroundOpacity: number = 0.75;
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -3128,6 +3129,7 @@ export default function TextPicker() {
         expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
         expect(expectedAutoPlayScenes).assertDeepEquals(msg.autoPlayScenes);
         expect(expectedAppAlbumFilters).assertDeepEquals(msg.appAlbumFilters);
+        expect(expectedBackgroundOpacity).assertDeepEquals(msg.backgroundOpacity);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -4677,5 +4679,51 @@ export default function TextPicker() {
       console.info("testPicker78 finish");
       done();
     });
+
+    /**
+     * @tc.name   testPicker79
+     * @tc.number testPicker79
+     * @tc.desc   Testing Change PhotoPickerComponent pickerOptions's backgroundOpacity property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker79', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.backgroundOpacity = 0.5;
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: number| undefined = pickerOptions.backgroundOpacity;
+        let result: PhotoPickerResult = event?.data?.msg.backgroundOpacity;
+        console.info('testPicker79 result event.data.msg=:' + result);
+        console.info('testPicker79 result expect =:' + expectResult);
+        expect(result).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker79 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker79 finish");
+      events_emitter.off(event.eventId);
+      done();
+    })
   })
 }
