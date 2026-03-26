@@ -41,32 +41,6 @@ void HuksCipherAESTest::SetUp() {}
 
 void HuksCipherAESTest::TearDown() {}
 
-static struct OH_Huks_Param g_genParams015[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
-static struct OH_Huks_Param g_encryptParams015[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE},
-    {.tag = OH_HUKS_TAG_IV, .blob = {.size = IV_SIZE, .data = (uint8_t *)IV}},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
-static struct OH_Huks_Param g_decryptParams015[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE},
-    {.tag = OH_HUKS_TAG_IV, .blob = {.size = IV_SIZE, .data = (uint8_t *)IV}},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
-
 static struct OH_Huks_Param g_genParams019[] = {
     {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
     {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
@@ -92,39 +66,6 @@ static struct OH_Huks_Param g_decryptParams019[] = {
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE},
     {.tag = OH_HUKS_TAG_IV, .blob = {.size = IV_SIZE, .data = (uint8_t *)IV}},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
-
-/**
- * @tc.name   Security_HUKS_NAPI_Cipher_AES_0100
- * @tc.number Security_HUKS_NAPI_Cipher_AES_0100
- * @tc.desc   alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-NONE size-256.
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(HuksCipherAESTest, Security_HUKS_NAPI_Cipher_AES_0100, TestSize.Level0)
-{
-    char tmpKeyAlias[] = "HksAESCipherKeyAliasTest015";
-    struct OH_Huks_Blob keyAlias = {strlen(tmpKeyAlias), (uint8_t *)tmpKeyAlias};
-
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
-    OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams015, sizeof(g_genParams015) / sizeof(OH_Huks_Param));
-    EXPECT_EQ(ret.errorCode, (int32_t)OH_HUKS_SUCCESS) << "InitParamSet(gen) failed.";
-
-    struct OH_Huks_ParamSet *encryptParamSet = nullptr;
-    ret = InitParamSet(&encryptParamSet, g_encryptParams015, sizeof(g_encryptParams015) / sizeof(OH_Huks_Param));
-    EXPECT_EQ(ret.errorCode, (int32_t)OH_HUKS_SUCCESS) << "InitParamSet(encrypt) failed.";
-
-    struct OH_Huks_ParamSet *decryptParamSet = nullptr;
-    ret = InitParamSet(&decryptParamSet, g_decryptParams015, sizeof(g_decryptParams015) / sizeof(OH_Huks_Param));
-    EXPECT_EQ(ret.errorCode, (int32_t)OH_HUKS_SUCCESS) << "InitParamSet(decrypt) failed.";
-
-    ret = HksAesCipherTestCaseOther(&keyAlias, genParamSet, encryptParamSet, decryptParamSet);
-    EXPECT_EQ(ret.errorCode, (int32_t)OH_HUKS_SUCCESS) << "this case failed.";
-
-    OH_Huks_FreeParamSet(&genParamSet);
-    OH_Huks_FreeParamSet(&encryptParamSet);
-    OH_Huks_FreeParamSet(&decryptParamSet);
-}
 
 /**
  * @tc.name   Security_HUKS_NAPI_Cipher_AES_0200

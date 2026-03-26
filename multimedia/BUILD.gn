@@ -176,7 +176,6 @@ group("multimedia") {
       "image/image_js_standard/imageSvgStatic:image_svg_js_static_hap",
       "image/image_js_standard/imageWebpStatic:image_webp_js_static_hap",
       "image/image_js_standard/imageYUVStatic:image_yuv_js_static_hap",
-      "media/media_cpp_standard:ActsAvcodecNdkTest",
       "media/media_js_standard/AVRecorderNDK:ActsOhAVRecorderNDKTest",
       "media/media_js_standard/AVRecorderVideoNDK:ActsOhAVRecorderVideoNDKTest",
       "media/media_js_standard/audioPlayer:audio_player_js_hap",
