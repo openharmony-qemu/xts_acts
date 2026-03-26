@@ -275,16 +275,16 @@ export default function WebSocketTest() {
       })
 
     /**
-     * @tc.name   testWebSocketConnectCallback_static_0300
-     * @tc.number SUB_Network_WebSocket_ConnectCallback_0300
+     * @tc.name   testWebSocketConnectCallback_static_0400
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0400
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testWebSocketConnectCallback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebSocketConnectCallback_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let caseName: string = 'testWebSocketConnectCallback_static_0300';
+        let caseName: string = 'testWebSocketConnectCallback_static_0400';
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
         try {
           let ws: webSocket.WebSocket = webSocket.createWebSocket();
