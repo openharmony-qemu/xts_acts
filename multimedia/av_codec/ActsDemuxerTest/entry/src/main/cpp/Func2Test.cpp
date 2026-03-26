@@ -465,12 +465,24 @@ static int ValidateFrameCounts(const FrameValidationParams &params)
     return 0;
 }
 
-// 辅助函数：处理单个轨道的读取和处理（AudioTrack版本）
-static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIsEnd2, bool videoIsEnd3,
-    OH_AVCodecBufferAttr &bufferAttr, bool &outEnd1, bool &outEnd2, bool &outEnd3,
-    int &frame1, int &frame2, int &frame3, const char *funcName)
+struct AudioTrackParams {
+    int32_t index;
+    bool videoIsEnd1;
+    bool videoIsEnd2;
+    bool videoIsEnd3;
+    OH_AVCodecBufferAttr &bufferAttr;
+    bool &outEnd1;
+    bool &outEnd2;
+    bool &outEnd3;
+    int &frame1;
+    int &frame2;
+    int &frame3;
+    const char *funcName;
+};
+
+static int ProcessSingleTrackAudio(AudioTrackParams &params)
 {
-    trackFormat = OH_AVSource_GetTrackFormat(source, index);
+    trackFormat = OH_AVSource_GetTrackFormat(source, params.index);
     if (trackFormat == nullptr) {
         return -1;
     }
@@ -479,17 +491,16 @@ static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIs
         return -1;
     }
     
-    if ((videoIsEnd1 && (index == TRACKNUM_1)) ||
-        (videoIsEnd2 && (index == TRACKNUM_2)) ||
-        (videoIsEnd3 && (index == TRACKNUM_3))) {
+    if ((params.videoIsEnd1 && (params.index == TRACKNUM_1)) ||
+        (params.videoIsEnd2 && (params.index == TRACKNUM_2)) ||
+        (params.videoIsEnd3 && (params.index == TRACKNUM_3))) {
         OH_AVFormat_Destroy(trackFormat);
         trackFormat = nullptr;
         return 1;
     }
     
-    OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer);
-    
-    if (!HandleReadSampleError(readResult, index, funcName, trackFormat)) {
+    OH_AVErrCode readResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, params.index, avBuffer);
+    if (!HandleReadSampleError(readResult, params.index, params.funcName, trackFormat)) {
         return -1;
     }
     
@@ -501,12 +512,13 @@ static int ProcessSingleTrackAudio(int32_t index, bool videoIsEnd1, bool videoIs
         return -1;
     }
     
-    if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &params.bufferAttr) != AV_ERR_OK) {
         return -1;
     }
     
-    TrackState state = {&outEnd1, &outEnd2, &outEnd3, &frame1, &frame2, &frame3};
-    if (ProcessTrackByType(index, g_trackType, bufferAttr, state, funcName) != 0) {
+    TrackState state = {&params.outEnd1, &params.outEnd2, &params.outEnd3,
+                        &params.frame1, &params.frame2, &params.frame3};
+    if (ProcessTrackByType(params.index, g_trackType, params.bufferAttr, state, params.funcName) != 0) {
         return -1;
     }
     
@@ -1724,9 +1736,10 @@ int DemuxerFunctionAudioTrack0130()
     
     while (!videoIsEnd1 || !videoIsEnd2 || !videoIsEnd3) {
         for (int32_t index = 0; index < g_trackCount; index++) {
-            int result = ProcessSingleTrackAudio(index, videoIsEnd1, videoIsEnd2, videoIsEnd3,
+            AudioTrackParams params = {index, videoIsEnd1, videoIsEnd2, videoIsEnd3,
                 bufferAttr, videoIsEnd1, videoIsEnd2, videoIsEnd3,
-                videoFrame1, videoFrame2, videoFrame3, "AUDIO_TRACK_0130");
+                videoFrame1, videoFrame2, videoFrame3, "AUDIO_TRACK_0130"};
+            int result = ProcessSingleTrackAudio(params);
             if (result < 0) {
                 return -1;
             }
