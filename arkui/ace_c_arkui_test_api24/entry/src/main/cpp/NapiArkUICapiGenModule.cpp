@@ -43,7 +43,7 @@ static napi_module arkuicapigenModule = {.nm_version = 1,
                                          .nm_priv = ((void *)0),
                                          .reserved = {0}};
 
-extern "C" __attribute__((constructor)) static void RegisterArkuiCapiGenModule(void)
+__attribute__((constructor)) static void RegisterArkuiCapiGenModule(void)
 {
     napi_module_register(&arkuicapigenModule);
 }
