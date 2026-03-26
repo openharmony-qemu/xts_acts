@@ -269,22 +269,21 @@ export default function api16CertFuncTestUnit() {
       let pwd = '123456';
       let alias = 'appCertAliasDemoEcc';
       let level = certManager.AuthStorageLevel.EL1;
-
+      let signSpec: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+        padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
+      }
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
         console.info('Security_CertManager_InstallPrivateCertificate_Func_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri))
         keyUri = result.uri;
-        let signSpec: certManager.CMSignatureSpec = {
-          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
-          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
-        }
-        let signHandle:certManager.CMHandle = await signVerifyCallback.initProcess(keyUri,signSpec);
-        expect(signHandle != null).assertTrue();
       } catch (e) {
         console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: failed. e.code " + e.code);
       }
       if (keyUri != undefined) {
+        let signHandle:certManager.CMHandle = await signVerifyCallback.initProcess(keyUri,signSpec);
+        expect(signHandle != null).assertTrue();
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
         console.error("Security_CertManager_InstallPrivateCertificate_Func_0010 keyUri is undefined!");
