@@ -235,7 +235,8 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
 
 void VDecAPI11Sample::CreateSurface()
 {
-    for (uint32_t i = 0; i < 2; i++) {
+    constexpr uint32_t kSurfaceSlots = sizeof(nativeWindow) / sizeof(nativeWindow[0]);
+    for (uint32_t i = 0; i < kSurfaceSlots; i++) {
         if (nativeWindow[i]) {
             OH_NativeWindow_DestroyNativeWindow(nativeWindow[i]);
             nativeWindow[i] = nullptr;
@@ -668,13 +669,16 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
         SetEOS(index, buffer);
         return K_PUSH_DATA_EOS;
     }
+    constexpr uint32_t kLengthByteIndex2 = 2U;
+    constexpr uint32_t kLengthByteIndex3 = 3U;
     uint32_t bufferSize = (static_cast<uint32_t>(ch[0] & 0xFF) << TWENTY_FOUR) |
                           (static_cast<uint32_t>(ch[1] & 0xFF) << SIXTEEN) |
-                          (static_cast<uint32_t>(ch[2] & 0xFF) << EIGHT) | static_cast<uint32_t>(ch[3] & 0xFF);
+                          (static_cast<uint32_t>(ch[kLengthByteIndex2] & 0xFF) << EIGHT) |
+                          static_cast<uint32_t>(ch[kLengthByteIndex3] & 0xFF);
     if (useHDRSource) {
-        bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF) << TWENTY_FOUR) |
-                     (static_cast<uint32_t>(ch[2] & 0xFF) << SIXTEEN) | (static_cast<uint32_t>(ch[1] & 0xFF) << EIGHT) |
-                     static_cast<uint32_t>(ch[0] & 0xFF);
+        bufferSize = (static_cast<uint32_t>(ch[kLengthByteIndex3] & 0xFF) << TWENTY_FOUR) |
+                     (static_cast<uint32_t>(ch[kLengthByteIndex2] & 0xFF) << SIXTEEN) |
+                     (static_cast<uint32_t>(ch[1] & 0xFF) << EIGHT) | static_cast<uint32_t>(ch[0] & 0xFF);
     }
     if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
