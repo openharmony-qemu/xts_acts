@@ -1008,7 +1008,7 @@ export default function api16CertFuncTestTwoUnit() {
         let cmResult = await certManager.installUserTrustedCertificate(certBlob);
         let uriList = cmResult.uriList;
         expect(uriList != null).assertTrue();
-        if(uriList != undefined){
+        if(uriList !== undefined){
 			    for(let i=0;i<uriList?.length;i++){
 				  certManager.uninstallUserTrustedCertificateSync(uriList[i]);
 			  }
