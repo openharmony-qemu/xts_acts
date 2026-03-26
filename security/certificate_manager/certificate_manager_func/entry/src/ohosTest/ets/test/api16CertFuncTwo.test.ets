@@ -1462,10 +1462,13 @@ export default function api16CertFuncTestTwoUnit() {
       };
       try {
         await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
-          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
           let uriList = cmResult.uriList;
           expect(uriList != null).assertTrue();
-          certManager.uninstallUserTrustedCertificateSync(uri);
+		  if(uriList != undefined){
+			for(let i=0;i<uriList?.length;i++){
+				certManager.uninstallUserTrustedCertificateSync(uriList[i]);
+			}
+		  }
         }).catch((err: BusinessError) => {
           console.info("SUB_Security_CertManager_installUserTrustedCertificate_0013 failed.");
           expect(null).assertFail();

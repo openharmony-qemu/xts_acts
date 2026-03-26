@@ -1006,10 +1006,13 @@ export default function api16CertFuncTestTwoUnit() {
       };
       try{
         let cmResult = await certManager.installUserTrustedCertificate(certBlob);
-        let certUri = cmResult.uri ?? '';
         let uriList = cmResult.uriList;
         expect(uriList != null).assertTrue();
-        certManager.uninstallUserTrustedCertificateSync(certUri ?? '');
+        if(uriList != undefined){
+			    for(let i=0;i<uriList?.length;i++){
+				  certManager.uninstallUserTrustedCertificateSync(uriList[i]);
+			  }
+		  }
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0013 Failed. Code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
