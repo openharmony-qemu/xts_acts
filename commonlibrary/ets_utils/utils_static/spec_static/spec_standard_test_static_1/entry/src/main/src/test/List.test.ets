@@ -19,6 +19,11 @@ import ImplicitConversionsTest from "./contextsandconversions/ImplicitConversion
 import NumericCastingConversionsTest from "./contextsandconversions/NumericCastingConversionsTest.test";
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
+import GenericsDeclarationsCreate from "./generics/generic_declarations/create_array_using_generic_types/GenericsDeclarationsCreate.test";
+import GenericDeclarationsFunction from "./generics/generic_declarations/generic_functions/GenericDeclarationsFunction.test";
+import GenericDeclarationsInOut from "./generics/generic_declarations/generic_in_out/GenericDeclarationsInOut.test";
+import GenericDeclarationsInterfaces from "./generics/generic_declarations/generic_interfaces/GenericDeclarationsInterfaces.test";
+import GenericDeclarationsTypeAlias from "./generics/generic_declarations/generic_type_alias/GenericDeclarationsTypeAlias.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
@@ -30,6 +35,11 @@ export default function testsuite() {
   NumericCastingConversionsTest();
   NumericOperatorContextsTest();
   StringOperatorContextsTest();
+  GenericsDeclarationsCreate();
+  GenericDeclarationsFunction();
+  GenericDeclarationsInOut();
+  GenericDeclarationsInterfaces();
+  GenericDeclarationsTypeAlias();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
   StatementsTest();
