@@ -1510,7 +1510,6 @@ export default function KVManagerRootDir() {
 
         });
 
-
         /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0100
          * @tc.name SingleKv_rootDir_backupEx_0100
