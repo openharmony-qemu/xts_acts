@@ -63,7 +63,7 @@ export default function RdbStoreGetRdbStoreSyncEtsAddTest() {
     console.log(TAG + "*************Unit Test Begin*************");
     /**
      * @tc.name   RelationalStore_getRdbStoreSyncAddTest001
-     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest001
+     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncAddTest001
      * @tc.desc   the autoCleanDirtyData is true
      * @tc.expect No exception, return RdbStore normally
      * @tc.size   MediumTest
