@@ -5463,22 +5463,22 @@ export default function abilityTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-                it('processOfflineReleaseResponse_null_key', Level.LEVEL1, (done:Function) => {
-                    let mediaKeySystem:drm.MediaKeySystem;
-                    mediaKeySystem = drm.createMediaKeySystem(systemName);
-                    let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
-                    let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
-                    mediaKeySession.processOfflineReleaseResponse(keyArray, null).then(() => {
-                        console.info('processOfflineReleaseResponse');
-                        mediaKeySystem.destroy();
-                        done();
-                    }).catch((err: BusinessError) => {
-                        console.log("XX processOfflineReleaseResponse failed", err.code);
-                        expect().assertFail();
-                    });
-                    mediaKeySystem.destroy();
-                    done();
-                })
+        it('processOfflineReleaseResponse_null_key', Level.LEVEL1, (done:Function) => {
+            let mediaKeySystem:drm.MediaKeySystem;
+            mediaKeySystem = drm.createMediaKeySystem(systemName);
+            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+            mediaKeySession.processOfflineReleaseResponse(keyArray, null).then(() => {
+                console.info('processOfflineReleaseResponse');
+                mediaKeySystem.destroy();
+                done();
+            }).catch((err: BusinessError) => {
+                console.log("XX processOfflineReleaseResponse failed", err.code);
+                expect().assertFail();
+            });
+            mediaKeySystem.destroy();
+            done();
+        })
         /**
          * @tc.name   processOfflineReleaseResponse_undefined_key
          * @tc.number processOfflineReleaseResponse_undefined_key
