@@ -20,7 +20,442 @@
 namespace ArkUICapiTest {
 
 /*
- * 测试接口: OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachment *, ArkUI_Margin *)
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(OH_ArkUI_LeadingMarginSpanDrawInfo *, uint32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_338(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(obj, 0U);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(const OH_ArkUI_LeadingMarginSpanDrawInfo *, uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_339(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    uint32_t v1 = 0U;
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(OH_ArkUI_LeadingMarginSpanDrawInfo *, uint32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_340(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(obj, 0U);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(const OH_ArkUI_LeadingMarginSpanDrawInfo *, uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_341(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    uint32_t v1 = 0U;
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(OH_ArkUI_LeadingMarginSpanDrawInfo *, bool)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_342(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(obj, false);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(const OH_ArkUI_LeadingMarginSpanDrawInfo *, bool *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LeadingMarginSpanDrawInfo_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_343(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LeadingMarginSpanDrawInfo_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    bool v1 = false;
+    auto ec = OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_ParagraphStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_344(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_ParagraphStyle_Create() 后调用 OH_ArkUI_ParagraphStyle_Destroy。
+ */
+static napi_value TestArkUICapi_345(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_SetTextAlign(OH_ArkUI_ParagraphStyle *, ArkUI_TextAlignment)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_346(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ParagraphStyle_SetTextAlign(obj, static_cast<ArkUI_TextAlignment>(0));
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_GetTextAlign(const OH_ArkUI_ParagraphStyle *, ArkUI_TextAlignment *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_347(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    ArkUI_TextAlignment outTa = static_cast<ArkUI_TextAlignment>(0);
+    auto ec = OH_ArkUI_ParagraphStyle_GetTextAlign(obj, &outTa);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_SetTextIndent(OH_ArkUI_ParagraphStyle *, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_348(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ParagraphStyle_SetTextIndent(obj, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_GetTextIndent(const OH_ArkUI_ParagraphStyle *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_349(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_ParagraphStyle_GetTextIndent(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_SetMaxLines(OH_ArkUI_ParagraphStyle *, int32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_350(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ParagraphStyle_SetMaxLines(obj, 0);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_GetMaxLines(const OH_ArkUI_ParagraphStyle *, int32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_351(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    int32_t v1 = 0;
+    auto ec = OH_ArkUI_ParagraphStyle_GetMaxLines(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_SetOverflow(OH_ArkUI_ParagraphStyle *, ArkUI_TextOverflow)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_352(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ParagraphStyle_SetOverflow(obj, static_cast<ArkUI_TextOverflow>(0));
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_GetOverflow(const OH_ArkUI_ParagraphStyle *, ArkUI_TextOverflow *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_353(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    ArkUI_TextOverflow outOv = static_cast<ArkUI_TextOverflow>(0);
+    auto ec = OH_ArkUI_ParagraphStyle_GetOverflow(obj, &outOv);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_SetWordBreak(OH_ArkUI_ParagraphStyle *, ArkUI_WordBreak)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_354(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_ParagraphStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ParagraphStyle_SetWordBreak(obj, static_cast<ArkUI_WordBreak>(0));
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_ParagraphStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_ParagraphStyle_GetWordBreak(const OH_ArkUI_ParagraphStyle *, ArkUI_WordBreak *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -635,7 +1070,73 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口:
- *     OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageAttachment *, float *, float *, float *, float *)
+ *     OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
+ *     uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_TextShadowStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_TextShadowStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_ShadowOptions* holder1 = nullptr;
+    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
+    uint32_t v3 = 0U;
+    auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, outPtr1, 0U, &v3);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_TextShadowStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_DecorationStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_379(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_DecorationStyle_Create() 后调用 OH_ArkUI_DecorationStyle_Destroy。
+ */
+static napi_value TestArkUICapi_380(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_SetTextDecorationType(OH_ArkUI_DecorationStyle *, ArkUI_TextDecorationType)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
  * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
  */
@@ -643,7 +1144,658 @@ static napi_value TestArkUICapi_381(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_DecorationStyle_SetTextDecorationType(obj, static_cast<ArkUI_TextDecorationType>(0));
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_GetTextDecorationType(const OH_ArkUI_DecorationStyle *, ArkUI_TextDecorationType *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_382(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    ArkUI_TextDecorationType outTd = static_cast<ArkUI_TextDecorationType>(0);
+    auto ec = OH_ArkUI_DecorationStyle_GetTextDecorationType(obj, &outTd);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_SetColor(OH_ArkUI_DecorationStyle *, uint32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_383(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_DecorationStyle_SetColor(obj, 0U);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_GetColor(const OH_ArkUI_DecorationStyle *, uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_384(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    uint32_t v1 = 0U;
+    auto ec = OH_ArkUI_DecorationStyle_GetColor(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_SetTextDecorationStyle(OH_ArkUI_DecorationStyle *, ArkUI_TextDecorationStyle)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_385(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_DecorationStyle_SetTextDecorationStyle(obj, static_cast<ArkUI_TextDecorationStyle>(0));
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_GetTextDecorationStyle(const OH_ArkUI_DecorationStyle *, ArkUI_TextDecorationStyle *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_386(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    ArkUI_TextDecorationStyle outTds = static_cast<ArkUI_TextDecorationStyle>(0);
+    auto ec = OH_ArkUI_DecorationStyle_GetTextDecorationStyle(obj, &outTds);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_SetThicknessScale(OH_ArkUI_DecorationStyle *, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_387(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_DecorationStyle_SetThicknessScale(obj, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_GetThicknessScale(const OH_ArkUI_DecorationStyle *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_388(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_DecorationStyle_GetThicknessScale(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_SetEnableMultiType(OH_ArkUI_DecorationStyle *, bool)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_389(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_DecorationStyle_SetEnableMultiType(obj, false);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_DecorationStyle_GetEnableMultiType(const OH_ArkUI_DecorationStyle *, bool *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_DecorationStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_390(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_DecorationStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    bool v1 = false;
+    auto ec = OH_ArkUI_DecorationStyle_GetEnableMultiType(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_DecorationStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BaselineOffsetStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_BaselineOffsetStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_391(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BaselineOffsetStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_BaselineOffsetStyle_Create() 后调用 OH_ArkUI_BaselineOffsetStyle_Destroy。
+ */
+static napi_value TestArkUICapi_392(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(OH_ArkUI_BaselineOffsetStyle *, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BaselineOffsetStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_393(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(obj, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(const OH_ArkUI_BaselineOffsetStyle *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BaselineOffsetStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_394(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BaselineOffsetStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LetterSpacingStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_LetterSpacingStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_395(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LetterSpacingStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_LetterSpacingStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LetterSpacingStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_LetterSpacingStyle_Create() 后调用 OH_ArkUI_LetterSpacingStyle_Destroy。
+ */
+static napi_value TestArkUICapi_396(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LetterSpacingStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_LetterSpacingStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(OH_ArkUI_LetterSpacingStyle *, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LetterSpacingStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_397(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LetterSpacingStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(obj, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LetterSpacingStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(const OH_ArkUI_LetterSpacingStyle *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LetterSpacingStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_398(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LetterSpacingStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LetterSpacingStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LineHeightStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_LineHeightStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_399(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LineHeightStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_LineHeightStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LineHeightStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_LineHeightStyle_Create() 后调用 OH_ArkUI_LineHeightStyle_Destroy。
+ */
+static napi_value TestArkUICapi_400(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LineHeightStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_LineHeightStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LineHeightStyle_SetLineHeight(OH_ArkUI_LineHeightStyle *, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LineHeightStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_401(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LineHeightStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_LineHeightStyle_SetLineHeight(obj, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LineHeightStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_LineHeightStyle_GetLineHeight(const OH_ArkUI_LineHeightStyle *, float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_LineHeightStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_402(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_LineHeightStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    float v1 = 0.0f;
+    auto ec = OH_ArkUI_LineHeightStyle_GetLineHeight(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_LineHeightStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BackgroundColorStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_BackgroundColorStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_403(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BackgroundColorStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_BackgroundColorStyle_Create() 后调用 OH_ArkUI_BackgroundColorStyle_Destroy。
+ */
+static napi_value TestArkUICapi_404(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BackgroundColorStyle_SetColor(OH_ArkUI_BackgroundColorStyle *, uint32_t)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BackgroundColorStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_405(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_BackgroundColorStyle_SetColor(obj, 0U);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BackgroundColorStyle_GetColor(const OH_ArkUI_BackgroundColorStyle *, uint32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BackgroundColorStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_406(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    uint32_t v1 = 0U;
+    auto ec = OH_ArkUI_BackgroundColorStyle_GetColor(obj, &v1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_BackgroundColorStyle_SetRadius(OH_ArkUI_BackgroundColorStyle *, float, float, float, float)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BackgroundColorStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_407(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_BackgroundColorStyle_SetRadius(obj, 0.0f, 0.0f, 0.0f, 0.0f);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口:
+ *     OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_BackgroundColorStyle *, float *, float *, float *,
+ *     float *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_BackgroundColorStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_408(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_BackgroundColorStyle_Create();
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -652,7 +1804,160 @@ static napi_value TestArkUICapi_381(napi_env env, napi_callback_info info)
     float v2 = 0.0f;
     float v3 = 0.0f;
     float v4 = 0.0f;
-    auto ec = OH_ArkUI_ImageAttachment_GetBorderRadiuses(obj, &v1, &v2, &v3, &v4);
+    auto ec = OH_ArkUI_BackgroundColorStyle_GetRadius(obj, &v1, &v2, &v3, &v4);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_BackgroundColorStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UrlStyle_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_UrlStyle_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_409(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UrlStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_UrlStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UrlStyle_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_UrlStyle_Create() 后调用 OH_ArkUI_UrlStyle_Destroy。
+ */
+static napi_value TestArkUICapi_410(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UrlStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_UrlStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UrlStyle_SetUrl(OH_ArkUI_UrlStyle *, const char *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_UrlStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_411(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UrlStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    char buf1[32] = {0};
+    auto ec = OH_ArkUI_UrlStyle_SetUrl(obj, buf1);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_UrlStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UrlStyle_GetUrl(const OH_ArkUI_UrlStyle *, char *, int32_t, int32_t *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_UrlStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_412(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UrlStyle_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    char buf1[32] = {0};
+    int32_t v3 = 0;
+    auto ec = OH_ArkUI_UrlStyle_GetUrl(obj, buf1, 0, &v3);
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            return napiAssertErr;
+        }
+    }
+
+    OH_ArkUI_UrlStyle_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UserDataSpan_Create
+ * 预期效果: 工厂方法返回非空指针，释放后无泄漏。
+ * 实际测试: 调用 OH_ArkUI_UserDataSpan_Create，断言非空，再配对释放。
+ */
+static napi_value TestArkUICapi_413(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UserDataSpan_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_UserDataSpan_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UserDataSpan_Destroy
+ * 预期效果: 先创建对象再销毁，资源正确释放无崩溃。
+ * 实际测试: 调用 OH_ArkUI_UserDataSpan_Create() 后调用 OH_ArkUI_UserDataSpan_Destroy。
+ */
+static napi_value TestArkUICapi_414(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UserDataSpan_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    OH_ArkUI_UserDataSpan_Destroy(obj);
+    return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+
+/*
+ * 测试接口: OH_ArkUI_UserDataSpan_SetUserData(OH_ArkUI_UserDataSpan *, void *)
+ * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
+ * 实际测试: 通过 OH_ArkUI_UserDataSpan_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ */
+static napi_value TestArkUICapi_415(napi_env env, napi_callback_info info)
+{
+    (void)env;
+    (void)info;
+    auto *obj = OH_ArkUI_UserDataSpan_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_UserDataSpan_SetUserData(obj, static_cast<void *>(nullptr));
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1205,15 +2510,13 @@ static napi_value TestArkUICapi_436(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Drawing_Range* holder2 = nullptr;
-    OH_Drawing_Range** outPtr2 = &holder2;
-    OH_Drawing_Range* holder3 = nullptr;
-    OH_Drawing_Range** outPtr3 = &holder3;
-    auto ec = OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(
-        nullptr,
-        static_cast<OH_Drawing_Range *>(nullptr),
-        outPtr2,
-        outPtr3);
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    ArkUI_Margin marginOut1{};
+    auto ec = OH_ArkUI_ImageAttachment_GetMargin(obj, &marginOut1);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1234,15 +2537,12 @@ static napi_value TestArkUICapi_437(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    OH_Drawing_Range* holder2 = nullptr;
-    OH_Drawing_Range** outPtr2 = &holder2;
-    OH_Drawing_Range* holder3 = nullptr;
-    OH_Drawing_Range** outPtr3 = &holder3;
-    auto ec = OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(
-        nullptr,
-        static_cast<OH_Drawing_Range *>(nullptr),
-        outPtr2,
-        outPtr3);
+    auto *obj = OH_ArkUI_ImageAttachment_Create();
+    if (((obj)) == nullptr) {
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_ImageAttachment_SetPadding(obj, ArkUI_Margin{});
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
