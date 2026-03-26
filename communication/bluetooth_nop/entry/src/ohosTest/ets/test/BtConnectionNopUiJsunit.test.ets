@@ -747,5 +747,29 @@ export default function btConnectionNopUiJsunit() {
       }
       done();
     })
+   /**
+    * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100
+    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100
+    * @tc.desc   Test setLocalName api10
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      let hashValue: string = "c10b57deb2e1aafd255596e0d4fd6789";
+      try {
+        let addr: string = connection.getVirtualAddressByHash(connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+        expect().assertFail();
+      } catch (e) {
+        if (e.code === 801) {
+          console.info('[bluetooth_js] RK板 is not support');
+          expect(e.code === 801).assertTrue();
+        } else {
+          console.info('[bluetooth_js] getVirtualAddressByHash fail 201');
+          expect(e.code).assertEqual(201);
+        }
+      }
+      done();
+    })
   })
 }
