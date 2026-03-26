@@ -25,34 +25,17 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext:common.UIAbilityContext;
+const driver = Driver.create();
 export default function webOnActivateContentTest() {
   describe('onActivateContentTest',  () =>{
     beforeAll(async (): Promise<void> => {
-      await Utils.msSleep(2000)
+      await Utils.msSleep(2000);
       console.log("App start")
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log("-----" + err.code)
-        }
-        console.log("BusinessError  end")
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusdevtest.static")
-      await Utils.msSleep(2000)
-      console.log("beforeAll end,%s", "Succeed!")
     });
 
-    beforeEach(async  () =>{
+    beforeEach(async () => {
       await Utils.msSleep(2000);
-      console.info("blurMode beforeEach start");
+      console.info("componentLifeCycleTestOne beforeEach start");
     })
 
     /**
@@ -67,11 +50,15 @@ export default function webOnActivateContentTest() {
       await Utils.msSleep(2000)
       Utils.emitEvent("testOnActivateContent00", 10)
       await Utils.msSleep(2000)
+      let buttonOne = await driver.findComponent(ON.text('第一次调用'));
+      if(buttonOne)
+      {
+        await buttonOne.click();
+      }
+      Utils.registerEvent("testOnActivateContent00", true, 141310, done);
+      await Utils.msSleep(2000)
       inspector.sendEventByKey('onActivateContentButton',10,'');
-      console.info(`testOnActivateContent00 finish`);
-      await Utils.msSleep(5000)
-      inspector.sendEventByKey('WebButton',10,'');
-      await Utils.msSleep(5000)
+      await Utils.msSleep(2000)
       done()
     })
   })

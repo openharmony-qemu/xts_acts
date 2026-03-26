@@ -55,7 +55,7 @@ export default function webJavaScriptOnDocumentStartTest() {
 
     /**
      * @tc.name        testJavaScriptOnDocumentStartStatic001
-     * @tc.number      SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0100
+     * @tc.number      SUB_WEB_JAVASCRIPTONDOCUMENTSTART_010022222
      * @tc.desc        test javaScriptOnDocumentStart
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -66,6 +66,44 @@ export default function webJavaScriptOnDocumentStartTest() {
         Utils.emitEvent("testJavaScriptOnDocumentStart001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("testJavaScriptOnDocumentStart001", '"Red"', 4500, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testJavaScriptOnDocumentStartStatic003
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0300
+     * @tc.desc   test javaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJavaScriptOnDocumentStartStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testJavaScriptOnDocumentStart003", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testJavaScriptOnDocumentStart003", '"Red"', 172230, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart004
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0400
+     * @tc.desc   test javaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJavaScriptOnDocumentStart004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("testJavaScriptOnDocumentStart004", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testJavaScriptOnDocumentStart004", true, 172240, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
         await Utils.msSleep(6000);

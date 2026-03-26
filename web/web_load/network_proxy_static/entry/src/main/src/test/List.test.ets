@@ -15,8 +15,11 @@
 
 import  webviewNetworkProxy from './WebviewNetworkProxy.test'
 import webCookieManager from './WebCookieManager.test'
+import webviewController from './WebViewController.test'
+
 
 export default function testsuite() {
   webviewNetworkProxy();
   webCookieManager();
+  webviewController();
 }

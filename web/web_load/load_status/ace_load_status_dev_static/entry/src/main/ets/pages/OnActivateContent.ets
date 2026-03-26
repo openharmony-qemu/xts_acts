@@ -28,6 +28,7 @@ import { Callback } from '@ohos.base'
 struct NewWebViewComp {
   controller?: CustomDialogController;
   webviewController_1: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+  @State onActivateContent:boolean = false
 
   build() {
     Column() {
@@ -81,6 +82,8 @@ struct WebComponent {
     }
   }
 
+
+
   build() {
     Column() {
       Row() {
@@ -90,20 +93,8 @@ struct WebComponent {
             console.info("key==>" + this.str);
             switch (this.str) {
               case "testOnActivateContent00": {
-                try {
-                  this.controller.runJavaScriptExt(
-                    "openWindow('https://www.baidu.com', 'name1')",
-                    (error, result) => {
-                      console.info("openWindow finish");
-                      if (error) {
-                        let e: BusinessError = error as BusinessError;
-                        console.error(`ErrorCode:2 ${e.code},  Message: ${e.message}`);
-                      }
-                    });
-                } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode:1 ${error.code},  Message: ${error.message}`);
-                }
+                Utils.emitEvent(true, 141310);
+                break;
               }
             }
           })

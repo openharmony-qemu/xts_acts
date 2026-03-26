@@ -19,6 +19,7 @@ import NativeEmbedParamStatusUpdate from './NativeEmbedParamStatusUpdate.test'
 import webViewSrollableJsunit from './bindSelectionMenu.test'
 import webAttributeTest from './WebAttributeTest.test'
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
+import WebKeyboardAvoidMode from './WebEmulateTouchFromMouseEvent.test'
 
 
 export default function testsuite() {
@@ -28,4 +29,5 @@ export default function testsuite() {
     WebViewEnumAndFontLibrary();
     webInitTest();
     NativeEmbedParamStatusUpdate();
+    WebKeyboardAvoidMode();
 }

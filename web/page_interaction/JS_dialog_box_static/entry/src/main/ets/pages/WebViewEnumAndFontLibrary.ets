@@ -18,6 +18,7 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import {
   OnRenderExitedEvent,
   OnPageBeginEvent,
@@ -129,6 +130,13 @@ struct WebViewEnumAndFontLibrary {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
                 router.pushUrl({ url: 'pages/WebInitTest' })
+                console.log('push URL success')
+              }
+
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebEmulateTouchFromMouseEvent' })
                 console.log('push URL success')
               }
 
