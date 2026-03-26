@@ -388,6 +388,29 @@ export default function WebSocketTest() {
       });
 
     /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
+     * @tc.number testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+          ExpectTrue(typeof server == 'object');
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+        }
+      });
+
+    /**
      * @tc.name   testNetworkMgrWebSocketConnect0100
      * @tc.number SUB_NetworkMgr_WebSocket_Connect_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
