@@ -27,12 +27,14 @@ struct SubHeaderExample {
   build() {
     Column() {
       SubHeader({
+        titleId: 'subHeaderTitleIdId',
         secondaryTitle: '二级标题',
         operationType: OperationType.LOADING,
       })
       SubHeader({
         // 设置左侧select
         select: {
+          id: 'selectId',
           options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
           value: 'selectDemo',
           selected: 2,
@@ -41,22 +43,25 @@ struct SubHeaderExample {
           }
         },
         operationType: OperationType.ICON_GROUP,
-        // 设置右侧icon
+        // 设置右侧
         operationItem: [
           {
             value: $r('sys.symbol.ohos_lungs'),
+            id: 'operationItemId01',
             action: () => {
               this.uiContext.getPromptAction().showToast({ message: 'demo' })
             }
           }, 
           {
             value: $r('sys.symbol.ohos_lungs'),
+            id: 'operationItemId02',
             action: () => {
               this.uiContext.getPromptAction().showToast({ message: 'demo' })
             }
           }, 
           {
             value: $r('sys.symbol.ohos_lungs'),
+            id: 'operationItemId03',
             action: () => {
               this.uiContext.getPromptAction().showToast({ message: 'demo' })
             }

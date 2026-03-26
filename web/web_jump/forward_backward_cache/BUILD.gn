@@ -15,6 +15,7 @@ group("ActsWebForwardBackwardCacheTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "forward_backward_cache_eight_static:ActsWebForwardBackwardCacheEightStaticTest",
       "forward_backward_cache_five:ActsWebForwardBackwardCacheFiveTest",
       "forward_backward_cache_five_static:ActsWebForwardBackwardCacheFiveStaticTest",
       "forward_backward_cache_four:ActsWebForwardBackwardCacheFourTest",

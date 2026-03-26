@@ -26,12 +26,25 @@ import {
   Color,
   SelectedDragPreviewStyle
 } from '@ohos.arkui.component';
+import { ComponentContent, wrapBuilder } from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
+
+@Builder
+function textInputCustomKeyboardBuilder() {
+  Column() {
+    TextInput({ placeholder: 'Custom Keyboard Row' })
+      .fontSize('12fp')
+      .key('textInputCustomKbdBuilderContent')
+  }
+  .width('100%')
+}
 
 @Entry
 @Component
 struct TextInputAttributeIndex {
+  private textInputKeyboard: ComponentContent<undefined> = new ComponentContent(this.getUIContext(),
+    wrapBuilder(textInputCustomKeyboardBuilder));
 
   aboutToAppear() {
     try {
@@ -86,6 +99,9 @@ struct TextInputAttributeIndex {
         TextInput({ placeholder: 'customKbd undefined' })
           .customKeyboard(undefined)
           .key('textInputCustomKbdUndefined')
+        TextInput({ placeholder: 'customKbd builder' })
+          .customKeyboard(this.textInputKeyboard)
+          .key('textInputCustomKbdBuilder')
 
         // ---------- TextInputAttribute.includeFontPadding ----------
         TextInput({ placeholder: 'incFontPad true' })
@@ -157,7 +173,7 @@ struct TextInputAttributeIndex {
           .key('textInputDirUndefined')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

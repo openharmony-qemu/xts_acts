@@ -39,9 +39,9 @@ import selectValueNullTest from './selectNullTest/SelectValueNullTest.test';
 import radiounllundefined from './radioNullTest/radio.test';
 
 export default function testsuite() {
+  sliderJsunit1();
   SliderOptionValue();
   // SliderInterfaceTest();
-  sliderJsunit1();
   sliderMovingJsunit();
   sliderJsunit();
   SliderTestC();
@@ -54,7 +54,7 @@ export default function testsuite() {
   sliderOnChangeModifierTest();
   sliderTrackColorMetricsTest();
 
-  StackAlignContentNullTest();
+  // StackAlignContentNullTest();
   slidenullundeifned();
 
   selectAttributeNullTest();

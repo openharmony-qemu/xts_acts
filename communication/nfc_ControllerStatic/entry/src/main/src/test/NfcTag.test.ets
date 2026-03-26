@@ -185,6 +185,43 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0201
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0201
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let aTag: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0201 is :');
+      let nfcATag: tag.NfcATag;
+      try {
+        nfcATag = tag.getNfcA(aTag);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0201 error is :  ' + error + " - " + error.code);
+           expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0201 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0300
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0300
      * @tc.desc Check whether the NFC function is enabled.
@@ -210,11 +247,48 @@ export default function nfcTagTest() {
         nfcBTag = tag.getNfcB(bTag);
       } catch (error) {
         error = error as BusinessError;
-        if (error.code === 801) {
+        if (error.code === 401) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0300 error is ' + error.code + " - " + error);
-          expect(801).assertEqual(error.code)
+           expect(error.code).assertEqual(401);
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0300 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0301
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0301
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0301', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let bTag: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "AppData": "A0C0", "ProtocolInfo": "131F",
+          }
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0301 is :');
+      let nfcBTag: tag.NfcBTag;
+      try {
+        nfcBTag = tag.getNfcB(bTag);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0301 error is ' + error.code + " - " + error);
+           expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0301 failed ');
           expect().assertFail();
         }
       }
@@ -259,6 +333,43 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0401
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0401
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let fTag: tag.TagInfo = {
+          "uid": [],
+          "technology": [],
+          "extrasData": [
+            {
+              "SystemCode": "A0C0", "Pmm": "131F",
+            }
+          ],
+          "tagRfDiscId": 1,
+          "remoteTagService": remoteTagService,
+        };
+        let nfcFTag: tag.NfcFTag;
+         hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0401 is :');
+        try {
+          nfcFTag = tag.getNfcF(fTag);
+        } catch (error) {
+        error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0401 error is ' + error.code + " - " + error);
+            expect(error.code).assertEqual(401);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0401 failed ');
+            expect().assertFail();
+          }
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0500
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0500
      * @tc.desc Check whether the NFC function is enabled.
@@ -289,6 +400,43 @@ export default function nfcTagTest() {
           expect(801).assertEqual(error.code)
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0500 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0501
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0501
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0501', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let vTag: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "ResponseFlags": 0x09, "DsfId": 0x13,
+          }
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcVTag: tag.NfcVTag ;
+      hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0501 is :');
+      try {
+        nfcVTag = tag.getNfcV(vTag);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0501 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0501 failed ');
           expect().assertFail();
         }
       }
@@ -328,6 +476,45 @@ export default function nfcTagTest() {
           expect(801).assertEqual(error.code)
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0600 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0601
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0601
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let isoDepTaginfo: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+            "HistoricalBytes": "4D54000500308693695B", "HiLayerResponse": "",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcIsoDepTag: tag.IsoDepTag;
+      try{
+        nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
+      }catch(error){
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0601 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0601 failed ');
           expect().assertFail();
         }
       }
@@ -377,6 +564,48 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0701
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0701
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0701', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let NDEFTaginfo: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+            "NdefMsg": "D4010354787473", "NdefForumType": 1, "NdefTagLength":255, "NdefTagMode": 1,
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0701 is :');
+      let nfcNdefTag: tag.NdefTag;
+      try {
+        nfcNdefTag = tag.getNdef(NDEFTaginfo);
+        hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0701 is :');
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0701 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0701 failed ');
+          expect().assertFail();
+        }
+      }
+      hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0701 is :');
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0800
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0800
      * @tc.desc Check whether the NFC function is enabled.
@@ -409,6 +638,45 @@ export default function nfcTagTest() {
           expect(801).assertEqual(error.code)
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0800 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0801
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0801
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0801', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mifareclassicTaginfo: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcMifareClassicTag: tag.MifareClassicTag ;
+      try{
+        nfcMifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0801 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0801 failed ');
           expect().assertFail();
         }
       }
@@ -455,6 +723,45 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0901
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0901
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mifareUltralightTaginfo: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+            "MifareUltralightC": "ture",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcMifareUltralightTag: tag.MifareUltralightTag;
+      try {
+        nfcMifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0901 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0901 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1000
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1000
      * @tc.desc Check whether the NFC function is enabled.
@@ -487,6 +794,45 @@ export default function nfcTagTest() {
           expect(801).assertEqual(error.code)
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1000 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1001
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1001
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let NdefFormatableTag: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcNdefFormatable: tag.NdefFormatableTag;
+      try {
+        nfcNdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1001 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1001 failed ');
           expect().assertFail();
         }
       }
@@ -535,6 +881,44 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1101
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1101
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1101', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let cTag: tag.TagInfo = {
+        "uid": [],
+        "technology": [],
+        "extrasData": [
+          {
+            "Sak": 0x08, "Atqa": "B000",
+          },
+          {
+
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      try {
+        let data: tag.BarcodeTag = tag.getBarcodeTag(cTag);
+      }catch(error){
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1101 error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1101 failed ');
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1200
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1200
      * @tc.desc Check whether the NFC function is enabled.
@@ -558,7 +942,6 @@ export default function nfcTagTest() {
           expect().assertFail();
         }
       }
-      console.info('[NFC_test] tag13 test TagInfo data>:' + nfcTagtest);
       done();
     })
 
@@ -579,7 +962,7 @@ export default function nfcTagTest() {
       let discTech: Array<int> = [1, 2, 4];
       let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
         err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
-        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 reregisterForegroundDispatch finish ');
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 registerForegroundDispatch finish ');
       }
       try {
         tag.registerForegroundDispatch(elementName, discTech, AsyncCallback);
@@ -618,6 +1001,40 @@ export default function nfcTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1301
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1301
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1301', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let elementName: ElementName = {
+        "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+        "abilityName": "MainAbility",
+        "moduleName": "entry"
+      };
+      let discTech: Array<int> = [];
+      let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
+        err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1301 registerForegroundDispatch finish ');
+      }
+      try {
+        tag.registerForegroundDispatch(elementName, discTech, AsyncCallback);
+      } catch(error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1301 registerForegroundDispatch error:  ' + error + error.code);
+          expect(error.code).assertEqual(401);
+        } else {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1301 registerForegroundDispatch fail:  ' + error + error.code);
+          expect().assertFail();
+        }
+      } 
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1400
      * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1400
      * @tc.desc Check whether the NFC function is enabled.
@@ -634,20 +1051,20 @@ export default function nfcTagTest() {
       let discTech: Array<int> = [1, 2, 4];
       let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
         err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
-        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 onReaderMode/offReaderMode finish ');
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode/offReaderMode finish ');
       }
 
       try {
         tag.onReaderMode(elementName, discTech, AsyncCallback);
-      } catch (err) {
+      } catch (error) {
         error = error as BusinessError;
-        if (err.code === 3100201) {
-          expect(3100201).assertEqual(err.code);
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
+        if (error.code === 3100201) {
+          expect(3100201).assertEqual(error.code);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode error :  ' + error + " - " + error.code);
           done();
-        } else if (err.code === 3100203) {
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
-          expect(3100203).assertEqual(err.code)
+        } else if (error.code === 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode error :  ' + error + " - " + error.code);
+          expect(3100203).assertEqual(error.code)
         } else {
           expect().assertFail();
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag  _static_1400 onReaderMode fail :  ');
@@ -655,18 +1072,54 @@ export default function nfcTagTest() {
       }
       try {
         tag.offReaderMode(elementName, AsyncCallback);
-      } catch (err) {
+      } catch (error) {
         error = error as BusinessError;
-        if (err.code === 3100201) {
-          expect(3100201).assertEqual(err.code);
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
+        if (error.code === 3100201) {
+          expect(3100201).assertEqual(error.code);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode error :  ' + error + " - " + error.code);
           done();
-        } else if (err.code === 3100203) {
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
-          expect(3100203).assertEqual(err.code)
+        } else if (error.code === 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode error :  ' + error + " - " + error.code);
+          expect(3100203).assertEqual(error.code)
         } else {
           expect().assertFail();
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode fail :  ');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1401
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1401
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let elementName: ElementName = {
+        "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+        "abilityName": "MainAbility",
+        "moduleName": "entry"
+      };
+      let discTech: Array<int> = [];
+      let AsyncCallback:(err: BusinessError<void> | null, data: tag.TagInfo | undefined) => void = (
+        err: BusinessError<void> | null, data: tag.TagInfo | undefined) => {
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1401 onReaderMode/offReaderMode finish ');
+      }
+
+      try {
+        tag.onReaderMode(elementName, discTech, AsyncCallback);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1401 onReaderMode error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1401  _static_1400 onReaderMode fail :  ');
         }
       }
       done();

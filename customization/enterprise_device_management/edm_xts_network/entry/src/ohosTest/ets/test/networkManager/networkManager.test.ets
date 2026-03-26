@@ -4275,6 +4275,93 @@ function testSetGlobalProxyForAccount() {
     done();
   });
 
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0110
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0110", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0111
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0111", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, null, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0112
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0112", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, undefined, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testGetGlobalProxyForAccount() {
@@ -4436,6 +4523,35 @@ function testGetGlobalProxyForAccount() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       networkManager.getGlobalProxyForAccount(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_for_account_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0106
+   * @tc.desc   test networkManager getGlobalProxyForAccount with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_for_account_0106", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxyForAccount(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {

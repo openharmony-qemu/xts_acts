@@ -55,6 +55,7 @@ struct Index {
     action: () => {
       console.info('Callback when the second button is clicked');
     },
+    textAlign: TextAlign.Center,
     background: ColorMetrics.resourceColor('#ff18cb53'),
     fontColor: ColorMetrics.resourceColor('#ffec5d5d'),
     buttonStyle: ButtonStyleMode.TEXTUAL,
@@ -68,6 +69,7 @@ struct Index {
     action: () => {
       console.info('Callback when the second button is clicked');
     },
+    textAlign: TextAlign.Start,
     background: ColorMetrics.resourceColor('#ff18cb53'),
     fontColor: ColorMetrics.resourceColor('#ffec5d5d'),
     buttonStyle: ButtonStyleMode.TEXTUAL,

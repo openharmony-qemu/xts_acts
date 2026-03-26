@@ -360,7 +360,72 @@ export default function storageStatistics_test() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   storage_statistics_test_getTotalInodes_static_002
+     * @tc.number SUB_DF_STATISTICS_GET_TOTAL_INODES_0300
+     * @tc.desc   Test getTotalInodes() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('storage_statistics_test_getTotalInodes_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_getTotalInodes_static_002 start');
+      try {
+        let totalInodes = await storageStatistics.getTotalInodes();
+        hilog.info(domain, tag, '%{public}s', "getTotalInodes successfully:" + totalInodes);
+        expect(await Utils.isIntNum(totalInodes)).assertTrue();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "getTotalInodes_static_002 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   storage_statistics_test_getFreeInodes_static_003
+     * @tc.number SUB_DF_STATISTICS_GET_FREE_INODES_0400
+     * @tc.desc   Test getFreeInodes() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('storage_statistics_test_getFreeInodes_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_getFreeInodes_static_003 start');
+      try {
+        let freeInodes = await storageStatistics.getFreeInodes();
+        hilog.info(domain, tag, '%{public}s', "getFreeInodes successfully:" + freeInodes);
+        expect(await Utils.isIntNum(freeInodes)).assertTrue();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "getFreeInodes_static_003 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   storage_statistics_test_getCurrentBundleInodes_static_004
+     * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_INODES_0500
+     * @tc.desc   Test getCurrentBundleInodes() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('storage_statistics_test_getCurrentBundleInodes_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_getCurrentBundleInodes_static_004 start');
+      try {
+        let currentInodes = await storageStatistics.getCurrentBundleInodes();
+        hilog.info(domain, tag, '%{public}s', "getCurrentBundleInodes successfully:" + currentInodes);
+        expect(await Utils.isIntNum(currentInodes)).assertTrue();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', "getCurrentBundleInodes_static_004 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'storageStatistics_test end');
- 
 }

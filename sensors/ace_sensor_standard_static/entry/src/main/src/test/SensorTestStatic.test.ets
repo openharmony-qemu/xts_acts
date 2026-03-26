@@ -4373,7 +4373,7 @@ export default function SensorJsStaticTest() {
       console.info("------------------GetSingleSensorByDeviceSync_JSTest_002-------------------------");
       const TAG = 'GetSingleSensorByDeviceSync_JSTest_002'
       try {
-        const invalidType = -1 as sensor.SensorId;
+        const invalidType = sensor.SensorId.fromValue(-1);
         const deviceId = 1;
         const result = sensor.getSingleSensorByDeviceSync(invalidType, deviceId);
         if (Array.isArray(result) && result.length === 0) {

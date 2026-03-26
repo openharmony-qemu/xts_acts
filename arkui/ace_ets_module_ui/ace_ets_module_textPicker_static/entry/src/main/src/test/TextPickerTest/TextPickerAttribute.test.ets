@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,12 +31,13 @@ import {
   PickerBackgroundStyle,
   TextPickerTextStyle,
   TextPickerDialogOptionsExt,
-  PickerDialogButtonStyle,
-  Rectangle,
-  Offset,
   ShadowOptions,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions
+  ShadowStyle,
+  BackgroundEffectOptions,
+  BorderRadiuses,
+  LocalizedBorderRadiuses,
+  Rectangle,
+  Offset
 } from '@ohos.arkui.component';
 import { LengthMetrics } from '@ohos.arkui.node';
 
@@ -81,24 +82,12 @@ export default function TextPickerAttributeTest() {
     /**
      * @tc.number TextPickerAttributeTest_001
      * @tc.name pickerBackgroundStyleColor
-     * @tc.desc Test PickerBackgroundStyle.color property
+     * @tc.desc Test PickerBackgroundStyle.color stores the assigned Color value
      */
     it('pickerBackgroundStyleColor', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: pickerBackgroundStyleColor START');
       let style: PickerBackgroundStyle = { color: Color.Blue };
-      expect(style.color !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_002
-     * @tc.name pickerBackgroundStyleColorUndefined
-     * @tc.desc Test PickerBackgroundStyle.color with undefined
-     */
-    it('pickerBackgroundStyleColorUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleColorUndefined START');
-      let style: PickerBackgroundStyle = {};
-      expect(style.color === undefined).assertTrue();
+      expect(style.color).assertEqual(Color.Blue);
       done();
     });
 
@@ -107,27 +96,45 @@ export default function TextPickerAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number TextPickerAttributeTest_003
-     * @tc.name pickerBackgroundStyleBorderRadius
-     * @tc.desc Test PickerBackgroundStyle.borderRadius property accepts LengthMetrics value
+     * @tc.number TextPickerAttributeTest_002
+     * @tc.name pickerBackgroundStyleBorderRadiusLengthMetrics
+     * @tc.desc Test PickerBackgroundStyle.borderRadius with LengthMetrics - value readable
      */
-    it('pickerBackgroundStyleBorderRadius', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleBorderRadius START');
-      // borderRadius?: LengthMetrics | BorderRadiuses | LocalizedBorderRadiuses
+    it('pickerBackgroundStyleBorderRadiusLengthMetrics', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleBorderRadiusLengthMetrics START');
       let style: PickerBackgroundStyle = { borderRadius: LengthMetrics.vp(8) };
-      expect(style.borderRadius !== undefined).assertTrue();
+      let br = style.borderRadius as LengthMetrics;
+      expect(br.value).assertEqual(8);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_003
+     * @tc.name pickerBackgroundStyleBorderRadiusBorderRadiuses
+     * @tc.desc Test PickerBackgroundStyle.borderRadius with BorderRadiuses interface
+     */
+    it('pickerBackgroundStyleBorderRadiusBorderRadiuses', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleBorderRadiusBorderRadiuses START');
+      let br: BorderRadiuses = { topLeft: '8vp', topRight: '8vp', bottomLeft: '4vp', bottomRight: '4vp' };
+      let style: PickerBackgroundStyle = { borderRadius: br };
+      let actualBr = style.borderRadius as BorderRadiuses;
+      expect(actualBr.topLeft).assertEqual('8vp');
+      expect(actualBr.bottomLeft).assertEqual('4vp');
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_004
-     * @tc.name pickerBackgroundStyleBorderRadiusUndefined
-     * @tc.desc Test PickerBackgroundStyle.borderRadius with undefined
+     * @tc.name pickerBackgroundStyleBorderRadiusLocalized
+     * @tc.desc Test PickerBackgroundStyle.borderRadius with LocalizedBorderRadiuses
      */
-    it('pickerBackgroundStyleBorderRadiusUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleBorderRadiusUndefined START');
-      let style: PickerBackgroundStyle = {};
-      expect(style.borderRadius === undefined).assertTrue();
+    it('pickerBackgroundStyleBorderRadiusLocalized', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: pickerBackgroundStyleBorderRadiusLocalized START');
+      let lbr: LocalizedBorderRadiuses = { topStart: LengthMetrics.vp(8), topEnd: LengthMetrics.vp(6) };
+      let style: PickerBackgroundStyle = { borderRadius: lbr };
+      let actualBr = style.borderRadius as LocalizedBorderRadiuses;
+      let ts = actualBr.topStart as LengthMetrics;
+      expect(ts.value).assertEqual(8);
       done();
     });
 
@@ -138,7 +145,7 @@ export default function TextPickerAttributeTest() {
     /**
      * @tc.number TextPickerAttributeTest_005
      * @tc.name textPickerSelectedBgStyleBlue
-     * @tc.desc Test TextPickerAttribute.selectedBackgroundStyle with color
+     * @tc.desc Test TextPickerAttribute.selectedBackgroundStyle with color - renders via inspector
      */
     it('textPickerSelectedBgStyleBlue', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextPickerAttributeTest execute: textPickerSelectedBgStyleBlue START');
@@ -157,7 +164,7 @@ export default function TextPickerAttributeTest() {
     /**
      * @tc.number TextPickerAttributeTest_006
      * @tc.name textPickerSelectedBgStyleUndefined
-     * @tc.desc Test TextPickerAttribute.selectedBackgroundStyle with undefined
+     * @tc.desc Test TextPickerAttribute.selectedBackgroundStyle with undefined - renders via inspector
      */
     it('textPickerSelectedBgStyleUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextPickerAttributeTest execute: textPickerSelectedBgStyleUndefined START');
@@ -174,25 +181,25 @@ export default function TextPickerAttributeTest() {
     });
 
     // ============================================================
-    // TextPickerDialogOptionsExt properties (pure JS)
+    // TextPickerDialogOptionsExt properties
     // ============================================================
 
     /**
      * @tc.number TextPickerAttributeTest_007
      * @tc.name textPickerDialogDefaultPickerItemHeight
-     * @tc.desc Test TextPickerDialogOptionsExt.defaultPickerItemHeight property
+     * @tc.desc Test TextPickerDialogOptionsExt.defaultPickerItemHeight stores the assigned value
      */
     it('textPickerDialogDefaultPickerItemHeight', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogDefaultPickerItemHeight START');
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], defaultPickerItemHeight: 44 };
-      expect(opts.defaultPickerItemHeight !== undefined).assertTrue();
+      expect(opts.defaultPickerItemHeight).assertEqual(44);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_008
      * @tc.name textPickerDialogCanLoop
-     * @tc.desc Test TextPickerDialogOptionsExt.canLoop property
+     * @tc.desc Test TextPickerDialogOptionsExt.canLoop property stores true
      */
     it('textPickerDialogCanLoop', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogCanLoop START');
@@ -204,73 +211,46 @@ export default function TextPickerAttributeTest() {
     /**
      * @tc.number TextPickerAttributeTest_009
      * @tc.name textPickerDialogDisappearTextStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.disappearTextStyle property
+     * @tc.desc Test TextPickerDialogOptionsExt.disappearTextStyle.color stores Color.Gray
      */
     it('textPickerDialogDisappearTextStyle', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogDisappearTextStyle START');
       let style: TextPickerTextStyle = { color: Color.Gray };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], disappearTextStyle: style };
-      expect(opts.disappearTextStyle !== undefined).assertTrue();
+      expect((opts.disappearTextStyle as TextPickerTextStyle).color).assertEqual(Color.Gray);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_010
      * @tc.name textPickerDialogTextStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.textStyle property
+     * @tc.desc Test TextPickerDialogOptionsExt.textStyle.color stores Color.Black
      */
     it('textPickerDialogTextStyle', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogTextStyle START');
       let style: TextPickerTextStyle = { color: Color.Black };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], textStyle: style };
-      expect(opts.textStyle !== undefined).assertTrue();
+      expect((opts.textStyle as TextPickerTextStyle).color).assertEqual(Color.Black);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_011
-     * @tc.name textPickerDialogAcceptButtonStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.acceptButtonStyle property
-     */
-    it('textPickerDialogAcceptButtonStyle', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogAcceptButtonStyle START');
-      // PickerDialogButtonStyle: all properties are optional; use empty object to avoid enum type issues
-      let btnStyle: PickerDialogButtonStyle = {};
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], acceptButtonStyle: btnStyle };
-      expect(opts.acceptButtonStyle !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_012
-     * @tc.name textPickerDialogCancelButtonStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.cancelButtonStyle property
-     */
-    it('textPickerDialogCancelButtonStyle', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogCancelButtonStyle START');
-      let btnStyle: PickerDialogButtonStyle = {};
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], cancelButtonStyle: btnStyle };
-      expect(opts.cancelButtonStyle !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_013
      * @tc.name textPickerDialogSelectedTextStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.selectedTextStyle property
+     * @tc.desc Test TextPickerDialogOptionsExt.selectedTextStyle.color stores Color.Blue
      */
     it('textPickerDialogSelectedTextStyle', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogSelectedTextStyle START');
       let style: TextPickerTextStyle = { color: Color.Blue };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], selectedTextStyle: style };
-      expect(opts.selectedTextStyle !== undefined).assertTrue();
+      expect((opts.selectedTextStyle as TextPickerTextStyle).color).assertEqual(Color.Blue);
       done();
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_014
+     * @tc.number TextPickerAttributeTest_012
      * @tc.name textPickerDialogDisableTextStyleAnimation
-     * @tc.desc Test TextPickerDialogOptionsExt.disableTextStyleAnimation property
+     * @tc.desc Test TextPickerDialogOptionsExt.disableTextStyleAnimation stores false
      */
     it('textPickerDialogDisableTextStyleAnimation', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogDisableTextStyleAnimation START');
@@ -280,126 +260,112 @@ export default function TextPickerAttributeTest() {
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_015
+     * @tc.number TextPickerAttributeTest_013
      * @tc.name textPickerDialogDefaultTextStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.defaultTextStyle property
+     * @tc.desc Test TextPickerDialogOptionsExt.defaultTextStyle.color stores Color.White
      */
     it('textPickerDialogDefaultTextStyle', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogDefaultTextStyle START');
       let style: TextPickerTextStyle = { color: Color.White };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], defaultTextStyle: style };
-      expect(opts.defaultTextStyle !== undefined).assertTrue();
+      expect((opts.defaultTextStyle as TextPickerTextStyle).color).assertEqual(Color.White);
       done();
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_016
+     * @tc.number TextPickerAttributeTest_014
      * @tc.name textPickerDialogMaskRect
-     * @tc.desc Test TextPickerDialogOptionsExt.maskRect property (Rectangle)
+     * @tc.desc Test TextPickerDialogOptionsExt.maskRect.width stores 300
      */
     it('textPickerDialogMaskRect', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogMaskRect START');
       let rect: Rectangle = { x: 0, y: 0, width: 300, height: 200 };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], maskRect: rect };
-      expect(opts.maskRect !== undefined).assertTrue();
+      expect((opts.maskRect as Rectangle).width).assertEqual(300);
+      expect((opts.maskRect as Rectangle).height).assertEqual(200);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_015
+     * @tc.name textPickerDialogAlignment
+     * @tc.desc Test TextPickerDialogOptionsExt.alignment stores DialogAlignment.Center
+     */
+    it('textPickerDialogAlignment', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogAlignment START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], alignment: DialogAlignment.Center };
+      expect(opts.alignment).assertEqual(DialogAlignment.Center);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_016
+     * @tc.name textPickerDialogOffset
+     * @tc.desc Test TextPickerDialogOptionsExt.offset.dx stores 10
+     */
+    it('textPickerDialogOffset', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogOffset START');
+      let offset: Offset = { dx: 10, dy: 20 };
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], offset: offset };
+      expect((opts.offset as Offset).dx).assertEqual(10);
+      expect((opts.offset as Offset).dy).assertEqual(20);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_017
-     * @tc.name textPickerDialogAlignment
-     * @tc.desc Test TextPickerDialogOptionsExt.alignment property (DialogAlignment enum)
+     * @tc.name textPickerDialogBackgroundColor
+     * @tc.desc Test TextPickerDialogOptionsExt.backgroundColor stores Color.White
      */
-    it('textPickerDialogAlignment', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogAlignment START');
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], alignment: DialogAlignment.Center };
-      expect(opts.alignment !== undefined).assertTrue();
+    it('textPickerDialogBackgroundColor', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundColor START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundColor: Color.White };
+      expect(opts.backgroundColor).assertEqual(Color.White);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_018
-     * @tc.name textPickerDialogOffset
-     * @tc.desc Test TextPickerDialogOptionsExt.offset property (Offset with required dx, dy)
+     * @tc.name textPickerDialogBackgroundBlurStyle
+     * @tc.desc Test TextPickerDialogOptionsExt.backgroundBlurStyle stores BlurStyle.Regular
      */
-    it('textPickerDialogOffset', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogOffset START');
-      // Offset.dx and Offset.dy are both required (Length = string | double | Resource)
-      let offset: Offset = { dx: 10, dy: 10 };
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], offset: offset };
-      expect(opts.offset !== undefined).assertTrue();
+    it('textPickerDialogBackgroundBlurStyle', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundBlurStyle START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundBlurStyle: BlurStyle.Regular };
+      expect(opts.backgroundBlurStyle).assertEqual(BlurStyle.Regular);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_019
-     * @tc.name textPickerDialogBackgroundColor
-     * @tc.desc Test TextPickerDialogOptionsExt.backgroundColor property
-     */
-    it('textPickerDialogBackgroundColor', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundColor START');
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundColor: Color.White };
-      expect(opts.backgroundColor !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_020
-     * @tc.name textPickerDialogBackgroundBlurStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.backgroundBlurStyle property (BlurStyle enum)
-     */
-    it('textPickerDialogBackgroundBlurStyle', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundBlurStyle START');
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundBlurStyle: BlurStyle.Regular };
-      expect(opts.backgroundBlurStyle !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_021
-     * @tc.name textPickerDialogBackgroundBlurStyleOptions
-     * @tc.desc Test TextPickerDialogOptionsExt.backgroundBlurStyleOptions property (BackgroundBlurStyleOptions)
-     */
-    it('textPickerDialogBackgroundBlurStyleOptions', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundBlurStyleOptions START');
-      // BackgroundBlurStyleOptions: colorMode/adaptiveColor are enum-typed, use empty object
-      let blurOpts: BackgroundBlurStyleOptions = {};
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundBlurStyleOptions: blurOpts };
-      expect(opts.backgroundBlurStyleOptions !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextPickerAttributeTest_022
      * @tc.name textPickerDialogBackgroundEffect
-     * @tc.desc Test TextPickerDialogOptionsExt.backgroundEffect property (BackgroundEffectOptions)
+     * @tc.desc Test TextPickerDialogOptionsExt.backgroundEffect.radius stores 10
      */
     it('textPickerDialogBackgroundEffect', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogBackgroundEffect START');
       let effect: BackgroundEffectOptions = { radius: 10, saturation: 1, brightness: 1 };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], backgroundEffect: effect };
-      expect(opts.backgroundEffect !== undefined).assertTrue();
+      expect((opts.backgroundEffect as BackgroundEffectOptions).radius).assertEqual(10);
       done();
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_023
-     * @tc.name textPickerDialogShadow
-     * @tc.desc Test TextPickerDialogOptionsExt.shadow property (ShadowOptions)
+     * @tc.number TextPickerAttributeTest_020
+     * @tc.name textPickerDialogShadowOptions
+     * @tc.desc Test TextPickerDialogOptionsExt.shadow with ShadowOptions - offsetX stores 5
      */
-    it('textPickerDialogShadow', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogShadow START');
-      // ShadowOptions.radius is required (number | Resource); offsetX/offsetY are optional
+    it('textPickerDialogShadowOptions', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogShadowOptions START');
       let shadow: ShadowOptions = { radius: 20, offsetX: 5, offsetY: 5 };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], shadow: shadow };
-      expect(opts.shadow !== undefined).assertTrue();
+      expect((opts.shadow as ShadowOptions).offsetX).assertEqual(5);
       done();
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_024
+     * @tc.number TextPickerAttributeTest_021
      * @tc.name textPickerDialogEnableHoverMode
-     * @tc.desc Test TextPickerDialogOptionsExt.enableHoverMode property
+     * @tc.desc Test TextPickerDialogOptionsExt.enableHoverMode stores true
      */
     it('textPickerDialogEnableHoverMode', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogEnableHoverMode START');
@@ -409,21 +375,33 @@ export default function TextPickerAttributeTest() {
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_025
-     * @tc.name textPickerDialogHoverModeArea
-     * @tc.desc Test TextPickerDialogOptionsExt.hoverModeArea property (HoverModeAreaType enum)
+     * @tc.number TextPickerAttributeTest_022
+     * @tc.name textPickerDialogHoverModeAreaTop
+     * @tc.desc Test TextPickerDialogOptionsExt.hoverModeArea stores HoverModeAreaType.TOP_SCREEN
      */
-    it('textPickerDialogHoverModeArea', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogHoverModeArea START');
+    it('textPickerDialogHoverModeAreaTop', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogHoverModeAreaTop START');
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], hoverModeArea: HoverModeAreaType.TOP_SCREEN };
-      expect(opts.hoverModeArea !== undefined).assertTrue();
+      expect(opts.hoverModeArea).assertEqual(HoverModeAreaType.TOP_SCREEN);
       done();
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_026
+     * @tc.number TextPickerAttributeTest_023
+     * @tc.name textPickerDialogHoverModeAreaBottom
+     * @tc.desc Test TextPickerDialogOptionsExt.hoverModeArea with HoverModeAreaType.BOTTOM_SCREEN
+     */
+    it('textPickerDialogHoverModeAreaBottom', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogHoverModeAreaBottom START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], hoverModeArea: HoverModeAreaType.BOTTOM_SCREEN };
+      expect(opts.hoverModeArea).assertEqual(HoverModeAreaType.BOTTOM_SCREEN);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_024
      * @tc.name textPickerDialogEnableHapticFeedback
-     * @tc.desc Test TextPickerDialogOptionsExt.enableHapticFeedback property
+     * @tc.desc Test TextPickerDialogOptionsExt.enableHapticFeedback stores false
      */
     it('textPickerDialogEnableHapticFeedback', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogEnableHapticFeedback START');
@@ -433,31 +411,51 @@ export default function TextPickerAttributeTest() {
     });
 
     /**
-     * @tc.number TextPickerAttributeTest_027
+     * @tc.number TextPickerAttributeTest_025
      * @tc.name textPickerDialogSelectedBackgroundStyle
-     * @tc.desc Test TextPickerDialogOptionsExt.selectedBackgroundStyle property (PickerBackgroundStyle)
+     * @tc.desc Test TextPickerDialogOptionsExt.selectedBackgroundStyle.color stores Color.Blue
      */
     it('textPickerDialogSelectedBackgroundStyle', Level.LEVEL1, (done: () => void): void => {
       console.info('TextPickerAttributeTest execute: textPickerDialogSelectedBackgroundStyle START');
-      // borderRadius?: LengthMetrics | BorderRadiuses | LocalizedBorderRadiuses
       let bgStyle: PickerBackgroundStyle = { color: Color.Blue, borderRadius: LengthMetrics.vp(4) };
       let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], selectedBackgroundStyle: bgStyle };
-      expect(opts.selectedBackgroundStyle !== undefined).assertTrue();
+      expect((opts.selectedBackgroundStyle as PickerBackgroundStyle).color).assertEqual(Color.Blue);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_026
+     * @tc.name textPickerDialogShadowStyle
+     * @tc.desc Test TextPickerDialogOptionsExt.shadow with ShadowStyle enum stores the enum value
+     */
+    it('textPickerDialogShadowStyle', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogShadowStyle START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], shadow: ShadowStyle.OUTER_DEFAULT_MD };
+      expect(opts.shadow).assertEqual(ShadowStyle.OUTER_DEFAULT_MD);
+      done();
+    });
+
+    /**
+     * @tc.number TextPickerAttributeTest_027
+     * @tc.name textPickerDialogDialogAlignmentTopStart
+     * @tc.desc Test DialogAlignment enum values coverage - TopStart
+     */
+    it('textPickerDialogDialogAlignmentTopStart', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogDialogAlignmentTopStart START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], alignment: DialogAlignment.TopStart };
+      expect(opts.alignment).assertEqual(DialogAlignment.TopStart);
       done();
     });
 
     /**
      * @tc.number TextPickerAttributeTest_028
-     * @tc.name textPickerDialogOptionsExtUndefinedProps
-     * @tc.desc Test TextPickerDialogOptionsExt with optional properties absent (all undefined)
+     * @tc.name textPickerDialogDialogAlignmentBottom
+     * @tc.desc Test DialogAlignment.Bottom enum value coverage
      */
-    it('textPickerDialogOptionsExtUndefinedProps', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextPickerAttributeTest execute: textPickerDialogOptionsExtUndefinedProps START');
-      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'] };
-      expect(opts.defaultPickerItemHeight === undefined).assertTrue();
-      expect(opts.canLoop === undefined).assertTrue();
-      expect(opts.enableHoverMode === undefined).assertTrue();
-      expect(opts.enableHapticFeedback === undefined).assertTrue();
+    it('textPickerDialogDialogAlignmentBottom', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextPickerAttributeTest execute: textPickerDialogDialogAlignmentBottom START');
+      let opts: TextPickerDialogOptionsExt = { range: ['a', 'b'], alignment: DialogAlignment.Bottom };
+      expect(opts.alignment).assertEqual(DialogAlignment.Bottom);
       done();
     });
   });

@@ -22,7 +22,8 @@ group("location") {
       "geolocation_nop:ActslocationNopTest",
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
-      "geolocation_capiStatic:ActslocationCapiStaticTest"
+      "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   } else {
     deps = [
@@ -32,7 +33,8 @@ group("location") {
       "geolocation_nop:ActslocationNopTest",
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
-      "geolocation_capiStatic:ActslocationCapiStaticTest"
+      "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   }
 }

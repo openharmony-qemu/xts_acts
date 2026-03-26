@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ export default function WaterFlowAttributeTest() {
         let attrs = node.getElement('$attrs');
         let colTemplate = attrs.getString('columnsTemplate');
         console.info('WaterFlowAttributeTest: waterFlowColTemplateStr2fr columnsTemplate = ' + colTemplate);
-        expect(colTemplate !== null && colTemplate.length > 0).assertTrue();
+        expect(colTemplate).assertEqual('1fr 1fr');
         done();
       } catch (error) {
         console.error('WaterFlowAttributeTest execute: waterFlowColTemplateStr2fr error:' + error);
@@ -130,27 +130,23 @@ export default function WaterFlowAttributeTest() {
 
     /**
      * @tc.number WaterFlowAttributeTest_004
-     * @tc.name waterFlowColTemplateItemFillPolicyJS
-     * @tc.desc Test ItemFillPolicy.fillType is optional (undefined when not set)
+     * @tc.name waterFlowColTemplateItemFillPolicyWithPage
+     * @tc.desc Test WaterFlow with ItemFillPolicy renders via inspector
      */
-    it('waterFlowColTemplateItemFillPolicyJS', Level.LEVEL1, (done: () => void): void => {
-      console.info('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicyJS START');
-      // fillType is ?ResponsiveFillType (= PresetFillType enum) — verify property is optional in SDK type
-      let policy: ItemFillPolicy = {};
-      expect(policy.fillType === undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number WaterFlowAttributeTest_005
-     * @tc.name waterFlowColTemplateItemFillPolicyUndefined
-     * @tc.desc Test ItemFillPolicy.fillType explicitly set to undefined
-     */
-    it('waterFlowColTemplateItemFillPolicyUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicyUndefined START');
-      let policy: ItemFillPolicy = { fillType: undefined };
-      expect(policy.fillType === undefined).assertTrue();
-      done();
+    it('waterFlowColTemplateItemFillPolicyWithPage', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicyWithPage START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('waterFlowColTemplateItemFill'));
+        expect(node !== null).assertTrue();
+        let attrs = node.getElement('$attrs');
+        expect(attrs !== null).assertTrue();
+        done();
+      } catch (error) {
+        console.error('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicyWithPage error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     // ============================================================

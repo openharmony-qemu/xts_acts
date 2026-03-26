@@ -628,6 +628,26 @@ export default function formProviderTest() {
             const element: formInfo.FormInfo = result[i];
             expect(element.bundleName).assertEqual(bundleName);
             expect(element.name).assertEqual(widgetName);
+            expect(moduleName).assertEqual(element.moduleName as string);
+            expect(formAbilityName).assertEqual(element.abilityName as string);
+            expect('widget displayName').assertEqual(element.displayName as string);
+            expect('This is a widget description').assertEqual(element.description as string);
+            expect('').assertEqual(element.jsComponentName as string);
+            expect('10:30').assertEqual(element.scheduledUpdateTime as string);
+            expect('').assertEqual(element.formConfigAbility as string);
+            expect(0).assertEqual(element.displayNameId);
+            expect(0).assertEqual(element.descriptionId);
+            expect(1).assertEqual(element.updateDuration);
+            expect(2).assertEqual(element.defaultDimension);
+            expect(formInfo.FormType.JS).assertEqual(element.type);
+            expect(1).assertEqual(element.supportDimensions.length);
+            expect(6).assertEqual(Object.keys(element.customizeData).length);
+            expect(1).assertEqual(element.supportedShapes.length);
+            expect(false).assertEqual(element.transparencyEnabled as boolean);
+            expect(true).assertEqual(element.isDynamic as boolean);
+            expect(false).assertEqual(element.formVisibleNotify as boolean);
+            expect(true).assertEqual(element.isDefault as boolean);
+            expect(false).assertEqual(element.updateEnabled as boolean);
           }
           hilog.info(DOMAIN, TAG, `GetFormsInfoTest001 success`);
           expect(BOOL_TRUE).assertEqual(true);

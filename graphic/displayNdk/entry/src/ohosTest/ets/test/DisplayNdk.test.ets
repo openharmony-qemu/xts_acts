@@ -43,8 +43,20 @@ export default function DisplayNdkTest() {
     let windowStage: window.WindowStage;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
+    let isSupportFreeWindowMode: boolean = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
+      let promise2 = mainWindowClass!.getWindowStateSnapshot();
+      promise2.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -1094,18 +1106,18 @@ export default function DisplayNdkTest() {
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
           expect(result).assertEqual(0);
-          if (deviceType === '2in1') {
+          if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
             // 调用maximize接口，设置窗口进入全屏沉浸式。
-            windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+            windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
             // 调用setTitleAndDockHoverShown接口，隐藏标题栏和dock栏。
             windowClass!.setTitleAndDockHoverShown(false, false);
             await sleep(1000);
             count = testNapi.getAreaLinsterCount();
-            console.info('Succeeded in get the count.');
+            console.info('Succeeded in get the count.' + count);
             await sleep(1000);
-            expect(count).assertLargerOrEqual(0);
+            expect(count).assertLarger(0);
             done()
-          } else if (deviceType === 'tablet') {
+          } else if (deviceType === 'tablet' && !isPCMode) {
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
             await sleep(1000);
             count = testNapi.getAreaLinsterCount();

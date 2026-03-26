@@ -19,6 +19,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 import { BusinessError, systemParameterEnhance } from '@kit.BasicServicesKit';
 import eventBusPlue from '../lib/EventBusPlus';
+import wifiManager from '@ohos.wifiManager';
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -30,6 +31,7 @@ export default function ActsUIExtensionContextMethodTest() {
   describe('ActsUIExtensionContextMethodTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
+      wifiManager.disableWifi();
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
@@ -39,6 +41,11 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
     afterEach(async () => {})
+    afterAll(() => {
+      hilog.info(0x0000, 'afterAll', 'afterAll start');
+      wifiManager.enableWifi();
+      hilog.info(0x0000, 'afterAll', 'afterAll end');
+    })
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0100
      * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0100

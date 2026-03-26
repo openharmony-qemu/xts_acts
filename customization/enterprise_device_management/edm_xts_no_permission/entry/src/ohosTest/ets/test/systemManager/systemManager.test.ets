@@ -43,6 +43,8 @@ export default function systemManagerTest() {
     testFinishLogCollected();
     testSetActivationLockDisabled();
     testIsActivationLockDisabled();
+    testSetInstallLocalEnterpriseAppEnabledForAccount();
+    testGetInstallLocalEnterpriseAppEnabledForAccount();
   })
 }
 
@@ -597,6 +599,60 @@ function testIsActivationLockDisabled() {
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
+    done();
+  });
+}
+
+function testSetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
     done();
   });
 }

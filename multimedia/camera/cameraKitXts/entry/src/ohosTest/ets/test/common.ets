@@ -21,7 +21,7 @@ import fs from '@ohos.file.fs';
 
 const TAG = "cameraXts.common";
 
-const COMMON_WAIT_DURATION: number = 500;
+const COMMON_WAIT_DURATION: number = 1000;
 const cameraPosition = camera.CameraPosition;
 const cameraType = camera.CameraType;
 const connectionType = camera.ConnectionType;
@@ -75,7 +75,7 @@ export async function driveFn() {
   let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   await sleep(COMMON_WAIT_DURATION);
   await power?.click();
-  await sleep(COMMON_WAIT_DURATION);
+  await sleep(COMMON_WAIT_DURATION * 2);
 }
 
 export function resourceName() {
@@ -146,3 +146,17 @@ export { COMMON_WAIT_DURATION,
   cameraFocusMode,
   cameraPreconfigType,
   cameraPreconfigRatio }
+
+export function getEnumMaxValue<T extends Record<string, number | string>>(enumeration: T): number {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  let maxValue = Math.max(...numberValues);
+  console.info(TAG,'getEnumMaxValue : ' + maxValue);
+  return maxValue;
+}
+
+export function getEnumValueList<T extends Record<string, number | string>>(enumeration: T): number[] {
+  const values = Object.values(enumeration);
+  const numberValues = values.filter(v => typeof v === 'number') as number[];
+  return numberValues;
+}

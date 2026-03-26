@@ -413,6 +413,32 @@ export default function inputMethodSettingTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodSetting_offImeChange_static_0200
+        * @tc.number SUB_Misc_inputMethodSetting_offImeChange_static_0200
+        * @tc.desc   Test offImeChange interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodSetting_offImeChange_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodSetting_offImeChange_static_0200';
+            let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+            let callback: inputMethod.ImeChangeCallback = (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodMethod): void => {
+                console.info(`${CASE_NAME} imeChange callback triggered`);
+            };
+            try {
+                inputMethodSetting.onImeChange(callback);
+                inputMethodSetting.offImeChange();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   Sub_InputMethod_IME_InputMethodState_static_0901
          * @tc.number Sub_InputMethod_IME_InputMethodState_static_0901
          * @tc.desc   Function test
@@ -425,7 +451,7 @@ export default function inputMethodSettingTest() {
             try{
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info(`====>${testName} getSetting success`);
-                let state =  await inputMethodSetting.getInputMethodState();
+                let state:inputMethod.EnabledState =  await inputMethodSetting.getInputMethodState();
                 console.info(`====>${testName} state is:${state}`);
                 expect().assertFail();
                 done();

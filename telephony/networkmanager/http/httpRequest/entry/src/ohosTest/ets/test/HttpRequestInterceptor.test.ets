@@ -37,7 +37,7 @@ const ExpectTrue = (n: boolean) => {
 const HTTP_URL_BAIDU: string = "https://www.baidu.com/";
 const HTTP_URL_OLD: string = "http://8.147.129.63:8088/old-path";
 const HTTP_URL_CACHE: string = "http://8.147.129.63:8088/aaa";
-
+const HTTP_NULL_URL: string = "";
 // 通用request的head
 const HEADER = { "content-type": "text/html" } as Record<string, string>;
 // 不修改的body
@@ -89,7 +89,46 @@ let cacheResponse: http.HttpResponse = JSON.parse(JSON.stringify(beginningRespon
 let redirectionResponse: http.HttpResponse = JSON.parse(JSON.stringify(beginningResponse));
 let finallyResponse: http.HttpResponse = JSON.parse(JSON.stringify(beginningResponse));
 let networkResponse: http.HttpResponse = JSON.parse(JSON.stringify(beginningResponse));
-
+const beginningResponse1: http.HttpResponse = {
+  result: "",
+  resultType: http.HttpDataType.OBJECT,
+  responseCode: 200,
+  header: "",
+  cookies: "",
+  performanceTiming: ({
+    dnsTiming: 0,
+    tcpTiming: 0,
+    tlsTiming: 0,
+    firstSendTiming: 0,
+    firstReceiveTiming: 0,
+    totalFinishTiming: 0,
+    redirectTiming: 0,
+    responseHeaderTiming: 0,
+    responseBodyTiming: 0,
+    totalTiming: 0
+  } as http.PerformanceTiming)
+}
+let initialResponse1: http.HttpResponse = JSON.parse(JSON.stringify(beginningResponse1));
+const beginningResponse2: http.HttpResponse = {
+  result: "",
+  resultType: http.HttpDataType.ARRAY_BUFFER,
+  responseCode: 200,
+  header: "",
+  cookies: "",
+  performanceTiming: ({
+    dnsTiming: 0,
+    tcpTiming: 0,
+    tlsTiming: 0,
+    firstSendTiming: 0,
+    firstReceiveTiming: 0,
+    totalFinishTiming: 0,
+    redirectTiming: 0,
+    responseHeaderTiming: 0,
+    responseBodyTiming: 0,
+    totalTiming: 0
+  } as http.PerformanceTiming)
+}
+let initialResponse2: http.HttpResponse = JSON.parse(JSON.stringify(beginningResponse2));
 class TestHttpInterceptor implements http.HttpInterceptor {
   interceptorType: InterceptorType = InterceptorType.INITIAL_REQUEST;
   result: boolean;
@@ -335,6 +374,153 @@ class NetworkHttpInterceptor implements http.HttpInterceptor {
     if (!this.result) {
       networkResponse = JSON.parse(JSON.stringify(rspContext));
       networkResponse.header = {
+        "charset=utf-8,cxy_all": "+5c4ea5d1638626cbb796a7db10e0d663",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue"
+      }
+    }
+    return Promise.resolve(this.result);
+  }
+}
+
+class TestHttpInterceptor2 implements http.HttpInterceptor {
+  interceptorType: InterceptorType = InterceptorType.INITIAL_REQUEST;
+  result: boolean;
+  title = "";
+
+  constructor(interceptorType: InterceptorType, result: boolean) {
+    this.interceptorType = interceptorType;
+    this.result = result;
+    this.title = this.interceptorType.toString() + " Promise.resolve(" + this.result + ")";
+    hilog.info(0x0000, 'testTag', "TestHttpInterceptor2::constructor::" + this.title + '::success');
+  }
+
+  interceptorHandle(reqContext: http.HttpRequestContext, rspContext: http.HttpResponse): Promise<http.ChainContinue> {
+    hilog.info(0x0000, 'testTag', this.title + '::success');
+    hilog.info(0x0000, 'testTag', this.title + '::reqContext::' + JSON.stringify(reqContext));
+    hilog.info(0x0000, 'testTag', this.title + '::rspContext::' + JSON.stringify(rspContext));
+
+
+    reqContext.url =HTTP_NULL_URL;
+    if (reqContext.url.includes('BODY_GET_NOT_CHANGE')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_NOT_CHANGE'");
+    } else if (reqContext.url.includes('BODY_GET_CHANGE_HEAD')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_HEAD'");
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
+    } else if (reqContext.url.includes('BODY_GET_CHANGE_URL_HEAD')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_URL_HEAD'");
+
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
+    } else {
+      let oldBody = JSON.parse(JSON.parse(JSON.stringify(reqContext.body))) as Record<string, string>;
+
+      // 不修改
+      if (oldBody['context'] === 'BODY_NO_CHANGE') {
+        hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_NO_CHANGE'");
+        ExpectTrue(JSON.stringify(reqContext.header) === JSON.stringify(HEADER));
+        ExpectTrue(oldBody['context'] === 'BODY_NO_CHANGE');
+
+      } else {
+        if (oldBody['context'] === 'BODY_CHANGE_URL') {
+          // 修改URL
+          hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_CHANGE_URL'");
+          reqContext.url = HTTP_URL_OLD;
+        }
+
+        // 第一次进入
+        if (this.result) {
+          if (!reqContext.header['INITIAL_REQUEST']) {
+            hilog.info(0x0000, 'testTag', "!reqContext.body['INITIAL_REQUEST']");
+            reqContext.header['INITIAL_REQUEST'] = '1';
+          } else {
+            hilog.info(0x0000, 'testTag', "reqContext.header['INITIAL_REQUEST']");
+            ExpectTrue(reqContext.header['INITIAL_REQUEST'] === '1');
+            reqContext.header['INITIAL_REQUEST'] = (Number(reqContext.header['INITIAL_REQUEST']) + 1).toString();
+          }
+        }
+      }
+    }
+
+    rspContext.result = "";
+    rspContext.responseCode = 200;
+    rspContext.header = responseHeader;
+    if (!this.result) {
+      initialResponse1 = JSON.parse(JSON.stringify(rspContext));
+      initialResponse1.header = {
+        "charset=utf-8,cxy_all": "+5c4ea5d1638626cbb796a7db10e0d663",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue"
+      }
+    }
+    return Promise.resolve(this.result);
+  }
+}
+class TestHttpInterceptor3 implements http.HttpInterceptor {
+  interceptorType: InterceptorType = InterceptorType.INITIAL_REQUEST;
+  result: boolean;
+  title = "";
+
+  constructor(interceptorType: InterceptorType, result: boolean) {
+    this.interceptorType = interceptorType;
+    this.result = result;
+    this.title = this.interceptorType.toString() + " Promise.resolve(" + this.result + ")";
+    hilog.info(0x0000, 'testTag', "TestHttpInterceptor3::constructor::" + this.title + '::success');
+  }
+
+  interceptorHandle(reqContext: http.HttpRequestContext, rspContext: http.HttpResponse): Promise<http.ChainContinue> {
+    hilog.info(0x0000, 'testTag', this.title + '::success');
+    hilog.info(0x0000, 'testTag', this.title + '::reqContext::' + JSON.stringify(reqContext));
+    hilog.info(0x0000, 'testTag', this.title + '::rspContext::' + JSON.stringify(rspContext));
+
+
+    reqContext.url =HTTP_NULL_URL;
+    if (reqContext.url.includes('BODY_GET_NOT_CHANGE')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_NOT_CHANGE'");
+    } else if (reqContext.url.includes('BODY_GET_CHANGE_HEAD')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_HEAD'");
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
+    } else if (reqContext.url.includes('BODY_GET_CHANGE_URL_HEAD')) {
+      hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_URL_HEAD'");
+
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
+    } else {
+      let oldBody = JSON.parse(JSON.parse(JSON.stringify(reqContext.body))) as Record<string, string>;
+
+      // 不修改
+      if (oldBody['context'] === 'BODY_NO_CHANGE') {
+        hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_NO_CHANGE'");
+        ExpectTrue(JSON.stringify(reqContext.header) === JSON.stringify(HEADER));
+        ExpectTrue(oldBody['context'] === 'BODY_NO_CHANGE');
+
+      } else {
+        if (oldBody['context'] === 'BODY_CHANGE_URL') {
+          // 修改URL
+          hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_CHANGE_URL'");
+          reqContext.url = HTTP_URL_OLD;
+        }
+
+        // 第一次进入
+        if (this.result) {
+          if (!reqContext.header['INITIAL_REQUEST']) {
+            hilog.info(0x0000, 'testTag', "!reqContext.body['INITIAL_REQUEST']");
+            reqContext.header['INITIAL_REQUEST'] = '1';
+          } else {
+            hilog.info(0x0000, 'testTag', "reqContext.header['INITIAL_REQUEST']");
+            ExpectTrue(reqContext.header['INITIAL_REQUEST'] === '1');
+            reqContext.header['INITIAL_REQUEST'] = (Number(reqContext.header['INITIAL_REQUEST']) + 1).toString();
+          }
+        }
+      }
+    }
+
+    rspContext.result = "";
+    rspContext.responseCode = 200;
+    rspContext.header = responseHeader;
+    if (!this.result) {
+      initialResponse2 = JSON.parse(JSON.stringify(rspContext));
+      initialResponse2.header = {
         "charset=utf-8,cxy_all": "+5c4ea5d1638626cbb796a7db10e0d663",
         "content-encoding": "br",
         "content-type": "text/html",
@@ -1768,5 +1954,105 @@ export default function HttpRequestInterceptor() {
       }
       hilog.info(0x0000, 'testTag', `${caseName} test End`);
     });
-  });
+    /**
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2700
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2700
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true  BODY_NO_CHANGE interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2700";
+        hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+        try {
+          let httpRequest: http.HttpRequest = http.createHttp();
+          hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+          let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+          let c1 = new TestHttpInterceptor2(InterceptorType.INITIAL_REQUEST, true);
+          chain.addChain([
+            c1
+          ]);
+          hilog.info(0x0000, 'testTag', `${caseName} c1: ${JSON.stringify(c1)}`);
+          let cs: http.HttpInterceptor[] = chain.getChain();
+          hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+          chain.apply(httpRequest);
+          let options: http.HttpRequestOptions = {
+            method: http.RequestMethod.POST,
+            header: HEADER,
+            extraData: BODY_NO_CHANGE,
+          };
+          httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
+            if (err) {
+              ExpectTrue(err.code==2300003);
+              hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+              httpRequest.destroy();
+              done();
+            } else {
+              hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
+              hilog.info(0x0000, 'testTag', `${caseName} finallyResponse:${JSON.stringify(finallyResponse)}`);
+              httpRequest.destroy();
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+
+        hilog.info(0x0000, 'testTag', `${caseName} test End`);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2800
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2800
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true  BODY_NO_CHANGE interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2800";
+        hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+        try {
+          let httpRequest: http.HttpRequest = http.createHttp();
+          hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+          let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+          let c1 = new TestHttpInterceptor3(InterceptorType.INITIAL_REQUEST, true);
+          chain.addChain([
+            c1
+          ]);
+          let cs: http.HttpInterceptor[] = chain.getChain();
+          hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+          chain.apply(httpRequest);
+          let options: http.HttpRequestOptions = {
+            method: http.RequestMethod.POST,
+            header: HEADER,
+            extraData: BODY_NO_CHANGE,
+          };
+          httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
+            if (err) {
+              ExpectTrue(err.code==2300003);
+              hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+              httpRequest.destroy();
+              done();
+            } else {
+              hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
+              hilog.info(0x0000, 'testTag', `${caseName} finallyResponse:${JSON.stringify(finallyResponse)}`);
+              httpRequest.destroy();
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(0x0000, 'testTag', `${caseName} test End`);
+      });
+  });  
 }

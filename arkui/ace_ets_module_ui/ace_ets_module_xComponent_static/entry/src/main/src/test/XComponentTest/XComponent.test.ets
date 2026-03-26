@@ -89,13 +89,16 @@ export default function XComponentTest() {
 
     /**
      * @tc.number XComponentTest_003
-     * @tc.name surfaceConfigIsOpaqueUndefined
-     * @tc.desc Test SurfaceConfig.isOpaque with undefined (default)
+     * @tc.name surfaceConfigIsOpaqueTrueFalse
+     * @tc.desc Test SurfaceConfig.isOpaque with true and false differ
      */
-    it('surfaceConfigIsOpaqueUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueUndefined START');
-      let config: SurfaceConfig = {};
-      expect(config.isOpaque === undefined).assertTrue();
+    it('surfaceConfigIsOpaqueTrueFalse', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: surfaceConfigIsOpaqueTrueFalse START');
+      let configTrue: SurfaceConfig = { isOpaque: true };
+      let configFalse: SurfaceConfig = { isOpaque: false };
+      expect(configTrue.isOpaque).assertEqual(true);
+      expect(configFalse.isOpaque).assertEqual(false);
+      expect(configTrue.isOpaque === configFalse.isOpaque).assertEqual(false);
       done();
     });
 
@@ -106,37 +109,61 @@ export default function XComponentTest() {
     /**
      * @tc.number XComponentTest_004
      * @tc.name xComponentControllerLockCanvas
-     * @tc.desc Test XComponentController.lockCanvas method exists
+     * @tc.desc Test XComponentController.lockCanvas method exists on page-created controller
      */
-    it('xComponentControllerLockCanvas', Level.LEVEL1, (done: () => void): void => {
+    it('xComponentControllerLockCanvas', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('XComponentTest execute: xComponentControllerLockCanvas START');
-      const ctrl = new XComponentController();
-      expect(typeof ctrl.lockCanvas === 'function').assertTrue();
-      done();
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        expect(typeof ctrl.lockCanvas === 'function').assertTrue();
+        console.info('XComponentTest execute: xComponentControllerLockCanvas END');
+        done();
+      } catch (error) {
+        console.error('XComponentTest execute: xComponentControllerLockCanvas error: ' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
      * @tc.number XComponentTest_005
      * @tc.name xComponentControllerUnlockCanvasAndPost
-     * @tc.desc Test XComponentController.unlockCanvasAndPost method exists
+     * @tc.desc Test XComponentController.unlockCanvasAndPost method exists on page-created controller
      */
-    it('xComponentControllerUnlockCanvasAndPost', Level.LEVEL1, (done: () => void): void => {
+    it('xComponentControllerUnlockCanvasAndPost', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost START');
-      const ctrl = new XComponentController();
-      expect(typeof ctrl.unlockCanvasAndPost === 'function').assertTrue();
-      done();
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        expect(typeof ctrl.unlockCanvasAndPost === 'function').assertTrue();
+        console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost END');
+        done();
+      } catch (error) {
+        console.error('XComponentTest execute: xComponentControllerUnlockCanvasAndPost error: ' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
      * @tc.number XComponentTest_006
      * @tc.name xComponentControllerSetSurfaceConfig
-     * @tc.desc Test XComponentController.setXComponentSurfaceConfig method exists
+     * @tc.desc Test XComponentController.setXComponentSurfaceConfig method exists on page-created controller
      */
-    it('xComponentControllerSetSurfaceConfig', Level.LEVEL1, (done: () => void): void => {
+    it('xComponentControllerSetSurfaceConfig', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig START');
-      const ctrl = new XComponentController();
-      expect(typeof ctrl.setXComponentSurfaceConfig === 'function').assertTrue();
-      done();
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        const ctrl = AppStorage.get<XComponentController>('xController') as XComponentController;
+        expect(typeof ctrl.setXComponentSurfaceConfig === 'function').assertTrue();
+        console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig END');
+        done();
+      } catch (error) {
+        console.error('XComponentTest execute: xComponentControllerSetSurfaceConfig error: ' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     // ============================================================
@@ -164,19 +191,19 @@ export default function XComponentTest() {
 
     /**
      * @tc.number XComponentTest_008
-     * @tc.name xComponentTextureRenders
-     * @tc.desc Test XComponent type renders
+    * @tc.name xComponentViewRenders
+     * @tc.desc Test XComponent page title renders
      */
-    it('xComponentTextureRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentTextureRenders START');
+    it('xComponentViewRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('XComponentTest execute: xComponentViewRenders START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentTexture'));
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentView'));
         expect(node !== null).assertTrue();
-        console.info('XComponentTest execute: xComponentTextureRenders END');
+        console.info('XComponentTest execute: xComponentViewRenders END');
         done();
       } catch (error) {
-        console.error('XComponentTest execute: xComponentTextureRenders error:' + error);
+        console.error('XComponentTest execute: xComponentViewRenders error:' + error);
         expect().assertFail();
         done();
       }

@@ -94,7 +94,7 @@ export default function getBurstAssetsTest() {
         const testNum = "get_burst_asset_by_subtype_static_001";
         try {
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, photoAccessHelper.PhotoSubtype.BURST as long);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, Int.toLong(photoAccessHelper.PhotoSubtype.BURST));
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
             predicates: predicates

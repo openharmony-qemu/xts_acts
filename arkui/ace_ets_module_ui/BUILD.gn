@@ -74,6 +74,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
       "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",
       "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
+      "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
     ]
   } else {
     deps = [
@@ -151,6 +152,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
       "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",
       "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
+      "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
     ]
   }
 }

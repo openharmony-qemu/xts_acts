@@ -15,9 +15,13 @@
 import matrix4Test from './matrix4/Matrix4Test.test'
 import errorCodeTest from './matrix4/ErrorCodeTest.test'
 import EnableClickSoundEffectTest from './enableClickSoundEffect/EnableClickSoundEffectTest.test'
+import EllipsisModeCenterTest from './ellipsisModeTest/ellipsisModeCenter.test'
+import EllipsisModeStartTest from './ellipsisModeTest/ellipsisModeStart.test'
 
 export default function testsuite() {
   matrix4Test();
   errorCodeTest();
   EnableClickSoundEffectTest();
+  EllipsisModeCenterTest();
+  EllipsisModeStartTest()
 }
