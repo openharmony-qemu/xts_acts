@@ -1566,20 +1566,20 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.name i18n_normalizer_getInstance_test_Static_0100
-     * @tc.number i18n_normalizer_getInstance_test_Static_0100
+     * @tc.name intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100
+     * @tc.number intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100
      * @tc.desc with resolvedOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('intl_DateTimeFormat_resolvedOptions_test_Static_0100', Level.LEVEL3, () => {
+    it('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100', Level.LEVEL3, () => {
       let formatter: intl.DateTimeFormat = new intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'medium' });
       let options: intl.DateTimeOptions = formatter.resolvedOptions();
       let dateStyle: string | undefined = options.dateStyle;
       let timeStyle: string | undefined = options.timeStyle;
-      console.log('intl_DateTimeFormat_resolvedOptions_test_Static_0100 value:', dateStyle);
-      console.log('intl_DateTimeFormat_resolvedOptions_test_Static_0100 value:', timeStyle);
+      console.log('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100 value:', dateStyle);
+      console.log('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100 value:', timeStyle);
       expect(dateStyle).assertEqual('full');
       expect(timeStyle).assertEqual('medium');
     })
