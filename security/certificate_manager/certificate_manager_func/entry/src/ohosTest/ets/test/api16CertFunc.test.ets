@@ -1097,7 +1097,7 @@ export default function api16CertFuncTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_getCertificateStorePath_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('SUB_Security_CertManager_installUserTrustedCertificate_0021 start');
       try {
         await certManager.installUserTrustedCertificate(null);
