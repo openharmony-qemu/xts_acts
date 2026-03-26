@@ -3531,6 +3531,7 @@ export default function audioFramework() {
         }
         done();
     })
+
     /**
      * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0100
      * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0100
@@ -3552,6 +3553,7 @@ export default function audioFramework() {
         }
         done();
     })
+    
     /**
      * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0200
      * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0200
