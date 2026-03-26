@@ -1527,5 +1527,108 @@ export default function AVSessionErrorCode() {
             });
             done();
         })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102
+         * @tc.desc   onCastDisplayChange with avsession does not exist(errcode 6600102)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await invalidSession(async (): Promise<void> => {
+                try {
+                    session!.onCastDisplayChange(callback1);
+                    expect(true).assertFalse();
+                }catch(err) {
+                    err = err as BusinessError;
+                    expect(err.code).assertEqual(6600102);
+                }
+            });
+            done();
+        })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109
+     * @tc.desc   Testing call getavcastcontroller(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+        try {
+            if (controller != null) {
+              await controller!.destroy()
+            }
+            let aVCastController: avSession.AVCastController| undefined;
+            session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
+                aVCastController = avcontroller;
+                console.info(`getAVCastController : SUCCESS : sessionid `);
+            }).catch((err: BusinessError) => {
+                console.error(`getAVCastController BusinessError: code: ${err?.code}, message: ${err?.message}`);
+            });
+        } catch (error) {
+            console.info(`getAVCastController failed: code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(6600109);
+            expect(error?.message).assertEqual("Cannot read property catch of undefined");
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900
+     * @tc.desc   Testing call getavcastcontroller(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+        try {
+            if (controller != null) {
+              await controller!.destroy()
+            }
+            let aVCastController: avSession.AVCastController| undefined;
+            session!.getAVCastController((err: BusinessError, avcontroller: avSession.AVCastController| undefined) => {
+              if (err) {
+                console.error(`getAVCastController BusinessError: code: ${err?.code}, message: ${err?.message}`);
+              } else {
+                aVCastController = avcontroller;
+                console.info('getAVCastController : SUCCESS');
+              }
+            });
+        } catch (error) {
+            console.error(`getAVCastController BusinessError: code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(6600109);
+            expect(error?.message).assertEqual("Cannot read property catch of undefined");
+        }
+        done();
+    })
+
+    /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102
+         * @tc.desc   onCastDisplayChange with avsession does not exist(errcode 6600102)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            try {
+                avSession.getAllSessionDescriptors();
+            } catch (err) {
+                console.info(`TestLog: BusinessError: code:${err.code}, message:${err.message}`);
+                expect(err.code).assertEqual(201);
+            }
+        done();
+        })
+
+
     })
 }
