@@ -436,6 +436,766 @@ export default function KVManagerRootDir() {
         });
 
         /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0107
+         * @tc.name SingleKv_rootDir_GetKVStore_0107
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  属性 createIfMissing:缺少false值覆盖；属性 backup:缺少true值覆盖；属性 autoSync:缺少true值覆盖；S1
+         * GetKVStore(dir)， closeKVStore(dir),deleteKVStore(dir),成功
+         */
+        it('SingleKv_rootDir_GetKVStore_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0107---------');
+            try {
+                const optionsDir00: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S1,
+                };
+
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir00).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(store != undefined).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir00).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: false,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S1,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(store != undefined).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0108
+         * @tc.name SingleKv_rootDir_GetKVStore_0108
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  S3
+         */
+        it('SingleKv_rootDir_GetKVStore_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0108---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S3,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(store != undefined).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0109
+         * @tc.name SingleKv_rootDir_GetKVStore_0109
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  S4
+         */
+        it('SingleKv_rootDir_GetKVStore_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0109---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S4,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(store != undefined).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0110
+         * @tc.name SingleKv_rootDir_GetKVStore_0110
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  属性 rootDir:缺少空值""覆盖；
+         */
+        it('SingleKv_rootDir_GetKVStore_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0110---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+                    rootDir: "",
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(401);
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(401);
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    expect(null).assertFail();
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' deleteKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(err.code).assertEqual(401);
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0111
+         * @tc.name SingleKv_rootDir_GetKVStore_0111
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  属性 kvStoreType:未覆盖枚举:['DEVICE_COLLABORATION']；
+         */
+        it('SingleKv_rootDir_GetKVStore_0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0111---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                    console.info(TAG + ' getKVStore success');
+                    expect(store != undefined).assertTrue();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' getKVStore catch e ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(async () => {
+                    console.info(TAG + ' closeKVStore success');
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, optionsDir).then(() => {
+                    console.info(TAG + ' deleteKVStore success');
+                    done();
+                }).catch((err: BusinessError) => {
+                    console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
+                    expect(null).assertFail();
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0112
+         * @tc.name SingleKv_rootDir_GetKVStore_0112
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第3个参数缺少null/undefined覆盖;
+         */
+        it('SingleKv_rootDir_GetKVStore_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0112---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+
+                try{
+                    await kvManager!.getKVStore(TEST_STORE_ID, null);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, null);
+                    console.info(TAG + 'closeKVStore success');
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(null).assertFail();
+                    done();
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, null);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100004);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_011201
+         * @tc.name SingleKv_rootDir_GetKVStore_011201
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第3个参数缺少null/undefined 覆盖;
+         */
+        it('SingleKv_rootDir_GetKVStore_011201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_011201---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+
+                try{
+                    await kvManager!.getKVStore(TEST_STORE_ID, undefined);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, undefined);
+                    console.info(TAG + 'closeKVStore success');
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(null).assertFail();
+                    done();
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, undefined);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(15100004);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0113
+         * @tc.name SingleKv_rootDir_GetKVStore_0113
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数storeId 缺少空值""//null/undefined覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0113---------');
+            try {
+                let storeIdd = "";
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+
+                try{
+                    await kvManager!.getKVStore(storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.closeKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_011301
+         * @tc.name SingleKv_rootDir_GetKVStore_011301
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数storeId 缺少空值""//null/undefined覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_011301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_011301---------');
+            try {
+                let storeIdd = null;
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+
+                try{
+                    await kvManager!.getKVStore(storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.closeKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_011302
+         * @tc.name SingleKv_rootDir_GetKVStore_011302
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数storeId 缺少空值""//null/undefined 覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_011302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_011302---------');
+            try {
+                let storeIdd = undefined;
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                console.info(TAG + ' context.databaseDir=' + context.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+
+                try{
+                    await kvManager!.getKVStore(storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.closeKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0114
+         * @tc.name SingleKv_rootDir_GetKVStore_0114
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数BUNDLE_NAME 缺少空值""//null/undefined覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0114---------');
+            try {
+                let storeIdd = "storeIdd";
+                let bundleName = "";
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                try{
+                    await kvManager!.closeKVStore(bundleName, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(bundleName, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_011401
+         * @tc.name SingleKv_rootDir_GetKVStore_011401
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数storeId 缺少空值""//null/undefined覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_011401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_011401---------');
+            try {
+                let storeIdd = "storeIdd";
+                let bundleName = null;
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                try{
+                    await kvManager!.closeKVStore(bundleName, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(bundleName, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_011402
+         * @tc.name SingleKv_rootDir_GetKVStore_011402
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  第1个参数storeId 缺少空值""//null/undefined 覆盖
+         */
+        it('SingleKv_rootDir_GetKVStore_011402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_011402---------');
+            try {
+                let storeIdd = "storeIdd";
+                let bundleName = undefined;
+
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: g_rootDir,
+                    securityLevel: factory.SecurityLevel.S2,
+                };
+
+                try{
+                    await kvManager!.closeKVStore(bundleName, storeIdd, optionsDir);
+                    console.info(TAG + 'closeKVStore success');
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' closeKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                }
+
+                try{
+                    await kvManager!.deleteKVStore(bundleName, storeIdd, optionsDir);
+                    expect(null).assertFail();
+                    done();
+                } catch (e) {
+                    console.error(TAG + ' deleteKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                    expect(e.code).assertEqual(401);
+                    done();
+                }
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+
+        /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0200
          * @tc.name SingleKv_rootDir_GetKVStore_0200
          * @tc.type: FUNC
@@ -749,6 +1509,7 @@ export default function KVManagerRootDir() {
             }
 
         });
+
 
         /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0100
