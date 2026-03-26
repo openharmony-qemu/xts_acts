@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "ohos.acts.communication.nfcpermission.static",
+    "bundleName": "ohos.acts.communication.nfcpermissions.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
