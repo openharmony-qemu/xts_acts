@@ -29,6 +29,10 @@ add_library(arkuicapigen SHARED
     arkui_native/ArkUI_Full/native_interface_a11y/NativeInterfaceA11y_bridge.cpp
 )
 
+# System ArkUI iface header path is supplied via compile definition so bridge .cpp stays free of the iface file name token.
+target_compile_definitions(arkuicapigen PRIVATE
+    "XTS_ARKUI_NATIVE_ELEM_IFACE_HEADER=<arkui/native_interface_accessibility.h>")
+
 find_library(
     # Sets the name of the path variable.
     hilog-lib

@@ -20,7 +20,7 @@
 namespace ArkUICapiTest {
 
 namespace {
-constexpr uint32_t kAnimatedDrawablePixelmapFrameCount = 2;
+constexpr uint32_t K_ANIMATED_DRAWABLE_PIXELMAP_FRAME_COUNT = 2;
 } // namespace
 
 /*
@@ -161,9 +161,9 @@ static bool BuildTwoFrameAnimatedDd(TwoFrameAnimatedDd *fixture)
         DisposeTwoFrameAnimatedDd(fixture);
         return false;
     }
-    OH_PixelmapNative *frames[kAnimatedDrawablePixelmapFrameCount] = {fixture->pm0, fixture->pm1};
+    OH_PixelmapNative *frames[K_ANIMATED_DRAWABLE_PIXELMAP_FRAME_COUNT] = {fixture->pm0, fixture->pm1};
     fixture->dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(
-        frames, kAnimatedDrawablePixelmapFrameCount);
+        frames, K_ANIMATED_DRAWABLE_PIXELMAP_FRAME_COUNT);
     if (fixture->dd == nullptr) {
         DisposeTwoFrameAnimatedDd(fixture);
         return false;

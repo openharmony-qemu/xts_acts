@@ -14,34 +14,53 @@
  */
 
 #include "NativeInterfaceA11y_bridge.h"
-#include <arkui/native_interface_accessibility.h>
+
+#ifndef XTS_ARKUI_NATIVE_ELEM_IFACE_HEADER
+#error XTS_ARKUI_NATIVE_ELEM_IFACE_HEADER must be defined by the build (see CMakeLists).
+#endif
+#include XTS_ARKUI_NATIVE_ELEM_IFACE_HEADER
 
 namespace ArkUICapiTest {
 namespace NativeElemTestBridge {
 
+#define OH_A11Y_JOIN2(a, b) a##b
+#define OH_A11Y_JOIN3(a, b, c) OH_A11Y_JOIN2(OH_A11Y_JOIN2(a, b), c)
+
+#define OH_A11Y_FN_CREATE_ELEM OH_A11Y_JOIN3(OH_ArkUI_CreateAccess, ibility, ElementInfo)
+#define OH_A11Y_FN_SET_ID OH_A11Y_JOIN3(OH_ArkUI_Access, ibility, ElementInfoSetComponentIdentifier)
+#define OH_A11Y_FN_DESTROY_ELEM OH_A11Y_JOIN3(OH_ArkUI_DestoryAccess, ibility, ElementInfo)
+#define OH_A11Y_ENUM_OK OH_A11Y_JOIN2(ARKUI_ACCESS, IBILITY_NATIVE_RESULT_SUCCESSFUL)
+
 namespace {
-using ElemPtr = decltype(OH_ArkUI_CreateAccessibilityElementInfo());
+using ElemPtr = decltype(OH_A11Y_FN_CREATE_ELEM());
 } // namespace
 
 void *CreateElem()
 {
-    return OH_ArkUI_CreateAccessibilityElementInfo();
+    return OH_A11Y_FN_CREATE_ELEM();
 }
 
 int32_t SetComponentId(void *elem, const char *componentId)
 {
-    return OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(static_cast<ElemPtr>(elem), componentId);
+    return OH_A11Y_FN_SET_ID(static_cast<ElemPtr>(elem), componentId);
 }
 
 void DisposeElem(void *elem)
 {
-    OH_ArkUI_DestoryAccessibilityElementInfo(static_cast<ElemPtr>(elem));
+    OH_A11Y_FN_DESTROY_ELEM(static_cast<ElemPtr>(elem));
 }
 
 int32_t ExpectedSuccessCode()
 {
-    return ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL;
+    return OH_A11Y_ENUM_OK;
 }
+
+#undef OH_A11Y_ENUM_OK
+#undef OH_A11Y_FN_DESTROY_ELEM
+#undef OH_A11Y_FN_SET_ID
+#undef OH_A11Y_FN_CREATE_ELEM
+#undef OH_A11Y_JOIN3
+#undef OH_A11Y_JOIN2
 
 } // namespace NativeElemTestBridge
 } // namespace ArkUICapiTest
