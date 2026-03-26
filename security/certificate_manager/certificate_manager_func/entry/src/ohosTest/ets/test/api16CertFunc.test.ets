@@ -279,7 +279,7 @@ export default function api16CertFuncTestUnit() {
           padding: certManager.CmKeyPadding.CM_PADDING_PSS,
           digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
         }
-        let signHandle:certManager.handle = await signVerifyCallback.initProcess(keyUri,signSpec);
+        let signHandle:certManager.CMHandle = await signVerifyCallback.initProcess(keyUri,signSpec);
         expect(signHandle != null).assertTrue();
       } catch (e) {
         console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: failed. e.code " + e.code);
