@@ -1392,7 +1392,7 @@ export default function FivePointOne_i18nStageTest() {
     it('i18n_getSystemLocaleInstance_test_Static_0100', Level.LEVEL3, () => {
       let locale: string = i18n.System.getSystemLocaleInstance().toString();
       console.log('i18n_getSystemLocaleInstance_test_Static_0100 value:', locale);
-      expect(locale).assertEqual('String');
+      expect(locale).assertEqual('zh-Hans-CN');
     })
 
     /**
@@ -1448,7 +1448,7 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('i18n_BreakIterator_current_test_Static_0100', Level.LEVEL3, () => {
-      let calendar: i18n.Calendar = i18n.getCalendar('en');
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
       iterator.setLineBreakText('Apple is my favorite fruit.');
       let currentPos: number = iterator.current();
       console.log('i18n_BreakIterator_current_test_Static_0100 value:', currentPos);
@@ -1464,7 +1464,7 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('i18n_BreakIterator_first_test_Static_0100', Level.LEVEL3, () => {
-      let calendar: i18n.Calendar = i18n.getCalendar('en');
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
       iterator.setLineBreakText('Apple is my favorite fruit.');
       let firstPos: number = iterator.first();
       console.log('i18n_BreakIterator_first_test_Static_0100 value:', firstPos);
@@ -1480,7 +1480,7 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('i18n_BreakIterator_previous_test_Static_0100', Level.LEVEL3, () => {
-      let calendar: i18n.Calendar = i18n.getCalendar('en');
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
       iterator.setLineBreakText('Apple is my favorite fruit.');
       let pos1: number = iterator.first();
       let pos2: number = iterator.next(3);
@@ -1498,9 +1498,9 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('i18n_BreakIterator_following_test_Static_0100', Level.LEVEL3, () => {
-      let calendar: i18n.Calendar = i18n.getCalendar('en');
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
       iterator.setLineBreakText('Apple is my favorite fruit.');
-      let pos: number = iterator.following();
+      let pos: number = iterator.following(0);
       console.log('i18n_BreakIterator_following_test_Static_0100 value:', pos);
       expect(pos).assertEqual(6);
     })
@@ -1558,7 +1558,7 @@ export default function FivePointOne_i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('i18n_normalizer_getInstance_test_Static_0100', Level.LEVEL3, () => {
-      let str: string = '\ule9b\u0323';
+      let str: string = '\u1e9b\u0323';
       let normal: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFD);
       let value: string = normal.normalize(str);
       console.log('i18n_normalizer_getInstance_test_Static_0100 value:', value);
@@ -1613,9 +1613,9 @@ export default function FivePointOne_i18nStageTest() {
      */
     it('intl_Collator_resolvedOptions_test_Static_0100', Level.LEVEL3, () => {
       let collator = new intl.Collator('zh-Hans', { usage: 'sort', ignorePunctuation: true });
-      let options = collator.resolvedOptions();
-      let usage = options.usage;
-      let ignorePunctuation = options.ignorePunctuation;
+      let options: intl.CollatorOptions = collator.resolvedOptions();
+      let usage: string | undefined  = options.usage;
+      let ignorePunctuation: boolean | undefined  = options.ignorePunctuation;
       console.log('intl_Collator_resolvedOptions_test_Static_0100 value:', usage);
       console.log('intl_Collator_resolvedOptions_test_Static_0100 value:', ignorePunctuation);
       expect(usage).assertEqual('sort');
