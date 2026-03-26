@@ -1121,9 +1121,4 @@ static napi_value TestArkUICapi_279(napi_env env, napi_callback_info info)
     OH_ArkUI_TextStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
-
-
-
-
-
 } // namespace ArkUICapiTest

@@ -1748,5 +1748,4 @@ static napi_value TestArkUICapi_337(napi_env env, napi_callback_info info)
     OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
-
 } // namespace ArkUICapiTest
