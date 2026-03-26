@@ -70,7 +70,7 @@ export default function RdbStoreArkGetRdbStoreSyncAddTest() {
 
     /**
      * @tc.name   RelationalStore_Ark_getRdbStoreSyncAddTest001
-     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest001
+     * @tc.number SUB_DistributedData_RelationalStore_Ark_getRdbStoreSyncAddTest001
      * @tc.desc   the autoCleanDirtyData is true
      * @tc.expect No exception, return RdbStore normally
      * @tc.size   MediumTest
