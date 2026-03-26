@@ -1425,7 +1425,7 @@ export default function abilityTest() {
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
                 expect(outputDeviceInfo.devices[0].castCategory).assertEqual(0);
-                expect(outputDeviceInfo.devices[0].castCategory).not().assertEqual(1);
+                expect(outputDeviceInfo.devices[0].castCategory == 1).assertFalse();
             } catch (err) {
                 expect(true).assertFalse();
             }

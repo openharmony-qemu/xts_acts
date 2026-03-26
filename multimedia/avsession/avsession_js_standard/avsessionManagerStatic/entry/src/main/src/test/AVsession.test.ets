@@ -3261,7 +3261,7 @@ export default function abilityTest() {
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
                         expect(deviceInfo.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo.supportedDrmCapabilities}`);
-                        expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
+                        expect(deviceInfo.supportedDrmCapabilities == undefined).assertFail();
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
@@ -3307,7 +3307,7 @@ export default function abilityTest() {
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
                         expect(deviceInfo?.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                        expect(deviceInfo?.supportedDrmCapabilities).not().assertEqual(undefined);
+                        expect(deviceInfo?.supportedDrmCapabilities == undefined).assertFalse();
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
