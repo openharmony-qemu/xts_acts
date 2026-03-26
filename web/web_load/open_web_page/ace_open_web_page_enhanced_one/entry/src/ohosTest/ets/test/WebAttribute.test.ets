@@ -45,7 +45,7 @@ export default function webAttribute() {
       } catch (err) {
         console.error("push webAttribute page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebAttributeButton');
       console.log("waitForComponent WebAttributeButton");
       done()
     });
@@ -77,7 +77,7 @@ export default function webAttribute() {
       }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("webAttribute beforeEach start");

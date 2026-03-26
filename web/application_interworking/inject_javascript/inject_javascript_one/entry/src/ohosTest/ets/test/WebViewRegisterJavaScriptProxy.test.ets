@@ -46,7 +46,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await driver.waitForComponent(ON.id("testWebView_registerJavaScriptProxy_0013"), 10000);
+      await Utils.waitForComponent(driver, 'testWebView_registerJavaScriptProxy_0013');
       done()
     });
     beforeEach(async (done: Function) => {

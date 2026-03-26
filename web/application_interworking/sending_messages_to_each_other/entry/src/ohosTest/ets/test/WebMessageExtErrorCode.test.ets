@@ -44,7 +44,7 @@ export default function webMessageExtErrorCode() {
         } catch (err) {
           console.error(`push ${pageName} page error: ` + err);
         }
-        await waitForComponent("WebMessageExtErrorCodeButton");
+        await Utils.waitForComponent(driver,'WebMessageExtErrorCodeButton');
         done()
       });
 

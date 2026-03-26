@@ -126,7 +126,7 @@ struct Index {
                 ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.runJavaScript(
                 'test()',
                 (error, result) => {
@@ -153,7 +153,7 @@ struct Index {
                 ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.runJavaScript(
                 'test()',
                 (error, result) => {
@@ -182,7 +182,7 @@ struct Index {
                 ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -212,7 +212,7 @@ struct Index {
                 ['test', 'toString', 'testNumber'], ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -241,7 +241,7 @@ struct Index {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', null, ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -267,7 +267,7 @@ struct Index {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['test'], ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {
@@ -295,7 +295,7 @@ struct Index {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['fake'], ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'fakeTest()',
                   (error, result) => {
@@ -322,7 +322,7 @@ struct Index {
                 ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {
@@ -351,7 +351,7 @@ struct Index {
                 ['asyncTestBool']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'asyncTest()',
                   (error, result) => {
@@ -378,7 +378,7 @@ struct Index {
                 ['asyncString', 'asyncTest']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'asyncTest()',
                   (error, result) => {
@@ -407,7 +407,7 @@ struct Index {
                 ['asyncTestBool', 'test', 'toString']);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {

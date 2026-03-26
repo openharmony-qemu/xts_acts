@@ -45,7 +45,7 @@ export default function webViewApiOne() {
         } catch (err) {
             console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
-        await driver.waitForComponent(ON.id("webViewApiOneButton"), 10000);
+        await Utils.waitForComponent(driver, 'webViewApiOneButton');
         done()
     });
     

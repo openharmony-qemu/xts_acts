@@ -166,7 +166,7 @@ export default class Utils {
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
-                           done: Function, expectFunction: Function) {
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -310,6 +310,28 @@ export default class Utils {
         if (error.code === 17000002) {
           retry = true;
           await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+        }
+      }
+    }
+  }
+  static async waitForComponent(driver: Driver, componentId: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`error: buttonConmponent is null.`);
+        }
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(5000);
           retryTimes++;
           console.log('retryTimes = ' + retryTimes);
         }
