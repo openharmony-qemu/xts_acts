@@ -73,8 +73,8 @@ struct webSetUserAgentForHosts {
         Button('setUserAgentForHosts click')
           .key('WebSetUserAgentForHostsButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
@@ -86,7 +86,7 @@ struct webSetUserAgentForHosts {
                   webView.WebviewController.setUserAgentForHosts(customUserAgent, ['test123.test.com']);
                   this.isPageEnd = -1;
                   this.controller.loadUrl(URL);
-                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -113,7 +113,7 @@ struct webSetUserAgentForHosts {
                   webView.WebviewController.setUserAgentForHosts(customUserAgent, [URL2]);
                   this.isPageEnd = -1;
                   this.controller.loadUrl(URL);
-                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
