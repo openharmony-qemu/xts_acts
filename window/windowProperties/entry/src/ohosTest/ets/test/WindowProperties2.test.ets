@@ -1866,6 +1866,119 @@ export default function windowPropertiesTest2() {
     })
 
     /**
+    * @tc.name    test_setWindowShadowEnabled
+    * @tc.number  SUB_BASIC_WMS_SetWindowShadowEnabled
+    * @tc.desc    SetWindowShadowEnabled多设备
+    * @tc.type    FUNCTION
+    * @tc.size    MEDIUMTEST
+    * @tc.level   LEVEL0
+    */
+    it('test_setWindowShadowEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'test_setWindowShadowEnabled';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      let isFreeWindowMode = false;
+      let isSupportRotate = false;
+      console.log(msgStr + 'begin');
+
+      let on_setWindowShadowEnabled_Supported = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.info(msgStr + ' Succeeded in setting window shadow.');
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(msgStr + `Failed to set window shadow. Cause code: ${err.code}, message:${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+
+      let on_setWindowShadowEnabled_notSupported_801 = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.error(msgStr + ' Unexpected success on unsupported device.');
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(msgStr + `Expected error on unsupported device. Code: ${err.code}, message:${err.message}`);
+            expect(err.code).assertEqual(801);
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+      let on_setWindowShadowEnabled_notSupported = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.error(msgStr + ' Unexpected success on unsupported device.');
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(msgStr + `Expected error on unsupported device. Code: ${err.code}, message:${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+
+      if (deviceInfo.deviceType === '2in1') {
+        await on_setWindowShadowEnabled_Supported();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+        let windowClass: window.Window = windowStage.getMainWindowSync();
+        let isFreeWindowMode = windowClass.isInFreeWindowMode();
+        if (isFreeWindowMode) {
+          await on_setWindowShadowEnabled_Supported();
+        } else {
+          await on_setWindowShadowEnabled_notSupported();
+        }
+      } else if (deviceInfo.deviceType === 'tv') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'phone') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'car') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else {
+        console.info(`====>${caseName} end fail====` + deviceInfo.deviceType);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testSetWindowShadowEnabledwithPermission
      * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
      * @tc.desc   验证非2in1设备调用接口报801，2in1设备调用成功
