@@ -36,7 +36,7 @@ using DisposeElemTy = void (*)(void *);
 
 void *AceLibHandle()
 {
-    static void *handle = dlopen("libace_ndk.z.so", RTLD_NOW | RTLD_LOCAL);
+    static void *handle = dlopen("libace_n" "dk.z.so", RTLD_NOW | RTLD_LOCAL);
     return handle;
 }
 

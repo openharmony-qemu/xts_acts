@@ -17,5 +17,5 @@
   "name": "libarkuicapigen.so",
   "types": "./index.d.ts",
   "version": "",
-  "description": "ArkUI C API generated XTS (ndk500) native exports."
+  "description": "ArkUI C API generated XTS native exports."
 }

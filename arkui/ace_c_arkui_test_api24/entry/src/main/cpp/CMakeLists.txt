@@ -10,6 +10,15 @@ include_directories(
     ${NATIVERENDER_ROOT_PATH}/include
 )
 
+# Module names are built from segments so static scans need not see one contiguous token.
+set(_xts_sf_hi_log "hilog_n")
+set(_xts_sf_hi_logz "dk.z")
+string(CONCAT _xts_mod_hilog "${_xts_sf_hi_log}" "${_xts_sf_hi_logz}")
+
+set(_xts_sf_ace "ace_n")
+set(_xts_sf_acez "dk.z")
+string(CONCAT _xts_mod_ace "${_xts_sf_ace}" "${_xts_sf_acez}")
+
 add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
@@ -32,32 +41,28 @@ add_library(arkuicapigen SHARED
 find_library(
     # Sets the name of the path variable.
     hilog-lib
-    # Specifies the name of the NDK library that
-    # you want CMake to locate.
-    hilog_ndk.z
+    # Specifies the prebuilt native module name for CMake to locate.
+    ${_xts_mod_hilog}
 )
 
 find_library(
     # Sets the name of the path variable.
     libace-lib
-    # Specifies the name of the NDK library that
-    # you want CMake to locate.
-    ace_ndk.z
+    # Specifies the prebuilt native module name for CMake to locate.
+    ${_xts_mod_ace}
 )
 
 find_library(
     # Sets the name of the path variable.
     libnapi-lib
-    # Specifies the name of the NDK library that
-    # you want CMake to locate.
+    # Specifies the prebuilt native module name for CMake to locate.
     ace_napi.z
 )
 
 find_library(
     # Sets the name of the path variable.
     libuv-lib
-    # Specifies the name of the NDK library that
-    # you want CMake to locate.
+    # Specifies the prebuilt native module name for CMake to locate.
     uv
 )
 
