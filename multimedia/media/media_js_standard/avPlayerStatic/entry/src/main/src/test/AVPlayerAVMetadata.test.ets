@@ -1039,8 +1039,6 @@ export default function AVMetadata() {
       });
     });
 
-
-
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3500
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3500
@@ -1078,6 +1076,67 @@ export default function AVMetadata() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3600
+     * @tc.desc   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let extractor = await media.createAVMetadataExtractor();
+      if(!extractor) {
+        console.error(`Failed to create AVMetadataExtractor`);
+        return;
+      }
+      console.info(`Succeeded in creating AVMetadataExtractor`);
+      expect(extractor !== undefined).assertTrue();
+      if(extractor.fdSrc) {
+        expect(extractor.fdSrc?.fd).assertEqual(0);
+        expect(extractor.fdSrc?.offset).assertEqual(0);
+        expect(extractor.fdSrc?.length).assertEqual(-1);
+      } else {
+        console.info(`fdSrc is undefined`);
+      }
+      if(extractor.dataSrc){
+        expect(extractor.dataSrc?.fileSize).assertEqual(0);
+      } else {
+        console.info(`dataSrc is undefined`);
+      }
+      try{
+        extractor.release();
+        console.info(`Released AVMetadataExtractor successfully`);
+      } catch (error) {
+        console.error(`Failed to released AVMetadataExtractor: ${error}`);
+      }
+      done;
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100
+     * @tc.desc   Test AVPlayer release with valid player instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`AVPlayerReleasetTest SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100 start`);
+      let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
+      if(!avMetadataExtractor){
+        console.info(`AVMetadataExtractor create failed. Received null or undefined`);
+      }
+      try{
+        await avMetadataExtractor!!.release();
+        console.info(`Succeeded in releasing`);
+        done();
+      } catch (err) {
+        console.error(`Failed to releas, error: ` + JSON.stringify(err));
+        expect().assertFail();
+      }
+    });
+    
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMEBYTIME_PROMISE_FUNCTION_static_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMEBYTIME_PROMISE_FUNCTION_static_0100

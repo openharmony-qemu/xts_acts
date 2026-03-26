@@ -544,6 +544,62 @@ function setPlayerMediaMuted(avPlayer: media.AVPlayer | undefined) {
   })
 }
 
+fuction setPlayerMediaMuted1(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_UNSUPPORTED, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted2(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_VID, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted3(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_SUBTITLE, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted4(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_ATTACHMENT, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted5(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_DATA, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted6(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_TIMED_METADATA, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted7(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_AUXILIARY, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
+fuction setPlayerMediaMuted8(avPlayer: media.AVPlayer | undefined){
+  avplayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    except().assertFail();
+  })
+}
+
 function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
@@ -1677,5 +1733,33 @@ export default function AVPlayerLocalTest() {
           testAvPlayerDataSrc(fileDescriptor!, avPlayer, done);
         }
       })
+
+       /**
+        * @tc.name   MEDIA_VIDEO_PLAYER_SEEK_004
+        * @tc.number MEDIA_VIDEO_PLAYER_SEEK_004
+        * @tc.desc   callback
+        * @tc.size   MEDIUM
+        * @tc.type   Fuction
+        * @tc.level  LEVEL1
+        */
+        it('MEDIA_VIDEO_PLAYER_SEEK_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+          const testName = 'MEDIA_VIDEO_PLAYER_SEEK_004';
+          const seekMode: media.SeekMode = media.SeekMode.SEEK_CLOSEST;
+          try {
+            let avPlayer = await media.createAVPlayer();
+            expect(avPlayer).not().assertNull();
+            console.info(TAG,'avPlayer')
+            let timeUs: int = 1000;
+            console.info(TAG,'timeMs')
+            avPlayer!.seek(timeMs, seekMode);
+            console.info(TAG,'succeed seek')
+            avplayer!.release();
+            done();
+          } catch (error) {
+            console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
+            expect().assertFail()
+            done();
+          }
+        })
   })
 }
