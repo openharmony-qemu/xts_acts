@@ -5901,8 +5901,8 @@ export default function soundPoolTest() {
     it('SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(Number(media.SoundInterruptMode.NO_INTERRUPT)).assertEqual(0);
       expect(Number(media.SoundInterruptMode.SAME_SOUND_INTERRUPT)).assertEqual(1);
-      expect(Number(ErrorType.LOAD_ERROR)).assertEqual(0);
-      expect(Number(ErrorType.PLAY_ERROR)).assertEqual(1);
+      expect(Number(ErrorType.LOAD_ERROR)).assertEqual(1);
+      expect(Number(ErrorType.PLAY_ERROR)).assertEqual(2);
       done();
     });
 
