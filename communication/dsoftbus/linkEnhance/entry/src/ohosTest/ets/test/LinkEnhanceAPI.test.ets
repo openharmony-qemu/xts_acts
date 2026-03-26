@@ -989,7 +989,7 @@ export default function LinkEnhanceAPI() {
         try {
           console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 connect_on  start");
           connection.on('disconnected', (number: number)=> {
-            console.info(logTag + TAG, 'connection disconnected reason = ' + number);
+            console.info(logTag +  'connection disconnected reason = ' + number);
         });
           connection.off('disconnected');
         }catch (error) {
