@@ -160,34 +160,35 @@ export default function RdbStoreGetRdbStoreSyncEtsAddTest() {
       if (!supported) {
         console.info(TAG + `vector not supported`);
         done();
+      }else{
+        const storeConfig: relationalStore.StoreConfig = {
+          name: RDB_TEST_NAME,
+          securityLevel: relationalStore.SecurityLevel.S4,
+          vector:true,
+          pluginLibs:[''],
+          encrypt:true,
+          cryptoParam: {
+            encryptionKey:new Uint8Array([10, 20, 30]),
+            encryptionAlgo: relationalStore.EncryptionAlgo.AES_256_CBC,
+            hmacAlgo: relationalStore.HmacAlgo.SHA512,
+            kdfAlgo: relationalStore.KdfAlgo.KDF_SHA512
+          },
+        };
+        let store: relationalStore.RdbStore | undefined = undefined;
+        try {
+          console.log(TAG, "Step 1: Get RdbStore");
+          store = relationalStore.getRdbStoreSync(context, storeConfig);
+          expect(store !== undefined).assertTrue();
+        } catch (e) {
+          const err = e as BusinessError;
+          console.log(TAG, `RelationalStore_getRdbStoreSyncAddTest003 failed. Code:${err.code}, message:${err.message}`);
+          expect().assertFail();
+        } finally {
+          await store?.close();
+          await relationalStore.deleteRdbStore(context, storeConfig);
+          done();
+        }
       }
-      const storeConfig: relationalStore.StoreConfig = {
-        name: RDB_TEST_NAME,
-        securityLevel: relationalStore.SecurityLevel.S4,
-        vector:true,
-        pluginLibs:[''],
-        encrypt:true,
-        cryptoParam: {
-          encryptionKey:new Uint8Array([10, 20, 30]),
-          encryptionAlgo: relationalStore.EncryptionAlgo.AES_256_CBC,
-          hmacAlgo: relationalStore.HmacAlgo.SHA512,
-          kdfAlgo: relationalStore.KdfAlgo.KDF_SHA512
-        },
-      };
-      let store: relationalStore.RdbStore | undefined = undefined;
-      try {
-        console.log(TAG, "Step 1: Get RdbStore");
-        store = relationalStore.getRdbStoreSync(context, storeConfig);
-        expect(store !== undefined).assertTrue();
-      } catch (e) {
-        const err = e as BusinessError;
-        console.log(TAG, `RelationalStore_getRdbStoreSyncAddTest003 failed. Code:${err.code}, message:${err.message}`);
-        expect().assertFail();
-      } finally {
-        await store?.close();
-        await relationalStore.deleteRdbStore(context, storeConfig);
-      }
-      done();
       console.log(TAG, "************* RelationalStore_getRdbStoreSyncAddTest003 end *************");
     })
     /**
@@ -240,26 +241,27 @@ export default function RdbStoreGetRdbStoreSyncEtsAddTest() {
       if (!isCustomSupported) {
         console.info(TAG + `custom tokenizer not supported`);
         done();
+      }else{
+        const storeConfig: relationalStore.StoreConfig = {
+          name: RDB_TEST_NAME,
+          securityLevel: relationalStore.SecurityLevel.S4,
+          tokenizer:relationalStore.Tokenizer.CUSTOM_TOKENIZER,
+        };
+        let store: relationalStore.RdbStore | undefined = undefined;
+        try {
+          console.log(TAG, "Step 1: Get RdbStore");
+          store = relationalStore.getRdbStoreSync(context, storeConfig);
+          expect(store !== undefined).assertTrue();
+        } catch (e) {
+          const err = e as BusinessError;
+          console.log(TAG, `RelationalStore_getRdbStoreSyncAddTest005 failed. Code:${err.code}, message:${err.message}`);
+          expect().assertFail();
+        } finally {
+          await store?.close();
+          await relationalStore.deleteRdbStore(context, storeConfig);
+          done();
+        }
       }
-      const storeConfig: relationalStore.StoreConfig = {
-        name: RDB_TEST_NAME,
-        securityLevel: relationalStore.SecurityLevel.S4,
-        tokenizer:relationalStore.Tokenizer.CUSTOM_TOKENIZER,
-      };
-      let store: relationalStore.RdbStore | undefined = undefined;
-      try {
-        console.log(TAG, "Step 1: Get RdbStore");
-        store = relationalStore.getRdbStoreSync(context, storeConfig);
-        expect(store !== undefined).assertTrue();
-      } catch (e) {
-        const err = e as BusinessError;
-        console.log(TAG, `RelationalStore_getRdbStoreSyncAddTest005 failed. Code:${err.code}, message:${err.message}`);
-        expect().assertFail();
-      } finally {
-        await store?.close();
-        await relationalStore.deleteRdbStore(context, storeConfig);
-      }
-      done();
       console.log(TAG, "************* RelationalStore_getRdbStoreSyncAddTest005 end *************");
     })
     /**
@@ -332,6 +334,5 @@ export default function RdbStoreGetRdbStoreSyncEtsAddTest() {
       done();
       console.log(TAG, "************* RelationalStore_getRdbStoreSyncAddTest007 end *************");
     })
-
   })
 }
