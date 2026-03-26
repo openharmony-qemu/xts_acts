@@ -14,12 +14,12 @@
  */
 
 #include "../../../common/common.h"
-#include "NativeInterfaceA11y_Symbols.h"
+#include "NativeInterfaceA11y_bridge.h"
 
 namespace ArkUICapiTest {
 
 /*
- * 测试接口: 组件信息对象上设置组件标识（C API，声明见配套头 NativeInterfaceA11y_Symbols.h）。
+ * 测试接口: 组件信息对象上设置组件标识（见 NativeInterfaceA11y_bridge 实现）。
  * 预期效果: 设置组件标识字符串成功。
  * 实际测试: 创建元素句柄，写入标识，断言成功码一致，再释放。
  */
@@ -27,22 +27,22 @@ static napi_value TestArkUICapi_007(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto elem = NativeA11ySymbols::CreateNativeElem();
+    auto elem = NativeElemTestBridge::CreateElem();
     if (((elem)) == nullptr) {
         return nullptr;
     }
 
-    auto rc = NativeA11ySymbols::SetNativeElemComponentId(elem, "xts_capi");
+    auto rc = NativeElemTestBridge::SetComponentId(elem, "xts_capi");
     {
-        napi_value napiAssertErr =
-            ::ArkUICapiTest::EqFailed(env, (rc), (NativeA11ySymbols::kNativeCallSucceeded));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+            env, (rc), (NativeElemTestBridge::ExpectedSuccessCode()));
         if (napiAssertErr != nullptr) {
-            NativeA11ySymbols::DisposeNativeElem(elem);
+            NativeElemTestBridge::DisposeElem(elem);
             return napiAssertErr;
         }
     }
 
-    NativeA11ySymbols::DisposeNativeElem(elem);
+    NativeElemTestBridge::DisposeElem(elem);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 

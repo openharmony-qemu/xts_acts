@@ -13,34 +13,35 @@
  * limitations under the License.
  */
 
-#ifndef NATIVE_INTERFACE_A11Y_SYMBOLS_H
-#define NATIVE_INTERFACE_A11Y_SYMBOLS_H
-
+#include "NativeInterfaceA11y_bridge.h"
 #include <arkui/native_interface_accessibility.h>
 
 namespace ArkUICapiTest {
-namespace NativeA11ySymbols {
+namespace NativeElemTestBridge {
 
-using NativeElemHandle = decltype(OH_ArkUI_CreateAccessibilityElementInfo());
+namespace {
+using ElemPtr = decltype(OH_ArkUI_CreateAccessibilityElementInfo());
+} // namespace
 
-inline NativeElemHandle CreateNativeElem()
+void *CreateElem()
 {
     return OH_ArkUI_CreateAccessibilityElementInfo();
 }
 
-inline int32_t SetNativeElemComponentId(NativeElemHandle elem, const char *id)
+int32_t SetComponentId(void *elem, const char *componentId)
 {
-    return OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(elem, id);
+    return OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(static_cast<ElemPtr>(elem), componentId);
 }
 
-inline void DisposeNativeElem(NativeElemHandle elem)
+void DisposeElem(void *elem)
 {
-    OH_ArkUI_DestoryAccessibilityElementInfo(elem);
+    OH_ArkUI_DestoryAccessibilityElementInfo(static_cast<ElemPtr>(elem));
 }
 
-constexpr int32_t kNativeCallSucceeded = ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL;
+int32_t ExpectedSuccessCode()
+{
+    return ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL;
+}
 
-} // namespace NativeA11ySymbols
+} // namespace NativeElemTestBridge
 } // namespace ArkUICapiTest
-
-#endif // NATIVE_INTERFACE_A11Y_SYMBOLS_H

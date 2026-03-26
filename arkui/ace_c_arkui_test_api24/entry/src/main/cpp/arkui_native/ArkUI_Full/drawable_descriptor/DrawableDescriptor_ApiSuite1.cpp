@@ -19,6 +19,10 @@
 
 namespace ArkUICapiTest {
 
+namespace {
+constexpr uint32_t kAnimatedDrawablePixelmapFrameCount = 2;
+} // namespace
+
 /*
  * 测试接口: DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME（DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME = 0）
  * 预期效果: 枚举/宏常量取值应为 0。
@@ -157,8 +161,9 @@ static bool BuildTwoFrameAnimatedDd(TwoFrameAnimatedDd *fixture)
         DisposeTwoFrameAnimatedDd(fixture);
         return false;
     }
-    OH_PixelmapNative *frames[2] = {fixture->pm0, fixture->pm1};
-    fixture->dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(frames, 2);
+    OH_PixelmapNative *frames[kAnimatedDrawablePixelmapFrameCount] = {fixture->pm0, fixture->pm1};
+    fixture->dd = OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(
+        frames, kAnimatedDrawablePixelmapFrameCount);
     if (fixture->dd == nullptr) {
         DisposeTwoFrameAnimatedDd(fixture);
         return false;

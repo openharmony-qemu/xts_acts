@@ -26,6 +26,7 @@ add_library(nativefunc SHARED
 add_library(arkuicapigen SHARED
     NapiArkUICapiGenModule.cpp
     ArkUICapiNapiDescriptors.cpp
+    arkui_native/ArkUI_Full/native_interface_a11y/NativeInterfaceA11y_bridge.cpp
 )
 
 find_library(
