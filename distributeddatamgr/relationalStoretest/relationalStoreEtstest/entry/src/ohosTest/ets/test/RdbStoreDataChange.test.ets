@@ -69,11 +69,14 @@ export default function RdbStoreDataChangeTest() {
             }
         })
 
-        afterEach(async function (done) {
+        afterEach(async function () {
             console.info(TAG + 'afterEach')
-            await relationalStore.deleteRdbStore(context, STORE_NAME);
-            rdbStore = null
-            done();
+            try {
+                await relationalStore.deleteRdbStore(context, STORE_NAME);
+                rdbStore = null
+            } catch (err) {
+                console.error(TAG + `afterEach failed, code:${err.code}, message: ${err.message}`)
+            }
         })
 
         afterAll(async function () {
@@ -936,6 +939,7 @@ export default function RdbStoreDataChangeTest() {
 
             try {
                 rdbStore.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_CLOUD, observer1);
+                console.info(TAG + "onDataChange Success");
             } catch (err) {
                 console.error(TAG + `register fail, code:${err.code}, message: ${err.message}`);
                 expect().assertFail();
@@ -954,19 +958,21 @@ export default function RdbStoreDataChangeTest() {
                     "blobType": new Uint8Array([1, 2, 3]),
                 }
                 let rowId = await rdbStore.insert("test19", valueBucket);
+                console.info(TAG + "insert Success, rowId:" + rowId);
                 expect(1).assertEqual(rowId);
                 done();
             } catch (error) {
-                expect().assertFail();
                 console.error(TAG + `insert fail, code:${error.code}, message: ${error.message}`);
+                expect().assertFail();
                 done();
             }
 
             try {
                 rdbStore.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_CLOUD);
+                console.info(TAG + "offDataChange Success");
             } catch (err) {
-                expect().assertFail();
                 console.error(TAG + `register fail, code:${err.code}, message: ${err.message}`);
+                expect().assertFail();
             }
 
             console.info(TAG + "************* testRdbStoreDataChange2000 end *************");
