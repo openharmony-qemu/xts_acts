@@ -186,7 +186,7 @@ struct WebInitTest {
                 console.log('====consoleCorsError=' + this.consoleCorsError)
 
                 if (this.interceptUrl === null &&
-                  this.consoleCorsError &&
+                this.consoleCorsError &&
                   this.consoleMsg.indexOf('Failed to fetch') >= 0) {
                   Utils.emitEvent(true, 200760);
                 } else {
@@ -201,7 +201,7 @@ struct WebInitTest {
                 this.controller.runJavaScript('fetchUrlAllowCors("jump3")');
                 await Utils.waitForExist(()=>this.consoleMsg, 'waitConsoleMsg', 'Uncaught (in promise) TypeError: Failed to fetch', 1000);
                 if (this.interceptUrl === null &&
-                  this.consoleCorsError &&
+                this.consoleCorsError &&
                   this.consoleMsg.indexOf('Failed to fetch') >= 0) {
                   Utils.emitEvent(true, 200770);
                 } else {

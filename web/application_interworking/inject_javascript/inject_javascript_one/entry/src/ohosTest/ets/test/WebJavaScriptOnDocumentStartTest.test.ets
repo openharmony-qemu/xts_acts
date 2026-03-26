@@ -43,7 +43,7 @@ export default function webJavaScriptOnDocumentStartTest() {
       } catch (err) {
         console.error('push WebJavaScriptOnDocumentStartTest page error: ' + err);
       }
-      await driver.waitForComponent(ON.id("WebJavaScriptOnDocumentStartTestButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
       done()
     });
 
@@ -82,6 +82,48 @@ export default function webJavaScriptOnDocumentStartTest() {
     it('testJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptOnDocumentStart002", 172210)
       Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 172230, done);
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
+    })
+
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart003
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0300
+     * @tc.desc   test javaScriptOnDocumentStart with null/undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJavaScriptOnDocumentStart003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testJavaScriptOnDocumentStart003", 172210)
+      Utils.registerEvent("testJavaScriptOnDocumentStart003", '"No script injected"', 20230312, done);
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
+    })
+
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart004
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0400
+     * @tc.desc   test javaScriptOnDocumentStart with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJavaScriptOnDocumentStart004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testJavaScriptOnDocumentStart004", 172210)
+      Utils.registerEvent("testJavaScriptOnDocumentStart004", '"No script injected"', 20230313, done);
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
+    })
+
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart005
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0500
+     * @tc.desc   test javaScriptOnDocumentStart with empty array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJavaScriptOnDocumentStart005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testJavaScriptOnDocumentStart005", 172210)
+      Utils.registerEvent("testJavaScriptOnDocumentStart005", '"No script injected"', 20230314, done);
       await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
     })
 

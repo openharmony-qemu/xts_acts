@@ -26,6 +26,7 @@ struct webAttribute {
   @State loadedResource: string = ""
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
+  @State resourceUrl: string = '';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -55,13 +56,18 @@ struct webAttribute {
       Row() {
         Button("WebAttribute click").key('WebAttributeButton').onClick(async () => {
           await Utils.waitForExist(()=>this.isReceive, 'WebAttributeButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebAttributeButtonIsReceive', 1, 1000);
           console.info("key==>" + this.str);
           this.isReceive = -1;
           switch (this.str) {
 
             case "testOnResourceLoad001": {
               try {
+                this.resourceUrl = '';
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/geolocation.html" });
+                await Utils.waitForExist(()=>this.isPageEnd, 'WebAttributeButtonIsReceive', 1, 1000);
+                Utils.emitEvent(this.resourceUrl, 200560);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200560)
@@ -77,9 +83,13 @@ struct webAttribute {
       Web({ src: $rawfile('webPart1index.html'), controller: this.controller })
         .onResourceLoad((event) => {
           if (event) {
-            console.info("onResourceLoad==>" + event.url)
-            Utils.emitEvent(event.url, 200560);
+            console.info("onResourceLoad==>" + event.url);
+            this.resourceUrl = event.url;
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url==>' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

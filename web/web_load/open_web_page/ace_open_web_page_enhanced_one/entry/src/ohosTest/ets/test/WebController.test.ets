@@ -14,6 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -46,7 +47,7 @@ export default function webController() {
       } catch (err) {
         console.error("push webController page error: " + err);
       }
-      await driver.waitForComponent(ON.id('WebControllerButton'),10000);
+      await Utils.waitForComponent(driver, 'WebControllerButton');
       console.log('waitForComponent WebControllerButton==>');
       done()
     });
@@ -95,11 +96,11 @@ export default function webController() {
      */
     it('testRefresh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRefresh001", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testRefresh001", "\"index\"", 200670, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testRefresh001' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testRefresh001", "\"index\"", 200670,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
 
     /**
@@ -112,11 +113,11 @@ export default function webController() {
      */
     it('testLoadData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadData001", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testLoadData001", "\"LoadData\"", 200680, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testLoadData001' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testLoadData001", "\"LoadData\"", 200680,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
 
     /**
@@ -129,11 +130,11 @@ export default function webController() {
      */
     it('testLoadUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl001", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testLoadUrl001", true, 200690, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testLoadUrl001' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testLoadUrl001", true, 200690,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
 
     /**
@@ -146,11 +147,11 @@ export default function webController() {
      */
     it('testLoadUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl002", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testLoadUrl002", 'Example Domain', 200700, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testLoadUrl002' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testLoadUrl002", 'Example Domain', 200700,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
 
     /**
@@ -163,11 +164,11 @@ export default function webController() {
      */
     it('testLoadUrl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl003", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testLoadUrl003", 'second', 200710, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testLoadUrl003' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testLoadUrl003", 'second', 200710,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
 
     /**
@@ -180,11 +181,11 @@ export default function webController() {
      */
     it('testLoadUrl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl004", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerEvent("testLoadUrl004", 'second', 200720, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "WebControllerButton");
-      await Utils.waitForExist(() => isReturn, 'testLoadUrl004' + '_returnCheck', true, 1000);
-      done();
+      Utils.registerBaseEvent("testLoadUrl004", 'second', 200720,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('WebControllerButton', 10, '');
     })
   })
 }

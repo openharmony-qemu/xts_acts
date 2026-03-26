@@ -46,7 +46,7 @@ export default function webAttributeEnhancedTest() {
       } catch (err) {
         console.error("push WebAttributeEnhancedTest page error: " + err);
       }
-      await driver.waitForComponent(ON.id('OnTitleReceiveIsRealTitleButton'),10000);
+      await Utils.waitForComponent(driver, 'OnTitleReceiveIsRealTitleButton');
       console.log('waitForComponent OnTitleReceiveIsRealTitleButton==>');
       done()
     });
@@ -202,9 +202,9 @@ export default function webAttributeEnhancedTest() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       await Utils.waitAndClickComponent(driver, "OnTitleReceiveIsRealTitleButton");
-     if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle005' + '_returnCheck', true, 1000)) {
-       done();
-     }
+      if (await Utils.waitForExist(() => isReturn, 'testOnTitleReceiveIsRealTitle005' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
   })
 }
