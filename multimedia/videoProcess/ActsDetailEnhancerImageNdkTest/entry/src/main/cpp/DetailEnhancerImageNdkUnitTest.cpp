@@ -80,9 +80,9 @@ void CreateEmptyPixelmap(OH_PixelmapNative** pixelMap, int32_t width, int32_t he
 }
 
 bool ValidateColorSpaceParam(const ImageProcessing_ColorSpaceInfo& param,
-                int expectedMetadataType,
-                OH_NativeBuffer_ColorSpace expectedColorSpace,
-                OH_NativeBuffer_Format expectedPixelFormat)
+                             int expectedMetadataType,
+                             OH_NativeBuffer_ColorSpace expectedColorSpace,
+                             OH_NativeBuffer_Format expectedPixelFormat)
 {
     if (param.metadataType != expectedMetadataType) {
         return false;
