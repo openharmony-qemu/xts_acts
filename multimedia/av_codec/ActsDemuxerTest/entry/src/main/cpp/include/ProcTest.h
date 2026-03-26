@@ -28,6 +28,7 @@ extern int SubMediaDemuxerProcess2100();
 extern int SubMediaDemuxerProcess2200();
 extern int SubMediaDemuxerProcess2300();
 extern int SubMediaDemuxerProcess2400();
+extern int SubMediaDemuxerProcess2500();
 extern int SubMediaDemuxerProcess2600();
 extern int SubMediaDemuxerProcess2700();
 extern int SubMediaDemuxerProcess2800();
