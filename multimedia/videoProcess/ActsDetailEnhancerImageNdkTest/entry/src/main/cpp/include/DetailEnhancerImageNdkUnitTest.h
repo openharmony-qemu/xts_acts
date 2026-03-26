@@ -173,6 +173,9 @@ int VpeImageNdk46();
 // invalid instance to destroy
 int VpeImageNdk47();
 
+// detail enhance invalid instance
+int VpeImageNdk48();
+
 } // namespace VideoProcessingEngine
 } // namespace Media
 } // namespace OHOS

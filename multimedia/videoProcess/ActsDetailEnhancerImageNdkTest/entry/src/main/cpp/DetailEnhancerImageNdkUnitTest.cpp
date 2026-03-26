@@ -99,9 +99,56 @@ bool IsSupportImageSR()
  * @tc.level  LEVEL1
  */
 int VpeImageNdk01()
-{
+{   
+    if (param_srgb.metadataType != 0) {
+        return -1;
+    }
+    if (param_srgb.colorSpace != OH_COLORSPACE_SRGB_FULL) {
+        return -1;
+    }
+    if (param_srgb.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
+        return -1;
+    }
+    if (param_p3.metadataType != 0) {
+        return -1;
+    }
+    if (param_p3.colorSpace != OH_COLORSPACE_P3_FULL) {
+        return -1;
+    }
+    if (param_p3.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
+        return -1;
+    }
+    if (param_bt709.metadataType != 0) {
+        return -1;
+    }
+    if (param_bt709.colorSpace != OH_COLORSPACE_BT709_FULL) {
+        return -1;
+    }
+    if (param_bt709.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_8888) {
+        return -1;
+    }
+    if (param_not_support.metadataType != 0) {
+        return -1;
+    }
+    if (param_not_support.colorSpace != OH_COLORSPACE_BT601_EBU_FULL) {
+        return -1;
+    }
+    if (param_not_support.pixelFormat != NATIVEBUFFER_PIXEL_FMT_BGRX_8888) {
+        return -1;
+    }
+    if (param5.metadataType != 0) {
+        return -1;
+    }
+    if (param5.colorSpace != OH_COLORSPACE_BT2020_PQ_LIMIT) {
+        return -1;
+    }
+    if (param5.pixelFormat != NATIVEBUFFER_PIXEL_FMT_RGBA_1010102) {
+        return -1;
+    }
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
-    EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+    if (ret != IMAGE_PROCESSING_SUCCESS) {
+        return -1;
+    }
     OH_ImageProcessing_DeinitializeEnvironment();
     return SUCCESS_CODE;
 }
@@ -1145,6 +1192,33 @@ int VpeImageNdk47()
     OH_ImageProcessing* instance = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_Destroy(instance);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
+    return SUCCESS_CODE;
+}
+
+// detail enhance invalid instance
+/**
+ * @tc.name   vpeImageNdk_48
+ * @tc.number vpeImageNdk_48
+ * @tc.desc   vpeImageNdk_48
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int VpeImageNdk48()
+{
+    if (!IsSupportImageSR()) {
+        return 0;
+    }
+    OH_ImageProcessing_InitializeEnvironment();
+    OH_ImageProcessing* instance = nullptr;
+    OH_PixelmapNative* srcImg = nullptr;
+    OH_PixelmapNative* dstImg = nullptr;
+    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+    CreateEmptyPixelmap(&dstImg, 1440, 1920, PIXEL_FORMAT_RGBA_8888);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_EnhanceDetail(instance, srcImg, dstImg);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
+    OH_ImageProcessing_Destroy(instance);
+    OH_ImageProcessing_DeinitializeEnvironment();
     return SUCCESS_CODE;
 }
 } // namespace VideoProcessingEngine

@@ -648,5 +648,17 @@ export default function VpeImageNdkTest() {
     it('VpeImageNdk47', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(50)).assertEqual(0);
     })
+
+    /**
+     * @tc.name   VpeImageNdk48
+     * @tc.number VpeImageNdk48
+     * @tc.desc   VpeImageNdk48
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VpeImageNdk48', Level.LEVEL0, () => {
+      expect(libNdk.VpeImageTest(51)).assertEqual(0);
+    })
   })
 }
