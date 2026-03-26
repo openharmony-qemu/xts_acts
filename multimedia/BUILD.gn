@@ -73,7 +73,6 @@ group("multimedia") {
       "audio/audio_js_standard/AudioStreamBuilderHap:ActsAudioStreamBuilderHapTest",
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
-      "av_codec/audio_encoder:ActsAvbufferEncoderTest",
       "av_codec/demuxer:ActsDemuxerTest",
       "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/encoder:ActsEncoderTest",
