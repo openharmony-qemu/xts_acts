@@ -47,8 +47,8 @@ const valueBucket: relationalStore.ValuesBucket = {
   'CODES': value4,
   'IDENTITY': value5,
 };
-export default function RdbStoreArkGetRdbStoreSyncEtsAddTest() {
-  describe('RdbStoreArkGetRdbStoreSyncEtsAddTest', (): void => {
+export default function RdbStoreArkGetRdbStoreSyncAddTest() {
+  describe('RdbStoreArkGetRdbStoreSyncAddTest', (): void => {
     beforeAll(async () => {
       hilog.info(DOMAIN, TAG, 'beforeAll: Test suite initialization');
       await Utils.msSleep(2000);
