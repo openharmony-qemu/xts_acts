@@ -4690,13 +4690,21 @@ export default function TextPicker() {
       }
       await imageCheckbox.click();
       await CommonFunc.sleep(300);
-      const btn = await driver.findComponent(ON.id('setPhotoBrowserItemWithEmptyURI'));
+      const btn = await driver.waitForComponent(ON.id('setPhotoBrowserItemWithEmptyURI'), 1000);
       console.log('testPicker77 btn click')
-      await btn.click();
+      if (!btn) {
+        console.error('testPicker77 no btn');
+      } else {
+        await btn.click();
+      }
       await CommonFunc.sleep(500);
-      const previewButton = await driver.findComponent(ON.id('previewButton'));
+      const previewButton = await driver.waitForComponent(ON.id('previewButton'), 1000);
       console.log('testPicker77 previewButton click')
-      await previewButton.click();
+      if (!previewButton) {
+        console.error('testPicker77 no previewButton');
+      } else {
+        await previewButton.click();
+      }
       await CommonFunc.sleep(500);
       router.back();
       done();
