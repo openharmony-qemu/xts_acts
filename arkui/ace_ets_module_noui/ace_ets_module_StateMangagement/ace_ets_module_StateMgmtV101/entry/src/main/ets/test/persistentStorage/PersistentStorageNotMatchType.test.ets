@@ -19,7 +19,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
-let driver: Driver;
+
 
 export default function PersistentStorageNotMatchTypeTest() {
   describe('PersistentStorageNotMatchTypeTest', () => {
@@ -62,7 +62,9 @@ export default function PersistentStorageNotMatchTypeTest() {
      * @tc.level  LEVEL0
      */
     it('PersistentStorageNotMatchType_initial_001', Level.LEVEL0, async () => {
-      hilog.info(0x0000, 'PersistentStorageNotMatchTypeTest', 'PersistentStorageNotMatchType_initial_001 START');
+      console.info('[PersistentStorageNotMatchType_initial_001] START');
+      await CommonFunc.sleep(2000);
+      let driver: Driver = Driver.create();
       try {
         const button1 = await driver.findComponent(ON.id('button_set_array'));
         if (button1) {
