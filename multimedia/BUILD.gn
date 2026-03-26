@@ -227,7 +227,9 @@ group("multimedia") {
       "av_codec/vcodec/ActsMpeg4swdecoderTest:ActsMpeg4swdecoderHapTest",
       "videoProcess/moduletest/ActsImageTest:ActsImageHapTest",
       "av_codec/vcodec/ActsHdrCodecTest:ActsHdrCodecHapTest",
+      "av_codec/vcodec/ActsSwDecoderTest:ActsSwDecoderHapTest",
       "av_codec/vcodec/ActsHwdecoderHapTest:ActsHwdecoderHapTest",
+
     ]
   } else {
     deps += [
