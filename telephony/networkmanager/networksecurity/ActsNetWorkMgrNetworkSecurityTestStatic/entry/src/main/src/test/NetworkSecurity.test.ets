@@ -544,7 +544,7 @@ export default function networkSecurityTest() {
           done();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
-          ExpectTrue(err.code == 201);
+          ExpectTrue(Number(err.code) === 201);
           done();
         }
       });
@@ -591,7 +591,7 @@ export default function networkSecurityTest() {
           done();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
-          ExpectTrue(err.code == 201);
+          ExpectTrue(Number(err.code) === 201);
           done();
         }
       });
