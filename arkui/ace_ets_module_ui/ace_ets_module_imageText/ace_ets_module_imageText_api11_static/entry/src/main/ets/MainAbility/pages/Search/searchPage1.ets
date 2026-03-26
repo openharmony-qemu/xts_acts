@@ -23,7 +23,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { RecordData } from '@ohos.base';
 
 @Observed
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   _testType: number = 0
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`Search page Test Type ${this._testType}`)

@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 
 
 @Observed
-class MyModifier2 implements AttributeModifier<ColumnAttribute> {
+export class MyModifier2 implements AttributeModifier<ColumnAttribute> {
   public isBgImage2: boolean = true;
 
   applyNormalAttribute(instance: ColumnAttribute): void {
@@ -36,7 +36,7 @@ class MyModifier2 implements AttributeModifier<ColumnAttribute> {
 }
 
 @Observed
-class MyModifier3 implements AttributeModifier<ColumnAttribute> {
+export class MyModifier3 implements AttributeModifier<ColumnAttribute> {
   public isBgImagePosition: boolean = true;
 
   applyNormalAttribute(instance: ColumnAttribute): void {

@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import inspector from '@ohos.arkui.inspector'
 
 @Observed
-class MyButtonModifier implements GestureModifier {
+export class MyButtonModifier implements GestureModifier {
   public value: string = '666';
   public count: int = 0;
 

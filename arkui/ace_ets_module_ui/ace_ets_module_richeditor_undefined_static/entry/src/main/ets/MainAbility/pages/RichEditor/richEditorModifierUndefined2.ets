@@ -31,7 +31,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
+export class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
   public message: string = 'hello';
   public isStopBackPress: boolean = true;
   public isOnSelect: boolean = true;

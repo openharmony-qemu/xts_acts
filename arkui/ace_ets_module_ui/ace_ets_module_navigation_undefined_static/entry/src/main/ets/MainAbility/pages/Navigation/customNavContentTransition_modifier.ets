@@ -24,7 +24,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
   public isUndefined: boolean = false;
   public changeCount: number = 0;
 

@@ -24,7 +24,7 @@ import matrix4 from '@ohos.matrix4'
 import { Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ImageAttribute> {
+export class MyModifier implements AttributeModifier<ImageAttribute> {
   public colorFilterMatrix: Array<number> = [
     1, 0, 1, 0, 1,
     0, 0, 0, 1, 0,

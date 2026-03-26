@@ -23,7 +23,7 @@ import { AttributeModifier, CommonAttribute, TextTimerAttribute } from '@ohos.ar
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   public textShadows: ShadowOptions | Array<ShadowOptions> | undefined = undefined;
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
