@@ -43,4 +43,5 @@ target_link_libraries(swdecoder_test PUBLIC
     libnative_media_core.so
     libnative_media_vdec.so
     libnative_window.so
+    libnative_image.so
 )

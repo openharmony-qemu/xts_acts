@@ -26,29 +26,18 @@ namespace {
 constexpr int64_t NANOS_IN_SECOND = 1000000000L;
 constexpr int64_t MICRO_IN_SECOND = 1000000L;
 constexpr int64_t NANOS_IN_MICRO = 1000L;
-constexpr uint8_t MPEG2_FRAME_HEAD[] = { 0x00, 0x00, 0x01, 0x00 };
-constexpr uint8_t MPEG2_SEQUENCE_HEAD[] = { 0x00, 0x00, 0x01, 0xb3 };
-// H.264 Annex B start codes: 3-byte 0x00 0x00 0x01 or 4-byte 0x00 0x00 0x00 0x01
-constexpr uint8_t H264_START_CODE_3[] = { 0x00, 0x00, 0x01 };
-constexpr uint8_t H264_START_CODE_4[] = { 0x00, 0x00, 0x00, 0x01 };
-constexpr uint32_t H264_START_CODE_3_LEN = 3;
-constexpr uint32_t H264_START_CODE_4_LEN = 4;
-constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_0 = 0U;
-constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_1 = 1U;
-constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_2 = 2U;
-constexpr uint32_t H264_START_CODE_4_BYTE_INDEX_3 = 3U;
-constexpr uint32_t H264_START_CODE_3_BYTE_INDEX_0 = 0U;
-constexpr uint32_t H264_START_CODE_3_BYTE_INDEX_1 = 1U;
-constexpr uint32_t K_H264_START_CODE_THIRD_BYTE_OFFSET = 2;
 constexpr int32_t MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD = 2;
 constexpr uint32_t MILLION = 1000000;
 constexpr int32_t THREE = 3;
 constexpr int32_t TEN = 10;
+constexpr int32_t EIGHT = 8;
+constexpr int32_t SIXTEEN = 16;
+constexpr int32_t TWENTY_FOUR = 24;
+constexpr uint8_t H264_NALU_TYPE = 0x1f;
+constexpr uint8_t SPS = 7;
+constexpr uint8_t PPS = 8;
 constexpr int32_t START_CODE_SIZE = 4;
-constexpr uint32_t PREREAD_BUFFER_SIZE = 0.1 * 1024 * 1024;
-constexpr uint32_t MAX_WIDTH = 4000;
-constexpr uint32_t MAX_HEIGHT = 3000;
-constexpr uint32_t MAX_NALU_SIZE = MAX_WIDTH * MAX_HEIGHT << 1;
+constexpr uint8_t START_CODE[START_CODE_SIZE] = { 0, 0, 0, 1 };
 constexpr uint32_t RES_CHANGE_TIME = 4;
 constexpr uint32_t CROP_INFO_SIZE = 2;
 constexpr uint32_t CROP_INFO[RES_CHANGE_TIME][CROP_INFO_SIZE] = { { 621, 1103 },
@@ -81,29 +70,6 @@ void clearBufferqueue(std::queue<OH_AVCodecBufferAttr>& q)
     swap(empty, q);
 }
 
-// Returns offset of next H.264 Annex B start code (0x00 0x00 0x01 or 0x00 0x00 0x00 0x01),
-// or endOffset if not found. *outLen is set to 3 or 4 for the start code length.
-static uint32_t FindH264StartCode(const uint8_t* data, uint32_t start, uint32_t endOffset, uint32_t* outLen)
-{
-    *outLen = 0;
-    for (uint32_t i = start; i + H264_START_CODE_3_LEN <= endOffset; i++) {
-        if (i + H264_START_CODE_4_LEN <= endOffset &&
-            data[i + H264_START_CODE_4_BYTE_INDEX_0] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_0] &&
-            data[i + H264_START_CODE_4_BYTE_INDEX_1] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_1] &&
-            data[i + H264_START_CODE_4_BYTE_INDEX_2] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_2] &&
-            data[i + H264_START_CODE_4_BYTE_INDEX_3] == H264_START_CODE_4[H264_START_CODE_4_BYTE_INDEX_3]) {
-            *outLen = H264_START_CODE_4_LEN;
-            return i;
-        }
-        if (data[i + H264_START_CODE_3_BYTE_INDEX_0] == H264_START_CODE_3[H264_START_CODE_3_BYTE_INDEX_0] &&
-            data[i + H264_START_CODE_3_BYTE_INDEX_1] == H264_START_CODE_3[H264_START_CODE_3_BYTE_INDEX_1] &&
-            data[i + K_H264_START_CODE_THIRD_BYTE_OFFSET] == H264_START_CODE_3[H264_START_CODE_3_LEN - 1]) {
-            *outLen = H264_START_CODE_3_LEN;
-            return i;
-        }
-    }
-    return endOffset;
-}
 } // namespace
 
 VDecAPI11Sample::~VDecAPI11Sample()
@@ -112,6 +78,10 @@ VDecAPI11Sample::~VDecAPI11Sample()
         if (nativeWindow[i]) {
             OH_NativeWindow_DestroyNativeWindow(nativeWindow[i]);
             nativeWindow[i] = nullptr;
+        }
+        if (cNativeImage[i]) {
+            OH_NativeImage_Destroy(&cNativeImage[i]);
+            cNativeImage[i] = nullptr;
         }
     }
     Stop();
@@ -265,7 +235,28 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
 
 void VDecAPI11Sample::CreateSurface()
 {
-    // 无 Native Window/Surface 生产链路时保持空实现；RunVideoDecSurface 将回退到 buffer 解码。
+    for (uint32_t i = 0; i < 2; i++) {
+        if (nativeWindow[i]) {
+            OH_NativeWindow_DestroyNativeWindow(nativeWindow[i]);
+            nativeWindow[i] = nullptr;
+        }
+        if (cNativeImage[i]) {
+            OH_NativeImage_Destroy(&cNativeImage[i]);
+            cNativeImage[i] = nullptr;
+        }
+    }
+
+    cNativeImage[0] = OH_ConsumerSurface_Create();
+    if (cNativeImage[0] != nullptr) {
+        nativeWindow[0] = OH_NativeImage_AcquireNativeWindow(cNativeImage[0]);
+    }
+
+    if (autoSwitchSurface && maxSurfNum > 1) {
+        cNativeImage[1] = OH_ConsumerSurface_Create();
+        if (cNativeImage[1] != nullptr) {
+            nativeWindow[1] = OH_NativeImage_AcquireNativeWindow(cNativeImage[1]);
+        }
+    }
 }
 
 int32_t VDecAPI11Sample::RunVideoDecSurface(string codeName)
@@ -363,10 +354,6 @@ void VDecAPI11Sample::ReleaseInFile()
         }
         inFile_.reset();
         inFile_ = nullptr;
-        mpegUnit_.reset();
-        mpegUnit_ = nullptr;
-        prereadBuffer_.reset();
-        prereadBuffer_ = nullptr;
     }
 }
 
@@ -399,8 +386,6 @@ int32_t VDecAPI11Sample::CreateVideoDecoder(string codeName)
 int32_t VDecAPI11Sample::PrepareStartDecoderOpenInputFile()
 {
     inFile_ = make_unique<ifstream>();
-    prereadBuffer_ = std::make_unique<uint8_t[]>(PREREAD_BUFFER_SIZE + START_CODE_SIZE);
-    mpegUnit_ = std::make_unique<std::vector<uint8_t>>(MAX_WIDTH * MAX_HEIGHT << 1);
     if (inFile_ == nullptr) {
         isRunning_.store(false);
         (void)OH_VideoDecoder_Stop(vdec_);
@@ -520,234 +505,6 @@ void VDecAPI11Sample::WaitForEOS()
     if (outputLoop_ && outputLoop_->joinable()) {
         outputLoop_->join();
     }
-}
-
-void VDecAPI11Sample::PtrStep(uint32_t& bufferSize, unsigned char** pBuffer, uint32_t size)
-{
-    pPrereadBuffer_ += size;
-    bufferSize += size;
-    *pBuffer += size;
-}
-
-void VDecAPI11Sample::PtrStepExtraRead(uint32_t& bufferSize, unsigned char** pBuffer)
-{
-    bufferSize -= START_CODE_SIZE;
-    *pBuffer -= START_CODE_SIZE;
-    pPrereadBuffer_ = 0;
-}
-
-bool VDecAPI11Sample::ProcessSegmentCopy(unsigned char** pBuffer,
-                                         uint32_t& bufferSize,
-                                         uint32_t size,
-                                         uint32_t size1,
-                                         bool& error)
-{
-    uint32_t copySize;
-    if (size == 0) {
-        auto pos3 = std::search(prereadBuffer_.get() + pPrereadBuffer_ + size1 + START_CODE_SIZE,
-                                prereadBuffer_.get() + prereadBufferSize_,
-                                std::begin(MPEG2_FRAME_HEAD),
-                                std::end(MPEG2_FRAME_HEAD));
-        copySize = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos3);
-    } else if (size1 > size) {
-        copySize = size;
-    } else {
-        copySize = size1;
-    }
-    if (SecureMemcpy(*pBuffer, copySize, prereadBuffer_.get() + pPrereadBuffer_, copySize) != EOK) {
-        error = true;
-        return false;
-    }
-    PtrStep(bufferSize, pBuffer, copySize);
-    return (pPrereadBuffer_ == prereadBufferSize_) && !inFile_->eof();
-}
-
-bool VDecAPI11Sample::RefillPrereadBuffer(unsigned char** pBuffer, uint32_t& bufferSize)
-{
-    inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + START_CODE_SIZE), PREREAD_BUFFER_SIZE);
-    prereadBufferSize_ = inFile_->gcount() + START_CODE_SIZE;
-    pPrereadBuffer_ = START_CODE_SIZE;
-    if (SecureMemcpy(prereadBuffer_.get(), START_CODE_SIZE, *pBuffer - START_CODE_SIZE, START_CODE_SIZE) != EOK) {
-        return false;
-    }
-    PtrStepExtraRead(bufferSize, pBuffer);
-    return true;
-}
-
-bool VDecAPI11Sample::H264RefillPrereadBuffer()
-{
-    if (prereadBufferSize_ >= H264_START_CODE_4_LEN) {
-        (void)SecureMemcpy(prereadBuffer_.get(),
-                           H264_START_CODE_4_LEN,
-                           prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
-                           H264_START_CODE_4_LEN);
-    }
-    inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN), PREREAD_BUFFER_SIZE);
-    streamsize gcount = inFile_->gcount();
-    prereadBufferSize_ = H264_START_CODE_4_LEN + static_cast<uint32_t>(gcount);
-    pPrereadBuffer_ = 0;
-    if (gcount == 0) {
-        mpegUnit_->resize(0);
-        return false;
-    }
-    return true;
-}
-
-bool VDecAPI11Sample::H264AnnexBRefillPrimary()
-{
-    if (pPrereadBuffer_ < prereadBufferSize_) {
-        return false;
-    }
-    if (inFile_->eof()) {
-        mpegUnit_->resize(0);
-        return true;
-    }
-    if (!H264RefillPrereadBuffer()) {
-        return true;
-    }
-    return false;
-}
-
-bool VDecAPI11Sample::H264AnnexBHandleScPastEnd()
-{
-    if (inFile_->eof()) {
-        uint32_t rest = prereadBufferSize_ - pPrereadBuffer_;
-        if (rest > 0 && rest <= MAX_NALU_SIZE) {
-            mpegUnit_->resize(rest);
-            (void)SecureMemcpy(mpegUnit_->data(), rest, prereadBuffer_.get() + pPrereadBuffer_, rest);
-        } else {
-            mpegUnit_->resize(0);
-        }
-        pPrereadBuffer_ = prereadBufferSize_;
-        return true;
-    }
-    if (!H264RefillPrereadBuffer()) {
-        return true;
-    }
-    return false;
-}
-
-bool VDecAPI11Sample::H264AnnexBHandleNextScPastEnd(uint32_t nalStart)
-{
-    if (inFile_->eof()) {
-        uint32_t nalSize = prereadBufferSize_ - nalStart;
-        if (nalSize <= MAX_NALU_SIZE) {
-            mpegUnit_->resize(nalSize);
-            (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
-        } else {
-            mpegUnit_->resize(0);
-        }
-        pPrereadBuffer_ = prereadBufferSize_;
-        return true;
-    }
-    if (!H264RefillPrereadBuffer()) {
-        return true;
-    }
-    return false;
-}
-
-void VDecAPI11Sample::H264AnnexBCopyNalAndFinish(uint32_t nalStart, uint32_t nextSc)
-{
-    uint32_t nalSize = nextSc - nalStart;
-    if (nalSize <= MAX_NALU_SIZE) {
-        mpegUnit_->resize(nalSize);
-        (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
-    } else {
-        mpegUnit_->resize(0);
-    }
-    pPrereadBuffer_ = nextSc;
-}
-
-void VDecAPI11Sample::GetH264AnnexBUnit()
-{
-    for (;;) {
-        if (H264AnnexBRefillPrimary()) {
-            return;
-        }
-        uint32_t scLen = 0;
-        uint32_t scPos = FindH264StartCode(prereadBuffer_.get(), pPrereadBuffer_, prereadBufferSize_, &scLen);
-        if (scPos >= prereadBufferSize_) {
-            if (H264AnnexBHandleScPastEnd()) {
-                return;
-            }
-            continue;
-        }
-        uint32_t nalStart = scPos + scLen;
-        uint32_t nextScLen = 0;
-        uint32_t nextSc = FindH264StartCode(prereadBuffer_.get(), nalStart, prereadBufferSize_, &nextScLen);
-        if (nextSc >= prereadBufferSize_) {
-            if (H264AnnexBHandleNextScPastEnd(nalStart)) {
-                return;
-            }
-            continue;
-        }
-        H264AnnexBCopyNalAndFinish(nalStart, nextSc);
-        return;
-    }
-}
-
-void VDecAPI11Sample::GetH264LengthPrefixedNal()
-{
-    mpegUnit_->resize(0);
-    if (inFile_ == nullptr || !inFile_->is_open()) {
-        return;
-    }
-    uint8_t lenBuf[H264_START_CODE_4_LEN];
-    inFile_->read(reinterpret_cast<char*>(lenBuf), H264_START_CODE_4_LEN);
-    const std::streamsize lenRead = inFile_->gcount();
-    if (lenRead < H264_START_CODE_4_LEN) {
-        return;
-    }
-    const uint32_t nalLen = (static_cast<uint32_t>(lenBuf[0]) << 24) | (static_cast<uint32_t>(lenBuf[1]) << 16) |
-                            (static_cast<uint32_t>(lenBuf[2]) << 8) | static_cast<uint32_t>(lenBuf[3]);
-    if (nalLen == 0 || nalLen > MAX_NALU_SIZE) {
-        return;
-    }
-    const uint32_t outSize = H264_START_CODE_4_LEN + nalLen;
-    if (outSize < nalLen) {
-        return;
-    }
-    mpegUnit_->resize(outSize);
-    if (SecureMemcpy(mpegUnit_->data(), outSize, H264_START_CODE_4, H264_START_CODE_4_LEN) != EOK) {
-        mpegUnit_->resize(0);
-        return;
-    }
-    inFile_->read(reinterpret_cast<char*>(mpegUnit_->data() + H264_START_CODE_4_LEN),
-                  static_cast<std::streamsize>(nalLen));
-    if (static_cast<uint32_t>(inFile_->gcount()) != nalLen) {
-        mpegUnit_->resize(0);
-    }
-}
-
-void VDecAPI11Sample::GetBufferSize()
-{
-    auto pBuffer = mpegUnit_->data();
-    uint32_t bufferSize = 0;
-    mpegUnit_->resize(MAX_NALU_SIZE);
-    do {
-        auto pos1 = std::search(prereadBuffer_.get() + pPrereadBuffer_ + START_CODE_SIZE,
-                                prereadBuffer_.get() + prereadBufferSize_,
-                                std::begin(MPEG2_FRAME_HEAD),
-                                std::end(MPEG2_FRAME_HEAD));
-        uint32_t size1 = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos1);
-        auto pos2 = std::search(prereadBuffer_.get() + pPrereadBuffer_,
-                                prereadBuffer_.get() + pPrereadBuffer_ + size1,
-                                std::begin(MPEG2_SEQUENCE_HEAD),
-                                std::end(MPEG2_SEQUENCE_HEAD));
-        uint32_t size = std::distance(prereadBuffer_.get() + pPrereadBuffer_, pos2);
-        bool error = false;
-        bool shouldContinue = ProcessSegmentCopy(&pBuffer, bufferSize, size, size1, error);
-        if (error) {
-            return;
-        }
-        if (!shouldContinue) {
-            break;
-        }
-        if (!RefillPrereadBuffer(&pBuffer, bufferSize)) {
-            return;
-        }
-    } while (pPrereadBuffer_ != prereadBufferSize_);
-    mpegUnit_->resize(bufferSize);
 }
 
 void VDecAPI11Sample::InputFuncTestApplyRepeatControls()
@@ -885,82 +642,45 @@ void VDecAPI11Sample::SyncInputFunc()
     }
 }
 
-bool VDecAPI11Sample::PushDataHandleEarlyEos(uint32_t index, OH_AVBuffer* buffer)
+int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
 {
     OH_AVCodecBufferAttr attr;
     if (beforeEosInput && frameCount_ > TEN) {
         SetEOS(index, buffer);
-        return true;
+        return K_PUSH_DATA_EOS;
     }
     if (beforeEosInputInput && frameCount_ > TEN) {
         SecureMemset(&attr, sizeof(OH_AVCodecBufferAttr), 0, sizeof(OH_AVCodecBufferAttr));
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         beforeEosInputInput = false;
     }
-    return false;
-}
-
-int32_t VDecAPI11Sample::PushDataLengthPrefixedPath(uint32_t index, OH_AVBuffer* buffer)
-{
-    if (inFile_->eof() && finishLastPush) {
-        SetEOS(index, buffer);
-        mpegUnit_->resize(0);
-        return K_PUSH_DATA_EOS;
-    }
-    GetH264LengthPrefixedNal();
-    uint32_t bufferSize = static_cast<uint32_t>(mpegUnit_->size());
-    if (bufferSize == 0) {
-        if (inFile_->eof()) {
-            SetEOS(index, buffer);
-            return K_PUSH_DATA_EOS;
-        }
+    char ch[START_CODE_SIZE] = {};
+    (void)inFile_->read(ch, START_CODE_SIZE);
+    if (repeatRun && inFile_->eof()) {
+        static uint32_t repeatCount = 0;
+        inFile_->clear();
+        inFile_->seekg(0, ios::beg);
+        cout << "repeat run " << repeatCount << endl;
+        repeatCount++;
         return K_PUSH_DATA_RETRY;
     }
-    if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
-        cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
-        return K_PUSH_DATA_EOS;
-    }
-    return static_cast<int32_t>(SendData(bufferSize, index, buffer));
-}
-
-int32_t VDecAPI11Sample::PushDataAnnexBOrMpeg2Path(uint32_t index, OH_AVBuffer* buffer)
-{
-    if (inFile_->tellg() == 0) {
-        inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + START_CODE_SIZE), PREREAD_BUFFER_SIZE);
-        prereadBufferSize_ = inFile_->gcount() + START_CODE_SIZE;
-        pPrereadBuffer_ = START_CODE_SIZE;
-    }
-    if (inFile_->eof() && finishLastPush) {
-        SetEOS(index, buffer);
-        mpegUnit_->resize(0);
-        return K_PUSH_DATA_EOS;
-    }
-    if (useH264AnnexB) {
-        GetH264AnnexBUnit();
-    } else {
-        GetBufferSize();
-    }
-    uint32_t bufferSize = static_cast<uint32_t>(mpegUnit_->size());
-    if (bufferSize == 0 && inFile_->eof()) {
+    if (inFile_->eof()) {
         SetEOS(index, buffer);
         return K_PUSH_DATA_EOS;
+    }
+    uint32_t bufferSize = (static_cast<uint32_t>(ch[0] & 0xFF) << TWENTY_FOUR) |
+                          (static_cast<uint32_t>(ch[1] & 0xFF) << SIXTEEN) |
+                          (static_cast<uint32_t>(ch[2] & 0xFF) << EIGHT) | static_cast<uint32_t>(ch[3] & 0xFF);
+    if (useHDRSource) {
+        bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF) << TWENTY_FOUR) |
+                     (static_cast<uint32_t>(ch[2] & 0xFF) << SIXTEEN) | (static_cast<uint32_t>(ch[1] & 0xFF) << EIGHT) |
+                     static_cast<uint32_t>(ch[0] & 0xFF);
     }
     if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
         return K_PUSH_DATA_EOS;
     }
     return static_cast<int32_t>(SendData(bufferSize, index, buffer));
-}
-
-int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
-{
-    if (PushDataHandleEarlyEos(index, buffer)) {
-        return K_PUSH_DATA_EOS;
-    }
-    if (useH264LengthPrefixed) {
-        return PushDataLengthPrefixedPath(index, buffer);
-    }
-    return PushDataAnnexBOrMpeg2Path(index, buffer);
 }
 
 int32_t VDecAPI11Sample::CheckAndReturnBufferSize(OH_AVBuffer* buffer)
@@ -972,38 +692,26 @@ int32_t VDecAPI11Sample::CheckAndReturnBufferSize(OH_AVBuffer* buffer)
     return size;
 }
 
-void VDecAPI11Sample::SetAttr(OH_AVCodecBufferAttr& attr, int64_t startPts, uint32_t bufferSize)
-{
-    attr.pts = startPts;
-    attr.size = bufferSize;
-    attr.offset = 0;
-}
-
-void VDecAPI11Sample::SetRepeat()
-{
-    inFile_->clear();
-    inFile_->seekg(0, ios::beg);
-    finishLastPush = false;
-    cout << "repeat" << endl;
-}
-
 uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuffer* buffer)
 {
     OH_AVCodecBufferAttr attr;
-    uint8_t* fileBuffer = nullptr;
-    if (bufferSize > 0) {
-        fileBuffer = new uint8_t[bufferSize];
-    } else {
+    uint8_t* fileBuffer = new uint8_t[bufferSize + START_CODE_SIZE];
+    if (fileBuffer == nullptr) {
+        delete[] fileBuffer;
         return K_PUSH_DATA_RETRY;
     }
-    if ((pPrereadBuffer_ == prereadBufferSize_ && inFile_->eof()) || (useH264LengthPrefixed && inFile_->eof())) {
-        finishLastPush = true;
-    }
-    if (SecureMemcpy(fileBuffer, bufferSize, mpegUnit_->data(), bufferSize) != EOK) {
+    if (SecureMemcpy(fileBuffer, bufferSize + START_CODE_SIZE, START_CODE, START_CODE_SIZE) != EOK) {
         cout << "Fatal: memory copy failed" << endl;
     }
+    (void)inFile_->read(reinterpret_cast<char*>(fileBuffer) + START_CODE_SIZE, bufferSize);
+    if ((fileBuffer[START_CODE_SIZE] & H264_NALU_TYPE) == SPS ||
+        (fileBuffer[START_CODE_SIZE] & H264_NALU_TYPE) == PPS) {
+        attr.flags = AVCODEC_BUFFER_FLAGS_CODEC_DATA;
+    } else {
+        attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
+    }
     int32_t size = CheckAndReturnBufferSize(buffer);
-    if (size < bufferSize) {
+    if (size < static_cast<int32_t>(bufferSize + START_CODE_SIZE)) {
         delete[] fileBuffer;
         return K_PUSH_DATA_RETRY;
     }
@@ -1014,12 +722,14 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
         delete[] fileBuffer;
         return K_PUSH_DATA_RETRY;
     }
-    if (SecureMemcpy(avBuffer, size, fileBuffer, bufferSize) != EOK) {
+    if (SecureMemcpy(avBuffer, size, fileBuffer, bufferSize + START_CODE_SIZE) != EOK) {
         delete[] fileBuffer;
         return K_PUSH_DATA_RETRY;
     }
     int64_t startPts = GetSystemTimeUs();
-    SetAttr(attr, startPts, bufferSize);
+    attr.pts = startPts;
+    attr.size = bufferSize + START_CODE_SIZE;
+    attr.offset = 0;
     if (isRunning_.load()) {
         OH_AVBuffer_SetBufferAttr(buffer, &attr);
         OH_VideoDecoder_PushInputBuffer(vdec_, index) == AV_ERR_OK ? (0) : (errCount++);
@@ -1031,9 +741,6 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
         }
     }
     delete[] fileBuffer;
-    if (inFile_->eof() && finishLastPush && repeatRun) {
-        SetRepeat();
-    }
     return K_PUSH_DATA_OK;
 }
 
