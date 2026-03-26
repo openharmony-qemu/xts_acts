@@ -2368,6 +2368,23 @@ export default function avRecorderTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_0100 end');
       done();
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PICKERMODE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PICKERMODE_static_0100
+     * @tc.desc   PickerMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PICKERMODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.PickerMode.WINDOW_ONLY)).assertEqual(0);
+      expect(Number(media.PickerMode.SCREEN_ONLY)).assertEqual(1);
+      expect(Number(media.PickerMode.SCREEN_AND_WINDOW)).assertEqual(2);
+      expect(Number(media.AacProfile.AAC_LC)).assertEqual(0);
+      expect(Number(media.AacProfile.AAC_HE)).assertEqual(1);
+      expect(Number(media.AacProfile.AAC_HE_V2)).assertEqual(2);
+      done();
+    });
   })
 }
 

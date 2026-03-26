@@ -440,6 +440,30 @@ export default function SecurityCryptoFwX963TestUnit() {
         }
         done();
       });
+    
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_X963_Func_1800
+     * @tc.number SUB_Security_CryptoFramework_X963_Func_1800
+     * @tc.desc   algorithm is kdf X963
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_X963_Func_1800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let z: string = "0000000000000000";
+          let info: string = "00000000";
+          let digestAlgName: string = "SHA3-224";
+          let keySize: number = 16;
+          let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
+          JsX963KdfSync(digestAlgName, kdfSpec);
+        } catch (error) {
+          console.error(`X963 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        done();
+      });
 
   });
 }

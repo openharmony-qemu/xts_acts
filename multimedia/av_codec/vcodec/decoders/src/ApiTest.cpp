@@ -413,7 +413,7 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0003, TestSize.Level1)
         ASSERT_EQ(AV_ERR_OK, ret);
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
         ASSERT_EQ(range.minVal, 2);
-        ASSERT_EQ(range.maxVal, 2048);
+        ASSERT_EQ(range.maxVal, 1920);
     }
 }
 

@@ -36,7 +36,7 @@ export default function abilityTest() {
         let event: KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:Action.UP, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
 
         let deviceInfo: avSession.DeviceInfo = {
-            castCategory: 0 as avSession.AVCastCategory,
+            castCategory: avSession.AVCastCategory.fromValue(0),
             deviceId: "deviceId",
             deviceName: "deviceName",
             deviceType: avSession.DeviceType.DEVICE_TYPE_LOCAL
@@ -48,11 +48,11 @@ export default function abilityTest() {
             bufferArr.fill(3, 0, 95);
             let opts: image.InitializationOptions = {
                 editable: true,
-                pixelFormat: 3 as image.PixelMapFormat,
+                pixelFormat: image.PixelMapFormat.fromValue(3),
                 size: {
                     height: 4, width: 6
                 },
-                alphaType: 3 as image.AlphaType
+                alphaType: image.AlphaType.fromValue(3)
             };
             return image.createPixelMap(color, opts);
         }
@@ -928,12 +928,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PLAY) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PLAY);
+                console.info('TestLog: Get State successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -965,12 +962,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.speed === 2.6) {
-                    console.info('TestLog: Get speed successfully');
-                } else {
-                    console.info('TestLog: Get speed failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:speed = ${data.speed}`);
+                expect(data.speed).assertEqual(2.6);
+                console.info('TestLog: Get speed successfully');
             } catch (err) {
                 console.info(`TestLog: Get speed error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1004,12 +998,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.position?.elapsedTime === 10) {
-                    console.info('TestLog: Get position successfully');
-                } else {
-                    console.info('TestLog: Get position failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:position = ${data.position?.elapsedTime}`);
+                expect(data.position?.elapsedTime).assertEqual(10);
+                console.info('TestLog: Get position successfully');
             } catch (err) {
                 console.info(`TestLog: Get position error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1041,12 +1032,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.bufferedTime === 1000) {
-                    console.info('TestLog: Get bufferedTime successfully');
-                } else {
-                    console.info('TestLog: Get bufferedTime failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:bufferedTime = ${data.bufferedTime}`);
+                expect(data.bufferedTime).assertEqual(1000);
+                console.info('TestLog: Get bufferedTime successfully');
             } catch (err) {
                 console.info(`TestLog: Get bufferedTime error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1078,12 +1066,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.loopMode === avSession.LoopMode.LOOP_MODE_SEQUENCE) {
-                    console.info('TestLog: Get loopMode successfully');
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(avSession.LoopMode.LOOP_MODE_SEQUENCE);
+                console.info('TestLog: Get loopMode successfully');
             } catch (err) {
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1115,12 +1100,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.loopMode === avSession.LoopMode.LOOP_MODE_SINGLE) {
-                    console.info('TestLog: Get loopMode successfully');
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(avSession.LoopMode.LOOP_MODE_SINGLE);
+                console.info('TestLog: Get loopMode successfully');
             } catch (err) {
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1152,12 +1134,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.loopMode === avSession.LoopMode.LOOP_MODE_LIST) {
-                    console.info('TestLog: Get loopMode successfully');
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(avSession.LoopMode.LOOP_MODE_LIST);
+                console.info('TestLog: Get loopMode successfully');
             } catch (err) {
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1189,12 +1168,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.loopMode === avSession.LoopMode.LOOP_MODE_SHUFFLE) {
-                    console.info('TestLog: Get loopMode successfully');
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(avSession.LoopMode.LOOP_MODE_SHUFFLE);
+                console.info('TestLog: Get loopMode successfully');
             } catch (err) {
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1226,12 +1202,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.isFavorite === true) {
-                    console.info('TestLog: Get isFavorite successfully');
-                } else {
-                    console.info('TestLog: Get isFavorite failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:isFavorite = ${data.isFavorite}`);
+                expect(data.isFavorite).assertEqual(true);
+                console.info('TestLog: Get isFavorite successfully');
             } catch (err) {
                 console.info(`TestLog: Get isFavorite error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1263,12 +1236,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_INITIAL) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_INITIAL);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1300,12 +1270,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PREPARE) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PREPARE);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1337,12 +1304,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_PAUSE) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PAUSE);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1374,12 +1338,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_FAST_FORWARD) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_FAST_FORWARD);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1411,12 +1372,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_REWIND) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_REWIND);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1448,12 +1406,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_STOP) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_STOP);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1485,12 +1440,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_IDLE) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_IDLE);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1522,12 +1474,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.state === avSession.PlaybackState.PLAYBACK_STATE_BUFFERING) {
-                    console.info('TestLog: Get State successfully');
-                } else {
-                    console.info('TestLog: Get State failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:state = ${data.state}`);
+                expect(data.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_BUFFERING);
+                console.info('TestLog: Get state successfully');
             } catch (err) {
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1559,12 +1508,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.loopMode === avSession.LoopMode.LOOP_MODE_CUSTOM) {
-                    console.info('TestLog: Get loopMode successfully');
-                } else {
-                    console.info('TestLog: Get loopMode failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:loopMode = ${data.loopMode}`);
+                expect(data.loopMode).assertEqual(avSession.LoopMode.LOOP_MODE_CUSTOM);
+                console.info('TestLog: Get loopMode successfully');
             } catch (err) {
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1596,12 +1542,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.maxVolume === PlaybackState.maxVolume) {
-                    console.info('TestLog: Get maxVolume successfully');
-                } else {
-                    console.info('TestLog: Get maxVolume failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:maxVolume = ${data.maxVolume}`);
+                expect(data.maxVolume).assertEqual(PlaybackState.maxVolume);
+                console.info('TestLog: Get maxVolume successfully');
             } catch (err) {
                 console.info(`TestLog: Get maxVolume error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1633,12 +1576,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.muted === PlaybackState.muted) {
-                    console.info('TestLog: Get muted successfully');
-                } else {
-                    console.info('TestLog: Get muted failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:muted = ${data.muted}`);
+                expect(data.muted).assertEqual(PlaybackState.muted);
+                console.info('TestLog: Get muted successfully');
             } catch (err) {
                 console.info(`TestLog: Get muted error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1671,13 +1611,10 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.videoWidth === PlaybackState.videoWidth &&
-                    data.videoHeight === PlaybackState.videoHeight) {
-                    console.info('TestLog: Get videoWidth & videoHeight successfully');
-                } else {
-                    console.info('TestLog: Get videoWidth & videoHeight failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:videoWidth = ${data.videoWidth},videoHeight = ${data.videoHeight}`);
+                expect(data.videoWidth).assertEqual(PlaybackState.videoWidth);
+                expect(data.videoHeight).assertEqual(PlaybackState.videoHeight);
+                console.info('TestLog: Get videoWidth & videoHeight successfully');
             } catch (err) {
                 console.info(`TestLog: Get videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1709,12 +1646,9 @@ export default function abilityTest() {
             let data: avSession.AVPlaybackState;
             try {
                 data = await controller!.getAVPlaybackState();
-                if (data.duration === PlaybackState.duration) {
-                    console.info('TestLog: Get duration successfully');
-                } else {
-                    console.info('TestLog: Get duration failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:duration = ${data.duration}`);
+                expect(data.duration).assertEqual(PlaybackState.duration);
+                console.info('TestLog: Get duration successfully');
             } catch (err) {
                 console.info(`TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3312,14 +3246,14 @@ export default function abilityTest() {
                     } else if (value) {
                         console.info('Get device information successfully');
                         let deviceInfo = value?.devices[0]
-                        if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
-                            deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && deviceInfo.ipAddress !== undefined &&
-                            deviceInfo.providerId !== undefined && deviceInfo.supportedProtocols !== undefined && deviceInfo.authenticationStatus !== undefined) {
-                            console.info('getOutputDevice deviceInfo successfully.');
-                        } else {
-                            console.info('getOutputDevice value error.')
-                            expect(false).assertTrue();
-                        }
+                        if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&	 
+                             deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && deviceInfo.ipAddress !== undefined &&	 
+                             deviceInfo.providerId !== undefined && deviceInfo.supportedProtocols !== undefined && deviceInfo.authenticationStatus !== undefined) {	 
+                             console.info('getOutputDevice deviceInfo successfully.');	 
+                         } else {	 
+                             console.info('getOutputDevice value error.')	 
+                             expect(false).assertTrue();	 
+                         }
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
@@ -3350,10 +3284,10 @@ export default function abilityTest() {
                     } else if (value) {
                         console.info('Get device information successfully');
                         let deviceInfo = value?.devices[0]
-                        console.info(`manufacturer:${deviceInfo?.manufacturer},modelName:${deviceInfo?.modelName}`);
-                        if (deviceInfo?.manufacturer == null || deviceInfo?.modelName == null || deviceInfo?.manufacturer == undefined || deviceInfo?.modelName == undefined) {
-                            expect(false).assertTrue();
-                        }
+                        console.info(`manufacturer:${deviceInfo?.manufacturer},modelName:${deviceInfo?.modelName}`);	 
+                         if (deviceInfo?.manufacturer == null || deviceInfo?.modelName == null || deviceInfo?.manufacturer == undefined || deviceInfo?.modelName == undefined) {	 
+                             expect(false).assertTrue();	 
+                         }
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
@@ -3678,12 +3612,9 @@ export default function abilityTest() {
             let data: avSession.AVMetadata;
             try {
                 data = await controller!.getAVMetadata();
-                if (data.fastForwardSkipIntervals === metadata.fastForwardSkipIntervals) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get fastForwardSkipIntervals failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:fastForwardSkipIntervals = ${data.fastForwardSkipIntervals}`);
+                expect(data.fastForwardSkipIntervals).assertEqual(metadata.fastForwardSkipIntervals);
+                console.info('TestLog: get fastForwardSkipIntervals successfully');
             } catch (err) {
                 console.info(`TestLog: Get fastForwardSkipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3715,12 +3646,9 @@ export default function abilityTest() {
             let data: avSession.AVMetadata;
             try {
                 data = await controller!.getAVMetadata();
-                if (data.rewindSkipIntervals === metadata.rewindSkipIntervals) {
-                    expect(true).assertTrue();
-                } else {
-                    console.info('TestLog: Get rewindSkipIntervals failed');
-                    expect(false).assertTrue();
-                }
+                console.info(`TestLog:rewindSkipIntervals - ${data.rewindSkipIntervals}`);
+                expect(data.rewindSkipIntervals).assertEqual(metadata.rewindSkipIntervals);
+                console.info('TestLog: get rewindSkipIntervals successfully');
             } catch (err) {
                 console.info(`TestLog: Get rewindSkipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();

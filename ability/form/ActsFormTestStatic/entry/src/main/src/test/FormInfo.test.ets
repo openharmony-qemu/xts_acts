@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,11 +15,8 @@
 
 import { describe, it, expect, TestType, Size, Level} from '../../../hypium/index';
 import hilog from '@ohos.hilog';
-import Want from '@ohos.app.ability.Want';
 import formInfo from '@ohos.app.form.formInfo';
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
-import formHost from '@ohos.app.form.formHost';
 
 
 const DOMAIN: int = 0x0000;
@@ -41,73 +38,76 @@ export default function formInfoTest() {
             await Utils.msSleep(1000);
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest001 start');
 
-            expect(0).assertEqual(formInfo.RenderingMode.AUTO_COLOR as int);
-            expect(1).assertEqual(formInfo.RenderingMode.FULL_COLOR as int);
-            expect(2).assertEqual(formInfo.RenderingMode.SINGLE_COLOR as int);
+            expect(0).assertEqual(formInfo.RenderingMode.AUTO_COLOR);
+            expect(1).assertEqual(formInfo.RenderingMode.FULL_COLOR);
+            expect(2).assertEqual(formInfo.RenderingMode.SINGLE_COLOR);
 
-            expect(1).assertEqual(formInfo.FormType.JS as int);
-            expect(2).assertEqual(formInfo.FormType.eTS as int);
+            expect(1).assertEqual(formInfo.FormType.JS);
+            expect(2).assertEqual(formInfo.FormType.eTS);
 
-            expect(-1).assertEqual(formInfo.FormState.UNKNOWN as int);
-            expect(0).assertEqual(formInfo.FormState.DEFAULT as int);
-            expect(1).assertEqual(formInfo.FormState.READY as int);
+            expect(-1).assertEqual(formInfo.FormState.UNKNOWN);
+            expect(0).assertEqual(formInfo.FormState.DEFAULT);
+            expect(1).assertEqual(formInfo.FormState.READY);
 
-            expect('ohos.extra.param.key.form_identity').assertEqual(formInfo.FormParam.IDENTITY_KEY as string);
-            expect('ohos.extra.param.key.form_dimension').assertEqual(formInfo.FormParam.DIMENSION_KEY as string);
-            expect('ohos.extra.param.key.form_name').assertEqual(formInfo.FormParam.NAME_KEY as string);
-            expect('ohos.extra.param.key.module_name').assertEqual(formInfo.FormParam.MODULE_NAME_KEY as string);
-            expect('ohos.extra.param.key.form_width').assertEqual(formInfo.FormParam.WIDTH_KEY as string);
-            expect('ohos.extra.param.key.form_height').assertEqual(formInfo.FormParam.HEIGHT_KEY as string);
-            expect('ohos.extra.param.key.form_temporary').assertEqual(formInfo.FormParam.TEMPORARY_KEY as string);
-            expect('ohos.extra.param.key.bundle_name').assertEqual(formInfo.FormParam.BUNDLE_NAME_KEY as string);
-            expect('ohos.extra.param.key.ability_name').assertEqual(formInfo.FormParam.ABILITY_NAME_KEY as string);
-            expect('ohos.extra.param.key.form_is_theme').assertEqual(formInfo.FormParam.THEME_KEY as string);
-            expect('ohos.extra.param.key.device_id').assertEqual(formInfo.FormParam.DEVICE_ID_KEY as string);
-            expect('ohos.extra.param.key.form_launch_reason').assertEqual(formInfo.FormParam.LAUNCH_REASON_KEY as string);
-            expect('ohos.extra.param.key.form_customize').assertEqual(formInfo.FormParam.PARAM_FORM_CUSTOMIZE_KEY as string);
-            expect('ohos.extra.param.key.form_location').assertEqual(formInfo.FormParam.FORM_LOCATION_KEY as string);
-            expect('ohos.extra.param.key.form_rendering_mode').assertEqual(formInfo.FormParam.FORM_RENDERING_MODE_KEY as string);
-            expect('ohos.extra.param.key.host_bg_inverse_color').assertEqual(formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY as string);
-            expect('ohos.extra.param.key.permission_name').assertEqual(formInfo.FormParam.FORM_PERMISSION_NAME_KEY as string);
-            expect('ohos.extra.param.key.permission_granted').assertEqual(formInfo.FormParam.FORM_PERMISSION_GRANTED_KEY as string);
+            expect('ohos.extra.param.key.form_identity').assertEqual(formInfo.FormParam.IDENTITY_KEY);
+            expect('ohos.extra.param.key.form_dimension').assertEqual(formInfo.FormParam.DIMENSION_KEY);
+            expect('ohos.extra.param.key.form_name').assertEqual(formInfo.FormParam.NAME_KEY);
+            expect('ohos.extra.param.key.module_name').assertEqual(formInfo.FormParam.MODULE_NAME_KEY);
+            expect('ohos.extra.param.key.form_width').assertEqual(formInfo.FormParam.WIDTH_KEY);
+            expect('ohos.extra.param.key.form_height').assertEqual(formInfo.FormParam.HEIGHT_KEY);
+            expect('ohos.extra.param.key.form_temporary').assertEqual(formInfo.FormParam.TEMPORARY_KEY);
+            expect('ohos.extra.param.key.bundle_name').assertEqual(formInfo.FormParam.BUNDLE_NAME_KEY);
+            expect('ohos.extra.param.key.ability_name').assertEqual(formInfo.FormParam.ABILITY_NAME_KEY);
+            expect('ohos.extra.param.key.form_is_theme').assertEqual(formInfo.FormParam.THEME_KEY);
+            expect('ohos.extra.param.key.device_id').assertEqual(formInfo.FormParam.DEVICE_ID_KEY);
+            expect('ohos.extra.param.key.form_launch_reason').assertEqual(formInfo.FormParam.LAUNCH_REASON_KEY);
+            expect('ohos.extra.param.key.form_customize').assertEqual(formInfo.FormParam.PARAM_FORM_CUSTOMIZE_KEY);
+            expect('ohos.extra.param.key.form_location').assertEqual(formInfo.FormParam.FORM_LOCATION_KEY);
+            expect('ohos.extra.param.key.form_rendering_mode').assertEqual(formInfo.FormParam.FORM_RENDERING_MODE_KEY);
+            expect('ohos.extra.param.key.host_bg_inverse_color').assertEqual(formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY);
+            expect('ohos.extra.param.key.permission_name').assertEqual(formInfo.FormParam.FORM_PERMISSION_NAME_KEY);
+            expect('ohos.extra.param.key.permission_granted').assertEqual(formInfo.FormParam.FORM_PERMISSION_GRANTED_KEY);
+            expect('ohos.extra.param.key.original_form_id').assertEqual(formInfo.FormParam.ORIGINAL_FORM_KEY);
+            expect('ohos.extra.param.key.edit_form_id').assertEqual(formInfo.FormParam.EDIT_FORM_KEY);
 
-            expect(1).assertEqual(formInfo.FormDimension.Dimension_1_2 as int);
-            expect(2).assertEqual(formInfo.FormDimension.Dimension_2_2 as int);
-            expect(3).assertEqual(formInfo.FormDimension.Dimension_2_4 as int);
-            expect(4).assertEqual(formInfo.FormDimension.Dimension_4_4 as int);
-            expect(6).assertEqual(formInfo.FormDimension.DIMENSION_1_1 as int);
-            expect(7).assertEqual(formInfo.FormDimension.DIMENSION_6_4 as int);
-            expect(8).assertEqual(formInfo.FormDimension.DIMENSION_2_3 as int);
-            expect(9).assertEqual(formInfo.FormDimension.DIMENSION_3_3 as int);
+            expect(1).assertEqual(formInfo.FormDimension.Dimension_1_2);
+            expect(2).assertEqual(formInfo.FormDimension.Dimension_2_2);
+            expect(3).assertEqual(formInfo.FormDimension.Dimension_2_4);
+            expect(4).assertEqual(formInfo.FormDimension.Dimension_4_4);
+            expect(6).assertEqual(formInfo.FormDimension.DIMENSION_1_1);
+            expect(7).assertEqual(formInfo.FormDimension.DIMENSION_6_4);
+            expect(8).assertEqual(formInfo.FormDimension.DIMENSION_2_3);
+            expect(9).assertEqual(formInfo.FormDimension.DIMENSION_3_3);
 
-            expect(1).assertEqual(formInfo.FormShape.RECT as int);
-            expect(2).assertEqual(formInfo.FormShape.CIRCLE as int);
+            expect(1).assertEqual(formInfo.FormShape.RECT);
+            expect(2).assertEqual(formInfo.FormShape.CIRCLE);
 
-            expect(0).assertEqual(formInfo.VisibilityType.UNKNOWN as int);
-            expect(1).assertEqual(formInfo.VisibilityType.FORM_VISIBLE as int);
-            expect(2).assertEqual(formInfo.VisibilityType.FORM_INVISIBLE as int);
+            expect(0).assertEqual(formInfo.VisibilityType.UNKNOWN);
+            expect(1).assertEqual(formInfo.VisibilityType.FORM_VISIBLE);
+            expect(2).assertEqual(formInfo.VisibilityType.FORM_INVISIBLE);
 
-            expect(1).assertEqual(formInfo.LaunchReason.FORM_DEFAULT as int);
-            expect(2).assertEqual(formInfo.LaunchReason.FORM_SHARE as int);
+            expect(1).assertEqual(formInfo.LaunchReason.FORM_DEFAULT);
+            expect(2).assertEqual(formInfo.LaunchReason.FORM_SHARE);
+            expect(3).assertEqual(formInfo.LaunchReason.FORM_SIZE_CHANGE);
 
-            expect(0).assertEqual(formInfo.PublishFormErrorCode.SUCCESS as int);
-            expect(1).assertEqual(formInfo.PublishFormErrorCode.NO_SPACE as int);
-            expect(2).assertEqual(formInfo.PublishFormErrorCode.PARAM_ERROR as int);
-            expect(3).assertEqual(formInfo.PublishFormErrorCode.INTERNAL_ERROR as int);
+            expect(0).assertEqual(formInfo.PublishFormErrorCode.SUCCESS);
+            expect(1).assertEqual(formInfo.PublishFormErrorCode.NO_SPACE);
+            expect(2).assertEqual(formInfo.PublishFormErrorCode.PARAM_ERROR);
+            expect(3).assertEqual(formInfo.PublishFormErrorCode.INTERNAL_ERROR);
 
-            expect(0).assertEqual(formInfo.FormUsageState.USED as int);
-            expect(1).assertEqual(formInfo.FormUsageState.UNUSED as int);
+            expect(0).assertEqual(formInfo.FormUsageState.USED);
+            expect(1).assertEqual(formInfo.FormUsageState.UNUSED);
 
-            expect(-1).assertEqual(formInfo.FormLocation.OTHER as int);
-            expect(0).assertEqual(formInfo.FormLocation.DESKTOP as int);
-            expect(1).assertEqual(formInfo.FormLocation.FORM_CENTER as int);
-            expect(2).assertEqual(formInfo.FormLocation.FORM_MANAGER as int);
-            expect(3).assertEqual(formInfo.FormLocation.NEGATIVE_SCREEN as int);
-            expect(4).assertEqual(formInfo.FormLocation.FORM_CENTER_NEGATIVE_SCREEN as int);
-            expect(5).assertEqual(formInfo.FormLocation.FORM_MANAGER_NEGATIVE_SCREEN as int);
-            expect(6).assertEqual(formInfo.FormLocation.SCREEN_LOCK as int);
-            expect(7).assertEqual(formInfo.FormLocation.AI_SUGGESTION as int);
-            expect(8).assertEqual(formInfo.FormLocation.STANDBY as int);
+            expect(-1).assertEqual(formInfo.FormLocation.OTHER);
+            expect(0).assertEqual(formInfo.FormLocation.DESKTOP);
+            expect(1).assertEqual(formInfo.FormLocation.FORM_CENTER);
+            expect(2).assertEqual(formInfo.FormLocation.FORM_MANAGER);
+            expect(3).assertEqual(formInfo.FormLocation.NEGATIVE_SCREEN);
+            expect(4).assertEqual(formInfo.FormLocation.FORM_CENTER_NEGATIVE_SCREEN);
+            expect(5).assertEqual(formInfo.FormLocation.FORM_MANAGER_NEGATIVE_SCREEN);
+            expect(6).assertEqual(formInfo.FormLocation.SCREEN_LOCK);
+            expect(7).assertEqual(formInfo.FormLocation.AI_SUGGESTION);
+            expect(8).assertEqual(formInfo.FormLocation.STANDBY);
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest001 end');
@@ -131,8 +131,8 @@ export default function formInfoTest() {
                 supportedDimensions: [1,2,3,4],
                 supportedShapes: [1,2,3,4,5],
             }
-            expect('bundle').assertEqual(formInfoFilterFo.bundleName as string);
-            expect('module').assertEqual(formInfoFilterFo.moduleName as string);
+            expect('bundle').assertEqual(formInfoFilterFo.bundleName);
+            expect('module').assertEqual(formInfoFilterFo.moduleName);
             expect(JSON.stringify([1,2,3,4])).assertEqual(JSON.stringify(formInfoFilterFo.supportedDimensions));
             expect(JSON.stringify([1,2,3,4,5])).assertEqual(JSON.stringify(formInfoFilterFo.supportedShapes));
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest002 assert FormStateInfo');
@@ -140,8 +140,8 @@ export default function formInfoTest() {
                 formState: formInfo.FormState.DEFAULT,
                 want: { bundleName: 'bundleName' },
             }
-            expect(0).assertEqual(formStateFo.formState as int);
-            expect('bundleName').assertEqual(formStateFo.want.bundleName as string);
+            expect(0).assertEqual(formStateFo.formState);
+            expect('bundleName').assertEqual(formStateFo.want.bundleName);
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest002 assert FormProviderFilter');
             let formProviderFilterFo: formInfo.FormProviderFilter = {
                 bundleName: 'bundleName',
@@ -150,18 +150,18 @@ export default function formInfoTest() {
                 abilityName: 'abilityName',
                 isUnusedIncluded: false,
             }
-            expect('bundleName').assertEqual(formProviderFilterFo.bundleName as string);
-            expect('formName').assertEqual(formProviderFilterFo.formName as string);
-            expect('moduleName').assertEqual(formProviderFilterFo.moduleName as string);
-            expect('abilityName').assertEqual(formProviderFilterFo.abilityName as string);
+            expect('bundleName').assertEqual(formProviderFilterFo.bundleName);
+            expect('formName').assertEqual(formProviderFilterFo.formName);
+            expect('moduleName').assertEqual(formProviderFilterFo.moduleName);
+            expect('abilityName').assertEqual(formProviderFilterFo.abilityName);
             expect(false).assertEqual(formProviderFilterFo.isUnusedIncluded as boolean);
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest002 assert PublishFormResult');
             let publishFormResultFo: formInfo.PublishFormResult = {
                 code: formInfo.PublishFormErrorCode.INTERNAL_ERROR,
                 message: 'message',
             }
-            expect(3).assertEqual(publishFormResultFo.code as int);
-            expect('message').assertEqual(publishFormResultFo.message as string);
+            expect(3).assertEqual(publishFormResultFo.code);
+            expect('message').assertEqual(publishFormResultFo.message);
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest002 end');
         })
@@ -182,8 +182,8 @@ export default function formInfoTest() {
                 formState: formInfo.FormState.UNKNOWN,
                 want: { bundleName: 'bundleName' },
             }
-            expect(-1).assertEqual(formStateFo.formState as int);
-            expect('bundleName').assertEqual(formStateFo.want.bundleName as string);
+            expect(-1).assertEqual(formStateFo.formState);
+            expect('bundleName').assertEqual(formStateFo.want.bundleName);
 
             let formInfoFilterFo: formInfo.FormInfoFilter = {
                 bundleName: 'bundleName',
@@ -191,8 +191,8 @@ export default function formInfoTest() {
                 supportedDimensions: [1,2,3],
                 supportedShapes: [1,2,3],
             }
-            expect('bundleName').assertEqual(formInfoFilterFo.bundleName as string);
-            expect('moduleName').assertEqual(formInfoFilterFo.moduleName as string);
+            expect('bundleName').assertEqual(formInfoFilterFo.bundleName);
+            expect('moduleName').assertEqual(formInfoFilterFo.moduleName);
             expect(JSON.stringify([1,2,3])).assertEqual(JSON.stringify(formInfoFilterFo.supportedDimensions));
             expect(JSON.stringify([1,2,3])).assertEqual(JSON.stringify(formInfoFilterFo.supportedShapes));
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 assert publishFormResultFo');
@@ -200,8 +200,8 @@ export default function formInfoTest() {
                 code: formInfo.PublishFormErrorCode.SUCCESS,
                 message: 'message',
             }
-            expect(0).assertEqual(publishFormResultFo.code as int);
-            expect('message').assertEqual(publishFormResultFo.message as string);
+            expect(0).assertEqual(publishFormResultFo.code);
+            expect('message').assertEqual(publishFormResultFo.message);
 
             let formProviderFilterFo: formInfo.FormProviderFilter = {
                 bundleName: 'bundleName',
@@ -210,14 +210,76 @@ export default function formInfoTest() {
                 abilityName: 'abilityName',
                 isUnusedIncluded: true,
             }
-            expect('bundleName').assertEqual(formProviderFilterFo.bundleName as string);
-            expect('formName').assertEqual(formProviderFilterFo.formName as string);
-            expect('moduleName').assertEqual(formProviderFilterFo.moduleName as string);
-            expect('abilityName').assertEqual(formProviderFilterFo.abilityName as string);
-            expect(true).assertEqual(formProviderFilterFo.isUnusedIncluded as boolean);
+            expect('bundleName').assertEqual(formProviderFilterFo.bundleName);
+            expect('formName').assertEqual(formProviderFilterFo.formName);
+            expect('moduleName').assertEqual(formProviderFilterFo.moduleName);
+            expect('abilityName').assertEqual(formProviderFilterFo.abilityName);
+            expect(true).assertEqual(formProviderFilterFo.isUnusedIncluded);
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 end');
+        })
+
+        /**
+         * @tc.name   FormInfoStaticTest004
+         * @tc.number FormInfoStaticTest004
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 start');
+            let formInfoFo: formInfo.FormInfo = {
+                bundleName: 'bundleName',
+                name: 'name',
+                moduleName: 'moduleName',
+                abilityName: 'abilityName',
+                displayName: 'displayName',
+                displayNameId: 123,
+                description: 'description',
+                descriptionId: 123,
+                type: formInfo.FormType.JS,
+                jsComponentName: 'jsComponentName',
+                isDefault: true,
+                updateEnabled: false,
+                formVisibleNotify: true,
+                scheduledUpdateTime: 'scheduledUpdateTime',
+                formConfigAbility: 'formConfigAbility',
+                updateDuration: 123,
+                defaultDimension: 123,
+                supportDimensions: {},
+                customizeData: {
+                    'name': 'name',
+                    'bundleName': 'bundleName'
+                },
+                isDynamic: true,
+                transparencyEnabled: false,
+                supportedShapes: {}
+            }
+            expect('moduleName').assertEqual(formInfoFo.moduleName as string);
+            expect('abilityName').assertEqual(formInfoFo.abilityName as string);
+            expect('displayName').assertEqual(formInfoFo.displayName as string);
+            expect('description').assertEqual(formInfoFo.description as string);
+            expect('jsComponentName').assertEqual(formInfoFo.jsComponentName as string);
+            expect('scheduledUpdateTime').assertEqual(formInfoFo.scheduledUpdateTime as string);
+            expect('formConfigAbility').assertEqual(formInfoFo.formConfigAbility as string);
+            expect(123).assertEqual(formInfoFo.displayNameId);
+            expect(123).assertEqual(formInfoFo.descriptionId);
+            expect(123).assertEqual(formInfoFo.updateDuration);
+            expect(123).assertEqual(formInfoFo.defaultDimension);
+            expect(formInfo.FormType.JS).assertEqual(formInfoFo.type);
+            expect(0).assertEqual(formInfoFo.supportDimensions.length);
+            expect('bundleName').assertEqual(formInfoFo.customizeData['bundleName'] as string);
+            expect(0).assertEqual(formInfoFo.supportedShapes.length);
+            expect(false).assertEqual(formInfoFo.transparencyEnabled as boolean);
+            expect(true).assertEqual(formInfoFo.isDynamic as boolean);
+            expect(true).assertEqual(formInfoFo.formVisibleNotify as boolean);
+            expect(true).assertEqual(formInfoFo.isDefault as boolean);
+            expect(false).assertEqual(formInfoFo.updateEnabled as boolean);
+            done();
+            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 end');
         })
     })
 }

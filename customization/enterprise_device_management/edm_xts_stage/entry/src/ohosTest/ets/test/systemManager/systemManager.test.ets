@@ -14,11 +14,12 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, INVALID_USER_ID } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import systemManager from '@ohos.enterprise.systemManager';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 export default function systemManagerTest() {
   describe('systemManager_test', () => {
@@ -41,6 +42,10 @@ export default function systemManagerTest() {
     testGetKeyEventPolicies();
     testStartCollectLog();
     testFinishLogCollected();
+    testSetActivationLockDisabled();
+    testIsActivationLockDisabled();
+    testSetInstallLocalEnterpriseAppEnabledForAccount();
+    testGetInstallLocalEnterpriseAppEnabledForAccount();
   })
 }
 
@@ -1743,6 +1748,27 @@ function testGetInstallLocalEnterpriseAppEnabled() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_is_install_local_enterprise_app_enable_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0005
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabled with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_install_local_enterprise_app_enable_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(null);
+      expect(isDisallow).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testAddKeyEventPolicies() {
@@ -3153,6 +3179,798 @@ function testFinishLogCollected() {
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   setOtaUpdatePolicy_test_004_1
+   * @tc.number setOtaUpdatePolicy_test_004_1
+   * @tc.desc   setOtaUpdatePolicy with disableSystemOtaUpdate is false policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setOtaUpdatePolicy_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let policy: systemManager.OtaUpdatePolicy = {
+      "policyType": systemManager.PolicyType.DEFAULT,
+      "version": UPDATE_VERSION,
+      "disableSystemOtaUpdate": false
+    }
+    try {
+      let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- setOtaUpdatePolicy_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   notifyUpdatePackages_test_004_1
+   * @tc.number notifyUpdatePackages_test_004_1
+   * @tc.desc   notifyUpdatePackages with [] parameter packages
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("notifyUpdatePackages_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let notify: systemManager.NotifyDescription = {
+      "installTips": "installTips",
+      "installTipsDetail": "installTips detail"
+    }
+    let description: systemManager.PackageDescription = {
+      "notify": notify,
+    }
+    let updatePackageInfo: systemManager.UpdatePackageInfo = {
+      "version": UPDATE_VERSION,
+      "packages": [],
+      "description": description,
+      "authInfo": "invalid authinfo",
+    };
+    await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(() => {
+      expect(false).assertTrue();
+    }).catch((error: BusinessError) => {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201004).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    });
+    done();
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   addKeyEventPolicies_test_004_1
+   * @tc.number addKeyEventPolicies_test_004_1
+   * @tc.desc   addKeyEventPolicies with [] parameter keyPolicies
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.addKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- addKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   removeKeyEventPolicies_test_004_1
+   * @tc.number removeKeyEventPolicies_test_004_1
+   * @tc.desc   removeKeyEventPolicies with [] parameter keyCodes
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeKeyEventPolicies_test_004  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.removeKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- removeKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- removeKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
+}
+
+function testSetActivationLockDisabled() {
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager setActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager setActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0003
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0003
+  * @tc.desc   test systemManager setActivationLockDisabled true with credential is null
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }   
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0004
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0004
+  * @tc.desc   test systemManager setActivationLockDisabled true with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "test";
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+        if (info == "true") {
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201011).assertTrue();
+          }
+        } else {
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201012).assertTrue();
+          }
+        }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0005
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0005
+  * @tc.desc   test systemManager setActivationLockDisabled false with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, false, "").then(()=>{
+      if (info == "true") {
+        expect(true).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    }).catch ((error: BusinessError)=> {
+      if (info == "true") {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201012).assertTrue();
+        }
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testIsActivationLockDisabled() {
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager IsActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager IsActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testSetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0001
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0002
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0003
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(INVALID_WANT, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0004
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0004", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(null, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0005
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0005", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(undefined, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0006
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with null isEnable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, null, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0007
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with undefined isEnable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, undefined, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0008
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0009
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0010
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(result).assertTrue();
+
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, false, DEFAULT_USER_ID);
+      result = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(result).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_enabled_for_account_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0011
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_enabled_for_account_0011", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, INVALID_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0001
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0002
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0003
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(INVALID_WANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0004
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(null, DEFAULT_USER_ID);
+      expect(result).assertFalse();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0005
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0005", Level.LEVEL2, async (done: Function) => {
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(undefined, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0006
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0007
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0008
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(result).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_enabled_for_account_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_FOR_ACCOUNT_JS_0009
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_enabled_for_account_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, INVALID_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

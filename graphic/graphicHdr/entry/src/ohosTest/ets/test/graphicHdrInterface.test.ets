@@ -15,6 +15,7 @@
 import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
 import { BusinessError } from '@ohos.base';
 import { hdrCapability } from '@kit.ArkGraphics2D';
+import uiEffect from "@ohos.graphics.uiEffect"
 
 export default function graphicHdrInterfaceTest() {
   describe('graphicHdrInterfaceTest', (done:Function)=> {
@@ -42,6 +43,7 @@ export default function graphicHdrInterfaceTest() {
         expect(hdrCapability.HDRFormat.IMAGE_HDR_VIVID_SINGLE == 5).assertTrue()
         expect(hdrCapability.HDRFormat.IMAGE_HDR_ISO_DUAL == 6).assertTrue()
         expect(hdrCapability.HDRFormat.IMAGE_HDR_ISO_SINGLE == 7).assertTrue()
+        expect(hdrCapability.HDRFormat.VIDEO_AIHDR === 8).assertTrue()
         done()
       } catch (err) {
         console.log(msg + " Faild in hdrCapability.HDRFormat " + JSON.stringify(err))
@@ -50,5 +52,53 @@ export default function graphicHdrInterfaceTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   testHdrBrightnessRatio_noPermissions
+     * @tc.number testHdrBrightnessRatio_noPermissions
+     * @tc.desc   Filter testHdrBrightnessRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHdrBrightnessRatio_noPermissions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr = " =====www data testHdrBrightnessRatio_noPermissions==== "
+      try {
+        let filter : uiEffect.Filter = uiEffect.createFilter()
+        console.log(msgStr + " Succeed in uiEffect.createFilter ")
+        expect(filter !== undefined).assertTrue();
+        try {
+          let ratio = filter.hdrBrightnessRatio(2.0)
+          console.info(msgStr + 'success ratio 111', JSON.stringify(ratio));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 111', JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+        }
+        try {
+          let ratio = filter.hdrBrightnessRatio(null)
+          console.info(msgStr + 'success ratio 222', JSON.stringify(ratio));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 222', JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+        }
+        try {
+          let ratio = filter.hdrBrightnessRatio(undefined)
+          console.info(msgStr + 'success ratio 333', JSON.stringify(ratio));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 333', JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+        }
+        done()
+      } catch (err) {
+        console.log(msgStr + " Failed in uiEffect.createFilter 444 " + JSON.stringify(err))
+        console.log(msgStr + " Failed in uiEffect.createFilter 444 " + err)
+        expect().assertFail()
+        done()
+      }
+    })
+
   })
 }

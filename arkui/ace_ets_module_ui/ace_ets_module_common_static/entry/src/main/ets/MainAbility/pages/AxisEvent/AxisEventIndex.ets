@@ -35,21 +35,21 @@ struct AxisEventIndex {
     Column() {
       Scroll() {
         Column() {
-          Text('item_0').width('100%').height(60);
-          Text('item_1').width('100%').height(60);
-          Text('item_2').width('100%').height(60);
-          Text('item_3').width('100%').height(60);
-          Text('item_4').width('100%').height(60);
-          Text('item_5').width('100%').height(60);
-          Text('item_6').width('100%').height(60);
-          Text('item_7').width('100%').height(60);
-          Text('item_8').width('100%').height(60);
-          Text('item_9').width('100%').height(60);
+          Text('item_0').width('100%').height('15%');
+          Text('item_1').width('100%').height('15%');
+          Text('item_2').width('100%').height('15%');
+          Text('item_3').width('100%').height('15%');
+          Text('item_4').width('100%').height('15%');
+          Text('item_5').width('100%').height('15%');
+          Text('item_6').width('100%').height('15%');
+          Text('item_7').width('100%').height('15%');
+          Text('item_8').width('100%').height('15%');
+          Text('item_9').width('100%').height('15%');
         }
       }
       .id('axisEventList')
       .width('100%')
-      .height(200)
+      .height('30%')
       .onAxisEvent((event: AxisEvent) => {
         try {
           this.hasAxisStatus = event.hasAxis(AxisType.VERTICAL_AXIS) ? 'hasAxis_ok' : 'hasAxis_fail';
@@ -58,7 +58,7 @@ struct AxisEventIndex {
         }
       });
 
-      Text(this.hasAxisStatus).key('axisEventHasAxisStatus');
+      Text(this.hasAxisStatus).key('axisEventHasAxisStatus').height('5%');
     }
     .width('100%')
     .height('100%');

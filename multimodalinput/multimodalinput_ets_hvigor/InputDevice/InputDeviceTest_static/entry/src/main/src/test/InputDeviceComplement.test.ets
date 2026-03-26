@@ -1006,7 +1006,5 @@ export default function InputDeviceComplementTest() {
         }
         hilog.info(domain, tag, `${caseName} leave`);
       });
-
   })
-
 }

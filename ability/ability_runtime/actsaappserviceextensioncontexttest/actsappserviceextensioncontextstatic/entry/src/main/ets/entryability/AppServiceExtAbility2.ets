@@ -37,6 +37,11 @@ class AppServiceExtAbility2 extends AppServiceExtensionAbility {
   }
   onRequest(want: Want, startId: int) {
     hilog.info(DOMAIN, TAG, `AppServiceExtAbility2 onRequest`);
+    try { 
+      this.context.terminateSelf(); 
+    } catch (err) {
+      hilog.info(0x0000, 'testTag', '%{public}s', `AppServiceExtensionAbility terminateSelf error: ${JSON.stringify(err)}`);
+    }
   }
   onConnect(want: Want): rpc.RemoteObject {
     hilog.info(DOMAIN, TAG, `AppServiceExtAbility2 onConnect`);

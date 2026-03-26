@@ -15,6 +15,7 @@
 import osaccount from '@ohos.account.osAccount'
 import bundle from '@ohos.bundle'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 export default function ActsOsAccountThirdPartyTest_third_2() {
     describe('ActsOsAccountThirdPartyTest_third_2', function () {
@@ -25,7 +26,7 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             for (let i = 0; i < accounts.length; i++) {
                 var localId = accounts[i].localId
                 if (localId != 100) {
-                    await osAccountManager.removeOsAccount(localId)
+                    await RemoveAccount(localId)
                 }
             }
             done();
@@ -416,6 +417,11 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             }
             osAccountManager.createOsAccount("osAccountNameIdSerialA", osaccount.OsAccountType.NORMAL, (err, data) => {
                 console.info("====>create os account err: " + JSON.stringify(err));
+                if (err && err.code === 204) {
+                    console.info("====>Current device need token to use API: createOsAccount");
+                    done();
+                    return;
+                }
                 console.info("====>create os account OsAccountInfo: " + JSON.stringify(data));
                 expect(err).assertEqual(null);
                 expect(data.localName).assertEqual("osAccountNameIdSerialA");
@@ -485,7 +491,12 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
                 done();
                 return;
             }
-            var OsAccountInfo = await osAccountManager.createOsAccount("accountIdSerialB", osaccount.OsAccountType.GUEST);
+            let options = {
+                shortName: "get0600",
+                disallowedPreinstalledBundles: [],
+                allowedPreinstalledBundles: []
+            }
+            var OsAccountInfo = await CreateAccount("accountIdSerialB", osaccount.OsAccountType.GUEST, options);
             console.info("====>create os account OsAccountInfo: " + JSON.stringify(OsAccountInfo));
             expect(OsAccountInfo.localName).assertEqual("accountIdSerialB");
             localId = OsAccountInfo.localId;
@@ -497,7 +508,7 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             var getlocalId = await osAccountManager.getOsAccountLocalIdBySerialNumber(serialNumber);
             console.info("====>get localId:" + getlocalId + " by serialNumber: " + serialNumber);
             expect(getlocalId).assertEqual(localId);
-            await osAccountManager.removeOsAccount(localId);
+            await RemoveAccount(localId);
             console.info("====>ActsOsAccountLocalIdSerial_0600 end====");
             done();
         });
@@ -536,6 +547,11 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
                 obtainCount = data;
                 osAccountManager.createOsAccount("osAccountNameIdSerialE", osaccount.OsAccountType.NORMAL, (err, data) => {
                     console.info("====>create first os account err: " + JSON.stringify(err));
+                    if (err && err.code === 204) {
+                        console.info("====>Current device need token to use API: createOsAccount");
+                        done();
+                        return;
+                    }
                     console.info("====>create first os account OsAccountInfo: " + JSON.stringify(data));
                     localIdFir = data.localId;
                     expect(err).assertEqual(null);
@@ -585,9 +601,14 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
                 done();
                 return;
             }
+            let options = {
+                shortName: "get0200",
+                disallowedPreinstalledBundles: [],
+                allowedPreinstalledBundles: []
+            }
             var obtainCount = await osAccountManager.getCreatedOsAccountsCount();
             console.info("====>obtains the number of all os accounts created:" + obtainCount);
-            var osAccountFir = await osAccountManager.createOsAccount("osAccountIdSerialG", osaccount.OsAccountType.NORMAL);
+            var osAccountFir = await CreateAccount("osAccountIdSerialG", osaccount.OsAccountType.NORMAL, options);
             console.info("====>create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
             var localIdFir = osAccountFir.localId;
             expect(osAccountFir.localName).assertEqual("osAccountIdSerialG");
@@ -595,7 +616,7 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             console.info("====>obtains the number of all os accounts created count:" + countFir);
             countFir = countFir - 1;
             expect(countFir).assertEqual(obtainCount);
-            await osAccountManager.removeOsAccount(localIdFir);
+            await RemoveAccount(localIdFir);
             console.info("====>remove localId: " + localIdFir);
             var countSec = await osAccountManager.getCreatedOsAccountsCount();
             console.info("====>obtains the number accounts created count:" + countSec);

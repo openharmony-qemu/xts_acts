@@ -24,7 +24,10 @@ import {
   Button,
   Text,
   FlexAlign,
-  CustomPopupOptions
+  CustomPopupOptions,
+  HorizontalAlign,
+  ColumnOptions,
+  TextOverflow
 } from '@ohos.arkui.component'
 import { AvoidanceMode } from '@kit.ArkUI';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -43,8 +46,8 @@ struct CustomPopupOptionsIndex {
   @Builder
   buildPopupContent() {
     Column() {
-      Text('Custom Popup Content')
-        .fontSize(24)
+      Text('Pop')
+        .fontSize(12)
         .key('customPopupContentNew')
     }
     .width(200)
@@ -62,11 +65,13 @@ struct CustomPopupOptionsIndex {
   }
 
   build() {
-    Column() {
-      Button('Open Custom Popup')
+    Column({ space: 4 } as ColumnOptions) {
+      Button('C-Popup')
         .id('btnOpenCustomPopupNew')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(10)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
         .bindPopup(this.showBindPopup, {
           builder: this.buildPopupContent,
           avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
@@ -96,31 +101,53 @@ struct CustomPopupOptionsIndex {
 
       Text(this.openPopupResult)
         .key('openPopupResultCustom')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillAppearResult)
         .key('onWillAppearResultCustom')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidAppearResult)
         .key('onDidAppearResultCustom')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillDisappearResult)
         .key('onWillDisappearResultCustom')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidDisappearResult)
         .key('onDidDisappearResultCustom')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

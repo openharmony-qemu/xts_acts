@@ -1317,19 +1317,23 @@ export default function TaskTimeoutTest() {
       let task4: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let terminate = false;
       let str = '';
-      taskpool.execute(task, {priority: taskpool.Priority.HIGH, timeout: 500}).catch((e:BusinessError) => {
+      let config1: taskpool.Configs = {priority: taskpool.Priority.HIGH, timeout: 500};
+      taskpool.execute(task, config1).catch((e:BusinessError) => {
         str += 'a';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task2, {priority: taskpool.Priority.MEDIUM, timeout: 500}).catch((e:BusinessError) => {
+      let config2: taskpool.Configs = {priority: taskpool.Priority.MEDIUM, timeout: 500};
+      taskpool.execute(task2, config2).catch((e:BusinessError) => {
         str += 'b';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task3, {priority: taskpool.Priority.LOW, timeout: 500}).catch((e:BusinessError) => {
+      let config3: taskpool.Configs = {priority: taskpool.Priority.LOW, timeout: 500};
+      taskpool.execute(task3, config3).catch((e:BusinessError) => {
         str += 'c';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task4, {priority: taskpool.Priority.IDLE, timeout: 500}).catch((e:BusinessError) => {
+      let config4: taskpool.Configs = {priority: taskpool.Priority.IDLE, timeout: 500};
+      taskpool.execute(task4, config4).catch((e:BusinessError) => {
         str += 'd';
         terminate = true;
         expect(e.code).assertEqual(10200058);
@@ -1512,6 +1516,116 @@ export default function TaskTimeoutTest() {
       while (!isTerminate) {
         await promiseCase()
       }
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1001
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('', timeoutDemo, dealTime);
+      let config: taskpool.Configs = {priority: taskpool.Priority.IDLE, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1002
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('timeoutDemo', timeoutDemo, [dealTime]);
+      let config: taskpool.Configs = {priority: taskpool.Priority.MEDIUM, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1003
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('1', timeoutDemo, []);
+      let config: taskpool.Configs = {priority: taskpool.Priority.HIGH, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1004
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('', timeoutDemo, dealTime);
+      let group: taskpool.TaskGroup = new taskpool.TaskGroup('');
+      group.addTask(task);
+      let config: taskpool.Configs = {priority: taskpool.Priority.LOW, timeout: timeout};
+      taskpool.execute(group, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200070);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
       done();
     })
   })

@@ -452,5 +452,564 @@ export default function AVPlayerMediaSource() {
       }
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0100
+     * @tc.desc   Local Video create Media Source With Url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0100', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      let mediaSource = media.createMediaSourceWithUrl("", header);
+      expect(mediaSource != null).assertTrue();
+      expect(mediaSource != undefined).assertTrue()
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0200
+     * @tc.desc   Local Video create Media Source With Url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0200', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      let mediaSource = media.createMediaSourceWithUrl(null, header);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithUrl url is null character')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0300
+     * @tc.desc   Local Video create Media Source With Url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0300', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      let mediaSource = media.createMediaSourceWithUrl(undefined, header);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithUrl url is undefined character')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0400
+     * @tc.desc   Local Video create Media Source With Url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0400', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, null);
+      expect(mediaSource != null).assertTrue();
+      expect(mediaSource != undefined).assertTrue()
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0500
+     * @tc.desc   Local Video create Media Source With Url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0500', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, undefined);
+      expect(mediaSource != null).assertTrue();
+      expect(mediaSource != undefined).assertTrue()
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100
+     * @tc.desc   flv live stream with create Media Source With Stream Data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithStreamData(null);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithStreamData is null')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0200
+     * @tc.desc   flv live stream with create Media Source With Stream Data Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0200', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithStreamData(undefined);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithStreamData is undefined')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0901
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0901
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0901', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: true,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0902
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0902
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0902', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_UNSUPPORTED
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0903
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0903
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0903', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_AUD
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0904
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0904
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0904', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_VID
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0905
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0905
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0905', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_SUBTITLE
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0906
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0906
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0906', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_ATTACHMENT
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0907
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0907
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0907', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_DATA
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0908
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0908
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0908', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_TIMED_METADATA
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0909
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0909
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0909', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_AUXILIARY
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0910
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0910
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0910', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        preferredAudioLanguage: ""
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0911
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0911
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0911', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        preferredSubtitleLanguage: ""
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0912
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0912
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0912', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: true
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0913
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0913
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0913', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        enableSuperResolution: true
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0914
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0914
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0914', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        enableSuperResolution: false
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0915
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0915
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0915', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        keepDecodingOnMute: true
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0916
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0916
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0916', Level.LEVEL0, async (done: Function) => {
+      player.on('error', (error: BusinessError) => {
+        console.info('error happened,and error message is :' + error.message);
+        console.info('error happened,and error code is :' + error.code);
+        expect(true).assertFalse();
+      });
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        preferredBufferDuration: 3,
+        preferredHdr: false,
+        preferredBufferDurationForPlaying: 1,
+        showFirstFrameOnPrepare: false,
+        keepDecodingOnMute: false
+      };
+      player.setMediaSource(mediaSource, playStrategy);
+      done();
+    });
   })
 }

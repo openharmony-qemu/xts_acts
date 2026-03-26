@@ -43,7 +43,7 @@ export default function webAttribute() {
       } catch (err) {
         console.error('push webAttribute page error: ' + err);
       }
-      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebAttributeButton');
       done()
     });
 

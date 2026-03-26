@@ -392,5 +392,301 @@ export default function GraphicTextAPI24() {
         done();
       })
 
+    /**
+     * @tc.name   graphicTextAPI24Test_1100
+     * @tc.number graphicTextAPI24Test_1100
+     * @tc.desc   Test layoutWithConstraints Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1100===="
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        try {
+          let textLayoutResult: text.TextLayoutResult = paragraph.layoutWithConstraints(null);
+          console.info(msgStr + 'textLayoutResult null success ', JSON.stringify(textLayoutResult));
+        } catch(err){
+          console.error(msgStr + 'textLayoutResult null error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let textLayoutResult: text.TextLayoutResult = paragraph.layoutWithConstraints(undefined);
+          console.info(msgStr + 'textLayoutResult undefined success ', JSON.stringify(textLayoutResult));
+        } catch(err){
+          console.error(msgStr + 'textLayoutResult undefined error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1200
+     * @tc.number graphicTextAPI24Test_1200
+     * @tc.desc   Test getCharacterRangeForGlyphRange Method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1200===="
+        let glyphRange: text.Range = { start: 0, end: 5 };
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        try {
+          let ranges = paragraph.getCharacterRangeForGlyphRange(null, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+        } catch(err){
+          console.error(msgStr + 'ranges null error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let ranges = paragraph.getCharacterRangeForGlyphRange(undefined, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+        } catch(err){
+          console.error(msgStr + 'ranges undefined error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1300
+     * @tc.number graphicTextAPI24Test_1300
+     * @tc.desc   Test getGlyphRangeForCharacterRange Method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1300===="
+        let characterRange: text.Range = { start: 0, end: 5 };
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        try {
+          let ranges = paragraph.getGlyphRangeForCharacterRange(null, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+        } catch(err){
+          console.error(msgStr + 'ranges null error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let ranges = paragraph.getGlyphRangeForCharacterRange(undefined, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+        } catch(err){
+          console.error(msgStr + 'ranges undefined error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1400
+     * @tc.number graphicTextAPI24Test_1400
+     * @tc.desc   Test getCharacterPositionAtCoordinate Method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1400===="
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "123456";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let x = 0;
+        let y = 0;
+        try {
+          let position = paragraph.getCharacterPositionAtCoordinate(null, null, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'position null success ', JSON.stringify(position));
+        } catch(err){
+          console.error(msgStr + 'position null error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let position = paragraph.getCharacterPositionAtCoordinate(undefined, undefined, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          console.info(msgStr + 'position null success ', JSON.stringify(position));
+        } catch(err){
+          console.error(msgStr + 'position null error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1500
+     * @tc.number graphicTextAPI24Test_1500
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "====testLineMetricsTest_0100===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.ALIAS,
+          fontVariations: [{ axis: 'aaa', value: 2, isNormalized: false }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<number,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        let textStyle: text.TextStyle | undefined = arrRunMetrics.get(arr[arr.length -1])?.textStyle;
+        console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+        console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+        expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.ALIAS);
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1600
+     * @tc.number graphicTextAPI24Test_1600
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "====graphicTextAPI24Test_1600===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.ANTI_ALIAS,
+          fontVariations: [{ axis: 'aaa', value: 2, isNormalized: true }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<number,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        let textStyle: text.TextStyle | undefined = arrRunMetrics.get(arr[arr.length -1])?.textStyle;
+        console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+        console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+        expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.ANTI_ALIAS);
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1700
+     * @tc.number graphicTextAPI24Test_1700
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "====graphicTextAPI24Test_1700===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.SUBPIXEL_ANTI_ALIAS,
+          fontVariations: [{ axis: '', value: 2, isNormalized: false }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<number,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        let textStyle: text.TextStyle | undefined = arrRunMetrics.get(arr[arr.length -1])?.textStyle;
+        console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+        console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+        expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }

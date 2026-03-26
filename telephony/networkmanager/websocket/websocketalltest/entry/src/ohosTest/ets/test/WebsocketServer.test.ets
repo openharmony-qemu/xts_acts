@@ -2565,6 +2565,45 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} test end`);
       }
     });
+     /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart1000
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_1000
+     * @tc.desc   Start a WebSocketServer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('testNetworkMgrWebSocketWebSocketServerStart1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart1000';
+      console.info(`${caseName} test start`);
+      try {
+        let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        console.info(`${caseName} --> ${server}`);
+        server.start(undefined).then((success: boolean) => {
+          if (success){
+            console.log(`${caseName} webSocketServer start success`)
+            ExpectTrue(true, `${caseName} webSocketServer start success`);
+            done()
+            server.stop()
+            console.info(`${caseName} test end`);
+          }else {
+            expectFail(`${caseName} webSocketServer start fail`)
+            done()
+            console.info(`${caseName} test end`);
+          }
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} test result error ${JSON.stringify(error)}`);
+          expectTrue(error.code === 401);
+          done()
+          console.info(`${caseName} test end`);
+        })
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        expectTrue(err.code === 401);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketServerOnMsg0200
      * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOnMsg_0200

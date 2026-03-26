@@ -19,6 +19,6 @@ group("print") {
     "print_errorcode:ActsPrintErrorCodeTest",
     "print_errorcode_noPer:ActsPrintErrorCodeNoPerTest",
     "PrintXtsTestStatic:ActsPrintXtsStaticTest",
-    "PrintXtsTestStaticNoPermission:ActsPrintNoPermissionXtsStaticTest",
+    "PrintXtsTestNoPermissionStatic:ActsPrintNoPermissionXtsStaticTest",
   ]
 }

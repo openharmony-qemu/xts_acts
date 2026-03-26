@@ -1104,7 +1104,8 @@ function testSetUsbStorageDeviceAccessPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_ONLY);
-      expect(false).assertTrue();
+      let policy: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
+      expect(policy == usbManager.UsbPolicy.READ_ONLY).assertTrue();
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
     } finally {
@@ -1187,8 +1188,8 @@ function testGetUsbStorageDeviceAccessPolicy() {
   it("test_get_usb_device_access_policy_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
-      expect(false).assertTrue();
+      let getPolicy: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
+      expect(getPolicy == usbManager.UsbPolicy.READ_WRITE).assertTrue();
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
     } finally {

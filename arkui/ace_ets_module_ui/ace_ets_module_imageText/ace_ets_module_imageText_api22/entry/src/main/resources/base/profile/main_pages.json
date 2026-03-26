@@ -11,6 +11,7 @@
     "MainAbility/pages/richEditorSupportSvg2/richEditorSupportSvg2",
     "MainAbility/pages/scrollbarTest/scrollbarTest",
     "MainAbility/pages/ShowCounterTest/TextAreaTest",
-    "MainAbility/pages/ShowCounterTest/TextInputTest"
+    "MainAbility/pages/ShowCounterTest/TextInputTest",
+    "MainAbility/pages/Text/TextFontColorByNameTest"
   ]
 }

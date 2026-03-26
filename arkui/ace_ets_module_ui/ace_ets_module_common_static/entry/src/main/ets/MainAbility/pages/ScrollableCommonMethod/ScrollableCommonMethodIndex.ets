@@ -48,7 +48,7 @@ struct ScrollableCommonMethodIndex {
       .id('scrollableCommonMethodTarget')
       .key('scrollableCommonMethodTargetKey')
       .scrollBarColor('#ff0000')
-      .height(60);
+      .height('10%');
     }
     .width('100%')
     .height('100%');

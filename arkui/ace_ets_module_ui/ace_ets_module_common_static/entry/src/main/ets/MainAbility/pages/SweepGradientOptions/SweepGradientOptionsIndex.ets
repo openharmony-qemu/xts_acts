@@ -37,8 +37,8 @@ struct SweepGradientOptionsIndex {
       Text('SweepGradientOpticmetricsColors')
         .id('SweepGradientOpticmetricsColors')
         .key('SweepGradientOpticmetricsColors')
-        .width(220)
-        .height(40)
+        .width('30%')
+        .height('5%')
         .sweepGradient({
           center: ['50%', '50%'],
           start: 0,

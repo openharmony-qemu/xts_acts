@@ -79,13 +79,13 @@ struct WebComponent {
     Column() {
       Button('deleteJavaScriptRegister_withRefresh')
         .onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str)
           this.isPageEnd = -1;
           this.InitJavaScriptProxyTest()
-          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
             try {
               this.isNewButtonEnd = -1;
               this.controller.deleteJavaScriptRegister(this.name);

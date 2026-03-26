@@ -29,6 +29,7 @@ import TextContentControllerBaseTest from './TextContentControllerBaseTest/TextC
 import ScrollableCommonMethodTest from './ScrollableCommonMethodTest/ScrollableCommonMethod.test';
 import ScrollResultTest from './ScrollResultTest/ScrollResult.test';
 import ChildrenMainSizeTest from './ChildrenMainSizeTest/ChildrenMainSize.test';
+import LayoutPolicyTest from './LayoutPolicyTest/LayoutPolicy.test';
 
 export default function testsuite() {
   ResponseRegionTest();
@@ -46,4 +47,5 @@ export default function testsuite() {
   ScrollableCommonMethodTest();
   ScrollResultTest();
   ChildrenMainSizeTest();
+  LayoutPolicyTest();
 }

@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 'use static'
 import {
   Entry,
@@ -30,7 +31,6 @@ import {
   MenuKeyboardAvoidMode,
   wrapBuilder,
   SliderOptions,
-  Scroll,
   MenuAlignType,
   AvoidanceMode
 } from '@ohos.arkui.component';
@@ -41,10 +41,11 @@ import { ColorSpace, ComponentContent } from '@kit.ArkUI';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { LengthUnit, LengthMetrics } from '@ohos.arkui.node';
 
+// xxx.ets
 @Entry
 @Component
 struct SelectIndex {
-  @State text: string = 'TTTTT';
+  @State text: string = 'Sel';
   @State index: Int = -1;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
 
@@ -58,41 +59,37 @@ struct SelectIndex {
   }
 
   build() {
-    Scroll() {
-      Column({ space: 20 } as ColumnOptions) {
-        // Select - 包含所有4个属性：showInSubWindow, showDefaultSelectedIcon, keyboardAvoidMode, minKeyboardAvoidDistance
-        Select([{ value: 'aaa', icon: $r('app.media.icon') },
-          { value: 'bbb', icon: $r('app.media.icon') },
-          { value: 'ccc', icon: $r('app.media.icon') },
-          { value: 'ddd', icon: $r('app.media.icon') }])
-          .id('selectAllProperties')
-          .margin({top:20})
-          .width(200)
-          .height(40)
-          .selected(this.index)
-          .value(this.text)
-          .font({ size: 16, weight: 500 })
-          .fontColor('#182431')
-          .showInSubWindow(false)
-          .showDefaultSelectedIcon(false)
-          .keyboardAvoidMode(MenuKeyboardAvoidMode.NONE)
-          .minKeyboardAvoidDistance(LengthMetrics.vp(20))
-          .selectedOptionFont({ size: 16, weight: 400 })
-          .optionFont({ size: 16, weight: 400 })
-          .arrowPosition(this.arrowPosition)
-          .onSelect((index: Int, text?: string | undefined) => {
-            console.info('Select:' + index);
-            this.index = index;
-            if (text) {
-              this.text = text;
-            }
-          })
-      }
-      .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+    Column({ space: 8 } as ColumnOptions) {
+      Select([{ value: 'aaa', icon: $r('app.media.icon') },
+        { value: 'bbb', icon: $r('app.media.icon') },
+        { value: 'ccc', icon: $r('app.media.icon') },
+        { value: 'ddd', icon: $r('app.media.icon') }])
+        .id('selectAllProperties')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '88%' })
+        .selected(this.index)
+        .value(this.text)
+        .font({ size: 10, weight: 500 })
+        .fontColor('#182431')
+        .showInSubWindow(false)
+        .showDefaultSelectedIcon(false)
+        .keyboardAvoidMode(MenuKeyboardAvoidMode.NONE)
+        .minKeyboardAvoidDistance(LengthMetrics.vp(20))
+        .selectedOptionFont({ size: 10, weight: 400 })
+        .optionFont({ size: 10, weight: 400 })
+        .arrowPosition(this.arrowPosition)
+        .onSelect((index: Int, text?: string | undefined) => {
+          console.info('Select:' + index);
+          this.index = index;
+          if (text) {
+            this.text = text;
+          }
+        })
     }
+    .justifyContent(FlexAlign.Center)
     .width('100%')
     .height('100%')
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

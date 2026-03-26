@@ -81,6 +81,20 @@ export default class EntryFormAbility extends FormExtensionAbility {
     hilog.info(DOMAIN, TAG, 'onRemoveForm testing');
   }
 
+  onUpdateForm(formId: string, wantParams?: Record<string, Object>) {
+    hilog.info(DOMAIN, TAG, 'onUpdateForm testing');
+  }
+  onChangeFormVisibility(newStatus: Record<string, int>) {
+    hilog.info(DOMAIN, TAG, 'onChangeFormVisibility testing');
+  }
+  onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: formInfo.Rect) {
+    hilog.info(DOMAIN, TAG, 'onSizeChanged testing');
+  }
+
+  onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation) {
+    hilog.info(DOMAIN, TAG, 'onFormLocationChanged testing');
+  }
+
   onConfigurationUpdate(newConfig: Configuration) {
     hilog.info(DOMAIN, TAG, 'onConfigurationUpdate testing');
     CommonEventManager.publish('XTS_FormExtensionAbilityOnConfigurationUpdate_commonEvent', () => {

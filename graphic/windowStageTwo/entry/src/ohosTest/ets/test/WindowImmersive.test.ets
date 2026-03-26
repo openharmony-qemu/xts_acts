@@ -1528,8 +1528,10 @@ export default function windowImmersiveTest() {
       let caseName = 'TestSetWindowSystemBarEnableStatusVisiblePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
+        let flag:number = 0;
         windowClass.on('avoidAreaChange', (data) => {
           console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+          flag++;
           windowClass.off('avoidAreaChange');
           done();
         });
@@ -1541,7 +1543,13 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
-        done();
+        if(isFreeWindowMode){
+          expect(flag).assertEqual(0)
+          done()
+        }else{
+          expect(flag).assertLarger(0)
+          done()
+        }
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
@@ -2246,10 +2254,23 @@ export default function windowImmersiveTest() {
         windowClass.setSpecificSystemBarEnabled('status', false).then(async () => {
           console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await sleep(100);
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Failed to set the status bar to be invisible. Cause: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        });
+        windowClass.setSpecificSystemBarEnabled('status', true).then(async () => {
+          console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
+          await sleep(100);
           let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
           console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
-          expect(avoidArea.bottomRect.height).assertEqual(0);
-          done();
+          if(isFreeWindowMode){
+            expect(avoidArea.topRect.height).assertEqual(0);
+            done();
+          }else{
+            expect(avoidArea.topRect.height).assertLarger(0);
+            done();
+          }
         }).catch((error: BusinessError) => {
           console.error(`${caseName} Failed to set the status bar to be invisible. Cause: ${JSON.stringify(error)}`);
           expect().assertFail();

@@ -1059,14 +1059,27 @@ export default function geolocationTest_geo1() {
         try {
             geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                 if (err) {
-                    console.info('[lbs_js]  getAddressesFromLocation_0100 callback err is : ' + JSON.stringify(err));
+                    console.info('[lbs_js] null getAddressesFromLocation_0100 callback err is : ' + JSON.stringify(err));
                 } else {
-                    console.info("[lbs_js]  getAddressesFromLocation_0100 callback data is: " + JSON.stringify(data));
+                    console.info("[lbs_js] null getAddressesFromLocation_0100 callback data is: " + JSON.stringify(data));
                     expect(true).assertEqual((JSON.stringify(data)) != null);
                 }
             });
         } catch (error) {
-            console.info("[lbs_js] getAddressesFromLocation_0100 callback try err:" + JSON.stringify(error));
+            console.info("[lbs_js] null getAddressesFromLocation_0100 callback try err:" + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.getAddressesFromLocation(undefined, (err, data) => {
+                if (err) {
+                    console.info('[lbs_js] undefined getAddressesFromLocation_0100 callback err is : ' + JSON.stringify(err));
+                } else {
+                    console.info("[lbs_js] undefined getAddressesFromLocation_0100 callback data is: " + JSON.stringify(data));
+                    expect(true).assertEqual((JSON.stringify(data)) != null);
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] undefined getAddressesFromLocation_0100 callback try err:" + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         await sleep(1000);
@@ -1085,15 +1098,28 @@ export default function geolocationTest_geo1() {
         let reverseGeocodeRequest = null;
         try {
             await geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-                console.info('[lbs_js] getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                console.info('[lbs_js] null getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
                 expect().assertFail();
             }).catch(error => {
-                console.info("[lbs_js] getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
-                console.info('[lbs_js] not support now');
+                console.info("[lbs_js] null getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                console.info('[lbs_js] null not support now');
                 expect(true).assertEqual(JSON.stringify(error) != null);
             });
         } catch (error) {
             console.info("[lbs_js] getAddressesFromLocation_0200 promise try err:" + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            await geolocation.getAddressesFromLocation(undefined).then((data) => {
+                console.info('[lbs_js] undefined getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                expect().assertFail();
+            }).catch(error => {
+                console.info("[lbs_js] undefined getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                console.info('[lbs_js] undefined not support now');
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] undefined getAddressesFromLocation_0200 promise try err:" + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
@@ -1112,16 +1138,31 @@ export default function geolocationTest_geo1() {
         try {
             geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                 if (err) {
-                    console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 callback err is: " + JSON.stringify(err));
+                    console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0100 callback err is: " + JSON.stringify(err));
                     expect(true).assertEqual((JSON.stringify(err)) != null);
                 } else {
-                    console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                    console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
                     expect(true).assertEqual((JSON.stringify(data)) != null);
                 }
                 done();
             });
         }catch(error){
-            console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+            console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+            expect(true).assertEqual((JSON.stringify(error.message)) != null);
+        }
+        try {
+            geolocation.getAddressesFromLocationName(undefined, (err, data) => {
+                if (err) {
+                    console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0100 callback err is: " + JSON.stringify(err));
+                    expect(true).assertEqual((JSON.stringify(err)) != null);
+                } else {
+                    console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                    expect(true).assertEqual((JSON.stringify(data)) != null);
+                }
+                done();
+            });
+        }catch(error){
+            console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
             expect(true).assertEqual((JSON.stringify(error.message)) != null);
         }
         done();
@@ -1139,14 +1180,26 @@ export default function geolocationTest_geo1() {
         let geocodeRequest = null;
         try {
             await geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
-                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 promise data: " + JSON.stringify(result));
+                console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0200 promise data: " + JSON.stringify(result));
                 expect(true).assertEqual((JSON.stringify(result)) != null);
             }).catch((error) => {
-                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
                 expect(true).assertEqual((JSON.stringify(error)) != null);
             });
         } catch (error) {
-            console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+            console.info("[lbs_js] null SUB_HSS_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual((JSON.stringify(error)) != null);
+        }
+        try {
+            await geolocation.getAddressesFromLocationName(undefined).then((result) => {
+                console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0200 promise data: " + JSON.stringify(result));
+                expect(true).assertEqual((JSON.stringify(result)) != null);
+            }).catch((error) => {
+                console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                expect(true).assertEqual((JSON.stringify(error)) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] undefined SUB_HSS_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
             expect(true).assertEqual((JSON.stringify(error)) != null);
         }
         done();

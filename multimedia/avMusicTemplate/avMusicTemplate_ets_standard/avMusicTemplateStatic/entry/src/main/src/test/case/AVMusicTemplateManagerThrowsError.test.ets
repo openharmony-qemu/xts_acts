@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function avMusicTemplateManagerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_CREATE_AV_MUSIC_TEMPLATE_THROWS_ERROR_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           done();
         } catch (err) {
           CommonUtils.logError(TAG,
@@ -68,7 +68,7 @@ export default function avMusicTemplateManagerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_CREATE_AV_MUSIC_TEMPLATE_THROWS_ERROR_STATIC_0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           done();
         } catch (err) {
           CommonUtils.logError(TAG,

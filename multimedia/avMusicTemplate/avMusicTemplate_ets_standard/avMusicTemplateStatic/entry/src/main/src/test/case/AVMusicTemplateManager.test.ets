@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function avMusicTemplateManagerTest() {
       async (done: () => void): Promise<void> => {
         try {
           let temp: avMusicTemplate.AVMusicTemplate =
-            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           expect(temp).not().assertUndefined();
           expect(temp).not().assertNull();
           expect(temp.sessionId).assertUndefined()
@@ -72,7 +72,7 @@ export default function avMusicTemplateManagerTest() {
       async (done: () => void): Promise<void> => {
         try {
           let temp: avMusicTemplate.AVMusicTemplate =
-            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           let des: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
           expect(des.length).assertLarger(0);
           const sid: string = des[0].sessionId;
@@ -107,7 +107,7 @@ export default function avMusicTemplateManagerTest() {
           let res: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
 
           let temp: avMusicTemplate.AVMusicTemplate =
-            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+            avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           res = avMusicTemplate.getAllAVMusicTemplateDescriptors();
           CommonUtils.logInfo(TAG, `res=${JSON.stringify(res)}`);
           expect(res).not().assertUndefined();
@@ -333,7 +333,7 @@ export default function avMusicTemplateManagerTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_CONTROLLER_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let temp: avMusicTemplate.AVMusicTemplate =
-          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
         let des: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors(undefined);
         expect(des.length).assertLarger(0);
         const sid: string = des[0].sessionId;

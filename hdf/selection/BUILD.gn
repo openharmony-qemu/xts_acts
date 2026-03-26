@@ -18,6 +18,7 @@ group("selection") {
   if (is_standard_system) {
     deps = [
       "selection_static:ActsSelectionStaticTest",
+      "selection_manager:ActsSelectionApiTest",
     ]
   }
 }
