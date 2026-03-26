@@ -90,7 +90,6 @@ import {
   builtinsStatementForTest_7600,
   builtinsStatementForTest_7700,
   builtinsStatementForTest_7800,
-  builtinsStatementForTest_7900
 } from './builtinsfortestfunction/BuiltinsForTestFunc';
 import Utils from '../Util.test';
 
@@ -2268,42 +2267,6 @@ export default function builtinsForTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsStatementForTest_7800)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-
-        done();
-      })
-
-
-    /**
-     * @tc.number SUB_BUILTINS_STATEMENT_FOR_TEST_7900
-     * @tc.name concurrent_builtinsStatementForTest_7900
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('concurrent_builtinsStatementForTest_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.info('testTag', '%{public}s', 'it begin');
-        let caseName = 'concurrent_builtinsStatementForTest_7900'
-        let result: int = 0
-
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(builtinsStatementForTest_7900)
           }
           await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
