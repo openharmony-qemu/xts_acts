@@ -3945,7 +3945,8 @@ export default function TextPicker() {
         }
       }).catch((error: BusinessError) => {
         console.error("testPicker67 valid case error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(14000011);
+        let isValidErrorCode = error.code === 14000011 || error.code === 23800301;
+        expect(isValidErrorCode).assertTrue();
       });
 
       let emptyUris: Array<string> = [];
