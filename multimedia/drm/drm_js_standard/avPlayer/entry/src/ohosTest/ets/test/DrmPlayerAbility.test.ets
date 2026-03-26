@@ -2516,6 +2516,137 @@ export default function abilityTest() {
             }
         });
         /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2010
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2010
+         * @tc.desc   离线许可证释放，响应参数为undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_2010', Level.LEVEL0, async (done:Function) => {
+            let drmsys:drm.MediaKeySystem;
+            let session:drm.MediaKeySession;
+            try {
+                if(isClearPlay) {
+                    try {
+                        drmsys = drm.createMediaKeySystem(systemName);
+                    } catch (err) {
+                        console.log("XX DRM_AVPLAYER_2010 createMediaKeySystem failed");
+                        done();
+                        expect(false).assertEqual(true);
+                    }
+
+                    try {
+                        session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                    } catch (err) {
+                        console.log("XX DRM_AVPLAYER_2010 createMediaKeySession failed");
+                        drmsys!.destroy();
+                        done();
+                        expect(false).assertEqual(true);
+                    }
+                    let base64 = new util.Base64();
+                    let uint8pssh =
+                        base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
+                    let optionalData:drm.OptionsData[] = [{
+                        name: "optionalDataName",
+                        value: "optionalDataValue"
+                    }];
+                    session!.generateMediaKeyRequest("video/mp4", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_OFFLINE, optionalData)
+                        .then((DrmRequest) => {
+                            console.log("XX DRM_AVPLAYER_2010 generateMediaKeyRequest success", DrmRequest.mediaKeyRequestType,
+                                DrmRequest.data, DrmRequest.defaultURL);
+                            let responseArray =
+                                new Uint8Array([0x31, 0x56, 0x55, 0x52, 0x53, 0x54, 0x56, 0x39, 0x55, 0x52, 0x56, 0x4E, 0x55, 0x58, 0x30,
+                                    0x4E, 0x4A, 0x52, 0x46, 0x38, 0x77, 0x4E, 0x41, 0x3D, 0x3D, 0x3A, 0x42, 0x4E, 0x4F, 0x71, 0x2B, 0x4F,
+                                    0x68, 0x6D, 0x65, 0x6B, 0x42, 0x41, 0x30, 0x36, 0x72, 0x34, 0x36, 0x47, 0x5A, 0x36, 0x42, 0x41, 0x3D,
+                                    0x3D]);
+                            session.processMediaKeyResponse(responseArray).then((keyId) => {
+                                let keyIds = drmsys.getOfflineMediaKeyIds();
+                                let keyArray = new Uint8Array(keyIds[0]);
+                                session.generateOfflineReleaseRequest(keyArray).then((OfflineReleaseRequest) => {
+                                    console.log("XX DRM_AVPLAYER_2010 generateOfflineReleaseRequest success", OfflineReleaseRequest);
+                                    session.processOfflineReleaseResponse(keyArray, undefined).then(() => {
+                                        console.log("XX DRM_AVPLAYER_2010 processOfflineReleaseResponse success");
+                                    }).catch((err:BusinessError) => {
+                                        console.log("XX DRM_AVPLAYER_2010 processOfflineReleaseResponse err end", err.code);
+                                        expect(err.code).assertEqual(401);
+                                        session.destroy();
+                                        drmsys.destroy();
+                                        done();
+                                    });
+                                }).catch((err:BusinessError) => {
+                                    console.log("XX DRM_AVPLAYER_2010 generateOfflineReleaseRequest err end", err.code);
+                                    session.destroy();
+                                    drmsys.destroy();
+                                    done();
+                                    expect(false).assertEqual(true);
+                                });
+                            }).catch((err:BusinessError) => {
+                                console.log("XX DRM_AVPLAYER_2010 processMediaKeyResponse err end", err.code);
+                                session.destroy();
+                                drmsys.destroy();
+                                done();
+                                expect(false).assertEqual(true);
+                            });
+                        }).catch((err:BusinessError) => {
+                        console.log("XX DRM_AVPLAYER_2010 generateMediaKeyRequest err end", err.code);
+                        session.destroy();
+                        drmsys.destroy();
+                        done();
+                        expect(false).assertEqual(true);
+                    });
+                } else {
+                    {
+                        let drmsys:drm.MediaKeySystem;
+                        let session:drm.MediaKeySession;
+                        try {
+                            drmsys = drm.createMediaKeySystem(systemName);
+                        } catch (err) {
+                            console.log("XX DRM_AVPLAYER_2010 createMediaKeySystem failed");
+                            done();
+                            expect(false).assertEqual(true);
+                        }
+
+                        try {
+                            session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                        } catch (err) {
+                            console.log("XX DRM_AVPLAYER_2010 createMediaKeySession failed");
+                            drmsys!.destroy();
+                            done();
+                            expect(false).assertEqual(true);
+                        }
+                        try {
+                            session!.processOfflineReleaseResponse(new Uint8Array([1, 2, 3, 4, 5]), undefined).then(() => {
+                                console.info('processOfflineReleaseResponse');
+                                session.destroy();
+                                drmsys.destroy();
+                                done();
+                                expect(false).assertEqual(true);
+                            }).catch((err:BusinessError) => {
+                                console.log("XX DRM_AVPLAYER_2010 processOfflineReleaseResponse err end", err.code);
+                                expect(err.code).assertEqual(401);
+                                session.destroy();
+                                drmsys.destroy();
+                                done();
+                            });
+                        } catch (err) {
+                            console.log("XX DRM_AVPLAYER_2010 failed");
+                            session!.destroy();
+                            drmsys!.destroy();
+                            done();
+                            expect(false).assertEqual(true);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.log("XX DRM_AVPLAYER_2010 failed");
+                session!.destroy();
+                drmsys!.destroy();
+                done();
+                expect(false).assertEqual(true);
+            }
+        });
+        /**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2100
          * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2100
          * @tc.desc   离线许可证restore,传错误的licenseid
