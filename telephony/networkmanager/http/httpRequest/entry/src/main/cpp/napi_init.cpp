@@ -30,12 +30,10 @@ static bool GetInt32Param(napi_env env, napi_callback_info info,
     size_t argc = expectedArgc;
     napi_value args[PARAM_COUNT_TWO] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (argc < expectedArgc)
-    {
+    if (argc < expectedArgc) {
         return false;
     }
-    for (size_t i = 0; i < expectedArgc; i++)
-    {
+    for (size_t i = 0; i < expectedArgc; i++) {
         napi_get_value_int32(env, args[i], &params[i]);
     }
     return true;
@@ -66,8 +64,7 @@ static napi_value NAPI_Global_AddReadOnlyRequestInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_TWO] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddReadOnlyRequestInterceptor(params[0], params[1]);
         return CreateInt32Result(env, param);
     }
@@ -78,8 +75,7 @@ static napi_value NAPI_Global_AddReadOnlyResponseInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_TWO] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddReadOnlyResponseInterceptor(params[0], params[1]);
         return CreateInt32Result(env, param);
     }
@@ -90,8 +86,7 @@ static napi_value NAPI_Global_AddWritableRequestInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_TWO] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddWritableRequestInterceptor(params[0], params[1]);
         return CreateInt32Result(env, param);
     }
@@ -102,8 +97,7 @@ static napi_value NAPI_Global_AddWritableResponseInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_TWO] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddWritableResponseInterceptor(params[0], params[1]);
         return CreateInt32Result(env, param);
     }
@@ -114,8 +108,7 @@ static napi_value NAPI_Global_RemoveRequestInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_ONE] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params)) {
         int32_t param = RemoveRequestInterceptor(params[0]);
         return CreateInt32Result(env, param);
     }
@@ -126,8 +119,7 @@ static napi_value NAPI_Global_RemoveResponseInterceptor(
     napi_env env, napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_ONE] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params)) {
         int32_t param = RemoveResponseInterceptor(params[0]);
         return CreateInt32Result(env, param);
     }
@@ -138,8 +130,7 @@ static napi_value NAPI_Global_StopAllInterceptor(napi_env env,
                                                  napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_ONE] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params)) {
         int32_t param = StopAllInterceptor(params[0]);
         return CreateInt32Result(env, param);
     }
@@ -150,8 +141,7 @@ static napi_value NAPI_Global_RemoveAllInterceptor(napi_env env,
                                                    napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_ONE] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params)) {
         int32_t param = RemoveAllInterceptor(params[0]);
         return CreateInt32Result(env, param);
     }
@@ -169,8 +159,7 @@ static napi_value NAPI_Global_StartAllInterceptor(napi_env env,
                                                   napi_callback_info info)
 {
     int32_t params[PARAM_COUNT_ONE] = {0};
-    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params))
-    {
+    if (GetInt32Param(env, info, PARAM_COUNT_ONE, params)) {
         int32_t param = StartAllInterceptor(params[0]);
         return CreateInt32Result(env, param);
     }

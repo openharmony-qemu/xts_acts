@@ -38,10 +38,10 @@ std::string g_requestMethod;
 std::string g_requestBody;
 std::string g_requestHeader;
 
-void LogHeader(const char* prefix, 
-               OH_Http_Interceptor_Headers* headers, 
-               std::string& headerStr, 
-               bool isModifyInterceptor)
+void LogHeader(const char* prefix,
+                OH_Http_Interceptor_Headers* headers,
+                std::string& headerStr,
+                bool isModifyInterceptor)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---------------------header begin---------------------");
     if (isModifyInterceptor) {
@@ -54,7 +54,7 @@ void LogHeader(const char* prefix,
                 headerStr += "\r\n";
             }
             OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "%{public}s", headers->data);
-        }                
+        }
         headers = headers->next;
     }
     OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---------------------header end---------------------");
@@ -150,33 +150,26 @@ void PrintResponseInfo(OH_Http_Interceptor_Response *response, bool isModifyInte
         }
         
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "dns: %lf", 
-            response->performanceTiming.dnsTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "dns: %lf",
+            response->performanceTiming.dnsTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tcp: %lf", 
-            response->performanceTiming.tcpTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tcp: %lf",
+            response->performanceTiming.tcpTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tls: %lf", 
-            response->performanceTiming.tlsTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tls: %lf",
+            response->performanceTiming.tlsTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "snd: %lf", 
-            response->performanceTiming.firstSendTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "snd: %lf",
+            response->performanceTiming.firstSendTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rcv: %lf", 
-            response->performanceTiming.firstReceiveTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rcv: %lf",
+            response->performanceTiming.firstReceiveTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tot: %lf", 
-            response->performanceTiming.totalFinishTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tot: %lf",
+            response->performanceTiming.totalFinishTiming);
         OH_LOG_Print(
-            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rdr: %lf", 
-            response->performanceTiming.redirectTiming
-        );
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rdr: %lf",
+            response->performanceTiming.redirectTiming);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-----PrintResponseInfo End-----");
     }
 }
@@ -294,7 +287,7 @@ OH_Interceptor_Result g_request_group4_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group4_modify_abort---");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group4_modify_abort---");
         PrintRequestInfo(request, true);
         return OH_ABORT;
     }
@@ -314,13 +307,12 @@ OH_Interceptor_Result g_request_group10_readonly_url_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group10_readonly_url---");        
-        if (request->url.buffer) {            
-             std::string url = "www.sina.com";
-             (void)free((void*)request->url.buffer);
-             request->url.buffer = MallocCString(url);
-             request->url.length = url.length();
-
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group10_readonly_url---");
+        if (request->url.buffer) {
+            std::string url = "www.sina.com";
+            (void)free((void*)request->url.buffer);
+            request->url.buffer = MallocCString(url);
+            request->url.length = url.length();
         }
         PrintRequestInfo(request);
     }
@@ -340,13 +332,12 @@ OH_Interceptor_Result g_request_group11_readonly_method_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group11_readonly_method---");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group11_readonly_method---");
         if (request->method.buffer) {
             std::string method = "GET";
             (void)free((void*)request->method.buffer);
             request->method.buffer = MallocCString(method);
             request->method.length = method.length();
-
         }
         PrintRequestInfo(request);
     }
@@ -365,18 +356,13 @@ OH_Interceptor_Result g_request_group12_readonly_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group12_readonly_headers---");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group12_readonly_headers---");
         if (request->headers) {
             OH_Http_Interceptor_Headers* header = request->headers;
-            while (header != nullptr) {
-                std::string data = std::string(header->data);
-                if (data.find("aaaaa") != std::string::npos) {
-                    free(header->data);
-                    data = "FFFFF:4444444";
-                    header->data = MallocCString(data);
-//                    *isModified = 1;
-                }
-                header = header->next;
+            if (header != nullptr && header->data != nullptr) {
+                std::string data = "FFFFF:4444444";
+                free(header->data);
+                header->data = MallocCString(data);
             }
         }
         PrintRequestInfo(request);
@@ -402,7 +388,6 @@ OH_Interceptor_Result g_request_group13_readonly_body_interceptor_handler(
             free((void*)request->body.buffer);
             request->body.buffer = MallocCString(body);
             request->body.length = body.length();
-
         }
         PrintRequestInfo(request);
     }
@@ -437,8 +422,7 @@ static OH_Http_Interceptor g_request_group14_readonly_abort_interceptor = {
 
 OH_Http_Interceptor* GetRequestInterceptorByGroupId(int32_t groupId)
 {
-    switch (groupId)
-    {
+    switch (groupId) {
         case REQUEST_GROUP0_MODIFY_URL:
             return &g_request_group0_modify_url_interceptor;
         case REQUEST_GROUP1_MODIFY_METHOD:
@@ -477,7 +461,7 @@ OH_Interceptor_Result g_response_group0_modify_body_interceptor_handler(
             response->body.buffer = MallocCString(body);
             response->body.length = body.length();
             *isModified = 1;
-        }        
+        }
         PrintResponseInfo(response, true);
     }
     return OH_CONTINUE;
@@ -542,7 +526,7 @@ OH_Interceptor_Result g_response_group3_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group3_modify_abort---");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group3_modify_abort---");
         PrintResponseInfo(response, true);
     }
     return OH_ABORT;
@@ -607,7 +591,7 @@ OH_Interceptor_Result g_response_group12_readonly_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group12_readonly_headers---");
-    if (response != nullptr) {        
+    if (response != nullptr) {
         if (response->headers) {
             OH_Http_Interceptor_Headers *tmp = response->headers;
             if (tmp != nullptr && tmp->data != nullptr) {
@@ -647,8 +631,6 @@ static OH_Http_Interceptor g_response_group13_readonly_abort_interceptor = {
     .handler = g_response_group13_readonly_abort_interceptor_handler,
 };
 
-
-
 static OH_Http_Interceptor* GetResponseInterceptorByGroupId(int32_t groupId)
 {
     switch (groupId)
@@ -680,7 +662,7 @@ int32_t AddReadOnlyRequestInterceptor(int32_t groupId, int32_t enabled)
     OH_Http_Interceptor *interceptor = GetRequestInterceptorByGroupId(groupId);
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
-    }    
+    }
     return OH_Http_AddReadOnlyInterceptor(interceptor);
 }
 int32_t AddReadOnlyResponseInterceptor(int32_t groupId, int32_t enabled)
@@ -688,7 +670,7 @@ int32_t AddReadOnlyResponseInterceptor(int32_t groupId, int32_t enabled)
     OH_Http_Interceptor *interceptor = GetResponseInterceptorByGroupId(groupId);
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
-    }    
+    }
     return OH_Http_AddReadOnlyInterceptor(interceptor);
 }
 int32_t AddWritableRequestInterceptor(int32_t groupId, int32_t enabled)
@@ -696,7 +678,7 @@ int32_t AddWritableRequestInterceptor(int32_t groupId, int32_t enabled)
     OH_Http_Interceptor *interceptor = GetRequestInterceptorByGroupId(groupId);
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
-    }    
+    }
     return OH_Http_AddWritableInterceptor(interceptor);
 }
 
@@ -705,7 +687,7 @@ int32_t AddWritableResponseInterceptor(int32_t groupId, int32_t enabled)
     OH_Http_Interceptor *interceptor = GetResponseInterceptorByGroupId(groupId);
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
-    }    
+    }
     return OH_Http_AddWritableInterceptor(interceptor);
 }
 
