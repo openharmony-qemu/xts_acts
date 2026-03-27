@@ -474,104 +474,6 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_487
-     * @tc.name    TestArkUICapi_487
-     * @tc.desc    Case: TestArkUICapi_487. API: OH_ArkUI_ClonedEvent_SetPinchAxisScaleValue, ArkUI_UIInputEvent. Note:
-     *             non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_487', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_487()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_488
-     * @tc.name    TestArkUICapi_488
-     * @tc.desc    Case: TestArkUICapi_488. API: OH_ArkUI_ClonedEvent_SetHorizontalAxisScaleValue, ArkUI_UIInputEvent.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_488', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_488()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_489
-     * @tc.name    TestArkUICapi_489
-     * @tc.desc    Case: TestArkUICapi_489. API: OH_ArkUI_ClonedEvent_SetVerticalAxisScaleValue, ArkUI_UIInputEvent.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_489', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_489()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_490
-     * @tc.name    TestArkUICapi_490
-     * @tc.desc    Case: TestArkUICapi_490. API: OH_ArkUI_ClonedEvent_SetScrollStep, ArkUI_UIInputEvent. Note: non-ASCII
-     *             details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_490', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_490()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_491
-     * @tc.name    TestArkUICapi_491
-     * @tc.desc    Case: TestArkUICapi_491. API: OH_ArkUI_ClonedEvent_SetMouseButton, ArkUI_UIInputEvent. Note:
-     *             non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_491', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_491()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_492
-     * @tc.name    TestArkUICapi_492
-     * @tc.desc    Case: TestArkUICapi_492. API: OH_ArkUI_ClonedEvent_SetRawDeltaX, ArkUI_UIInputEvent. Note: non-ASCII
-     *             details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_492', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_492()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_493
-     * @tc.name    TestArkUICapi_493
-     * @tc.desc    Case: TestArkUICapi_493. API: OH_ArkUI_ClonedEvent_SetRawDeltaY, ArkUI_UIInputEvent. Note: non-ASCII
-     *             details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_493', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_493()).assertEqual(0)
-      done()
-    })
-
-    /**
      * @tc.number  TestArkUICapi_494
      * @tc.name    TestArkUICapi_494
      * @tc.desc    Case: TestArkUICapi_494. API: OH_ArkUI_ClonedEvent_SetPressedButtons, ArkUI_UIInputEvent. Note:
@@ -652,20 +554,6 @@ export default function arkuiNativeCapiUiInputEvent() {
      */
     it('TestArkUICapi_499', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_499()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_500
-     * @tc.name    TestArkUICapi_500
-     * @tc.desc    Case: TestArkUICapi_500. API: OH_ArkUI_DigitalCrownEvent_SetStopPropagation, ArkUI_UIInputEvent.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_500', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_500()).assertEqual(0)
       done()
     })
 

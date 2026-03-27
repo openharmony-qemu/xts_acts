@@ -1069,7 +1069,7 @@ static napi_value TestArkUICapi_376(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_TextShadowStyle_SetTextShadow(OH_ArkUI_TextShadowStyle *, const OH_ArkUI_ShadowOptions **, uint32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextShadowStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: SetTextShadow 对 options 校验较严；用 ShadowOptions_Create 填 1 项指针数组调用，再释放选项与样式对象。
  */
 static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
 {
@@ -1080,15 +1080,24 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextShadowStyle_SetTextShadow(obj, nullptr, 0U);
+    auto *opt = OH_ArkUI_ShadowOptions_Create();
+    if (opt == nullptr) {
+        OH_ArkUI_TextShadowStyle_Destroy(obj);
+        return nullptr;
+    }
+    const OH_ArkUI_ShadowOptions* optConst = opt;
+    const OH_ArkUI_ShadowOptions* opts[] = { optConst };
+    auto ec = OH_ArkUI_TextShadowStyle_SetTextShadow(obj, opts, 1U);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ShadowOptions_Destroy(opt);
             OH_ArkUI_TextShadowStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ShadowOptions_Destroy(opt);
     OH_ArkUI_TextShadowStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }

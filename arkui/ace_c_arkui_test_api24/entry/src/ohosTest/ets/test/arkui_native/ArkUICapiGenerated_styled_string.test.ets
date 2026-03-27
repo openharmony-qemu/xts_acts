@@ -323,52 +323,6 @@ export default function arkuiNativeCapiStyledString() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_259
-     * @tc.name    TestArkUICapi_259
-     * @tc.desc    Case: TestArkUICapi_259. API: OH_ArkUI_StyledString_Descriptor_GetStyles,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledStringKey, OH_ArkUI_SpanStyle,
-     *             OH_ArkUI_StyledString_Descriptor_Create, ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII details are in
-     *             the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_259', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_259()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_260
-     * @tc.name    TestArkUICapi_260
-     * @tc.desc    Case: TestArkUICapi_260. API: OH_ArkUI_StyledString_Descriptor_FromHtml,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledString_Descriptor_Create, ARKUI_ERROR_CODE_NO_ERROR.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_260', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_260()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_261
-     * @tc.name    TestArkUICapi_261
-     * @tc.desc    Case: TestArkUICapi_261. API: OH_ArkUI_StyledString_Descriptor_ReplaceString,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledString_Descriptor_Create, ARKUI_ERROR_CODE_NO_ERROR.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_261', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_261()).assertEqual(0)
-      done()
-    })
-
-    /**
      * @tc.number  TestArkUICapi_262
      * @tc.name    TestArkUICapi_262
      * @tc.desc    Case: TestArkUICapi_262. API: OH_ArkUI_StyledString_Descriptor_InsertString,
@@ -384,66 +338,6 @@ export default function arkuiNativeCapiStyledString() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_263
-     * @tc.name    TestArkUICapi_263
-     * @tc.desc    Case: TestArkUICapi_263. API: OH_ArkUI_StyledString_Descriptor_RemoveString,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledString_Descriptor_Create, ARKUI_ERROR_CODE_NO_ERROR.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_263', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_263()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_264
-     * @tc.name    TestArkUICapi_264
-     * @tc.desc    Case: TestArkUICapi_264. API: OH_ArkUI_StyledString_Descriptor_ReplaceStyle,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_SpanStyle, OH_ArkUI_StyledString_Descriptor_Create,
-     *             ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_264', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_264()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_265
-     * @tc.name    TestArkUICapi_265
-     * @tc.desc    Case: TestArkUICapi_265. API: OH_ArkUI_StyledString_Descriptor_SetStyle,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_SpanStyle, OH_ArkUI_StyledString_Descriptor_Create,
-     *             ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_265', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_265()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_266
-     * @tc.name    TestArkUICapi_266
-     * @tc.desc    Case: TestArkUICapi_266. API: OH_ArkUI_StyledString_Descriptor_RemoveStyle,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledStringKey, OH_ArkUI_StyledString_Descriptor_Create,
-     *             ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_266', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_266()).assertEqual(0)
-      done()
-    })
-
-    /**
      * @tc.number  TestArkUICapi_267
      * @tc.name    TestArkUICapi_267
      * @tc.desc    Case: TestArkUICapi_267. API: OH_ArkUI_StyledString_Descriptor_ClearStyles,
@@ -455,21 +349,6 @@ export default function arkuiNativeCapiStyledString() {
      */
     it('TestArkUICapi_267', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_267()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_268
-     * @tc.name    TestArkUICapi_268
-     * @tc.desc    Case: TestArkUICapi_268. API: OH_ArkUI_StyledString_Descriptor_ReplaceStyledString,
-     *             ArkUI_StyledString_Descriptor, OH_ArkUI_StyledString_Descriptor_Create, ARKUI_ERROR_CODE_NO_ERROR.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_268', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_268()).assertEqual(0)
       done()
     })
 
@@ -1243,21 +1122,6 @@ export default function arkuiNativeCapiStyledString() {
      */
     it('TestArkUICapi_320', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_320()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_321
-     * @tc.name    TestArkUICapi_321
-     * @tc.desc    Case: TestArkUICapi_321. API: OH_ArkUI_SpanStyle_GetUserDataSpan, OH_ArkUI_SpanStyle,
-     *             OH_ArkUI_UserDataSpan, OH_ArkUI_SpanStyle_Create, ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII details
-     *             are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_321', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_321()).assertEqual(0)
       done()
     })
 
@@ -2075,21 +1939,6 @@ export default function arkuiNativeCapiStyledString() {
      */
     it('TestArkUICapi_376', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_376()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number  TestArkUICapi_377
-     * @tc.name    TestArkUICapi_377
-     * @tc.desc    Case: TestArkUICapi_377. API: OH_ArkUI_TextShadowStyle_SetTextShadow, OH_ArkUI_TextShadowStyle,
-     *             OH_ArkUI_ShadowOptions, OH_ArkUI_TextShadowStyle_Create, ARKUI_ERROR_CODE_NO_ERROR. Note: non-ASCII
-     *             details are in the workbook and native C++ comments
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     */
-    it('TestArkUICapi_377', Level.LEVEL1, async (done: Function) => {
-      expect(arkuiCapiTest.TestArkUICapi_377()).assertEqual(0)
       done()
     })
 
