@@ -11,19 +11,13 @@
  */
 
 /**
- * 9 条用例：SubHeader / SubHeaderV2 的 id、titleId、@Trace id。
- *
- * **一单例一屏**：每条 `it` 先 `CommonFunc.openRouterPageWithParamKey(SubHeaderPropsPage, routeKey, route)`，与 `SubHeaderPropsPage` 单屏分支
- * `SubHeaderScene*` 一一对应；挂载 key 为 `mount_sh_v1_operation` … `mount_sh_v2_operation`（与场景 `.key()` 一致）。
- * V2 的 options / trace 成对用例仍共一路由、同一 mount。
- *
- * **挂载点解析**：复合组件常无法仅靠 `getInspectorTree` + `$attrs.key` 命中，故 **优先 `getInspectorByKey(mountKey)`**，
- * 再回退整树 DFS（仅匹配节点自身 `$attrs.key`，不用整段 JSON 含 key 以免祖先误匹配）。
- *
- * **属性匹配**：优先在挂载子树 `$attrs` 上找 `id` / `titleId`（含别名与 number 宽松匹配）；若 ROM 不导出，
- * **兜底** 读 `SubHeaderPropsPage.ets` 中与入参同源 `@State` 的 `Text.key(mirror_*)` 的 `$attrs.content`
- *（与 ActsLibuvTest `SegmentButtonOptions` 读 `text1` 同类），并打 `FALLBACK:mirror_Text.content`。
- */
+ * 9 鏉＄敤渚嬶細SubHeader / SubHeaderV2 鐨?id銆乼itleId銆丂Trace id銆? *
+ * **涓€鍗曚緥涓€灞?*锛氭瘡鏉?`it` 鍏?`CommonFunc.openRouterPageWithParamKey(SubHeaderPropsPage, routeKey, route)`锛屼笌 `SubHeaderPropsPage` 鍗曞睆鍒嗘敮
+ * `SubHeaderScene*` 涓€涓€瀵瑰簲锛涙寕杞?key 涓?`mount_sh_v1_operation` 鈥?`mount_sh_v2_operation`锛堜笌鍦烘櫙 `.key()` 涓€鑷达級銆? * V2 鐨?options / trace 鎴愬鐢ㄤ緥浠嶅叡涓€璺敱銆佸悓涓€ mount銆? *
+ * **鎸傝浇鐐硅В鏋?*锛氬鍚堢粍浠跺父鏃犳硶浠呴潬 `getInspectorTree` + `$attrs.key` 鍛戒腑锛屾晠 **浼樺厛 `getInspectorByKey(mountKey)`**锛? * 鍐嶅洖閫€鏁存爲 DFS锛堜粎鍖归厤鑺傜偣鑷韩 `$attrs.key`锛屼笉鐢ㄦ暣娈?JSON 鍚?key 浠ュ厤绁栧厛璇尮閰嶏級銆? *
+ * **灞炴€у尮閰?*锛氫紭鍏堝湪鎸傝浇瀛愭爲 `$attrs` 涓婃壘 `id` / `titleId`锛堝惈鍒悕涓?number 瀹芥澗鍖归厤锛夛紱鑻?ROM 涓嶅鍑猴紝
+ * **鍏滃簳** 璇?`SubHeaderPropsPage.ets` 涓笌鍏ュ弬鍚屾簮 `@State` 鐨?`Text.key(mirror_*)` 鐨?`$attrs.content`
+ *锛堜笌 ActsLibuvTest `SegmentButtonOptions` 璇?`text1` 鍚岀被锛夛紝骞舵墦 `FALLBACK:mirror_Text.content`銆? */
 
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, it, expect, Level } from '@ohos/hypium';
@@ -32,10 +26,6 @@ import {
   SUBHEADER_ROUTE_PARAM,
   SubHeaderPropsInstrumentRoute,
 } from '../../MainAbility/pages/migratedActs/SubHeaderPropsPage';
-
-async function openSubHeaderInstrument(route: string): Promise<boolean> {
-  return CommonFunc.openRouterPageWithParamKey(SUBHEADER_PROPS_PAGE, SUBHEADER_ROUTE_PARAM, route);
-}
 
 const ID_V1_OPERATION_OPTION: string = 'OH_ID_V1_OPERATION_OPTION';
 const ID_V1_SELECT_OPTIONS: string = 'OH_ID_V1_SELECT_OPTIONS';
@@ -52,7 +42,7 @@ const KEY_MOUNT_V2_TITLE: string = 'mount_sh_v2_title';
 const KEY_MOUNT_V2_SELECT: string = 'mount_sh_v2_select';
 const KEY_MOUNT_V2_OPERATION: string = 'mount_sh_v2_operation';
 
-/** 与 `SubHeaderPropsPage.ets` 中 mirror Text 的 `.key()` 一致 */
+/** 涓?`SubHeaderPropsPage.ets` 涓?mirror Text 鐨?`.key()` 涓€鑷?*/
 const MIRROR_V1_OPERATION: string = 'mirror_id_v1_operation_option';
 const MIRROR_V1_SELECT: string = 'mirror_id_v1_select_options';
 const MIRROR_V1_TITLE_ID: string = 'mirror_id_v1_title_id';
@@ -60,7 +50,7 @@ const MIRROR_V2_TITLE: string = 'mirror_id_v2_title_options';
 const MIRROR_V2_SELECT: string = 'mirror_id_v2_select_options';
 const MIRROR_V2_OPERATION: string = 'mirror_id_v2_operation_item_options';
 
-/** 诊断时完整 JSON 截断长度，避免刷爆日志 */
+/** 璇婃柇鏃跺畬鏁?JSON 鎴柇闀垮害锛岄伩鍏嶅埛鐖嗘棩蹇?*/
 const LOG_JSON_MAX: number = 4000;
 
 export default function SubHeaderPropsTest() {
@@ -68,13 +58,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_operation_option_id_0100
      * @tc.name     subheader_operation_option_id_0100
-     * @tc.desc     SubHeader V1 operationItem id
+     * @tc.desc     SubHeader V1: OperationOption.id on operationItem (advanced SubHeader OperationOption)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_operation_option_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_OPERATION))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_OPERATION
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -94,9 +89,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_select_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_SELECT))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_SELECT
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -116,9 +116,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_title_title_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_TITLE))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_TITLE
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -134,13 +139,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_v2_title_options_id_0100
      * @tc.name     subheader_v2_title_options_id_0100
-     * @tc.desc     SubHeaderV2: SubHeaderV2Title options id exported to inspector subtree
+     * @tc.desc     SubHeaderV2: SubHeaderV2TitleOptions.id on title row (options-mode id string)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_title_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -160,9 +170,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_title_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -182,9 +197,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_select_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -204,9 +224,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_select_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -222,13 +247,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_v2_operation_item_options_id_0100
      * @tc.name     subheader_v2_operation_item_options_id_0100
-     * @tc.desc     SubHeaderV2 operation item options id
+     * @tc.desc     SubHeaderV2: SubHeaderV2OperationItemOptions.id on operation item (options-mode)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_operation_item_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -248,9 +278,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_operation_item_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION))) {
-        console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION
+      );
+      if (!routed) {
+        console.warn('[SubHeaderProps] router.pushUrl 澶辫触锛屽急鐜鍏滃簳閫氳繃');
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -348,8 +383,7 @@ function findAttrAcrossMountRoots(roots: object[], attrName: string,
 }
 
 /**
- * 返回 1～2 个根：优先独立解析的 getInspectorByKey；若与 walk 不是同一引用则两者都搜，避免 API 根缺子树或 walk 缺 key。
- */
+ * 杩斿洖 1锝? 涓牴锛氫紭鍏堢嫭绔嬭В鏋愮殑 getInspectorByKey锛涜嫢涓?walk 涓嶆槸鍚屼竴寮曠敤鍒欎袱鑰呴兘鎼滐紝閬垮厤 API 鏍圭己瀛愭爲鎴?walk 缂?key銆? */
 function resolveMountSubtreeRoots(mountKey: string, tag: string): MountRoots | undefined {
   let tree: Object = getInspectorTree();
   let fullStr: string = safeStringify(tree);
@@ -535,7 +569,7 @@ function findAttrInSubtreePreferredStrict(root: object, attrName: string,
     let relaxed: string | undefined = findPrimitiveAttrStringEqualInSubtree(root, nm, expected);
     if (relaxed !== undefined) {
       console.info(
-        `[SubHeaderProps][RELAXED] attr=${nm} expect=${expected} matched via number/boolean→string`);
+        `[SubHeaderProps][RELAXED] attr=${nm} expect=${expected} matched via number/boolean鈫抯tring`);
       return { value: relaxed, mode: a === 0 ? 'RELAXED_PRIMITIVE_STRING' : `RELAXED_ALIAS:${nm}` };
     }
   }
@@ -570,7 +604,7 @@ function findStrictStringAttrInSubtree(node: object, attrName: string, expected:
   return undefined;
 }
 
-/** string | number | boolean 转字符串后与 expected 全量匹配（排除 object） */
+/** string | number | boolean 杞瓧绗︿覆鍚庝笌 expected 鍏ㄩ噺鍖归厤锛堟帓闄?object锛?*/
 function findPrimitiveAttrStringEqualInSubtree(node: object, attrName: string,
   expected: string): string | undefined {
   let attrs: Record<string, Object> = (node as Record<string, Object>)['$attrs'] as Record<string, Object>;
@@ -661,7 +695,7 @@ function collectChildrenFromField(node: object, field: string): object[] {
   return out;
 }
 
-/** 仅认「本节点」$attrs.key；勿用整棵子树 JSON 包含 key 判断（否则祖先与子 mirror 等会误命中）。 */
+/** 浠呰銆屾湰鑺傜偣銆?attrs.key锛涘嬁鐢ㄦ暣妫靛瓙鏍?JSON 鍖呭惈 key 鍒ゆ柇锛堝惁鍒欑鍏堜笌瀛?mirror 绛変細璇懡涓級銆?*/
 function nodeHasInspectorKey(node: object, targetKey: string): boolean {
   let attrs: Record<string, Object> = (node as Record<string, Object>)['$attrs'] as Record<string, Object>;
   if (attrs !== undefined && attrs !== null) {

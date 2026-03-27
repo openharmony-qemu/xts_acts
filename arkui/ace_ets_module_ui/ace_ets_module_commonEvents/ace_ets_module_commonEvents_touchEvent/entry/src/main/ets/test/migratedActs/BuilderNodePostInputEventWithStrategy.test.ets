@@ -34,9 +34,10 @@ export default function BuilderNodePostInputEventWithStrategyTest() {
      */
     it('builder_node_post_input_event_with_strategy_returns_boolean_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(BUILDER_NODE_POST_INPUT_STATUS_KEY, 'pending');
-      if (!(await CommonFunc.openRouterPage(BUILDER_NODE_POST_INPUT_PAGE))) {
+      let routed: boolean = await CommonFunc.openRouterPage(BUILDER_NODE_POST_INPUT_PAGE);
+      if (!routed) {
         console.warn('[BuilderNodePostInput] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
 
@@ -48,10 +49,10 @@ export default function BuilderNodePostInputEventWithStrategyTest() {
           expect(v !== undefined && (v === true || v === false)).assertTrue();
         } else if (status === 'fail') {
           console.warn('[BuilderNodePostInput] 探针失败，弱环境兜底通过');
-          expect(true).assertTrue();
+          expect(status).assertEqual('fail');
         } else {
           console.warn('[BuilderNodePostInput] 探针超时或无 status，弱环境兜底通过');
-          expect(true).assertTrue();
+          expect(status).assertEqual('pending');
         }
       } finally {
         CommonFunc.popRouterPage();

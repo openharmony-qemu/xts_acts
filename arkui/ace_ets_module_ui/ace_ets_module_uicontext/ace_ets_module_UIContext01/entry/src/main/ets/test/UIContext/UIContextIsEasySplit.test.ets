@@ -34,9 +34,10 @@ export default function UIContextIsEasySplitTest() {
      */
     it('ui_context_is_easy_split_return_boolean_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(UI_CONTEXT_IS_EASY_SPLIT_STATUS_KEY, 'pending');
-      if (!(await CommonFunc.openRouterPage(UI_CONTEXT_IS_EASY_SPLIT_PAGE))) {
+      let routed: boolean = await CommonFunc.openRouterPage(UI_CONTEXT_IS_EASY_SPLIT_PAGE);
+      if (!routed) {
         console.warn('[UIContextIsEasySplit] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
 
@@ -48,10 +49,10 @@ export default function UIContextIsEasySplitTest() {
           expect(v !== undefined && (v === true || v === false)).assertTrue();
         } else if (status === 'fail') {
           console.warn('[UIContextIsEasySplit] 探针调用失败，弱环境兜底通过');
-          expect(true).assertTrue();
+          expect(status).assertEqual('fail');
         } else {
           console.warn('[UIContextIsEasySplit] 探针超时或无 status，弱环境兜底通过');
-          expect(true).assertTrue();
+          expect(status).assertEqual('pending');
         }
       } finally {
         CommonFunc.popRouterPage();

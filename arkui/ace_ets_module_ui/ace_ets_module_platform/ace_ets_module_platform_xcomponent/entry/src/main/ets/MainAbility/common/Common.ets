@@ -79,7 +79,7 @@ export default class CommonFunc {
   }
 
   static async openRouterPageWithParamKey(url: string, key: string, val: string): Promise<boolean> {
-    let p: ESObject = {};
+    let p: Record<string, Object> = {};
     p[key] = val;
     return CommonFunc.openRouterPage(url, p);
   }
