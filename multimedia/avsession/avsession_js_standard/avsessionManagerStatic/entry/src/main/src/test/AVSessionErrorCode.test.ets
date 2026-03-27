@@ -1564,12 +1564,8 @@ export default function AVSessionErrorCode() {
             if (controller != null) {
               await controller!.destroy()
             }
-            let aVCastController: avSession.AVCastController| undefined;
             session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
-                aVCastController = avcontroller;
                 console.info(`getAVCastController : SUCCESS `);
-            }).catch((err: BusinessError) => {
-                console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);

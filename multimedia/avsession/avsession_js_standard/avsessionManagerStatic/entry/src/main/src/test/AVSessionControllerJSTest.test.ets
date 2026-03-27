@@ -1710,10 +1710,10 @@ export default function abilityTest() {
 
             controller!.onMetadataChange(filter, (metadata: avSession.AVMetadata) => {
                 console.info(`onMetadataChange assetId : ${metadata.assetId}`);
-                expect(metadata.assetId).assertEqual(changedata1.assetId);
-                expect(metadata.title).assertEqual(changedata1.title);
-                expect(metadata.artist).assertEqual(changedata1.artist);
-                expect(metadata.author).assertEqual(changedata1.author);
+                expect(metadata?.assetId).assertEqual(changedata1?.assetId);
+                expect(metadata?.title).assertEqual(changedata1?.title);
+                expect(metadata?.artist).assertEqual(changedata1?.artist);
+                expect(metadata?.author).assertEqual(changedata1?.author);
                 expect(metadata?.avQueueName).assertEqual(changedata1?.avQueueName);
                 expect(metadata?.avQueueId).assertEqual(changedata1?.avQueueId);
                 expect(metadata?.avQueueImage).assertEqual(changedata1?.avQueueImage);
@@ -1730,7 +1730,7 @@ export default function abilityTest() {
                 expect(metadata?.previousAssetId).assertEqual(changedata1?.previousAssetId);
                 expect(metadata?.nextAssetId).assertEqual(changedata1?.nextAssetId);
                 expect(metadata?.filter).assertEqual(changedata1?.filter);
-                expect(metadata?.drmScheme).assertEqual(changedata1?.drmScheme);
+                expect(metadata?.drmSchemes).assertEqual(changedata1?.drmSchemes);
                 expect(metadata?.displayTags).assertEqual(changedata1?.displayTags);
                 flag ++;
             });
@@ -1770,12 +1770,12 @@ export default function abilityTest() {
                 author: "ST1"
             };
 
-            controller!.onMetadataChangeAll(filter, (metadata: avSession.AVMetadata) => {
-                console.info(`onMatadataChange assetId : ${metadata.assetId}`);
-                expect(metadata.assetId).assertEqual(changedata1.assetId);
-                expect(metadata.title).assertEqual(changedata1.title);
-                expect(metadata.artist).assertEqual(changedata1.artist);
-                expect(metadata.author).assertEqual(changedata1.author);
+            controller!.onMetadataChangeAll((metadata: avSession.AVMetadata) => {
+                console.info(`onMatadataChange assetId : ${metadata?.assetId}`);
+                expect(metadata?.assetId).assertEqual(changedata1?.assetId);
+                expect(metadata?.title).assertEqual(changedata1?.title);
+                expect(metadata?.artist).assertEqual(changedata1?.artist);
+                expect(metadata?.author).assertEqual(changedata1?.author);
                 expect(metadata?.avQueueName).assertEqual(changedata1?.avQueueName);
                 expect(metadata?.avQueueId).assertEqual(changedata1?.avQueueId);
                 expect(metadata?.avQueueImage).assertEqual(changedata1?.avQueueImage);
@@ -1792,7 +1792,7 @@ export default function abilityTest() {
                 expect(metadata?.previousAssetId).assertEqual(changedata1?.previousAssetId);
                 expect(metadata?.nextAssetId).assertEqual(changedata1?.nextAssetId);
                 expect(metadata?.filter).assertEqual(changedata1?.filter);
-                expect(metadata?.drmScheme).assertEqual(changedata1?.drmScheme);
+                expect(metadata?.drmSchemes).assertEqual(changedata1?.drmSchemes);
                 expect(metadata?.displayTags).assertEqual(changedata1?.displayTags);
             });
 
@@ -1819,8 +1819,7 @@ export default function abilityTest() {
                 console.info(`onCallMatadataChange name : ${callmetadata.name}`);
                 expect(callmetadata.name).assertEqual(callMetadate1.name);
                 expect(callmetadata.phoneNumber).assertEqual(callMetadate1.phoneNumber);
-                expect(callmetadata?.avatra).assertEqual(callMetadate1?.avatra);
-                flag ++;
+                expect(callmetadata?.avatar).assertEqual(callMetadate1?.avatar);
             });
 
             done();
@@ -1846,7 +1845,6 @@ export default function abilityTest() {
                 console.info(`onCallStateChange state : ${callstate.state}`);
                 expect(callstate.state).assertEqual(AVCallState1.state);
                 expect(callstate.muted).assertEqual(AVCallState1.muted);
-
             });
             done();
         })
@@ -1866,7 +1864,7 @@ export default function abilityTest() {
             let playbackstate1: avSession.AVPlaybackState = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
                 speed: 1.5
-            }
+            };   
 
             controller!.onPlaybackStateChange(filter, (playbackState: avSession.AVPlaybackState) => {
                 console.info(`onPlaybackStateChange state : ${playbackState.state}`);
@@ -1912,9 +1910,9 @@ export default function abilityTest() {
             let playbackstate1: avSession.AVPlaybackState = {
                 state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
                 speed: 1.5
-            }
+            };
 
-            controller!.onPlaybackStateChangeAll(filter, (playbackState: avSession.AVPlaybackState) => {
+            controller!.onPlaybackStateChangeAll((playbackState: avSession.AVPlaybackState) => {
                 console.info(`onPlaybackStateChangeAll state : ${playbackState.state}`);
                 expect(playbackState.state).assertEqual(playbackstate1.state);
                 expect(playbackState.speed).assertEqual(playbackstate1.speed);

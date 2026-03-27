@@ -1245,7 +1245,7 @@ export default function abilityTest() {
         /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRORCODE_STATIC_0103
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRORCODE_STATIC_0103
-         * @tc.desc   onsessionDestroy with controller does not exist(errcode 6600103)
+         * @tc.desc   onSessionDestroy with controller does not exist(errcode 6600103)
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
@@ -1254,11 +1254,11 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onsessionDestroy(() => {
-                    console.info(`controller onsessionDestroy Successfully`);
+                controller!.onSessionDestroy(() => {
+                    console.info(`controller onSessionDestroy Successfully`);
                 });
             }catch(err){
-                console.info(`controller onsessionDestroy BusinessError: code: ${err.code}, message: ${err.message}`)
+                console.info(`controller onSessionDestroy BusinessError: code: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600103);
             }
             done();
