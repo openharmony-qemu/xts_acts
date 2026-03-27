@@ -1133,34 +1133,34 @@ export default function actslocationTest() {
         )
 
         /**
-         * @tc.number  Sub_Location_core_onBluetoothScanResultChange_0100
-         * @tc.name  Sub_Location_core_onBluetoothScanResultChange_0100
+         * @tc.number  Sub_Location_core_onBluetoothScanResultChange_0200
+         * @tc.name  Sub_Location_core_onBluetoothScanResultChange_0200
          * @tc.desc  onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
          * @tc.level  Level 0
          * @tc.type  Function
          * @tc.size  MEDIUMTEST
          */
-        it('Sub_Location_core_onBluetoothScanResultChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_core_onBluetoothScanResultChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
-                console.info('Sub_Location_core_onBluetoothScanResultChange_0100: ' + JSON.stringify(result));
+                console.info('Sub_Location_core_onBluetoothScanResultChange_0200: ' + JSON.stringify(result));
                 expect(true).assertEqual(result!=null);
-                console.info("Sub_Location_core_onBluetoothScanResultChange_0100 ======>deviceId", typeof result.deviceId)
+                console.info("Sub_Location_core_onBluetoothScanResultChange_0200 ======>deviceId", typeof result.deviceId)
                 expect(typeof result.deviceId).assertEqual("string");
-                console.info("Sub_Location_core_onBluetoothScanResultChange_0100 ======>rssi", typeof result.rssi)
+                console.info("Sub_Location_core_onBluetoothScanResultChange_0200 ======>rssi", typeof result.rssi)
                 expect(typeof result.rssi).assertEqual("number");
                 if (result.data) {
-                  console.info("Sub_Location_core_onBluetoothScanResultChange_0100 ======>data", typeof result.data)
+                  console.info("Sub_Location_core_onBluetoothScanResultChange_0200 ======>data", typeof result.data)
                   expect(result.data instanceof Array);
                 }
-                console.info("Sub_Location_core_onBluetoothScanResultChange_0100 ======>deviceName", typeof result.deviceName)
+                console.info("Sub_Location_core_onBluetoothScanResultChange_0200 ======>deviceName", typeof result.deviceName)
                 expect(typeof result.deviceName).assertEqual("string");
-                console.info("Sub_Location_core_onBluetoothScanResultChange_0100 ======>connectable", typeof result.connectable)
+                console.info("Sub_Location_core_onBluetoothScanResultChange_0200 ======>connectable", typeof result.connectable)
                 expect(typeof result.connectable).assertEqual("boolean");
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
               } catch (err) {
-                console.error("Sub_Location_core_onBluetoothScanResultChange_0100 errCode:" + err.code + ", message:" + err.message);
+                console.error("Sub_Location_core_onBluetoothScanResultChange_0200 errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
           await Utils.msSleep(1000)
