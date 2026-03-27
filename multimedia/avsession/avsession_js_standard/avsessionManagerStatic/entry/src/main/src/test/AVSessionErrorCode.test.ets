@@ -1567,14 +1567,14 @@ export default function AVSessionErrorCode() {
             let aVCastController: avSession.AVCastController| undefined;
             session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
                 aVCastController = avcontroller;
-                console.info(`getAVCastController : SUCCESS : sessionid `);
+                console.info(`getAVCastController : SUCCESS `);
             }).catch((err: BusinessError) => {
-                console.error(`getAVCastController BusinessError: code: ${err?.code}, message: ${err?.message}`);
+                console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
             });
         } catch (error) {
-            console.info(`getAVCastController failed: code: ${error?.code}, message: ${error?.message}`);
-            expect(error?.code).assertEqual(6600109);
-            expect(error?.message).assertEqual("Cannot read property catch of undefined");
+            console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(6600109);
+            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -1594,7 +1594,7 @@ export default function AVSessionErrorCode() {
               await controller!.destroy()
             }
             let aVCastController: avSession.AVCastController| undefined;
-            session!.getAVCastController((err: BusinessError, avcontroller: avSession.AVCastController| undefined) => {
+            session!.getAVCastController((err: BusinessError | null, avcontroller: avSession.AVCastController| undefined) => {
               if (err) {
                 console.error(`getAVCastController BusinessError: code: ${err?.code}, message: ${err?.message}`);
               } else {

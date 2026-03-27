@@ -1210,10 +1210,10 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onCallMetadataChangeAll((callmetadata: avSession.CallMetadata) = > {
+                controller!.onCallMetadataChangeAll((callmetadata: avSession.CallMetadata) => {
                     console.info(`controller onCallMetadataChangeAll Successfully`);
                 });
-            }catch(err){
+            } catch (err){
                 console.info(`controller onCallMetadataChangeAll BusinessError: code: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600103);
             }
@@ -1232,7 +1232,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onCallStateChangeAll((callstate: avSession.AVCallState) = > {
+                controller!.onCallStateChangeAll((callstate: avSession.AVCallState) => {
                     console.info(`controller onCallStateChangeAll Successfully`);
                 });
             }catch(err){
@@ -1254,7 +1254,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onsessionDestroy(() = > {
+                controller!.onsessionDestroy(() => {
                     console.info(`controller onsessionDestroy Successfully`);
                 });
             }catch(err){
@@ -1276,7 +1276,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onQueueItemsChange((items: avSession.AVQueueItem[]) = > {
+                controller!.onQueueItemsChange((items: avSession.AVQueueItem[]) => {
                     console.info(`controller onQueueItemsChange Successfully`);
                 });
             }catch(err){
@@ -1318,7 +1318,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await controller!.destroy()
             try {
-                controller!.onQueueTitleChange((tilte: string) = > {
+                controller!.onQueueTitleChange((tilte: string) => {
                     console.info(`controller onQueueTitleChange Successfully`);
                 });
             }catch(err){

@@ -1692,7 +1692,7 @@ export default function abilityTest() {
         /**
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGE_STATIC_0101
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGE_STATIC_0101
-         * @tc.desc   Testing onMatadataChange callback registration
+         * @tc.desc   Testing onMetadataChange callback registration
          * @tc.size   MediumTest
          * @tc.type   Function
          * @tc.level  Level 3
@@ -1708,8 +1708,8 @@ export default function abilityTest() {
                 author: "ST1"
             };
 
-            controller!.onMatadataChange(filter, (metadata: avSession.AVMetadata) => {
-                console.info(`onMatadataChange assetId : ${metadata.assetId}`);
+            controller!.onMetadataChange(filter, (metadata: avSession.AVMetadata) => {
+                console.info(`onMetadataChange assetId : ${metadata.assetId}`);
                 expect(metadata.assetId).assertEqual(changedata1.assetId);
                 expect(metadata.title).assertEqual(changedata1.title);
                 expect(metadata.artist).assertEqual(changedata1.artist);
@@ -1738,7 +1738,7 @@ export default function abilityTest() {
             await session!.setAVMetadata(changedata1);
             await Utils.msSleep(500);
 
-            controller!.offMatadataChange((metadata: avSession.AVMetadata) => {
+            controller!.offMetadataChange((metadata: avSession.AVMetadata) => {
                 console.info(`offMatadataChange secces : ${JSON.stringify(metadata)}`);
             });
 
@@ -1755,7 +1755,7 @@ export default function abilityTest() {
         /**
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGEALL_STATIC_0101
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGEALL_STATIC_0101
-         * @tc.desc   Testing onMatadataChangeAll callback registration
+         * @tc.desc   Testing onMetadataChangeAll callback registration
          * @tc.size   MediumTest
          * @tc.type   Function
          * @tc.level  Level 3
@@ -1770,7 +1770,7 @@ export default function abilityTest() {
                 author: "ST1"
             };
 
-            controller!.onMatadataChangeAll(filter, (metadata: avSession.AVMetadata) => {
+            controller!.onMetadataChangeAll(filter, (metadata: avSession.AVMetadata) => {
                 console.info(`onMatadataChange assetId : ${metadata.assetId}`);
                 expect(metadata.assetId).assertEqual(changedata1.assetId);
                 expect(metadata.title).assertEqual(changedata1.title);
@@ -1802,7 +1802,7 @@ export default function abilityTest() {
         /**
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCALLMETADATACHNGE_STATIC_0101
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCALLMETADATACHNGE_STATIC_0101
-         * @tc.desc   Testing onCallMatadataChange callback registration
+         * @tc.desc   Testing onCallMetadataChange callback registration
          * @tc.size   MediumTest
          * @tc.type   Function
          * @tc.level  Level 3
@@ -1815,7 +1815,7 @@ export default function abilityTest() {
                 phoneNumber: '65432111'
             };
 
-            controller!.onCallMatadataChange(filter, (callmetadata: avSession.CallMetadata) => {
+            controller!.onCallMetadataChange(filter, (callmetadata: avSession.CallMetadata) => {
                 console.info(`onCallMatadataChange name : ${callmetadata.name}`);
                 expect(callmetadata.name).assertEqual(callMetadate1.name);
                 expect(callmetadata.phoneNumber).assertEqual(callMetadate1.phoneNumber);
