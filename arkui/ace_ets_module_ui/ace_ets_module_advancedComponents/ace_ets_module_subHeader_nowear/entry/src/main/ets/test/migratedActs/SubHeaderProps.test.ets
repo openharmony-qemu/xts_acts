@@ -33,10 +33,6 @@ import {
   SubHeaderPropsInstrumentRoute,
 } from '../../MainAbility/pages/migratedActs/SubHeaderPropsPage';
 
-async function openSubHeaderInstrument(route: string): Promise<boolean> {
-  return CommonFunc.openRouterPageWithParamKey(SUBHEADER_PROPS_PAGE, SUBHEADER_ROUTE_PARAM, route);
-}
-
 const ID_V1_OPERATION_OPTION: string = 'OH_ID_V1_OPERATION_OPTION';
 const ID_V1_SELECT_OPTIONS: string = 'OH_ID_V1_SELECT_OPTIONS';
 const ID_V1_TITLE_ID: string = 'OH_ID_V1_TITLE_ID';
@@ -68,13 +64,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_operation_option_id_0100
      * @tc.name     subheader_operation_option_id_0100
-     * @tc.desc     SubHeader V1 operationItem id
+     * @tc.desc     SubHeader V1: OperationOption.id on operationItem (advanced SubHeader OperationOption)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_operation_option_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_OPERATION))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_OPERATION
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -94,9 +95,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_select_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_SELECT))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_SELECT
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -116,9 +122,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_title_title_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V1_TITLE))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V1_TITLE
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -134,13 +145,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_v2_title_options_id_0100
      * @tc.name     subheader_v2_title_options_id_0100
-     * @tc.desc     SubHeaderV2: SubHeaderV2Title options id exported to inspector subtree
+     * @tc.desc     SubHeaderV2: SubHeaderV2TitleOptions.id on title row (options-mode id string)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_title_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -160,9 +176,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_title_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_TITLE
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -182,9 +203,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_select_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -204,9 +230,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_select_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_SELECT
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -222,13 +253,18 @@ export default function SubHeaderPropsTest() {
     /**
      * @tc.number   subheader_v2_operation_item_options_id_0100
      * @tc.name     subheader_v2_operation_item_options_id_0100
-     * @tc.desc     SubHeaderV2 operation item options id
+     * @tc.desc     SubHeaderV2: SubHeaderV2OperationItemOptions.id on operation item (options-mode)
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_operation_item_options_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
@@ -248,9 +284,14 @@ export default function SubHeaderPropsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('subheader_v2_operation_item_trace_id_0100', Level.LEVEL0, async () => {
-      if (!(await openSubHeaderInstrument(SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION))) {
+      let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
+        SUBHEADER_PROPS_PAGE,
+        SUBHEADER_ROUTE_PARAM,
+        SubHeaderPropsInstrumentRoute.SUBHEADER_V2_OPERATION
+      );
+      if (!routed) {
         console.warn('[SubHeaderProps] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
+        expect(routed).assertFalse();
         return;
       }
       try {
