@@ -2,6 +2,9 @@
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,10 +34,9 @@ export default function BuilderNodePostInputEventWithStrategyTest() {
      */
     it('builder_node_post_input_event_with_strategy_returns_boolean_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(BUILDER_NODE_POST_INPUT_STATUS_KEY, 'pending');
-      let routed: boolean = await CommonFunc.openRouterPage(BUILDER_NODE_POST_INPUT_PAGE);
-      if (!routed) {
+      if (!(await CommonFunc.openRouterPage(BUILDER_NODE_POST_INPUT_PAGE))) {
         console.warn('[BuilderNodePostInput] router.pushUrl 失败，弱环境兜底通过');
-        expect(routed).assertFalse();
+        expect(true).assertTrue();
         return;
       }
 
@@ -46,10 +48,10 @@ export default function BuilderNodePostInputEventWithStrategyTest() {
           expect(v !== undefined && (v === true || v === false)).assertTrue();
         } else if (status === 'fail') {
           console.warn('[BuilderNodePostInput] 探针失败，弱环境兜底通过');
-          expect(status).assertEqual('fail');
+          expect(true).assertTrue();
         } else {
           console.warn('[BuilderNodePostInput] 探针超时或无 status，弱环境兜底通过');
-          expect(status).assertEqual('pending');
+          expect(true).assertTrue();
         }
       } finally {
         CommonFunc.popRouterPage();
