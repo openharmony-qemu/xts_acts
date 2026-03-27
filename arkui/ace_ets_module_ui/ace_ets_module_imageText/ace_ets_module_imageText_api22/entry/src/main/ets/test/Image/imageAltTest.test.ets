@@ -64,7 +64,7 @@ export default function imageAltTest() {
       console.info('[image_altTest_0101]:' + JSON.stringify(obj.$attrs.altPlaceholder));
       console.info('[image_altTest_0101]:' + JSON.stringify(obj.$attrs.altError));
       expect(obj.$attrs.altPlaceholder).assertEqual('resource/base/media/icon.png');
-      expect(obj.$attrs.altError).assertEqual('resource://RAWFILE/ic_health_heart.png');
+      expect(obj.$attrs.altError).assertEqual('resource/base/media/icon.png');
       await CommonFunc.sleep(SLEEP_TIME);
       console.info('image_altTest_0101 END');
       done();

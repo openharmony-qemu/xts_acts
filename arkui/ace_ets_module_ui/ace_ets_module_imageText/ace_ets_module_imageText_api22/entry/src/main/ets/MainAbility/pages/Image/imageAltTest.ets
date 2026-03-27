@@ -23,7 +23,7 @@ struct ImageExample {
         .id('image001')
         .alt({
           placeholder: 'resource/base/media/icon.png',
-          error: $rawfile('ic_health_heart.png')
+          error: 'resource/base/media/icon.png'
         })
       Image('common/pages/apple')
         .width(80).height(80).margin(10)
