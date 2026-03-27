@@ -1111,6 +1111,1790 @@ export default function TypeArgumentsTest() {
       expect(v instanceof A).assertTrue()
     })
 
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_0900
+     * @tc.name      testTypeArguments0009
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X009[]> = new A<X009[]>(new X009[0])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1000
+     * @tc.name      testTypeArguments0010
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X010[]> = new A<X010[]>(new X010[0])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1100
+     * @tc.name      testTypeArguments0011
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X011[]|null> = new A<X011[]|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1200
+     * @tc.name      testTypeArguments0012
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithConstraint012<X012[]|null> = new AWithConstraint012<X012[]|null>(null)
+      expect(v instanceof AWithConstraint012).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1300
+     * @tc.name      testTypeArguments0013
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<X013>[]> = new A<A<X013>[]>([new A<X013>(new X013())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1400
+     * @tc.name      testTypeArguments0014
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<X014[]>[]> = new A<A<X014[]>[]>([new A<X014[]>(new X014[1])])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1500
+     * @tc.name      testTypeArguments0015
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<I015>[]> = new A<A<I015>[]>([new A<I015>(new X015())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1600
+     * @tc.name      testTypeArguments0016
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithConstraint016<Color016[]> = new AWithConstraint016<Color016[]>([Color016.Red])
+      expect(v instanceof AWithConstraint016).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1700
+     * @tc.name      testTypeArguments0017
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<Color017[]>[]> = new A<A<Color017[]>[]>([new A<Color017[]>([Color017.Red])])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1800
+     * @tc.name      testTypeArguments0018
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<int[]> = new A<int[]>([1, 2, 3])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_1900
+     * @tc.name      testTypeArguments0019
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<B019> = new A<B019>(new X019())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2000
+     * @tc.name      testTypeArguments0020
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<B020|null> = new A<B020|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2100
+     * @tc.name      testTypeArguments0021
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<C021> = new A<C021>(new A<X021>(new X021()))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2200
+     * @tc.name      testTypeArguments0022
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<D022> = new A<D022>(new X022[0])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2300
+     * @tc.name      testTypeArguments0023
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<E023> = new A<E023>([new A<X023>(new X023())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2400
+     * @tc.name      testTypeArguments0024
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithObjectConstraint024<F024> = new AWithObjectConstraint024<F024>([new AWithObjectConstraint024<X024|null>(new X024())])
+      expect(v instanceof AWithObjectConstraint024).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2500
+     * @tc.name      testTypeArguments0025
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<G025> = new A<G025>([new A<X025[]>(new X025[1])])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2600
+     * @tc.name      testTypeArguments0026
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<H026>[]> = new A<A<H026>[]>([new A<H026>([new X026()])])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2700
+     * @tc.name      testTypeArguments0027
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<int> = new A<int>(1)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2800
+     * @tc.name      testTypeArguments0028
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<Color028> = new A<Color028>(Color028.Red)
+      expect(v != null).assertTrue()
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_2900
+     * @tc.name      testTypeArguments0029
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithObjectConstraint029<B029> = new AWithObjectConstraint029<B029>([new AWithObjectConstraint029<X029|null>(new X029())])
+      expect(v instanceof AWithObjectConstraint029).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3000
+     * @tc.name      testTypeArguments0030
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[X030, X030]> = new A<[X030, X030]>([new X030(), new X030()])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3100
+     * @tc.name      testTypeArguments0031
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[X031, int]> = new A<[X031, int]>([new X031(), 1])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3200
+     * @tc.name      testTypeArguments0032
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[X032, X032]|null> = new A<[X032, X032]|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3300
+     * @tc.name      testTypeArguments0033
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[X033|null, X033]> = new A<[X033|null, X033]>([null, new X033()])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3400
+     * @tc.name      testTypeArguments0034
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<[X034, X034]>> = new A<A<[X034, X034]>>(new A<[X034, X034]>([new X034(), new X034()]))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3500
+     * @tc.name      testTypeArguments0035
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[A<X035>, A<X035>]> = new A<[A<X035>, A<X035>]>([new A<X035>(new X035()), new A<X035>(new X035())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3600
+     * @tc.name      testTypeArguments0036
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let foo: foo_type036 = (): void => {}
+      let v: A<foo_type036> = new A<foo_type036>(foo)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3700
+     * @tc.name      testTypeArguments0037
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let foo: foo_type036 = (): void => {}
+      let foo1: foo_type051 = (foo): void => {}
+      let v: A<foo_type051> = new A<foo_type051>(foo1)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3800
+     * @tc.name      testTypeArguments0038
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<foo_type038|[X038, X038]|null> = new A<foo_type038|[X038, X038]|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_3900
+     * @tc.name      testTypeArguments0039
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let foo: foo_type039 = (): void => {}
+      let v: A<[foo_type039|null, foo_type039]> = new A<[foo_type039|null, foo_type039]>([null, foo])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4000
+     * @tc.name      testTypeArguments0040
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let foo: foo_type040 = (): void => {}
+      let v: A<A<[foo_type040, foo_type040]>> = new A<A<[foo_type040, foo_type040]>>(new A<[foo_type040, foo_type040]>([foo, foo]))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4100
+     * @tc.name      testTypeArguments0041
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let foo: foo_type041 = (): void => {}
+      let v: A<[A<foo_type041>, A<foo_type041>]> = new A<[A<foo_type041>, A<foo_type041>]>([new A<foo_type041>(foo), new A<foo_type041>(foo)])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4200
+     * @tc.name      testTypeArguments0042
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X042>> = new A<FixedArray<X042>>([new X042()])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4300
+     * @tc.name      testTypeArguments0043
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X043>|null> = new A<FixedArray<X043>|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4400
+     * @tc.name      testTypeArguments0044
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<FixedArray<X044>>> = new A<A<FixedArray<X044>>>(new A<FixedArray<X044>>([new X044()]))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4500
+     * @tc.name      testTypeArguments0045
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<A<X045>>> = new A<FixedArray<A<X045>>>([new A<X045>(new X045())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4600
+     * @tc.name      testTypeArguments0046
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<Any> = new A<Any>(new X046())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4700
+     * @tc.name      testTypeArguments0047
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<undefined> = new A<undefined>(undefined)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4800
+     * @tc.name      testTypeArguments0048
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<null> = new A<null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_4900
+     * @tc.name      testTypeArguments0049
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<string> = new A<string>("string")
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5000
+     * @tc.name      testTypeArguments0050
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<bigint> = new A<bigint>(123n)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5100
+     * @tc.name      testTypeArguments0051
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<KeyHolder050<keyof Keys050>> = new A<KeyHolder050<'key'>>(new KeyHolder050<'key'>())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5200
+     * @tc.name      testTypeArguments0052
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X052> = new A<X052>(new X052())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5300
+     * @tc.name      testTypeArguments0053
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X053|null> = new A<X053|null>(new X053())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5400
+     * @tc.name      testTypeArguments0054
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<X054|null> = new A<X054|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5500
+     * @tc.name      testTypeArguments0055
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithExtendedConstraint<X055> = new AWithExtendedConstraint<X055>(new X055())
+      expect(v instanceof AWithExtendedConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5600
+     * @tc.name      testTypeArguments0056
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithExtendedNullConstraint<X056|null> = new AWithExtendedNullConstraint<X056|null>(new X056())
+      expect(v instanceof AWithExtendedNullConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5700
+     * @tc.name      testTypeArguments0057
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithObjectNullConstraint<X057|null> = new AWithObjectNullConstraint<X057|null>(null)
+      expect(v instanceof AWithObjectNullConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5800
+     * @tc.name      testTypeArguments0058
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<I058> = new A<I058>(new X058())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_5900
+     * @tc.name      testTypeArguments0059
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<I059|null> = new A<I059|null>(new Y059())
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6000
+     * @tc.name      testTypeArguments0060
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<I060|null> = new A<I060|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6100
+     * @tc.name      testTypeArguments0061
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A061<KeyHolder061<'key1'>> = new A061<KeyHolder061<'key1'>>(new KeyHolder061<'key1'>('key1'));
+      expect(v instanceof A061).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6200
+     * @tc.name      testTypeArguments0062
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType062 = (): void => {}
+      let v: A<FuncType062> = new A<FuncType062>(func)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6300
+     * @tc.name      testTypeArguments0063
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType064 = (): void => {}
+      let v: A<FuncType064|null> = new A<FuncType064|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6400
+     * @tc.name      testTypeArguments0064
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType065 = (): void => {}
+      let v: A<A<FuncType065>> = new A<A<FuncType065>>(new A<FuncType065>(func))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6500
+     * @tc.name      testTypeArguments0065
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType066 = (): void => {}
+      let v: A<AWithObjectConstraint<FuncType066>> = new A<AWithObjectConstraint<FuncType066>>(new AWithObjectConstraint<FuncType066>(func))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6600
+     * @tc.name      testTypeArguments0066
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType067 = (): void => {}
+      let v: A<[FuncType067, FuncType067]> = new A<[FuncType067, FuncType067]>([func, func])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6700
+     * @tc.name      testTypeArguments0067
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType068 = (): void => {}
+      let v: A<FuncType068[]|null> = new A<FuncType068[]|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6800
+     * @tc.name      testTypeArguments0068
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType069 = (): void => {}
+      let v: A<[FuncType069|null, FuncType069]> = new A<[FuncType069|null, FuncType069]>([null, func])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_6900
+     * @tc.name      testTypeArguments0069
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let func: FuncType070 = (): void => {}
+      let v: A<A<[FuncType070, FuncType070]>> = new A<A<[FuncType070, FuncType070]>>(new A<[FuncType070, FuncType070]>([func, func]))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7000
+     * @tc.name      testTypeArguments0070
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X071>> = new A<FixedArray<X071>>([new X071()])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7100
+     * @tc.name      testTypeArguments0071
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X072>|null> = new A<FixedArray<X072>|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7200
+     * @tc.name      testTypeArguments0072
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<FixedArray<X073>>> = new A<A<FixedArray<X073>>>(new A<FixedArray<X073>>([new X073()]))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7300
+     * @tc.name      testTypeArguments0073
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<A<X074>>> = new A<FixedArray<A<X074>>>([new A<X074>(new X074())])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7400
+     * @tc.name      testTypeArguments0074
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<FixedArray<X075>>> = new A<FixedArray<FixedArray<X075>>>([[new X075()]])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7500
+     * @tc.name      testTypeArguments0075
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X076>[]> = new A<FixedArray<X076>[]>([[new X076()]])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7600
+     * @tc.name      testTypeArguments0076
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<FixedArray<X077>>[]> = new A<A<FixedArray<X077>>[]>([new A<FixedArray<X077>>([new X077()])])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7700
+     * @tc.name      testTypeArguments0077
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<FixedArray<X078[]>[]> = new A<FixedArray<X078[]>[]>([[new X078[0]]])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7800
+     * @tc.name      testTypeArguments0078
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<undefined> = new A<undefined>(undefined)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_7900
+     * @tc.name      testTypeArguments0079
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<null> = new A<null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8000
+     * @tc.name      testTypeArguments0080
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<undefined|null> = new A<undefined|null>(null)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8100
+     * @tc.name      testTypeArguments0081
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[undefined, null]> = new A<[undefined, null]>([undefined, null])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8200
+     * @tc.name      testTypeArguments0082
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<A<undefined|null>> = new A<A<undefined|null>>(new A<undefined|null>(null))
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8300
+     * @tc.name      testTypeArguments0083
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[A<undefined>, A<null>]> = new A<[A<undefined>, A<null>]>([new A<undefined>(undefined), new A<null>(null)])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8400
+     * @tc.name      testTypeArguments0084
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<bigint> = new A<bigint>(123n)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8500
+     * @tc.name      testTypeArguments0085
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<string> = new A<string>("test")
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8600
+     * @tc.name      testTypeArguments0086
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<boolean> = new A<boolean>(true)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8700
+     * @tc.name      testTypeArguments0087
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<number> = new A<number>(123)
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8800
+     * @tc.name      testTypeArguments0088
+     * @tc.desc      Test of type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A<[bigint, string, boolean, number]> = new A<[bigint, string, boolean, number]>([123n, "test", true, 123])
+      expect(v instanceof A).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_8900
+     * @tc.name      testTypeArguments0089
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Y0091, B0091> = new A1<Y0091, B0091>(new Y0091(), new Y0091[0])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9000
+     * @tc.name      testTypeArguments0090
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Y0092, B0092> = new A1<Y0092, B0092>(new Y0092(), new Y0092[0])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9100
+     * @tc.name      testTypeArguments0091
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<[X0093, X0093], X0093> = new A1<[X0093, X0093], X0093>([new X0093(), new X0093()], new X0093())
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9200
+     * @tc.name      testTypeArguments0092
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Int, [X0094, X0094] | null> = new A1<Int, [X0094, X0094] | null>(new Int(), [new X0094(), new X0094()])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9300
+     * @tc.name      testTypeArguments0093
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Int | null, [X0095, X0095] | null> = new A1<Int|null, [X0095, X0095] | null>(null, null)
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9400
+     * @tc.name      testTypeArguments0094
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<[X0096, X0096], X0096 | null> = new A1<[X0096, X0096], X0096 | null>([new X0096(), new X0096()], new X0096())
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9500
+     * @tc.name      testTypeArguments0095
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Object, [X0097, X0097] | null> = new A1<Object, [X0097, X0097] | null>(new X0097(), null)
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9600
+     * @tc.name      testTypeArguments0096
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<FixedArray<X0098>, FixedArray<X0098>> = new A1<FixedArray<X0098>, FixedArray<X0098>>([new X0098()], [new X0098()])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9700
+     * @tc.name      testTypeArguments0097
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Int, FixedArray<X0099> | null> = new A1<Int, FixedArray<X0099> | null>(new Int(), [new X0099()])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9800
+     * @tc.name      testTypeArguments0098
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<Int|null, X0100|null> = new A1<Int|null, X0100|null>(null, null)
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_9900
+     * @tc.name      testTypeArguments0099
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<FixedArray<X0101>, FixedArray<X0101> | null> = new A1<FixedArray<X0101>, FixedArray<X0101> | null>([new X0101()], [new X0101()])
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10000
+     * @tc.name      testTypeArguments0100
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<FixedArray<X0102>|null, X0102> = new A1<FixedArray<X0102>|null, X0102>(
+        [new X0102()],
+        new X0102()
+      );
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10100
+     * @tc.name      testTypeArguments0101
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<FixedArray<X0103>|null, X0103> = new A1<FixedArray<X0103>|null, X0103>(
+        [new X0103()],
+        new X0103()
+      );
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10200
+     * @tc.name      testTypeArguments0102
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<undefined, undefined> = new A1<undefined, undefined>(undefined, undefined);
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10300
+     * @tc.name      testTypeArguments0103
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithConstraint<X0106> = new AWithConstraint<X0106>(new X0106())
+      expect(v instanceof AWithConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10400
+     * @tc.name      testTypeArguments0104
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithObjectNullConstraint<X0107|null> = new AWithObjectNullConstraint<X0107|null>(null)
+      expect(v instanceof AWithObjectNullConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10500
+     * @tc.name      testTypeArguments0105
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<X0108[], undefined> = new A1<X0108[], undefined>([new X0108()], undefined);
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10600
+     * @tc.name      testTypeArguments0106
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<X0109[][], undefined> = new A1<X0109[][], undefined>([[new X0109()]], undefined);
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10700
+     * @tc.name      testTypeArguments0107
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<[X0110, X0110], undefined> = new A1<[X0110, X0110], undefined>([new X0110(), new X0110()], undefined);
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10800
+     * @tc.name      testTypeArguments0108
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A1<[X0111, X0111]|null, undefined> = new A1<[X0111, X0111]|null, undefined>(null, undefined);
+      expect(v instanceof A1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_10900
+     * @tc.name      testTypeArguments0109
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v = new X0112()
+      let result = foo<X0112>(v, new Y0112())
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11000
+     * @tc.name      testTypeArguments0110
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v = new Y0113()
+      let result = fooWithConstraint<X0113>(v, new X0113())
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11100
+     * @tc.name      testTypeArguments0111
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = foo<X0114|null>(null, new X0114())
+      expect(result).assertNull()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11200
+     * @tc.name      testTypeArguments0112
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = fooWithObjectNullConstraint<Y0115|null>(null, new Y0115())
+      expect(result).assertNull()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11300
+     * @tc.name      testTypeArguments0113
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: I0116 = new X0116()
+      let result = foo<I0116>(v, v)
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11400
+     * @tc.name      testTypeArguments0114
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: I0117 = new Y0117()
+      let result = fooWithObjectConstraint<I0117>(v, new Y0117())
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11500
+     * @tc.name      testTypeArguments0115
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: Color0117[] = [Color0117.Red]
+      let result = fooWithObjectConstraint<Color0117[]>(v, [Color0117.Blue])
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11600
+     * @tc.name      testTypeArguments0116
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v = new X0118()
+      let result = foo<X0118>(v, new Y0118())
+      expect(result).assertEqual(v)
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11700
+     * @tc.name      testTypeArguments0117
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0121[], X0121> = new A2<X0121[], X0121>([new X0121()], new X0121())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11800
+     * @tc.name      testTypeArguments0118
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0122[][]|null, X0122> = new A2<X0122[][]|null, X0122>(null, new X0122())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_11900
+     * @tc.name      testTypeArguments0119
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0123|null, X0123[]> = new A2<X0123|null, X0123[]>(new X0123(), [new X0123()])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12000
+     * @tc.name      testTypeArguments0120
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0124|null, X0124|null> = new A2<X0124|null, X0124|null>(new X0124(), new X0124())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12100
+     * @tc.name      testTypeArguments0121
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0125[], X0125[]> = new A2<X0125[], X0125[]>([new X0125(), new X0125()], [new X0125()])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12200
+     * @tc.name      testTypeArguments0122
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<FixedArray<X0126 | null>, undefined> = new A2<FixedArray<X0126 | null>, undefined>(
+        [null, new X0126()],
+        undefined
+      );
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12300
+     * @tc.name      testTypeArguments0123
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0127, X0127> = new A2<X0127, X0127>(new X0127(), new X0127())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12400
+     * @tc.name      testTypeArguments0124
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithConstraint<X0128> = new AWithConstraint<X0128>(new X0128())
+      expect(v instanceof AWithConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12500
+     * @tc.name      testTypeArguments0125
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithConstraint<X0129> = new AWithConstraint<X0129>(new X0129())
+      expect(v instanceof AWithConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12600
+     * @tc.name      testTypeArguments0126
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: AWithObjectNullConstraint<X0130|null> = new AWithObjectNullConstraint<X0130|null>(null)
+      expect(v instanceof AWithObjectNullConstraint).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12700
+     * @tc.name      testTypeArguments0127
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<undefined, undefined> = new A2<undefined, undefined>(undefined, undefined)
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12800
+     * @tc.name      testTypeArguments0128
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0133[], X0133|null> = new A2<X0133[], X0133|null>([new X0133()], new X0133())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_12900
+     * @tc.name      testTypeArguments0129
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<FixedArray<X0134>, FixedArray<X0134|null>> = new A2<FixedArray<X0134>, FixedArray<X0134|null>>([new X0134()], [new X0134(), null])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13000
+     * @tc.name      testTypeArguments0130
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0135|null, X0135|null> = new A2<X0135|null, X0135|null>(null, null)
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13100
+     * @tc.name      testTypeArguments0131
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: B<Y0136, B0136> = new B<Y0136, B0136>(new Y0136(), [new Y0136()])
+      expect(v instanceof B).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13200
+     * @tc.name      testTypeArguments0132
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: B<[X0137, X0137], X0137> = new B<[X0137, X0137], X0137>([new X0137(), new X0137()], new X0137())
+      expect(v instanceof B).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13300
+     * @tc.name      testTypeArguments0133
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0138, X0138> = new A2<X0138, X0138>(new X0138(), new X0138())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13400
+     * @tc.name      testTypeArguments0134
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0139[], X0139> = new A2<X0139[], X0139>([new X0139()], new X0139())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13500
+     * @tc.name      testTypeArguments0135
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0140|null, X0140> = new A2<X0140|null, X0140>(new X0140(), new X0140())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13600
+     * @tc.name      testTypeArguments0136
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0141, X0141|null> = new A2<X0141, X0141|null>(new X0141(), null)
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13700
+     * @tc.name      testTypeArguments0137
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<FixedArray<X0142>, X0142> = new A2<FixedArray<X0142>, X0142>([new X0142()], new X0142())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13800
+     * @tc.name      testTypeArguments0138
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0143|null, FixedArray<X0143>> = new A2<X0143|null, FixedArray<X0143>>(new X0143(), [new X0143()])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_13900
+     * @tc.name      testTypeArguments0139
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0144, X0144[]|null> = new A2<X0144, X0144[]|null>(new X0144(), null)
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_14000
+     * @tc.name      testTypeArguments0140
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0145[][], X0145> = new A2<X0145[][], X0145>([[new X0145()]], new X0145())
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_14100
+     * @tc.name      testTypeArguments0141
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<X0146[]|null, X0146[][]> = new A2<X0146[]|null, X0146[][]>(null, [[new X0146()]])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_14200
+     * @tc.name      testTypeArguments0142
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<FixedArray<X0147|null>, FixedArray<X0147|null>> = new A2<FixedArray<X0147|null>, FixedArray<X0147|null>>([null, new X0147()], [new X0147(), null])
+      expect(v instanceof A2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_TYPE_ARGUMENTS_14300
+     * @tc.name      testTypeArguments0143
+     * @tc.desc      Type arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTypeArguments0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: A2<[X0148, X0148], [X0148, X0148]|null> = new A2<[X0148, X0148], [X0148, X0148]|null>([new X0148(), new X0148()], null)
+      expect(v instanceof A2).assertTrue()
+    })
 
   })
 }
