@@ -84,6 +84,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
           let encodedKeyConvert: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
           let expectKeyLen: number = encodedKeyConvert.data.byteLength;
+          let getKeyLen: number = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(expectKeyLen * 8);
           expect(keyLen).assertEqual(expectKeyLen);
           expect(ret).assertTrue();
         }
@@ -113,6 +115,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
           let expectKeyLen: number = encodedKeyConvert.data.byteLength;
           expect(keyLen).assertEqual(expectKeyLen);
+          let getKeyLen: number = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(expectKeyLen * 8);
           expect(ret).assertTrue();
         }
       } catch (error) {
@@ -140,6 +144,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
           let encodedKeyConvert: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
           let expectKeyLen: number = encodedKeyConvert.data.byteLength;
+          let getKeyLen: number = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(expectKeyLen * 8);
           expect(keyLen).assertEqual(expectKeyLen);
           expect(ret).assertTrue();
         }
