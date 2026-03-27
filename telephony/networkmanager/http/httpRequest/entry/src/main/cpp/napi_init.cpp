@@ -13,207 +13,180 @@
  * limitations under the License.
  */
 
-// [Start header_file]
 #include "global_http_interceptor.h"
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
-// [End header_file]
 
 const int GLOBAL_NETSTACK = 0xFF00;
 const char* TAG = "[netstack]";
 
+static bool GetInt32Param(napi_env env, napi_callback_info info, size_t expectedArgc, int32_t* params) {
+  size_t argc = expectedArgc;
+  napi_value args[2] = {nullptr};
+  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+  if (argc < expectedArgc) {
+    return false;
+  }
+  for (size_t i = 0; i < expectedArgc; i++) {
+    napi_get_value_int32(env, args[i], &params[i]);
+  }
+  return true;
+}
+
+static napi_value CreateInt32Result(napi_env env, int32_t value) {
+  napi_value result;
+  napi_create_int32(env, value, &result);
+  return result;
+}
+
 static napi_value NAPI_Global_AddNullPtrReadOnlyRequestInterceptor(
     napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = OH_Http_AddReadOnlyInterceptor(nullptr);
-  napi_create_int32(env, param, &result);
-  return result;
+  return CreateInt32Result(env, param);
 }
 
 static napi_value NAPI_Global_AddNullPtrWritableResponseInterceptor(
     napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = OH_Http_AddWritableInterceptor(nullptr);
-  napi_create_int32(env, param, &result);
-  return result;
+  return CreateInt32Result(env, param);
 }
+
 static napi_value NAPI_Global_AddReadOnlyRequestInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 2;
-  napi_value args[2] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  int32_t enabled = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_get_value_int32(env, args[1], &enabled);
-  napi_value result;
-  int32_t param = AddReadOnlyRequestInterceptor(group, enabled);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[2] = {0};
+  if (GetInt32Param(env, info, 2, params)) {
+    int32_t param = AddReadOnlyRequestInterceptor(params[0], params[1]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
 
 static napi_value NAPI_Global_AddReadOnlyResponseInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 2;
-  napi_value args[2] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  int32_t enabled = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_get_value_int32(env, args[1], &enabled);
-  napi_value result;
-  int32_t param = AddReadOnlyResponseInterceptor(group, enabled);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[2] = {0};
+  if (GetInt32Param(env, info, 2, params)) {
+    int32_t param = AddReadOnlyResponseInterceptor(params[0], params[1]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
 
 static napi_value NAPI_Global_AddWritableRequestInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 2;
-  napi_value args[2] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  int32_t enabled = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_get_value_int32(env, args[1], &enabled);
-  napi_value result;
-  int32_t param = AddWritableRequestInterceptor(group, enabled);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[2] = {0};
+  if (GetInt32Param(env, info, 2, params)) {
+    int32_t param = AddWritableRequestInterceptor(params[0], params[1]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
 
 static napi_value NAPI_Global_AddWritableResponseInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 2;
-  napi_value args[2] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  int32_t enabled = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_get_value_int32(env, args[1], &enabled);
-  napi_value result;
-  int32_t param = AddWritableResponseInterceptor(group, enabled);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[2] = {0};
+  if (GetInt32Param(env, info, 2, params)) {
+    int32_t param = AddWritableResponseInterceptor(params[0], params[1]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
+
 static napi_value NAPI_Global_RemoveRequestInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 1;
-  napi_value args[1] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_value result;
-  int32_t param = RemoveRequestInterceptor(group);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[1] = {0};
+  if (GetInt32Param(env, info, 1, params)) {
+    int32_t param = RemoveRequestInterceptor(params[0]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
+
 static napi_value NAPI_Global_RemoveResponseInterceptor(
     napi_env env, napi_callback_info info) {
-  size_t argc = 1;
-  napi_value args[1] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_value result;
-  int32_t param = RemoveResponseInterceptor(group);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[1] = {0};
+  if (GetInt32Param(env, info, 1, params)) {
+    int32_t param = RemoveResponseInterceptor(params[0]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
 
 static napi_value NAPI_Global_StopAllInterceptor(napi_env env,
                                                  napi_callback_info info) {
-  size_t argc = 1;
-  napi_value args[1] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_value result;
-  int32_t param = StopAllInterceptor(group);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[1] = {0};
+  if (GetInt32Param(env, info, 1, params)) {
+    int32_t param = StopAllInterceptor(params[0]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
 
 static napi_value NAPI_Global_RemoveAllInterceptor(napi_env env,
                                                    napi_callback_info info) {
-  size_t argc = 1;
-  napi_value args[1] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  napi_get_value_int32(env, args[0], &group);
-  napi_value result;
-  int32_t param = RemoveAllInterceptor(group);
-  napi_create_int32(env, param, &result);
-  return result;
+  int32_t params[1] = {0};
+  if (GetInt32Param(env, info, 1, params)) {
+    int32_t param = RemoveAllInterceptor(params[0]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
 }
+
 static napi_value NAPI_Global_RemoveNullptrInterceptor(
     napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = OH_Http_RemoveInterceptor(nullptr);
-  napi_create_int32(env, param, &result);
-  return result;
+  return CreateInt32Result(env, param);
 }
+
 static napi_value NAPI_Global_StartAllInterceptor(napi_env env,
                                                   napi_callback_info info) {
-  size_t argc = 1;
-  napi_value args[1] = {nullptr};
-  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  int32_t group = 0;
-  napi_get_value_int32(env, args[0], &group);
+  int32_t params[1] = {0};
+  if (GetInt32Param(env, info, 1, params)) {
+    int32_t param = StartAllInterceptor(params[0]);
+    return CreateInt32Result(env, param);
+  }
+  return CreateInt32Result(env, 0);
+}
+
+static napi_value CreateStringResult(napi_env env, const char* value) {
   napi_value result;
-  int32_t param = StartAllInterceptor(group);
-  napi_create_int32(env, param, &result);
+  napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &result);
   return result;
 }
 
 static napi_value NAPI_GetRequestUrl(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetRequestUrl();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetRequestBody(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetRequestBody();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetResponseBody(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetResponseBody();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetRequestMethod(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetRequestMethod();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetRequestHeader(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetRequestHeader();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetResponseHeader(napi_env env,
                                          napi_callback_info info) {
-  napi_value result;
   auto param = GetResponseHeader();
-  napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
-  return result;
+  return CreateStringResult(env, param);
 }
 
 static napi_value NAPI_GetResponseCode(napi_env env, napi_callback_info info) {
-  napi_value result;
   auto param = GetResponseCode();
-  napi_create_int32(env, param, &result);
-  return result;
+  return CreateInt32Result(env, param);
 }
 
 EXTERN_C_START
