@@ -9,7 +9,7 @@ import hilog from '@ohos.hilog'
 
 
 @Observed
-class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
   public isUndefined: Boolean = false;
   public mode: NavigationMode = NavigationMode.Split;
   public showMode: NavigationMode = NavigationMode.Split;

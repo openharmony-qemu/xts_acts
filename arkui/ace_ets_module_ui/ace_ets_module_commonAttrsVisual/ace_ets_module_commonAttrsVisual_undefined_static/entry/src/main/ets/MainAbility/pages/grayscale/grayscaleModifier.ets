@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyGrayscaleModifier implements AttributeModifier<CommonAttribute> {
+export class MyGrayscaleModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import { Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<VideoAttribute> {
+export class MyModifier implements AttributeModifier<VideoAttribute> {
   public eventValue: string = 'value';
   public isOnUpdate: boolean = false;
   public isOnPrepared: boolean = false;

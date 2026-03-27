@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 
 @Observed
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   public textPickerMOnChangeFlag: boolean | undefined = true;
   public gradientHeightMFlag: boolean | undefined = true;
   public digitalCrownSensitivityMFlag: boolean | undefined = true;

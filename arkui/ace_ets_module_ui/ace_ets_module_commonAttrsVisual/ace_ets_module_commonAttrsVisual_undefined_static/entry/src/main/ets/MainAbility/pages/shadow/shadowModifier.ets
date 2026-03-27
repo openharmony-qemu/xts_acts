@@ -31,7 +31,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyImageAttributeModifier implements AttributeModifier<ImageAttribute> {
+export class MyImageAttributeModifier implements AttributeModifier<ImageAttribute> {
   @State public isChange: boolean = true
 
   applyNormalAttribute(instance: ImageAttribute): void {

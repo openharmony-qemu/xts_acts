@@ -11,7 +11,7 @@ import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
 import { NodeContainer } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext);
     node.commonAttribute;

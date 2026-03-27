@@ -18,7 +18,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier implements AttributeModifier<ColumnAttribute> {
+export class MyModifier implements AttributeModifier<ColumnAttribute> {
   public isUndefined: boolean = true;
   public count: int = 0;
 

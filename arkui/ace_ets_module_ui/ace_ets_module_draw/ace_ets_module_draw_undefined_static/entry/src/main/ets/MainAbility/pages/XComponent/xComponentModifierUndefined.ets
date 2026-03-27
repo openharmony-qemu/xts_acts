@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<XComponentAttribute> {
+export class MyPointModifier implements AttributeModifier<XComponentAttribute> {
   public isOnLoad: boolean = true;
   public isOnDestroy: boolean = true;
   public isEnableSecure: boolean = true;

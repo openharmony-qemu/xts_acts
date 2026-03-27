@@ -19,7 +19,7 @@ import {
 } from '@ohos.arkui.component'
 
 @Observed
-class MyModifier implements AttributeModifier<ButtonAttribute> {
+export class MyModifier implements AttributeModifier<ButtonAttribute> {
   public isUndefined: boolean = true;
   public cnt: int = 0;
 

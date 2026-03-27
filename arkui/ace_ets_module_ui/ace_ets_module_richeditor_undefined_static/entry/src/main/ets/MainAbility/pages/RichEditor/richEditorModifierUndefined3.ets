@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier implements AttributeModifier<RichEditorAttribute> {
+export class MyModifier implements AttributeModifier<RichEditorAttribute> {
   public isAboutToDelete: boolean = true;
   public isAboutToIMEInput: boolean = true;
   public isOnCut: boolean = true;

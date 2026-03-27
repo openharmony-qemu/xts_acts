@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyBackgroundEffectModifier implements AttributeModifier<CommonAttribute> {
+export class MyBackgroundEffectModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = false;
   @State public rad: number = 40;
   @State public satVal: number = 0.8;

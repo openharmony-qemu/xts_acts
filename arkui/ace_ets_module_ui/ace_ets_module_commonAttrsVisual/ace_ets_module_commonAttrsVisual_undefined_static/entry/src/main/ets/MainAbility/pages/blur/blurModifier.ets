@@ -30,7 +30,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyBlurModifier implements AttributeModifier<CommonAttribute> {
+export class MyBlurModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

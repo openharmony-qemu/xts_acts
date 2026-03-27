@@ -20,7 +20,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<GaugeAttribute> {
+export class MyModifier implements AttributeModifier<GaugeAttribute> {
   public isStartAngle: boolean = true;
   public isEndAngle: boolean = true;
   public isColors: boolean = true;
