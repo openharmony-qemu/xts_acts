@@ -959,7 +959,7 @@ describe('btHidTest', () => {
             console.info("设备（除手机外） is not support.");
             expect(Number(err.code)).assertEqual(801);
         } else {
-            expect(Number(err.code)).assertEqual(2903052);
+            expect(Number(err.code)).assertEqual(401);
         }
         }
         done();
@@ -989,7 +989,7 @@ describe('btHidTest', () => {
             console.info("设备（除手机外） is not support.");
             expect(Number(err.code)).assertEqual(801);
         } else {
-            expect(Number(err.code)).assertEqual(2903052);
+            expect(Number(err.code)).assertEqual(401);
         }
         }
         done();
@@ -1019,7 +1019,7 @@ describe('btHidTest', () => {
             console.info("设备（除手机外） is not support.");
             expect(Number(err.code)).assertEqual(801);
         } else {
-            expect(Number(err.code)).assertEqual(2903052);
+            expect(Number(err.code)).assertEqual(401);
         }
         }
         done();
@@ -1048,7 +1048,7 @@ describe('btHidTest', () => {
             console.info("设备（除手机外） is not support.");
             expect(Number(err.code)).assertEqual(801);
         } else {
-            expect(Number(err.code)).assertEqual(2903052);
+            expect(Number(err.code)).assertEqual(401);
         }
         }
         done();
