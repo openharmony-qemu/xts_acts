@@ -9,6 +9,7 @@ import atomicCharTest from './AtomicChar.test';
 import atomicBooleanTest from './AtomicBoolean.test';
 import atomicsFunctionalTest from './AtomicsFunctional.test';
 import atomicConcurrentTest from './AtomicConcurrent.test';
+import atomicsParamTest from './AtomicsParamTest.test';
 
 export default function testsuite() {
   atomicReferenceTest()
@@ -22,4 +23,5 @@ export default function testsuite() {
   atomicBooleanTest()
   atomicsFunctionalTest()
   atomicConcurrentTest()
+  atomicsParamTest()
 }
