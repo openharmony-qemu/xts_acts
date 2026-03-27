@@ -3807,14 +3807,17 @@ export default function abilityTest() {
                 callerBundleName : 'com.example.hmsapp.music',
                 callerModuleName : 'BroadCastCenter',
                 callerDeviceId : '123123123123',
-                callerType : 'app'
+                callerType : avSession.CallerType.TYPE_APP
             }
-            let returnedInfo : avSession.CommandInfo;
 
             try {
-                session!.onPlay((command : avSession.CommandInfo) => {
+                session!.onPlay((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: Play command callback registration successful`);
-                    returnedInfo = command;
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
                 let controlCommand : avSession.AVControlCommand = {
                     command : 'play',
@@ -3823,11 +3826,6 @@ export default function abilityTest() {
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
-                expect(returnedInfo?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
-                expect(returnedInfo?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                expect(returnedInfo?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                expect(returnedInfo?.callerType).assertEqual(cmdInfo.callerType);
-                console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
             } catch (err) {
                 console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3851,14 +3849,17 @@ export default function abilityTest() {
                 callerBundleName : 'com.example.hmsapp.music',
                 callerModuleName : 'BroadCastCenter',
                 callerDeviceId : '123123123123',
-                callerType : 'app'
+                callerType : avSession.CallerType.TYPE_APP
             }
-            let returnedInfo : avSession.CommandInfo;
 
             try {
-                session!.onPlayPrevious((command : avSession.CommandInfo) => {
+                session!.onPlayPrevious((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
-                    returnedInfo = command;
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
                 let controlCommand : avSession.AVControlCommand = {
                     command : 'playPrevious',
@@ -3867,11 +3868,6 @@ export default function abilityTest() {
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
-                expect(returnedInfo?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
-                expect(returnedInfo?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                expect(returnedInfo?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                expect(returnedInfo?.callerType).assertEqual(cmdInfo.callerType);
-                console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
             } catch (err) {
                 console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3895,14 +3891,17 @@ export default function abilityTest() {
                 callerBundleName : 'com.example.hmsapp.music',
                 callerModuleName : 'BroadCastCenter',
                 callerDeviceId : '123123123123',
-                callerType : 'app'
+                callerType : avSession.CallerType.TYPE_APP
             }
-            let returnedInfo : avSession.CommandInfo;
 
             try {
-                session!.onPlayNext((command : avSession.CommandInfo) => {
+                session!.onPlayNext((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
-                    returnedInfo = command;
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
                 let controlCommand : avSession.AVControlCommand = {
                     command : 'playNext',
@@ -3911,11 +3910,6 @@ export default function abilityTest() {
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
-                expect(returnedInfo?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
-                expect(returnedInfo?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                expect(returnedInfo?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                expect(returnedInfo?.callerType).assertEqual(cmdInfo.callerType);
-                console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
             } catch (err) {
                 console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
