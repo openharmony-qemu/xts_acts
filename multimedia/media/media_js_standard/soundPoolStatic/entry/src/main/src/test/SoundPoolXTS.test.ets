@@ -1050,6 +1050,7 @@ export default function soundPoolTest() {
           if (soundId_ > 0) {
             console.info(`${TAG}: load(uri) success, soundId: ${soundId_}`);
             soundId = Double.toInt(soundId_);
+            expect(soundId > 0).assertTrue();
           } else {
             console.info(`${TAG}: load(uri) fail! soundId: ${soundId_}`);
             expectFalse();
@@ -1131,6 +1132,7 @@ export default function soundPoolTest() {
           if (soundId_ > 0) {
             console.info(`${TAG}: load(fd, offset, length) success, offset = 0, soundId: ${soundId_}`);
             soundId = Double.toInt(soundId_);
+            expect(soundId > 0).assertTrue();
           } else {
             console.info(`${TAG}: load(fd, offset, length) fail! soundId: ${soundId_}`);
             expectFalse();
@@ -1171,6 +1173,7 @@ export default function soundPoolTest() {
           if (soundId_ > 0) {
             console.info(`${TAG}: load(fd, offset, length) success, offset = 1/3 length, soundId: ${soundId_}`);
             soundId = Double.toInt(soundId_);
+            expect(soundId > 0).assertTrue();
           } else {
             console.info(`${TAG}: load(fd, offset, length) fail! soundId: ${soundId_}`);
             expectFalse();
@@ -1212,6 +1215,7 @@ export default function soundPoolTest() {
           if (soundId_ > 0) {
             console.info(`${TAG}: load(fd, offset, length) success, length < fileSize, soundId: ${soundId_}`);
             soundId = Double.toInt(soundId_);
+            expect(soundId > 0).assertTrue();
           } else {
             console.info(`${TAG}: load(fd, offset, length) fail! soundId: ${soundId_}`);
             expectFalse();
@@ -1270,6 +1274,7 @@ export default function soundPoolTest() {
           if (soundId_ > 0) {
             console.info(`${TAG}: load(fd, offset, length) success, length > fileSize, soundId: ${soundId_}`);
             soundId = Double.toInt(soundId_);
+            expect(soundId > 0).assertTrue();
           } else {
             console.info(`${TAG}: load(fd, offset, length) fail! soundId: ${soundId_}`);
             expectFalse();
@@ -2130,6 +2135,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play fail! streamId: ${streamId}`);
             expectFalse();
@@ -2260,6 +2266,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) fail! streamId: ${streamId}`);
             expectFalse();
@@ -2391,6 +2398,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) with params.loop success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) with params.loop fail! streamId: ${streamId}`);
             expectFalse();
@@ -2440,6 +2448,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) with params.leftVolume success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) with params.leftVolume fail! streamId: ${streamId}`);
             expectFalse();
@@ -2489,6 +2498,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) with params.rightVolume success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) with params.rightVolume fail! streamId: ${streamId}`);
             expectFalse();
@@ -2538,6 +2548,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) with params.priority success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) with params.priority fail! streamId: ${streamId}`);
             expectFalse();
@@ -2587,6 +2598,7 @@ export default function soundPoolTest() {
           if (streamId > 0) {
             console.info(`${TAG}: play(soundID, params) with params.parallelPlayFlag success, streamId: ${streamId}`);
             streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
           } else {
             console.info(`${TAG}: play(soundID, params) with params.parallelPlayFlag fail! streamId: ${streamId}`);
             expectFalse();
@@ -2639,6 +2651,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback fail! streamId: ${streamId}`);
               expectFalse();
@@ -2781,6 +2794,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback fail! streamId: ${streamId}`);
               expectFalse();
@@ -2925,6 +2939,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback with param.loop success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback with param.loop fail! streamId: ${streamId}`);
               expectFalse();
@@ -2979,6 +2994,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback with param.leftVolume success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback with param.leftVolume fail! streamId: ${streamId}`);
               expectFalse();
@@ -3033,6 +3049,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback with param.rightVolume success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback with param.rightVolume fail! streamId: ${streamId}`);
               expectFalse();
@@ -3087,6 +3104,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback with param.priority success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback with param.priority fail! streamId: ${streamId}`);
               expectFalse();
@@ -3141,6 +3159,7 @@ export default function soundPoolTest() {
             if (streamId! > 0) {
               console.info(`${TAG}: playCallback with param.parallelPlayFlag success, streamId: ${streamId}`);
               streamId_ = Double.toInt(streamId!);
+              expect(streamId_ > 0).assertTrue();
             } else {
               console.info(`${TAG}: playCallback with param.parallelPlayFlag fail! streamId: ${streamId}`);
               expectFalse();
@@ -5465,7 +5484,8 @@ export default function soundPoolTest() {
         expectFalse();
       }
       done();
-    })
+    });
+    
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
@@ -5509,8 +5529,54 @@ export default function soundPoolTest() {
         console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
       }
       done();
-    })
-    
+    });
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0101
+ 	   * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0101
+ 	   * @tc.desc   Function test
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0101',
+ 	    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+ 	    console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0101 in`);
+ 	    if (deviceInfo.deviceType === 'default') {
+ 	      try {
+ 	        let streamId = 0;
+ 	        await createSoundPool();
+ 	        if (!soundPool) {
+ 	          console.error(`${TAG}:createSoundPool soundPool is null`);
+ 	          expectFalse();
+ 	          done();
+ 	        }
+ 	        soundPool!!.onError((error: BusinessError) => {
+ 	          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+ 	          expectFalse();
+ 	        } as ErrorCallback<BusinessError>)
+ 	        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+ 	        await sleep(2000);
+ 	        streamId = (await soundPool!!.play(soundId)) as int;
+ 	        await sleep(200);
+ 	        await soundPool!!.setRate(streamId, audio.AudioRendererRate.RENDER_RATE_NORMAL).then(() => {
+ 	          console.info(`${TAG}: setRate success, rate: ${audio.AudioRendererRate.RENDER_RATE_NORMAL}`);
+ 	        }).catch((error: Error) => {
+ 	          console.info(`${TAG}: setRate fail! error: [${JSON.stringify(error)}]`);
+ 	          expectFalse();
+ 	        })
+ 	        await sleep(2000);
+ 	        await soundPool!!.stop(streamId);
+ 	      } catch (error) {
+ 	        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+ 	        expectFalse();
+ 	      }
+ 	    } else {
+ 	      console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+ 	    }
+ 	    done();
+ 	  });
+       
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
@@ -5663,6 +5729,57 @@ export default function soundPoolTest() {
     })
     
     /**
+ 	   * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0101
+ 	   * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0101
+ 	   * @tc.desc   Function test
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0101',
+ 	    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+ 	    console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0101 in`);
+ 	    if (deviceInfo.deviceType === 'default') {
+ 	      try {
+ 	        let streamId = 0;
+ 	        await createSoundPool();
+ 	        if (!soundPool) {
+ 	          console.error(`${TAG}:createSoundPool soundPool is null`);
+ 	          expectFalse();
+ 	          done();
+ 	        }
+ 	        soundPool!!.onError((error: BusinessError) => {
+ 	          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+ 	          expectFalse();
+ 	          done();
+ 	        } as ErrorCallback<BusinessError>)
+ 	        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+ 	        await sleep(2000);
+ 	        streamId = (await soundPool!!.play(soundId)) as int;
+ 	        await sleep(200);
+ 	        soundPool!!.setRate(streamId, audio.AudioRendererRate.RENDER_RATE_NORMAL, (err) => {
+ 	          if (err) {
+ 	            console.info(`${TAG}: setRateCallback error: ${JSON.stringify(err)}`);
+ 	            expectFalse();
+ 	          } else {
+ 	            console.info(`${TAG}: setRateCallback success, rate: ${audio.AudioRendererRate.RENDER_RATE_NORMAL}`);
+ 	          }
+ 	        })
+ 	        await sleep(2000);
+ 	        await soundPool!!.stop(streamId);
+ 	        done();
+ 	      } catch (error) {
+ 	        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+ 	        expectFalse();
+ 	        done();
+ 	      }
+ 	    } else {
+ 	      console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+ 	      done();
+ 	    }
+ 	  });
+       
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
      * @tc.desc   Function test. Error code: 401
@@ -5774,6 +5891,104 @@ export default function soundPoolTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
+     * @tc.desc   Mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.SoundInterruptMode.NO_INTERRUPT)).assertEqual(0);
+      expect(Number(media.SoundInterruptMode.SAME_SOUND_INTERRUPT)).assertEqual(1);
+      expect(Number(ErrorType.LOAD_ERROR)).assertEqual(1);
+      expect(Number(ErrorType.PLAY_ERROR)).assertEqual(2);
+      done();
+    });
+
+  /**
+ 	 * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100
+ 	 * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100
+ 	 * @tc.desc   Function test.
+ 	 * @tc.type   FUNCTION
+ 	 * @tc.size   MEDIUMTEST
+ 	 * @tc.level  LEVEL0
+ 	 */
+ 	it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+ 	    console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100 in`);
+ 	    if (deviceInfo.deviceType === 'default') {
+ 	      try {
+ 	        let streamId = 0;
+ 	        await createSoundPool();
+ 	        if (!soundPool) {
+ 	          console.error(`${TAG}:createSoundPool soundPool is null`);
+ 	          expectFalse();
+ 	          done();
+ 	        }
+ 	        soundPool!!.onError((error: BusinessError) => {
+ 	          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+ 	          expectFalse();
+ 	        } as ErrorCallback<BusinessError>)
+ 	        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+ 	        await sleep(2000);
+ 	        soundPool!!.setInterruptMode(media.SoundInterruptMode.NO_INTERRUPT);
+ 	        await sleep(200);
+ 	        streamId = (await soundPool!!.play(soundId)) as int;
+ 	        await sleep(200);
+ 	        await soundPool!!.stop(streamId);
+ 	      } catch (error) {
+ 	        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+ 	        expectFalse();
+ 	      }
+ 	    } else {
+ 	      console.info(`${TAG}: This device does not support setInterruptMode! Ignore this case.`);
+ 	    }
+ 	    done();
+ 	  });
+
+  /**
+ 	 * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200
+ 	 * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200
+ 	 * @tc.desc   Function test.
+ 	 * @tc.type   FUNCTION
+ 	 * @tc.size   MEDIUMTEST
+ 	 * @tc.level  LEVEL0
+ 	 */
+ 	it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200',
+   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200 in`);
+    if (deviceInfo.deviceType === 'default') {
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+        }
+        soundPool!!.onError((error: BusinessError) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        } as ErrorCallback<BusinessError>)
+        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+        await sleep(2000);
+        soundPool!!.setInterruptMode(media.SoundInterruptMode.SAME_SOUND_INTERRUPT);
+        await sleep(200);
+        streamId = (await soundPool!!.play(soundId)) as int;
+        await sleep(200);
+        await soundPool!!.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+      }
+    } else {
+      console.info(`${TAG}: This device does not support setInterruptMode! Ignore this case.`);
+    }
+    done();
+  });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100
      * @tc.desc   Function test. Error code: 5400103
@@ -5785,6 +6000,7 @@ export default function soundPoolTest() {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100 in`);
       try {
         let soundId = 1;
+        let streamId = 0;
         let isExpected = false;
         await createSoundPool();
         if (!soundPool) {
@@ -5795,10 +6011,10 @@ export default function soundPoolTest() {
         soundPool!!.onErrorOccurred((errorInfo_: ErrorInfo) => {
           expect(errorInfo_).not().assertNull;
           console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorCode.message}`);
-          console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorType}`);
+          console.error(`${TAG}: onErrorOccurred called! error happened, errorType is: ${errorInfo_.errorType}`);
           let errType = errorInfo_.errorType as ErrorType;
-          isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.PLAY_ERROR &&
-            errorInfo_.errorCode.code == 5400103;
+          isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.LOAD_ERROR &&
+            errorInfo_.errorCode.code == 5400103 && errorInfo_.streamId == streamId;
         })
         await soundPool!!.load(uri5).then((soundId_: int) => {
           if (soundId_ > 0) {
@@ -5875,24 +6091,6 @@ export default function soundPoolTest() {
         expectFalse();
         done();
       }
-    });
-    /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
-     * @tc.desc   Mode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      expect(Number(media.SoundInterruptMode.NO_INTERRUPT)).assertEqual(0);
-      expect(Number(media.SoundInterruptMode.SAME_SOUND_INTERRUPT)).assertEqual(1);
-      expect(Number(media.FetchResult.FETCH_FAILED)).assertEqual(0);
-      expect(Number(media.FetchResult.FETCH_SUCCEEDED)).assertEqual(1);
-      expect(Number(media.FetchResult.FETCH_CANCELED)).assertEqual(2);
-      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
-      expect(string(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
-      done();
     });
   })
 }

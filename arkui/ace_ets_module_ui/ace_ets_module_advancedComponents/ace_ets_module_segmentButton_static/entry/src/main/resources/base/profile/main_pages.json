@@ -17,6 +17,7 @@
     "MainAbility/pages/segmentButton/localizedTextPadding",
     "MainAbility/pages/segmentButton/SegmentButtonBorder",
     "MainAbility/pages/segmentButton/SegmentButtonDirection",
-    "MainAbility/pages/segmentButton/SegmentBtnItem0010"
+    "MainAbility/pages/segmentButton/SegmentBtnItem0010",
+    "MainAbility/pages/segmentButton/SegmentButtonIndex"
   ]
 }

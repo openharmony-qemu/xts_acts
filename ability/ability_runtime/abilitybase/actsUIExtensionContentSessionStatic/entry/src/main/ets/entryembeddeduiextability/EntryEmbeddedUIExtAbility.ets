@@ -184,12 +184,22 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     if (testCaseName === (TEST_CASE_NAME_EC + '_1300')) {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
       let code: int = PARAM_0;
+      let left: int = PARAM_0;
+      let top: int = PARAM_0;
+      let width: int = PARAM_0;
+      let height: int = PARAM_0;
       try {
         let windowProxy = session.getUIExtensionWindowProxy();
         hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy success`);
-        if (windowProxy) {
-          code = PARAM_0;
+        if (windowProxy && windowProxy.properties) {
           hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy windowProxy success`);
+          let rect = windowProxy.properties.uiExtensionHostWindowProxyRect;
+          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} Window rect: left=${rect.left}, top=${rect.top}, width=${rect.width}, height=${rect.height}`);
+          code = PARAM_0;
+          left = rect.left;
+          top = rect.top;
+          width = rect.width;
+          height = rect.height;
         } else {
           code = PARAM_NEGATIVE_1;
           hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} getUIExtensionWindowProxy windowProxy null`);
@@ -202,6 +212,10 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
       let commonEventDataOptions: commonEventManager.CommonEventPublishData = {
         parameters: {
           'result': code,
+          'left': left,
+          'top': top,
+          'width': width,
+          'height': height
         } as Record<string, RecordData>
       } as commonEventManager.CommonEventPublishData;
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} publish : ${commonEventDataOptions}`);

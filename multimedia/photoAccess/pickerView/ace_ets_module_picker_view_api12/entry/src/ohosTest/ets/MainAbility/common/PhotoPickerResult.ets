@@ -43,4 +43,5 @@ export class PhotoPickerResult {
   public gridPinchMode?: photoAccessHelper.GridPinchMode;
   public autoPlayScenes: photoAccessHelper.AutoPlayScene[] = [];
   public appAlbumFilters: Array<string> = [];
+  public backgroundOpacity: number | undefined = undefined;
 }

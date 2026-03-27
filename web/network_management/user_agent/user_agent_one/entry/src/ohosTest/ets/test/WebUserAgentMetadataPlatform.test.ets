@@ -127,6 +127,21 @@ export default function webUserAgentMetadataPlatform() {
       });
       sendEventByKey('WebUserAgentMetadataPlatformButton', 10, '');
     })
+    /**
+     * @tc.name   testSetPlatformEmpty
+     * @tc.number SUB_ACE_WEB_USERAGENTMETADATA_SETPLATFORM_EMPTY_0100
+     * @tc.desc   test setPlatform with EMPTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetPlatformEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitSetPlatformEmpty', 174850);
+      Utils.registerBaseEvent('testSetPlatformEmpty', 'no_error', 26032509, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebUserAgentMetadataPlatformButton', 10, '');
+    })
 
     /**
      * @tc.name   testGetPlatformWindows

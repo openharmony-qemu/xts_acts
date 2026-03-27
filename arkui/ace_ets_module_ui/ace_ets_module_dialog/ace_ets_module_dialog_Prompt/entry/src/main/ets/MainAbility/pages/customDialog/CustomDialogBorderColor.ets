@@ -53,7 +53,7 @@ struct CustomDialogBorderColor1 {
       }
     },
     alignment: DialogAlignment.Center,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: 30 },
     customStyle: false,
     cornerRadius: 20,
     width: 200,
@@ -83,50 +83,52 @@ struct CustomDialogBorderColor1 {
 
   build() {
     Column({space: 5}) {
-      Button('click')
-        .id('color')
-        .onClick(() => {
-          if (this.dialogController != null) {
-            this.dialogController.open();
-          }
-        }).backgroundColor(0x317aff)
-        .margin({top: '2%'})
-      Button('click1')
-        .id('color1')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExample112({
-              cancel: ()=> { this.onCancel(); },
-              confirm: ()=> { this.onAccept(); }
-            }),
-            cancel: this.existApp,
-            autoCancel: true,
-            onWillDismiss:(dismissDialogAction: DismissDialogAction)=> {
-              console.info('reason=' + JSON.stringify(dismissDialogAction.reason))
-              console.log('dialog onWillDismiss')
-              if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-                dismissDialogAction.dismiss();
-              }
-              if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-                dismissDialogAction.dismiss();
-              }
-            },
-            alignment: DialogAlignment.Center,
-            offset: { dx: 0, dy: -20 },
-            customStyle: false,
-            cornerRadius: 20,
-            width: 200,
-            height: 100,
-            borderWidth: 2,
-            borderStyle: BorderStyle.Solid,//使用borderStyle属性，需要和borderWidth属性一起使用
-            borderColor: '#FF6582F8',//使用borderColor属性，需要和borderWidth属性一起使用
-            backgroundColor: Color.White,
-            shadow: ({ radius: 20, color: Color.Grey, offsetX: 50, offsetY: 0}),
+      Row() {
+        Button('click')
+          .id('color')
+          .onClick(() => {
+            if (this.dialogController != null) {
+              this.dialogController.open();
+            }
+          }).backgroundColor(0x317aff)
+          .margin({top: '2%'})
+        Button('click1')
+          .id('color1')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExample112({
+                cancel: ()=> { this.onCancel(); },
+                confirm: ()=> { this.onAccept(); }
+              }),
+              cancel: this.existApp,
+              autoCancel: true,
+              onWillDismiss:(dismissDialogAction: DismissDialogAction)=> {
+                console.info('reason=' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss();
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss();
+                }
+              },
+              alignment: DialogAlignment.Center,
+              offset: { dx: 0, dy: -20 },
+              customStyle: false,
+              cornerRadius: 20,
+              width: 200,
+              height: 100,
+              borderWidth: 2,
+              borderStyle: BorderStyle.Solid,//使用borderStyle属性，需要和borderWidth属性一起使用
+              borderColor: '#FF6582F8',//使用borderColor属性，需要和borderWidth属性一起使用
+              backgroundColor: Color.White,
+              shadow: ({ radius: 20, color: Color.Grey, offsetX: 50, offsetY: 0}),
+            })
+            if (this.dialogController != null) {
+              this.dialogController.open();
+            }
           })
-          if (this.dialogController != null) {
-            this.dialogController.open();
-          }
-        })
+      }
 
     }.width('100%')
     .height('100%')

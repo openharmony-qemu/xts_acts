@@ -118,11 +118,11 @@ export default function imageModifyProperty() {
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
             for (let i = 0; i < checkKey.length; i++) {
-              logger.log("getImageProperties data: " + data[checkKey[i] as string]);
-              logger.log("getImageProperties props: " + props[checkKey[i] as string]);
+              logger.log("getImageProperties data: " + data[checkKey[i].valueOf()]);
+              logger.log("getImageProperties props: " + props[checkKey[i].valueOf()]);
             }
             checkKey.forEach((item: image.PropertyKey) => {
-              expect(data[item as string] == props[item as string]).assertTrue();
+              expect(data[item] == props[item]).assertTrue();
             })
             done();
           } catch (error) {
@@ -138,7 +138,7 @@ export default function imageModifyProperty() {
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
             for (let i = 0; i < checkKey.length; i++) {
-              logger.log("getImageProperties data: " + data[checkKey[i] as string]);
+              logger.log("getImageProperties data: " + data[checkKey[i].valueOf()]);
             }
             done();
           } catch (error) {
@@ -273,8 +273,8 @@ export default function imageModifyProperty() {
         globalimageSource = imageSourceApi;
         if (isBatch) {
           let props: Record<string, string | null> = {};
-          props[IMAGE_WIDTH as string] = "1024";
-          props[GIF_LOOP_COUNT as string] = "3";
+          props[IMAGE_WIDTH] = "1024";
+          props[GIF_LOOP_COUNT] = "3";
           try {
             await imageSourceApi.modifyImageProperties(props);
             console.log(`${testNum} modify GIF_LOOP_COUNT success.`);
@@ -588,8 +588,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {};
-      props[IMAGE_WIDTH as string] = "1024";
-      props[IMAGE_LENGTH as string] = "2048";
+      props[IMAGE_WIDTH] = "1024";
+      props[IMAGE_LENGTH] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -615,7 +615,7 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {};
-      props[IMAGE_LENGTH as string] = "2048";
+      props[IMAGE_LENGTH] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH
@@ -640,8 +640,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[GPS_DATE_STAMP as string] = "2023:04:13";
-      props[IMAGE_DESCRIPTION as string] = "A gray picture";
+      props[GPS_DATE_STAMP] = "2023:04:13";
+      props[IMAGE_DESCRIPTION] = "A gray picture";
 
       let checkKey: Array<image.PropertyKey> = [
         GPS_DATE_STAMP,
@@ -667,8 +667,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[GPS_DATE_STAMP as string] = "2023:04:13";
-      props[IMAGE_WIDTH as string] = "1024";
+      props[GPS_DATE_STAMP] = "2023:04:13";
+      props[IMAGE_WIDTH] = "1024";
 
       let checkKey: Array<image.PropertyKey> = [
         GPS_DATE_STAMP,
@@ -726,8 +726,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_WIDTH as string] = "-1";
-      props[IMAGE_LENGTH as string] = "2344";
+      props[IMAGE_WIDTH] = "-1";
+      props[IMAGE_LENGTH] = "2344";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -753,8 +753,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_WIDTH as string] = "100000000000000";
-      props[IMAGE_LENGTH as string] = "2344";
+      props[IMAGE_WIDTH] = "100000000000000";
+      props[IMAGE_LENGTH] = "2344";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -780,8 +780,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_LENGTH as string] = "2048";
-      props[IMAGE_WIDTH as string] = "";
+      props[IMAGE_LENGTH] = "2048";
+      props[IMAGE_WIDTH] = "";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH,
@@ -807,8 +807,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_LENGTH as string] = "2048";
-      props[IMAGE_WIDTH as string] = "abc";
+      props[IMAGE_LENGTH] = "2048";
+      props[IMAGE_WIDTH] = "abc";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH,
@@ -834,8 +834,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[SCENE_BLUE_SKY_CONF as string] = "71";
-      props[SCENE_GREEN_PLANT_CONF as string] = "98";
+      props[SCENE_BLUE_SKY_CONF] = "71";
+      props[SCENE_GREEN_PLANT_CONF] = "98";
 
       let checkKey: Array<image.PropertyKey> = [
         SCENE_BLUE_SKY_CONF,
@@ -861,10 +861,10 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_WIDTH as string] = "1024";
-      props[IMAGE_LENGTH as string] = "2048";
-      props[SCENE_BLUE_SKY_CONF as string] = "71";
-      props[SCENE_GREEN_PLANT_CONF as string] = "98";
+      props[IMAGE_WIDTH] = "1024";
+      props[IMAGE_LENGTH] = "2048";
+      props[SCENE_BLUE_SKY_CONF] = "71";
+      props[SCENE_GREEN_PLANT_CONF] = "98";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -892,8 +892,8 @@ export default function imageModifyProperty() {
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let props: Record<string, string | null> = {}
-      props[IMAGE_WIDTH as string] = "1024";
-      props[IMAGE_LENGTH as string] = "2048";
+      props[IMAGE_WIDTH] = "1024";
+      props[IMAGE_LENGTH] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,

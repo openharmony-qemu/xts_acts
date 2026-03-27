@@ -21,16 +21,7 @@ lite_component("acts_component") {
   all_features = []
   features = []
   if (ohos_xts_test_args != "") {
-    args = [
-      "--method_name",
-      "get_target_modules",
-      "--arguments",
-      "all_features=${ohos_xts_test_args}",
-    ]
-    all_features +=
-        exec_script(rebase_path("//test/xts/tools/lite/build/utils.py"),
-                    args,
-                    "list lines")
+    all_features += string_split(ohos_xts_test_args, ",")
   } else {
     if (ohos_kernel_type == "liteos_m") {
       all_features += [
@@ -113,20 +104,65 @@ lite_component("acts_component") {
   }
 
   if (ohos_build_type == "debug" && ohos_test_args != "notest") {
-    _all_features = ""
-    _product_json = rebase_path("${product_config_path}/config.json")
-    foreach(one_feature, all_features) {
-      _all_features = _all_features + one_feature + ","
+    _prod_conf = read_file("${product_config_path}/config.json", "json")
+    _prod_subsystems = _prod_conf.subsystems
+
+    _filtered_feats = []
+    foreach(feat, all_features) {
+      _keep = false
+      _subsystem_name = ""
+
+      # Identify the subsystem of the current feature
+      foreach(sub, SUBSYSTEM_LIST) {
+        if (_subsystem_name == "") {
+          if (filter_include([ feat ],
+                             [
+                               "*/${sub}*",
+                               "*/${sub}_lite*",
+                             ]) != []) {
+            _subsystem_name = sub
+          }
+        }
+      }
+
+      if (_subsystem_name != "") {
+        if (filter_include([ _subsystem_name ], NO_FILTER_SUBSYSTEM_LIST) !=
+            []) {
+          _keep = true
+        } else {
+          # Check if the subsystem and component are enabled for this product
+          foreach(ps, _prod_subsystems) {
+            if (!_keep && ps.subsystem == _subsystem_name) {
+              foreach(c, ps.components) {
+                if (!_keep) {
+                  _c_name = c.component
+
+                  if (_c_name != "kv_store_lite") {
+                    _c_parts = string_split(_c_name, "_lite")
+                    _c_name = _c_parts[0]
+                    _c_parts = []
+                  }
+
+                  if (filter_include([ feat ],
+                                     [
+                                       "*${_c_name}*",
+                                       "*${_c_name}_hal*",
+                                       "*${_c_name}_posix*",
+                                     ]) != []) {
+                    _keep = true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      if (_keep) {
+        _filtered_feats += [ feat ]
+      }
     }
-    _args = [
-      "--method_name",
-      "filter_by_subsystem",
-      "--arguments",
-      "testsuites=${_all_features}#product_json=${_product_json}",
-    ]
-    features += exec_script(rebase_path("//test/xts/tools/lite/build/utils.py"),
-                            _args,
-                            "list lines")
+    features += _filtered_feats
   }
 }
 

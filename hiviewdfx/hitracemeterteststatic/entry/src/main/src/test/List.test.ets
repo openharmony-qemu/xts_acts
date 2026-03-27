@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import HitraceMeterTest from "./HiTraceMeter.test";
+import hiTraceMeterStrongTest from "./HiTraceMeterStatic.test"
+
 export default function testsuite() {
   HitraceMeterTest();
+  hiTraceMeterStrongTest();
 }

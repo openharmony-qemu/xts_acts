@@ -15,9 +15,13 @@
 import HidebugJsTest from "./HiDeBug.test";
 import HidebuggwpasanTest from "./HiDeBugGwpAsan.test";
 import HidebugnewTest from "./HiDebugNew.test";
+import hidebugStrongTest from "./HiDeBugEx.test"
+import hidebugGetRssInfoTest from "./HidebugGetRssInfo.test"
 
 export default function testsuite() {
     HidebugJsTest();
     HidebuggwpasanTest();
     HidebugnewTest();
+    hidebugStrongTest();
+    hidebugGetRssInfoTest();
 }

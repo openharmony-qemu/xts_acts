@@ -715,6 +715,10 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
     int32_t result = OH_WindowManager_GetAllMainWindowInfo(&infoList, &mainWindowInfoSize);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
         "Test_OH_WindowManager_GetAllMainWindowInfo_0200: %{public}d", result);
+    if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
     if (result != OK) {
         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
         return retValue;
@@ -1001,6 +1005,11 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_c
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0800: %{public}d", result);
+
+    if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
     if (g_snapshotListSize == 1) {
         napi_create_int32(env, 0, &retValue);
         return retValue;

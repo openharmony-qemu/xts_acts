@@ -312,11 +312,25 @@ export default function ActsUIExtensionContentSessionTest() {
             eventData: commonEventManager.CommonEventData|undefined ) => {
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
             let result: int = 0;
-            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+            let left: int = 0;
+            let top: int = 0;
+            let width: int = 0;
+            let height: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY] === PARAM_0) {
               result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+              left = eventData?.parameters?.['left'] as int;
+              top = eventData?.parameters?.['top'] as int;
+              width = eventData?.parameters?.['width'] as int;
+              height = eventData?.parameters?.['height'] as int;
             }
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
             expect(result).assertEqual(SUCCESS);
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} Rect values - 
+              left: ${left}, top: ${top}, width: ${width}, height: ${height}`);
+            expect(left).assertLarger(0);
+            expect(top).assertLarger(0);
+            expect(width).assertLarger(0);
+            expect(height).assertLarger(0);
             commonEventManager.publish(EVENT_TERMINATE,() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {
               done();

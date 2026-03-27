@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,7 +108,7 @@ struct GridCallbackPage {
         this.scrollBarWidth = message.value as number
       }
       if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as int
+        this.cachedCount = (message.value as number).toInt()
       }
       if (message.name == 'editMode') {
         this.editMode = message.value as boolean
@@ -117,10 +117,10 @@ struct GridCallbackPage {
         this.layoutDirection = message.value as GridDirection
       }
       if (message.name == 'maxCount') {
-        this.maxCount = message.value as int
+        this.maxCount = (message.value as number).toInt()
       }
       if (message.name == 'minCount') {
-        this.minCount = message.value as int
+        this.minCount = (message.value as number).toInt()
       }
       if (message.name == 'cellLength') {
         this.cellLength = message.value as number

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -180,6 +180,455 @@ export default function windowLayoutTest() {
     });
 
     /**
+     * @tc.name   test_maximize_mainWindow
+     * @tc.number SUB_BASIC_WMS_MAXIMIZE_0100
+     * @tc.desc   test_maximize_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_maximize_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_maximize_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+          console.info(`${caseName} :Succeeded maximize window `);
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+        let windowStatusType = mainWindow.getWindowStatus()
+        if(isFreeWindowMode){
+         expect(windowStatusType.valueOf()).assertEqual(2)
+         mainWindow.recover().then(()=>{
+          console.info('Succeed in recover window')
+         }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+          done();
+        }else{
+          expect(windowStatusType.valueOf()).assertEqual(1)
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow. Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    
+    /**
+     * @tc.name   test_maximize_mainWindow_withparam
+     * @tc.number SUB_BASIC_WMS_MAXIMIZE_0200
+     * @tc.desc   test_maximize_mainWindow_withparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTE
+     * @tc.level  LEVEL3
+     */
+    it('test_maximize_mainWindow_withparam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_maximize_mainWindow_withparam';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.maximize(window.MaximizePresentation.EXIT_IMMERSIVE,false).then(() => {
+          console.info(`${caseName} :Succeeded maximize window `);
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+        let windowStatusType = mainWindow.getWindowStatus()
+        if(isFreeWindowMode){
+         expect(windowStatusType.valueOf()).assertEqual(2)
+         mainWindow.recover().then(()=>{
+          console.info('Succeed in recover window')
+         }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+             expect().assertFail();
+            done();
+          });
+          done();
+        }else{
+          expect(windowStatusType.valueOf()).assertEqual(1)
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow. Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_recover_mainWindow
+     * @tc.number SUB_BASIC_WMS_RECOVER_0100
+     * @tc.desc   test_recover_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_recover_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_recover_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        if(isFreeWindowMode){
+          mainWindow.recover().then(() => {
+            console.info(`${caseName} :Succeeded recover window `);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        }else{
+          mainWindow.recover().then(() => {
+            console.info(`${caseName} :Succeeded recover window `);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code === 801).assertTrue()
+            done();
+          });
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+      /**
+     * @tc.name   test_stopmoving_mainWindow
+     * @tc.number SUB_BASIC_WMS_STOPMOVING_0100
+     * @tc.desc   test_stopmoving_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_stopmoving_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_stopmoving_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        if(isFreeWindowMode){
+          mainWindow.stopMoving().then(() => {
+            console.info(`${caseName} :Succeeded stopMoving window `);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to stopMoving window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        }else{
+          mainWindow.stopMoving().then(() => {
+            console.info(`${caseName} :Succeeded stopMoving window `);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} :Failed to stopMoving window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code === 801).assertTrue()
+            done();
+          });
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_setAspectRatio_mainWindow
+     * @tc.number SUB_BASIC_WMS_SETASPECTRATION_0100
+     * @tc.desc   test_setAspectRatio_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setAspectRatio_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_setAspectRatio_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let windowRectbefore = mainWindow.getWindowProperties().windowRect
+        mainWindow.setAspectRatio(1.0).then(()=>{
+            console.info(`${caseName} :Succeeded in setAspectRatio `);
+        }).catch((err:BusinessError)=>{
+            console.error(`${caseName} :Failed to setAspectRatio. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+        })
+        sleep(1000)
+        let windowRect = mainWindow.getWindowProperties().windowRect
+        if(isFreeWindowMode){
+          expect(windowRect.width !== windowRectbefore.width).assertTrue
+          expect(windowRect.height !== windowRectbefore.height).assertTrue
+          mainWindow.resetAspectRatio((err:BusinessError)=>{
+            const errCode: number= err.code;
+            if(errCode){
+              console.error(`${caseName} :Failed to resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+               expect().assertFail();
+              done();
+            }
+            console.info(`${caseName} :Succeeded in resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+          })
+          done()
+        }else{
+          expect(windowRect.width === windowRectbefore.width).assertTrue
+          expect(windowRect.height === windowRectbefore.height).assertTrue
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_setAspectRatio_mainWindow_callback
+     * @tc.number SUB_BASIC_WMS_SETASPECTRATION_0200
+     * @tc.desc   test_setAspectRatio_mainWindow_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setAspectRatio_mainWindow_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_setAspectRatio_mainWindow_callback';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let windowRectbefore = mainWindow.getWindowProperties().windowRect
+        mainWindow.setAspectRatio(1.0,(err:BusinessError)=>{
+          const errCode: number= err.code;
+            if(errCode){
+              console.error(`${caseName} :Failed to setAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+               expect().assertFail();
+              done();
+            }
+            console.info(`${caseName} :Succeeded in setAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+          })
+        sleep(1000)
+        let windowRect = mainWindow.getWindowProperties().windowRect
+        if(isFreeWindowMode){
+          expect(windowRect.width !== windowRectbefore.width).assertTrue
+          expect(windowRect.height !== windowRectbefore.height).assertTrue
+          mainWindow.resetAspectRatio((err:BusinessError)=>{
+            const errCode: number= err.code;
+            if(errCode){
+              console.error(`${caseName} :Failed to resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+               expect().assertFail();
+              done();
+            }
+            console.info(`${caseName} :Succeeded in resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+          })
+          done()
+        }else{
+          expect(windowRect.width === windowRectbefore.width).assertTrue
+          expect(windowRect.height === windowRectbefore.height).assertTrue
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_setContentAspectRatio_mainWindow
+     * @tc.number SUB_BASIC_WMS_SETCONTENTASPECTRATION_0100
+     * @tc.desc   test_setContentAspectRatio_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setContentAspectRatio_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_setContentAspectRatio_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let windowRectbefore = mainWindow.getWindowProperties().windowRect
+        mainWindow.setContentAspectRatio(1.0,false,true).then(()=>{
+            console.info(`${caseName} :Succeeded in setContentAspectRatio `);
+        }).catch((err:BusinessError)=>{
+            console.error(`${caseName} :Failed to setContentAspectRatio. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+        })
+        sleep(1000)
+        let windowRect = mainWindow.getWindowProperties().windowRect
+        if(isFreeWindowMode){
+          expect(windowRect.width !== windowRectbefore.width).assertTrue
+          expect(windowRect.height !== windowRectbefore.height).assertTrue
+          mainWindow.resetAspectRatio((err:BusinessError)=>{
+            const errCode: number= err.code;
+            if(errCode){
+              console.error(`${caseName} :Failed to resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+               expect().assertFail();
+              done();
+            }
+
+            console.info(`${caseName} :Succeeded in resetAspectRatio . Cause code: ${err.code}, message: ${err.message}`);
+          })
+          done()
+        }else{
+          expect(windowRect.width === windowRectbefore.width).assertTrue
+          expect(windowRect.height === windowRectbefore.height).assertTrue
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_resize_mainWindow
+     * @tc.number SUB_BASIC_WMS_RESIZE_0100
+     * @tc.desc   test_resize_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_resize_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_resize_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.resize(500,1000).then(()=>{
+           console.info(`${caseName} :Succeeded in resize window `);
+        }).catch((err:BusinessError)=>{
+          console.error(`${caseName} :Failed to resize window. Cause code: ${err.code}, message: ${err.message}`);
+          if(err.code === 1300002){
+            expect(err.code === 1300002).assertTrue()
+          }else{
+            expect().assertFail();
+            done();
+          }
+        })
+        sleep(1000)
+        let windowRect = mainWindow.getGlobalRect()
+        if(isFreeWindowMode){
+          expect(windowRect.width).assertEqual(500)
+          expect(windowRect.height).assertEqual(1000)
+          done()
+        }else{
+          expect(windowRect.width != 500).assertTrue()
+          expect(windowRect.height != 1000).assertTrue()
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_resize_mainWindow_callback
+     * @tc.number SUB_BASIC_WMS_RESIZE_0200
+     * @tc.desc   test_resize_mainWindow_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_resize_mainWindow_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_resize_mainWindow_callback';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.resize(500,1000,(err:BusinessError)=>{
+          let errCode:number = err.code;
+          if(errCode){
+            console.error(`${caseName} :Failed to resize window. Cause code: ${err.code}, message: ${err.message}`);
+            if(errCode === 1300002){
+              expect(errCode === 1300002).assertTrue()
+            }else{
+              expect().assertFail();
+              done();
+            }
+          }
+          console.info(`${caseName} :Succeeded in resize window `);
+        })
+        sleep(1000)
+        let windowRect = mainWindow.getGlobalRect()
+        if(isFreeWindowMode){
+          expect(windowRect.width).assertEqual(500)
+          expect(windowRect.height).assertEqual(1000)
+          done()
+        }else{
+          expect(windowRect.width != 500).assertTrue()
+          expect(windowRect.height != 1000).assertTrue()
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   test_resizeAsync_mainWindow
+     * @tc.number SUB_BASIC_WMS_RESIZE_0300
+     * @tc.desc   test_resizeAsync_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_resizeAsync_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_resizeAsync_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.resizeAsync(500,1000).then(()=>{
+           console.info(`${caseName} :Succeeded in resize window `);
+        }).catch((err:BusinessError)=>{
+          console.error(`${caseName} :Failed to resize window. Cause code: ${err.code}, message: ${err.message}`);
+          if(err.code === 1300010){
+            expect(err.code === 1300010).assertTrue()
+          }else{
+            expect().assertFail();
+            done();
+          }
+        })
+        sleep(1000)
+        let windowRect = mainWindow.getGlobalRect()
+        if(isFreeWindowMode){
+          expect(windowRect.width).assertEqual(500)
+          expect(windowRect.height).assertEqual(1000)
+          done()
+        }else{
+          expect(windowRect.width != 500).assertTrue()
+          expect(windowRect.height != 1000).assertTrue()
+          done()
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testStartMoving_0100
      * @tc.number testStartMoving_0100
      * @tc.desc   Test the function value of setWindowTitleMoveEnabled
@@ -190,38 +639,53 @@ export default function windowLayoutTest() {
     it('testStartMoving_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0100';
       await sleep(1000)
-      let driver = await Driver.create();
-      let windowClass = windowStage.getMainWindowSync();
-      await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-      await sleep(1000)
-      let windowPoint = await windowClass.getWindowProperties().windowRect
-      console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-      let blank = await driver.findComponent(ON.id('startMoving'))
-      await sleep(1000)
-      let point = await blank.getBoundsCenter();
-      await driver.drag(point.x, point.y, point.x - 50, point.y - 50, 200);
-      await sleep(1000)
-      let text = await driver.findComponent(ON.id('startMovingText'));
-      await sleep(1000)
-      let textDragged = await text.getText()
-      if (textDragged == 'startMoving success') {
-        let windowPointDragged = await windowClass.getWindowProperties().windowRect
-        console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
-        expect(windowPointDragged.left).assertEqual(windowPoint.left - 50)
-        expect(windowPointDragged.top).assertEqual(windowPoint.top - 50)
-        await windowClass.setUIContent("testability/pages/Index");
-        done()
-      } else if (textDragged == 'startMoving 801') {
-        await windowClass.setUIContent("testability/pages/Index");
-
-        done()
-      } else if (textDragged == 'startMoving 1300004') {
-        await windowClass.setUIContent("testability/pages/Index");
-
-        done()
-      } else {
-        await windowClass.setUIContent("testability/pages/Index");
-        console.error(`${message} Error`);
+      try {
+        let driver = await Driver.create();
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+        await sleep(1000)
+        let windowPoint = await windowClass.getWindowProperties().windowRect
+        console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
+        let blank = await driver.findComponent(ON.id('startMoving'))
+        await sleep(1000)
+        let point = await blank.getBoundsCenter();
+        await driver.drag(point.x, point.y, point.x - 50, point.y - 50, 200);
+        await sleep(1000)
+        let text = await driver.findComponent(ON.id('startMovingText'));
+        await sleep(1000)
+        let textDragged = await text.getText()
+        if(isFreeWindowMode){
+          if (textDragged == 'startMoving success') {
+            let windowPointDragged = await windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
+            expect(windowPointDragged.left).assertEqual(windowPoint.left - 50)
+            expect(windowPointDragged.top).assertEqual(windowPoint.top - 50)
+            await windowClass.setUIContent("testability/pages/Index");
+            done()
+          } else {
+            await windowClass.setUIContent("testability/pages/Index");
+            console.error(`${message} Error`);
+            expect(true).assertFalse()
+            done()
+          }
+        }else{
+        if (textDragged == 'startMoving 801') {
+            console.info('startMoving 801')
+            await windowClass.setUIContent("testability/pages/Index");
+            done()
+          } else if (textDragged == 'startMoving 1300004') {
+            console.info('startMoving 1300004')
+            await windowClass.setUIContent("testability/pages/Index");
+            done()
+          } else {
+            await windowClass.setUIContent("testability/pages/Index");
+            console.error(`${message} Error`);
+            expect(true).assertFalse()
+            done()
+          }
+        }
+      } catch (err) {
+        console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
         expect(true).assertFalse()
         done()
       }
@@ -300,8 +764,7 @@ export default function windowLayoutTest() {
         isModal: false
       };
       try {
-        if(isFreeWindowMode){
-          mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
+        mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
           windowClass.resize(1000, 1200);
@@ -343,12 +806,8 @@ export default function windowLayoutTest() {
             done();
           }
         })
-        }else{
-          done();
-        }
-        
-      } catch (exception) {
-        console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+      } catch (expection) {
+        console.error(`${message} Error. Cause code: ${expection.code}, message: ${expection.message}`);
         // await mainwindowClass.setUIContent("testability/pages/Index");
         expect(true).assertFalse();
         done();
@@ -392,8 +851,8 @@ export default function windowLayoutTest() {
             expect(windowPointDragged.height).assertEqual(windowPoint.height - 100)
             done()
           });
-        } catch (exception) {
-          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
+        } catch (expection) {
+          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${expection.code}, message: ${expection.message}`)
           expect().assertFail();
           done();
         }
@@ -1505,6 +1964,353 @@ export default function windowLayoutTest() {
       }
 
     })
+
+    /**
+     * @tc.name   testmoveWindowTo_mainWindow
+     * @tc.number SUB_BASIC_WMS_moveWindowTo_mainWindow_0100
+     * @tc.desc   testmoveWindowTo_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowTo_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowTo_mainWindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let rectBefore = mainWindow.getGlobalRect()
+        let promise:Promise<void>
+        if(rectBefore.left == 300 || rectBefore.top == 300){
+           promise = mainWindow.moveWindowTo(500, 500);
+        }else{
+           promise = mainWindow.moveWindowTo(300, 300);
+        }
+        promise.then(() => {
+          console.info(msgStr + 'Succeeded in moving the window.');
+          done()
+        }).catch( (err: BusinessError) => {
+          console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
+            console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+            expect(err.code === 801).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+          let rect = mainWindow.getGlobalRect()
+        if(isFreeWindowMode){
+          expect(rect.left).assertLargerOrEqual(300)
+          expect(rect.top).assertLargerOrEqual(300)
+          done()
+        }else{
+          expect(rect.left).assertEqual(rectBefore.left)
+          expect(rect.top).assertEqual(rectBefore.top)
+        } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+     /**
+     * @tc.name   testmoveWindowTo_mainWindow_callback
+     * @tc.number SUB_BASIC_WMS_moveWindowTo_mainWindow_0200
+     * @tc.desc   testmoveWindowTo_mainWindow_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowTo_mainWindow_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowTo_mainWindow_callback";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let rectBefore = mainWindow.getGlobalRect()
+        if(rectBefore.left == 300 || rectBefore.top == 300){
+          mainWindow.moveWindowTo(500, 500,(err:BusinessError)=>{
+            let errCode:number = err.code;
+            if (err.code == 801) {
+              console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+              expect(err.code === 801).assertTrue()
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+            console.info(msgStr + 'Succeeded in moving the window.');
+          });
+        }else{
+          mainWindow.moveWindowTo(300, 300,(err:BusinessError)=>{
+            let errCode:number = err.code;
+            if (err.code == 801) {
+              console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+              expect(err.code === 801).assertTrue()
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+            console.info(msgStr + 'Succeeded in moving the window.');
+          });
+        }
+        let rect = mainWindow.getGlobalRect()
+        if(isFreeWindowMode){
+          expect(rect.left).assertLargerOrEqual(300)
+          expect(rect.top).assertLargerOrEqual(300)
+          done()
+        }else{
+          expect(rect.left).assertEqual(rectBefore.left)
+          expect(rect.top).assertEqual(rectBefore.top)
+        } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testmoveWindowToAsync_mainWindow
+     * @tc.number SUB_BASIC_WMS_moveWindowToAsync_mainWindow_0100
+     * @tc.desc   testmoveWindowToAsync_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowToAsync_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowToAsync_mainWindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let displayId = mainWindow.getWindowProperties().displayId;
+        console.info(msgStr + 'windowId :' + displayId)
+        let moveConfiguration: window.MoveConfiguration = {
+          displayId: displayId
+        };
+          if(isFreeWindowMode){
+            let promise = mainWindow.moveWindowToAsync(300, 300, moveConfiguration);
+            promise.then( () => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch( (err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }else{
+            let promise = mainWindow.moveWindowToAsync(300, 300, moveConfiguration);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else if(err.code == 1300010) {
+                 expect(err.code === 1300010).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testmoveWindowToAsync_mainWindow_withoutparam
+     * @tc.number SUB_BASIC_WMS_moveWindowToAsync_mainWindow_0200
+     * @tc.desc   testmoveWindowToAsync_mainWindow_withoutparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowToAsync_mainWindow_withoutparam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowToAsync_mainWindow_withoutparam";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+          if(isFreeWindowMode){
+            let promise = mainWindow.moveWindowToAsync(300, 300);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch( (err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }else{
+            let promise = mainWindow.moveWindowToAsync(300, 300);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else if(err.code == 1300010) {
+                expect(err.code === 1300010).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testmoveWindowToGlobal_mainWindow
+     * @tc.number SUB_BASIC_WMS_moveWindowToGlobal_mainWindow_0100
+     * @tc.desc   testmoveWindowToGlobal_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowToGlobal_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowToGlobal_mainWindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let displayId = mainWindow.getWindowProperties().displayId;
+        console.info(msgStr + 'windowId :' + displayId)
+        let moveConfiguration: window.MoveConfiguration = {
+          displayId: displayId
+        };
+          if(isFreeWindowMode){
+            let promise = mainWindow.moveWindowToGlobal(300, 300, moveConfiguration);
+            promise.then( () => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch( (err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }else{
+            let promise = mainWindow.moveWindowToGlobal(300, 300, moveConfiguration);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else if(err.code == 1300010) {
+                expect(err.code === 1300010).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testmoveWindowToGlobal_mainWindow_withoutparam
+     * @tc.number SUB_BASIC_WMS_moveWindowToGlobal_mainWindow_0200
+     * @tc.desc   testmoveWindowToGlobal_mainWindow_withoutparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testmoveWindowToGlobal_mainWindow_withoutparam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testmoveWindowToGlobal_mainWindow_withoutparam";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+          if(isFreeWindowMode){
+            let promise = mainWindow.moveWindowToGlobal(300, 300);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch( (err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          }else{
+            let promise = mainWindow.moveWindowToGlobal(300, 300);
+            promise.then(() => {
+              console.info(msgStr + 'Succeeded in moving the window.');
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
+                expect(err.code === 801).assertTrue()
+                done();
+              } else if(err.code == 1300010) {
+                expect(err.code === 1300010).assertTrue()
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          } 
+      } catch (expection) {
+        console.error(msgStr + `Failed to get mainWindow. Cause code: ${expection.code}, message: ${expection.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
     /**
      * @tc.name   testmoveWindowToAsync_3_parameters
      * @tc.number SUB_BASIC_WMS_moveWindowToAsync_3_parameters_0100
@@ -1546,8 +2352,8 @@ export default function windowLayoutTest() {
             done();
           }
         });
-      } catch (exception) {
-        console.error(msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+      } catch (expection) {
+        console.error(msgStr + `Failed. Cause code: ${expection.code}, message: ${expection.message}`);
         await subWindow.destroyWindow();
         expect(false).assertFail();
         done();
@@ -1593,9 +2399,9 @@ export default function windowLayoutTest() {
               await windowClass?.destroyWindow();
               done();
             })
-          } catch (exception) {
-            console.error(`testWindowEnableDragNull! Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
-            expect(exception.code).assertEqual(401);
+          } catch (expection) {
+            console.error(`testWindowEnableDragNull! Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
+            expect(expection.code).assertEqual(401);
             await windowClass?.destroyWindow();
             done();
           }
@@ -1605,8 +2411,8 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         });
-      } catch (exception) {
-        console.error(`testWindowEnableDragNull! Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+      } catch (expection) {
+        console.error(`testWindowEnableDragNull! Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
         expect().assertFail();
         done();
       }
@@ -1657,8 +2463,8 @@ export default function windowLayoutTest() {
               }
               done();
             })
-          } catch (exception) {
-            console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+          } catch (expection) {
+            console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
             expect().assertFail();
             done();
           }
@@ -1668,8 +2474,8 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         });
-      } catch (exception) {
-        console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+      } catch (expection) {
+        console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
         expect().assertFail();
         done();
       }
@@ -1720,8 +2526,8 @@ export default function windowLayoutTest() {
                 expect(err.code).assertEqual(801);
                 done();
               })
-            } catch (exception) {
-              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+            } catch (expection) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
               expect().assertFail();
               done();
             }
@@ -1732,8 +2538,8 @@ export default function windowLayoutTest() {
             expect().assertFail();
             done();
           });
-        } catch (exception) {
-          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+        } catch (expection) {
+          console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
           expect().assertFail();
           done();
         }
@@ -1784,8 +2590,8 @@ export default function windowLayoutTest() {
                 expect(err.code).assertEqual(801);
                 done();
               })
-            } catch (exception) {
-              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+            } catch (expection) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
               expect().assertFail();
               done();
             }
@@ -1796,8 +2602,8 @@ export default function windowLayoutTest() {
             expect().assertFail();
             done();
           });
-        } catch (exception) {
-          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+        } catch (expection) {
+          console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
           expect().assertFail();
           done();
         }
@@ -1853,8 +2659,8 @@ export default function windowLayoutTest() {
                 expect(err.code).assertEqual(801);
                 done();
               })
-            } catch (exception) {
-              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+            } catch (expection) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
               expect().assertFail();
               done();
             }
@@ -1864,8 +2670,8 @@ export default function windowLayoutTest() {
             expect().assertFail();
             done();
           });
-        } catch (exception) {
-          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+        } catch (expection) {
+          console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
           expect().assertFail();
           done();
         }
@@ -1920,8 +2726,8 @@ export default function windowLayoutTest() {
                 expect(err.code).assertEqual(801);
                 done();
               })
-            } catch (exception) {
-              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+            } catch (expection) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
               expect().assertFail();
               done();
             }
@@ -1932,8 +2738,8 @@ export default function windowLayoutTest() {
             expect().assertFail();
             done();
           });
-        } catch (exception) {
-          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+        } catch (expection) {
+          console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
           expect().assertFail();
           done();
         }
@@ -2210,8 +3016,6 @@ export default function windowLayoutTest() {
                 console.log(caseName + 'device not support')
                 done();
               } else if (error.code == 1300004) {
-
-
                 done();
               } else if (error.code == 801) {
                 done();
@@ -3832,8 +4636,8 @@ export default function windowLayoutTest() {
                 expect(err.code).assertEqual(801);
                 done();
               })
-            } catch (exception) {
-              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+            } catch (expection) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${expection.code}, message: ${expection.message}`);
               expect().assertFail();
               done();
             }
@@ -3849,8 +4653,8 @@ export default function windowLayoutTest() {
             
             
           });
-        } catch (exception) {
-          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+        } catch (expection) {
+          console.error(caseName + `Failed to create the window. Cause code: ${expection.code}, message: ${expection.message}`);
           expect().assertFail();
           done();
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -102,19 +102,19 @@ export default function drmEnumTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_DRM_PREDEFINED_CONFIG_NAME_ENUM_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void) => {
-      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR as string == 'vendor').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR.valueOf() == 'vendor').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR: ${drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR}`);
-      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION as string == 'version').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION.valueOf() == 'version').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION : ${drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION}`);
-      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION as string == 'description').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION.valueOf() == 'description').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION : ${drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION}`);
-      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS as string == 'algorithms').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS.valueOf() == 'algorithms').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS : ${drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS}`);
-      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID as string == 'deviceUniqueId').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID.valueOf() == 'deviceUniqueId').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID  : ${drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID}`);
-      expect(drm.PreDefinedConfigName.CONFIG_SESSION_MAX as string == 'maxSessionNum').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_SESSION_MAX.valueOf() == 'maxSessionNum').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_SESSION_MAX  : ${drm.PreDefinedConfigName.CONFIG_SESSION_MAX}`);
-      expect(drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string == 'currentSessionNum').assertTrue();
+      expect(drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf() == 'currentSessionNum').assertTrue();
       console.log(`drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT: ${drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT}`);
       done();
     });

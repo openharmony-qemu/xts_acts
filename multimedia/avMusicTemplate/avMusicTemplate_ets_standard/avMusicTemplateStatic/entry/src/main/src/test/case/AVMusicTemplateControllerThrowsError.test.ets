@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -400,7 +400,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
         try {
           let tSort: int = 1;
           let pid = 3;
-          await controller!.queryPlaylist(pid, tSort as avMusicTemplate.Sort);
+          await controller!.queryPlaylist(pid, avMusicTemplate.Sort.fromValue(tSort));
           done();
         } catch (err) {
           CommonUtils.logError(TAG, "QUERY_PLAYLIST_THROWS_ERROR_0500 catch err: " + CommonUtils.getError(err));
@@ -422,7 +422,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
         try {
           let tSort: int = 1;
           let pid = 3;
-          await controller!.queryPlaylist(pid, tSort as avMusicTemplate.Sort);
+          await controller!.queryPlaylist(pid, avMusicTemplate.Sort.fromValue(tSort));
           done();
         } catch (err) {
           CommonUtils.logError(TAG, "QUERY_PLAYLIST_THROWS_ERROR_0501 catch err: " + CommonUtils.getError(err));
@@ -444,7 +444,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
         try {
           let tSort: int = 1;
           let pid = 3;
-          await controller!.queryPlaylist(pid, tSort as avMusicTemplate.Sort);
+          await controller!.queryPlaylist(pid, avMusicTemplate.Sort.fromValue(tSort));
           done();
         } catch (err) {
           CommonUtils.logError(TAG, "QUERY_PLAYLIST_THROWS_ERROR_0502 catch err: " + CommonUtils.getError(err));
@@ -466,7 +466,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
         try {
           let tSort: int = 1;
           let pid = 3;
-          await controller!.queryPlaylist(pid, tSort as avMusicTemplate.Sort);
+          await controller!.queryPlaylist(pid, avMusicTemplate.Sort.fromValue(tSort));
           done();
         } catch (err) {
           CommonUtils.logError(TAG, "QUERY_PLAYLIST_THROWS_ERROR_0503 catch err: " + CommonUtils.getError(err));
@@ -651,7 +651,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           const keyword = 'KEY_WORD';
-          const searchType = 0 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(0);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -675,7 +675,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           const keyword = 'KEY_WORD';
-          const searchType = 0 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(0);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -699,7 +699,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           const keyword = 'KEY_WORD';
-          const searchType = 0 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(0);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -723,7 +723,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           const keyword = 'KEY_WORD';
-          const searchType = 0 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(0);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -1494,7 +1494,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEMBER_PURCHASE_THROWS_ERROR_STATIC_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          const memberPurchaseType = 'normal' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('normal');
           let res: avMusicTemplate.MemberPurchaseInfo[] | undefined =
             await controller!.queryMemberPurchase(memberPurchaseType);
           done();
@@ -1516,7 +1516,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEMBER_PURCHASE_THROWS_ERROR_STATIC_1801',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          const memberPurchaseType = 'normal' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('normal');
           let res: avMusicTemplate.MemberPurchaseInfo[] | undefined =
             await controller!.queryMemberPurchase(memberPurchaseType);
           done();
@@ -1538,7 +1538,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEMBER_PURCHASE_THROWS_ERROR_STATIC_1802',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          const memberPurchaseType = 'normal' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('normal');
           let res: avMusicTemplate.MemberPurchaseInfo[] | undefined =
             await controller!.queryMemberPurchase(memberPurchaseType);
           done();
@@ -1560,7 +1560,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEMBER_PURCHASE_THROWS_ERROR_STATIC_1803',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          const memberPurchaseType = 'normal' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('normal');
           let res: avMusicTemplate.MemberPurchaseInfo[] | undefined =
             await controller!.queryMemberPurchase(memberPurchaseType);
           done();
@@ -1754,7 +1754,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_PLAY_FOR_SEARCH_THROWS_ERROR_STATIC_2100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let command = 'playMusic' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playMusic');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           done();
@@ -1776,7 +1776,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_PLAY_FOR_SEARCH_THROWS_ERROR_STATIC_2101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let command = 'playMusic' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playMusic');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           done();
@@ -1798,7 +1798,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_PLAY_FOR_SEARCH_THROWS_ERROR_STATIC_2102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let command = 'playMusic' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playMusic');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           done();
@@ -1820,7 +1820,7 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_PLAY_FOR_SEARCH_THROWS_ERROR_STATIC_2103',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let command = 'playMusic' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playMusic');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           done();

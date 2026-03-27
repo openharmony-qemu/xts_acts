@@ -74,7 +74,6 @@ export default function WebInitTest() {
       done()
     })
 
-
     /**
      * @tc.name   ContextMenuEditStateFlagsStatic
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035
@@ -100,7 +99,7 @@ export default function WebInitTest() {
 
     /**
      * @tc.name   ContextMenuEditStateFlags1Static
-     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_036
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_0300
      * @tc.desc   Save current page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,5 +190,22 @@ export default function WebInitTest() {
         done();
       })
 
+    /**
+    * @tc.name         SwitchNextPageStatic
+    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE
+    * @tc.desc         test SwitchNextPageStatic
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        Level 0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }

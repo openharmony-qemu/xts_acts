@@ -149,6 +149,268 @@ export default function WebSocketTest() {
     });
 
     /**
+     * @tc.name   testWebSocketCreateWebSocket_static_0100
+     * @tc.number SUB_Network_WebSocket_CreateWebSocket_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketCreateWebSocket_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketCreateWebSocket_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          ExpectTrue(typeof ws == 'object');
+          hilog.info(domain, tag, '%{public}s', caseName + '---test ');
+          ws.connect(availableWebSocketAddress, {}, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  connect fail  error  is ' + err.code);
+              ExpectFail();
+              ws.close();
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect success and value is ->' + value);
+              ExpectTrue(value!);
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnect_static_0100
+     * @tc.number testNetworkMgrWebSocketConnect_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnect_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnect_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          ws.connect('', (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  test connect1 fail error is ' + err.code);
+              ExpectTrue(err?.code == 2302001)
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect1 success and value is ->' + value);
+              ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+                if (err && err.code != 0) {
+                  hilog.info(domain, tag, '%{public}s',
+                    caseName + ' test connect2 fail  error is ' + JSON.stringify(err));
+                  done();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + ': test connect2 success and value is ->' + value);
+                  ExpectTrue(false)
+                  done();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+              })
+            }
+          })
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+          ExpectTrue(false)
+          done();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnect_static_0200
+     * @tc.number testNetworkMgrWebSocketConnect_static_0200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnect_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnect_static_0200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  test connect1 fail error is ' + err.code);
+              ExpectTrue(err?.code == 2302999)
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect1 success and value is ->' + value);
+              ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+                if (err && err.code != 0) {
+                  hilog.info(domain, tag, '%{public}s',
+                    caseName + ' test connect2 fail  error is ' + err.code);
+                  done();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + ': test connect2 success and value is ->' + value);
+                  ExpectTrue(false)
+                  done();
+                  hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+              })
+            }
+          })
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+          ExpectTrue(false)
+          done();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      })
+
+    /**
+     * @tc.name   testWebSocketConnectCallback_static_0400
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0400
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketConnectCallback_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketConnectCallback_static_0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test ');
+          ws.connect('', {}, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  connect fail  error  is ' + err.code);
+              ExpectTrue(err.code == 2302001);
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect success and value is ->' + value);
+              ExpectTrue(value!);
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketConnectPromiseUrl_static_0100
+     * @tc.number testWebSocketConnectPromiseUrl_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketConnectPromiseUrl_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketConnectPromiseUrl_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test ');
+          let options: webSocket.WebSocketRequestOptions = {};
+          ws.connect('', options).then(async (value: boolean) => {
+            if (value == false) {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect1 fail and value is ->' + value);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect success and value is ->' + value);
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s', caseName + '  connect fail  error  is ' + err.code);
+            ExpectTrue(err.code == 2302001)
+            done();
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          })
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketConnectPromiseUrl_static_0200
+     * @tc.number testWebSocketConnectPromiseUrl_static_0200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketConnectPromiseUrl_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketConnectPromiseUrl_static_0200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws: webSocket.WebSocket = webSocket.createWebSocket();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test ');
+          let options: webSocket.WebSocketRequestOptions = {};
+          ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+            if (value == false) {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect1 fail and value is ->' + value);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ': test connect success and value is ->' + value);
+              done();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s', caseName + '  connect fail  error  is ' + err.code);
+            ExpectTrue(err.code == 2302999)
+            done();
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          })
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
+     * @tc.number testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+          ExpectTrue(typeof server == 'object');
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+        }
+      });
+
+    /**
      * @tc.name   testNetworkMgrWebSocketConnect0100
      * @tc.number SUB_NetworkMgr_WebSocket_Connect_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)

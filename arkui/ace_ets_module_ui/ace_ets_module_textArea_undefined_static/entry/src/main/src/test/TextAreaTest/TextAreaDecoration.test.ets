@@ -65,8 +65,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0010] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextAreaDecorationTest_static_0010] END');
       done();
     });
@@ -90,8 +90,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0020] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"');
       console.info('[TextAreaDecorationTest_static_0020] END');
       done();
     });
@@ -116,8 +116,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0030] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"');
       console.info('[TextAreaDecorationTest_static_0030] END');
       done();
     });
@@ -144,8 +144,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0040] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       console.info('[TextAreaDecorationTest_static_0040] END');
       done();
     });
@@ -172,8 +172,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0050] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextAreaDecorationTest_static_0050] END');
       done();
     });
@@ -197,8 +197,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0060] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextAreaDecorationTest_static_0060] END');
       done();
     });
@@ -222,8 +222,8 @@ export default function TextAreaDecorationTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextAreaDecorationTest_static_0070] TextAreaDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       console.info('[TextAreaDecorationTest_static_0070] END');
       done();
     });

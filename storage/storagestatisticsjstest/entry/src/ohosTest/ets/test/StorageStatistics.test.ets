@@ -14,7 +14,7 @@
  */
 
 import storageStatistics from "@ohos.file.storageStatistics";
-import { describe, it, expect, Level } from "@ohos/hypium"
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import { isIntNum, isNegativeNum } from "./Common";
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -229,6 +229,75 @@ export default function storageStatisticsTest() {
         expect(isIntNum(number)).assertTrue();
       } catch (error) {
         console.log("storage_statistics_test_getFreeSize_async_003 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   storage_statistics_test_getTotalInodes_004
+     * @tc.number SUB_DF_STORAGE_STATISTICS_GET_TOTAL_INODES_0090
+     * @tc.desc   Test getTotalInodes() interfaces, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("storage_statistics_test_getTotalInodes_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        storageStatistics.getTotalInodes().then((totalInodes: number) => {
+          console.info("storage_statistics_test_getTotalInodes_004 successfully: " + totalInodes);
+          expect(isIntNum(totalInodes)).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`storage_statistics_test_getTotalInodes_004 failed. Code: ${err.code}, Message: ${err.message}`);
+        });
+        done();
+      } catch (error) {
+        console.log("storage_statistics_test_getTotalInodes_004 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   storage_statistics_test_getFreeInodes_005
+     * @tc.number SUB_DF_STORAGE_STATISTICS_GET_FREE_INODES_1000
+     * @tc.desc   Test getFreeInodes() interfaces, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("storage_statistics_test_getFreeInodes_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        storageStatistics.getFreeInodes().then((freeInodes: number) => {
+          console.info("storage_statistics_test_getFreeInodes_005 successfully: " + freeInodes);
+          expect(isIntNum(freeInodes)).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`storage_statistics_test_getFreeInodes_005 failed. Code: ${err.code}, Message: ${err.message}`);
+        });
+        done();
+      } catch (error) {
+        console.log("storage_statistics_test_getFreeInodes_005 has failed for " + error);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   storage_statistics_test_getCurrentBundleInodes_006
+     * @tc.number SUB_DF_STORAGE_STATISTICS_GET_FREE_INODES_1100
+     * @tc.desc   Test getCurrentBundleInodes() interfaces, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("storage_statistics_test_getCurrentBundleInodes_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        storageStatistics.getCurrentBundleInodes().then((curInodes: number) => {
+          console.info("storage_statistics_test_getCurrentBundleInodes_006 successfully: " + curInodes);
+          expect(isIntNum(curInodes)).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`storage_statistics_test_getCurrentBundleInodes_006 failed. Code: ${err.code}, Message: ${err.message}`);
+        });
+        done();
+      } catch (error) {
+        console.log("storage_statistics_test_getCurrentBundleInodes_006 has failed for " + error);
         expect(false).assertTrue();
       }
     })

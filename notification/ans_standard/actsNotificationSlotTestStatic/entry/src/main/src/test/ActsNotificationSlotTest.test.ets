@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021-2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1853,16 +1853,16 @@ export default function ActsNotificationSlotTest() {
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100'
         console.info(`${TAG} SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_0100 START`)
-        expect(notificationManager.SlotType.UNKNOWN_TYPE as int).assertEqual(0)
-        expect(notificationManager.SlotType.SOCIAL_COMMUNICATION as int).assertEqual(1)
-        expect(notificationManager.SlotType.SERVICE_INFORMATION as int).assertEqual(2)
-        expect(notificationManager.SlotType.CONTENT_INFORMATION as int).assertEqual(3)
-        expect(notificationManager.SlotType.OTHER_TYPES as int).assertEqual(0xFFFF)
-        expect(notificationManager.SlotLevel.LEVEL_NONE as int).assertEqual(0)
-        expect(notificationManager.SlotLevel.LEVEL_MIN as int).assertEqual(1)
-        expect(notificationManager.SlotLevel.LEVEL_LOW as int).assertEqual(2)
-        expect(notificationManager.SlotLevel.LEVEL_DEFAULT as int).assertEqual(3)
-        expect(notificationManager.SlotLevel.LEVEL_HIGH as int).assertEqual(4)
+        expect(notificationManager.SlotType.UNKNOWN_TYPE.valueOf()).assertEqual(0)
+        expect(notificationManager.SlotType.SOCIAL_COMMUNICATION.valueOf()).assertEqual(1)
+        expect(notificationManager.SlotType.SERVICE_INFORMATION.valueOf()).assertEqual(2)
+        expect(notificationManager.SlotType.CONTENT_INFORMATION.valueOf()).assertEqual(3)
+        expect(notificationManager.SlotType.OTHER_TYPES.valueOf()).assertEqual(0xFFFF)
+        expect(notificationManager.SlotLevel.LEVEL_NONE.valueOf()).assertEqual(0)
+        expect(notificationManager.SlotLevel.LEVEL_MIN.valueOf()).assertEqual(1)
+        expect(notificationManager.SlotLevel.LEVEL_LOW.valueOf()).assertEqual(2)
+        expect(notificationManager.SlotLevel.LEVEL_DEFAULT.valueOf()).assertEqual(3)
+        expect(notificationManager.SlotLevel.LEVEL_HIGH.valueOf()).assertEqual(4)
         done()
       })
     console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST END')

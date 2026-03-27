@@ -60,7 +60,7 @@ export default function SaveButtonTest() {
         let pages = routerInstance.getState();
         console.info("SaveButtonTest state pages: " + JSON.stringify(pages));
         console.info("SaveButtonTest state pages.name: " + pages.name);
-        if (pages.name !== "SaveButtonIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
         // Wait for page to load

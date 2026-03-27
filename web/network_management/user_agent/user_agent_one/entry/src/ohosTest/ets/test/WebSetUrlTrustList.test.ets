@@ -114,6 +114,22 @@ export default function webSetUrlTrustList() {
     })
 
     /**
+     * @tc.name   testSetUrlTrustListFirstParamEmpty
+     * @tc.number SUB_ACE_WEB_SETURLTRUSTLIST_PARAMS_0100
+     * @tc.desc   test setUrlTrustList first param empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetUrlTrustListFirstParamEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitSetUrlTrustListFirstParamEmpty', 174270);
+      Utils.registerBaseEvent('testSetUrlTrustListFirstParamEmpty', true, 26032504, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebSetUrlTrustListButton', 10, '');
+    })
+
+    /**
      * @tc.name   testSetUrlTrustListSecondParamNull
      * @tc.number SUB_ACE_WEB_SETURLTRUSTLIST_ERROR_0300
      * @tc.desc   test setUrlTrustList second param null
@@ -140,6 +156,21 @@ export default function webSetUrlTrustList() {
     it('testSetUrlTrustListSecondParamaterUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUrlTrustListSecondParamUndefined', 174270);
       Utils.registerBaseEvent('testSetUrlTrustListSecondParamaterUndefined', '401', 174320, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebSetUrlTrustListButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetUrlTrustListSecondParamaterFalse
+     * @tc.number SUB_ACE_WEB_SETURLTRUSTLIST_PARAMS_0200
+     * @tc.desc   test setUrlTrustList second param empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetUrlTrustListSecondParamaterFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitSetUrlTrustListSecondParamaterFalse', 174270);
+      Utils.registerBaseEvent('testSetUrlTrustListSecondParamaterFalse', true, 26032505, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebSetUrlTrustListButton', 10, '');
@@ -172,6 +203,21 @@ export default function webSetUrlTrustList() {
     it('testSetUrlTrustListThirdParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUrlTrustListThirdParamUndefined', 174270);
       Utils.registerBaseEvent('testSetUrlTrustListThirdParamUndefined', '401', 174340, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebSetUrlTrustListButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetUrlTrustListThirdParamFalse
+     * @tc.number SUB_ACE_WEB_SETURLTRUSTLIST_PARAMS_0300
+     * @tc.desc   test setUrlTrustList third param false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetUrlTrustListThirdParamFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitSetUrlTrustListThirdParamFalse', 174270);
+      Utils.registerBaseEvent('testSetUrlTrustListThirdParamFalse', true, 26032506, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebSetUrlTrustListButton', 10, '');

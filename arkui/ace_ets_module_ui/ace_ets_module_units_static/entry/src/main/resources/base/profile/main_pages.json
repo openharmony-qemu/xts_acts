@@ -1,5 +1,1 @@
-﻿{
-  "src": [
-    "MainAbility/pages/index/index"
-  ]
-}
+{"src":["MainAbility/pages/index/index","MainAbility/pages/Units/UnitsIndex"]}

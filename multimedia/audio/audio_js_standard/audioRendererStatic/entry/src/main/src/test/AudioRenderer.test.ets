@@ -1872,7 +1872,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: File size : Removing header: ${totalSize}`);
       await Utils.msSleep(100);
       let waitTime: int;
-      switch (samplingRate! as int) {
+      switch (samplingRate!.valueOf()) {
         case 44100:
           waitTime = 45;
           break;
@@ -12930,7 +12930,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -12967,7 +12966,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13004,7 +13002,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13041,7 +13038,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13078,7 +13074,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13115,7 +13110,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13152,7 +13146,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13189,7 +13182,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13226,7 +13218,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13263,7 +13254,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13300,7 +13290,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13337,7 +13326,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13374,7 +13362,6 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error){
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
@@ -13400,7 +13387,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_UNKNOWN;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.INVALID)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13427,7 +13413,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.EARPIECE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13454,7 +13439,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.WIRED_HEADSET)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13481,7 +13465,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_ALARM;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.WIRED_HEADPHONES)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13508,7 +13491,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.BLUETOOTH_SCO)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13535,7 +13517,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_RINGTONE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.BLUETOOTH_A2DP)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13562,7 +13543,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.MIC)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13589,7 +13569,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.USB_HEADSET)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13616,7 +13595,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MOVIE;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.DISPLAY_PORT)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13643,7 +13621,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_GAME;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.REMOTE_CAST)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13670,7 +13647,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_AUDIOBOOK;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.USB_DEVICE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13697,7 +13673,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NAVIGATION;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.HDMI)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13724,7 +13699,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.LINE_DIGITAL)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13751,7 +13725,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.REMOTE_DAUDIO)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13778,7 +13751,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.HEARING_AID)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13805,7 +13777,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.NEARLINK)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13832,7 +13803,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.SYSTEM_PRIVATE)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13859,7 +13829,6 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.DEFAULT)
         console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -13989,6 +13958,326 @@ export default function audioRendererTest() {
         done();
       }
       expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 
+     * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 
+     * @tc.desc   setIndependentAudioSessionStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+    
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 
+    * @tc.desc   setIndependentAudioSessionStrategy--CONCURRENCY_DUCK_OTHERS--DEFALUT
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0500 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0600 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0700 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        audioRenderer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_0800 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release();
       done();
     })
   })

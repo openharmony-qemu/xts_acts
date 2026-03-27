@@ -15,6 +15,7 @@ group("ActsWebInjectJavascriptTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "inject_javascript_four_static:ActsWebInjectJavacriptFourStaticTest",
       "inject_javascript_one:ActsWebInjectJavascriptOneTest",
       "inject_javascript_one_static:ActsWebInjectJavascriptOneStaticTest",
       "inject_javascript_three:ActsWebInjectJavacriptThreeTest",

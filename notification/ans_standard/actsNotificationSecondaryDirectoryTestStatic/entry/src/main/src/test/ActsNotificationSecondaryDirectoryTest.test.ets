@@ -757,11 +757,11 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()
         expect(num2 == 2).assertTrue()
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT as int).assertEqual(0)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT as int).assertEqual(1)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE as int).assertEqual(2)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION as int).assertEqual(3)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE as int).assertEqual(4)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.valueOf()).assertEqual(0)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.valueOf()).assertEqual(1)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.valueOf()).assertEqual(2)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION.valueOf()).assertEqual(3)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.valueOf()).assertEqual(4)
         done()
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4850 END`);
       })

@@ -55,8 +55,8 @@ struct webUserAgentMetadataPlatform {
         Button('webUserAgentMetadata click')
           .key('WebUserAgentMetadataPlatformButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
@@ -130,6 +130,17 @@ struct webUserAgentMetadataPlatform {
                   } else {
                     Utils.emitEvent(String(error.code), 174890);
                   }
+                }
+                break;
+              }
+              case 'emitSetPlatformEmpty': {
+                try {
+                  let metaData = new webView.UserAgentMetadata();
+                  metaData.setPlatform('');
+                  Utils.emitEvent('no_error', 26032509);
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032509);
                 }
                 break;
               }

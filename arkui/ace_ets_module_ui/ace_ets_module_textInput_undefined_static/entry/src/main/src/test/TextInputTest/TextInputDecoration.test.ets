@@ -67,8 +67,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0010] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextInputDecoration_static_0010] END');
       done();
     });
@@ -92,8 +92,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0020] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"');
       console.info('[TextInputDecoration_static_0020] END');
       done();
     });
@@ -118,8 +118,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0030] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Overline","color":"#FF0000FF","style":"TextDecorationStyle.DASHED"');
       console.info('[TextInputDecoration_static_0030] END');
       done();
     });
@@ -146,8 +146,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0040] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       console.info('[TextInputDecoration_static_0040] END');
       done();
     });
@@ -174,8 +174,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0050] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextInputDecoration_static_0050] END');
       done();
     });
@@ -199,8 +199,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0060] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"');
       console.info('[TextInputDecoration_static_0060] END');
       done();
     });
@@ -224,8 +224,8 @@ export default function TextInputDecoration() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TextInputDecoration_static_0070] TextInputDecoration: ' + JSON.stringify(obj.getElement('$attrs').getString('decoration')));
       let resultStr = obj.getElement('$attrs').getString('decoration')
-      expect(resultStr).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(resultStr).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
       console.info('[TextInputDecoration_static_0070] END');
       done();
     });

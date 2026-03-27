@@ -788,6 +788,23 @@ export default function audioFramework() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0300
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE).assertEqual(8);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE);
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE).assertEqual(9);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE);
+      await Utils.msSleep(50);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.desc   DeviceRole - ALL Device Role
@@ -3482,6 +3499,375 @@ export default function audioFramework() {
         }
         expect(flag).assertTrue();
         done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_STATIC_001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_STATIC_001
+     * @tc.desc   isSystemMutedForStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try{
+            let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+            let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
+            console.info(`SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_STATIC_001 IsSystemMutedForStream is ${IsSystemMutedForStream}`);
+            if (IsSystemMutedForStream){
+                expect(IsSystemMutedForStream).assertEqual(true);
+                done();
+            }
+            else {
+                expect(IsSystemMutedForStream).assertEqual(false);
+                done();
+            }
+        }catch(error){
+            console.error(`SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_STATIC_001 FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+            expect(true).assertFalse();
+            done();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0100
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0100
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_UNKNOWN test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_UNKNOWN: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_UNKNOWN: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0200
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0200
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_VOICE_COMMUNICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_COMMUNICATION: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0300
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0300
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_VOICE_ASSISTANT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_ASSISTANT: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_ASSISTANT: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0400
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0400
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_ALARM test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_ALARM: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_ALARM: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0500
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0500
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_VOICE_MESSAGE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_MESSAGE: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VOICE_MESSAGE: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0600
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0600
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_RINGTONE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_RINGTONE: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_RINGTONE: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0700
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0700
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_NOTIFICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_NOTIFICATION: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_NOTIFICATION: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0800
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0800
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_ACCESSIBILITY test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_ACCESSIBILITY: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_ACCESSIBILITY: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0900
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0900
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_MOVIE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_MOVIE: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_MOVIE: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0110
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0110
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_GAME test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_GAME);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_GAME: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_GAME: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0120
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0120
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_AUDIOBOOK test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_AUDIOBOOK: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_AUDIOBOOK: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0130
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0130
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_NAVIGATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_NAVIGATION: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_NAVIGATION: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0140
+     * @tc.number AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0140
+     * @tc.desc   isSystemMutedForStream with STREAM_USAGE_VIDEO_COMMUNICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_MANAGER_IS_SYSTEM_MUTED_FOR_STREAM_STREAM_STATIC_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+        try {
+            let isMuted:boolean = audioVolumeManager.isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VIDEO_COMMUNICATION: PASS, isMuted: ${isMuted}`);
+            done();
+        } catch (err) {
+            console.info(`isSystemMutedForStream with STREAM_USAGE_VIDEO_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+     * @tc.name   AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001
+     * @tc.number AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001
+     * @tc.desc   on_off_StatusChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+          try {
+              let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+              audioLoopback?.offStatusChange();
+              audioLoopback?.onStatusChange((status: audio.AudioLoopbackStatus) => {
+                  if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
+                      console.info('audio loopback status is: UNAVAILABLE_DEVICE');
+                  } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
+                      console.info('audio loopback status is: UNAVAILABLE_SCENE');
+                  } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
+                      console.info('audio loopback status is: AVAILABLE_IDLE');
+                  } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
+                      console.info('audio loopback status is: AVAILABLE_RUNNING');
+                  }
+              });
+              audioLoopback?.offStatusChange((status: audio.AudioLoopbackStatus) => {
+                  if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
+                      console.info('audio loopback status is: UNAVAILABLE_DEVICE');
+                  } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
+                      console.info('audio loopback status is: UNAVAILABLE_SCENE');
+                  } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
+                      console.info('audio loopback status is: AVAILABLE_IDLE');
+                  } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
+                      console.info('audio loopback status is: AVAILABLE_RUNNING');
+                  }
+              });
+              audioLoopback?.enable(true).then((isSuccess) => {
+                  if (isSuccess) {
+                      console.error(` AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 audio loopback enable success`);
+                  } else {
+                      console.error(` AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 audio loopback enable fail`);
+                  }
+              }).catch((err: Error) => {
+                  console.error(` AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 ERROR: ${err}`);
+                  expect(Number(err.code)).assertEqual(201);
+              });
+              audioLoopback?.enable(false).then((isSuccess) => {
+                  if (isSuccess) {
+                      console.error(` AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 audio loopback enable success`);
+                  } else {
+                      console.error(`AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 audio loopback enable fail`);
+                  }
+              }).catch((err: Error) => {
+                  console.error(` AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 ERROR: ${err}`);
+                  expect(Number(err.code)).assertEqual(201);
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              console.error(`AUDIO_AUDIOLOOPBACK_ON_OFF_STATUSCHANGE_STATIC_001 ERROR: ${err}`);
+              expect(Number(err.code)).assertEqual(201);
+          }
+      }
+      done();
     })
   })
 }

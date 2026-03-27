@@ -59,7 +59,7 @@ export default function CustomPopupOptionsTest() {
         let pages = routerInstance.getState();
         console.info("CustomPopupOptionsTest state pages: " + JSON.stringify(pages));
         console.info("CustomPopupOptionsTest state pages.name: " + pages.name);
-        if (pages.name !== "CustomPopupOptionsIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
       } catch (err) {

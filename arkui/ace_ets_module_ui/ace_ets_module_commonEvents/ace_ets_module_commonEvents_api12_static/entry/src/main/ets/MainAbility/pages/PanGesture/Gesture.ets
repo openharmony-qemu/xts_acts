@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ struct PanGestureExample {
   @State offsetY: number = 0
   @State positionX: number = 0
   @State positionY: number = 0
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: (PanDirection.Left | PanDirection.Right) as PanDirection})
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.fromValue(PanDirection.Left | PanDirection.Right)})
   @State gesture1: string="init"
 
   build() {

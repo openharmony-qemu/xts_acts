@@ -17,6 +17,7 @@ import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist } from '../../test/WaitTest.test';
+import { URL_EXAMPLE } from '../../test/Config.test';
 
 
 @Entry
@@ -28,6 +29,10 @@ struct webSetUrlTrustList {
   @State message: Array<string> = [];
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
+  @State isSearchEnd: number = -1;
+  @State searchTotalNumber: number = -1;
+  urlWildcardList: string = '{\"UrlPermissionList\":' +
+    '[{\"scheme\":\"https\", \"host\":\"*.example.com\", \"path\":\"*\"}]}';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -58,10 +63,12 @@ struct webSetUrlTrustList {
         Button('webSetUrlTrustList click')
           .key('WebSetUrlTrustListButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
+            this.isSearchEnd = -1;
+            this.searchTotalNumber = -1;
             switch (this.emitKey) {
               case 'emitSetUrlTrustList': {
                 try {
@@ -102,6 +109,25 @@ struct webSetUrlTrustList {
                 }
                 break;
               }
+              case 'emitSetUrlTrustListFirstParamEmpty': {
+                try {
+                  this.controller.setUrlTrustList('', true, true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl(URL_EXAMPLE);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
+                  this.controller.searchAllAsync('Example');
+                  await waitForExist(()=>this.isSearchEnd, this.emitKey, 0, 1000);
+                  if (this.searchTotalNumber > 0) {
+                    Utils.emitEvent(true, 26032504);
+                  } else {
+                    Utils.emitEvent(false, 26032504);
+                  }
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032504);
+                }
+                break;
+              }
               case 'emitSetUrlTrustListSecondParamNull': {
                 try {
                   let urlTrustList: string = '{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.example.com\", \"path\":\"test\"}]}'
@@ -130,6 +156,25 @@ struct webSetUrlTrustList {
                   } else {
                     Utils.emitEvent(String(error.code), 174320);
                   }
+                }
+                break;
+              }
+              case 'emitSetUrlTrustListSecondParamaterFalse': {
+                try {
+                  this.controller.setUrlTrustList(this.urlWildcardList, false, true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('javascript:(\'<h1>hello world</h1>\')');
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
+                  this.controller.searchAllAsync('返回');
+                  await waitForExist(()=>this.isSearchEnd, this.emitKey, 0, 1000);
+                  if (this.searchTotalNumber > 0) {
+                    Utils.emitEvent(true, 26032505);
+                  } else {
+                    Utils.emitEvent(false, 26032505);
+                  }
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032505);
                 }
                 break;
               }
@@ -162,6 +207,25 @@ struct webSetUrlTrustList {
                   } else {
                     Utils.emitEvent(String(error.code), 174340);
                   }
+                }
+                break;
+              }
+              case 'emitSetUrlTrustListThirdParamFalse': {
+                try {
+                  this.controller.setUrlTrustList(this.urlWildcardList, true, false);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl(URL_EXAMPLE);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
+                  this.controller.searchAllAsync('返回');
+                  await waitForExist(()=>this.isSearchEnd, this.emitKey, 0, 1000);
+                  if (this.searchTotalNumber > 0) {
+                    Utils.emitEvent(true, 26032506);
+                  } else {
+                    Utils.emitEvent(false, 26032506);
+                  }
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032506);
                 }
                 break;
               }
@@ -235,6 +299,13 @@ struct webSetUrlTrustList {
         .onErrorReceive((event) => {
           console.info('onErrorReceive is invoked');
         })
+        .onSearchResultReceive(ret => {
+        if (ret) {
+          console.log('onSearchResultReceive nul numberOfMatches==>' + ret.numberOfMatches);
+          this.isSearchEnd = 0;
+          this.searchTotalNumber = ret.numberOfMatches;
+        }
+      })
     }
   }
 }

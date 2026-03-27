@@ -100,6 +100,54 @@ export default function runJavaScriptErrorCode() {
       sendEventByKey('runJavaScriptErrorCodeButton', 10, '');
 
     })
+    /**
+     * @tc.name   testRunJavaScriptCallbackSetEmpty001
+     * @tc.number SUB_WEB_RUNJAVASCRIPT_CALLBACK_SET_EMPTY_API_0100
+     * @tc.desc   test runJavaScript callback set empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRunJavaScriptCallbackSetEmpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitRunJavaScriptCallbackSetEmpty001", 180210)
+      Utils.registerBaseEvent("testRunJavaScriptCallbackSetEmpty001",'null', 26032501, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('runJavaScriptErrorCodeButton', 10, '');
+    })
+    /**
+     * @tc.name   testRunJavaScriptCallbackSetNull001
+     * @tc.number SUB_WEB_RUNJAVASCRIPT_CALLBACK_SET_NULL_API_0100
+     * @tc.desc   test runJavaScript callback set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRunJavaScriptCallbackSetNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("emitRunJavaScriptCallbackSetNull001", 180210)
+      Utils.registerBaseEvent("testRunJavaScriptCallbackSetNull001",'401', 26032502, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('runJavaScriptErrorCodeButton', 10, '');
+    })
+    /**
+     * @tc.name   testRunJavaScriptCallbackSetUndefined001
+     * @tc.number SUB_WEB_RUNJAVASCRIPT_CALLBACK_SET_UNDEFINED_API_0100
+     * @tc.desc   test runJavaScript callback set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRunJavaScriptCallbackSetUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("emitRunJavaScriptCallbackSetUndefined001", 180210)
+      Utils.registerBaseEvent("testRunJavaScriptCallbackSetUndefined001",'401', 26032503, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('runJavaScriptErrorCodeButton', 10, '');
+    })
 
 
   })

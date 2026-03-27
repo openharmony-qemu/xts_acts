@@ -27,6 +27,7 @@ struct SubHeaderExample {
       SubHeader({
         // 设置左侧select
         select: {
+          id: 'selectId',
           options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
           value: $r('app.string.download'),
           selected: 2,

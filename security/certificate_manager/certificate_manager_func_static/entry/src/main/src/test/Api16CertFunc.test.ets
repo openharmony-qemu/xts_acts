@@ -710,5 +710,31 @@ export default function api16CertFuncTestUnit() {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getCertificateStorePath_Static_0154 end');
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0020
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0020
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0020 start');
+      let certData: Uint8Array = new Uint8Array();
+      let certBlob: certManager.CertBlob = {
+        certData: certData,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+      } catch (error) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0020 e.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0020 end');
+      done();
+    }); 
   })
 }

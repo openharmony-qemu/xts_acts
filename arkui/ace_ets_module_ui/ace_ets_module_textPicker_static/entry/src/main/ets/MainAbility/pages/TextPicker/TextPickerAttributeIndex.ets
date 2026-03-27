@@ -47,16 +47,16 @@ struct TextPickerAttributeIndex {
         TextPicker({ range: ['Option A', 'Option B', 'Option C'] })
           .selectedBackgroundStyle({ color: Color.Blue } as PickerBackgroundStyle)
           .key('textPickerSelectedBgStyleBlue')
-          .height(120)
+          .height('20%')
 
         // ---------- TextPickerAttribute.selectedBackgroundStyle - undefined ----------
         TextPicker({ range: ['Option X', 'Option Y', 'Option Z'] })
           .selectedBackgroundStyle(undefined)
           .key('textPickerSelectedBgStyleUndefined')
-          .height(120)
+          .height('20%')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

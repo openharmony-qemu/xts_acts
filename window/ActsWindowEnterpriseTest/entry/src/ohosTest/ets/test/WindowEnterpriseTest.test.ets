@@ -182,6 +182,11 @@ export default function WindowEnterpriseTest() {
               expect(info.rect.width).assertEqual(res.windowRect.width);
               expect(info.rect.height).assertEqual(res.windowRect.height);
               expect(info.isFocused).assertEqual(true);
+              expect(info!.globalRect!.left).assertLargerOrEqual(0);
+              expect(info!.globalRect!.top).assertLargerOrEqual(0);
+              expect(info!.globalRect!.width).assertLarger(0);
+              expect(info!.globalRect!.height).assertLarger(0);
+              expect(info!.displayId).assertLargerOrEqual(0);
               console.info(caseName + `info.windowStatusType: ${info.windowStatusType}`);
               console.info(caseName + `info.bundleName: ${info.bundleName}`);
               console.info(caseName + `info.abilityName: ${info.abilityName}`);

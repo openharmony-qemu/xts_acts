@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import uitest from '@ohos.UiTest';
 import { mContext } from '../testability/TestAbility';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import CommonFunc from './Common';
 
 interface myObj {
@@ -49,6 +50,26 @@ function isDeviceSupportInputMethod(): boolean {
 }
 
 function isDeviceSupportOpenNetWork(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function getBoolSystemParam(key: string, def: boolean): boolean {
+  let defStr = def ? 'true' : 'false';
+  try {
+    return systemParameterEnhance.getSync(key, defStr) === 'true';
+  } catch (err) {
+    console.error(`getSystemParam failed, code:${err?.code}, msg:${err?.message}`);
+    return def;
+  }
+}
+
+function isDeviceSupportNfc(): boolean {
+  return (isDevicePhone() || isDeviceTablet()) &&
+    getBoolSystemParam('const.SystemCapability.Communication.NFC.Core', false) &&
+    !getBoolSystemParam('const.nfc.not_support', false);
+}
+
+function isDeviceSupportBiometrics(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
@@ -4364,6 +4385,10 @@ export default function settingUiJsunit() {
      */
     it('openNfcSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportNfc()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openNfcSettingsPage(null);
@@ -4385,6 +4410,10 @@ export default function settingUiJsunit() {
      */
     it('openNfcSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportNfc()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openNfcSettingsPage(undefined);
@@ -4406,6 +4435,10 @@ export default function settingUiJsunit() {
      */
     it('openNfcSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportNfc()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openNfcSettingsPage(mContext?.getApplicationContext());
@@ -4427,6 +4460,10 @@ export default function settingUiJsunit() {
      */
     it('openNfcSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportNfc()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openNfcSettingsPage(mContext);
@@ -4448,6 +4485,10 @@ export default function settingUiJsunit() {
       */
     it('openBiometricsSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportBiometrics()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openBiometricsSettingsPage(null);
@@ -4469,6 +4510,10 @@ export default function settingUiJsunit() {
      */
     it('openBiometricsSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportBiometrics()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openBiometricsSettingsPage(undefined);
@@ -4490,6 +4535,10 @@ export default function settingUiJsunit() {
      */
     it('openBiometricsSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportBiometrics()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openBiometricsSettingsPage(mContext?.getApplicationContext());
@@ -4511,6 +4560,10 @@ export default function settingUiJsunit() {
      */
     it('openBiometricsSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
+        if (!isDeviceSupportBiometrics()) {
+          done();
+          return;
+        }
         let code = 0;
         try {
           settings.openBiometricsSettingsPage(mContext);

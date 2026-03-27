@@ -22,19 +22,25 @@ import {
   Text,
   TextArea,
   Scroll,
+  Button,
   Color,
   MaxLinesMode,
   MaxLinesOptions,
   LineSpacingOptions,
-  SelectedDragPreviewStyle
+  SelectedDragPreviewStyle,
+  TextMenuItemId,
+  ColumnOptions
 } from '@ohos.arkui.component';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import { LengthMetrics } from '@ohos.arkui.node';
 
 @Entry
 @Component
 struct TextCommonIndex {
+  @State mMenuSame: string = 'menu_same_init'
+  @State mMenuDistinct: string = 'menu_distinct_init'
+
   aboutToAppear() {
     try {
       let routerInstance = this.getUIContext().getRouter();
@@ -46,7 +52,26 @@ struct TextCommonIndex {
 
   build() {
     Scroll() {
-      Column() {
+      Column({ space: 4 } as ColumnOptions) {
+        // TextMenuItemId singleton reference test
+        Button(this.mMenuSame)
+          .id('btnTextMenuItemIdSame')
+          .width('90%')
+          .onClick(() => {
+            let a = TextMenuItemId.autoFill;
+            let b = TextMenuItemId.autoFill;
+            this.mMenuSame = 'menu_same:' + (a === b ? 'true' : 'false');
+          })
+        // TextMenuItemId.autoFill !== TextMenuItemId.passwordVault
+        Button(this.mMenuDistinct)
+          .id('btnTextMenuItemIdDistinct')
+          .width('90%')
+          .onClick(() => {
+            let a = TextMenuItemId.autoFill;
+            let b = TextMenuItemId.passwordVault;
+            this.mMenuDistinct = 'menu_distinct:' + (a !== b ? 'true' : 'false');
+          })
+
         Text('Drag Preview Blue')
           .selectedDragPreviewStyle({ color: Color.Blue } as SelectedDragPreviewStyle)
           .key('textCommonDragPreviewBlue')
@@ -72,7 +97,7 @@ struct TextCommonIndex {
           .key('textCommonMaxLinesScroll')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

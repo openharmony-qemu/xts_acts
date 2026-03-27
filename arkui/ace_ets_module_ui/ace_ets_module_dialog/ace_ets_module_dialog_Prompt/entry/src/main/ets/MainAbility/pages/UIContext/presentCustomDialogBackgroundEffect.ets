@@ -25,8 +25,8 @@ struct UIOpenCustomDialog2 {
   private dialogController: promptAction.DialogController = new promptAction.DialogController()
   @Builder customDialogComponent() {
     Column() {
-      Text(this.message).fontSize(30)
-      Row({ space: 10 }) {
+      Text(this.message).fontSize(10)
+      Column({ space: 10 }) {
         Button('通过DialogId关闭').onClick(() => {
           this.promptAction.closeCustomDialog(this.customDialogComponentId)
         })
@@ -34,13 +34,13 @@ struct UIOpenCustomDialog2 {
           this.dialogController.close()
         })
       }
-    }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
+    }.height(100).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
 
   @Builder customDialogComponentWithId(dialogId: number) {
     Column() {
-      Text(this.message).fontSize(30)
-      Row({ space: 10 }) {
+      Text(this.message).fontSize(10)
+      Column({ space: 10 }) {
         Button('通过DialogId关闭').onClick(() => {
           this.promptAction.closeCustomDialog(dialogId)
         })
@@ -48,12 +48,14 @@ struct UIOpenCustomDialog2 {
           this.dialogController.close()
         })
       }
-    }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
+    }.height(100).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('UIPresentCustomDialog_Effect001')
         .id('UIPresentCustomDialog_Effect001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.presentCustomDialog(() => {
             this.customDialogComponent()
@@ -76,6 +78,8 @@ struct UIOpenCustomDialog2 {
         })
       Button('UIPresentCustomDialog_Effect002')
         .id('UIPresentCustomDialog_Effect002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.presentCustomDialog(() => {
             this.customDialogComponent()
@@ -96,6 +100,8 @@ struct UIOpenCustomDialog2 {
         })
       Button('UIPresentCustomDialog_Effect003')
         .id('UIPresentCustomDialog_Effect003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           this.promptAction.presentCustomDialog(() => {
             this.customDialogComponent()
@@ -119,5 +125,8 @@ struct UIOpenCustomDialog2 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

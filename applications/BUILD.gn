@@ -20,6 +20,6 @@ group("applications") {
     "intelligentScene_ets_Nop:ActsIntelligentSceneNopEtsTest",
     "intelligentScene_ets:ActsIntelligentSceneEtsTest",
     "intelligentScene_ets_static:ActsIntelligentSceneEtsStaticTest",
-    "intelligentScene_ets_static_nop:ActsIntelligentSceneEtsNopStaticTest",
+    "intelligentScene_ets_nop_static:ActsIntelligentSceneEtsNopStaticTest",
   ]
 }

@@ -54,6 +54,7 @@ struct TextAttributeIndex {
         // ---------- fontSize ----------
         Text('fontSize double 16').fontSize(16).key('textFontSizeDouble16')
         Text('fontSize string 20vp').fontSize('20vp').key('textFontSizeStr20vp')
+        Text('fontSize resource').fontSize('16fp').key('textFontSizeResource')
         Text('fontSize undefined').fontSize(undefined).key('textFontSizeUndefined')
 
         // ---------- fontWeight (enum values) ----------
@@ -62,14 +63,10 @@ struct TextAttributeIndex {
         Text('fontWeight Medium').fontWeight(FontWeight.Medium).key('textFontWeightMedium')
         Text('fontWeight Lighter').fontWeight(FontWeight.Lighter).key('textFontWeightLighter')
         Text('fontWeight Bolder').fontWeight(FontWeight.Bolder).key('textFontWeightBolder')
-
         Text('fontWeight int 700').fontWeight(700).key('textFontWeightInt700')
         Text('fontWeight int 400').fontWeight(400).key('textFontWeightInt400')
-
         Text('fontWeight str bold').fontWeight('bold').key('textFontWeightStrBold')
-
         Text('fontWeight undefined').fontWeight(undefined).key('textFontWeightUndefined')
-        // fontWeight with FontSettingOptions (new optional param)
         Text('fontWeight with options').fontWeight(FontWeight.Bold,
           { enableVariableFontWeight: false } as FontSettingOptions
         ).key('textFontWeightWithOptions')
@@ -118,7 +115,7 @@ struct TextAttributeIndex {
           .key('textWithController')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

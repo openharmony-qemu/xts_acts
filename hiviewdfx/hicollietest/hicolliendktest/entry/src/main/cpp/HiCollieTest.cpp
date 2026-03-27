@@ -66,3 +66,21 @@ napi_value OH_HiCollie_Report_Remote(napi_env env, napi_callback_info info)
     napi_get_boolean(env, res, &ret);
     return ret;
 }
+
+napi_value OH_HiCollie_ReportInputBlock_Main(napi_env env, napi_callback_info info)
+{
+    int reportResult = OH_HiCollie_ReportInputBlock();
+    OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_ReportInputBlock: %{public}d", reportResult);
+    // 执行任务
+    napi_value sum;
+    napi_create_int32(env, reportResult, &sum);
+    return sum;
+}
+ 
+napi_value OH_HiCollie_ReportInputBlock_Remote(napi_env env, napi_callback_info info)
+{
+    bool result = HiCollie_ErrorCode::HICOLLIE_REMOTE_FAILED == 29800002;
+    napi_value val = nullptr;
+    napi_get_boolean(env, result, &val);
+    return val;
+}

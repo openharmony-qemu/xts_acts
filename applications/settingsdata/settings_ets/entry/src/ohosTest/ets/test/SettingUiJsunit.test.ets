@@ -16,6 +16,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import settings from '@ohos.settings'
 import { BusinessError } from '@ohos.base';
+import CommonFunc from './Common';
 
 interface myObj {
   aa: string
@@ -24,6 +25,11 @@ interface myObj {
 interface myObj2 {
   "code": number
 }
+
+const SETTINGS_PARAM_INVALID_CODE: number = 16900010;
+
+const SETTINGS_PAGE_OPEN_FAILED_CODE: number = 16900020;
+
 export default function settingUiJsunit() {
   describe('appInfoTest', ()=> {
     console.log("************* settings Test start*************");
@@ -2959,5 +2965,784 @@ export default function settingUiJsunit() {
       }
       done();
     });
+
+    /**
+      * @tc.name   openMobileNetworkSettingsPage_invalid_context
+      * @tc.number openMobileNetworkSettingsPage_invalid_context
+      * @tc.desc   MediumTest
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('openMobileNetworkSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openMobileNetworkSettingsPage(null);
+        } catch (err) {
+          console.error("[openMobileNetworkSettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openMobileNetworkSettingsPage_invalid_context_undefined
+     * @tc.number openMobileNetworkSettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openMobileNetworkSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openMobileNetworkSettingsPage(undefined);
+        } catch (err) {
+          console.error("[openMobileNetworkSettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openMobileNetworkSettingsPage_invalid_context_applicationContext
+     * @tc.number openMobileNetworkSettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openMobileNetworkSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openMobileNetworkSettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openMobileNetworkSettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openMobileNetworkSettingsPage_valid_param
+     * @tc.number openMobileNetworkSettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openMobileNetworkSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openMobileNetworkSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openMobileNetworkSettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openMobileNetworkSettingsPage_failed
+     * @tc.number openMobileNetworkSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openMobileNetworkSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openMobileNetworkSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openMobileNetworkSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+    * @tc.name   openDisplaySettingsPage_invalid_context
+    * @tc.number openDisplaySettingsPage_invalid_context
+    * @tc.desc   MediumTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('openDisplaySettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openDisplaySettingsPage(null);
+        } catch (err) {
+          console.error("[openDisplaySettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openDisplaySettingsPage_invalid_context_undefined
+     * @tc.number openDisplaySettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openDisplaySettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openDisplaySettingsPage(undefined);
+        } catch (err) {
+          console.error("[openDisplaySettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openDisplaySettingsPage_invalid_context_applicationContext
+     * @tc.number openDisplaySettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openDisplaySettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openDisplaySettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openDisplaySettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openDisplaySettingsPage_valid_param
+     * @tc.number openDisplaySettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openDisplaySettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openDisplaySettingsPage(mContext);
+        } catch (err) {
+          console.error("[openDisplaySettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openDisplaySettingsPage_failed
+     * @tc.number openDisplaySettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openDisplaySettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openDisplaySettingsPage(mContext);
+        } catch (err) {
+          console.error("[openDisplaySettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+    * @tc.name   openScreenRefreshRateSettingsPage_invalid_context
+    * @tc.number openScreenRefreshRateSettingsPage_invalid_context
+    * @tc.desc   MediumTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('openScreenRefreshRateSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openScreenRefreshRateSettingsPage(null);
+        } catch (err) {
+          console.error("[openScreenRefreshRateSettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openScreenRefreshRateSettingsPage_invalid_context_undefined
+     * @tc.number openScreenRefreshRateSettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openScreenRefreshRateSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openScreenRefreshRateSettingsPage(undefined);
+        } catch (err) {
+          console.error("[openScreenRefreshRateSettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openScreenRefreshRateSettingsPage_invalid_context_applicationContext
+     * @tc.number openScreenRefreshRateSettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openScreenRefreshRateSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openScreenRefreshRateSettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openScreenRefreshRateSettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openScreenRefreshRateSettingsPage_valid_param
+     * @tc.number openScreenRefreshRateSettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openScreenRefreshRateSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openScreenRefreshRateSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openScreenRefreshRateSettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openScreenRefreshRateSettingsPage_failed
+     * @tc.number openScreenRefreshRateSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openScreenRefreshRateSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openScreenRefreshRateSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openScreenRefreshRateSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+    * @tc.name   openSoundSettingsPage_invalid_context
+    * @tc.number openSoundSettingsPage_invalid_context
+    * @tc.desc   MediumTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('openSoundSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openSoundSettingsPage(null);
+        } catch (err) {
+          console.error("[openSoundSettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openSoundSettingsPage_invalid_context_undefined
+     * @tc.number openSoundSettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openSoundSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openSoundSettingsPage(undefined);
+        } catch (err) {
+          console.error("[openSoundSettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openSoundSettingsPage_invalid_context_applicationContext
+     * @tc.number openSoundSettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openSoundSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openSoundSettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openSoundSettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openSoundSettingsPage_valid_param
+     * @tc.number openSoundSettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openSoundSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openSoundSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openSoundSettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openSoundSettingsPage_failed
+     * @tc.number openSoundSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openSoundSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openSoundSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openSoundSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openBiometricsSettingsPage_failed
+     * @tc.number openBiometricsSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openBiometricsSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openBiometricsSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openBiometricsSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+    * @tc.name   openAboutDeviceSettingsPage_invalid_context
+    * @tc.number openAboutDeviceSettingsPage_invalid_context
+    * @tc.desc   MediumTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('openAboutDeviceSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAboutDeviceSettingsPage(null);
+        } catch (err) {
+          console.error("[openAboutDeviceSettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAboutDeviceSettingsPage_invalid_context_undefined
+     * @tc.number openAboutDeviceSettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAboutDeviceSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAboutDeviceSettingsPage(undefined);
+        } catch (err) {
+          console.error("[openAboutDeviceSettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAboutDeviceSettingsPage_invalid_context_applicationContext
+     * @tc.number openAboutDeviceSettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAboutDeviceSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAboutDeviceSettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openAboutDeviceSettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAboutDeviceSettingsPage_valid_param
+     * @tc.number openAboutDeviceSettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAboutDeviceSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAboutDeviceSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openAboutDeviceSettingsPage_failed
+     * @tc.number openAboutDeviceSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAboutDeviceSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAboutDeviceSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openAboutDeviceSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openNfcSettingsPage_failed
+     * @tc.number openNfcSettingsPage_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openNfcSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openNfcSettingsPage_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
+
+    /**
+    * @tc.name   openAppDetailSettings_invalid_context
+    * @tc.number openAppDetailSettings_invalid_context1
+    * @tc.desc   MediumTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('openAppDetailSettings_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(null, 'bundleName', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_context_undefined
+     * @tc.number openAppDetailSettings_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(undefined, 'bundleName', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_context_applicationContext
+     * @tc.number openAppDetailSettings_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext?.getApplicationContext(), 'bundleName', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    
+    /**
+     * @tc.name   openAppDetailSettings_invalid_bundleName
+     * @tc.number openAppDetailSettings_invalid_bundleName
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_bundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, null, 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_bundleName] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_bundleName_empty
+     * @tc.number openAppDetailSettings_invalid_bundleName_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_bundleName_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, '', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_bundleName_empty] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_bundleName_undefined
+     * @tc.number openAppDetailSettings_invalid_bundleName_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_bundleName_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, 'bundleName', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_bundleName_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_appIndex
+     * @tc.number openAppDetailSettings_invalid_appIndex
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_appIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, 'bundleName', null);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_appIndex] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_invalid_appIndex_undefined
+     * @tc.number openAppDetailSettings_invalid_appIndex_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_invalid_appIndex_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, 'bundleName', undefined);
+        } catch (err) {
+          console.error("[openAppDetailSettings_invalid_appIndex_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_valid_param
+     * @tc.number openAppDetailSettings_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, 'bundleName', 0);
+          settings.openAppDetailSettings(mContext, 'bundleName');
+        } catch (err) {
+          console.error("[openAppDetailSettings_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   openAppDetailSettings_failed
+     * @tc.number openAppDetailSettings_failed
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAppDetailSettings_failed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openAppDetailSettings(mContext, 'bundleName', 0);
+        } catch (err) {
+          console.error("[openAppDetailSettings_failed] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PAGE_OPEN_FAILED_CODE);
+        done();
+      });
   })
 }

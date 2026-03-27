@@ -67,5 +67,46 @@ export default function subHeaderV2Select23() {
       console.info('[subHeaderV2Select23_0100] END');
       done();
     });
+
+    /**
+     * @tc.number subHeaderV2Select23_0200
+     * @tc.name   subHeaderV2Select23_0200
+     * @tc.desc   Test subHeaderV2Select23_0200
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('subHeaderV2Select23_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[subHeaderV2Select23_0200] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      // subHeaderSelect是否存在以下入口。
+      let selectDemoValue = await driver.findComponent(ON.text('下载2'));
+      expect(selectDemoValue !== null).assertTrue();
+      await driver.delayMs(1000);
+      console.info('[subHeaderV2Select23_0200] END');
+      done();
+    });
+
+    /**
+     * @tc.number subHeaderV2Select23_0300
+     * @tc.name   subHeaderV2Select23_0300
+     * @tc.desc   Test subHeaderV2Select23_0300
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('subHeaderV2Select23_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[subHeaderV2Select23_0300] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      // subHeaderSelect是否存在以下入口。
+      let selectDemoValue = await driver.findComponent(ON.text('一级标题'));
+      expect(selectDemoValue !== null).assertTrue();
+      await driver.delayMs(1000);
+      console.info('[subHeaderV2Select23_0300] END');
+      done();
+    });
+
   })
 }
