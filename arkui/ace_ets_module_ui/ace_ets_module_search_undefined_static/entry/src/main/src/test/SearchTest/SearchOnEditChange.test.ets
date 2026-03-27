@@ -76,9 +76,9 @@ it('SearchOnEditChange_static_001', Level.LEVEL0, async (done: () => void): Prom
 
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let text = await driver.findComponent(ON.id('Search')) as Component;
-      let text2 = await driver.findComponent(ON.id('Modifier')) as Component;
-      let button = await driver.findComponent(ON.id('change')) as Component;
+      let text = await driver.findComponent(ON.id('Search_SearchOnEditChange')) as Component;
+      let text2 = await driver.findComponent(ON.id('Search_SearchOnEditChangeModifier')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchOnEditChange')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
@@ -87,7 +87,7 @@ it('SearchOnEditChange_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('SearchText')
+      let strJson = inspector.getInspectorByKey('Text_SearchOnEditChange')
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(500);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('00');
@@ -100,7 +100,7 @@ it('SearchOnEditChange_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson2 = inspector.getInspectorByKey('SearchText')
+      let strJson2 = inspector.getInspectorByKey('Text_SearchOnEditChange')
       let obj2 = JSON.parseJsonElement(strJson2);
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('22');
       await button.click();
@@ -112,7 +112,7 @@ it('SearchOnEditChange_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson3 = inspector.getInspectorByKey('SearchText')
+      let strJson3 = inspector.getInspectorByKey('Text_SearchOnEditChange')
       let obj3 = JSON.parseJsonElement(strJson3);
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('22');
       console.info('[SearchOnEditChange_static001] END');

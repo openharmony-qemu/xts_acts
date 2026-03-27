@@ -57,20 +57,20 @@ struct Index {
       Scroll(undefined){
         Column(undefined) {
           Button('search maxFontSize' + this.searchArrayStr[this.searchIndex])
-            .id('change')
+            .id('Button_SearchMaxFontSize')
             .onClick((e: ClickEvent)=>{
               this.searchIndex = ++this.searchIndex % this.searchArray.length;
               this.searchModifier.index = ++this.searchModifier.index % this.searchArray.length;
             })
           Search({ value: this.text })
-            .id('Search')
+            .id('Search_SearchMaxFontSize')
             .height(56)
             .maxFontSize(this.searchArray[this.searchIndex])
             .minFontSize(10)
 
           Text('Search Modifier')
           Search({ value: this.text })
-            .id('Modifier')
+            .id('Search_SearchMaxFontSizeModifier')
             .attributeModifier(this.searchModifier)
         }
       }.height('100%')

@@ -76,22 +76,22 @@ export default function SearchEditMenuOptionsModifierTest() {
       console.info('[SearchEditMenuOptionsModifierTest_static_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let textArea = await driver.findComponent(ON.id('Search')) as Component;
+      let textArea = await driver.findComponent(ON.id('Search_SearchEditMenuOptionsModifier')) as Component;
       await CommonFunc.sleep(1000);
       await textArea.longClick();
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('Text');
+      let strJson = inspector.getInspectorByKey('Text_SearchEditMenuOptionsModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '');
       await CommonFunc.sleep(1000);
-      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      let search2 = await driver.findComponent(ON.id('Search_SearchEditMenuOptionsModifier2')) as Component;
       await CommonFunc.sleep(1000);
       search2.click();
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('button_editMenuOptions')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchEditMenuOptionsModifier2')) as Component;
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
@@ -103,7 +103,7 @@ export default function SearchEditMenuOptionsModifierTest() {
       await CommonFunc.sleep(1000);
       await text.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchEditMenuOptionsModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '111111');
@@ -120,7 +120,7 @@ export default function SearchEditMenuOptionsModifierTest() {
       await textArea.longClick();
       await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchEditMenuOptionsModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '');

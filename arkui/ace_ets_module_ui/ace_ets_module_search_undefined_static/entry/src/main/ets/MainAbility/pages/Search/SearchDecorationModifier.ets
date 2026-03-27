@@ -60,7 +60,7 @@ struct TextInputExample {
     Row() {
       Column( { space: 10 } as ColumnOptions ) {
         Button(`decoration: ${this.searchModifier.state}`)
-          .id('button_decoration')
+          .id('Button_SearchDecorationModifier')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -70,7 +70,7 @@ struct TextInputExample {
         Search({ value: this.text})
           .attributeModifier(this.searchModifier)
           .height(56)
-          .id('Search')
+          .id('Search_SearchDecorationModifier')
       }.width('100%')
     }
     .height('100%')

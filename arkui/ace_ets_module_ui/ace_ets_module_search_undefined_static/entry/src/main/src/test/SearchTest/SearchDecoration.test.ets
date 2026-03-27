@@ -76,9 +76,9 @@ export default function SearchDecorationTest() {
       console.info('[SearchDecorationTest_static_0010] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('button_decoration')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchDecoration')) as Component;
 
-      let strJson = inspector.getInspectorByKey('SearchTest');
+      let strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       let obj = JSON.parseJsonElement(strJson);
       let resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -87,7 +87,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -96,7 +96,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -105,7 +105,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -114,7 +114,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -123,7 +123,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(
@@ -132,7 +132,7 @@ export default function SearchDecorationTest() {
 
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('SearchTest');
+      strJson = inspector.getInspectorByKey('Search_SearchDecoration');
       obj = JSON.parseJsonElement(strJson);
       resultStr = obj.getElement('$attrs').getString('decoration')
       expect(resultStr).assertEqual(

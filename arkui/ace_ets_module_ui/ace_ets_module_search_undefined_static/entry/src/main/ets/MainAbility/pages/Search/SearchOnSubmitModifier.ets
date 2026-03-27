@@ -75,9 +75,9 @@ struct TextInputExample {
     Row() {
       Column( { space: 10 } as ColumnOptions ) {
         Text(`${this.textAreaModifier.content}`)
-          .id('Text')
+          .id('Text_SearchOnSubmitModifier')
         Button(`onSubmit: ${this.textAreaModifier.state}`)
-          .id('button_onSubmit')
+          .id('Button_SearchOnSubmitModifier')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -89,10 +89,10 @@ struct TextInputExample {
         Search({value: this.text})
           .attributeModifier(this.textAreaModifier)
           .height(56)
-          .id('Search')
+          .id('Search_SearchOnSubmitModifier')
           .enterKeyType(EnterKeyType.Go)
         Search({value: ''})
-          .id('Search2')
+          .id('Search_SearchOnSubmitModifier2')
 
       }.width('100%')
     }

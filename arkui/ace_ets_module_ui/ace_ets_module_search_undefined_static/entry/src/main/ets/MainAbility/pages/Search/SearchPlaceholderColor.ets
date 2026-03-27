@@ -63,20 +63,20 @@ struct Index {
       Scroll(undefined){
         Column(undefined) {
           Button('search placeholderColor ' + this.searchArrayStr[this.searchIndex])
-            .id('change')
+            .id('Button_SearchPlaceholderColor')
             .onClick((e: ClickEvent)=>{
               this.searchIndex = ++this.searchIndex % this.searchArray.length;
               this.searchModifier.index = ++this.searchModifier.index % this.searchArray.length;
             })
 
           Search({ value: this.text, placeholder: '6666666666666666' })
-            .id('Search')
+            .id('Search_SearchPlaceholderColor')
             .height(56)
             .placeholderColor(this.searchArray[this.searchIndex])
 
           Text('Search Modifier')
           Search({ value: this.text, placeholder: '6666666666666666' })
-            .id('Modifier')
+            .id('Search_SearchPlaceholderColorModifier')
             .attributeModifier(this.searchModifier)
         }
       }.height('100%')

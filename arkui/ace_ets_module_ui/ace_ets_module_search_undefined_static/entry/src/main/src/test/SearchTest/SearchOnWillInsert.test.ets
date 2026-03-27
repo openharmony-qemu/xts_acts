@@ -76,9 +76,9 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
 
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let text = await driver.findComponent(ON.id('Search')) as Component;
-      let text2 = await driver.findComponent(ON.id('Modifier')) as Component;
-      let button = await driver.findComponent(ON.id('change')) as Component;
+      let text = await driver.findComponent(ON.id('Search_SearchOnWillInsert')) as Component;
+      let text2 = await driver.findComponent(ON.id('Search_SearchOnWillInsertModifier')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchOnWillInsert')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
@@ -87,7 +87,7 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('SearchText')
+      let strJson = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('');
@@ -100,7 +100,7 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson2 = inspector.getInspectorByKey('SearchText')
+      let strJson2 = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       let obj2 = JSON.parseJsonElement(strJson2);
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('96');
       await button.click();
@@ -112,7 +112,7 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(200);
-      let strJson3 = inspector.getInspectorByKey('SearchText')
+      let strJson3 = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       await CommonFunc.sleep(200);
       let obj3 = JSON.parseJsonElement(strJson3);
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('96');

@@ -76,22 +76,22 @@ export default function SearchOnTextSelectionChangeModifierTest() {
       console.info('[SearchOnTextSelectionChangeModifierTest_static_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let search = await driver.findComponent(ON.id('Search')) as Component;
+      let search = await driver.findComponent(ON.id('Search_SearchOnTextSelectionChangeModifier')) as Component;
       await CommonFunc.sleep(1000);
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('Text');
+      let strJson = inspector.getInspectorByKey('Text_SearchOnTextSelectionChangeModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '0');
       await CommonFunc.sleep(1000);
-      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      let search2 = await driver.findComponent(ON.id('Search_SearchOnTextSelectionChangeModifier2')) as Component;
       await CommonFunc.sleep(1000);
       search2.click();
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('button_onTextSelectionChange')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchOnTextSelectionChangeModifier')) as Component;
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
@@ -99,7 +99,7 @@ export default function SearchOnTextSelectionChangeModifierTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchOnTextSelectionChangeModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '26');
@@ -116,7 +116,7 @@ export default function SearchOnTextSelectionChangeModifierTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchOnTextSelectionChangeModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         '0');

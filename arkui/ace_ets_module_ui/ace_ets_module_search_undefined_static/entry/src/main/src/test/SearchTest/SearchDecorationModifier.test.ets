@@ -76,19 +76,19 @@ export default function SearchDecorationModifierTest() {
       console.info('[SearchDecorationModifierTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('Search');
+      let strJson = inspector.getInspectorByKey('Search_SearchDecorationModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
         '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('button_decoration')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchDecorationModifier')) as Component;
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchDecorationModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
         '{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"}');
@@ -96,7 +96,7 @@ export default function SearchDecorationModifierTest() {
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchDecorationModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
         '{"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"}');
@@ -104,7 +104,7 @@ export default function SearchDecorationModifierTest() {
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchDecorationModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
         '{"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');

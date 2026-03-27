@@ -44,17 +44,17 @@ struct Index {
     Row(undefined) {
       Column(undefined) {
         Text('' + this.count + this.searchModifier.count)
-          .id('SearchText').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
+          .id('Text_SearchOnEditChange').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
 
         Button('callback ' + this.isCallback ? 'false' : 'true')
-          .id('change')
+          .id('Button_SearchOnEditChange')
           .onClick((e: ClickEvent)=>{
             this.isCallback = !this.isCallback;
             this.searchModifier.isCallback = !this.searchModifier.isCallback;
           })
 
         Search({ value: this.text })
-          .id('Search')
+          .id('Search_SearchOnEditChange')
           .height(56)
           .onEditChange(this.isCallback ? undefined :
             (status: boolean) => {
@@ -63,7 +63,7 @@ struct Index {
 
         Text('Search Modifier')
         Search({ value: this.text })
-          .id('Modifier')
+          .id('Search_SearchOnEditChangeModifier')
           .attributeModifier(this.searchModifier)
       }.height('100%')
     }.width('100%')

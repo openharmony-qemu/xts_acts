@@ -57,19 +57,19 @@ struct Index {
     Row(undefined) {
       Column(undefined) {
         Button('search CancelButton' + this.searchArrayStr[this.searchIndex])
-          .id('change')
+          .id('Button_SearchCancelButton')
           .onClick((e: ClickEvent)=>{
             this.searchIndex = ++this.searchIndex % this.searchArray.length;
             this.searchModifier.index = ++this.searchModifier.index % this.searchArray.length;
           })
         Search({ value: this.text })
-          .id('Search')
+          .id('Search_SearchCancelButton')
           .height(56)
           .cancelButton(this.searchArray[this.searchIndex])
 
         Text('Search Modifier')
         Search({ value: this.text })
-          .id('Modifier')
+          .id('Search_SearchCancelButton2')
           .attributeModifier(this.searchModifier)
       }.height('100%')
     }.width('100%')

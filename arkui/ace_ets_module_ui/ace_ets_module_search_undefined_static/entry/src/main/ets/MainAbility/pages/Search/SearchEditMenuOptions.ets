@@ -87,9 +87,9 @@ struct SearchExample {
   build() {
     Row(undefined) {
       Column( { space: 10 } as ColumnOptions ) {
-        Text(`${this.content}`).id('Text')
+        Text(`${this.content}`).id('Text_SearchEditMenuOptions')
         Button(`editMenuOptions: ${this.state}`)
-          .id('button_editMenuOptions')
+          .id('Button_SearchEditMenuOptions2')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -98,7 +98,7 @@ struct SearchExample {
             this.state = !this.state;
           })
         Search({value: ''})
-          .id('Search2')
+          .id('Search_SearchEditMenuOptions2')
         Search({value: this.text})
           .editMenuOptions(this.state ? {
                 onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
@@ -128,7 +128,7 @@ struct SearchExample {
                 }
             } as EditMenuOptions : undefined)
           .height(56)
-          .id('Search')
+          .id('Search_SearchEditMenuOptions')
       }.width('100%')
     }
     .height('100%')
