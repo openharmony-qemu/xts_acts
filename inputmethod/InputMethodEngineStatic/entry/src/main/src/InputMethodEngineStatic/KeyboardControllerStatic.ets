@@ -3011,7 +3011,7 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive inputMethodEngine_test_static_029 editorAttribute' + JSON.stringify(editorAttribute));
     let value: boolean = false;
     if(typeof (editorAttribute!.enterKeyType) === 'int' && typeof (editorAttribute!.inputPattern) === 'int' &&
-         typeof (editorAttribute!.isTextPreviewSupported) === 'boolean' && typeof (obj!.windowId) === 'int' &&
+         typeof (editorAttribute!.isTextPreviewSupported) === 'boolean' && typeof (editorAttribute!.windowId) === 'int' &&
  	       typeof (editorAttribute!.placeholder) === 'string' && typeof (editorAttribute!.immersiveMode) === 'int' &&
  	       typeof (editorAttribute!.gradientMode) === 'int' && typeof (editorAttribute!.extraConfig) === 'object' &&
  	       typeof (editorAttribute!.capitalizeMode) === 'int' && typeof (editorAttribute!.bundleName) === 'string' &&
@@ -3742,10 +3742,10 @@ export class KeyboardControllerStatic {
     setTimeout(() => {
       if (count === 1) {
         commonEventPublishData = {
-          data: "SUCCESS"
+          data: 'SUCCESS'
         };
       }
-      commonEventManager.publish("inputMethodAbility_test_073", commonEventPublishData, this.publishCallback);
+      commonEventManager.publish('inputMethodAbility_test_073', commonEventPublishData, this.publishCallback);
     }, 2000);
   }
 
@@ -3761,10 +3761,10 @@ export class KeyboardControllerStatic {
       });
       if (typeof (wid) === 'int') {
         commonEventPublishData = {
-          data: "SUCCESS"
+          data: 'SUCCESS'
         };
       }
-      commonEventManager.publish("inputMethodAbility_test_074", commonEventPublishData, this.publishCallback);
+      commonEventManager.publish('inputMethodAbility_test_074', commonEventPublishData, this.publishCallback);
     });
   }
 
@@ -3789,10 +3789,10 @@ export class KeyboardControllerStatic {
     setTimeout(() => {
       if (count === 1) {
         commonEventPublishData = {
-          data: "SUCCESS"
+          data: 'SUCCESS'
         };
       }
-      commonEventManager.publish("inputMethodAbility_test_075", commonEventPublishData, this.publishCallback);
+      commonEventManager.publish('inputMethodAbility_test_075', commonEventPublishData, this.publishCallback);
     }, 2000);
   }
 
@@ -3827,13 +3827,13 @@ export class KeyboardControllerStatic {
       })
       inputMethodAbility!.offSecurityModeChange((): void => {});
       commonEventPublishData = {
-        data: "SUCCESS"
+        data: 'SUCCESS'
       };
       console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 privateCommand on success');
     } catch (err) {
       console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 on(privateCommand) err: ' + JSON.stringify(err));
     }
-    commonEventManager.publish("SUB_InputMethod_IME_onoffsecurityModeChanged_0200", commonEventPublishData, this.publishCallback);
+    commonEventManager.publish('SUB_InputMethod_IME_onoffsecurityModeChanged_0200', commonEventPublishData, this.publishCallback);
   }
 
   async inputMethodEngine_test_exitCurrentInputType_static_0200(): Promise<void> {
@@ -4386,11 +4386,11 @@ export class KeyboardControllerStatic {
       console.info(TAG + '====>SUB_InputMethod_IME_PrivateDateTransferred_static_1100 err: ' + JSON.stringify(err));
       if (err.code === 16000001) {
         commonEventPublishData = {
-          data: "SUCCESS"
+          data: 'SUCCESS'
         };
       }
     }
-    commonEventManager.publish("SUB_InputMethod_IME_PrivateDateTransferred_static_1100", commonEventPublishData,
+    commonEventManager.publish('SUB_InputMethod_IME_PrivateDateTransferred_static_1100', commonEventPublishData,
       this.publishCallback);
   }
 
@@ -4401,7 +4401,7 @@ export class KeyboardControllerStatic {
     };
     this.mContext!.destroy((err) => {
       console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
-      commonEventManager.publish("inputMethodAbility_test_091", commonEventPublishData, () => {
+      commonEventManager.publish('inputMethodAbility_test_091', commonEventPublishData, () => {
       });
     })
   }
@@ -4415,7 +4415,7 @@ export class KeyboardControllerStatic {
       this.mContext!.destroy();
     } catch (err) {
       console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
-      commonEventManager.publish("inputMethodAbility_test_092", commonEventPublishData, () => {
+      commonEventManager.publish('inputMethodAbility_test_092', commonEventPublishData, () => {
       });
     }
   }
