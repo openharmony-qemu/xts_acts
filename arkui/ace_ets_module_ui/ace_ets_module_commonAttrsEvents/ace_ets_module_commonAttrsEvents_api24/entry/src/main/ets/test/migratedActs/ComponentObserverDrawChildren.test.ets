@@ -182,7 +182,8 @@ export default function ComponentObserverDrawChildrenTest() {
      * @tc.level    Level.LEVEL0
      */
     it('component_observer_on_draw_children_0100', Level.LEVEL0, async () => {
-      if (!(await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE))) {
+      let routed: boolean = await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE);
+      if (!routed) {
         console.warn('[ComponentObserverDrawChildren] router.pushUrl 失败，弱环境兜底通过');
         expect(true).assertTrue();
         return;
@@ -247,11 +248,12 @@ export default function ComponentObserverDrawChildrenTest() {
     /**
      * @tc.number   component_observer_off_draw_children_optional_callback_0100
      * @tc.name     component_observer_off_draw_children_optional_callback_0100
-     * @tc.desc     ComponentObserver.offDrawChildren() with no callback unregisters after prior onDrawChildren
+     * @tc.desc     ComponentObserver.offDrawChildren() called with no callback unregisters after prior onDrawChildren
      * @tc.level    Level.LEVEL0
      */
     it('component_observer_off_draw_children_optional_callback_0100', Level.LEVEL0, async () => {
-      if (!(await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE))) {
+      let routed: boolean = await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE);
+      if (!routed) {
         console.warn('[ComponentObserverDrawChildren] router.pushUrl 失败，弱环境兜底通过');
         expect(true).assertTrue();
         return;
