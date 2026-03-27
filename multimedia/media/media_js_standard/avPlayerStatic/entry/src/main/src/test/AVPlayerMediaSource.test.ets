@@ -174,7 +174,7 @@ export default function AVPlayerMediaSource() {
         expect().assertFail();
         done();
       }
-      let playStrategy: media.playbackStrategy = {
+      let playStrategy: media.PlaybackStrategy = {
         preferredWidth: 1,
         preferredHeight: 2,
         mutedMediaType: media.MediaType.MEDIA_TYPE_VID,
@@ -182,9 +182,6 @@ export default function AVPlayerMediaSource() {
         preferredHdr: true as boolean,
         preferredBufferDurationForPlaying: 1 as double,
         showFirstFrameOnPrepare: true as boolean,
-        preferredAudioLanguage: " ",
-        preferredSubtitleLanguage: " ",
-        enableSuperResolution: false as boolean,
         preferredAudioLanguage: " ",
         preferredSubtitleLanguage: " ",
         enableSuperResolution: false as boolean
