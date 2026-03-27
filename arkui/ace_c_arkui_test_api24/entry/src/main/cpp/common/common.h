@@ -20,6 +20,7 @@
 #include <hilog/log.h>
 #include <cstdio>
 #include <cstdint>
+#include <algorithm>
 #include <initializer_list>
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>
@@ -167,23 +168,18 @@ template<typename T, typename U>
     return errorResult;
 }
 
-/**
- * Assert result equals one of the expected values (e.g. documented alternate error codes).
- */
+/** Assert result is one of expectedOneOf (e.g. documented alternate error codes). */
 [[nodiscard]] inline napi_value ErrCodeAnyOfFailed(
     napi_env env, int32_t result, std::initializer_list<int32_t> expectedOneOf)
 {
-    for (int32_t expect : expectedOneOf) {
-        if (result == expect) {
-            return nullptr;
-        }
+    if (std::find(expectedOneOf.begin(), expectedOneOf.end(), result) != expectedOneOf.end()) {
+        return nullptr;
     }
-    std::string assertStr =
-        std::string("assert error code in set failed, result is ") + std::to_string(result);
-    (void)napi_throw_error(env, nullptr, assertStr.c_str());
-    napi_value errorResult = nullptr;
-    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
-    return errorResult;
+    std::string s = std::string("assert error code in set failed, result is ") + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, s.c_str());
+    napi_value out = nullptr;
+    (void)napi_create_int32(env, PARAM_NEGATIVE_1, &out);
+    return out;
 }
 
 template<typename T, typename U>

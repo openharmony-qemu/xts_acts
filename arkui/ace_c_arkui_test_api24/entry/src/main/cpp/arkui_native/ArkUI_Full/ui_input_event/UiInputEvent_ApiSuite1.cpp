@@ -2100,71 +2100,69 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
-/*
- * 测试接口: OH_ArkUI_PointerEvent_PostClonedEventWithStrategy
- * 预期效果: 参考 capi-ui-input-event-h.md 中 PostClonedEvent 族：入参错误多返回 PARAM_INVALID；文档另列
- * NOT_CLONED_POINTER_EVENT、POST_CLONED_*。node=nullptr 时实现对错误码优先级可能不同，故断言落在上述非成功码集合内
- * （不含 NO_ERROR），避免仅靠单一 PARAM_INVALID 在个别环境误失败。
- * 实际测试: TOUCH→CreateClonedPointerEvent 后，首参 nullptr + 合法 cloneEvt/strategy。
- */
-static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
+namespace {
+napi_value XtsRunPostClonedEventWithStrategyNullNode(napi_env env)
 {
-    (void)env;
-    (void)info;
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+        napi_value e = ::ArkUICapiTest::EqFailed(
             env,
             (OH_ArkUI_PointerEvent_CreatePointerEvent(&baseEvt, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
-        if (napiAssertErr != nullptr) {
-            return napiAssertErr;
+        if (e != nullptr) {
+            return e;
         }
     }
-
     if (((baseEvt)) == nullptr) {
         return nullptr;
     }
-
     ArkUI_UIInputEvent *cloneEvt = nullptr;
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
+        napi_value e = ::ArkUICapiTest::EqFailed(
             env,
             (OH_ArkUI_PointerEvent_CreateClonedPointerEvent(baseEvt, &cloneEvt)),
             (ARKUI_ERROR_CODE_NO_ERROR));
-        if (napiAssertErr != nullptr) {
+        if (e != nullptr) {
             (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
-            return napiAssertErr;
+            return e;
         }
     }
-
     if (((cloneEvt)) == nullptr) {
         (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
         return nullptr;
     }
-
     auto ec = OH_ArkUI_PointerEvent_PostClonedEventWithStrategy(
-        static_cast<ArkUI_NodeHandle>(nullptr), cloneEvt,
-        static_cast<ArkUI_CompetitionStrategy>(0));
+        static_cast<ArkUI_NodeHandle>(nullptr), cloneEvt, static_cast<ArkUI_CompetitionStrategy>(0));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::ErrCodeAnyOfFailed(
-            env,
-            static_cast<int32_t>(ec),
+        napi_value e = ::ArkUICapiTest::ErrCodeAnyOfFailed(
+            env, static_cast<int32_t>(ec),
             { static_cast<int32_t>(ARKUI_ERROR_CODE_PARAM_INVALID),
                 static_cast<int32_t>(ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT),
                 static_cast<int32_t>(ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL),
                 static_cast<int32_t>(
                     ARKUI_ERROR_CODE_POST_CLONED_NO_COMPONENT_HIT_TO_RESPOND_TO_THE_EVENT) });
-        if (napiAssertErr != nullptr) {
+        if (e != nullptr) {
             (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
             (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
-            return napiAssertErr;
+            return e;
         }
     }
-
     (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
     (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
+}
+} // namespace
+
+/*
+ * 测试接口: OH_ArkUI_PointerEvent_PostClonedEventWithStrategy
+ * 预期效果: 参考 capi-ui-input-event-h.md 中 PostClonedEvent 族：入参错误多返回 PARAM_INVALID；文档另列
+ * NOT_CLONED_POINTER_EVENT、POST_CLONED_*。node=nullptr 时错误码因实现而异，断言为上述非成功码集合（不含 NO_ERROR）。
+ * 实际测试: TOUCH→CreateClonedPointerEvent 后，首参 nullptr + 合法 cloneEvt/strategy。
+ */
+static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    return XtsRunPostClonedEventWithStrategyNullNode(env);
 }
 
 /*

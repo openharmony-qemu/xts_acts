@@ -20,8 +20,9 @@ namespace ArkUICapiTest {
 
 namespace {
 /*
- * styled_string.h，并对照官方 ndk-styled-string.md、capi-styled-string-h.md 等：对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类
- * 接口，文档允许 INVALID_STYLED_STRING；入参须为有效属性串。单独 Descriptor_Create() 未承载文本内容时多属无效。
+ * styled_string.h，并对照 OpenHarmony 公开文档「属性字符串」指南与 capi-styled-string-h.md：
+ * 对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类接口，文档允许 INVALID_STYLED_STRING；
+ * 入参须为有效属性串。单独 Descriptor_Create() 无文本内容时多属无效。
  * CreateWithString 在 length=0 时 styles 仍须为合法数组指针（可为每项 nullptr），与 252 一致。
  * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
  */
@@ -426,7 +427,8 @@ static napi_value TestArkUICapi_254(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledString_Descriptor *, int32_t *)
  * 预期效果: 在有效描述符上调用 GetLength 成功。
- * 实际测试: Descriptor_Create() 空描述符经 GetLength 后在部分版本 Destroy 中会 SIGSEGV；改用 CreateWithString 得到合法内容再 GetLength（与 cppcrash 栈 DestroyArkUIStyledStringDescriptor 一致）。
+ * 实际测试: 空 Descriptor_Create() 经 GetLength 后部分版本 Destroy 会 SIGSEGV；改用 CreateWithString 再 GetLength。
+ * （崩溃栈曾见 DestroyArkUIStyledStringDescriptor。）
  */
 static napi_value TestArkUICapi_255(napi_env env, napi_callback_info info)
 {
