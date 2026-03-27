@@ -79,10 +79,8 @@ struct webViewController {
             switch (this.stringObj.str) {
               case 'emitDataResubmissionHandlerResend': {
                 try {
-                  this.controller.loadUrl("resource://rawfile/dataSubmit.html");
-                  this.title = ''
                   setTimeout(() => {
-                    Utils.emitEvent(this.title, 60600)
+                    this.controller.refresh();
                   }, 1000);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -92,11 +90,9 @@ struct webViewController {
 
               case 'emitDataResubmissionHandlerCancel': {
                 try {
-                  this.controller.loadUrl("resource://rawfile/dataSubmit.html");
-                  this.title = ''
                   this.resend = false
                   setTimeout(() => {
-                    Utils.emitEvent(this.title, 60601)
+                    this.controller.refresh();
                   }, 1000);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -113,7 +109,8 @@ struct webViewController {
             }
           })
 
-        Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+        Web({ src: 'resource://rawfile/dataSubmit.html', controller: this.controller })
+          .key('onDataResubmittedKey')
           .javaScriptAccess(true)
           .geolocationAccess(true)
           .databaseAccess(true)
@@ -122,8 +119,10 @@ struct webViewController {
               console.log('onDataResubmitted:')
               if (this.resend) {
                 event.handler.resend();
+                Utils.emitEvent(this.resend, 60600)
               } else {
                 event.handler.cancel();
+                Utils.emitEvent(this.resend, 60601)
               }
             }
           })

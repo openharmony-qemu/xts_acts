@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,22 +28,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function WebViewBlankScreenDetectionConfigSuite() {
   describe('WebViewBlankScreenDetectionConfigTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.systemeventstest.static')
-      await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
     beforeEach(async () => {
@@ -52,7 +37,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
 
     /**
     * @tc.name         testWebViewBlankScreenDetectionConfigStatic
-    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_0300
+    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_STATIC_0100
     * @tc.desc         test DetectedBlankScreenReason
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -71,7 +56,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
 
     /**
     * @tc.name         testDetectedBlankScreenReasonStatic01
-    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_0100
+    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_STATIC_0200
     * @tc.desc         test DetectedBlankScreenReason
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -90,7 +75,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
 
     /**
     * @tc.name         testDetectedBlankScreenReasonStatic02
-    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_0200
+    * @tc.number       SUB_WEB_ONDETECTEDBLANKSCREEN_STATIC_0300
     * @tc.desc         test DetectedBlankScreenReason
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -109,7 +94,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
 
     /**
     * @tc.name         SwitchNextPageStatic
-    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE0
+    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE_160601
     * @tc.desc         test SwitchNextPageStatic
     * @tc.size         MediumTest
     * @tc.type         Function
