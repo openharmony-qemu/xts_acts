@@ -40,7 +40,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicRefEAWorker001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<number>(0);
-      let count = 0;
+      let count = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -48,16 +48,16 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           let value = atomicRef.load();
-          count++;
+          count.fetchAdd(1);
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      while (count < 20) {
+      while (count.load() < 20) {
         await sleep(10);
       }
-      expect(count).assertEqual(20);
+      expect(count.load()).assertEqual(20);
     });
 
     /**
