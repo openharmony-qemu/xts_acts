@@ -55,7 +55,7 @@ export default function XComponentHdrTest() {
     /**
      * @tc.number   hdr_type_default_zero_0100
      * @tc.name     hdr_type_default_zero_0100
-     * @tc.desc     HdrType.DEFAULT equals 0
+     * @tc.desc     xcomponent HdrType.DEFAULT enum numeric value is 0
      * @tc.level    Level.LEVEL0
      */
     it('hdr_type_default_zero_0100', Level.LEVEL0, () => {
@@ -75,7 +75,7 @@ export default function XComponentHdrTest() {
     /**
      * @tc.number   xcomponent_hdr_brightness_with_hdr_type_0100
      * @tc.name     xcomponent_hdr_brightness_with_hdr_type_0100
-     * @tc.desc     XComponent.hdrBrightness(brightness, HdrType)
+     * @tc.desc     XComponentAttribute.hdrBrightness(brightness, type) two-argument overload with HdrType.AIHDR
      * @tc.level    Level.LEVEL0
      */
     it('xcomponent_hdr_brightness_with_hdr_type_0100', Level.LEVEL0, async () => {
@@ -86,7 +86,7 @@ export default function XComponentHdrTest() {
     /**
      * @tc.number   xcomponent_hdr_brightness_single_arg_0100
      * @tc.name     xcomponent_hdr_brightness_single_arg_0100
-     * @tc.desc     XComponent.hdrBrightness(brightness)
+     * @tc.desc     XComponentAttribute.hdrBrightness(brightness) single-argument overload without HdrType
      * @tc.level    Level.LEVEL0
      */
     it('xcomponent_hdr_brightness_single_arg_0100', Level.LEVEL0, async () => {
