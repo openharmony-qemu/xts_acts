@@ -524,7 +524,6 @@ static napi_value TestArkUICapi_356(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_ParagraphStyle_Destroy(obj);
-    (void)OH_PixelmapNative_Destroy(&pm);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -548,6 +547,7 @@ static napi_value TestArkUICapi_357(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1060,6 +1060,7 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextShadowStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1073,7 +1074,7 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
  *     uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextShadowStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: shadowOptionsSize 须为可容纳输出的非零容量（styled_string.h：过小将可能 BUFFER_SIZE_ERROR / PARAM_INVALID）。
  */
 static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
 {
@@ -1087,10 +1088,11 @@ static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
     OH_ArkUI_ShadowOptions* holder1 = nullptr;
     OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
     uint32_t v3 = 0U;
-    auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, outPtr1, 0U, &v3);
+    auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, outPtr1, 1U, &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextShadowStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1895,7 +1897,7 @@ static napi_value TestArkUICapi_412(napi_env env, napi_callback_info info)
 
     char buf1[32] = {0};
     int32_t v3 = 0;
-    auto ec = OH_ArkUI_UrlStyle_GetUrl(obj, buf1, 0, &v3);
+    auto ec = OH_ArkUI_UrlStyle_GetUrl(obj, buf1, static_cast<int32_t>(sizeof(buf1)), &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1989,6 +1991,7 @@ static napi_value TestArkUICapi_416(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UserDataSpan_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2035,8 +2038,8 @@ static napi_value TestArkUICapi_418(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(OH_ArkUI_CustomSpan *, ArkUI_CustomSpanMetrics *(*)(float))
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_CustomSpan_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: 依据 styled_string.h，onMeasure 为非法参数时返回 ARKUI_ERROR_CODE_PARAM_INVALID。
+ * 实际测试: 传入空回调指针，断言 PARAM_INVALID（与「合法对象 + 合法回调才 NO_ERROR」区分）。
  */
 static napi_value TestArkUICapi_419(napi_env env, napi_callback_info info)
 {
@@ -2051,7 +2054,7 @@ static napi_value TestArkUICapi_419(napi_env env, napi_callback_info info)
         obj,
         static_cast<ArkUI_CustomSpanMetrics *(*)(float)>(nullptr));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_CustomSpan_Destroy(obj);
             return napiAssertErr;
@@ -2249,7 +2252,7 @@ static napi_value TestArkUICapi_426(napi_env env, napi_callback_info info)
 
     char buf1[32] = {0};
     int32_t v3 = 0;
-    auto ec = OH_ArkUI_ImageAttachment_GetResource(obj, buf1, 0, &v3);
+    auto ec = OH_ArkUI_ImageAttachment_GetResource(obj, buf1, static_cast<int32_t>(sizeof(buf1)), &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {

@@ -39,6 +39,7 @@ static napi_value TestArkUICapi_438(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -65,6 +66,7 @@ static napi_value TestArkUICapi_439(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -96,6 +98,7 @@ static napi_value TestArkUICapi_440(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -123,6 +126,7 @@ static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -134,7 +138,7 @@ static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAttachment *, float **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: colorFilterSize 取 1（styled_string.h：size 过小会 BUFFER_SIZE_ERROR / PARAM_INVALID，与 0 区分）。
  */
 static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
 {
@@ -148,10 +152,11 @@ static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
     float* holder1 = nullptr;
     float** outPtr1 = &holder1;
     uint32_t v3 = 0U;
-    auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 0U, &v3);
+    auto ec = OH_ArkUI_ImageAttachment_GetColorFilter(obj, outPtr1, 1U, &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -267,6 +272,7 @@ static napi_value TestArkUICapi_445(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -320,6 +326,7 @@ static napi_value TestArkUICapi_447(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -347,6 +354,7 @@ static napi_value TestArkUICapi_448(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
