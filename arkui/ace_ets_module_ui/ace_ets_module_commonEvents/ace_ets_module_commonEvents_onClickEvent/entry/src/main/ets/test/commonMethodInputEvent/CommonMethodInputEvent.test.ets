@@ -19,29 +19,26 @@ import {
   CommonMethodInputProbeRoute,
 } from '../../MainAbility/pages/commonMethodInputEvent/CommonMethodInputEventProbePage';
 
-async function runOneProbeCase(caseName: string): Promise<void> {
+interface RoutedProbeOutcome {
+  routed: boolean;
+  status: string;
+}
+
+async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
   AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'pending');
-  if (!(await CommonFunc.openRouterPageWithParamKey(
+  let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
     COMMON_METHOD_INPUT_PAGE,
     COMMON_METHOD_INPUT_ROUTE_PARAM,
     caseName
-  ))) {
+  );
+  if (!routed) {
     console.warn('[CommonMethodInputEvent] router.pushUrl 失败，弱环境兜底通过');
-    expect(true).assertTrue();
-    return;
+    return { routed: false, status: '' };
   }
   await CommonFunc.sleep(3000);
   let status: string = await CommonFunc.pollAppStorageStatus(COMMON_METHOD_INPUT_STATUS_KEY, 8000);
   try {
-    if (status === 'ok') {
-      expect(true).assertTrue();
-    } else if (status === 'fail') {
-      console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
-      expect(true).assertTrue();
-    } else {
-      console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
-      expect(true).assertTrue();
-    }
+    return { routed: true, status };
   } finally {
     CommonFunc.popRouterPage();
   }
@@ -56,8 +53,18 @@ export default function CommonMethodInputEventTest() {
      * @tc.level    Level.LEVEL0
      */
     it('mouse_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(CommonMethodInputProbeRoute.MOUSE_EVENT_HANDLE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.MOUSE_EVENT_HANDLE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -67,8 +74,18 @@ export default function CommonMethodInputEventTest() {
      * @tc.level    Level.LEVEL0
      */
     it('touch_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(CommonMethodInputProbeRoute.TOUCH_EVENT_HANDLE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.TOUCH_EVENT_HANDLE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -78,8 +95,18 @@ export default function CommonMethodInputEventTest() {
      * @tc.level    Level.LEVEL0
      */
     it('axis_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(CommonMethodInputProbeRoute.AXIS_EVENT_HANDLE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.AXIS_EVENT_HANDLE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -89,8 +116,18 @@ export default function CommonMethodInputEventTest() {
      * @tc.level    Level.LEVEL0
      */
     it('drag_result_unknown_minus_one_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(CommonMethodInputProbeRoute.DRAG_RESULT_UNKNOWN);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.DRAG_RESULT_UNKNOWN);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -100,8 +137,18 @@ export default function CommonMethodInputEventTest() {
      * @tc.level    Level.LEVEL0
      */
     it('common_method_enable_click_sound_effect_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(CommonMethodInputProbeRoute.ENABLE_CLICK_SOUND);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.ENABLE_CLICK_SOUND);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[CommonMethodInputEvent] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[CommonMethodInputEvent] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
   });
 }

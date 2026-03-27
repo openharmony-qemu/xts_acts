@@ -10,7 +10,7 @@
  * limitations under the License.
  */
 import { BuilderNode } from '@kit.ArkUI';
-import { CompetitionStrategy, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 export const BUILDER_NODE_POST_INPUT_PAGE: string =
   'MainAbility/pages/migratedActs/BuilderNodePostInputEventWithStrategyPage';

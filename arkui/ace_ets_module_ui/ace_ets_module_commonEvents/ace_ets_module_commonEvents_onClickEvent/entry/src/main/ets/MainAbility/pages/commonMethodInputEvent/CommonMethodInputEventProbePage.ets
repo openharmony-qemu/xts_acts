@@ -9,45 +9,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from t@ohos.routert;
+import router from '@ohos.router';
 
-export const COMMON_METHOD_INPUT_PAGE: string = ttestability/pages/CommonMethodInputEventProbePaget;
-export const COMMON_METHOD_INPUT_ROUTE_PARAM: string = tprobet;
-export const COMMON_METHOD_INPUT_STATUS_KEY: string = tohosTestCommonMethodInputProbeStatust;
+export const COMMON_METHOD_INPUT_PAGE: string = 'MainAbility/pages/commonMethodInputEvent/CommonMethodInputEventProbePage';
+export const COMMON_METHOD_INPUT_ROUTE_PARAM: string = 'probe';
+export const COMMON_METHOD_INPUT_STATUS_KEY: string = 'actsAceCommonMethodInputProbeStatus';
 
 export class CommonMethodInputProbeRoute {
-  static readonly MOUSE_EVENT_HANDLE: string = tmouse_event_handlet;
-  static readonly TOUCH_EVENT_HANDLE: string = ttouch_event_handlet;
-  static readonly AXIS_EVENT_HANDLE: string = taxis_event_handlet;
-  static readonly DRAG_RESULT_UNKNOWN: string = tdrag_result_unknownt;
-  static readonly ENABLE_CLICK_SOUND: string = tenable_click_soundt;
+  static readonly MOUSE_EVENT_HANDLE: string = 'mouse_event_handle';
+  static readonly TOUCH_EVENT_HANDLE: string = 'touch_event_handle';
+  static readonly AXIS_EVENT_HANDLE: string = 'axis_event_handle';
+  static readonly DRAG_RESULT_UNKNOWN: string = 'drag_result_unknown';
+  static readonly ENABLE_CLICK_SOUND: string = 'enable_click_sound';
 }
 
 function eventHandleIdOptionalNumberOk(v: number | undefined): boolean {
-  return v === undefined || typeof v === tnumbert;
+  return v === undefined || typeof v === 'number';
 }
 
 function readProbeRoute(): string {
   let p: Object | undefined = router.getParams();
   if (p === undefined) {
-    return tt;
+    return '';
   }
   let rec: Record<string, Object> = p as Record<string, Object>;
   let r: Object | undefined = rec[COMMON_METHOD_INPUT_ROUTE_PARAM];
-  if (typeof r === tstringt && (r as string).length > 0) {
+  if (typeof r === 'string' && (r as string).length > 0) {
     return r as string;
   }
-  return tt;
+  return '';
 }
 
 function probeMouseEventHandleId(): void {
   let withId = { eventHandleId: 1 } as MouseEvent;
   if (!eventHandleIdOptionalNumberOk(withId.eventHandleId)) {
-    throw new Error(tMouseEvent.eventHandleId with number invalidt);
+    throw new Error('MouseEvent.eventHandleId with number invalid');
   }
   let without = {} as MouseEvent;
   if (!eventHandleIdOptionalNumberOk(without.eventHandleId)) {
-    throw new Error(tMouseEvent.eventHandleId undefined invalidt);
+    throw new Error('MouseEvent.eventHandleId undefined invalid');
   }
 }
 
@@ -111,22 +111,22 @@ function buildSyntheticTouchDownWithHandleId(eventHandleId?: number): TouchEvent
 function probeTouchEventHandleId(): void {
   let t1: TouchEvent = buildSyntheticTouchDownWithHandleId(0);
   if (!eventHandleIdOptionalNumberOk(t1.eventHandleId)) {
-    throw new Error(tTouchEvent.eventHandleId with number invalidt);
+    throw new Error('TouchEvent.eventHandleId with number invalid');
   }
   let t2: TouchEvent = buildSyntheticTouchDownWithHandleId(undefined);
   if (!eventHandleIdOptionalNumberOk(t2.eventHandleId)) {
-    throw new Error(tTouchEvent.eventHandleId unset invalidt);
+    throw new Error('TouchEvent.eventHandleId unset invalid');
   }
 }
 
 function probeAxisEventHandleId(): void {
   let withId = { eventHandleId: 42 } as AxisEvent;
   if (!eventHandleIdOptionalNumberOk(withId.eventHandleId)) {
-    throw new Error(tAxisEvent.eventHandleId with number invalidt);
+    throw new Error('AxisEvent.eventHandleId with number invalid');
   }
   let without = {} as AxisEvent;
   if (!eventHandleIdOptionalNumberOk(without.eventHandleId)) {
-    throw new Error(tAxisEvent.eventHandleId undefined invalidt);
+    throw new Error('AxisEvent.eventHandleId undefined invalid');
   }
 }
 
@@ -141,7 +141,7 @@ function probeDragResultUnknown(): void {
   ];
   for (let i: number = 0; i < known.length; i++) {
     if (known[i] === documentedUnknown) {
-      throw new Error(tDragResult documented values must not equal UNKNOWN (-1)t);
+      throw new Error('DragResult documented values must not equal UNKNOWN (-1)');
     }
   }
 }
@@ -149,10 +149,10 @@ function probeDragResultUnknown(): void {
 @Entry
 @Component
 struct CommonMethodInputEventProbePage {
-  @State private shellRoute: string = tt;
+  @State private shellRoute: string = '';
 
   aboutToAppear(): void {
-    AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tpendingt);
+    AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'pending');
     let route: string = readProbeRoute();
     this.shellRoute = route;
 
@@ -170,43 +170,43 @@ struct CommonMethodInputEventProbePage {
       } else if (route === CommonMethodInputProbeRoute.DRAG_RESULT_UNKNOWN) {
         probeDragResultUnknown();
       } else {
-        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tfailt);
+        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'fail');
         return;
       }
-      AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tokt);
+      AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'ok');
     } catch (_e) {
-      console.warn(t[CommonMethodInputEventProbePage] 探针异常（SDK/ROM 差异可忽略）t);
-      AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tfailt);
+      console.warn('[CommonMethodInputEventProbePage] 探针异常（SDK/ROM 差异可忽略）');
+      AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'fail');
     }
   }
 
   build() {
     Column({ space: 8 }) {
-      Text(tInstrument：CommonMethod + Mouse/Touch/Axis eventHandleId + DragResultt)
+      Text('Instrument：CommonMethod + Mouse/Touch/Axis eventHandleId + DragResult')
         .fontSize(13)
         .fontWeight(FontWeight.Bold)
-      Text(`probe：${this.shellRoute.length > 0 ? this.shellRoute : t(no param)t}`)
+      Text(`probe：${this.shellRoute.length > 0 ? this.shellRoute : '(no param)'}`)
         .fontSize(11)
-        .fontColor($r(tsys.color.ohos_id_color_text_secondaryt))
+        .fontColor($r('sys.color.ohos_id_color_text_secondary'))
 
       if (this.shellRoute === CommonMethodInputProbeRoute.ENABLE_CLICK_SOUND) {
-        Button(tenableClickSoundEffect chaint)
+        Button('enableClickSoundEffect chain')
           .fontSize(12)
           .enableClickSoundEffect(true)
           .enableClickSoundEffect(undefined)
       }
     }
-    .width(t100%t)
-    .height(t100%t)
+    .width('100%')
+    .height('100%')
     .padding({ left: 12, right: 12, top: 8, bottom: 32 })
     .onAppear(() => {
       if (this.shellRoute !== CommonMethodInputProbeRoute.ENABLE_CLICK_SOUND) {
         return;
       }
       try {
-        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tokt);
+        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'ok');
       } catch (_e) {
-        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, tfailt);
+        AppStorage.setOrCreate(COMMON_METHOD_INPUT_STATUS_KEY, 'fail');
       }
     })
   }
