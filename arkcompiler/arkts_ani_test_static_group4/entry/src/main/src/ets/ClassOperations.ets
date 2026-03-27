@@ -320,10 +320,8 @@ class SingletonIterator implements Iterator<int> {
         this.base = base
     }
     next(): IteratorResult<int> {
-        return {
-            done: this.index >= this.base.data.length,
-            value: this.index >= this.base.data.length ? undefined : this.base.data[this.index++]
-        }
+        return new IteratorResult<int>(this.index >= this.base.data.length,
+            this.index >= this.base.data.length ? undefined : this.base.data[this.index++]);
     }
 }
 };
@@ -349,10 +347,8 @@ class SingletonIterator implements Iterator<int> {
         this.age = 1
     }
     next(): IteratorResult<int> {
-        return {
-            done: this.index >= this.base.data.length,
-            value: this.index >= this.base.data.length ? undefined : this.base.data[this.index++]
-        }
+        return new IteratorResult<int>(this.index >= this.base.data.length,
+             this.index >= this.base.data.length ? undefined : this.base.data[this.index++]);
     }
  }
 
