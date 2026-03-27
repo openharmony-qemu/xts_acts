@@ -24,7 +24,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 const TEST_TAG: string = 'FrameNodeConvertPositionFromWindow '
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public frameNode: FrameNode | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {

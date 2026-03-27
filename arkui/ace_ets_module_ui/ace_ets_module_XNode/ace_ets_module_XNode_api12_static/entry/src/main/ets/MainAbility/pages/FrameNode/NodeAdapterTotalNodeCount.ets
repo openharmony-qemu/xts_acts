@@ -31,7 +31,7 @@ import { NodeController, FrameNode, NodeAdapter, typeNode } from '@ohos.arkui.no
 import { NodeContainer } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class TestNodeAdapter extends NodeAdapter {
+export class TestNodeAdapter extends NodeAdapter {
   uiContext: UIContext
   data: Array<string> = new Array<string>();
   hostNode?: FrameNode
@@ -81,7 +81,7 @@ class TestNodeAdapter extends NodeAdapter {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   rootNode: FrameNode | null = null;
   nodeAdapter: TestNodeAdapter | null = null;
 

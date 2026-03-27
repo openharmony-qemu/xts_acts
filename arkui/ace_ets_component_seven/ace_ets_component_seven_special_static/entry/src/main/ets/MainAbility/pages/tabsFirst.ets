@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ import { State } from '@ohos.arkui.stateManagement';
 //     }
 //   }
 
-  class TabsFirModifier2 implements AttributeModifier<TabsAttribute> {
+  export class TabsFirModifier2 implements AttributeModifier<TabsAttribute> {
     nullFlag: boolean = false
     strokeWidthNum: number = 10
     dividerColorNum: int = 0xFF0000
@@ -46,7 +46,7 @@ import { State } from '@ohos.arkui.stateManagement';
     }
   }
 
-  class TabsFirModifier3 implements AttributeModifier<TabsAttribute> {
+  export class TabsFirModifier3 implements AttributeModifier<TabsAttribute> {
     strokeWidthRes: Resource = $r("app.string.Divider_Stroke_Width")
     dividerColorRes: Resource = $r("app.color.Divider_Color")
     startMarginRes: Resource = $r("app.string.Divider_Start_Margin")
@@ -62,7 +62,7 @@ import { State } from '@ohos.arkui.stateManagement';
     }
   }
 
-  class TabsFirModifier4 implements AttributeModifier<TabsAttribute> {
+  export class TabsFirModifier4 implements AttributeModifier<TabsAttribute> {
     strokeWidthStr: string = '10px'
     startMarginStr: string = '5px'
     endMarginStr: string = '5px'

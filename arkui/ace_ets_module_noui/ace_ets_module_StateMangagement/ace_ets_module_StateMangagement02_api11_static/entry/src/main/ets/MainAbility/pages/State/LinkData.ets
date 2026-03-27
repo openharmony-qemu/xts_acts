@@ -1,5 +1,5 @@
 /**
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -43,10 +43,10 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-interface LinkModelLinkData {
+export interface LinkModelLinkData {
   value: string
 }
-class LinkModel implements LinkModelLinkData {
+export class LinkModel implements LinkModelLinkData {
   @Track value: string = ''
 
   constructor(value: string) {
@@ -54,7 +54,7 @@ class LinkModel implements LinkModelLinkData {
   }
 }
 
-enum KFCLD{A=1,B,C}
+export enum KFCLD{A=1,B,C}
 @Entry
 @Component
 struct parData_Link {

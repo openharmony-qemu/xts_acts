@@ -31,7 +31,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 const TEST_TAG: string = 'FrameNodeCancelAnimations '
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
   private isRunning: boolean = false;
 

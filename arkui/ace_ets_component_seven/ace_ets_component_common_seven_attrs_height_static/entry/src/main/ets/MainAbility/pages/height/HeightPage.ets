@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,259 +42,259 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
@@ -315,245 +315,245 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mheight: number | string = 0
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`height page show ${JSON.stringify(this.mheight)}`)
     instance.height(this.mheight)
   }
 }
-class ProgressModifier implements AttributeModifier<ProgressAttribute>{
+export class ProgressModifier implements AttributeModifier<ProgressAttribute>{
   mheight: number | string = 0
   applyNormalAttribute(instance: ProgressAttribute): void {
     instance.width(this.mheight)

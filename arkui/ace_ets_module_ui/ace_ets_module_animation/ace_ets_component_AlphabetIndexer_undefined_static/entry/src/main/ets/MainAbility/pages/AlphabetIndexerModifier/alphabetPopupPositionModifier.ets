@@ -38,7 +38,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyAlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class MyAlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {

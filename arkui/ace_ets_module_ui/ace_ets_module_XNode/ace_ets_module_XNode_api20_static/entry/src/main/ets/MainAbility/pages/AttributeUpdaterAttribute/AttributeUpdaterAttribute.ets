@@ -30,7 +30,7 @@ import { State} from '@ohos.arkui.stateManagement';
 import { AttributeUpdater} from '@ohos.arkui.modifier';
 import hilog from '@ohos.hilog';
 
-class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
+export class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
   initializeModifier(instance: ButtonAttribute): void {
     instance.backgroundColor('#ffd5d5d5')
       .width('50%')

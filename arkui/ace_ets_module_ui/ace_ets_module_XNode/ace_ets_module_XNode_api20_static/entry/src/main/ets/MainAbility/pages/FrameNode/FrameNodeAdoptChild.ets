@@ -34,7 +34,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 const TEST_TAG: string = 'FrameNode '
 
 // 继承NodeController实现自定义UI控制器
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public frameNode: FrameNode | null = null;
   public rootNode: FrameNode | null = null;
 

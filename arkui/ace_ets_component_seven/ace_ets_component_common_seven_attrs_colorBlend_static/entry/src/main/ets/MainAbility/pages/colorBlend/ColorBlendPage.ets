@@ -44,21 +44,21 @@ import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 import { RecordData } from '@ohos.base';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mColorBlend: Color | string = Color.Green
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
@@ -66,490 +66,490 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 @Observed
-class _colorBlendButttonMod implements AttributeModifier<ButtonAttribute> {
+export class _colorBlendButttonMod implements AttributeModifier<ButtonAttribute> {
   mColorBlend: Color | string = Color.Green
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.log('this.mColorBlend',this.mColorBlend)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class NavigatorModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigatorModifier implements AttributeModifier<NavigationAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class NavRouterModifier implements AttributeModifier<NavigationAttribute> {
+export class NavRouterModifier implements AttributeModifier<NavigationAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)

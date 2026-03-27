@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -197,7 +197,7 @@ import {
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -210,7 +210,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -223,7 +223,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -236,7 +236,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -249,7 +249,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -262,7 +262,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -275,7 +275,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -288,7 +288,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -301,7 +301,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -314,7 +314,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -327,7 +327,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -340,7 +340,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -353,7 +353,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -366,7 +366,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -379,7 +379,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -392,7 +392,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -405,7 +405,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -418,7 +418,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -431,7 +431,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -444,7 +444,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   }
 }
 
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -457,7 +457,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -470,7 +470,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -483,7 +483,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -496,7 +496,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -509,7 +509,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -522,7 +522,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -535,7 +535,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -548,7 +548,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -561,7 +561,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -574,7 +574,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -587,7 +587,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -600,7 +600,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -613,7 +613,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -626,7 +626,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -639,7 +639,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -652,7 +652,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -665,7 +665,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -678,7 +678,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -691,7 +691,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -704,7 +704,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
   }
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -717,7 +717,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   }
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -730,7 +730,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   }
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -743,7 +743,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -756,7 +756,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -769,7 +769,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -782,7 +782,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -795,7 +795,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -808,7 +808,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -821,7 +821,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -834,7 +834,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -847,7 +847,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -860,7 +860,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -873,7 +873,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -886,7 +886,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -899,7 +899,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -912,7 +912,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -925,7 +925,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -938,7 +938,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -951,7 +951,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -964,7 +964,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -977,7 +977,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -990,7 +990,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1003,7 +1003,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1016,7 +1016,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1029,7 +1029,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1042,7 +1042,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1055,7 +1055,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1068,7 +1068,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1081,7 +1081,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1094,7 +1094,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1107,7 +1107,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1120,7 +1120,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1133,7 +1133,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1146,7 +1146,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1159,7 +1159,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1172,7 +1172,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1185,7 +1185,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,
@@ -1198,7 +1198,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
     radius: 60,

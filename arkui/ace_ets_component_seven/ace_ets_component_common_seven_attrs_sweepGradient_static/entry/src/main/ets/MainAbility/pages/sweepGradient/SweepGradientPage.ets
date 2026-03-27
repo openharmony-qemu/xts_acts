@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -57,7 +57,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 	}
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -72,7 +72,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	}
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -87,7 +87,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	}
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -102,7 +102,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 	}
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -117,7 +117,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 	}
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -132,7 +132,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	}
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -147,7 +147,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	}
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -162,7 +162,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 	}
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -177,7 +177,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 	}
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -192,7 +192,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	}
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -207,7 +207,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	}
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -222,7 +222,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 	}
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -237,7 +237,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	}
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -252,7 +252,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	}
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -267,7 +267,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 	}
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -282,7 +282,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	}
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -297,7 +297,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 	}
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -312,7 +312,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	}
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -327,7 +327,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	}
 }
 
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -342,7 +342,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	}
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -357,7 +357,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 	}
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -372,7 +372,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 	}
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -387,7 +387,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	}
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -402,7 +402,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	}
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -417,7 +417,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	}
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -432,7 +432,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 	}
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -447,7 +447,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 	}
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -462,7 +462,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 	}
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -477,7 +477,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 	}
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -492,7 +492,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	}
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -507,7 +507,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 	}
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -522,7 +522,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 	}
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -537,7 +537,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	}
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -552,7 +552,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 	}
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -567,7 +567,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	}
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -582,7 +582,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 	}
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -597,7 +597,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 	}
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -612,7 +612,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	}
 }
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -627,7 +627,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 	}
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -642,7 +642,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	}
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -657,7 +657,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	}
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -672,7 +672,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	}
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -687,7 +687,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	}
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -702,7 +702,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 	}
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -717,7 +717,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 	}
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -732,7 +732,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 	}
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -747,7 +747,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	}
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -762,7 +762,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 	}
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -777,7 +777,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	}
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -792,7 +792,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	}
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -807,7 +807,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	}
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -822,7 +822,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 	}
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -837,7 +837,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	}
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -852,7 +852,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	}
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -867,7 +867,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	}
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -882,7 +882,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 	}
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -897,7 +897,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 	}
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -912,7 +912,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	}
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -927,7 +927,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 	}
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -942,7 +942,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 	}
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -957,7 +957,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -972,7 +972,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -987,7 +987,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	}
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1002,7 +1002,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	}
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1017,7 +1017,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 	}
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1032,7 +1032,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 	}
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1047,7 +1047,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	}
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1062,7 +1062,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	}
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1077,7 +1077,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	}
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1092,7 +1092,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	}
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1107,7 +1107,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	}
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1122,7 +1122,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	}
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1137,7 +1137,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	}
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1152,7 +1152,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 	}
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1167,7 +1167,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	}
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1182,7 +1182,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 	}
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,
@@ -1197,7 +1197,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	}
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
 		start: 25,

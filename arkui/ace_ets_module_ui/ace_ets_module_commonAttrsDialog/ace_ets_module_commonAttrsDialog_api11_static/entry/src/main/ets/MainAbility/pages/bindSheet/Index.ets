@@ -47,7 +47,7 @@ import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
-interface TheTitle {
+export interface TheTitle {
   title: string
   subtitle: string
 }

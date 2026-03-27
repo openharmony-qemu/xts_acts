@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,223 +43,223 @@ import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 
-  class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+  export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+  export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: BadgeAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class BlankModifier implements AttributeModifier<BlankAttribute> {
+  export class BlankModifier implements AttributeModifier<BlankAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: BlankAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+  export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ButtonAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+  export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: CalendarPickerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+  export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: CheckboxAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+  export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: CheckboxGroupAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+  export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ColumnAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+  export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ColumnSplitAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class CounterModifier implements AttributeModifier<CounterAttribute> {
+  export class CounterModifier implements AttributeModifier<CounterAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: CounterAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+  export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: DataPanelAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+  export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: DatePickerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class DividerModifier implements AttributeModifier<DividerAttribute> {
+  export class DividerModifier implements AttributeModifier<DividerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: DividerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+  export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: EffectComponentAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class FlexModifier implements AttributeModifier<FlexAttribute> {
+  export class FlexModifier implements AttributeModifier<FlexAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: FlexAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+  export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: FlowItemAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+  export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: FormComponentAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: FormLinkAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+  export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: GaugeAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class GridModifier implements AttributeModifier<GridAttribute> {
+  export class GridModifier implements AttributeModifier<GridAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: GridAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class GridColModifier implements AttributeModifier<GridColAttribute> {
+  export class GridColModifier implements AttributeModifier<GridColAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: GridColAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+  export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: GridItemAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+  export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: GridRowAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+  export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: HyperlinkAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+  export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ImageAnimatorAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+  export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ImageSpanAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ImageModifier implements AttributeModifier<ImageAttribute> {
+  export class ImageModifier implements AttributeModifier<ImageAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ImageAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ListModifier implements AttributeModifier<ListAttribute> {
+  export class ListModifier implements AttributeModifier<ListAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ListAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+  export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ListItemAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+  export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ListItemGroupAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+  export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: LoadingProgressAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+  export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: MarqueeAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class MenuModifier implements AttributeModifier<MenuAttribute> {
+  export class MenuModifier implements AttributeModifier<MenuAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: MenuAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+  export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: MenuItemAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+  export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: MenuItemGroupAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+  export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: NavDestinationAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+  export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: NavigationAttribute): void {
       instance.clip(this.mClip)
@@ -277,205 +277,205 @@ import { SetValue, RouterParams } from '../../common/Utils';
 
 
 
-  class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+  export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: PatternLockAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+  export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: PluginComponentAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+  export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: QRCodeAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RadioModifier implements AttributeModifier<RadioAttribute> {
+  export class RadioModifier implements AttributeModifier<RadioAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RadioAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RatingModifier implements AttributeModifier<RatingAttribute> {
+  export class RatingModifier implements AttributeModifier<RatingAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RatingAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+  export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RefreshAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+  export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RelativeContainerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+  export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RemoteWindowAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+  export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RichEditorAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+  export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RichTextAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RowModifier implements AttributeModifier<RowAttribute> {
+  export class RowModifier implements AttributeModifier<RowAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RowAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+  export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: RowSplitAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+  export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ScrollAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+  export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ScrollBarAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class SearchModifier implements AttributeModifier<SearchAttribute> {
+  export class SearchModifier implements AttributeModifier<SearchAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: SearchAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class SelectModifier implements AttributeModifier<SelectAttribute> {
+  export class SelectModifier implements AttributeModifier<SelectAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: SelectAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+  export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: SideBarContainerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class SliderModifier implements AttributeModifier<SliderAttribute> {
+  export class SliderModifier implements AttributeModifier<SliderAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: SliderAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class StackModifier implements AttributeModifier<StackAttribute> {
+  export class StackModifier implements AttributeModifier<StackAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: StackAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+  export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: SwiperAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+  export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TabContentAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TabsModifier implements AttributeModifier<TabsAttribute> {
+  export class TabsModifier implements AttributeModifier<TabsAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TabsAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextModifier implements AttributeModifier<TextAttribute> {
+  export class TextModifier implements AttributeModifier<TextAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextAreaAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+  export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextClockAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+  export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextInputAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+  export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextPickerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+  export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TextTimerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+  export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: TimePickerAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+  export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: ToggleAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+  export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+  export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: WaterFlowAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class WebModifier implements AttributeModifier<WebAttribute> {
+  export class WebModifier implements AttributeModifier<WebAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: WebAttribute): void {
       instance.clip(this.mClip)
     }
   }
-  class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+  export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: XComponentAttribute): void {
       instance.clip(this.mClip)

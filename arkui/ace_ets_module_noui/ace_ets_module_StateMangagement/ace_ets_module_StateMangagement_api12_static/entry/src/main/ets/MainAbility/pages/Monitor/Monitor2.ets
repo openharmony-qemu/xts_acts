@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ import {
 let testSample = new TestSample()
 
 @ObservedV2
-class Inner {
+export class Inner {
   @Trace innerT1: number = 0
   @Trace innerT2: number = 0
   @Trace innerT3: number = 0
@@ -55,7 +55,7 @@ class Inner {
 }
 
 @ObservedV2
-class Outer {
+export class Outer {
   inner: Inner = new Inner()
 
   @Monitor(['inner.innerT1'])

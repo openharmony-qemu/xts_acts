@@ -37,7 +37,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Observed
-class ClassA006 {
+export class ClassA006 {
   public value: number;
 
   constructor(value: number) {

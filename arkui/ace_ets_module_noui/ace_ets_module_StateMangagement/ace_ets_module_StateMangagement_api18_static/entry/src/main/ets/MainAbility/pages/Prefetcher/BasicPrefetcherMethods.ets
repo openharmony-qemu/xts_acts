@@ -94,7 +94,7 @@ struct PictureItemComponent {
 }
 
 @Observed
-class PictureItem {
+export class PictureItem {
   readonly color: Int;
   title: string;
   imagePixelMap: image.PixelMap | undefined;
@@ -114,7 +114,7 @@ class PictureItem {
 type ItemIndex = Int;
 type TimerId = Int;
 
-class MyDataSource implements IDataSourcePrefetching<PictureItem> {
+export class MyDataSource implements IDataSourcePrefetching<PictureItem> {
   private readonly items: PictureItem[] = [];
   private readonly fetchDelayMs: Int;
   private readonly fetches: Map<ItemIndex, TimerId> = new Map<ItemIndex, TimerId>();

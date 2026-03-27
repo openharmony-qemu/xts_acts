@@ -36,7 +36,7 @@ import { AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 @Observed
-class StateClass0090 {
+export class StateClass0090 {
   private _value: string = ''
 
   public set value(value: string) {

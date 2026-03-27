@@ -7,7 +7,7 @@ import hilog from '@ohos.hilog'
 import { Color,ResourceColor,LoadingProgressAttribute,Scroll,Scroller,ContentModifier,FontWeight,Gauge,TextAlign,TextOverflow,ForEach,wrapBuilder,Circle,Builder,Row,LoadingProgress,List,Gauge,ListItem,WrappedBuilder,ContentModifier,LoadingProgressConfiguration,ResourceColor, Color, QRCode, Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
 
 @Observed
-class MyEnableModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class MyEnableModifier implements AttributeModifier<LoadingProgressAttribute> {
   public change: boolean | undefined = true;
 
   public color_:ResourceColor | undefined = Color.Red

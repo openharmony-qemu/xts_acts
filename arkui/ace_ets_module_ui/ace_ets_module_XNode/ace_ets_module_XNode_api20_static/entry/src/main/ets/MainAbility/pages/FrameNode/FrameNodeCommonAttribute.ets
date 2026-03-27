@@ -27,7 +27,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 const TEST_TAG: string = 'FrameNodeCommonAttribute '
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {

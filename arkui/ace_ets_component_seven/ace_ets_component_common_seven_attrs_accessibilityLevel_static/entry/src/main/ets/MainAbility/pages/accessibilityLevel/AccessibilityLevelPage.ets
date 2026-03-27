@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -161,427 +161,427 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router'
 import udmfType from '@ohos.data.uniformTypeDescriptor';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: BadgeAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: BlankAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: CheckboxAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: CounterAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: DataPanelAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: DividerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: FlexAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: FlowItemAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: FormComponentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: GaugeAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: GridAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: GridColAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: GridItemAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: GridRowAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ListAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ListItemAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: MarqueeAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: MenuAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: MenuItemAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: PatternLockAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: QRCodeAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RadioAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RatingAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RefreshAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RichTextAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RowAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: RowSplitAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SearchAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SelectAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: StackAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: SwiperAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TabContentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TabsAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextPickerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TextTimerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: TimePickerAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: ToggleAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: WebAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: XComponentAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
