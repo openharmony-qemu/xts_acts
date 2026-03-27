@@ -708,6 +708,42 @@ export default function KVManagerRootDir() {
         });
 
         /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_callback_0110
+         * @tc.name SingleKv_rootDir_GetKVStore_callback_0110
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  get callback;第2个参数属性kvStoreType:未覆盖枚举:['DEVICE_COLLABORATION']；属性rootDir:缺少空值""覆盖；
+         */
+        it('SingleKv_rootDir_GetKVStore_callback_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_callback_0110---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: "",
+                    securityLevel: factory.SecurityLevel.S3,
+                };
+
+                console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                kvManager!.getKVStore(TEST_STORE_ID, optionsDir, (err, store) => {
+                    console.info(TAG + ' getKVStore success, err.code='+ err!.code);
+                    expect(err!.code).assertEqual(401);
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0111
          * @tc.name SingleKv_rootDir_GetKVStore_0111
          * @tc.type: FUNC
