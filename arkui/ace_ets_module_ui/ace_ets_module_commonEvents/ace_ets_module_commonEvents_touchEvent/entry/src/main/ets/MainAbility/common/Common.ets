@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,13 @@
 import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
-import RectValue from './Rect';
+
+export class RectValue {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+}
 
 export default class CommonFunc {
   static rect_left: number;
@@ -76,7 +82,7 @@ export default class CommonFunc {
     });
   }
 
-  static async openRouterPage(url: string, params?: Record<string, Object>): Promise<boolean> {
+  static async openRouterPage(url: string, params?: ESObject): Promise<boolean> {
     try {
       if (params !== undefined) {
         await router.pushUrl({ url: url, params: params });
@@ -90,7 +96,7 @@ export default class CommonFunc {
   }
 
   static async openRouterPageWithParamKey(url: string, key: string, val: string): Promise<boolean> {
-    let p: Record<string, Object> = {};
+    let p: ESObject = {};
     p[key] = val;
     return CommonFunc.openRouterPage(url, p);
   }
@@ -115,3 +121,7 @@ export default class CommonFunc {
     return AppStorage.get<string>(statusKey) ?? 'pending';
   }
 }
+
+
+
+
