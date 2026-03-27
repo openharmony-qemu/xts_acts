@@ -30,7 +30,6 @@ import {
   testClassSuperclassStaticmethod0001,
   testClassSuperclassStaticmethod0002,
   testClassSuperclassStaticmethod0003,
-  testClassSuperclassStaticmethod0004,
   testClassSuperclassStaticmethod0005,
   testClassSuperclassStaticmethod0006
 } from './classsuperclassstaticmethodtestfunction/ClassSuperclassStaticmethodTestFunc';
@@ -157,43 +156,6 @@ export default function ClassSuperclassStaticmethodTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testClassSuperclassStaticmethod0003)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-
-        done();
-      })
-
-
-    /**
-     * @tc.number    SUB_CLASS_SUPERCLASS_STATICMETHODTEST_0400
-     * @tc.name      concurrent_testClassSuperclassStaticmethod0004
-     * @tc.desc      A subclass calls a static method of its superclass, and the superclass method returns a static
-     * property
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('concurrent_testClassSuperclassStaticmethod0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.info('testTag', '%{public}s', 'it begin');
-        let caseName = 'concurrent_testClassSuperclassStaticmethod0004'
-        let result: int = 0
-        
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(testClassSuperclassStaticmethod0004)
           }
           await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);

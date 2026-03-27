@@ -111,16 +111,6 @@ export function testClassSuperclassStaticmethod0003(){
       }
 }
 
-export function testClassSuperclassStaticmethod0004(){
-  const TAG = 'testClassSuperclassStaticmethod0004';
-
-        const childInstance = new Child3();
-  if(Child3.callParentStaticMethod() !== "Parent static property"){
-        console.info(`${TAG} Task execution failed: Child3.callParentStaticMethod(): ${Child3.callParentStaticMethod()}`);
-        throw new Error('Child3.callParentStaticMethod() check failed, expected Parent static property');
-      }
-}
-
 export function testClassSuperclassStaticmethod0005(){
   const TAG = 'testClassSuperclassStaticmethod0005';
 

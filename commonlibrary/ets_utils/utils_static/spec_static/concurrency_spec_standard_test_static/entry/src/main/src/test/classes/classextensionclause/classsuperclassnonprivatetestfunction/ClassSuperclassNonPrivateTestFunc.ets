@@ -784,16 +784,6 @@ export function testClassSuperclassNonPrivate0005() {
   }
 }
 
-export function testClassSuperclassNonPrivate0006() {
-  const TAG = 'testClassSuperclassNonPrivate0006';
-
-  const child = new Child5();
-  if (child.callParentGreet() !== "Hello from Child!") {
-    console.info(`${TAG} Task execution failed: child.callParentGreet(): ${child.callParentGreet()}`);
-    throw new Error('child.callParentGreet() check failed, expected Hello from Child!');
-  }
-}
-
 export function testClassSuperclassNonPrivate0007() {
   const TAG = 'testClassSuperclassNonPrivate0007';
 

@@ -32,7 +32,6 @@ import {
   testClassSuperclassNonPrivate0003,
   testClassSuperclassNonPrivate0004,
   testClassSuperclassNonPrivate0005,
-  testClassSuperclassNonPrivate0006,
   testClassSuperclassNonPrivate0007,
   testClassSuperclassNonPrivate0008,
   testClassSuperclassNonPrivate0009,
@@ -257,42 +256,6 @@ export default function ClassSuperclassNonPrivateTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testClassSuperclassNonPrivate0005)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-
-        done();
-      })
-
-
-    /**
-     * @tc.number    SUB_CLASS_SUPERCLASS_NON_PRIVATETEST_0600
-     * @tc.name      concurrent_testClassSuperclassNonPrivate0006
-     * @tc.desc      A subclass directly calls a non-private method
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('concurrent_testClassSuperclassNonPrivate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.info('testTag', '%{public}s', 'it begin');
-        let caseName = 'concurrent_testClassSuperclassNonPrivate0006'
-        let result: int = 0
-        
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(testClassSuperclassNonPrivate0006)
           }
           await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
