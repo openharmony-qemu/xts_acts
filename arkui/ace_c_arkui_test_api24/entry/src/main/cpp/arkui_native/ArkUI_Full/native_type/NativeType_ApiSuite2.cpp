@@ -371,14 +371,14 @@ static napi_value TestArkUICapi_172(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             return napiAssertErr;
         }
     }
 
-    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -406,14 +406,14 @@ static napi_value TestArkUICapi_173(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             return napiAssertErr;
         }
     }
 
-    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -795,6 +795,7 @@ static napi_value TestArkUICapi_187(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextEditorTextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2054,12 +2055,14 @@ static napi_value TestArkUICapi_236(napi_env env, napi_callback_info info)
 
     auto *fw = OH_ArkUI_FontWeightConfigs_Create();
     if (((fw)) == nullptr) {
+        OH_ArkUI_FontConfigs_Destroy(fc);
         return nullptr;
     }
 
     OH_ArkUI_FontConfigs_SetFontWeightConfigs(fc, fw);
-    OH_ArkUI_FontWeightConfigs_Destroy(fw);
+    // 先 Destroy(fc) 再 Destroy(fw)：若先释放 fw，fc 析构仍可能访问已释放对象，设备上会出现 SIGILL/App died。
     OH_ArkUI_FontConfigs_Destroy(fc);
+    OH_ArkUI_FontWeightConfigs_Destroy(fw);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -2079,17 +2082,20 @@ static napi_value TestArkUICapi_237(napi_env env, napi_callback_info info)
 
     auto *fw = OH_ArkUI_FontWeightConfigs_Create();
     if (((fw)) == nullptr) {
+        OH_ArkUI_FontConfigs_Destroy(fc);
         return nullptr;
     }
 
     OH_ArkUI_FontConfigs_SetFontWeightConfigs(fc, fw);
     auto *got = OH_ArkUI_FontConfigs_GetFontWeightConfigs(fc);
     if (((got)) == nullptr) {
+        OH_ArkUI_FontConfigs_Destroy(fc);
+        OH_ArkUI_FontWeightConfigs_Destroy(fw);
         return nullptr;
     }
 
-    OH_ArkUI_FontWeightConfigs_Destroy(fw);
     OH_ArkUI_FontConfigs_Destroy(fc);
+    OH_ArkUI_FontWeightConfigs_Destroy(fw);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 

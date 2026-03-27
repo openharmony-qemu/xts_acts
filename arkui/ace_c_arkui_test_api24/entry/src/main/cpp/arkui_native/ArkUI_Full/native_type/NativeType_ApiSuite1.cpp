@@ -965,14 +965,14 @@ static napi_value TestArkUICapi_097(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             return napiAssertErr;
         }
     }
 
-    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1002,14 +1002,14 @@ static napi_value TestArkUICapi_098(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+            OH_ArkUI_DecorationStyleOptions_Destroy(dec);
             return napiAssertErr;
         }
     }
 
-    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     OH_ArkUI_TextDataDetectorConfig_Destroy(obj);
+    OH_ArkUI_DecorationStyleOptions_Destroy(dec);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 

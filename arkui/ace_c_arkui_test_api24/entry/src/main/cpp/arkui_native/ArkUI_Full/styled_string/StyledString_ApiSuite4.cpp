@@ -184,14 +184,14 @@ static napi_value TestArkUICapi_443(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_Drawing_ColorFilterDestroy(cf);
             OH_ArkUI_ImageAttachment_Destroy(obj);
+            OH_Drawing_ColorFilterDestroy(cf);
             return napiAssertErr;
         }
     }
 
-    OH_Drawing_ColorFilterDestroy(cf);
     OH_ArkUI_ImageAttachment_Destroy(obj);
+    OH_Drawing_ColorFilterDestroy(cf);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -219,16 +219,16 @@ static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
-            OH_Drawing_ColorFilterDestroy(cfSet);
             OH_ArkUI_ImageAttachment_Destroy(obj);
+            OH_Drawing_ColorFilterDestroy(cfSet);
             return napiAssertErr;
         }
     }
 
     OH_Drawing_ColorFilter *cfGet = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
     if (cfGet == nullptr) {
-        OH_Drawing_ColorFilterDestroy(cfSet);
         OH_ArkUI_ImageAttachment_Destroy(obj);
+        OH_Drawing_ColorFilterDestroy(cfSet);
         return nullptr;
     }
 
@@ -236,16 +236,16 @@ static napi_value TestArkUICapi_444(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec2), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             OH_Drawing_ColorFilterDestroy(cfGet);
             OH_Drawing_ColorFilterDestroy(cfSet);
-            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ImageAttachment_Destroy(obj);
     OH_Drawing_ColorFilterDestroy(cfGet);
     OH_Drawing_ColorFilterDestroy(cfSet);
-    OH_ArkUI_ImageAttachment_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
