@@ -16,10 +16,10 @@ export const SWIPER_CACHED_COUNT_ROUTE_PARAM: string = 'probe';
 export const SWIPER_CACHED_COUNT_STATUS_KEY: string = 'actsAceSwiperCachedCountStatus';
 
 export class SwiperCachedCountProbeRoute {
-  static readonly BOTH_TRUE: string = 'options_both_true';
-  static readonly IS_SHOWN_ONLY: string = 'options_is_shown_only';
-  static readonly INDEPENDENT_ONLY: string = 'options_independent_only';
-  static readonly EMPTY_OPTIONS: string = 'options_empty';
+  public static readonly BOTH_TRUE: string = 'options_both_true';
+  public static readonly IS_SHOWN_ONLY: string = 'options_is_shown_only';
+  public static readonly INDEPENDENT_ONLY: string = 'options_independent_only';
+  public static readonly EMPTY_OPTIONS: string = 'options_empty';
 }
 
 function readProbeRoute(): string {

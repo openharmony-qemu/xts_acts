@@ -36,12 +36,12 @@ import type {
 
 /** Hypium 单屏路由（本文件自包含，避免依赖外部 TestShellRoute） */
 export class SubHeaderPropsInstrumentRoute {
-  static readonly SUBHEADER_V1_OPERATION: string = 'subheader_v1_operation';
-  static readonly SUBHEADER_V1_SELECT: string = 'subheader_v1_select';
-  static readonly SUBHEADER_V1_TITLE: string = 'subheader_v1_title';
-  static readonly SUBHEADER_V2_TITLE: string = 'subheader_v2_title';
-  static readonly SUBHEADER_V2_SELECT: string = 'subheader_v2_select';
-  static readonly SUBHEADER_V2_OPERATION: string = 'subheader_v2_operation';
+  public static readonly SUBHEADER_V1_OPERATION: string = 'subheader_v1_operation';
+  public static readonly SUBHEADER_V1_SELECT: string = 'subheader_v1_select';
+  public static readonly SUBHEADER_V1_TITLE: string = 'subheader_v1_title';
+  public static readonly SUBHEADER_V2_TITLE: string = 'subheader_v2_title';
+  public static readonly SUBHEADER_V2_SELECT: string = 'subheader_v2_select';
+  public static readonly SUBHEADER_V2_OPERATION: string = 'subheader_v2_operation';
 }
 
 /** 与 `main_pages.json` 中路径一致 */
@@ -67,18 +67,18 @@ interface PageSelectOptionRow {
 }
 
 class PageSelectOptions {
-  options?: PageSelectOptionRow[] = undefined;
-  selected?: number = undefined;
-  value?: ResourceStr = undefined;
-  onSelect?: (index: number, value?: string) => void = undefined;
-  defaultFocus?: boolean = undefined;
-  id?: string = undefined;
+  public options?: PageSelectOptionRow[] = undefined;
+  public selected?: number = undefined;
+  public value?: ResourceStr = undefined;
+  public onSelect?: (index: number, value?: string) => void = undefined;
+  public defaultFocus?: boolean = undefined;
+  public id?: string = undefined;
 }
 
 class PageOperationOption {
-  value?: ResourceStr = undefined;
-  action?: () => void = undefined;
-  id?: string = undefined;
+  public value?: ResourceStr = undefined;
+  public action?: () => void = undefined;
+  public id?: string = undefined;
 }
 
 class SubHeaderV1UiArgs {
