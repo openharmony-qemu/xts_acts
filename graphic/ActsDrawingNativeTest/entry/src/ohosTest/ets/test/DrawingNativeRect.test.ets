@@ -1,0 +1,884 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import libDrawingNative from 'libdrawingnative.so';
+import Utils, { Log } from './Utils.test';
+
+
+export default function DrawingNativeRectTest() {
+  describe('DrawingNativeRectTest', () => {
+    beforeAll(async () => {
+    })
+
+    beforeEach(async () => {
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.name   testRectCreateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100
+     * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectIntersectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200
+     * @tc.desc   Test for intersecting two rectangles with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectIntersectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201
+     * @tc.desc   Test for intersecting rectangles with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectJoinNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0300
+     * @tc.desc   Test for joining two rectangles with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectJoinNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0301
+     * @tc.desc   Test for joining rectangles with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetLeftNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0400
+     * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0400', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetLeftNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0401
+     * @tc.desc   Test for setting the left coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0401', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetLeftAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0402
+     * @tc.desc   Test for setting the left coordinate of a rectangle with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0402', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetLeftMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0403
+     * @tc.desc   Test for repeatedly setting and getting the left coordinate of a rectangle.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0403', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetTopNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0500
+     * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0500', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetTopNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0501
+     * @tc.desc   Test for setting the top coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0501', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetTopAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0502
+     * @tc.desc   Test for setting the top coordinate of a rectangle with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0502', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetTopMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0503
+     * @tc.desc   Test for repeatedly setting and getting the top coordinate of a rectangle.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0503', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetRightNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0600
+     * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0600', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetRightNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0601
+     * @tc.desc   Test for setting the right coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0601', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetRightAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0602
+     * @tc.desc   Test for setting the right coordinate of a rectangle with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0602', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetRightMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0603
+     * @tc.desc   Test for repeatedly setting and getting the right coordinate of a rectangle.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0603', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetBottomNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0700
+     * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0700', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetBottomNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0701
+     * @tc.desc   Test for setting the bottom coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0701', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetBottomAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0702
+     * @tc.desc   Test for setting the bottom coordinate of a rectangle with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0702', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetBottomMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0703
+     * @tc.desc   Test for repeatedly setting and getting the bottom coordinate of a rectangle.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0703', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetLeftNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0800
+     * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0800', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(16);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetLeftNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0801
+     * @tc.desc   Test for getting the left coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0801', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(17);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetTopNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0900
+     * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0900', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(18);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetTopNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0901
+     * @tc.desc   Test for getting the top coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0901', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(19);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetRightNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1000
+     * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1000', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(20);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetRightNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1001
+     * @tc.desc   Test for getting the right coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1001', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(21);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetBottomNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1100
+     * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(22);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetBottomNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1101
+     * @tc.desc   Test for getting the bottom coordinate of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1101', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(23);
+      expect(result).assertEqual(0);
+    })
+
+    // Rect GetWidth/GetHeight related test cases (5 cases)
+    /**
+     * @tc.name   testRectGetHeightNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1200
+     * @tc.desc   Test for setting coordinates and getting the height of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectOtherOperations(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetHeightNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1201
+     * @tc.desc   Test for getting the height of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectOtherOperations(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetWidthNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1300
+     * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectOtherOperations(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetWidthNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1301
+     * @tc.desc   Test for getting the width of a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectOtherOperations(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectGetWidthBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1302
+     * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1302', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectOtherOperations(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectCopyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1400
+     * @tc.desc   Test for copying a rectangle with normal parameters and checking the copied values.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1400', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectCopyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1401
+     * @tc.desc   Test for copying a rectangle with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1401', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectDestroyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1500
+     * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1500', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectDestroyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1501
+     * @tc.desc   Test for destroying a rectangle object with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1501', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectInsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600
+     * @tc.desc   Test for testRectInsetNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectInsetAbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601
+     * @tc.desc   Test for testRectInsetAbNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectInsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
+     * @tc.desc   Test for testRectInsetNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectInsetCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603
+     * @tc.desc   Test for testRectInsetCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectContainsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700
+     * @tc.desc   Test for testRectContainsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectContainsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701
+     * @tc.desc   Test for testRectContainsNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectContainsCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703
+     * @tc.desc   Test for testRectContainsCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800
+     * @tc.desc   Test for testRectSetEmptyNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetEmptyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801
+     * @tc.desc   Test for testRectSetEmptyNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSetEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802
+     * @tc.desc   Test for testRectSetEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectIsEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900
+     * @tc.desc   Test for testRectIsEmptyNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectIsEmptyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901
+     * @tc.desc   Test for testRectIsEmptyNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectIsEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902
+     * @tc.desc   Test for testRectIsEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000
+     * @tc.desc   Test for testRectOffsetNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001
+     * @tc.desc   Test for testRectOffsetNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002
+     * @tc.desc   Test for testRectOffsetAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
+     * @tc.desc   Test for testRectOffsetMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(16);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetToNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100
+     * @tc.desc   Test for testRectOffsetToNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(17);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101
+     * @tc.desc   Test for testRectOffsetToNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(18);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetToAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102
+     * @tc.desc   Test for testRectOffsetToAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(19);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectOffsetToMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103
+     * @tc.desc   Test for testRectOffsetToMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(20);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSortNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200
+     * @tc.desc   Test for testRectSortNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(21);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSortNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201
+     * @tc.desc   Test for testRectSortNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(22);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectSortMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202
+     * @tc.desc   Test for testRectSortMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(23);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectUnionNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300
+     * @tc.desc   Test for testRectUnionNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(24);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectUnionNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301
+     * @tc.desc   Test for testRectUnionNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(25);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRectUnionMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302
+     * @tc.desc   Test for testRectUnionMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRectPart2OtherOperations(26);
+      expect(result).assertEqual(0);
+    })
+  })
+}

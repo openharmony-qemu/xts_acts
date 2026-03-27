@@ -1,0 +1,1892 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import libDrawingNative from 'libdrawingnative.so';
+import Utils, { Log } from './Utils.test';
+
+
+export default function DrawingNativeCanvasTest() {
+  describe('DrawingNativeCanvasTest', () => {
+    beforeAll(async () => {
+    })
+
+    beforeEach(async () => {
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.name   testCanvasDestroyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0100
+     * @tc.desc   test for testCanvasDestroyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDestroy(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDestroyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0101
+     * @tc.desc   test for testCanvasDestroyNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0101', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDestroy(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasBindNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0200
+     * @tc.desc   test for testCanvasBindNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasBind(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasBindNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0201
+     * @tc.desc   test for testCanvasBindNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasBind(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasBindDestroyBitmap
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0202
+     * @tc.desc   test for testCanvasBindNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0202', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasBind(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasBindMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0203
+     * @tc.desc   test for testCanvasBindNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0203', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasBind(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasBindBoundaryMultipleCallsBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0204
+     * @tc.desc   test for testCanvasBindBoundaryl.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0204', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasBind(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachPenDetachPenNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0300
+     * @tc.desc   test for testCanvasAttachPenDetachPenNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachPenDetachPenNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0301
+     * @tc.desc   test for testCanvasAttachPenDetachPenNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachPenDetachPenMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0302
+     * @tc.desc   test for testCanvasAttachPenDetachPenMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0302', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachPenOnly
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0303
+     * @tc.desc   test for testCanvasAttachPenOnly.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0303', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDetachPenOnly
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0304
+     * @tc.desc   test for testCanvasDetachPenOnly.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0304', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDetach(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachPenDetachPenBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0305
+     * @tc.desc   test for testCanvasAttachPenDetachPenBounday.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0305', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachBrushDetachBrushNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0400
+     * @tc.desc   test for testCanvasAttachBrushDetachBrushNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0400', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachBrushDetachBrushNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0401
+     * @tc.desc   test for testCanvasAttachBrushDetachBrushNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0401', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachBrushDetachBrushMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0402
+     * @tc.desc   test for testCanvasAttachBrushDetachBrushMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0402', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachBrushOnly
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0403
+     * @tc.desc   test for testCanvasAttachPenOnly.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0403', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDetachBrushOnly
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0404
+     * @tc.desc   test for testCanvasDetachBrushOnly.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0404', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDetach(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasAttachBrushDetachBrushBoudary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0405
+     * @tc.desc   test for testCanvasAttachBrushDetachBrushBoudary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0405', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasAttach(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0500
+     * @tc.desc   test for testCanvasSaveNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0500', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasSave(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSavetestCanvasGetSaveCountNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0501
+     * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0501', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSave(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSavetestCanvasGetSaveCountMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0502
+     * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0502', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSave(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSavetestCanvasGetSaveCountInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0503
+     * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountInputDestroyed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0503', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSave(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasGetSaveCountWhenNoSave
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0504
+     * @tc.desc   test for testCanvasGetSaveCountWhenNoSave
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0504', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSave(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveLayerNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0600
+     * @tc.desc   test for testCanvasSaveLayerNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0600', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasSaveLayer(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveLayerNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0601
+     * @tc.desc   test for testCanvasSaveLayerNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0601', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSaveLayer(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveLayerAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0602
+     * @tc.desc   test for testCanvasSaveLayerAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0602', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSaveLayer(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveLayerRestore
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0603
+     * @tc.desc   test for testCanvasSaveLayerRestore.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0603', Level.LEVEL2, () => {
+      const result = libDrawingNative.DrawingCanvasSaveLayer(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasSaveLayerMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0604
+     * @tc.desc   test for testCanvasSaveLayerMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0604', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasSaveLayer(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0700
+     * @tc.desc   test for testCanvasRestoreNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0700', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0701
+     * @tc.desc   test for testCanvasRestoreNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0701', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0702
+     * @tc.desc   test for testCanvasRestoreMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0702', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreBeforeSave
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0703
+     * @tc.desc   test for testCanvasRestoreBeforeSave.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0703', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0704
+     * @tc.desc   test for testCanvasRestoreInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0704', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreExceededSaveSavelayerTimes
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0705
+     * @tc.desc   test for testCanvasRestoreExceededSaveSavelayerTimes.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0705', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestore(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0800
+     * @tc.desc   test for testCanvasRestoreToCountNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0800', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0801
+     * @tc.desc   test for testCanvasRestoreToCountNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0801', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0802
+     * @tc.desc   test for testCanvasRestoreToCountAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0802', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0803
+     * @tc.desc   test for testCanvasRestoreToCountMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0803', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountExceeded
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0804
+     * @tc.desc   test for testCanvasRestoreToCountExceeded.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0804', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRestoreToCountInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0805
+     * @tc.desc   test for testCanvasRestoreToCountInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0805', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRestoreToCount(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawLineNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0900
+     * @tc.desc   test for testCanvasDrawLineNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0900', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawLine(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawLineNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0901
+     * @tc.desc   test for testCanvasDrawLineNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0901', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawLine(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawLineAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0902
+     * @tc.desc   test for testCanvasDrawLineAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0902', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawLine(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawLineMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0903
+     * @tc.desc   test for testCanvasDrawLineMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0903', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawLine(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawLineInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0904
+     * @tc.desc   test for testCanvasDrawLineInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_0904', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawLine(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPathNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1000
+     * @tc.desc   test for testCanvasDrawPathNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1000', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPath(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPathNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1001
+     * @tc.desc   test for testCanvasDrawPathNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1001', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPath(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPathInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1002
+     * @tc.desc   test for testCanvasDrawPathInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1002', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPath(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1100
+     * @tc.desc   test for testCanvasDrawPixelMapRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1101
+     * @tc.desc   test for testCanvasDrawPixelMapRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1101', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1102
+     * @tc.desc   test for testCanvasDrawPixelMapRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1102', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1103
+     * @tc.desc   test for testCanvasDrawPixelMapRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1103', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRect4KBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1104
+     * @tc.desc   test for testCanvasDrawPixelMapRect4KBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1104', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1105
+     * @tc.desc   test for testCanvasDrawPixelMapRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1105', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPixelMapRect4ByteAlignment
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1106
+     * @tc.desc   test for Canvas Draw PixelMap Rect 4ByteAlignment.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1106', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBackgroundNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1200
+     * @tc.desc   test for testCanvasDrawBackgroundNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBackground(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBackgroundNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1201
+     * @tc.desc   test for testCanvasDrawBackgroundNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBackground(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBackgroundInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1202
+     * @tc.desc   test for testCanvasDrawBackgroundInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1202', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBackground(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBackgroundMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1203
+     * @tc.desc   test for testCanvasDrawBackgroundMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1203', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBackground(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRegionNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1300
+     * @tc.desc   test for testCanvasDrawRegionNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRegion(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRegionNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1301
+     * @tc.desc   test for testCanvasDrawRegionNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRegion(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRegionInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1302
+     * @tc.desc   test for testCanvasDrawRegionInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1302', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRegion(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1400
+     * @tc.desc   test for testCanvasDrawPointsNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1400', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1401
+     * @tc.desc   test for testCanvasDrawPointsNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1401', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1402
+     * @tc.desc   test for testCanvasDrawPointsAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1402', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsMismatch
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1403
+     * @tc.desc   test for testCanvasDrawPointsMismatch.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1403', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1404
+     * @tc.desc   test for testCanvasDrawPointsMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1404', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawPointsInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1405
+     * @tc.desc   test for testCanvasDrawPointsInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1405', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawPoints(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1500
+     * @tc.desc   test for testCanvasDrawBitmapNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1500', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1501
+     * @tc.desc   test for testCanvasDrawBitmapNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1501', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1502
+     * @tc.desc   test for testCanvasDrawBitmapAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1502', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1503
+     * @tc.desc   test for testCanvasDrawBitmapMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1503', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1504
+     * @tc.desc   test for testCanvasDrawBitmapInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1504', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1505
+     * @tc.desc   test for testCanvasDrawBitmapBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1505', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmap(5);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part2 DrawBitmapRect related test cases
+    /**
+     * @tc.name   testCanvasDrawBitmapRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1600
+     * @tc.desc   test for testCanvasDrawBitmapRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1600', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1601
+     * @tc.desc   test for testCanvasDrawBitmapRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1601', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1602
+     * @tc.desc   test for testCanvasDrawBitmapRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1602', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1603
+     * @tc.desc   test for testCanvasDrawBitmapRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1603', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1604
+     * @tc.desc   test for testCanvasDrawBitmapRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1604', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawBitmapRectBoundary
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1605
+     * @tc.desc   test for testCanvasDrawBitmapRectBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1605', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawBitmapRect(5);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part2 DrawRect related test cases
+    /**
+     * @tc.name   testCanvasDrawRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1700
+     * @tc.desc   test for testCanvasDrawRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1700', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1701
+     * @tc.desc   test for testCanvasDrawRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1701', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1702
+     * @tc.desc   test for testCanvasDrawRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1702', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1703
+     * @tc.desc   test for testCanvasDrawRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1703', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1704
+     * @tc.desc   test for testCanvasDrawRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1704', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part2 DrawCircle related test cases
+    /**
+     * @tc.name   testCanvasDrawCircleNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1800
+     * @tc.desc   test for testCanvasDrawCircleNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1800', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawCircle(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawCircleNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1801
+     * @tc.desc   test for testCanvasDrawCircleNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1801', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawCircle(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawCircleAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1802
+     * @tc.desc   test for testCanvasDrawCircleAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1802', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawCircle(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawCircleMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1803
+     * @tc.desc   test for testCanvasDrawCircleMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1803', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawCircle(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawCircleInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1804
+     * @tc.desc   test for testCanvasDrawCircleInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1804', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawCircle(4);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part3 DrawOval related test cases
+    /**
+     * @tc.name   testCanvasDrawOvalNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1900
+     * @tc.desc   test for testCanvasDrawOvalNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1900', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawOval(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawOvalNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1901
+     * @tc.desc   test for testCanvasDrawOvalNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1901', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawOval(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawOvalAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1902
+     * @tc.desc   test for testCanvasDrawOvalAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1902', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawOval(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawOvalMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1903
+     * @tc.desc   test for testCanvasDrawOvalMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1903', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawOval(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawOvalInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1904
+     * @tc.desc   test for testCanvasDrawOvalInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1904', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawOval(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawArcNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2000
+     * @tc.desc   test for testCanvasDrawArcNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2000', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawArc(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawArcNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2001
+     * @tc.desc   test for testCanvasDrawArcNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2001', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawArc(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawArcAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2002
+     * @tc.desc   test for testCanvasDrawArcAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2002', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawArc(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawArcMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2003
+     * @tc.desc   test for testCanvasDrawArcMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2003', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawArc(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawArcInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2004
+     * @tc.desc   test for testCanvasDrawArcInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2004', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawArc(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRoundRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2100
+     * @tc.desc   test for testCanvasDrawRoundRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2100', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRoundRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRoundRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2101
+     * @tc.desc   test for testCanvasDrawRoundRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2101', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRoundRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRoundRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2102
+     * @tc.desc   test for testCanvasDrawRoundRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2102', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRoundRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRoundRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2103
+     * @tc.desc   test for testCanvasDrawRoundRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2103', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRoundRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawRoundRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2104
+     * @tc.desc   test for testCanvasDrawRoundRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2104', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawRoundRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part3 DrawTextBlob related test cases
+    /**
+     * @tc.name   testCanvasDrawTextBlobNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2200
+     * @tc.desc   test for testCanvasDrawTextBlobNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2200', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawTextBlob(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawTextBlobNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2201
+     * @tc.desc   test for testCanvasDrawTextBlobNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2201', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawTextBlob(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawTextBlobAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2202
+     * @tc.desc   test for testCanvasDrawTextBlobAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2202', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawTextBlob(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawTextBlobMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2203
+     * @tc.desc   test for testCanvasDrawTextBlobMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2203', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawTextBlob(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawTextBlobInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2204
+     * @tc.desc   test for testCanvasDrawTextBlobInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2204', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawTextBlob(4);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part3 ClipRect related test cases
+    /**
+     * @tc.name   testCanvasClipRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2300
+     * @tc.desc   test for testCanvasClipRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2300', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasClipRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2301
+     * @tc.desc   test for testCanvasClipRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2301', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2302
+     * @tc.desc   test for testCanvasClipRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2302', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2303
+     * @tc.desc   test for testCanvasClipRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2303', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2304
+     * @tc.desc   test for testCanvasClipRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2304', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part3 ClipRoundRect related test cases
+    /**
+     * @tc.name   testCanvasClipRoundRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2400
+     * @tc.desc   test for testCanvasClipRoundRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2400', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasClipRoundRect(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRoundRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2401
+     * @tc.desc   test for testCanvasClipRoundRectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2401', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRoundRect(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRoundRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2402
+     * @tc.desc   test for testCanvasClipRoundRectAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2402', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRoundRect(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRoundRectMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2403
+     * @tc.desc   test for testCanvasClipRoundRectMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2403', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRoundRect(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipRoundRectInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2404
+     * @tc.desc   test for testCanvasClipRoundRectInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2404', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipRoundRect(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipPathNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2500
+     * @tc.desc   test for testCanvasClipPathNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2500', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasClipPath(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipPathNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2501
+     * @tc.desc   test for testCanvasClipPathNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2501', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipPath(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasClipPathInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2502
+     * @tc.desc   test for testCanvasClipPathInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2502', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasClipPath(2);
+      expect(result).assertEqual(0);
+    })
+
+    // Canvas Part3 Rotate related test cases
+    /**
+     * @tc.name   testCanvasRotateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2600
+     * @tc.desc   test for testCanvasRotateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2600', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRotateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2601
+     * @tc.desc   test for testCanvasRotateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2601', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRotateAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2602
+     * @tc.desc   test for testCanvasRotateAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2602', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRotateMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2603
+     * @tc.desc   test for testCanvasRotateMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2603', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRotateInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2604
+     * @tc.desc   test for testCanvasRotateInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2604', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasRotateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2605
+     * @tc.desc   test for testCanvasRotateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2605', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasRotate(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2700
+     * @tc.desc   test for testCanvasTranslateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2700', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2701
+     * @tc.desc   test for testCanvasTranslateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2701', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2702
+     * @tc.desc   test for testCanvasTranslateAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2702', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2703
+     * @tc.desc   test for testCanvasTranslateMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2703', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2704
+     * @tc.desc   test for testCanvasTranslateInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2704', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasTranslateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2705
+     * @tc.desc   test for testCanvasTranslateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2705', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasTranslate(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2800
+     * @tc.desc   test for testCanvasScaleNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2800', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasScale(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2801
+     * @tc.desc   test for testCanvasScaleNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2801', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasScale(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2802
+     * @tc.desc   test for testCanvasScaleAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2802', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasScale(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleMaximum
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2803
+     * @tc.desc   test for testCanvasScaleMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2803', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasScale(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleInputDestroyed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2804
+     * @tc.desc   test for testCanvasScaleInputDestroyed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2804', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasScale(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasScaleMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2805
+     * @tc.desc   test for testCanvasScaleMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_2805', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasScale(5);
+      expect(result).assertEqual(0);
+    })
+  })
+}

@@ -16,13 +16,12 @@
 #include "include/DrawingNativeColorSpaceTest.h"
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_10 10
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-constexpr int LOOP_COUNT = 10;
-
-// Common SetUp and TearDown functions implementation
 void DrawingNativeColorSpaceTestSetUp()
 {
     std::cout << "DrawingNativeColorSpaceTest Setup code called before each test case." << std::endl;
@@ -45,13 +44,11 @@ void DrawingNativeColorSpaceTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorSpaceCreateSrgbNormal()
-{
+int TestColorSpaceCreateSrgbNormal() {
     DrawingNativeColorSpaceTestSetUp();
-    OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
+    OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
     EXPECT_NE(colorSpace, nullptr);
     OH_Drawing_ColorSpaceDestroy(colorSpace);
-
     DrawingNativeColorSpaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -64,74 +61,66 @@ int TestColorSpaceCreateSrgbNormal()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceDestroyNull()
-{
+int TestColorSpaceDestroyNull() {
     DrawingNativeColorSpaceTestSetUp();
+    OH_Drawing_ColorSpace *colorSpace = nullptr;
     OH_Drawing_ColorSpaceDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
-
+    EXPECT_EQ(colorSpace, nullptr);
     DrawingNativeColorSpaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testColorSpaceCreateSrgbMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0102
  * @tc.desc   Test for creating an sRGB color space with multiple calls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceCreateSrgbMultipleCalls()
-{
+int TestColorSpaceCreateSrgbMultipleCalls() {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);
     }
-
     DrawingNativeColorSpaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testColorSpaceCreateSrgbLinearNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0200
  * @tc.desc   Test for creating an sRGB linear color space with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorSpaceCreateSrgbLinearNormal()
-{
+int TestColorSpaceCreateSrgbLinearNormal() {
     DrawingNativeColorSpaceTestSetUp();
-    OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
+    OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
     EXPECT_NE(colorSpace, nullptr);
     OH_Drawing_ColorSpaceDestroy(colorSpace);
-
     DrawingNativeColorSpaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testColorSpaceCreateSrgbLinearMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0201
  * @tc.desc   Test for creating an sRGB linear color space with multiple calls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceCreateSrgbLinearMultipleCalls()
-{
+int TestColorSpaceCreateSrgbLinearMultipleCalls() {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);
     }
-
     DrawingNativeColorSpaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

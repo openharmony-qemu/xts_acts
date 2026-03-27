@@ -1966,16 +1966,27 @@ napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    int32_t len = NUMBER_60;
-    uint8_t metaData[len];
-    for (int i = 0; i < len; ++i) {
-        metaData[i] = static_cast<uint8_t>(i);
-    }
-    int32_t flag = OH_NativeBuffer_SetMetadataValue(
-        nativeBuffer, OH_REGION_OF_INTEREST_METADATA, len, metaData);
-    if (flag != 0) {
-        napi_create_int32(env, NUMBER_4001, &result);
-        return result;
+    const char *setMetadataList[] = {
+        "10,20-30,40=2;",
+        "10,20-30,40=2;50,60,-70,80=-1",
+        "10,20-30,40;50,60,-70,80;",
+        "10,20-30,40=2;50,60,-70,80=-3;11,21,-31,41=2;51,61-71,81=-3;12,22-32,42=2;52,62-72,82=-3;",
+        "10,20-30,40=2;50,60,-70,80=-3;11,21,-31,41=2;51,61-71,81=-3;12,22-32,42=2;52,62-72,82=-3;52,62-7282=-3;",
+        "10,20-30,40;0,0-1200,2000;",
+        "10",
+        "10000"
+    };
+    for (int i = 0; i < sizeof(setMetadataList) / sizeof(setMetadataList[0]); i++) {
+        const char *setMetadata = setMetadataList[i];
+        uint8_t *getMetadata = nullptr;
+        int32_t setMetadataSize = strlen(setMetadataList[i]) + 1;
+        int32_t getMetadataSize = 0;
+        int32_t flag1 = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, setMetadataSize, (uint8_t*)setMetadata);
+        int32_t flag2 = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, &getMetadataSize, &getMetadata);
+        if (getMetadataSize != NUMBER_256 || memcmp(setMetadata, getMetadata, setMetadataSize) != 0) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, NATIVE_ERROR_OK, &result);

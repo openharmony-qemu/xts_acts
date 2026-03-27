@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "include/NapiInitCommonTest.h"
 
 napi_value DrawingCanvasDrawRecordCmd(napi_env env, napi_callback_info info)
@@ -1216,4 +1217,3 @@ napi_value DrawingFontGetWidths(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
-

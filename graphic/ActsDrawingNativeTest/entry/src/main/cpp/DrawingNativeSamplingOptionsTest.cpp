@@ -17,22 +17,15 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_2 2
+#define DRAWING_NUMBER_3 3
+#define DRAWING_NUMBER_10 10
+#define DRAWING_NUMBER_19937 19937
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-namespace {
-// Constants for test values
-constexpr int TEST_LOOP_COUNT_10 = 10;
-constexpr int TEST_RANDOM_DISTRIBUTION_MIN_0 = 0;
-constexpr int TEST_RANDOM_DISTRIBUTION_MAX_10 = 10;
-constexpr int TEST_ARRAY_SIZE_10 = 10;
-constexpr int TEST_FILTER_MODE_COUNT_2 = 2;
-constexpr int TEST_MIPMAP_MODE_COUNT_3 = 3;
-constexpr int TEST_ARRAY_INDEX_0 = 0;
-} // namespace
-
-// Common SetUp and TearDown functions implementation
 void DrawingNativeSamplingOptionsTestSetUp()
 {
     std::cout << "DrawingNativeSamplingOptionsTest Setup code called before each test case." << std::endl;
@@ -49,14 +42,13 @@ void DrawingNativeSamplingOptionsTestTearDown()
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSamplingOptionsCreateDestroyDestroyNormal()
-{
+int TestSamplingOptionsCreateDestroyDestroyNormal() {
     DrawingNativeSamplingOptionsTestSetUp();
     OH_Drawing_FilterMode filterModes[] = {
         FILTER_MODE_NEAREST,
@@ -70,7 +62,7 @@ int TestSamplingOptionsCreateDestroyDestroyNormal()
     // 1. Enumerate OH_Drawing_FilterMode and OH_Drawing_MipmapMode values with cross iteration
     for (OH_Drawing_FilterMode filterMode : filterModes) {
         for (OH_Drawing_MipmapMode mipmapMode : mipmapModes) {
-            OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
+            OH_Drawing_SamplingOptions *options = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
             // add assert
             EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
             EXPECT_NE(options, nullptr);
@@ -84,56 +76,54 @@ int TestSamplingOptionsCreateDestroyDestroyNormal()
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCreateDestroyDestroyNull()
-{
+int TestSamplingOptionsCreateDestroyDestroyNull() {
     DrawingNativeSamplingOptionsTestSetUp();
     // 1. OH_Drawing_SamplingOptionsDestroy with empty parameter
+    OH_Drawing_SamplingOptions *options = nullptr;
     OH_Drawing_SamplingOptionsDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(options, nullptr);
     DrawingNativeSamplingOptionsTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
-{
-    // 1. Call OH_Drawing_SamplingOptionsCreate 10 times with random enum values
+int TestSamplingOptionsCreateDestroyDestroyMultipleCalls() {
     DrawingNativeSamplingOptionsTestSetUp();
+    // 1. Call OH_Drawing_SamplingOptionsCreate 10 times with random enum values
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dis(TEST_RANDOM_DISTRIBUTION_MIN_0, TEST_RANDOM_DISTRIBUTION_MAX_10);
-    OH_Drawing_SamplingOptions* options[TEST_ARRAY_SIZE_10];
-    for (int i = TEST_ARRAY_INDEX_0; i < TEST_LOOP_COUNT_10; i++) {
+    std::uniform_int_distribution<int> dis(0, DRAWING_NUMBER_10);
+    OH_Drawing_SamplingOptions *options[DRAWING_NUMBER_10];
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         int random = dis(gen);
-        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % TEST_FILTER_MODE_COUNT_2);
-        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % TEST_MIPMAP_MODE_COUNT_3);
+        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % DRAWING_NUMBER_2);
+        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % DRAWING_NUMBER_3);
         options[i] = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
         EXPECT_NE(options[i], nullptr);
     }
     // 2. Call OH_Drawing_SamplingOptionsDestroy 10 times
-    for (int i = TEST_ARRAY_INDEX_0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_SamplingOptionsDestroy(options[i]);
     }
     // 3. Call OH_Drawing_SamplingOptionsCreate and OH_Drawing_SamplingOptionsDestroy alternately 10 times
-    for (int i = TEST_ARRAY_INDEX_0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         int random = dis(gen);
-        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % TEST_FILTER_MODE_COUNT_2);
-        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % TEST_MIPMAP_MODE_COUNT_3);
-        OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
+        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % DRAWING_NUMBER_2);
+        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % DRAWING_NUMBER_3);
+        OH_Drawing_SamplingOptions *options = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
         EXPECT_NE(options, nullptr);
         OH_Drawing_SamplingOptionsDestroy(options);
     }
@@ -143,18 +133,17 @@ int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
 
 /**
  * @tc.name   testSamplingOptionsCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
  * @tc.desc   test for testSamplingOptionsCopyNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSamplingOptionsCopyNormal()
-{
+int TestSamplingOptionsCopyNormal() {
     DrawingNativeSamplingOptionsTestSetUp();
-    OH_Drawing_SamplingOptions* src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
+    OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is called normally.
-    OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
+    OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
     EXPECT_NE(samplingOptions, nullptr);
     // 2. Destroy the objects created in step 1 with OH_Drawing_SamplingOptionsDestroy
     OH_Drawing_SamplingOptionsDestroy(src);
@@ -165,17 +154,16 @@ int TestSamplingOptionsCopyNormal()
 
 /**
  * @tc.name   testSamplingOptionsCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
  * @tc.desc   test for testSamplingOptionsCopyNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCopyNull()
-{
+int TestSamplingOptionsCopyNull() {
     DrawingNativeSamplingOptionsTestSetUp();
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is passed null.
-    OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCopy(nullptr);
+    OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCopy(nullptr);
     EXPECT_EQ(samplingOptions, nullptr);
     // 2. Destroy the objects created in step 1 with OH_Drawing_SamplingOptionsDestroy
     OH_Drawing_SamplingOptionsDestroy(samplingOptions);
@@ -185,19 +173,18 @@ int TestSamplingOptionsCopyNull()
 
 /**
  * @tc.name   testSamplingOptionsCopyMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0600
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
  * @tc.desc   test for testSamplingOptionsCopyMultiCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCopyMultiCalls()
-{
+int TestSamplingOptionsCopyMultiCalls() {
     DrawingNativeSamplingOptionsTestSetUp();
-    OH_Drawing_SamplingOptions* src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
-    OH_Drawing_SamplingOptions* samplingOptions = nullptr;
+    OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
+    OH_Drawing_SamplingOptions *samplingOptions = nullptr;
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is called 10 times.
-    for (int i = TEST_ARRAY_INDEX_0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
         EXPECT_NE(samplingOptions, nullptr);
     }
@@ -207,7 +194,6 @@ int TestSamplingOptionsCopyMultiCalls()
     DrawingNativeSamplingOptionsTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

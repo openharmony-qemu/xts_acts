@@ -17,19 +17,16 @@
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_10 10
+
+
+#define DRAWING_NUMBER_4096 4096
+#define DRAWING_NUMBER_2160 2160
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-namespace {
-// Constants for test values
-constexpr int COUNT_10 = 10;
-constexpr int TEST_ARRAY_INDEX_0 = 0;
-constexpr uint32_t TEST_PIXELMAP_WIDTH_4K = 4096;
-constexpr uint32_t TEST_PIXELMAP_HEIGHT_4K = 2160;
-} // namespace
-
-// Common SetUp and TearDown functions implementation
 void DrawingNativePixelMapTestSetUp()
 {
     std::cout << "DrawingNativePixelMapTest Setup code called before each test case." << std::endl;
@@ -46,19 +43,18 @@ void DrawingNativePixelMapTestTearDown()
 
 /**
  * @tc.name   testPixelMapGetFromNativePixelMapNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100
  * @tc.desc   test for testPixelMapGetFromNativePixelMapNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPixelMapGetFromNativePixelMapNormal()
-{
+int TestPixelMapGetFromNativePixelMapNormal() {
     DrawingNativePixelMapTestSetUp();
     // todo: how to get NativePixelMap_?
-    NativePixelMap_* pixelMap = nullptr;
+    NativePixelMap_ *pixelMap = nullptr;
     // 1. Call OH_Drawing_PixelMapGetFromNativePixelMap
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
     EXPECT_EQ(drPixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -66,16 +62,15 @@ int TestPixelMapGetFromNativePixelMapNormal()
 
 /**
  * @tc.name   testPixelMapGetFromNativePixelMapNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_01000
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101
  * @tc.desc   test for testPixelMapGetFromNativePixelMapNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPixelMapGetFromNativePixelMapNull()
-{
+int TestPixelMapGetFromNativePixelMapNull() {
     DrawingNativePixelMapTestSetUp();
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
     EXPECT_EQ(drPixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -83,20 +78,19 @@ int TestPixelMapGetFromNativePixelMapNull()
 
 /**
  * @tc.name   testPixelMapGetFromNativePixelMapMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
  * @tc.desc   test for testPixelMapGetFromNativePixelMapMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPixelMapGetFromNativePixelMapMultipleCalls()
-{
+int TestPixelMapGetFromNativePixelMapMultipleCalls() {
     DrawingNativePixelMapTestSetUp();
     // todo: how to get NativePixelMap_?
-    NativePixelMap_* pixelMap = nullptr;
+    NativePixelMap_ *pixelMap = nullptr;
     // 1. Call OH_Drawing_PixelMapGetFromNativePixelMap 10 times
-    for (int i = TEST_ARRAY_INDEX_0; i < COUNT_10; i++) {
-        OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
         EXPECT_EQ(drPixelMap, nullptr);
     }
     DrawingNativePixelMapTestTearDown();
@@ -105,19 +99,18 @@ int TestPixelMapGetFromNativePixelMapMultipleCalls()
 
 /**
  * @tc.name   testPixelMapGetFromNativePixelMapBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
  * @tc.desc   test for testPixelMapGetFromNativePixelMapBoundary.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPixelMapGetFromNativePixelMapBoundary()
-{
+int TestPixelMapGetFromNativePixelMapBoundary() {
     DrawingNativePixelMapTestSetUp();
     // todo: how to get NativePixelMap_?
-    NativePixelMap_* pixelMap = nullptr;
+    NativePixelMap_ *pixelMap = nullptr;
     // 1. Call OH_Drawing_PixelMapGetFromNativePixelMap
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
     EXPECT_EQ(drPixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -125,18 +118,17 @@ int TestPixelMapGetFromNativePixelMapBoundary()
 
 /**
  * @tc.name   testPixelMapGetFromOhPixelMapNativeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200
  * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPixelMapGetFromOhPixelMapNativeNormal()
-{
+int TestPixelMapGetFromOhPixelMapNativeNormal() {
     DrawingNativePixelMapTestSetUp();
-    OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative();
+    OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     // add assert
     EXPECT_NE(drPixelMap, nullptr);
     // 2. Release memory
@@ -148,18 +140,17 @@ int TestPixelMapGetFromOhPixelMapNativeNormal()
 
 /**
  * @tc.name   testPixelMapGetFromOhPixelMapNativeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201
  * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPixelMapGetFromOhPixelMapNativeNull()
-{
+int TestPixelMapGetFromOhPixelMapNativeNull() {
     DrawingNativePixelMapTestSetUp();
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative with nullptr as parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(nullptr);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(nullptr);
     EXPECT_EQ(drPixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -167,19 +158,18 @@ int TestPixelMapGetFromOhPixelMapNativeNull()
 
 /**
  * @tc.name   testPixelMapGetFromOhPixelMapNativeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0600
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202
  * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
-{
+int TestPixelMapGetFromOhPixelMapNativeMultipleCalls() {
     DrawingNativePixelMapTestSetUp();
-    OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative();
+    OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative 10 times
-    for (int i = TEST_ARRAY_INDEX_0; i < COUNT_10; i++) {
-        OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
         // add assert
         EXPECT_NE(drPixelMap, nullptr);
         OH_Drawing_PixelMapDissolve(drPixelMap);
@@ -191,22 +181,21 @@ int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
 
 /**
  * @tc.name   testPixelMapGetFromOhPixelMapNativeBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0700
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203
  * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeBoundary.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPixelMapGetFromOhPixelMapNativeBoundary()
-{
+int TestPixelMapGetFromOhPixelMapNativeBoundary() {
     DrawingNativePixelMapTestSetUp();
-    uint32_t width = TEST_PIXELMAP_WIDTH_4K;
-    uint32_t height = TEST_PIXELMAP_HEIGHT_4K;
-    OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative(width, height);
+    uint32_t width = DRAWING_NUMBER_4096;
+    uint32_t height = DRAWING_NUMBER_2160;
+    OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative(width, height);
     // add assert
     EXPECT_EQ(pixelMap, nullptr);
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     // add assert
     EXPECT_EQ(drPixelMap, nullptr);
     // 2. Release memory
@@ -219,20 +208,19 @@ int TestPixelMapGetFromOhPixelMapNativeBoundary()
 
 /**
  * @tc.name   testPixelMapDissolveNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0800
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300
  * @tc.desc   test for testPixelMapDissolveNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPixelMapDissolveNormal()
-{
+int TestPixelMapDissolveNormal() {
     DrawingNativePixelMapTestSetUp();
-    OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative();
+    OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
     // add assert
     EXPECT_NE(pixelMap, nullptr);
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative
-    OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
+    OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     // add assert
     EXPECT_NE(drPixelMap, nullptr);
     // 2. Call OH_Drawing_PixelMapDissolve
@@ -244,19 +232,18 @@ int TestPixelMapDissolveNormal()
 
 /**
  * @tc.name   testPixelMapDissolveNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PIXEL_MAP_0900
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301
  * @tc.desc   test for testPixelMapDissolveNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPixelMapDissolveNull()
-{
+int TestPixelMapDissolveNull() {
     DrawingNativePixelMapTestSetUp();
     // 1. OH_Drawing_PixelMapDissolve parameter is null
+    OH_Drawing_PixelMap *pixelMap = nullptr;
     OH_Drawing_PixelMapDissolve(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(pixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
