@@ -425,7 +425,7 @@ export default function AVImageGeneratorTest() {
                     expect().assertFail()
                 };
             });
-
+        })
         /**
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
