@@ -17,7 +17,7 @@ import i18nStageTest from './i18nstage.test.ets'
 import FivePointOne_i18nStageTest from './FivePointOne_i18nstage.test.ets'
 import SixPointZeroI18nStageTest from './SixPointZeroI18nStage.test.ets';
 import InterfaceNullValueOverrideTest from './InterfaceNullValueOverride.test.ets'
-import SevenPointZeroI18nStageTest from './SevenPointZeroI18nStage.test.ets
+import SevenPointZeroI18nStageTest from './SevenPointZeroI18nStage.test.ets'
 
 export default function testsuite() {
   i18nStageTest()
