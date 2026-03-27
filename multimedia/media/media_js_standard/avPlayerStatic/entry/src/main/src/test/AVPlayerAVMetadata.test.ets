@@ -1108,9 +1108,9 @@ export default function AVMetadata() {
         extractor.release();
         console.info(`Released AVMetadataExtractor successfully`);
       } catch (error) {
-        console.error(`Failed to released AVMetadataExtractor: ${error}`);
+        console.error(`Failed to release AVMetadataExtractor: ${error}`);
       }
-      done;
+      done();
     });
 
     /**
@@ -1122,17 +1122,17 @@ export default function AVMetadata() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info(`AVPlayerReleasetTest SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100 start`);
+      console.info('AVPlayerReleasetTest SUB_MULTIMEDIA_AV_PLAYER_AVMETADATA_FUNCTION_static_0100 start');
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       if(!avMetadataExtractor){
-        console.info(`AVMetadataExtractor create failed. Received null or undefined`);
+        console.info('AVMetadataExtractor create failed. Received null or undefined');
       }
       try{
         await avMetadataExtractor!!.release();
-        console.info(`Succeeded in releasing`);
+        console.info('Succeeded in releasing');
         done();
       } catch (err) {
-        console.error(`Failed to releas, error: ` + JSON.stringify(err));
+        console.error('Failed to releas, error: ' + JSON.stringify(err));
         expect().assertFail();
       }
     });
