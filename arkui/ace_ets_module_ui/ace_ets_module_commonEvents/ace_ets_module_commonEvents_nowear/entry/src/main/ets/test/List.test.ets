@@ -44,6 +44,7 @@ import gestureDefine6 from './customGestureTest/gestureParallel.test';
 import SwipeGestureExample01Test from './SwipeGesture/SwipeGestureExample01Test.test';
 import SwipeGestureExample02Test from './SwipeGesture/SwipeGestureExample02Test.test';
 import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
+import CursorControlSetCursorTest from './cursorControl/setCursorNullAndUndefinedTest.test';
 
 export default function testsuite() {
   textAreaInputTest()
@@ -76,4 +77,5 @@ export default function testsuite() {
   columnMonopolizeFalse();
   listMonopolize();
   gestureDefine6();
+  CursorControlSetCursorTest();
 }

@@ -22,18 +22,19 @@ import call from  '@ohos.telephony.call'
 import audioSessionManagerTest from  './AudioSessionManager.test'
 import audioSessionManagerErrorTest from  './AudioSessionManagerError.test'
 import audioLoudnessGainTest from  './AudioLoudnessGain.test'
-
+import audioGetRendererInfoTest from  './AudioGetRendererInfo.test'
 
 let voice = call.hasVoiceCapability()
 export default function testsuite() {
     if (voice){
+        AudioRendererInterruptUnitTest()
         audioLoudnessGainTest()
         audioSessionManagerTest()
-        audioRendererTest()
-        AudioRendererInterruptUnitTest()
+        audioRendererTest()        
         AudioEffectTest()
         maxAmplitudeFor()
         audioSessionManagerErrorTest()
+        audioGetRendererInfoTest()
     }else{
         audioRendererTestPc();
     }

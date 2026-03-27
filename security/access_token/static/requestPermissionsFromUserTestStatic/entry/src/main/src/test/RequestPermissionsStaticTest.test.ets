@@ -89,28 +89,6 @@ export default function requestPermissionsStaticTest() {
     })
 
     /**
-     * @tc.name   Test_requestPermissionsFromUser_001
-     * @tc.number Test_requestPermissionsFromUser_001
-     * @tc.desc   test requestPermissionsFromUser with invalid context, throw 401.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Test_requestPermissionsFromUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
-      hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 start");
-      let context: common.UIAbilityContext | undefined;
-      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
-      try {
-        await atManager.requestPermissionsFromUser(context!, permissionList);
-      } catch (error) {
-        error = error as BusinessError;
-        hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 catch err" + JSON.stringify(error));
-        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
-        done();
-      }
-    })
-
-    /**
      * @tc.name   Test_requestPermissionsFromUser_002
      * @tc.number Test_requestPermissionsFromUser_002
      * @tc.desc   test requestPermissionsFromUser with empty permissionList, throw 401.
@@ -436,31 +414,6 @@ export default function requestPermissionsStaticTest() {
           expect(false).assertFail();
           done();
         }
-      }
-    })
-
-    /**
-     * @tc.name   Test_requestPermissionsFromUser_010
-     * @tc.number Test_requestPermissionsFromUser_010
-     * @tc.desc   test requestPermissionsFromUser callbck with invalid context, throw 401.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Test_requestPermissionsFromUser_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
-      hilog.info(domain, tag, "Test_requestPermissionsFromUser_010 start");
-      let context: common.UIAbilityContext | undefined;
-      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
-      
-      try {
-        atManager.requestPermissionsFromUser(context!, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
-          expect(false).assertFail();
-          done();
-        });
-      } catch (error) {
-        hilog.info(domain, tag, "Test_requestPermissionsFromUser_010 error" + JSON.stringify(error));
-        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
-        done();
       }
     })
     

@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function showActionMenuFalse() {
   describe('showActionMenuFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showActionMenuFalse beforeAll start");
 
 

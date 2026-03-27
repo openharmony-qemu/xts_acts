@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchOnWillInsert() {
   describe('SearchOnWillInsert', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnWillInsert beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

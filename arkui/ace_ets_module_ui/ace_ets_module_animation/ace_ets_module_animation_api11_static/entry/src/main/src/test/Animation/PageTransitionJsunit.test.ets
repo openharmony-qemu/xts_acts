@@ -28,7 +28,7 @@ import { RecordData } from '@ohos.base';
 export default function pageTransitionJsunit() {
   describe('pageTransitionJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("pageTransitionJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

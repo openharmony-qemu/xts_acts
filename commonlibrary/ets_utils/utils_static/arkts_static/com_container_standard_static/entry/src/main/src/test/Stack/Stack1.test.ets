@@ -36,7 +36,7 @@ class C1 {
 }
 export default function StackTest1() {
   describe('StackTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

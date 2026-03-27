@@ -25,7 +25,7 @@ import {UtilsTest,startAbility} from '../Util.test'
 
 export default function UIObserverWillDrawTest() {
   describe('UIObserverWillDrawTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIObserverWillDrawTest beforeEach start");
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

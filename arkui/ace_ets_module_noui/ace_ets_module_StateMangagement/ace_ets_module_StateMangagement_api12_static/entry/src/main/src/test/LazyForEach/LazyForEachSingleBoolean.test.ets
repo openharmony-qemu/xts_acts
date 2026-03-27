@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LazyForEachSingleBoolean() {
   describe('LazyForEachSingleBoolean', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachSingleBoolean beforeEach start");
 
 

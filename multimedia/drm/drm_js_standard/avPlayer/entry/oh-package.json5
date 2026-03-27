@@ -21,6 +21,6 @@
   "main": "",
   "version": "1.0.0",
   "dependencies": {
-    "@ohos/hypium": "1.0.25"
+    "@ohos/hypium": "1.0.26"
   }
 }

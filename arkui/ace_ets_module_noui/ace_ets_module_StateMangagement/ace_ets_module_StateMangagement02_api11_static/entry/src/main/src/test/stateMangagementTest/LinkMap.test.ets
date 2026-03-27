@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LinkMap() {
   describe('LinkMap', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LinkMap beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

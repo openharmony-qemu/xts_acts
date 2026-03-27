@@ -46,7 +46,7 @@
     ],
     "extensionAbilities": [
       {
-        "srcEntry": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ts",
+        "srcEntry": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ets",
         "name": "com.example.myapplication.EnterpriseAdminAbility",
         "icon": "$media:icon",
         "description": "",
@@ -201,7 +201,10 @@
       },
  	    {
  	      "name": "ohos.permission.ENTERPRISE_READ_LOG"
- 	    }
+ 	    },
+      {
+        "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
+      }
     ]
   }
 }

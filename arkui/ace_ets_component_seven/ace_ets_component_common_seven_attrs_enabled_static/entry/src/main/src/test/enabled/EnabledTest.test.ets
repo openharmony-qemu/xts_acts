@@ -65,7 +65,7 @@ export default function enabledTest() {
    * Create test suite.
    */
   describe('enabledTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000)
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

@@ -18,6 +18,8 @@
 
 // 功能测试函数声明
 extern void CleanupResources();
+extern int DemuxerFunction0200();
+extern int DemuxerFunction0300();
 extern int DemuxerFunction0400();
 extern int DemuxerFunction0500();
 extern int DemuxerFunction0700();

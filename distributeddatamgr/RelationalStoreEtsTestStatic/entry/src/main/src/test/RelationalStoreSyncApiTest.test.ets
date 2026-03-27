@@ -42,31 +42,6 @@ const STORE_CONFIG2: data_Rdb.StoreConfig = {
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
 const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS employee (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, " + "age INTEGER, " + "dec TEXT)";
 
-const dbName = "12345.db"
-const dbPath = "/data/storage/el2/database/relationalstore/rdb/" + dbName;
-const dbPathWal = "/data/storage/el2/database/relationalstore/rdb/" + dbName + "-wal";
-const dbPathShm = "/data/storage/el2/database/relationalstore/rdb/" + dbName + "-shm";
-let num ='a'.repeat((1024 * 1024-10));
-let num1 = "p".repeat((1024 * 1024));
-async function CreateCorruptDb() {
-  try {
-    let fileExist = fs.accessSync(dbPath);
-    console.info(TAG + "fileExist:"+fileExist)
-    expect(fileExist).assertTrue();
-    fs.truncateSync(dbPathWal, 4)
-    fs.truncateSync(dbPathShm, 4)
-    let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE);
-    fs.truncateSync(file.fd, 4);
-    fs.fsyncSync(file.fd)
-    fs.closeSync(file)
-  } catch (err) {
-    console.info(TAG, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
-  }
-  console.info(TAG, `quit create corrupt store`);
-}
-
-
-
 export default function RelationalStoreSyncApiTest() {
   describe('RelationalStoreSyncApiTest', () => {
     beforeAll(async () => {

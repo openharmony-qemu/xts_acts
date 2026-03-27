@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function Matrix2DTest() {
   describe('Matrix2DTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Matrix2DTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")

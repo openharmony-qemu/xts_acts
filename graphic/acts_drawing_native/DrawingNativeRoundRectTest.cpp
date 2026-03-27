@@ -423,9 +423,9 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNormal, Function | Smal
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectDestroy with nullptr as the parameter
+    OH_Drawing_RoundRect *roundRect = nullptr;
     OH_Drawing_RoundRectDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(roundRect, nullptr);
 }
 
 /**

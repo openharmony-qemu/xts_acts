@@ -62,6 +62,55 @@ export default function MechanicManagerAPI() {
       // await clickRequestPermission(CLOSE_BT_TEXT);
       done();
     });
+
+        /**
+     * @tc.name   SUB_DH_MechanicManager_on_0900
+     * @tc.number SUB_DH_MechanicManager_on_0900
+     * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0900 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_0900 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0900 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_0900 end-----------------");
+          }
+        });
+
+        /**
+     * @tc.name   SUB_DH_MechanicManager_on_1000
+     * @tc.number SUB_DH_MechanicManager_on_1000
+     * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1000 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1000 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1000 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1000 end-----------------");
+          }
+        });
+
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0100
      * @tc.number SUB_DH_MechanicManager_on_0100
@@ -72,15 +121,16 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_on_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log("-----------------SUB_DH_MechanicManager_on_0100 begin-----------------");
+      let flag = 0;
       try {
         mechanicManager.on("attachStateChange", (data) => {
           console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
         });
         console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success");
-        expect(true).assertTrue();
+        expect(flag == 0).assertTrue();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect(false).assertFail();
+        expect().assertFail();
       }
       console.log("-----------------SUB_DH_MechanicManager_on_0100 end-----------------");
     });
@@ -98,7 +148,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.on("attachStateChange", null);
         console.info("SUB_DH_MechanicManager_on_0200 mechanicManager.on success" + ",expect fail");
-        expect().assertFalse()
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0200 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -117,13 +167,13 @@ export default function MechanicManagerAPI() {
     it("SUB_DH_MechanicManager_on_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_on_0300 begin-----------------");
       try {
-        mechanicManager.on("attachStateChange",undefined);
+        mechanicManager.on("attachStateChange", undefined);
         console.info("SUB_DH_MechanicManager_on_0300 mechanicManager.on success" + ",expect fail");
-        expect().assertFalse()
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0300 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
-        }
+      }
       console.info("-----------------SUB_DH_MechanicManager_on_0300 end-----------------");
     });
 
@@ -137,15 +187,16 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_off_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0100 begin-----------------");
+      let flag = 0;
       try {
         mechanicManager.off("attachStateChange", (data) => {
           console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
         });
         console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success");
-        expect(true).assertTrue();
+        expect(flag == 0).assertTrue();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(false).assertFail();
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0100 end-----------------");
     });
@@ -163,7 +214,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.off("attachStateChange");
         console.log("SUB_DH_MechanicManager_off_0200 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 33300001).assertTrue();
@@ -182,14 +233,62 @@ export default function MechanicManagerAPI() {
     it("SUB_DH_MechanicManager_off_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0300 begin-----------------");
       try {
-        mechanicManager.off("attachStateChange",null);
+        mechanicManager.off("attachStateChange", null);
         console.log("SUB_DH_MechanicManager_off_0300 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0300 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_0900
+     * @tc.number SUB_DH_MechanicManager_off_0900
+     * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0900 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_0900 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0900 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_0900 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1000
+     * @tc.number SUB_DH_MechanicManager_off_1000
+     * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1000 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1000 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1000 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1000 end-----------------");
     });
 
     /**
@@ -203,9 +302,9 @@ export default function MechanicManagerAPI() {
     it("SUB_DH_MechanicManager_off_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0400 begin-----------------");
       try {
-        mechanicManager.off("attachStateChange",undefined);
+        mechanicManager.off("attachStateChange", undefined);
         console.log("SUB_DH_MechanicManager_off_0400 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0400 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -256,7 +355,7 @@ export default function MechanicManagerAPI() {
             expect(mechInfos).assertDeepEquals([]);
           }
           console.info('SUB_DH_MechanicManager_getAttachedMechDevices_0200 设备列表: ' + JSON.stringify(mechInfos));
-          expect(mechInfos[0]!=null).assertTrue();
+          expect(mechInfos[0] != null).assertTrue();
         } catch (error) {
           console.error('SUB_DH_MechanicManager_getAttachedMechDevices_0200 查询失败, code: ' + error.code +
             ' message: ' + error.message);
@@ -278,10 +377,10 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.setCameraTrackingEnabled(true);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 Enable Tracking Success');
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002||error.code == 33300003).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 end-----------------");
     });
@@ -299,10 +398,10 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.setCameraTrackingEnabled(false);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 Enable Tracking Success');
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002||error.code == 33300003).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 end-----------------");
     });
@@ -320,7 +419,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.setCameraTrackingEnabled(null);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 Enable Tracking Success');
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -341,7 +440,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.setCameraTrackingEnabled(undefined);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 Enable Tracking Success');
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -362,10 +461,10 @@ export default function MechanicManagerAPI() {
       try {
         let enabled = mechanicManager.getCameraTrackingEnabled();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 current tracking status:' ${enabled}`);
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 end-----------------");
     });
@@ -382,7 +481,7 @@ export default function MechanicManagerAPI() {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 begin-----------------");
       try {
         let enabled = mechanicManager.getCameraTrackingEnabled();
-        if (!enabled){
+        if (!enabled) {
           console.log("getCameraTrackingEnabled SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 fail");
           expect(enabled).assertFalse();
         }
@@ -390,7 +489,7 @@ export default function MechanicManagerAPI() {
         expect(enabled).assertTrue();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 end-----------------");
     });
@@ -408,7 +507,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.on("trackingStateChange", (data) => {
           console.log("SUB_DH_MechanicManager_on_0400 mechanicManager.on success, data:" + JSON.stringify(data));
-          expect(false).assertFail();
+          expect().assertFail();
         });
         console.log("SUB_DH_MechanicManager_on_0400 mechanicManager.on success" + ",expect fail");
       } catch (error) {
@@ -431,12 +530,60 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.on("trackingStateChange", null);
         console.info("SUB_DH_MechanicManager_on_0500 mechanicManager.on success" + ",expect fail");
-        expect().assertFalse()
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0500 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
         console.info("-----------------SUB_DH_MechanicManager_on_0500 end-----------------");
       }
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_on_1100
+     * @tc.number SUB_DH_MechanicManager_on_1100
+     * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1100 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_1100 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1100 end-----------------");
+          }
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_on_1200
+     * @tc.number SUB_DH_MechanicManager_on_1200
+     * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1200 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1200 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1200 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1200 end-----------------");
+          }
     });
 
     /**
@@ -452,7 +599,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.on("trackingStateChange", undefined);
         console.info("SUB_DH_MechanicManager_on_0600 mechanicManager.on success" + ",expect fail");
-        expect().assertFalse()
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0600 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -473,10 +620,9 @@ export default function MechanicManagerAPI() {
       try {
         let callback = (result: mechanicManager.TrackingEventInfo) => {
           console.info(`'SUB_DH_MechanicManager_on_0700 callback result: ' ${JSON.stringify(result)}`);
-          expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_ENABLED ||
-            result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_DISABLED ||
-            result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_LAYOUT_CHANGED
-          ).assertTrue();
+          expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_ENABLED).assertTrue();
+          expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_DISABLED).assertTrue();
+          expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_LAYOUT_CHANGED).assertTrue();
           done();
         };
         console.info('SUB_DH_MechanicManager_on_0700 Register');
@@ -495,7 +641,7 @@ export default function MechanicManagerAPI() {
       done();
       console.log("-----------------SUB_DH_MechanicManager_on_0700 end-----------------");
     });
- 
+
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0800
      * @tc.number SUB_DH_MechanicManager_on_0800
@@ -509,8 +655,8 @@ export default function MechanicManagerAPI() {
       try {
         let callback = (result: mechanicManager.AttachStateChangeInfo) => {
           console.info(`'SUB_DH_MechanicManager_on_0800 callback result: ' ${JSON.stringify(result)}`);
-          expect(result.state === mechanicManager.AttachState.ATTACHED ||
-            result.state === mechanicManager.AttachState.DETACHED).assertTrue();
+          expect(result.state).assertEqual(mechanicManager.AttachState.ATTACHED);
+          expect(result.state).assertEqual(mechanicManager.AttachState.DETACHED);
           expect(result.mechInfo[0].mechId == 0).assertTrue();
           expect(result.mechInfo[0].mechDeviceType == 0).assertTrue();
           expect(result.mechInfo[0].mechName == "Osmo Mobile 7P").assertTrue();
@@ -538,15 +684,16 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_off_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0500 begin-----------------");
+      let flag = 0;
       try {
         mechanicManager.off("trackingStateChange", (data) => {
           console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
         });
         console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success");
-        expect(true).assertTrue();
+        expect(flag == 0).assertTrue();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0500 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(false).assertFail();
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0100 end-----------------");
     });
@@ -563,7 +710,7 @@ export default function MechanicManagerAPI() {
       try {
         mechanicManager.off("trackingStateChange");
         console.log("SUB_DH_MechanicManager_off_0600 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0600 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 33300001).assertTrue();
@@ -582,14 +729,62 @@ export default function MechanicManagerAPI() {
     it("SUB_DH_MechanicManager_off_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0700 begin-----------------");
       try {
-        mechanicManager.off("trackingStateChange",null);
+        mechanicManager.off("trackingStateChange", null);
         console.log("SUB_DH_MechanicManager_off_0700 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0700 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0700 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1100
+     * @tc.number SUB_DH_MechanicManager_off_1100
+     * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1100 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_1100 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1200
+     * @tc.number SUB_DH_MechanicManager_off_1200
+     * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1200 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1200 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1200 end-----------------");
     });
 
     /**
@@ -603,9 +798,9 @@ export default function MechanicManagerAPI() {
     it("SUB_DH_MechanicManager_off_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_off_0800 begin-----------------");
       try {
-        mechanicManager.off("trackingStateChange",undefined);
+        mechanicManager.off("trackingStateChange", undefined);
         console.log("SUB_DH_MechanicManager_off_0800 mechanicManager.off success");
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_off_0800 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
@@ -626,10 +821,10 @@ export default function MechanicManagerAPI() {
       try {
         let layout = mechanicManager.getCameraTrackingLayout();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0100 Query layout successful, current layout:' ${layout}`);
-        expect(false).assertFail();
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0100 end-----------------");
     });
@@ -647,10 +842,13 @@ export default function MechanicManagerAPI() {
       try {
         let layout = mechanicManager.getCameraTrackingLayout();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
-        expect(layout).assertEqual("CameraTrackingLayout");
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.DEFAULT);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.LEFT);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.MIDDLE);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+        expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
     });
@@ -677,7 +875,7 @@ export default function MechanicManagerAPI() {
         expect(CAMERA_TRACKING_LAYOUT_CHANGED).assertEqual(2)
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_enumerated_0100 print failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFalse()
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_enumerated_0100 end-----------------");
     });
@@ -698,7 +896,7 @@ export default function MechanicManagerAPI() {
         expect(GIMBAL_DEVICE).assertEqual(0)
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_enumerated_0200 print failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFalse()
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_enumerated_0200 end-----------------");
     });
@@ -722,7 +920,7 @@ export default function MechanicManagerAPI() {
         expect(DETACHED).assertEqual(1)
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_enumerated_0300 print failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFalse()
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_enumerated_0300 end-----------------");
     });
@@ -752,7 +950,7 @@ export default function MechanicManagerAPI() {
         expect(RIGHT).assertEqual(3)
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_enumerated_0400 print failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFalse()
+        expect().assertFail();
       }
       console.info("-----------------SUB_DH_MechanicManager_enumerated_0400 end-----------------");
     });

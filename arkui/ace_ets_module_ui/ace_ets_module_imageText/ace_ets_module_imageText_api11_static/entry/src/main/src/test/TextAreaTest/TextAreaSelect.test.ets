@@ -39,7 +39,7 @@ export default function TextAreaSelectTest() {
 
 
   describe('TextAreaSelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaSelectTest beforeEach start");
 
 

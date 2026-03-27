@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnWidthHeight_SubChange() {
   describe('ColumnSetWidthHeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetVisibility_SubChange beforeEach start");
 
 

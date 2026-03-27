@@ -25,11 +25,14 @@ struct showDialogLevelOrder {
       Row({ space: 5 }) {
         Button('100')
           .id('100')
-          .height('8%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(100),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -42,11 +45,14 @@ struct showDialogLevelOrder {
           })
         Button('undefined')
           .id('undefined')
-          .height('8%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(undefined),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -58,16 +64,16 @@ struct showDialogLevelOrder {
             })
           })
 
-      }
-
-      Row({ space: 5 }) {
         Button('100001')
           .id('100001')
-          .height('5%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(100001),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -78,13 +84,20 @@ struct showDialogLevelOrder {
               ]
             })
           })
+
+      }
+
+      Row({ space: 5 }) {
         Button('-100001')
           .id('-100001')
-          .height('5%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(-100001),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -95,16 +108,16 @@ struct showDialogLevelOrder {
               ]
             })
           })
-      }
-
-      Row({ space: 5 }) {
         Button('100000')
           .id('100000')
-          .height('5%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(100000),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -117,11 +130,14 @@ struct showDialogLevelOrder {
           })
         Button('-100000')
           .id('-100000')
-          .height('5%')
+          .fontSize(9)
+          .width(50)
+          .height(10)
           .onClick(() => {
             this.promptAction.showDialog({
               title: 'showDialog',
               levelOrder: LevelOrder.clamp(-100000),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               isModal: false,
               buttons: [
@@ -136,7 +152,9 @@ struct showDialogLevelOrder {
 
       Button('get showDialogOrder')
         .id('myOrder')
-        .height('5%')
+        .fontSize(9)
+        .width(50)
+        .height(10)
         .onClick(() => {
           let showDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showDialogOrder !== undefined) {
@@ -145,6 +163,7 @@ struct showDialogLevelOrder {
         })
     }
     .justifyContent(FlexAlign.Start)
+    .margin({top:20})
     .height('100%')
     .width('100%')
   }

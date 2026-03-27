@@ -83,7 +83,7 @@ export default function AccessibilityTextTest() {
    * Create test suite.
    */
   describe('accessibilityTextTest', () => {
-beforeAll(() => {
+beforeAll(async (): Promise<void> => {
   console.info("markAnchorTest beforeAll start");
   
   

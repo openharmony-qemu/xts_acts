@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function outline() {
   describe('outline', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("outline beforeEach start");
 
 

@@ -664,6 +664,8 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_NEXTGROUP == 2729);
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_ACCEPT == 2730);
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_CANCEL == 2731);
+        ExpectTrue(KeyCode.KEYCODE_MOUSE_ASSISTANT == 2732);
+        ExpectTrue(KeyCode.KEYCODE_MOUSE_INTELLIGENCE_SELECTION == 2733);
         ExpectTrue(KeyCode.KEYCODE_FRONT == 2800);
         ExpectTrue(KeyCode.KEYCODE_SETUP == 2801);
         ExpectTrue(KeyCode.KEYCODE_WAKEUP == 2802);
@@ -775,6 +777,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_DAGGER_CLICK == 3211);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_DOUBLE_CLICK == 3212);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_LONG_PRESS == 3213);
+        expect(KeyCode.KEYCODE_DIV).assertEqual(3220);
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

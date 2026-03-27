@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperAutoPlay_3() {
   describe('swiperAutoPlayTest04', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperAutoPlay_3 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

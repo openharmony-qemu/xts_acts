@@ -63,8 +63,8 @@ export default function ConnectedTagErrorTest() {
                     expect().assertFail();
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0100 initialize failed, code is ${error.code}, message is ${error.message}`)
-                    if(error.code==801||error.code==3200101||error.code==201){
-                        expect(true).assertTrue();
+                    if(error.code===801||error.code===3200101||error.code===201){
+                        expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                     }else{
                         expect().assertFail();
                     }
@@ -92,11 +92,11 @@ export default function ConnectedTagErrorTest() {
                 try{
                     let uninittag = connectedTag.uninitialize();
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0200 uninitialize success: " + uninittag );
-                    expect(true).assertTrue();
+                    
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0200 uninitialize failed, code is ${error.code}, message is ${error.message}`)
-                    if(error.code==801||error.code==3200101||error.code==201){
-                        expect(true).assertTrue();
+                    if(error.code===801||error.code===3200101||error.code===201){
+                        expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                     }else{
                         expect().assertFail();
                     }
@@ -128,8 +128,8 @@ export default function ConnectedTagErrorTest() {
                         expect().assertFail();
                     }catch(error){
                         console.error(`read promise failed,code is ${error.code}, message is ${error.message}`)
-                        if(error.code==801||error.code==3200101||error.code==201){
-                            expect(true).assertTrue();
+                        if(error.code===801||error.code===3200101||error.code===201){
+                            expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                         }else{
                             expect().assertFail();
                         }
@@ -161,8 +161,8 @@ export default function ConnectedTagErrorTest() {
                         (error, data) => {
                             if (error) {
                                 console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0400 read callback failed,code is ${error.code}, message is ${error.message}`)
-                                if(error.code==801||error.code==3200101||error.code==201){
-                                    expect(true).assertTrue();
+                                if(error.code===801||error.code===3200101||error.code===201){
+                                    expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                                 }else{
                                     expect().assertFail();
                                 }
@@ -173,8 +173,8 @@ export default function ConnectedTagErrorTest() {
                         });
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0400 read callback failed,code is ${error.code}, message is ${error.message}`)
-                    if(error.code==801||error.code==3200101||error.code==201){
-                        expect(true).assertTrue();
+                    if(error.code===801||error.code===3200101||error.code===201){
+                        expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                     }else{
                         expect().assertFail();
                     }
@@ -205,11 +205,11 @@ export default function ConnectedTagErrorTest() {
                         let rawData=[0x03,0x01,0x00];
                         let result=await connectedTag.write(rawData);
                         console.info("[SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0500 connectedTag write promise successful:]"+JSON.stringify(result))
-                        expect(true).assertTrue();
+                        
                     }catch(error){
                         console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0500 write promise failed,code is ${error.code}, message is ${error.message}`)
-                        if(error.code==801||error.code==3200101||error.code==201){
-                            expect(true).assertTrue();
+                        if(error.code===801||error.code===3200101||error.code===201){
+                            expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                         }else{
                             expect().assertFail();
                         }
@@ -242,8 +242,8 @@ export default function ConnectedTagErrorTest() {
                         (error, data) => {
                             if (error) {
                                 console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0600 write callback failed,code is ${error.code}, message is ${error.message}`)
-                                if(error.code==801||error.code==3200101||error.code==201){
-                                    expect(true).assertTrue();
+                                if(error.code===801||error.code===3200101||error.code===201){
+                                    expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                                 }else{
                                     expect().assertFail();
                                 }
@@ -254,8 +254,8 @@ export default function ConnectedTagErrorTest() {
                         });
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0600 write callback failed,code is ${error.code}, message is ${error.message}`)
-                    if(error.code==801||error.code==3200101||error.code==201){
-                        expect(true).assertTrue();
+                    if(error.code===801||error.code===3200101||error.code===201){
+                        expect(error.code===801||error.code===3200101||error.code===201).assertTrue();
                     }else{
                         expect().assertFail();
                     }
@@ -293,16 +293,16 @@ export default function ConnectedTagErrorTest() {
                         done();
                     }).catch((error)=> {
                         console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0700 write promise failed,code is ${error.code}, message is ${error.message}`);
-                        if(error.code==401){
-                            expect(true).assertTrue();
+                        if(error.code===401){
+                            expect(error.code===401).assertTrue();
                         }else{
                             expect().assertFail();
                         }
                     });
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0700 write promise failed,code is ${error.code}, message is ${error.message}`);
-                    if(error.code==401){
-                        expect(true).assertTrue();
+                    if(error.code===401){
+                        expect(error.code===401).assertTrue();
                     }else{
                         expect().assertFail();
                     }
@@ -342,8 +342,8 @@ export default function ConnectedTagErrorTest() {
                     connectedTag.write((err, result)=> {
                         if (err) {
                             console.info("[SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0800 connectedTag write callback error]" + err);
-                            if(err.code==401){
-                                expect(true).assertTrue();
+                            if(err.code===401){
+                                expect(error.code===401).assertTrue();
                             }else{
                                 expect().assertFail();
                             }
@@ -354,8 +354,8 @@ export default function ConnectedTagErrorTest() {
                     });
                 }catch(error){
                     console.error(`SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0800 write promise failed,code is ${error.code}, message is ${error.message}`);
-                    if(error.code==401){
-                        expect(true).assertTrue();
+                    if(error.code===401){
+                        expect(error.code===401).assertTrue();
                     }else{
                         expect().assertFail();
                     }

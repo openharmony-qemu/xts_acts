@@ -30,9 +30,9 @@ export default function regexNdkTest() {
      * @tc.desc   test regcomp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslRegexRegcomp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslRegexRegcomp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = regex.regcomp();
       console.info("Test regcomp result = " + JSON.stringify(result));
       expect(result).assertEqual(0);
@@ -45,9 +45,9 @@ export default function regexNdkTest() {
      * @tc.desc   test regexec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslRegexRegerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslRegexRegerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = regex.regerror();
       console.info("Test result = " + JSON.stringify(result));
       expect(result).assertEqual(0);
@@ -60,9 +60,9 @@ export default function regexNdkTest() {
      * @tc.desc   test regfree
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslRegexRegfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslRegexRegfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = regex.regfree();
       console.info("Test result = " + JSON.stringify(result));
       expect(result).assertEqual(0);

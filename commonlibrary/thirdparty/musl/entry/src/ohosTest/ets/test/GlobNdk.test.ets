@@ -32,9 +32,9 @@ export default function muslGlobdNdkTest() {
      * @tc.desc   test glob
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGlobGlob001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGlobGlob001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = glob.glob();
       expect(result).assertEqual(0)
       done()
@@ -46,9 +46,9 @@ export default function muslGlobdNdkTest() {
      * @tc.desc   test globfree
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGlobGlobfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGlobGlobfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = glob.globfree();
       expect(result).assertEqual(0)
       done()

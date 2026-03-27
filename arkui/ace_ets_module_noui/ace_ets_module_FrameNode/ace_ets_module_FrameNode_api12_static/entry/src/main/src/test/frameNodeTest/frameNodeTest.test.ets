@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function frameNodeTest() {
   describe('frameNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("frameNodeTest beforeEach start");
       await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
     });

@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTes2() {
   describe('NewEAWorkerTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -166,10 +166,8 @@ export default function NewEAWorkerTes2() {
           }
           jobs.forEach(j => j.Await());
           expect(count).assertEqual(5);
-          worker.join();
-          while(worker.isAlive()){
-              await Sleep(10);
-          }
+          let job2 = worker.join();
+          job2.Await();
           expect(worker.isAlive()).assertFalse();
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
@@ -1174,22 +1172,24 @@ export default function NewEAWorkerTes2() {
         let errMessage = '';
         try {
           EAWorker.main().postTask(() => {
-            try {
-              new Promise<number>((resolve) => {
-                resolve(1);
-              })
-                .then(() => {
-                  new Promise<void>(() => {
-                    throw new Error('Worker function exception');
-                  }).catch((error: Error) => {
-                    errMessage = error.message;
-                  })
+            waitForCompletion(async () => {
+              try {
+                new Promise<number>((resolve) => {
+                  resolve(1);
                 })
-              await Utils.msSleep(1000);
-              expect(errMessage).assertContain('Worker function exception')
-            } catch (error) {
-              expect(false).assertFail()
-            }
+                  .then(() => {
+                    new Promise<void>(() => {
+                      throw new Error('Worker function exception');
+                    }).catch((error: Error) => {
+                      errMessage = error.message;
+                    })
+                  })
+                await Utils.msSleep(1000);
+                expect(errMessage).assertContain('Worker function exception')
+              } catch (error) {
+                expect(false).assertFail()
+              }
+            })
           });
         } catch (error) {
         } finally {
@@ -1309,16 +1309,18 @@ export default function NewEAWorkerTes2() {
         let errMessage = '';
         try {
           EAWorker.main().postTask(() => {
-            worker.start();
-            worker.setUncaughtExceptionHandler((error: Error) => {
-              errMessage = error.message;
+            waitForCompletion(async () => {
+              worker.start();
+              worker.setUncaughtExceptionHandler((error: Error) => {
+                errMessage = error.message;
+              })
+              worker.run<void>(() => {
+                throw new Error('Worker function exception');
+              }).Await();
+              await Utils.msSleep(1000);
+              expect(errMessage).assertContain('Worker function exception')
+              worker.join();
             })
-            worker.run<void>(() => {
-              throw new Error('Worker function exception');
-            }).Await();
-            await Utils.msSleep(1000);
-            expect(errMessage).assertContain('Worker function exception')
-            worker.join();
           })
         } catch (error) {
           expect(false).assertFail();
@@ -1346,13 +1348,15 @@ export default function NewEAWorkerTes2() {
         const worker = new EAWorker();
         try {
           EAWorker.main().postTask(() => {
-            worker.start();
-            worker.run<void>(() => {
-              flag = true;
-            }).Await();
-            await Utils.msSleep(1000);
-            expect(flag).assertTrue();
-            worker.join();
+            waitForCompletion(async () => {
+              worker.start();
+              worker.run<void>(() => {
+                flag = true;
+              }).Await();
+              await Utils.msSleep(1000);
+              expect(flag).assertTrue();
+              worker.join();
+            })
           })
         } catch (error) {
           expect(false).assertFail();

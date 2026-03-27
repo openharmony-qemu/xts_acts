@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ListAddApi() {
   describe('ListAddApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

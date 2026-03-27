@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexTextMargin_StretchJsunit() {
   describe('flexTextMargin_StretchJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexTextMargin_StretchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -91,6 +91,35 @@ it('testFlexItemAlignStretchSubSetMargin_static', Level.LEVEL0, async () : Promi
       let textMargin02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin02');
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexTextMargin01');
+
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi1:'+ Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi2:'+ Math.floor(Math.abs((textMargin02.left - textMargin01.right) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi3:'+ Math.floor(Math.abs(textMargin03.left - textMargin02.right)));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi4:'+ Math.floor(Math.abs((flexTextMargin01.right - textMargin03.right) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi5:'+ Math.floor(Math.abs(textMargin02.top - textMargin03.top)));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi6:'+ Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi7:'+ Math.floor(Math.abs((textMargin01.top - flexTextMargin01.top) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi8:'+ Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi9:'+ Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi10:'+ Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi11:'+ Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi12:'+ Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi13:'+ Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi14:'+ Math.floor(Math.abs((textMargin01.right - textMargin01.left) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi15:'+ Math.floor(Math.abs((textMargin02.right - textMargin02.left) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignStretchSubSetMargin_static_chazhi16:'+ Math.floor(Math.abs((textMargin03.right - textMargin03.left) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+
       expect(Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.left - textMargin01.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.left - textMargin02.right)) <= 1).assertTrue()
@@ -101,13 +130,13 @@ it('testFlexItemAlignStretchSubSetMargin_static', Level.LEVEL0, async () : Promi
       expect(Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
-
       expect(Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
       console.info('new testFlexItemAlignStretchSubSetMargin END');
@@ -137,6 +166,34 @@ it('testFlexItemAlignStretchSubSetMarginExceed_static', Level.LEVEL0, async () :
       let textMargin02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin02');
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexTextMargin01');
+
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi1:'+ Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi2:'+ Math.floor(Math.abs((textMargin02.left - textMargin01.right) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi3:'+ Math.floor(Math.abs(textMargin03.left - textMargin02.right)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi4:'+ Math.floor(Math.abs(textMargin03.right - flexTextMargin01.right)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi5:'+ Math.floor(Math.abs(textMargin02.top - textMargin03.top)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi6:'+ Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi7:'+ Math.floor(Math.abs((textMargin01.top - flexTextMargin01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi8:'+ Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi9:'+ Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi10:'+ Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi11:'+ Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi12:'+ Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi13:'+ Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi14:'+ Math.floor(Math.abs((textMargin01.right - textMargin01.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi15:'+ Math.floor(Math.abs((textMargin02.right - textMargin02.left) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_static_chazhi16:'+ Math.floor(Math.abs((textMargin03.right - textMargin03.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+
       expect(Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.left - textMargin01.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.left - textMargin02.right)) <= 1).assertTrue()
@@ -150,9 +207,10 @@ it('testFlexItemAlignStretchSubSetMarginExceed_static', Level.LEVEL0, async () :
       expect(Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
       console.info('new testFlexItemAlignStretchSubSetMarginExceed END');

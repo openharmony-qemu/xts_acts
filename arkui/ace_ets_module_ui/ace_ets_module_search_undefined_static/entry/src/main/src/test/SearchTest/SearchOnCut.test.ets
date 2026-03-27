@@ -51,7 +51,7 @@ function doCopy(driver: Driver, componentId: string){
 
 export default function SearchOnCutTest() {
   describe('SearchOnCutTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnCutTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

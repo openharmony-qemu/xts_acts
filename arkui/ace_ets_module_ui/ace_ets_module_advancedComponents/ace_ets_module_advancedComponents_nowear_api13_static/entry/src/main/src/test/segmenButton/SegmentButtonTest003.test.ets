@@ -28,7 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function SegmentButtonTest003() {
   describe('SegmentButton003', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SegmentButton003 beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.api13.static", "EntryAbility")
     });

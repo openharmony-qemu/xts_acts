@@ -317,6 +317,275 @@ export default function AVImageGeneratorTest() {
             done()
         })
 
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1000
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1000', Level.LEVEL0, async (done : Function) => {
+            let tmpParam: media.PixelMapParams = {
+                width : 300,
+                height : 300,
+                colorFormat : media.PixelFormat.RGB_888
+            }
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    let option: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(null, option, tmpParam, (error: BusinessError, pixelMap) => {
+                        if (error) {
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
+                            expect().assertFail()
+                            return
+                        }
+                        let pixel_map = pixelMap;
+                        expect(pixel_map).assertNull()
+                    });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail()
+                };
+            });
+            done()
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1100
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1100', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap.isEditable).assertFalse();
+                            expect(pixelMap.isStrideAlignment).assertTrue();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1200
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1200', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap).assertNull();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1300
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1300', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap).assertNull();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1400
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1400', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap).assertNull();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1500
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1500', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(0, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, null)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap.isEditable).assertFalse();
+                            expect(pixelMap.isStrideAlignment).assertTrue();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1600
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1600', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    avImageGenerator.fetchFrameByTime(0, media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC, null)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap.isEditable).assertFalse();
+                            expect(pixelMap.isStrideAlignment).assertTrue();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700', Level.LEVEL0, async (done : Function) => {
+            let tmpParam: media.PixelMapParams = {
+                width : 300,
+                height : 300,
+                colorFormat : media.PixelFormat.RGB_888
+            }
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let option: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+                    console.info(`createAVImageGenerator success`);
+                    generator.fetchFrameByTime(null, option, tmpParam, (error: BusinessError, pixelMap) => {
+                        if (error) {
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
+                            expect().assertFail()
+                            return
+                        }
+                        let pixel_map = pixelMap;
+                        expect(pixel_map).assertNull()
+                    });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail()
+                };
+            });
+            done()
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator) {
+                    console.info(`createAVImageGenerator success`);
+                    generator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap.isEditable).assertFalse();
+                            expect(pixelMap.isStrideAlignment).assertTrue();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
 
         /**
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
@@ -349,14 +618,14 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100Adapt001
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
          * @tc.desc   AvImageGenerator fetchFrameByTime test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100', Level.LEVEL0, async (done : Function) => {
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100Adapt001', Level.LEVEL0, async (done : Function) => {
             media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
                 if (generator != null) {
                     let avImageGenerator = generator;
@@ -400,6 +669,117 @@ export default function AVImageGeneratorTest() {
                 };
             });
             done()
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_PROMISE_FUNCTION_0100
+         * @tc.number SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_PROMISE_FUNCTION_0100
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done : Function) => {
+            let avImageGenerator: media.AVImageGenerator;
+            media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
+                if (generator) {
+                    avImageGenerator = generator;
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(avImageGenerator != undefined).assertTrue();
+                    expect(avImageGenerator.fdSrc != undefined).assertTrue();
+                    if (avImageGenerator?.fdSrc) {
+                        expect(avImageGenerator?.fdSrc?.fd).assertEqual(0);
+                        expect(avImageGenerator?.fdSrc?.offset).assertEqual(0);
+                        expect(avImageGenerator?.fdSrc?.length).assertEqual(-1);
+                    }
+                } else {
+                    console.error(`Failed to create AVImageGenerator`);
+                }
+            }).catch((error: BusinessError) => {
+                console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                expect(error.code == 5400101).assertTrue();
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_CALLBACK_FUNCTION_0100
+         * @tc.number SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_CALLBACK_FUNCTION_0100
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_AVIMAGE_GENERATOR_CALLBACK_FUNCTION_0100', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((error: BusinessError, avImageGenerator: media.AVImageGenerator) => {
+                if (avImageGenerator !== undefined) {
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(avImageGenerator != undefined).assertTrue();
+                    expect(avImageGenerator.fdSrc != undefined).assertTrue();
+                    if (avImageGenerator?.fdSrc) {
+                        expect(avImageGenerator?.fdSrc?.fd).assertEqual(0);
+                        expect(avImageGenerator?.fdSrc?.offset).assertEqual(0);
+                        expect(avImageGenerator?.fdSrc?.length).assertEqual(-1);
+                    }
+                } else {
+                    console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                    expect(error.code == 5400101).assertTrue();
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200
+         * @tc.number SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
+                if (generator) {
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(generator != undefined).assertTrue();
+                    expect(generator.fdSrc != undefined).assertTrue();
+                    expect(generator.fdSrc?.fd).assertEqual(0);
+                    expect(generator.fdSrc?.offset).assertEqual(0);
+                    expect(generator.fdSrc?.length).assertEqual(-1);
+                } else {
+                    console.error(`Failed to create AVImageGenerator`);
+                }
+            }).catch((error: BusinessError) => {
+                console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                expect(error.code == 5400101).assertTrue();
+            });
+            done();
+        })
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200
+         * @tc.number SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((error: BusinessError, generator: media.AVImageGenerator) => {
+                if (error) {
+                    console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                    return;
+                }
+                if (generator) {
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(generator != undefined).assertTrue();
+                    expect(generator.fdSrc != undefined).assertTrue();
+                    expect(generator.fdSrc?.fd).assertEqual(0);
+                    expect(generator.fdSrc?.offset).assertEqual(0);
+                    expect(generator.fdSrc?.length).assertEqual(-1);
+                }
+            });
+            done();
         })
     });
 }

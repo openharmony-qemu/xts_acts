@@ -52,7 +52,7 @@ export default function curvesStepsJsunit() {
     /**
      * run before testcase
      */
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

@@ -19,7 +19,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInputTextIndent() {
   describe('TextInputTextIndent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputTextIndent beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

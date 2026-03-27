@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ScrollAndScrollIndex() {
   describe('Grid_ScrollAndScrollIndex', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
@@ -107,7 +107,7 @@ it('Grid_ScrollAndScrollIndex_static_0200', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0200] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
@@ -138,7 +138,7 @@ it('Grid_ScrollAndScrollIndex_static_0300', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0300] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
@@ -169,7 +169,7 @@ it('Grid_ScrollAndScrollIndex_static_0400', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0400] START');
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_scrollBar')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),

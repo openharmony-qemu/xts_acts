@@ -285,9 +285,9 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNormal, Function | 
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceDestroy
+    OH_Drawing_Typeface *typeface = nullptr;
     OH_Drawing_TypefaceDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(typeface, nullptr);
 }
 
 /**

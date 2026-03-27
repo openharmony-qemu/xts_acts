@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function pushUrl3() {
   describe('pushUrl3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("pushUrl3 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
@@ -70,8 +70,10 @@ it('pushUrl3_static_0100', Level.LEVEL2, async (done: () => void): Promise<void>
       inspector.sendEventByKey('pushUrl3_btn1',10,"")
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('pushUrl3_text2');
-      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('100003');
+      let text1: string | undefined = AppStorage.get<string>('errcode1') as string;
+      console.info('test pushUrl3_static_0100 text1 is', text1);
+      expect(text1).assertEqual('100003');
+      AppStorage.delete('errcode1')
       await CommonFunc.sleep(1000);
 
       console.info('pushUrl3_static_0100 END');

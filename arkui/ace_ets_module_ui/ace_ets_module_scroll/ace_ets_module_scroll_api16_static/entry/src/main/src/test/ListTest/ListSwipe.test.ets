@@ -34,7 +34,7 @@ export default function ListSwipeTest() {
   const waitUiReadyMs: number = 1500
 
   describe('ListSwipeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListSwipeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       

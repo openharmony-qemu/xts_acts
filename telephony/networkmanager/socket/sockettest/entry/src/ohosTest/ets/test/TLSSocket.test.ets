@@ -1402,5 +1402,97 @@ export default function TLSSocketTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1990
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1990
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketSetExtraOptions1990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1990';
+      console.info(`${caseName} test start`);
+      try {
+        let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+        await tlsSocket.bind(addr).catch((err:BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        let tcpExtraOptions: socket.TCPExtraOptions = {
+          keepAlive: false,
+          OOBInline: false,
+          TCPNoDelay: false,
+          socketLinger: { on: true, linger: 100000 },
+          receiveBufferSize: 1000,
+          sendBufferSize: 1000,
+          reuseAddress: false,
+          socketTimeout: 0,
+          tcpFastOpen: true
+        };
+        tlsSocket.setExtraOptions(tcpExtraOptions).then(() => {
+          expectTrue(true);
+          console.info(`${caseName} test end`);
+          tlsSocket.close();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1991
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1991
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTLSSocketSetExtraOptions1991', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1991';
+      console.info(`${caseName} test start`);
+      try {
+        let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+        await tlsSocket.bind(addr).catch((err:BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        let tcpExtraOptions: socket.TCPExtraOptions = {
+          keepAlive: false,
+          OOBInline: false,
+          TCPNoDelay: false,
+          socketLinger: { on: true, linger: 100000 },
+          receiveBufferSize: 1000,
+          sendBufferSize: 1000,
+          reuseAddress: false,
+          socketTimeout: 0,
+          tcpFastOpen: false
+        };
+        tlsSocket.setExtraOptions(tcpExtraOptions).then(() => {
+          expectTrue(true);
+          console.info(`${caseName} test end`);
+          tlsSocket.close();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
   });
 }

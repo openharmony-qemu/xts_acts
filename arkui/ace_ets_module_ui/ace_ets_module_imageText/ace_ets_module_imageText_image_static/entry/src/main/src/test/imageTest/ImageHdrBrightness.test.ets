@@ -28,7 +28,7 @@ const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_S = 100;
 export default function ImageHdrBrightnessTest() {
   describe('ImageHdrBrightnessTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageHdrBrightnessTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

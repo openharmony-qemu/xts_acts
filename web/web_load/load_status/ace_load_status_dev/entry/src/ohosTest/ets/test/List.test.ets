@@ -16,11 +16,17 @@ import webJsunit from './WebJsunit.test';
 import webOnOffOne from './WebOnOffOne.test';
 import webOnOffTwo from './WebOnOffTwo.test';
 import waitForAttached from './WaitForAttached.test';
+import waitForAttachedError from './WaitForAttachedError.test';
 import onActivateContent from './OnActivateContent.test';
+import onControllerAttachStateChangeError from './OnControllerAttachStateChangeError.test';
+import offControllerAttachStateChangeError from './OffControllerAttachStateChangeError.test';
 export default function testsuite() {
   webJsunit();
   webOnOffOne();
   webOnOffTwo();
   waitForAttached();
+  waitForAttachedError();
   onActivateContent();
+  onControllerAttachStateChangeError();
+  offControllerAttachStateChangeError();
 }

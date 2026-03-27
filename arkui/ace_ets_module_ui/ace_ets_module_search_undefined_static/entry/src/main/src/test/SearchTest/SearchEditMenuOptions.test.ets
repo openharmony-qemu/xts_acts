@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchEitMenuOptionsTest() {
   describe('SearchEditMenuOptionsTest', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchEditMenuOptionsTest beforeEach start");
 
       await UtilsTest.msSleep(4000)
@@ -75,97 +75,55 @@ export default function SearchEitMenuOptionsTest() {
      */
     it('SearchEditMenuOptionsTest_static_0001', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
       let driver = Driver.create();
-      console.info('SearchEditMenuOptionsTest SearchEditMenuOptionsTest0002 START');
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('search')) as Component;
-      await CommonFunc.sleep(500);
-      await search.longClick();
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('111111')) as Component;
-      await CommonFunc.sleep(500);
-      await button.click();
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('searchLabelInfo');
-      let obj = JSON.parseJsonElement(strJson);
-      console.log('SearchEditMenuOptionsTest0002---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('SearchEditMenuOptionsTest0002---obj.$attrs.content---' + obj.getElement('$attrs').getString('content'));
-      expect('' + obj.getElement('$attrs').getString('content')).assertEqual('');
-      console.info("[SearchEditMenuOptionsTest0002] end");
-      done();
-    });
-
-    /**
-     * @tc.number   SearchEditMenuOptionsTest_static_0002
-     * @tc.name     SearchEditMenuOptionsTest_static_0002
-     * @tc.desc     SearchEditMenuOptionsTest_static_0002
-     * @tc.level    Level.LEVEL0
-     */
-    it('SearchEditMenuOptionsTest_static_0002', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
-      let driver = Driver.create();
-      console.info('SearchEditMenuOptionsTest SearchEditMenuOptionsTest0002 START');
-      let change = await driver.findComponent(ON.id('button_ChangeValue')) as Component;
-      await CommonFunc.sleep(500);
-      change.click();
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('search')) as Component;
-      await CommonFunc.sleep(500);
-      await search.longClick();
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('全选')) as Component;
-      await CommonFunc.sleep(500);
-      button.click();
-      await CommonFunc.sleep(500);
-      let text = await driver.findComponent(ON.id('search')) as Component;
-      await CommonFunc.sleep(500);
-      await text.inputText('Undefined');
-      await CommonFunc.sleep(500);
-
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      let actualText = search2.getText();
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('search');
-      let obj = JSON.parseJsonElement(strJson);
-      console.log('SearchEditMenuOptionsTest0002---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('SearchEditMenuOptionsTest0002---obj.$attrs.content---' + obj.getElement('$attrs').getString('value'));
-      expect('' + obj.getElement('$attrs').getString('value')).assertEqual('searchUndefined');
-      console.info("[SearchEditMenuOptionsTest0002] end");
-      done();
-    });
-    /**
-     * @tc.number   SearchEditMenuOptionsTest_static_0003
-     * @tc.name     SearchEditMenuOptionsTest_static_0003
-     * @tc.desc     SearchEditMenuOptionsTest_static_0003
-     * @tc.level    Level.LEVEL0
-     */
-    it('SearchEditMenuOptionsTest_static_0003', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
-      let driver = Driver.create();
-      console.info('SearchEditMenuOptionsTest SearchEditMenuOptionsTest0002 START');
-      let change = await driver.findComponent(ON.id('button_ChangeValue')) as Component;
-      await CommonFunc.sleep(500);
-      change.click();
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('search')) as Component;
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
+      let search = await driver.findComponent(ON.id('Search')) as Component;
+      await CommonFunc.sleep(1000);
       await search.longClick();
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.text('111111')) as Component;
-      await CommonFunc.sleep(500);
-      await button.click();
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('searchLabelInfo');
+
+      let strJson = inspector.getInspectorByKey('Text');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
-      console.log('SearchEditMenuOptionsTest_static_0003---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('SearchEditMenuOptionsTest_static_0003---obj.$attrs.content---' + obj.getElement('$attrs').getString('content'));
-      expect('' + obj.getElement('$attrs').getString('content')).assertEqual('');
-      console.info("[SearchEditMenuOptionsTest_static_0003] end");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
+      await CommonFunc.sleep(1000);
+      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      await CommonFunc.sleep(1000);
+      search2.click();
+      await CommonFunc.sleep(1000);
+
+      let button = await driver.findComponent(ON.id('button_editMenuOptions')) as Component;
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await search.longClick();
+      await CommonFunc.sleep(1000);
+
+      let text = await driver.findComponent(ON.text('111111')) as Component;
+      await CommonFunc.sleep(1000);
+      await text.click();
+      await CommonFunc.sleep(1000);
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        '111111');
+
+      await CommonFunc.sleep(1000);
+      search2.click();
+      await CommonFunc.sleep(1000);
+
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await CommonFunc.sleep(1000);
+      await search.longClick();
+      await CommonFunc.sleep(1000);
+
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        '');
       done();
     });
   })

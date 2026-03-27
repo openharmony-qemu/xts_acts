@@ -213,6 +213,82 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
+    } else if (want.parameters?.case === '5100') {
+      eventName = 'connectServiceExtensionAbility_5100';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      try {
+        this.context.connectServiceExtensionAbility(null, null);
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility should throw error`);
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
+    } else if (want.parameters?.case === '5200') {
+      eventName = 'connectServiceExtensionAbility_5200';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      try {
+        this.context.connectServiceExtensionAbility(undefined, undefined);
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility should throw error`);
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
+    } else if (want.parameters?.case === '5400') {
+      eventName = 'connectServiceExtensionAbility_5400';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      let wantInfo: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'ServiceExtensionAbility'
+      };
+      try {
+        this.context.connectServiceExtensionAbility(wantInfo, null);
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility should throw error`);
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
+    } else if (want.parameters?.case === '5500') {
+      eventName = 'connectServiceExtensionAbility_5500';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      let wantInfo: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'ServiceExtensionAbility'
+      };
+      try {
+        this.context.connectServiceExtensionAbility(wantInfo, undefined);
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility should throw error`);
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
+    } else if (want.parameters?.case === '5600') {
+      eventName = 'disconnectServiceExtensionAbility_5600';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      try {
+        this.context.disconnectServiceExtensionAbility(null).then(() => {
+          hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility succeed`);
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility error: ${JSON.stringify(err)}`);
+          publishEvent(eventName, err.code);
+        });
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
+    } else if (want.parameters?.case === '5700') {
+      eventName = 'disconnectServiceExtensionAbility_5700';
+      hilog.info(0x0000, TAG, `${eventName} Begin`);
+      try {
+        this.context.disconnectServiceExtensionAbility(undefined).then(() => {
+          hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility succeed`);
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility error: ${JSON.stringify(err)}`);
+          publishEvent(eventName, err.code);
+        });
+      } catch (error) {
+        hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
+        publishEvent(eventName, error?.code);
+      }
     }
   }
 

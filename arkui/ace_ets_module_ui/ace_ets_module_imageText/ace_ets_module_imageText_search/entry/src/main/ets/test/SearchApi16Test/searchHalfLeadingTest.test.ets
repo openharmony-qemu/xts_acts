@@ -76,7 +76,7 @@ export default function searchHalfLeadingTest() {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
       await CommonFunc.sleep(1000);
-      let search2 = getInspectorByKey('search2');
+      let search2 = getInspectorByKey('searchHalfLeading2');
       let obj: ESObject = JSON.parse(search2);
       console.log('searchHalfLeadingTest0002---' + obj.$attrs.halfLeading)
       expect(obj.$attrs.halfLeading).assertEqual(false);
@@ -95,7 +95,7 @@ export default function searchHalfLeadingTest() {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
       await CommonFunc.sleep(1000);
-      let search3 = getInspectorByKey('search3');
+      let search3 = getInspectorByKey('searchHalfLeading3');
       let obj: ESObject = JSON.parse(search3);
       console.log('searchHalfLeadingTest0003---' + obj.$attrs.halfLeading)
       expect(obj.$attrs.halfLeading).assertEqual(false);

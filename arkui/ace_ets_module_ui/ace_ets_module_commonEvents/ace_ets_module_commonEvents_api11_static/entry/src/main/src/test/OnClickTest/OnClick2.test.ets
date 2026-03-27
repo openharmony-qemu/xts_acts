@@ -46,7 +46,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function OnClick2() {
   describe('OnClick2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       

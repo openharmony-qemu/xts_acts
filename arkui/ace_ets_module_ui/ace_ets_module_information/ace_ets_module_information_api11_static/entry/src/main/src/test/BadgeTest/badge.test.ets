@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function badgeTest() {
   describe('ActsBadgeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsBadgeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

@@ -220,6 +220,7 @@ export default function ActsAccountAddAccount() {
       var appAccountManager = account.createAppAccountManager();
       try {
         await appAccountManager.addAccount(limitAccountName, "account_extraInfo_promise_fourth");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -403,6 +404,7 @@ export default function ActsAccountAddAccount() {
       var specialStr = " ";
       try {
         await appAccountManager.addAccount(specialStr, "account_extraInfo_promise_eighth");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {

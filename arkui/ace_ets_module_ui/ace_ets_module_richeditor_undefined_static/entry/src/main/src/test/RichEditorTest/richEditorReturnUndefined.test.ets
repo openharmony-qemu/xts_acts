@@ -38,10 +38,11 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
+import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function RichEditorUndefinedTest() {
   describe('richEditorReturnUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorReturnUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

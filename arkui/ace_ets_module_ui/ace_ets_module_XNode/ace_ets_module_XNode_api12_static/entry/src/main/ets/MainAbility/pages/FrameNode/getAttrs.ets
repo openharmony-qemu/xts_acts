@@ -340,7 +340,7 @@ struct GetAttrsFrameNode {
         .width(300)
         .onClick((e:ClickEvent)=>{
           if(this.uiContext && this.node){
-            this.getData = "" + JSON.stringify(this.node?.commonAttribute.padding(undefined))
+            this.getData = "" + JSON.stringify(this.node?.commonAttribute.padding)
           }
         })
       Button("getId").height('5%')

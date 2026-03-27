@@ -82,7 +82,7 @@ async function startAbilityProcess(abilityContext:common.UIAbilityContext, optio
 
 
 export default function abilityTest(abilityContext) {
-  describe('ActsGetDisplayIdStartAbilityTest', () => {
+  describe('ActsGetDisplayIdStartAbilityTestAdapt001', () => {
 
     beforeEach(async (done: Function) => {
       setTimeout(() => {

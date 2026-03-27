@@ -4312,7 +4312,6 @@ export default function Int8ArrayTest() {
         ["1", "3", "5"], (v: string, k: number) => parseInt(v));
       expect(array.toString()).assertEqual('1,3,5');
       expect(array[1]).assertEqual(3);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
       expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
       expect(array.byteLength).assertEqual(3);
       expect(array.byteOffset).assertEqual(0);
@@ -4333,7 +4332,6 @@ export default function Int8ArrayTest() {
       let array: collections.Int8Array = collections.Int8Array.from(myset, undefined);
       expect(array.toString()).assertEqual('1,3,5');
       expect(array[1]).assertEqual(3);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
       expect(array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
       expect(array.byteLength).assertEqual(3);
       expect(array.byteOffset).assertEqual(0);
@@ -4351,14 +4349,13 @@ export default function Int8ArrayTest() {
      */
     it('testInt8ArrayMissing0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
-      int8Array.copyWithin(0, 3, undefined);
-      expect(int8Array[1]).assertEqual(5);
-      expect(int8Array.toString()).assertEqual('4,5,3,4,5');
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(int8Array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(int8Array.byteLength).assertEqual(5);
-      expect(int8Array.byteOffset).assertEqual(0);
-      expect(int8Array.length).assertEqual(5);
+      let result = int8Array.copyWithin(0, 3, undefined);
+      expect(result[1]).assertEqual(5);
+      expect(result.toString()).assertEqual('4,5,3,4,5');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done()
     })
 
@@ -4373,13 +4370,12 @@ export default function Int8ArrayTest() {
     it('testInt8ArrayMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
       let result = int8Array.fill(9, undefined, 3);
-      expect(int8Array[1]).assertEqual(9);
+      expect(result[1]).assertEqual(9);
       expect(result.toString()).assertEqual('9,9,9,4,5');
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(int8Array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(int8Array.byteLength).assertEqual(5);
-      expect(int8Array.byteOffset).assertEqual(0);
-      expect(int8Array.length).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done();
     })
 
@@ -4393,14 +4389,13 @@ export default function Int8ArrayTest() {
      */
     it('testInt8ArrayMissing0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
-      int8Array.fill(9, 1, undefined);
-      expect(int8Array[1]).assertEqual(9);
-      expect(int8Array.toString()).assertEqual('1,9,9,9,9');
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(int8Array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(int8Array.byteLength).assertEqual(5);
-      expect(int8Array.byteOffset).assertEqual(0);
-      expect(int8Array.length).assertEqual(5);
+      let result = int8Array.fill(9, 1, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('1,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done();
     })
 
@@ -4414,14 +4409,13 @@ export default function Int8ArrayTest() {
      */
     it('testInt8ArrayMissing0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
-      int8Array.fill(9, undefined, undefined);
-      expect(int8Array[1]).assertEqual(9);
-      expect(int8Array.toString()).assertEqual('9,9,9,9,9');
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(int8Array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(int8Array.byteLength).assertEqual(5);
-      expect(int8Array.byteOffset).assertEqual(0);
-      expect(int8Array.length).assertEqual(5);
+      let result = int8Array.fill(9, undefined, undefined);
+      expect(result[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,9,9');
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done();
     })
 
@@ -4520,8 +4514,7 @@ export default function Int8ArrayTest() {
       const result = int8Array.slice(undefined,4);
       expect(result.toString()).assertEqual('1,2,3,4');
       expect(result[1]).assertEqual(2);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.buffer.byteLength).assertEqual(4);
       expect(result.byteLength).assertEqual(4);
       expect(result.byteOffset).assertEqual(0);
       expect(result.length).assertEqual(4);
@@ -4541,8 +4534,7 @@ export default function Int8ArrayTest() {
       const result = int8Array.slice();
       expect(result.toString()).assertEqual('1,2,3,4,5');
       expect(result[1]).assertEqual(2);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.buffer.byteLength).assertEqual(5);
       expect(result.byteLength).assertEqual(5);
       expect(result.byteOffset).assertEqual(0);
       expect(result.length).assertEqual(5);
@@ -4562,8 +4554,7 @@ export default function Int8ArrayTest() {
       const result = int8Array.slice(4, undefined);
       expect(result.toString()).assertEqual('5');
       expect(result[0]).assertEqual(5);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.buffer.byteLength).assertEqual(1);
       expect(result.byteLength).assertEqual(1);
       expect(result.byteOffset).assertEqual(0);
       expect(result.length).assertEqual(1);
@@ -4580,14 +4571,13 @@ export default function Int8ArrayTest() {
      */
     it('testInt8ArrayMissing0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([5, 3, 1, 4, 2]);
-      int8Array.sort(undefined);
-      expect(int8Array.toString()).assertEqual('1,2,3,4,5');
-      expect(int8Array[0]).assertEqual(1);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(int8Array.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(int8Array.byteLength).assertEqual(5);
-      expect(int8Array.byteOffset).assertEqual(0);
-      expect(int8Array.length).assertEqual(5);
+      let result = int8Array.sort(undefined);
+      expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(result[0]).assertEqual(1);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done();
     })
 
@@ -4604,8 +4594,7 @@ export default function Int8ArrayTest() {
       const result = int8Array.subarray(undefined);
       expect(result.toString()).assertEqual('1,2,3,4,5');
       expect(result[0]).assertEqual(1);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.buffer.byteLength).assertEqual(5);
       expect(result.byteLength).assertEqual(5);
       expect(result.byteOffset).assertEqual(0);
       expect(result.length).assertEqual(5);
@@ -4625,8 +4614,7 @@ export default function Int8ArrayTest() {
       const result = int8Array.subarray(2, undefined);
       expect(result.toString()).assertEqual('3,4,5');
       expect(result[0]).assertEqual(3);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(result.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(result.buffer.byteLength).assertEqual(5);
       expect(result.byteLength).assertEqual(3);
       expect(result.byteOffset).assertEqual(2);
       expect(result.length).assertEqual(3);
@@ -4643,14 +4631,13 @@ export default function Int8ArrayTest() {
      */
     it('testInt8ArrayMissing0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let int8Array: collections.Int8Array = new collections.Int8Array([1, 2, 3, 4, 5]);
-      const subarray = int8Array.subarray(1, 4);
-      expect(subarray.toString()).assertEqual('2,3,4');
-      expect(subarray[0]).assertEqual(2);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(subarray.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(subarray.byteLength).assertEqual(3);
-      expect(subarray.byteOffset).assertEqual(1);
-      expect(subarray.length).assertEqual(3);
+      const result = int8Array.subarray(1, 4);
+      expect(result.toString()).assertEqual('2,3,4');
+      expect(result[0]).assertEqual(2);
+      expect(result.buffer.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(3);
+      expect(result.byteOffset).assertEqual(1);
+      expect(result.length).assertEqual(3);
       done();
     })
 
@@ -4687,7 +4674,7 @@ export default function Int8ArrayTest() {
     /**
      * @tc.name   testInt8ArrayMissing0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INT8ARRAY_MISSING_2200
-     * @tc.desc   Testing 'of' with undefined parameter.
+     * @tc.desc   Test of() creating Int8Array from variadic arguments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -4707,7 +4694,7 @@ export default function Int8ArrayTest() {
     /**
      * @tc.name   testInt8ArrayMissing0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INT8ARRAY_MISSING_2300
-     * @tc.desc   Testing 'of' with undefined parameter.
+     * @tc.desc   Test map() with Math.sqrt callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -4717,8 +4704,7 @@ export default function Int8ArrayTest() {
       const mapped = array.map(Math.sqrt);
       expect(mapped.toString()).assertEqual("5,6,7");
       expect(mapped[0]).assertEqual(5);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(mapped.buffer instanceof collections.ArrayBuffer).assertEqual(true);
+      expect(mapped.buffer.byteLength).assertEqual(3);
       expect(mapped.byteLength).assertEqual(3);
       expect(mapped.byteOffset).assertEqual(0);
       expect(mapped.length).assertEqual(3);
@@ -4728,21 +4714,20 @@ export default function Int8ArrayTest() {
     /**
      * @tc.name   testInt8ArrayMissing0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INT8ARRAY_MISSING_2400
-     * @tc.desc   Testing 'of' with undefined parameter.
+     * @tc.desc   Test reverse() mutating array in place.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testInt8ArrayMissing0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let array: collections.Int8Array = new collections.Int8Array([1,2,3,4,5]);
-      const mapped = array.reverse();
-      expect(mapped.toString()).assertEqual("5,4,3,2,1");
-      expect(mapped[0]).assertEqual(5);
-      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
-      expect(mapped.buffer instanceof collections.ArrayBuffer).assertEqual(true);
-      expect(mapped.byteLength).assertEqual(5);
-      expect(mapped.byteOffset).assertEqual(0);
-      expect(mapped.length).assertEqual(5);
+      const result = array.reverse();
+      expect(result.toString()).assertEqual("5,4,3,2,1");
+      expect(result[0]).assertEqual(5);
+      expect(result.buffer.byteLength).assertEqual(5); 
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(5);
       done();
     })
   })

@@ -107,35 +107,35 @@ export default function AbilityDelegatorStageStaticTest() {
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor callback`);
           abilityDelegator.removeAbilityMonitor(monitor, (err: BusinessError<void> | null) => {
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
-            if (err?.code) {
-              hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
-              expect().assertFail();
+            waitForCompletion(async () => {
+              hilog.info(domain, tag, `${itName} removeAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
+              if (err?.code) {
+                hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+                return;
+              }
+              hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
+              hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+              await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+              await Utils.msSleep(2000);
+              hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+              const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+              await context.moveAbilityToBackground()
+                .catch((err): void => {
+                  if(err instanceof BusinessError){
+                      hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+                      if(err?.code == 16000061) {
+                        done();
+                      }
+                  }
+                });
+              await Utils.msSleep(2000);
+              expect(isOnBackground).assertFalse();
               done();
               hilog.info(domain, tag, `${itName} end`);
-              return;
-            }
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
-            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
-            await Utils.msSleep(2000);
-
-            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-            await context.moveAbilityToBackground()
-              .catch((err): void => {
-                if(err instanceof BusinessError){
-                    hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-                    if(err?.code == 16000061) {
-                      done();
-                    }
-                }
-              });
-            await Utils.msSleep(2000);
-
-            expect(isOnBackground).assertFalse();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+            })
           })
         } catch (err) {
           if(err instanceof BusinessError){
@@ -177,7 +177,7 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor promise`);
-          abilityDelegator.removeAbilityMonitor(monitor).then(() => {
+          abilityDelegator.removeAbilityMonitor(monitor).then(() => { waitForCompletion(async () => {
             hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
@@ -193,7 +193,7 @@ export default function AbilityDelegatorStageStaticTest() {
 
             done();
             hilog.info(domain, tag, `${itName} end`);
-          }).catch((e) => {
+          }) }).catch((e) => {
             if (e instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} removeAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
                 if(e?.code == 16000061) {
@@ -304,7 +304,7 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, (err: BusinessError<void> | null) => {
+            abilityDelegator.waitAbilityMonitor(monitor, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
               if (err?.code) {
                 hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
@@ -314,6 +314,7 @@ export default function AbilityDelegatorStageStaticTest() {
                 return;
               }
               hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
@@ -366,7 +367,7 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, 10000, (err: BusinessError<void> | null) => {
+            abilityDelegator.waitAbilityMonitor(monitor, 10000, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
               if (err?.code) {
                 hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
@@ -376,6 +377,7 @@ export default function AbilityDelegatorStageStaticTest() {
                 return;
               }
               hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
             })
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
             await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
@@ -427,8 +429,9 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, 10000).then(() => {
+            abilityDelegator.waitAbilityMonitor(monitor, 10000).then((data: UIAbility) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
             }).catch((e) => {
               if (e instanceof BusinessError){
                   hilog.info(domain, tag,
@@ -492,8 +495,9 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor).then(() => {
+            abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
             }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag,
@@ -669,7 +673,7 @@ export default function AbilityDelegatorStageStaticTest() {
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} doAbilityForeground`);
-            abilityDelegator.doAbilityForeground(ability).then(() => {
+            abilityDelegator.doAbilityForeground(ability).then(() => { waitForCompletion(async () => {
               hilog.info(domain, tag, `${itName} doAbilityForeground success`);
 
               await Utils.msSleep(2000);
@@ -677,7 +681,7 @@ export default function AbilityDelegatorStageStaticTest() {
               expect(isOnBackground).assertTrue();
               done();
               hilog.info(domain, tag, `${itName} end`);
-            }).catch((e) => {
+            }) }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag,
                     `${itName} doAbilityForeground fail error code: ${e?.code} msg: ${e?.message}`);
@@ -726,7 +730,7 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
 
             hilog.info(domain, tag, `${itName} doAbilityBackground`);
-            abilityDelegator.doAbilityBackground(ability).then(() => {
+            abilityDelegator.doAbilityBackground(ability).then(() => { waitForCompletion(async () => {
               hilog.info(domain, tag, `${itName} doAbilityBackground success`);
               await Utils.msSleep(2000);
 
@@ -735,7 +739,7 @@ export default function AbilityDelegatorStageStaticTest() {
 
               done();
               hilog.info(domain, tag, `${itName} end`);
-            }).catch((e) => {
+            }) }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag, `${itName} doAbilityBackground fail error code: ${e?.code} msg: ${e?.message}`);
                   expect().assertFail();
@@ -980,6 +984,84 @@ export default function AbilityDelegatorStageStaticTest() {
               expect().assertFail();
               done();
               hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg).then(() => {
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+
+            }
+          })
+        } catch (err) {
+          if(err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg, (err: BusinessError<void> | null) => {
+            hilog.info(domain, tag, `${itName} print error code: ${err?.code} msg: ${err?.message}`);
+            if (err?.code) {
+              hilog.info(domain, tag, `${itName} print fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          });
+        } catch (err) {
+          if (err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
           }
         }
       })

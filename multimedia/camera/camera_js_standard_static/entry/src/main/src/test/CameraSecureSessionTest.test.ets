@@ -323,7 +323,7 @@ export default function cameraSecureSessionTest() {
   describe('cameraSecureSessionTest', () => {
     console.info(TAG + '----------CameraSecureSessionTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       getCameraManagerInstance();
@@ -344,7 +344,7 @@ export default function cameraSecureSessionTest() {
       Utils.msSleep(500);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(500);
       console.info('afterAll case');

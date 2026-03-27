@@ -69,7 +69,7 @@ export default function menuThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsMenuThemeColors_0100
+     * @tc.name   `ActsMenuThemeColors_0100`
      * @tc.number ActsMenuThemeColors_0100
      * @tc.desc   check system colors values of the Menu component
      * @tc.type   FUNCTION
@@ -87,7 +87,7 @@ export default function menuThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsMenuThemeColors_0200
+     * @tc.name   `ActsMenuThemeColors_0200`
      * @tc.number ActsMenuThemeColors_0200
      * @tc.desc   check custom colors values of the Menu component
      * @tc.type   FUNCTION
@@ -106,7 +106,7 @@ export default function menuThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsMenuThemeColors_0300
+     * @tc.name   `ActsMenuThemeColors_0300`
      * @tc.number ActsMenuThemeColors_0300
      * @tc.desc   check system colors values of the Menu component
      * @tc.type   FUNCTION

@@ -1,3 +1,17 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import libAudioEncoder from 'libaudioencoder.so';
 
@@ -32,7 +46,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_001', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(0);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(0);
       expect(result).assertEqual(0);
       done();
     })
@@ -45,7 +59,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_002', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(1);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(1);
       expect(result).assertEqual(0);
       done();
     })
@@ -58,7 +72,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_003', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(2);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(2);
       expect(result).assertEqual(0);
       done();
     })
@@ -71,7 +85,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_004', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(3);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(3);
       expect(result).assertEqual(0);
       done();
     })
@@ -84,7 +98,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_005', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(4);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(4);
       expect(result).assertEqual(0);
       done();
     })
@@ -97,7 +111,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_006', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(5);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(5);
       expect(result).assertEqual(0);
       done();
     })
@@ -110,7 +124,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_007', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(6);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(6);
       expect(result).assertEqual(0);
       done();
     })
@@ -123,7 +137,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_008', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(7);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(7);
       expect(result).assertEqual(0);
       done();
     })
@@ -136,7 +150,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_009', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(8);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(8);
       expect(result).assertEqual(0);
       done();
     })
@@ -149,7 +163,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_010', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(9);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(9);
       expect(result).assertEqual(0);
       done();
     })
@@ -162,7 +176,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_011', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(10);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(10);
       expect(result).assertEqual(0);
       done();
     })
@@ -175,7 +189,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_012', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(11);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(11);
       expect(result).assertEqual(0);
       done();
     })
@@ -188,7 +202,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_013', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(12);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(12);
       expect(result).assertEqual(0);
       done();
     })
@@ -201,7 +215,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_014', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(13);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(13);
       expect(result).assertEqual(0);
       done();
     })
@@ -214,7 +228,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_015', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(14);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(14);
       expect(result).assertEqual(0);
       done();
     })
@@ -227,7 +241,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_016', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(15);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(15);
       expect(result).assertEqual(0);
       done();
     })
@@ -240,7 +254,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_017', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(16);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(16);
       expect(result).assertEqual(0);
       done();
     })
@@ -253,7 +267,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_018', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(17);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(17);
       expect(result).assertEqual(0);
       done();
     })
@@ -266,7 +280,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_019', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(18);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(18);
       expect(result).assertEqual(0);
       done();
     })
@@ -279,7 +293,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_020', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(19);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(19);
       expect(result).assertEqual(0);
       done();
     })
@@ -292,7 +306,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_021', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(20);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(20);
       expect(result).assertEqual(0);
       done();
     })
@@ -305,7 +319,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_022', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(21);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(21);
       expect(result).assertEqual(0);
       done();
     })
@@ -318,7 +332,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('NULL_CHECK_023', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_NullCheckTest(22);
+      const result = await libAudioEncoder.Audio_Encoder_NullCheckTest(22);
       expect(result).assertEqual(0);
       done();
     })
@@ -331,7 +345,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_001', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(0);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(0);
       expect(result).assertEqual(0);
       done();
     })
@@ -344,7 +358,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_002', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(1);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(1);
       expect(result).assertEqual(0);
       done();
     })
@@ -357,7 +371,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_003', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(2);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(2);
       expect(result).assertEqual(0);
       done();
     })
@@ -370,7 +384,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_004', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(3);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(3);
       expect(result).assertEqual(0);
       done();
     })
@@ -383,7 +397,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_005', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(4);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(4);
       expect(result).assertEqual(0);
       done();
     })
@@ -396,7 +410,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_006', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(5);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(5);
       expect(result).assertEqual(0);
       done();
     })
@@ -409,7 +423,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_007', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(6);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(6);
       expect(result).assertEqual(0);
       done();
     })
@@ -422,7 +436,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_008', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(7);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(7);
       expect(result).assertEqual(0);
       done();
     })
@@ -435,7 +449,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_009', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(8);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(8);
       expect(result).assertEqual(0);
       done();
     })
@@ -448,7 +462,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_010', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(9);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(9);
       expect(result).assertEqual(0);
       done();
     })
@@ -461,7 +475,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_011', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(10);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(10);
       expect(result).assertEqual(0);
       done();
     })
@@ -474,7 +488,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_012', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(11);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(11);
       expect(result).assertEqual(0);
       done();
     })
@@ -487,7 +501,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_013', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(12);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(12);
       expect(result).assertEqual(0);
       done();
     })
@@ -500,7 +514,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_014', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(13);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(13);
       expect(result).assertEqual(0);
       done();
     })
@@ -513,7 +527,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('PARAM_CHECK_015', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_ParamCheckTest(14);
+      const result = await libAudioEncoder.Audio_Encoder_ParamCheckTest(14);
       expect(result).assertEqual(0);
       done();
     })
@@ -526,7 +540,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_001', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(0);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(0);
       expect(result).assertEqual(0);
       done();
     })
@@ -539,7 +553,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_002', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(1);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(1);
       expect(result).assertEqual(0);
       done();
     })
@@ -552,7 +566,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_003', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(2);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(2);
       expect(result).assertEqual(0);
       done();
     })
@@ -565,7 +579,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_004', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(3);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(3);
       expect(result).assertEqual(0);
       done();
     })
@@ -578,7 +592,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_005', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(4);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(4);
       expect(result).assertEqual(0);
       done();
     })
@@ -591,7 +605,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_006', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(5);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(5);
       expect(result).assertEqual(0);
       done();
     })
@@ -604,7 +618,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_007', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(6);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(6);
       expect(result).assertEqual(0);
       done();
     })
@@ -617,7 +631,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_008', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(7);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(7);
       expect(result).assertEqual(0);
       done();
     })
@@ -630,7 +644,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_009', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(8);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(8);
       expect(result).assertEqual(0);
       done();
     })
@@ -643,7 +657,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_010', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(9);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(9);
       expect(result).assertEqual(0);
       done();
     })
@@ -656,7 +670,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_011', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(10);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(10);
       expect(result).assertEqual(0);
       done();
     })
@@ -669,7 +683,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_012', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(11);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(11);
       expect(result).assertEqual(0);
       done();
     })
@@ -682,7 +696,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_013', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(12);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(12);
       expect(result).assertEqual(0);
       done();
     })
@@ -695,7 +709,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_014', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(13);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(13);
       expect(result).assertEqual(0);
       done();
     })
@@ -708,7 +722,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_015', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(14);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(14);
       expect(result).assertEqual(0);
       done();
     })
@@ -721,7 +735,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_016', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(15);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(15);
       expect(result).assertEqual(0);
       done();
     })
@@ -734,7 +748,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_017', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(16);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(16);
       expect(result).assertEqual(0);
       done();
     })
@@ -747,10 +761,25 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_018', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(17);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(17);
       expect(result).assertEqual(0);
       done();
     })
+
+    /**
+     * @tc.name   STATUS_CHECK_019
+     * @tc.number STATUS_CHECK_019
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_019', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(18);
+      expect(result).assertEqual(0);
+      done();
+    })
+
     /**
      * @tc.name   STATUS_CHECK_020
      * @tc.number STATUS_CHECK_020
@@ -760,7 +789,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_020', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(19);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(19);
       expect(result).assertEqual(0);
       done();
     })
@@ -773,7 +802,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_021', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(20);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(20);
       expect(result).assertEqual(0);
       done();
     })
@@ -786,7 +815,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_022', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(21);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(21);
       expect(result).assertEqual(0);
       done();
     })
@@ -799,7 +828,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_023', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(22);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(22);
       expect(result).assertEqual(0);
       done();
     })
@@ -812,7 +841,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_024', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(23);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(23);
       expect(result).assertEqual(0);
       done();
     })
@@ -825,7 +854,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_025', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(24);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(24);
       expect(result).assertEqual(0);
       done();
     })
@@ -838,7 +867,20 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_026', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(25);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(25);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_027
+     * @tc.number STATUS_CHECK_027
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_027', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(26);
       expect(result).assertEqual(0);
       done();
     })
@@ -851,7 +893,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_028', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(27);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(27);
       expect(result).assertEqual(0);
       done();
     })
@@ -864,7 +906,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_029', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(28);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(28);
       expect(result).assertEqual(0);
       done();
     })
@@ -877,7 +919,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_030', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(29);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(29);
       expect(result).assertEqual(0);
       done();
     })
@@ -890,7 +932,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_031', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(30);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(30);
       expect(result).assertEqual(0);
       done();
     })
@@ -903,7 +945,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_032', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(31);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(31);
       expect(result).assertEqual(0);
       done();
     })
@@ -916,7 +958,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_033', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(32);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(32);
       expect(result).assertEqual(0);
       done();
     })
@@ -929,7 +971,20 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_034', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(33);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(33);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_035
+     * @tc.number STATUS_CHECK_035
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_035', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(34);
       expect(result).assertEqual(0);
       done();
     })
@@ -942,7 +997,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_036', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(35);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(35);
       expect(result).assertEqual(0);
       done();
     })
@@ -955,7 +1010,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_037', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(36);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(36);
       expect(result).assertEqual(0);
       done();
     })
@@ -968,7 +1023,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_038', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(37);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(37);
       expect(result).assertEqual(0);
       done();
     })
@@ -981,7 +1036,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_039', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(38);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(38);
       expect(result).assertEqual(0);
       done();
     })
@@ -994,7 +1049,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_040', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(39);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(39);
       expect(result).assertEqual(0);
       done();
     })
@@ -1007,7 +1062,33 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_041', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(40);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(40);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_042
+     * @tc.number STATUS_CHECK_042
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_042', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(41);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_043
+     * @tc.number STATUS_CHECK_043
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_043', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(42);
       expect(result).assertEqual(0);
       done();
     })
@@ -1020,7 +1101,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_044', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(43);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(43);
       expect(result).assertEqual(0);
       done();
     })
@@ -1033,7 +1114,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_045', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(44);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(44);
       expect(result).assertEqual(0);
       done();
     })
@@ -1046,7 +1127,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_046', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(45);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(45);
       expect(result).assertEqual(0);
       done();
     })
@@ -1059,7 +1140,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_047', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(46);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(46);
       expect(result).assertEqual(0);
       done();
     })
@@ -1072,7 +1153,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_048', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(47);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(47);
       expect(result).assertEqual(0);
       done();
     })
@@ -1085,7 +1166,20 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_049', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(48);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(48);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_050
+     * @tc.number STATUS_CHECK_050
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_050', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(49);
       expect(result).assertEqual(0);
       done();
     })
@@ -1098,7 +1192,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_051', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(50);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(50);
       expect(result).assertEqual(0);
       done();
     })
@@ -1111,7 +1205,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_052', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(51);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(51);
       expect(result).assertEqual(0);
       done();
     })
@@ -1124,7 +1218,20 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_053', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(52);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(52);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_054
+     * @tc.number STATUS_CHECK_054
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_054', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(53);
       expect(result).assertEqual(0);
       done();
     })
@@ -1137,7 +1244,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_055', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(54);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(54);
       expect(result).assertEqual(0);
       done();
     })
@@ -1150,7 +1257,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_056', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(55);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(55);
       expect(result).assertEqual(0);
       done();
     })
@@ -1163,7 +1270,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_057', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(56);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(56);
       expect(result).assertEqual(0);
       done();
     })
@@ -1176,7 +1283,20 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_058', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(57);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(57);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_059
+     * @tc.number STATUS_CHECK_059
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_059', Level.LEVEL2, async (done: Function) => {
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(58);
       expect(result).assertEqual(0);
       done();
     })
@@ -1189,7 +1309,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_060', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(59);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(59);
       expect(result).assertEqual(0);
       done();
     })
@@ -1202,7 +1322,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_061', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(60);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(60);
       expect(result).assertEqual(0);
       done();
     })
@@ -1215,7 +1335,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_062', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(61);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(61);
       expect(result).assertEqual(0);
       done();
     })
@@ -1228,7 +1348,7 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_063', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(62);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(62);
       expect(result).assertEqual(0);
       done();
     })
@@ -1241,37 +1361,10 @@ export default function AudioEncoderTest() {
      * @tc.level  LEVEL2
      */
     it('STATUS_CHECK_064', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(63);
+      const result = await libAudioEncoder.Audio_Encoder_StatusCheckTest(63);
       expect(result).assertEqual(0);
       done();
     })
-    /**
-     * @tc.name   STATUS_CHECK_065
-     * @tc.number STATUS_CHECK_065
-     * @tc.desc   status check test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('STATUS_CHECK_065', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(64);
-      expect(result).assertEqual(0);
-      done();
-    })
-    /**
-     * @tc.name   STATUS_CHECK_066
-     * @tc.number STATUS_CHECK_066
-     * @tc.desc   status check test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('STATUS_CHECK_066', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(65);
-      expect(result).assertEqual(0);
-      done();
-    })
-
 
   })
 }

@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Col_Span_Default() {
   describe('Grid_Col_Span_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_Col_Span_Default beforeAll start");
       
       await UtilsTest.msSleep(4000)

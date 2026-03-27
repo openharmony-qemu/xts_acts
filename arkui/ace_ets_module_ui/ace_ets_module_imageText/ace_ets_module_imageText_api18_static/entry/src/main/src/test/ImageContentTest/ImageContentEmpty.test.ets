@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ImageContentEmptyTest() {
   describe('ImageContentEmptyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
 

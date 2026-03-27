@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 export default function EnableToolBarAdaptation() {
   describe('EnableToolBarAdaptation', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stepper beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear18.static", "EntryAbility")
 

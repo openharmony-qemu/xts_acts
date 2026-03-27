@@ -31,7 +31,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from '../Util.test';
 export default function NavigationStack15Jsunit() {
   describe('NavigationStack15Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

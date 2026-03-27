@@ -79,6 +79,48 @@ export default class Utils {
     return rawFilePath
   }
 
+  static async waitForExist<T> (
+    stateGetter: () => T,
+    testsuite: string,
+    expectValue: string | number | boolean | null = null,
+    interval=3000,
+    tryTime=20
+  ):Promise<T>{
+    let nums = 0;
+    let isSuccess = false;
+    while (nums < tryTime) {
+      const currentValue = await new Promise<T>((done) => {
+        setTimeout(()=>done(stateGetter()), 0);
+      })
+
+      if (expectValue == null) {
+        if (currentValue != null) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      } else {
+        if (currentValue == expectValue) {
+          console.log(testsuite + ' debug wait for success exist');
+          isSuccess = true;
+          return currentValue
+        }
+      }
+      await Utils.sleep(interval);
+      nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
+    }
+    if (!isSuccess) {
+      console.log(testsuite + ' debug wait for failed')
+    }
+    const currentValue = await new Promise<T>((result) => {
+      setTimeout(() => result(stateGetter()), 0);
+    });
+    console.log(testsuite + ' debug wait for failed exist ' + currentValue);
+    return currentValue;
+  }
+
   static getSystemTime() {
     return systemDateTime.getTime(true) / 1000
   }

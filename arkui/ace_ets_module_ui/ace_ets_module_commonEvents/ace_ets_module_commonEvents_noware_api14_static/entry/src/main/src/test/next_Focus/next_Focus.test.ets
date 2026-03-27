@@ -25,7 +25,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function next_Focus() {
   describe('Button', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
 
       await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")

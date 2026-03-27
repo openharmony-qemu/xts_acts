@@ -31,7 +31,7 @@ import { RecordData } from '@ohos.base';
 
 export default function cachedShowFlow() {
   describe('cachedShowFlow', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("cachedShowFlow beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");

@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flexAlign_SpaceBetween_fixedChildParentPadding() {
   describe('FlexAlign_SpaceBetween_fixedChildParentPadding', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentPadding beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

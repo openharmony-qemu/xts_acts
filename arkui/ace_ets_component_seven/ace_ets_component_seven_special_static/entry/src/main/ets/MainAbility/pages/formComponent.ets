@@ -20,7 +20,6 @@ import  hilog  from '@ohos.hilog'
 
 class FormComponentModifier implements AttributeModifier<FormComponentAttribute>{
 	applyNormalAttribute(instance: FormComponentAttribute): void {
-		instance.size({ width: 200, height: 300 });
 		instance.allowUpdate(false);
 		// instance.dimension(FormDimension.Dimension_2_1);
 		instance.visibility(Visibility.Visible);
@@ -52,6 +51,7 @@ class FormComponentModifier implements AttributeModifier<FormComponentAttribute>
 			})
 			.key('FormComponentKey1')
 			.attributeModifier(this.buttonMod)
+			.size({ width: 200, height: 300 })
 
       FormComponent({
 				id: this.formId,

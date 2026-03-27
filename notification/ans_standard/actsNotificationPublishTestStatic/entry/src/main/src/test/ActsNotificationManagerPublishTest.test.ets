@@ -35,7 +35,7 @@ export default function ActsNotificationManagerPublishTest() {
     hilog.info(DOMAIN_NUMBER, TAG, 'SUB_NOTIFICATION_ANS_MANAGER_Publish_TEST START')
     let testAbilityContext:common.UIAbilityContext;
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
     /**
@@ -1448,6 +1448,7 @@ export default function ActsNotificationManagerPublishTest() {
         try {
           await Utils.msSleep(1500);
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
+            waitForCompletion(async () => {
             if (err) {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
                 JSON.stringify(err));
@@ -1466,6 +1467,7 @@ export default function ActsNotificationManagerPublishTest() {
                 done()
               })
             }
+          })
           })
         } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',

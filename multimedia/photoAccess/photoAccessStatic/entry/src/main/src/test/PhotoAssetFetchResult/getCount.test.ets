@@ -27,7 +27,7 @@ let helper: photoAccessHelper.PhotoAccessHelper | null = null;
 export default function assetGetCountTest() {
   describe('assetGetCountTest', (): void => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('beforeAll case');
       testContext = Hypium.get("context") as Context;
       helper = photoAccessHelper.getPhotoAccessHelper(testContext);

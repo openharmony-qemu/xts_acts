@@ -58,7 +58,7 @@ const waitUiReadyMs = 1000
 export default function sliderJsunitSliderTest() {
   describe("sliderJsunitSliderTestSliderTest", () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

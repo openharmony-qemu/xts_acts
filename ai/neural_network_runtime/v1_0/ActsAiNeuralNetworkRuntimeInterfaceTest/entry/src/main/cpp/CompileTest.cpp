@@ -61,6 +61,10 @@ int SubAiNnRtFuncNorthCompilationCreate0100()
 int SubAiNnRtFuncNorthCompilationCreate0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_Create_0200 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -102,6 +106,10 @@ int SubAiNnRtFuncNorthCompilationCreate0200()
 int SubAiNnRtFuncNorthCompilationSetDevice0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
@@ -130,6 +138,10 @@ int SubAiNnRtFuncNorthCompilationSetDevice0100()
 int SubAiNnRtFuncNorthCompilationSetDevice0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -355,6 +367,11 @@ int SubAiNnRtFuncNorthCompilationSetPriority0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100 start");
 
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
+
     OH_NN_ReturnCode ret = OH_NNCompilation_SetPriority(nullptr, OH_NN_PRIORITY_MEDIUM);
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
@@ -522,6 +539,10 @@ int SubAiNnRtFuncNorthCompilationDestroy0100()
 int SubAiNnRtFuncNorthCompilationDestroy0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_Destroy_0200 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -889,6 +910,10 @@ int SubAiNnRtFuncNorthCompilationCombine0200()
 int SubAiNnRtFuncNorthCompilationEnableFloat160200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1169,6 +1194,10 @@ int SubAiNnRtFuncNorthCompilationSetCache0800()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1219,6 +1248,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0300()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1269,6 +1302,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0400()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0500()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1319,6 +1356,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0500()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0600()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1369,6 +1410,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0600()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0700()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1419,6 +1464,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0700()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0800()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1477,6 +1526,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0800()
 int SubAiNnRtFuncNorthCompilationSetPerformanceMode0900()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1535,6 +1588,10 @@ int SubAiNnRtFuncNorthCompilationSetPerformanceMode0900()
 int SubAiNnRtFuncNorthCompilationSetPriority0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1585,6 +1642,10 @@ int SubAiNnRtFuncNorthCompilationSetPriority0300()
 int SubAiNnRtFuncNorthCompilationSetPriority0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1635,6 +1696,10 @@ int SubAiNnRtFuncNorthCompilationSetPriority0400()
 int SubAiNnRtFuncNorthCompilationSetPriority0500()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1685,6 +1750,10 @@ int SubAiNnRtFuncNorthCompilationSetPriority0500()
 int SubAiNnRtFuncNorthCompilationSetPriority0600()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1735,6 +1804,10 @@ int SubAiNnRtFuncNorthCompilationSetPriority0600()
 int SubAiNnRtFuncNorthCompilationSetPriority0700()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
@@ -1792,6 +1865,10 @@ int SubAiNnRtFuncNorthCompilationSetPriority0700()
 int SubAiNnRtFuncNorthCompilationSetPriority0800()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800 start");
+    if (!Test::IsNPU()) {
+        OH_LOG_ERROR(LOG_APP, "device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {

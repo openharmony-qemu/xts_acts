@@ -111,7 +111,7 @@ struct ConsumeArrayObjectChild {
           this.message.pop()
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [number, MyProvideObject]) => {
+      ForEach(Array.from(this.message.entries()), (item: [int, MyProvideObject]) => {
         Text(`Item ${item[1].id}: ${item[1].value} index: ${item[0]}`).fontSize(9)
           .id('provideArrayObject_value_' + item[0]).height('5%')
         Divider()

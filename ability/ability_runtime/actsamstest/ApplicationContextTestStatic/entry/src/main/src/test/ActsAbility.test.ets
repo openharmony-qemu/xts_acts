@@ -195,6 +195,31 @@ export default function abilityDelegatorStage() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200
+     * @tc.number SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200
+     * @tc.desc   Test setSupportedProcessCache can not use in iphone.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200`;
+      try{
+        let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
+        ApplicationContexts?.setSupportedProcessCache(true)
+        done();
+      }catch(e){
+        e = e as BusinessError;
+        if(JSON.stringify(e?.code) == '801'){
+          done();
+        }else{
+          expect().assertFail()
+          done();
+        }
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_3000
      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3000
      * @tc.desc   Test killAllProcess in ApplicationContext(AsyncCallback)

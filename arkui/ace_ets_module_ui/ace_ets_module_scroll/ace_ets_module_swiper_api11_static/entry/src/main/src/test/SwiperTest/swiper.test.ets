@@ -86,7 +86,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
 
 export default function swiperTest() {
   describe('ActSwiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
     });

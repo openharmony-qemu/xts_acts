@@ -69,8 +69,10 @@ export default function MessageTest() {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler);
           message.sendToTarget();
@@ -112,9 +114,11 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            console.log("worker one message");
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              console.log("worker one message");
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker)
           let msg1 = new concurrency.Message(0, handler);
           let msg2 = new concurrency.Message(1, handler);
@@ -157,9 +161,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor003';
         console.info(`${TAG} test start`);
@@ -170,9 +174,11 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            console.log("worker one message");
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              console.log("worker one message");
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker)
           let msg = new concurrency.Message(1, handler);
           handler.sendMessage(msg);
@@ -200,9 +206,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor004';
         console.info(`${TAG} test start`);
@@ -212,9 +218,11 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            console.log("worker one message");
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              console.log("worker one message");
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let msg = new concurrency.Message(1, handler);
           handler.sendMessage(msg);
@@ -254,10 +262,12 @@ export default function MessageTest() {
         worker.start();
         try {
           const m = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            const cb = msg.getCallback()!;
-            cb();
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              const cb = msg.getCallback()!;
+              cb();
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           const msg = new concurrency.Message(() => {
             executed = true;
@@ -265,7 +275,7 @@ export default function MessageTest() {
           msg.sendToTarget();
           await Sleep(200);
           expect(executed).assertTrue();
-          expect(msg.getWhat()).assertEqual(0);
+          expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -290,9 +300,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG = 'MessageConstructor006';
         console.info(`${TAG} test start`);
@@ -302,10 +312,12 @@ export default function MessageTest() {
         worker.start();
         try {
           const m = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            const cb = msg.getCallback()!;
-            cb();
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              const cb = msg.getCallback()!;
+              cb();
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           const asyncTask = () => {
             setTimeout(() => {
@@ -316,7 +328,7 @@ export default function MessageTest() {
           msg.sendToTarget();
           await Sleep(1100);
           expect(executed).assertTrue();
-          expect(msg.getWhat()).assertEqual(0);
+          expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -342,9 +354,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor007';
         console.info(`${TAG} test start`);
@@ -369,7 +381,7 @@ export default function MessageTest() {
           message.sendToTarget();
           await Sleep(1200);
           expect(callbackExecuted).assertTrue();
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           expect(message.getObject()).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
@@ -406,12 +418,14 @@ export default function MessageTest() {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(handler);
           message.sendToTarget();
-          expect(handler.hasMessages(0)).assertEqual(true);
+          expect(handler.hasMessages(-1000000)).assertEqual(false);
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -435,9 +449,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor009';
         console.info(`${TAG} test start`);
@@ -447,16 +461,18 @@ export default function MessageTest() {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            console.info('MessageConstructor009--00')
-            await Sleep(1000);
-            flag = true;
-            console.info('MessageConstructor009--01', flag)
+            waitForCompletion(async () => {
+              console.info('MessageConstructor009--00')
+              await Sleep(1000);
+              flag = true;
+              console.info('MessageConstructor009--01', flag)
+            })
           }, worker);
           console.info('MessageConstructor009--0', handler)
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
           console.info('MessageConstructor009--1', message.getWhat())
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           while (!flag) {
             await Utils.msSleep(100)
             console.info('MessageConstructor009--2', flag)
@@ -482,9 +498,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor010';
         console.info(`${TAG} test start`);
@@ -494,8 +510,10 @@ export default function MessageTest() {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(0, handler);
           handler.sendMessage(message);
@@ -524,9 +542,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor011';
         console.info(`${TAG} test start`);
@@ -536,9 +554,11 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            console.log("worker one message");
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              console.log("worker one message");
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           console.info('MessageConstructor011--0', handler)
           let msg = new concurrency.Message(0, handler);
@@ -618,7 +638,7 @@ export default function MessageTest() {
             console.log("worker one message");
             let currentWorkerId = EAWorker.current()!.getWorkerId();
             expect(currentWorkerId).assertEqual(workerId);
-          }, EAWorker.main());
+          });
           let message = new concurrency.Message(1, "handler workerID", handler)
           handler.sendMessage(message);
         } catch (error) {
@@ -656,8 +676,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -686,9 +708,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks002';
         console.info(`${TAG} test start`);
@@ -705,8 +727,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.post(p);
@@ -753,8 +777,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let msg = new concurrency.Message(handler)
           expect(handler.hasCallbacks(p)).assertEqual(false);
@@ -778,9 +804,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks003';
         let flag: boolean = false;
@@ -797,8 +823,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -827,9 +855,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks004';
         let flag: boolean = false;
@@ -846,8 +874,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -876,9 +906,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks005';
         console.info(`${TAG} test start`);
@@ -895,8 +925,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -925,9 +957,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks006';
         console.info(`${TAG} test start`);
@@ -944,8 +976,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -974,9 +1008,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks007';
         console.info(`${TAG} test start`);
@@ -993,8 +1027,10 @@ export default function MessageTest() {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -1031,8 +1067,10 @@ export default function MessageTest() {
         let handler: concurrency.MessageHandler;
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           await Sleep(1500);
@@ -1070,8 +1108,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1097,9 +1137,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages003';
         console.info(`${TAG} test start`);
@@ -1108,7 +1148,9 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            waitForCompletion(async () => {
+              await Sleep(2000);
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1129,21 +1171,38 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages004';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              if (msg.getWhat() == 0) {
+                blockerStarted = true;
+                const end = Date.now() + 1000;
+                while (Date.now() < end) {
+                }
+                return;
+              }
+              if (msg.getWhat() == 1) {
+                await Sleep(1000);
+                flag = true;
+              }
+            })
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1168,9 +1227,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages005';
         console.info(`${TAG} test start`);
@@ -1179,7 +1238,9 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            waitForCompletion(async () => {
+              await Sleep(2000);
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1205,9 +1266,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages006';
         console.info(`${TAG} test start`);
@@ -1218,8 +1279,10 @@ export default function MessageTest() {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
@@ -1244,20 +1307,37 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages007';
         console.info(`${TAG} test start`);
         let messageObject = new MessageObject(10);
         let handler: concurrency.MessageHandler;
+        let blockerStarted = false;
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            waitForCompletion(async () => {
+              if (msg.getWhat() == 0) {
+                blockerStarted = true;
+                const end = Date.now() + 1000;
+                while (Date.now() < end) {
+                }
+                return;
+              }
+              if (msg.getWhat() == 1) {
+                await Sleep(2000);
+              }
+            })
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1281,9 +1361,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages008';
         console.info(`${TAG} test start`);
@@ -1294,8 +1374,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -1325,20 +1407,37 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages009';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
+        let blockerStarted = false;
         let worker = new EAWorker();
         worker.start();
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(2000);
+            waitForCompletion(async () => {
+              if (msg.getWhat() == 0) {
+                blockerStarted = true;
+                const end = Date.now() + 1000;
+                while (Date.now() < end) {
+                }
+                return;
+              }
+              if (msg.getWhat() == 1) {
+                await Sleep(2000);
+              }
+            })
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
           expect(handler.removeMessages(1)).assertEqual(true);
@@ -1362,9 +1461,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages010';
         console.info(`${TAG} test start`);
@@ -1375,8 +1474,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -1406,9 +1507,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages011';
         console.info(`${TAG} test start`);
@@ -1419,8 +1520,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
@@ -1445,9 +1548,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages012';
         console.info(`${TAG} test start`);
@@ -1458,8 +1561,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1487,9 +1592,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages013';
         console.info(`${TAG} test start`);
@@ -1500,8 +1605,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1530,9 +1637,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages014';
         console.info(`${TAG} test start`);
@@ -1543,8 +1650,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1572,9 +1681,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages015';
         console.info(`${TAG} test start`);
@@ -1585,8 +1694,10 @@ export default function MessageTest() {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1615,9 +1726,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages016';
         console.info(`${TAG} test start`);
@@ -1628,8 +1739,10 @@ export default function MessageTest() {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(1, messageObject)).assertEqual(false);
@@ -1654,22 +1767,39 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages017';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let messageObject = new MessageObject(10);
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              if (msg.getWhat() == 0) {
+                blockerStarted = true;
+                const end = Date.now() + 1000;
+                while (Date.now() < end) {
+                }
+                return;
+              }
+              if (msg.getWhat() == 1) {
+                await Sleep(1000);
+                flag = true;
+              }
+            })
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler)
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
           expect(handler.removeMessages(1, messageObject)).assertEqual(true);
@@ -1694,9 +1824,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages018';
         console.info(`${TAG} test start`);
@@ -1706,7 +1836,9 @@ export default function MessageTest() {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(5000);
+            waitForCompletion(async () => {
+              await Sleep(5000);
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
           handler.sendMessage(message);
@@ -1732,22 +1864,39 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages019';
         console.info(`${TAG} test start`);
         let flag = false;
+        let blockerStarted = false;
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
         worker.start();
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              if (msg.getWhat() == 0) {
+                blockerStarted = true;
+                const end = Date.now() + 1000;
+                while (Date.now() < end) {
+                }
+                return;
+              }
+              if (msg.getWhat() == 1) {
+                await Sleep(1000);
+                flag = true;
+              }
+            })
           }, worker);
+          let blockMsg = new concurrency.Message(0, handler);
+          blockMsg.sendToTarget();
+          while (!blockerStarted) {
+            await Utils.msSleep(10);
+          }
           let message = new concurrency.Message(1, messageObject, handler);
           message.sendToTarget();
           expect(handler.removeMessages(1, messageObject)).assertEqual(true);
@@ -1772,9 +1921,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages020';
         console.info(`${TAG} test start`);
@@ -1784,7 +1933,9 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(5000);
+            waitForCompletion(async () => {
+              await Sleep(5000);
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
           message.sendToTarget();
@@ -1810,9 +1961,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages001';
         console.info(`${TAG} test start`);
@@ -1822,8 +1973,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(handler);
           expect(handler.hasMessages(0)).assertEqual(false);
@@ -1847,9 +2000,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages002';
         console.info(`${TAG} test start`);
@@ -1859,8 +2012,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -1888,9 +2043,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages003';
         console.info(`${TAG} test start`);
@@ -1900,8 +2055,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler);
           handler.sendMessage(message);
@@ -1929,9 +2086,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages004';
         console.info(`${TAG} test start`);
@@ -1941,8 +2098,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1970,9 +2129,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages005';
         console.info(`${TAG} test start`);
@@ -1982,8 +2141,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -2011,9 +2172,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages006';
         console.info(`${TAG} test start`);
@@ -2023,8 +2184,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -2052,9 +2215,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages007';
         console.info(`${TAG} test start`);
@@ -2065,8 +2228,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -2094,9 +2259,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages008';
         console.info(`${TAG} test start`);
@@ -2107,8 +2272,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -2136,9 +2303,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages009';
         console.info(`${TAG} test start`);
@@ -2149,8 +2316,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -2178,9 +2347,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages010';
         console.info(`${TAG} test start`);
@@ -2191,8 +2360,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -2220,9 +2391,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages011';
         console.info(`${TAG} test start`);
@@ -2233,8 +2404,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -2262,9 +2435,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages012';
         console.info(`${TAG} test start`);
@@ -2275,8 +2448,10 @@ export default function MessageTest() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -2316,8 +2491,10 @@ export default function MessageTest() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           message.sendToTarget();
@@ -2340,9 +2517,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest002';
         console.info(`${TAG} test start`);
@@ -2351,8 +2528,10 @@ export default function MessageTest() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           message.sendToTarget();
@@ -2375,9 +2554,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest003';
         console.info(`${TAG} test start`);
@@ -2386,8 +2565,10 @@ export default function MessageTest() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           message.sendToTarget();
@@ -2410,9 +2591,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest004';
         console.info(`${TAG} test start`);
@@ -2421,11 +2602,13 @@ export default function MessageTest() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, eaw);
-          let callback: CB | undefined;
-          let message: concurrency.Message = new concurrency.Message(callback!, handler);
+          let callback: CB = () => {};
+          let message: concurrency.Message = new concurrency.Message(callback, handler);
           message.sendToTarget();
           while (!flag) {
             await Utils.msSleep(100)
@@ -2457,12 +2640,14 @@ export default function MessageTest() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
-            flag = true;
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           handler.sendMessage(message);
-          expect(message.getWhat()).assertEqual(0);
+          expect(message.getWhat()).assertEqual(-1000000);
           while (!flag) {
             await Utils.msSleep(100)
           }

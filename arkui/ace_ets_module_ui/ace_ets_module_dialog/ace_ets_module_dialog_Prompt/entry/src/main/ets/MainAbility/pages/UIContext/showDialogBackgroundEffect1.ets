@@ -20,9 +20,11 @@ struct UIShowDialog2 {
   private ctx: UIContext = this.getUIContext()
   private promptAction: PromptAction = this.ctx.getPromptAction()
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('UIShowDialog_Effect001')
         .id('UIShowDialog_Effect001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -66,6 +68,8 @@ struct UIShowDialog2 {
         })
       Button('UIShowDialog_Effect002')
         .id('UIShowDialog_Effect002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -107,6 +111,8 @@ struct UIShowDialog2 {
         })
       Button('UIShowDialog_Effect003')
         .id('UIShowDialog_Effect003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -151,5 +157,8 @@ struct UIShowDialog2 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

@@ -45,7 +45,7 @@ export default function checkboxGroupThemeTest() {
       
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const options: router.RouterOptions = {

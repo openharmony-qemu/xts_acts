@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { DeleteParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { Cipher, cipherAbortWithText, CipherData, cipherWithText, cipherWithTextCallback, GetCfbNoPaddingOptions } from './utils/huks/CipherUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { DeleteParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Cipher, cipherAbortWithText, CipherData, cipherWithText, cipherWithTextCallback, GetCfbNoPaddingOptions } from './utils/huks/CipherUtils';
+import { Logger } from './utils/common/Logger';
+import { GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 
 export default function SecurityHuksCipherSM4Test() {

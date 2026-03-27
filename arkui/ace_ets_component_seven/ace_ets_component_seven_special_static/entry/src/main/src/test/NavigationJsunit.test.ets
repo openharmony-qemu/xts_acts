@@ -35,7 +35,7 @@ import Utils from '../../ets/MainAbility/common/Utils';
 
 export default function navigationJsunit() {
   describe('NavigationJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavigationJsunit beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

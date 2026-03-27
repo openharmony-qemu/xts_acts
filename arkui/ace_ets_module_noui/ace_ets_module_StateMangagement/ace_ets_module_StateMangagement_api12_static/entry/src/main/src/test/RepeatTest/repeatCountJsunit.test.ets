@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function repeatCountJsunit() {
   describe('repeatCountJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("repeatCountJsunit beforeEach start");
 
 

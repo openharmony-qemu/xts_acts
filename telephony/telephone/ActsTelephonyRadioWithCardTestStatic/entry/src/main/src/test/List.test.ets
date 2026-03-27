@@ -14,6 +14,7 @@
  */
 
 import telephonyRadioPublicTest from './TelephonyRadioPublic.test';
+import telephonyRadioPublic1Test from './TelephonyRadioPublic1.test';
 import sim from '@ohos.telephony.sim';
 import EmptyTest from './Empty.test'
 
@@ -22,6 +23,7 @@ export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
     if (sim.hasSimCardSync(0)) {
       telephonyRadioPublicTest();
+      telephonyRadioPublic1Test();
     } else {
       EmptyTest();
     }

@@ -30,7 +30,7 @@ function stringToArray(str: string): number[] {
 function uInt8ArrayToString(fileData: Uint8Array): string {
   let dataString = "";
   for (let i = 0; i < fileData.length; i++) {
-    dataString += String.fromCharCode(fileData[i]);
+    dataString += String.fromCharCode(fileData[i].toInt());
   }
   return dataString;
 }

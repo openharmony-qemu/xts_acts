@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputPreview() {
   describe('textInputPreview', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputPreview beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

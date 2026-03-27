@@ -57,7 +57,7 @@ export default function AVPlayerDrmTest() {
           //throw new Error("======> WLAN Network error");//方式二
           done();
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
           //throw new Error("======> WLAN Network error");//方式二
           done();
@@ -109,11 +109,11 @@ export default function AVPlayerDrmTest() {
       } catch (err) {
         console.error(TAG, testName + ' drm createMediaKeySession failed.');
         drmMediaKeySystem!.destroy();
+        expect().assertFail();
         done();
       }
       let avPlayer: media.AVPlayer = await media.createAVPlayer();
       avPlayer.setDecryptionConfig(session!, false);
-      expect(true).assertTrue();
       session!.destroy();
       drmMediaKeySystem!.destroy();
       done();

@@ -15,7 +15,13 @@
  */
 
 import ButtonTest from './ButtonTest/Button.test';
+import ArcButtonEnumTest from './ButtonTest/ArcButtonEnum.test';
+import ArcButtonTest from './ArcButtonTest/ArcButton.test';
+import ButtonLabelStyleTest from './ButtonLabelStyleTest/ButtonLabelStyle.test';
 
 export default function testsuite() {
   ButtonTest();
+  ArcButtonEnumTest();
+  ArcButtonTest();
+  ButtonLabelStyleTest();
 }

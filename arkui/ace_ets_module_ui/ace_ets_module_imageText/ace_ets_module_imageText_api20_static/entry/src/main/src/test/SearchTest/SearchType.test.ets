@@ -37,7 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function SearchTypeTest() {
   describe('SearchTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api20.static", "EntryAbility")
     });

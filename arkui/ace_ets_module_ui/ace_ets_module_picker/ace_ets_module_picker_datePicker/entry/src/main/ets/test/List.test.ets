@@ -24,6 +24,12 @@ import datePickerJsunit from './datePickerTest/DatePickerJsunit.test';
 import datePickerUIJsunit from './datePickerTest/datePickerUIJsunit.test';
 import datePickerPropertiesModifierTest from './datePickerTest/datePickerPropertiesModifier.test';
 
+import DatePickerCanLoopNullUndefinedTest from './datePickerNullUndefined/DatePickerCanLoopNullUndefined.test';
+import DatePickerDisappearTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined.test';
+import DatePickerLunarNullUndefinedTest from './datePickerNullUndefined/DatePickerLunarNullUndefined.test';
+import DatePickerSelectedTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined.test';
+import DatePickerTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerTextStyleNullUndefined.test';
+
 export default function testsuite() {
   DatePickerCanLoopTest();
   datePickerMode();
@@ -35,4 +41,9 @@ export default function testsuite() {
   datePickerJsunit();
   datePickerUIJsunit();
   datePickerPropertiesModifierTest();
+  DatePickerCanLoopNullUndefinedTest();
+  DatePickerDisappearTextStyleNullUndefinedTest();
+  DatePickerLunarNullUndefinedTest();
+  DatePickerSelectedTextStyleNullUndefinedTest();
+  DatePickerTextStyleNullUndefinedTest();
 }

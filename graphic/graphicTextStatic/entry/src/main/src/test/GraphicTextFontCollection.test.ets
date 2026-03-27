@@ -44,7 +44,6 @@ export default function GraphicTextFontCollection() {
           let fontCollection = text.FontCollection.getGlobalInstance();
           expect(fontCollection !== undefined).assertTrue()
           fontCollection.loadFontSync('myFamilyName0', 'file:///system/fonts/HarmonyOS_Sans.ttf');
-          expect(true).assertTrue();
           hilog.info(domain, tag, 'Succeed in fontCollection.loadFontSync.');
           done()
         } catch (err) {
@@ -68,7 +67,6 @@ export default function GraphicTextFontCollection() {
           let fontCollection = new text.FontCollection;
           expect(fontCollection !== undefined).assertTrue()
           fontCollection.loadFontSync('myFamilyName0', 'file:///system/fonts/HarmonyOS_Sans.ttf');
-          expect(true).assertTrue();
           hilog.info(domain, tag, 'Succeed in fontCollection.loadFontSync.');;
           done()
         } catch (err) {
@@ -93,7 +91,6 @@ export default function GraphicTextFontCollection() {
           expect(fontCollection !== undefined).assertTrue()
           fontCollection.loadFont('myFamilyName0', 'file:///system/fonts/HarmonyOS_Sans.ttf')
             .then(()=>{
-              expect(true).assertTrue();
               hilog.info(domain, tag, 'Succeed in fontCollection.loadFont.');;
             })
           done()
@@ -119,11 +116,9 @@ export default function GraphicTextFontCollection() {
           expect(fontCollection !== undefined).assertTrue()
           fontCollection.loadFont('myFamilyName0', 'file:///system/fonts/HarmonyOS_Sans.ttf')
             .then(()=>{
-              expect(true).assertTrue();
               hilog.info(domain, tag, 'Succeed in fontCollection.loadFont.');;
               fontCollection.clearCaches();
               hilog.info(domain, tag, 'Succeed in fontCollection.clearCaches.');;
-              expect(true).assertTrue();
             })
           done()
         } catch (err) {

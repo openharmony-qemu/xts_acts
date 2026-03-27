@@ -121,18 +121,32 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
               hilog.info(0x0000, tag, '====>queryDistributedVirtualDeviceId fail');
               expect().assertFail();
             } else {
-              if (data) {
-                expect(data !== null).assertTrue();
+              if (data !== true) {
+                expect(data).assertFalse();
                 hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0100 end====");
-              } else {
-                hilog.info(0x0000, tag, "====>run err");
-                expect().assertFail();
+                done();
+                return;
               }
+              accountManager.checkMultiOsAccountEnabled((err: BusinessError<void> | null, data: boolean | undefined): void => {
+                hilog.info(0x0000, tag, "====>checkMultiOsAccountEnabled err: " + JSON.stringify(err));
+                hilog.info(0x0000, tag, "====>checkMultiOsAccountEnabled data: " + data);
+                try {
+                  if (err) {
+                    hilog.info(0x0000, tag, '====>queryDistributedVirtualDeviceId fail');
+                    expect().assertFail();
+                  } else {
+                    expect(data).assertTrue();
+                    hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0100 end====");
+                  }
+                } catch (err) {
+                  hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+                }
+                done();
+              });
             }
           } catch (err) {
             hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
           }
-          done();
         });
       });
 
@@ -147,10 +161,18 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
     it('ActsOsAccountCheckMulty_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0200 start====");
+        let data: boolean = await accountManager.checkMultiOsAccountEnabled();
+        hilog.info(0x0000, tag, "====>checkMultiOsAccountEnabled data: " + data);
+        if (data !== true) {
+          expect(data).assertFalse();
+          hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0200 end====");
+          done();
+          return;
+        }
         try {
           let data: boolean = await accountManager.checkMultiOsAccountEnabled();
           hilog.info(0x0000, tag, "====>checkMultiOsAccountEnabled data: " + data);
-          expect(data !== null).assertTrue();
+          expect(data).assertTrue();
           hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0200 end====");
           done();
         } catch (err) {
@@ -180,7 +202,28 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
               hilog.info(0x0000, tag, '====>checkOsAccountTestable fail');
               expect().assertFail();
             } else {
-              expect(data).assertEqual(false);
+              if (data !== false) {
+                expect(data).assertTrue();
+                hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0100 end====");
+                done();
+                return;
+              }
+              accountManager.checkOsAccountTestable((err: BusinessError<void> | null, data: boolean | undefined): void => {
+                hilog.info(0x0000, tag, "====>checkOsAccountTestable err: " + JSON.stringify(err));
+                hilog.info(0x0000, tag, "====>checkOsAccountTestable data: " + data);
+                try {
+                  if (err) {
+                    hilog.info(0x0000, tag, '====>checkOsAccountTestable fail');
+                    expect().assertFail();
+                  } else {
+                    expect(data).assertFalse();
+                    hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0100 end====");
+                  }
+                } catch (err) {
+                  hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+                }
+                done();
+              });
               hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0100 end====");
             }
           } catch (err) {
@@ -189,6 +232,7 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
           done();
         });
       });
+      
     /**
     * @tc.number   ActsOsAccountCheckTest_0200
     * @tc.name     ActsOsAccountCheckTest_0200
@@ -199,8 +243,15 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
     */
     it('ActsOsAccountCheckTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0200 start====");
+        let isTest: boolean = await accountManager.checkOsAccountTestable();
+        if (isTest !== false) {
+          expect(isTest).assertTrue();
+          hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0200 end====");
+          done();
+          return;
+        }
         try {
-          hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0200 start====");
           let isTest: boolean = await accountManager.checkOsAccountTestable();
           expect(isTest).assertFalse();
           hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0200 end====");

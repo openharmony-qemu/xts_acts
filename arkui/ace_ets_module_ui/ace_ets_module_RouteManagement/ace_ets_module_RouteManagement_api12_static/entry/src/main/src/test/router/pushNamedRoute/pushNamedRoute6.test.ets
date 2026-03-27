@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function pushNamedRoute6() {
   describe('pushNamedRoute6', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("pushNamedRoute6 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

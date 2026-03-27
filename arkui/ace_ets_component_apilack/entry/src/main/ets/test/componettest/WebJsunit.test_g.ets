@@ -456,14 +456,14 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
     /**
-     * @tc.name   postMessageEvent
+     * @tc.name   postMessageEventAdapt001
      * @tc.number postMessageEvent
      * @tc.desc   postMessageEvent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postMessageEvent', Level.LEVEL0, async () => {
+    it('postMessageEventAdapt001', Level.LEVEL0, async () => {
       emitKey = "emitpostMessageEvent1";
       Utils.registerEvent("postMessageEvent", 1, 424);
       sendEventByKey('webcomponent', 10, '');
@@ -508,14 +508,14 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
     /**
-     * @tc.name   getPorts
+     * @tc.name   getPortsAdapt001
      * @tc.number getPorts
      * @tc.desc   getPorts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getPorts', Level.LEVEL0, async () => {
+    it('getPortsAdapt001', Level.LEVEL0, async () => {
       emitKey = "emitgetPorts";
       Utils.registerEvent("getPorts", 1, 424);
       sendEventByKey('webcomponent', 10, '');
@@ -574,28 +574,28 @@ export default function webJsunit() {
     })
 
     /**
-     * @tc.name   constructor
+     * @tc.name   constructorAdapt001
      * @tc.number constructor
      * @tc.desc   constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('constructor', Level.LEVEL0, async () => {
+    it('constructorAdapt001', Level.LEVEL0, async () => {
       emitKey = "emitonFullScreenExitconstructor";
       Utils.registerEvent("constructor", 1, 424);
       sendEventByKey('webcomponent', 10, '');
     })
 
     /**
-     * @tc.name   constructor
+     * @tc.name   constructorAdapt002
      * @tc.number constructor
      * @tc.desc   constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('constructor', Level.LEVEL0, async () => {
+    it('constructorAdapt002', Level.LEVEL0, async () => {
       emitKey = "emitWebMessageEventconstructor";
       Utils.registerEvent("constructor", 1, 424);
       sendEventByKey('webcomponent', 10, '');

@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Monitor0280Test() {
   describe('Monitor0280Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Monitor0280Test beforeEach start");
 
 

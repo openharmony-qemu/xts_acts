@@ -204,6 +204,17 @@ export default function UIAbilityContextStatic() {
           let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL2)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic001 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el2/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el2/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el2/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el2/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el2/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          expect(moduleContext.resourceManager!= null).assertTrue();
+          expect(moduleContext.applicationInfo.name).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
           hilog.info(domain, tag, "testCreateAreaModeContextStatic001 abilityContext err");
@@ -212,6 +223,150 @@ export default function UIAbilityContextStatic() {
         }
       } catch (err) {
         hilog.info(domain, tag, `testCreateAreaModeContextStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateAreaModeContextStatic002
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0200
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCreateAreaModeContextStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL1)
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic002 moduleContext:" + JSON.stringify(moduleContext));
+          expect(moduleContext != null).assertTrue();
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el1/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el1/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el1/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el1/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el1/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el1/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic002 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateAreaModeContextStatic002 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateAreaModeContextStatic003
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0300
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCreateAreaModeContextStatic003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL3)
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic003 moduleContext:" + JSON.stringify(moduleContext));
+          expect(moduleContext != null).assertTrue();
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el3/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el3/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el3/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el3/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el3/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic003 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateAreaModeContextStatic003 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateAreaModeContextStatic004
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0400
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCreateAreaModeContextStatic004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL4)
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic004 moduleContext:" + JSON.stringify(moduleContext));
+          expect(moduleContext != null).assertTrue();
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el4/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el4/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el4/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el4/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el4/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic004 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateAreaModeContextStatic004 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateAreaModeContextStatic005
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0500
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCreateAreaModeContextStatic005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL5)
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic005 moduleContext:" + JSON.stringify(moduleContext));
+          expect(moduleContext != null).assertTrue();
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el5/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el5/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el5/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el5/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el5/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic005 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateAreaModeContextStatic005 fail: ` + err);
         expect().assertFail();
         done();
       }
@@ -231,6 +386,17 @@ export default function UIAbilityContextStatic() {
           let displayContext: common.Context = context!.createDisplayContext(0)
           hilog.info(domain, tag, "testCreateDisplayContextStatic001 displayContext:" + JSON.stringify(displayContext));
           expect(displayContext != null).assertTrue();
+          expect(displayContext.filesDir).assertEqual("/data/storage/el2/base/haps/entry/files");
+          expect(displayContext.tempDir).assertEqual("/data/storage/el2/base/haps/entry/temp");
+          expect(displayContext.preferencesDir).assertEqual("/data/storage/el2/base/haps/entry/preferences");
+          expect(displayContext.databaseDir).assertEqual("/data/storage/el2/database/entry");
+          expect(displayContext.cacheDir).assertEqual("/data/storage/el2/base/haps/entry/cache");
+          expect(displayContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(displayContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(displayContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
+          expect(displayContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          expect(displayContext.resourceManager!= null).assertTrue();
+          expect(displayContext.applicationInfo.name).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
           hilog.info(domain, tag, "testCreateDisplayContextStatic001 abilityContext err");
@@ -396,7 +562,7 @@ export default function UIAbilityContextStatic() {
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
         })
-        await Utils.msSleep(1000);
+        await Utils.msSleep(500);
         let AbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext
         await Utils.msSleep(2000);
         let isTerminating: boolean = AbilityContext.isTerminating();
@@ -409,5 +575,30 @@ export default function UIAbilityContextStatic() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SetOnNewWantSkipScenarios_Static_0100
+     * @tc.number SetOnNewWantSkipScenarios_Static_0100
+     * @tc.desc   SetOnNewWantSkipScenarios_Static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetOnNewWantSkipScenarios_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG: string = 'SetOnNewWantSkipScenarios_Static_0100';
+      hilog.info(0x0000, tag, TAG + '---------------testcase is start---------------')
+      let scenarios: int = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
+      contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
+      contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+      context?.setOnNewWantSkipScenarios(scenarios).then(() => {
+        hilog.info(0x0000, tag, TAG + 'SetOnNewWantSkipScenarios_Static_0100 succeed');
+        done();
+      }).catch((err: Error) => {
+        hilog.info(0x0000, tag, `${TAG} SetOnNewWantSkipScenarios_Static_0100 failed, code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+        done();
+      });
+      hilog.info(0x0000, tag, TAG + '---------------testcase is end---------------')
+    });
   })
 }

@@ -36,7 +36,7 @@ export default function webViewController() {
 
   describe('WebViewController', (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await Utils.sleep(2000)
       await Utils.emitEvent('pages/webViewController', 10)
       await Utils.sleep(2000)
@@ -175,7 +175,7 @@ export default function webViewController() {
         done()
       })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)
       await Utils.sleep(2000);

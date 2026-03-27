@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ReachStartAndEnd2() {
   describe('Grid_ReachStartAndEnd2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("Grid_ReachStartAndEnd2 beforeAll start111")
            
       await UtilsTest.msSleep(4000)
@@ -91,7 +91,7 @@ it('Grid_ReachStartAndEnd2_static_0200', Level.LEVEL0, async (done: () => void):
       console.info('[Grid_ReachStartAndEnd2_static_0200] START');
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_scrollBar')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
@@ -104,7 +104,7 @@ it('Grid_ReachStartAndEnd2_static_0200', Level.LEVEL0, async (done: () => void):
      console.info("[Grid_ReachStartAndEnd2_static_0200] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function NavigationCustomTitlePage() {
   describe('NavigationCustomTitlePage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavigationCustomTitlePage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");

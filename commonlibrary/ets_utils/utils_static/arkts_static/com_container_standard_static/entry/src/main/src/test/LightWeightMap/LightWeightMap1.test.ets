@@ -48,7 +48,7 @@ class TestAbc {
 
 export default function LightWeightMapTest1() {
   describe("LightWeightMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 

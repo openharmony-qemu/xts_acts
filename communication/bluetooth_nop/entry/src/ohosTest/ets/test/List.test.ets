@@ -19,6 +19,7 @@ import btConnectionNopUiJsunit from './BtConnectionNopUiJsunit.test';
 import btProfileNopUiJsunit from './BtProfileNopUiJsunit.test';
 import btSocketNopUiJsunit from './BtSocketNopUiJsunit.test';
 import btHidNopUiJsunit from './BtHidNopUiJsunit.test';
+import btNopUiJsunitCoverageTest from './BtNopUiJsunitCoverage.test'
 export default function testsuite() {
   btBleNopUiJsunit();
   btBleServerNopUiJsunit();
@@ -26,4 +27,5 @@ export default function testsuite() {
   btProfileNopUiJsunit();
   btSocketNopUiJsunit();
   btHidNopUiJsunit();
+  btNopUiJsunitCoverageTest();
 }

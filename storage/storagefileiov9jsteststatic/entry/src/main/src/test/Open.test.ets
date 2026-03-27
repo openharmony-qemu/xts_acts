@@ -373,6 +373,26 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_014
+     * @tc.number SUB_DF_FILEIO_OPEN_SYNC_1400
+     * @tc.desc   Test openSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_sync_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_014 start');
+      try {
+        fs.openSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_014 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_open_async_static_000
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0000
      * @tc.desc   Test open() interfaces. mode=0o0. Promise.
@@ -1152,6 +1172,106 @@ export default function fileIOOpen() {
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_029 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_open_async_static_030
+     * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3000
+     * @tc.desc   Test open() Promise interface with empty path. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_async_static_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_030 start');
+      try {
+        await fs.open("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_030 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_open_async_static_031
+     * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3100
+     * @tc.desc   Test open() Promise interface with empty path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_async_static_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_031 start');
+      try {
+        fs.open("", (err: BusinessError | null, file: fs.File | undefined) => {
+          if(err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_031 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_031 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_open_async_static_032
+     * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3200
+     * @tc.desc   Test open() interfaces.. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_async_static_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_032 start');
+      let fpath = await Utils.nextFileName('fileIO_test_open_async_static_032');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.open(fpath, (err: BusinessError | null, file: fs.File | undefined) => {
+          if(err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_032 has error for' + JSON.stringify(err));
+            expect(false).assertTrue();
+          }
+          expect(typeof file?.fd == 'int').assertTrue();
+          fs.closeSync(file!);
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_032 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_open_async_static_033
+     * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3300
+     * @tc.desc   Test open() Promise interface with empty path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_async_static_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 start');
+      try {
+        fs.open("", fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, (err: BusinessError | null, file: fs.File | undefined) => {
+          if(err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
 

@@ -36,7 +36,7 @@ let compareFlexGrow = 1;
 const uiContext = new UIContext();
 export default function RichEditorApi5() {
   describe('RichEditorApi5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorApi5 beforeEach start");
 
 

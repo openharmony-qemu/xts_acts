@@ -71,7 +71,7 @@ export default function imageGif() {
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       isSupportHEICDecode =

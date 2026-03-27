@@ -42,7 +42,7 @@ function sleep(time: int):Promise<int> {
 export default function stageTimePickerDialog() {
   describe('stageTimePickerDialog', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

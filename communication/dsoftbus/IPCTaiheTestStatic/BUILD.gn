@@ -21,5 +21,6 @@ ohos_js_app_static_suite("ActsIPCTaiheStaticTest") {
   hap_name = "ActsIPCTaiheStaticTest"
   part_name = "ipc"
   subsystem_name = "communication"
+  deps =
+      [ "../ipc_Static/IPCTaiheServerTestStatic:ActsIPCTaiheServerStaticTest" ]
 }
-

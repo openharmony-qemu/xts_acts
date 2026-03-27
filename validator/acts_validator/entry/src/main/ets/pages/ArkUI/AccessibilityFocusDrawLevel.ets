@@ -180,7 +180,6 @@ struct AccessibilityOptions {
         Row() {
           Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
         }
-
         Row() {
           Column() {
             Button(`不支持`)
@@ -203,85 +202,90 @@ struct AccessibilityOptions {
                 this.onAccessibilityHoverEnable = true
               })
           }
-        }
+        }.height('5%')
 
         Column({ space: 10 }) {
-          Column() {
+          Scroll(){
             Column() {
-              Text('By Modifier')
-                .accessibilityLevel('yes')
-                .fontSize('50fp')
-                .fontWeight(FontWeight.Bold)
-                .attributeModifier(this.modifier)
-                .focusable(true)
-            }
-            .borderRadius(50)
-            .borderWidth(1)
-            .borderColor(Color.Blue)
-            .clip(true)
+              Column() {
+                Text('By Modifier')
+                  .accessibilityLevel('yes')
+                  .fontSize('50fp')
+                  .fontWeight(FontWeight.Bold)
+                  .attributeModifier(this.modifier)
+                  .focusable(true)
+              }
+              .margin('3vp')
+              .borderRadius(50)
+              .borderWidth(1)
+              .borderColor(Color.Blue)
+              .clip(true)
 
-            Button('ChangeTextModifier_TOP')
-              .accessibilityLevel('yes')
-              .onClick(() => {
-                this.status1 = true;
-                this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
-                if(this.status1&&this.status2&&this.status3&&this.status4){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
-              })
-              .margin(20)
-            Button('ChangeTextModifier_SELF')
-              .accessibilityLevel('yes')
-              .onClick(() => {
-                this.status2 = true;
-                this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
-                if(this.status1&&this.status2&&this.status3&&this.status4){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
-              })
-              .margin(20)
-            Column() {
-              Text('By State')
+              Button('ChangeTextModifier_TOP')
                 .accessibilityLevel('yes')
-                .key('State')
-                .fontSize('50fp')
-                .fontWeight(FontWeight.Bold)
-                .focusable(true)
-                .accessibilityFocusDrawLevel(this.focusDrawLevel)
-            }
-            .borderRadius(50)
-            .clip(true)
-            .borderWidth(1)
-            .borderColor(Color.Blue)
+                .margin('3vp')
+                .onClick(() => {
+                  this.status1 = true;
+                  this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
+                  if(this.status1&&this.status2&&this.status3&&this.status4){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Button('ChangeTextModifier_SELF')
+                .accessibilityLevel('yes')
+                .margin('3vp')
+                .onClick(() => {
+                  this.status2 = true;
+                  this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
+                  if(this.status1&&this.status2&&this.status3&&this.status4){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Column() {
+                Text('By State')
+                  .accessibilityLevel('yes')
+                  .key('State')
+                  .fontSize('50fp')
+                  .fontWeight(FontWeight.Bold)
+                  .focusable(true)
+                  .accessibilityFocusDrawLevel(this.focusDrawLevel)
+              }
+              .margin('3vp')
+              .borderRadius(50)
+              .clip(true)
+              .borderWidth(1)
+              .borderColor(Color.Blue)
 
-            Button('Change state focusDrawLevel to TOP')
-              .accessibilityLevel('yes')
-              .onClick(() => {
-                this.status3 = true;
-                this.focusDrawLevel = FocusDrawLevel.TOP;
-                if(this.status1&&this.status2&&this.status3&&this.status4){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
-              })
-              .margin(20)
-            Button('Change state focusDrawlevel to SELF')
-              .accessibilityLevel('yes')
-              .onClick(() => {
-                this.status4 = true;
-                this.focusDrawLevel = FocusDrawLevel.SELF;
-                if(this.status1&&this.status2&&this.status3&&this.status4){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
-              })
-              .margin(20)
+              Button('Change state focusDrawLevel to TOP')
+                .accessibilityLevel('yes')
+                .margin('3vp')
+                .onClick(() => {
+                  this.status3 = true;
+                  this.focusDrawLevel = FocusDrawLevel.TOP;
+                  if(this.status1&&this.status2&&this.status3&&this.status4){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Button('Change state focusDrawlevel to SELF')
+                .accessibilityLevel('yes')
+                .margin('3vp')
+                .onClick(() => {
+                  this.status4 = true;
+                  this.focusDrawLevel = FocusDrawLevel.SELF;
+                  if(this.status1&&this.status2&&this.status3&&this.status4){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+
+            }
           }
         }
         .accessibilityGroup(true, { accessibilityPreferred: true })

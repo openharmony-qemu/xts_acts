@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorMenuPolicyJsunit() {
   describe('RichEditorMenuPolicyJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorMenuPolicyJsunit beforeEach start");
 
 

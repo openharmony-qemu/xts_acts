@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SwiperOnSelectedTest() {
   describe('SwiperOnSelectedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperOnSelectedTest beforeEach start");
 
       

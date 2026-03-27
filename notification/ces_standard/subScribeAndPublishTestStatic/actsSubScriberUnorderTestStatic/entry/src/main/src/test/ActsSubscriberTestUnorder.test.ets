@@ -32,7 +32,7 @@ export default function ActsSubscriberTestUnorder() {
   describe('SUB_NOTIFICATION_CES_SUBSCRIBER_UNORDER_TEST', () : void => {
     let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_UNORDER_TEST ===>';
     hilog.info(DOMAIN_NUMBER, TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_UNORDER_TEST START`)
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

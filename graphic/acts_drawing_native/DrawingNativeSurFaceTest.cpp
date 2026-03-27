@@ -222,9 +222,9 @@ HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNormal, Function | SmallTes
  */
 HWTEST_F(DrawingNativeSurFaceTest, testSurfaceDestroyNull, Function | SmallTest | Level3) {
     // free
+    OH_Drawing_Surface *surface = nullptr;
     OH_Drawing_SurfaceDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(surface, nullptr);
 }
 
 /**

@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function Bgde_Policy_APITest() {
   describe('Bgde_Policy_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
       

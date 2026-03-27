@@ -21,19 +21,6 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 function sleep(delay : number) : Promise<void> {
     return new Promise(resovle => setTimeout(resovle, delay))
 }
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
 
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
@@ -126,7 +113,6 @@ export default function btSocketTest() {
         beforeAll(async (done : Function) =>  {
             console.info('beforeAll called')
             await clickRequestPermission(PERMISSION_TEXT);
-            await openPhone();
             done();
         })
         beforeEach(async (done : Function) =>  {
@@ -821,6 +807,1569 @@ export default function btSocketTest() {
             }
             done();
         })
-		
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0100
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let stringMaxLen = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345" +
+                "6789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123" +
+                "45678901234567890123456789012345678901234567890123456789012345678901234567890abcdef"
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_L2CAP
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(stringMaxLen, SppOption, serverSocket);
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(error == null);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0200
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let stringMaxLen1 = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345" +
+                "6789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123" +
+                "45678901234567890123456789012345678901234567890123456789012345678901234567890abcdefg456789012345678901234567890123" +
+                "45678901234567890123456789012345678901234567890abcdefg456789012345678901234567890123456789012345678901234567890123456" +
+                "78901234567890abcdefg45678901234567890123456789012345678901234567890123456789012345678901234567890abcdefg456789012345" +
+                "67890123456789012345678901234567890123456789012345678901234567890abcdefg"
+            let str1 = "a".repeat(300)
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_RFCOMM,
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(str1, SppOption, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(error == null);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0300
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let stringMaxLen = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345" +
+                "6789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123" +
+                "45678901234567890123456789012345678901234567890123456789012345678901234567890abcdef"
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_L2CAP_BLE
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(stringMaxLen, SppOption, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(error == null);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0400
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_L2CAP_BLE
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen("", SppOption, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(error == null);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0500
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_L2CAP_BLE
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(null, SppOption, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0600
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false,
+                type: bluetooth.SppType.SPP_L2CAP_BLE
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(undefined, SppOption, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0700
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen("service", null, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0800
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0800
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen("service", undefined, serverSocket);
+                console.info('[bluetooth_js]sppListen success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppListen is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0100
+         * @tc.desc   Test getL2capPsm api20
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let psm = bluetooth.getL2capPsm(null);
+                console.info('[bluetooth_js]:getL2capPsm success, result:' + JSON.stringify(psm));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getL2capPsm: errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0200
+         * @tc.desc   Test getL2capPsm api20
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_GetL2capPsm_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let psm = bluetooth.getL2capPsm(undefined);
+                console.info('[bluetooth_js]:getL2capPsm success, result:' + JSON.stringify(psm));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getL2capPsm: errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0100
+         * @tc.desc   Test SppAccept api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            bluetooth.sppListen('server_accept', SppOption, serverSocket);
+            let clientNumber = -1;
+            try {
+                bluetooth.sppAccept(null, acceptClientSocket);
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPAccept error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppAccept is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0200
+         * @tc.desc   Test SppAccept api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppAccept_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            bluetooth.sppListen('server_accept', SppOption, serverSocket);
+            let clientNumber = -1;
+            try {
+                bluetooth.sppAccept(undefined, acceptClientSocket);
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPAccept error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppAccept is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0100
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+
+            let sppOption : bluetooth.SppOptions = {
+                uuid: '',
+                secure: true,
+                type: 1,
+                psm: 1,
+            };
+            try {
+                await bluetooth.sppConnect('00:11:22:33:44:55', sppOption, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(false).assertTrue();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0200
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let sppOption : sppoption = {
+                uuid: '',
+                secure: true,
+                type: 2
+            };
+            try {
+                await bluetooth.sppConnect('00:11:22:33:44:55', sppOption, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0300
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let sppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: true,
+                type: 0
+            };
+            try {
+                await bluetooth.sppConnect("", sppOption, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0400
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let sppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: true,
+                type: 0
+            };
+            try {
+                await bluetooth.sppConnect(null, sppOption, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0500
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let sppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: true,
+                type: 0
+            };
+            try {
+                await bluetooth.sppConnect(undefined, sppOption, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0600
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.sppConnect("", null, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0700
+         * @tc.desc   Test SppConnect api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.sppConnect("", undefined, (code: BusinessError, number: number) => {
+                    if (code) {
+                        console.info('[bluetooth_js] code is: ' + JSON.stringify(code));
+                    } else {
+                        console.log('[bluetooth_js]sppConnect Number:'
+                            + JSON.stringify(number));
+                        expect(true).assertEqual(number != null);
+                    }
+                });
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0100
+         * @tc.desc   Test getDeviceId api17
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let deviceId = bluetooth.getDeviceId(null);
+                console.info('[bluetooth_js]:getDeviceId success, result:' + JSON.stringify(deviceId));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getDeviceId: errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0200
+         * @tc.desc   Test getDeviceId api17
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_GetDeviceId_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let deviceId = bluetooth.getDeviceId(undefined);
+                console.info('[bluetooth_js]:getDeviceId success, result:' + JSON.stringify(deviceId));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getDeviceId: errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_max_receive = bluetooth.getMaxReceiveDataSize(null);
+                console.info('[bluetooth_js]:getMaxReceiveDataSize success, result:' + JSON.stringify(return_max_receive));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]getMaxReceiveDataSize is failed, code is ${error.code}, message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0200
+         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_max_receive = bluetooth.getMaxReceiveDataSize(undefined);
+                console.info('[bluetooth_js]:getMaxReceiveDataSize success, result:' + JSON.stringify(return_max_receive));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]getMaxReceiveDataSize is failed, code is ${error.code}, message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_max_transmit = bluetooth.getMaxTransmitDataSize(null);
+                console.info('[bluetooth_js]:getMaxTransmitDataSize success, result:' + JSON.stringify(return_max_transmit));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]getMaxTransmitDataSize is failed, code is ${error.code}, message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0200
+         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_max_transmit = bluetooth.getMaxTransmitDataSize(undefined);
+                console.info('[bluetooth_js]:getMaxTransmitDataSize success, result:' + JSON.stringify(return_max_transmit));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]getMaxTransmitDataSize is failed, code is ${error.code}, message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0100
+         * @tc.desc   20251113API22用例覆盖 isConnected 返回值为布尔值.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_boolean = bluetooth.isConnected(null);
+                console.info('[bluetooth_js]:isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
+                expect(return_boolean).assertFalse();
+            } catch (error) {
+                console.error(`[bt_arkts]isConnected 0100 is failed, code is ${error.code}, message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bluetooth_js]isConnected is not support');
+                    expect(Number(error.code)).assertEqual(801);
+                } else {
+                    console.info("isConnected: errCode:" + error.code + ",errMessage:" + error.message);
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0200
+         * @tc.desc   20251113API22用例覆盖 isConnected 返回值为布尔值.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_boolean = bluetooth.isConnected(undefined);
+                console.info('[bluetooth_js]:isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
+                expect(return_boolean).assertFalse();
+            } catch (error) {
+                console.error(`[bt_arkts]isConnected 0100 is failed, code is ${error.code}, message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bluetooth_js]isConnected is not support');
+                    expect(Number(error.code)).assertEqual(801);
+                } else {
+                    console.info("isConnected: errCode:" + error.code + ",errMessage:" + error.message);
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0100
+         * @tc.desc   Test sppCloseServerSocket api10 by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let serverNumber = -1;
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: true, type: 0};
+            await bluetooth.sppListen('server1', SppOption, serverSocket3);
+            try {
+                bluetooth.sppCloseServerSocket(null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppCloseServerSocket is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(err === null || Number(err.code) === 2900099 || Number(err.code) === 401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0200
+         * @tc.desc   Test sppCloseServerSocket api10 by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseServerSocket_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let serverNumber = -1;
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: true, type: 0};
+            await bluetooth.sppListen('server1', SppOption, serverSocket3);
+            try {
+                bluetooth.sppCloseServerSocket(undefined);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppCloseServerSocket is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(err === null || Number(err.code) === 2900099 || Number(err.code) === 401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0100
+         * @tc.desc   Test sppCloseClientSocket api10 by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption :sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server06', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppCloseClientSocket(null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppCloseClientSocket is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0200
+         * @tc.desc   Test sppCloseClientSocket api10 by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppCloseClientSocket_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption :sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server06', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppCloseClientSocket(undefined);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppCloseClientSocket is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0100
+         * @tc.desc   Test sppWrite api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            data[0] = 123;
+            try {
+                bluetooth.sppListen('server07', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppWrite(null, arrayBuffer);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWrite is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0200
+         * @tc.desc   Test sppWrite api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            data[0] = 123;
+            try {
+                bluetooth.sppListen('server07', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppWrite(undefined, arrayBuffer);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWrite is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0300
+         * @tc.desc   Test sppWrite api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            data[0] = 123;
+            try {
+                bluetooth.sppListen('server07', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppWrite(clientNumber, null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWrite is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0400
+         * @tc.desc   Test sppWrite api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWrite_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            data[0] = 123;
+            try {
+                bluetooth.sppListen('server07', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.sppWrite(clientNumber, undefined);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWrite is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0100
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.on(null, clientNumber, dataRead);
+                bluetooth.off('sppRead', clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0200
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.on(undefined, clientNumber, dataRead);
+                bluetooth.off('sppRead', clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0300
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.on('sppRead', null, dataRead);
+                bluetooth.off('sppRead', clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0400
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_ON_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.on('sppRead', undefined, dataRead);
+                bluetooth.off('sppRead', clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0100
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.off(null, clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0200
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.off(undefined, clientNumber);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0300
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.off('sppRead', null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0400
+         * @tc.desc   Test On and Off api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('server04', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.off('sppRead', undefined);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppReadOn is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(true).assertEqual(Number(err.code) == 401 || Number(err.code) == 2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0100
+         * @tc.desc   Test sppWriteAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            try {
+                await bluetooth.sppWriteAsync(null, data).then(() => {
+                    console.info('[bluetooth_js]:sppWriteAsync success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0200
+         * @tc.desc   Test sppWriteAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            try {
+                await bluetooth.sppWriteAsync(undefined, data).then(() => {
+                    console.info('[bluetooth_js]:sppWriteAsync success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0300
+         * @tc.desc   Test sppWriteAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            try {
+                await bluetooth.sppWriteAsync(0, null).then(() => {
+                    console.info('[bluetooth_js]:sppWriteAsync success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0400
+         * @tc.desc   Test sppWriteAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppWriteAsync_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let arrayBuffer = new ArrayBuffer(8);
+            let data = new Uint8Array(arrayBuffer);
+            try {
+                await bluetooth.sppWriteAsync(0, undefined).then(() => {
+                    console.info('[bluetooth_js]:sppWriteAsync success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppWriteAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0100
+         * @tc.desc   Test sppReadAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.sppReadAsync(null).then((data: ArrayBuffer) => {
+                    console.info('[bluetooth_js]:sppReadAsync success, result:' + JSON.stringify(data));
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppReadAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0200
+         * @tc.desc   Test sppReadAsync api18
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppReadAsync_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.sppReadAsync(undefined).then((data: ArrayBuffer) => {
+                    console.info('[bluetooth_js]:sppReadAsync success, result:' + JSON.stringify(data));
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("sppReadAsync: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]sppWriteAsync is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
     })
 }

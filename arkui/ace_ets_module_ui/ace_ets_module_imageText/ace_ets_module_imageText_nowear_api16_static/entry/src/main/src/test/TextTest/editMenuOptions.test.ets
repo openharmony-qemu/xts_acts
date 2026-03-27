@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function editMenuOptions() {
   describe('editMenuOptions', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("editMenuOptions beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api16.static", "EntryAbility")
@@ -60,7 +60,7 @@ export default function editMenuOptions() {
       }
       console.info("editMenuOptions beforeEach end");
     });
-    afterEach(()=>{
+    afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(2000);
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.replaceUrl({ url:'MainAbility/pages/index/index' })

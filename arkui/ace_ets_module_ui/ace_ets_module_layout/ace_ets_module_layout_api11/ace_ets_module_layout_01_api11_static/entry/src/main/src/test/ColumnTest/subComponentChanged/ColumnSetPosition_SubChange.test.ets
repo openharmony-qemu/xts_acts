@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetPosition_SubChange() {
   describe('ColumnSetPositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetPositionTest beforeEach start");
 
 

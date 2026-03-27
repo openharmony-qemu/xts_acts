@@ -19,14 +19,16 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webMessageExt() {
 
   describe('webMessageExtTestSuite', () => {
     beforeAll(async (done: Function) => {
-      await waitForComponent("WebMessageExtButton");
+      await Utils.waitForComponent(driver,'WebMessageExtButton');
       done()
     });
     beforeEach(async (done: Function) => {

@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 import ArcAlphabetIndexer from './ArcAlphabetIndexer/ArcAlp.test.ets'
+import ArcAlphabetIndexerColorNullTest from './ArcAlphabetIndexer/ArcAlphabetIndexerColorNull.test';
+import ArcAlphabetIndexerColorUndefinedTest from './ArcAlphabetIndexer/ArcAlphabetIndexerColorUndefined.test';
 export default function testsuite() {
   ArcAlphabetIndexer()
+  ArcAlphabetIndexerColorNullTest()
+  ArcAlphabetIndexerColorUndefinedTest()
 }

@@ -33,6 +33,12 @@ import certFrameworkCertCmsTestUnit from './CertCms.test';
 import certFrameworkCertCheckCrlTestUnit from './CertLocalCRLVerification.test';
 import certFrameworkCmsVerifyTestUnit from './CmsVerify.test';
 import certFrameworkCmsDecryptTestUnit from './CmsDecrypt.test';
+import certFrameworkX509CertVerifyTestUnit from './X509CertVerify.test';
+import certFrameworkX509CertCheckValidityWithDateTestUnit from './X509CertCheckValidityWithDate.test';
+import certFrameworkX509CertGetItemTestUnit from './X509CertGetItem.test';
+import certFrameworkX509CertMatchTestUnit from './X509CertMatch.test';
+import certX509CertCheckNullOrUndefinedTestUnit from './X509CertFunctionParamIsNullOrUndefined.test';
+import certExtensionFuncTestUnit from './CertExtension.test';
 
 
 export default function testsuite() {
@@ -57,4 +63,10 @@ export default function testsuite() {
   certFrameworkCertCheckCrlTestUnit();
   certFrameworkCmsVerifyTestUnit();
   certFrameworkCmsDecryptTestUnit();
+  certFrameworkX509CertVerifyTestUnit();
+  certFrameworkX509CertCheckValidityWithDateTestUnit();
+  certFrameworkX509CertGetItemTestUnit();
+  certFrameworkX509CertMatchTestUnit();
+  certX509CertCheckNullOrUndefinedTestUnit();
+  certExtensionFuncTestUnit();
 }

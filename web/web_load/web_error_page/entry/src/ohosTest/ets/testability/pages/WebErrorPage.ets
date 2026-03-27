@@ -31,6 +31,8 @@ struct webErrorPageTest {
   @State isPageEnd: number = -1;
   @State isOnOverrideErrorPage: number = -1;
   @State errorCode: number = -1;
+  @State errorInfo: string = '';
+  @State currentStr: string = '';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -67,6 +69,7 @@ struct webErrorPageTest {
             this.isReceive = -1;
             this.isOnOverrideErrorPage = -1;
             this.errorCode = -1;
+            this.currentStr = '';
             switch (this.emitKey) {
               case 'emitSetErrorPageEnabledAndGetErrorPageEnabled01': {
                 try {
@@ -130,9 +133,11 @@ struct webErrorPageTest {
               }
               case 'emitOnOverrideErrorPage01': {
                 try {
+                  this.currentStr = 'onOverrideErrorPageOne'
                   this.controller.setErrorPageEnabled(true);
                   this.controller.loadUrl(URL_INVALID);
                   await waitForExist(()=>this.isOnOverrideErrorPage, this.emitKey, 0);
+                  Utils.emitEvent(this.errorInfo, 26031034);
                   Utils.emitEvent(this.errorCode, 2025081407);
                 } catch (error) {
                   console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
@@ -165,9 +170,29 @@ struct webErrorPageTest {
         .onOverrideErrorPage(event => {
           console.log('onOverrideErrorPage getErrorCode：' + event.error.getErrorCode());
           console.log('onOverrideErrorPage getErrorInfo:' + event.error.getErrorInfo());
+          if(event && event.request) {
+            console.log('onOverrideErrorPage request getRequestUrl：' + event.request.getRequestUrl());
+            console.log('onOverrideErrorPage request getRequestHeader：' + event.request.getRequestHeader());
+            console.log('onOverrideErrorPage request isMainFrame：' + event.request.isMainFrame());
+            console.log('onOverrideErrorPage request isRedirect：' + event.request.isRedirect());
+            console.log('onOverrideErrorPage request isRequestGesture：' + event.request.isRequestGesture());
+            console.log('onOverrideErrorPage request getRequestMethod：' + event.request.getRequestMethod());
+            if (this.currentStr === 'onOverrideErrorPageOne') {
+              Utils.emitEvent(event.request.getRequestUrl(), 26031035);
+              let headArr = event.request.getRequestHeader();
+              if (headArr && headArr.length > 0) {
+                Utils.emitEvent(true, 26031036);
+              }
+              Utils.emitEvent(event.request.isMainFrame(), 26031037);
+              Utils.emitEvent(event.request.isRedirect(), 26031038);
+              Utils.emitEvent(event.request.isRequestGesture(), 26031039);
+              Utils.emitEvent(event.request.getRequestMethod(), 26031040);
+            }
+          }
           if (event.error.getErrorCode()) {
             this.isOnOverrideErrorPage = 0;
             this.errorCode = event.error.getErrorCode();
+            this.errorInfo = event.error.getErrorInfo();
           }
           let htmlStr = '<html><h1>error occur : ';
           htmlStr += event.error.getErrorCode();

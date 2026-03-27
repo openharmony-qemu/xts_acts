@@ -1050,11 +1050,9 @@ export default function abilityTest() {
                 data = await controller!.getAVMetadata()
                 if (data.bundleIcon ) {
                     console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}:TestLog: Get bundleIcon failed`);
                     console.info(`${TAG}:TestLog: bundleIcon is: ${data.bundleIcon}`);
-                    expect(true).assertTrue();
                 }
             }catch(err){
                 console.info(`${TAG}:TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
@@ -1075,7 +1073,6 @@ export default function abilityTest() {
             session!.onSetTargetLoopMode((callback: avSession.LoopMode) => {
                 if (callback === 1) {
                     console.info('TestLog: Set TargetLoopMode command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.error(`TestLog: Set TargetLoopMode command callback registration error`);
                     expect(false).assertTrue();
@@ -1157,7 +1154,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch(err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             };
             await Utils.msSleep(500);
             done();
@@ -1250,7 +1246,7 @@ export default function abilityTest() {
            try{
                session!.setAVPlaybackState(PlaybackState)
                console.info(`${TAG}:SetAVPlaybackState successfully`);
-               expect(true).assertTrue();
+               expect(PlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PLAY);
            }catch(err){
                console.error(`${TAG}:SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
            };
@@ -1272,7 +1268,6 @@ export default function abilityTest() {
             try{
                 data = await session!.getAllCastDisplays()
                 console.info(`${TAG}:getAllCastDisplays success: ${JSON.stringify(data)}`);
-                expect(true).assertTrue();
             }catch(err){
                 err = err as BusinessError;
                 console.info(`${TAG}:getAllCastDisplays successfully: ${err.code}, message: ${err.message}`)
@@ -1296,7 +1291,6 @@ export default function abilityTest() {
                         console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                     } else {
                         console.info(`stopCasting successfully`);
-                        expect(true).assertTrue();
                     };
                 });
             } catch (error) {
@@ -1305,7 +1299,6 @@ export default function abilityTest() {
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`stopCasting callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1330,9 +1323,9 @@ export default function abilityTest() {
             } catch (error) {
                 error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined" || error.code == 6600109) {
                     console.info(`stopCasting callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1360,9 +1353,9 @@ export default function abilityTest() {
             } catch (error) {
                 error = error as BusinessError;
                 console.info(`${TAG}:getAVCastController failed: code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property then of undefined" || error.code == 6600109 ) {
                     console.info(`${TAG}:getAVCastController callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1464,7 +1457,6 @@ export default function abilityTest() {
 
             await controller!.getAVMetadata().then((data:avSession.AVMetadata) => {
                 if (JSON.stringify(data.filter) === JSON.stringify(metadata.filter)) {
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -1493,7 +1485,7 @@ export default function abilityTest() {
                     if (deviceInfo && deviceInfo.castCategory !== undefined &&
                         deviceInfo.deviceId !== undefined && deviceInfo.deviceName !== undefined &&
                         deviceInfo.deviceType !== undefined && deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                        expect(true).assertTrue();
+                        console.info('getOutputDevice deviceType successfully.')
                     } else {
                         console.info('getOutputDevice value error.')
                         expect(false).assertTrue();
@@ -1532,7 +1524,7 @@ export default function abilityTest() {
                     if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
                         deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined &&
                         deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                        expect(true).assertTrue();
+                        console.info('getOutputDevice deviceType successfully.')
                     } else {
                         console.info('getOutputDevice value error.')
                         expect(false).assertTrue();
@@ -2140,14 +2132,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             session!.onCustomDataChange((data: Record<string, Object>) => {
-                console.info(`session on_customDataChange Successfully ${data}`)
-                session!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                console.info(`session on_customDataChange Successfully ${data}`);
+                flag = true;
             })
             await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2183,14 +2176,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                controller!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                flag = true;
             })
             await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 

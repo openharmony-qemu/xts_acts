@@ -42,7 +42,7 @@ import { startAbility, UtilsTest } from '../Util.test.ets';
 export default function stackFromEndList() {
 
   describe('stackFromEndList', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stackFromEndList beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       
@@ -60,7 +60,7 @@ export default function stackFromEndList() {
         console.info("get   state pages:" + JSON.stringify(pages));
         if (!("stackFromEndList" == pages.name)) {
           console.info("get stackFromEndList pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          router.replaceUrl(options);
         }
       } catch (err) {
         console.error("push stackFromEndList page error:" + err);

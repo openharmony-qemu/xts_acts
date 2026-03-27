@@ -219,14 +219,14 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.name   testStackAlignContentCenter
+     * @tc.name   testStackAlignContentCenterAdapt001
      * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0600
      * @tc.desc   The stack component sets alignContent to Alignment.Center
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStackAlignContentCenter',  Level.LEVEL0, async  (done: Function)=> {
+    it('testStackAlignContentCenterAdapt001',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentCenter] START');
       globalThis.value.message.notify({ name: 'addAlignContent', value: Alignment.Center });
       await CommonFunc.sleep(3000);

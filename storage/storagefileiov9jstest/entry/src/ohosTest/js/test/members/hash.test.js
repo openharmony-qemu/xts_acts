@@ -347,5 +347,426 @@ describe('fileIO_fs_hash', function () {
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
+
+  /**
+    * @tc.name   fileIO_test_hash_error_012
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1200
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_012', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_012');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash("", 'md5');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_012 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_error_013
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1300
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_013', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_013');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash(null, 'md5');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_013 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_error_014
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1400
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_014', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_014');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash(undefined, 'md5');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_014 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_error_015
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1500
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_015', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_015');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash(fpath, "");
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_015 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_error_016
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1600
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_016', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_016');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash(fpath, null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_016 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_error_017
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1700
+    * @tc.desc   Test hash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_error_017', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_error_017');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        await fileHash.hash(fpath, undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_error_017 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_018
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1800
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_018', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_018');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash("", 'md5', (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_018 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_018 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_019
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1900
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_019', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_019');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash(null, 'md5', (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_019 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_019 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_020
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2000
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_020', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_020');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash(undefined, 'md5', (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_020 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_020 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_021
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2100
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_021', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_021');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash(fpath, "", (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_021 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_021 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_022
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2200
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_022', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_022');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash(fpath, null, (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_022 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_022 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_callback_error_023
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2300
+    * @tc.desc   Test hash() interface with callback and invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_callback_error_023', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileIO_test_hash_callback_error_023');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  
+      try {
+        fileHash.hash(fpath, undefined, (err, str) => {
+          if (err) {
+            console.log('fileIO_test_hash_callback_error_023 error package: ' + JSON.stringify(err));
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            fileIO.unlinkSync(fpath);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('fileIO_test_hash_callback_error_023 has failed for ' + e.message + ', code: ' + e.code);
+        fileIO.unlinkSync(fpath);
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_update_error_024
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2400
+    * @tc.desc   Test update() method with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_update_error_024', Level.LEVEL2, async function (done) {
+      try {
+        let hs = Hash.createHash('md5');
+        hs.update(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_update_error_024 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_update_error_025
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2500
+    * @tc.desc   Test update() method with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_update_error_025', Level.LEVEL2, async function (done) {
+      try {
+        let hs = Hash.createHash('md5');
+        hs.update(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_update_error_025 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_createHash_error_026
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2600
+    * @tc.desc   Test createHash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_createHash_error_026', Level.LEVEL2, async function (done) {
+      try {
+        let hs = Hash.createHash("");
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_createHash_error_026 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_createHash_error_027
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2700
+    * @tc.desc   Test createHash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_createHash_error_027', Level.LEVEL2, async function (done) {
+      try {
+        let hs = Hash.createHash(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_createHash_error_027 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   fileIO_test_hash_createHash_error_028
+    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_2800
+    * @tc.desc   Test createHash() interface with invalid parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('fileIO_test_hash_createHash_error_028', Level.LEVEL2, async function (done) {
+      try {
+        let hs = Hash.createHash(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_hash_createHash_error_028 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
 })
 }

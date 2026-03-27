@@ -25,7 +25,7 @@ import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -44,7 +44,7 @@ export default function gridJsunit() {
         if (!('gridPage' == pages.name)) {
           console.info('beforeEach get prompt state pages.name:' + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
-          routerAlp.pushUrl(options);
+          routerAlp.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info('beforeEach push prompt page result:' + JSON.stringify(result));
         }

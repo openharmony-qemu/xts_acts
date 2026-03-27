@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function getUIContextApiTest() {
   describe('getUIContextApiTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getUIContextApiTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

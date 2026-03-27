@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexBase_StretchJsunit() {
   describe('flexBase_StretchJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexBase_StretchJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")

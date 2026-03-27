@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function span3Jsunit() {
   describe('span3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("span3Jsunit beforeEach start");
 
 

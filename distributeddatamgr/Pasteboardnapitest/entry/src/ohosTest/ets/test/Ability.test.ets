@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -603,5 +603,50 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_HasType0700 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     })
+
+    /**
+     * @tc.name   OH_Pasteboard_HasRemoteData0100
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3600
+     * @tc.desc   OH_Pasteboard_HasRemoteData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Pasteboard_HasRemoteData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0100' );
+      let data = testndk.OH_Pasteboard_HasRemoteData0100();
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0100 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   OH_Pasteboard_HasRemoteData0200
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3700
+     * @tc.desc   OH_Pasteboard_HasRemoteData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Pasteboard_HasRemoteData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0200' );
+      let data = testndk.OH_Pasteboard_HasRemoteData0200();
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0200 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
+     * @tc.name   OH_Pasteboard_HasRemoteData0300
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3800
+     * @tc.desc   OH_Pasteboard_HasRemoteData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Pasteboard_HasRemoteData0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0300' );
+      let data = testndk.OH_Pasteboard_HasRemoteData0300();
+      console.info( TAG + 'OH_Pasteboard_HasRemoteData0300 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    }) 
   })
 }

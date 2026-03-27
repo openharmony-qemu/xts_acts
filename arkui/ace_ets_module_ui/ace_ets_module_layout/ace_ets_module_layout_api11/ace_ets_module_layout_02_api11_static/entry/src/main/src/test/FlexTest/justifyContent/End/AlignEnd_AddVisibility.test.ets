@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignEnd_AddVisibility() {
   describe('AlignEnd_AddVisibility', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignEnd_AddVisibility beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

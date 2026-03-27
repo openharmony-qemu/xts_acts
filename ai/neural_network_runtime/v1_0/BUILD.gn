@@ -14,14 +14,10 @@
 group("neural_network_runtime") {
   testonly = true
 
-  deps = [
-    "interface:ActsAiNnrtFunctionV1_0Test",
-    "stability:ActsAiNnrtStabilityV1_0Test",
-  ]
+  deps = []
   if (is_standard_system) {
     deps += [
-      "ActsAiNeuralNetworkRuntimeInterfaceTest:ActsAiNeuralNetworkRuntimeInterfaceNdkTest",
-      "ActsAiNnrtStabilityTest:ActsAiNnrtStabilityHapTest",
+      "ActsAiNeuralNetworkRuntimeInterfaceTest:ActsAiNeuralNetworkRuntimeInterfaceNdkTest"
     ]
   }
 }

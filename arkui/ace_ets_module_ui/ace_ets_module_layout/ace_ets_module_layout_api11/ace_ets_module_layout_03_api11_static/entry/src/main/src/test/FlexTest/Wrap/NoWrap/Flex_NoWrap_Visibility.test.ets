@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flex_NoWrap_VisibilityTest() {
   describe('Flex_NoWrap_VisibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Flex_NoWrap_VisibilityTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

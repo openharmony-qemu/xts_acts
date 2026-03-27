@@ -42,7 +42,7 @@ function sleep(time: int):Promise<int> {
 export default function checkBoxGroupJsunit2() {
   describe('checkBoxGroupTest', () =>{
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

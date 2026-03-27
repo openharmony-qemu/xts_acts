@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function repeatAniGrid() {
   describe('repeatAniGrid', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("repeatAniGrid beforeEach start");
 
       

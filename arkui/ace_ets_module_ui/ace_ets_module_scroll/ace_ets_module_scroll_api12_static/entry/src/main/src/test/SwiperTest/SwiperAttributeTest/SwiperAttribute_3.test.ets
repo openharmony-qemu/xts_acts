@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SwiperAttribute_3() {
   describe('SwiperAttribute_3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
     });

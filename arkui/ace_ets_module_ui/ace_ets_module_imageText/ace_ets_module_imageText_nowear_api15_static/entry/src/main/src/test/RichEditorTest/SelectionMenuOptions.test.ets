@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectionMenuOptions beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api15.static", "EntryAbility")

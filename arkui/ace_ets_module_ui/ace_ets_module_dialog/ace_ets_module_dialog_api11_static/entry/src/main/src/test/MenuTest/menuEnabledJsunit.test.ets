@@ -59,7 +59,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function menuEnabledJsunit() {
   describe('menuEnabledJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("menuEnabledJsunit beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

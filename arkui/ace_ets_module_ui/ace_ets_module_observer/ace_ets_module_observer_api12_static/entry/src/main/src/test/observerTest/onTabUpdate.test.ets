@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function onTabUpdate() {
   describe('onTabUpdate', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onTabUpdate beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");

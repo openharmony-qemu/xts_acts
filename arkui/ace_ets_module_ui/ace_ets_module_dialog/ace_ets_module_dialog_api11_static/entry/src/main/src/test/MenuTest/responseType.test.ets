@@ -59,7 +59,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function responseTypeJsunit() {
   describe('responseTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("responseTypeTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

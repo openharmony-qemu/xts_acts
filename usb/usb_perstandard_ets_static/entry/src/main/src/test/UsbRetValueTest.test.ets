@@ -1183,5 +1183,278 @@ export default function UsbRetValueTest() {
         }
         hilog.info(domain, tag, 'usb testOpenAccessoryInputPara end');
     })
+
+    /**
+     * @tc.name   testConnectDeviceRet
+     * @tc.number SUB_USB_HostManager_RetValue_Func_3600
+     * @tc.desc   Positive test: connectDevice retVal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testConnectDeviceRet", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testConnectDeviceRet begin');
+        if (!isDeviceConnected) {
+          hilog.info(domain, tag, 'usb testConnectDeviceRet No device is connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          try {
+            let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
+            let devices: UsbMgr.USBDevice = gDeviceList[0];
+            let isHasRight = await UsbMgr.requestRight(devices.name);
+            hilog.info(domain, tag, 'usb case requestRight ret : ' + isHasRight);
+            let ret = UsbMgr.connectDevice(devices);
+            hilog.info(domain, tag, 'usb testConnectDeviceRet ret' + JSON.stringify(ret));
+            hilog.info(domain, tag, 'usb testConnectDeviceRet ret' + typeof(ret));
+            hilog.info(domain, tag, 'usb testConnectDeviceRet ret' + typeof(ret.busNum));
+            hilog.info(domain, tag, 'usb testConnectDeviceRet ret' + typeof(ret.devAddress));
+            expect(typeof(ret)).assertEqual("object");
+            expect(typeof(ret.busNum)).assertEqual("int");
+            expect(typeof(ret.devAddress)).assertEqual("int");
+            expect(ret.busNum > 0).assertTrue();
+            expect(ret.devAddress > 0).assertTrue();
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, 'testConnectDeviceRet catch err code: ' + error);
+          }
+          done();
+        }
+        hilog.info(domain, tag, 'testConnectDeviceRet end');
+      })
+
+    /**
+     * @tc.name   testGetFileDescriptorRet
+     * @tc.number SUB_USB_HostManager_RetValue_Func_3700
+     * @tc.desc   Positive test: getFileDescriptor retVal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testGetFileDescriptorRet", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'testGetFileDescriptorRet begin');
+      if (!isDeviceConnected) {
+        hilog.info(domain, tag, 'usb testGetFileDescriptorRet No device is connected');
+        expect(isDeviceConnected).assertFalse();
+        done();
+      } else {
+        try {
+          let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
+          let devices: UsbMgr.USBDevice = gDeviceList[0];
+          let isHasRight = await UsbMgr.requestRight(devices.name);
+          hilog.info(domain, tag, 'usb case requestRight ret : ' + isHasRight);
+          let ret = UsbMgr.connectDevice(devices);
+          hilog.info(domain, tag, 'usb testGetFileDescriptorRet ret' + JSON.stringify(ret));
+          let devs: int = UsbMgr.getFileDescriptor(ret);
+          hilog.info(domain, tag, 'usb testGetFileDescriptorRet ret' + devs);
+          hilog.info(domain, tag, 'usb testGetFileDescriptorRet ret' + typeof(devs));
+          expect(typeof(devs)).assertEqual("int");
+          expect(devs >= 0).assertTrue();
+          UsbMgr.removeRight(devices.name);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, 'testGetFileDescriptorRet catch err code: ' + JSON.stringify(error));
+        }
+        done();
+      }
+      hilog.info(domain, tag, 'testGetFileDescriptorRet end');
+    })
+
+    /**
+     * @tc.name   testUsbControlTransferRet
+     * @tc.number SUB_USB_HostManager_RetValue_Func_3800
+     * @tc.desc   usbControlTransfer retVal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testUsbControlTransferRet", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'usb testUsbControlTransferRet begin');
+        if (!isDeviceConnected) {
+          hilog.info(domain, tag, 'usb not connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: 0x06,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            await UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `testUsbControlTransferRet name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            let timeout: int | undefined = 30;
+            let retVal = UsbMgr.usbControlTransfer(devicePipe, param, timeout);
+            hilog.info(domain, tag, `testUsbControlTransferRet size= ${retVal}`);
+            hilog.info(domain, tag, `testUsbControlTransferRet : ${typeof(retVal)}`);
+            expect(typeof(retVal)).assertEqual("int");
+            expect(retVal == 18).assertTrue();
+            UsbMgr.removeRight(devicesList[0].name);
+            let ret = UsbMgr.closePipe(devicePipe);
+            hilog.info(domain, tag, `closePipe : ${typeof(ret)}`);
+            expect(typeof(ret)).assertEqual("int");
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, 'testUsbControlTransferRet catch err code: ' + JSON.stringify(error));
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testBulkTransferRet
+     * @tc.number SUB_USB_HostManager_RetValue_Func_3900
+     * @tc.desc   bulkTransfer retVal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testBulkTransferRet", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'usb testBulkTransferRet begin');
+      if (!isDeviceConnected) {
+        hilog.info(domain, tag, 'usb not connected');
+        expect(isDeviceConnected).assertFalse();
+        done();
+      } else {
+        try {
+          let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+          let device: UsbMgr.USBDevice = devicesList[0];
+          await UsbMgr.requestRight(device.name);
+
+          let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(device);
+          hilog.info(domain, tag, `UsbMgr.connectDevice(device) = ${devicePipe.busNum}`);
+          hilog.info(domain, tag, `UsbMgr.connectDevice(device) = ${devicePipe.devAddress}`);
+          let interfaces: UsbMgr.USBInterface = device.configs[0].interfaces[0];
+          let endpoint: UsbMgr.USBEndpoint = device.configs[0].interfaces[0].endpoints[0];
+          let ret: int = UsbMgr.claimInterface(devicePipe, interfaces);
+          hilog.info(domain, tag, `testBulkTransferRet ret  = ${ret}`);
+          hilog.info(domain, tag, 'USB claim sucess');
+          let bufferTransfer = new Uint8Array(128);
+          let retVal = await UsbMgr.bulkTransfer(devicePipe, endpoint, bufferTransfer, undefined);
+          hilog.info(domain, tag, `testBulkTransferRet retVal = ${retVal}`);
+          hilog.info(domain, tag, `testBulkTransferRet retVal = ${typeof(retVal)}`);
+          expect(typeof(retVal)).assertEqual("int");
+          expect(retVal == 128).assertTrue();
+          UsbMgr.removeRight(device.name);
+          UsbMgr.closePipe(devicePipe);
+          hilog.info(domain, tag, `testBulkTransferRet end `);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `testBulkTransferRet error `)
+          hilog.info(domain, tag, `testBulkTransferRet err.code= ${error.code}`);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testOpenAccessoryRet
+     * @tc.number SUB_USB_HostManager_RetValue_Func_4000
+     * @tc.desc   OpenAccessory retval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testOpenAccessoryRet", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'USB testOpenAccessoryRet begin');
+        if (!isDevAccessoryFunc) {
+          hilog.info(domain, tag, 'usb testOpenAccessoryRet No Accessory is connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          try {
+            let accList:Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
+            hilog.info(domain, tag, 'usb case getAccessoryList ret length: ' + accList.length);
+            let flag = await UsbMgr.requestAccessoryRight(accList[0]);
+            let handle = UsbMgr.openAccessory(accList[0]);
+            hilog.info(domain, tag, `testOpenAccessoryRet handle = ${JSON.stringify(handle)}`);
+            hilog.info(domain, tag, `testOpenAccessoryRet handle = ${typeof(handle)}`);
+            hilog.info(domain, tag, `testOpenAccessoryRet handle = ${typeof(handle.accessoryFd)}`);
+            expect(typeof(handle)).assertEqual("object");
+            expect(typeof(handle.accessoryFd)).assertEqual("int");
+            expect(handle.accessoryFd > 0).assertTrue();
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, 'testOpenAccessoryRet catch err : ' + JSON.stringify(error));
+            done();
+          }
+        }
+        hilog.info(domain, tag, 'USB testOpenAccessoryRet end');
+      })
+
+    /**
+     * @tc.name   testClaimInterfaceInputUndefined
+     * @tc.number SUB_USB_HostManager_RetValue_Func_4100
+     * @tc.desc   claimInterface input parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceInputUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'usb testClaimInterfaceInputUndefined begin');
+      try {
+        let ret = UsbMgr.claimInterface(pip, USBInterfaceFeature1, undefined);
+        hilog.info(domain, tag, 'usb testClaimInterfaceInputUndefined ret: ' + ret);
+        expect(ret).assertEqual(88080488);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, 'usb testClaimInterfaceInputUndefined fail:' + JSON.stringify(err));
+        done();
+      }
+      hilog.info(domain, tag, 'usb testClaimInterfaceInputUndefined end');
+    })
+
+    /**
+     * @tc.name   testUsbControlTransferUndefined
+     * @tc.number SUB_USB_HostManager_RetValue_Func_4200
+     * @tc.desc   usbControlTransfer input undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testUsbControlTransferUndefined", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'usb testUsbControlTransferUndefined begin');
+        if (!isDeviceConnected) {
+          hilog.info(domain, tag, 'usb not connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x80,
+            bRequest: 0x06,
+            wValue: (0x01 << 8) | 0x00,
+            wIndex: 0x00,
+            wLength: 18,
+            data: new Uint8Array(18),
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            await UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `testUsbControlTransferUndefined name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            let retVal = UsbMgr.usbControlTransfer(devicePipe, param, undefined);
+            hilog.info(domain, tag, `testUsbControlTransferUndefined size= ${retVal}`);
+            expect(retVal == 18).assertTrue();
+            UsbMgr.removeRight(devicesList[0].name);
+            UsbMgr.closePipe(devicePipe);
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, 'testUsbControlTransferUndefined catch err code: ' + JSON.stringify(error));
+            done();
+          }
+        }
+      })
   })
 }

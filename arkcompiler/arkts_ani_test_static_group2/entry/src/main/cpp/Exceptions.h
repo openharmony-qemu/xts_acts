@@ -593,7 +593,8 @@ ani_int test_Handling_Error_28([[maybe_unused]] ani_env *env, [[maybe_unused]] a
     ASSERT_NE(errorClass, nullptr);
 
     ani_method constructor {};
-    ASSERT_EQ(env->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}:", &constructor), ANI_OK);
+    ASSERT_EQ(env->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}C{escompat.ErrorOptions}:", &constructor),
+              ANI_OK);
     ASSERT_NE(constructor, nullptr);
 
     ani_string errorMessage {};

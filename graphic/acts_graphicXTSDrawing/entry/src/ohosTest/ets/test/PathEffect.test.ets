@@ -249,14 +249,14 @@ export default function pathEffectTest() {
     });
 
     /**
-     * @tc.name   testcreateCornerPathEffectMultipleCalls
+     * @tc.name   testcreateCornerPathEffectMultipleCallsAdapt001
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_0203
      * @tc.desc   Test for testcreateCornerPathEffectMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testcreateCornerPathEffectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+    it('testcreateCornerPathEffectMultipleCallsAdapt001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testcreateCornerPathEffectMultipleCalls';
 
       for (let i = 0; i < 20; i++) {

@@ -105,5 +105,26 @@ export default function ActsErrorCodeTest() {
         expect(false).assertEqual(PRINT_ERR_OK);
       }
     })
+
+    /**
+     * @tc.name   testOHPrintStartPrintWithJobStateCallback
+     * @tc.number SUB_OH_Print_StartPrintWithJobStateCallback
+     * @tc.desc   test no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPrintStartPrintWithJobStateCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>testOHPrintStartPrintWithJobStateCallback start====");
+        let result = printNdk.OH_Print_StartPrintWithJobStateCallback();
+        console.info("====>testOHPrintStartPrintWithJobStateCallback result: " + result);
+        expect(201).assertEqual(result);
+        done()
+      } catch (err) {
+        console.error("====>testOHPrintStartPrintWithJobStateCallback catch err: " + err);
+        expect(false).assertEqual(PRINT_ERR_OK);
+      }
+    })
   })
 }

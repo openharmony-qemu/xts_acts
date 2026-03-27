@@ -33,6 +33,7 @@ import beforeAllTest from './beforeAll/beforeAll.test.ets';
 
 export default function testsuite() {
   beforeAllTest();
+  accountManagerTest();
   systemManagerTest();
   wifiManagerTest();
   deviceControlTest();
@@ -43,7 +44,6 @@ export default function testsuite() {
   securityManagerTest();
   deviceSettingsTest();
   deviceInfoTest();
-  accountManagerTest();
   adminManagerTest();
   applicationManagerTest();
   bundleManagerTest();

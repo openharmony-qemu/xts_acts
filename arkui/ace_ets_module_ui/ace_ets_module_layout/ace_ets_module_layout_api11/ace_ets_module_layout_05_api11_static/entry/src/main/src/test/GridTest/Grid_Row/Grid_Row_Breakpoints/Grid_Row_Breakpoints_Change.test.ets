@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Row_Breakpoints_Change() {
   describe('Grid_Row_Breakpoints_Change', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_Row_Breakpoints_Change beforeEach start");
       console.info("Grid_Row_Columns beforeAll start");
            

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexPadding_CenterJsunit() {
   describe('flexItemAlignCenterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignCenterTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

@@ -447,7 +447,7 @@ export default function cameraSessionVideoStabilizationTest() {
 
   describe('cameraSessionVideoStabilizationTest', () => {
     console.info(TAG + '----------cameraSessionVideoStabilizationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -469,7 +469,7 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);

@@ -378,7 +378,7 @@ export default function cameraPreconfigTest() {
   describe('CameraPreconfigTest', () => {
     console.info(TAG + '----------CameraPreconfigTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
@@ -386,18 +386,18 @@ export default function cameraPreconfigTest() {
       console.info('beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
       await Utils.msSleep(100);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       try {
         await releaseCameraSessionInstance();
       } catch (error) {

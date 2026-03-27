@@ -115,24 +115,6 @@ struct styled_string_demo1 {
 
    aboutToAppear() {
     console.info('aboutToAppear initial imagePixelMap')
-    this.imagePixelMap = this.getPixmapFromMedia($r('app.media.icon'))
-  }
-
-  private getPixmapFromMedia(resource: Resource) {
-    let unit8Array: Uint8Array|undefined;
-    waitForCompletion(async ()=>{
-      unit8Array = await this.getUIContext()!.getHostContext()!.resourceManager.getMediaContent(resource.id);
-    })
-    let imageSource = 
-      image.createImageSource((unit8Array as Uint8Array).buffer.slice(0, (unit8Array as Uint8Array).buffer.byteLength));
-    let createPixelMap: image.PixelMap|undefined;
-    waitForCompletion(async ()=>{ await imageSource!.createPixelMap({
-        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
-        desiredSize: { width: 50, height: 50 }
-      }) as image.PixelMap; 
-    })
-    waitForCompletion(async ()=>{ await imageSource!.release(); })
-    return createPixelMap as image.PixelMap;
   }
 
   onPageShow() {
@@ -167,7 +149,6 @@ struct styled_string_demo1 {
       styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.px(50) })
     }]))
     this.textController.setStyledString(this.style1)
-    this.imagePixelMap = this.getPixmapFromMedia($r('app.media.icon'))
   }
 
   build() {

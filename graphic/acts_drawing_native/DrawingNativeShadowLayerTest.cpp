@@ -198,9 +198,9 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerDestroyNormal, Function | 
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShadowLayerDestroy with null parameter
+    OH_Drawing_ShadowLayer *shadowLayer = nullptr;
     OH_Drawing_ShadowLayerDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(shadowLayer, nullptr);
 }
 
 } // namespace Drawing

@@ -414,6 +414,112 @@ export default function radioSecondJsunit() {
       }
     });
 
+    /**
+    * @tc.name   Telephony_NetworkSearch_getRadioTech_Async_0700
+    * @tc.number Telephony_NetworkSearch_getRadioTech_Async_0700
+    * @tc.desc   SlotId parameter input is 0, test getRadioTech() api by callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('Telephony_NetworkSearch_getRadioTech_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let slotId = 0;
+      radio.getRadioTech(slotId, (err, data) => {
+        if (err) {
+          console.error("Telephony_NetworkSearch_getRadioTech_Async_0700 err:" + JSON.stringify(err));
+          done();
+          return;
+        }
+        console.error("Telephony_NetworkSearch_getRadioTech_Async_0700 data.psRadioTech:" + JSON.stringify(data.psRadioTech));
+        const psRadioTech: number[] = [
+          radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_GSM,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN,
+        ]
+        ExpectTrue(psRadioTech.includes(data.psRadioTech));
+        console.error("Telephony_NetworkSearch_getRadioTech_Async_0700 data.csRadioTech:" + JSON.stringify(data.csRadioTech));
+        const csRadioTech: number[] = [
+          radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_GSM,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_NR,
+        ]
+        ExpectTrue(psRadioTech.includes(data.csRadioTech));
+      });
+      done();
+    });
+
+    /**
+    * @tc.name   Telephony_NetworkSearch_getRadioTech_Promise_0600
+    * @tc.number Telephony_NetworkSearch_getRadioTech_Promise_0600
+    * @tc.desc   SlotId parameter input is 0, test getRadioTech() api by promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('Telephony_NetworkSearch_getRadioTech_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let slotId = 0;
+      let promise = radio.getRadioTech(slotId);
+      promise.then(data => {
+        console.log("getRadioTech success, promise: data.psRadioTech:" + JSON.stringify(data.psRadioTech));
+        const psRadioTechPromise: number[] = [
+          radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_GSM,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_NR,
+        ]
+        ExpectTrue(psRadioTechPromise.includes(data.psRadioTech));
+        console.log("getRadioTech success, promise: data.csRadioTech:" + JSON.stringify(data.csRadioTech));
+        const csRadioTechPromise: number[] = [
+          radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_GSM,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_1XRTT,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_WCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_HSPAP,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_TD_SCDMA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EVDO,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_EHRPD,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_LTE_CA,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_IWLAN,
+          radio.RadioTechnology.RADIO_TECHNOLOGY_NR,
+        ]
+        ExpectTrue(csRadioTechPromise.includes(data.csRadioTech));
+      }).catch((err:BusinessError) => {
+        console.log("getRadioTech failed, promise: err:" + JSON.stringify(err));
+        done();
+      });
+      done();
+    });
+
     console.log("************* radio Test end*************");
   })
 }

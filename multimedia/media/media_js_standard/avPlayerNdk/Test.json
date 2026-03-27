@@ -41,6 +41,7 @@
                 "./resource/medialibrary/01.mpeg -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
                 "./resource/media/1vp9_320x240_30.mp4 -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
                 "./resource/media/audio_2video.avi -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
+                "./resource/media/h264_1280x720_30.mp4 -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
                 "./resource/media/output_8k.mp4 -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
                 "./resource/media/output_160x120.mp4 -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",
                 "./resource/media/test_highBit_v46Mbps_a295kbps.mp4 -> /data/app/el2/100/base/com.avplayer.napitest/haps/com.avplayer.napitest/files/",

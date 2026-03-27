@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectAttr() {
   describe('SelectAttr', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectAttr beforeEach start");
 
 

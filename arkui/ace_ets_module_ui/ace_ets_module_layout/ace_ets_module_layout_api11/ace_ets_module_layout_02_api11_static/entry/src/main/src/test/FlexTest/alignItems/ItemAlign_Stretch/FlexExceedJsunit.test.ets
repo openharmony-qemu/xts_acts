@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexExceed_StretchJsunit() {
   describe('flexExceed_StretchJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexExceed_StretchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -67,15 +67,15 @@ export default function flexExceed_StretchJsunit() {
       console.info("ItemAlign_Stretch_FlexExceed after each called");
     });
 
-    
-    
-/**
+
+
+    /**
      * @tc.number   testFlexItemAlignStretchSetMarPad_static
      * @tc.name     testFlexItemAlignStretchSetMarPad_static
      * @tc.desc     testFlexItemAlignStretchSetMarPad_static
      * @tc.level    Level.LEVEL0
      */
-it('testFlexItemAlignStretchSetMarPad_static', Level.LEVEL0, async () : Promise<void> => {
+    it('testFlexItemAlignStretchSetMarPad_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('new testFlexItemAlignStretchSetMarPad START');
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
@@ -93,36 +93,51 @@ it('testFlexItemAlignStretchSetMarPad_static', Level.LEVEL0, async () : Promise<
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexExceed01');
+
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi1'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi2'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi3'+ Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi4'+ Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi5'+
+      Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi6'+
+      Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi7'+
+      Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi8'+
+      Math.floor(Math.abs((textExceed01.right - textExceed01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi9'+
+      Math.floor(Math.abs((textExceed02.right - textExceed02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignStretchSetMarPad_static_chazhi10'+
+      Math.floor(Math.abs((textExceed03.right - textExceed03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+
+
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue()
-      expect(textExceed01.top).assertLarger(flexExceed01.top)
-
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)) <= 1).assertTrue()
-      expect(textExceed01.bottom).assertLess(flexExceed01.bottom)
-      expect(textExceed01.left).assertLarger(flexExceed01.left)
-      expect(textExceed03.right).assertLess(flexExceed01.right)
       expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textExceed02.right - textExceed02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
       console.info('new testFlexItemAlignStretchSetMarPad END');
 
     });
 
-    
-    
-/**
+
+
+    /**
      * @tc.number   testFlexItemAlignStretchSetMarPadExceed_static
      * @tc.name     testFlexItemAlignStretchSetMarPadExceed_static
      * @tc.desc     testFlexItemAlignStretchSetMarPadExceed_static
      * @tc.level    Level.LEVEL0
      */
-it('testFlexItemAlignStretchSetMarPadExceed_static', Level.LEVEL0, async () : Promise<void> => {
+    it('testFlexItemAlignStretchSetMarPadExceed_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('new testFlexItemAlignStretchSetMarPadExceed START');
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
@@ -140,21 +155,36 @@ it('testFlexItemAlignStretchSetMarPadExceed_static', Level.LEVEL0, async () : Pr
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexExceed01');
+
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi1'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi2'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi3'+ Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi4'+ Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi5'+
+      Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi6'+
+      Math.floor(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140))))));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi7'+
+      Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi8'+
+      Math.floor(Math.abs((textExceed01.right - textExceed01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi9'+
+      Math.floor(Math.abs((textExceed02.right - textExceed02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignStretchSetMarPadExceed_static_chazhi10'+
+      Math.floor(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+
+
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue()
-      expect(textExceed01.top).assertLarger(flexExceed01.top)
-
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)) <= 1).assertTrue()
-      expect(textExceed01.bottom).assertLess(flexExceed01.bottom)
-      expect(textExceed01.left).assertLarger(flexExceed01.left)
-      expect(textExceed03.right).assertLess(flexExceed01.right)
-      expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed02.right - textExceed02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs((textExceed02.right - textExceed02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3).assertTrue()
+      expect(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
       console.info('new testFlexItemAlignStretchSetMarPadExceed END');

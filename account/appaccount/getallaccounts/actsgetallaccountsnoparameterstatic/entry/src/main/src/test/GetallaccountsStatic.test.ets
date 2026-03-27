@@ -30,7 +30,7 @@ export default function ActsGetAllAccountsNoParameterStatic() {
     let accountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>accountmanager create finish====");
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.getallaccountsnoparameter.static");

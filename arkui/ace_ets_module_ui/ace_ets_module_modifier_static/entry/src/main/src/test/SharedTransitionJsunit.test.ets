@@ -38,7 +38,7 @@ interface EventD {
 }
 export default function sharedTransitionJsunit() {
   describe('common_sharedTransitionTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

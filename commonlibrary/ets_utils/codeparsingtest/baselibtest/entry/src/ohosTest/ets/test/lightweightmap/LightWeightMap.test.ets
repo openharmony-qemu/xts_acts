@@ -2264,5 +2264,81 @@ export default function LightWeightMapTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testLightWeightMapCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightMapCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightMapCase001';
+      let lightWeightMap =
+        new LightWeightMap<number | string | boolean | undefined | null | Object, number | string | boolean | undefined | null | Object>();
+      lightWeightMap.set(null, 123);
+      expect(lightWeightMap.get(null)).assertEqual(123);
+
+      lightWeightMap.set(undefined, 456);
+      expect(lightWeightMap.get(undefined)).assertEqual(456);
+    });
+
+    /**
+     * @tc.name   testLightWeightMapCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightMapCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightMapCase002';
+      let lightWeightMap =
+        new LightWeightMap<number | string | boolean | undefined | null | Object, number | string | boolean | undefined | null | Object>();
+      lightWeightMap.set("squirrel", 123);
+      lightWeightMap.set("sparrow", 356);
+      try {
+        let result1 = lightWeightMap.removeAt(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        let result2 = lightWeightMap.removeAt(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLightWeightMapCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightMapCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightMapCase003';
+      let num = 0;
+      let lightWeightMap =
+        new LightWeightMap<number | string | boolean | undefined | null | Object, number | string | boolean | undefined | null | Object>();
+      lightWeightMap.set("squirrel", 123);
+      lightWeightMap.set("sparrow", 356);
+      lightWeightMap.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, null);
+
+      lightWeightMap.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
   });
 }

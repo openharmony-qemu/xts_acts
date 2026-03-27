@@ -23,7 +23,7 @@ import Utils from '../../ets/MainAbility/common/Utils';
 
 export default function RatingJsunit() {
   describe('RatingJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("RatingJsunit beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

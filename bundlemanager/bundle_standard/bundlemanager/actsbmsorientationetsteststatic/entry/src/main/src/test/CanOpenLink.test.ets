@@ -91,5 +91,46 @@ export default function canOpenLink() {
       }
     });
 
+    /**
+     * @tc.name   canOpenLinkCanOpen_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0010
+     * @tc.desc   Test canOpenLink, return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('canOpenLinkCanOpen_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = bundle.canOpenLink("http://");
+        expect(data).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, `canOpenLinkCanOpen_static catch failed errCode:${err.code} message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   canOpenLinkCanNotOpen_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0020
+     * @tc.desc   Test canOpenLink, return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('canOpenLinkCanNotOpen_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = bundle.canOpenLink("welink://");
+        expect(data).assertFalse();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, `canOpenLinkCanNotOpen_static catch failed errCode:${err.code} message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

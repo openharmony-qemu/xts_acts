@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function Prefetcher2() {
   describe('Prefetcher2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Prefetcher2 beforeEach start");
 
 

@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipGroupIconItemOptionsTest() {
   describe('ChipGroupIconItemOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipGroupIconItemOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
 

@@ -32,7 +32,7 @@ interface Value {
 }
 export default function pageRouteTest() {
   describe('pageRouteTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

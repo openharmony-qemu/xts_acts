@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function TouchTestStrategy() {
   describe('TouchTestStrategy', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

@@ -187,5 +187,129 @@ describe('fileio_close', function () {
        done();
      }
    })
+
+   /**
+ 	     * @tc.name   fileio_test_close_sync_error_001
+ 	     * @tc.number SUB_DF_FILEIO_CLOSESYNC_ERROR_001
+ 	     * @tc.desc   Test closeSync() interface with null fd.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_sync_error_001', Level.LEVEL2, async function () {
+ 	      try {
+ 	        fileio.closeSync(null);
+ 	        expect(false).assertTrue();
+ 	      } catch (err) {
+ 	        console.log('fileio_test_close_sync_error_001: ' + err.message + ', code: ' + err.code);
+ 	        expect(err.message == 'Invalid fd').assertTrue();
+ 	      }
+ 	    })
+ 	 
+ 	    /**
+ 	     * @tc.name   fileio_test_close_sync_error_002
+ 	     * @tc.number SUB_DF_FILEIO_CLOSESYNC_ERROR_002
+ 	     * @tc.desc   Test closeSync() interface with undefined fd.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_sync_error_002', Level.LEVEL2, async function () {
+ 	      try {
+ 	        fileio.closeSync(undefined);
+ 	        expect(false).assertTrue();
+ 	      } catch (err) {
+ 	        console.log('fileio_test_close_sync_error_002: ' + err.message + ', code: ' + err.code);
+ 	        expect(err.message == 'Invalid fd').assertTrue();
+ 	      }
+ 	    })
+ 	 
+ 	    /**
+ 	     * @tc.name   fileio_test_close_promise_error_001
+ 	     * @tc.number SUB_DF_FILEIO_CLOSE_PROMISE_ERROR_001
+ 	     * @tc.desc   Test close() interface with null fd. Promise.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_promise_error_001', Level.LEVEL2, async function () {
+ 	      try {
+ 	        await fileio.close(null);
+ 	        expect(false).assertTrue();
+ 	      } catch (err) {
+ 	        console.log('fileio_test_close_promise_error_001: ' + err.message + ', code: ' + err.code);
+ 	        expect(err.message == 'Invalid fd').assertTrue();
+ 	      }
+ 	    })
+ 	 
+ 	    /**
+ 	     * @tc.name   fileio_test_close_promise_error_002
+ 	     * @tc.number SUB_DF_FILEIO_CLOSE_PROMISE_ERROR_002
+ 	     * @tc.desc   Test close() interface with undefined fd. Promise.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_promise_error_002', Level.LEVEL2, async function () {
+ 	      try {
+ 	        await fileio.close(undefined);
+ 	        expect(false).assertTrue();
+ 	      } catch (err) {
+ 	        console.log('fileio_test_close_promise_error_002: ' + err.message + ', code: ' + err.code);
+ 	        expect(err.message == 'Invalid fd').assertTrue();
+ 	      }
+ 	    })
+ 	 
+ 	    /**
+ 	     * @tc.name   fileio_test_close_callback_error_001
+ 	     * @tc.number SUB_DF_FILEIO_CLOSE_CALLBACK_ERROR_001
+ 	     * @tc.desc   Test close() interface with null fd. Callback.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_callback_error_001', Level.LEVEL2, async function (done) {
+        try {
+          fileio.close(null, function (err) {
+            if (err) {
+              console.log('fileio_test_close_callback_error_001: ' + err.message + ', code: ' + err.code);
+              expect(err.message == 'Invalid fd').assertTrue();
+              done();
+            }
+          });
+          console.log('fileio_test_close_callback_error_001 res');
+          done();
+        } catch (e) {
+          console.info('fileio_test_close_callback_error_001 has failed for ' + e.message);
+          expect(e.message == "Invalid fd").assertTrue();
+          done();
+        }
+ 	    })
+ 	 
+ 	    /**
+ 	     * @tc.name   fileio_test_close_callback_error_002
+ 	     * @tc.number SUB_DF_FILEIO_CLOSE_CALLBACK_ERROR_002
+ 	     * @tc.desc   Test close() interface with undefined fd. Callback.
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL2
+ 	     */
+ 	    it('fileio_test_close_callback_error_002', Level.LEVEL2, async function (done) {
+        try {
+          fileio.close(undefined, function (err) {
+            if (err) {
+              console.log('fileio_test_close_callback_error_002: ' + err.message + ', code: ' + err.code);
+              expect(err.message == 'Invalid fd').assertTrue();
+              done();
+            }
+          });
+          console.log('fileio_test_close_callback_error_002 res');
+          done();
+        } catch (e) {
+          console.info('fileio_test_close_callback_error_002 has failed for ' + e.message);
+          expect(e.message == "Invalid fd").assertTrue();
+          done();
+        }
+      })
 })
 }

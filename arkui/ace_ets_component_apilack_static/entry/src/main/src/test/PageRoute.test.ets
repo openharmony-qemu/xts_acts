@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function pageRouteTest() {
   describe('pageRouteTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

@@ -60,6 +60,12 @@
     "MainAbility/pages/Slider/XcomponentSlider/XcomponentSlider24",
     "MainAbility/pages/Slider/XcomponentSlider/XcomponentSlider25",
     "MainAbility/pages/Slider/XcomponentSlider/XcomponentSlider26",
-    "MainAbility/pages/Slider/sliderTrackColorMetrics"
+    "MainAbility/pages/Slider/sliderTrackColorMetrics",
+    "MainAbility/pages/Stack/StackAlignContentNullTest",
+    "MainAbility/pages/sliderNull/sliderNull",
+    "MainAbility/pages/radioNull/radio",
+    "MainAbility/pages/selectNull/SelectAttributeNullTest",
+    "MainAbility/pages/selectNull/SelectSelectedNullTest",
+    "MainAbility/pages/selectNull/SelectValueNullTest"
   ]
 }

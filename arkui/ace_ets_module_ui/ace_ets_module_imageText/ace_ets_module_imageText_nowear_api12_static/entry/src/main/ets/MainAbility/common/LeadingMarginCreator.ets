@@ -18,7 +18,7 @@ import { RenderingContextSettings, OffscreenCanvas, OffscreenCanvasRenderingCont
 const canvasWidth = 1000
 const canvasHeight = 100
 
-enum FontSizeScaleThreshold {
+enum FontSizeScaleThreshold:double {
   SMALL = 0.9,
   NORMAL = 1.1,
   LEVEL_1_LARGE = 1.2,

@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function actsBadgeTest() {
   describe('actsBadgeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageSupportSvg2Test beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information02.static", "EntryAbility")
     });

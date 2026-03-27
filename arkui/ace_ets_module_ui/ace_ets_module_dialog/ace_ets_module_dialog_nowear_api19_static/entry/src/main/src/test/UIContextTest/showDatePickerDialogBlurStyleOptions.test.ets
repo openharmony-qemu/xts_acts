@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 export default function showDatePickerDialogBlurStyleOptionsTest() {
   describe('ShowDatePickerDialogBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowDatePickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

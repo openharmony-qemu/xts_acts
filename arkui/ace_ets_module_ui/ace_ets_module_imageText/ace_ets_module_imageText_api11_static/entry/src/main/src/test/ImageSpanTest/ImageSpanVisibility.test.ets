@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ImageSpanVisibilityTest() {
   describe('ImageSpanVisibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageSpanVisibilityTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

@@ -1748,5 +1748,43 @@ export default function RdbStoreUpdateWithReturning() {
       console.log(TAG + "************* updateWithReturning034 end *************");
       done();
     })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_updateWithReturningErrAPITest_0100
+     * @tc.name  updateWithReturning_Err0100
+     * @tc.desc  columns.size == 0, errCode 14800021.
+     * @tc.size  MediumTest
+     * @tc.type  Function
+     * @tc.level Level 2
+     */
+    it('updateWithReturning_Err0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* updateWithReturning_Err0100 start *************");
+      const valueBucket: relationalStore.ValuesBucket = {
+        'name': 'zhangsan',
+        'age': 18,
+        'salary': 25000.5,
+      };
+      let predicates = new relationalStore.RdbPredicates("test");
+      predicates.equalTo('name', 'zhangsan5');
+      const config: relationalStore.ReturningConfig = {
+        columns: [""],
+      }
+      try {
+        await rdbStore?.updateWithReturning(valueBucket, predicates, config);
+        expect(true).assertFail();
+      } catch (e) {
+        console.error(TAG + `updateWithReturning_Err0100 failed. code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(14800021);
+      }
+      try {
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        expect(true).assertFail();
+      } catch (e) {
+        console.error(TAG + `updateWithReturning_Err0100 failed. code is ${e.code}, message is ${e.message}`);
+       expect(e.code).assertEqual(14800021);
+      }
+      console.log(TAG + "************* updateWithReturning_Err0100 end *************");
+    })
+
   })
 }

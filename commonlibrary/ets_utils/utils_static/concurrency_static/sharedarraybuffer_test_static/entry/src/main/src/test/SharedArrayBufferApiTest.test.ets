@@ -37,7 +37,7 @@ export default function SharedArrayBufferApiTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('array_buffer_api_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('array_buffer_api_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName = 'array_buffer_api_static_0900';
         console.info(`${caseName} test start`);
@@ -79,7 +79,7 @@ export default function SharedArrayBufferApiTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('array_buffer_api_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('array_buffer_api_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName = 'array_buffer_api_static_1000';
         console.info(`${caseName} test start`);
@@ -111,7 +111,7 @@ export default function SharedArrayBufferApiTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('array_buffer_api_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('array_buffer_api_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName = 'array_buffer_api_static_1100';
         console.info(`${caseName} test start`);

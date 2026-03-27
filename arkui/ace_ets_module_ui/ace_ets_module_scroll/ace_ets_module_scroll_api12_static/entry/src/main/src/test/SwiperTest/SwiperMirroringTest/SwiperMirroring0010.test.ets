@@ -42,7 +42,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SwiperMirroring0010() {
   describe('SwiperMirroring0010', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")

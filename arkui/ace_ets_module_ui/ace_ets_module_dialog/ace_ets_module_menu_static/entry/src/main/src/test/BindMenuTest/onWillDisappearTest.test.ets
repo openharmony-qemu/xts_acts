@@ -36,7 +36,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function onWillDisappearTest() {
   describe('onWillDisappearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onWillDisappearTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
     });

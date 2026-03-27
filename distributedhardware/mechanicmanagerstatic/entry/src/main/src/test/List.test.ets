@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import ActsmechanicManagerTestStatic from './ActsmechanicManagerTestStatic.test';
+import ActsmechanicManagerStaticTest from './ActsmechanicManagerStaticTest.test';
 export default function testsuite() {
-  ActsmechanicManagerTestStatic();
+  ActsmechanicManagerStaticTest();
 }

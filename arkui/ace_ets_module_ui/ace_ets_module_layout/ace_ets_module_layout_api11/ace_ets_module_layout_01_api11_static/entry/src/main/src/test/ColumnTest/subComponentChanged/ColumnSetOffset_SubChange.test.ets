@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetOffset_SubChange() {
   describe('ColumnSetOffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetOffsetTest beforeEach start");
 
 

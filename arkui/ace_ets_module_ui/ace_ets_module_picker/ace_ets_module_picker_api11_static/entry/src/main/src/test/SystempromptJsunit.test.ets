@@ -27,7 +27,7 @@ import Utils  from "../../ets/MainAbility/common/Utils";
 export default function systempromptJsunit() {
   describe('systempromptJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     })
 

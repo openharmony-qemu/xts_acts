@@ -55,7 +55,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -74,7 +78,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -95,7 +103,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -116,7 +128,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, 3);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -141,7 +157,11 @@ function testSetSimDisabled() {
       expect(info == "true").assertTrue();
       telephonyManager.setSimEnabled(SELFWANT, 0);
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -164,7 +184,11 @@ function testSetSimDisabled() {
       expect(info == "true").assertTrue();
       telephonyManager.setSimEnabled(SELFWANT, 1);
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -185,7 +209,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -206,7 +234,111 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, 2);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_disabled_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_JS_0108
+   * @tc.desc   test telephonyManager setSimDisabled with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_disabled_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(null, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_disabled_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_JS_0109
+   * @tc.desc   test telephonyManager setSimDisabled with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_disabled_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(undefined, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_disabled_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_JS_0110
+   * @tc.desc   test telephonyManager setSimDisabled with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_disabled_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_disabled_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_JS_0111
+   * @tc.desc   test telephonyManager setSimDisabled with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_disabled_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -228,7 +360,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -247,7 +383,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -268,7 +408,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -289,7 +433,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, 3);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -311,7 +459,11 @@ function testSetSimEnabled() {
       let info: string = systemParameterEnhance.getSync(PARAM_DISABLE_SLOT0, "");
       expect(info == "false").assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -333,7 +485,11 @@ function testSetSimEnabled() {
       let info: string = systemParameterEnhance.getSync(PARAM_DISABLE_SLOT1, "");
       expect(info == "false").assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -354,7 +510,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -375,7 +535,111 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, 2);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_enabled_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_JS_0108
+   * @tc.desc   test telephonyManager setSimEnabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_enabled_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimEnabled(null, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_enabled_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_JS_0109
+   * @tc.desc   test telephonyManager setSimEnabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_enabled_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimEnabled(undefined, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_enabled_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_JS_0110
+   * @tc.desc   test telephonyManager setSimEnabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_enabled_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimEnabled(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_sim_enabled_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_JS_0111
+   * @tc.desc   test telephonyManager setSimEnabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_sim_enabled_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimEnabled(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -397,7 +661,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -416,7 +684,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -437,7 +709,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -458,7 +734,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, 3);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -479,7 +759,11 @@ function testIsSimDisabled() {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 0);
       expect(result == false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -500,7 +784,11 @@ function testIsSimDisabled() {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 1);
       expect(result == false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200007 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200007).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -521,7 +809,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -542,7 +834,111 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, 2);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_sim_disabled_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_JS_0108
+   * @tc.desc   test telephonyManager isSimDisabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_sim_disabled_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.isSimDisabled(null, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_sim_disabled_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_JS_0109
+   * @tc.desc   test telephonyManager isSimDisabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_sim_disabled_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.isSimDisabled(undefined, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_sim_disabled_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_JS_0110
+   * @tc.desc   test telephonyManager isSimDisabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_sim_disabled_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.isSimDisabled(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_sim_disabled_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_JS_0111
+   * @tc.desc   test telephonyManager isSimDisabled with invalid slotId param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_sim_disabled_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.isSimDisabled(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -565,7 +961,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -585,7 +985,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -607,7 +1011,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -629,7 +1037,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -651,7 +1063,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -674,7 +1090,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 203 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -697,7 +1117,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.TRUST_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200010 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -745,7 +1169,134 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_outgoing_call_policy_numbers_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_JS_0109
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_outgoing_call_policy_numbers_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = ["","13687654321"];
+      telephonyManager.addOutgoingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_outgoing_call_policy_numbers_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_JS_0110
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_outgoing_call_policy_numbers_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = ["","13687654321"];
+      telephonyManager.addOutgoingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_outgoing_call_policy_numbers_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_JS_0111
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_outgoing_call_policy_numbers_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_outgoing_call_policy_numbers_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_JS_0112
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_outgoing_call_policy_numbers_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_outgoing_call_policy_numbers_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_JS_0113
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_outgoing_call_policy_numbers_0113", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -768,7 +1319,11 @@ function testGetOutgoingCallPolicyNumbers() {
         telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -788,7 +1343,11 @@ function testGetOutgoingCallPolicyNumbers() {
         telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -810,7 +1369,11 @@ function testGetOutgoingCallPolicyNumbers() {
         telephonyManager.getOutgoingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -837,6 +1400,56 @@ function testGetOutgoingCallPolicyNumbers() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_outgoing_call_policy_numbers_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_JS_0104
+   * @tc.desc   test telephonyManager getOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_outgoing_call_policy_numbers_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getOutgoingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_outgoing_call_policy_numbers_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_JS_0105
+   * @tc.desc   test telephonyManager getOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_outgoing_call_policy_numbers_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getOutgoingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveOutgoingCallPolicyNumbers() {
@@ -854,7 +1467,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -874,7 +1491,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -896,7 +1517,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -918,7 +1543,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -940,7 +1569,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -963,7 +1596,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 203 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1012,7 +1649,166 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0108
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.removeOutgoingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0109
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.removeOutgoingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0110
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.removeOutgoingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.TRUST_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0111
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0112
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_JS_0113
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_outgoing_call_policy_numbers_0113", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, []);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1035,7 +1831,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1055,7 +1855,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1077,7 +1881,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1099,7 +1907,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1121,7 +1933,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1144,7 +1960,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 203 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1167,7 +1987,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.TRUST_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200010 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1215,7 +2039,134 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_incoming_call_policy_numbers_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_JS_0109
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_incoming_call_policy_numbers_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = new Array(100).fill("13687654321");
+      telephonyManager.addIncomingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_incoming_call_policy_numbers_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_JS_0110
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_incoming_call_policy_numbers_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = new Array(100).fill("13687654321");
+      telephonyManager.addIncomingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_incoming_call_policy_numbers_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_JS_0111
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_incoming_call_policy_numbers_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_incoming_call_policy_numbers_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_JS_0112
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_incoming_call_policy_numbers_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_incoming_call_policy_numbers_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_JS_0113
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_incoming_call_policy_numbers_0113", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1238,7 +2189,11 @@ function testGetIncomingCallPolicyNumbers() {
         telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1258,7 +2213,11 @@ function testGetIncomingCallPolicyNumbers() {
         telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1280,7 +2239,11 @@ function testGetIncomingCallPolicyNumbers() {
         telephonyManager.getIncomingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1308,6 +2271,58 @@ function testGetIncomingCallPolicyNumbers() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_incoming_call_policy_numbers_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_JS_0104
+   * @tc.desc   test telephonyManager getIncomingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_incoming_call_policy_numbers_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = 
+        telephonyManager.getIncomingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_incoming_call_policy_numbers_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_JS_0105
+   * @tc.desc   test telephonyManager getIncomingCallPolicyNumbers with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_incoming_call_policy_numbers_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = 
+        telephonyManager.getIncomingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveIncomingCallPolicyNumbers() {
@@ -1325,7 +2340,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1345,7 +2364,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1367,7 +2390,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(INVALID_WANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1389,7 +2416,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1411,7 +2442,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1434,7 +2469,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 203 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1483,7 +2522,113 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_incoming_call_policy_numbers_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_JS_0108
+   * @tc.desc   test telephonyManager removeIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_incoming_call_policy_numbers_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = new Array(100).fill("13687654321");
+      telephonyManager.removeIncomingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_incoming_call_policy_numbers_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_JS_0109
+   * @tc.desc   test telephonyManager removeIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_incoming_call_policy_numbers_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let numbers: Array<string> = new Array(100).fill("13687654321");
+      telephonyManager.removeIncomingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_incoming_call_policy_numbers_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_JS_0110
+   * @tc.desc   test telephonyManager removeIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_incoming_call_policy_numbers_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_incoming_call_policy_numbers_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_JS_0111
+   * @tc.desc   test telephonyManager removeIncomingCallPolicyNumbers with invalid numbers param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_incoming_call_policy_numbers_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1505,7 +2650,11 @@ function testHangupCalling() {
       telephonyManager.hangupCalling(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1524,7 +2673,11 @@ function testHangupCalling() {
       telephonyManager.hangupCalling(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1545,7 +2698,11 @@ function testHangupCalling() {
       telephonyManager.hangupCalling(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1572,4 +2729,166 @@ function testHangupCalling() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_hang_up_calling_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0104
+   * @tc.desc   test telephonyManager hangupCalling with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.hangupCalling(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_hang_up_calling_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0105
+   * @tc.desc   test telephonyManager hangupCalling with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.hangupCalling(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   testGetOutgoingCallPolicyNumbers_0100_1
+   * @tc.number testGetOutgoingCallPolicyNumbers_0100_1
+   * @tc.desc   getOutgoingCallPolicyNumbers with TRUST_LIST parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testGetOutgoingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeKeyEventPolicies_test_004  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      let numbers: Array<string> = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, policy);
+      console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 numbers:' + numbers[0]);
+      expect(numbers[0] === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testRemoveIncomingCallPolicyNumbers_0100_1
+   * @tc.number testRemoveIncomingCallPolicyNumbers_0100_1
+   * @tc.desc   getOutgoingCallPolicyNumbers with TRUST_LIST parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testRemoveIncomingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, policy, ["13112345678"]);
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testRemoveIncomingCallPolicyNumbers_0100_2
+   * @tc.number testRemoveIncomingCallPolicyNumbers_0100_2
+   * @tc.desc   getOutgoingCallPolicyNumbers with [] parameter phoneNumber
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testRemoveIncomingCallPolicyNumbers_0100_2", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, policy, []);
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2 error 9200012 is expected, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testGetIncomingCallPolicyNumbers_0100_1
+   * @tc.number testGetIncomingCallPolicyNumbers_0100_1
+   * @tc.desc   getIncomingCallPolicyNumbers with [] parameter phoneNumber
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testGetIncomingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testGetIncomingCallPolicyNumbers_0100_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, policy);
+      console.info(' --- testGetIncomingCallPolicyNumbers_0100_1 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testGetIncomingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testGetIncomingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
 }

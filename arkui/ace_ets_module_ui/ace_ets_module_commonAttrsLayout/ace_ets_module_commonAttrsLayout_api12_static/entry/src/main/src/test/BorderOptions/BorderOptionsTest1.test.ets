@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function BorderOptionsTest1() {
   describe('BorderOptionsTest1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BorderOptionsTest1 beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")

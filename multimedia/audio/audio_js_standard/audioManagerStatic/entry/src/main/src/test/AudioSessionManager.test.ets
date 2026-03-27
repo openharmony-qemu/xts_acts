@@ -163,6 +163,192 @@ export default function audioSessionManagerTest() {
       }
       done();
     })
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0500
+    * @tc.desc   enableMuteSuggestionWhenMixWithOthers-without setting scene
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+        }
+        await sessionManager!.activateAudioSession(strategy);
+        console.info(`${TagFrmwk}: activateAudioSession succeed`);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
+        expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
+      }
+      done();
+    })
 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0600
+    * @tc.desc   enableMuteSuggestionWhenMixWithOthers-without setting scene
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+        }
+        await sessionManager!.activateAudioSession(strategy);
+        console.info(`${TagFrmwk}: activateAudioSession succeed`);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
+        expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0700
+    * @tc.desc   enableMuteSuggestionWhenMixWithOthers-without setting scene
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+        }
+        await sessionManager!.activateAudioSession(strategy);
+        console.info(`${TagFrmwk}: activateAudioSession succeed`);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
+        expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0800
+    * @tc.desc   enableMuteSuggestionWhenMixWithOthers-set-false
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        if (sessionManager!.isAudioSessionActivated()) {
+          await sessionManager!.deactivateAudioSession();
+          console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
+        }
+        sessionManager!.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION);
+        console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(false);
+        console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
+      } catch (err) {
+        console.error(`${TagFrmwk}: Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0200. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0900
+    * @tc.desc   enableMuteSuggestionWhenMixWithOthers-set-false
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        if (sessionManager!.isAudioSessionActivated()) {
+          await sessionManager!.deactivateAudioSession();
+          console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
+        }
+        sessionManager!.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_GAME);
+        console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(false);
+        console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
+      } catch (err) {
+        console.error(`${TagFrmwk}: Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0200. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_STATIC_001
+     * @tc.number AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_STATIC_001
+     * @tc.desc   IsOtherMediaPlaying
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+        try {
+            let isExistence: boolean = audioSessionManager.isOtherMediaPlaying();
+            console.info(`ISOTHERMEDIAPLAYING_001 isExistence is: ${isExistence}`);
+            expect(isExistence).assertFalse();
+        } catch (err) {
+            console.info(`ISOTHERMEDIAPLAYING_STATIC_001 err.code: ${err.code}, err.message: ${err.message}`);
+            expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        sessionManager!.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200 
+    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200  
+    * @tc.desc   setAudioSessionBehavior
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        sessionManager!.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200: setAudioSessionBehavior with DEFALUT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0200: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
   })
 }

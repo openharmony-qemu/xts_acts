@@ -117,6 +117,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       catch (err) {
         expect(err.code).assertEqual(401);
       }
+      try {
+        await certManager.getPublicCertificate(null);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.getPublicCertificate(undefined);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
       done();
     });
 
@@ -150,6 +164,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.isAuthorizedApp('');
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.isAuthorizedApp(null);
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        await certManager.isAuthorizedApp(undefined);
         expect(null).assertFail();
       }
       catch (err) {
@@ -191,6 +219,71 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
+
+      try{
+        await certManager.installPrivateCertificate(null, keystorePwd, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(undefined, keystorePwd, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, "", certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INCORRECT_FORMAT);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, null, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, undefined, certAlias);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, "");
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, null);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, undefined);
+        console.log("installPrivateCertificate success")
+      }catch(err){
+        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010：e.code = " + err.code);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+
       await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias).then((cmResult: certManager.CMResult) => {
         expect(cmResult != null).assertTrue();
         console.warn("SUB_Security_CertManager_GetPriCertJsApi_Func_0010[Promise] cmResult.uri: " + cmResult.uri);
@@ -314,7 +407,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-
         try {
           await certManagerDialog.openCertificateManagerDialog(context, null);
           expect(null).assertFail();
@@ -322,7 +414,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-
+        try {
+          await certManagerDialog.openCertificateManagerDialog(undefined, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+        try {
+          await certManagerDialog.openCertificateManagerDialog(context, undefined);
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
         try {
           await certManagerDialog.openCertificateManagerDialog(context, 9);
           expect(null).assertFail();
@@ -393,7 +498,39 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
-
+      try {
+        await certManagerDialog.openInstallCertificateDialog(undefined, certificateType, certificateScope, caCert)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      try {
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      try {
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, undefined)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, null, certificateScope, caCert)
         expect(null).assertFail()
@@ -417,21 +554,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
-
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, null, caCert)
-        expect(null).assertFail()
-      } catch (err) {
-        if (err.code == 29700004) {
-          done();
-        } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-        }
-      }
-
-      try {
-        await certManagerDialog.openInstallCertificateDialog(context, certificateType, 3, caCert)
         expect(null).assertFail()
       } catch (err) {
         if (err.code == 29700004) {
@@ -510,5 +634,117 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0010
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0010: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0010 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0010 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0011
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0011: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0011 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0011 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0012
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0012: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0012 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0012 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0013
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0013
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0013: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0013 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0013 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
   })
 }

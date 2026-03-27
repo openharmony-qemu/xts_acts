@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AttributeUpdaterTest() {
   describe("AttributeUpdaterTest", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AttributeUpdaterTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

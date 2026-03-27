@@ -41,7 +41,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function richEditorUndefined() {
   describe('richEditorUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)
@@ -333,6 +333,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       driver.triggerKey(KeyCode.KEYCODE_DEL)
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_OnDeleteComplete'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDeleteComplete:0');
 
@@ -342,12 +344,16 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       driver.triggerKey(KeyCode.KEYCODE_DEL)
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDeleteComplete:1');
 
       await (changeBtn?.click() as Promise<void>);
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       driver.triggerKey(KeyCode.KEYCODE_DEL)
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDeleteComplete:1');
       console.info('[richEditorUndefined_static_0008] END');
@@ -368,6 +374,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_OnDidChange'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidChange:0');
 
@@ -378,6 +386,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidChange:6');
 
       await btn1.click();
@@ -385,6 +395,8 @@ export default function richEditorUndefined() {
       await RichEditor.click();
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidChange:6');
       console.info('[richEditorUndefined_static_0009] END');
@@ -405,6 +417,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_OnDidIMEInput'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidIMEInput:0');
 
@@ -415,6 +429,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidIMEInput:3');
 
       await btn1.click();
@@ -422,6 +438,8 @@ export default function richEditorUndefined() {
       await RichEditor.click();
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onDidIMEInput:3');
       console.info('[richEditorUndefined_static_0010] END');
@@ -442,6 +460,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_OnIMEInputComplete'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('onIMEInputComplete:0');
 
@@ -452,6 +472,8 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onIMEInputComplete:3');
 
       await btn1.click();
@@ -459,6 +481,8 @@ export default function richEditorUndefined() {
       await RichEditor.click();
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('onIMEInputComplete:3');
       console.info('[richEditorUndefined_static_0011] END');

@@ -61,8 +61,8 @@ int OHDrawingFontMgrTest002()
 
     char* familyName = OH_Drawing_FontMgrGetFamilyName(mgr, FONT_INDEX_ZERO);
     OH_Drawing_FontMgrDestroyFamilyName(familyName);
-
     OH_Drawing_FontMgrDestroy(mgr);
+    EXPECT_NE(mgr, nullptr);
     return TEST_SUCCESS_CODE;
 }
 
@@ -271,6 +271,7 @@ int OHDrawingFontMgrTest011()
     OH_Drawing_FontStyleSetFreeStyleName(styleName);
     OH_Drawing_FontMgrDestroyFontStyleSet(fontStyleSet);
     OH_Drawing_FontMgrDestroy(mgr);
+    EXPECT_EQ(styleName, nullptr);
     return TEST_SUCCESS_CODE;
 }
 

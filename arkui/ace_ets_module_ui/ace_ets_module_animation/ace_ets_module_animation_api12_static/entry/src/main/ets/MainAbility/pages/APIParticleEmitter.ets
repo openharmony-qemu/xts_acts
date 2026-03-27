@@ -123,7 +123,9 @@ struct APIParticleEmitter {
         .onClick((e: ClickEvent) => {
           console.log('APIParticleEmitter_Button11')
           let strJson = inspector.getInspectorByKey('APIParticleEmitter_Particle');
-          await CommonFunc.sleep(2000);
+          waitForCompletion(async ()=>{
+            await CommonFunc.sleep(2000);
+          })
           if (JSON.parseJsonElement(strJson)
             .getElement('$attrs')?.getArray('emitter')
             && (JSON.parseJsonElement(strJson)

@@ -30,9 +30,9 @@ export default function locale1NdkTest() {
      * @tc.desc   test newlocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleNewlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleNewlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = locale.newlocale();
       expect(result).assertEqual(-1)
       done()
@@ -44,9 +44,9 @@ export default function locale1NdkTest() {
      * @tc.desc   test setlocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleSetlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleSetlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = locale.setlocale();
       expect(result).assertEqual(-1);
       done()

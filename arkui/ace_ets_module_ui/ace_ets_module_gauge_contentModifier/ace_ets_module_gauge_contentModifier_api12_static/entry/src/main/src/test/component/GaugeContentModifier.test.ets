@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function GaugeContentModifier() {
   describe('GaugeContentModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GaugeContentModifier beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       console.info("GaugeContentModifier beforeAll startAbility");

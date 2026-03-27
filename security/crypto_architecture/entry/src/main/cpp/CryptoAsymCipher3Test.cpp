@@ -294,7 +294,7 @@ napi_value OHCryptoSymCipherCreateNotSupport(napi_env env, napi_callback_info in
     napi_value result;
     napi_create_int32(env, DEFAULT_CODE, &result);
     OH_CryptoSymCipher *encCtx = nullptr;
-    OH_Crypto_ErrCode ret = OH_CryptoSymCipher_Create("AES128|XTS|NoPadding", &encCtx);
+    OH_Crypto_ErrCode ret = OH_CryptoSymCipher_Create("AES128|XTSS|NoPadding", &encCtx);
     if (ret == CRYPTO_NOT_SUPPORTED) {
         napi_create_int32(env, 0, &result);
     }
@@ -378,7 +378,7 @@ napi_value OHCryptoSymKeyGeneratorCreateNotSupport(napi_env env, napi_callback_i
     napi_value result;
     napi_create_int32(env, DEFAULT_CODE, &result);
     OH_CryptoSymKeyGenerator *ctx = nullptr;
-    OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("RC4", &ctx);
+    OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("RC5", &ctx);
     if (ret == CRYPTO_NOT_SUPPORTED) {
         napi_create_int32(env, 0, &result);
     }

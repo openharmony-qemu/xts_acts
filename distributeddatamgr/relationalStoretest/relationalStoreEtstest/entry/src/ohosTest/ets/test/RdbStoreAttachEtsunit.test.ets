@@ -631,14 +631,14 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @tc.name   testRdbStoreAttach0018
+         * @tc.name   testRdbStoreAttach0018Adapt001
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
          * @tc.desc   non encrypted database attach non encrypted database
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('testRdbStoreAttach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+        it('testRdbStoreAttach0018Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             console.log(TAG + "************* testRdbStoreAttach0018 start *************");
             let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
             await store.executeSql(CREATE_TABLE_TEST);

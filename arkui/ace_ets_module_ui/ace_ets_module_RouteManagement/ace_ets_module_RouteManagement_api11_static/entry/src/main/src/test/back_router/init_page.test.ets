@@ -40,7 +40,7 @@ import {
 
 export default function aboutToAppearRouterTest() {
   describe('aboutToAppearRouterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

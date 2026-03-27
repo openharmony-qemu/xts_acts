@@ -36,6 +36,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import image from '@ohos.multimedia.image'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -148,6 +149,12 @@ struct WebInitTest {
                 break;
               }
 
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebContextMenuEditStateFlagTest' })
+                console.log('push URL success')
+              }
             }
           })
       }

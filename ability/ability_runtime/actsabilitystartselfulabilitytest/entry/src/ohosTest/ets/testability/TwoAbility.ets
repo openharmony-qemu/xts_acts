@@ -15,23 +15,25 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-
+import common from '@ohos.app.ability.common';
+import eventBus from '../common/EventBus';
 const DOMAIN = 0x0000;
 
 export default class IsolationEntryTwoAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onCreate');
   }
 
-  onDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+  async onDestroy(): Promise<void> {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onDestroy');
+    await eventBus.emit('TwoAbility_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onWindowStageCreate');
 
-    windowStage.loadContent('testAbility/pages/Index', (err) => {
+    windowStage.loadContent('testability/pages/Index', (err) => {
       if (err.code) {
         hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
@@ -40,19 +42,19 @@ export default class IsolationEntryTwoAbility extends UIAbility {
     });
   }
 
-
   onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onWindowStageDestroy');
   }
 
   onForeground(): void {
     // Ability has brought to foreground
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onForeground');
+    AppStorage.setOrCreate<common.UIAbilityContext>('TwoAbilityContext', this.context);
   }
 
   onBackground(): void {
     // Ability has back to background
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryTwoAbility onBackground');
   }
 }

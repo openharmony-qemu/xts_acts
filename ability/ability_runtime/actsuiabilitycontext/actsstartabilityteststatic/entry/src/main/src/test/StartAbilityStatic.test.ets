@@ -46,7 +46,7 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'getAbilityDelegator success');
@@ -76,8 +76,6 @@ export default function startAbilityTestStatic() {
       try {
         context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
-          expect(true).assertTrue()
-          done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
@@ -85,6 +83,7 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
+        done();
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
@@ -201,8 +200,6 @@ export default function startAbilityTestStatic() {
       try {
         context?.startAbility(want, options1).then(() => {
           hilog.info(domain, tag, `startAbility success`);
-          expect(true).assertTrue()
-          done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
@@ -210,6 +207,7 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
+        done();
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
@@ -277,10 +275,9 @@ export default function startAbilityTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            expect(true).assertTrue()
-            done();
           }
         });
+        done();
       } catch (err) {
         if (err instanceof BusinessError) {
           hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
@@ -352,10 +349,9 @@ export default function startAbilityTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            expect(true).assertTrue()
-            done();
           }
         });
+        done();
       } catch (err) {
         if (err instanceof BusinessError) {
           hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));

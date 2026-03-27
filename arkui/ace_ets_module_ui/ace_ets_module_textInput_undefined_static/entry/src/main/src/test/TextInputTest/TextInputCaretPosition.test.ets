@@ -25,7 +25,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputCaretPositionTest() {
   describe('TextInputCaretPositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputCaretPositionTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

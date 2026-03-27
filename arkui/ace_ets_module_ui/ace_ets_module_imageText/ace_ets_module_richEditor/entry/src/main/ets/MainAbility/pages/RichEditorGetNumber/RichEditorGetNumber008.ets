@@ -47,13 +47,6 @@ struct RichEditorGetNumber008 {
       styledKey: StyledStringKey.FONT,
       styledValue: this.fontStyle1
     }]);
-  styledString: StyledString = new StyledString('插入属性字符串',
-    [{
-      start: 2,
-      length: 4,
-      styledKey: StyledStringKey.FONT,
-      styledValue: this.fontStyle2
-    }]);
   controller: RichEditorStyledStringController = new RichEditorStyledStringController();
   options: RichEditorStyledStringOptions = { controller: this.controller };
 
@@ -91,7 +84,6 @@ struct RichEditorGetNumber008 {
           // 设定组件展示的属性字符串
           this.controller.setStyledString(this.mutableStyledString);
           this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(this.styledString);
           this.controller.setStyledString(this.richEditorStyledString);
           this.controller.setCaretOffset(this.richEditorStyledString.length);
         })

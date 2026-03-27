@@ -35,6 +35,18 @@ export default function SuppressWarningsTypeTest() {
             expect(SuppressWarningsType.COMPATIBILITY).assertEqual('compatibility');
             expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
         });
+        /**
+         * @tc.number SuppressWarningsType_TEST_002
+         * @tc.name SuppressWarningsType_test_002
+         * @tc.desc Verify the accuracy of SYSCAP enum value, must be strictly equal to 'syscap'
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 3
+         */
+        it('SuppressWarningsType_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+            expect(SuppressWarningsType.SYSCAP).assertEqual('syscap');
+            expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
+        });
 
     });
 }

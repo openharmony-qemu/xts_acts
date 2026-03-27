@@ -20,4 +20,8 @@ ohos_js_app_static_suite("ActsOsAccountEnterpriseStaticTest") {
   hap_name = "ActsOsAccountEnterpriseStaticTest"
   part_name = "os_account"
   subsystem_name = "account"
+  deps = [ 
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistappone:ActsOsAccountAssistAppOneEnterpriseTest",
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistapptwo:ActsOsAccountAssistAppTwoEnterpriseTest"
+  ]
 }

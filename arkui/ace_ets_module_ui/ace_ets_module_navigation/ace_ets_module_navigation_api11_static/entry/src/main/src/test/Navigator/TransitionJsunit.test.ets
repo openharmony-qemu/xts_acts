@@ -33,7 +33,7 @@ interface Acton {
 }
 export default function transitionJsunit() {
   describe('transitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

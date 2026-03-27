@@ -537,6 +537,160 @@ export default function abilityTest() {
         deviceId: '',
         bundleName: 'com.acts.systemappa',
         abilityName: 'MainAbility3',
+        action: 'nullTest'
+      };
+      try {
+        console.log(`${TAG} startAssistAbility, ${JSON.stringify(want)}`);
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility want ${JSON.stringify(want)}`);
+        testAbilityContext.startAbility(want, async (err: BusinessError) => {
+          if (err.code) {
+            hilog.info(0x0000, TAG, '%{public}s',
+              `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
+          await sleep(2000);
+          expect(onCreateFlag).assertTrue();
+          expect(onBackgroundFlag).assertTrue();
+          expect(errCode).assertEqual(code);
+          commonEvent.unsubscribe(subscriber);
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME}  startAbility failed, code is ${code}, message is ${message} `);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3010
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3010
+     * @tc.desc   test the parameter method of Caller.callWithResult function is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3010', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3010';
+      hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test begin`);
+      let code = 401;
+      subscriber = await commonEvent.createSubscriber(subscribeInfo);
+      commonEvent.subscribe(subscriber, (err, data) => {
+        subscribeCallBack(err, data, done, TEST_CASE_NAME);
+      });
+      let want: Want = {
+        deviceId: '',
+        bundleName: 'com.acts.systemappa',
+        abilityName: 'MainAbility3',
+        action: 'undefinedDataTest'
+      };
+      try {
+        console.log(`${TAG} startAssistAbility, ${JSON.stringify(want)}`);
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility want ${JSON.stringify(want)}`);
+        testAbilityContext.startAbility(want, async (err: BusinessError) => {
+          if (err.code) {
+            hilog.info(0x0000, TAG, '%{public}s',
+              `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
+          await sleep(2000);
+          expect(onCreateFlag).assertTrue();
+          expect(onBackgroundFlag).assertTrue();
+          expect(errCode).assertEqual(code);
+          commonEvent.unsubscribe(subscriber);
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME}  startAbility failed, code is ${code}, message is ${message} `);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3030
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3030
+     * @tc.desc   test the parameter method of Caller.callWithResult ParcelableData is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3030', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3010';
+      hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test begin`);
+      let code = 401;
+      subscriber = await commonEvent.createSubscriber(subscribeInfo);
+      commonEvent.subscribe(subscriber, (err, data) => {
+        subscribeCallBack(err, data, done, TEST_CASE_NAME);
+      });
+      let want: Want = {
+        deviceId: '',
+        bundleName: 'com.acts.systemappa',
+        abilityName: 'MainAbility3',
+        action: 'nullDataTest'
+      };
+      try {
+        console.log(`${TAG} startAssistAbility, ${JSON.stringify(want)}`);
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility want ${JSON.stringify(want)}`);
+        testAbilityContext.startAbility(want, async (err: BusinessError) => {
+          if (err.code) {
+            hilog.info(0x0000, TAG, '%{public}s',
+              `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sstartAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+          hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
+          await sleep(2000);
+          expect(onCreateFlag).assertTrue();
+          expect(onBackgroundFlag).assertTrue();
+          expect(errCode).assertEqual(code);
+          commonEvent.unsubscribe(subscriber);
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, TAG, '%{public}s',
+          `${TEST_SUITE_NAME}#${TEST_CASE_NAME}  startAbility failed, code is ${code}, message is ${message} `);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3020
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3020
+     * @tc.desc   test the parameter method of Caller.callWithResult ParcelableData is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3020', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_3020';
+      hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test begin`);
+      let code = 401;
+      subscriber = await commonEvent.createSubscriber(subscribeInfo);
+      commonEvent.subscribe(subscriber, (err, data) => {
+        subscribeCallBack(err, data, done, TEST_CASE_NAME);
+      });
+      let want: Want = {
+        deviceId: '',
+        bundleName: 'com.acts.systemappa',
+        abilityName: 'MainAbility3',
+        action: 'undefinedTest'
       };
       try {
         console.log(`${TAG} startAssistAbility, ${JSON.stringify(want)}`);

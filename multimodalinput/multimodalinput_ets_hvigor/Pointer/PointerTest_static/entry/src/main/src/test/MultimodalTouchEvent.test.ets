@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Touch, TouchEvent, Action, ToolType, SourceType, FixedMode } from '@ohos.multimodalInput.touchEvent';
+import { Touch, TouchEvent, Action, ToolType, SourceType } from '@ohos.multimodalInput.touchEvent';
 import { InputEvent } from '@ohos.multimodalInput.inputEvent'
 import hilog from '@ohos.hilog';
 import { BusinessError } from "@ohos.base";
@@ -111,30 +111,6 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(SourceType.TOUCH_SCREEN == 0);
           ExpectTrue(SourceType.PEN == 1);
           ExpectTrue(SourceType.TOUCH_PAD == 2);
-          done();
-        } catch (error) {
-          hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
-          done();
-        }
-        hilog.info(domain, tag, `${caseName} leave`);
-      });
-
-    /**
-     * @tc.name   SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
-     * @tc.number SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
-     * @tc.desc   Test TouchEvent FixedMode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("SUB_MMI_Input_Api_TouchEvent_FixedMode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_TouchEvent_FixedMode_0100";
-        hilog.info(domain, tag, `${caseName} enter`);
-        try {
-          ExpectTrue(FixedMode.NONE == 0);
-          ExpectTrue(FixedMode.AUTO == 1);
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -253,13 +229,11 @@ export default function MultimodalTouchEventTest() {
             touch: testTouch,
             touches: [testTouch],
             sourceType: SourceType.TOUCH_SCREEN,
-            fixedMode: FixedMode.NONE,
           };
           ExpectTrue(testTouchEvent.action == Action.CANCEL);
           ExpectTrue(testTouchEvent.touch.id == 1);
           ExpectTrue(testTouchEvent.touches[0].id == 1);
           ExpectTrue(testTouchEvent.sourceType == SourceType.TOUCH_SCREEN);
-          ExpectTrue(testTouchEvent.fixedMode == FixedMode.NONE);
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);

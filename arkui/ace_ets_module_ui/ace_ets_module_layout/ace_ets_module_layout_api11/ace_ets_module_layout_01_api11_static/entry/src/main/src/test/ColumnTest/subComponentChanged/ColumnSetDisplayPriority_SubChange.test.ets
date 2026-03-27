@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetDisplayPriority_SubChange() {
   describe('ColumnSetDisplayPriorityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetDisplayPriorityTest beforeEach start");
 
 

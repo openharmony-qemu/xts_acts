@@ -51,7 +51,7 @@ function doPaste(driver: Driver, componentId: string){
 
 export default function SearchOnPasteModifierTest() {
   describe('SearchOnPasteModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnPasteModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

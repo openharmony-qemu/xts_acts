@@ -181,9 +181,9 @@ HWTEST_F(DrawingNativePathEffectTest, testPathEffectDestroyNormal, Function | Sm
  */
 HWTEST_F(DrawingNativePathEffectTest, testPathEffectDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_PathEffectDestroy with nullptr as the parameter
+    OH_Drawing_PathEffect *pathEffect = nullptr;
     OH_Drawing_PathEffectDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(pathEffect, nullptr);
 }
 
 /**

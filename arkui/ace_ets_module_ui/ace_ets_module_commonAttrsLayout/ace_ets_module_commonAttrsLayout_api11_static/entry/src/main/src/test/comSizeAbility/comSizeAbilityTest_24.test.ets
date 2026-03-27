@@ -44,7 +44,7 @@ export default function comSizeAbilityTest_24() {
       console.info("comSizeAbilityTest_24 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_24 beforeEach start")
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/comSizeAbility/comSizeAbilityTest_24'

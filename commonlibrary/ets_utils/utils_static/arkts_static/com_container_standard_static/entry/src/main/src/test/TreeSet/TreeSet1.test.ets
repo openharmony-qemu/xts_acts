@@ -30,7 +30,7 @@ class InfoC {
 
 export default function TreeSetTest1() {
   describe("TreeSetTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

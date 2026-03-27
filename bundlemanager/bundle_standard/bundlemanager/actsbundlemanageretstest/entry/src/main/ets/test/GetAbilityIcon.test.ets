@@ -40,6 +40,8 @@ export default function getAbilityIcon() {
             await bundle.getAbilityIcon(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER).then(pixelmap => {
                 console.log('Sub_Bms_Framework_Query_Icon_2800 success: ' + pixelmap.getBytesNumberPerRow());
                 expect(pixelmap.getBytesNumberPerRow()).assertLarger(0);
+		expect(pixelmap.isEditable).assertFalse();
+		expect(pixelmap.isStrideAlignment).assertFalse();
             }).catch(err => {
                 console.info("getAbilityIcon fail:" + JSON.stringify(err));
                 expect(err).assertFail();
@@ -168,6 +170,45 @@ export default function getAbilityIcon() {
                 bundle.getAbilityIcon(undefined, ABILITIY_NAME, (err, pixelmap) => {
                     expect(err).assertEqual(2);
                     bundle.getAbilityIcon(undefined, undefined, (err, pixelmap) => {
+                        expect(err).assertEqual(2);
+                        done();
+                    });
+                });
+            });
+        });
+
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Icon_3100
+         * @tc.number Sub_Bms_Framework_Query_Icon_3100
+         * @tc.desc   get the abilityIcon with null bundleName and abilityName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_Bms_Framework_Query_Icon_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundle.getAbilityIcon(BUNDLE_NAME, null).then(pixelmap => {
+                expect(pixelmap).assertFail();
+            }).catch(err => {
+                console.info("getAbilityIcon null abilityName fail:" + JSON.stringify(err));
+                expect(err).assertEqual(2);
+            });
+            await bundle.getAbilityIcon(null, ABILITIY_NAME).then(pixelmap => {
+                expect(pixelmap).assertFail();
+            }).catch(err => {
+                console.info("getAbilityIcon null bundleName fail:" + JSON.stringify(err));
+                expect(err).assertEqual(2);
+            });
+            await bundle.getAbilityIcon(null, null).then(pixelmap => {
+                expect(pixelmap).assertFail();
+            }).catch(err => {
+                console.info("getAbilityIcon null null fail:" + JSON.stringify(err));
+                expect(err).assertEqual(2);
+            });
+            bundle.getAbilityIcon(BUNDLE_NAME, null, (err, pixelmap) => {
+                expect(err).assertEqual(2);
+                bundle.getAbilityIcon(null, ABILITIY_NAME, (err, pixelmap) => {
+                    expect(err).assertEqual(2);
+                    bundle.getAbilityIcon(null, null, (err, pixelmap) => {
                         expect(err).assertEqual(2);
                         done();
                     });

@@ -3847,14 +3847,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0100', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }])
+      let expectedType: string[] = ["relatedYear", "literal", "month", "day", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["2025", "年", "六月", "23", " ", "0"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -3867,14 +3868,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0200', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "000" }])
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025", ", ", "000"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -3887,13 +3889,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0300', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" }])
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat();
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -4009,17 +4013,19 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0100', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }, { "type": "literal", "value": "–" },
-          { "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "腊月" }, { "type": "day", "value": "16" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }]);
+      let expectedType: string[] = ["relatedYear", "literal", "month", "day", "literal", "fractionalSecond", "literal",
+        "relatedYear", "literal", "month", "day", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["2025", "年", "六月", "23", " ", "0", "–", "2025", "年", "腊月", "16", " ", "0"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange",
+        "startRange", "shared", "endRange", "endRange", "endRange", "endRange", "endRange", "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4033,17 +4039,21 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0200', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "day", "value": "17" }, { "type": "literal", "value": "." },
-          { "type": "month", "value": "07" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" },
-          { "type": "literal", "value": " – " }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
-          { "type": "month", "value": "02" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2026" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" }]);
+      let expectedType: string[] = ["day", "literal", "month", "literal", "year", "literal", "fractionalSecond",
+        "literal", "day", "literal", "month", "literal", "year", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["17", ".", "07", ".", "2025", ", ", "0", " – ", "03", ".", "02",
+        ".", "2026", ", ", "0"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange",
+        "startRange", "startRange", "shared", "endRange", "endRange", "endRange", "endRange", "endRange", "endRange",
+        "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('ru', { calendar: 'gregory', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4057,15 +4067,19 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0300', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": " – " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "3" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2026" }]);
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year", "literal", "month", "literal", "day",
+        "literal", "year"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025", " – ", "2", "/", "3", "/", "2026"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange", "shared",
+        "endRange", "endRange", "endRange", "endRange", "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat();
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4676,6 +4690,23 @@ export default function SixPointZeroI18nStageTest() {
       let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "terabit", unitDisplay: "short"});
       let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_SHORTFILE_BYTE});
       expect(aft.format(100)).assertEqual("100 Tb")
+    })
+
+    /**
+     * @tc.name dateTimeFormat_resolvedOptions_test_0100
+     * @tc.number dateTimeFormat_resolvedOptions_test_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('dateTimeFormat_resolvedOptions_test_0100', Level.LEVEL3, () => {
+      let date: Date = new Date(2020, 11, 20, 14, 23, 16);
+      let option: intl.DateTimeOptions = {dateStyle: 'medium', timeStyle: 'medium'};
+      let datefmt = new intl.DateTimeFormat('zh-CN', option);
+      console.log('dateTimeFormat_resolvedOptions_test_0100 value:', datefmt.resolvedOptions().dateStyle);
+      expect(datefmt.resolvedOptions().dateStyle).assertEqual('medium');
+      expect(datefmt.format(date)).assertContain('2020年12月20日');
     })
 
   })

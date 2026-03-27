@@ -110,7 +110,7 @@ export default function flexGrowTest() {
 
 
   describe('FlexGrowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexGrowTest beforeAll start");
       
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.two.nowear.test.static", "EntryAbility")

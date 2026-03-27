@@ -58,8 +58,7 @@ class FourthAbility {
           featureAbility.getContext().getDisplayOrientation()
             .then(orientation => {
               if (bundle.DisplayOrientation.UNSPECIFIED == orientation) {
-                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.LANDSCAPE)
-                  .then(() => {
+                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.LANDSCAPE, () => {
                     featureAbility.getContext().getDisplayOrientation((err, data) => {
                       if (bundle.DisplayOrientation.LANDSCAPE == data) {
                         publishEvent(Event_FA_DisplayOrientation_0800, true);
@@ -77,8 +76,7 @@ class FourthAbility {
           featureAbility.getContext().getDisplayOrientation()
             .then(orientation => {
               if (bundle.DisplayOrientation.UNSPECIFIED == orientation) {
-                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.PORTRAIT)
-                  .then(() => {
+                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.PORTRAIT, () => {
                     featureAbility.getContext().getDisplayOrientation((err, data) => {
                       if (bundle.DisplayOrientation.PORTRAIT == data) {
                         publishEvent(Event_FA_DisplayOrientation_0900, true);
@@ -217,8 +215,7 @@ class FourthAbility {
             featureAbility.getContext().getDisplayOrientation((error, data) => {
               hilog.info(0x0000, 'testTag', '%{public}s', `7-getDisplayOrientation main data: ${data}, err: ${JSON.stringify(error)}`);
               if (bundle.DisplayOrientation.UNSPECIFIED == data) {
-                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.FOLLOW_RECENT)
-                  .then(() => {
+                featureAbility.getContext().setDisplayOrientation(bundle.DisplayOrientation.FOLLOW_RECENT,() => {
                     hilog.info(0x0000, 'testTag', '%{public}s', '7-setDisplayOrientation main data');
                     featureAbility.getContext().getDisplayOrientation()
                       .then(data => {

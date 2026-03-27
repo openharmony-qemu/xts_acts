@@ -858,15 +858,14 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer53 = new ArrayBuffer(8);
-    //   const dataView53 = new DataView(buffer53);
-    //   const originalValue = 0x0123456789ABCDEFn;
-    //   dataView53.setBigInt64(0, originalValue, false);
-    //   expect(dataView53.getBigInt64(0, false)).assertEqual(originalValue);
-    //
-    // });
+    it('DataView13Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer53 = new ArrayBuffer(8);
+      const dataView53 = new DataView(buffer53);
+      const originalValue = 81985529216486895n;
+      dataView53.setBigInt64(0, originalValue, false);
+      expect(dataView53.getBigInt64(0, false)).assertEqual(originalValue);
+
+    });
 
     /**
      * @tc.name   DataView13Test054
@@ -1177,14 +1176,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer72 = new ArrayBuffer(8);
-    //   const dataView72 = new DataView(buffer72);
-    //   const hexValue = 0xabcdef0123456789n;
-    //   dataView72.setBigInt64(0, hexValue, false);
-    //   expect(dataView72.getBigInt64(0, false)).assertEqual(-6066930334832433271n);
-    // });
+    it('DataView13Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer72 = new ArrayBuffer(8);
+      const dataView72 = new DataView(buffer72);
+      const hexValue = -6066930334832433271n;
+      dataView72.setBigInt64(0, hexValue, false);
+      expect(dataView72.getBigInt64(0, false)).assertEqual(-6066930334832433271n);
+    });
 
     /**
      * @tc.name   DataView13Test073
@@ -1194,14 +1192,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer73 = new ArrayBuffer(8);
-    //   const dataView73 = new DataView(buffer73);
-    //   const binaryValue = 0b1010101010101010n;
-    //   dataView73.setBigInt64(0, binaryValue, true);
-    //   expect(dataView73.getBigInt64(0, true)).assertEqual(binaryValue);
-    // });
+    it('DataView13Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer73 = new ArrayBuffer(8);
+      const dataView73 = new DataView(buffer73);
+      const binaryValue = 43690n;
+      dataView73.setBigInt64(0, binaryValue, true);
+      expect(dataView73.getBigInt64(0, true)).assertEqual(binaryValue);
+    });
 
     /**
      * @tc.name   DataView13Test074
@@ -1450,14 +1447,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer94 = new ArrayBuffer(8);
-    //   const dataView94 = new DataView(buffer94);
-    //   const value94 = 0x12345678n | 0xABCDEF00n | 0x100000000n;
-    //   dataView94.setBigInt64(0, value94, true);
-    //   expect(dataView94.getBigInt64(0, true)).assertEqual(value94);
-    // });
+    it('DataView13Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer94 = new ArrayBuffer(8);
+      const dataView94 = new DataView(buffer94);
+      const value94 = 305419896n | 1835938944n | 4294967296n;
+      dataView94.setBigInt64(0, value94, true);
+      expect(dataView94.getBigInt64(0, true)).assertEqual(value94);
+    });
 
     /**
      * @tc.name   DataView13Test095
@@ -1467,14 +1463,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer95 = new ArrayBuffer(8);
-    //   const dataView95 = new DataView(buffer95);
-    //   const value95 = 0xFFFFFFFFFFFFFFFFn & 0x00000000FFFFFFFFn;
-    //   dataView95.setBigInt64(0, value95, false);
-    //   expect(dataView95.getBigInt64(0, false)).assertEqual(value95);
-    // });
+    it('DataView13Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer95 = new ArrayBuffer(8);
+      const dataView95 = new DataView(buffer95);
+      const value95 = -1n & 4294967295n;
+      dataView95.setBigInt64(0, value95, false);
+      expect(dataView95.getBigInt64(0, false)).assertEqual(value95);
+    });
 
     /**
      * @tc.name   DataView13Test096
@@ -1484,14 +1479,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer96 = new ArrayBuffer(8);
-    //   const dataView96 = new DataView(buffer96);
-    //   const value96 = (0x1122334455667788n ^ 0x8877665544332211n);
-    //   dataView96.setBigInt64(0, value96, true);
-    //   expect(dataView96.getBigInt64(0, true)).assertEqual(-7397913281092561511n);
-    // });
+    it('DataView13Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer96 = new ArrayBuffer(8);
+      const dataView96 = new DataView(buffer96);
+      const value96 = (1234605616436508552n ^ -8690576415013850959n);
+      dataView96.setBigInt64(0, value96, true);
+      expect(dataView96.getBigInt64(0, true)).assertEqual(-7618140517912524999n);
+    });
 
     /**
      * @tc.name   DataView13Test097
@@ -1517,14 +1511,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer98 = new ArrayBuffer(8);
-    //   const dataView98 = new DataView(buffer98);
-    //   const value98 = (0x8000000000000000n >> 1n);
-    //   dataView98.setBigInt64(0, value98, true);
-    //   expect(dataView98.getBigInt64(0, true)).assertEqual(value98);
-    // });
+    it('DataView13Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer98 = new ArrayBuffer(8);
+      const dataView98 = new DataView(buffer98);
+      const value98 = (-9223372036854775808n >> 1n);
+      dataView98.setBigInt64(0, value98, true);
+      expect(dataView98.getBigInt64(0, true)).assertEqual(value98);
+    });
 
     /**
      * @tc.name   DataView13Test099
@@ -1717,14 +1710,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer111 = new ArrayBuffer(8);
-    //   const dataView111 = new DataView(buffer111);
-    //   const patternValue1 = 0x5555555555555555n;
-    //   dataView111.setBigInt64(0, patternValue1, true);
-    //   expect(dataView111.getBigInt64(0, true)).assertEqual(patternValue1);
-    // });
+    it('DataView13Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer111 = new ArrayBuffer(8);
+      const dataView111 = new DataView(buffer111);
+      const patternValue1 = 6148914691236517205n;
+      dataView111.setBigInt64(0, patternValue1, true);
+      expect(dataView111.getBigInt64(0, true)).assertEqual(patternValue1);
+    });
 
     /**
      * @tc.name   DataView13Test112
@@ -1734,14 +1726,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer112 = new ArrayBuffer(8);
-    //   const dataView112 = new DataView(buffer112);
-    //   const patternValue2 = 0xAAAAAAAAAAAAAAAAn;
-    //   dataView112.setBigInt64(0, patternValue2, false);
-    //   expect(dataView112.getBigInt64(0, false)).assertEqual(-6148914691236517206n);
-    // });
+    it('DataView13Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer112 = new ArrayBuffer(8);
+      const dataView112 = new DataView(buffer112);
+      const patternValue2 = -6148914691236517206n;
+      dataView112.setBigInt64(0, patternValue2, false);
+      expect(dataView112.getBigInt64(0, false)).assertEqual(-6148914691236517206n);
+    });
 
     /**
      * @tc.name   DataView13Test113
@@ -1751,14 +1742,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer113 = new ArrayBuffer(8);
-    //   const dataView113 = new DataView(buffer113);
-    //   const allOnes = 0xFFFFFFFFFFFFFFFFn;
-    //   dataView113.setBigInt64(0, allOnes, true);
-    //   expect(dataView113.getBigInt64(0, true)).assertEqual(-1n);
-    // });
+    it('DataView13Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer113 = new ArrayBuffer(8);
+      const dataView113 = new DataView(buffer113);
+      const allOnes = -1n;
+      dataView113.setBigInt64(0, allOnes, true);
+      expect(dataView113.getBigInt64(0, true)).assertEqual(-1n);
+    });
 
     /**
      * @tc.name   DataView13Test114
@@ -1768,14 +1758,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer114 = new ArrayBuffer(8);
-    //   const dataView114 = new DataView(buffer114);
-    //   const highBitOnly = 0x8000000000000000n;
-    //   dataView114.setBigInt64(0, highBitOnly, false);
-    //   expect(dataView114.getBigInt64(0, false)).assertEqual(-9223372036854775808n);
-    // });
+    it('DataView13Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer114 = new ArrayBuffer(8);
+      const dataView114 = new DataView(buffer114);
+      const highBitOnly = -9223372036854775808n;
+      dataView114.setBigInt64(0, highBitOnly, false);
+      expect(dataView114.getBigInt64(0, false)).assertEqual(-9223372036854775808n);
+    });
 
     /**
      * @tc.name   DataView13Test115
@@ -1817,14 +1806,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer117 = new ArrayBuffer(8);
-    //   const dataView117 = new DataView(buffer117);
-    //   const midBitValue = 0x0000000080000000n;
-    //   dataView117.setBigInt64(0, midBitValue, true);
-    //   expect(dataView117.getBigInt64(0, true)).assertEqual(midBitValue);
-    // });
+    it('DataView13Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer117 = new ArrayBuffer(8);
+      const dataView117 = new DataView(buffer117);
+      const midBitValue = 2147483648n;
+      dataView117.setBigInt64(0, midBitValue, true);
+      expect(dataView117.getBigInt64(0, true)).assertEqual(midBitValue);
+    });
 
     /**
      * @tc.name   DataView13Test118
@@ -1834,14 +1822,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer118 = new ArrayBuffer(8);
-    //   const dataView118 = new DataView(buffer118);
-    //   const truncated = BigInt.asIntN(64, 0x1234567890ABCDEF00n);
-    //   dataView118.setBigInt64(0, truncated, false);
-    //   expect(dataView118.getBigInt64(0, false)).assertEqual(truncated);
-    // });
+    it('DataView13Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer118 = new ArrayBuffer(8);
+      const dataView118 = new DataView(buffer118);
+      const truncated = BigInt.asIntN(64, 1311768467463790320n);
+      dataView118.setBigInt64(0, truncated, false);
+      expect(dataView118.getBigInt64(0, false)).assertEqual(truncated);
+    });
 
     /**
      * @tc.name   DataView13Test119
@@ -1951,15 +1938,14 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer125 = new ArrayBuffer(8);
-    //   const dataView125 = new DataView(buffer125);
-    //   const unsignedMask = 0xFFFFFFFFFFFFFFFFn;
-    //   const value125 = (0x8000000000000000n & unsignedMask);
-    //   dataView125.setBigInt64(0, value125, true);
-    //   expect(dataView125.getBigInt64(0, true)).assertEqual(-9223372036854775808n);
-    // });
+    it('DataView13Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer125 = new ArrayBuffer(8);
+      const dataView125 = new DataView(buffer125);
+      const unsignedMask = -1n;
+      const value125 = (-9223372036854775808n & unsignedMask);
+      dataView125.setBigInt64(0, value125, true);
+      expect(dataView125.getBigInt64(0, true)).assertEqual(-9223372036854775808n);
+    });
 
     /**
      * @tc.name   DataView13Test126
@@ -2001,14 +1987,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer128 = new ArrayBuffer(8);
-    //   const dataView128 = new DataView(buffer128);
-    //   const octalValue = 0o1234567012345670n;
-    //   dataView128.setBigInt64(0, octalValue, false);
-    //   expect(dataView128.getBigInt64(0, false)).assertEqual(octalValue);
-    // });
+    it('DataView13Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer128 = new ArrayBuffer(8);
+      const dataView128 = new DataView(buffer128);
+      const octalValue = 149078067200192n;
+      dataView128.setBigInt64(0, octalValue, false);
+      expect(dataView128.getBigInt64(0, false)).assertEqual(octalValue);
+    });
 
     /**
      * @tc.name   DataView13Test129
@@ -2018,14 +2003,13 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer129 = new ArrayBuffer(8);
-    //   const dataView129 = new DataView(buffer129);
-    //   const binaryStrValue = 0b1010101010101010101010101010101010101010101010101010101010101010n;
-    //   dataView129.setBigInt64(0, binaryStrValue, true);
-    //   expect(dataView129.getBigInt64(0, true)).assertEqual(-6148914691236517206n);
-    // });
+    it('DataView13Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer129 = new ArrayBuffer(8);
+      const dataView129 = new DataView(buffer129);
+      const binaryStrValue = -6148914691236517206n;
+      dataView129.setBigInt64(0, binaryStrValue, true);
+      expect(dataView129.getBigInt64(0, true)).assertEqual(-6148914691236517206n);
+    });
 
     /**
      * @tc.name   DataView13Test130
@@ -2140,16 +2124,14 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer136 = new ArrayBuffer(8);
-    //   const dataView136 = new DataView(buffer136);
-    //   const signedValue = -1n;
-    //   dataView136.setBigInt64(0, signedValue, true);
-    //   const unsignedInterpretation = dataView136.getBigUint64(0, true);
-    //   expect(unsignedInterpretation).assertEqual(0xFFFFFFFFFFFFFFFFn);
-    //
-    // });
+    it('DataView13Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer136 = new ArrayBuffer(8);
+      const dataView136 = new DataView(buffer136);
+      const signedValue = -1n;
+      dataView136.setBigInt64(0, signedValue, true);
+      const unsignedInterpretation = dataView136.getBigUint64(0, true);
+      expect(unsignedInterpretation).assertEqual(18446744073709551615n);
+    });
 
     /**
      * @tc.name   DataView13Test137
@@ -2159,15 +2141,14 @@ export default function DataView13Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView13Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer137 = new ArrayBuffer(8);
-    //   const dataView137 = new DataView(buffer137);
-    //   const unsignedValue = 0xFFFFFFFFFFFFFFFFn;
-    //   dataView137.setBigUint64(0, unsignedValue, false);
-    //   const signedInterpretation = dataView137.getBigInt64(0, false);
-    //   expect(signedInterpretation).assertEqual(-1n);
-    // });
+    it('DataView13Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer137 = new ArrayBuffer(8);
+      const dataView137 = new DataView(buffer137);
+      const unsignedValue = -1n;
+      dataView137.setBigUint64(0, unsignedValue, false);
+      const signedInterpretation = dataView137.getBigInt64(0, false);
+      expect(signedInterpretation).assertEqual(-1n);
+    });
 
     /**
      * @tc.name   DataView13Test138

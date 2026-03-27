@@ -54,7 +54,7 @@ async function flingComponentV(key: string, isForward: boolean, speed: Int = 500
 export default function listNestedScrollEventTest() {
 
   describe('ListNestedScrollEventTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function searchEnterKeyTypeTest() {
   describe('searchEnterKeyTypeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchEnterKeyTypeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

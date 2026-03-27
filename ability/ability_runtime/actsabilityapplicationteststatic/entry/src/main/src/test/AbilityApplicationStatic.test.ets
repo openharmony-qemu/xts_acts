@@ -75,6 +75,7 @@ export default function AbilityApplicationStaticTest() {
           expect(application.AppPreloadType.TYPE_CREATE_PROCESS).assertEqual(1);
           expect(application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE).assertEqual(2);
           expect(application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE).assertEqual(3);
+          expect(application.AppPreloadType.TYPE_CREATE_BACKGROUND_ABILITY).assertEqual(4);
           expect(Type === application.AppPreloadType.TYPE_CREATE_PROCESS).assertFalse();
           expect(Type === application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE).assertFalse();
           expect(Type === application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE).assertFalse();

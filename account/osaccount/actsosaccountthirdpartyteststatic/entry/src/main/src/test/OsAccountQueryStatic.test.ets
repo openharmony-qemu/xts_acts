@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import {describe, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
+import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 let tag: string = 'testTag';
 
@@ -34,7 +35,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       for (let i: int = 0; i < accounts.length; i++) {
         let localId: int = accounts[i].localId;
         if (localId != 100) {
-          await accountManager.removeOsAccount(localId);
+          await RemoveAccount(localId);
         }
       }
       done();
@@ -571,6 +572,11 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
         accountManager.createOsAccount("osAccountNameIdSerialA", osAccount.OsAccountType.NORMAL,
           (err: BusinessError<void> | null, data: osAccount.OsAccountInfo | undefined): void => {
             hilog.info(0x0000, tag, "====>create os account err: " + JSON.stringify(err));
+            if (err && err.code === 204) {
+              hilog.info(0x0000, tag, "====>Current device need token to use API: createOsAccount");
+              done();
+              return;
+            }
             hilog.info(0x0000, tag, "====>create os account OsAccountInfo: " + JSON.stringify(data));
             try {
               if (err) {
@@ -680,7 +686,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           done();
           return new Promise<void>(() => {});
         }
-        let OsAccountInfo: osAccount.OsAccountInfo = await accountManager.createOsAccount("accountIdSerialB", osAccount.OsAccountType.GUEST);
+        let options: osAccount.CreateOsAccountOptions = {
+          shortName: "nameIdSerialB",
+          disallowedPreinstalledBundles: [],
+          allowedPreinstalledBundles: []
+        }
+        let OsAccountInfo = await CreateAccount("accountIdSerialB", osAccount.OsAccountType.GUEST, options);
+        OsAccountInfo = OsAccountInfo as osAccount.OsAccountInfo;
         hilog.info(0x0000, tag, "====>create os account OsAccountInfo: " + JSON.stringify(OsAccountInfo));
         expect(OsAccountInfo.localName).assertEqual("accountIdSerialB");
         localId = OsAccountInfo.localId;
@@ -689,7 +701,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
         let getlocalId: int = await accountManager.getOsAccountLocalIdForSerialNumber(serialNumber);
         hilog.info(0x0000, tag, "====>get localId: "+ getlocalId + " by serialNumber: " + serialNumber);
         expect(getlocalId).assertEqual(localId);
-        await accountManager.removeOsAccount(localId);
+        await RemoveAccount(localId);
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryLocalIdSerial_0600 end====");
         done();
       });
@@ -743,6 +755,11 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           accountManager.createOsAccount("osAccountNameIdSerialE", osAccount.OsAccountType.NORMAL,
             (err: BusinessError<void> | null, data: osAccount.OsAccountInfo | undefined): void => {
               hilog.info(0x0000, tag, "====>create first os account err: " + JSON.stringify(err));
+              if (err && err.code === 204) {
+                hilog.info(0x0000, tag, "====>Current device need token to use API: createOsAccount");
+                done();
+                return;
+              }
               hilog.info(0x0000, tag, "====>create first os account OsAccountInfo: " + JSON.stringify(data));
               if (data) {
                 localIdFir = data.localId;
@@ -816,9 +833,15 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           done();
           return new Promise<void>(() => {});
         }
+        let options: osAccount.CreateOsAccountOptions = {
+          shortName: "nameIdSerialG",
+          disallowedPreinstalledBundles: [],
+          allowedPreinstalledBundles: []
+        }
         let obtainCount: int = await accountManager.getOsAccountCount();
         hilog.info(0x0000, tag, "====>obtains the number of all os accounts created: "+ obtainCount);
-        let osAccountFir: osAccount.OsAccountInfo = await accountManager.createOsAccount("osAccountIdSerialG", osAccount.OsAccountType.NORMAL);
+        let osAccountFir = await CreateAccount("osAccountIdSerialG", osAccount.OsAccountType.NORMAL, options);
+        osAccountFir = osAccountFir as osAccount.OsAccountInfo;
         hilog.info(0x0000, tag, "====>create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
         let localIdFir: int = osAccountFir.localId;
         expect(osAccountFir.localName).assertEqual("osAccountIdSerialG");
@@ -826,7 +849,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
         hilog.info(0x0000, tag, "====>obtains the number of all os accounts created count: "+ countFir);
         countFir = countFir - 1;
         expect(countFir).assertEqual(obtainCount);
-        await accountManager.removeOsAccount(localIdFir);
+        await RemoveAccount(localIdFir);
         hilog.info(0x0000, tag, "====>remove localId: " + localIdFir);
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryCounts_0200 end====");
         done();
@@ -971,6 +994,31 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
+     * @tc.number   ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.name     ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.desc     Checks whether the given constraint is enabled IsOsAccountConstraintEnabled promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
+     */
+    it('ActsOsAccountIsOsAccountConstraintEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0200 start====");
+        try {
+          let isEnabled: boolean = await accountManager.isOsAccountConstraintEnabled("constraint.fun");
+          hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled data: "+ JSON.stringify(isEnabled));
+          expect(isEnabled).assertFalse();
+          hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0200 end====");
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled err: "+ JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
      * @tc.number   ActsOsAccountGetOsAccountName_0100
      * @tc.name     ActsOsAccountGetOsAccountName_0100
      * @tc.desc     Gets the name of the OS account to which the caller belongs GetOsAccountName promise
@@ -992,5 +1040,42 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           done();
         }
       });
+
+    /**
+     * @tc.name   OsAccountPermissionCheck_0100
+     * @tc.number OsAccountPermissionCheck_0100
+     * @tc.desc   check updateAccountInfo interface meeting ohos.permission.MANAGE_LOCAL_ACCOUNTS permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('OsAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>start====");
+      let key = '';
+      let oldDomainInfo: osAccount.DomainAccountInfo = {
+        domain: key,
+        accountName: 'testAccount'
+      };
+      let newDomainInfo: osAccount.DomainAccountInfo = {
+        domain: 'testDomain',
+        accountName: 'newTestAccountName'
+      };
+      try {
+        hilog.info(0x0000, tag, "====>start updateAccountInfo");
+        await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        hilog.info(0x0000, tag, "====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, tag, "====>Current device not support API: updateAccountInfo");
+        } else {
+          expect(err.code).assertEqual(12300003);
+        }
+        done();
+      }
+    });
   });
 }

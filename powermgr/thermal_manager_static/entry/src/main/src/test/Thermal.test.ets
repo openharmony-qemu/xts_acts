@@ -41,8 +41,8 @@ export default function ThermalTest() {
         try {
           thermal.registerThermalLevelCallback((level: thermal.ThermalLevel) => {
             hilog.info(domain, tag, `${TAG} level: ${JSON.stringify(level)}`);
-            expect(level as int).assertLargerOrEqual(thermal.ThermalLevel.COOL);
-            expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
+            expect(level.valueOf()).assertLargerOrEqual(thermal.ThermalLevel.COOL);
+            expect(level.valueOf()).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
             done();
           });
         } catch (e) {
@@ -91,8 +91,8 @@ export default function ThermalTest() {
         try {
           let level: thermal.ThermalLevel = thermal.getLevel();
           hilog.info(domain, tag, `${TAG} level: ${JSON.stringify(level)}`);
-          expect(level as int).assertLargerOrEqual(thermal.ThermalLevel.COOL);
-          expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
+          expect(level.valueOf()).assertLargerOrEqual(thermal.ThermalLevel.COOL);
+          expect(level.valueOf()).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
           done();
         } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);

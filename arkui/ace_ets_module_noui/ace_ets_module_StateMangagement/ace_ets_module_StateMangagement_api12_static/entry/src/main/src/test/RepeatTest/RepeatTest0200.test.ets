@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatTest0200() {
   describe('RepeatTest0200', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatTest0200 beforeEach start");
 
 

@@ -60,7 +60,7 @@ export default function idKeyJsunit() {
       let strJsonNew = getInspectorByKey('testid');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[idkey0001] component idkey0001 is: " + JSON.stringify(objNew.$attrs));
-      expect(strJsonNew).assertNotNull;
+      expect(strJsonNew).not().assertNull();
       done();
     });
 
@@ -78,7 +78,7 @@ export default function idKeyJsunit() {
       let strJsonNew = getInspectorByKey('testkey');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[idkey0002] component idkey0002 is: " + JSON.stringify(objNew.$attrs));
-      expect(strJsonNew).assertNotNull;
+      expect(strJsonNew).not().assertNull();
       done();
     });
   })

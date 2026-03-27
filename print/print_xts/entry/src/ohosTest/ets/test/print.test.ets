@@ -99,6 +99,28 @@ export default function printTest() {
         expect(error).assertEqual(401);
         done();
       })
+
+      await print.print(null).then((printTask: print.PrintTask) => {
+        expect(typeof (printTask)).assertEqual('object');
+        expect(!!printTask).assertTrue();
+        console.log('print_function_0100 succeed');
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('print_function_0100 failed, err: ' + JSON.stringify(error));
+        expect(error).assertEqual(13100001);
+        done();
+      })
+
+      await print.print(undefined).then((printTask: print.PrintTask) => {
+        expect(typeof (printTask)).assertEqual('object');
+        expect(!!printTask).assertTrue();
+        console.log('print_function_0100 succeed');
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('print_function_0100 failed, err: ' + JSON.stringify(error));
+        expect(error).assertEqual(13100001);
+        done();
+      })
     })
 
     /**
@@ -117,6 +139,40 @@ export default function printTest() {
           if (err) {
             console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
             expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0200 succeed');
+            done()
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(null, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
+            expect(err).assertEqual(13100001);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0200 succeed');
+            done()
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(undefined, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
+            expect(err).assertEqual(13100001);
             done();
           } else {
             expect(typeof (printTask)).assertEqual('object');
@@ -147,6 +203,40 @@ export default function printTest() {
           if (err) {
             console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
             expect(err.code).assertEqual(13100003);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0300 succeed');
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(undefined, undefined, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(undefined);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0300 succeed');
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(null, null, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(undefined);
             done();
           } else {
             expect(typeof (printTask)).assertEqual('object');
@@ -197,8 +287,32 @@ export default function printTest() {
       let context = getContext();
       // Permissions required: ohos.permission.PRINT
       await print.print(file, context).then((printTask: print.PrintTask) => {
-        registerPrintTask(printTask);
-        UnregisterPrintTask(printTask);
+        printTask.on('block', () => {
+          hilog.info(DOMAIN, TAG, 'print state is block')
+        });
+        printTask.on('succeed', () => {
+          hilog.info(DOMAIN, TAG, 'print state is succeed')
+        });
+        printTask.on('fail', () => {
+          hilog.info(DOMAIN, TAG, 'print state is fail')
+        });
+        printTask.on('cancel', () => {
+          hilog.info(DOMAIN, TAG, 'print state is cancel')
+        });
+        printTask.off('block', () => {
+          hilog.info(DOMAIN, TAG, 'unregister print state is blocked')
+        });
+        printTask.off('succeed', () => {
+          hilog.info(DOMAIN, TAG, 'unregister print state is succeed')
+        });
+        printTask.off('fail', () => {
+          hilog.info(DOMAIN, TAG, 'unregister print state is fail')
+        });
+        printTask.off('cancel', () => {
+          hilog.info(DOMAIN, TAG, 'unregister print state is cancel')
+        });
+        expect(typeof (printTask)).assertEqual('object');
+        expect(!!printTask).assertTrue();
         console.log('print_function_0401 succeed');
         done();
       }).catch((error: BusinessError) => {
@@ -229,29 +343,6 @@ export default function printTest() {
         done();
       })
     })
-
-    class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
-      onStartLayoutWrite(jobId: string, oldAttrs: print.PrintAttributes, newAttrs: print.PrintAttributes, fd: number,
-        writeResultCallback: (jobId: string, writeResult: print.PrintFileCreationState) => void) {
-        writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATED);
-        writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATION_FAILED);
-        writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATED_UNRENDERED);
-      };
-
-      onJobStateChanged(jobId: string, state: print.PrintDocumentAdapterState) {
-        if (state == print.PrintDocumentAdapterState.PREVIEW_DESTROY) {
-          console.log('PREVIEW_DESTROY');
-        } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_SUCCEED) {
-          console.log('PRINT_TASK_SUCCEED');
-        } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_FAIL) {
-          console.log('PRINT_TASK_FAIL');
-        } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_CANCEL) {
-          console.log('PRINT_TASK_CANCEL');
-        } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_BLOCK) {
-          console.log('PRINT_TASK_BLOCK');
-        }
-      };
-    }
 
     class MyPrintAttributes implements print.PrintAttributes {
       copyNumber?: number;
@@ -284,6 +375,32 @@ export default function printTest() {
      * @tc.level  LEVEL1
      */
     it('print_function_0500', Level.LEVEL1, async (done: Function) => {
+      class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
+        onStartLayoutWrite(jobId: string, oldAttrs: print.PrintAttributes, newAttrs: print.PrintAttributes, fd: number,
+          writeResultCallback: (jobId: string, writeResult: print.PrintFileCreationState) => void) {
+          writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATED);
+          writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATION_FAILED);
+          writeResultCallback(jobId, print.PrintFileCreationState.PRINT_FILE_CREATED_UNRENDERED);
+          expect(!!jobId).assertTrue();
+          done();
+        };
+
+        onJobStateChanged(jobId: string, state: print.PrintDocumentAdapterState) {
+          if (state == print.PrintDocumentAdapterState.PREVIEW_DESTROY) {
+            console.log('PREVIEW_DESTROY');
+          } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_SUCCEED) {
+            console.log('PRINT_TASK_SUCCEED');
+          } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_FAIL) {
+            console.log('PRINT_TASK_FAIL');
+          } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_CANCEL) {
+            console.log('PRINT_TASK_CANCEL');
+          } else if (state == print.PrintDocumentAdapterState.PRINT_TASK_BLOCK) {
+            console.log('PRINT_TASK_BLOCK');
+          }
+          expect(!!jobId).assertTrue();
+          done();
+        };
+      }
       let jobName: string = 'jobName';
       let printAdapter: print.PrintDocumentAdapter = new MyPrintDocumentAdapter();
       let printAttributes: print.PrintAttributes = new MyPrintAttributes();
@@ -608,6 +725,30 @@ export default function printTest() {
           expect(error).assertEqual(401);
           done();
         })
+
+      await print.removePrinterFromDiscovery(null)
+        .then((data : void) => {
+          console.log('removePrinterFromDiscovery succeed, data: ' + JSON.stringify(data));
+          expect().assertFalse();
+          done();
+        })
+        .catch((error: BusinessError) => {
+          console.log('removePrinterFromDiscovery expect failed, error: ' + JSON.stringify(error));
+          expect(error).assertEqual(401);
+          done();
+        })
+
+      await print.removePrinterFromDiscovery(undefined)
+        .then((data : void) => {
+          console.log('removePrinterFromDiscovery succeed, data: ' + JSON.stringify(data));
+          expect().assertFalse();
+          done();
+        })
+        .catch((error: BusinessError) => {
+          console.log('removePrinterFromDiscovery expect failed, error: ' + JSON.stringify(error));
+          expect(error).assertEqual(401);
+          done();
+        })
     })
 
     /**
@@ -675,6 +816,30 @@ export default function printTest() {
 
       // Permissions required: ohos.permission.PRINT
       await print.getPrinterInformationById(printerId)
+        .then((printerInformation : print.PrinterInformation) => {
+          console.log('getPrinterInformationById succeed, data: ' + JSON.stringify(printerInformation));
+          expect().assertFalse();
+          done();
+        })
+        .catch((error: BusinessError) => {
+          console.log('getPrinterInformationById expect failed, error: ' + JSON.stringify(error));
+          expect(error).assertEqual(401);
+          done();
+        })
+
+      await print.getPrinterInformationById(null)
+        .then((printerInformation : print.PrinterInformation) => {
+          console.log('getPrinterInformationById succeed, data: ' + JSON.stringify(printerInformation));
+          expect().assertFalse();
+          done();
+        })
+        .catch((error: BusinessError) => {
+          console.log('getPrinterInformationById expect failed, error: ' + JSON.stringify(error));
+          expect(error).assertEqual(401);
+          done();
+        })
+
+      await print.getPrinterInformationById(undefined)
         .then((printerInformation : print.PrinterInformation) => {
           console.log('getPrinterInformationById succeed, data: ' + JSON.stringify(printerInformation));
           expect().assertFalse();
@@ -821,6 +986,7 @@ export default function printTest() {
         print.DocFlavor.BYTES
       ];
       console.log('docFlavors: ' + JSON.stringify(docFlavors));
+      expect(docFlavors.length).assertEqual(2);
     })
 
     /**
@@ -960,6 +1126,36 @@ export default function printTest() {
           done();
         }
       })
+
+      print.startDiscoverPrinter(null, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            expect(err).assertTrue();
+            done();
+          } else {
+            console.log('print_function_1300 expect success');
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.startDiscoverPrinter(undefined, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            expect(err).assertTrue();
+            done();
+          } else {
+            console.log('print_function_1300 expect success');
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
     })
 
     /**
@@ -974,6 +1170,24 @@ export default function printTest() {
       let extensionList: string[] = [];
       // Permissions required: ohos.permission.PRINT
       await print.startDiscoverPrinter(extensionList).then((data: void) => {
+        console.log('print_function_1301 expect success');
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        expect(err).assertTrue();
+        done();
+      })
+
+      await print.startDiscoverPrinter(null).then((data: void) => {
+        console.log('print_function_1301 expect success');
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        expect(err).assertTrue();
+        done();
+      })
+
+      await print.startDiscoverPrinter(undefined).then((data: void) => {
         console.log('print_function_1301 expect success');
         expect(data).assertTrue();
         done();
@@ -1054,6 +1268,51 @@ export default function printTest() {
           done();
         }
       })
+
+      print.connectPrinter('', (err: BusinessError) => {
+        try {
+          if (err) {
+            console.log('print_function_1500 expect failed by required real printer');
+            expect(err).assertEqual(13100005);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.connectPrinter(null, (err: BusinessError) => {
+        try {
+          if (err) {
+            console.log('print_function_1500 expect failed by required real printer');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.connectPrinter(undefined, (err: BusinessError) => {
+        try {
+          if (err) {
+            console.log('print_function_1500 expect failed by required real printer');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
     })
 
     /**
@@ -1075,6 +1334,25 @@ export default function printTest() {
         expect(err).assertEqual(13100005);
         done();
       })
+
+      await print.connectPrinter('').then((data:void) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_1501 expect failed by required real printer');
+        expect(err).assertEqual(13100005);
+        done();
+      })
+
+      await print.connectPrinter(null).then((data:void) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_1501 expect failed by required real printer');
+        expect(err).assertEqual(401);
+        done();
+      })
+
     })
     
     /**

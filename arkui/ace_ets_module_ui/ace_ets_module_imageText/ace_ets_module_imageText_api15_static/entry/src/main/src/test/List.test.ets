@@ -27,17 +27,15 @@ import RichEditorStopBackPressTest from './RichEditorTest/RichEditorStopBackPres
 import SelectionMenuOptions from './RichEditorTest/SelectionMenuOptions.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   SearchKeyboardAppearanceTest();
   ResourceDefaultTest();
-
   ObjectFitTest();
   PixelMapColorFilterTest();
   VerticalAlignTest();
-  textAreaInputTest();
   TextInputKeyboardAppearanceTest();
   TextAreaKeyboardAppearanceTest();
   RichEditorKeyboardAppearanceTest();
   RichEditorStopBackPressTest();
-
   SelectionMenuOptions();
 }

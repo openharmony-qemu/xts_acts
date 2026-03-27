@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function waterFlowStart1() {
   describe('waterFlowStart1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

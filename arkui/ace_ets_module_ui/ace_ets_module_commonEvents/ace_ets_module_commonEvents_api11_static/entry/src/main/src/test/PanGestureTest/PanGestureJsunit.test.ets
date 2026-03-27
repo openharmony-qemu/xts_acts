@@ -42,7 +42,7 @@ export default function PanGesture3Jsunit() {
   describe('PanGesture3Jsunit', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 

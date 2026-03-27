@@ -30,7 +30,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function CONTENT_FIRST_APITest() {
   describe('CONTENT_FIRST_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CONTENT_FIRST_APITest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

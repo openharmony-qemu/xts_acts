@@ -25,11 +25,26 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
     console.info(`${caseName} expect error ${JSON.stringify(err)}`);
   }
 }
+function expectFail(info: string = ''): void {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(`${info} test failed`);
+  }
+}
+
+function expectEqual(exp: string | number | boolean, assert: string | number | boolean, info: string = ''): void {
+  try {
+    expect(exp).assertEqual(assert);
+  } catch (err) {
+    console.info(`${info} test failed`);
+  }
+}
 
 let ws: webSocket.WebSocket = webSocket.createWebSocket();
 
-export default function WebSocketPermissionDeniedTest() {
-  describe('webSocketPermissionDeniedTest', () => {
+export default function WebSocketPermissionDeniedTest1() {
+  describe('webSocketPermissionDeniedTest1', () => {
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnectCode201Callback0100
@@ -43,7 +58,7 @@ export default function WebSocketPermissionDeniedTest() {
       let caseName: string = 'testNetworkMgrWebSocketConnectCode201Callback0100';
       console.info(`${caseName} test start`);
       try {
-       let url: string = 'ws://';
+        let url: string = 'ws://';
         ws.connect(url, (error: BusinessError, value: boolean) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
           ExpectTrue(error !== undefined && error.code === 201);
@@ -259,6 +274,62 @@ export default function WebSocketPermissionDeniedTest() {
         console.info(`${caseName} test end`);
       }
     });
-
+    /**
+     * @tc.name   testNetworkMgrWebSocketSendCode401Callback0100
+     * @tc.number SUB_NetworkMgr_WebSocket_SendCode401Callback_0100
+     * @tc.desc   Test code 401 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketSendCode401Callback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'testNetworkMgrWebSocketSendCode401Callback0100';
+        console.info(`${caseName} test start`);
+        try {
+          ws.send(null, (error: BusinessError, value: boolean) => {
+            console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+            ExpectTrue(error !== undefined && error.code === 401);
+            done();
+            console.info(`${caseName} test end`);
+          });
+        } catch (err) {
+          console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+          console.info(`${caseName} test end`);
+        }
+      });
+    /**
+     * @tc.name   testNetworkMgrWebSocketSendCode401Promise0100
+     * @tc.number testNetworkMgrWebSocketSendCode401Promise0100
+     * @tc.desc   Sending data through WebSocket connection(no connect)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketSendCode401Promise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'testNetworkMgrWebSocketSendPromise0600';
+        console.info(`${caseName} test start`);
+        try {
+          ws.send(null).then((value: boolean) => {
+            console.info(`${caseName} send success and value is ${value}`);
+            expectFail(`${caseName} send success`);
+            done();
+            console.info(`${caseName} test end`);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} send fail ${JSON.stringify(err)}`);
+            expectEqual(err.code, 401);
+            done();
+            console.info(`${caseName} test end`);
+          })
+        } catch (err) {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+          expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+          done();
+          console.info(`${caseName} test end`);
+        }
+      })
   });
 }

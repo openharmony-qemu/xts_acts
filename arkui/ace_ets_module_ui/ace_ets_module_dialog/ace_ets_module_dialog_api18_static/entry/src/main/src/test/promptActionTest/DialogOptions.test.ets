@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function DialogOptions() {
   describe('DialogOptions', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
     })
 

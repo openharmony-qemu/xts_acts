@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function replaceString() {
   describe('replaceString', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("replaceString beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

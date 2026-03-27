@@ -355,9 +355,21 @@ export default function wifiSta() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_StartScan_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            let boolean1 = wifiMg.isConnected();
             try {
-                wifiMg.startScan();
-                console.info("wifi startScan success!");
+                if (boolean1) {
+                    console.info("[wifi_test]亮屏关联扫描周期20/40/80/160,未防止触发扫描，跳过startscan");
+                } else {
+                    let lists = wifiMg.getDeviceConfigs();
+                    console.info("[wifi_test]wifi get getDeviceConfigs result : " + JSON.stringify(lists));
+                    console.info("[wifi_test]wifi  getDeviceConfigs.length result : " + JSON.stringify(lists.length));
+                    if (lists.length > 0) {
+                        console.info("wifi 有候选网络（连接过）时，不连接状态扫描10s一次，会与扫描接口相撞，管控5s一次，故不跑此接口");
+                    } else {
+                        wifiMg.startScan();
+                        console.info("wifi startScan success!");
+                    }
+                }
 	        } catch(error) {
 		        console.error("wifi startScan get failed:" + JSON.stringify(error));
                 if (Number(error.code) == 801) {

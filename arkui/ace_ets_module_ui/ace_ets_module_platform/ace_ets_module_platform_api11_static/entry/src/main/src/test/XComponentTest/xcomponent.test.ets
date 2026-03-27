@@ -42,7 +42,7 @@ interface EventMessage {
 }
 export default function xcomponentGetXComponentContextJsunit() {
   describe('xcomponentGetXComponentContextTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
     });

@@ -2941,6 +2941,34 @@ export default function SingleKvStoreNull(){
     })
 
     /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_sync_0100
+     * @tc.name SUB_DDM_SKV_Null_sync_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void;
+     * sync  callback，deviceIds = null/undefined/[]  err=201
+     * delayMs = null/undefined
+     */
+    it('SUB_DDM_SKV_Null_sync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_sync_0100 begin---------  ');
+      let mode = factory.SyncMode.PULL_ONLY;
+      try {
+        kvStore!.sync(syncDeviceIds, mode, 10);
+        console.info(TAG + ' sync success');
+        done();
+      } catch (e) {
+        console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
+        if (e.code === 201) {
+          expect( e.code ).assertEqual(201);
+        } else {
+          expect( e != undefined ).assertTrue();
+        }
+        done();
+      }
+    })
+
+    /**
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_sync_0101
      * @tc.name SUB_DDM_SKV_Null_sync_0101
      * @tc.type FUNC
@@ -3060,6 +3088,34 @@ export default function SingleKvStoreNull(){
       }
     })
 
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_syncQuery_0100
+     * @tc.name SUB_DDM_SKV_Null_syncQuery_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void;
+     * sync  callback，deviceIds = null/undefined/[],  err=201
+     * delayMs = null/undefined
+     */
+    it('SUB_DDM_SKV_Null_syncQuery_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_Null_syncQuery_0100 begin---------  ');
+      let mode = factory.SyncMode.PUSH_ONLY;
+      const query = new factory.Query();
+      query.prefixKey("batch_test");
+      try {
+        kvStore!.sync(syncDeviceIds, query, mode, 10);
+        done();
+      } catch (e) {
+        console.error(TAG + 'catch e get' + `, error code is ${e.code}, message is ${e.message}`);
+        if (e.code === 201) {
+          expect( e.code ).assertEqual(201);
+        } else {
+          expect( e != undefined ).assertTrue();
+        }
+        done();
+      }
+    })
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_syncQuery_0101
@@ -3566,11 +3622,21 @@ export default function SingleKvStoreNull(){
           moved = resultSet.move(null);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
+
         });
+
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -3614,10 +3680,17 @@ export default function SingleKvStoreNull(){
           moved = resultSet.move(undefined);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3661,10 +3734,17 @@ export default function SingleKvStoreNull(){
           moveToPositiond = resultSet.moveToPosition(null);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3708,10 +3788,17 @@ export default function SingleKvStoreNull(){
           moveToPositiond = resultSet.moveToPosition(undefined);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3907,6 +3994,19 @@ export default function SingleKvStoreNull(){
         console.info(TAG + 'first.default f22=' + first.default);
         expect(first.default).assertEqual('');
 
+        let first33 = new factory.FieldNode('first33');
+        first33.type = factory.ValueType.STRING;
+        expect(first33.type).assertEqual(factory.ValueType.STRING);
+        first33.type = factory.ValueType.BYTE_ARRAY;
+        expect(first33.type).assertEqual(factory.ValueType.BYTE_ARRAY);
+        first33.type = factory.ValueType.BOOLEAN;
+        expect(first33.type).assertEqual(factory.ValueType.BOOLEAN);
+        first33.type = factory.ValueType.DOUBLE;
+        expect(first33.type).assertEqual(factory.ValueType.DOUBLE);
+        first33.type = factory.ValueType.INTEGER;
+        expect(first33.type).assertEqual(factory.ValueType.INTEGER);
+        first33.type = factory.ValueType.FLOAT;
+        expect(first33.type).assertEqual(factory.ValueType.FLOAT);
         done();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);

@@ -284,8 +284,8 @@ export default function RdbErrorCode14800024() {
             }
 
             try {
-              await transaction.batchInsertWithConflictResolution("test", [valueBucket1],
-                relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+              waitForCompletion(async () => {await transaction.batchInsertWithConflictResolution("test", [valueBucket1],
+                relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);})
             } catch (e) {
               expect(14800024).assertEqual(e.code);
             }
@@ -316,7 +316,7 @@ export default function RdbErrorCode14800024() {
             }
 
             try {
-              await transaction.execute("PRAGMA integrity_check");
+              waitForCompletion(async () => {await transaction.execute("PRAGMA integrity_check");})
             } catch (e) {
               expect(e.code).assertEqual(14800024);
             }

@@ -35,7 +35,7 @@ import { RecordData } from '@ohos.base';
 
 export default function inspectorJsunit() {
   describe('inspectorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

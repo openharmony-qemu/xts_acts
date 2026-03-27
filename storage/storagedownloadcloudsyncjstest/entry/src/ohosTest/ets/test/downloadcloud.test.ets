@@ -46,14 +46,11 @@ async function errHandle(err:BusinessError, tag:string){
     switch (err.code){
       case 13600001://IPC error
         console.error('${tag} ICP error');
-        expect(true).assertTrue();
         break;
       case 22400002:// Network unavailable
-        expect(true).assertTrue();
         break;
       case 401: //The inputparameter is invalid
         console.error('${tag} The input parameter is invalid');
-        expect(true).assertTrue();
         break;
     }
   }else{
@@ -104,11 +101,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == RUNNING) {
              console.info("state:pg.state.RUNNING==0-云文件正在下载中");
-             expect(true).assertTrue();
+             expect(cloudSync.State.RUNNING === 0).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -133,11 +129,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == FAILED) {
              console.info("state:pg.state.FAILED==2-云文件下载失败");
-             expect(true).assertTrue();
+             expect(cloudSync.State.FAILED === 2).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -162,7 +157,7 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == UPLOADING) {
              console.info("state:pg.state.SyncState==0-上行同步中");
-             expect(true).assertTrue();
+             expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
            }
          }
        });
@@ -190,7 +185,7 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == UPLOAD_FAILED) {
              console.info("state:pg.state.SyncState==1-上行同步失败");
-             expect(true).assertTrue();
+             expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
            }
          }
        });
@@ -218,11 +213,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.state = " + pg.state);
           if (pg.state == DOWNLOAD_FAILED) {
             console.info("state:pg.state.DOWNLOAD_FAILED ==3-云文件下行同步失败");
-            expect(true).assertTrue();
+            expect(cloudSync.SyncState.DOWNLOAD_FAILED === 3).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -247,7 +241,7 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == DOWNLOADING) {
              console.info("state:pg.state.SyncState==2-下行同步中");
-             expect(true).assertTrue();
+             expect(cloudSync.SyncState.DOWNLOADING === 2).assertTrue();
            }
          }
        });
@@ -275,11 +269,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.state = " + pg.state);
            if (pg.state == FAILED) {
              console.info("on:callback succeed. pg.processed = " + pg.processed);
-             expect(true).assertTrue();
+             expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -304,11 +297,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
          if (pg.error == NO_ERROR) {
            console.info("error: pg.error.NO_ERROR==0-没有错误");
-           expect(true).assertTrue();
+           expect(cloudSync.DownloadErrorType.NO_ERROR === 0).assertTrue();
          }
        }
        });
-    expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -333,11 +325,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
            if (pg.error == UNKNOWN_ERROR) {
              console.info("error: pg.error.UNKNOWN_ERROR==1-未知错误");
-             expect(true).assertTrue();
+             expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -362,11 +353,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
            if (pg.error == NETWORK_UNAVAILABLE) {
              console.info("error: pg.error.NETWORK_UNAVAILABLE==2-网络不可用");
-             expect(true).assertTrue();
+             expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE === 2).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -391,11 +381,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
            if (pg.error == LOCAL_STORAGE_FULL) {
              console.info("error: pg.error.LOCAL_STORAGE_FULL==3-本地空间不足");
-             expect(true).assertTrue();
+             expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL === 3).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -420,11 +409,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
            if (pg.error == CONTENT_NOT_FOUND) {
              console.info("error: pg.error.CONTENT_NOT_FOUND==4-云端空间未找到对应文件");
-             expect(true).assertTrue();
+             expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND === 4).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -449,11 +437,10 @@ describe('cloud_file_download_test', () => {
            console.info("on:callback succeed. pg.error = " + pg.error);
            if (pg.error == FREQUENT_USER_REQUESTS) {
              console.info("error: pg.error.CONTENT_NOT_FOUND==5-用户请求过于频繁");
-             expect(true).assertTrue();
+             expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS === 5).assertTrue();
            }
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -475,10 +462,9 @@ describe('cloud_file_download_test', () => {
          console.info("on: callback succeed.");
          if(pg != undefined){
            console.info("on:callback succeed. pg.error = " + pg.error);
-           expect(true).assertTrue();
+           expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
          }
        });
-       expect(true).assertTrue();
      } catch (err) {
        errHandle(err,TAG);
      }
@@ -503,11 +489,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.error = " + pg.error);
           if (pg.error == WIFI_UNAVAILABLE) {
             console.info("error: pg.error.WIFI_UNAVAILABLE == 2-WIFI不可用");
-            expect(true).assertTrue();
+            expect(cloudSync.ErrorType.WIFI_UNAVAILABLE === 2).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -532,11 +517,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.error = " + pg.error);
           if (pg.error == BATTERY_LEVEL_LOW) {
             console.info("error: pg.error.BATTERY_LEVEL_LOW == 3-低电量（低于15%）");
-            expect(true).assertTrue();
+            expect(cloudSync.ErrorType.BATTERY_LEVEL_LOW === 3).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -562,11 +546,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.error = " + pg.error);
           if (pg.error == BATTERY_LEVEL_WARNING) {
             console.info("error: pg.error.BATTERY_LEVEL_WARNING == 4-告警电量（低于10%）");
-            expect(true).assertTrue();
+            expect(cloudSync.ErrorType.BATTERY_LEVEL_WARNING === 4).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -592,11 +575,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.error = " + pg.error);
           if (pg.error == CLOUD_STORAGE_FULL) {
             console.info("error: pg.error.CLOUD_STORAGE_FULL == 5-云端空间不足");
-            expect(true).assertTrue();
+            expect(cloudSync.ErrorType.CLOUD_STORAGE_FULL === 5).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -622,11 +604,10 @@ describe('cloud_file_download_test', () => {
           console.info("on:callback succeed. pg.error = " + pg.error);
           if (pg.error == DEVICE_TEMPERATURE_TOO_HIGH) {
             console.info("error: pg.error.DEVICE_TEMPERATURE_TOO_HIGH == 7-设备温度过高");
-            expect(true).assertTrue();
+            expect(cloudSync.ErrorType.DEVICE_TEMPERATURE_TOO_HIGH === 7).assertTrue();
           }
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -729,7 +710,7 @@ describe('cloud_file_download_test', () => {
     try {
       let timeStamp = await fileSync.getLastSyncTime();
       let date = new Date(timeStamp);
-      expect(true).assertTrue();
+      expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }
@@ -754,9 +735,9 @@ describe('cloud_file_download_test', () => {
         } else {
           let date = new Date(timeStamp);
           console.info("test_Getlastsynctime_002 get last sync time successfully:"+ date);
+          expect(cloudSync.SyncState.UPLOADING === 0).assertTrue();
         }
       });
-      expect(true).assertTrue();
     } catch (err) {
       errHandle(err,TAG);
     }

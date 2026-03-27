@@ -26,7 +26,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputEditMenuOptionsModifier() {
   describe('TextInputEditMenuOptionsModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputEditMenuOptionsModifier beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

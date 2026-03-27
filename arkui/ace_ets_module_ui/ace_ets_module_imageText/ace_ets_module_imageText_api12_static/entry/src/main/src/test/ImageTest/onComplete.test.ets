@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function onComplete() {
   describe('onComplete', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onComplete beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

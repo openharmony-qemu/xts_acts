@@ -3162,7 +3162,7 @@ export default function inputMethodDrawnControlJSUnit() {
      */
     it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300', Level.LEVEL3, async (done: Function) => {
       try{
-        inputMethod.switchCurrentInputMethodAndSubtype(undefined, undefined, (err, data) => {
+        inputMethod.switchCurrentInputMethodAndSubtype(null, null, (err, data) => {
           console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300 success");
           expect().assertFail();
           done();

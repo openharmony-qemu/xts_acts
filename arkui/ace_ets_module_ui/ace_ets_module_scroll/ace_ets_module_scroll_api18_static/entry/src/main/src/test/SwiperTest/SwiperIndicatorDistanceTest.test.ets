@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function IndexTest() {
   describe('SwiperIndicatorDistance', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperIndicatorDistance beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       

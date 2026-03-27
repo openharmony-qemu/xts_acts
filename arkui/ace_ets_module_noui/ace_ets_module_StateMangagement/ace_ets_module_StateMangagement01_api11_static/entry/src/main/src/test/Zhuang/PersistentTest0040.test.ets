@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PersistentTest0040() {
   describe('PersistentTest0040', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PersistentTest0040 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

@@ -132,5 +132,29 @@ export default function setFontTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600
+     * @tc.desc   Passing empty string to the setFont interface results in a 401 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0600';
+      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      try {
+        let applicationContext = testAbilityContext.getApplicationContext();
+        hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        let result = applicationContext.setFont('');
+        expect(result).assertEqual(undefined);
+        done();
+      } catch (paramError) {
+        hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

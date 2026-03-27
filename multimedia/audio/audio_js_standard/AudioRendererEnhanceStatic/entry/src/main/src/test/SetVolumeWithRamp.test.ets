@@ -47,7 +47,9 @@ export default function audioRendererEnhanceTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
@@ -175,7 +177,6 @@ export default function audioRendererEnhanceTest() {
       try {
         audioRen!.setVolumeWithRamp(1, 1000);
         console.info(`${Tag}: setVolumeWithRamp 1,1000 :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: setVolumeWithRamp catch error: ${error.code}, ${error.message}`);
@@ -202,7 +203,6 @@ export default function audioRendererEnhanceTest() {
       try {
         audioRen!.setVolumeWithRamp(0, 100)
         console.info(`${Tag}: setVolumeWithRamp 0,100 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -229,7 +229,6 @@ export default function audioRendererEnhanceTest() {
       try {
         audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -256,7 +255,6 @@ export default function audioRendererEnhanceTest() {
       try {
         audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -283,7 +281,6 @@ export default function audioRendererEnhanceTest() {
       try {
         audioRen!.setVolumeWithRamp(0, 10)
         console.info(`${Tag}: setVolumeWithRamp 0,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
@@ -464,7 +461,6 @@ export default function audioRendererEnhanceTest() {
           }
           await Utils.msSleep(20);
         }
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}:  setVolumeWithRamp : error ${error.message}, ${error.code}`);

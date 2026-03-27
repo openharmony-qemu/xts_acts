@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,6 +62,95 @@ export default function PasteboardProgressPermissionTest() {
         expect(err.code).assertEqual('201')
       }
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardProgressPermissionTest_0100 end ************')
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardgetData_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardgetData_0100
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardgetData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetData_0100 start ************')
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      try {
+        await systemPasteboard.getData();
+        
+      } catch (err) {
+        console.info(TAG + 'Failed to getDataWithProgress.Cause: ' + err.message + ', code: ' + err.code)
+        expect(err === null).assertTrue();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetData_0100 end ************')
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardgetDataSync_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardgetDataSync_0100
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardgetDataSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetDataSync_0100 start ************')
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      try {
+        await systemPasteboard.getDataSync();
+        
+      } catch (err) {
+        console.info(TAG + 'Failed to getDataWithProgress.Cause: ' + err.message + ', code: ' + err.code)
+        expect(err === null).assertTrue();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetDataSync_0100 end ************')
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedData_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedData_0100
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedData_0100 start ************')
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      try {
+        await systemPasteboard.getUnifiedData();
+      } catch (err) {
+        console.info(TAG + 'Failed to getDataWithProgress.Cause: ' + err.message + ', code: ' + err.code)
+        expect(err === null).assertTrue();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedData_0100 end ************')
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedDataSync_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedDataSync_0100
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedDataSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      try {
+        await systemPasteboard.getUnifiedDataSync();
+      } catch (err) {
+        console.info(TAG + 'Failed to getDataWithProgress.Cause: ' + err.message + ', code: ' + err.code)
+        expect(err === null).assertTrue();
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardgetUnifiedDataSync_0100 end ************')
     })
   })
 }

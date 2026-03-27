@@ -57,7 +57,7 @@ export default function SXrenderingStrategyJsunit() {
       }
       console.info("SXrenderingStrategyJsunit beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXrenderingStrategyJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

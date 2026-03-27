@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Row_Breakpoints_Default() {
   describe('Grid_Row_Breakpoints_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_Row_Breakpoints_Default beforeAll start");
            
       await UtilsTest.msSleep(4000)

@@ -245,7 +245,7 @@ export default function staticLoadSourceHar() {
     it("testSourceHar12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testSourceHar12";
       try {
-        expect(ConstantTAG).assertEqual('[Hypium]');
+        expect(ConstantTAG.LEVEL4).assertEqual(Level.LEVEL4);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();

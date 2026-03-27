@@ -957,6 +957,37 @@ export default function AccessTokenStaticTest() {
     })
 
     /**
+     * @tc.name   Test_Off_003
+     * @tc.number Test_Off_003
+     * @tc.desc   abilityAccessCtrl On Off The permission list does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("Test_Off_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, 'testTag', '----------------------Test_Off_003---------------------------');
+      await Utils.msSleep(1000);
+      try {
+        let permissionList: Array<Permissions> = [];
+        atManager.onSelfPermissionStateChange(permissionList,
+          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', `Test_Off_003 on callback data: ${JSON.stringify(data)}`);
+          });
+        atManager.offSelfPermissionStateChange(permissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+            hilog.info(domain, 'testTag', `Test_Off_003 off callback data: ${JSON.stringify(data)}`);
+          });
+        hilog.info(domain, 'testTag', 'Test_Off_003 success');
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, 'testTag', "Test_Off_003 error" + JSON.stringify(error));
+        expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   Test_On_001
      * @tc.number Test_On_001
      * @tc.desc   abilityAccessCtrl On The size of the permission list exceeds the limit of 1024

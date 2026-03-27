@@ -84,10 +84,10 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let sectorIndex: int = 1;
           let key: Array<int> = [0x04, 0x05];
-
           try {
             await nfcmifareClassicTag.authenticateSector(sectorIndex, key, true).then(() => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100 data is ');
@@ -116,6 +116,40 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+        if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+          let sectorIndex: int = 1;
+          let key: Array<int> = [];
+          try {
+            await nfcmifareClassicTag.authenticateSector(sectorIndex, key, false).then(() => {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101 data is ');
+            });
+          } catch (error) {
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101 error is ' + error.code + " - " + error);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0101 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined: ');
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200
      * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200
      * @tc.desc Check whether the NFC function is enabled.
@@ -124,6 +158,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let sectorIndex: int = 1;
           let key: Array<int> = [0x04, 0x05];
@@ -158,6 +193,42 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+        if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+          let sectorIndex: int = 1;
+          let key: Array<int> = [];
+          let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201 authenticateSector finish ');
+          }
+          try {
+            nfcmifareClassicTag.authenticateSector(sectorIndex, key, false, AsyncCallback);
+          } catch (error) {
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201 error is ' + error.code + " - " + error);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0201 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+            done();
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined: ');
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300
      * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300
      * @tc.desc Check whether the NFC function is enabled.
@@ -166,11 +237,17 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           try {
             await nfcmifareClassicTag.readSingleBlock(blockIndex).then((data) => {
-              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300 data is ');
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300 data ');
+              if (data.length > 0) {
+                  expect(data.length > 0).assertTrue();
+              } else {
+                  expect(data.length == 0).assertTrue();
+              }
             });
           } catch (error) {
             error = error as BusinessError;
@@ -204,11 +281,19 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
             err: BusinessError<void> | null, data: Array<int> | undefined) => {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0400 readSingleBlock finish ');
+            if (data != undefined) {
+              if (data.length > 0) {
+                  expect(data.length > 0).assertTrue();
+              } else {
+                  expect(data.length == 0).assertTrue();
+              }
+            }
           }
           try {
             nfcmifareClassicTag.readSingleBlock(blockIndex, AsyncCallback);
@@ -244,6 +329,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let rawData: Array<int> = [0x0a, 0x14];
@@ -275,6 +361,40 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+        if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+          let blockIndex: int = 1;
+          let rawData: Array<int> = [];
+          try {
+            await nfcmifareClassicTag.writeSingleBlock(blockIndex, rawData).then((data) => {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501 data ');
+            });
+          } catch (error){
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501 error is ' + error.code + " - " + error);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0501 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined: ');
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600
      * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600
      * @tc.desc Check whether the NFC function is enabled.
@@ -283,11 +403,12 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let rawData: Array<int> = [0x0a, 0x14];
           let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600 readSingleBlock finish ');
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600 writeSingleBlock finish ');
           }
           try {
             nfcmifareClassicTag.writeSingleBlock(blockIndex, rawData, AsyncCallback);
@@ -314,6 +435,41 @@ export default function nfcMifareClassicTagTest() {
         done();
     })
 
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+        if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+          let blockIndex: int = 1;
+          let rawData: Array<int> = [];
+          let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601 writeSingleBlock finish ');
+          }
+          try {
+            nfcmifareClassicTag.writeSingleBlock(blockIndex, rawData, AsyncCallback);
+          } catch (error){
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601 error is ' + error.code + " - " + error);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0601 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined: ');
+          expect().assertFail();
+        }
+        done();
+    })
+
       /**
        * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700
        * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700
@@ -323,6 +479,7 @@ export default function nfcMifareClassicTagTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
           if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
             let blockIndex: int = 1;
             let value: int = 0x20;
@@ -331,7 +488,7 @@ export default function nfcMifareClassicTagTest() {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700 data ');
               });
             } catch (error){
-            error = error as BusinessError;
+              error = error as BusinessError;
               if (error.code === 201) {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700 error is ' + error.code + " - " + error);
                 expect(201).assertEqual(error.code)
@@ -362,17 +519,18 @@ export default function nfcMifareClassicTagTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
           if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
             let blockIndex: int = 1;
             let value: int = 0x20;
 
             let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800 readSingleBlock finish ');
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800 incrementBlock finish ');
             }
             try {
               nfcmifareClassicTag.incrementBlock(blockIndex, value, AsyncCallback);
             } catch (error){
-            error = error as BusinessError;
+              error = error as BusinessError;
               if (error.code === 201) {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800 error is ' + error.code + " - " + error);
                 expect(201).assertEqual(error.code)
@@ -403,6 +561,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let value: int = 0x20;
@@ -442,12 +601,13 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let value: int = 0x20;
 
           let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000 readSingleBlock finish ');
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000 decrementBlock finish ');
           }
           try {
             nfcmifareClassicTag.decrementBlock(blockIndex, value, AsyncCallback);
@@ -483,6 +643,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           try {
@@ -521,10 +682,11 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200 readSingleBlock finish ');
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200 transferToBlock finish ');
           }
           try {
             nfcmifareClassicTag.transferToBlock(blockIndex, AsyncCallback);
@@ -560,6 +722,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           try {
@@ -598,10 +761,11 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let blockIndex: int = 1;
           let AsyncCallback:(err: BusinessError<void> | null, data: undefined) => void = (err: BusinessError<void> | null, data: undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400 readSingleBlock finish ');
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400 restoreFromBlock finish ');
           }
           try {
             nfcmifareClassicTag.restoreFromBlock(blockIndex, AsyncCallback);
@@ -637,11 +801,12 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let sectorCount:int = nfcmifareClassicTag.getSectorCount();
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500 getSectorCount error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -661,12 +826,13 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         let sectorIndex: int = 1;
         try{
           let blockCountInSector: int = nfcmifareClassicTag.getBlockCountInSector(sectorIndex);
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1600 getBlockCountInSector error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -686,11 +852,13 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let getType: tag.MifareClassicType = nfcmifareClassicTag.getType();
+          expect(getType).assertEqual(tag.MifareClassicType.TYPE_CLASSIC);
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700 getType error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -710,11 +878,12 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let tagSize: int = nfcmifareClassicTag.getTagSize();
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800 getTagSize error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -734,11 +903,17 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let isEmulatedTagstate: boolean = nfcmifareClassicTag.isEmulatedTag();
+          if (isEmulatedTagstate == true) {
+            expect(isEmulatedTagstate).assertTrue();
+          } else {
+            expect(isEmulatedTagstate).assertFalse();
+          }
         } catch (error) {
-            error = error as BusinessError;
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900 isEmulatedTag error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -758,6 +933,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let sectorIndex: int = 1;
@@ -783,6 +959,7 @@ export default function nfcMifareClassicTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_2100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let blockIndex: int = 1;

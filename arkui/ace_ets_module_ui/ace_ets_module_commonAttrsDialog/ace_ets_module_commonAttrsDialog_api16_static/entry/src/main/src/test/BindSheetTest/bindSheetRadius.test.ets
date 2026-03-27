@@ -40,14 +40,12 @@ import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// let uiContext = new UIContext()
 export default function BindSheetTest() {
   describe('BindSheetTest', () => {
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")})
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
-    beforeAll(() => {
-      console.info("assemblyCallbackTest beforeAll start");
 
+    beforeAll(async (): Promise<void> => {
+      console.info("assemblyCallbackTest beforeAll start");
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -93,6 +91,7 @@ export default function BindSheetTest() {
 it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0100';
       console.info('[' + tagName + '] START============================');
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0100] driver is: " + driver);
       let btn1 = await driver.findComponent(ON.id('bindSheet_001'));
@@ -131,6 +130,7 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0200';
       console.info('[' + tagName + '] START============================');
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0200] driver is: " + driver);
       let btn1 = await driver.findComponent(ON.id('bindSheet_002'));
@@ -164,6 +164,7 @@ it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0300';
       console.info('[' + tagName + '] START============================');
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0300] driver is: " + driver);
       let btn1 = await driver.findComponent(ON.id('bindSheet_003'));
@@ -202,6 +203,7 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
 it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0400';
       console.info('[' + tagName + '] START============================');
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0400] driver is: " + driver);
       let btn1 = await driver.findComponent(ON.id('bindSheet_004'));

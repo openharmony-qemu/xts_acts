@@ -208,7 +208,7 @@ struct OnAccessibilityActionIntercept {
   }
   build() {
     NavDestination() {
-      Column({ space: 10 }) {
+      Column() {
         Row() {
           Button() {
             Image($r('app.media.ic_public_back'))

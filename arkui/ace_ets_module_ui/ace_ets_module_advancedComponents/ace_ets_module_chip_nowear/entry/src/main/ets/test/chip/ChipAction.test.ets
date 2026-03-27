@@ -65,30 +65,40 @@ export default function ChipAction() {
      * @tc.level  LEVEL0
      */
     it('ChipAction_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-
       console.info('ChipAction_001 START');
+      await CommonFunc.sleep(1000);
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
-      await CommonFunc.sleep(200);
-      let right: number = ChipActionCol.right - vp2px(22);
-      let top: number = ChipActionCol.top + vp2px(18);
-      await CommonFunc.sleep(200);
-      console.info('ChipAction_001 right：' + right + 'top:' + top);
+      let rom: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let flexRom: ESObject = rom
+        .$children[0]
+        .$children[0]
+        .$children[0]
+        .$children[0]
+      let rightImg: ESObject = rom
+        .$children[0]
+        .$children[0]
+        .$children[0]
+        .$children[0]
+        .$children[2]
+        .$children[0]
+      let flexPadding: ESObject = JSON.parse(flexRom.$attrs.padding);
+      console.info('flexRom padding：' + JSON.stringify(flexPadding));
+      let right: number = ChipActionCol.right - vp2px(Number(flexPadding.right.match(/\d+/)[0])) -
+      vp2px(Number(rightImg.$attrs.width.match(/\d+/)[0]) / 2) + globalThis.winLeft;
+      let top: number = ChipActionCol.top + vp2px(Number(flexPadding.top.match(/\d+/)[0])) +
+      vp2px(Number(rightImg.$attrs.height.match(/\d+/)[0]) / 2) + globalThis.winTop;
+      console.info('ChipAction_001 rightImg right：' + right + 'top:' + top);
       let driver = Driver.create();
-      await driver.mouseClick({
-        x: Math.round(right), y: Math.round(top)
-      }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.click(
+        Math.round(right), Math.round(top)
+      );
       await CommonFunc.sleep(1000);
       console.info('ChipAction_001 click success');
-
-      let strJson1 = getInspectorByKey('ChipAction');
-      await CommonFunc.sleep(1000);
-      console.info("[ChipAction_001] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('action');
+      let strJson1: ESObject = JSON.parse(getInspectorByKey('tvChipAction'));
+      console.info('[ChipAction_001] strJson1 is: ' + JSON.stringify(strJson1));
+      expect(strJson1.$attrs.content).assertEqual('action');
       console.info('[ChipAction_001] END');
-
       done();
     });
-
-
   })
 }

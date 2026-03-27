@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 export default function DatePickerDialog() {
   describe('DatePickerDialog', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

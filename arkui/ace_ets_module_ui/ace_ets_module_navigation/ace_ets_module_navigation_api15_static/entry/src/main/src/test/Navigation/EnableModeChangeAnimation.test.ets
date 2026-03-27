@@ -33,7 +33,7 @@ let tag = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function EnableModeChangeAnimation() {
   describe('EnableModeChangeAnimation', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EnableModeChangeAnimation beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");

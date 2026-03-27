@@ -89,9 +89,9 @@ HWTEST_F(DrawingNativeFontTest, testFontCreateDestroyNormal, Function | SmallTes
  */
 HWTEST_F(DrawingNativeFontTest, testFontCreateDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontDestroy with nullptr as parameter
+    OH_Drawing_Font *font = nullptr;
     OH_Drawing_FontDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(font, nullptr);
 }
 
 /**

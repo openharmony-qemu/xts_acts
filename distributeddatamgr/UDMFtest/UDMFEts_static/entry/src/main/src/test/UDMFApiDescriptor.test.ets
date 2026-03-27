@@ -632,19 +632,14 @@ export default function UDMFApiDescriptorTest() {
       hilog.info(domain, tag, TAG + ' start ');
       try {
         let typeObj = UTD.getTypeDescriptor("null");
-        if (!typeObj) {
-          hilog.info(domain, tag, TAG + 'typeObj assertFail');
-          expect(false).assertTrue();
-          return;
-        }
-        hilog.info(domain, tag, TAG + ' typeObj: ' + typeObj);
-        expect(false).assertTrue();
+        hilog.info(domain, tag, TAG + ' typeObj success: ' + typeObj);
+        expect(typeObj == null).assertTrue();
         done()
       } catch (err) {
         const error = err as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
         done()
       }
       hilog.info(domain, tag, TAG + ' end ');

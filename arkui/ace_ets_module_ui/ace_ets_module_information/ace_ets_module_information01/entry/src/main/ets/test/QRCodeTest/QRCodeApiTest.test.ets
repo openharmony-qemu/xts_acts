@@ -61,7 +61,7 @@ export default function QRCodeApiTest() {
       let obj: ESObject = JSON.parse(strJson);
       await CommonFunc.sleep(1000);
       console.info("[QRCode_Api_QRCode1] obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.opacity).assertEqual(0.5);
+      expect(obj.$attrs.contentOpacity).assertEqual(0.5);
 
       console.info('[QRCode_Api_QRCode1] END');
       done();

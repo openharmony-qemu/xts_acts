@@ -509,6 +509,30 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1000
+     * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1000
+     * @tc.desc   algorithm is cmac, update msg is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_Cmac_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let mdName: string = "SHA3-224";
+        let spec: cryptoFramework.HmacSpec = {
+          algName: "HMAC",
+          mdName: mdName
+        }
+        cryptoFramework.createMac(spec);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1100
      * @tc.desc   algorithm is cmac, update msg is empty

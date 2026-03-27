@@ -20,7 +20,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function TextAreaTextOverflow() {
   describe('TextAreaTextOverflow', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaTextOverflow beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

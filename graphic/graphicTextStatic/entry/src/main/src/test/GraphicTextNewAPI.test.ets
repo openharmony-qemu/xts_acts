@@ -60,6 +60,7 @@ export default function GraphicTextNewAPI() {
           decorationThicknessScale: 2.0,
         });
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -103,6 +104,7 @@ export default function GraphicTextNewAPI() {
           decorationThicknessScale: 1.0,
         });
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -146,6 +148,7 @@ export default function GraphicTextNewAPI() {
           decorationThicknessScale: 1.5,
         });
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -185,6 +188,7 @@ export default function GraphicTextNewAPI() {
           expect().assertFail();
         }
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -224,6 +228,7 @@ export default function GraphicTextNewAPI() {
           expect().assertFail();
         }
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -264,6 +269,7 @@ export default function GraphicTextNewAPI() {
           expect().assertFail();
         }
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -338,7 +344,6 @@ export default function GraphicTextNewAPI() {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
             }
-
           }
         }
         try {
@@ -347,6 +352,7 @@ export default function GraphicTextNewAPI() {
           console.info('www data test error ' + msg + err);
           expect().assertFail();
         }
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -468,6 +474,7 @@ export default function GraphicTextNewAPI() {
           expect().assertFail();
         }
         paragraph.layoutSync(600);
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -521,6 +528,7 @@ export default function GraphicTextNewAPI() {
         expect(lineMetrics != undefined).assertTrue();
         let runs = lines[0].getGlyphRuns();
         expect(runs.length > 0).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -561,6 +569,7 @@ export default function GraphicTextNewAPI() {
         let lineMetrics =  paragraph.getLineMetrics(0);
         console.info('www data lineMetrics ', JSON.stringify(lineMetrics));
         expect(lineMetrics == undefined).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -608,6 +617,7 @@ export default function GraphicTextNewAPI() {
         expect(placeholderRects.length > 0).assertTrue();
         let didExceed = paragraph.didExceedMaxLines();
         expect(didExceed == true).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -649,6 +659,7 @@ export default function GraphicTextNewAPI() {
       })
       console.info(msg + JSON.stringify(fontDescriptor2));
       expect(fontDescriptor2.length == 0).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
       done();
     })
 
@@ -695,6 +706,7 @@ export default function GraphicTextNewAPI() {
         let glphy4 = runs[0].getGlyphs({start: 0, end: -1});
         console.info('www data glphy4 ' + JSON.stringify(glphy4));
         expect(glphy4 == undefined).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -746,6 +758,7 @@ export default function GraphicTextNewAPI() {
         let position4 = runs[0].getPositions({start: 0, end: -1});
         console.info('www data position4 ' + JSON.stringify(position4));
         expect(position4 == undefined).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);
@@ -802,6 +815,7 @@ export default function GraphicTextNewAPI() {
         let indicesUndefined = runs[0].getStringIndices(undefined); // undefined是非法参数，将返回undefined
         console.info('www data indicesUndefined ' + JSON.stringify(indicesUndefined));
         expect(indicesUndefined == undefined).assertTrue();
+        fontCollection.unloadFontSync('Clock_01');
         done();
       } catch(err){
         console.info(msg + 'test error' + err);

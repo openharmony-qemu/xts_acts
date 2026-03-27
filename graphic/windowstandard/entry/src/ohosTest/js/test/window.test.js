@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import app from '@system.app'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, TestType, Size} from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium'
 import window from '@ohos.window'
 import display from '@ohos.display'
 
@@ -222,7 +222,7 @@ export default function window_test() {
                 expect(wnd != null).assertTrue();
                 wnd.getAvoidArea(window.AvoidAreaType.TYPE_CUTOUT).then((data) => {
                     console.log(msgStr + ' wnd.getAvoidArea success, data :' + JSON.stringify(data));
-                    expect(!data.visible).assertTrue();
+                    expect(data.visible).assertEqual(false);
                     expect(data.rightRect != null).assertTrue();
                     expect(data.topRect != null).assertTrue();
                     expect(data.bottomRect != null).assertTrue();
@@ -1028,7 +1028,7 @@ export default function window_test() {
                         expect(data != null).assertTrue();
                         data.on('windowSizeChange', windowSizeChangeCallback);
                         data.off('windowSizeChange');
-                        expect(true).assertTrue()
+                        
                         done()
                     }
                 })
@@ -1312,7 +1312,7 @@ export default function window_test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testCreateWindow_Promise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        it('testCreateWindow_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'create_Test_001';
             console.log(msgStr + ' begin');
             window.create('subWindow3', window.WindowType.TYPE_APP).then(wnd => {
@@ -3714,7 +3714,7 @@ export default function window_test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSetTouchable_Parameter1_Callback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        it('testSetTouchable_Parameter1_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setTouchableCallBack_Test_001';
             console.log(msgStr + ' begin');
             window.getTopWindow().then(wnd => {
@@ -3896,173 +3896,184 @@ export default function window_test() {
         })
 
 
-    /**
-     * @tc.name   testIsFoldable_Test
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
-     * @tc.desc   To test the function of isFoldable
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testIsFoldable_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        
-        let tag = 'isFoldable_Test_001 '
-        try {
-            display.isFoldable();
-            done();
-        } catch (err) {
-            console.log(tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
-            expect().assertFail();
-            done();
-        }
-    })
+        /**
+         * @tc.name   testIsFoldable_Test
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
+         * @tc.desc   To test the function of isFoldable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testIsFoldable_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
-    /**
-     * @tc.name   testGetFoldStatus_Test
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
-     * @tc.desc   To test the function of getFoldStatus
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testGetFoldStatus_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        
-        let tag = 'getFoldStatus_Test_001 '
-        
-        console.info(tag + ' begin');
-        try {
-            display.getFoldStatus();
-            expect(display.FoldStatus.FOLD_STATUS_EXPANDED != null).assertTrue();
-            expect(display.FoldStatus.FOLD_STATUS_UNKNOWN != null).assertTrue();
-            expect(display.FoldStatus.FOLD_STATUS_FOLDED != null).assertTrue();
-            expect(display.FoldStatus.FOLD_STATUS_HALF_FOLDED != null).assertTrue();
-            done();
-        } catch (err) {
-            console.log(tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
-            expect().assertFail();
-            done();
-        }
-    })
-
-    /**
-     * @tc.name   testGetFoldDisplayMode_Test
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
-     * @tc.desc   To test the function of getFoldDisplayMode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testGetFoldDisplayMode_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        
-        let tag = 'getFoldDisplayMode_Test_001 '
-        
-        console.info(tag + ' begin');
-        try {
-            display.getFoldDisplayMode();
-            expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_UNKNOWN != null).assertTrue();
-            expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_FULL != null).assertTrue();
-            expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_MAIN != null).assertTrue();
-            expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_SUB != null).assertTrue();
-            expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_COORDINATION != null).assertTrue();
-            done();
-        } catch (err) {
-            console.log(tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
-            expect().assertFail();
-            done();
-        }
-    })
-
-    /**
-     * @tc.name   testGetCurrentFoldCreaseRegion_Test
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
-     * @tc.desc   To test the function of getCurrentFoldCreaseRegion
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testGetCurrentFoldCreaseRegion_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        
-        let tag = 'getCurrentFoldCreaseRegion_Test_001 '
-        
-        console.info(tag + ' begin');
-        try {
-            let region = display.getCurrentFoldCreaseRegion();
-            if (region != null) {
-                expect(region.displayId != null).assertTrue()
-                expect(region.creaseRects != null).assertTrue()
-                done()
-            } else {
-                console.log(tag + "region : " + JSON.stringify(region))
+            let tag = 'isFoldable_Test_001 '
+            try {
+                display.isFoldable();
                 done();
-            }
-        } catch (err) {
-            console.log(tag + 'getCurrentFoldCreaseRegion failed, err : ' + JSON.stringify(err))
-            expect().assertFail();
-            done();
-        }
-    })
-
-     /**
-      * @tc.name   testGetWindowLimits_Test
-      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1170
-      * @tc.desc   test the function of getWindowLimits
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL1
-      */
-     it('testGetWindowLimits_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async function (done) {
-        console.log('www data testGetWindowLimits_Test begin')
-        try {
-            let windowClass = await window.getTopWindow();
-            let WindowLimits = windowClass.getWindowLimits();
-            console.log('www data Succeeded in window limits'+ JSON.stringify(WindowLimits))
-            expect(WindowLimits.maxWidth != null).assertTrue();
-            expect(WindowLimits.maxHeight != null).assertTrue();
-            expect(WindowLimits.minWidth != null).assertTrue();
-            expect(WindowLimits.minHeight != null).assertTrue();
-            done();
-          } catch (error) {
-            console.log('www data Failed to obtain the window limits of window. Cause: ' + JSON.stringify(error));
-            if (error.code == 801) {
-                expect(true).assertTrue()
-                done()
-            } else {
+            } catch (err) {
+                console.log(tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
             }
-          }
-    })
+        })
+
+        /**
+         * @tc.name   testGetFoldStatus_Test
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
+         * @tc.desc   To test the function of getFoldStatus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testGetFoldStatus_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+
+            let tag = 'getFoldStatus_Test_001 '
+
+            console.info(tag + ' begin');
+            try {
+                display.getFoldStatus();
+                expect(display.FoldStatus.FOLD_STATUS_EXPANDED != null).assertTrue();
+                expect(display.FoldStatus.FOLD_STATUS_UNKNOWN != null).assertTrue();
+                expect(display.FoldStatus.FOLD_STATUS_FOLDED != null).assertTrue();
+                expect(display.FoldStatus.FOLD_STATUS_HALF_FOLDED != null).assertTrue();
+                done();
+            } catch (err) {
+                console.log(tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
+                expect().assertFail();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testGetFoldDisplayMode_Test
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
+         * @tc.desc   To test the function of getFoldDisplayMode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testGetFoldDisplayMode_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+
+            let tag = 'getFoldDisplayMode_Test_001 '
+
+            console.info(tag + ' begin');
+            try {
+                display.getFoldDisplayMode();
+                expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_UNKNOWN != null).assertTrue();
+                expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_FULL != null).assertTrue();
+                expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_MAIN != null).assertTrue();
+                expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_SUB != null).assertTrue();
+                expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_COORDINATION != null).assertTrue();
+                done();
+            } catch (err) {
+                console.log(tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
+                expect().assertFail();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testGetCurrentFoldCreaseRegion_Test
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
+         * @tc.desc   To test the function of getCurrentFoldCreaseRegion
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testGetCurrentFoldCreaseRegion_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+
+            let tag = 'getCurrentFoldCreaseRegion_Test_001 '
+
+            console.info(tag + ' begin');
+            try {
+                let region = display.getCurrentFoldCreaseRegion();
+                if (region != null) {
+                    expect(region.displayId != null).assertTrue()
+                    expect(region.creaseRects != null).assertTrue()
+                    done()
+                } else {
+                    console.log(tag + "region : " + JSON.stringify(region))
+                    done();
+                }
+            } catch (err) {
+                console.log(tag + 'getCurrentFoldCreaseRegion failed, err : ' + JSON.stringify(err))
+                expect().assertFail();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testGetWindowLimits_Test
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1170
+         * @tc.desc   test the function of getWindowLimits
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testGetWindowLimits_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            console.log('www data testGetWindowLimits_Test begin')
+            try {
+                let windowClass = await window.getTopWindow();
+                let WindowLimits = windowClass.getWindowLimits();
+                console.log('www data Succeeded in window limits' + JSON.stringify(WindowLimits))
+                expect(WindowLimits.maxWidth != null).assertTrue();
+                expect(WindowLimits.maxHeight != null).assertTrue();
+                expect(WindowLimits.minWidth != null).assertTrue();
+                expect(WindowLimits.minHeight != null).assertTrue();
+                done();
+            } catch (error) {
+                console.log('www data Failed to obtain the window limits of window. Cause: ' + JSON.stringify(error));
+                if (error.code == 801) {
+                    
+                    done()
+                } else {
+                    expect().assertFail();
+                    done();
+                }
+            }
+        })
 
 
-     /**
-      * @tc.name   testMinimize_Function_Callback
-      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
-      * @tc.desc   test the function of minimize callback
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-     it('testMinimize_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        let msgStr = 'testMinimize_Function_Callback';
-        console.log(msgStr + ' begin');
-        window.create('subWindow11', window.WindowType.TYPE_APP).then(wnd => {
-            expect(wnd != null).assertTrue();
-            console.log(msgStr + ' wnd.resetSize(400, 400) begin');
-            wnd.resetSize(400, 400).then(() => {
-                console.log(msgStr + ' wnd.resetSize(400, 400) success');
-                wnd.isShowing().then(res => {
-                    console.log(msgStr + ' wnd.isShowing data:' + res);
-                    expect(!res).assertTrue();
-                    wnd.show().then(() => {
-                        console.info(msgStr + 'show come in....');
-                        try {
-                            wnd.minimize((err) => {
-                                if (err.code) {
-                                  console.error(msgStr + 'Failed to minimize the window. Cause: ' + JSON.stringify(err));
-                                  expect().assertFail()
-                                }
-                                console.info(msgStr + 'Succeeded in minimizing the window.');
-                                expect(true).assertTrue()
+        /**
+         * @tc.name   testMinimize_Function_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
+         * @tc.desc   test the function of minimize callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testMinimize_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            let msgStr = 'testMinimize_Function_Callback';
+            console.log(msgStr + ' begin');
+            window.create('subWindow11', window.WindowType.TYPE_APP).then(wnd => {
+                expect(wnd != null).assertTrue();
+                console.log(msgStr + ' wnd.resetSize(400, 400) begin');
+                wnd.resetSize(400, 400).then(() => {
+                    console.log(msgStr + ' wnd.resetSize(400, 400) success');
+                    wnd.isShowing().then(res => {
+                        console.log(msgStr + ' wnd.isShowing data:' + res);
+                        expect(!res).assertTrue();
+                        wnd.show().then(() => {
+                            console.info(msgStr + 'show come in....');
+                            try {
+                                wnd.minimize((err) => {
+                                    if (err.code) {
+                                        console.error(msgStr + 'Failed to minimize the window. Cause: ' + JSON.stringify(err));
+                                        expect().assertFail()
+                                    }
+                                    console.info(msgStr + 'Succeeded in minimizing the window.');
+                                    
+                                    wnd.destroy((err) => {
+                                        if (err.code) {
+                                            console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
+                                            return
+                                        }
+                                        console.info(msgStr + 'Succeeded in destroying the window.');
+                                    });
+                                    done();
+                                });
+                            } catch (err) {
+                                console.error(msgStr + 'catched Failed to minimize the window. Cause: ' + JSON.stringify(err) + 'errCode' + err.code);
                                 wnd.destroy((err) => {
                                     if (err.code) {
                                         console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
@@ -4070,153 +4081,275 @@ export default function window_test() {
                                     }
                                     console.info(msgStr + 'Succeeded in destroying the window.');
                                 });
-                                done();
-                            });
-                        } catch (err) {
-                            console.error(msgStr + 'catched Failed to minimize the window. Cause: ' + JSON.stringify(err)+'errCode'+ err.code);
-                            wnd.destroy((err) => {
-                                if (err.code) {
-                                    console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
-                                    return
+                                if (err.code == 801) {
+                                    done();
+                                } else {
+                                    expect().assertFail();
+                                    done();
                                 }
-                                console.info(msgStr + 'Succeeded in destroying the window.');
-                            });
-                            if(err.code == 801){
-                                done();
-                            }else{
-                                expect().assertFail();
-                                done();
                             }
-                        }                         
-                        
+
+                        }, (err) => {
+                            console.log(msgStr + ' wnd.show failed, err :' + JSON.stringify(err));
+                            expect().assertFail();
+                            done();
+                        })
                     }, (err) => {
-                        console.log(msgStr + ' wnd.show failed, err :' + JSON.stringify(err));
+                        console.log(msgStr + ' wnd.isShowing failed, err :' + JSON.stringify(err));
                         expect().assertFail();
                         done();
                     })
-                }, (err) => {
-                    console.log(msgStr + ' wnd.isShowing failed, err :' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
+                }, (err_resetSize) => {
+                    console.log(msgStr + ' wnd.resetSize failed, err :' + JSON.stringify(err_resetSize));
                 })
-            }, (err_resetSize) => {
-                console.log(msgStr + ' wnd.resetSize failed, err :' + JSON.stringify(err_resetSize));
             })
         })
-    })
 
-     /**
-      * @tc.name   testMinimize_Function_Promise
-      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1200
-      * @tc.desc   test the function of minimize promise
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-     it('testMinimize_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        let msgStr = 'testMinimize_Function_Promise';
-        console.log(msgStr + ' begin');
-        window.create('subWindow12', window.WindowType.TYPE_APP).then(wnd => {
-            expect(wnd != null).assertTrue();
-            console.log(msgStr + ' wnd.resetSize(400, 400) begin');
-            wnd.resetSize(400, 400).then(() => {
-                console.log(msgStr + ' wnd.resetSize(400, 400) success');
-                wnd.isShowing().then(res => {
-                    console.log(msgStr + ' wnd.isShowing data:' + res);
-                    expect(!res).assertTrue();
-                    wnd.show().then(() => {
-                        console.info(msgStr + 'show come in....');
-                        try {
-                            let promise = wnd.minimize();
-                            promise.then(() => {
-                                console.info(msgStr + 'Succeeded in minimizing the window.');
-                                expect(true).assertTrue()
+        /**
+         * @tc.name   testMinimize_Function_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1200
+         * @tc.desc   test the function of minimize promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testMinimize_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            let msgStr = 'testMinimize_Function_Promise';
+            console.log(msgStr + ' begin');
+            window.create('subWindow12', window.WindowType.TYPE_APP).then(wnd => {
+                expect(wnd != null).assertTrue();
+                console.log(msgStr + ' wnd.resetSize(400, 400) begin');
+                wnd.resetSize(400, 400).then(() => {
+                    console.log(msgStr + ' wnd.resetSize(400, 400) success');
+                    wnd.isShowing().then(res => {
+                        console.log(msgStr + ' wnd.isShowing data:' + res);
+                        expect(!res).assertTrue();
+                        wnd.show().then(() => {
+                            console.info(msgStr + 'show come in....');
+                            try {
+                                let promise = wnd.minimize();
+                                promise.then(() => {
+                                    console.info(msgStr + 'Succeeded in minimizing the window.');
+                                    
+                                    wnd.destroy((err) => {
+                                        if (err.code) {
+                                            console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
+                                            return
+                                        }
+                                        console.info(msgStr + 'Succeeded in destroying the window.');
+                                    });
+                                    done();
+                                }).catch((err) => {
+                                    console.error(msgStr + 'Failed to minimize the window. Cause: ' + JSON.stringify(err));
+                                    expect().assertFail()
+                                    done();
+                                });
+                            } catch (err) {
+                                console.error(msgStr + 'catched Failed to minimize the window. Cause: ' + JSON.stringify(err) + 'errCode' + err.code);
                                 wnd.destroy((err) => {
                                     if (err.code) {
                                         console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
                                         return
                                     }
                                     console.info(msgStr + 'Succeeded in destroying the window.');
-                            });
-                            done();
-                        }).catch((err) => {
-                            console.error(msgStr + 'Failed to minimize the window. Cause: ' + JSON.stringify(err));
-                            expect().assertFail()
-                            done();
-                        });
-                        } catch (err) {
-                            console.error(msgStr + 'catched Failed to minimize the window. Cause: ' + JSON.stringify(err)+'errCode'+ err.code);
-                            wnd.destroy((err) => {
-                                if (err.code) {
-                                    console.error(msgStr + ' Failed to destroy the window. err:' + JSON.stringify(err));
-                                    return
+                                });
+                                if (err.code == 801) {
+                                    done();
+                                } else {
+                                    expect().assertFail();
+                                    done();
                                 }
-                                console.info(msgStr + 'Succeeded in destroying the window.');
-                            });
-                            if(err.code == 801){
-                                done();
-                            }else{
-                                expect().assertFail();
-                                done();
                             }
-                        }
-                          
+
+                        }, (err) => {
+                            console.log(msgStr + ' wnd.show failed, err :' + JSON.stringify(err));
+                            expect().assertFail();
+                            done();
+                        })
                     }, (err) => {
-                        console.log(msgStr + ' wnd.show failed, err :' + JSON.stringify(err));
+                        console.log(msgStr + ' wnd.isShowing failed, err :' + JSON.stringify(err));
                         expect().assertFail();
                         done();
                     })
-                }, (err) => {
-                    console.log(msgStr + ' wnd.isShowing failed, err :' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
+                }, (err_resetSize) => {
+                    console.log(msgStr + ' wnd.resetSize failed, err :' + JSON.stringify(err_resetSize));
                 })
-            }, (err_resetSize) => {
-                console.log(msgStr + ' wnd.resetSize failed, err :' + JSON.stringify(err_resetSize));
             })
         })
-    })
 
 
-     /**
-      * @tc.name   testWindowStatusType_attr
-      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1210
-      * @tc.desc   test the enum value of WindowStatusType
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it('testWindowStatusType_attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-        let msgStr = 'testWindowStatusType_attr';
-        console.log(msgStr + ' begin');
-        try {
-            if (window.WindowStatusType) {
-                expect(window.WindowStatusType.UNDEFINED).assertEqual(0);
-                expect(window.WindowStatusType.FULL_SCREEN).assertEqual(1);
-                expect(window.WindowStatusType.MAXIMIZE).assertEqual(2);
-                expect(window.WindowStatusType.MINIMIZE).assertEqual(3);
-                expect(window.WindowStatusType.FLOATING).assertEqual(4);
-                expect(window.WindowStatusType.SPLIT_SCREEN).assertEqual(5);
-                done();
-            } else {
-                console.log(msgStr + 'WindowStatusType is not calleble')
-                expect(false).assertTrue();
-                done();
+        /**
+         * @tc.name   testWindowStatusType_attr
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1210
+         * @tc.desc   test the enum value of WindowStatusType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testWindowStatusType_attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let msgStr = 'testWindowStatusType_attr';
+            console.log(msgStr + ' begin');
+            try {
+                if (window.WindowStatusType) {
+                    expect(window.WindowStatusType.UNDEFINED).assertEqual(0);
+                    expect(window.WindowStatusType.FULL_SCREEN).assertEqual(1);
+                    expect(window.WindowStatusType.MAXIMIZE).assertEqual(2);
+                    expect(window.WindowStatusType.MINIMIZE).assertEqual(3);
+                    expect(window.WindowStatusType.FLOATING).assertEqual(4);
+                    expect(window.WindowStatusType.SPLIT_SCREEN).assertEqual(5);
+                    done();
+                } else {
+                    console.log(msgStr + 'WindowStatusType is not calleble')
+                    expect(false).assertTrue();
+                    done();
+                }
+
+            } catch (err) {
+                if (err.code) {
+                    console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
+                    expect().assertFail()
+                    done();
+                } else {
+                    
+                    console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
+                    done()
+                }
             }
-            
-        } catch(err) {
-            if (err.code) {
+
+        })
+        /**
+        * @tc.name testCreateWindow_callback_TYPE_APP
+        * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1220
+        * @tc.desc test the enum value of WindowStatusType
+        * @tc.type FUNCTION
+        * @tc.size MEDIUMTEST
+        * @tc.level LEVEL2
+        */
+        it('testCreateWindow_callback_TYPE_APP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let msgStr = 'testCreateWindow_callback_TYPE_APP';
+            console.log(msgStr + ' begin');
+            let config = {
+                name: "testCreateWindow_callback_TYPE_APP",
+                windowType: window.WindowType.TYPE_APP,
+            };
+            try {
+                window.createWindow(config, async (err, data) => {
+                    const errCode = err.code;
+                    if (errCode) {
+                        console.error(msgStr + `Failed to create the window.Cause code: ${err.code}, message: ${err.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info(msgStr + 'Succeeded in creating the window. Data: ' + JSON.stringify(data));
+                        expect(data !== null).assertTrue();
+                        await data.destroyWindow();
+                        done();
+                    }
+
+                });
+            } catch (err) {
                 console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
                 expect().assertFail()
                 done();
-            } else {
-                expect(true).assertTrue()
+
+            }
+
+        })
+        /**
+          * @tc.name   testCreateWindow_Promise_TYPE_APP
+          * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1230
+          * @tc.desc   test the enum value of WindowStatusType
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+        it('testCreateWindow_Promise_TYPE_APP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let msgStr = 'testCreateWindow_Promise_TYPE_APP';
+            console.log(msgStr + ' begin');
+            let config = {
+                name: "testCreateWindow_Promise_TYPE_APP",
+                windowType: window.WindowType.TYPE_APP,
+            };
+            try {
+                window.createWindow(config).then(async (data) => {
+                    console.info(msgStr + 'Succeeded in creating the window. Data: ' + JSON.stringify(data));
+                    expect(data !== null).assertTrue();
+                    data.getProperties(async (err, Properties) => {
+                        const errCode = err.code;
+                        if (errCode) {
+                            console.error(msgStr + `Failed to obtain the window properties1. Cause code: ${err.code}, message: ${err.message}`);
+                            await data.destroyWindow();
+                            expect(false).assertTrue();
+                            done();
+                        } else {
+                            console.info(msgStr + 'Succeeded in obtaining the window properties1. Data: ' + JSON.stringify(Properties));
+                            expect(Properties.type).assertEqual(window.WindowType.TYPE_APP)
+                            let promise = data.getProperties();
+                            promise.then(async (Properties) => {
+                                console.info(msgStr + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(Properties));
+                                expect(Properties.type).assertEqual(window.WindowType.TYPE_APP);
+                                let properties = data.getWindowProperties();
+                                console.info(msgStr + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties));
+                                expect(properties.type).assertEqual(window.WindowType.TYPE_APP);
+                                await data.destroyWindow();
+                                done();
+                            }).catch(async (err) => {
+                                console.error(msgStr + `Failed to obtain the window properties2. Cause code: ${err.code}, message: ${err.message}`);
+                                await data.destroyWindow();
+                                expect(false).assertTrue();
+                                done();
+                            });
+                            
+                        }
+
+                    });
+
+                }).catch((err) => {
+                    console.error(msgStr + `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                });
+
+            } catch (err) {
                 console.log(msgStr + "failed to test enum value" + JSON.stringify(err))
+                expect().assertFail()
+                done();
+
+            }
+
+        })
+
+        /**
+     * @tc.name   testGetTopWindow_0100
+     * @tc.number testGetTopWindow_0100
+     * @tc.desc   testGetTopWindow_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it('testGetTopWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let msgStr = 'testGetTopWindow_0100';
+            console.log(msgStr + ' begin');
+            console.log(msgStr + 'begin.');
+            try {
+                await window.getTopWindow(null);
+                console.info(msgStr + 'Succeeded');
+            } catch (exception) {
+                console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+
+            try {
+                await window.getTopWindow(undefined);
+                console.info(msgStr + 'Succeeded2.');
+                done();
+            } catch (exception) {
+                console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+                expect().assertFail();
                 done()
             }
-        }
-        
-    })
+        })
 
     })
 }

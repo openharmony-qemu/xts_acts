@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function StyledStringURL() {
   describe('StyledStringURL', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StyledStringURL beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");

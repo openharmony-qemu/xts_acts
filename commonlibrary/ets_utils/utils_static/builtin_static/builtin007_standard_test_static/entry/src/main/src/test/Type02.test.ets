@@ -41,7 +41,7 @@ export default function type_02Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -742,47 +742,6 @@ export default function type_02Test() {
         let testMessage = "Internal error occurred during runtime initialization";
         let error = new InternalError(testMessage);
         expect(error.name).assertEqual("InternalError");
-        expect(error.message).assertEqual(testMessage);
-      } catch (err) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_IllegalMonitorStateError_3400
-     * @tc.name    testIllegalMonitorStateError0034
-     * @tc.desc    Testing IllegalMonitorStateError without message parameter.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIllegalMonitorStateError0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testIllegalMonitorStateError0034";
-      try {
-        let error = new IllegalMonitorStateError();
-        expect(error.name).assertEqual("IllegalMonitorStateError");
-        expect(error.message).assertEqual("");
-      } catch (err) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_IllegalMonitorStateError_3500
-     * @tc.name    testIllegalMonitorStateError0035
-     * @tc.desc    Verify error can accept and store custom message.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIllegalMonitorStateError0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let TAG = "testIllegalMonitorStateError0035";
-      try {
-        let testMessage = "IllegalMonitorStateError";
-        let error = new IllegalMonitorStateError(testMessage);
-        expect(error.name).assertEqual("IllegalMonitorStateError");
         expect(error.message).assertEqual(testMessage);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);

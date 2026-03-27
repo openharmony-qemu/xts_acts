@@ -65,7 +65,22 @@ import RdbLockRow from "./RdbLockRow.test"
 import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
 import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
 import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
+import RdbSetdistributedtableTest from "./RdbSetdistributedTableEts.test"
+import RdbPredicatesTest from "./RdbPredicatesTest.test";
+import ResultSetTest from "./ResultSetTest.test";
+import RdbStoreTest from "./RdbStoreTest.test";
+import TransactionTest from "./TransactionTest.test";
+import RelationalResultSetReturnValueAddTest from "./RelationalResultSetReturnValueAdd.test"
+import RelationalRdbStoreReturnValueAddTest from "./RelationalRdbStoreReturnValueAdd.test"
+import RdbStoreCallbackNullTest from "./RdbStoreCallbackNullTest.test";
+import RdbStoreResultNullEtsTest from "./RdbStoreResultNullEtsTest.test";
+import RdbStoreSqlInfoEnumTestEts from "./RdbStoreSqlInfoEnumTestEts.test";
+import RdbStoreGetModifyTimeErrTest from "./RdbStoreGetModifyTimeErr.test";
+import rdbStorePredicatesParamErrTest from "./RdbStorePredicatesParamErr.test";
+import rdbStoreAttachErrorTest from "./RdbStoreAttachError.test";
 
+import RdbStoreArkGetRdbStoreSyncTest from "./RdbStoreArkGetRdbStoreSyncEts.test";
+import RdbStoreArkGetRdbStoreSyncAddTest from "./RdbStoreArkGetRdbStoreSyncEtsAdd.test"
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -131,4 +146,24 @@ export default function testsuite() {
   RdbStoreDuplicateColumnsTest();
   RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
+  RdbSetdistributedtableTest();
+
+  RdbPredicatesTest();
+  ResultSetTest();
+  RdbStoreTest();
+  TransactionTest();
+
+  RelationalResultSetReturnValueAddTest();
+  RelationalRdbStoreReturnValueAddTest();
+
+  RdbStoreCallbackNullTest();
+  RdbStoreResultNullEtsTest();
+  RdbStoreSqlInfoEnumTestEts();
+
+  RdbStoreGetModifyTimeErrTest();
+  rdbStorePredicatesParamErrTest();
+  rdbStoreAttachErrorTest();
+
+  RdbStoreArkGetRdbStoreSyncTest();
+  RdbStoreArkGetRdbStoreSyncAddTest();
 }

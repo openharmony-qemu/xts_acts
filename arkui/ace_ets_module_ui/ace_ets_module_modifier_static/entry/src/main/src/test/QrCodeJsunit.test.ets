@@ -32,7 +32,7 @@ import bundle from '@ohos.bundle.bundleManager';
 
 export default function qrCodeJsunit() {
   describe('qrCodeTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -109,7 +109,7 @@ it('test_qrCode_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_qrCode_static_003] obj is: " + JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').tryGetElement('contentOpacity')).assertEqual(undefined); //not support
+      expect(obj.getElement('$attrs').getDouble('contentOpacity')).assertEqual(1);
       console.info('[test_qrCode_static_003] END');
       done();
     });

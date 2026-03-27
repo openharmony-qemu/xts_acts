@@ -1347,5 +1347,73 @@ export default function fileIOLstat() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_lstat_async_static_005
+     * @tc.number SUB_DF_fileIO_lstat_async_static_0500
+     * @tc.desc   Test lstat() interface with empty string as path parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_lstat_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        fs.lstat("", (err: BusinessError | null, stat: fs.Stat | undefined) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_005 should throw error with empty string path');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_005 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_lstat_async_static_006
+     * @tc.number SUB_DF_fileIO_lstat_async_static_0600
+     * @tc.desc   Test lstat() interface with empty string as path parameter. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_lstat_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        await fs.lstat("");
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_006 end error' + JSON.stringify(e));
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_lstat_sync_static_002
+     * @tc.number SUB_DF_fileIO_lstat_sync_static_0200
+     * @tc.desc   Test lstatSync() interface with empty string as path parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_lstat_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      try {
+        fs.lstatSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_sync_static_002 end error' + JSON.stringify(e));
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
   });
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ import {
 class C{}
 export default function arrayTest() {
   describe("arrayTest", (): void => {
-    // afterEach(() => {
+    // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);
     // })
     /**
@@ -258,7 +258,7 @@ export default function arrayTest() {
     it('testIsArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testIsArray0005";
       try {
-        let result = Array.isArray(new Array<string>(3));
+        let result = Array.isArray(new Array<string>(3, (i) => ''));
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
       } catch (err) {
@@ -914,7 +914,7 @@ export default function arrayTest() {
     it('testPrototypeFill0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeFill0009";
       try {
-        let arr = new Array<Number>(3);
+        let arr = new Array<Number>(3, (i) => 0);
         let obj = arr.fill(4);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,4,4]');

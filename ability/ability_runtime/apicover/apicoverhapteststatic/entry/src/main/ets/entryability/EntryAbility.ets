@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,8 @@ import { Configuration } from '@ohos.app.ability.Configuration';
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    hilog.info(0x0000, 'testTag EntryAbility', `EntryAbility onCreate fds: ${JSON.stringify(want.fds)}}`)
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -53,6 +55,13 @@ class EntryAbility extends UIAbility {
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
     AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    if (this.context.cacheDir) {
+      hilog.info(0x0000, 'testTag EntryAbility2', 'context.cacheDir: ' + this.context.cacheDir);
+      AppStorage.setOrCreate<string>("dir", this.context.cacheDir);
+    } else {
+      hilog.info(0x0000, 'testTag EntryAbility2', 'context.cacheDir is undefined');
+      AppStorage.setOrCreate<string>("dir", "");
+    }
   }
 
   onBackground() {
@@ -65,5 +74,26 @@ class EntryAbility extends UIAbility {
 
   onMemoryLevel(level: AbilityConstant.MemoryLevel) {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', `EntryAbility onMemoryLevel level: ${level}`);
+  }
+  onContinue(wantParams: Record<string, Object>) {
+    console.info('onContinue');
+    wantParams['myData'] = 'my1234567';
+    return AbilityConstant.OnContinueResult.AGREE;
+  }
+
+  async onSaveStateAsync(reason: AbilityConstant.StateType,
+    wantParam: Record<string, Object>): Promise<AbilityConstant.OnSaveResult> {
+    await new Promise<string>((res, rej) => {
+      setTimeout(res, 1000);
+    });
+    return AbilityConstant.OnSaveResult.RECOVERY_AGREE;
+  }
+
+  onPrepareToTerminate() {
+    return true;
+  }
+  async onPrepareToTerminateAsync(): Promise<boolean> {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility onPrepareToTerminateAsync');
+    return true;
   }
 }

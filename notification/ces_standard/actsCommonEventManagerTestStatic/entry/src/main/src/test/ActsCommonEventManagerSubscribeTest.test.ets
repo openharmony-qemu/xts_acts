@@ -33,7 +33,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
   describe('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST', () => {
     let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST START`)
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -66,6 +66,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 come in `)
 
         commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
+          waitForCompletion(async () => {
           console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 createSubscriber come in `)
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 createSubscriber err, error code: ${err.code}, message: ${err.message}`)
@@ -147,8 +148,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 expect(count).assertEqual(0);
               }
             })
-
-
             await subscriber!.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
               expect(count).assertEqual(0);
@@ -159,6 +158,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
           }
+          })
         })
       } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 failed, code is ${err.code}, message is ${err.message}`)
@@ -190,6 +190,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
+        waitForCompletion(async () => {
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 createSubscriber err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
@@ -272,6 +273,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
 
           }
+        })
         })
       } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 failed, code is ${err.code}, message is ${err.message}`)
@@ -403,7 +405,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           })
 
-          await Utils.msSleep(1000)
+          waitForCompletion(async () => {await Utils.msSleep(1000)})
           count = 0;
           console.info(TAG+`getAbortCommonEventSync isaborted ${isaborted}`)
           subscriber!.clearAbortCommonEventSync()
@@ -473,6 +475,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         done()
       }
       commonEventManager.subscribe(subscriber!, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
+      waitForCompletion(async () => {
         if (err) {
           console.error(TAG+`subscribe failed, code is ${err.code}, message is ${err.message}`)
           expect(false).assertTrue()
@@ -531,6 +534,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
         }
+      })
       })
 
       let publishCB=(err: BusinessError|null)=> {

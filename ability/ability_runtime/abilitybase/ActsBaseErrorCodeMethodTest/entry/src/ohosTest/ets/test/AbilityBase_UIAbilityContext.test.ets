@@ -21,10 +21,12 @@ import { BusinessError } from '@ohos.base';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { common, StartOptions, Want } from '@kit.AbilityKit';
+import dialogRequest from '@ohos.app.ability.dialogRequest';
 import { rpc } from '@kit.IPCKit';
 import bundleManager from '@ohos.bundle.bundleManager';
 import CompletionHandler from '@ohos.app.ability.CompletionHandler';
 import hilog from '@ohos.hilog';
+import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 
 let context = getContext(this) as common.UIAbilityContext;;
 const DOMAIN = 0x0000;
@@ -111,7 +113,11 @@ export default function openLinkTest() {
       console.log(`${tag}, it begin`);
       let want: Want|null = null
       let options: StartOptions|null = {
-        displayId: 0
+        displayId: 0,
+        minWindowWidth:100,
+        minWindowHeight:100,
+        maxWindowWidth:100,
+        maxWindowHeight:100
       };
       try {
         context.startAbility(want, options, (err: BusinessError) => {
@@ -1456,6 +1462,73 @@ export default function openLinkTest() {
     });
 
     /**
+     * @tc.name   testSetMissionLabelEmptyStringCallback0100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4250
+     * @tc.desc   Test setMissionLabel with empty string parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetMissionLabelEmptyStringCallback0100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4250`;
+      console.log(`${tag}, it begin`);
+      let label: string = "";
+      try {
+        context.setMissionLabel(label, (err: BusinessError, data) => {
+          if (err?.code) {
+            console.error(`${tag}, SetMissionLabel failed, code is ${err.code}, message is ${err.message}`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+          console.info(`${tag}, SetMissionLabel succeed`);
+          try{
+            expect(data).assertEqual(undefined);
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} SetMissionLabel failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMissionLabelEmptyStringPromise0200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4260
+     * @tc.desc   Test setMissionLabel with empty string parameter (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetMissionLabelEmptyStringPromise0200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4260`;
+      console.log(`${tag}, it begin`);
+      let label: string = "";
+      try {
+        context.setMissionLabel(label).then((data) => {
+          console.info(`#${tag}# SetMissionLabel successful ` + data);
+          expect(data).assertEqual(undefined);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`#${tag}# SetMissionLabel err: ${error}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} SetMissionLabel failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4300
      * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4300
      * @tc.desc   Call the interface startAbility through context, return errorcode 401
@@ -1586,6 +1659,43 @@ export default function openLinkTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4700
+     * @tc.desc   Test disconnectServiceExtensionAbility with undefined parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_4700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4700`;
+      console.log(`${tag}, it begin`);
+      let connect_num: number|undefined = undefined;
+      try {
+        context.disconnectServiceExtensionAbility(connect_num, (err: BusinessError) => {
+          if (err?.code) {
+            console.error(`${tag}, DisConnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+            try{
+              expect(err?.code).assertEqual(16000050);
+            }catch(e){}
+            done();
+          }else{
+            console.info(`${tag}, DisConnectServiceExtensionAbility succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} DisConnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4900
      * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4900
      * @tc.desc   Call the interface startAbility through context, return errorcode 401
@@ -1596,7 +1706,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_UIAbilityContext_4900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4900`;
       console.log(`${tag}, it begin`);
-      let want: Want|null|undefined = undefined;
+      let want: Want|null|undefined = null;
       try {
         context.requestDialogService(want, (err: BusinessError) => {
           if (err?.code) {
@@ -1684,6 +1794,862 @@ export default function openLinkTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5400
+     * @tc.desc   Test startAbility with valid want and null options (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5400`;
+      console.log(`${tag}, it begin`);
+      let want: Want = {
+        bundleName: 'com.example.test',
+        abilityName: 'MainAbility'
+      };
+      let options: StartOptions|null = null;
+      try {
+        context.startAbility(want, options)
+          .then((data) => {
+            console.info(`${tag}, startAbility succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbility failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5500
+     * @tc.desc   Test startAbility with valid want and undefined options (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5500`;
+      console.log(`${tag}, it begin`);
+      let want: Want = {
+        bundleName: 'com.example.test',
+        abilityName: 'MainAbility'
+      };
+      let options: StartOptions|undefined = undefined;
+      try {
+        context.startAbility(want, options)
+          .then((data) => {
+            console.info(`${tag}, startAbility succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbility failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5800
+     * @tc.desc   Test startAbilityForResult with valid want and null options (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5800', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5800`;
+      console.log(`${tag}, it begin`);
+      let want: Want = {
+        bundleName: 'com.example.test',
+        abilityName: 'MainAbility'
+      };
+      let options: StartOptions|null = null;
+      try {
+        context.startAbilityForResult(want, options)
+          .then((data) => {
+            console.info(`${tag}, startAbilityForResult succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityForResult failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5900
+     * @tc.desc   Test startAbilityForResult with valid want and undefined options (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5900', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5900`;
+      console.log(`${tag}, it begin`);
+      let want: Want = {
+        bundleName: 'com.example.test',
+        abilityName: 'MainAbility'
+      };
+      let options: StartOptions|undefined = undefined;
+      try {
+        context.startAbilityForResult(want, options)
+          .then((data) => {
+            console.info(`${tag}, startAbilityForResult succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityForResult failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6000
+     * @tc.desc   Test startAbilityByType with null type (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6000', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6000`;
+      console.log(`${tag}, it begin`);
+      let type: string|null = null;
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError) => {
+          console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed catch, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6100
+     * @tc.desc   Test startAbilityByType with undefined type (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6100`;
+      console.log(`${tag}, it begin`);
+      let type: string|undefined = undefined;
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError) => {
+          console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed catch, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6200
+     * @tc.desc   Test startAbilityByType with null wantParam (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6200`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object>|null = null;
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError) => {
+          console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed catch , code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6300
+     * @tc.desc   Test startAbilityByType with undefined wantParam (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6300`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object>|undefined = undefined;
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError) => {
+          console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed catch, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6400
+     * @tc.desc   Test startAbilityByType with null abilityStartCallback (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6400`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback|null = null;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError, data) => {
+          console.info(`${tag}, startAbilityByType succeed`);
+          try{
+            expect(data).assertEqual(undefined);
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6500
+     * @tc.desc   Test startAbilityByType with undefined abilityStartCallback (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6500`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback|undefined = undefined;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError, data) => {
+          console.info(`${tag}, startAbilityByType succeed`);
+          try{
+            expect(data).assertEqual(undefined);
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6800
+     * @tc.desc   Test startAbilityByType with null type (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6800', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6800`;
+      console.log(`${tag}, it begin`);
+      let type: string|null = null;
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then((data) => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_6900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_6900
+     * @tc.desc   Test startAbilityByType with undefined type (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6900', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6900`;
+      console.log(`${tag}, it begin`);
+      let type: string|undefined = undefined;
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then(() => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7000
+     * @tc.desc   Test startAbilityByType with null wantParam (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7000', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7000`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object>|null = null;
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then(() => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7100
+     * @tc.desc   Test startAbilityByType with undefined wantParam (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7100`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object>|undefined = undefined;
+      let abilityStartCallback: common.AbilityStartCallback = {
+        onError: (code: number, name: string, message: string) => {
+          console.error(`${tag}, onError called, code: ${code}, name: ${name}, message: ${message}`);
+        },
+        onResult: (result: common.AbilityResult) => {
+          console.info(`${tag}, onResult called, result: ${JSON.stringify(result)}`);
+        }
+      };
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then(() => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7200
+     * @tc.desc   Test startAbilityByType with null abilityStartCallback (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7200`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback|null = null;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then((data) => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect(data).assertEqual(undefined);
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7300
+     * @tc.desc   Test startAbilityByType with undefined abilityStartCallback (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7300`;
+      console.log(`${tag}, it begin`);
+      let type: string = 'testType';
+      let wantParam: Record<string, Object> = {
+        'sceneType': 1
+      };
+      let abilityStartCallback: common.AbilityStartCallback|undefined = undefined;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then((data) => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect(data).assertEqual(undefined);
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7400
+     * @tc.desc   Test startAbilityByType with all null parameters (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7400`;
+      console.log(`${tag}, it begin`);
+      let type: string|null = null;
+      let wantParam: Record<string, Object>|null = null;
+      let abilityStartCallback: common.AbilityStartCallback|null = null;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError, data) => {
+          if (err?.code) {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+          console.info(`${tag}, startAbilityByType succeed`);
+          try{
+            expect(data).assertEqual(undefined);
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7500
+     * @tc.desc   Test startAbilityByType with all undefined parameters (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7500`;
+      console.log(`${tag}, it begin`);
+      let type: string|undefined = undefined;
+      let wantParam: Record<string, Object>|undefined = undefined;
+      let abilityStartCallback: common.AbilityStartCallback|undefined = undefined;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback, (err: BusinessError) => {
+          console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+          try{
+            expect().assertFail();
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7600
+     * @tc.desc   Test startAbilityByType with all null parameters (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7600', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7600`;
+      console.log(`${tag}, it begin`);
+      let type: string|null = null;
+      let wantParam: Record<string, Object>|null = null;
+      let abilityStartCallback: common.AbilityStartCallback|null = null;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then(() => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7700
+     * @tc.desc   Test startAbilityByType with all undefined parameters (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7700`;
+      console.log(`${tag}, it begin`);
+      let type: string|undefined = undefined;
+      let wantParam: Record<string, Object>|undefined = undefined;
+      let abilityStartCallback: common.AbilityStartCallback|undefined = undefined;
+      try {
+        context.startAbilityByType(type, wantParam, abilityStartCallback)
+          .then(() => {
+            console.info(`${tag}, startAbilityByType succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_7800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_7800
+     * @tc.desc   Test UIAbilityContext.setColorMode and verify with config.colorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7800', Level.LEVEL0, async (done: Function) => {
+      let tag = `testSSUB_Ability_AbilityBase_UIAbilityContext_7800etColorMode0100`;
+      console.log(`${tag}, it begin`);
+      try {
+        let colorMode = context.config.colorMode;
+        console.log(`${tag}, current colorMode: ${colorMode}`);
+        if (colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
+          context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
+          await sleep(2000);
+          console.log(`${tag}, set colorMode to LIGHT, current: ${context.config.colorMode}`);
+          expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT).assertTrue();
+        } else if (colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT) {
+          context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+          await sleep(2000);
+          console.log(`${tag}, set colorMode to DARK, current: ${context.config.colorMode}`);
+          expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK).assertTrue();
+        } else if (colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET) {
+          context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+          await sleep(2000);
+          console.log(`${tag}, set colorMode to DARK, current: ${context.config.colorMode}`);
+          expect(context.config.colorMode === colorMode).assertTrue();
+        }
+        context.setColorMode(colorMode);
+        await sleep(2000);
+        console.log(`${tag}, restore colorMode to: ${colorMode}, current: ${context.config.colorMode}`);
+        done();
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag}, setColorMode failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5200
+     * @tc.desc   Call the interface requestDialogService through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5200`;
+      console.log(`${tag}, it begin`);
+      let want: Want|null|undefined = undefined;
+      try {
+        context.requestDialogService(want, (err: BusinessError, result: dialogRequest.RequestResult) => {
+          if (err?.code) {
+            try{
+              console.error(`${tag}, RequestDialogService failed, code is ${err.code}, message is ${err.message}`);
+              expect(err?.code).assertEqual(16000001);
+            }catch(e){}
+            done();
+          }else{
+            console.info(`${tag}, RequestDialogService succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} RequestDialogService failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
   })
 }

@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function menuPolicySHOW() {
   describe('menuPolicySHOW', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("menuPolicySHOW beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

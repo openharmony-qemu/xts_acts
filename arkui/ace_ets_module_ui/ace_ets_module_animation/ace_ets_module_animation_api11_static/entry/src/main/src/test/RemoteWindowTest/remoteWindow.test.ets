@@ -25,7 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function remoteWindowJsunit() {
   describe('remoteWindowTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("remoteWindowJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

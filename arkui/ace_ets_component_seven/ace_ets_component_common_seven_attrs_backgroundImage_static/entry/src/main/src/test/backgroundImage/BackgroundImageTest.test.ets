@@ -65,7 +65,7 @@ export default function backgroundImageTest() {
    * Create test suite.
    */
   describe('backgroundImageTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000)
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

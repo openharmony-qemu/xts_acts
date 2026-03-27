@@ -55,6 +55,313 @@ export default function AssetErrorCodeTest() {
         console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to add Asset. Code is ${err.code}, message is ${err.message}`);
         expect(null).assertFail();
       }
+
+      try {
+        await asset.add(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to add null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.add(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to add undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.addSync(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to addSync null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.addSync(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to addSync undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.remove(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to remove null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.remove(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to remove undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.removeSync(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to removeSync null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.removeSync(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to removeSync undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      let query: asset.AssetMap = new Map();
+      query.set(asset.Tag.ALIAS, StringToArray('demo_alias'));
+      let attrsToUpdate: asset.AssetMap = new Map();
+      attrsToUpdate.set(asset.Tag.SECRET, StringToArray('demo_pwd_new'));
+      try {
+        await asset.update(null, attrsToUpdate);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to update 1null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.update(undefined, attrsToUpdate);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to update 1undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+
+      try {
+        await asset.update(query, null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to update 2null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.update(query, undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to update 2undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.updateSync(null, attrsToUpdate);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to updateSync 1null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.updateSync(undefined, attrsToUpdate);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to updateSync 1undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+
+      try {
+        await asset.updateSync(query, null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to updateSync 2null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.updateSync(query, undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to updateSync 2undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.preQuery(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuery null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.preQuery(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuery undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.preQuerySync(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuerySync null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.preQuerySync(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuerySync undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.query(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to query null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.query(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to query undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.querySync(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to querySync null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.querySync(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to querySync undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.postQuery(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to postQuery null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.postQuery(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to postQuery undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.postQuerySync(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to postQuerySync null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.postQuerySync(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to postQuerySync undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.querySyncResult(null);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to querySyncResult null Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await asset.querySyncResult(undefined);
+        expect(null).assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to querySyncResult undefined Asset. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      let attr1: asset.AssetMap = new Map();
+      attr1.set(asset.Tag.SECRET, StringToArray('demo_pwd1'));
+      attr1.set(asset.Tag.ALIAS, StringToArray('demo_alias0'));
+      attr1.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
+      attr1.set(asset.Tag.DATA_LABEL_NORMAL_1, StringToArray('demo_label1'));
+      attr1.set(asset.Tag.WRAP_TYPE, asset.WrapType.TRUSTED_ACCOUNT);
+      attr1.set(asset.Tag.AUTH_TYPE, asset.AuthType.ANY);
+      await asset.add(attr1);
+      let attr2: asset.AssetMap = new Map();
+      attr2.set(asset.Tag.ALIAS, StringToArray('demo_alias0'));
+
+      try {
+        let challenge: Uint8Array = await asset.preQuery(attr2);
+        expect(challenge.length>0).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuery.length. Code is ${err.code}, message is ${err.message}`);
+        expect(null).assertFail();
+      }
+
+      try {
+        let challenge: Uint8Array = await asset.preQuerySync(attr2);
+        expect(challenge.length>0).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`SUB_Security_DataSecurity_Asset_JS_wraptype_0100 Failed to preQuerySync.length. Code is ${err.code}, message is ${err.message}`);
+        expect(null).assertFail();
+      }
+      await asset.remove(attr2);
+
       done();
     });
 

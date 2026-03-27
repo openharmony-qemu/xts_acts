@@ -84,9 +84,9 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestr
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_SamplingOptionsDestroy with empty parameter
+    OH_Drawing_SamplingOptions *options = nullptr;
     OH_Drawing_SamplingOptionsDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(options, nullptr);
 }
 
 /**

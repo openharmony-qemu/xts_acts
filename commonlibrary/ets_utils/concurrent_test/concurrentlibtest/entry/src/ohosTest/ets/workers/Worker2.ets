@@ -10,33 +10,171 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
  */
 workerPort.onmessage = (e: MessageEvents) => {
   const buffer = new ArrayBuffer(10);
-  workerPort.postMessage(null)
-  workerPort.postMessage(undefined)
-  workerPort.postMessage(1, null)
-  workerPort.postMessage(1, undefined)
-  workerPort.postMessage(1, [])
-  workerPort.postMessage(2, { transfer: [] })
-  workerPort.postMessage(2, { transfer: [buffer] })
-  workerPort.postMessage(null, { transfer: [] })
-  workerPort.postMessage(undefined, { transfer: [] })
-  workerPort.postMessage(1, null)
-  workerPort.postMessage(1, undefined)
-  workerPort.postMessageWithSharedSendable(null)
-  workerPort.postMessageWithSharedSendable(undefined)
-  workerPort.postMessageWithSharedSendable(1, null)
-  workerPort.postMessageWithSharedSendable(1, undefined)
-  workerPort.postMessageWithSharedSendable(1, [])
-  // 第1个参数缺少空值""//null/undefined覆盖;第2个参数缺少空值""//null/undefined覆盖;第3个参数缺少null/undefined覆盖;第4个参数缺少null/undefined覆盖;
-  workerPort.callGlobalCallObjectMethod('', 'func1', 1000, 1)
-  workerPort.callGlobalCallObjectMethod(null, 'func1', 1000, 1)
-  workerPort.callGlobalCallObjectMethod(undefined, 'func1', 1000, 1)
-  workerPort.callGlobalCallObjectMethod('test', '', 1000, 1)
-  workerPort.callGlobalCallObjectMethod('test', null, 1000, 1)
-  workerPort.callGlobalCallObjectMethod('test', undefined, 1000, 1)
-  workerPort.callGlobalCallObjectMethod('test', 'func1', null, 1)
-  workerPort.callGlobalCallObjectMethod('test', 'func1', undefined, 1)
-  workerPort.callGlobalCallObjectMethod('test', 'func1', 1000, null)
-  workerPort.callGlobalCallObjectMethod('test', 'func1', 1000, undefined)
+  try {
+    workerPort.postMessage(null)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, null)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, undefined)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, [])
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(2, { transfer: [] })
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(2, { transfer: [buffer] })
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(null, { transfer: [] })
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(undefined, { transfer: [] })
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, null)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, undefined)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessage(1, [])
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessageWithSharedSendable(null)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessageWithSharedSendable(undefined)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessageWithSharedSendable(1, null)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessageWithSharedSendable(1, undefined)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.postMessageWithSharedSendable(1, [])
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('', 'func1', 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod(null, 'func1', 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod(undefined, 'func1', 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', '', 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', null, 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', undefined, 1000, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', 'func1', null, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', 'func1', undefined, 1)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', 'func1', 1000, null)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
+  
+  try {
+    workerPort.callGlobalCallObjectMethod('test', 'func1', 1000, undefined)
+    workerPort.postMessage(3)
+  } catch (error) {
+    workerPort.postMessage(error.code)
+  }
 }
 
 /**

@@ -1147,6 +1147,26 @@ Camera_ErrorCode NDKCamera::PhotoOutputUnRegisterCallback(int useCaseCode)
     }
     return ret_;
 }
+Camera_ErrorCode NDKCamera::IsMovingPhotoSupported(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_IsMovingPhotoSupported(photoOutput_, &isMovingPhotoSupported_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_IsMovingPhotoSupported(photoOutput_, nullptr);
+    } else {
+        ret_ = OH_PhotoOutput_IsMovingPhotoSupported(nullptr, &isMovingPhotoSupported_);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_IsMovingPhotoSupported failed. %d", ret_);
+    } else {
+        if (!isMovingPhotoSupported_) {
+            LOG("moving photo is not supported.");
+        } else {
+            LOG("moving photo is supported.");
+        }
+    }
+    return ret_;
+}
 Camera_ErrorCode NDKCamera::IsMirrorSupported(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {

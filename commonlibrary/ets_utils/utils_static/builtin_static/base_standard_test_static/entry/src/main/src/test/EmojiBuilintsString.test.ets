@@ -31,7 +31,7 @@ import Utils from './Util.test';
 
 export default function EmojiString() {
   describe('Emoji_String', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

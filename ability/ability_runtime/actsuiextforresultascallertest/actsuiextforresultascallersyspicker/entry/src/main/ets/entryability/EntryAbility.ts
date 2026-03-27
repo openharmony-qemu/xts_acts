@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import commonEvent from '@ohos.commonEventManager';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
@@ -59,6 +59,11 @@ let setWant = (want) => {
   } else if (want.parameters.parameter === 'StartAbilityForResultAsCaller_1800') {
     console.info("====>[UIExtensionForResultAsCallerRely] want.parameters.parameter == 'StartAbilityForResultAsCaller_1800':");
     setWantParameters('StartAbilityForResultAsCaller_1800', 'com.example.uiextensionforresultascallersyspicker');
+  } else if (want.parameters.parameter === 'StartAbilityForResultAsCaller_2100') {
+    console.info('====>[OtherUIAbility] 2100 commonEvent start publish killui');
+    commonEvent.publish('killui', (err) => {
+      console.info('====>[OtherUIAbility] 2100 killui commonEvent publish err: ' + JSON.stringify(err));
+    });
   }
 }
 

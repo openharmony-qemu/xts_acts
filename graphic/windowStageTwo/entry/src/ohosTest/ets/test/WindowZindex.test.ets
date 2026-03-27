@@ -1571,7 +1571,11 @@ export default function windowZindexTest() {
         done();
       } catch (err) {
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-        expect(err.code == 1300004 || err.code == 801).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(1300004);
+        }
         done();
       }
     });
@@ -1664,7 +1668,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledTrue_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledTrueTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let options: window.SubWindowOptions = {
             title: 'subWindow',
@@ -1694,7 +1698,6 @@ export default function windowZindexTest() {
             }).catch((err: BusinessError) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1725,7 +1728,7 @@ export default function windowZindexTest() {
     it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0100';
       let windowClass = windowStage.getMainWindowSync()
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let enabled = false;
           let promise = windowClass.setResizeByDragEnabled(enabled);
@@ -1746,7 +1749,6 @@ export default function windowZindexTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-              expect(false).assertFalse();
               done();
             } else {
               console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1775,7 +1777,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         let options: window.SubWindowOptions = {
           title: 'subWindow',
           decorEnabled: true
@@ -1790,7 +1792,6 @@ export default function windowZindexTest() {
             subWindowClass.setResizeByDragEnabled(enabled, async (err) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else if (err.code && err.code != 801) {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)

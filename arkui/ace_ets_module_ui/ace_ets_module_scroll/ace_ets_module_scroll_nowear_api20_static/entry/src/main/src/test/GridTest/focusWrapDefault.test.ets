@@ -41,7 +41,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function focusWrapDefault() {
   describe('focusWrapDefault', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceCalendarPickerTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api20.static", "EntryAbility");

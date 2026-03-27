@@ -19,7 +19,7 @@ import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDi
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function enableEdgeAutoScroll() {
-  describe('enableEdgeAutoScroll', () => {
+  describe('enableEdgeAutoScrollAdapt001', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll_true',

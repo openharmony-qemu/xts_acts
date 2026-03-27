@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listSContentTest() {
   describe('listSContentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

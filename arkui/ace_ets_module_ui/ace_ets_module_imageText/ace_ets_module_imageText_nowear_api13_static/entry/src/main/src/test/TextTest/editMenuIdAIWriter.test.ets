@@ -34,7 +34,7 @@ const waitUiReadyMs = 1000;
 
 export default function editMenuIdAIWriterTest() {
   describe('editMenuIdAIWriterTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("editMenuIdAIWriterTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api13.static", "EntryAbility")

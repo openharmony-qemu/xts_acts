@@ -392,7 +392,7 @@ describe("ActsAppRecoveryTest", function () {
             let wantParam = {"test1": 1, "test2": 2};
             let ret = ability_test.onSaveState(StateType, wantParam);
             if (wantParam["test3"] == 3) {
-                expect(true).assertTrue();
+                console.info("DFX_DFR_AppRecovery_Interface_1900");
             } else {
                 console.info("test3 not exist");
                 expect(false).assertTrue();

@@ -2,6 +2,8 @@
   "src": [
     "testability/pages/index/index",
     "testability/pages/pasteButton",
-    "testability/pages/pasteButton_1"
+    "testability/pages/pasteButton_1",
+    "testability/pages/pasteButtonSetNull",
+    "testability/pages/pasteButtonSetUndefined"
   ]
 }

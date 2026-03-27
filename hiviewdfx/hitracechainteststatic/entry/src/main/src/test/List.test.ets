@@ -14,7 +14,9 @@
  */
 
 import hiTraceChainJsTest from './HiTraceChain.test'
+import hiTraceChainStrongTest from './HiTraceChainStatic.test'
 
 export default function testsuite() {
     hiTraceChainJsTest();
+    hiTraceChainStrongTest();
 }

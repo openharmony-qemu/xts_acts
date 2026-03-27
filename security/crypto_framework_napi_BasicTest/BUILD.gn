@@ -63,8 +63,6 @@ ohos_moduletest_suite("ActsCryptoFrameworkNAPITest") {
   ]
 
   deps = [
-    "$root_path/base/security/crypto_framework/common:crypto_plugin_common",
-    "$root_path/base/security/crypto_framework/frameworks/native:ohcrypto",
-    "$root_path/third_party/openssl:libcrypto_shared",
+    "$root_path/base/security/crypto_framework/frameworks/native:ohcrypto"
   ]
 }

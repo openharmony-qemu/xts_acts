@@ -20,7 +20,10 @@ import { AtomicServiceOptions,
   common, contextConstant,
   OpenLinkOptions,
   StartOptions, startupManager,
-  UIAbility, dialogRequest  } from '@kit.AbilityKit';
+  UIAbility, dialogRequest,
+  CompletionHandlerForAbilityStartCallback,
+  AbilityStartFailureCode
+} from '@kit.AbilityKit';
 import { BusinessError ,systemParameterEnhance} from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { image } from '@kit.ImageKit';
@@ -351,13 +354,25 @@ export default function UIAbilityContext() {
       let wantParam: Record<string, Object> = {
         'time': '2023-10-23 20:45'
       };
+      let completionHandler: CompletionHandlerForAbilityStartCallback = {
+        onRequestSuccess: (name: string) => {
+          console.info(`testTag onRequestSuccess name` + name);
+          expect().assertFail();
+        },
+        onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => {
+          console.info(`testTag onRequestFailure name: ` + name + `, failureCode:` + failureCode + `, failureMessage:` +
+            failureMessage);
+          expect().assertFail();
+        }
+      };
       let abilityStartCallback: common.AbilityStartCallback = {
         onError: (code: number, name: string, message: string) => {
           console.log(`code:` + code + `name:` + name + `message:` + message);
         },
         onResult: (abilityResult: common.AbilityResult) => {
           console.log(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
-        }
+        },
+        completionHandler: completionHandler
       };
       try {
         globalThis.context.startAbilityByType(undefined, wantParam, abilityStartCallback).then(() => {
@@ -1304,6 +1319,36 @@ export default function UIAbilityContext() {
         let message = (err as BusinessError).message;
         console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
       }
-    })
-  })
+     })
+
+    /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.desc   openAtomicService parameter error, pass null Promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200', Level.LEVEL0, async (done: Function) => {
+       let appId: string = '6918661953712445909';
+       let options: AtomicServiceOptions = {
+         displayId: 0
+       };
+       try {
+         globalThis.context.openAtomicService(null, options)
+           .then((result: common.AbilityResult) => {
+             console.info('openAtomicService succeed');
+           })
+           .catch((err: BusinessError) => {
+             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+           });
+       } catch (err) {
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         expect(err.code).assertEqual(401)
+         console.error(`startAbility failed, code is ${code}, message is ${message}`);
+         done();
+       }
+     })
+   })
 }

@@ -46,7 +46,7 @@ const BUNDLE_NAME = 'com.arkui.ace.picker'
 export default function SliderInterfaceTest() {
   describe('SliderInterfaceTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

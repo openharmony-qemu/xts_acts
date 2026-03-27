@@ -41,9 +41,9 @@ function sleep(time: int):Promise<int> {
 }
 
 export default function datePickerLunarJsunit() {
-  describe('datePickerLunarTest', () =>{
+  describe('datePickerLunarTestAdapt001', () =>{
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

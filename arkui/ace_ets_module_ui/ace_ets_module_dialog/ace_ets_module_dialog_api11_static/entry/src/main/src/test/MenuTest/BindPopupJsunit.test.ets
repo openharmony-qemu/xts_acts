@@ -59,7 +59,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindPopupTest() {
   describe('bindPopupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindPopupTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

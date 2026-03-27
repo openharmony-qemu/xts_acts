@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParagraphStyle3() {
   describe('ParagraphStyle3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParagraphStyle3 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -98,7 +98,7 @@ it('ParagraphStyle_static_30001', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       console.info('StyledString ParagraphStyle10001 StyledString5_textAlign ' +
       AppStorage.get<undefined | TextAlign>('StyledString5_textAlign'));
-      expect('' + AppStorage.get<undefined | TextAlign>('StyledString5_textAlign')).assertEqual('0');
+      expect('' + AppStorage.get<undefined | TextAlign>('StyledString5_textAlign')).assertEqual('undefined');
       console.info('StyledString ParagraphStyle10001 StyledString5_textIndent ' +
       AppStorage.get<undefined | number>('StyledString5_textIndent'));
       expect('' + AppStorage.get<undefined | number>('StyledString5_textIndent')).assertEqual('undefined');
@@ -107,7 +107,7 @@ it('ParagraphStyle_static_30001', Level.LEVEL1, async (done: () => void): Promis
       expect('' + AppStorage.get<undefined | int>('StyledString5_maxLines')).assertEqual('-5');
       console.info('StyledString ParagraphStyle10001 StyledString5_wordBreak ' +
       AppStorage.get<undefined | WordBreak>('StyledString5_wordBreak'));
-      expect('' + AppStorage.get<undefined | WordBreak>('StyledString5_wordBreak')).assertEqual('2');
+      expect('' + AppStorage.get<undefined | WordBreak>('StyledString5_wordBreak')).assertEqual('undefined');
       console.info('StyledString ParagraphStyle10001 StyledString5_leadingMargin ' +
       AppStorage.get<undefined | Double | LeadingMarginPlaceholder>('StyledString5_lea'));
       expect('' + AppStorage.get<undefined | Double | LeadingMarginPlaceholder>('StyledString5_leadingMargin'))

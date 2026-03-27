@@ -36,7 +36,7 @@ const waitUiReadyMs = 1000;
 
 export default function ObserverApi() {
   describe('ObserverApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObserverApi beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.observer.static", "EntryAbility");
     });

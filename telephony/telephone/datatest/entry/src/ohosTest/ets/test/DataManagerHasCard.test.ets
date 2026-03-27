@@ -219,25 +219,9 @@ export default function dataManagerTest() {
               }
             });
           } else {
-            data.enableCellularData((err: BusinessError) => {
-              if (err) {
-                console.info(`${caseName} enableCellularData err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              }
-              data.getCellularDataState((err: BusinessError, data: data.DataConnectState) => {
-                if (err) {
-                  console.info(`${caseName}  etCellularDataState_err->${JSON.stringify(err)}`);
-                  ExpectTrue(false);
-                  done();
-                } else {
-                  // Start the cellular data with the status of linked;
-                  console.info(`${caseName} getCellularDataState_data->${JSON.stringify(data)}`);
-                  ExpectTrue(true);
-                  done();
-                }
-              });
-            });
+            console.info(`${caseName} CellularData not Enabled`);
+            ExpectTrue(false);
+            done();
           }
         } else {
           console.info(`${caseName} This test case requires an environment where cards are inserted.`);
@@ -249,7 +233,6 @@ export default function dataManagerTest() {
         ExpectTrue(false);
         done();
       }
-      await data.enableCellularData();
       console.info(`${caseName} test end `);
     });
 
@@ -316,23 +299,9 @@ export default function dataManagerTest() {
               done();
             });
           } else {
-            data.enableCellularData((err: BusinessError) => {
-              if (err) {
-                console.info(`${caseName} err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              }
-              data.getCellularDataState().then((data: data.DataConnectState) => {
-                // Start the cellular data with the status of linked;
-                console.info(`${caseName} data->${JSON.stringify(data)}`);
-                ExpectTrue(true);
-                done();
-              }).catch((err: BusinessError) => {
-                console.info(`${caseName} err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              });
-            });
+            console.info(`${caseName} CellularData not Enabled`);
+            ExpectTrue(false);
+            done();
           }
         } else {
           console.info(`${caseName} This test case requires an environment where cards are inserted.`);
@@ -663,6 +632,126 @@ export default function dataManagerTest() {
       } catch (error) {
         console.info(`${caseName} catchError->${JSON.stringify(error)}`);
         ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabled1200
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabled_1200
+     * @tc.desc   Check whether roaming is enabled for cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabled1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled1200';
+      console.info(`${caseName} test start `);
+      try {
+        data.isCellularDataRoamingEnabled(null, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code === 401);
+            done();
+          } else {
+            console.info(`${caseName} Input parameter 2 of the card`);
+            ExpectTrue(false);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catcherr->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+        /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabled1300
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabled_1300
+     * @tc.desc   Check whether roaming is enabled for cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabled1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled1300';
+      console.info(`${caseName} test start `);
+      try {
+        data.isCellularDataRoamingEnabled(undefined, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code === 401);
+            done();
+          } else {
+            console.info(`${caseName} Input parameter 2 of the card`);
+            ExpectTrue(false);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catcherr->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabled1400
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabled_1400
+     * @tc.desc   Check whether roaming is enabled for cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabled1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled1400';
+      console.info(`${caseName} test start `);
+      try {
+        data.isCellularDataRoamingEnabled(null).then((data: boolean) => {
+          console.info(`${caseName} The parameter passed in is 2 and should not go to the normal branch`);
+          ExpectTrue(false);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err.code->${JSON.stringify(err)}`);
+          ExpectTrue(err.code === 401);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catcherr->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabled1500
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabled_1500
+     * @tc.desc   Check whether roaming is enabled for cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabled1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled1500';
+      console.info(`${caseName} test start `);
+      try {
+        data.isCellularDataRoamingEnabled(undefined).then((data: boolean) => {
+          console.info(`${caseName} The parameter passed in is 2 and should not go to the normal branch`);
+          ExpectTrue(false);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err.code->${JSON.stringify(err)}`);
+          ExpectTrue(err.code === 401);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catcherr->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
         done();
       }
       console.info(`${caseName} test end `);

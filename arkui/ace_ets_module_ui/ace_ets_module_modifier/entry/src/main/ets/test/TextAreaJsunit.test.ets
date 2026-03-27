@@ -72,7 +72,7 @@ export default function textAreaJsunit() {
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("textAreaTest_003 component  is: " + JSON.stringify(objNew.$attrs));
       // expect(objNew.$attrs.fontColor).assertEqual("#FF123456");
-      expect(objNew.$attrs.fontColor).assertNotNull;
+      expect(objNew.$attrs.fontColor).not().assertNull();
       console.info('textAreaTest_003 END');
       done();
     });

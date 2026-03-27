@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function menuPolicyHIDE() {
   describe('menuPolicyHIDE', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("menuPolicyHIDE beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

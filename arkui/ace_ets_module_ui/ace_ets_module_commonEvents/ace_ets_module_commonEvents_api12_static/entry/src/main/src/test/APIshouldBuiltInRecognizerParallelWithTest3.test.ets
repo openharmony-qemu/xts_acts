@@ -47,7 +47,7 @@ const uiContext = new UIContext();
 
 export default function APIshouldBuiltInRecognizerParallelWith() {
   describe('APIshouldBuiltInRecognizerParallelWith', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       

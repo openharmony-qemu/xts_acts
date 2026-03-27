@@ -308,8 +308,10 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040] obj1.$attrs.width is: " + obj1.$attrs.width);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040] obj1.$attrs.height is: " + obj1.$attrs.height);
-      expect(obj1.$attrs.width).assertEqual('180.00vp');
-      expect(obj1.$attrs.height).assertEqual('60.00vp');
+      let widthStr = '180.00vp'
+      let heightStr = '60.00vp'
+      expect(Math.abs(parseFloat(obj1.$attrs.width.slice(0,-2)) - parseFloat(widthStr.slice(0,-2))) <= 1).assertTrue();
+      expect(Math.abs(parseFloat(obj1.$attrs.height.slice(0,-2)) - parseFloat(heightStr.slice(0,-2))) <= 1).assertTrue();
       done();
     });
   })

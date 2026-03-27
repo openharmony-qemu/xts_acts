@@ -26,7 +26,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputHeightAdaptivePolicyModifierTest() {
   describe('TextInputHeightAdaptivePolicyModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputHeightAdaptivePolicyModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

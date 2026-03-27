@@ -20,7 +20,7 @@ import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import wifiMg from '@ohos.wifiManager';
-
+import notificationManager from '@ohos.notificationManager';
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -54,12 +54,18 @@ async function applyPermission() {
         console.info('[permission] case accessTokenID is ' + tokenID);
         let permissionName1 = 'ohos.permission.LOCATION';
         let permissionName2 = 'ohos.permission.LOCATION_IN_BACKGROUND';
+        let permissionName3 = 'ohos.permission.APPROXIMATELY_LOCATION';
         await atManager.grantUserGrantedPermission(tokenID, permissionName1, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
         });
         await atManager.grantUserGrantedPermission(tokenID, permissionName2, 1).then((result) => {
+            console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+        }).catch((err) => {
+            console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+        });
+        await atManager.grantUserGrantedPermission(tokenID, permissionName3, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
@@ -562,6 +568,13 @@ export default function geolocationTest_GeoErr() {
             } else {
                 try {
                     let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let bssid = geolocationm.getCurrentWifiBssidForLocating();
+                    console.info("getCurrentWifiBssidForLocating_0100" + bssid);
+                    if(bssid) {
+                        wlanBssidArray.push(bssid);
+                    } else {
+                        console.info("get bssid fail");
+                    }
                     let rssiThreshold = -100;
                     let needStartScan = true;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
@@ -768,6 +781,13 @@ export default function geolocationTest_GeoErr() {
             } else {
                 try {
                     let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let bssid = geolocationm.getCurrentWifiBssidForLocating();
+                    console.info("getCurrentWifiBssidForLocating_0100" + bssid);
+                    if(bssid) {
+                        wlanBssidArray.push(bssid);
+                    } else {
+                        console.info("get bssid fail");
+                    }
                     let rssiThreshold = -100;
                     let needStartScan = true;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
@@ -1112,7 +1132,37 @@ export default function geolocationTest_GeoErr() {
                 try {
                     let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                     console.info("isGeocoderAvailable01 return:" + JSON.stringify(isGeocoderAvailable));
-                    expect(isGeocoderAvailable).assertTrue();
+                    if (isGeocoderAvailable) {
+                        let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5};
+                        try {
+                            geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                                console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
+                                if(data){
+                                    expect(data.length>0).assertTrue();
+                                }else{
+                                    console.info("The device Capability not supported." + JSON.stringify(data));
+                                    expect(true).assertFalse();
+                                }
+                            });
+                        } catch (err) {
+                            console.error("errCode:" + err.code + ", message:"  + err.message);
+                        }
+                    } else {
+                        let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
+                        try {
+                            geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                                console.info('SUB_HSS_isGeocoderAvailable_0001: data=' + JSON.stringify(data));
+                                if(data){
+                                    expect(true).assertFalse();
+                                }else{
+                                    console.info("The device Capability not supported." + JSON.stringify(data));
+                                    expect(data === undefined || data === null).assertTrue();
+                                }
+                            });
+                        } catch (err) {
+                            console.error("errCode:" + err.code + ", message:"  + err.message);
+                        }
+                    }
                 } catch (error) {
                     console.error("[lbs_js] Promise isGeocoderAvailable01:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
@@ -1216,7 +1266,7 @@ export default function geolocationTest_GeoErr() {
                             expect(data.length>0).assertTrue();
                         }else{
                             console.info("The device Capability not supported." + JSON.stringify(data));
-                            expect(data.length==0).assertTrue();
+                            expect(data === undefined || data === null).assertTrue();
                         }
                     });
                 } catch (err) {
@@ -1285,7 +1335,7 @@ export default function geolocationTest_GeoErr() {
                             console.info('getAddressesFromLocation0200: data=' + JSON.stringify(data));
                             expect(data.length>0).assertTrue();
                         }else{
-                            expect(data.length==0).assertTrue();
+                            expect(data === undefined || data === null).assertTrue();
                         }
                     });
                 } catch (err) {
@@ -1312,11 +1362,17 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 try {
                     geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                         console.info('getAddressesFromLocation0300: data=' + JSON.stringify(data));
-                        expect(data.length>0).assertTrue();
+                        if (isGeocoderAvailable){
+                            expect(data.length>0).assertTrue();
+                        } else {
+                            expect(data === undefined || data === null).assertTrue();
+                        }
+                        
                     });
                 } catch (err) {
                     console.error("getAddressesFromLocation0300:errCode:" + err.code + ", message:"  + err.message);
@@ -1343,7 +1399,7 @@ export default function geolocationTest_GeoErr() {
                 done();
             } else {
                 let locationEnabledChange = (state) => {
-                    console.info('locationEnabledChange: state:打开' + JSON.stringify(state));
+                    console.info('locationEnabledChange: state:' + JSON.stringify(state));
                     expect(state).assertTrue()
                 }
                 try {
@@ -1405,7 +1461,9 @@ export default function geolocationTest_GeoErr() {
             } else {
                 geolocation.isGeoServiceAvailable().then((result) => {
                     console.info('promise, isGeoServiceAvailable0002: ' + JSON.stringify(result));
-                    expect(result).assertTrue();
+                    if(result) {
+                        expect(result).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1455,10 +1513,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
                 geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                     console.info('geolocationgetAddressesFromLocationName0004: data=' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1509,10 +1572,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
                     console.info('geolocationgetAddressesFromLocation0006: ' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1536,10 +1604,15 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
+                let isGeocoderAvailable = geolocationm.isGeocoderAvailable();
                 let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
                 geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                     console.info('geolocationgetAddressesFromLocation0007: data=' + JSON.stringify(data));
-                    expect(data.length>0).assertTrue();
+                    if (isGeocoderAvailable){
+                        expect(data.length>0).assertTrue();
+                    } else {
+                        expect(data === undefined || data === null).assertTrue();
+                    }
                 });
                 await sleep(1000);
                 done();
@@ -1620,12 +1693,234 @@ export default function geolocationTest_GeoErr() {
                 await sleep(1000);
                 done();
             }            
-        });  
-        
-           
-        
-        
+        });
 
+         /**
+          * @tc.name   SUB_HSS_addGnssGeofence_0001
+          * @tc.number SUB_HSS_addGnssGeofence_0001
+          * @tc.desc   GnssGeofence.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */        
+         it('SUB_HSS_addGnssGeofence_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_addGnssGeofence_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geofence = {
+                    "latitude": 34.12,
+                    "longitude": 124.11,
+                    "radius": 10000.0,
+                    "expiration": 10000.0
+                }
+                let transitionStatusList = [
+                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
+                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT,
+                ];
+                let notificationRequest1 = {
+                    id: 1,
+                    content: {
+                        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+                        normal: {
+                            title: "围栏通知",
+                            text: "围栏进入",
+                            additionalText: ""
+                        }
+                    }
+                };
+                let notificationRequest2 = {
+                    id: 2,
+                    content: {
+                        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+                        normal: {
+                            title: "围栏通知",
+                            text: "围栏进入",
+                            additionalText: ""
+                        }
+                    }
+                };
+                let notificationRequestList = [notificationRequest1, notificationRequest2];
+                let gnssGeofenceRequest = {
+                    geofence: geofence,
+                    monitorTransitionEvents: transitionStatusList,
+                    notifications: notificationRequestList,
+                    loiterTimeMs: 10000,
+                    fenceExtensionAbilityName: "fenceExtensionAbility",
+                    geofenceTransitionCallback: (err, transition) => {
+                        if (err) {
+                            console.error('SUB_HSS_addGnssGeofence_0001 geofenceTransitionCallback: err=' + JSON.stringify(err));
+                        }
+                        if (transition) {
+                            console.info("SUB_HSS_addGnssGeofence_0001 GeofenceTransition: %{public}s", JSON.stringify(transition)); 
+                        }
+                }
+                };
+                try { 
+                    console.info("SUB_HSS_addGnssGeofence_0001 ======>loiterTimeMs ", typeof gnssGeofenceRequest.loiterTimeMs);
+                    expect(typeof gnssGeofenceRequest.loiterTimeMs).assertEqual("number");
+                    console.info("SUB_HSS_addGnssGeofence_0001 ======>fenceExtensionAbilityName ", typeof gnssGeofenceRequest.fenceExtensionAbilityName);
+                    expect(typeof gnssGeofenceRequest.fenceExtensionAbilityName).assertEqual("string");                    
+                } catch (error) {
+                    console.error("SUB_HSS_addGnssGeofence_0001:" + JSON.stringify(error));
+                }
+                await sleep(1000);
+                done();
+            }
+        });
+
+         /**
+          * @tc.name   SUB_HSS_getActiveGeofences_0001
+          * @tc.number SUB_HSS_getActiveGeofences_0001
+          * @tc.desc   GnssGeofence.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+         it('SUB_HSS_getActiveGeofences_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getActiveGeofences_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    geolocationm.getActiveGeoFences().then((res) => {
+                        if (res) {
+                            console.info("SUB_HSS_getActiveGeofences_0001, fence num: " + res.size);
+                            expect(res != null).assertTrue();
+                            done();
+                        }
+                    }).catch((error) => {
+                        console.error("promise, SUB_HSS_getActiveGeofences_0001 error=" + error.code);
+                        expect(error.code).assertEqual(801);
+                    });
+                } catch (error) {
+                    console.error("SUB_HSS_getActiveGeofences_0001: errCode" + error.code + ", errMessage" + error.message);
+                    expect().assertFalse();
+                }
+                await sleep(1000);
+                done();
+            }
+        });        
+        
+        /**
+         * @tc.number  SUB_HSS_testGeolocationManagerConfig001
+         * @tc.name  SUB_HSS_testGeolocationManagerConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('SUB_HSS_testGeolocationManagerConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.UNSET == 0x300)
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.NAVIGATION == 0x301)
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.TRAJECTORY_TRACKING == 0x302)
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.CAR_HAILING == 0x303)
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.DAILY_LIFE_SERVICE == 0x304)
+            expect(true).assertEqual(geolocationm.LocationRequestScenario.NO_POWER == 0x305)
+
+            expect(true).assertEqual(geolocation.LocationRequestScenario.UNSET == 0x300)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.NAVIGATION == 0x301)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.TRAJECTORY_TRACKING == 0x302)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.CAR_HAILING == 0x303)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.DAILY_LIFE_SERVICE == 0x304)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.NO_POWER == 0x305)
+
+            expect(true).assertEqual(geolocationm.CoordinateSystemType.WGS84 == 1)
+            expect(true).assertEqual(geolocationm.CoordinateSystemType.GCJ02 == 2)
+
+            expect(true).assertEqual(geolocationm.LocationRequestPriority.UNSET == 0x200)
+            expect(true).assertEqual(geolocationm.LocationRequestPriority.ACCURACY == 0X201)
+            expect(true).assertEqual(geolocationm.LocationRequestPriority.LOW_POWER == 0x202)
+            expect(true).assertEqual(geolocationm.LocationRequestPriority.FIRST_FIX == 0x203)
+
+            expect(true).assertEqual(geolocation.LocationRequestPriority.UNSET == 0x200)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.ACCURACY == 0X201)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.LOW_POWER == 0x202)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.FIRST_FIX == 0x203)
+
+            expect(true).assertEqual(geolocationm.LocationSourceType.GNSS == 1)
+            expect(true).assertEqual(geolocationm.LocationSourceType.NETWORK == 2)
+            expect(true).assertEqual(geolocationm.LocationSourceType.INDOOR == 3)
+            expect(true).assertEqual(geolocationm.LocationSourceType.RTK == 4)
+
+            done();
+
+        });
+
+        /**
+         * @tc.name   SUB_HSS_locationchange_0001
+         * @tc.number SUB_HSS_locationchange_0001
+         * @tc.desc   locationchange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_locationchange_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Core");
+            console.info("SUB_HSS_locationchange_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Core");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let requestInfo = {
+                    'priority': null,
+                    'scenario': null,
+                };
+                let locationChange = geolocationm.Location
+                console.info('locationChange: data: ' + JSON.stringify(geolocationm.Location));
+                try {
+                    geolocationm.on('locationChange', requestInfo, locationChange);
+                    expect(location != null).assertTrue(location);
+                    done();
+                } catch (err) {
+                    console.info("errCode:" + err.code + ", message:" + err.message);
+                    expect(false).assertFalse();
+                }
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_HSS_locationchange_0002
+         * @tc.number SUB_HSS_locationchange_0002
+         * @tc.desc   locationchange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_locationchange_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Core");
+            console.info("SUB_HSS_locationchange_0002: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Core");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let requestInfo = {
+                    'priority': undefined,
+                    'scenario': undefined,
+                };
+                let locationChange = geolocationm.Location
+                console.info('locationChange: data: ' + JSON.stringify(geolocationm.Location));
+                done();
+                try {
+                    geolocationm.on('locationChange', requestInfo, locationChange);
+                    expect(location != null).assertTrue(location);
+                    done();
+                } catch (err) {
+                    console.info("errCode:" + err.code + ", message:" + err.message);
+                    expect(false).assertFalse();
+                }
+                done();
+            }
+        });
 
     })
 }

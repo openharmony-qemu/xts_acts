@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function getSharedLocalStorageTest() {
   describe('getSharedLocalStorageTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getSharedLocalStorageTest beforeEach start");
 
 

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function bindSheetRadius() {
   describe('bindSheetRadius', () => {
   let currentDeviceIsPC = false
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")

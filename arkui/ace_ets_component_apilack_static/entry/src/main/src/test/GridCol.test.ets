@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function grid_colSpanJsunit() {
   describe('grid_colSpanTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

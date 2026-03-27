@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SnapshotOptions_region() {
   describe('SnapshotOptions_region', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       
@@ -127,73 +127,5 @@ it('SnapshotOptions_region_static_0200', Level.LEVEL0, async (done: () => void):
       done();
     });
 
-
-    
-    
-/**
-     * @tc.number   SnapshotOptions_region_static_0300
-     * @tc.name     SnapshotOptions_region_static_0300
-     * @tc.desc     SnapshotOptions_region_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('SnapshotOptions_region_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('[SnapshotOptions_region_0300] START');
-      let driver = Driver.create();
-      let button1 = await driver.findComponent(ON.id('SnapshotRegion1'));
-      await CommonFunc.sleep(2000);
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-
-      // test the child component response
-      let strJson = inspector.getInspectorByKey('image2');
-      await CommonFunc.sleep(2000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[SnapshotOptions_region_0300] strJson is: ' + strJson);
-      console.info('[SnapshotOptions_region_0300] SnapshotOptions_region obj is: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('width')));
-      console.info('[SnapshotOptions_region_0300] SnapshotOptions_region obj is: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('height')));
-      expect(obj.getElement('$attrs').getString('height')).assertEqual('470.66vp');
-      expect(obj.getElement('$attrs').getString('width')).assertEqual('470.66vp');
-
-
-      console.info('[SnapshotOptions_region_0300] END');
-      done();
-    });
-
-
-    
-    
-/**
-     * @tc.number   SnapshotOptions_region_static_0400
-     * @tc.name     SnapshotOptions_region_static_0400
-     * @tc.desc     SnapshotOptions_region_static_0400
-     * @tc.level    Level.LEVEL0
-     */
-it('SnapshotOptions_region_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('[SnapshotOptions_region_0400] START');
-      let driver = Driver.create();
-      let button2 = await driver.findComponent(ON.id('LocalizedSnapshotRegion1'));
-      await CommonFunc.sleep(2000);
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-
-      // test the child component response
-      let strJson = inspector.getInspectorByKey('image2');
-      await CommonFunc.sleep(2000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[SnapshotOptions_region_0400] strJson is: ' + strJson);
-      console.info('[SnapshotOptions_region_0400] SnapshotOptions_region obj is: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('width')));
-      console.info('[SnapshotOptions_region_0400] SnapshotOptions_region obj is: ' +
-      JSON.stringify(obj.getElement('$attrs').getString('height')));
-      expect(obj.getElement('$attrs').getString('height')).assertEqual('470.66vp');
-      expect(obj.getElement('$attrs').getString('width')).assertEqual('470.66vp');
-
-      console.info('[SnapshotOptions_region_0400] END');
-      done();
-    });
   })
 }

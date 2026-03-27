@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function selectNodeTest() {
   describe('selectNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectNodeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility")
     });

@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_ListInitialIndex1Test() {
   describe('List_ListInitialIndex1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_ListInitialIndex1Test beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

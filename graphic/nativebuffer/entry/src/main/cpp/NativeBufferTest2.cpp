@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include "common/native_common.h"
 #include "napi/native_api.h"
 #include <GLES2/gl2.h>
 #include <bits/alltypes.h>
@@ -28,6 +29,20 @@
 #include <vector>
 #include <hilog/log.h>
 #include "NativeBufferTest.h"
+
+std::vector<OH_NativeBuffer_ColorSpace> nativeBuffeColorSpace = {
+    OH_COLORSPACE_NONE,                 OH_COLORSPACE_BT601_EBU_FULL,        OH_COLORSPACE_BT601_SMPTE_C_FULL,
+    OH_COLORSPACE_BT709_FULL,           OH_COLORSPACE_BT2020_HLG_FULL,       OH_COLORSPACE_BT2020_PQ_FULL,
+    OH_COLORSPACE_BT601_EBU_LIMIT,      OH_COLORSPACE_BT601_SMPTE_C_LIMIT,   OH_COLORSPACE_BT709_LIMIT,
+    OH_COLORSPACE_BT2020_HLG_LIMIT,     OH_COLORSPACE_BT2020_PQ_LIMIT,       OH_COLORSPACE_SRGB_FULL,
+    OH_COLORSPACE_P3_FULL,              OH_COLORSPACE_P3_HLG_FULL,           OH_COLORSPACE_P3_PQ_FULL,
+    OH_COLORSPACE_ADOBERGB_FULL,        OH_COLORSPACE_SRGB_LIMIT,            OH_COLORSPACE_P3_LIMIT,
+    OH_COLORSPACE_P3_HLG_LIMIT,         OH_COLORSPACE_P3_PQ_LIMIT,           OH_COLORSPACE_ADOBERGB_LIMIT,
+    OH_COLORSPACE_LINEAR_SRGB,          OH_COLORSPACE_LINEAR_BT709,          OH_COLORSPACE_LINEAR_P3,
+    OH_COLORSPACE_LINEAR_BT2020,        OH_COLORSPACE_DISPLAY_SRGB,          OH_COLORSPACE_DISPLAY_P3_SRGB,
+    OH_COLORSPACE_DISPLAY_P3_HLG,       OH_COLORSPACE_DISPLAY_P3_PQ,         OH_COLORSPACE_DISPLAY_BT2020_SRGB,
+    OH_COLORSPACE_DISPLAY_BT2020_HLG,   OH_COLORSPACE_DISPLAY_BT2020_PQ
+};
 
 static OH_NativeBuffer *getBuffer()
 {
@@ -807,23 +822,40 @@ napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_info in
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
-    for (uint32_t index = 0; index < sizeof(OH_NativeBuffer_ColorSpace); index++) {
-        OH_NativeBuffer_ColorSpace colorSpace1 = static_cast<OH_NativeBuffer_ColorSpace>(index);
+    for (uint32_t index = 0; index < nativeBuffeColorSpace.size(); index++) {
+        OH_NativeBuffer_ColorSpace colorSpace1 = nativeBuffeColorSpace[index];
         OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
         int32_t ret = OH_NativeBuffer_SetColorSpace(nativeBuffer, colorSpace1);
-        if (ret != 0) {
-            napi_create_int32(env, NUMBER_1000 * index + NUMBER_1, &result);
-            return result;
-        }
-        OH_NativeBuffer_ColorSpace colorspace;
-        ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorspace);
-        if (ret != 0) {
-            napi_create_int32(env, NUMBER_1000 * index + NUMBER_2, &result);
-            return result;
-        }
-        if (colorspace != colorSpace1) {
-            napi_create_int32(env, NUMBER_1000 * index + NUMBER_3, &result);
-            return result;
+        NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+        OH_NativeBuffer_ColorSpace colorSpace2;
+        ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace2);
+        NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+        if (colorSpace2 != colorSpace1) {
+            if (index == NUMBER_4) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_HLG,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_HLG");
+            } else if (index == NUMBER_5) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_PQ,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_PQ");
+            } else if (index == NUMBER_11) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_SRGB,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_SRGB");
+            } else if (index == NUMBER_12) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_SRGB,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_SRGB");
+            } else if (index == NUMBER_13) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_HLG,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_HLG");
+            } else if (index == NUMBER_14) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_PQ,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_PQ");
+            } else if (index == NUMBER_21) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_LINEAR_BT709,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_LINEAR_BT709");
+            } else {
+                napi_create_int32(env, FAIL, &result);
+                return result;
+            }
         }
         OH_NativeBuffer_Unreference(nativeBuffer);
     }

@@ -102,6 +102,10 @@ namespace NnCoreOps {
  */
 int SUBAINNRtFuncNorthGreaterBuild01()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -135,6 +139,10 @@ int SUBAINNRtFuncNorthGreaterBuild01()
  */
 int SUBAINNRtFuncNorthGreaterBuild02()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -168,6 +176,10 @@ int SUBAINNRtFuncNorthGreaterBuild02()
  */
 int SUBAINNRtFuncNorthGreaterBuild04()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+    
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 

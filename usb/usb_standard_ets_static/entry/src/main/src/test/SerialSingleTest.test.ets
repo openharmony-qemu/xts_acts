@@ -51,7 +51,7 @@ function checkDevice(): boolean {
 export default function SerialSingleTest() {
   describe('SerialSingleTest', () => {
     let openPortId: int = -1;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         if (checkDevice()) {
           openPortId = portIds[0];

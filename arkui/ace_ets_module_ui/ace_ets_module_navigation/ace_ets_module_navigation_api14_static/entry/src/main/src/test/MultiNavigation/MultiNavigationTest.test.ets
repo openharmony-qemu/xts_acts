@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MultiNavigationTest() {
   describe('MultiNavigationTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MultiNavigationTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");

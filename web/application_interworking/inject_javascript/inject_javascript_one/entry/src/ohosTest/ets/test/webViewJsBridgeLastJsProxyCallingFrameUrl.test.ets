@@ -46,7 +46,7 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
         } catch (err) {
             console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
-        await driver.waitForComponent(ON.id("webViewJsBridgeLastJsProxyCallingFrameUrl"), 10000);
+        await Utils.waitForComponent(driver, 'webViewJsBridgeLastJsProxyCallingFrameUrl');
         done()
     });
     

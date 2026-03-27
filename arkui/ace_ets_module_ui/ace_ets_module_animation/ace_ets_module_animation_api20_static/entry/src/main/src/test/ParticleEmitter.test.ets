@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleEmitter() {
   describe('ParticleEmitter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticleEmitter beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
@@ -84,7 +84,7 @@ export default function ParticleEmitter() {
         console.log('test 1156  ' + getInspectorBtn)
         await (getInspectorBtn?.click() as Promise<void>);
         console.info('[ParticleEmitter_001] getInspectorBtn click');
-        await driver.delayMs(1000);
+        await driver.delayMs(4000);
 
         let xValue: string = AppStorage.get<string>('xValue') as string;
         expect(xValue).assertEqual('"50.00%"');

@@ -161,183 +161,186 @@ struct bindPopupTest {
 
       Column() {
         Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround }) {
-          Column({space:30}){
-            Button('PopupOptions1')
-              .id('button1')
-              .onClick(() => {
-                this.handlePopup1 = !this.handlePopup1
-              })
-              .bindPopup(this.handlePopup1, {
-                message: 'This is a popup with PopupOptions',
-                placementOnTop: true,
-                outlineWidth: '1vp',
-                outlineLinearGradient: {
-                  direction: undefined,
-                  colors: [[Color.Yellow, 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
-                },
-                borderWidth: '1px',
-                borderLinearGradient: {
-                  direction: GradientDirection.Right,
-                  colors: [[$r('app.color.color_333'), 0.2], [0xffffff, 0.8]]
-                },
-                onStateChange: (e) => {
-                  console.info(JSON.stringify(e.isVisible))
-                  if (!e.isVisible) {
-                    this.handlePopup1 = false
+          Scroll() {
+            Column({space:30}){
+              Button('PopupOptions1')
+                .id('button1')
+                .onClick(() => {
+                  this.handlePopup1 = !this.handlePopup1
+                })
+                .bindPopup(this.handlePopup1, {
+                  message: 'This is a popup with PopupOptions',
+                  placementOnTop: true,
+                  outlineWidth: '1vp',
+                  outlineLinearGradient: {
+                    direction: undefined,
+                    colors: [[Color.Yellow, 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
+                  },
+                  borderWidth: '1px',
+                  borderLinearGradient: {
+                    direction: GradientDirection.Right,
+                    colors: [[$r('app.color.color_333'), 0.2], [0xffffff, 0.8]]
+                  },
+                  onStateChange: (e) => {
+                    console.info(JSON.stringify(e.isVisible))
+                    if (!e.isVisible) {
+                      this.handlePopup1 = false
+                    }
                   }
-                }
-              })
+                })
 
-            Button('PopupOptions2')
-              .id('button2')
-              .onClick(() => {
-                this.handlePopup2 = !this.handlePopup2
-              })
-              .bindPopup(this.handlePopup2, {
-                message: 'This is a popup with PopupOptions',
-                placementOnTop: true,
-                outlineWidth: '1fp',
-                outlineLinearGradient: {
-                  direction: GradientDirection.None,
-                  colors: [[$r('app.color.color_666'), 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
-                },
-                borderWidth: '1lpx',
-                borderLinearGradient: {
-                  direction: GradientDirection.Left,
-                  colors: [['#FF0000FF', 0.2], [Color.Red, 1.0]]
-                },
-                onStateChange: (e) => {
-                  console.info(JSON.stringify(e.isVisible))
-                  if (!e.isVisible) {
-                    this.handlePopup2 = false
-                  }
-                }
-              })
-
-            Button('CustomPopupOptions1')
-              .id('button3')
-              .onClick(() => {
-                this.handlePopup3 = !this.handlePopup3
-              })
-              .bindPopup(this.handlePopup3, {
-                builder: this.popupBuilder,
-                placement: Placement.Top,
-                mask: {color:'#33000000'},
-                popupColor: Color.Yellow,
-                enableArrow: true,
-                showInSubWindow: false,
-                outlineWidth: $r('app.string.popup_border_size'),
-                outlineLinearGradient: {
-                  direction: undefined,
-                  colors: [[$r('app.color.color_666'), 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
-                },
-                borderWidth: '1lpx',
-                borderLinearGradient: {
-                  direction: GradientDirection.Left,
-                  colors: [['#FF0000FF', 0.2], [undefined, 1.0]]
-                },
-                onStateChange: (e) => {
-                  if (!e.isVisible) {
-                    this.handlePopup3 = false
-                  }
-                }
-              })
-
-            Button('CustomPopupOptions2')
-              .id('button4')
-              .onClick(() => {
-                this.handlePopup4 = !this.handlePopup4
-              })
-              .bindPopup(this.handlePopup4, {
-                builder: this.popupBuilder,
-                placement: Placement.Top,
-                mask: {color:'#33000000'},
-                popupColor: Color.Yellow,
-                enableArrow: true,
-                showInSubWindow: false,
-                outlineLinearGradient: {
-                  direction: undefined,
-                  colors: [[undefined, 0.0], ['rgba(227, 100, 255, 1.00)', 1.0]]
-                },
-                borderWidth: '1vp',
-                borderLinearGradient: {
-                  direction: GradientDirection.RightTop,
-                  colors: [[Color.Green, 0.2], [0xffffff, 1.0]]
-                },
-                onStateChange: (e) => {
-                  if (!e.isVisible) {
-                    this.handlePopup4 = false
-                  }
-                }
-              })
-            Button('PopupCommonOptions1')
-              .id('button5')
-              .fontSize(20)
-              .onClick(() => {
-                let context = this.getUIContext()
-                const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-                const promptAction = context.getPromptAction();
-                let uniqueId = this.getUniqueId();
-                let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-                let targetId = frameNode?.getFirstChild()?.getUniqueId();
-                promptAction.openPopup(contentNode, { id: targetId }, {
-                  outlineWidth: 1,
+              Button('PopupOptions2')
+                .id('button2')
+                .onClick(() => {
+                  this.handlePopup2 = !this.handlePopup2
+                })
+                .bindPopup(this.handlePopup2, {
+                  message: 'This is a popup with PopupOptions',
+                  placementOnTop: true,
+                  outlineWidth: '1fp',
                   outlineLinearGradient: {
                     direction: GradientDirection.None,
-                    colors: [[Color.Yellow, 0.1], ['rgba(227, 100, 255, 1.00)', 1.0]]
+                    colors: [[$r('app.color.color_666'), 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
                   },
                   borderWidth: '1lpx',
                   borderLinearGradient: {
-                    direction: GradientDirection.Right,
-                    colors: [[null, 0.1], ['#FF0000FF', 0.9]]
-                  }
-                })
-                  .then(() => {
-                    console.info('openPopup success');
-                    this.openPopup = 'openPopup'
-                  })
-                  .catch((err: BusinessError) => {
-                    console.info('openPopup error: ' + err.code + ' ' + err.message);
-                  })
-                setTimeout(() => {
-                  promptAction.closePopup(contentNode)
-                }, 2000); //2秒后自动关闭
-              })
-
-            Button('PopupCommonOptions2')
-              .id('button2')
-              .fontSize(20)
-              .onClick(() => {
-                let context = this.getUIContext()
-                const contentNode = new ComponentContent(context, wrapBuilder(buildText));
-                const promptAction = context.getPromptAction();
-                let uniqueId = this.getUniqueId();
-                let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-                let targetId = frameNode?.getFirstChild()?.getUniqueId();
-                promptAction.openPopup(contentNode, { id: targetId }, {
-                  outlineWidth: undefined,
-                  outlineLinearGradient: {
-                    direction: GradientDirection.LeftBottom,
-                    colors: [[undefined, 0.1], ['rgba(227, 100, 255, 1.00)', 0.8]]
+                    direction: GradientDirection.Left,
+                    colors: [['#FF0000FF', 0.2], [Color.Red, 1.0]]
                   },
-                  borderWidth: 1,
-                  borderLinearGradient: {
-                    direction: undefined,
-                    colors: [[Color.Orange, 0.1], ['#FF0000FF', 0.9]]
+                  onStateChange: (e) => {
+                    console.info(JSON.stringify(e.isVisible))
+                    if (!e.isVisible) {
+                      this.handlePopup2 = false
+                    }
                   }
                 })
-                  .then(() => {
-                    console.info('openPopup success');
-                    this.openPopup = 'openPopup'
+
+              Button('CustomPopupOptions1')
+                .id('button3')
+                .onClick(() => {
+                  this.handlePopup3 = !this.handlePopup3
+                })
+                .bindPopup(this.handlePopup3, {
+                  builder: this.popupBuilder,
+                  placement: Placement.Top,
+                  mask: {color:'#33000000'},
+                  popupColor: Color.Yellow,
+                  enableArrow: true,
+                  showInSubWindow: false,
+                  outlineWidth: $r('app.string.popup_border_size'),
+                  outlineLinearGradient: {
+                    direction: undefined,
+                    colors: [[$r('app.color.color_666'), 0.0], ['rgba(123, 255, 100, 1.00)', 1.0]]
+                  },
+                  borderWidth: '1lpx',
+                  borderLinearGradient: {
+                    direction: GradientDirection.Left,
+                    colors: [['#FF0000FF', 0.2], [undefined, 1.0]]
+                  },
+                  onStateChange: (e) => {
+                    if (!e.isVisible) {
+                      this.handlePopup3 = false
+                    }
+                  }
+                })
+
+              Button('CustomPopupOptions2')
+                .id('button4')
+                .onClick(() => {
+                  this.handlePopup4 = !this.handlePopup4
+                })
+                .bindPopup(this.handlePopup4, {
+                  builder: this.popupBuilder,
+                  placement: Placement.Top,
+                  mask: {color:'#33000000'},
+                  popupColor: Color.Yellow,
+                  enableArrow: true,
+                  showInSubWindow: false,
+                  outlineLinearGradient: {
+                    direction: undefined,
+                    colors: [[undefined, 0.0], ['rgba(227, 100, 255, 1.00)', 1.0]]
+                  },
+                  borderWidth: '1vp',
+                  borderLinearGradient: {
+                    direction: GradientDirection.RightTop,
+                    colors: [[Color.Green, 0.2], [0xffffff, 1.0]]
+                  },
+                  onStateChange: (e) => {
+                    if (!e.isVisible) {
+                      this.handlePopup4 = false
+                    }
+                  }
+                })
+              Button('PopupCommonOptions1')
+                .id('button5')
+                .fontSize(20)
+                .onClick(() => {
+                  let context = this.getUIContext()
+                  const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+                  const promptAction = context.getPromptAction();
+                  let uniqueId = this.getUniqueId();
+                  let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+                  let targetId = frameNode?.getFirstChild()?.getUniqueId();
+                  promptAction.openPopup(contentNode, { id: targetId }, {
+                    outlineWidth: 1,
+                    outlineLinearGradient: {
+                      direction: GradientDirection.None,
+                      colors: [[Color.Yellow, 0.1], ['rgba(227, 100, 255, 1.00)', 1.0]]
+                    },
+                    borderWidth: '1lpx',
+                    borderLinearGradient: {
+                      direction: GradientDirection.Right,
+                      colors: [[null, 0.1], ['#FF0000FF', 0.9]]
+                    }
                   })
-                  .catch((err: BusinessError) => {
-                    console.info('openPopup error: ' + err.code + ' ' + err.message);
+                    .then(() => {
+                      console.info('openPopup success');
+                      this.openPopup = 'openPopup'
+                    })
+                    .catch((err: BusinessError) => {
+                      console.info('openPopup error: ' + err.code + ' ' + err.message);
+                    })
+                  setTimeout(() => {
+                    promptAction.closePopup(contentNode)
+                  }, 2000); //2秒后自动关闭
+                })
+
+              Button('PopupCommonOptions2')
+                .id('button2')
+                .fontSize(20)
+                .onClick(() => {
+                  let context = this.getUIContext()
+                  const contentNode = new ComponentContent(context, wrapBuilder(buildText));
+                  const promptAction = context.getPromptAction();
+                  let uniqueId = this.getUniqueId();
+                  let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
+                  let targetId = frameNode?.getFirstChild()?.getUniqueId();
+                  promptAction.openPopup(contentNode, { id: targetId }, {
+                    outlineWidth: undefined,
+                    outlineLinearGradient: {
+                      direction: GradientDirection.LeftBottom,
+                      colors: [[undefined, 0.1], ['rgba(227, 100, 255, 1.00)', 0.8]]
+                    },
+                    borderWidth: 1,
+                    borderLinearGradient: {
+                      direction: undefined,
+                      colors: [[Color.Orange, 0.1], ['#FF0000FF', 0.9]]
+                    }
                   })
-                setTimeout(() => {
-                  promptAction.closePopup(contentNode)
-                }, 2000); //2秒后自动关闭
-              })
+                    .then(() => {
+                      console.info('openPopup success');
+                      this.openPopup = 'openPopup'
+                    })
+                    .catch((err: BusinessError) => {
+                      console.info('openPopup error: ' + err.code + ' ' + err.message);
+                    })
+                  setTimeout(() => {
+                    promptAction.closePopup(contentNode)
+                  }, 2000); //2秒后自动关闭
+                })
+            }
           }
+          
         }
       }.height('80%')
       .width('100%')

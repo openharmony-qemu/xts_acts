@@ -549,6 +549,28 @@ static napi_value OhAvTransCoderSetStateCbError(napi_env env, napi_callback_info
     return result;
 }
 
+static napi_value OhAvTransCoderSetStateCb(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = SUCCESS;
+    NdkAVTransCoderUser *transcoderUser = new NdkAVTransCoderUser();
+    transcoderUser->transcoder = OH_AVTranscoder_Create();
+    if (transcoderUser->transcoder == nullptr) {
+        LOGE("Transcoder OhAvTransCoderSetStateCb create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
+        return result;
+    }
+    OH_AVErrCode err = OH_AVTranscoder_SetStateCallback(
+        transcoderUser->transcoder, AvTransCoderStateChangeCbImpl, transcoderUser);
+    backParam = err;
+    LOG("Transcoder OhAvTransCoderSetStateCb ret %{public}d", backParam);
+    napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
+    return result;
+}
+
 static napi_value OhAvTransCoderSetErrorCbError(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -560,6 +582,28 @@ static napi_value OhAvTransCoderSetErrorCbError(napi_env env, napi_callback_info
     return result;
 }
 
+static napi_value OhAvTransCoderSetErrorCb(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = SUCCESS;
+    NdkAVTransCoderUser *transcoderUser = new NdkAVTransCoderUser();
+    transcoderUser->transcoder = OH_AVTranscoder_Create();
+    if (transcoderUser->transcoder == nullptr) {
+        LOGE("Transcoder OH_AVTranscoder_SetErrorCallback create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
+        return result;
+    }
+    OH_AVErrCode err = OH_AVTranscoder_SetErrorCallback(
+        transcoderUser->transcoder, AvTransCoderErrorCbImpl, transcoderUser);
+    backParam = err;
+    LOG("Transcoder OhAvTransCoderSetErrorCb ret %{public}d", backParam);
+    napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
+    return result;
+}
+
 static napi_value OhAvTransCoderSetProgressUpdateCbError(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -568,6 +612,28 @@ static napi_value OhAvTransCoderSetProgressUpdateCbError(napi_env env, napi_call
     backParam = err;
     LOG("Transcoder OhAvTransCoderSetProgressUpdateCbError ret %{public}d", backParam);
     napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvTransCoderSetProgressUpdateCb(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = SUCCESS;
+    NdkAVTransCoderUser *transcoderUser = new NdkAVTransCoderUser();
+    transcoderUser->transcoder = OH_AVTranscoder_Create();
+    if (transcoderUser->transcoder == nullptr) {
+        LOGE("Transcoder OH_AVTranscoder_SetProgressUpdateCallback create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
+        return result;
+    }
+    OH_AVErrCode err = OH_AVTranscoder_SetProgressUpdateCallback(
+        transcoderUser->transcoder, AvTransCoderProgressUpdateCbImpl, transcoderUser);
+    backParam = err;
+    LOG("Transcoder OhAvTransCoderSetProgressUpdateCb ret %{public}d", backParam);
+    napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
     return result;
 }
 
@@ -930,6 +996,18 @@ static napi_value OhAvTransCodeConfigEnableBFrame(napi_env env, napi_callback_in
     return result;
 }
 
+static napi_value OhAvTransCodeConfigEnableBFrameError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    bool enableBFrame = false;
+    OH_AVErrCode errCode = OH_AVTranscoderConfig_EnableBFrame(nullptr, enableBFrame);
+    backParam = errCode;
+    LOG("Transcoder OH_AVTranscoderConfig_EnableBFrame ret %{public}d", backParam);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 static napi_value OhAvTransCodeConfigSetDstFileTypeError(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1201,9 +1279,15 @@ static napi_value Init(napi_env env, napi_value exports)
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetStateCbError", nullptr, OhAvTransCoderSetStateCbError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCoderSetStateCb", nullptr, OhAvTransCoderSetStateCb, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetErrorCbError", nullptr, OhAvTransCoderSetErrorCbError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCoderSetErrorCb", nullptr, OhAvTransCoderSetErrorCb, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetProgressUpdateCbError", nullptr, OhAvTransCoderSetProgressUpdateCbError, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCoderSetProgressUpdateCb", nullptr, OhAvTransCoderSetProgressUpdateCb, nullptr,
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderNdkProgressUpdateCb", nullptr, OhAvTransCoderNdkProgressUpdateCb, nullptr,
         nullptr, nullptr, napi_default, nullptr},
@@ -1224,6 +1308,8 @@ static napi_value Init(napi_env env, napi_value exports)
     {"AvTransCodeConfigSetDstVideoBitrate", nullptr, OhAvTransCodeConfigSetDstVideoBitrate, nullptr,
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCodeConfigEnableBFrame", nullptr, OhAvTransCodeConfigEnableBFrame, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCodeConfigEnableBFrameError", nullptr, OhAvTransCodeConfigEnableBFrameError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCodeConfigSetDstVideoResolution", nullptr, OhAvTransCodeConfigSetDstVideoResolution, nullptr,
         nullptr, nullptr, napi_default, nullptr},

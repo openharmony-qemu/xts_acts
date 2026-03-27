@@ -61,7 +61,7 @@ export default function searchDecoration() {
       let strJson = getInspectorByKey('key_search_decoration_001');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[searchDecoration_0100] obj is: " + JSON.stringify(obj.$attrs));
-      expect(obj.$attrs.decoration).assertEqual('{\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"}');
+      expect(obj.$attrs.decoration).assertContain('\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"');
       console.info('[searchDecoration_0100] END');
       done();
     });

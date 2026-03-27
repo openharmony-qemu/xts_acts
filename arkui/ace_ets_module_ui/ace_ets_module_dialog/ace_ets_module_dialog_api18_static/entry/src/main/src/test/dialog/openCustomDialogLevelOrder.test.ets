@@ -31,7 +31,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function openCustomDialogLevelOrder() {
   describe('openCustomDialogLevelOrder', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

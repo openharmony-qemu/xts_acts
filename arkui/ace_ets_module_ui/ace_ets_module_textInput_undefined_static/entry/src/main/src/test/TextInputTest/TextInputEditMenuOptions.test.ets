@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInputEditMenuOptions() {
   describe('TextInputEditMenuOptions', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputEditMenuOptions beforeEach start");
 
       await UtilsTest.msSleep(4000)

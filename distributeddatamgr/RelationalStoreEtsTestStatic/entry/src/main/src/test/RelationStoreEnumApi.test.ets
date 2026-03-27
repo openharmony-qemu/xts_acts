@@ -809,7 +809,7 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: false,
       };
       let STORE_CONFIG: data_relationalStore.StoreConfig = {
-        name: "MyStore1.db",
+        name: "MyStore2.db",
         securityLevel: data_relationalStore.SecurityLevel.S1,
         allowRebuild: true,
 
@@ -825,7 +825,7 @@ export default function RelationalStoreEnumTest(){
         expect(fileExist).assertTrue();
         fs.truncateSync(dbPathWal, 4)
         fs.truncateSync(dbPathShm, 4)
-        let file = fs.openSync(dbPath, fs.OpenMode.READ_ONLY | fs.OpenMode.SYNC | fs.OpenMode.TRUNC );
+        let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE | fs.OpenMode.SYNC | fs.OpenMode.TRUNC );
         fs.truncateSync(file.fd, 4);
         fs.fsyncSync(file.fd)
         fs.closeSync(file)
@@ -841,12 +841,14 @@ export default function RelationalStoreEnumTest(){
         expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
         expect( data_relationalStore.RebuildType.REPAIRED == 2).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0021, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0021 end *************');
@@ -950,7 +952,7 @@ export default function RelationalStoreEnumTest(){
       try{
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         console.error(`RelationalStoreEnumerateTest0023, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
-        expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
+        expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.REBUILT).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       } catch(err) {
@@ -1545,7 +1547,5 @@ export default function RelationalStoreEnumTest(){
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0033 end *************');
     })
-
-
   })
 }

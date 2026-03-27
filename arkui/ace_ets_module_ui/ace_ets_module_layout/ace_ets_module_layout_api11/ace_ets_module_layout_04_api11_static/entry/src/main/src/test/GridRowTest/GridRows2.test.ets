@@ -35,7 +35,7 @@ const BUNDLE_NAME = 'com.arkui.ace.layout.split04.static/EntryAbility';
 
 export default function GridRows2() {
   describe('GridRows2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('GridRows2 beforeAll')
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

@@ -25,7 +25,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function composeTitleBar() {
   describe('composeTitleBar', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("composeTitleBar beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
 

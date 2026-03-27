@@ -23,9 +23,11 @@ import uriTest from './uri/Uri.test';
 import uri2Test from './uri/Uri2.test';
 import urlTest from './url/Url.test';
 import url2Test from './url/Url2.test';
-import UtilTypeTest from './util/UtilType.test';
 import utilTest from './util/Util.test';
+import UtilTypeTest from './util/UtilType.test';
 import util2Test from './util/Util2.test';
+import util3Test from './util/Util3.test';
+import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test.ets';
 import timerTest from './timer/Timer.test';
 import jsonTest from './json/Json.test';
 import tresMapTest from './treemap/Treemap.test';
@@ -49,16 +51,18 @@ import linkedListTest from './linkedlist/LinkedList.test';
 import plainArrayTest from './plainarray/PlainArray.test';
 import stringDecoderTest from './stringDecoder/StringDecoder.test';
 import streamTest from './stream/Stream.test';
+import stream2Test from './stream/Stream2.test';
 import specialChar from './specialchar/SpecialChar.test';
 import consoleTest from './console/Console.test';
 import LRUCacheTest from './LRUCache/LRUCache.test';
-import ActsUrlParameterTest from './url/UrlParameter.test'
+import ActsUrlParameterTest from './url/UrlParameter.test';
 import emojiFastBufferTest from './fastbuffer/Emoji_FastBuffer.test';
 import escapeFastBufferTest from './fastbuffer/Escape_FastBuffer.test';
 import fastBuffer1Test from './fastbuffer/FastBuffer1.test';
 import fastBuffer2Test from './fastbuffer/FastBuffer2.test';
 import fastBuffer3Test from './fastbuffer/FastBuffer3.test';
 import fastBuffer4Test from './fastbuffer/FastBuffer4.test';
+import Vector1Test from './vector/Vector.test';
 
 export default function testsuite() {
   buffer1Test();
@@ -73,7 +77,9 @@ export default function testsuite() {
   url2Test();
   utilTest();
   util2Test();
+  util3Test();
   UtilTypeTest();
+  vmHeapMemoryPressureTest();
   timerTest();
   jsonTest();
   tresMapTest();
@@ -97,6 +103,7 @@ export default function testsuite() {
   plainArrayTest();
   stringDecoderTest();
   streamTest();
+  stream2Test();
   specialChar();
   consoleTest();
   LRUCacheTest();
@@ -108,4 +115,5 @@ export default function testsuite() {
   fastBuffer3Test();
   fastBuffer4Test();
   ActsUrlParameterTest();
+  Vector1Test();
 }

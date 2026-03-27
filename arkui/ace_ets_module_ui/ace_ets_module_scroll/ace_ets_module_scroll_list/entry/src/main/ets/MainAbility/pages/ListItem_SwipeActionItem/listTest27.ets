@@ -40,6 +40,13 @@ struct ListItemExample27 {
 
   build() {
     Column() {
+      Text(this.enterEndDeleteAreaString)
+      Text(this.exitEndDeleteAreaString)
+      Text(this.swipeActionState).margin({ top: 2 }).key('swipe27State')
+      Button('Delete').height('8%').key('btreset27').onClick(() => {
+        this.swipeActionState = '-1';
+        this.arr = [0, 1, 2, 3, 4];
+      })
       List({ space: 10 }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
@@ -76,14 +83,6 @@ struct ListItemExample27 {
           .key('lSwipe27Action' + item)
         }, (item: string) => item)
       }.listDirection(Axis.Horizontal).height('60%')
-
-      Text(this.enterEndDeleteAreaString).fontSize(20)
-      Text(this.exitEndDeleteAreaString).fontSize(20)
-      Text(this.swipeActionState).fontSize(20).margin({ top: 20 }).key('swipe27State')
-      Button('Delete').margin('4vp').key('btreset27').onClick(() => {
-        this.swipeActionState = '-1';
-        this.arr = [0, 1, 2, 3, 4];
-      })
 
     }
     .padding(10)

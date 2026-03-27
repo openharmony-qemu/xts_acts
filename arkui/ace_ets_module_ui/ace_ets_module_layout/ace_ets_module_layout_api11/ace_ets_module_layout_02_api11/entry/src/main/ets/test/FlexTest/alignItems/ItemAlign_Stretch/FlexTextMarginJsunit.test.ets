@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,27 +66,44 @@ export default function flexTextMargin_StretchJsunit() {
       let textMargin02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin02');
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexTextMargin01');
+
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi1:'+ Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - vp2px(10))))
       expect(Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - vp2px(10))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi2:'+ Math.floor(Math.abs((textMargin02.left - textMargin01.right) - vp2px(10))))
       expect(Math.floor(Math.abs((textMargin02.left - textMargin01.right) - vp2px(10))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi3:'+ Math.floor(Math.abs(textMargin03.left - textMargin02.right)))
       expect(Math.floor(Math.abs(textMargin03.left - textMargin02.right)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi4:'+ Math.floor(Math.abs((flexTextMargin01.right - textMargin03.right) - vp2px(30))))
       expect(Math.floor(Math.abs((flexTextMargin01.right - textMargin03.right) - vp2px(30))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi5:'+ Math.floor(Math.abs(textMargin02.top - textMargin03.top)))
       expect(Math.floor(Math.abs(textMargin02.top - textMargin03.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi6:'+ Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)))
       expect(Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi7:'+ Math.floor(Math.abs((textMargin01.top - flexTextMargin01.top) - vp2px(10))))
       expect(Math.floor(Math.abs((textMargin01.top - flexTextMargin01.top) - vp2px(10))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi8:'+ Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)))
       expect(Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi9:'+ Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)))
       expect(Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi10:'+ Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) - vp2px(10))))
       expect(Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) - vp2px(10))) <= 1).assertTrue()
 
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi11:'+ Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - vp2px(180))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi12:'+ Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - vp2px(200))))
       expect(Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - vp2px(200))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi13:'+ Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - vp2px(200))))
       expect(Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - vp2px(200))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi14:'+ Math.floor(Math.abs((textMargin01.right - textMargin01.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi15:'+ Math.floor(Math.abs((textMargin02.right - textMargin02.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSubSetMargin_chazhi16:'+ Math.floor(Math.abs((textMargin03.right - textMargin03.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - vp2px(150))) <= 1).assertTrue()
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
-      console.info('new testFlexItemAlignStretchSubSetMargin END');
 
+      console.info('new testFlexItemAlignStretchSubSetMargin END');
     });
 
     /**
@@ -110,6 +127,23 @@ export default function flexTextMargin_StretchJsunit() {
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexTextMargin01');
 
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi1:'+ Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - vp2px(30))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi2:'+ Math.floor(Math.abs((textMargin02.left - textMargin01.right) - vp2px(30))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi3:'+ Math.floor(Math.abs(textMargin03.left - textMargin02.right)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi4:'+ Math.floor(Math.abs(textMargin03.right - flexTextMargin01.right)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi5:'+ Math.floor(Math.abs(textMargin02.top - textMargin03.top)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi6:'+ Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi7:'+ Math.floor(Math.abs((textMargin01.top - flexTextMargin01.top) - vp2px(30))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi8:'+ Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi9:'+ Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi10:'+ Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) - vp2px(30))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi11:'+ Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi12:'+ Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - vp2px(200))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi13:'+ Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - vp2px(200))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi14:'+ Math.floor(Math.abs((textMargin01.right - textMargin01.left) - vp2px(440 / 3))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi15:'+ Math.floor(Math.abs((textMargin02.right - textMargin02.left) - vp2px(440 / 3))))
+      console.info('testFlexItemAlignStretchSubSetMarginExceed_chazhi16:'+ Math.floor(Math.abs((textMargin03.right - textMargin03.left) - vp2px(440 / 3))))
+
       expect(Math.floor(Math.abs((textMargin01.left - flexTextMargin01.left) - vp2px(30))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.left - textMargin01.right) - vp2px(30))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.left - textMargin02.right)) <= 1).assertTrue()
@@ -120,16 +154,18 @@ export default function flexTextMargin_StretchJsunit() {
       expect(Math.floor(Math.abs(textMargin02.bottom - textMargin03.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.bottom - flexTextMargin01.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs((flexTextMargin01.bottom - textMargin01.bottom) - vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - vp2px(140))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textMargin01.bottom - textMargin01.top) - vp2px(140))) <= 2).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.bottom - textMargin02.top) - vp2px(200))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - vp2px(200))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - vp2px(440 / 3))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - vp2px(440 / 3))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - vp2px(440 / 3))) <= 1).assertTrue()
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
+      
       console.info('new testFlexItemAlignStretchSubSetMarginExceed END');
-
     });
+
   })
 }

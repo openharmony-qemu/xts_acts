@@ -896,6 +896,70 @@ export default function ActsZipDeflateTest() {
       })
 
     /**
+     * @tc.number     ACTS_ZipTest_static_28
+     * @tc.name       actsZipTest_static_28
+     * @tc.desc       test deflateSetHeader
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_28 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 28,
+          zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_28 deflateInit2 success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_28 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        await zip.deflateSetHeader({
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        },
+          {
+            isText: false,
+            os: 1,
+            time: 1,
+            xflags: 1,
+            extra: arrayBufferIn,
+            extraLen: 12,
+            name: arrayBufferIn,
+            comment: arrayBufferOut,
+            hcrc: false,
+            done: false
+          }).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_28 deflateSetHeader success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_28 deflateSetHeader errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_28 end==================");
+      })
+      
+    /**
      * @tc.number     ACTS_ZipTest_static_59
      * @tc.name       actsZipTest_static_59
      * @tc.desc       test deflateSetHeader
@@ -1784,6 +1848,490 @@ export default function ActsZipDeflateTest() {
         
         console.info("==================actsZipTest_static_119 end==================");
       })
+
+      /**
+     * @tc.number     ACTS_ZipTest_static_98
+     * @tc.name       actsZipTest_static_98
+     * @tc.desc       test deflateInit2 first parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_98', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_98 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION, zlib.CompressMethod.DEFLATED,
+          15, zlib.MemLevel.MEM_LEVEL_MIN, zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_98 deflateInit2 success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_98 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_98 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_97
+     * @tc.name       actsZipTest_static_97
+     * @tc.desc       test deflateInit2 second parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_97', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_97 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
+          zlib.CompressMethod.DEFLATED, 15,
+          zlib.MemLevel.MEM_LEVEL_MAX, zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_97 deflateInit2 success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_97 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_97 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_96
+     * @tc.name       actsZipTest_static_96
+     * @tc.desc       test deflateInit2 third parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_96', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_96 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+          zlib.CompressMethod.DEFLATED, 15, zlib.MemLevel.MEM_LEVEL_DEFAULT,
+          zlib.CompressStrategy.COMPRESS_STRATEGY_RLE).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_96 deflateInit2 success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_96 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_96 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_95
+     * @tc.name       actsZipTest_static_95
+     * @tc.desc       test deflateInit2 fourth parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_95', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_95 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 15,
+          zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_95 deflateInit2 success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_95 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_95 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_87
+     * @tc.name       actsZipTest_static_87
+     * @tc.desc       test deflate CompressFlushMode PARTIAL_FLUSH
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('actsZipTest_static_87', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_87 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zip: zlib.Zip = zlib.createZipSync();
+        try {
+          await zip.deflate({}, zlib.CompressFlushMode.PARTIAL_FLUSH).then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_87 deflate success');
+            expect(data).assertFail();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `actsZipTest_static_87 deflate errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(17800004);
+          expect(errData.message).assertEqual("Compression or decompression stream error, which may be caused by an initialization error in the zlib stream structure or a modified structure.");
+        }
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_87 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_32
+     * @tc.name       actsZipTest_static_32
+     * @tc.desc       test deflate CompressFlushMode SYNC_FLUSH
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('actsZipTest_static_32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_32 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zip: zlib.Zip = zlib.createZipSync();
+        try {
+          await zip.deflate({}, zlib.CompressFlushMode.SYNC_FLUSH).then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_32 deflate success');
+            expect(data).assertFail();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `actsZipTest_static_32 deflate errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(17800004);
+          expect(errData.message).assertEqual("Compression or decompression stream error, which may be caused by an initialization error in the zlib stream structure or a modified structure.");
+        }
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_57 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_33
+     * @tc.name       actsZipTest_static_33
+     * @tc.desc       test deflate CompressFlushMode BLOCK
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('actsZipTest_static_33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_33 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zip: zlib.Zip = zlib.createZipSync();
+        try {
+          await zip.deflate({}, zlib.CompressFlushMode.BLOCK).then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_33 deflate success');
+            expect(data).assertFail();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `actsZipTest_static_33 deflate errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(17800004);
+          expect(errData.message).assertEqual("Compression or decompression stream error, which may be caused by an initialization error in the zlib stream structure or a modified structure.");
+        }
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_33 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_34
+     * @tc.name       actsZipTest_static_34
+     * @tc.desc       test deflate CompressFlushMode TREES
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('actsZipTest_static_34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_34 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zip: zlib.Zip = zlib.createZipSync();
+        try {
+          await zip.deflate({}, zlib.CompressFlushMode.TREES).then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_34 deflate success');
+            expect(data).assertFail();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `actsZipTest_static_34 deflate errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(17800004);
+          expect(errData.message).assertEqual("Compression or decompression stream error, which may be caused by an initialization error in the zlib stream structure or a modified structure.");
+        }
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_34 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_123
+     * @tc.name       actsZipTest_static_123
+     * @tc.desc       test deflateParams first parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('actsZipTest_static_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_123 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync();
+        await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_123 deflateInit success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_123 deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        await zip.deflateParams(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
+          zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_123 deflateParams success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_123 deflateParams errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_123 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_117
+     * @tc.name       actsZipTest_static_117
+     * @tc.desc       test deflateParams second parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('actsZipTest_static_117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_117 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync();
+        await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_117 deflateInit success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_117 deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        await zip.deflateParams(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
+          zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_117 deflateParams success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_117 deflateParams errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_117 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_121
+     * @tc.name       actsZipTest_static_121
+     * @tc.desc       test deflateParams third parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('actsZipTest_static_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_121 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync();
+        await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_121 deflateInit success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_121 deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        await zip.deflateParams(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
+          zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_121 deflateParams success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_121 deflateParams errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_121 end==================");
+      })
+
+    /**
+     * @tc.number     ACTS_ZipTest_static_122
+     * @tc.name       actsZipTest_static_122
+     * @tc.desc       test deflateParams fourth parameter
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('actsZipTest_static_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_122 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync();
+        await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_122 deflateInit success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_122 deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        await zip.deflateParams(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
+          zlib.CompressStrategy.COMPRESS_STRATEGY_RLE).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_122 deflateParams success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_122 deflateParams errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_122 end==================");
+      })
+
 
   })
 }

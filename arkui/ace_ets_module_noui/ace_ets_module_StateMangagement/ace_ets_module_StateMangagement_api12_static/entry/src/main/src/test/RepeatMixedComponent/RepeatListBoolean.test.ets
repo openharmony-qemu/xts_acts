@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RepeatListBoolean() {
   describe('RepeatListBoolean', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatListBoolean beforeEach start");
 
 

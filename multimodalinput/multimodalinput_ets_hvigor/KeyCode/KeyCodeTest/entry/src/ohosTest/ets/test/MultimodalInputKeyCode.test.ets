@@ -122,6 +122,50 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_MOUSE_ASSISTANT_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_MOUSE_ASSISTANT_0100
+     * @tc.desc   Test keycode KEYCODE_MOUSE_ASSISTANT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_KEYCODE_MOUSE_ASSISTANT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_KEYCODE_MOUSE_ASSISTANT_0100";
+      try {
+        let KEYCODE_MOUSE_ASSISTANT = KeyCode.KEYCODE_MOUSE_ASSISTANT;
+        console.info(`${caseName} success, keyCode value ${JSON.stringify(KEYCODE_MOUSE_ASSISTANT)}`);
+        ExpectTrue(KEYCODE_MOUSE_ASSISTANT == 2732);
+        done();
+      } catch (error) {
+        console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_MOUSE_INTELLIGENCE_SELECTION_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_MOUSE_INTELLIGENCE_SELECTION_0100
+     * @tc.desc   Test keycode KEYCODE_MOUSE_INTELLIGENCE_SELECTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_KEYCODE_MOUSE_INTELLIGENCE_SELECTION_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_KEYCODE_MOUSE_INTELLIGENCE_SELECTION_0100";
+      try {
+        let KEYCODE_MOUSE_INTELLIGENCE_SELECTION = KeyCode.KEYCODE_MOUSE_INTELLIGENCE_SELECTION;
+        console.info(`${caseName} success, keyCode value ${JSON.stringify(KEYCODE_MOUSE_INTELLIGENCE_SELECTION)}`);
+        ExpectTrue(KEYCODE_MOUSE_INTELLIGENCE_SELECTION == 2733);
+        done();
+      } catch (error) {
+        console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
      * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
      * @tc.desc   Test keycode KEYCODE_DAGGER_CLICK.

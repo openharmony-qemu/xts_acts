@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 
 export default function counterJsunit() {
   describe('counterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

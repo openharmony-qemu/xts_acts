@@ -41,7 +41,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function fontFeatureTest() {
   describe('fontFeatureTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("fontFeatureTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

@@ -12,15 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { deviceInfo } from '@kit.BasicServicesKit';
 import intelligentSceneJsunit from './IntelligentSceneUiJsunit.test.ets';
 import canNotUse from './CanNotUse.test.ets';
 
+export function isDeviceSupport(): boolean {
+  let deviceType: string = deviceInfo.deviceType;
+  console.log(`current deviceType is ${deviceType}`);
+  return deviceType === 'phone' || deviceType === 'tablet';
+}
+
 export default function testsuite() {
-  console.log("testsuite start")
-  if (canIUse("SystemCapability.Applications.IntelligentScene") && 
-    canIUse("SystemCapability.Applications.Settings.Core")){
+  console.log("testsuite start");
+  if (canIUse("SystemCapability.Applications.IntelligentScene") &&
+    canIUse("SystemCapability.Applications.Settings.Core") && isDeviceSupport()){
     intelligentSceneJsunit();
   } else {
     canNotUse();
-  } 
+  }
 }

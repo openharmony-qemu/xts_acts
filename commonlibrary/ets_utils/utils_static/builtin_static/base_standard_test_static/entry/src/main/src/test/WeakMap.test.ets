@@ -30,7 +30,7 @@ interface GeneratedObjectLiteralInterface_2 {
 export default function WeakMapTest() {
 
   describe('weakMapTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

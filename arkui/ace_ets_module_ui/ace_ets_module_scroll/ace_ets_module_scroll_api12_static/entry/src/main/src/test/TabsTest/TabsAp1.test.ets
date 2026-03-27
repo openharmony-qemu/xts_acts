@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function TabsAp1() {
   describe('TabsAp1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

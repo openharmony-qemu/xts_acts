@@ -138,7 +138,7 @@ export default function imageGetImagePropertySecond() {
       console.info("beforeEach case");
     });
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {

@@ -36,7 +36,7 @@ function doCopy(driver: Driver, componentId: string){
 
 export default function TextInputOnCopyTest() {
   describe('TextInputOnCopyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputOnCopyTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

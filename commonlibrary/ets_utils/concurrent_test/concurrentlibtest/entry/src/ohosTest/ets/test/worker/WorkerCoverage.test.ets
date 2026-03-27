@@ -1782,20 +1782,6 @@ export default function workerCoverageTest() {
       });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * @tc.name   testThreadWorkerDispatchEventReturnValueFalse
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_RETURN_FALSE_001
@@ -2261,6 +2247,7 @@ export default function workerCoverageTest() {
           const workerInstance = new worker.ThreadWorker("../../workers/Worker2.ets");
           let finished = false;
           let obj = new TestObj()
+          let results: Object[] = []
           try {
             workerInstance.registerGlobalCallObject("test", obj);
           } catch (e) {
@@ -2268,19 +2255,25 @@ export default function workerCoverageTest() {
           }
           workerInstance.onmessage = (event) => {
             console.info(`${caseName} onmessage: ${event.data}`);
+            results.push(event.data)
+            if (results.length == 26) {
+              workerInstance.terminate();
+            }
           };
           workerInstance.onAllErrors = (e) => {
             console.error(`${caseName} onAllErrors: ${e}`);
           };
+          workerInstance.postMessage(1)
           workerInstance.onexit = (code: number) => {
             finished = true;
             expect(code).assertEqual(0);
           };
-          await Sleep(100)
-          workerInstance.terminate();
           while (!finished) {
             await Sleep(100)
           }
+          expect(results)
+            .assertDeepEquals([null, 401, 401, 1, 2, 2, null, undefined, 401, 401, 1, null, undefined, 401, 401, 1, 10200019, 401,
+              401, 10200020, 401, 401, 401, 401, 3, 3])
           done();
         } catch (error) {
           console.error(`${caseName} error: ${error}`);

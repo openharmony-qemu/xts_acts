@@ -794,7 +794,7 @@ export default function MapForeachTest() {
       map.forEach((value, key, currentMap) => {
         result.push(value);
         if (key < 3) {
-          currentMap.set(key + 1, String.fromCharCode(97 + key));
+          currentMap.set(key + 1, String.fromCharCode(97 + key.toInt()));
         }
       });
       expect(result).assertDeepEquals(['a', 'b', 'c']);

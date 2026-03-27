@@ -75,7 +75,7 @@ async function forKey(Key: string, text: string, icon?: PasswordIcon) {
 }
 export default function textinputSec() {
   describe('textinputSec', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textinputSec beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

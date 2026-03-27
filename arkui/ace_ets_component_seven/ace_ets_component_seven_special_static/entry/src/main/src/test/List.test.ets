@@ -23,7 +23,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function list() {
   describe('listJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("listJsunit beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

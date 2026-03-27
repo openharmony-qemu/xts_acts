@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function onSubmitTest() {
   describe('onSubmitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSubmitTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");

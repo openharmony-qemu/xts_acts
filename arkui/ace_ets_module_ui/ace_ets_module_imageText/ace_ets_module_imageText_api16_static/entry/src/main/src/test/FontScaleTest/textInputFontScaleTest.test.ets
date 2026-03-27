@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputFontScaleTest() {
   describe('textInputFontScaleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputFontScaleTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

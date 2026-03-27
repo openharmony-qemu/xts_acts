@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import {
   AtomicServiceOptions,
   common, OpenLinkOptions, StartOptions, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { ConfigurationConstant, AbilityConstant } from '@kit.AbilityKit';
 import EmbeddedUIExtensionAbility from '@ohos.app.ability.EmbeddedUIExtensionAbility';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { rpc } from '@kit.IPCKit';
@@ -24,6 +25,8 @@ import eventBusPlue from '../lib/EventBusPlus';
 const DOMAIN = 0x0000;
 const TAG: string = '[ExampleEmbeddedAbility]';
 const uiServiceProxy: common.UIServiceProxy | null = null;
+let sub2 : commonEventManager.CommonEventSubscriber;
+
 export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbility {
   onCreate() {
     hilog.info(DOMAIN, 'testTag', `onCreate`);
@@ -96,7 +99,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         }
         commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_0200_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
-          this.context.terminateSelf()
+          this.context.terminateSelf(()=>{})
         });
       }
     };
@@ -488,6 +491,102 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         }
         commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_1700_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    };
+
+    if(want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_3900'){
+      try{
+        let code = this.context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+        let configColorMode = this.context.config.colorMode;
+        console.log('setcolor mode', JSON.stringify(code));
+        console.log('config colorMode', JSON.stringify(configColorMode));
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': 'success',
+            'colorMode': configColorMode
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_3900_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 3900==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }catch(err){
+        console.log(TAG + `setColorMode catch failed, code is ${err}`);
+        console.log(TAG + `setColorMode catch failed, code is ${err.code}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+            'colorMode': err?.code
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_3900_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 3900==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    };
+
+    if(want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4000'){
+      try{
+        let code = this.context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        let configColorMode = this.context.config.colorMode;
+        console.log('setcolor mode', JSON.stringify(code));
+        console.log('config colorMode', JSON.stringify(configColorMode));
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': 'success',
+            'colorMode': configColorMode
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4000_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 4000==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }catch(err){
+        console.log(TAG + `setColorMode catch failed, code is ${err}`);
+        console.log(TAG + `setColorMode catch failed, code is ${err.code}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+            'colorMode': err?.code
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4000_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 4000==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    };
+
+    if(want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4100'){
+      try{
+        let code = this.context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
+        let configColorMode = this.context.config.colorMode;
+        console.log('setcolor mode', JSON.stringify(code));
+        console.log('config colorMode', JSON.stringify(configColorMode));
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': 'success',
+            'colorMode': configColorMode
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4100_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 4100==: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }catch(err){
+        console.log(TAG + `setColorMode catch failed, code is ${err}`);
+        console.log(TAG + `setColorMode catch failed, code is ${err.code}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+            'colorMode': err?.code
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4100_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 4100==: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
       }
@@ -1004,7 +1103,393 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
           this.context.terminateSelf()
         });
       }
-    };
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4200') {
+      try {
+        // Test openLink with empty string link parameter
+        this.context.openLink("", undefined, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
+            let commonEventData: commonEventManager.CommonEventPublishData = {
+              parameters: {
+                'result': err?.code,
+              }
+            }
+            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4200_event', commonEventData, (result) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4200: ${JSON.stringify(result)}`);
+              this.context.terminateSelf()
+            });
+          } else {
+            console.info('openLink succeed');
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `openLink empty string catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4200_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4200: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4300') {
+      try {
+        // Test openLink with null options parameter
+        this.context.openLink("file://example.com", null, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
+            let commonEventData: commonEventManager.CommonEventPublishData = {
+              parameters: {
+                'result': err?.code,
+              }
+            }
+            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4300_event', commonEventData, (result) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4201: ${JSON.stringify(result)}`);
+              this.context.terminateSelf()
+            });
+          } else {
+            console.info('openLink succeed');
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `openLink null options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4300_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4201: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4400') {
+      try {
+        // Test openLink with undefined options parameter
+        this.context.openLink("file://example.com", undefined, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
+            let commonEventData: commonEventManager.CommonEventPublishData = {
+              parameters: {
+                'result': err?.code,
+              }
+            }
+            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
+              this.context.terminateSelf()
+            });
+          } else {
+            console.info('openLink succeed');
+                    let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `openLink undefined options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4500') {
+      try {
+        // Test openAtomicService with empty string appId parameter
+        this.context.openAtomicService("")
+        .then(() => {
+          console.info('startAbility promise succeed');
+        })
+        .catch((err: BusinessError) => {
+          console.error(`startAbility promise failed, code is ${err.code}, message is ${err.message}`);
+          let commonEventData: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': err.code,
+            }
+          }
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500_event', commonEventData, (result) => {
+            hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4500: ${JSON.stringify(result)}`);
+            this.context.terminateSelf()
+          });
+        });
+      } catch (err) {
+        console.log(TAG + `openAtomicService empty string catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4500: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4600') {
+      try {
+        // Test openAtomicService with null appId parameter
+        this.context.openAtomicService(null);
+      } catch (err) {
+        console.log(TAG + `openAtomicService null appId catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4600_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4600: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4700') {
+      try {
+        // Test openAtomicService with undefined appId parameter
+        this.context.openAtomicService(undefined);
+      } catch (err) {
+        console.log(TAG + `openAtomicService undefined appId catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4700_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4700: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4800') {
+      try {
+        // Test openAtomicService with valid appId and null options parameter
+        let options: AtomicServiceOptions = {
+          displayId: 0,
+        };
+        this.context.openAtomicService("valid.app.id", null)
+        .then(() => {
+          console.info('startAbility promise succeed');
+        })
+        .catch((err: BusinessError) => {
+          console.error(`startAbility promise failed, code is ${err.code}, message is ${err.message}`);
+          let commonEventData: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': err.code,
+            }
+          }
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800_event', commonEventData, (result) => {
+            hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4800: ${JSON.stringify(result)}`);
+            this.context.terminateSelf()
+          });
+        });
+      } catch (err) {
+        console.log(TAG + `openAtomicService null options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4800: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4900') {
+      try {
+        // Test openAtomicService with valid appId and undefined options parameter
+        let options: AtomicServiceOptions = {
+          displayId: 0,
+        };
+        this.context.openAtomicService("valid.app.id", undefined)
+        .then(() => {
+          console.info('startAbility promise succeed');
+        })
+        .catch((err: BusinessError) => {
+          console.error(`startAbility promise failed, code is ${err.code}, message is ${err.message}`);
+          let commonEventData: commonEventManager.CommonEventPublishData = {
+            parameters: {
+              'result': err.code,
+            }
+          }
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900_event', commonEventData, (result) => {
+            hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4900: ${JSON.stringify(result)}`);
+            this.context.terminateSelf()
+          });
+        });
+      } catch (err) {
+        console.log(TAG + `openAtomicService undefined options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900_event', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4900: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_5000') {
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: ['AbilityRuntime_OptionResult']
+        };
+        commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub2 = subscriber;
+          commonEventManager.subscribe(sub2, (err, commonEventData) => {
+            this.context.terminateSelf();
+            commonEventManager.unsubscribe(subscriber, (err, data) => {});
+          });
+        });
+        let testWant: Want = {
+          bundleName: "com.acts.uiextensioncontexttest",
+          abilityName: "EntryAbility2",
+          action: "result"
+        };
+        this.context.startAbility(testWant, null, (err: BusinessError) => {
+          if (err.code) {
+            console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          } else {
+            console.info('startAbility succeed');
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `startAbility null options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_5000', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5000: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_5100') {
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: ['AbilityRuntime_OptionResult']
+        };
+        commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub2 = subscriber;
+          commonEventManager.subscribe(sub2, (err, commonEventData) => {
+            this.context.terminateSelf(() => {});
+            commonEventManager.unsubscribe(subscriber, (err, data) => {});
+          });
+        });
+        let testWant: Want = {
+          bundleName: "com.acts.uiextensioncontexttest",
+          abilityName: "EntryAbility2",
+          action: "result"
+        };
+        this.context.startAbility(testWant, undefined, (err: BusinessError) => {
+          if (err.code) {
+            console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          } else {
+            console.info('startAbility succeed');
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `startAbility undefined options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_5100', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5100: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_5400') {
+      try {
+        // Test startAbilityForResult with valid want and null options parameter
+        let testWant: Want = {
+          bundleName: "com.acts.uiextensioncontexttest",
+          abilityName: "EntryAbility2",
+          action: "result"
+        };
+        this.context.startAbilityForResult(testWant, null, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+          } else {
+            console.info('startAbilityForResult succeed');
+            this.context.terminateSelf();
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `startAbilityForResult null options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_5400', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5400: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
+    if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_5500') {
+      try {
+        // Test startAbilityForResult with valid want and undefined options parameter
+        let testWant: Want = {
+          bundleName: "com.acts.uiextensioncontexttest",
+          abilityName: "EntryAbility2",
+          action: "result"
+        };
+        this.context.startAbilityForResult(testWant, undefined, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+          } else {
+            console.info('startAbilityForResult succeed');
+            this.context.terminateSelf();
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `startAbilityForResult undefined options catch failed, code is ${err}`);
+        let commonEventData: commonEventManager.CommonEventPublishData = {
+          parameters: {
+            'result': err?.code,
+          }
+        }
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_5500', commonEventData, (result) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5500: ${JSON.stringify(result)}`);
+          this.context.terminateSelf()
+        });
+      }
+    }
+
   }
 
   onSessionDestroy(session: UIExtensionContentSession) {

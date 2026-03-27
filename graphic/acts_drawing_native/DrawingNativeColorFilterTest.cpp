@@ -518,9 +518,9 @@ HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNormal, Function | 
  */
 HWTEST_F(DrawingNativeColorFilterTest, testColorFilterDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ColorFilterDestroy with empty parameter
+    OH_Drawing_ColorFilter *colorFilter = nullptr;
     OH_Drawing_ColorFilterDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(colorFilter, nullptr);
 }
 
 /**

@@ -22,7 +22,7 @@ group("distributeddatamgr") {
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
-      "PasteboardPermissionTestTaiheStatic:ActsPasteBoardPermissionsStatic",
+      "PasteboardPermissionTestTaiheStatic:ActsPasteBoardPermissionsStaticTest",
       "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
       "PasteboardTestStatic:ActsPasteboardStaticTest",
       "Pasteboardjsapitest:ActsPasteBoardETSApiTest",
@@ -50,6 +50,8 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
+      "dataObjectEtsNoPermissions_static:ActsDataObjectNoPermissionsStaticTest",
+      "RdbWithPermisionTestStatic:ActsRdbStorePermissionEtsStaticTest",
     ]
   } else {
     deps = [

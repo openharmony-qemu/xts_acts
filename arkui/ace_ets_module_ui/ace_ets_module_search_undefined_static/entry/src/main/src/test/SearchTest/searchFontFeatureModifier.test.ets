@@ -43,7 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function searchFontFeatureModifier() {
   describe('searchFontFeatureModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchFontFeatureModifier beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

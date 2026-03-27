@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,9 @@ import ArrayIsArrayTest from './array/ArrayIsArray.test';
 import ArrayLastIndexOfTest from './array/ArrayLastIndexOf.test';
 import ArrayMapTest from './array/ArrayMap.test';
 import ArrayReduceTest from './array/ArrayReduce.test';
+import ArrayConcatTest from './array/ArrayConcat.test';
+import ArrayReverseTest from './array/ArrayReverse.test';
+import ArrayShiftTest from './array/ArrayShift.test';
 
 export default function testsuite() {
     ArrayEveryTest();
@@ -55,4 +58,7 @@ export default function testsuite() {
     ArrayLastIndexOfTest();
     ArrayMapTest();
     ArrayReduceTest();
+    ArrayConcatTest();
+    ArrayReverseTest();
+    ArrayShiftTest();
 }

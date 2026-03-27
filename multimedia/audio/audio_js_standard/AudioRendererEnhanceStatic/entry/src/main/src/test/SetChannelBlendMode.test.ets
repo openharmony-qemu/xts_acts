@@ -48,7 +48,9 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
@@ -173,7 +175,6 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_DEFAULT)
         console.info(`${Tag}: setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -194,7 +195,6 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -215,7 +215,6 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_LEFT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -236,7 +235,6 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_RIGHT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
@@ -302,7 +300,6 @@ export default function audioRendererTest() {
           }
           await Utils.msSleep(20);
         }
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);

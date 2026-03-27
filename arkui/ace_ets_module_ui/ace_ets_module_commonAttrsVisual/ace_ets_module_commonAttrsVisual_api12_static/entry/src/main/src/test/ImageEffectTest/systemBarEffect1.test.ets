@@ -34,13 +34,13 @@ let testAbilityContext:common.UIAbilityContext;
 export default function systemBarEffectTest() {
 
   describe('systemBarEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("systemBarEffectTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("systemBarEffectTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/ImageEffect/systemBarEffect',

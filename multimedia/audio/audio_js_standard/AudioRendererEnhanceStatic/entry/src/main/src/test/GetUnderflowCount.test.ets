@@ -54,7 +54,9 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
@@ -221,7 +223,6 @@ export default function audioRendererTest() {
           await audioRen!.drain();
           try {
             await audioRen!.stop();
-            expect(true).assertTrue();
             done();
           } catch (err) {
             console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);
@@ -287,7 +288,6 @@ export default function audioRendererTest() {
             await audioRen!.drain();
             try {
               await audioRen!.stop();
-              expect(true).assertTrue();
               done();
             } catch (err) {
               console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);

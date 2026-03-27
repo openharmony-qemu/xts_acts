@@ -42,6 +42,7 @@ namespace ArkUICapiTest {
 #define PARAM_1 1
 #define PARAM_2 2
 #define PARAM_3 3
+#define PARAM_NEGATIVE_3 (-3)
 #define PARAM_4 4
 #define PARAM_5 5
 #define PARAM_6 6

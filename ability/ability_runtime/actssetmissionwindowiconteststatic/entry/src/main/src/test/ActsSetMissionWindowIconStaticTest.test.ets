@@ -24,7 +24,7 @@ import Utils from './Util.test';
 let testAbilityContext: common.UIAbilityContext | undefined;
 export default function ActsSetMissionWindowIconStaticTest() {
   describe('ActsSetMissionWindowIconStaticTest', () => {
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info('beforeEach start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.setmissionicon.static")

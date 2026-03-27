@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listOffsetJsunit() {
   describe('listOffsetJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

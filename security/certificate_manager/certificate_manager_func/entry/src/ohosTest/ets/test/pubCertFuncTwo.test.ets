@@ -40,12 +40,97 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PriCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let keystore: Uint8Array = new Uint8Array([]);
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystoreNull: Uint8Array = new Uint8Array([]);
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
       try {
-        certManager.installPrivateCertificate(keystore, keystorePwd, certAlias).then((cmResult) => {
+        certManager.installPrivateCertificate(keystoreNull, keystorePwd, certAlias).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(undefined, keystorePwd, certAlias).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, "", certAlias).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, null, certAlias).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, undefined, certAlias).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, keystorePwd, "").then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, keystorePwd, null).then((cmResult) => {
+          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.installPrivateCertificate(keystore, keystorePwd, undefined).then((cmResult) => {
           let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
           expect(null).assertFail();
         }).catch((err: BusinessError) => {
@@ -194,6 +279,34 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0105 Failed to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+      try {
+        certManager.uninstallPrivateCertificate(null, (err, result) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0105 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_PriCertJsApi_Func_0105 Succeeded in uninstalling private certificate.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0105 Failed to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.uninstallPrivateCertificate(undefined, (err, result) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0105 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_PriCertJsApi_Func_0105 Succeeded in uninstalling private certificate.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0105 Failed to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -209,9 +322,49 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let cmHandle: Uint8Array = new Uint8Array([
         0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
       ]);
-      let srcData: Uint8Array = new Uint8Array([]);
+      let cmHandleNull: Uint8Array = new Uint8Array([]);
+      let srcData: Uint8Array = new Uint8Array([
+        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
+      ]);
+      let srcDataNull: Uint8Array = new Uint8Array([]);
       try {
-        certManager.update(cmHandle, srcData).then((result) => {
+        certManager.update(cmHandleNull, srcData).then((result) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0100 Succeeded in updating.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        certManager.update(undefined, srcData).then((result) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0100 Succeeded in updating.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        certManager.update(cmHandle, srcDataNull).then((result) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0100 Succeeded in updating.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        certManager.update(cmHandle, undefined).then((result) => {
           console.info('SUB_Security_CertManager_SignThree_Func_0100 Succeeded in updating.');
           expect(null).assertFail();
         }).catch((err: BusinessError) => {
@@ -237,9 +390,55 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let cmHandle: Uint8Array = new Uint8Array([
         0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
       ]);
-      let srcData: Uint8Array = new Uint8Array([]);
+      let srcData: Uint8Array = new Uint8Array([
+        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
+      ]);
+      let cmHandleNull: Uint8Array = new Uint8Array([]);
+      let srcDataNull: Uint8Array = new Uint8Array([]);
       try {
-        certManager.update(cmHandle, srcData, (err, result) => {
+        certManager.update(cmHandleNull, srcData, (err, result) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0101 Succeeded in updating.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.update(undefined, srcData, (err, result) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0101 Succeeded in updating.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.update(cmHandle, srcDataNull, (err, result) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0101 Succeeded in updating.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.update(cmHandle, undefined, (err, result) => {
           if (err != null) {
             console.error(`SUB_Security_CertManager_SignThree_Func_0101 Failed to update. Code: ${err.code}, message: ${err.message}`);
             expect(null).assertFail();
@@ -267,9 +466,37 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let cmHandle: Uint8Array = new Uint8Array([
         0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
       ]);
-      let signRes: Uint8Array = new Uint8Array([]);
+      let cmHandleNull: Uint8Array = new Uint8Array([]);
+      let signRes: Uint8Array = new Uint8Array([
+        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
+      ]);
+      let signResNull: Uint8Array = new Uint8Array([]);
       try {
-        certManager.finish(cmHandle, signRes).then((cmResult) => {
+        certManager.finish(cmHandleNull, signRes).then((cmResult) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0102 Succeeded in finishing verification.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0102 Failed to finish verification. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0102 Failed to finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.finish(undefined, signRes).then((cmResult) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0102 Succeeded in finishing verification.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0102 Failed to finish verification. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0102 Failed to finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.finish(cmHandle, signResNull).then((cmResult) => {
           console.info('SUB_Security_CertManager_SignThree_Func_0102 Succeeded in finishing verification.');
           expect(null).assertFail();
         }).catch((err: BusinessError) => {
@@ -295,9 +522,55 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let cmHandle: Uint8Array = new Uint8Array([
         0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
       ]);
-      let signRes: Uint8Array = new Uint8Array([]);
+      let signRes: Uint8Array = new Uint8Array([
+        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08
+      ]);
+      let cmHandleNull: Uint8Array = new Uint8Array([]);
+      let signResNull: Uint8Array = new Uint8Array([]);
       try {
-        certManager.finish(cmHandle, signRes, (err, cmResult) => {
+        certManager.finish(cmHandleNull, signRes, (err, cmResult) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0103 Succeeded in finishing.');
+            expect(null).assertFail();
+          }
+        });
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.finish(undefined, signRes, (err, cmResult) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0103 Succeeded in finishing.');
+            expect(null).assertFail();
+          }
+        });
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.finish(cmHandle, signResNull, (err, cmResult) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0103 Succeeded in finishing.');
+            expect(null).assertFail();
+          }
+        });
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.finish(cmHandle, undefined, (err, cmResult) => {
           if (err != null) {
             console.error(`SUB_Security_CertManager_SignThree_Func_0103 Failed to finish. Code: ${err.code}, message: ${err.message}`);
             expect(null).assertFail();
@@ -341,6 +614,24 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to finish. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+
+      try {
+        certManager.finish(null, (err, cmResult) => {
+        });
+        expect(null).assertFail();
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to null finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      
+      try {
+        certManager.finish(undefined, (err, cmResult) => {
+        });
+        expect(null).assertFail();
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0104 Failed to undefined finish. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -366,6 +657,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         console.error(`SUB_Security_CertManager_SignThree_Func_0105 Failed to abort. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+      try {
+        certManager.abort(undefined).then((result) => {
+          console.info('SUB_Security_CertManager_SignThree_Func_0105 Succeeded in aborting.');
+          expect(null).assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(`SUB_Security_CertManager_SignThree_Func_0105 Failed to abort. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0105 Failed to abort. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -381,6 +684,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let cmHandle: Uint8Array = new Uint8Array([]);
       try {
         certManager.abort(cmHandle, (err, cmResult) => {
+          if (err != null) {
+            console.error(`SUB_Security_CertManager_SignThree_Func_0106 Failed to abort. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            console.info('SUB_Security_CertManager_SignThree_Func_0106 Succeeded in aborting.');
+            expect(null).assertFail();
+          }
+        });
+      } catch(error) {
+        console.error(`SUB_Security_CertManager_SignThree_Func_0106 Failed to abort. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.abort(undefined, (err, cmResult) => {
           if (err != null) {
             console.error(`SUB_Security_CertManager_SignThree_Func_0106 Failed to abort. Code: ${err.code}, message: ${err.message}`);
             expect(null).assertFail();

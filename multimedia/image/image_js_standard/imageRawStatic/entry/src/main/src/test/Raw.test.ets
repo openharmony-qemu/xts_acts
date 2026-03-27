@@ -33,7 +33,7 @@ export default function imageRaw() {
       console.info("beforeAll case");
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("beforeEach case");
       await initialize();
       filesDir = Hypium.get('filesDir') as string;

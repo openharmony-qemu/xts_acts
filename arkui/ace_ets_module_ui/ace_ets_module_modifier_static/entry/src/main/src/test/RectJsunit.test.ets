@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 
 export default function rectJsunit() {
   describe('rectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

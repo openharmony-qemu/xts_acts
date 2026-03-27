@@ -56,7 +56,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperItemPadding() {
   describe('swiperItemPadMarTest01', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperItemPadding beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

@@ -39,7 +39,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function SearchOnSubmitTest() {
   describe('SearchOnSubmitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnSubmitTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")
@@ -76,42 +76,55 @@ export default function SearchOnSubmitTest() {
      */
     it('SearchOnSubmitTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SearchOnSubmitTest_0010 START');
+      let driver = Driver.create();
       await CommonFunc.sleep(1000);
-
-      let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let strJson1 = inspector.getInspectorByKey('enterKeyType');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("Search enterKeyType content: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('');
-      let Search = await driver.findComponent(ON.id('SearchTest')) as Component;
-      await Search.click();
-      await CommonFunc.sleep(500);
-
-      let button1 = await driver.findComponent(ON.id('changeIsOnSubmitValid')) as Component;
-      await button1.click();
-      await CommonFunc.sleep(500);
-      await Search.inputText('HelloWorld');
+      let search = await driver.findComponent(ON.id('Search')) as Component;
+      await CommonFunc.sleep(1000);
+      await search.longClick();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('enterKeyType');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("Search enterKeyType content: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('HelloWorld');
+      let strJson = inspector.getInspectorByKey('Text');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        'false');
+      await CommonFunc.sleep(1000);
+      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      await CommonFunc.sleep(1000);
+      await search2.click();
+      await CommonFunc.sleep(1000);
 
-      await Search.doubleClick();
-      await CommonFunc.sleep(500);
-      let button2 = await driver.findComponent(ON.id('changeIsOnSubmitValid')) as Component;
-      await button2.click();
-      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('button_onSubmit')) as Component;
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await search.longClick();
+      await CommonFunc.sleep(1000);
+
+      await driver.triggerKey(2054)
+      await CommonFunc.sleep(1000);
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        'true');
+      await CommonFunc.sleep(1000);
+      await search2.click();
+      await CommonFunc.sleep(1000);
+
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await search.longClick();
+      await CommonFunc.sleep(1000);
+
       await driver.triggerKey(2054);
       await CommonFunc.sleep(1000);
-      let strJson3 = inspector.getInspectorByKey('enterKeyType');
-      let obj3 = JSON.parseJsonElement(strJson3);
-      console.info("Search enterKeyType content: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
-      expect(obj3.getElement('$attrs').getString('content')).assertEqual('');
-      console.info('[SearchOnSubmitTest_0010] END');
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        'false');
+      console.info('[SearchOnSubmitModifierTest_static_0010] END');
       done();
     });
   })

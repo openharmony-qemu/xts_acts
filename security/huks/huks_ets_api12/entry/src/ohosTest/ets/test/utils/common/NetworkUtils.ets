@@ -14,7 +14,7 @@
  */
 import { wifiManager } from '@kit.ConnectivityKit'
 import { Logger } from './Logger';
-import { Sleep } from './CommonUtils.ets';
+import { Sleep } from './CommonUtils';
 
 export async function CheckWifiInfo() {
   if (!wifiManager.isWifiActive()){

@@ -96,7 +96,7 @@ export default function ActsCommonEventSystemAPITest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 
@@ -587,7 +587,7 @@ export default function ActsCommonEventSystemAPITest() {
             } as notificationManager.NotificationContent,
           }
           notificationManager.publish(notificationRequest, publishCallback)
-          //await Utils.msSleep(60)
+          await Utils.msSleep(60)
         }
       })
 

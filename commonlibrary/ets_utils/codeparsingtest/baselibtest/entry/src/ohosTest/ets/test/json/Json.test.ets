@@ -24,6 +24,19 @@ function reviverFunc(key: string, value: Object) {
   return value;
 }
 
+interface Person {
+  name: string;
+  age: number;
+  city: string;
+}
+
+function replacer(key: string, value: Object): Object {
+  if (typeof value === "string") {
+    return value.toUpperCase();
+  }
+  return value;
+}
+
 export default function JsonTest() {
   describe('jsonTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -1826,5 +1839,71 @@ export default function JsonTest() {
       }
     });
 
+    /**
+     * @tc.name   testRemove0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_JSONREMOVE_1400
+     * @tc.desc   Testing JSON testHas function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRemove0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const jsonText =
+        '{"name": "!!\"\"##$$%%\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~", "age": 30, "city": "New York"}';
+      try {
+        let obj1 = JSON.parse(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let obj2 = JSON.parse(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        let obj2 = JSON.parse('');
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      let person: Person = { name: "John", age: 30, city: "New York" };
+
+      let rstArrStr = JSON.stringify(person, [1, 2]);
+      expect(rstArrStr).assertEqual("{}");
+      let rstStrSpace = JSON.stringify(person, ["name", "age"], '  ');
+      expect(rstStrSpace.length).assertEqual(33);
+      expect(rstStrSpace).assertEqual('{\n' +
+        '  "name": "John",\n' +
+        '  "age": 30\n' +
+        '}')
+      let rstStrStar = JSON.stringify(person, ["name", "age"], '  &&');
+      expect(rstStrStar.length).assertEqual(37);
+      expect(rstStrStar).assertEqual('{\n' +
+        '  &&"name": "John",\n' +
+        '  &&"age": 30\n' +
+        '}')
+      try {
+        let rstStrStar1 = JSON.stringify(person, ["name", "age"], null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      let rstStrStar2 = JSON.stringify(person, ["name", "age"], undefined);
+      expect(rstStrStar2.length).assertEqual(24);
+      expect(rstStrStar2).assertEqual('{"name":"John","age":30}');
+
+      let inputObj = { "name": "John", "age": 30, "city": "ChongQing" } as Person;
+      let res1 = JSON.stringify(inputObj, replacer);
+      expect(res1).assertEqual('{"name":"JOHN","age":30,"city":"CHONGQING"}');
+      try {
+        let res2 = JSON.stringify(inputObj, replacer, null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      let res3 = JSON.stringify(inputObj, replacer, undefined);
+      expect(res3).assertEqual('{"name":"JOHN","age":30,"city":"CHONGQING"}');
+    });
+
   })
 }
+

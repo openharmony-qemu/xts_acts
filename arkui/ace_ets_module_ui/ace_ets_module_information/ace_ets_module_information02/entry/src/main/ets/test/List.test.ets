@@ -30,6 +30,8 @@ import ProgressMask from './ProgressTest/ProgressMask.test';
 import ProgressPrivacySensitiveTest from './ProgressTest/ProgressPrivacySensitive.test';
 import ProgressScaleCountTest from './ProgressTest/ProgressScaleCountTest.test';
 import ProgressStyleTest from './ProgressTest/ProgressStyleTest.test';
+import LoadingProgressPropertiesNullUndefinedTest from './ProgressTest/LoadingProgressPropertiesNullUndefinedTest.test';
+import ProgressPropertiesNullUndefinedTest from './ProgressTest/ProgressPropertiesNullUndefinedTest.test';
 
 import TextClockApiTest from './TextClockTest/TextClockApiTest.test';
 import TextClockJsunit from './TextClockTest/TextClockJsunit.test';
@@ -38,6 +40,7 @@ import TextClockLongJsunit from './TextClockTest/TextClockLongJsunit.test';
 import TextClockDateTimeOptionsTest from './TextClockTest/TextClockDateTimeOptions.test';
 import TextClockFormatTest from './TextClockTest/TextClockFormat.test';
 import TextClockNodeTest from './TextClockTest/TextClockNodeTest.test';
+import TextClockPropertiesNullUndefinedTest from './TextClockTest/TextClockPropertiesNullUndefined.test';
 
 import TextTimerApiTest from './TextTimerTest/TextTimerApiTest.test';
 import TextTimerJsunit from './TextTimerTest/TextTimerJsunit.test';
@@ -45,6 +48,7 @@ import TextTimerJsunit2 from './TextTimerTest/TextTimerJsunit2.test';
 import TextTimerFontWeightTest from './TextTimerTest/TextTimerFontWeight.test';
 import TextTimerNodeTest from './TextTimerTest/TextTimerNode.test';
 import TextTimerTextShadowTest from './TextTimerTest/TextTimerTextShadow.test';
+import TextTimerPropertiesNullUndefinedTest from './TextTimerTest/TextTimerPropertiesNullUndefined.test';
 
 
 export default function testsuite() {
@@ -65,6 +69,8 @@ export default function testsuite() {
     ProgressPrivacySensitiveTest()
     ProgressScaleCountTest()
     ProgressStyleTest()
+    LoadingProgressPropertiesNullUndefinedTest()
+    ProgressPropertiesNullUndefinedTest()
     // TextClockTest
     TextClockApiTest()
     TextClockJsunit()
@@ -73,6 +79,7 @@ export default function testsuite() {
     TextClockDateTimeOptionsTest()
     TextClockFormatTest()
     TextClockNodeTest()
+    TextClockPropertiesNullUndefinedTest()
     // TextTimerTest
     TextTimerApiTest()
     TextTimerJsunit()
@@ -80,4 +87,5 @@ export default function testsuite() {
     TextTimerFontWeightTest()
     TextTimerNodeTest()
     TextTimerTextShadowTest()
+    TextTimerPropertiesNullUndefinedTest()
 }

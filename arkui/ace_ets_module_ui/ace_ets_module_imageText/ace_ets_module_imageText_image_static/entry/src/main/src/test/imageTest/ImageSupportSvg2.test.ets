@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function ImageSupportSvg2Test() {
   describe('ImageSupportSvg2Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageSupportSvg2Test beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

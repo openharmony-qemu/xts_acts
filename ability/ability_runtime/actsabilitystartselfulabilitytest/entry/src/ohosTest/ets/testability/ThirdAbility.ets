@@ -14,24 +14,30 @@
  */
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import common from '@ohos.app.ability.common';
 import { window } from '@kit.ArkUI';
 
 const DOMAIN = 0x0000;
 
+function sleep(time: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, time))
+}
+
 export default class IsolationEntryThirdAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onCreate');
+   
   }
 
   onDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onWindowStageCreate');
 
-    windowStage.loadContent('testAbility/pages/Index', (err) => {
+    windowStage.loadContent('testability/pages/Index', (err) => {
       if (err.code) {
         hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
@@ -43,16 +49,19 @@ export default class IsolationEntryThirdAbility extends UIAbility {
 
   onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onWindowStageDestroy');
   }
 
   onForeground(): void {
     // Ability has brought to foreground
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onForeground');
+    AppStorage.setOrCreate<common.UIAbilityContext>('ThirdAbilityContext', this.context);
+    this.context.terminateSelf();
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility terminateSelf');
   }
 
   onBackground(): void {
     // Ability has back to background
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'IsolationEntryThirdAbility onBackground');
   }
 }

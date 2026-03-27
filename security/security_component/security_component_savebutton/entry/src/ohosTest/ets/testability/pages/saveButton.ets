@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -183,6 +183,36 @@ struct saveButton {
       }
       if (eventData.data.strokeWth != null) {
         this.strokeWidth = eventData.data.strokeWth;
+      }
+      if (eventData.data.maxFontSize != null) {
+        this.maxFontSize = eventData.data.maxFontSize;
+      }
+      if (eventData.data.minFontSize != null) {
+        this.minFontSize = eventData.data.minFontSize;
+      }
+      if (eventData.data.maxFontScale != null) {
+        this.maxFontScale = eventData.data.maxFontScale;
+      }
+      if (eventData.data.minFontScale != null) {
+        this.minFontScale = eventData.data.minFontScale;
+      }
+      if (eventData.data.enable != null) {
+        this.enable = eventData.data.enable;
+      }
+      if (eventData.data.heightAdaptivePolicy != null) {
+        this.heightAdaptivePolicy = eventData.data.heightAdaptivePolicy;
+      }
+      if (eventData.data.maxLines != null) {
+        this.maxLines = eventData.data.maxLines;
+      }
+      if (eventData.data.alignRule != null) {
+        this.alignRule = eventData.data.alignRule;
+      }
+      if (eventData.data.chainDirection != null) {
+        this.chainDirection = eventData.data.chainDirection;
+      }
+      if (eventData.data.chainStyle != null) {
+        this.chainStyle = eventData.data.chainStyle;
       }
     }
   }

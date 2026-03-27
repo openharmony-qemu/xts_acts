@@ -24,6 +24,7 @@
     "pages": "$profile:test_pages",
     "abilities": [
       {
+        "orientation": "auto_rotation",
         "name": "TestAbility",
         "srcEntry": "./ets/testability/TestAbility.ets",
         "description": "$string:TestAbility_desc",

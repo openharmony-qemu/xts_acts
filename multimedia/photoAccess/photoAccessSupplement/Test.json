@@ -42,6 +42,8 @@
                 "./resource/medialibrary/01.gif ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/stm_RAW.dng ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/media/1vp9_320x240_30.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
+                "./resource/medialibrary/test_mov_1.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
+                "./resource/medialibrary/test_mov_1.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/01.jpg ->/data/tmp/case",
                 "./resource/medialibrary/test_exif.jpg ->/data/tmp/case",
                 "./resource/medialibrary/01.gif ->/data/tmp/case",
@@ -80,6 +82,7 @@
         },
         {
             "test-file-name": [
+                "ActsPhotoAccessXtsSuppMainTest.hap",
                 "ActsPhotoAccessXtsSuppTest.hap"
             ],
             "type": "AppInstallKit",

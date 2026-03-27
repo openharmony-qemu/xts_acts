@@ -123,9 +123,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       for (let i = 0; i < 1; i++) {
@@ -167,9 +167,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times,error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -219,9 +219,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Number parameters and Number return values, and execute them 10 times,error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -269,9 +269,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -307,9 +307,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times,error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -358,9 +358,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with bigint parameters and bigint return values, and execute them 10 times,error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -409,9 +409,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       for (let i = 0; i < 1; i++) {
@@ -439,9 +439,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let count: Number = 0;
       const promises: Array<Promise<void>> = new Array<Promise<void>>();
@@ -486,9 +486,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with null parameters and null return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let count: Number = 0;
@@ -533,9 +533,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Array parameters and Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -569,9 +569,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Array parameters and Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -622,9 +622,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Map parameters and Map return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask01500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask01500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -657,9 +657,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Map parameters and Map return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -708,9 +708,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Set parameters and Set return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -746,9 +746,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Set parameters and Set return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -801,9 +801,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -836,9 +836,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int8Array parameters and Int8Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -888,9 +888,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -923,9 +923,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint8Array parameters and Uint8Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -976,9 +976,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1011,9 +1011,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int16Array parameters and Int16Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1063,9 +1063,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1098,9 +1098,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint16Array parameters and Uint16Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1150,9 +1150,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1185,9 +1185,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Int32Array parameters and Int32Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1237,9 +1237,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -1272,9 +1272,9 @@ export default function TaskGroupAbilityTest() {
      * @tc.desc Create two tasks with Uint32Array parameters and Uint32Array return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolTaskGroupTask3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 

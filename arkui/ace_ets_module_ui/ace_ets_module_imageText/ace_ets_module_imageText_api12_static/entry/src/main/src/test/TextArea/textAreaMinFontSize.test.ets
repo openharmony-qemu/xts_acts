@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaMinFontSize() {
   describe('textAreaMinFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaMinFontSize beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

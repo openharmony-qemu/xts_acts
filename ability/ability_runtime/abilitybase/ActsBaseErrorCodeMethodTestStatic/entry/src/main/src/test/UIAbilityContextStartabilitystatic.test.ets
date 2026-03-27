@@ -40,6 +40,17 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
   onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
     console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
   }
+
+  completionHandler?: CompletionHandlerForAbilityStartCallback = {
+    onRequestSuccess: (name: string) => {
+      hilog.info(domain, tag, `startAbilityByType onRequestSuccess called,
+            name: ${JSON.stringify(name)}`);
+    },
+    onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => {
+      hilog.info(domain, tag, `startAbilityByType onRequestFailure called,
+            name: ${JSON.stringify(name)}, failureCode: ${failureCode}, failureMessage: ${failureMessage}`);
+    }
+  }
 }
 
 export default function UiAbilityContextStartAbilityStatic() {
@@ -783,6 +794,75 @@ export default function UiAbilityContextStartAbilityStatic() {
       } catch (Error) {
         Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByTypeStatic003
+     * @tc.number ACTS_UIExtension_StartAbilityByTypeStatic003
+     * @tc.desc   Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic003 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context?.startAbilityByType("", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
+          if (err != null && err?.code != 0) {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType003 err, err:" + JSON.stringify(err));
+            return;
+          } else {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType003 success:");
+          }
+        }))
+        await Utils.msSleep(200);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error) {
+        Error = Error as BusinessError;
+        hilog.info(domain, tag, `startAbilityByType003 fail: ` + JSON.stringify(Error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByTypeStatic004
+     * @tc.number ACTS_UIExtension_StartAbilityByTypeStatic004
+     * @tc.desc   Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic004 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context?.startAbilityByType("", wantParam, abilityStartCallback).then(() => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType004 success");
+        }).catch((error: Error): void => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType004 fail, err:" + JSON.stringify(error));
+        })
+        await Utils.msSleep(200);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error) {
+        Error = Error as BusinessError;
+        hilog.info(domain, tag, `startAbilityByType004 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
       }

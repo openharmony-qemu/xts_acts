@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,6 @@
 #define PARAM_2 2
 #define PARAM_3 3
 #define PARAM_NEGATIVE_1 (-1)
-#define SUCCESS 0
 #define INVALID_PARAM 401
 #define NULL_PARAM 404
 #define PARAM_0_POINT_8 0.8
@@ -34,6 +33,8 @@
 #define PARAM_0_POINT_2 0.2
 #define EPSILON (1.0e-6)
 
+constexpr int SUCCESS = 0;
+constexpr int FAIL = -1;
 /**
  * Log print domain.
  */

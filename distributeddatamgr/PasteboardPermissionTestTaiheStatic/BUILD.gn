@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsPasteBoardPermissionsStatic") {
+ohos_js_app_static_suite("ActsPasteBoardPermissionsStaticTest") {
   #  test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsPasteBoardPermissionsStatic"
+  hap_name = "ActsPasteBoardPermissionsStaticTest"
   part_name = "pasteboard"
   subsystem_name = "distributeddatamgr"
 }

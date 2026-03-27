@@ -88,6 +88,24 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_create_32400003 strategy.timeout = -10 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }
+      try {
+        let metrics: Array<PerfMetric> = []
+        let perfTestStrategy: PerfTestStrategy = {
+          metrics: metrics,
+          actionCode: (finish: Callback<boolean>) => {
+            finish(true)
+          },
+          iterations: 5,
+          resetCode: (finish: Callback<boolean>) => {
+            finish(true)
+          },
+        }
+        let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_PerfTest_create_32400003 strategy.metrics = [] error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
       console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
     })
 

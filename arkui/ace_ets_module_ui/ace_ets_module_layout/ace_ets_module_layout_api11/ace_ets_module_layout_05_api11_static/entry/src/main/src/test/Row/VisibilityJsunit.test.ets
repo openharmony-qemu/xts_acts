@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function visibilityJsunit() {
   describe('appInfoTest_five_5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_five_5 beforeAll start");
            
       await UtilsTest.msSleep(4000)

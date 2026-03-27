@@ -35,7 +35,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function showAlertDialogBackgroundEffectTest() {
   describe('ShowAlertDialogBackgroundEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showAlertDialogBackgroundEffect beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
     });

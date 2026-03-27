@@ -39,13 +39,12 @@ struct WebMediaOption {
   @State options: WebMediaOptions = { resumeInterval: 2, audioExclusive: true }
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
-
+  @State valueChangeEvent: events_emitter.InnerEvent = {
+    eventId: 300600,
+    priority: events_emitter.EventPriority.LOW
+  }
   onPageShow() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 300600,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    events_emitter.on(this.valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
@@ -74,6 +73,114 @@ struct WebMediaOption {
           switch (this.str) {
             case "emitMediaOptions001": {
               try {
+                let flag = '';
+                this.controller.requestFocus();
+                this.controller.runJavaScript("play()", (error, result) => {
+                  if (error) {
+                    console.log(`The controller.play() return error is: ${error}`);
+                  }
+                  if (result) {
+                    flag = result;
+                    console.log(`The controller.play() return value is: ${result}`);
+                  }
+                })
+                await waitForExist(()=>flag, this.str, 'false');
+                flag = '';
+                this.controllerTwo.requestFocus();
+                this.controllerTwo.runJavaScript("play()", (error, result) => {
+                  if (error) {
+                    console.log(`The controllerTwo.play() return error is: ${error}`);
+                  }
+                  if (result) {
+                    flag = result;
+                    console.log(`The controllerTwo.play() return value is: ${result}`);
+                  }
+                })
+                await waitForExist(()=>flag, this.str, 'true');
+                this.controller.runJavaScript("checkState()", (error, result) => {
+                  if (error) {
+                    console.log(`The controller.checkState() return error is: ${error}`);
+                  }
+                  if (result) {
+                    this.checkResult = result
+                    console.log(`The controller.checkState() return value is: ${result}`);
+                  }
+                })
+                this.controllerTwo.runJavaScript("checkState()", (error, result) => {
+                  if (error) {
+                    console.log(`The controllerTwo.checkState() return error is: ${error}`);
+                  }
+                  if (result) {
+                    this.checkResultTwo = result
+                    console.log(`The controllerTwo.checkState() return value is: ${result}`);
+                  }
+                })
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              this.controller.runJavaScript("test()", () => {
+                Utils.emitEvent((this.checkResult == this.checkResultTwo), this.firstId)
+              })
+              break;
+            }
+            case "emitMediaOptions002": {
+              try {
+                this.firstId=300630
+                this.options= { resumeInterval: 2, audioExclusive: false }
+                let flag = '';
+                this.controller.requestFocus();
+                this.controller.runJavaScript("play()", (error, result) => {
+                  if (error) {
+                    console.log(`The controller.play() return error is: ${error}`);
+                  }
+                  if (result) {
+                    flag = result;
+                    console.log(`The controller.play() return value is: ${result}`);
+                  }
+                })
+                await waitForExist(()=>flag, this.str, 'false');
+                flag = '';
+                this.controllerTwo.requestFocus();
+                this.controllerTwo.runJavaScript("play()", (error, result) => {
+                  if (error) {
+                    console.log(`The controllerTwo.play() return error is: ${error}`);
+                  }
+                  if (result) {
+                    flag = result;
+                    console.log(`The controllerTwo.play() return value is: ${result}`);
+                  }
+                })
+                await waitForExist(()=>flag, this.str, 'true');
+                this.controller.runJavaScript("checkState()", (error, result) => {
+                  if (error) {
+                    console.log(`The controller.checkState() return error is: ${error}`);
+                  }
+                  if (result) {
+                    this.checkResult = result
+                    console.log(`The controller.checkState() return value is: ${result}`);
+                  }
+                })
+                this.controllerTwo.runJavaScript("checkState()", (error, result) => {
+                  if (error) {
+                    console.log(`The controllerTwo.checkState() return error is: ${error}`);
+                  }
+                  if (result) {
+                    this.checkResultTwo = result
+                    console.log(`The controllerTwo.checkState() return value is: ${result}`);
+                  }
+                })
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              this.controller.runJavaScript("test()", () => {
+                Utils.emitEvent((this.checkResult == this.checkResultTwo), this.firstId)
+              })
+              break;
+            }
+            case "emitMediaOptions003": {
+              try {
+                this.firstId=300650
+                this.options= { resumeInterval: undefined, audioExclusive: true }
                 let flag = '';
                 this.controller.requestFocus();
                 this.controller.runJavaScript("play()", (error, result) => {

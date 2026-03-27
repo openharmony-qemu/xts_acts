@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,11 +14,17 @@
  */
 
 #include "nativeFontNdk.h"
-#include <cmath>
+#include "common.h"
+#include <hilog/log.h>
 #include <vector>
+#include <codecvt>
+#include <filesystem>
+#include <fstream>
+#include <sstream>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
-#define SUCCESS 0
-#define FAIL (-1)
 #define ARR_NUM_0 0
 #define ARR_NUM_1 1
 #define ARR_NUM_2 2
@@ -41,8 +47,19 @@
 #define NUM_10000 10000
 
 namespace {
+    // 测试常量
     const double DEFAULT_FONT_SIZE = 50;
     const double MAX_WIDTH = 800.0;
+    const int ZERO_MINUS_ONE = -1;
+    const int MIN_FONT_WEIGHT = 100;
+    const int MAX_FONT_WEIGHT = 1000;
+    const int TEST_FONT_SIZE = 12;
+    const double TEST_LINE_HEIGHT = 1.5;
+    const int TEST_TEXT_ALIGN = 1;
+    const int INVALID_ATTRIBUTE_ID = 9999;
+    const int INVALID_VALUE = -1;
+    constexpr const char* TEST_FONT_FILE_PATH = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+    constexpr const char* SYMBOL_FILE = "/system/fonts/HMSymbolVF.ttf";
 }
 
 static OH_Drawing_TypographyStyle *typoStyle_ = nullptr;
@@ -56,6 +73,46 @@ static OH_Drawing_TypographyCreate *handler2_ = nullptr;
 static OH_Drawing_FontCollection *fontCollection2_ = nullptr;
 static OH_Drawing_TextStyle *txtStyle2_ = nullptr;
 static OH_Drawing_TypographyStyle *typoStyle2_ = nullptr;
+
+bool NearEqual(const double left, const double right)
+{
+    constexpr double epsilon = 0.001f;
+    return (std::abs(left - right) <= epsilon);
+}
+
+// read font file to memory buffer
+static bool ReadFontFileToBuffer(const char* filePath, void** outData, size_t* outSize)
+{
+    if (filePath == nullptr || outData == nullptr || outSize == nullptr) {
+        return false;
+    }
+
+    FILE* fp = fopen(filePath, "rb");
+    if (fp == nullptr) {
+        return false;
+    }
+
+    fseek(fp, 0, SEEK_END);
+    *outSize = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+
+    *outData = malloc(*outSize);
+    if (*outData == nullptr) {
+        fclose(fp);
+        return false;
+    }
+
+    size_t readSize = fread(*outData, 1, *outSize, fp);
+    fclose(fp);
+    return (readSize == *outSize);
+}
+
+std::string ConvertUtf16ToUtf8(const uint8_t* utf16Data, uint32_t utf16Len)
+{
+    std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> converter;
+    std::u16string utf16String(reinterpret_cast<const char16_t*>(utf16Data), utf16Len / 2);
+    return converter.to_bytes(utf16String);
+}
 
 static void PrepareCreateTextLine(const std::string &text)
 {
@@ -806,12 +863,6 @@ napi_value OHDrawingTypographyHandlerAddEncodedText009(napi_env env, napi_callba
     return result;
 }
 
-bool NearEqual(const double left, const double right)
-{
-    constexpr double epsilon = 0.001f;
-    return (std::abs(left - right) <= epsilon);
-}
-
 napi_value OHDrawingSetTypographyStyleAttributeDouble001(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -978,8 +1029,359 @@ napi_value OHDrawingGetFontFullDescriptorsFromPath001(napi_env env, napi_callbac
     const OH_Drawing_FontFullDescriptor *desc1 = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, index);
     NAPI_ASSERT(env, desc1 == nullptr, "desc1 != nullptr, has error");
     OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
-    OH_Drawing_DestroyFontFullDescriptors(nullptr);
     free(invalidPath);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorsFromPath002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    
+    // Test empty path
+    const char* emptyPath = "";
+    OH_Drawing_Array* fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(emptyPath);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    // Test NULL path
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(nullptr);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    // Test non-existent path
+    const char* invalidPath = "/invalid/path/to/font.ttf";
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(invalidPath);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorsFromPath003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    
+    // Create long path safely
+    std::string longPath(1023, 'a'); // Create string with 1023 'a' characters
+    longPath += '\0'; // Null-terminate
+
+    OH_Drawing_Array* fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(longPath.c_str());
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    // Test path with special characters
+    const char* specialPath = "/system/fonts/test\0null.ttf";
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(specialPath);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    // Test relative path
+    const char* relativePath = "./font.ttf";
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(relativePath);
+    // Relative path may be valid or invalid
+    if (fontDescArray != nullptr) {
+        OH_Drawing_DestroyFontFullDescriptors(fontDescArray);
+    }
+    
+    // Test path without permission
+    const char* noPermissionPath = "/proc/kallsyms";
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(noPermissionPath);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    // Test non-font file
+    const char* notFontFile = "/system/etc/hosts";
+    fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(notFontFile);
+    NAPI_ASSERT_NO_MES(fontDescArray == nullptr);
+    
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+bool StrcmpUtf8(OH_Drawing_String result, char *expect)
+{
+    return strcmp(ConvertUtf16ToUtf8(result.strData, result.strLen).c_str(), expect) == 0;
+}
+
+napi_value OHDrawingGetFontFullDescriptorAttributeString001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    char *validPath = strdup("/system/fonts/HarmonyOS_Sans.ttf");
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromPath(validPath);
+    NAPI_ASSERT(env, fontFullDescArr != nullptr, "fontFullDescArr");
+    NAPI_ASSERT(env, OH_Drawing_GetDrawingArraySize(fontFullDescArr) == 1,
+        "OH_Drawing_GetDrawingArraySize(fontFullDescArr) != 1");
+
+    const OH_Drawing_FontFullDescriptor *desc = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, 0);
+    NAPI_ASSERT(env, desc != nullptr, "desc");
+    const OH_Drawing_FontFullDescriptor *desc1 = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, 1);
+    NAPI_ASSERT(env, desc1 == nullptr, "desc1");
+
+    OH_Drawing_String path = {.strData = nullptr, .strLen = 0};
+    OH_Drawing_ErrorCode errorCode0 =
+        OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_S_PATH, &path);
+    NAPI_ASSERT(env, errorCode0 == OH_DRAWING_SUCCESS, "errorCode0");
+    NAPI_ASSERT(env, StrcmpUtf8(path, validPath), "");
+
+    OH_Drawing_String postscriptName = {.strData = nullptr, .strLen = 0};
+    errorCode0 = OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_S_POSTSCRIPT_NAME,
+        &postscriptName);
+    NAPI_ASSERT(env, errorCode0 == OH_DRAWING_SUCCESS, "errorCode1");
+    char *realPostscriptName = strdup("HarmonyOS_Sans");
+    NAPI_ASSERT(env, StrcmpUtf8(postscriptName, realPostscriptName), "");
+
+    char *realFullName = strdup("HarmonyOS Sans");
+    OH_Drawing_String fullName = {.strData = nullptr, .strLen = 0};
+    errorCode0 = OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_S_FULL_NAME, &fullName);
+    NAPI_ASSERT(env, errorCode0 == OH_DRAWING_SUCCESS, "errorCode2");
+    NAPI_ASSERT(env, StrcmpUtf8(fullName, realFullName), "");
+
+    char *realFamilyName = strdup("HarmonyOS Sans");
+    OH_Drawing_String familyName = {.strData = nullptr, .strLen = 0};
+    errorCode0 =
+        OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_S_FAMILY_NAME, &familyName);
+    NAPI_ASSERT(env, errorCode0 == OH_DRAWING_SUCCESS, "errorCode3");
+    NAPI_ASSERT(env, StrcmpUtf8(familyName, realFamilyName), "");
+
+    char *realSubFamilyName = strdup("Regular");
+    OH_Drawing_String subFamilyName = {.strData = nullptr, .strLen = 0};
+    errorCode0 = OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_S_SUB_FAMILY_NAME,
+        &subFamilyName);
+    ASSERT_EQ(errorCode0, OH_DRAWING_SUCCESS);
+    NAPI_ASSERT(env, errorCode0 == 0, "errorCode4");
+    NAPI_ASSERT(env, StrcmpUtf8(subFamilyName, realSubFamilyName), "");
+
+    OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
+    free(validPath);
+    free(realPostscriptName);
+    free(realFullName);
+    free(realFamilyName);
+    free(realSubFamilyName);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorAttributeString002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_String str;
+    OH_Drawing_ErrorCode ret = OH_Drawing_GetFontFullDescriptorAttributeString(
+        nullptr, FULL_DESCRIPTOR_ATTR_S_PATH, &str);
+    NAPI_ASSERT_NO_MES(ret == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorAttributeString003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    char *validPath = strdup("/system/fonts/HarmonyOS_Sans.ttf");
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromPath(validPath);
+    NAPI_ASSERT(env, fontFullDescArr != nullptr, "fontFullDescArr");
+    NAPI_ASSERT(env, OH_Drawing_GetDrawingArraySize(fontFullDescArr) == 1,
+        "OH_Drawing_GetDrawingArraySize(fontFullDescArr) != 1");
+
+    const OH_Drawing_FontFullDescriptor *desc = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, 0);
+    NAPI_ASSERT(env, desc != nullptr, "desc");
+    OH_Drawing_String path = {.strData = nullptr, .strLen = 0};
+    OH_Drawing_ErrorCode errorCode0 =
+        OH_Drawing_GetFontFullDescriptorAttributeString(desc, FULL_DESCRIPTOR_ATTR_B_SYMBOLIC, &path);
+    NAPI_ASSERT(env, errorCode0 == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH, "");
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorByIndex001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    char *validPath = strdup("/system/fonts/HarmonyOS_Sans.ttf");
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromPath(validPath);
+    NAPI_ASSERT(env, fontFullDescArr != nullptr, "fontFullDescArr");
+    NAPI_ASSERT(env, OH_Drawing_GetDrawingArraySize(fontFullDescArr) == 1, "");
+
+    const OH_Drawing_FontFullDescriptor *desc =
+        OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, ZERO_MINUS_ONE);
+    NAPI_ASSERT(env, desc == nullptr, "index should >= 0");
+    OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
+    free(validPath);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorAttributeInt001(napi_env env, napi_callback_info info)
+{
+    char *validPath = strdup("/system/fonts/HMSymbolVF.ttf");
+    // Assign it an initial value
+    int weight = -1;
+    int italic = -1;
+    bool mono = false;
+    bool symblic = false;
+    constexpr int initialValue = -1;
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromPath(validPath);
+    NAPI_ASSERT(env, fontFullDescArr != nullptr, "fontFullDescArr");
+    const OH_Drawing_FontFullDescriptor *desc = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, 0);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetFontFullDescriptorAttributeInt(desc, FULL_DESCRIPTOR_ATTR_S_PATH,
+        &weight);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH, "errorCode");
+    NAPI_ASSERT(env, weight == initialValue, "weight");
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeBool(desc, FULL_DESCRIPTOR_ATTR_I_WEIGHT, &symblic);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH, "errorCode1");
+    NAPI_ASSERT(env, symblic == false, "symblic");
+
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeInt(nullptr, FULL_DESCRIPTOR_ATTR_I_ITALIC, &italic);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER, "errorCode2");
+    NAPI_ASSERT(env, weight == initialValue, "weight1");
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeBool(nullptr, FULL_DESCRIPTOR_ATTR_B_SYMBOLIC, &mono);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER, "errorCode3");
+
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeInt(desc, FULL_DESCRIPTOR_ATTR_I_ITALIC, nullptr);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER, "errorCode4");
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeBool(desc, FULL_DESCRIPTOR_ATTR_B_SYMBOLIC, nullptr);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER, "errorCode5");
+
+    OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
+    free(validPath);
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// Normal successful case
+napi_value OHDrawingGetFontFullDescriptorAttributeInt002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    
+    // 1. Get valid font descriptors
+    const char* fontPath = "/system/fonts/HarmonyOS_Sans.ttf";
+    OH_Drawing_Array* fontDescArray = OH_Drawing_GetFontFullDescriptorsFromPath(fontPath);
+    
+    if (fontDescArray == nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+        return result;
+    }
+    
+    // 2. Get first descriptor
+    const OH_Drawing_FontFullDescriptor* desc =
+        OH_Drawing_GetFontFullDescriptorByIndex(fontDescArray, 0);
+    NAPI_ASSERT(env, desc != nullptr, "Failed to get font descriptor");
+    
+    // 3. Test getting font weight (should succeed)
+    int fontWeight = 0;
+    bool getResult = OH_Drawing_GetFontFullDescriptorAttributeInt(
+        desc, FULL_DESCRIPTOR_ATTR_I_WEIGHT, &fontWeight);
+    
+    NAPI_ASSERT(env, getResult == OH_DRAWING_SUCCESS, "GetFontFullDescriptorAttributeInt failed");
+    NAPI_ASSERT(env, fontWeight >= MIN_FONT_WEIGHT && fontWeight <= MAX_FONT_WEIGHT,
+        "Font weight out of valid range");
+    
+    // 4. Test getting width (should succeed)
+    int fontWidth = 0;
+    getResult = OH_Drawing_GetFontFullDescriptorAttributeInt(
+        desc, FULL_DESCRIPTOR_ATTR_I_WIDTH, &fontWidth);
+    
+    NAPI_ASSERT(env, getResult == OH_DRAWING_SUCCESS, "Failed to get font width");
+    
+    OH_Drawing_DestroyFontFullDescriptors(fontDescArray);
+    
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorFromStream001(napi_env env, napi_callback_info info)
+{
+    std::vector<char> content;
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromStream(nullptr, 1);
+    NAPI_ASSERT(env, fontFullDescArr == nullptr, "");
+    fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromStream(content.data(), content.size());
+    NAPI_ASSERT(env, fontFullDescArr == nullptr, "");
+    size_t num = OH_Drawing_GetDrawingArraySize(fontFullDescArr);
+    NAPI_ASSERT(env, num == 0, "");
+
+    const OH_Drawing_FontFullDescriptor* desc = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, 0);
+    NAPI_ASSERT(env, desc == nullptr, "");
+    NAPI_ASSERT_NO_MES(desc == nullptr);
+
+    OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * 测试用例：正常场景-传入合法字体二进制数据
+ * 参数：data=有效TTF数据指针，size=文件实际大小
+ * 返回值：非NULL数组
+ */
+napi_value OHDrawingGetFontFullDescriptorFromStream002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    void* fontData = nullptr;
+    size_t fontSize = 0;
+
+    // 适配NAPI_ASSERT_NO_MES：仅传断言条件，无消息参数
+    bool readRet = ReadFontFileToBuffer(TEST_FONT_FILE_PATH, &fontData, &fontSize);
+    NAPI_ASSERT_NO_MES(readRet == true);
+    NAPI_ASSERT_NO_MES(fontData != nullptr && fontSize > 0);
+
+    // 调用目标API
+    OH_Drawing_Array* fontDescArr = OH_Drawing_GetFontFullDescriptorsFromStream(fontData, fontSize);
+    NAPI_ASSERT_NO_MES(fontDescArr != nullptr);
+
+    // 校验数组属性
+    size_t descCount = OH_Drawing_GetDrawingArraySize(fontDescArr);
+    NAPI_ASSERT_NO_MES(descCount > 0);
+
+    // 校验描述符
+    const OH_Drawing_FontFullDescriptor* desc = OH_Drawing_GetFontFullDescriptorByIndex(fontDescArr, 0);
+    NAPI_ASSERT_NO_MES(desc != nullptr);
+
+    // 资源释放
+    OH_Drawing_DestroyFontFullDescriptors(fontDescArr);
+    free(fontData);
+
+    // 返回测试结果
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorFromStream003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    void* fontData = nullptr;
+    size_t fontSize = 0;
+
+    bool readRet = ReadFontFileToBuffer(SYMBOL_FILE, &fontData, &fontSize);
+    NAPI_ASSERT_NO_MES(readRet == true);
+    NAPI_ASSERT_NO_MES(fontData != nullptr && fontSize > 0);
+
+    // 调用目标API
+    OH_Drawing_Array* fontDescArr = OH_Drawing_GetFontFullDescriptorsFromStream(fontData, fontSize);
+    NAPI_ASSERT_NO_MES(fontDescArr != nullptr);
+
+    // 校验数组属性
+    size_t descCount = OH_Drawing_GetDrawingArraySize(fontDescArr);
+    NAPI_ASSERT_NO_MES(descCount > 0);
+
+    // 校验描述符
+    const OH_Drawing_FontFullDescriptor* desc = OH_Drawing_GetFontFullDescriptorByIndex(fontDescArr, 0);
+    NAPI_ASSERT_NO_MES(desc != nullptr);
+
+    bool boolAttr = false;
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_GetFontFullDescriptorAttributeBool(desc, FULL_DESCRIPTOR_ATTR_B_MONO, &boolAttr);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MyTag",
+        "monoSpace: %{public}s", boolAttr ? "true" : "false");
+    NAPI_ASSERT_NO_MES(boolAttr == false);
+
+    errorCode = OH_Drawing_GetFontFullDescriptorAttributeBool(desc, FULL_DESCRIPTOR_ATTR_B_SYMBOLIC, &boolAttr);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MyTag",
+        "symbolic: %{public}s", boolAttr ? "true" : "false");
+    NAPI_ASSERT_NO_MES(boolAttr == false);
+
+    // 资源释放
+    OH_Drawing_DestroyFontFullDescriptors(fontDescArr);
+    free(fontData);
+
+    // 返回测试结果
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

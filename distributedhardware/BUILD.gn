@@ -18,6 +18,6 @@ group("distributedhardware") {
     "device_manager:ActsdeviceManager20Test",
     "mechanicmanager:ActsmechanicManagerTest",
     "device_manager_no_permission:ActsdeviceManager20noTest",
-    "mechanicmanagerstatic:ActsmechanicManagerTestStatic",
+    "mechanicmanagerstatic:ActsmechanicManagerStaticTest",
   ]
 }

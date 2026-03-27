@@ -26,7 +26,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputLetterSpacingModifier() {
   describe('TextInputLetterSpacingModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputLetterSpacingModifier beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

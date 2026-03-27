@@ -36,7 +36,7 @@ function doPaste(driver: Driver, componentId: string){
 
 export default function TextAreaOnPasteModifierTest() {
   describe('TextAreaOnPasteModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaOnPasteModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

@@ -88,7 +88,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData!.length; i++) {
-          result += String.fromCharCode((fileData as Uint8Array)[i]);
+          result += String.fromCharCode((fileData as Uint8Array)[i].toInt());
         }
         resolve(result);
       } else {

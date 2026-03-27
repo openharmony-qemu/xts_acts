@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AlignStart_NoSpace() {
   describe('AlignStart_NoSpace', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignStart_NoSpace beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -98,25 +98,47 @@ it('testFlexAlignStartFlexWidthOverflow_static', Level.LEVEL0, async () : Promis
       let Start_NoSpace_012: RectValue = CommonFunc.getComponentRect('Start_NoSpace_012');
       let Start_NoSpace_013: RectValue = CommonFunc.getComponentRect('Start_NoSpace_013');
       let Start_NoSpace_01: RectValue = CommonFunc.getComponentRect('Start_NoSpace_01');
-      expect(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right) <= 2).assertTrue();
-      expect(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_01.right - Start_NoSpace_013.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi1:'+ Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi2:'+ Math.floor(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi3:'+ Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi4:'+ Math.floor(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi5:'+ Math.floor(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi6:'+ Math.floor(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi7:'+ Math.floor(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left)));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi8:'+ Math.floor(Math.abs((Start_NoSpace_011.right - Start_NoSpace_011.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi9:'+ Math.floor(Math.abs((Start_NoSpace_012.right - Start_NoSpace_012.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi10:'+ Math.floor(Math.abs((Start_NoSpace_013.right - Start_NoSpace_013.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi11:'+ Math.floor(Math.abs((Start_NoSpace_011.bottom - Start_NoSpace_011.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi12:'+ Math.floor(Math.abs((Start_NoSpace_012.bottom - Start_NoSpace_012.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexAlignStartFlexWidthOverflow_static_static_chazhi13:'+ Math.floor(Math.abs((Start_NoSpace_013.bottom - Start_NoSpace_013.top) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+
+      expect(Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right)) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_01.right - Start_NoSpace_013.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Start_NoSpace_011.right - Start_NoSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_012.right - Start_NoSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_013.right - Start_NoSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_011.bottom - Start_NoSpace_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_012.bottom - Start_NoSpace_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_013.bottom - Start_NoSpace_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
+
       console.info('[testFlexAlignStartFlexWidthOverflow] END');
 
     });
@@ -147,26 +169,49 @@ it('testFlexAlignStartFlexWidthMeet_static', Level.LEVEL0, async () : Promise<vo
       let Start_NoSpace_012: RectValue = CommonFunc.getComponentRect('Start_NoSpace_012');
       let Start_NoSpace_013: RectValue = CommonFunc.getComponentRect('Start_NoSpace_013');
       let Start_NoSpace_01: RectValue = CommonFunc.getComponentRect('Start_NoSpace_01');
-      expect(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right) <= 1).assertTrue();
-      expect(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_01.right - Start_NoSpace_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi1:'+ Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi2:'+ Math.floor(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi3:'+ Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi4:'+ Math.floor(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi5:'+ Math.floor(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi6:'+ Math.floor(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right)));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi7:'+ Math.floor(Math.abs((Start_NoSpace_01.right - Start_NoSpace_013.right)) - 
+      (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi8:'+ Math.floor(Math.abs((Start_NoSpace_011.right - Start_NoSpace_011.left)) - 
+      (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi9:'+ Math.floor(Math.abs((Start_NoSpace_012.right - Start_NoSpace_012.left)) -
+       (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi10:'+ Math.floor(Math.abs((Start_NoSpace_013.right - Start_NoSpace_013.left)) -
+       (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi11:'+ Math.floor(Math.abs((Start_NoSpace_011.bottom - Start_NoSpace_011.top)) -
+       (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi12:'+ Math.floor(Math.abs((Start_NoSpace_012.bottom - Start_NoSpace_012.top)) -
+       (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexAlignStartFlexWidthMeet_static_chazhi13:'+ Math.floor(Math.abs((Start_NoSpace_013.bottom - Start_NoSpace_013.top)) -
+       (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+
+      expect(Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_012.top - Start_NoSpace_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_011.top - Start_NoSpace_01.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_01.left - Start_NoSpace_011.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_012.left - Start_NoSpace_011.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_NoSpace_013.left - Start_NoSpace_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Start_NoSpace_01.right - Start_NoSpace_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_011.right - Start_NoSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_012.right - Start_NoSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_013.right - Start_NoSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_011.bottom - Start_NoSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_012.bottom - Start_NoSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_NoSpace_013.bottom - Start_NoSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
+
       console.info('[testFlexAlignStartFlexWidthMeet] END');
 
     });

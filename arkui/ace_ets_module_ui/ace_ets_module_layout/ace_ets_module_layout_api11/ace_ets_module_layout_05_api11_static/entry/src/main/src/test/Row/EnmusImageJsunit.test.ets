@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function enumsImageJsunit() {
   describe('enumsImage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enumsImage beforeAll start");
            
       await UtilsTest.msSleep(4000)

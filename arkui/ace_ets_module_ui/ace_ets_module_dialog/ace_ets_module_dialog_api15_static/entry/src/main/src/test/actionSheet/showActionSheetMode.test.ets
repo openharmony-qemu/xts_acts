@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function showActionSheetMode() {
   describe('showActionSheetMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api15.static", "EntryAbility")

@@ -35,7 +35,7 @@ const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function QRCodeUIJsunit() {
   describe('QRCodeUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QRCodeUIJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

@@ -427,7 +427,7 @@ export default function cameraVideoMirrorTest() {
 
   describe('CameraVideoMirrorTest', () => {
     console.info(TAG + '----------CameraVideoMirrorTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -448,7 +448,7 @@ export default function cameraVideoMirrorTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       await Utils.msSleep(1000);

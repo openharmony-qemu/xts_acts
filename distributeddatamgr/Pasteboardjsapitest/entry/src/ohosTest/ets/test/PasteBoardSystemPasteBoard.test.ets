@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, common, PermissionRequestResult} from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import image from '@ohos.multimedia.image';
 
 let error: ESObject = undefined;
 
@@ -735,5 +736,162 @@ export default function pasteBoardSystemPasteBoardTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800 end")
       done();
     })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_HASREMOTEDATA_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_HasRemoteData_0100
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_HASREMOTEDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0100 start")
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.clearData().then(async () => {
+        let dataText = 'hello';
+        let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, dataText);
+        await systemPasteboard.setData(PasteData).then(async () => {
+          try {
+            let hasremote: boolean = systemPasteboard.hasRemoteData();
+            expect(hasremote == false).assertTrue();
+            done();
+          } catch (err) {
+            console.error(TAG + "test hasRemoteData err:" + err)
+            expect().assertFail();
+          }
+        })
+      })
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0100 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_HASREMOTEDATA_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_HasRemoteData_0200
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_HASREMOTEDATA_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0200 start")
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.clearData().then(async () => {
+        let datauri = 'www.baidu.com';
+        let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, datauri);
+        await systemPasteboard.setData(PasteData).then(async () => {
+          try {
+            let hasremote: boolean = systemPasteboard.hasRemoteData();
+            expect(hasremote == false).assertTrue();
+            done();
+          } catch (err) {
+            console.error(TAG + "test hasRemoteData err:" + err)
+            expect().assertFail();
+          }
+        })
+      })
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0200 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_HASREMOTEDATA_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_HasRemoteData_0300
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_HASREMOTEDATA_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0300 start")
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.clearData().then(async () => {
+        let htmlText = 'Hello 中国!@#$%^&*()_+{}\?.';
+        let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, htmlText);
+        await systemPasteboard.setData(PasteData).then(async () => {
+          try {
+            let hasremote: boolean = systemPasteboard.hasRemoteData();
+            expect(hasremote == false).assertTrue();
+            done();
+          } catch (err) {
+            console.error(TAG + "test hasRemoteData err:" + err)
+            expect().assertFail();
+          }
+        })
+      })
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0300 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_HASREMOTEDATA_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_HasRemoteData_0400
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_HASREMOTEDATA_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0400 start")
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.clearData().then(async () => {
+        let want: Want = {
+          bundleName: "com.example.myapplication8",
+          abilityName: "com.example.myapplication8.MainAbility"
+        };
+        let PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_WANT, want);
+        await systemPasteboard.setData(PasteData).then(async () => {
+          try {
+            let hasremote: boolean = systemPasteboard.hasRemoteData();
+            expect(hasremote == false).assertTrue();
+            done();
+          } catch (err) {
+            console.error(TAG + "test hasRemoteData err:" + err)
+            expect().assertFail();
+          }
+        })
+      })
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0400 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_HASREMOTEDATA_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_HasRemoteData_0500
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_HASREMOTEDATA_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0500 start")
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.clearData().then(async () => {
+        let buffer = new ArrayBuffer(128);
+        let realSize: image.Size = { height: 3, width: 5 };
+        let opt: image.InitializationOptions = {
+          size: realSize,
+          pixelFormat: 3,
+          editable: true,
+          alphaType: 1,
+          scaleMode: 1
+        };
+        let pixelMap: image.PixelMap = image.createPixelMapSync(buffer, opt);
+        let PasteData = pasteboard.createData(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
+        await systemPasteboard.setData(PasteData).then(async () => {
+          try {
+            let hasremote: boolean = systemPasteboard.hasRemoteData();
+            expect(hasremote == false).assertTrue();
+            done();
+          } catch (err) {
+            console.error(TAG + "test hasRemoteData err:" + err)
+            expect().assertFail();
+          }
+        })
+      })
+      console.info(TAG + "SUB_PASTEBOARD_HASREMOTEDATA_0500 end");
+      done();
+    }) 
   });
 }

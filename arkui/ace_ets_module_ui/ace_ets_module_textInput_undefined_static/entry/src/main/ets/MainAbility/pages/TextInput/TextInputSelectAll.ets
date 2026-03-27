@@ -26,6 +26,7 @@ struct Index {
             this.textInputIndex = ++this.textInputIndex % this.textInputArray.length;
           })
           .id('button_selectAll')
+          .margin(20)
         TextInput({ text: this.text })
           .height(56)
           .selectAll(this.textInputArray[this.textInputIndex])

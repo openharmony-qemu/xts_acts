@@ -48,7 +48,7 @@ const waitUiReadyMs = 1000;
 
 export default function spanUIJsunit() {
   describe('spanUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("spanUIJsunit beforeEach start");
 
 

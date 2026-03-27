@@ -2026,26 +2026,6 @@ export default function ActsBuffer3Test() {
     })
 
     /**
-     * @tc.name   testFromObjectOffsetEmptyString
-     * @tc.number SUB_BUFFER_FROM_OBJECT_OFFSET_EMPTYSTR_0100
-     * @tc.desc   Testing Buffer.from with object and offsetOrEncoding as empty string
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
      * @tc.name   testFromStringEncodingNull
      * @tc.number SUB_BUFFER_FROM_STRING_ENCODING_NULL_0100
      * @tc.desc   Testing Buffer.from with string and encoding as null
@@ -3410,5 +3390,83 @@ export default function ActsBuffer3Test() {
       }
     })
 
+    /**
+     * @tc.name   testbuffer001
+     * @tc.number SUB_BUFFER_TEST_0100
+     * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testbuffer001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let ab = new ArrayBuffer(10);
+      let buf1 = buffer.from(ab, 0, null);
+      expect(buf1.length).assertEqual(0);
+      let buf2 = buffer.from(ab, 0, undefined);
+      expect(buf2.length).assertEqual(10);
+    })
+
+    /**
+     * @tc.name   testbuffer002
+     * @tc.number SUB_BUFFER_TEST_0200
+     * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testbuffer002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let buf1 = buffer.from(new String('this is a test'), 'utf8', null);
+      expect(buf1.length).assertEqual(14);
+      expect(buf1.toString()).assertEqual("this is a test");
+      let buf2 = buffer.from(new String('this is a test'), 'utf8', undefined);
+      expect(buf2.length).assertEqual(14);
+      expect(buf2.toString()).assertEqual("this is a test");
+      let buf3 = buffer.from(new String('this is a test'), '', 10);
+      expect(buf3.length).assertEqual(14);
+      expect(buf3.toString()).assertEqual("this is a test");
+      try {
+        let buf4 = buffer.from(null, 'utf8', 14);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let buf5 = buffer.from(undefined, 'utf8', 14);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   testbuffer003
+     * @tc.number SUB_BUFFER_TEST_0300
+     * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testbuffer003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+      let blob1 = blob.slice(null, 2);
+      expect(blob1.size).assertEqual(3);
+      expect(blob1.type).assertEqual("");
+      let blob2 = blob.slice(undefined, 2);
+      expect(blob2.size).assertEqual(3);
+      expect(blob2.type).assertEqual("");
+      let blob3 = blob.slice(0, null, "MIME");
+      expect(blob3.size).assertEqual(3);
+      expect(blob3.type).assertEqual("MIME");
+      let blob4 = blob.slice(0, undefined, "MIME");
+      expect(blob4.size).assertEqual(3);
+      expect(blob4.type).assertEqual("MIME");
+      let blob5 = blob.slice(0, 2, "");
+      expect(blob5.size).assertEqual(3);
+      expect(blob5.type).assertEqual("");
+      let blob6 = blob.slice(0, 2, null);
+      expect(blob6.size).assertEqual(3);
+      expect(blob6.type).assertEqual(null);
+      let blob7 = blob.slice(0, 2, undefined);
+      expect(blob7.size).assertEqual(3);
+      expect(blob7.type).assertEqual("");
+    })
   })
 }

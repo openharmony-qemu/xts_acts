@@ -456,7 +456,7 @@ export default function cameraSessionFocusTest() {
 
   describe('cameraSessionFocusTest', () => {
     console.info(TAG + '----------cameraSessionFocusTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -477,7 +477,7 @@ export default function cameraSessionFocusTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
@@ -1470,7 +1470,7 @@ export default function cameraSessionFocusTest() {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         mCameraSession!.offFocusStateChange()
@@ -1503,7 +1503,7 @@ export default function cameraSessionFocusTest() {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         mCameraSession!.offError()

@@ -18,11 +18,14 @@ group("ActsAceEtsModuleDrawTest") {
     "ace_ets_module_draw_api12:ActsAceEtsModuleDrawApi12Test",
     "ace_ets_module_draw_api13:ActsAceEtsModuleDrawApi13Test",
     "ace_ets_module_draw_api20:ActsAceEtsModuleDrawApi20Test",
+    "ace_ets_module_draw_api23_static:ActsAceEtsModuleDrawApi23StaticTest",
     "ace_ets_module_draw_canvas:ActsAceEtsModuleDrawCanvasTest",
     "ace_ets_module_draw_shape:ActsAceEtsModuleDrawShapeTest",
     "ace_ets_module_draw_api13_static:ActsAceEtsModuleDrawApi13StaticTest",
     "ace_ets_module_draw_api20_static:ActsAceEtsModuleDrawApi20StaticTest",
     "ace_ets_module_draw_api11_static:ActsAceEtsModuleDrawApi11StaticTest",
     "ace_ets_module_draw_api12_static:ActsAceEtsModuleDrawApi12StaticTest",
+    "ace_ets_module_draw_undefined_static:ActsAceEtsModuleDrawUndefinedStaticTest",
+    "ace_ets_module_draw_undefined01_static:ActsAceEtsModuleDrawUndefined01StaticTest"
   ]
 }

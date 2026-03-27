@@ -42,7 +42,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 export default function searchEnableHapticFeedBack() {
   describe('searchEnableHapticFeedBack', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchEnableHapticFeedBack beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

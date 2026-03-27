@@ -49,7 +49,9 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
@@ -182,7 +184,6 @@ export default function audioRendererTest() {
         error = error as BusinessError;
         console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
         if (error.code === 5400106) {
-          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();

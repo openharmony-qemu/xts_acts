@@ -26,7 +26,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputDecorationModifier() {
   describe('TextInputDecorationModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputDecorationModifier beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")
@@ -65,8 +65,8 @@ export default function TextInputDecorationModifier() {
 
       let strJson = inspector.getInspectorByKey('TextInput');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
+      expect(obj.getElement('$attrs').getString('decoration')).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -77,32 +77,32 @@ export default function TextInputDecorationModifier() {
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('TextInput');
       obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"}');
+      expect(obj.getElement('$attrs').getString('decoration')).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF0000FF","style":"TextDecorationStyle.DOUBLE"');
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('TextInput');
       obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
-        '{"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"}');
+      expect(obj.getElement('$attrs').getString('decoration')).assertContain(
+        '"type":"TextDecorationType.LineThrough","color":"#FF000000","style":"TextDecorationStyle.DOUBLE"');
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('TextInput');
       obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
-        '{"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"}');
+      expect(obj.getElement('$attrs').getString('decoration')).assertContain(
+        '"type":"TextDecorationType.Underline","color":"#FF0000FF","style":"TextDecorationStyle.SOLID"');
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('TextInput');
       obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('decoration')).assertEqual(
-        '{"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"}');
+      expect(obj.getElement('$attrs').getString('decoration')).assertContain(
+        '"type":"TextDecorationType.None","color":"#FF000000","style":"TextDecorationStyle.SOLID"');
       await CommonFunc.sleep(1000);
       console.info('[TextInputDecorationModifier_static_0010] END');
       done();

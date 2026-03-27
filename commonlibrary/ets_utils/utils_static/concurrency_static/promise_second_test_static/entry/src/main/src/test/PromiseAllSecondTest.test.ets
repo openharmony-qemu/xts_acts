@@ -49,7 +49,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3000';
         console.info(`${caseName} test start`);
@@ -123,7 +123,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3100';
         console.info(`${caseName} test start`);
@@ -193,7 +193,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3200';
         console.info(`${caseName} test start`);
@@ -264,7 +264,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3300';
         console.info(`${caseName} test start`);
@@ -325,7 +325,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3400';
         console.info(`${caseName} test start`);
@@ -384,7 +384,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3500';
         console.info(`${caseName} test start`);
@@ -460,7 +460,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3600';
         console.info(`${caseName} test start`);
@@ -547,7 +547,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3700';
         console.info(`${caseName} test start`);
@@ -627,7 +627,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest3800';
         console.info(`${caseName} test start`);
@@ -699,7 +699,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4100';
         console.info(`${caseName} test start`);
@@ -782,7 +782,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4200';
         console.info(`${caseName} test start`);
@@ -862,7 +862,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4300';
         console.info(`${caseName} test start`);
@@ -927,7 +927,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4400';
         console.info(`${caseName} test start`);
@@ -1000,7 +1000,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4500';
         console.info(`${caseName} test start`);
@@ -1077,7 +1077,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4600';
         console.info(`${caseName} test start`);
@@ -1154,7 +1154,7 @@ export default function PromiseAllSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAllTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseAllTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseAllTest4700';
         console.info(`${caseName} test start`);

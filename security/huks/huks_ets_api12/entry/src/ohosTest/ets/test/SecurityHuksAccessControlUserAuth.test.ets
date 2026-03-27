@@ -14,11 +14,11 @@
  */
 import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { CheckSoftware, MergeOptions } from './utils/huks/HuksOptionsUtils.ets';
-import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils.ets';
-import { GetAesImportData } from './utils/huks/ImportKeyUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { CheckSoftware, MergeOptions } from './utils/huks/HuksOptionsUtils';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils';
+import { GetAesImportData } from './utils/huks/ImportKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHuksAccessControlUserAuthTest() {
   let useSoftware: boolean = true;

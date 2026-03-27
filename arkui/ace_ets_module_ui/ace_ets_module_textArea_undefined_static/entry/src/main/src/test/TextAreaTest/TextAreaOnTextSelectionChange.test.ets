@@ -25,7 +25,7 @@ import { Driver, ON, Component, InputTextMode } from '@kit.TestKit';
 
 export default function TextAreaOnTextSelectionChangeTest() {
   describe('TextAreaOnTextSelectionChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaOnTextSelectionChangeTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

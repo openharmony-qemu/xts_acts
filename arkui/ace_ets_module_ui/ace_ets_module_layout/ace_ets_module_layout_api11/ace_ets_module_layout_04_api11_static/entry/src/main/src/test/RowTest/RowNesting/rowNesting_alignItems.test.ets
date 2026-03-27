@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function rowNesting_alignItems() {
   describe('rowNesting_alignItems', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("rowNesting_alignItems beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

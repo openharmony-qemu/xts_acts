@@ -485,7 +485,7 @@ export default function cameraJSUnitOutput() {
 
   describe('cameraJSUnitOutput', () => {
     hilog.info(domain, tag, '----------cameraJSUnitOutput begin--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getVideoSurface();
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -493,7 +493,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeEach case');
     })
@@ -502,7 +502,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await closeFd();
       await release();
       hilog.info(domain, tag, 'afterAll case');
@@ -912,7 +912,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1011,7 +1011,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1042,7 +1042,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1077,7 +1077,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1112,7 +1112,7 @@ export default function cameraJSUnitOutput() {
             expect(err!.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1147,7 +1147,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1287,7 +1287,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_STOP_METADATA_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1322,7 +1322,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1357,7 +1357,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1392,7 +1392,7 @@ export default function cameraJSUnitOutput() {
             expect(err!.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1426,7 +1426,7 @@ export default function cameraJSUnitOutput() {
             err.message);
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1460,7 +1460,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         await Utils.msSleep(1000);
@@ -1496,7 +1496,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1528,7 +1528,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1624,7 +1624,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1704,7 +1704,7 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
-            await Utils.msSleep(1000);
+            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         }
@@ -1778,7 +1778,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output stop listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on captureReady success`);
@@ -1816,7 +1816,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         await Utils.msSleep(1000);
@@ -1892,7 +1892,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1994,7 +1994,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onEstimatedCaptureDuration((err: BusinessError |null, data:double | undefined) => {
         hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration success`);
@@ -2056,7 +2056,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offEstimatedCaptureDuration((err: BusinessError | null, data: double | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration success`);
@@ -2572,7 +2572,7 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_STATIC_0100 FAILED: " +
           err.message);
         }
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       expect(1 == 1).assertTrue();
@@ -2603,7 +2603,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output start listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on frameShutterEnd success`);
@@ -2640,7 +2640,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on frameShutterEnd success`);
@@ -2714,7 +2714,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output start listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on captureReady success`);
@@ -3175,7 +3175,7 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_STATIC_0100 ends here");
-            await Utils.msSleep(1000);
+            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         } else {

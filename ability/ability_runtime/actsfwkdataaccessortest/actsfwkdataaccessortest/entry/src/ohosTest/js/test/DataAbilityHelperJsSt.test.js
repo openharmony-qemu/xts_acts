@@ -180,6 +180,29 @@ describe('ActsDataAbilityHelperTest', function () {
     })
 
     /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0600
+     * @tc.number ACTS_AcquireDataAbilityHelper_0600
+     * @tc.desc   Check the return value of the interface (null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_AcquireDataAbilityHelper_0600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_AcquireDataAbilityHelper_0600====<begin');
+      try {
+        var abilityHelper = featureAbility.acquireDataAbilityHelper(null)
+        console.log('ACTS_AcquireDataAbilityHelper_0600 abilityHelper ====>: '
+          + abilityHelper + " ,JSON. " + JSON.stringify(abilityHelper))
+        expect(JSON.stringify(abilityHelper)).assertEqual("null");
+      } catch (err) {
+        console.error('=ACTS_GetDataAbilityHelper_0600 acquireDataAbilityHelper catch(err)====>:' + err);
+        expect(false).assertTrue();
+      }
+      done();
+      console.log('ACTS_AcquireDataAbilityHelper_0600====<end')
+    })
+
+    /**
      * @tc.name   ACTS_Insert_0100
      * @tc.number ACTS_Insert_0100
      * @tc.desc   Check the return value of the interface (by Promise)

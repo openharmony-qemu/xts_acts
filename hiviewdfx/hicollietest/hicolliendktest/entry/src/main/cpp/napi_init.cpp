@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+#include "HiCollieTest.h"
 #include "napi/native_api.h"
 #include "hicollie/hicollie.h"
 #include <thread>
@@ -345,6 +345,14 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testHiCollieStuckWithTimeoutNdk", nullptr, TestHiCollieStuckWithTimeoutNdk, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testHiCollieStuckWithTimeoutNdk1", nullptr, TestHiCollieStuckWithTimeoutNdk1, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testHiCollieStuckWithTimeoutNdk2", nullptr, TestHiCollieStuckWithTimeoutNdk2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_HiCollie_Report_sucess", nullptr, OH_HiCollie_Report_sucess, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_HiCollie_Report_Main", nullptr, OH_HiCollie_Report_Main, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_HiCollie_Report_Remote", nullptr, OH_HiCollie_Report_Remote, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "OH_HiCollie_ReportInputBlock_Main", nullptr, OH_HiCollie_ReportInputBlock_Main, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "OH_HiCollie_ReportInputBlock_Remote", nullptr, OH_HiCollie_ReportInputBlock_Remote, nullptr, nullptr,
+            nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
@@ -356,7 +364,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "hicollie",
+    .nm_modname = "entry",
     .nm_priv = ((void*)0),
     .reserved = { 0 },
 };

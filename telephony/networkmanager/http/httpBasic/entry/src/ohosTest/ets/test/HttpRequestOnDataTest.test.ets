@@ -437,5 +437,107 @@ export default function HttpRequestInStreamTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testTelephonyhttpHttpRequestrequestInStream0200
+     * @tc.number SUB_Telephony_http_HttpRequest_requestInStream_0200
+     * @tc.desc   Test requestInStream(url: string, callback: AsyncCallback<void>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonyhttpHttpRequestrequestInStream0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyhttpHttpRequestrequestInStream0200";
+      let Address_Img = "https://img1.baidu.com/it/u=3010094603,1247181326&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
+      let httpRequest = http.createHttp();
+      console.info(`${caseName}---start`);
+      try {
+        httpRequest.on("dataReceive", dataReceive_on_callback);
+        try {
+          httpRequest.on("dataReceiveProgress", (data: http.DataReceiveProgressInfo) => {
+            console.info(`${caseName} dataReceiveProgress DataSendProgressInfo success:" + ${JSON.stringify(data)}`);
+            ExpectTrue(data.totalSize != null);
+            ExpectTrue(data.receiveSize != null);
+          });
+          httpRequest.on("dataEnd", dataEnd_on_callback);
+          httpRequest.requestInStream(Address_Img, httpRequestOptions, async (error, data) => {
+            console.log(`${caseName} get error is `+ JSON.stringify(error)+ " data is " + JSON.stringify(data));
+            if (error) {
+              console.error(`${caseName} get err is `+JSON.stringify(error));
+              ExpectFail();
+              console.info(`${caseName}---end`);
+              done();
+            } else {
+              httpRequest.off("dataReceive");
+              httpRequest.off("dataReceiveProgress");
+              httpRequest.off("dataEnd");
+              httpRequest.destroy();
+              await sleep(200);
+              done();
+              console.info(`${caseName}---end`);
+            }
+          });
+        } catch (error) {
+          console.error(`${caseName} catch err is `+JSON.stringify(error));
+          ExpectFail();
+          console.info(`${caseName}---end`);
+          done();
+        }
+      } catch (outerError) {
+        console.error(`${caseName} outerError: ` + JSON.stringify(outerError));
+        ExpectFail();
+        console.info(`${caseName}---end`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testTelephonyhttpHttpRequestrequestInStream0300
+     * @tc.number SUB_Telephony_http_HttpRequest_requestInStream_0300
+     * @tc.desc   Test requestInStream(url: string, callback: AsyncCallback<void>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonyhttpHttpRequestrequestInStream0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyhttpHttpRequestrequestInStream0300";
+      let Address_Img = "https://img1.baidu.com/it/u=3010094603,1247181326&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
+      let httpRequest = http.createHttp();
+      console.info(`${caseName}---start`);
+      try {
+        try {
+          httpRequest.on("dataReceive", (data: ArrayBuffer) => {
+            console.info(`${caseName} dataReceive DataSendProgressInfo success: ${JSON.stringify(data.byteLength)}`);
+            ExpectTrue(data.byteLength != null);
+          });
+          httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
+          httpRequest.on("dataEnd", dataEnd_on_callback);
+          httpRequest.requestInStream(Address_Img, httpRequestOptions, async (error, data) => {
+            console.log(`${caseName} get error is ` + JSON.stringify(error) + " data is " + JSON.stringify(data));
+            if (error) {
+              console.error(`${caseName} get err is ` + JSON.stringify(error));
+              ExpectFail();
+              console.info(`${caseName}---end`);
+              done();
+            } else {
+              httpRequest.off("dataReceive");
+              httpRequest.off("dataReceiveProgress");
+              httpRequest.off("dataEnd");
+              httpRequest.destroy();
+              await sleep(200);
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(`${caseName} inner catch err is ` + JSON.stringify(error));
+          ExpectFail();
+          console.info(`${caseName}---end`);
+          done();
+        }
+      } catch (error) {
+        console.error(`${caseName} outer catch err is ` + JSON.stringify(error));
+        ExpectFail();
+        console.info(`${caseName}---end`);
+        done();
+      }
+    });
   });
 }

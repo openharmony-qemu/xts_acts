@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TimePickerDialog() {
   describe('TimePickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

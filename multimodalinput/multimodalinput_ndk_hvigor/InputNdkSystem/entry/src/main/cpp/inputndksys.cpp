@@ -1298,9 +1298,11 @@ static napi_value AddKeyEventHook2(napi_env env, napi_callback_info info)
     napi_value result;
 
     Input_Result retResult = OH_Input_AddKeyEventHook(nullptr);
-    napi_create_int32(env,
-        (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION ||
-        retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    };
     return result;
 }
 

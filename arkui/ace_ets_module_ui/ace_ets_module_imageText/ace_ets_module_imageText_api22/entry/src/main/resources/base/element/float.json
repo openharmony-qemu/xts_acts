@@ -95,6 +95,10 @@
     {
       "name": "offsetY_1",
       "value": "10"
+    },
+    {
+      "name": "normal_font_size",
+      "value": "16.0"
     }
   ]
 }

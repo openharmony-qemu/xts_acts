@@ -135,15 +135,19 @@ ani_int test_PromiseResolver_Reject_02([[maybe_unused]] ani_env *env_, [[maybe_u
     ASSERT_EQ(env_->FindClass("escompat.Error", &errorClass), ANI_OK);
 
     ani_method constructor {};
-    ASSERT_EQ(env_->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}:", &constructor), ANI_OK);
+    ASSERT_EQ(env_->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}C{escompat.ErrorOptions}:", &constructor),
+              ANI_OK);
 
     std::string rejected = "rejected";
     ani_string rejection {};
     ASSERT_EQ(env_->String_NewUTF8(rejected.c_str(), rejected.size(), &rejection), ANI_OK);
 
+    ani_ref undefinedArgument {};
+    ASSERT_EQ(env_->GetUndefined(&undefinedArgument), ANI_OK);
+
     ani_object errorObject {};
     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
-    ASSERT_EQ(env_->Object_New(errorClass, constructor, &errorObject, rejection), ANI_OK);
+    ASSERT_EQ(env_->Object_New(errorClass, constructor, &errorObject, rejection, undefinedArgument), ANI_OK);
 
     auto err = static_cast<ani_error>(errorObject);
 

@@ -18,9 +18,10 @@ import EmptyTest from './Empty.test.js';
 import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
-  if (sim.getMaxSimCount()!=0){
+  
+  if (sim.getMaxSimCount() != 0 && sim.hasSimCardSync(0)) {
     CallManagerTest();
-  }else{
+  } else {
     EmptyTest()
   }
 }

@@ -44,7 +44,7 @@ let emitKey = "emitUserAgent";
 export default function patternLockTest() {
 
   describe('ActsPatternLockInterfaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

@@ -24,21 +24,6 @@ export default function accountManagerTest() {
 
   describe('accountManager_test', () => {
 
-    let localIds: Array<number> = [];
-
-    beforeAll((done: Function) => {
-      appIdsInit();
-      done();
-    })
-
-    afterAll((done: Function) => {
-      let osAccountManager = osAccount.getAccountManager();
-      localIds.forEach((localId) => {
-        osAccountManager.removeOsAccount(localId);
-      })
-      done();
-    })
-
     // ------------- accountManager --------------------
 
     /**
@@ -194,7 +179,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_001 error 201 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 201) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -224,7 +213,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- getDomainAccountPolicy_test_001 error 201 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 201) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

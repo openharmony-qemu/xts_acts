@@ -45,6 +45,21 @@ import PolygonResourceTest from './Polygon/PolygonResourceTest';
 import PolylineResourceTest from './Polyline/PolylineResourceTest';
 import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
+import ShapeNullUndefinedTest from './Shape/ShapeNullUndefined.test';
+import ShapeNullUndefined2Test from './Shape/ShapeNullUndefined2.test';
+import ShapeNullUndefined3Test from './Shape/ShapeNullUndefined3.test';
+import ShapeNullUndefined4Test from './Shape/ShapeNullUndefined4.test';
+import ShapeNullUndefined5Test from './Shape/ShapeNullUndefined5.test';
+import BaseShapeWidthHeightNullUndefinedTest from './Shape/BaseShapeWidthHeightNullUndefined.test';
+import lineStartPointNullUndefinedTest from './Line/lineStartPointNullUndefinedTest.test';
+import pathCommandsNullUndefinedTest from './Path/pathCommandsNullUndefinedTest.test';
+import polygonPointsNullUndefinedTest from './Polygon/polygonPointsNullUndefinedTest.test';
+import polylinePointsNullUndefinedTest from './Polyline/polylinePointsNullUndefinedTest.test';
+import CircleNullUndefinedTest from './Circle/CircleNullUndefined.test';
+import CircleNullUndefined2Test from './Circle/CircleNullUndefined2.test';
+import CircleNullUndefined3Test from './Circle/CircleNullUndefined3.test';
+import RectRadiusWidthHeightNullUndefinedTest from './Rect/RectRadiusWidthHeightNullUndefined.test';
+import RectNullUndefinedTest from './Rect/RectNullUndefined.test';
 
 export default function testsuite() {
 
@@ -81,4 +96,19 @@ export default function testsuite() {
   RectResourceTest();
   ShapeResourceTest();
 
+  ShapeNullUndefinedTest();
+  ShapeNullUndefined2Test();
+  ShapeNullUndefined3Test();
+  ShapeNullUndefined4Test();
+  ShapeNullUndefined5Test();
+  BaseShapeWidthHeightNullUndefinedTest();
+  lineStartPointNullUndefinedTest();
+  pathCommandsNullUndefinedTest();
+  polygonPointsNullUndefinedTest();
+  polylinePointsNullUndefinedTest();
+  CircleNullUndefinedTest();
+  CircleNullUndefined2Test();
+  CircleNullUndefined3Test();
+  RectRadiusWidthHeightNullUndefinedTest();
+  RectNullUndefinedTest();
 }

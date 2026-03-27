@@ -1,5 +1,4 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, xit, Level, Size, TestType } from "../../../hypium/index";
-import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
 class CustomClass {
@@ -213,11 +212,10 @@ export default function ConcurrentHashMapTest() {
     it("constructor_With_ArrayLike_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrKeys: Number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       let arrValues: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-      let array = Array<[Number, string]>(10);
-      for (let i = 0; i < 10; i++) {
-        let arrKV: [Number, string] = [arrKeys[i], arrValues[i]]
-        array[i] = arrKV;
-      }
+      let array = new Array<[Number, string]>(10, (i) => { 
+        let arrKV: [Number, string] = [arrKeys[i], arrValues[i]] 
+        return arrKV
+      });
       let arrayLike = array as ArrayLike<[Number, string]>;
       let concurrentHashMap:  containers.ConcurrentHashMap<Number, string> = new  containers.ConcurrentHashMap<Number, string>(arrayLike);
       expect(String(concurrentHashMap.get(0))).assertEqual('zero');
@@ -250,7 +248,8 @@ export default function ConcurrentHashMapTest() {
      */
     it("constructor_With_Iterable_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
-      concurrentHashMap.set(1, "one");
+      let res = concurrentHashMap.set(1, "one");
+      expect(res).assertEqual(concurrentHashMap);
       let iterable = concurrentHashMap.entries();
       let concurrentIter:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(iterable);
       expect(String(concurrentIter.size)).assertEqual('1');
@@ -294,6 +293,19 @@ export default function ConcurrentHashMapTest() {
       let iterable = map.entries();
       let concurrentMap = new  containers.ConcurrentHashMap<number | null | undefined, string | null | undefined>(iterable);
       expect(String(concurrentMap.size)).assertEqual('4');
+      expect(concurrentMap.get(null)).assertEqual("nullKey");
+      expect(concurrentMap.get(undefined)).assertEqual("undefinedKey");
+      expect(concurrentMap.get(1)).assertEqual(null);
+      expect(concurrentMap.get(2)).assertEqual(undefined);
+      expect(concurrentMap.has(null)).assertTrue();
+      expect(concurrentMap.has(undefined)).assertTrue();
+      expect(concurrentMap.has(1)).assertTrue();
+      expect(concurrentMap.has(2)).assertTrue();
+      expect(concurrentMap.remove(null)).assertEqual("nullKey");
+      expect(concurrentMap.remove(undefined)).assertEqual("undefinedKey");
+      expect(concurrentMap.remove(1)).assertEqual(null);
+      expect(concurrentMap.remove(2)).assertEqual(undefined);
+      expect(concurrentMap.size).assertEqual(0);
     });
 
     /**
@@ -653,7 +665,7 @@ export default function ConcurrentHashMapTest() {
      */
     it("constructor_With_GetTest_static_Test_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
-      expect(String(map.get(1))).assertEqual('undefined');
+      expect(map.get(1)).assertEqual(undefined);
     });
 
     /**
@@ -666,7 +678,7 @@ export default function ConcurrentHashMapTest() {
      */
     it("constructor_With_isEmpty_static_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
-      expect(String(ConcurrentHashMap.isEmpty())).assertEqual('true');
+      expect(ConcurrentHashMap.isEmpty()).assertTrue();
     });
 
     /**
@@ -680,7 +692,7 @@ export default function ConcurrentHashMapTest() {
     it("constructor_With_isEmpty_static_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "value");
-      expect(String(ConcurrentHashMap.isEmpty())).assertEqual('false');
+      expect(ConcurrentHashMap.isEmpty()).assertFalse();
     });
 
     /**
@@ -732,7 +744,7 @@ export default function ConcurrentHashMapTest() {
       map.set(1, "value1");
       map.set(2, "value2");
       map.clear();
-      expect(String(map.isEmpty())).assertEqual('true');
+      expect(map.isEmpty()).assertTrue();
     });
 
     /**
@@ -2002,7 +2014,8 @@ export default function ConcurrentHashMapTest() {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       let flag: boolean = map.replace(1, "first");
-      expect(String(map.get(1))).assertEqual("first");
+      expect(flag).assertTrue();
+      expect(map.get(1)).assertEqual("first");
     });
 
     /**
@@ -2049,6 +2062,9 @@ export default function ConcurrentHashMapTest() {
       map.set(null, 'value')
       let flag: boolean = map.replace(null, "value1");
       expect(String(map.get(null))).assertEqual("value1");
+      let flag2 = map.delete(null);
+      expect(flag2).assertTrue();
+      expect(map.has(null)).assertFalse();
     });
 
     /**
@@ -2064,6 +2080,9 @@ export default function ConcurrentHashMapTest() {
       map.set(undefined, 'value')
       let flag: boolean = map.replace(undefined, 'value1');
       expect(String(map.get(undefined))).assertEqual('value1');
+      let flag2 = map.delete(undefined);
+      expect(flag2).assertTrue();
+      expect(map.has(undefined)).assertFalse();
     });
 
     /**
@@ -2338,7 +2357,7 @@ export default function ConcurrentHashMapTest() {
     it("iterator_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       let count = 0;
-      const iterator = map.entries();
+      const iterator = map.$_iterator();
       let entry = iterator.next();
       while (!entry.done) {
         count++;
@@ -2363,7 +2382,7 @@ export default function ConcurrentHashMapTest() {
         map.set(key, value);
       }
       let count = 0;
-      const iterator = map.entries();
+      const iterator = map.$_iterator();
       let entry = iterator.next();
       while (!entry.done) {
         const key = entry.value![0];
@@ -2389,7 +2408,7 @@ export default function ConcurrentHashMapTest() {
       const value = "value";
       map.set(key, value);
       let count = 0;
-      const iterator = map.entries();
+      const iterator = map.$_iterator();
       let entry = iterator.next();
       while (!entry.done) {
         const iterKey = entry.value![0];
@@ -2416,7 +2435,7 @@ export default function ConcurrentHashMapTest() {
       map1.set("key1", "value1");
       map1.set("key2", "value2");
       map1.set("key3", "value3");
-      const iterator = map1.entries();
+      const iterator = map1.$_iterator();
       let entry = iterator.next();
       while (!entry.done) {
         const key = entry.value![0];

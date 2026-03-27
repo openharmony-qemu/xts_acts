@@ -30,7 +30,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function textInputContentType() {
   describe('textInputContentType', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputContentType beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

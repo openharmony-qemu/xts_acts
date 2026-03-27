@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ChipGroupApi1() {
   describe('ChipGroupApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipGroupApi1 beforeAll start");
 
 

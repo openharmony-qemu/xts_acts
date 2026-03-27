@@ -85,7 +85,7 @@ export default function timePickerThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0100
+     * @tc.name   `ActsTimePickerThemeColors_0100`
      * @tc.number ActsTimePickerThemeColors_0100
      * @tc.desc   check system colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0200
+     * @tc.name   `ActsTimePickerThemeColors_0200`
      * @tc.number ActsTimePickerThemeColors_0200
      * @tc.desc   check custom colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -122,7 +122,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0300
+     * @tc.name   `ActsTimePickerThemeColors_0300`
      * @tc.number ActsTimePickerThemeColors_0300
      * @tc.desc   check custom colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0400
+     * @tc.name   `ActsTimePickerThemeColors_0400`
      * @tc.number ActsTimePickerThemeColors_0400
      * @tc.desc   check colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -160,7 +160,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0500
+     * @tc.name   `ActsTimePickerThemeColors_0500`
      * @tc.number ActsTimePickerThemeColors_0500
      * @tc.desc   check system colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -178,7 +178,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0600
+     * @tc.name   `ActsTimePickerThemeColors_0600`
      * @tc.number ActsTimePickerThemeColors_0600
      * @tc.desc   Check custom colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -197,7 +197,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0700
+     * @tc.name   `ActsTimePickerThemeColors_0700`
      * @tc.number ActsTimePickerThemeColors_0700
      * @tc.desc   Check custom colors values of the TimePicker component
      * @tc.type   FUNCTION
@@ -217,7 +217,7 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTimePickerThemeColors_0800
+     * @tc.name   `ActsTimePickerThemeColors_0800`
      * @tc.number ActsTimePickerThemeColors_0800
      * @tc.desc   Check system colors values of the TimePicker component
      * @tc.type   FUNCTION

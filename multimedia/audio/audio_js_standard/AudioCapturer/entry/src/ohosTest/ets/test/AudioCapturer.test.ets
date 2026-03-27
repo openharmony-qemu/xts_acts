@@ -156,7 +156,6 @@ export default function audioCapturer() {
         await sleep(1000);
         if (markReachState === 'success' || markReachState === 'invalid_failure') {
           console.log(`${Tag} markReachState: ${JSON.stringify(markReachState)}`);
-          expect(true).assertTrue();
         } else if (markReachState === 'failure') {
           expect(false).assertTrue();
         }
@@ -164,7 +163,6 @@ export default function audioCapturer() {
 
         if (periodReachState === 'success' || periodReachState === 'invalid_failure') {
           console.log(`${Tag} periodReachState: ${JSON.stringify(periodReachState)}`);
-          expect(true).assertTrue();
         } else if (periodReachState === 'failure') {
           expect(false).assertTrue();
         }
@@ -710,7 +708,6 @@ export default function audioCapturer() {
         console.log(`${Tag} fd-re: ${JSON.stringify(fd)}`);
         if (fd !== null) {
           console.info(`${Tag} recCapturerPromise4: file fd created`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} recCapturerPromise4: Capturer start : ERROR `);
           expect(false).assertTrue();
@@ -897,7 +894,6 @@ export default function audioCapturer() {
           audioCapPromise = data;
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
           audioCapPromise.setWillMuteWhenInterrupted(true);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
@@ -2775,16 +2771,18 @@ export default function audioCapturer() {
         console.log(`${Tag} start-getAudioTime-getBufferSize-read-getAudioTimein- err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
+      let flag: boolean = false;
       try {
         await audioCapPromise.stop();
+        console.log(`${Tag} stop ok`);
         let audioTime2: ESObject = await audioCapPromise.getAudioTime();
-        console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
+        console.log(`${Tag} audioTime2 after stop: ${JSON.stringify(audioTime2)}`);
         expect(audioTime2).assertLarger(0);
       } catch (err) {
         console.log(`${Tag} stop-getAudioTimein- err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        flag = true;
       }
-
+      expect(flag).assertTrue();
       try {
         await audioCapPromise.release();
       } catch (err) {
@@ -3042,10 +3040,9 @@ export default function audioCapturer() {
       try {
         await audioCapPromise.stop();
         console.log(`${Tag} stop ok`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${Tag} stop err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        expect(true).assertFail();
       }
       done();
     })
@@ -3086,16 +3083,20 @@ export default function audioCapturer() {
       try {
         await audioCapPromise.release();
         expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        console.log(`${Tag} First release ok`);
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
+      let flag: boolean = false;
       try {
         await audioCapPromise.release();
+        console.log(`${Tag} Second release succeeded unexpectedly!`);
+        flag = true;
       } catch (err) {
-        console.log(`${Tag} re-release err: ${JSON.stringify(err)}`);
-        expect(true).assertTrue();
+        console.log(`${Tag} Second release failed as expected: ${JSON.stringify(err)}`);
       }
+      expect(flag).assertTrue();
       done();
     })
 
@@ -3443,7 +3444,6 @@ export default function audioCapturer() {
       try {
         let audioParamsGet: ESObject = audioCap.getCapturerInfoSync();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -3481,13 +3481,15 @@ export default function audioCapturer() {
         streamInfo: audioStreamInfo44100,
         capturerInfo: audioCapturerInfo44100,
       }
+      let flag: boolean = false;
       await audio.createAudioCapturer(AudioCapturerOptionsInvalid).then((data) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success: ${JSON.stringify(data)}`);
         expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
-        expect(true).assertTrue();
+        flag = true;
       });
+      expect(flag).assertEqual(true);
       done();
     })
 
@@ -3514,11 +3516,10 @@ export default function audioCapturer() {
         streamInfo: audioStreamInfo44100,
         capturerInfo: audioCapturerInfo44100,
       }
-
+      let flag: boolean = false;
       await audio.createAudioCapturer(AudioCapturerOptionsInvalid).then((data) => {
         if (data == undefined) {
           console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Unsuccess : ${JSON.stringify(data)}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success: ${JSON.stringify(data)}`);
           expect(false).assertTrue();
@@ -3526,8 +3527,9 @@ export default function audioCapturer() {
 
       }).catch((err: BusinessError) => {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
-        expect(true).assertTrue();
+        flag = true;
       });
+      expect(flag).assertTrue();
       done();
     })
 
@@ -4201,7 +4203,6 @@ export default function audioCapturer() {
             console.info(`${Tag}: getAudioStreamId : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
           } else {
-            expect(true).assertTrue();
             console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
           }
           audioCapPromise.release();
@@ -4239,11 +4240,10 @@ export default function audioCapturer() {
       try {
         let audioCapPromise: ESObject = await audio.createAudioCapturer(AudioCapturerOptions);
         audioCapPromise.getAudioStreamId().then((data: ESObject) => {
-          expect(true).assertTrue();
           audioCapPromise.release();
           console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
         }).catch((err: BusinessError) => {
-          expect(true).assertTrue();
+          expect(false).assertTrue();
           audioCapPromise.release();
           console.error(`${Tag}: getAudioStreamId : ERROR : ${err}`);
         });
@@ -4284,7 +4284,6 @@ export default function audioCapturer() {
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
           let StreamIdSync: ESObject = audioCapPromise.getAudioStreamIdSync();
           console.info(`${Tag}: getAudioStreamId : Converted: ${StreamIdSync}`);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
@@ -4322,21 +4321,18 @@ export default function audioCapturer() {
       }
       try {
         let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.getOverflowCount().then((data) => {
-          expect(data).assertLargerOrEqual(0);
-          console.info(`${Tag}: getOverflowCount : Converted: ${data}`);
-        }).catch((err: BusinessError) => {
-          expect(true).assertTrue();
-          console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);
-        });
-
+        const overflowCount = await audioCapPromise.getOverflowCount();
+        expect(overflowCount).assertLargerOrEqual(0);
+        console.info(`${Tag}: getOverflowCount returned: ${overflowCount}`);
         await audioCapPromise.release();
-      } catch (err) {
-        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        done();
+        } catch (err) {
+        console.error(`${Tag} error : ${err}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
-    })
+    });
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
@@ -4372,9 +4368,11 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+      let flag: boolean = false;
       await getFd("capture_js-44100-2C-16B_voice_message.pcm");
       await recPromise(AudioCapturerOptions, AudioRendererOptions, done);
-      expect(true).assertTrue();
+      flag = true;
+      expect(flag).assertEqual(true);
       done();
     })
 
@@ -4418,12 +4416,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4472,12 +4469,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4526,12 +4522,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -4580,12 +4575,11 @@ export default function audioCapturer() {
         let fileName = "capture_js-48000-F32LE.pcm";
         await recCapturerPromise4(audioCapturerOptions, fileName, done);
         console.log(`${caseTag} audio recording success`);
-        
+
         await sleep(200);
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -5247,6 +5241,746 @@ export default function audioCapturer() {
         expect(false).assertTrue();
         done();
       }
+    })
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1301
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1301
+     * @tc.desc   createAudioCapturer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioCapturer(null, (err, capturer) => {
+          if (err) {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message},${err.code}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800101);
+            done();
+          } else {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+            done();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1302
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1302
+     * @tc.desc   createAudioCapturer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audio.createAudioCapturer(undefined, (err, capturer) => {
+          if (err) {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1301: createAudioCapturer with null/undefined options: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(6800101);
+          } else {
+            console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: createAudioCapturer with null/undefined options: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1302: PASS :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1303
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1303
+     * @tc.desc   createAudioCapturer with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioCapturer(null);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: createAudioCapturer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1303: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_CREATEAUDIOCAPTURER_1304
+     * @tc.number AUDIO_CREATEAUDIOCAPTURER_1304
+     * @tc.desc   createAudioCapturer with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CREATEAUDIOCAPTURER_1304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audio.createAudioCapturer(undefined);
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: createAudioCapturer with null/undefined options: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`AUDIO_CREATEAUDIOCAPTURER_1304: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(6800101);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_001
+     * @tc.number AUDIO_CAPTURER_READ_NULL_001
+     * @tc.desc   read null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
+        audioCapturer = data;
+        console.info('AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : SUCCESS');
+        audioCapturer.read(null, false).then(() => {
+          console.info('AUDIO_CAPTURER_READ_NULL_001 Succeeded in doing read.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIO_CAPTURER_READ_NULL_001 Failed to read. Code: ${err.code}, message: ${err.message}`);
+          expect(Number(err.code)).assertEqual(6800101);
+          done();
+        });
+        audioCapturer.release();
+      }).catch((err: BusinessError) => {
+        console.error(`AUDIO_CAPTURER_READ_NULL_001 AudioCapturer Created : ERROR : ${err}`);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_002
+     * @tc.number AUDIO_CAPTURER_READ_NULL_002
+     * @tc.desc   read undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      await audio.createAudioCapturer(audioCapturerOptions).then((data) => {
+        audioCapturer = data;
+        console.info('AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : SUCCESS');
+        audioCapturer.read(undefined, false).then(() => {
+          console.info('AUDIO_CAPTURER_READ_NULL_002 Succeeded in doing read.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AUDIO_CAPTURER_READ_NULL_002 Failed to read. Code: ${err.code}, message: ${err.message}`);
+          expect(Number(err.code)).assertEqual(6800101);
+          done();
+        });
+        audioCapturer.release();
+      }).catch((err: BusinessError) => {
+        console.error(`AUDIO_CAPTURER_READ_NULL_002 AudioCapturer Created : ERROR : ${err}`);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_003
+     * @tc.number AUDIO_CAPTURER_READ_NULL_003
+     * @tc.desc   read null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
+        if (err) {
+          console.error(`AUDIO_CAPTURER_READ_NULL_003 AudioCapturer Created : Error: ${err}`);
+          expect(false).assertTrue();
+          done();
+          return;
+        } else {
+          console.info('AUDIO_CAPTURER_READ_NULL_003 AudioCapturer Created : SUCCESS');
+          audioCapturer = data;
+          audioCapturer.read(null, false, (err: BusinessError, buffer: ArrayBuffer) => {
+            if (err) {
+              console.error(`AUDIO_CAPTURER_READ_NULL_003 Failed to read. Code: ${err.code}, message: ${err.message}`);
+              expect(Number(err.code)).assertEqual(6800101);
+              done();
+            } else {
+              console.info('AUDIO_CAPTURER_READ_NULL_003 Succeeded in doing read.');
+              expect(false).assertTrue();
+              done();
+            }          
+          });
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_CAPTURER_READ_NULL_004
+     * @tc.number AUDIO_CAPTURER_READ_NULL_004
+     * @tc.desc   read undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_CAPTURER_READ_NULL_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      audio.createAudioCapturer(audioCapturerOptions, (err, data) => {
+        if (err) {
+          console.error(`AUDIO_CAPTURER_READ_NULL_004 AudioCapturer Created : Error: ${err}`);
+        } else {
+          console.info('AUDIO_CAPTURER_READ_NULL_004 AudioCapturer Created : SUCCESS');
+          audioCapturer = data;
+          audioCapturer.read(undefined, false, (err: BusinessError, buffer: ArrayBuffer) => {
+            if (err) {
+              console.error(`AUDIO_CAPTURER_READ_NULL_004 Failed to read. Code: ${err.code}, message: ${err.message}`);
+              expect(Number(err.code)).assertEqual(6800101);
+              done();
+            } else {
+              console.info('AUDIO_CAPTURER_READ_NULL_004 Succeeded in doing read.');
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 
+     * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 
+     * @tc.desc   setIndependentAudioSessionStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0500 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0600 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0700 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0800 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      expect(behavior).assertEqual(0x00000000)
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_0900 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 
+    * @tc.desc   setIndependentAudioSessionStrategy--0x00000002--MUTE_WHEN_INTERRUPTED
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      expect(behavior).assertEqual(0x00000002)
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+
+      let behavior: ESObject = -1;
+      try {
+        await audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 Error: FAIL' );
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 :PASS ' + strategy + 'and ' + behavior);
+        expect(Number(err.code)).assertEqual(6800101);
+      }
+      await audioCapturer.release();
+      done();
     })
   })
 }

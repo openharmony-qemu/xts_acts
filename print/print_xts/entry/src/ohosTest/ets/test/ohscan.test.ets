@@ -147,5 +147,18 @@ export default function oHScannerServicesInterfaceTest() {
       let result: number = await entry.oHScanExit();
       expect(result).assertEqual(0);
     });
+
+    /**
+     * @tc.name   testOHScan011
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_11
+     * @tc.desc   test OHScanCreateEnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHScan011', Level.LEVEL1, async () => {
+      let result: number = await entry.oHScanCreateEnum();
+      expect(result).assertEqual(0);
+    });
   })
 }

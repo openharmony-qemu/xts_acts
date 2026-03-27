@@ -114,7 +114,7 @@ const waitUiReadyMs: number = 500;
 export default function swiperSecTest() {
 
   describe('swiperSecTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperSecTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

@@ -23,9 +23,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends a specified key/value pair as a new search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testParamsAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testParamsAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var that = new Url.URL('http://username:password@host:8080/directory/file?foo=1&bar=2');
         var params = new Url.URLParams(that.search);
         params.append('ma','jk')
@@ -39,9 +39,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends a specified key/value pair as a new search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new Url.URL('http://username:password@host:8080/directory/file?foo=1&bar=2');
         var params = new Url.URLParams(that.search);
         params.append("ma 大","jk￥")
@@ -55,9 +55,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends a specified key/value pair as a new search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new Url.URL('http://username:password@host:8080/directory/file?foo=1&bar=2');
         var params = new Url.URLParams(that.search);
         params.append("foo~!@#$%^&*()_+-=","jk")
@@ -71,9 +71,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends a specified key/value pair as a new search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo=1&bar=2')
         let params = new Url.URLParams(that.search)
         params.append("app","par")
@@ -87,9 +87,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends a specified key/value pair as a new search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo=1&bar=2')
         let params = new Url.URLParams(that.search)
         params.append("123","456")
@@ -103,9 +103,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Appends throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let that = new Url.URL('https://example.com?foo=1&bar=2')
             let params = new Url.URLParams(that.search)
@@ -147,9 +147,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo=1&bar=2')
         let params = new Url.URLParams(that.search)
         params.delete("foo")
@@ -163,9 +163,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo大=1&bar=2');
         let params = new Url.URLParams(that.search);
         params.delete('foo');
@@ -179,9 +179,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo大=1&bar=2');
         let params = new Url.URLParams(that.search);
         params.delete("foo大");
@@ -195,9 +195,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new Url.URL('https://example.com?foo=1&bar=2');
         let params = new Url.URLParams(that.search);
         params.delete('bar');
@@ -227,9 +227,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let that = new Url.URL('https://example.com?foo=1&bar=2');
             let params = new Url.URLParams(that.search);
@@ -248,9 +248,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Deletes throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsDelete007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsDelete007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let that = new Url.URL('https://example.com?foo=1&bar=2');
             let params = new Url.URLParams(that.search);
@@ -269,9 +269,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   The input parameter for New URLParams is undefined or null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testNewURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testNewURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams(undefined);
         let result = params.toString();
         expect(result).assertEqual('');
@@ -286,9 +286,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2");
 
         var i=0;
@@ -308,9 +308,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -351,9 +351,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -372,9 +372,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("jss","txt")
         var i=0;
@@ -415,9 +415,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -436,9 +436,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsSymbolIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsSymbolIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("foo","jk")
         var i=0;
@@ -458,9 +458,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -479,9 +479,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("jss","txt")
         var i=0;
@@ -522,9 +522,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Callback functions are used to traverse key-value pairs on the URLSearchParams instance object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2");
         var arr={};
         var i = 0;
@@ -543,9 +543,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Callback functions are used to traverse key-value pairs on the URLSearchParams instance object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2");
         params.append("foo","jk");
         var arr={};
@@ -586,9 +586,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Callback functions are used to traverse key-value pairs on the URLSearchParams instance object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("foo=bar&jss=txt");
         params.append("foo","jk");
         var arr={};
@@ -608,9 +608,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   forEach throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let params = new Url.URLParams("foo=bar&jss=txt");
             var arr={};
@@ -656,9 +656,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the first value associated to the given search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var result =  params.get("1")
         expect(result).assertEqual(undefined)
@@ -670,9 +670,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the first value associated to the given search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var result =  params.get("key2")
         expect(result).assertEqual("value2")
@@ -684,9 +684,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the first value associated to the given search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("5","JKL")
         var result =  params.get("5")
@@ -699,9 +699,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the first value associated to the given search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var result =  params.get("key1")
         expect(result).assertEqual("value1")
@@ -713,9 +713,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the first value associated to the given search parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("jss","JL")
         var result =  params.get("jss")
@@ -728,9 +728,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   get throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try{
             let params = new Url.URLParams("key1=value1&key2=value2")
             params.append("jss","JL")
@@ -750,9 +750,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("key1","AAA")
         var result =  params.getAll("key1")
@@ -765,9 +765,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&8=DEF")
         params.append("8","A8A")
         var result =  params.getAll("8")
@@ -780,9 +780,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2&key3=da")
         params.append("key3","A3A")
         var result =  params.getAll("key3")
@@ -795,9 +795,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
         params.append("key3","A3A")
         var result =  params.getAll("key4")
@@ -810,9 +810,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
         params.append("key3","A3A")
         var result =  params.getAll("key2")
@@ -825,9 +825,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   getAll throw BusinessError: Parameter error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsGetAll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsGetAll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
             params.append("key3","A3A")
@@ -847,9 +847,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
         var result =  params.has("2")
         expect(result).assertEqual(false)
@@ -861,9 +861,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&key2=value2&key3=大")
         var result =  params.has("小")
         expect(result).assertEqual(true)
@@ -875,9 +875,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&￥=value2&key3=大")
         params.append("￥","ACA")
         var result =  params.has("￥")
@@ -890,9 +890,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&key2=value2&key3=大")
         var result =  params.has("无")
         expect(result).assertEqual(false)
@@ -904,9 +904,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&￥=value2&key3=大")
         params.append("￥","ACA")
         var result =  params.has("￥11")
@@ -919,9 +919,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&￥=value2&key3=大")
         try {
             var a = 1;
@@ -939,9 +939,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an iterator allowing to go through all keys contained in this object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testParamsKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams("小=value1&￥=value2&key3=大");
         var arr={};
         var i = 0;
@@ -1143,14 +1143,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParamsSet007
+     * @tc.name   testParamsSet007Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06300
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testParamsSet007Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let params = new Url.URLParams("1=value1&2=value2&key3=3");
             var b = undefined;
@@ -2218,9 +2218,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("key1=value1&key2=value2&key3=da")
         params.append("key3","A3A")
         var result =  params.getAll("key3")
@@ -2291,9 +2291,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("小=value1&￥=value2&key3=大")
         params.append("￥","ACA")
         var result =  params.has("￥")
@@ -2335,9 +2335,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("小=value1&￥=value2&key3=大")
         params.append("￥","ACA")
         try {
@@ -2394,9 +2394,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns an iterator allowing to go through all keys contained in this object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("小=value1&￥=value2&key3=大");
         var arr={};
         var i = 0;
@@ -2482,9 +2482,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("1=value1&2=value2&key3=3");
         params.set("ma 大" ,"10￥");
         var res = params.toString();
@@ -2497,9 +2497,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("1=value1&2=value2&key3=3");
         // params.append("1","ACA");
         params.set("1","CCC");
@@ -2513,9 +2513,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("1=value1&2=value2&key3=3");
         params.set('12','BBB');
         var res = params.toString();
@@ -2528,9 +2528,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         try {
             let params = new Url.URLSearchParams("1=value1&2=value2&key3=3");
             var a = 12;
@@ -2548,9 +2548,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams();
         params.set('name', 'value');
         var res = params.toString();
@@ -2735,9 +2735,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a query string suitable for use in a URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("d=value1&c=value2&b=大")
         var result= params.toString()
         expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7")
@@ -2749,9 +2749,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a query string suitable for use in a URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("d=value1&c=value2&b= 大")
         params.append("1 12","QQQ")
         var result= params.toString()
@@ -2764,9 +2764,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a query string suitable for use in a URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("￥=)")
         params.delete("5")
         var result= params.toString()
@@ -2779,9 +2779,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a query string suitable for use in a URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("d=value1&c=value2&b=大&4=key4")
         var result= params.toString()
         expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
@@ -2793,9 +2793,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns a query string suitable for use in a URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams("d=value1&c=value2&b= 大&4=key4&5=key5")
         params.append("1 12","QQQ")
         var result= params.toString()
@@ -2808,9 +2808,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   A parameterized constructor used to create an URLSearchParams instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlSearchParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlSearchParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLSearchParams('?user=abc&query=xyz')
         var result= params.toString()
         expect(result).assertEqual("user=abc&query=xyz")
@@ -2939,9 +2939,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   The second parameter of Url construction is undefined or null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testNewUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testNewUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URL('http://username:password@host:8080/directory/file?query#fragment', undefined)
         let result = params.toString()
         expect(result).assertEqual("http://username:password@host:8080/directory/file?query#fragment")
@@ -2956,9 +2956,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   Returns the serialized URL as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URL('http://username:password@host:8080/directory/file?query#fragment')
         var result= params.toString()
         expect(result).assertEqual("http://username:password@host:8080/directory/file?query#fragment")
@@ -4881,9 +4881,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   URL constructor, which is used to instantiate a URL object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlparseURL0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlparseURL0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
         "p%2Fc2c8b671c3ea4f968ae3a89a21b5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x" +
         "-signature%3DFUbhPcvUfgI%252BJLdkCiaj1S1pBSQ%253D&index=0";
@@ -4901,9 +4901,9 @@ describe('UrlFunTest', function () {
      * @tc.desc   URL constructor, which is used to instantiate a URL object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testUrlparseURL0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testUrlparseURL0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
         "p%2Fc2c8b671c3ea4f968ae3a89a21b5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x" +
         "-signature%3DFUbhPcvUfgI%252BJLdkCiaj1S1pBSQ%253D&index=0";

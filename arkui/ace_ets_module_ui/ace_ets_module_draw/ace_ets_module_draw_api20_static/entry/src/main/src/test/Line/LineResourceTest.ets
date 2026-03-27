@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function LineResourceTest() {
   describe('LineResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LineResourceTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")

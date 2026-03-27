@@ -14,7 +14,6 @@
  */
 import motion from "@ohos.multimodalAwareness.motion";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import { UiDriver, BY } from '@ohos.UiTest'
 import featureAbility from '@ohos.ability.featureAbility';
 
 async function sleep(time) {
@@ -27,44 +26,11 @@ async function sleep(time) {
   })
 }
 
-async function requestPermission() {
-  try {
-      console.info(`msdp getPermission is start`);
-      let context = featureAbility.getContext();
-      await context.requestPermissionsFromUser(['ohos.permission.ACTIVITY_MOTION'], 0, (data) => {
-        console.info("msdp requestPermission success data: " + JSON.stringify(data));
-      });
-  } catch (err) {
-      console.error('msdp requestPermissionsFromUser fail:' + JSON.stringify(err));
-  }
-}
-
-async function driveFn() {
-  try {
-      let driver = await UiDriver.create();
-      console.info(`msdp motion test come in driveFn`);
-      console.info(`msdp motion test driver is ${JSON.stringify(driver)}`);
-      let button = await driver.findComponent(BY.text('允许'));
-      console.info(`button is ${JSON.stringify(button)}`);
-      await button.click();
-      await sleep(1000);
-  } catch (err) {
-      console.info('msdp motion test err code is ' + err);
-      return;
-  }
-}
-
-
 export default function DeviceStatusMotionTest() {
   describe('DeviceStatusMotionTest', function () {
     console.log("*************Motion API Test Begin*************");
-    beforeAll(async function (done) {
-      console.info('-----------------msdp motion test beforeAll begin-----------------');
-      await requestPermission();
-      console.info('msdp requestPermission success');
-      await driveFn();
-      console.info('-----------------msdp motion test beforeAll end-----------------');
-      done();
+    beforeAll(function() {
+      console.info('msdp motion test beforeAll called')
     })
 
     afterAll(function() {

@@ -87,9 +87,9 @@ HWTEST_F(DrawingNativeFilterTest, testFilterCreateDestroyNormal, Function | Smal
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFilterTest, testFilterCreateDestroyNULL, Function | SmallTest | Level3) {
+    OH_Drawing_Filter *filter = nullptr;
     OH_Drawing_FilterDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(filter, nullptr);
 }
 
 /**

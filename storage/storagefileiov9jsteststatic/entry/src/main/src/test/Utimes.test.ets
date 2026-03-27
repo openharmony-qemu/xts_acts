@@ -145,5 +145,25 @@ export default function fileIOUtimes() {
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_utimes_async_static_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0700
+     * @tc.desc   Test utimes() interface with empty string for the first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_utimes_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      try {
+        let time = new Date().getTime();
+        fs.utimes("", time);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_007 has failed for' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
   })
 }

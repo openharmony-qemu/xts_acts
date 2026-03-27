@@ -165,6 +165,96 @@ export default function abilityTest() {
     })
 
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0100
+     * @tc.desc   test on('castDisplayChange') when session destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0100]';
+      await session.destroy();
+      await sleep(500);
+      try {
+        await session.on('castDisplayChange', ()=>{
+          console.info(`${TAG}TestLog: on castDisplayChange callback triggered.`);
+        });
+      } catch (err) {
+        console.info(`${TAG}TestLog: on castDisplayChange register error, error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      }
+      session = null;
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0200
+     * @tc.desc   test on('castDisplayChange') with invalid input param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0200]';
+      try {
+        await session.on('castDisplayChange', null);
+        await sleep(300);
+        console.info(`${TAG}TestLog: no register error raised, vertification failed.`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TAG}TestLog: on castDisplayChange register error, error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0300
+     * @tc.desc   test on('castDisplayChange') with invalid input param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0300]';
+      try {
+        await session.on('castDisplayChange', undefined);
+        await sleep(300);
+        console.info(`${TAG}TestLog: no register error raised, vertification failed.`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TAG}TestLog: on castDisplayChange register error, error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0400
+     * @tc.desc   test on('castDisplayChange') without callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_ON_CASTDISPLAYCHANGE_0400]';
+      try {
+        await session.on('castDisplayChange', );
+        await sleep(300);
+        console.info(`${TAG}TestLog: no register error raised, vertification failed.`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TAG}TestLog: on castDisplayChange register error, error code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    })
 
   })
 }

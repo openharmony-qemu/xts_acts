@@ -218,6 +218,30 @@ export default function publishReminderNopTest() {
       });
         console.info('--------SUB_updateReminder001----after----');
     })
+
+    /**
+ 	   * @tc.name   SUB_subscribeReminderState001
+ 	   * @tc.number SUB_subscribeReminderState001
+ 	   * @tc.desc   Using the updateReminder then method without permission
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL3
+ 	   */
+ 	  it("SUB_subscribeReminderState001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+ 	    console.info('--------SUB_subscribeReminderState001----before----');
+ 	    let reminderId: number = 1;
+ 	    let reminderStateCallback = (states: Array<reminderAgentManager.ReminderState>) => {
+ 	      console.info('SUB_subscribeReminderState001 length is : ' + states.length);
+ 	    }
+ 	    reminderAgentManager.subscribeReminderState(reminderStateCallback).then(() => {
+ 	      console.info('SUB_subscribeReminderState001 subscribe succeed');
+ 	    }).catch((err: BusinessError) => {
+ 	      console.error('SUB_subscribeReminderState001 promise err code:' + err.code + ' message:' + err.message);
+ 	      expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+ 	      done();
+ 	    });
+ 	      console.info('--------SUB_subscribeReminderState001----after----');
+ 	  })
     
   })
 }

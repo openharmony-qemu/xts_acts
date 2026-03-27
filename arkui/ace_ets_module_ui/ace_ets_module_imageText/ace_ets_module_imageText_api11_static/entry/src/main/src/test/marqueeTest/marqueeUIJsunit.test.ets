@@ -47,7 +47,7 @@ const waitUiReadyMs = 1000;
 let uiContext = AppStorage.get<UIContext>("uiContext");
 export default function marqueeUIJsunit() {
   describe('marqueeUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("marqueeUIJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

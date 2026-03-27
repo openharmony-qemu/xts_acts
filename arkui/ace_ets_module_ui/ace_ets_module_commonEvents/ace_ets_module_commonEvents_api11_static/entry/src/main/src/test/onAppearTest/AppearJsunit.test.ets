@@ -36,7 +36,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function appearJsunit() {
   describe('appearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -82,12 +82,14 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         let callBackAppear1 = (backData: emitter.EventData) => {
-          const data: Record<String,RecordData> =
-            backData.data as Record<String,RecordData>
-          console.info("testAppear01 get appearEvent result is: " + JSON.stringify(backData));
-          await CommonFunc.sleep(1000);
-          expect(data['ACTION']).assertEqual(false);
-          done()
+          waitForCompletion(async () => {
+            const data: Record<String,RecordData> =
+              backData.data as Record<String,RecordData>
+            console.info("testAppear01 get appearEvent result is: " + JSON.stringify(backData));
+            await CommonFunc.sleep(1000);
+            expect(data['ACTION']).assertEqual(false);
+            done()
+          })
         }
         let appearEvent1: emitter.InnerEvent = {
           eventId: 58,

@@ -19,6 +19,7 @@ import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadJSUnit() {
   describe('requestDownloadJSUnit', () => {
@@ -48,8 +49,11 @@ export default function requestDownloadJSUnit() {
     /**
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
-    beforeEach(() => {
-      console.info('====>beforeEach: Prerequisites is executed.');
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**
@@ -513,6 +517,28 @@ export default function requestDownloadJSUnit() {
                 console.error('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 Failed to getTaskInfo the download task.');
                 expect().assertFail();
               }
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo description: '+ data.description);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo downloadedBytes: '+ data.downloadedBytes);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo downloadId: '+ data.downloadId);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo failedReason: '+ data.failedReason);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo fileName: '+ data.fileName);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo filePath: '+ data.filePath);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo pausedReason: '+ data.pausedReason);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo status: '+ data.status);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo targetURI: '+ data.targetURI);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo downloadTitle: '+ data.downloadTitle);
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 DownloadInfo downloadTotalBytes: '+ data.downloadTotalBytes);
+              expect(data.description !== undefined).assertTrue();
+              expect(data.downloadedBytes !== undefined).assertTrue();
+              expect(data.downloadId !== undefined).assertTrue();
+              expect(data.failedReason !== undefined).assertTrue();
+              expect(data.fileName !== undefined).assertTrue();
+              expect(data.filePath !== undefined).assertTrue();
+              expect(data.pausedReason !== undefined).assertTrue();
+              expect(data.status !== undefined).assertTrue();
+              expect(data.targetURI !== undefined).assertTrue();
+              expect(data.downloadTitle !== undefined).assertTrue();
+              expect(data.downloadTotalBytes !== undefined).assertTrue();
               expect(typeof data == "object").assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001 Download getTaskInfo success.');
             }catch(err){
@@ -561,6 +587,28 @@ export default function requestDownloadJSUnit() {
         try{
           expect(downloadTask != undefined).assertEqual(true);
           downloadTask.getTaskInfo().then(async data => {
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo description: '+ data.description);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo downloadedBytes: '+ data.downloadedBytes);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo downloadId: '+ data.downloadId);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo failedReason: '+ data.failedReason);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo fileName: '+ data.fileName);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo filePath: '+ data.filePath);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo pausedReason: '+ data.pausedReason);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo status: '+ data.status);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo targetURI: '+ data.targetURI);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo downloadTitle: '+ data.downloadTitle);
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 DownloadInfo downloadTotalBytes: '+ data.downloadTotalBytes);
+            expect(data.description !== undefined).assertTrue();
+            expect(data.downloadedBytes !== undefined).assertTrue();
+            expect(data.downloadId !== undefined).assertTrue();
+            expect(data.failedReason !== undefined).assertTrue();
+            expect(data.fileName !== undefined).assertTrue();
+            expect(data.filePath !== undefined).assertTrue();
+            expect(data.pausedReason !== undefined).assertTrue();
+            expect(data.status !== undefined).assertTrue();
+            expect(data.targetURI !== undefined).assertTrue();
+            expect(data.downloadTitle !== undefined).assertTrue();
+            expect(data.downloadTotalBytes !== undefined).assertTrue();
             expect(typeof data == "object").assertTrue();
             console.info('====>SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002 Download task getTaskInfo success.');
             await downloadTask.delete();
@@ -599,8 +647,8 @@ export default function requestDownloadJSUnit() {
         header: {
           headers: 'http'
         },
-        enableMetered: false,
-        enableRoaming: false,
+        enableMetered: true,
+        enableRoaming: true,
         description: 'XTS download test!',
         networkType: request.NETWORK_WIFI,
         filePath: downloadFilePath,
@@ -758,7 +806,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_Notice_Task_001 delete files success');
               await downloadTask.delete();
               console.info('====>SUB_Misc_Request_Download_Notice_Task_001 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>SUB_Misc_Request_Download_Notice_Task_001 complete error: " + JSON.stringify(err));
@@ -814,7 +862,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_Notice_Task_002 delete files success');
               await downloadTask.delete();
               console.info('====>SUB_Misc_Request_Download_Notice_Task_002 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>SUB_Misc_Request_Download_Notice_Task_002 complete error: " + JSON.stringify(err));
@@ -870,7 +918,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_Notice_Task_003 delete files success');
               await downloadTask.delete();
               console.info('====>SUB_Misc_Request_Download_Notice_Task_003 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>SUB_Misc_Request_Download_Notice_Task_003 complete error: " + JSON.stringify(err));
@@ -1050,7 +1098,7 @@ export default function requestDownloadJSUnit() {
         description: 'XTS download test!',
         filePath: "downloadFilePath",
         title: 'XTS download test!',
-        background: false
+        background: true
       }
       try {
         request.downloadFile(baseContext, downloadFileConfig, (err: BusinessError, downloadTask: request.DownloadTask) => {
@@ -1107,7 +1155,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001 delete downloadTask');
               fs.unlinkSync(`${baseContext.cacheDir}/test.hap`);
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002 delete files success');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001 complete error: " + JSON.stringify(err));
@@ -1162,7 +1210,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002 delete files success');
               await downloadTask.delete();
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002 complete error: " + JSON.stringify(err));
@@ -1307,7 +1355,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>Download_Test_0400 delete files success');
               await downloadTask.delete();
               console.info('====>Download_Test_0400 delete downloadTask');
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               done();
             } catch (err) {
               console.info("====>Download_Test_0400 complete error: " + JSON.stringify(err));
@@ -1367,7 +1415,7 @@ export default function requestDownloadJSUnit() {
             console.info('====>Download_Test_0600 delete files success');
             await downloadTask.delete();
             console.info('====>Download_Test_0600 delete downloadTask');
-            expect(true).assertTrue();
+            expect(downloadTask !== undefined).assertTrue();
             done();
           } else {
             console.info("====>Download_Test_0600 onFail error: " + JSON.stringify(err));
@@ -1433,7 +1481,7 @@ export default function requestDownloadJSUnit() {
                   console.info('====>Download_Test_0700 delete files success');
                   await downloadTask.delete();
                   console.info('====>Download_Test_0700 delete downloadTask');
-                  expect(true).assertTrue();
+                  expect(downloadTask !== undefined).assertTrue();
                   done();
                 } else {
                   console.info("====>Download_Test_0700 onFail error: " + JSON.stringify(err));
@@ -1507,7 +1555,7 @@ export default function requestDownloadJSUnit() {
         console.info('====>Download_Test_1100 task1 delete file success');
         fs.unlinkSync(downloadFilePath2);
         console.info('====>Download_Test_1100 task2 delete file success');
-        expect(true).assertTrue();
+        expect(task !== undefined).assertTrue();
         done();
       } catch (err) {
         console.info("====>Download_Test_1100 error: " + JSON.stringify(err));

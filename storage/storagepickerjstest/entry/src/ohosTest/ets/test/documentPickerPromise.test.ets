@@ -427,7 +427,21 @@ export default function documentPickerPromise(abilityContext: Context) {
       let testNum = "test_Documentpicker_Save_Promise_010";
       let option = new picker.DocumentSaveOptions();
       option.pickerMode = picker.DocumentPickerMode.DOWNLOAD;
-      await saveWithOption(testNum, done, option);
+      try {
+        new picker.DocumentViewPicker().save(option).then((result) => {
+        console.info(`test_Documentpicker_Save_Promise_010 result: ${JSON.stringify(result)}`);
+        expect(picker.DocumentPickerMode.DOWNLOAD === 1).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`test_Documentpicker_Save_Promise_010 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+      } catch (e) {
+        console.log('test_Documentpicker_Save_Promise_010 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
     });
     /**
      * @tc.name   test_Documentpicker_Save_Promise_011
@@ -443,6 +457,338 @@ export default function documentPickerPromise(abilityContext: Context) {
       option.pickerMode = picker.DocumentPickerMode.DEFAULT;
       await saveWithOption(testNum, done, option);
     });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_000
+    * @tc.number SUB_DF_DocumentViewPicker_select_0000
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with null parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        await new picker.DocumentViewPicker().select(null).then((result) => {
+          console.info(`DocumentViewPicker_select_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`DocumentViewPicker_select_000 err: ${JSON.stringify(err)}`);
+          done();
+        })
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_select_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_001
+    * @tc.number SUB_DF_DocumentViewPicker_select_0010
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with undefined parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(undefined).then((result) => {
+          console.info(`DocumentViewPicker_select_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`DocumentViewPicker_select_001 err: ${JSON.stringify(err)}`);
+          done();
+        })
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_select_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_002
+    * @tc.number SUB_DF_DocumentViewPicker_select_0020
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with empty defaultFilePathUri
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_002', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_002";
+      let option = new picker.DocumentSelectOptions();
+      option.defaultFilePathUri = "";
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_003
+    * @tc.number SUB_DF_DocumentViewPicker_select_0030
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with empty fileSuffixFilters array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_003', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_003";
+      let option = new picker.DocumentSelectOptions();
+      option.fileSuffixFilters = [];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_004
+    * @tc.number SUB_DF_DocumentViewPicker_select_0040
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with non-empty fileSuffixFilters array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_004', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_004";
+      let option = new picker.DocumentSelectOptions();
+      option.fileSuffixFilters = ['txt'];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_005
+    * @tc.number SUB_DF_DocumentViewPicker_select_0050
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with empty fileSuffixFilters string
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_005', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_005";
+      let option = new picker.DocumentSelectOptions();
+      option.fileSuffixFilters = [''];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_012
+    * @tc.number SUB_DF_DocumentViewPicker_select_0120
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with multiAuthMode false
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_012', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_012";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = false;
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_013
+    * @tc.number SUB_DF_DocumentViewPicker_select_0130
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with empty multiUriArray
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_013', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_013";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = true;
+      option.multiUriArray = [];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_014
+    * @tc.number SUB_DF_DocumentViewPicker_select_0140
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with non-empty multiUriArray
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_014', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_014";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = true;
+      option.multiUriArray = ['file://test'];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_select_015
+    * @tc.number SUB_DF_DocumentViewPicker_select_0150
+    * @tc.desc   Test DocumentViewPicker.select() interfaces with empty multiUriArray string
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_select_015', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_select_015";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = true;
+      option.multiUriArray = [''];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_000
+    * @tc.number SUB_DF_DocumentViewPicker_save_0000
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with null parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        await new picker.DocumentViewPicker().save(null).then((result) => {
+        console.info(`DocumentViewPicker_save_000 result: ${JSON.stringify(result)}`);
+        expect(result).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`DocumentViewPicker_save_000 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_001
+    * @tc.number SUB_DF_DocumentViewPicker_save_0010
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with undefined parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(undefined).then((result) => {
+        console.info(`DocumentViewPicker_save_001 result: ${JSON.stringify(result)}`);
+        expect(result.length === 0).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`DocumentViewPicker_save_001 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_002
+    * @tc.number SUB_DF_DocumentViewPicker_save_0020
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with empty newFileNames array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_002', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_002";
+      let option = new picker.DocumentSaveOptions();
+      option.newFileNames = [];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_003
+    * @tc.number SUB_DF_DocumentViewPicker_save_0030
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with non-empty newFileNames array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_003', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_003";
+      let option = new picker.DocumentSaveOptions();
+      option.newFileNames = ['test.txt'];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_004
+    * @tc.number SUB_DF_DocumentViewPicker_save_0040
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with empty newFileNames string
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_004', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_004";
+      let option = new picker.DocumentSaveOptions();
+      option.newFileNames = [''];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_005
+    * @tc.number SUB_DF_DocumentViewPicker_save_0050
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with empty defaultFilePathUri
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_005', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_005";
+      let option = new picker.DocumentSaveOptions();
+      option.defaultFilePathUri = '';
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_006
+    * @tc.number SUB_DF_DocumentViewPicker_save_0060
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with empty fileSuffixChoices array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_006', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_006";
+      let option = new picker.DocumentSaveOptions();
+      option.fileSuffixChoices = [];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_007
+    * @tc.number SUB_DF_DocumentViewPicker_save_0070
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with non-empty fileSuffixChoices array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_007', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_007";
+      let option = new picker.DocumentSaveOptions();
+      option.fileSuffixChoices = ['txt'];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+    * @tc.name   DocumentViewPicker_save_008
+    * @tc.number SUB_DF_DocumentViewPicker_save_0080
+    * @tc.desc   Test DocumentViewPicker.save() interfaces with empty fileSuffixChoices string
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('DocumentViewPicker_save_008', Level.LEVEL3, async (done: Function) => {
+      let testNum = "DocumentViewPicker_save_008";
+      let option = new picker.DocumentSaveOptions();
+      option.fileSuffixChoices = [''];
+      await saveWithOption(testNum, done, option);
+    });
   });
 }
 
@@ -452,13 +798,13 @@ async function select(testNum: string, done: Function) {
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.select().then((result) => {
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::select err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::select error: ${JSON.stringify(error)}`);
@@ -472,13 +818,13 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.select(option).then((result) => {
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
@@ -492,13 +838,13 @@ async function saveWithoutSelect(testNum: string, done: Function) {
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.save().then((result) => {
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::saveWithoutSelect error: ${JSON.stringify(error)}`);
@@ -512,13 +858,13 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Do
     let documentPicker = new picker.DocumentViewPicker();
     documentPicker.save(option).then((result) => {
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     })
-    expect(true).assertTrue();
     done();
   } catch (error) {
     console.info(`${testNum}::saveWithOption error: ${JSON.stringify(error)}`);

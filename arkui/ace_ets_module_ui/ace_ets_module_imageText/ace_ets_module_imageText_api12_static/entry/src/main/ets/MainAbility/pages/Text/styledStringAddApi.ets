@@ -73,7 +73,9 @@ struct Index {
 
   onPageShow() {
     this.controller3.setStyledString(this.mutableStyledString)
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource):Promise<image.PixelMap> {

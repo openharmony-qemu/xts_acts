@@ -15,10 +15,17 @@
     "MainAbility/pages/AlertDialog/AlertDialogTrue",
     "MainAbility/pages/AlertDialog/DialogPage",
     "MainAbility/pages/AlertDialog/stageAlertDialog",
+    "MainAbility/pages/AlertDialog/ShowAlertDialogNullUndefined",
     "MainAbility/pages/Dialog/showAlertDialogMode",
     "MainAbility/pages/dialogLife/AlertDialogLife",
     "MainAbility/pages/Dialog/alertDialogLevelOrder",
     "MainAbility/pages/AlertDialog/alertDialogBlurStyleOptions",
-    "MainAbility/pages/AlertDialog/alertDialogBackgroundEffect"
+    "MainAbility/pages/AlertDialog/alertDialogBackgroundEffect",
+    "MainAbility/pages/promptaction/PromptActionShowToastTest",
+    "MainAbility/pages/promptaction/PromptActionOpenToastTest",
+    "MainAbility/pages/promptaction/PromptActionCloseToastTest",
+    "MainAbility/pages/promptaction/PromptActionShowDialogTest",
+    "MainAbility/pages/promptaction/LevelOrderClampNullUndefined",
+    "MainAbility/pages/promptaction/PromptActionMethodNullUndefined"
   ]
 }

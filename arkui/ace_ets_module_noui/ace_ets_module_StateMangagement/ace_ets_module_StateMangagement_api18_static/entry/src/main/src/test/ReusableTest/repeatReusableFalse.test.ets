@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function repeatReusableFalse() {
   describe('repeatReusableFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
 

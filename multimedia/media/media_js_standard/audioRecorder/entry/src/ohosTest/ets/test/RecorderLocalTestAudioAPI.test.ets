@@ -1388,5 +1388,405 @@ export default function RecorderLocalTestAudioAPI() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0100
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0100', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.VIDEO_H263,
+          fileFormat: media.ContainerFormatType.CFT_MP3,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0200
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0200', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoder: media.AudioEncoder.DEFAULT,
+          format: media.AudioOutputFormat.DEFAULT,
+          audioEncoderMime: media.CodecMimeType.VIDEO_AVC,
+          fileFormat: media.ContainerFormatType.CFT_AAC,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0300
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0300', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoder: media.AudioEncoder.AMR_NB,
+          format: media.AudioOutputFormat.AMR_WB,
+          audioEncoderMime: media.CodecMimeType.VIDEO_MPEG2,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0400
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0400', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoder: media.AudioEncoder.AMR_WB,
+          format: media.AudioOutputFormat.AMR_NB,
+          audioEncoderMime: media.CodecMimeType.VIDEO_MPEG4,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0500
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0500', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoder: media.AudioEncoder.HE_AAC,
+          format: media.AudioOutputFormat.MPEG_4,
+          audioEncoderMime: media.CodecMimeType.VIDEO_VP8,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0600
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0600', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_VORBIS,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0700
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0700', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_FLAC,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0800
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0800', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_MP3,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0900
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0900', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_G711MU,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1000
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1000', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_AMR_WB,
+          fileFormat: media.ContainerFormatType.CFT_AMR,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1001
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1001', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_AMR_NB,
+          fileFormat: media.ContainerFormatType.CFT_AMR,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1004
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1004', Level.LEVEL2, async (done: Function) => {
+      initAudioRecorder();
+      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
+      setCallback(mySteps, done);
+      try {
+        let customAudioConfig: media.AudioRecorderConfig = {
+          audioEncodeBitRate: 48000,
+          audioSampleRate: 48000,
+          numberOfChannels: CHANNEL_TWO,
+          uri: 'fd://',
+          audioEncoderMime: media.CodecMimeType.AUDIO_FLAC,
+          fileFormat: media.ContainerFormatType.CFT_WAV,
+        }
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        done();
+        expect().assertFail();
+        console.error(`test error end: `+ error);
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on(null, () => {
+            console.info('prepare called');
+          });
+        } catch (err) {
+          console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on(undefined, () => {
+            console.info('prepare called');
+          });
+        } catch (err) {
+          console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
   })
 }

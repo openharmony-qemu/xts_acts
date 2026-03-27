@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContent_Start_FlexP_Fixed_Margin() {
 
   describe('AlignContent_Start_FlexP_Fixed_Margin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContent_Start_FlexP_Fixed_Margin beforeEach start");
       
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")

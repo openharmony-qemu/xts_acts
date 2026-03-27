@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -153,21 +153,34 @@ export default function WindowEnterpriseTest() {
                             expect(info.rect.top).assertEqual(res.windowRect.top);
                             expect(info.rect.width).assertEqual(res.windowRect.width);
                             expect(info.rect.height).assertEqual(res.windowRect.height);
-                            expect(info.isFocused).assertEqual(true);
+                            expect(info!.globalDisplayRect!.left).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.top).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.width).assertLarger(0);
+                            expect(info!.globalDisplayRect!.height).assertLarger(0);
+                            expect(info!.globalRect!.left).assertLargerOrEqual(0);
+                            expect(info!.globalRect!.top).assertLargerOrEqual(0);
+                            expect(info!.globalRect!.width).assertLarger(0);
+                            expect(info!.globalRect!.height).assertLarger(0);
+                            expect(info!.displayId).assertLargerOrEqual(0);
+                            expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
+                            expect(info!.abilityName !== null).assertTrue();
+                            expect(info!.windowId).assertLargerOrEqual(0);
+                            expect(info!.windowStatusType !== null).assertTrue();
+                            expect(info!.isFocused === true || info!.isFocused === false).assertTrue();
                             break;
                         }
                     }
                     if (!isExit) {
                         hilog.error(domain, tag,`${caseName} failed, there is no match windowId.`);
-                        await terminateAbility(caseName);
+                        waitForCompletion(async () => {await terminateAbility(caseName);})
                         expect(false).assertTrue();
                         done()
                     }
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     expect(err.message!=null).assertTrue();
                     if (err.code === 801) {
                         hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);

@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function columnNesting_Space() {
   describe('columnNesting_Space', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("columnNesting_Space beforeEach start");
 
 

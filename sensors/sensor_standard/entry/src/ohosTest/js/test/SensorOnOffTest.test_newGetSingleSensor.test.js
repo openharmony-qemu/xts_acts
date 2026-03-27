@@ -52,6 +52,7 @@ describe("SensorJsTest_sensor_36", function () {
 
     let invild;
     let testNullSensorId = -1;
+    let sensortempcode = true;
     const PARAMETER_ERROR_CODE = 401
     const SERVICE_EXCEPTION_CODE = 14500101
     const SENSOR_NO_SUPPORT_CODE = 14500102
@@ -429,7 +430,7 @@ describe("SensorJsTest_sensor_36", function () {
         try{
             sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, undefined).then((data) => {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' illegal parameter!');
@@ -455,7 +456,7 @@ describe("SensorJsTest_sensor_36", function () {
         try{
             sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, null).then((data) => {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' illegal parameter!');
@@ -481,7 +482,7 @@ describe("SensorJsTest_sensor_36", function () {
         try{
             sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, "abc").then((data) => {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' illegal parameter!');

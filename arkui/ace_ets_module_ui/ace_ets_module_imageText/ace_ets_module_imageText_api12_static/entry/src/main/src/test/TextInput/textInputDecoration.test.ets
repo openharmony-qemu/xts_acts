@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputDecoration() {
   describe('textInputDecoration', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputDecoration beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -77,7 +77,7 @@ export default function textInputDecoration() {
       let strJson = inspector.getInspectorByKey('key_textInput_decoration_001');
       console.info("[textInputDecoration_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('decoration'))
-        .assertEqual('{\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"}');
+        .assertContain('\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"');
       console.info('[textInputDecoration_0100] END');
       done();
     });

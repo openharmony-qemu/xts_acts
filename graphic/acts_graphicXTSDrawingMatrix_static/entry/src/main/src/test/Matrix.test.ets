@@ -862,8 +862,9 @@ export default function drawingTsMatrixTest() {
       const msg = 'testMatrixIsIdentityNormalStatic';
       try {
         let matrix1 = new drawing.Matrix();
-        matrix1.isIdentity();
-        console.info(msg + ' isIdentity successed');
+        let result = matrix1.isIdentity();
+        expect(result).assertEqual(true);
+        console.info(msg + ' isIdentity successed 1 result: ' + result);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -873,8 +874,9 @@ export default function drawingTsMatrixTest() {
       try {
         let matrix1 = new drawing.Matrix();
         matrix1.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
-        matrix1.isIdentity();
-        console.info(msg + ' isIdentity successed');
+        let result = matrix1.isIdentity();
+        expect(result).assertEqual(false);
+        console.info(msg + ' isIdentity successed 2 result: ' + result);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -895,7 +897,9 @@ export default function drawingTsMatrixTest() {
       try {
         let matrix1 = new drawing.Matrix();
         for (let i = 0; i < loop_times; i++) {
-          matrix1.isIdentity();
+          let result = matrix1.isIdentity();
+          expect(result).assertEqual(true);
+          console.info(msg + ' isIdentity successed  result: ' + result + " step: " + i);
         }
         console.info(msg + ' isIdentity successed');
       } catch (e) {

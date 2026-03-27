@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function onSelectedTabs() {
   describe('onSelectedTabs', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSelectedTabs beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       

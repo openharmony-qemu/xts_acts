@@ -30,7 +30,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function textAreaFontSize() {
   describe('textAreaFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaFontSize beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

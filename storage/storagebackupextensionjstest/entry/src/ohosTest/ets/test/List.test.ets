@@ -15,8 +15,10 @@
 
 import backupdirTest from './backupdir.test'
 import onreleaseTest from './OnRelease.test'
+import boundaryTest from './BackupExtensionAbilityBoundary.test'
 
 export default function testsuite() {
   backupdirTest()
   onreleaseTest()
+  boundaryTest()
 }
