@@ -376,7 +376,7 @@ export default function typeArrayFloat32ArrayTest() {
     it('TypeArrayFloat32ArrayBufferDv0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
 
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(10);
     })
 
@@ -391,7 +391,7 @@ export default function typeArrayFloat32ArrayTest() {
     it('TypeArrayFloat32ArrayBufferDv0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
 
-      const sum = arr.reduceRight((acc, val) => acc + val, 0);
+      const sum = arr.reduceRight((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(10);
     })
 
@@ -2233,7 +2233,7 @@ export default function typeArrayFloat32ArrayTest() {
       const emptyArr = new Float32Array(0)
       expect(emptyArr.map((val) => val * 2).length).assertEqual(0)
       expect(emptyArr.filter((val) => val > 0).length).assertEqual(0)
-      expect(emptyArr.reduce((acc, val) => acc + val, 0)).assertEqual(0)
+      expect(emptyArr.reduce((acc, val) => acc + val, 0.)).assertEqual(0)
       done();
     })
 
@@ -2365,7 +2365,7 @@ export default function typeArrayFloat32ArrayTest() {
 
         const sum = arr.reduce((acc, val) => {
           return acc + val;
-        }, 0);
+        }, 0.);
         expect(approxEqual(sum, 10.0)).assertEqual(true);
 
         done();

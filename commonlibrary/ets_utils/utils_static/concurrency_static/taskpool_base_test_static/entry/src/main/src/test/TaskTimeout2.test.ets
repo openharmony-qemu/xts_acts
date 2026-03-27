@@ -294,7 +294,7 @@ export default function TaskTimeout2Test() {
         taskpool.execute(task, { timeout: 1000 }).then((res) => {
           isTerminate = true;
           console.info(`${caseName} then`);
-          expect(res).assertEqual(600);
+          expect(res as number).assertEqual(600);
 
         }).catch((e: Error) => {
           console.info(`${caseName} catch: ${e.message}`);
@@ -381,7 +381,7 @@ export default function TaskTimeout2Test() {
         taskpool.execute(task, { timeout: 3000 }).then((res) => {
           isTerminate = true;
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
 
         }).catch((e: Error) => {
           console.info(`${caseName} catch: ${e.message}`);
@@ -1049,7 +1049,7 @@ export default function TaskTimeout2Test() {
         let longTask: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 100.0);
         taskpool.execute(longTask, { timeout: 0 }).then((res) => {
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
         }).catch((e: Error) => {
           console.info(`${caseName} error: ${e.code}, ${e.message}`)
         });
@@ -1073,7 +1073,7 @@ export default function TaskTimeout2Test() {
         let longTask: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 100.0);
         taskpool.execute(longTask, { priority: taskpool.Priority.HIGH }).then((res) => {
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
         }).catch((e: Error) => {
           console.info(`${caseName} error: ${e.code}, ${e.message}`)
         });
@@ -1097,7 +1097,7 @@ export default function TaskTimeout2Test() {
         let longTask: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 100.0);
         taskpool.execute(longTask, {}).then((res) => {
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
         });
         taskpool.terminateTask(longTask);
         console.info(`${caseName} end.`);
@@ -1584,7 +1584,7 @@ export default function TaskTimeout2Test() {
         taskpool.execute(task, { timeout: 5000 }).then((res) => {
           isTerminate = true;
           console.info(`${caseName} then`);
-          expect(res).assertEqual(200);
+          expect(res as number).assertEqual(200);
         }).catch((e: Error) => {
           console.info(`${caseName} error: ${e.code}, ${e.message}`)
           isTerminate = true;
@@ -2281,7 +2281,7 @@ export default function TaskTimeout2Test() {
         let task = new taskpool.Task(taskAsyncRunnerInnerShortOuterLong);
         taskpool.execute(task, { timeout: 2000 }).then((res) => {
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
           isTerminate = true;
         }).catch((e: Error) => {
           console.info(`${caseName} error: ${e.code}, ${e.message}`)
@@ -2311,7 +2311,7 @@ export default function TaskTimeout2Test() {
         taskpool.execute(task, { timeout: 2000 }).then((res) => {
           isTerminate = true;
           console.info(`${caseName} then`);
-          expect(res).assertEqual(100);
+          expect(res as number).assertEqual(100);
         }).catch((e: Error) => {
           console.info(`${caseName} error: ${e.code}, ${e.message}`)
         });
@@ -2703,7 +2703,7 @@ export default function TaskTimeout2Test() {
         taskpool.execute(task, { timeout: 1000 }).then((res) => {
           isTerminate = true;
           console.info(`${caseName} then`);
-          expect(res).assertEqual(16);
+          expect(res as number).assertEqual(16);
         }).catch((e: Error) => {
           console.info(`${caseName} catch: ${e.message}`);
           isTerminate = true;
