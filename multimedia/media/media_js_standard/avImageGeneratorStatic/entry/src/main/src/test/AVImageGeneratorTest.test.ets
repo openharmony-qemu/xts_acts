@@ -430,7 +430,7 @@ export default function AVImageGeneratorTest() {
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
          * @tc.desc   AvImageGenerator fetchFrameByTime test
-         * @tc.type   FUCTION
+         * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -460,7 +460,7 @@ export default function AVImageGeneratorTest() {
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_1000
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_1000
          * @tc.desc   AvImageGenerator fetchFrameByTime test
-         * @tc.type   FUCTION
+         * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -490,7 +490,7 @@ export default function AVImageGeneratorTest() {
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_1100
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_1100
          * @tc.desc   AvImageGenerator fetchFrameByTime test
-         * @tc.type   FUCTION
+         * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -520,11 +520,11 @@ export default function AVImageGeneratorTest() {
          * @tc.name   SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
          * @tc.desc   Test fetchScaledFrameByTime with valid parameters and outputSize (success case)
-         * @tc.type   FUCTION
+         * @tc.type   FUCNTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMETIME_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        it('SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMETIME_FUNCTION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let avImageGenerator: media.AVImageGenerator | undefined = undefined;
             let pixel_map : image.PixelMap | undefined = undefined;
             let outputSize: media.OutputSize = {width :300, height : 300,};
