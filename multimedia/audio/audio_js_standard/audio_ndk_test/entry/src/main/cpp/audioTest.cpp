@@ -7528,6 +7528,103 @@ static napi_value AudioStreamManagerIsFastRecordingSupported_001(napi_env env, n
     return result;
 }
 
+static napi_value AudioStreamManagerIsMultichannelPlaybackSupported_001(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = g_samplingRate;
+    streamInfo.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_2POINT1;
+    streamInfo.encodingType = OH_AudioStream_EncodingType::AUDIOSTREAM_ENCODING_TYPE_RAW;
+    streamInfo.sampleFormat = OH_AudioStream_SampleFormat::AUDIOSTREAM_SAMPLE_S32LE;
+
+    bool isMultichannel = false;
+    isMultichannel = OH_AudioStreamManager_IsMultichannelPlaybackSupported(streamManager, &streamInfo,
+                                                                           AUDIOSTREAM_USAGE_MUSIC);
+    if (isMultichannel) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    } else if (!isMultichannel) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    }
+
+    LOG("IsMultichannelPlaybackSupported_001: FAIL, isMultichannel is: %{public}d", isMultichannel);
+    napi_create_int32(env, TEST_FAIL, &result);
+    return result;
+}
+
+static napi_value AudioStreamManagerIsDirectPlaybackSupported_001(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = g_samplingRate;
+    streamInfo.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    streamInfo.encodingType = OH_AudioStream_EncodingType::AUDIOSTREAM_ENCODING_TYPE_RAW;
+    streamInfo.sampleFormat = OH_AudioStream_SampleFormat::AUDIOSTREAM_SAMPLE_S32LE;
+
+    bool IsDirectPlay = false;
+    IsDirectPlay = OH_AudioStreamManager_IsDirectPlaybackSupported(streamManager, &streamInfo, AUDIOSTREAM_USAGE_MUSIC);
+    if (IsDirectPlay) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    } else if (!IsDirectPlay) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    }
+
+    LOG("IsDirectPlaybackSupported: FAIL, IsDirectPlay is: %{public}d", IsDirectPlay);
+    napi_create_int32(env, TEST_FAIL, &result);
+    return result;
+}
+
+static napi_value AudioStreamManagerIsOffloadPlaybackSupported_001(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = g_samplingRate;
+    streamInfo.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
+    streamInfo.encodingType = OH_AudioStream_EncodingType::AUDIOSTREAM_ENCODING_TYPE_RAW;
+    streamInfo.sampleFormat = OH_AudioStream_SampleFormat::AUDIOSTREAM_SAMPLE_S32LE;
+
+    bool isOffload = false;
+    isOffload = OH_AudioStreamManager_IsOffloadPlaybackSupported(streamManager, &streamInfo, AUDIOSTREAM_USAGE_MUSIC);
+    if (isOffload) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    } else if (!isOffload) {
+        napi_create_int32(env, TEST_PASS, &result);
+        return result;
+    }
+
+    LOG("IsOffloadPlaybackSupported: FAIL, IsOffload is: %{public}d", IsOffload);
+    napi_create_int32(env, TEST_FAIL, &result);
+    return result;
+}
+
 static napi_value AudioStreamBuilderSetCapturerFastStatusChangeCallback_001(napi_env env, napi_callback_info info)
 {
     OH_AudioStreamBuilder *builder = nullptr;
@@ -10221,6 +10318,12 @@ napi_property_descriptor desc3[] = {
     {"audioStreamManagerIsFastPlaybackSupported_001", nullptr, AudioStreamManagerIsFastPlaybackSupported_001,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioStreamManagerIsFastRecordingSupported_001", nullptr, AudioStreamManagerIsFastRecordingSupported_001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamManagerIsMultichannelPlaybackSupported_001", nullptr,
+        AudioStreamManagerIsMultichannelPlaybackSupported_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamManagerIsDirectPlaybackSupported_001", nullptr, AudioStreamManagerIsDirectPlaybackSupported_001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamManagerIsOffloadPlaybackSupported_001", nullptr, AudioStreamManagerIsOffloadPlaybackSupported_001,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioStreamBuilderSetCapturerFastStatusChangeCallback_001", nullptr,
         AudioStreamBuilderSetCapturerFastStatusChangeCallback_001, nullptr, nullptr, nullptr, napi_default, nullptr},

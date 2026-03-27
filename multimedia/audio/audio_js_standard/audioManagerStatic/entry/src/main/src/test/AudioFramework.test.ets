@@ -3869,5 +3869,189 @@ export default function audioFramework() {
       }
       done();
     })
+    /**
+    * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.desc   isFastPlaybackSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      };
+      
+      try {
+        let value: boolean = audioStreamManager.isFastPlaybackSupported(audioStreamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+        console.info(`Return to indicate that under the current audio device conditions, the support for FastPlayback is ${value}.`);
+        if (value == true) {
+          expect(value).assertEqual(true);
+        } else if (value == false) {
+          expect(value).assertEqual(false);
+        } else {
+          console.info("FastPlayback error");
+          expect(true).assertFalse();
+        }
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_STATIC_0100 FAIL:" + error.message);
+        expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISOFFLOADPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISOFFLOADPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.desc   isOffloadPlaybackSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOSTREAMMANAGER_ISOFFLOADPLAYBACKSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      };
+      
+      try {
+        let value: boolean = audioStreamManager.isOffloadPlaybackSupported(audioStreamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+        console.info(`Return to indicate that under the current audio device conditions, the support for OffloadPlayback is ${value}.`);
+        if (value == true) {
+          expect(value).assertEqual(true);
+        } else if (value == false) {
+          expect(value).assertEqual(false);
+        } else {
+          console.info("OffloadPlayback error");
+          expect(true).assertFalse();
+        }
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOSTREAMMANAGER_ISOFFLOADPLAYBACKSUPPORTED_STATIC_0100 FAIL:" + error.message);
+        expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.desc   isFastPlaybackSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      };
+      
+      try {
+        let value: boolean = audioStreamManager.isDirectPlaybackSupported(audioStreamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+        console.info(`Return to indicate that under the current audio device conditions, the support for DirectPlayback is ${value}.`);
+        if (value == true) {
+          expect(value).assertEqual(true);
+        } else if (value == false) {
+          expect(value).assertEqual(false);
+        } else {
+          console.info("DirectPlayback error");
+          expect(true).assertFalse();
+        }
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100 FAIL:" + error.message);
+        expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISFASTRECORDINGSUPPORTED_STATIC_0100 
+    * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISFASTRECORDINGSUPPORTED_STATIC_0100 
+    * @tc.desc   isFastRecordingSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTRECORDINGSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      };
+      
+      try {
+        let value: boolean = audioStreamManager.isFastRecordingSupported(audioStreamInfo, audio.SourceType.SOURCE_TYPE_MIC);
+        console.info(`Return to indicate that under the current audio device conditions, the support for FastRecording is ${value}.`);
+        if (value == true) {
+          expect(value).assertEqual(true);
+        } else if (value == false) {
+          expect(value).assertEqual(false);
+        } else {
+          console.info("FastRecording error");
+          expect(true).assertFalse();
+        }
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOSTREAMMANAGER_ISFASTRECORDINGSUPPORTED_STATIC_0100 FAIL:" + error.message);
+        expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_STATIC_0100 
+    * @tc.desc   isMultichannelPlaybackSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_3,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1
+      };
+      
+      try {
+        let value: boolean = audioStreamManager.isMultichannelPlaybackSupported(audioStreamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+        console.info(`Return to indicate that under the current audio device conditions, the support for MultichannelPlayback is ${value}.`);
+        if (value == true) {
+          expect(value).assertEqual(true);
+        } else if (value == false) {
+          expect(value).assertEqual(false);
+        } else {
+          console.info("MultichannelPlayback error");
+          expect(true).assertFalse();
+        }
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_STATIC_0100 FAIL:" + error.message);
+        expect(true).assertFalse();
+      }
+      done();
+    })
   })
 }
