@@ -16,6 +16,7 @@ group("location") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "geolocation_GnssStatic:ActslocationGnssStaticTest",
       "geolocation_capi:ActslocationCApiTest",
       "geolocation_capi20_test:ActsLocationCApi20Test",
       "geolocation_errorCode:ActslocationErrorCodeTest",
@@ -23,10 +24,13 @@ group("location") {
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
       "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_GeofenceStatic:ActslocationGeofenceStatic",
+      "geolocation_GeocoderStatic:ActslocationGeocoderStatic",
       "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   } else {
     deps = [
+      "geolocation_GnssStatic:ActslocationGnssStaticTest",
       "geolocation_capi:ActslocationCApiTest",
       "geolocation_capi20_test:ActsLocationCApi20Test",
       "geolocation_errorCode:ActslocationErrorCodeTest",
@@ -34,6 +38,8 @@ group("location") {
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
       "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_GeofenceStatic:ActslocationGeofenceStatic",
+      "geolocation_GeocoderStatic:ActslocationGeocoderStatic",
       "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   }
