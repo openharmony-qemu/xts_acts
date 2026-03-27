@@ -18,6 +18,11 @@
 
 namespace ArkUICapiTest {
 
+namespace {
+void StubMenuIntCallback(int32_t, int32_t, void *) {}
+void StubMenuVoidCallback(void *) {}
+} // namespace
+
 /*
  * 测试接口: OH_ArkUI_ShadowOptions_GetFill(OH_ArkUI_ShadowOptions *, bool *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
@@ -227,7 +232,8 @@ static napi_value TestArkUICapi_167(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontStyle(obj, static_cast<ArkUI_FontStyle *>(nullptr));
+    ArkUI_FontStyle out = {};
+    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontStyle(obj, &out);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -335,7 +341,11 @@ static napi_value TestArkUICapi_171(napi_env env, napi_callback_info info)
 
     char buf1[32] = {0};
     int32_t v3 = 0;
-    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFamily(obj, buf1, 0, &v3);
+    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFamily(
+        obj,
+        buf1,
+        static_cast<int32_t>(sizeof(buf1)),
+        &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -433,15 +443,24 @@ static napi_value TestArkUICapi_174(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    const OH_ArkUI_ShadowOptions *holder1 = nullptr;
-    auto ec = OH_ArkUI_TextEditorTextStyle_SetTextShadows(obj, &holder1, 0);
+    auto *shadow = OH_ArkUI_ShadowOptions_Create();
+    if (((shadow)) == nullptr) {
+        OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+        return nullptr;
+    }
+
+    const OH_ArkUI_ShadowOptions *holder1 = shadow;
+    auto ec = OH_ArkUI_TextEditorTextStyle_SetTextShadows(obj, &holder1, 1);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ShadowOptions_Destroy(shadow);
+            OH_ArkUI_TextEditorTextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ShadowOptions_Destroy(shadow);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -626,7 +645,11 @@ static napi_value TestArkUICapi_181(napi_env env, napi_callback_info info)
 
     char buf1[32] = {0};
     int32_t v3 = 0;
-    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFeature(obj, buf1, 0, &v3);
+    auto ec = OH_ArkUI_TextEditorTextStyle_GetFontFeature(
+        obj,
+        buf1,
+        static_cast<int32_t>(sizeof(buf1)),
+        &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -820,16 +843,23 @@ static napi_value TestArkUICapi_188(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(
-        obj,
-        static_cast<OH_ArkUI_TextEditorTextStyle *>(nullptr));
+    auto *sty = OH_ArkUI_TextEditorTextStyle_Create();
+    if (((sty)) == nullptr) {
+        OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(obj, sty);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextEditorTextStyle_Destroy(sty);
+            OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextEditorTextStyle_Destroy(sty);
     OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -850,16 +880,23 @@ static napi_value TestArkUICapi_189(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(
-        obj,
-        static_cast<OH_ArkUI_TextEditorTextStyle *>(nullptr));
+    auto *sty = OH_ArkUI_TextEditorTextStyle_Create();
+    if (((sty)) == nullptr) {
+        OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
+        return nullptr;
+    }
+
+    auto ec = OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(obj, sty);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextEditorTextStyle_Destroy(sty);
+            OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_TextEditorTextStyle_Destroy(sty);
     OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
@@ -944,9 +981,8 @@ static napi_value TestArkUICapi_193(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(
-        obj,
-        static_cast<OH_ArkUI_TextEditorSpanType *>(nullptr));
+    OH_ArkUI_TextEditorSpanType spanOut = static_cast<OH_ArkUI_TextEditorSpanType>(0);
+    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(obj, &spanOut);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -976,7 +1012,7 @@ static napi_value TestArkUICapi_194(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(obj, static_cast<ArkUI_NodeHandle>(0));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1002,7 +1038,8 @@ static napi_value TestArkUICapi_195(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(obj, static_cast<ArkUI_NodeHandle *>(nullptr));
+    ArkUI_NodeHandle nodeOut = static_cast<ArkUI_NodeHandle>(0);
+    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(obj, &nodeOut);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1060,9 +1097,8 @@ static napi_value TestArkUICapi_197(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(
-        obj,
-        static_cast<OH_ArkUI_TextEditorResponseType *>(nullptr));
+    OH_ArkUI_TextEditorResponseType rtOut = static_cast<OH_ArkUI_TextEditorResponseType>(0);
+    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(obj, &rtOut);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1118,7 +1154,8 @@ static napi_value TestArkUICapi_199(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(obj, static_cast<OH_ArkUI_TextMenuType *>(nullptr));
+    OH_ArkUI_TextMenuType mtOut = static_cast<OH_ArkUI_TextMenuType>(0);
+    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(obj, &mtOut);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1149,7 +1186,7 @@ static napi_value TestArkUICapi_200(napi_env env, napi_callback_info info)
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallback(
         obj,
         static_cast<void *>(nullptr),
-        static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
+        StubMenuIntCallback);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1180,7 +1217,7 @@ static napi_value TestArkUICapi_201(napi_env env, napi_callback_info info)
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallback(
         obj,
         static_cast<void *>(nullptr),
-        static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
+        StubMenuIntCallback);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1211,7 +1248,7 @@ static napi_value TestArkUICapi_202(napi_env env, napi_callback_info info)
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCallback(
         obj,
         static_cast<void *>(nullptr),
-        static_cast<void (*)(int32_t, int32_t, void *)>(nullptr));
+        StubMenuIntCallback);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1242,7 +1279,7 @@ static napi_value TestArkUICapi_203(napi_env env, napi_callback_info info)
     auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearCallback(
         obj,
         static_cast<void *>(nullptr),
-        static_cast<void (*)(void *)>(nullptr));
+        StubMenuVoidCallback);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1300,9 +1337,8 @@ static napi_value TestArkUICapi_205(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(
-        obj,
-        static_cast<OH_ArkUI_HapticFeedbackMode *>(nullptr));
+    OH_ArkUI_HapticFeedbackMode hfOut = static_cast<OH_ArkUI_HapticFeedbackMode>(0);
+    auto ec = OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(obj, &hfOut);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -1330,7 +1366,7 @@ static napi_value TestArkUICapi_206(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu(obj);
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1360,7 +1396,7 @@ static napi_value TestArkUICapi_207(napi_env env, napi_callback_info info)
     uint32_t v2 = 0U;
     auto ec = OH_ArkUI_TextEditorStyledStringController_GetSelection(obj, &v1, &v2);
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1390,7 +1426,7 @@ static napi_value TestArkUICapi_208(napi_env env, napi_callback_info info)
         obj,
         static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1420,7 +1456,7 @@ static napi_value TestArkUICapi_209(napi_env env, napi_callback_info info)
         obj,
         static_cast<ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1450,7 +1486,7 @@ static napi_value TestArkUICapi_210(napi_env env, napi_callback_info info)
         obj,
         static_cast<const ArkUI_StyledString_Descriptor *>(nullptr));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
@@ -1702,6 +1738,7 @@ static napi_value TestArkUICapi_221(napi_env env, napi_callback_info info)
     }
 
     if (((tr)) == nullptr) {
+        OH_ArkUI_Matrix4_Dispose(m);
         return nullptr;
     }
 
@@ -1709,6 +1746,8 @@ static napi_value TestArkUICapi_221(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4TranslationOptions_Dispose(tr);
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1734,6 +1773,7 @@ static napi_value TestArkUICapi_222(napi_env env, napi_callback_info info)
     }
 
     if (((sc)) == nullptr) {
+        OH_ArkUI_Matrix4_Dispose(m);
         return nullptr;
     }
 
@@ -1741,6 +1781,8 @@ static napi_value TestArkUICapi_222(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4ScaleOptions_Dispose(sc);
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1766,6 +1808,7 @@ static napi_value TestArkUICapi_223(napi_env env, napi_callback_info info)
     }
 
     if (((ro)) == nullptr) {
+        OH_ArkUI_Matrix4_Dispose(m);
         return nullptr;
     }
 
@@ -1773,6 +1816,8 @@ static napi_value TestArkUICapi_223(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4RotationOptions_Dispose(ro);
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1800,6 +1845,7 @@ static napi_value TestArkUICapi_224(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1828,6 +1874,7 @@ static napi_value TestArkUICapi_225(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1856,6 +1903,7 @@ static napi_value TestArkUICapi_226(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -1883,6 +1931,7 @@ static napi_value TestArkUICapi_227(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_Matrix4_Dispose(m);
             return napiAssertErr;
         }
     }
@@ -2042,7 +2091,7 @@ static napi_value TestArkUICapi_235(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_FontConfigs_SetFontWeightConfigs
  * 预期效果: 将 FontWeightConfigs 关联到 FontConfigs。
- * 实际测试: 分别创建 FontConfigs 与 FontWeightConfigs，调用 Set 后按序释放。
+ * 实际测试: 创建二者并 Set；Set 后仅 Destroy(fc)，勿再 Destroy(fw)（否则设备上二次释放崩溃）。
  */
 static napi_value TestArkUICapi_236(napi_env env, napi_callback_info info)
 {
@@ -2060,16 +2109,15 @@ static napi_value TestArkUICapi_236(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_FontConfigs_SetFontWeightConfigs(fc, fw);
-    // 先 Destroy(fc) 再 Destroy(fw)：若先释放 fw，fc 析构仍可能访问已释放对象，设备上会出现 SIGILL/App died。
+    // Set 后实现侧由 FontConfigs 持有 FontWeightConfigs：仅 Destroy(fc) 即可；再 Destroy(fw) 会在设备上二次释放 → SIGILL/App died。
     OH_ArkUI_FontConfigs_Destroy(fc);
-    OH_ArkUI_FontWeightConfigs_Destroy(fw);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
  * 测试接口: OH_ArkUI_FontConfigs_GetFontWeightConfigs
  * 预期效果: SetFontWeightConfigs 后 GetFontWeightConfigs 返回非空配置指针。
- * 实际测试: 按 capi-native-type-h.md：先 Create 二者并 Set，再 Get 断言非空，释放顺序与 SetFontWeightConfigs 用例一致。
+ * 实际测试: Create 二者并 Set，Get 断言非空；Set 后仅 Destroy(fc)，不得再 Destroy(fw)（与 236 相同，避免二次释放崩溃）。
  */
 static napi_value TestArkUICapi_237(napi_env env, napi_callback_info info)
 {
@@ -2090,12 +2138,10 @@ static napi_value TestArkUICapi_237(napi_env env, napi_callback_info info)
     auto *got = OH_ArkUI_FontConfigs_GetFontWeightConfigs(fc);
     if (((got)) == nullptr) {
         OH_ArkUI_FontConfigs_Destroy(fc);
-        OH_ArkUI_FontWeightConfigs_Destroy(fw);
         return nullptr;
     }
 
     OH_ArkUI_FontConfigs_Destroy(fc);
-    OH_ArkUI_FontWeightConfigs_Destroy(fw);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
