@@ -119,6 +119,50 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case "testSslErrorHandlerHandleCancel002": {
+              try {
+                this.ConfirmCancel = 'handleCancelTrue'
+                const startUrl = this.controller.getUrl();
+                this.cancel_result = 10000
+                this.controller.clearSslCache();
+                setTimeout(() => {
+                  this.controller.loadUrl("https://expired.badssl.com");
+                  setTimeout(() => {
+                    const endUrl = this.controller.getUrl();
+                    this.cancel_result = (endUrl === startUrl) ? 0 : 1;
+                    console.log("cancel True get cancel_result = ", this.cancel_result);
+                    Utils.emitEvent(this.cancel_result, 302711);
+                  }, 3000)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "testSslErrorHandlerHandleCancel003": {
+              try {
+                this.ConfirmCancel = 'handleCancelFalse'
+                const startUrl = this.controller.getUrl();
+                this.cancel_result = 10000
+                this.controller.clearSslCache();
+                setTimeout(() => {
+                  this.controller.loadUrl("https://expired.badssl.com");
+                  setTimeout(() => {
+                    const endUrl = this.controller.getUrl();
+                    this.cancel_result = (endUrl === startUrl) ? 0 : 1;
+                    console.log("cancel false get cancel_result = ", this.cancel_result);
+                    Utils.emitEvent(this.cancel_result, 302712);
+                  }, 3000)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
             case "testSslErrorHandlerHandleConfirm001": {
               try {
                 let title: string = ' '
@@ -173,6 +217,12 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
             }
             if (this.ConfirmCancel == 'handleCancel') {
               event.handler.handleCancel()
+            }
+            if (this.ConfirmCancel == 'handleCancelTrue') {
+              event.handler.handleCancel(true)
+            }
+            if (this.ConfirmCancel == 'handleCancelFalse') {
+              event.handler.handleCancel(false)
             }
             this.ConfirmCancel = ' '
             this.onSslErrorEventReceiveCallBack = true

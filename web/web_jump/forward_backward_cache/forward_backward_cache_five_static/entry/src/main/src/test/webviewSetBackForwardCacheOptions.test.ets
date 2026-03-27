@@ -55,5 +55,24 @@ export default function ActsAceWebviewSetBackForwardCacheOptions() {
       done();
     })
 
+    /**
+     * @tc.name   testWebviewSetBackForwardCacheOptions02
+     * @tc.number SUB_ACE_WEBVIEW_SETBACKFORWARDCHCHEOPTIONS_API_0002
+     * @tc.desc   test webviewSetBackForwardCacheOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebviewSetBackForwardCacheOptions02',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000);
+      emitKey = 'emitWebviewSetBackForwardCacheOptions02'
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent('testWebviewSetBackForwardCacheOptions02', '17100001', 240871, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webviewSetBackForwardCacheOptionsButton', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
   })
 }

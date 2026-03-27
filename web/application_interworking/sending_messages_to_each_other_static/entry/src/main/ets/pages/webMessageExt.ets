@@ -289,6 +289,23 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtGetStringErrorCode001": {
+              this.listening_port = 100003
+              this.listening_flag = 10
+              this.controller.runJavaScript(
+                'postErrorStringToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postStringToApp() return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
             case "testWebMessageExtGetNumber001": {
               this.listening_port = 100021
               this.listening_flag = 11
@@ -304,6 +321,23 @@ struct webMessageExt {
                   }
                 });
 
+              break;
+            }
+
+            case "testWebMessageExtGetNumberErrorCode001": {
+              this.listening_port = 100008
+              this.listening_flag = 11
+              this.controller.runJavaScript(
+                'postErrorNumberToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postNumberToApp() return value is: ${result}`)
+                  }
+                });
               break;
             }
 
@@ -326,7 +360,7 @@ struct webMessageExt {
 
             case "testWebMessageExtGetBoolean002": {
               this.listening_port = 100023
-              this.listening_flag = 13
+              this.listening_flag = 12
               this.controller.runJavaScript(
                 'postBooleanFalseToApp()',
                 (error, result) => {
@@ -341,11 +375,45 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtGetBooleanErrorCode001": {
+              this.listening_port = 110000
+              this.listening_flag = 13
+              this.controller.runJavaScript(
+                'postErrorBooleanToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postNumberToApp() return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
             case "testWebMessageExtGetArrayBuffer001": {
               this.listening_port = 100024
               this.listening_flag = 14
               this.controller.runJavaScript(
                 'postArrayBufferToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postArrayBufferToApp() return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
+            case "testWebMessageExtGetArrayBufferErrorCode001": {
+              this.listening_port = 110001
+              this.listening_flag = 14
+              this.controller.runJavaScript(
+                'postErrorArrayBufferToApp()',
                 (error, result) => {
                   if (error) {
                     console.info(`run JavaScript error: ` + JSON.stringify(error))
@@ -375,6 +443,40 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtGetArrayEmpty001": {
+              this.listening_port = 110004
+              this.listening_flag = 15
+              this.controller.runJavaScript(
+                'postEmptyArrayToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postEmptyArrayToApp() return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
+            case "testWebMessageExtGetArrayErrorCode001": {
+              this.listening_port = 110002
+              this.listening_flag = 15
+              this.controller.runJavaScript(
+                'postErrorArrayToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postErrorArrayToApp() return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
             case "testWebMessageExtGetError001": {
               this.listening_port = 100026
               this.listening_flag = 16
@@ -389,6 +491,74 @@ struct webMessageExt {
                     console.info(`The postErrorToApp() return value is: ${result}`)
                   }
                 });
+              break;
+            }
+
+            case "testWebMessageExtGetErrorErrorCode001": {
+              this.listening_port = 110003
+              this.listening_flag = 16
+              this.controller.runJavaScript(
+                'postErrorErrorToApp()',
+                (error, result) => {
+                  if (error) {
+                    console.info(`run JavaScript error: ` + JSON.stringify(error))
+                    return;
+                  }
+                  if (result) {
+                    console.info(`The postErrorErrorToApp return value is: ${result}`)
+                  }
+                });
+              break;
+            }
+
+            case "testWebMessageExtSetStringErrorCode001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.NUMBER);
+                  this.message.setString("1");
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postStringToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postStringToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postStringToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100001)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100001)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetStringEmpty001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.STRING);
+                  this.message.setString("");
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postStringToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postStringToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postStringToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100002)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+              }
               break;
             }
 
@@ -440,6 +610,32 @@ struct webMessageExt {
                 error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100028)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetNumberErrorCode001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.STRING);
+                  this.message.setNumber(1);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postNumberToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postNumberToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postNumberToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100004)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100004)
               }
               break;
             }
@@ -496,6 +692,32 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtSetBooleanErrorCode001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.NOT_SUPPORT);
+                  this.message.setBoolean(true);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postBooleanFalseToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postBooleanFalseToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postBooleanFalseToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100005)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100005)
+              }
+              break;
+            }
+
             case "testWebMessageExtSetArrayBuffer001": {
               try {
                 if (this.nativePort) {
@@ -523,6 +745,33 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtSetArrayBufferErrorCode001": {
+              try {
+                if (this.nativePort) {
+                  let buffer = new ArrayBuffer(8);
+                  this.message.setType(webView.WebMessageType.NOT_SUPPORT);
+                  this.message.setArrayBuffer(buffer);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postArrayBufferToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postArrayBufferToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postArrayBufferToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100006)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100006)
+              }
+              break;
+            }
+
             case "testWebMessageExtSetArray001": {
               try {
                 if (this.nativePort) {
@@ -543,9 +792,123 @@ struct webMessageExt {
                 })
                 }, 1000)
               } catch (error) {
-                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100032)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetArrayEmpty001": {
+              try {
+                if (this.nativePort) {
+                  let arr = [] as Array<string|Double|Long|boolean>;
+                  this.message.setType(webView.WebMessageType.ARRAY);
+                  this.message.setArray(arr);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postArrayBufferToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postArrayBufferToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postArrayBufferToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100009)
+                    }
+                  })
+                  Utils.emitEvent("1", 100009)
+                }, 1000)
+              } catch (error) {
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100009)
+              }
+              break;
+            }
+
+
+            case "testWebMessageExtSetArrayErrorCode001": {
+              try {
+                if (this.nativePort) {
+                  let fruits = ["apple"] as Array<string|Double|Long|boolean>;
+                  this.message.setType(webView.WebMessageType.ARRAY_BUFFER);
+                  this.message.setArray(fruits);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postArrayBufferToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postArrayBufferToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postArrayBufferToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 100007)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100007)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetErrorErrorCode001": {
+              try {
+                try {
+                  console.log("URL Error");
+                  throw new URIError("URI seq")
+                } catch(e) {
+                  console.log("URIError:" + (e instanceof SyntaxError));
+                  console.log("URIError:" + e.message);
+                  console.log("URIError:" + e.name);
+                  if (this.nativePort){
+                    this.message.setType(webView.WebMessageType.STRING);
+                    this.message.setError(e);
+                    this.nativePort.postMessageEventExt(this.message);
+                  }
+                  setTimeout(() => {
+                    this.controller.runJavaScript("postErrorToHtml()", (error, result) => {
+                      if (error) {
+                        console.log(`The postErrorToHtml() return value is: ${error}`);
+                      }
+                      console.log(`The postErrorToHtml() return value is: ${result}`);
+                      if (result) {
+                        Utils.emitEvent(result, 100008)
+                      }
+                    })
+                  }, 1000)
+                }
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 100008)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetNotSupport001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.NOT_SUPPORT);
+                  this.message.setString("NOT_SUPPORT");
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postStringToHtml()", (error, result) => {
+                    if (error) {
+                      console.log(`The postStringToHtml() return value is: ${error}`);
+                    }
+                    console.log(`The postStringToHtml() return value is: ${result}`);
+                    if (result) {
+                      Utils.emitEvent(result, 110008)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
+                Utils.emitEvent(error.code, 110008)
               }
               break;
             }
@@ -627,7 +990,8 @@ struct webMessageExt {
                   Utils.emitEvent(value, this.listening_port as Long)
                 }
               } catch (resError) {
-                console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
+                console.log(`error code: ${resError.code}, Message: ${resError.message}`);
+                Utils.emitEvent(resError.code, this.listening_port as Long)
               }
             });
             console.log('url:' + event.url)

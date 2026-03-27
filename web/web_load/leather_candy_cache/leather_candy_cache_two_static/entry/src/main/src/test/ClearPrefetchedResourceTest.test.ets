@@ -56,14 +56,14 @@ export default function ClearPrefetchedResourceTest() {
     })
 
     /**
-     * @tc.name   testClearPrefetchedResourceStatic001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0100
+     * @tc.name   testClearPrefetchedResourceStatic0101
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0101
      * @tc.desc   test clearPrefetchedResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClearPrefetchedResourceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testClearPrefetchedResourceStatic0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testClearPrefetchedResource001", 10)
@@ -71,6 +71,46 @@ export default function ClearPrefetchedResourceTest() {
         Utils.registerEvent("testPrefetchResource001", 17100002, 10110, done);
         await Utils.msSleep(2000);
         Utils.registerEvent("testClearPrefetchedResource001", true, 10112, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testClearPrefetchedResourceStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0300
+     * @tc.desc   test clearPrefetchedResource ErrorCode 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearPrefetchedResourceStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testClearPrefetchedResource003", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testClearPrefetchedResource003", true, 148310, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testPrefetchedResourceErrorCodeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0100
+     * @tc.desc   test clearPrefetchedResource ErrorCode 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPrefetchedResourceErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testPrefetchResourceErrorCode001", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testPrefetchResourceErrorCode001", 17100002, 10510, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
         await Utils.msSleep(5000);
