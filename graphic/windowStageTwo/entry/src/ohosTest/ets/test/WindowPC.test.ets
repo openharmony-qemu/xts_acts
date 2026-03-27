@@ -104,9 +104,11 @@ export default function windowPCTest() {
     let isPCStatus: string = '';
     let mainWindowClass: window.Window;
     let isFreeWindowMode = false;
+    let isSyscapSessionManagerSupported = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let isPCMode: boolean = false;
+	let isSupportFreeWindowMode: boolean = false;
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -127,11 +129,14 @@ export default function windowPCTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
       let promise = mainWindowClass.getWindowStateSnapshot();
       promise.then((data) => {
         let jsonObj: object = JSON.parse(data);
         console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
         isPCMode = jsonObj["isPcMode"];
+		isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
@@ -1283,22 +1288,22 @@ export default function windowPCTest() {
         const message = 'test_setSupportedWindowModes_threeElement'
         let windowStageStart = await startAbility(message, context)
         let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
-        bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
+          bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
-
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
-          } else {
+          }else {
             expect().assertFail();
+            done();
           }
-          done();
         });
+
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
         expect().assertFail();
@@ -1324,18 +1329,17 @@ export default function windowPCTest() {
         bundleManager.SupportWindowMode.FULL_SCREEN]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
-
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
-          } else {
+          }else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1366,14 +1370,15 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with same windowmode`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1402,12 +1407,13 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
-          } else {
+          }else {
             expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with null windowmode`);
             done();
           }
         });
@@ -1439,14 +1445,15 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
-          } else {
-            expect().assertFail();
+          }else {
+            expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with null windowmode`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1477,17 +1484,20 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 1300002) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
-          } else {
-            expect().assertFail();
+            done();
+          }else {
+            expect(err.code).assertEqual(1300002);
+            console.error(`windowstage used to setSupportedWindowModes is null`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
         if (err.code == 1300002) {
+          console.error(`try catch the error: windowstage used to setSupportedWindowModes is null`);
           done();
         } else {
           expect().assertFail();
@@ -1524,13 +1534,14 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} primary Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
 
         let promise_float = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FLOATING]);
@@ -1545,13 +1556,14 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} float Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
 
         let promise_fullscreen =
@@ -1573,13 +1585,14 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} fullscreen Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1608,9 +1621,9 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
           } else {
             expect().assertFail();
@@ -1643,9 +1656,9 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-
             done();
           } else {
             expect().assertFail();
@@ -3476,7 +3489,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3519,7 +3533,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3562,7 +3577,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3601,7 +3617,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3640,7 +3657,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3681,7 +3699,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect(err.code).assertEqual(1300004);
@@ -3727,7 +3746,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect(err.code).assertEqual(1300002);
@@ -3762,7 +3782,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
