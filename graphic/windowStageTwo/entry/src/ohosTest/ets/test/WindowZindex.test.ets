@@ -2211,7 +2211,7 @@ export default function windowZindexTest() {
     /**
      * @tc.number  testCreateWindowCallbackwithContextUndefined
      * @tc.name    testCreateWindowCallbackwithContextUndefined
-     * @tc.desc   调用createWindow callback接口，ctx设置为undefined，返回1300002
+     * @tc.desc   调用createWindow callback接口，ctx设置为undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -2227,7 +2227,7 @@ export default function windowZindexTest() {
         window.createWindow(config, async (err: BusinessError, data: window.Window) => {
           if (err && err.code) {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(1300002);
+            expect(err.code).assertEqual(1300006);
             expect((err.message as string).length > 0).assertTrue();
             done();
           } else {
@@ -2239,7 +2239,7 @@ export default function windowZindexTest() {
         });
       } catch (err) {
         console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(1300002);
+        expect(err.code).assertEqual(1300006);
         expect((err.message as string).length > 0).assertTrue();
         done();
       }
@@ -2248,7 +2248,7 @@ export default function windowZindexTest() {
     /**
      * @tc.number  testCreateWindowPromisewithContextUndefined
      * @tc.name    testCreateWindowPromisewithContextUndefined
-     * @tc.desc   调用createWindow promise接口，ctx设置为undefined，返回1300002
+     * @tc.desc   调用createWindow promise接口，ctx设置为undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -2268,13 +2268,13 @@ export default function windowZindexTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(1300002);
+          expect(err.code).assertEqual(1300006);
           expect((err.message as string).length > 0).assertTrue();
           done();
         });
       } catch (err) {
         console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(1300002);
+        expect(err.code).assertEqual(1300006);
         expect((err.message as string).length > 0).assertTrue();
         done();
       }
