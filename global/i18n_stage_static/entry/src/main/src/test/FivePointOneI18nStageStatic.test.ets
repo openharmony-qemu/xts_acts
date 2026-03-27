@@ -1367,6 +1367,261 @@ export default function FivePointOne_i18nStageTest() {
       expect(formattedDate.getString()).assertContain('2025年7月17日 GMT+8 03:24:30')
     })
 
+    /**
+     * @tc.name i18n_getSystemLanguages_test_Static_0100
+     * @tc.number i18n_getSystemLanguages_test_Static_0100
+     * @tc.desc with getSystemLanguages
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_getSystemLanguages_test_Static_0100', Level.LEVEL3, () => {
+      let lang: string[] = i18n.System.getSystemLanguages();
+      console.log('i18n_getSystemLanguages_test_Static_0100 value:', lang);
+      expect(lang.length != 0).assertEqual(true);
+    })
+
+    /**
+     * @tc.name i18n_getSystemLocaleInstance_test_Static_0100
+     * @tc.number i18n_getSystemLocaleInstance_test_Static_0100
+     * @tc.desc with getSystemLocaleInstance
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_getSystemLocaleInstance_test_Static_0100', Level.LEVEL3, () => {
+      let locale: string = i18n.System.getSystemLocaleInstance().toString();
+      console.log('i18n_getSystemLocaleInstance_test_Static_0100 value:', locale);
+      expect(locale).assertEqual('zh-Hans-CN');
+    })
+
+    /**
+     * @tc.name i18n_getPreferredLanguageList_test_Static_0100
+     * @tc.number i18n_getPreferredLanguageList_test_Static_0100
+     * @tc.desc with getPreferredLanguageList
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_getPreferredLanguageList_test_Static_0100', Level.LEVEL3, () => {
+      let value: string[] = i18n.System.getPreferredLanguageList();
+      console.log('i18n_getSystemLocaleInstance_test_Static_0100 value:', value);
+      expect(value.length != 0).assertEqual(true);
+    })
+
+    /**
+     * @tc.name i18n_calendar_getFirstDayOfWeek_test_Static_0100
+     * @tc.number i18n_calendar_getFirstDayOfWeek_test_Static_0100
+     * @tc.desc with getFirstDayOfWeek
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_calendar_getFirstDayOfWeek_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh');
+      let value: number = calendar.getFirstDayOfWeek();
+      console.log('i18n_calendar_getFirstDayOfWeek_test_Static_0100 value:', value);
+      expect(value).assertEqual(1);
+    })
+
+    /**
+     * @tc.name i18n_calendar_getMinimalDaysInFirstWeek_test_Static_0100
+     * @tc.number i18n_calendar_getMinimalDaysInFirstWeek_test_Static_0100
+     * @tc.desc with getMinimalDaysInFirstWeek
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_calendar_getMinimalDaysInFirstWeek_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+      let value: number = calendar.getMinimalDaysInFirstWeek();
+      console.log('i18n_calendar_getMinimalDaysInFirstWeek_test_Static_0100 value:', value);
+      expect(value).assertEqual(1);
+    })
+
+    /**
+     * @tc.name i18n_BreakIterator_current_test_Static_0100
+     * @tc.number i18n_BreakIterator_current_test_Static_0100
+     * @tc.desc with current
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_BreakIterator_current_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('Apple is my favorite fruit.');
+      let currentPos: number = iterator.current();
+      console.log('i18n_BreakIterator_current_test_Static_0100 value:', currentPos);
+      expect(currentPos).assertEqual(0);
+    })
+
+    /**
+     * @tc.name i18n_BreakIterator_first_test_Static_0100
+     * @tc.number i18n_BreakIterator_first_test_Static_0100
+     * @tc.desc with first
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_BreakIterator_first_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('Apple is my favorite fruit.');
+      let firstPos: number = iterator.first();
+      console.log('i18n_BreakIterator_first_test_Static_0100 value:', firstPos);
+      expect(firstPos).assertEqual(0);
+    })
+
+    /**
+     * @tc.name i18n_BreakIterator_previous_test_Static_0100
+     * @tc.number i18n_BreakIterator_previous_test_Static_0100
+     * @tc.desc with previous
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_BreakIterator_previous_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('Apple is my favorite fruit.');
+      let pos1: number = iterator.first();
+      let pos2: number = iterator.next(3);
+      let pos3: number = iterator.previous();
+      console.log('i18n_BreakIterator_previous_test_Static_0100 value:', pos3);
+      expect(pos3).assertEqual(9);
+    })
+
+    /**
+     * @tc.name i18n_BreakIterator_following_test_Static_0100
+     * @tc.number i18n_BreakIterator_following_test_Static_0100
+     * @tc.desc with following
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_BreakIterator_following_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('Apple is my favorite fruit.');
+      let pos: number = iterator.following(0);
+      console.log('i18n_BreakIterator_following_test_Static_0100 value:', pos);
+      expect(pos).assertEqual(6);
+    })
+
+    /**
+     * @tc.name i18n_IndexUtil_getIndexList_test_Static_0100
+     * @tc.number i18n_IndexUtil_getIndexList_test_Static_0100
+     * @tc.desc with getIndexList
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_IndexUtil_getIndexList_test_Static_0100', Level.LEVEL3, () => {
+      let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+      let indexList: string[] = indexUtil.getIndexList();
+      console.log('i18n_IndexUtil_getIndexList_test_Static_0100 value:', indexList);
+      expect(indexList[1]).assertEqual("A");
+    })
+
+    /**
+     * @tc.name i18n_TimeZone_getRawOffset_test_Static_0100
+     * @tc.number i18n_TimeZone_getRawOffset_test_Static_0100
+     * @tc.desc with getRawOffset
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_TimeZone_getRawOffset_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let offset: number = timeZone.getRawOffset();
+      console.log('i18n_TimeZone_getRawOffset_test_Static_0100 value:', offset);
+      expect(offset).assertEqual(28800000);
+    })
+
+    /**
+     * @tc.name i18n_Transliterator_getAvailableIDs_test_Static_0100
+     * @tc.number i18n_Transliterator_getAvailableIDs_test_Static_0100
+     * @tc.desc with getAvailableIDs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_Transliterator_getAvailableIDs_test_Static_0100', Level.LEVEL3, () => {
+      let ids: string[] = i18n.Transliterator.getAvailableIDs();
+      console.log('i18n_Transliterator_getAvailableIDs_test_Static_0100 value:', ids);
+      expect(ids.length != 0 ).assertEqual(true);
+    })
+
+    /**
+     * @tc.name i18n_normalizer_getInstance_test_Static_0100
+     * @tc.number i18n_normalizer_getInstance_test_Static_0100
+     * @tc.desc with getInstance
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_normalizer_getInstance_test_Static_0100', Level.LEVEL3, () => {
+      let str: string = '\u1e9b\u0323';
+      let normal: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFD);
+      let value: string = normal.normalize(str);
+      console.log('i18n_normalizer_getInstance_test_Static_0100 value:', value);
+      expect(value).assertEqual('\u017f\u0323\u0307');
+    })
+
+    /**
+     * @tc.name intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100
+     * @tc.number intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100', Level.LEVEL3, () => {
+      let formatter: intl.DateTimeFormat = new intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'medium' });
+      let options: intl.DateTimeOptions = formatter.resolvedOptions();
+      let dateStyle: string | undefined = options.dateStyle;
+      let timeStyle: string | undefined = options.timeStyle;
+      console.log('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100 value:', dateStyle);
+      console.log('intl_DateTimeFormat_resolvedOptions_dateStyle_test_Static_0100 value:', timeStyle);
+      expect(dateStyle).assertEqual('full');
+      expect(timeStyle).assertEqual('medium');
+    })
+
+    /**
+     * @tc.name intl_NumberFormat_resolvedOptions_test_Static_0100
+     * @tc.number intl_NumberFormat_resolvedOptions_test_Static_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('intl_NumberFormat_resolvedOptions_test_Static_0100', Level.LEVEL3, () => {
+      let formatter: intl.NumberFormat = new intl.NumberFormat('zh', { style: 'decimal', notation: 'scientific' });
+      let options: intl.NumberOptions = formatter.resolvedOptions();
+      let style: string | undefined = options.style;
+      let notation: string | undefined = options.notation;
+      console.log('intl_NumberFormat_resolvedOptions_test_Static_0100 value:', style);
+      console.log('intl_NumberFormat_resolvedOptions_test_Static_0100 value:', notation);
+      expect(style).assertEqual('decimal');
+      expect(notation).assertEqual('scientific');
+    })
+
+    /**
+     * @tc.name intl_Collator_resolvedOptions_test_Static_0100
+     * @tc.number intl_Collator_resolvedOptions_test_Static_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('intl_Collator_resolvedOptions_test_Static_0100', Level.LEVEL3, () => {
+      let collator = new intl.Collator('zh-Hans', { usage: 'sort', ignorePunctuation: true });
+      let options: intl.CollatorOptions = collator.resolvedOptions();
+      let usage: string | undefined  = options.usage;
+      let ignorePunctuation: boolean | undefined  = options.ignorePunctuation;
+      console.log('intl_Collator_resolvedOptions_test_Static_0100 value:', usage);
+      console.log('intl_Collator_resolvedOptions_test_Static_0100 value:', ignorePunctuation);
+      expect(usage).assertEqual('sort');
+      expect(ignorePunctuation).assertEqual(true);
+    })
+
 
     console.log('*************end FivePointOne_i18nStageTest*************');
   })
