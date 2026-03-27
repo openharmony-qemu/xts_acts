@@ -56,11 +56,11 @@ struct Humidity {
             this.isHave = false;
             this.Vue = false;
             promptAction.showToast({
-              message: '当前设备暂无心率传感器'
+              message: '当前设备湿度传感器为模拟传感器'
             })
             router.back({
               url: 'pages/Sensor/Sensor_index',
-              params: { result: 'true ', title: this.name }
+              params: { result: 'false', title: this.name }
             })
           }
         }
@@ -88,7 +88,7 @@ struct Humidity {
           })
           router.back({
             url: 'pages/Sensor/Sensor_index',
-            params: { result: 'true ', title: this.name }
+            params: { result: 'false', title: this.name }
           })
         }
         console.error(TAG, `Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
