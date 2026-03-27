@@ -9,28 +9,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from t@ohos.routert;
+import router from '@ohos.router';
 
-export const XCOMPONENT_HDR_PAGE: string = ttestability/pages/XComponentHdrProbePaget;
-export const XCOMPONENT_HDR_ROUTE_PARAM: string = tprobet;
-export const XCOMPONENT_HDR_STATUS_KEY: string = tohosTestXComponentHdrStatust;
+export const XCOMPONENT_HDR_PAGE: string = 'MainAbility/pages/XComponent/XComponentHdrProbePage';
+export const XCOMPONENT_HDR_ROUTE_PARAM: string = 'probe';
+export const XCOMPONENT_HDR_STATUS_KEY: string = 'actsAceXComponentHdrStatus';
 
 export class XComponentHdrProbeRoute {
-  static readonly BRIGHTNESS_WITH_TYPE: string = thdr_brightness_with_typet;
-  static readonly BRIGHTNESS_SINGLE_ARG: string = thdr_brightness_single_argt;
+  static readonly BRIGHTNESS_WITH_TYPE: string = 'hdr_brightness_with_type';
+  static readonly BRIGHTNESS_SINGLE_ARG: string = 'hdr_brightness_single_arg';
 }
 
 function readProbeRoute(): string {
   let p: Object | undefined = router.getParams();
   if (p === undefined) {
-    return tt;
+    return '';
   }
   let rec: Record<string, Object> = p as Record<string, Object>;
   let r: Object | undefined = rec[XCOMPONENT_HDR_ROUTE_PARAM];
-  if (typeof r === tstringt && (r as string).length > 0) {
+  if (typeof r === 'string' && (r as string).length > 0) {
     return r as string;
   }
-  return tt;
+  return '';
 }
 
 @Entry
@@ -39,7 +39,7 @@ struct XComponentHdrProbePage {
   @State private probe: string = XComponentHdrProbeRoute.BRIGHTNESS_WITH_TYPE;
 
   aboutToAppear(): void {
-    AppStorage.setOrCreate(XCOMPONENT_HDR_STATUS_KEY, tpendingt);
+    AppStorage.setOrCreate(XCOMPONENT_HDR_STATUS_KEY, 'pending');
     let r: string = readProbeRoute();
     if (r.length > 0) {
       this.probe = r;
@@ -50,15 +50,15 @@ struct XComponentHdrProbePage {
 
   build() {
     Column({ space: 8 }) {
-      Text(tXComponent.hdrBrightness(brightness, type?)t)
+      Text('XComponent.hdrBrightness(brightness, type?)')
         .fontSize(13)
         .fontWeight(FontWeight.Bold)
       Text(`probe=${this.probe}`)
         .fontSize(11)
-        .fontColor($r(tsys.color.ohos_id_color_text_secondaryt))
+        .fontColor($r('sys.color.ohos_id_color_text_secondary'))
       if (this.probe === XComponentHdrProbeRoute.BRIGHTNESS_SINGLE_ARG) {
         XComponent({
-          id: tohos_test_hdr_xcomponent_singlet,
+          id: 'ohos_test_hdr_xcomponent_single',
           type: XComponentType.COMPONENT,
         })
           .width(32)
@@ -66,7 +66,7 @@ struct XComponentHdrProbePage {
           .hdrBrightness(0.35)
       } else {
         XComponent({
-          id: tohos_test_hdr_xcomponent_typedt,
+          id: 'ohos_test_hdr_xcomponent_typed',
           type: XComponentType.COMPONENT,
         })
           .width(32)
@@ -74,11 +74,11 @@ struct XComponentHdrProbePage {
           .hdrBrightness(0.55, HdrType.AIHDR)
       }
     }
-    .width(t100%t)
-    .height(t100%t)
+    .width('100%')
+    .height('100%')
     .padding({ left: 12, right: 12, top: 8, bottom: 32 })
     .onAppear(() => {
-      AppStorage.setOrCreate(XCOMPONENT_HDR_STATUS_KEY, tokt);
+      AppStorage.setOrCreate(XCOMPONENT_HDR_STATUS_KEY, 'ok');
     })
   }
 }

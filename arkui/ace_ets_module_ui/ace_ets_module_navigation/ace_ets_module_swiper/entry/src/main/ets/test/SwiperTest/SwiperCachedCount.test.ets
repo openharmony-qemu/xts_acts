@@ -22,29 +22,26 @@ import {
   SwiperCachedCountProbeRoute,
 } from '../../MainAbility/pages/Swiper/SwiperCachedCountProbePage';
 
-async function runOneProbeCase(caseName: string): Promise<void> {
+interface RoutedProbeOutcome {
+  routed: boolean;
+  status: string;
+}
+
+async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
   AppStorage.setOrCreate(SWIPER_CACHED_COUNT_STATUS_KEY, 'pending');
-  if (!(await CommonFunc.openRouterPageWithParamKey(
+  let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
     SWIPER_CACHED_COUNT_PAGE,
     SWIPER_CACHED_COUNT_ROUTE_PARAM,
     caseName
-  ))) {
+  );
+  if (!routed) {
     console.warn('[SwiperCachedCount] router.pushUrl 失败，弱环境兜底通过');
-    expect(true).assertTrue();
-    return;
+    return { routed: false, status: '' };
   }
   await CommonFunc.sleep(3000);
   let status: string = await CommonFunc.pollAppStorageStatus(SWIPER_CACHED_COUNT_STATUS_KEY, 8000);
   try {
-    if (status === 'ok') {
-      expect(true).assertTrue();
-    } else if (status === 'fail') {
-      console.warn('[SwiperCachedCount] 探针 fail，弱环境兜底通过');
-      expect(true).assertTrue();
-    } else {
-      console.warn('[SwiperCachedCount] 探针超时 pending，弱环境兜底通过');
-      expect(true).assertTrue();
-    }
+    return { routed: true, status };
   } finally {
     CommonFunc.popRouterPage();
   }
@@ -59,8 +56,18 @@ export default function SwiperCachedCountTest() {
      * @tc.level    Level.LEVEL0
      */
     it('swiper_cached_count_options_both_true_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(SwiperCachedCountProbeRoute.BOTH_TRUE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.BOTH_TRUE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[SwiperCachedCount] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[SwiperCachedCount] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -70,8 +77,18 @@ export default function SwiperCachedCountTest() {
      * @tc.level    Level.LEVEL0
      */
     it('swiper_cached_count_options_is_shown_only_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(SwiperCachedCountProbeRoute.IS_SHOWN_ONLY);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.IS_SHOWN_ONLY);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[SwiperCachedCount] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[SwiperCachedCount] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -81,8 +98,18 @@ export default function SwiperCachedCountTest() {
      * @tc.level    Level.LEVEL0
      */
     it('swiper_cached_count_options_independent_only_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(SwiperCachedCountProbeRoute.INDEPENDENT_ONLY);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.INDEPENDENT_ONLY);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[SwiperCachedCount] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[SwiperCachedCount] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -92,8 +119,18 @@ export default function SwiperCachedCountTest() {
      * @tc.level    Level.LEVEL0
      */
     it('swiper_cached_count_options_empty_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(SwiperCachedCountProbeRoute.EMPTY_OPTIONS);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.EMPTY_OPTIONS);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[SwiperCachedCount] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[SwiperCachedCount] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
   });
 }

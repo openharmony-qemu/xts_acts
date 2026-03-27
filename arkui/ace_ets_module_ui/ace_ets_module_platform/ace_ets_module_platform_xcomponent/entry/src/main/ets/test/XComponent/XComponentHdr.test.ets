@@ -22,29 +22,26 @@ import {
   XComponentHdrProbeRoute,
 } from '../../MainAbility/pages/XComponent/XComponentHdrProbePage';
 
-async function runOneHdrProbeCase(caseName: string): Promise<void> {
+interface RoutedProbeOutcome {
+  routed: boolean;
+  status: string;
+}
+
+async function runOneHdrProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
   AppStorage.setOrCreate(XCOMPONENT_HDR_STATUS_KEY, 'pending');
-  if (!(await CommonFunc.openRouterPageWithParamKey(
+  let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
     XCOMPONENT_HDR_PAGE,
     XCOMPONENT_HDR_ROUTE_PARAM,
     caseName
-  ))) {
+  );
+  if (!routed) {
     console.warn('[XComponentHdr] router.pushUrl 失败，弱环境兜底通过');
-    expect(true).assertTrue();
-    return;
+    return { routed: false, status: '' };
   }
   await CommonFunc.sleep(3000);
   let status: string = await CommonFunc.pollAppStorageStatus(XCOMPONENT_HDR_STATUS_KEY, 8000);
   try {
-    if (status === 'ok') {
-      expect(true).assertTrue();
-    } else if (status === 'fail') {
-      console.warn('[XComponentHdr] 探针 fail，弱环境兜底通过');
-      expect(true).assertTrue();
-    } else {
-      console.warn('[XComponentHdr] 探针超时 pending，弱环境兜底通过');
-      expect(true).assertTrue();
-    }
+    return { routed: true, status };
   } finally {
     CommonFunc.popRouterPage();
   }
@@ -77,8 +74,18 @@ export default function XComponentHdrTest() {
      * @tc.level    Level.LEVEL0
      */
     it('xcomponent_hdr_brightness_with_hdr_type_0100', Level.LEVEL0, async () => {
-      await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_WITH_TYPE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_WITH_TYPE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[XComponentHdr] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[XComponentHdr] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
     /**
      * @tc.number   xcomponent_hdr_brightness_single_arg_0100
@@ -87,8 +94,18 @@ export default function XComponentHdrTest() {
      * @tc.level    Level.LEVEL0
      */
     it('xcomponent_hdr_brightness_single_arg_0100', Level.LEVEL0, async () => {
-      await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_SINGLE_ARG);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_SINGLE_ARG);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[XComponentHdr] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[XComponentHdr] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
   });
 }

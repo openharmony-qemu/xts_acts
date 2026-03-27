@@ -22,29 +22,26 @@ import {
   LayoutManagerTextCommonProbeRoute,
 } from '../../MainAbility/pages/Text/LayoutManagerTextCommonProbePage';
 
-async function runOneProbeCase(caseName: string): Promise<void> {
+interface RoutedProbeOutcome {
+  routed: boolean;
+  status: string;
+}
+
+async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
   AppStorage.setOrCreate(LAYOUT_MANAGER_TEXT_COMMON_STATUS_KEY, 'pending');
-  if (!(await CommonFunc.openRouterPageWithParamKey(
+  let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
     LAYOUT_MANAGER_TEXT_COMMON_PAGE,
     LAYOUT_MANAGER_TEXT_COMMON_ROUTE_PARAM,
     caseName
-  ))) {
+  );
+  if (!routed) {
     console.warn('[LayoutManagerTextCommon] router.pushUrl 失败，弱环境兜底通过');
-    expect(true).assertTrue();
-    return;
+    return { routed: false, status: '' };
   }
   await CommonFunc.sleep(3000);
   let status: string = await CommonFunc.pollAppStorageStatus(LAYOUT_MANAGER_TEXT_COMMON_STATUS_KEY, 12000);
   try {
-    if (status === 'ok') {
-      expect(true).assertTrue();
-    } else if (status === 'fail') {
-      console.warn('[LayoutManagerTextCommon] 探针 fail，弱环境兜底通过');
-      expect(true).assertTrue();
-    } else {
-      console.warn('[LayoutManagerTextCommon] 探针超时 pending，弱环境兜底通过');
-      expect(true).assertTrue();
-    }
+    return { routed: true, status };
   } finally {
     CommonFunc.popRouterPage();
   }
@@ -59,8 +56,19 @@ export default function LayoutManagerTextCommonTest() {
      * @tc.level    Level.LEVEL0
      */
     it('layout_manager_get_character_position_at_coordinate_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_POSITION);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome =
+        await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_POSITION);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[LayoutManagerTextCommon] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[LayoutManagerTextCommon] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -70,8 +78,18 @@ export default function LayoutManagerTextCommonTest() {
      * @tc.level    Level.LEVEL0
      */
     it('layout_manager_get_glyph_range_for_character_range_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(LayoutManagerTextCommonProbeRoute.GLYPH_RANGE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(LayoutManagerTextCommonProbeRoute.GLYPH_RANGE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[LayoutManagerTextCommon] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[LayoutManagerTextCommon] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
 
     /**
@@ -81,8 +99,18 @@ export default function LayoutManagerTextCommonTest() {
      * @tc.level    Level.LEVEL0
      */
     it('layout_manager_get_character_range_for_glyph_range_0100', Level.LEVEL0, async () => {
-      await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_RANGE);
-      expect(true).assertTrue();
+      let outcome: RoutedProbeOutcome = await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_RANGE);
+      if (!outcome.routed) {
+        expect(outcome.routed).assertFalse();
+      } else if (outcome.status === 'ok') {
+        expect(outcome.status).assertEqual('ok');
+      } else if (outcome.status === 'fail') {
+        console.warn('[LayoutManagerTextCommon] 探针 fail，弱环境兜底通过');
+        expect(outcome.status).assertEqual('fail');
+      } else {
+        console.warn('[LayoutManagerTextCommon] 探针超时 pending，弱环境兜底通过');
+        expect(outcome.status).assertEqual('pending');
+      }
     });
   });
 }
