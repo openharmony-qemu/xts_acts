@@ -16,8 +16,8 @@ export const XCOMPONENT_HDR_ROUTE_PARAM: string = 'probe';
 export const XCOMPONENT_HDR_STATUS_KEY: string = 'actsAceXComponentHdrStatus';
 
 export class XComponentHdrProbeRoute {
-  static readonly BRIGHTNESS_WITH_TYPE: string = 'hdr_brightness_with_type';
-  static readonly BRIGHTNESS_SINGLE_ARG: string = 'hdr_brightness_single_arg';
+  public static readonly BRIGHTNESS_WITH_TYPE: string = 'hdr_brightness_with_type';
+  public static readonly BRIGHTNESS_SINGLE_ARG: string = 'hdr_brightness_single_arg';
 }
 
 function readProbeRoute(): string {

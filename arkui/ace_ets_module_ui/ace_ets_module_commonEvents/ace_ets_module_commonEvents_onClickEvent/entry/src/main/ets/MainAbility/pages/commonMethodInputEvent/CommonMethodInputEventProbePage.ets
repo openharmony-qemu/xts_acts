@@ -16,11 +16,11 @@ export const COMMON_METHOD_INPUT_ROUTE_PARAM: string = 'probe';
 export const COMMON_METHOD_INPUT_STATUS_KEY: string = 'actsAceCommonMethodInputProbeStatus';
 
 export class CommonMethodInputProbeRoute {
-  static readonly MOUSE_EVENT_HANDLE: string = 'mouse_event_handle';
-  static readonly TOUCH_EVENT_HANDLE: string = 'touch_event_handle';
-  static readonly AXIS_EVENT_HANDLE: string = 'axis_event_handle';
-  static readonly DRAG_RESULT_UNKNOWN: string = 'drag_result_unknown';
-  static readonly ENABLE_CLICK_SOUND: string = 'enable_click_sound';
+  public static readonly MOUSE_EVENT_HANDLE: string = 'mouse_event_handle';
+  public static readonly TOUCH_EVENT_HANDLE: string = 'touch_event_handle';
+  public static readonly AXIS_EVENT_HANDLE: string = 'axis_event_handle';
+  public static readonly DRAG_RESULT_UNKNOWN: string = 'drag_result_unknown';
+  public static readonly ENABLE_CLICK_SOUND: string = 'enable_click_sound';
 }
 
 function eventHandleIdOptionalNumberOk(v: number | undefined): boolean {

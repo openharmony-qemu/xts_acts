@@ -36,7 +36,7 @@ function readProbeRoute(): string {
 }
 
 @Builder
-function ProbeSwiperWithCached(itemCount: number, cacheCount: number, options: CachedCountOptions) {
+function probeSwiperWithCached(itemCount: number, cacheCount: number, options: CachedCountOptions) {
   Swiper() {
     if (itemCount > 0) {
       Text('0').width('100%').height('100%')
@@ -77,15 +77,15 @@ struct SwiperCachedCountProbePage {
         .fontSize(11)
         .fontColor($r('sys.color.ohos_id_color_text_secondary'))
       if (this.probe === SwiperCachedCountProbeRoute.BOTH_TRUE) {
-        ProbeSwiperWithCached(3, 2, { isShown: true, independent: true } as CachedCountOptions)
+        probeSwiperWithCached(3, 2, { isShown: true, independent: true } as CachedCountOptions)
       } else if (this.probe === SwiperCachedCountProbeRoute.IS_SHOWN_ONLY) {
-        ProbeSwiperWithCached(2, 2, { isShown: true } as CachedCountOptions)
+        probeSwiperWithCached(2, 2, { isShown: true } as CachedCountOptions)
       } else if (this.probe === SwiperCachedCountProbeRoute.INDEPENDENT_ONLY) {
-        ProbeSwiperWithCached(2, 2, { independent: true } as CachedCountOptions)
+        probeSwiperWithCached(2, 2, { independent: true } as CachedCountOptions)
       } else if (this.probe === SwiperCachedCountProbeRoute.EMPTY_OPTIONS) {
-        ProbeSwiperWithCached(2, 1, {} as CachedCountOptions)
+        probeSwiperWithCached(2, 1, {} as CachedCountOptions)
       } else {
-        ProbeSwiperWithCached(1, 1, {} as CachedCountOptions)
+        probeSwiperWithCached(1, 1, {} as CachedCountOptions)
       }
     }
     .width('100%')

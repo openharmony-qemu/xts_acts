@@ -12,7 +12,8 @@
 
 /**
  * SubHeader / SubHeaderV2 测试页：
- * - **六块独立场景**（`SubHeaderScene*`）：Hypium 单测通过 `router.pushUrl` 传 `params[SUBHEADER_ROUTE_PARAM]`（见 `SubHeaderPropsInstrumentRoute`）。
+ * - **六块独立场景**（`SubHeaderScene*`）：Hypium 单测通过 `router.pushUrl` 传
+ *   `params[SUBHEADER_ROUTE_PARAM]`（见 `SubHeaderPropsInstrumentRoute`）。
  * - **无参或 `route=subheader`**：`SubHeaderPropsTestContent` 六块纵向拼接全量预览。
  *
  * 文档与扩展字段说明见各场景顶部注释；测试辅助 Text 与入参同源 @State，非官方 API。
@@ -81,12 +82,12 @@ class PageOperationOption {
 }
 
 class SubHeaderV1UiArgs {
-  primaryTitle?: ResourceStr = undefined;
-  secondaryTitle?: ResourceStr = undefined;
-  titleId?: string = undefined;
-  operationType?: OperationType = undefined;
-  select?: PageSelectOptions = undefined;
-  operationItem?: PageOperationOption[] = undefined;
+  public primaryTitle?: ResourceStr = undefined;
+  public secondaryTitle?: ResourceStr = undefined;
+  public titleId?: string = undefined;
+  public operationType?: OperationType = undefined;
+  public select?: PageSelectOptions = undefined;
+  public operationItem?: PageOperationOption[] = undefined;
 }
 
 function newPageSelectOptionsFilled(): PageSelectOptions {

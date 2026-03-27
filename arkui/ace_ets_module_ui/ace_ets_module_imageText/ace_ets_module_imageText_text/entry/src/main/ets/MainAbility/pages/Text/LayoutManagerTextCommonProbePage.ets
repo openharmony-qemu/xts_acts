@@ -16,9 +16,9 @@ export const LAYOUT_MANAGER_TEXT_COMMON_ROUTE_PARAM: string = 'probe';
 export const LAYOUT_MANAGER_TEXT_COMMON_STATUS_KEY: string = 'actsAceLayoutManagerTextCommonStatus';
 
 export class LayoutManagerTextCommonProbeRoute {
-  static readonly CHARACTER_POSITION: string = 'layout_manager_character_position';
-  static readonly GLYPH_RANGE: string = 'layout_manager_glyph_range';
-  static readonly CHARACTER_RANGE: string = 'layout_manager_character_range';
+  public static readonly CHARACTER_POSITION: string = 'layout_manager_character_position';
+  public static readonly GLYPH_RANGE: string = 'layout_manager_glyph_range';
+  public static readonly CHARACTER_RANGE: string = 'layout_manager_character_range';
 }
 
 function readProbeRoute(): string {
