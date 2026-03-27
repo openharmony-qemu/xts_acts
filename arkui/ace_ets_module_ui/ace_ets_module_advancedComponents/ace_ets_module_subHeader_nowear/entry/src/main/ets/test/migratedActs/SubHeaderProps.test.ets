@@ -13,7 +13,7 @@
 /**
  * 9 条用例：SubHeader / SubHeaderV2 的 id、titleId、@Trace id。
  *
- * **一单例一屏**：每条 `it` 先 `router.pushUrl(SubHeaderPropsPage, params.route)`，与 `SubHeaderPropsPage` 单屏分支
+ * **一单例一屏**：每条 `it` 先 `CommonFunc.openRouterPageWithParamKey(SubHeaderPropsPage, routeKey, route)`，与 `SubHeaderPropsPage` 单屏分支
  * `SubHeaderScene*` 一一对应；挂载 key 为 `mount_sh_v1_operation` … `mount_sh_v2_operation`（与场景 `.key()` 一致）。
  * V2 的 options / trace 成对用例仍共一路由、同一 mount。
  *

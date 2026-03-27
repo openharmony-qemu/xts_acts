@@ -13,7 +13,7 @@
 /**
  * `inspector.createComponentObserver`：`onDrawChildren` / `offDrawChildren(callback?)`。
  *
- * 探针：`ComponentObserverDrawChildrenPage.ets`；`router.pushUrl` 后依赖 Inspector 与 `createComponentObserver`。
+ * 探针：`ComponentObserverDrawChildrenPage.ets`；`CommonFunc.openRouterPage` 后依赖 Inspector 与 `createComponentObserver`。
  * 两条 `it` 分别覆盖订阅与无参 `offDrawChildren`；弱环境见 `console.warn` 与兜底断言。
  */
 
