@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import drawChildrenTest from './CreateComponentObserver/drawChildren.test';
+import ComponentObserverDrawChildrenTest from './migratedActs/ComponentObserverDrawChildren.test';
 
 export default function testsuite() {
     drawChildrenTest();
+    ComponentObserverDrawChildrenTest();
 }
