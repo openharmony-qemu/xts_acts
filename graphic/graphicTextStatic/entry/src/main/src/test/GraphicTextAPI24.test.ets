@@ -464,6 +464,7 @@ export default function GraphicTextAPI24() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           lineSpacing: 15,
+          orphanCharOptimization: true
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
         let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
@@ -511,6 +512,7 @@ export default function GraphicTextAPI24() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           lineSpacing: 15,
+          orphanCharOptimization: false
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
         let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
