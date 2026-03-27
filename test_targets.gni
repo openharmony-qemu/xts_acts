@@ -13,7 +13,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-_all_test_packages = [
+all_test_targets = [
   "${ACTS_ROOT}/ai:ai",
   "${ACTS_ROOT}/web:web",
   "${ACTS_ROOT}/testfwk:testfwk",
@@ -62,73 +62,19 @@ _all_test_packages = [
   "${ACTS_ROOT}/distributedhardware:distributedhardware",
   "${ACTS_ROOT}/game:game",
   "${ACTS_ROOT}/updater:update",
-  "${ACTS_ROOT}/tee:tee",
 ]
 
-_all_test_packages_ivi = [
+all_test_targets_ivi = [
   # add acts for ivi here
   # "${ACTS_ROOT}/multimedia:multimedia_ivi",
 ]
 
-_all_test_packages_intellitv = [
+all_test_targets_intellitv = [
   # add acts for intellitv here
   "${ACTS_ROOT}/multimedia:multimedia_intellitv",
 ]
 
-_all_test_packages_wearable = [
+all_test_targets_wearable = [
   # add acts for wearable here
   "${ACTS_ROOT}/multimedia:multimedia_wearable",
 ]
-
-selected_packages_wearable = []
-selected_packages_intellitv = []
-selected_packages_ivi = []
-selected_packages = []
-assert(XTS_SUITENAME != "")
-if (build_xts == true && XTS_SUITENAME == "acts") {
-  _select_script = "//test/xts/tools/build/test_package_select.py"
-  _subsystem_config_path = rebase_path(
-          "$root_build_dir/build_configs/subsystem_info/src_subsystem_info.json")
-  _select_args = [ _subsystem_config_path ] + _all_test_packages
-  _select_args_ivi = [ _subsystem_config_path ] + _all_test_packages_ivi
-  _select_args_intellitv =
-      [ _subsystem_config_path ] + _all_test_packages_intellitv
-  _select_args_wearable =
-      [ _subsystem_config_path ] + _all_test_packages_wearable
-  _target_subsystem = getenv("target_subsystem")
-
-  if (_target_subsystem != "" && _target_subsystem != "all") {
-    print("Build acts, target_subsystem=" + _target_subsystem)
-    _select_args += [ "selected_subsystem=" + _target_subsystem ]
-    _select_args_ivi += [ "selected_subsystem=" + _target_subsystem ]
-    _select_args_intellitv += [ "selected_subsystem=" + _target_subsystem ]
-    _select_args_wearable += [ "selected_subsystem=" + _target_subsystem ]
-  }
-
-  selected_packages = exec_script(_select_script, _select_args, "list lines")
-
-  selected_packages_ivi =
-      exec_script(_select_script, _select_args_ivi, "list lines")
-
-  selected_packages_intellitv =
-      exec_script(_select_script, _select_args_intellitv, "list lines")
-
-  selected_packages_wearable =
-      exec_script(_select_script, _select_args_wearable, "list lines")
-
-  print("Selected packages:")
-  print(selected_packages)
-
-  # always include testtools
-  selected_packages += [ "testtools:deploy_testtools" ]
-  selected_packages += [ "${XTS_ROOT}/tools/others/query:libQuery" ]
-  selected_packages_ivi += [ "testtools:deploy_testtools" ]
-  selected_packages_intellitv += [ "testtools:deploy_testtools" ]
-  selected_packages_wearable += [ "testtools:deploy_testtools" ]
-} else {
-  print("ACTS build is not enabled")
-}
-
-exec_script("init_ark_runtime_jsvm.py",
-            [ rebase_path("//test/xts/acts/") ],
-            "list lines")
