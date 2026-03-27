@@ -34,7 +34,8 @@ struct DynamicLayoutColumn {
   uiContext: UIContext | undefined = undefined;
   columnAlignItemsArr: HorizontalAlign [] = [HorizontalAlign.Center, HorizontalAlign.Start, HorizontalAlign.End]
   columnAlignItemsIndex: number = 0
-  columnJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
+  columnJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, 
+  FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
   columnJustifyContentIndex: number = 0
   flag: boolean = false
 

@@ -34,7 +34,8 @@ struct DynamicLayoutRow {
   public uiContext: UIContext | undefined = undefined;
   public rowAlignItemsArr: VerticalAlign [] = [VerticalAlign.Center, VerticalAlign.Top, VerticalAlign.Bottom]
   public rowAlignItemsIndex: number = 0
-  public rowJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
+  public rowJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, 
+  FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
   public rowJustifyContentIndex: number = 0
   public flag: boolean = false
 

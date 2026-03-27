@@ -22,8 +22,9 @@
 struct DynamicLayoutStack {
   @Local dynamicLayoutAlignContent: LocalizedAlignment |null| undefined = LocalizedAlignment.CENTER
   @Local stackLayoutAlignContent: LocalizedAlignment |null| undefined = LocalizedAlignment.CENTER
-  public stackAlignContentArr: LocalizedAlignment[] = [LocalizedAlignment.CENTER,LocalizedAlignment.TOP_START,LocalizedAlignment.TOP,LocalizedAlignment.TOP_END,
-  LocalizedAlignment.START,LocalizedAlignment.END,LocalizedAlignment.BOTTOM_START,LocalizedAlignment.BOTTOM,LocalizedAlignment.BOTTOM_END]
+  public stackAlignContentArr: LocalizedAlignment[] = [LocalizedAlignment.CENTER,LocalizedAlignment.TOP_START,
+  LocalizedAlignment.TOP,LocalizedAlignment.TOP_END,LocalizedAlignment.START,LocalizedAlignment.END,
+  LocalizedAlignment.BOTTOM_START,LocalizedAlignment.BOTTOM,LocalizedAlignment.BOTTOM_END]
   public stackAlignContentIndex: number = 0
 
   build() {
