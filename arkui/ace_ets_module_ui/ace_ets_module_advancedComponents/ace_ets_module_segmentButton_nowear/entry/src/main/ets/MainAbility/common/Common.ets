@@ -15,13 +15,7 @@
 import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
-
-export class RectValue {
-  left: number = 0;
-  top: number = 0;
-  right: number = 0;
-  bottom: number = 0;
-}
+import RectValue from './Rect';
 
 export default class CommonFunc {
   static rect_left: number;
@@ -31,47 +25,58 @@ export default class CommonFunc {
   static rect_value: RectValue;
 
   static sleep(time: number) {
-    return new Promise<string>((resolve, reject) => {
+    return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
-        resolve("ok");
-      }, time);
+        resolve("ok")
+      }, time)
     }).then(() => {
-      console.info(`sleep ${time} over...`);
-    });
+      console.info(`sleep ${time} over...`)
+    })
   }
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
+    let strJson: string = getInspectorByKey(key);
+    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
+    console.info("[getInspectorByKey] rectInfo is: " + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
+    CommonFunc.rect_left = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[0]
+    CommonFunc.rect_top = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[0] + ']')[1]
+    CommonFunc.rect_right = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[0]
+    CommonFunc.rect_bottom = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[1]
+    return CommonFunc.rect_value = {
+      left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
+    }
+  }
+
+  static getComponentRectOnScreen(key: string): RectValue {
     let strJson = getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse(strJson);
+    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: string[] = JSON.parse('[' + obj.$rect + ']');
-    CommonFunc.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0];
-    CommonFunc.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1];
-    CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0];
-    CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1];
-    CommonFunc.rect_value = {
-      left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
-    };
-    console.info(JSON.stringify(CommonFunc.rect_value));
-    return CommonFunc.rect_value;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop );
+    CommonFunc.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0] + globalThis.winLeft;
+    CommonFunc.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1] + globalThis.winTop;
+    CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0] + globalThis.winLeft;
+    CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1] + globalThis.winTop;
+    return CommonFunc.rect_value = {
+      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
+    }
   }
 
   static setScreenOrientation(orientation: number) {
     screen.getAllScreens().then(data => {
-      const screenClass = data[0];
-      console.log('Succeeded in getting all screens. Data:', data);
-      screenClass.setOrientation(orientation, (err: BusinessError) => {
-        if (err) {
-          console.error('Failed to set the vertical orientation. Code:', err);
-          return;
-        }
-        console.info('Succeeded in setting the vertical orientation.');
-      });
+        console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+        return data[0];
+    }).then(screenClass => {
+        return screenClass.setOrientation(orientation);
+    }).then(() => {
+        console.log('Succeeded in setting the vertical orientation.');
     }).catch((err: BusinessError) => {
-      console.log('Failed to get all screens. Cause:', err);
+        console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
     });
   }
 
-  static async openRouterPage(url: string, params?: ESObject): Promise<boolean> {
+  static async openRouterPage(url: string, params?: Record<string, Object>): Promise<boolean> {
     try {
       if (params !== undefined) {
         await router.pushUrl({ url: url, params: params });
@@ -85,7 +90,7 @@ export default class CommonFunc {
   }
 
   static async openRouterPageWithParamKey(url: string, key: string, val: string): Promise<boolean> {
-    let p: ESObject = {};
+    let p: Record<string, Object> = {};
     p[key] = val;
     return CommonFunc.openRouterPage(url, p);
   }
