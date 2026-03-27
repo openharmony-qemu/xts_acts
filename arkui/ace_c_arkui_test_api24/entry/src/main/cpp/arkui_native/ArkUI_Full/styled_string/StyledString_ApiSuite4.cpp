@@ -30,7 +30,7 @@ ArkUI_StyledString_Descriptor* XtsPlainTextDescriptor(const char* utf8)
     }
     const auto n = static_cast<size_t>(std::strlen(utf8));
     std::vector<const OH_ArkUI_SpanStyle*> slots(n, nullptr);
-    const OH_ArkUI_SpanStyle* const* p = n == 0 ? nullptr : slots.data();
+    const OH_ArkUI_SpanStyle* const *p = n == 0 ? nullptr : slots.data();
     return OH_ArkUI_StyledString_Descriptor_CreateWithString(utf8, p, static_cast<int32_t>(n));
 }
 } // namespace
