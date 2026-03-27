@@ -61,17 +61,15 @@ export default function XComponentHdrTest() {
     it('hdr_type_default_zero_0100', Level.LEVEL0, () => {
       expect(HdrType.DEFAULT).assertEqual(0);
     });
-
     /**
      * @tc.number   hdr_type_aihdr_one_0100
      * @tc.name     hdr_type_aihdr_one_0100
-     * @tc.desc     HdrType.AIHDR equals 1
+     * @tc.desc     xcomponent HdrType.AIHDR enum numeric value is 1
      * @tc.level    Level.LEVEL0
      */
     it('hdr_type_aihdr_one_0100', Level.LEVEL0, () => {
       expect(HdrType.AIHDR).assertEqual(1);
     });
-
     /**
      * @tc.number   xcomponent_hdr_brightness_with_hdr_type_0100
      * @tc.name     xcomponent_hdr_brightness_with_hdr_type_0100
@@ -82,7 +80,6 @@ export default function XComponentHdrTest() {
       await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_WITH_TYPE);
       expect(true).assertTrue();
     });
-
     /**
      * @tc.number   xcomponent_hdr_brightness_single_arg_0100
      * @tc.name     xcomponent_hdr_brightness_single_arg_0100

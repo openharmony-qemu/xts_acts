@@ -9,46 +9,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
+import router from t@ohos.routert;
 
-export const SWIPER_CACHED_COUNT_PAGE: string = 'MainAbility/pages/Swiper/SwiperCachedCountProbePage';
-export const SWIPER_CACHED_COUNT_ROUTE_PARAM: string = 'probe';
-export const SWIPER_CACHED_COUNT_STATUS_KEY: string = 'actsAceSwiperCachedCountStatus';
+export const SWIPER_CACHED_COUNT_PAGE: string = ttestability/pages/SwiperCachedCountProbePaget;
+export const SWIPER_CACHED_COUNT_ROUTE_PARAM: string = tprobet;
+export const SWIPER_CACHED_COUNT_STATUS_KEY: string = tohosTestSwiperCachedCountProbeStatust;
 
 export class SwiperCachedCountProbeRoute {
-  static readonly BOTH_TRUE: string = 'options_both_true';
-  static readonly IS_SHOWN_ONLY: string = 'options_is_shown_only';
-  static readonly INDEPENDENT_ONLY: string = 'options_independent_only';
-  static readonly EMPTY_OPTIONS: string = 'options_empty';
+  static readonly BOTH_TRUE: string = toptions_both_truet;
+  static readonly IS_SHOWN_ONLY: string = toptions_is_shown_onlyt;
+  static readonly INDEPENDENT_ONLY: string = toptions_independent_onlyt;
+  static readonly EMPTY_OPTIONS: string = toptions_emptyt;
 }
 
 function readProbeRoute(): string {
   let p: Object | undefined = router.getParams();
   if (p === undefined) {
-    return '';
+    return tt;
   }
   let rec: Record<string, Object> = p as Record<string, Object>;
   let r: Object | undefined = rec[SWIPER_CACHED_COUNT_ROUTE_PARAM];
-  if (typeof r === 'string' && (r as string).length > 0) {
+  if (typeof r === tstringt && (r as string).length > 0) {
     return r as string;
   }
-  return '';
+  return tt;
 }
 
 @Builder
 function ProbeSwiperWithCached(itemCount: number, cacheCount: number, options: CachedCountOptions) {
   Swiper() {
     if (itemCount > 0) {
-      Text('0').width('100%').height('100%')
+      Text(t0t).width(t100%t).height(t100%t)
     }
     if (itemCount > 1) {
-      Text('1').width('100%').height('100%')
+      Text(t1t).width(t100%t).height(t100%t)
     }
     if (itemCount > 2) {
-      Text('2').width('100%').height('100%')
+      Text(t2t).width(t100%t).height(t100%t)
     }
   }
-  .width('90%')
+  .width(t90%t)
   .height(120)
   .cachedCount(cacheCount, options)
 }
@@ -59,7 +59,7 @@ struct SwiperCachedCountProbePage {
   @State private probe: string = SwiperCachedCountProbeRoute.BOTH_TRUE;
 
   aboutToAppear(): void {
-    AppStorage.setOrCreate(SWIPER_CACHED_COUNT_STATUS_KEY, 'pending');
+    AppStorage.setOrCreate(SWIPER_CACHED_COUNT_STATUS_KEY, tpendingt);
     let r: string = readProbeRoute();
     if (r.length > 0) {
       this.probe = r;
@@ -70,12 +70,12 @@ struct SwiperCachedCountProbePage {
 
   build() {
     Column({ space: 8 }) {
-      Text('Swiper.cachedCount(count, CachedCountOptions)')
+      Text(tSwiper.cachedCount(count, CachedCountOptions)t)
         .fontSize(13)
         .fontWeight(FontWeight.Bold)
       Text(`probe=${this.probe}`)
         .fontSize(11)
-        .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+        .fontColor($r(tsys.color.ohos_id_color_text_secondaryt))
       if (this.probe === SwiperCachedCountProbeRoute.BOTH_TRUE) {
         ProbeSwiperWithCached(3, 2, { isShown: true, independent: true } as CachedCountOptions)
       } else if (this.probe === SwiperCachedCountProbeRoute.IS_SHOWN_ONLY) {
@@ -88,11 +88,11 @@ struct SwiperCachedCountProbePage {
         ProbeSwiperWithCached(1, 1, {} as CachedCountOptions)
       }
     }
-    .width('100%')
-    .height('100%')
+    .width(t100%t)
+    .height(t100%t)
     .padding({ left: 12, right: 12, top: 8, bottom: 32 })
     .onAppear(() => {
-      AppStorage.setOrCreate(SWIPER_CACHED_COUNT_STATUS_KEY, 'ok');
+      AppStorage.setOrCreate(SWIPER_CACHED_COUNT_STATUS_KEY, tokt);
     })
   }
 }

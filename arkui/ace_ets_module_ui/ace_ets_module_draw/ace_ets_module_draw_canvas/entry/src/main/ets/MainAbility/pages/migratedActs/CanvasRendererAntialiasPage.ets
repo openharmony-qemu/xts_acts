@@ -9,38 +9,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const CANVAS_RENDERER_ANTIALIAS_PAGE: string = 'MainAbility/pages/migratedActs/CanvasRendererAntialiasPage';
-export const CANVAS_RENDERER_ANTIALIAS_STATUS_KEY: string = 'actsAceCanvasRendererAntialiasStatus';
+export const CANVAS_RENDERER_ANTIALIAS_PAGE: string = ttestability/pages/CanvasRendererAntialiasPaget;
+export const CANVAS_RENDERER_ANTIALIAS_STATUS_KEY: string = tohosTestCanvasRendererAntialiasStatust;
 
 function isValidFillStrokeValue(v: string | number | CanvasGradient | CanvasPattern): boolean {
-  if (typeof v === 'string' || typeof v === 'number') {
+  if (typeof v === tstringt || typeof v === tnumbert) {
     return true;
   }
   if (v instanceof CanvasGradient) {
     return true;
   }
-  return typeof v === 'object' && v !== null;
+  return typeof v === tobjectt && v !== null;
 }
 
 function invokeCanvasRendererFillStrokePutProbes(
   renderer: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D): void {
-  renderer.fillStyle = '#00AA33';
+  renderer.fillStyle = t#00AA33t;
   let afterFill: string | number | CanvasGradient | CanvasPattern = renderer.fillStyle;
   if (!isValidFillStrokeValue(afterFill)) {
-    throw new Error('fillStyle read invalid type');
+    throw new Error(tfillStyle read invalid typet);
   }
   renderer.strokeStyle = 0xFF00AA33;
   let afterStroke: string | number | CanvasGradient | CanvasPattern = renderer.strokeStyle;
   if (!isValidFillStrokeValue(afterStroke)) {
-    throw new Error('strokeStyle read invalid type');
+    throw new Error(tstrokeStyle read invalid typet);
   }
   let cone: CanvasGradient = renderer.createConicGradient(0, 8, 8);
-  cone.addColorStop(0, '#FF0000');
-  cone.addColorStop(1, '#0000FF');
+  cone.addColorStop(0, t#FF0000t);
+  cone.addColorStop(1, t#0000FFt);
   renderer.fillStyle = cone;
   let afterCone: string | number | CanvasGradient | CanvasPattern = renderer.fillStyle;
   if (!(afterCone instanceof CanvasGradient)) {
-    throw new Error('fillStyle after createConicGradient not CanvasGradient');
+    throw new Error(tfillStyle after createConicGradient not CanvasGradientt);
   }
   let imageData: ImageData = renderer.createImageData(4, 4);
   imageData.data[0] = 255;
@@ -51,20 +51,20 @@ function invokeCanvasRendererFillStrokePutProbes(
 
 function invokeCanvasRendererFillStrokePutProbesLinear(
   renderer: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D): void {
-  renderer.fillStyle = '#00AA33';
+  renderer.fillStyle = t#00AA33t;
   if (!isValidFillStrokeValue(renderer.fillStyle)) {
-    throw new Error('fillStyle read invalid type');
+    throw new Error(tfillStyle read invalid typet);
   }
   renderer.strokeStyle = 0xFF00AA33;
   if (!isValidFillStrokeValue(renderer.strokeStyle)) {
-    throw new Error('strokeStyle read invalid type');
+    throw new Error(tstrokeStyle read invalid typet);
   }
   let lin: CanvasGradient = renderer.createLinearGradient(0, 0, 16, 16);
-  lin.addColorStop(0, '#FF0000');
-  lin.addColorStop(1, '#0000FF');
+  lin.addColorStop(0, t#FF0000t);
+  lin.addColorStop(1, t#0000FFt);
   renderer.fillStyle = lin;
   if (!(renderer.fillStyle instanceof CanvasGradient)) {
-    throw new Error('fillStyle after createLinearGradient not CanvasGradient');
+    throw new Error(tfillStyle after createLinearGradient not CanvasGradientt);
   }
   let imageData: ImageData = renderer.createImageData(4, 4);
   imageData.data[0] = 255;
@@ -75,13 +75,13 @@ function invokeCanvasRendererFillStrokePutProbesLinear(
 
 function invokeCanvasRendererFillStrokePutProbesMinimal(
   renderer: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D): void {
-  renderer.fillStyle = '#00AA33';
+  renderer.fillStyle = t#00AA33t;
   if (!isValidFillStrokeValue(renderer.fillStyle)) {
-    throw new Error('fillStyle read invalid type');
+    throw new Error(tfillStyle read invalid typet);
   }
   renderer.strokeStyle = 0xFF00AA33;
   if (!isValidFillStrokeValue(renderer.strokeStyle)) {
-    throw new Error('strokeStyle read invalid type');
+    throw new Error(tstrokeStyle read invalid typet);
   }
   let imageData: ImageData = renderer.createImageData(4, 4);
   imageData.data[0] = 255;
@@ -91,13 +91,13 @@ function invokeCanvasRendererFillStrokePutProbesMinimal(
 
 function invokeAntialiasContextProbeOnly(
   renderer: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D): void {
-  renderer.fillStyle = '#00AA33';
+  renderer.fillStyle = t#00AA33t;
   if (!isValidFillStrokeValue(renderer.fillStyle)) {
-    throw new Error('fillStyle read invalid type');
+    throw new Error(tfillStyle read invalid typet);
   }
   renderer.strokeStyle = 0xFF00AA33;
   if (!isValidFillStrokeValue(renderer.strokeStyle)) {
-    throw new Error('strokeStyle read invalid type');
+    throw new Error(tstrokeStyle read invalid typet);
   }
 }
 
@@ -130,22 +130,22 @@ function runCanvasProbesWithFallback(
 @Component
 struct CanvasRendererAntialiasPage {
   aboutToAppear(): void {
-    AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'pending');
+    AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, tpendingt);
     let settings: RenderingContextSettings = new RenderingContextSettings(true);
     let a: boolean | undefined | null = settings.antialias;
-    if (a !== undefined && a !== null && typeof a !== 'boolean') {
-      AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'fail');
+    if (a !== undefined && a !== null && typeof a !== tbooleant) {
+      AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, tfailt);
       return;
     }
     try {
       let off: OffscreenCanvas = new OffscreenCanvas(16, 16);
-      let osCtx: OffscreenCanvasRenderingContext2D | null = off.getContext('2d', settings);
+      let osCtx: OffscreenCanvasRenderingContext2D | null = off.getContext(t2dt, settings);
       if (osCtx == null) {
-        osCtx = off.getContext('2d');
+        osCtx = off.getContext(t2dt);
       }
       if (osCtx != null) {
         if (runCanvasProbesWithFallback(osCtx)) {
-          AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'ok');
+          AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, tokt);
         }
       }
     } catch (_e) {
@@ -154,19 +154,19 @@ struct CanvasRendererAntialiasPage {
 
   build() {
     Column({ space: 8 }) {
-      Text('Instrument：CanvasRenderer（antialias + fill/stroke/conic/putImageData）')
+      Text(tInstrument：CanvasRenderer（antialias + fill/stroke/conic/putImageData）t)
         .fontSize(13)
         .fontWeight(FontWeight.Bold)
-      Text('Offscreen 优先探针；Canvas onReady 为 RS 正常机型的第二路径')
+      Text(tOffscreen 优先探针；Canvas onReady 为 RS 正常机型的第二路径t)
         .fontSize(11)
-        .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+        .fontColor($r(tsys.color.ohos_id_color_text_secondaryt))
       Canvas({} as CanvasParams)
         .width(160)
         .height(160)
-        .backgroundColor('#E8E8E8')
+        .backgroundColor(t#E8E8E8t)
         .onReady((drawingContext?: DrawingRenderingContext) => {
           let s: string | undefined = AppStorage.get<string>(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY);
-          if (s === 'ok' || s === 'fail') {
+          if (s === tokt || s === tfailt) {
             return;
           }
           if (!drawingContext) {
@@ -177,14 +177,14 @@ struct CanvasRendererAntialiasPage {
             let renderer: CanvasRenderingContext2D =
               CanvasRenderingContext2D.getContext2DFromDrawingContext(drawingContext, drawOpts);
             runCanvasProbesWithFallback(renderer);
-            AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'ok');
+            AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, tokt);
           } catch (_e) {
-            AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'fail');
+            AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, tfailt);
           }
         })
     }
-    .width('100%')
-    .height('100%')
+    .width(t100%t)
+    .height(t100%t)
     .padding({ left: 12, right: 12, top: 8, bottom: 32 })
   }
 }

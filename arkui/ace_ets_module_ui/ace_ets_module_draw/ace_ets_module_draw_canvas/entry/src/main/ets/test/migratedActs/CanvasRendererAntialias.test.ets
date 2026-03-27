@@ -1,10 +1,7 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +11,7 @@
  */
 
 /**
- * Canvas / RenderingContextSettings antialias probe; router or weak env may degrade to pass-with-warn.
+ * Canvas / RenderingContextSettings antialias 探针；路由成功须得到 ok。
  */
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, it, expect, Level } from '@ohos/hypium';
@@ -36,22 +33,13 @@ export default function CanvasRendererAntialiasTest() {
      */
     it('canvas_renderer_antialias_boolean_or_undefined_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'pending');
-      if (!(await CommonFunc.openRouterPage(CANVAS_RENDERER_ANTIALIAS_PAGE))) {
-        console.warn('[CanvasRendererAntialias] router.pushUrl 失败，弱环境兜底通过');
-        expect(true).assertTrue();
-        return;
-      }
+      expect(await CommonFunc.openRouterPage(CANVAS_RENDERER_ANTIALIAS_PAGE)).assertTrue();
 
       await CommonFunc.sleep(ROUTE_STABILIZE_MS);
       let status: string =
         await CommonFunc.pollAppStorageStatus(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, PROBE_POLL_WAIT_MS);
       try {
-        if (status === 'ok') {
-          expect(true).assertTrue();
-        } else {
-          console.warn(`[CanvasRendererAntialias] 探针状态 ${status}，弱环境兜底通过`);
-          expect(true).assertTrue();
-        }
+        expect(status === 'ok').assertTrue();
       } finally {
         CommonFunc.popRouterPage();
       }
