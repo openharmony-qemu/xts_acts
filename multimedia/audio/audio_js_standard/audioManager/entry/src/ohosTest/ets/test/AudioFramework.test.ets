@@ -16233,7 +16233,7 @@ export default function audioFramework() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOSTREAMMANAGER_ISOFFLOADPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
@@ -16265,12 +16265,12 @@ export default function audioFramework() {
     /**
     * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_0100 
     * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_0100 
-    * @tc.desc   isFastPlaybackSupported
+    * @tc.desc   isDirectPlaybackSupported
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
@@ -16307,7 +16307,7 @@ export default function audioFramework() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTRECORDINGSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
@@ -16344,7 +16344,7 @@ export default function audioFramework() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,

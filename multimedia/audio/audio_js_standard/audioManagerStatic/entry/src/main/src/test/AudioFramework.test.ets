@@ -3946,7 +3946,7 @@ export default function audioFramework() {
     /**
     * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100 
     * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISDIRECTPLAYBACKSUPPORTED_STATIC_0100 
-    * @tc.desc   isFastPlaybackSupported
+    * @tc.desc   isDirectPlaybackSupported
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2

@@ -7578,17 +7578,17 @@ static napi_value AudioStreamManagerIsDirectPlaybackSupported_001(napi_env env, 
     streamInfo.encodingType = OH_AudioStream_EncodingType::AUDIOSTREAM_ENCODING_TYPE_RAW;
     streamInfo.sampleFormat = OH_AudioStream_SampleFormat::AUDIOSTREAM_SAMPLE_S32LE;
 
-    bool IsDirectPlay = false;
-    IsDirectPlay = OH_AudioStreamManager_IsDirectPlaybackSupported(streamManager, &streamInfo, AUDIOSTREAM_USAGE_MUSIC);
-    if (IsDirectPlay) {
+    bool isDirectPlay = false;
+    isDirectPlay = OH_AudioStreamManager_IsDirectPlaybackSupported(streamManager, &streamInfo, AUDIOSTREAM_USAGE_MUSIC);
+    if (isDirectPlay) {
         napi_create_int32(env, TEST_PASS, &result);
         return result;
-    } else if (!IsDirectPlay) {
+    } else if (!isDirectPlay) {
         napi_create_int32(env, TEST_PASS, &result);
         return result;
     }
 
-    LOG("IsDirectPlaybackSupported: FAIL, IsDirectPlay is: %{public}d", IsDirectPlay);
+    LOG("IsDirectPlaybackSupported: FAIL, isDirectPlay is: %{public}d", isDirectPlay);
     napi_create_int32(env, TEST_FAIL, &result);
     return result;
 }
@@ -7620,7 +7620,7 @@ static napi_value AudioStreamManagerIsOffloadPlaybackSupported_001(napi_env env,
         return result;
     }
 
-    LOG("IsOffloadPlaybackSupported: FAIL, IsOffload is: %{public}d", IsOffload);
+    LOG("IsOffloadPlaybackSupported: FAIL, isOffload is: %{public}d", isOffload);
     napi_create_int32(env, TEST_FAIL, &result);
     return result;
 }
