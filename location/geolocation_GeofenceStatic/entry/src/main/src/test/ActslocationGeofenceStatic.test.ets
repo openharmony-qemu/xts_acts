@@ -176,7 +176,7 @@ export default function actslocationTest() {
                     expect(typeof id).assertEqual("int");
                     }).catch((err) => {
                     console.error("SUB_Location_GF_addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
-                    if (err.code == 801){
+                    if (err.code === 801){
                       expect(err.code).assertEqual(801);
                     } else {
                       expect(err.code).assertEqual(401);
@@ -185,7 +185,7 @@ export default function actslocationTest() {
                     done();
                 } catch (error) {
                     console.error("SUB_Location_GF_addGnssGeofence_0100 failed, err:" + JSON.stringify(error));
-                    if (error.code == 801){
+                    if (error.code === 801){
                       expect(error.code).assertEqual(801);
                     } else {
                       expect(error.code).assertEqual(401);
