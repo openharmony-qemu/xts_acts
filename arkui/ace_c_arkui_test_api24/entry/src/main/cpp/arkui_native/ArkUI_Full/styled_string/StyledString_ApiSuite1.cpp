@@ -15,6 +15,8 @@
 
 #include "../../../common/common.h"
 #include <arkui/styled_string.h>
+#include <cstring>
+#include <vector>
 
 namespace ArkUICapiTest {
 
@@ -23,13 +25,18 @@ namespace {
  * styled_string.h，并对照 OpenHarmony 公开文档「属性字符串」指南与 capi-styled-string-h.md：
  * 对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类接口，文档允许 INVALID_STYLED_STRING；
  * 入参须为有效属性串。单独 Descriptor_Create() 无文本内容时多属无效。
- * CreateWithString 在 length=0 时 styles 仍须为合法数组指针（可为每项 nullptr），与 252 一致。
+ * API 24 CreateWithString：length 为 span 样式槽数量，与 UTF-8 文本字节长度一致（每字节一槽，槽可为 nullptr）。
  * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
  */
 ArkUI_StyledString_Descriptor* XtsDescriptorFromUtf8(const char* utf8)
 {
-    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
-    return OH_ArkUI_StyledString_Descriptor_CreateWithString(utf8, styleSlots, 0);
+    if (utf8 == nullptr) {
+        return nullptr;
+    }
+    const auto n = static_cast<size_t>(std::strlen(utf8));
+    std::vector<const OH_ArkUI_SpanStyle*> slots(n, nullptr);
+    const OH_ArkUI_SpanStyle* const* p = n == 0 ? nullptr : slots.data();
+    return OH_ArkUI_StyledString_Descriptor_CreateWithString(utf8, p, static_cast<int32_t>(n));
 }
 } // namespace
 
@@ -364,8 +371,7 @@ static napi_value TestArkUICapi_252(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
-    auto *d = OH_ArkUI_StyledString_Descriptor_CreateWithString("xts_capi", styleSlots, 0);
+    auto *d = XtsDescriptorFromUtf8("xts_capi");
     if (((d)) == nullptr) {
         return nullptr;
     }
@@ -434,8 +440,7 @@ static napi_value TestArkUICapi_255(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
-    auto *obj = OH_ArkUI_StyledString_Descriptor_CreateWithString("a", styleSlots, 0);
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -463,8 +468,7 @@ static napi_value TestArkUICapi_256(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
-    auto *obj = OH_ArkUI_StyledString_Descriptor_CreateWithString("a", styleSlots, 0);
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }

@@ -606,6 +606,16 @@ static napi_value TestArkUICapi_301(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetTextStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_TextStyle_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetTextStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -674,6 +684,16 @@ static napi_value TestArkUICapi_303(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetParagraphStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_ParagraphStyle_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetParagraphStyle(obj, sub);
@@ -746,6 +766,16 @@ static napi_value TestArkUICapi_305(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetGestureStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_GestureStyle_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetGestureStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -814,6 +844,16 @@ static napi_value TestArkUICapi_307(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetTextShadowStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_TextShadowStyle_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetTextShadowStyle(obj, sub);
@@ -886,6 +926,16 @@ static napi_value TestArkUICapi_309(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetDecorationStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_DecorationStyle_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetDecorationStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -954,6 +1004,16 @@ static napi_value TestArkUICapi_311(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(obj, sub);
@@ -1026,6 +1086,16 @@ static napi_value TestArkUICapi_313(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetLetterSpacingStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_LetterSpacingStyle_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetLetterSpacingStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1094,6 +1164,16 @@ static napi_value TestArkUICapi_315(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetLineHeightStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_LineHeightStyle_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetLineHeightStyle(obj, sub);
@@ -1166,6 +1246,16 @@ static napi_value TestArkUICapi_317(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetUrlStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_UrlStyle_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetUrlStyle(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1234,6 +1324,16 @@ static napi_value TestArkUICapi_319(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetBackgroundColorStyle(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_BackgroundColorStyle_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetBackgroundColorStyle(obj, sub);
@@ -1306,6 +1406,16 @@ static napi_value TestArkUICapi_321(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetUserDataSpan(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_UserDataSpan_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetUserDataSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1376,6 +1486,16 @@ static napi_value TestArkUICapi_323(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetCustomSpan(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_CustomSpan_Destroy(sub);
+            return napiAssertErr;
+        }
+    }
+
     auto ec = OH_ArkUI_SpanStyle_GetCustomSpan(obj, sub);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -1444,6 +1564,16 @@ static napi_value TestArkUICapi_325(napi_env env, napi_callback_info info)
     if (sub == nullptr) {
         OH_ArkUI_SpanStyle_Destroy(obj);
         return nullptr;
+    }
+
+    {
+        auto ecSet = OH_ArkUI_SpanStyle_SetImageAttachment(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
+            OH_ArkUI_ImageAttachment_Destroy(sub);
+            return napiAssertErr;
+        }
     }
 
     auto ec = OH_ArkUI_SpanStyle_GetImageAttachment(obj, sub);

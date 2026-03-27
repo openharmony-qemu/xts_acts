@@ -17,8 +17,23 @@
 #include <arkui/styled_string.h>
 #include <native_drawing/drawing_color_filter.h>
 #include <native_drawing/drawing_text_typography.h>
+#include <cstring>
+#include <vector>
 
 namespace ArkUICapiTest {
+
+namespace {
+ArkUI_StyledString_Descriptor* XtsPlainTextDescriptor(const char* utf8)
+{
+    if (utf8 == nullptr) {
+        return nullptr;
+    }
+    const auto n = static_cast<size_t>(std::strlen(utf8));
+    std::vector<const OH_ArkUI_SpanStyle*> slots(n, nullptr);
+    const OH_ArkUI_SpanStyle* const* p = n == 0 ? nullptr : slots.data();
+    return OH_ArkUI_StyledString_Descriptor_CreateWithString(utf8, p, static_cast<int32_t>(n));
+}
+} // namespace
 
 /*
  * 测试接口: OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachment *, ArkUI_Margin *)
@@ -398,7 +413,7 @@ static napi_value TestArkUICapi_450(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *desc = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *desc = XtsPlainTextDescriptor("x");
     if (desc == nullptr) {
         return nullptr;
     }
@@ -429,7 +444,7 @@ static napi_value TestArkUICapi_451(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *desc = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *desc = XtsPlainTextDescriptor("x");
     if (desc == nullptr) {
         return nullptr;
     }
