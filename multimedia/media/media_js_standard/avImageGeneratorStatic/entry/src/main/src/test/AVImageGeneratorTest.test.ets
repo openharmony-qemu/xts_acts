@@ -425,7 +425,7 @@ export default function AVImageGeneratorTest() {
                     expect().assertFail()
                 };
             });
-        })
+
         /**
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0900
@@ -442,7 +442,7 @@ export default function AVImageGeneratorTest() {
                     avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption1, param, (error: BusinessError|null, pixelMap: undefined|image.PixelMap) => {
                         if (error) {
-                            console.error(`fetchFrameByTime callback failed, err = ${JSON,stringify(error)}`)
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
                             expect().assertFail()
                         } else {
                             let pixel_map = pixelMap;
@@ -452,7 +452,7 @@ export default function AVImageGeneratorTest() {
                     });
                 } else {
                     console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
-                    except().assertFail()
+                    expect().assertFail()
                 };
             });
         })
@@ -472,7 +472,7 @@ export default function AVImageGeneratorTest() {
                     avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption2, param, (error: BusinessError|null, pixelMap: undefined|image.PixelMap) => {
                         if (error) {
-                            console.error(`fetchFrameByTime callback failed, err = ${JSON,stringify(error)}`)
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
                             expect().assertFail()
                         } else {
                             let pixel_map = pixelMap;
@@ -482,7 +482,7 @@ export default function AVImageGeneratorTest() {
                     });
                 } else {
                     console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
-                    except().assertFail()
+                    expect().assertFail()
                 };
             });
         })
@@ -502,7 +502,7 @@ export default function AVImageGeneratorTest() {
                     avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption3, param, (error: BusinessError|null, pixelMap: undefined|image.PixelMap) => {
                         if (error) {
-                            console.error(`fetchFrameByTime callback failed, err = ${JSON,stringify(error)}`)
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
                             expect().assertFail()
                         } else {
                             let pixel_map = pixelMap;
@@ -512,19 +512,19 @@ export default function AVImageGeneratorTest() {
                     });
                 } else {
                     console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
-                    except().assertFail()
+                    expect().assertFail()
                 };
             });
         })
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_static_0100
-         * @tc.number SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_static_0100
+         * @tc.name   SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
          * @tc.desc   Test fetchScaledFrameByTime with valid parameters and outputSize (success case)
          * @tc.type   FUCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        it('SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMETIME_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let avImageGenerator: media.AVImageGenerator | undefined = undefined;
             let pixel_map : image.PixelMap | undefined = undefined;
             let outputSize: media.OutputSize = {width :300, height : 300,};
@@ -532,13 +532,13 @@ export default function AVImageGeneratorTest() {
                 if (generator != null){
                     let avImageGenerator = generator;
                     console.info(`Succeeded in creating AVImageGenerator`);
-                    avImageGenerator!.fdSrc = fileDescriptor;
+                    avImageGenerator!.fdSrc = fileDescriptor!;
                     avImageGenerator!.fetchScaledFrameByTime(timeUs, queryOption, outputSize).then((pixelMap: image.PixelMap|undefined) => {
                         let pixel_map = pixelMap;
                         expect(pixel_map).not().assertNull()
                     }).catch((error: Error) => {
                         console.error(`Failed to fetch ScaledFrameByTime, error message:${error!!.message}`);
-                        except().assertFail()
+                        expect().assertFail()
                     });
                 } else {
                     console.error(`Failed to creat AVImageGenerator, error message:${err!!.message}`);
