@@ -36,7 +36,7 @@ struct UIContextIsEasySplitPage {
       Text('Instrument：UIContext.isEasySplit()')
         .fontSize(14)
         .fontWeight(FontWeight.Bold)
-      Text('Route：MainAbility/pages/UIContext/UIContextIsEasySplitPage')
+      Text('独立页面：testability/pages/UIContextIsEasySplitPage')
         .fontSize(11)
         .fontColor($r('sys.color.ohos_id_color_text_secondary'))
     }

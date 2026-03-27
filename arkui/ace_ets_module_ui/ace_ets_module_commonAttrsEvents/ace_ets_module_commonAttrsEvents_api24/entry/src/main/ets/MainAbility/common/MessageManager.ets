@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,43 +12,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export type Callback = (message: ESObject) => void;
+export type Callback = (message: ESObject) => void
 
 export class MessageManager {
-  callback?: Callback = undefined;
-  callbacks: Map<string, Callback> = new Map();
+  callback?: Callback = undefined
+  callbacks: Map<string, Callback> = new Map()
 
   constructor() {
 
   }
 
   registerCallback(callback: Callback, type?: string) {
-    if (type === undefined) {
-      console.error('registerCallback callback set');
-      this.callback = callback;
-      return;
+    if (type == undefined) {
+      console.error('registerCallback callback set')
+      this.callback = callback
+      return
     }
-    this.callbacks.set(type, callback);
+    this.callbacks.set(type, callback)
   }
 
   notify(message: ESObject, type?: string) {
-    if (type === undefined) {
+    if (type == undefined) {
       if (this.callback !== undefined) {
-        this.callback(message);
+        this.callback(message)
       }
       return
     }
 
     let tmpCallback: Callback | undefined = this.callbacks.get(type)
     if (tmpCallback === undefined) {
-      console.error('callbacks has no callback for type ' + type);
-      return;
+      console.error('callbacks has no callback for type ' + type)
+      return
     }
-    tmpCallback(message);
+    tmpCallback(message)
   }
 
   clear() {
-    this.callbacks.clear();
-    this.callback = undefined;
+    this.callbacks.clear()
+    this.callback = undefined
   }
 }
