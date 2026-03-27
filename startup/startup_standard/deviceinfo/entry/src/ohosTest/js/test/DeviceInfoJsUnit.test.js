@@ -148,6 +148,32 @@ export default function DeviceInfoTest() {
         }
 
         /**
+         * 将六位整数 API 版本（如 654321）解析为 {major, minor, patch}
+         * 规则：654321 → major=65, minor=43, patch=21
+         * @param {number} apiVersionInt - 六位整数，如 654321
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function parseHarmonyOSApiVersion(apiVersionInt) {
+            // 合法范围：10000 (1.0.0) ~ 999999 (99.99.99)
+            if (!Number.isInteger(apiVersionInt) || apiVersionInt < 10000 || apiVersionInt > 999999) {
+                console.error(`Invalid Harmony OS API version: ${apiVersionInt} (must be 10000~999999)`);
+                return null;
+            }
+
+            const patch = apiVersionInt % 100;
+            const minor = Math.floor(apiVersionInt / 100) % 100;
+            const major = Math.floor(apiVersionInt / 10000);
+
+            // 防御性检查
+            if (major > 99 || minor > 99 || patch > 99) {
+                console.error(`Parsed version out of range: ${major}.${minor}.${patch}`);
+                return null;
+            }
+
+            return { major, minor, patch };
+        }
+
+        /**
          * 从字符串 "x.y.z" 解析并校验版本
          * @param {string} versionStr
          * @returns {{major: number, minor: number, patch: number} | null}
@@ -1686,9 +1712,9 @@ export default function DeviceInfoTest() {
             let sysVer = null;
             const HARMONY_OS_NAME = ["Harm", "onyOS"].join("");
             if (osName === HARMONY_OS_NAME) {
-                const versionStr = deviceinfo.distributionOSVersion;
-                console.info(`Harmony OS Version String: ${versionStr}`);
-                sysVer = validateSystemVersionFromString(versionStr);
+                const apiVersionInt = deviceinfo.distributionOSApiVersion;
+                console.info(`Harmony OS API Version Integer: ${apiVersionInt}`);
+                sysVer = parseHarmonyOSApiVersion(apiVersionInt);
             } else {
                 // OpenHarmony or other: use integer fields
                 const major = deviceinfo.sdkApiVersion;
