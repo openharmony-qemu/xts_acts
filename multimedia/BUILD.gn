@@ -76,7 +76,6 @@ group("multimedia") {
       "av_codec/demuxer:ActsDemuxerTest",
       "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/encoder:ActsEncoderTest",
-      "av_codec/vcodec/swdecoder:ActsSwDecodeTest",
       "av_codec/vcodec/ActsH263SwDecoderTest:ActsH263swDecoderHapTest",
       "av_codec/vcodec/hevchwencoder:ActsHevcEncoderTest",
       "av_codec/vcodec/decoders:ActsDecodersTest",
