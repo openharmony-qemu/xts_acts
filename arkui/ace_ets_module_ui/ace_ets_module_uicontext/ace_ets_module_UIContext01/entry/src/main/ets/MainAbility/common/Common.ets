@@ -76,7 +76,7 @@ export default class CommonFunc {
     });
   }
 
-  static async openRouterPage(url: string, params?: ESObject): Promise<boolean> {
+  static async openRouterPage(url: string, params?: Record<string, Object>): Promise<boolean> {
     try {
       if (params !== undefined) {
         await router.pushUrl({ url: url, params: params });
@@ -90,7 +90,7 @@ export default class CommonFunc {
   }
 
   static async openRouterPageWithParamKey(url: string, key: string, val: string): Promise<boolean> {
-    let p: ESObject = {};
+    let p: Record<string, Object> = {};
     p[key] = val;
     return CommonFunc.openRouterPage(url, p);
   }
