@@ -38,7 +38,10 @@ std::string g_requestMethod;
 std::string g_requestBody;
 std::string g_requestHeader;
 
-void LogHeader(const char* prefix, OH_Http_Interceptor_Headers* headers, std::string& headerStr, bool isModifyInterceptor)
+void LogHeader(const char* prefix, 
+               OH_Http_Interceptor_Headers* headers, 
+               std::string& headerStr, 
+               bool isModifyInterceptor)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---------------------header begin---------------------");
     if (isModifyInterceptor) {
@@ -59,7 +62,7 @@ void LogHeader(const char* prefix, OH_Http_Interceptor_Headers* headers, std::st
 
 void PrintRequestInfo(OH_Http_Interceptor_Request *request, bool isModifyInterceptor = false)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-------------------------PrintRequestInfo Begin-----------------------------");
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-----PrintRequestInfo Begin-----");
     if (request != nullptr) {
         if (request->url.buffer != nullptr) {
             OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "url = %{public}s", request->url.buffer);
@@ -84,7 +87,7 @@ void PrintRequestInfo(OH_Http_Interceptor_Request *request, bool isModifyInterce
         }
     }
     
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-------------------------PrintRequestInfo End-----------------------------");
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-----PrintRequestInfo End-----");
 }
 
 
@@ -130,7 +133,7 @@ int16_t GetResponseCode()
 
 void PrintResponseInfo(OH_Http_Interceptor_Response *response, bool isModifyInterceptor = false)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-------------------------PrintResponseInfo Begin-----------------------------");
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-----PrintResponseInfo Begin-----");
     if (response != nullptr) {
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "responseCode = %{public}d", response->responseCode);
         if (response->body.buffer != nullptr) {
@@ -146,14 +149,35 @@ void PrintResponseInfo(OH_Http_Interceptor_Response *response, bool isModifyInte
             g_responseCode = response->responseCode;
         }
         
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "dnsTiming = %{public}lf", response->performanceTiming.dnsTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tcpTiming = %{public}lf", response->performanceTiming.tcpTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tlsTiming = %{public}lf", response->performanceTiming.tlsTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "firstSendTiming = %{public}lf", response->performanceTiming.firstSendTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "firstReceiveTiming = %{public}lf", response->performanceTiming.firstReceiveTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "totalFinishTiming = %{public}lf", response->performanceTiming.totalFinishTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "redirectTiming = %{public}lf", response->performanceTiming.redirectTiming);
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-------------------------PrintResponseInfo End-----------------------------");
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "dns: %lf", 
+            response->performanceTiming.dnsTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tcp: %lf", 
+            response->performanceTiming.tcpTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tls: %lf", 
+            response->performanceTiming.tlsTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "snd: %lf", 
+            response->performanceTiming.firstSendTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rcv: %lf", 
+            response->performanceTiming.firstReceiveTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "tot: %lf", 
+            response->performanceTiming.totalFinishTiming
+        );
+        OH_LOG_Print(
+            LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "rdr: %lf", 
+            response->performanceTiming.redirectTiming
+        );
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "-----PrintResponseInfo End-----");
     }
 }
 
@@ -161,7 +185,7 @@ OH_Interceptor_Result g_request_group0_modify_url_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group0_modify_url_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group0_modify_url---");
         if (request->url.buffer) {
             std::string newurl = std::string(request->url.buffer, request->url.length);
             if (newurl == "https://aaaa.com") {
@@ -189,7 +213,7 @@ OH_Interceptor_Result g_request_group1_modify_method_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group1_modify_method_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group1_modify_method---");
         if (request->method.buffer) {
             std::string method = std::string(request->method.buffer, request->method.length);
             if (method == "post") {
@@ -217,7 +241,7 @@ OH_Interceptor_Result g_request_group2_modify_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group2_modify_body_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group2_modify_body---");
         if (request->body.buffer) {
             std::string body = std::string(request->body.buffer, request->body.length);
             (void)free((void*)request->body.buffer);
@@ -243,7 +267,7 @@ OH_Interceptor_Result g_request_group3_modify_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group3_modify_headers_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group3_modify_headers---");
         if (request->headers) {
             OH_Http_Interceptor_Headers* header = request->headers;
             if (header != nullptr && header->data != nullptr) {
@@ -270,7 +294,7 @@ OH_Interceptor_Result g_request_group4_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group4_modify_abort_interceptor_handler------");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group4_modify_abort---");        
         PrintRequestInfo(request, true);
         return OH_ABORT;
     }
@@ -290,7 +314,7 @@ OH_Interceptor_Result g_request_group10_readonly_url_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group10_readonly_url_interceptor_handler------");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group10_readonly_url---");        
         if (request->url.buffer) {            
              std::string url = "www.sina.com";
              (void)free((void*)request->url.buffer);
@@ -316,7 +340,7 @@ OH_Interceptor_Result g_request_group11_readonly_method_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group11_readonly_method_interceptor_handler------");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group11_readonly_method---");        
         if (request->method.buffer) {
             std::string method = "GET";
             (void)free((void*)request->method.buffer);
@@ -341,7 +365,7 @@ OH_Interceptor_Result g_request_group12_readonly_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group12_readonly_headers_interceptor_handler------");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group12_readonly_headers---");        
         if (request->headers) {
             OH_Http_Interceptor_Headers* header = request->headers;
             while (header != nullptr) {
@@ -372,7 +396,7 @@ OH_Interceptor_Result g_request_group13_readonly_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group13_readonly_body_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group13_readonly_body---");
         if (request->body.buffer) {
             std::string body = "g_request_group13_readonly_body_interceptor_handler";
             free((void*)request->body.buffer);
@@ -397,7 +421,7 @@ OH_Interceptor_Result g_request_group14_readonly_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_request_group14_readonly_all_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group14_readonly_all---");
         PrintRequestInfo(request);
     }
     return OH_ABORT;
@@ -415,28 +439,28 @@ OH_Http_Interceptor* GetRequestInterceptorByGroupId(int32_t groupId)
 {
     switch (groupId)
     {
-    case REQUEST_GROUP0_MODIFY_URL:
-        return &g_request_group0_modify_url_interceptor;
-    case REQUEST_GROUP1_MODIFY_METHOD:
-        return &g_request_group1_modify_method_interceptor;
-    case REQUEST_GROUP2_MODIFY_BODY:
-        return &g_request_group2_modify_body_interceptor;
-    case REQUEST_GROUP3_MODIFY_HEADERS:
-        return &g_request_group3_modify_headers_interceptor;
-    case REQUEST_GROUP4_MODIFY_ABORT:
-        return &g_request_group4_modify_abort_interceptor;
-    case REQUEST_GROUP10_READONLY_URL:
-        return &g_request_group10_readonly_url_interceptor;
-    case REQUEST_GROUP11_READONLY_METHOD:
-        return &g_request_group11_readonly_method_interceptor;
-    case REQUEST_GROUP12_READONLY_HEADERS:
-        return &g_request_group12_readonly_headers_interceptor;
-    case REQUEST_GROUP13_READONLY_BODY:
-        return &g_request_group13_readonly_body_interceptor;
-    case REQUEST_GROUP14_READONLY_ABORT:
-        return &g_request_group14_readonly_abort_interceptor;
-    default:
-        break;
+        case REQUEST_GROUP0_MODIFY_URL:
+            return &g_request_group0_modify_url_interceptor;
+        case REQUEST_GROUP1_MODIFY_METHOD:
+            return &g_request_group1_modify_method_interceptor;
+        case REQUEST_GROUP2_MODIFY_BODY:
+            return &g_request_group2_modify_body_interceptor;
+        case REQUEST_GROUP3_MODIFY_HEADERS:
+            return &g_request_group3_modify_headers_interceptor;
+        case REQUEST_GROUP4_MODIFY_ABORT:
+            return &g_request_group4_modify_abort_interceptor;
+        case REQUEST_GROUP10_READONLY_URL:
+            return &g_request_group10_readonly_url_interceptor;
+        case REQUEST_GROUP11_READONLY_METHOD:
+            return &g_request_group11_readonly_method_interceptor;
+        case REQUEST_GROUP12_READONLY_HEADERS:
+            return &g_request_group12_readonly_headers_interceptor;
+        case REQUEST_GROUP13_READONLY_BODY:
+            return &g_request_group13_readonly_body_interceptor;
+        case REQUEST_GROUP14_READONLY_ABORT:
+            return &g_request_group14_readonly_abort_interceptor;
+        default:
+            break;
     }
     return nullptr;
 }
@@ -445,9 +469,9 @@ OH_Interceptor_Result g_response_group0_modify_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group0_modify_body_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group0_modify_body---");
         if (response->body.buffer) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group0_modify_body_interceptor_handler1------");
+            OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group0_modify_body1---");
             std::string body = "response_body_modify";
             free((void*)response->body.buffer);
             response->body.buffer = MallocCString(body);
@@ -471,7 +495,7 @@ OH_Interceptor_Result g_response_group1_modify_responseCode_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group1_modify_responseCode_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group1_modify_responseCode---");
         response->responseCode = OH_HTTP_FORBIDDEN;
         *isModified = 1;
         PrintResponseInfo(response, true);
@@ -491,7 +515,7 @@ OH_Interceptor_Result g_response_group2_modify_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group2_modify_headers_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group2_modify_headers---");
         if (response->headers) {
             OH_Http_Interceptor_Headers *tmp = response->headers;
             if (tmp != nullptr && tmp->data != nullptr) {
@@ -518,7 +542,7 @@ OH_Interceptor_Result g_response_group3_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group3_modify_abort_interceptor_handler------");        
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group3_modify_abort---");        
         PrintResponseInfo(response, true);
     }
     return OH_ABORT;
@@ -537,9 +561,9 @@ OH_Interceptor_Result g_response_group10_readonly_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group10_readonly_body_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group10_readonly_body---");
         if (response->body.buffer) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group10_readonly_body_interceptor_handler1------");
+            OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group10_readonly_body1---");
             std::string body = "g_response_group10_readonly_body_interceptor_handler";
             free((void*)response->body.buffer);
             response->body.buffer = MallocCString(body);
@@ -563,7 +587,7 @@ OH_Interceptor_Result g_response_group11_readonly_responseCode_interceptor_handl
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group11_readonly_responseCode_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group11_readonly_responseCode---");
         response->responseCode = OH_HTTP_NOT_FOUND;
 //        *isModified = 1;
         PrintResponseInfo(response);
@@ -582,7 +606,7 @@ static OH_Http_Interceptor g_response_group11_readonly_responseCode_interceptor 
 OH_Interceptor_Result g_response_group12_readonly_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group12_readonly_headers_interceptor_handler------");
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group12_readonly_headers---");
     if (response != nullptr) {        
         if (response->headers) {
             OH_Http_Interceptor_Headers *tmp = response->headers;
@@ -609,7 +633,7 @@ OH_Interceptor_Result g_response_group13_readonly_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "--------g_response_group13_readonly_abort_interceptor_handler------");
+        OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group13_readonly_abort---");
     }
     PrintResponseInfo(response);
     return OH_ABORT;
@@ -629,24 +653,24 @@ static OH_Http_Interceptor* GetResponseInterceptorByGroupId(int32_t groupId)
 {
     switch (groupId)
     {
-    case RESPONSE_GROUP0_MODIFY_BODY:
-        return &g_response_group0_modify_body_interceptor;
-    case RESPONSE_GROUP1_MODIFY_RESPONSE_CODE:
-        return &g_response_group1_modify_responseCode_interceptor;
-    case RESPONSE_GROUP2_MODIFY_HEADERS:
-        return &g_response_group2_modify_headers_interceptor;
-    case RESPONSE_GROUP3_MODIFY_ABORT:
-        return &g_response_group3_modify_abort_interceptor;
-    case RESPONSE_GROUP10_READONLY_BODY:
-        return &g_response_group10_readonly_body_interceptor;
-    case RESPONSE_GROUP11_READONLY_RESPONSE_CODE:
-        return &g_response_group11_readonly_responseCode_interceptor;
-    case RESPONSE_GROUP12_READONLY_HEADERS:
-        return &g_response_group12_readonly_headers_interceptor;
-    case RESPONSE_GROUP13_READONLY_ABORT:
-        return &g_response_group13_readonly_abort_interceptor;
-    default:
-        break;
+        case RESPONSE_GROUP0_MODIFY_BODY:
+            return &g_response_group0_modify_body_interceptor;
+        case RESPONSE_GROUP1_MODIFY_RESPONSE_CODE:
+            return &g_response_group1_modify_responseCode_interceptor;
+        case RESPONSE_GROUP2_MODIFY_HEADERS:
+            return &g_response_group2_modify_headers_interceptor;
+        case RESPONSE_GROUP3_MODIFY_ABORT:
+            return &g_response_group3_modify_abort_interceptor;
+        case RESPONSE_GROUP10_READONLY_BODY:
+            return &g_response_group10_readonly_body_interceptor;
+        case RESPONSE_GROUP11_READONLY_RESPONSE_CODE:
+            return &g_response_group11_readonly_responseCode_interceptor;
+        case RESPONSE_GROUP12_READONLY_HEADERS:
+            return &g_response_group12_readonly_headers_interceptor;
+        case RESPONSE_GROUP13_READONLY_ABORT:
+            return &g_response_group13_readonly_abort_interceptor;
+        default:
+            break;
     }
     return nullptr;
 }

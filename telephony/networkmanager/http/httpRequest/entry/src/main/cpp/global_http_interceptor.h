@@ -13,13 +13,12 @@
  * limitations under the License.
  */
 
+#ifndef HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
+#define HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
 #include <cstdint>
 #include <cstddef>
 
 #include "network/netstack/http_interceptor.h"
-
-#ifndef HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
-#define HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
 
 // Request interceptor group ID enumeration
 typedef enum {
