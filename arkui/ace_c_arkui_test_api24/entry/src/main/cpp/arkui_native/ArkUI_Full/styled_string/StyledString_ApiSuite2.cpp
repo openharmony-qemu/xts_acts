@@ -38,6 +38,7 @@ static napi_value TestArkUICapi_280(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -64,6 +65,7 @@ static napi_value TestArkUICapi_281(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -91,6 +93,7 @@ static napi_value TestArkUICapi_282(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -117,6 +120,7 @@ static napi_value TestArkUICapi_283(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -144,6 +148,7 @@ static napi_value TestArkUICapi_284(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -170,6 +175,7 @@ static napi_value TestArkUICapi_285(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -224,6 +230,7 @@ static napi_value TestArkUICapi_287(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -251,6 +258,7 @@ static napi_value TestArkUICapi_288(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -277,6 +285,7 @@ static napi_value TestArkUICapi_289(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -304,6 +313,7 @@ static napi_value TestArkUICapi_290(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -330,6 +340,7 @@ static napi_value TestArkUICapi_291(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -448,6 +459,7 @@ static napi_value TestArkUICapi_296(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -475,6 +487,7 @@ static napi_value TestArkUICapi_297(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -501,6 +514,7 @@ static napi_value TestArkUICapi_298(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -528,6 +542,7 @@ static napi_value TestArkUICapi_299(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_SpanStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -567,6 +582,7 @@ static napi_value TestArkUICapi_300(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_TextStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -636,6 +652,7 @@ static napi_value TestArkUICapi_302(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_ParagraphStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -705,6 +722,7 @@ static napi_value TestArkUICapi_304(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_GestureStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -774,6 +792,7 @@ static napi_value TestArkUICapi_306(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_TextShadowStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -843,6 +862,7 @@ static napi_value TestArkUICapi_308(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_DecorationStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -912,6 +932,7 @@ static napi_value TestArkUICapi_310(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_BaselineOffsetStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -981,6 +1002,7 @@ static napi_value TestArkUICapi_312(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_LetterSpacingStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1050,6 +1072,7 @@ static napi_value TestArkUICapi_314(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_LineHeightStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1119,6 +1142,7 @@ static napi_value TestArkUICapi_316(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_UrlStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1188,6 +1212,7 @@ static napi_value TestArkUICapi_318(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_BackgroundColorStyle_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1257,6 +1282,7 @@ static napi_value TestArkUICapi_320(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_UserDataSpan_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1326,6 +1352,7 @@ static napi_value TestArkUICapi_322(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_CustomSpan_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1395,6 +1422,7 @@ static napi_value TestArkUICapi_324(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_SpanStyle_Destroy(obj);
+    OH_ArkUI_ImageAttachment_Destroy(sub);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -1487,6 +1515,7 @@ static napi_value TestArkUICapi_328(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1514,6 +1543,7 @@ static napi_value TestArkUICapi_329(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1540,6 +1570,7 @@ static napi_value TestArkUICapi_330(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1567,6 +1598,7 @@ static napi_value TestArkUICapi_331(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1593,6 +1625,7 @@ static napi_value TestArkUICapi_332(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1620,6 +1653,7 @@ static napi_value TestArkUICapi_333(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1646,6 +1680,7 @@ static napi_value TestArkUICapi_334(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1673,6 +1708,7 @@ static napi_value TestArkUICapi_335(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1699,6 +1735,7 @@ static napi_value TestArkUICapi_336(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1728,6 +1765,7 @@ static napi_value TestArkUICapi_337(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }

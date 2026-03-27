@@ -19,6 +19,8 @@
 #include <napi/native_api.h>
 #include <hilog/log.h>
 #include <cstdio>
+#include <cstdint>
+#include <initializer_list>
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <string>
@@ -159,6 +161,25 @@ template<typename T, typename U>
     }
     std::string assertStr = std::string("assert equal failed, expect is ") + std::to_string(expect) +
         " and result is " + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, assertStr.c_str());
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
+
+/**
+ * Assert result equals one of the expected values (e.g. documented alternate error codes).
+ */
+[[nodiscard]] inline napi_value ErrCodeAnyOfFailed(
+    napi_env env, int32_t result, std::initializer_list<int32_t> expectedOneOf)
+{
+    for (int32_t expect : expectedOneOf) {
+        if (result == expect) {
+            return nullptr;
+        }
+    }
+    std::string assertStr =
+        std::string("assert error code in set failed, result is ") + std::to_string(result);
     (void)napi_throw_error(env, nullptr, assertStr.c_str());
     napi_value errorResult = nullptr;
     napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);

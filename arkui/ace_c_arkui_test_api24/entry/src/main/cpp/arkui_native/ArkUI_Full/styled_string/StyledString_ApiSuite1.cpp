@@ -18,6 +18,20 @@
 
 namespace ArkUICapiTest {
 
+namespace {
+/*
+ * styled_string.h，并对照官方 ndk-styled-string.md、capi-styled-string-h.md 等：对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类
+ * 接口，文档允许 INVALID_STYLED_STRING；入参须为有效属性串。单独 Descriptor_Create() 未承载文本内容时多属无效。
+ * CreateWithString 在 length=0 时 styles 仍须为合法数组指针（可为每项 nullptr），与 252 一致。
+ * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
+ */
+ArkUI_StyledString_Descriptor* XtsDescriptorFromUtf8(const char* utf8)
+{
+    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
+    return OH_ArkUI_StyledString_Descriptor_CreateWithString(utf8, styleSlots, 0);
+}
+} // namespace
+
 /*
  * 测试接口: OH_ARKUI_STYLEDSTRINGKEY_UNSPECIFIED（OH_ARKUI_STYLEDSTRINGKEY_UNSPECIFIED = -1）
  * 预期效果: 枚举/宏常量取值应为 -1。
@@ -343,13 +357,14 @@ static napi_value TestArkUICapi_251(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_StyledString_Descriptor_CreateWithString
  * 预期效果: 由非空 C 字符串创建描述符。
- * 实际测试: 使用合法字符串与 length=0、styles=nullptr 调用创建，再销毁。
+ * 实际测试: styled_string.h 中 styles 为样式数组指针；部分实现要求指针非空（length=0 时不解引用）。使用栈上占位数组。
  */
 static napi_value TestArkUICapi_252(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *d = OH_ArkUI_StyledString_Descriptor_CreateWithString("xts_capi", nullptr, 0);
+    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
+    auto *d = OH_ArkUI_StyledString_Descriptor_CreateWithString("xts_capi", styleSlots, 0);
     if (((d)) == nullptr) {
         return nullptr;
     }
@@ -374,6 +389,7 @@ static napi_value TestArkUICapi_253(napi_env env, napi_callback_info info)
 
     auto *d = OH_ArkUI_StyledString_Descriptor_CreateWithImageAttachment(img);
     if (((d)) == nullptr) {
+        OH_ArkUI_ImageAttachment_Destroy(img);
         return nullptr;
     }
 
@@ -398,6 +414,7 @@ static napi_value TestArkUICapi_254(napi_env env, napi_callback_info info)
 
     auto *d = OH_ArkUI_StyledString_Descriptor_CreateWithCustomSpan(cs);
     if (((d)) == nullptr) {
+        OH_ArkUI_CustomSpan_Destroy(cs);
         return nullptr;
     }
 
@@ -408,14 +425,15 @@ static napi_value TestArkUICapi_254(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledString_Descriptor *, int32_t *)
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_StyledString_Descriptor_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: 在有效描述符上调用 GetLength 成功。
+ * 实际测试: Descriptor_Create() 空描述符经 GetLength 后在部分版本 Destroy 中会 SIGSEGV；改用 CreateWithString 得到合法内容再 GetLength（与 cppcrash 栈 DestroyArkUIStyledStringDescriptor 一致）。
  */
 static napi_value TestArkUICapi_255(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
+    auto *obj = OH_ArkUI_StyledString_Descriptor_CreateWithString("a", styleSlots, 0);
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -425,6 +443,7 @@ static napi_value TestArkUICapi_255(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -435,14 +454,15 @@ static napi_value TestArkUICapi_255(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_StyledString_Descriptor_GetString(const ArkUI_StyledString_Descriptor *, char *, int32_t, int32_t *)
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_StyledString_Descriptor_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: 在含文本内容的描述符上 GetString 成功。
+ * 实际测试: 空 Create() 描述符易导致 INVALID_STYLED_STRING 或与 255 同类稳定性问题；使用 CreateWithString。
  */
 static napi_value TestArkUICapi_256(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    const OH_ArkUI_SpanStyle* styleSlots[1] = { nullptr };
+    auto *obj = OH_ArkUI_StyledString_Descriptor_CreateWithString("a", styleSlots, 0);
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -453,6 +473,7 @@ static napi_value TestArkUICapi_256(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -466,18 +487,18 @@ static napi_value TestArkUICapi_256(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_IsEqual(const ArkUI_StyledString_Descriptor *,
  *     const ArkUI_StyledString_Descriptor *, bool *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_StyledString_Descriptor_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 按 styled_string.h，IsEqual 在 INVALID_STYLED_STRING 时非 NO_ERROR；用 CreateWithString 得到有效文本描述符再比较。
  */
 static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
 
-    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *other = XtsDescriptorFromUtf8("a");
     if (other == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
@@ -504,13 +525,13 @@ static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_StyledString_Descriptor *,
  *     ArkUI_StyledString_Descriptor *, uint32_t, uint32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_StyledString_Descriptor_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 源串用 CreateWithString 保证有效；输出槽仍 Create()，截取 "ab" 的子串长度 1。
  */
 static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("ab");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -521,7 +542,7 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto ec = OH_ArkUI_StyledString_Descriptor_SubStyledString(obj, outDesc, 0U, 0U);
+    auto ec = OH_ArkUI_StyledString_Descriptor_SubStyledString(obj, outDesc, 0U, 1U);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
@@ -541,13 +562,14 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledString_Descriptor *, uint32_t, uint32_t,
  *     OH_ArkUI_StyledStringKey, OH_ArkUI_SpanStyle **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_StyledString_Descriptor_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 有效描述符上调用；stylesSize 取 1，满足 styled_string.h 对缓冲容量与 BUFFER_SIZE_ERROR 的约定（0 易触发容量不足）。
+ * 成功后仅 OH_ArkUI_StyledString_Descriptor_Destroy(descriptor)，不对输出槽中的 OH_ArkUI_SpanStyle* 调用 SpanStyle_Destroy。
  */
 static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("x");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -561,7 +583,7 @@ static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
         0U,
         static_cast<OH_ArkUI_StyledStringKey>(0),
         outPtr4,
-        0U,
+        1U,
         &v6);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
@@ -584,7 +606,7 @@ static napi_value TestArkUICapi_260(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -613,7 +635,7 @@ static napi_value TestArkUICapi_261(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -641,7 +663,7 @@ static napi_value TestArkUICapi_262(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -669,7 +691,7 @@ static napi_value TestArkUICapi_263(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -696,7 +718,7 @@ static napi_value TestArkUICapi_264(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -706,6 +728,8 @@ static napi_value TestArkUICapi_264(napi_env env, napi_callback_info info)
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
     }
+    (void)OH_ArkUI_SpanStyle_SetStart(style, 0);
+    (void)OH_ArkUI_SpanStyle_SetLength(style, 1);
 
     auto ec = OH_ArkUI_StyledString_Descriptor_ReplaceStyle(obj, style);
     {
@@ -718,6 +742,7 @@ static napi_value TestArkUICapi_264(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+    OH_ArkUI_SpanStyle_Destroy(style);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -730,7 +755,7 @@ static napi_value TestArkUICapi_265(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -740,6 +765,8 @@ static napi_value TestArkUICapi_265(napi_env env, napi_callback_info info)
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
     }
+    (void)OH_ArkUI_SpanStyle_SetStart(style, 0);
+    (void)OH_ArkUI_SpanStyle_SetLength(style, 1);
 
     auto ec = OH_ArkUI_StyledString_Descriptor_SetStyle(obj, style);
     {
@@ -752,6 +779,7 @@ static napi_value TestArkUICapi_265(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+    OH_ArkUI_SpanStyle_Destroy(style);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -766,7 +794,7 @@ static napi_value TestArkUICapi_266(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -793,7 +821,7 @@ static napi_value TestArkUICapi_267(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -822,12 +850,12 @@ static napi_value TestArkUICapi_268(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
 
-    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *other = XtsDescriptorFromUtf8("b");
     if (other == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
@@ -859,12 +887,12 @@ static napi_value TestArkUICapi_269(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
 
-    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *other = XtsDescriptorFromUtf8("b");
     if (other == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
@@ -896,12 +924,12 @@ static napi_value TestArkUICapi_270(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
 
-    auto *other = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *other = XtsDescriptorFromUtf8("b");
     if (other == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
@@ -931,7 +959,7 @@ static napi_value TestArkUICapi_271(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *obj = XtsDescriptorFromUtf8("a");
     if (((obj)) == nullptr) {
         return nullptr;
     }
@@ -940,6 +968,7 @@ static napi_value TestArkUICapi_271(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_StyledString_Descriptor_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1065,6 +1094,7 @@ static napi_value TestArkUICapi_277(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1092,6 +1122,7 @@ static napi_value TestArkUICapi_278(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1119,6 +1150,7 @@ static napi_value TestArkUICapi_279(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_TextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }

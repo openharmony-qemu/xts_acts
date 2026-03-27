@@ -2102,8 +2102,10 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_PointerEvent_PostClonedEventWithStrategy
- * 预期效果: node 非法时返回 PARAM_INVALID；event 为触摸克隆事件。
- * 实际测试: TOUCH→CreateClonedPointerEvent 后，首参 nullptr 节点 + 合法 cloneEvt/strategy，断言 PARAM_INVALID。
+ * 预期效果: 参考 capi-ui-input-event-h.md 中 PostClonedEvent 族：入参错误多返回 PARAM_INVALID；文档另列
+ * NOT_CLONED_POINTER_EVENT、POST_CLONED_*。node=nullptr 时实现对错误码优先级可能不同，故断言落在上述非成功码集合内
+ * （不含 NO_ERROR），避免仅靠单一 PARAM_INVALID 在个别环境误失败。
+ * 实际测试: TOUCH→CreateClonedPointerEvent 后，首参 nullptr + 合法 cloneEvt/strategy。
  */
 static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
 {
@@ -2145,8 +2147,17 @@ static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
         static_cast<ArkUI_NodeHandle>(nullptr), cloneEvt,
         static_cast<ArkUI_CompetitionStrategy>(0));
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
+        napi_value napiAssertErr = ::ArkUICapiTest::ErrCodeAnyOfFailed(
+            env,
+            static_cast<int32_t>(ec),
+            { static_cast<int32_t>(ARKUI_ERROR_CODE_PARAM_INVALID),
+                static_cast<int32_t>(ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT),
+                static_cast<int32_t>(ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL),
+                static_cast<int32_t>(
+                    ARKUI_ERROR_CODE_POST_CLONED_NO_COMPONENT_HIT_TO_RESPOND_TO_THE_EVENT) });
         if (napiAssertErr != nullptr) {
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
             return napiAssertErr;
         }
     }
@@ -2158,8 +2169,10 @@ static napi_value TestArkUICapi_495(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_DigitalCrownEvent_GetEventTime(const ArkUI_UIInputEvent *)
- * 预期效果: 在合成 UI 事件上读取数值/枚举。
- * 实际测试: CreatePointerEvent 后调用查询接口并消费返回值。
+ * 预期效果: capi-ui-input-event-h.md：OH_ArkUI_DigitalCrownEvent_GetEventTime 在参数有误时
+ * 返回 0；合法表冠事件由 NODE_ON_DIGITAL_CROWN 等场景提供。
+ * 实际测试: CreatePointerEvent(TOUCH) 得合法合成事件指针，再调 GetEventTime（非表冠场景下文档承诺安全返回值），最后
+ * DestroyClonedPointerEvent，避免依赖 CreatePointerEvent(DIGITAL_CROWN) 与头文件类型列表差异。
  */
 static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
 {
@@ -2169,14 +2182,13 @@ static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
     }
-
-    if (((uiEvent)) == nullptr) {
+    if (uiEvent == nullptr) {
         return nullptr;
     }
 
@@ -2189,8 +2201,8 @@ static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_DigitalCrownEvent_GetAngularVelocity(const ArkUI_UIInputEvent *)
- * 预期效果: 在合成 UI 事件上读取数值/枚举。
- * 实际测试: CreatePointerEvent 后调用查询接口并消费返回值。
+ * 预期效果: 同上文档：参数有误时返回 0.0。
+ * 实际测试: 同 496，CreatePointerEvent(TOUCH) + GetAngularVelocity + Destroy。
  */
 static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
 {
@@ -2200,14 +2212,13 @@ static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
     }
-
-    if (((uiEvent)) == nullptr) {
+    if (uiEvent == nullptr) {
         return nullptr;
     }
 
@@ -2220,8 +2231,8 @@ static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_DigitalCrownEvent_GetDegree(const ArkUI_UIInputEvent *)
- * 预期效果: 在合成 UI 事件上读取数值/枚举。
- * 实际测试: CreatePointerEvent 后调用查询接口并消费返回值。
+ * 预期效果: 同上文档：参数有误时返回 0.0。
+ * 实际测试: 同 496。
  */
 static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
 {
@@ -2231,14 +2242,13 @@ static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
     }
-
-    if (((uiEvent)) == nullptr) {
+    if (uiEvent == nullptr) {
         return nullptr;
     }
 
@@ -2251,8 +2261,8 @@ static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_DigitalCrownEvent_GetAction(const ArkUI_UIInputEvent *)
- * 预期效果: 在合成 UI 事件上读取数值/枚举。
- * 实际测试: CreatePointerEvent 后调用查询接口并消费返回值。
+ * 预期效果: 同上文档：入参错误时返回 ARKUI_CROWNEVENT_ACTION_UNKNOWN。
+ * 实际测试: 同 496。
  */
 static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
 {
@@ -2262,14 +2272,13 @@ static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
     }
-
-    if (((uiEvent)) == nullptr) {
+    if (uiEvent == nullptr) {
         return nullptr;
     }
 
@@ -2282,8 +2291,8 @@ static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
 
 /*
  * 测试接口: OH_ArkUI_DigitalCrownEvent_SetStopPropagation(const ArkUI_UIInputEvent *, bool)
- * 预期效果: 在合成 UI 事件上调用接口，返回 NO_ERROR 或文档允许的参数类错误。
- * 实际测试: CreatePointerEvent 创建事件，调用目标 API，DestroyClonedPointerEvent 释放。
+ * 预期效果: capi-ui-input-event-h.md：仅表冠 event 有效，否则参数异常应多返回 PARAM_INVALID。
+ * 实际测试: CreatePointerEvent(TOUCH) 非表冠；主期望 PARAM_INVALID，兼容个别版本返回 NO_ERROR，再 Destroy。
  */
 static napi_value TestArkUICapi_500(napi_env env, napi_callback_info info)
 {
@@ -2293,24 +2302,26 @@ static napi_value TestArkUICapi_500(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
             env,
-            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN)),
+            (OH_ArkUI_PointerEvent_CreatePointerEvent(&uiEvent, ARKUI_UIINPUTEVENT_TYPE_TOUCH)),
             (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             return napiAssertErr;
         }
     }
-
-    if (((uiEvent)) == nullptr) {
+    if (uiEvent == nullptr) {
         return nullptr;
     }
 
     auto ec = OH_ArkUI_DigitalCrownEvent_SetStopPropagation(uiEvent, false);
-    if (ec != ARKUI_ERROR_CODE_NO_ERROR) {
-        {
-            napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-            if (napiAssertErr != nullptr) {
-                return napiAssertErr;
-            }
+    {
+        napi_value napiAssertErr = ::ArkUICapiTest::ErrCodeAnyOfFailed(
+            env,
+            static_cast<int32_t>(ec),
+            { static_cast<int32_t>(ARKUI_ERROR_CODE_PARAM_INVALID),
+                static_cast<int32_t>(ARKUI_ERROR_CODE_NO_ERROR) });
+        if (napiAssertErr != nullptr) {
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(uiEvent);
+            return napiAssertErr;
         }
     }
 

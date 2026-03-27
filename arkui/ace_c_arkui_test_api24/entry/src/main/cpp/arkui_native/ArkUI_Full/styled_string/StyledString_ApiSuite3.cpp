@@ -37,6 +37,7 @@ static napi_value TestArkUICapi_338(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -64,6 +65,7 @@ static napi_value TestArkUICapi_339(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -90,6 +92,7 @@ static napi_value TestArkUICapi_340(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -117,6 +120,7 @@ static napi_value TestArkUICapi_341(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -143,6 +147,7 @@ static napi_value TestArkUICapi_342(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -170,6 +175,7 @@ static napi_value TestArkUICapi_343(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -232,6 +238,7 @@ static napi_value TestArkUICapi_346(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -286,6 +293,7 @@ static napi_value TestArkUICapi_348(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -313,6 +321,7 @@ static napi_value TestArkUICapi_349(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -339,6 +348,7 @@ static napi_value TestArkUICapi_350(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -366,6 +376,7 @@ static napi_value TestArkUICapi_351(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -392,6 +403,7 @@ static napi_value TestArkUICapi_352(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -446,6 +458,7 @@ static napi_value TestArkUICapi_354(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -485,7 +498,8 @@ static napi_value TestArkUICapi_355(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_ParagraphStyle *, struct OH_PixelmapNative *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建 ParagraphStyle 与测试用 OH_PixelmapNative，Set 成功则先 OH_ArkUI_ParagraphStyle_Destroy，再
+ * OH_PixelmapNative_Destroy(pm)；失败路径同步释放。
  */
 static napi_value TestArkUICapi_356(napi_env env, napi_callback_info info)
 {
@@ -524,13 +538,14 @@ static napi_value TestArkUICapi_356(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_ParagraphStyle_Destroy(obj);
+    (void)OH_PixelmapNative_Destroy(&pm);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
 /*
  * 测试接口: OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(const OH_ArkUI_ParagraphStyle *, struct OH_PixelmapNative **)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_ParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 未 SetLeadingMarginPixelMap 时调用 Get；成功后 OH_ArkUI_ParagraphStyle_Destroy，不对 *out 调用 OH_PixelmapNative_Destroy。
  */
 static napi_value TestArkUICapi_357(napi_env env, napi_callback_info info)
 {
@@ -574,6 +589,7 @@ static napi_value TestArkUICapi_358(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -601,6 +617,7 @@ static napi_value TestArkUICapi_359(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -627,6 +644,7 @@ static napi_value TestArkUICapi_360(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -654,6 +672,7 @@ static napi_value TestArkUICapi_361(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -680,6 +699,7 @@ static napi_value TestArkUICapi_362(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -707,6 +727,7 @@ static napi_value TestArkUICapi_363(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -733,6 +754,7 @@ static napi_value TestArkUICapi_364(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -792,6 +814,7 @@ static napi_value TestArkUICapi_366(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -847,6 +870,7 @@ static napi_value TestArkUICapi_368(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -874,6 +898,7 @@ static napi_value TestArkUICapi_369(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ParagraphStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1155,6 +1180,7 @@ static napi_value TestArkUICapi_381(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1209,6 +1235,7 @@ static napi_value TestArkUICapi_383(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1236,6 +1263,7 @@ static napi_value TestArkUICapi_384(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1262,6 +1290,7 @@ static napi_value TestArkUICapi_385(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1316,6 +1345,7 @@ static napi_value TestArkUICapi_387(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1343,6 +1373,7 @@ static napi_value TestArkUICapi_388(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1369,6 +1400,7 @@ static napi_value TestArkUICapi_389(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1396,6 +1428,7 @@ static napi_value TestArkUICapi_390(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_DecorationStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1458,6 +1491,7 @@ static napi_value TestArkUICapi_393(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1485,6 +1519,7 @@ static napi_value TestArkUICapi_394(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BaselineOffsetStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1547,6 +1582,7 @@ static napi_value TestArkUICapi_397(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LetterSpacingStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1574,6 +1610,7 @@ static napi_value TestArkUICapi_398(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LetterSpacingStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1636,6 +1673,7 @@ static napi_value TestArkUICapi_401(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LineHeightStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1663,6 +1701,7 @@ static napi_value TestArkUICapi_402(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_LineHeightStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1725,6 +1764,7 @@ static napi_value TestArkUICapi_405(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1752,6 +1792,7 @@ static napi_value TestArkUICapi_406(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1778,6 +1819,7 @@ static napi_value TestArkUICapi_407(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1810,6 +1852,7 @@ static napi_value TestArkUICapi_408(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_BackgroundColorStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1873,6 +1916,7 @@ static napi_value TestArkUICapi_411(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UrlStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1901,6 +1945,7 @@ static napi_value TestArkUICapi_412(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UrlStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -1963,6 +2008,7 @@ static napi_value TestArkUICapi_415(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_UserDataSpan_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2138,7 +2184,8 @@ static napi_value TestArkUICapi_422(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_ImageAttachment_SetPixelMap(OH_ArkUI_ImageAttachment *, struct OH_PixelmapNative *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建附件与测试用 OH_PixelmapNative，Set 成功则先 OH_ArkUI_ImageAttachment_Destroy，再 OH_PixelmapNative_Destroy(pm)；
+ * 失败路径同步释放。
  */
 static napi_value TestArkUICapi_423(napi_env env, napi_callback_info info)
 {
@@ -2184,7 +2231,7 @@ static napi_value TestArkUICapi_423(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_ImageAttachment_GetPixelMap(const OH_ArkUI_ImageAttachment *, struct OH_PixelmapNative **)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_ImageAttachment_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 未 SetPixelMap 时调用 Get；成功后 OH_ArkUI_ImageAttachment_Destroy，不对 *out 调用 OH_PixelmapNative_Destroy。
  */
 static napi_value TestArkUICapi_424(napi_env env, napi_callback_info info)
 {
@@ -2201,6 +2248,7 @@ static napi_value TestArkUICapi_424(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2228,6 +2276,7 @@ static napi_value TestArkUICapi_425(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2256,6 +2305,7 @@ static napi_value TestArkUICapi_426(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2282,6 +2332,7 @@ static napi_value TestArkUICapi_427(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2309,6 +2360,7 @@ static napi_value TestArkUICapi_428(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2335,6 +2387,7 @@ static napi_value TestArkUICapi_429(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2362,6 +2415,7 @@ static napi_value TestArkUICapi_430(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2388,6 +2442,7 @@ static napi_value TestArkUICapi_431(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2442,6 +2497,7 @@ static napi_value TestArkUICapi_433(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2496,6 +2552,7 @@ static napi_value TestArkUICapi_435(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2523,6 +2580,7 @@ static napi_value TestArkUICapi_436(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }
@@ -2549,6 +2607,7 @@ static napi_value TestArkUICapi_437(napi_env env, napi_callback_info info)
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ImageAttachment_Destroy(obj);
             return napiAssertErr;
         }
     }

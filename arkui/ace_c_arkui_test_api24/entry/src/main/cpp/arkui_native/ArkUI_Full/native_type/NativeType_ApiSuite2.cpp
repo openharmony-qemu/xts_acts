@@ -831,8 +831,8 @@ static napi_value TestArkUICapi_187(napi_env env, napi_callback_info info)
  * 测试接口:
  *     OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(OH_ArkUI_TextEditorStyledStringController *,
  *     OH_ArkUI_TextEditorTextStyle *)
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: Controller 未绑定时返回 ARKUI_ERROR_CODE_PARAM_INVALID（与 117–124、145、module_run 401 一致）。
+ * 实际测试: 断言 PARAM_INVALID；失败路径释放 textStyle 与 controller。
  */
 static napi_value TestArkUICapi_188(napi_env env, napi_callback_info info)
 {
@@ -851,7 +851,7 @@ static napi_value TestArkUICapi_188(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(obj, sty);
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_TextEditorTextStyle_Destroy(sty);
             OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
@@ -868,8 +868,8 @@ static napi_value TestArkUICapi_188(napi_env env, napi_callback_info info)
  * 测试接口:
  *     OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(OH_ArkUI_TextEditorStyledStringController *,
  *     OH_ArkUI_TextEditorTextStyle *)
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: Controller 未绑定时返回 ARKUI_ERROR_CODE_PARAM_INVALID。
+ * 实际测试: 断言 PARAM_INVALID；失败路径释放 textStyle 与 controller。
  */
 static napi_value TestArkUICapi_189(napi_env env, napi_callback_info info)
 {
@@ -888,7 +888,7 @@ static napi_value TestArkUICapi_189(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(obj, sty);
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_TextEditorTextStyle_Destroy(sty);
             OH_ArkUI_TextEditorStyledStringController_Destroy(obj);

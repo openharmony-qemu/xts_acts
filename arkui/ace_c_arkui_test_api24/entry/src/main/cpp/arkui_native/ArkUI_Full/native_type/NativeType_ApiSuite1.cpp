@@ -1797,7 +1797,8 @@ static napi_value TestArkUICapi_128(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle *,
  *     struct OH_PixelmapNative *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorParagraphStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: 创建 TextEditorParagraphStyle 与测试用 OH_PixelmapNative，Set 成功则先 OH_ArkUI_TextEditorParagraphStyle_Destroy，
+ * 再 OH_PixelmapNative_Destroy(pm)；失败路径同步释放。
  */
 static napi_value TestArkUICapi_129(napi_env env, napi_callback_info info)
 {
@@ -1836,6 +1837,7 @@ static napi_value TestArkUICapi_129(napi_env env, napi_callback_info info)
     }
 
     OH_ArkUI_TextEditorParagraphStyle_Destroy(obj);
+    (void)OH_PixelmapNative_Destroy(&pm);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
 
@@ -2252,8 +2254,8 @@ static napi_value TestArkUICapi_144(napi_env env, napi_callback_info info)
  * 测试接口:
  *     OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(OH_ArkUI_TextEditorStyledStringController *,
  *     OH_ArkUI_TextEditorParagraphStyle *)
- * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorStyledStringController_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 预期效果: Controller 未绑定到 TextEditor 时，native_type.h 约定返回 ARKUI_ERROR_CODE_PARAM_INVALID（现场 401）。
+ * 实际测试: Create 后与 117–124 一致，断言 PARAM_INVALID；失败路径释放 paragraph 与 controller。
  */
 static napi_value TestArkUICapi_145(napi_env env, napi_callback_info info)
 {
@@ -2272,7 +2274,7 @@ static napi_value TestArkUICapi_145(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(obj, para);
     {
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_TextEditorParagraphStyle_Destroy(para);
             OH_ArkUI_TextEditorStyledStringController_Destroy(obj);
