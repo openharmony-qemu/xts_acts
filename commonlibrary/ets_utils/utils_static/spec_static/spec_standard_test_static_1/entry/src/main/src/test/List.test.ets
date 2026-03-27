@@ -20,6 +20,8 @@ import NumericCastingConversionsTest from "./contextsandconversions/NumericCasti
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
 import GenericsDeclarationsCreate from "./generics/generic_declarations/create_array_using_generic_types/GenericsDeclarationsCreate.test";
+import GenericClassesInheritance from "./generics/generic_declarations/generic_classes/generic_inheritance/GenericClassesInheritance.test";
+import GenericClassesImplement from "./generics/generic_declarations/generic_classes/implementation_of_different_types/GenericClassesImplement.test";
 import GenericDeclarationsFunction from "./generics/generic_declarations/generic_functions/GenericDeclarationsFunction.test";
 import GenericDeclarationsInOut from "./generics/generic_declarations/generic_in_out/GenericDeclarationsInOut.test";
 import GenericDeclarationsInterfaces from "./generics/generic_declarations/generic_interfaces/GenericDeclarationsInterfaces.test";
@@ -27,6 +29,7 @@ import GenericDeclarationsTypeAlias from "./generics/generic_declarations/generi
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
+
 export default function testsuite() {
   AssignmentLikeContextsTest();
   AnnotationsTest();
@@ -36,9 +39,11 @@ export default function testsuite() {
   NumericOperatorContextsTest();
   StringOperatorContextsTest();
   GenericsDeclarationsCreate();
+  GenericClassesInheritance();
+  GenericClassesImplement();
   GenericDeclarationsFunction();
-  GenericDeclarationsInOut();
   GenericDeclarationsInterfaces();
+  GenericDeclarationsInOut();
   GenericDeclarationsTypeAlias();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
