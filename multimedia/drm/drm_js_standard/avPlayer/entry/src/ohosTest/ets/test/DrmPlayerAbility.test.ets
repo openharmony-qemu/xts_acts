@@ -5456,6 +5456,54 @@ export default function abilityTest() {
             done();
         })
         /**
+         * @tc.name   processOfflineReleaseResponse_null_key
+         * @tc.number processOfflineReleaseResponse_null_key
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('processOfflineReleaseResponse_null_key', Level.LEVEL1, (done:Function) => {
+            let mediaKeySystem:drm.MediaKeySystem;
+            mediaKeySystem = drm.createMediaKeySystem(systemName);
+            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+            mediaKeySession.processOfflineReleaseResponse(keyArray, null).then(() => {
+                console.info('processOfflineReleaseResponse');
+                mediaKeySystem.destroy();
+                done();
+            }).catch((err: BusinessError) => {
+                console.log("XX processOfflineReleaseResponse failed", err.code);
+                expect().assertFail();
+            });
+            mediaKeySystem.destroy();
+            done();
+        })
+        /**
+         * @tc.name   processOfflineReleaseResponse_undefined_key
+         * @tc.number processOfflineReleaseResponse_undefined_key
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('processOfflineReleaseResponse_undefined_key', Level.LEVEL1, (done:Function) => {
+            let mediaKeySystem:drm.MediaKeySystem;
+            mediaKeySystem = drm.createMediaKeySystem(systemName);
+            let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
+            let keyArray = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+            mediaKeySession.processOfflineReleaseResponse(keyArray, undefined).then(() => {
+                console.info('processOfflineReleaseResponse');
+                mediaKeySystem.destroy();
+                done();
+            }).catch((err: BusinessError) => {
+                console.log("XX processOfflineReleaseResponse_undefined_key failed", err.code);
+                expect().assertFail();
+            });
+            mediaKeySystem.destroy();
+            done();
+        })
+        /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5000
          * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_5000
          * @tc.desc   给maxSessionNum赋值1，创建两个会话
