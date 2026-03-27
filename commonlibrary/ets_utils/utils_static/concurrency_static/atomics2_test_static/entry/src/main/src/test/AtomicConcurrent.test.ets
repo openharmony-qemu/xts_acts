@@ -852,9 +852,7 @@ export default function atomicConcurrentTest() {
           let oldValue = atomicChar.exchange(c'C');
           exchangeCount.fetchAdd(1);
           let result = atomicChar.compareAndSwap(c'C', c'D');
-          if (result === c'C'){
-            casCount.fetchAdd(1);
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicChar.load();
         });
       }
@@ -949,9 +947,7 @@ export default function atomicConcurrentTest() {
           let oldValue = atomicFloat.exchange(2.5f);
           exchangeCount.fetchAdd(1);
           let result = atomicFloat.compareAndSwap(2.5f, 3.5f);
-          if (result === 2.5f) {
-            casCount.fetchAdd(1);
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicFloat.load();
         });
       }
@@ -961,7 +957,7 @@ export default function atomicConcurrentTest() {
       expect(finalValue).assertEqual(3.5f);
       expect(storeCount.load()).assertEqual(20);
       expect(exchangeCount.load()).assertEqual(20);
-      expect(casCount.load()).assertEqual(20);//expect 19 equals 20
+      expect(casCount.load()).assertEqual(20);
 
     });
 
@@ -1047,9 +1043,7 @@ export default function atomicConcurrentTest() {
           let oldValue = atomicDouble.exchange(2.5);
           exchangeCount.fetchAdd(1);
           let result = atomicDouble.compareAndSwap(2.5, 3.5);
-          if (result === 2.5) {
-            casCount.fetchAdd(1);
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicDouble.load();
         });
       }
