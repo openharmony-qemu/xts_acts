@@ -102,177 +102,6 @@ export default function HttpInterceptorForSafeCheckTest() {
       await createServer(TAG, done);
     })
 
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorAddInterceptor0100
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_AddInterceptor_0100
-     * @tc.desc   test Add request interceptor, not started
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorAddInterceptor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorAddInterceptor0100";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(2, 0);
-          ExpectTrue(result === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success result:${result}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST,
-          };
-          httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
-              testNetManager.RemoveAllInterceptor(2);
-              httpRequest.destroy();
-              done();
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorAddInterceptor0200
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_AddInterceptor_0200
-     * @tc.desc   test Add request interceptor, started
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorAddInterceptor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorAddInterceptor0200";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(2, 1);
-          ExpectTrue(result === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success result:${result}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST
-          };
-          httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
-              testNetManager.RemoveAllInterceptor(2);
-              httpRequest.destroy();
-              done();
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorAddInterceptor0300
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_AddInterceptor_0300
-     * @tc.desc   test Add request interceptor, started, interceptor modifies URL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorAddInterceptor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorAddInterceptor0300";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} AddWritableRequestInterceptor success, result->${result}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST,
-          };
-          httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              let resUrl: string = testNetManager.GetRequestUrl();
-              ExpectTrue(resUrl == HTTP_URL_BAIDU);
-              testNetManager.RemoveAllInterceptor(0);
-              httpRequest.destroy();
-              done();
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorAddInterceptor0400
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_AddInterceptor_0400
-     * @tc.desc   test Add request interceptor, started, request abort
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorAddInterceptor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorAddInterceptor0400";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result:number = testNetManager.AddWritableRequestInterceptor(4,1);
-          ExpectTrue(result === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result->${result}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST
-          };
-          httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectTrue(err.code == 2300999);
-            } else {
-              console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectFail();
-            }
-            testNetManager.RemoveAllInterceptor(4);
-            httpRequest.destroy();
-            done();
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
 
     /**
      * @tc.name   testNetworkMgrHttpRequestInterceptorAddInterceptor0500
@@ -613,10 +442,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let result1: number = testNetManager.AddReadOnlyResponseInterceptor(99, 1);
           ExpectTrue(result == 401);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor failed, result1:${result1}`);
-          let result3: number = testNetManager.AddWritableRequestInterceptor(99, 1);
-          ExpectTrue(result == 401);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor failed, result3:${result3}`);
-          let result4: number = testNetManager.AddWritableResponseInterceptor(99, 1);
           ExpectTrue(result == 401);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor failed, result4:${result4}`);
           done();
@@ -646,9 +471,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -697,9 +520,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(12, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(3, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST,
@@ -747,9 +568,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(13, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(2, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST,
@@ -797,9 +616,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(11, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(1, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -846,9 +663,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(14, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -1084,9 +899,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorRemoveInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          let addRes: number = testNetManager.AddWritableRequestInterceptor(0,1);
           ExpectTrue(addRes === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, addRes:${addRes}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -1390,9 +1203,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let readOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(readOnlyResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyRequestInterceptor success, readOnlyResult:${readOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
           ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
           ExpectTrue(readOnlyResResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
@@ -1468,9 +1279,7 @@ export default function HttpInterceptorForSafeCheckTest() {
           let reqArr: Array<number> = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14];
           reqArr.forEach((item: number) => {
             if (item < 5) {
-              let result:number = testNetManager.AddWritableRequestInterceptor(item, 1);
               ExpectTrue(result === 0);
-              console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
             } else {
               let result1:number = testNetManager.AddReadOnlyRequestInterceptor(item, 1);
               ExpectTrue(result1 === 0);
@@ -1661,9 +1470,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorRemoveAllInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          let addResult:number = testNetManager.AddWritableRequestInterceptor(0, 1);
           ExpectTrue(addResult === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, addResult:${addResult}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -1922,9 +1729,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let readOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(readOnlyResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyRequestInterceptor success, readOnlyResult:${readOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
           ExpectTrue(readOnlyResResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
@@ -1968,74 +1772,6 @@ export default function HttpInterceptorForSafeCheckTest() {
                 } else {
                   console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
                   ExpectTrue(res.responseCode == 200);
-                  httpRequest.destroy();
-                  done();
-                }
-              });
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorRemoveAllInterceptor0800
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_RemoveAllInterceptor_0800
-     * @tc.desc   test activate the deleted interceptor, same type interceptor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorRemoveAllInterceptor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorRemoveAllInterceptor0800";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
-          let result1: number = testNetManager.AddWritableRequestInterceptor(20, 1);
-          ExpectTrue(result1 == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
-          let result2: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result2 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
-          let result3: number = testNetManager.AddWritableResponseInterceptor(21, 1);
-          ExpectTrue(result3 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST
-          };
-          httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 403);
-              let resUrl: string = testNetManager.GetRequestUrl();
-              ExpectTrue(resUrl == HTTP_URL_BAIDU);
-              console.info(`${TAG} ${caseName} GetRequestUrl success, resUrl:${resUrl}`);
-              let delResult: number = testNetManager.RemoveAllInterceptor(0);
-              ExpectTrue(delResult === 0);
-              console.info(`${TAG} ${caseName} RemoveAllInterceptor success, delResult:${delResult}`);
-              httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-                if (err) {
-                  console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-                  httpRequest.destroy();
-                  ExpectFail();
-                  done();
-                } else {
-                  console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 403);
                   httpRequest.destroy();
                   done();
                 }
@@ -2118,9 +1854,6 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorStartAllInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          let addResult:number = testNetManager.AddWritableRequestInterceptor(0, 0);
-          ExpectTrue(addResult === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor addResult:${addResult}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -2383,9 +2116,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let readOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 0);
           ExpectTrue(readOnlyResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyRequestInterceptor success, readOnlyResult:${readOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 0);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 0);
           ExpectTrue(readOnlyResResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
@@ -2437,80 +2167,6 @@ export default function HttpInterceptorForSafeCheckTest() {
                   // let readOnlyResult1: number = testNetManager.GetResponseCode();
                   // ExpectTrue(readOnlyResult1 == 2300999);
                   // console.info(`${TAG} ${caseName} GetResponseCode success, readOnlyResult:${readOnlyResult}`);
-                  httpRequest.destroy();
-                  done();
-                }
-              });
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorStartAllInterceptor0800
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_StartAllInterceptor_0800
-     * @tc.desc   test start group interceptor, same type interceptor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorStartAllInterceptor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorStartAllInterceptor0800";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 0);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
-          let result1: number = testNetManager.AddWritableRequestInterceptor(20, 0);
-          ExpectTrue(result1 == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
-          let result2: number = testNetManager.AddWritableResponseInterceptor(1, 0);
-          ExpectTrue(result2 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
-          let result3: number = testNetManager.AddWritableResponseInterceptor(21, 0);
-          ExpectTrue(result3 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
-          let startResult: number = testNetManager.StartAllInterceptor(0);
-          ExpectTrue(startResult === 0);
-          console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult:${startResult}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST
-          };
-          httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 200);
-              let resUrl: string = testNetManager.GetRequestUrl();
-              ExpectTrue(resUrl == HTTP_URL_BAIDU);
-              console.info(`${TAG} ${caseName} GetRequestUrl success, resUrl:${resUrl}`);
-              let startResult: number = testNetManager.StartAllInterceptor(1);
-              ExpectTrue(startResult === 0);
-              console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult:${startResult}`);
-              httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
-                if (err) {
-                  console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-                  httpRequest.destroy();
-                  ExpectFail();
-                  done();
-                } else {
-                  console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 403);
-                  let resUrl: string = testNetManager.GetRequestUrl();
-                  ExpectTrue(resUrl == HTTP_URL_BAIDU);
-                  console.info(`${TAG} ${caseName} GetRequestUrl success, resUrl:${resUrl}`);
                   httpRequest.destroy();
                   done();
                 }
@@ -2593,9 +2249,6 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorStopAllInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          let addResult:number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(addResult === 0);
-          console.info(`${TAG} ${caseName}AddWritableRequestInterceptor addResult:${addResult}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -2859,9 +2512,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let readOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(readOnlyResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyRequestInterceptor success, readOnlyResult:${readOnlyResult}`);
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
           ExpectTrue(readOnlyResResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
@@ -2905,80 +2555,6 @@ export default function HttpInterceptorForSafeCheckTest() {
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
                   ExpectTrue(res.responseCode == 200);
-                  httpRequest.destroy();
-                  done();
-                }
-              });
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
-
-    /**
-     * @tc.name   testNetworkMgrHttpRequestInterceptorStopAllInterceptor0800
-     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_StopAllInterceptor_0800
-     * @tc.desc   test stop group interceptor, same type interceptor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testNetworkMgrHttpRequestInterceptorStopAllInterceptor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorStopAllInterceptor0800";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
-          let result1: number = testNetManager.AddWritableRequestInterceptor(20, 1);
-          ExpectTrue(result1 == 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
-          let result2: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result2 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
-          let result3: number = testNetManager.AddWritableResponseInterceptor(21, 1);
-          ExpectTrue(result3 == 0);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
-          let stopResult: number = testNetManager.StopAllInterceptor(0);
-          ExpectTrue(stopResult === 0);
-          console.info(`${TAG} ${caseName} StopAllInterceptor success, stopResult:${stopResult}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST
-          };
-          httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 403);
-              let resUrl: string = testNetManager.GetRequestUrl();
-              ExpectTrue(resUrl == HTTP_URL);
-              console.info(`${TAG} ${caseName} GetRequestUrl success, resUrl:${resUrl}`);
-              let stopResult: number = testNetManager.StopAllInterceptor(1);
-              ExpectTrue(stopResult === 0);
-              console.info(`${TAG} ${caseName} StopAllInterceptor success, stopResult:${stopResult}`);
-              httpRequest.request(HTTP_URL, options, (err: BusinessError, res: http.HttpResponse) => {
-                if (err) {
-                  console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-                  httpRequest.destroy();
-                  ExpectFail();
-                  done();
-                } else {
-                  console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 200);
-                  let resUrl: string = testNetManager.GetRequestUrl();
-                  ExpectTrue(resUrl == HTTP_URL);
-                  console.info(`${TAG} ${caseName} GetRequestUrl success, resUrl:${resUrl}`);
                   httpRequest.destroy();
                   done();
                 }
