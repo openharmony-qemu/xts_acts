@@ -1735,12 +1735,12 @@ export default function AVPlayerLocalTest() {
       })
 
        /**
-        * @tc.name   MEDIA_VIDEO_PLAYER_SEEK_004
-        * @tc.number MEDIA_VIDEO_PLAYER_SEEK_004
-        * @tc.desc   callback
+        * @tc.number   MEDIA_VIDEO_PLAYER_SEEK_004
+        * @tc.name MEDIA_VIDEO_PLAYER_SEEK_004
+        * @tc.desc   Callback
         * @tc.size   MEDIUM
         * @tc.type   Fuction
-        * @tc.level  LEVEL1
+        * @tc.level  Level1
         */
         it('MEDIA_VIDEO_PLAYER_SEEK_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
           const testName = 'MEDIA_VIDEO_PLAYER_SEEK_004';
