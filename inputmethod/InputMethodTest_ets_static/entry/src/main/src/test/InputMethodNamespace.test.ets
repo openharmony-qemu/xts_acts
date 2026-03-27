@@ -528,6 +528,8 @@ export default function inputMethodNamespaceTest() {
             expect(inputMethodEngine.SecurityMode.BASIC === 0).assertTrue();
             console.info(`${CASE_NAME} CapitalizeMode.CHARACTERS: ${inputMethodEngine.CapitalizeMode.CHARACTERS}`);
             expect(inputMethodEngine.CapitalizeMode.CHARACTERS === 3).assertTrue();
+            console.info(`${CASE_NAME} CapitalizeMode.NONE: ${inputMethodEngine.CapitalizeMode.NONE}`);
+            expect(inputMethodEngine.CapitalizeMode.NONE === 0).assertTrue();
             done();
         });
 
