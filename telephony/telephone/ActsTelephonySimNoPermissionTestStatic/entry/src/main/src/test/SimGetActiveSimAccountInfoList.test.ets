@@ -16,7 +16,6 @@
 import sim from '@ohos.telephony.sim';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
-import msSleep from './Util.test';
 
 const ExpectFail = () => {
     try {
@@ -49,7 +48,7 @@ export default function Sim_getActiveSimAccountInfoList_dual() {
                 TRUE_SLOT_ID_0 = 0;
                 simAmount = 1;
             }
-            msSleep(2000);
+           
             console.info(`beforeAll, slotId: ${TRUE_SLOT_ID_0}, simAmount: ${simAmount}`);
         });
         /**
