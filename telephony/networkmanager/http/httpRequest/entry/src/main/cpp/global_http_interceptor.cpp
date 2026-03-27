@@ -633,8 +633,7 @@ static OH_Http_Interceptor g_response_group13_readonly_abort_interceptor = {
 
 static OH_Http_Interceptor* GetResponseInterceptorByGroupId(int32_t groupId)
 {
-    switch (groupId)
-    {
+    switch (groupId) {
         case RESPONSE_GROUP0_MODIFY_BODY:
             return &g_response_group0_modify_body_interceptor;
         case RESPONSE_GROUP1_MODIFY_RESPONSE_CODE:
