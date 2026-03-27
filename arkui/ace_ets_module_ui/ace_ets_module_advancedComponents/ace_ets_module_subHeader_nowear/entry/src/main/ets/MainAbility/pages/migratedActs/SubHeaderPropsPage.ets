@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  *
@@ -8,6 +8,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/**
+ * SubHeader / SubHeaderV2 测试页：
+ * - **六块独立场景**（`SubHeaderScene*`）：Hypium 单测通过 `router.pushUrl` 传 `params[SUBHEADER_ROUTE_PARAM]`（见 `SubHeaderPropsInstrumentRoute`）。
+ * - **无参或 `route=subheader`**：`SubHeaderPropsTestContent` 六块纵向拼接全量预览。
+ *
+ * 文档与扩展字段说明见各场景顶部注释；测试辅助 Text 与入参同源 @State，非官方 API。
  */
 import router from '@ohos.router';
 import {
@@ -24,7 +32,8 @@ import type {
   SubHeaderV2SelectOptions,
   SubHeaderV2OperationItemOptions,
 } from '@ohos.arkui.advanced.SubHeaderV2';
-/** Hypium single-screen routes (self-contained, matches XTS SubHeaderPropsInstrumentRoute). */
+
+/** Hypium 单屏路由（本文件自包含，避免依赖外部 TestShellRoute） */
 export class SubHeaderPropsInstrumentRoute {
   static readonly SUBHEADER_V1_OPERATION: string = 'subheader_v1_operation';
   static readonly SUBHEADER_V1_SELECT: string = 'subheader_v1_select';
@@ -34,7 +43,10 @@ export class SubHeaderPropsInstrumentRoute {
   static readonly SUBHEADER_V2_OPERATION: string = 'subheader_v2_operation';
 }
 
-export const SUBHEADER_PROPS_PAGE: string = 'testability/pages/SubHeaderPropsPage';
+/** 与 `main_pages.json` 中路径一致 */
+export const SUBHEADER_PROPS_PAGE: string = 'MainAbility/pages/migratedActs/SubHeaderPropsPage';
+
+/** `router.pushUrl` 参数键：`params[SUBHEADER_ROUTE_PARAM] = SubHeaderPropsInstrumentRoute.*` */
 export const SUBHEADER_ROUTE_PARAM: string = 'route';
 
 interface SubHeaderV2TitleOptionsWithId extends SubHeaderV2TitleOptions {
@@ -132,6 +144,7 @@ export struct SubHeaderSceneV1OperationId {
   }
 }
 
+/** V1：仅测 SelectOptions.id；operation 不传 id；不传 titleId */
 @Component
 export struct SubHeaderSceneV1SelectId {
   @State private primary: string = 'OH_SUBTEST_V1_PRIMARY';
@@ -201,6 +214,7 @@ export struct SubHeaderSceneV1TitleId {
   }
 }
 
+/** V2：仅 Title 段带 id（Select / OperationItem 不带 id） */
 @Component
 export struct SubHeaderSceneV2TitleId {
   @State private primary: string = 'OH_SUBTEST_V2_PRIMARY';
@@ -252,6 +266,7 @@ export struct SubHeaderSceneV2TitleId {
   }
 }
 
+/** V2：仅 Select 段带 id */
 @Component
 export struct SubHeaderSceneV2SelectId {
   @State private primary: string = 'OH_SUBTEST_V2_PRIMARY';
@@ -303,6 +318,7 @@ export struct SubHeaderSceneV2SelectId {
   }
 }
 
+/** V2：仅 OperationItem 段带 id */
 @Component
 export struct SubHeaderSceneV2OperationId {
   @State private primary: string = 'OH_SUBTEST_V2_PRIMARY';
@@ -356,12 +372,13 @@ export struct SubHeaderSceneV2OperationId {
   }
 }
 
+/** 全量预览：六块场景纵向排列（挂载 key 与单测屏一致，便于对照） */
 @Component
 export struct SubHeaderPropsTestContent {
   build() {
     Scroll() {
       Column({ space: 24 }) {
-        Text('以下为 6 块独立场景纵向单测请 push 本页并传 params.route。')
+        Text('以下为 6 块独立场景纵向拼接；Hypium 单测请 push 本页并传 params.route（见文件头说明）。')
           .fontSize(11)
           .fontColor($r('sys.color.ohos_id_color_text_secondary'))
         SubHeaderSceneV1OperationId()
@@ -387,6 +404,7 @@ export struct SubHeaderPropsTestContent {
 @Entry
 @Component
 struct SubHeaderPropsPage {
+  /** 无参：全量预览；有值且为单场景：仅挂载对应 `SubHeaderScene*` */
   @State private shellRoute: string = '';
 
   aboutToAppear(): void {
