@@ -725,10 +725,10 @@ static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetri
     OH_WindowManager_FrameMetrics_GetInputHandlingDuration(metrics, &g_inputHandlingDuration);
     OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(metrics, &g_duration);
     OH_WindowManager_FrameMetrics_GetVsyncTimestamp(metrics, &g_timestamp);
-    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured isFirstDrawFrame=%{public}d", g_isFirstDrawFrame);
-    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured inputHandlingDuration=%{public}llu", g_inputHandlingDuration);
-    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured duration=%{public}llu", g_duration);
-    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured timestamp=%{public}llu", g_timestamp);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured isFirstDrawFrame=%{public}d", g_isFirstDrawFrame);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured inputHandlingDuration=%{public}llu", g_inputHandlingDuration);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured duration=%{public}llu", g_duration);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured timestamp=%{public}llu", g_timestamp);
 }
 
 static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
