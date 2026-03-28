@@ -1199,5 +1199,58 @@ export default function AVMetadata() {
       });
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_static_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_static_3600
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+
+      let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
+      let onFrameFetched = (frameInfo: media.FrameInfo, err?: BusinessError|undefined): void => {
+
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          if (frameInfo !== undefined) {
+            let result: long = frameInfo.result;
+            expect(result).assertEqual(0);
+          }
+          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: long = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTimeUs: long | undefined = frameInfo.actualTimeUs;
+            expect(actualTimeUs!).assertEqual(115000);
+          }
+          let result: media.FetchResult = frameInfo.result;
+          expect(result).assertEqual(media.FetchResult.FETCH_SUCCEEDED);
+          let pixelMap: image.PixelMap | undefined = frameInfo.image;
+          expect(pixelMap!).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+          return;
+        }
+        done();
+      };
+      let timesUs: long[] = [];
+      timesUs.push(1000000);
+      timesUs.push(-1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      avMetadataExtractor!!.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
+      avMetadataExtractor!!.cancelAllFetchFrames();
+      avMetadataExtractor!!.release();
+    });
   })
 }
