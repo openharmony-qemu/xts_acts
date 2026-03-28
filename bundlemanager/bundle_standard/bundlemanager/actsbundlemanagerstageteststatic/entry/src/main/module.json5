@@ -413,7 +413,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "partnerAgent",
-        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
         "type": "partnerAgent",
         "visible": true
       }
