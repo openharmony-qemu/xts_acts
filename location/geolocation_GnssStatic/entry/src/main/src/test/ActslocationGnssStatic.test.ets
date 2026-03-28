@@ -121,6 +121,26 @@ export default function actslocationTest() {
       let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
         console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
         expect(true).assertEqual(satelliteStatusInfo != null);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>satellitesNumber ", typeof satelliteStatusInfo.satellitesNumber)
+        expect(satelliteStatusInfo.satellitesNumber instanceof int);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>satelliteIds ", typeof satelliteStatusInfo.satelliteIds)
+        expect(satelliteStatusInfo.satelliteIds instanceof Array);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>carrierToNoiseDensitys ", typeof satelliteStatusInfo.carrierToNoiseDensitys)
+        expect(satelliteStatusInfo.carrierToNoiseDensitys instanceof Array);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>altitudes ", typeof satelliteStatusInfo.altitudes)
+        expect(satelliteStatusInfo.altitudes instanceof Array);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>azimuths ", typeof satelliteStatusInfo.azimuths)
+        expect(satelliteStatusInfo.azimuths instanceof Array);
+        console.info("Sub_Location_onSatelliteStatusChange_0100 ======>carrierFrequencies ", typeof satelliteStatusInfo.carrierFrequencies)
+        expect(satelliteStatusInfo.carrierFrequencies instanceof Array);
+        if (satelliteStatusInfo.satelliteConstellation) {
+          console.info("Sub_Location_onSatelliteStatusChange_0100 ======>satelliteConstellation ", typeof satelliteStatusInfo.satelliteConstellation)
+          expect(satelliteStatusInfo.satelliteConstellation instanceof Array);
+        }
+        if (satelliteStatusInfo.satelliteAdditionalInfo) {
+          console.info("Sub_Location_onSatelliteStatusChange_0100 ======>satelliteAdditionalInfo ", typeof satelliteStatusInfo.satelliteAdditionalInfo)
+          expect(satelliteStatusInfo.satelliteAdditionalInfo instanceof Array);
+        }
         // 表示卫星个数
         let totalNumber: number = satelliteStatusInfo.satellitesNumber;
         let satelliteIds: Array<Int> = satelliteStatusInfo.satelliteIds;
@@ -174,6 +194,26 @@ export default function actslocationTest() {
       let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
         console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
         expect(true).assertEqual(satelliteStatusInfo != null);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>satellitesNumber ", typeof satelliteStatusInfo.satellitesNumber)
+        expect(satelliteStatusInfo.satellitesNumber instanceof int);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>satelliteIds ", typeof satelliteStatusInfo.satelliteIds)
+        expect(satelliteStatusInfo.satelliteIds instanceof Array);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>carrierToNoiseDensitys ", typeof satelliteStatusInfo.carrierToNoiseDensitys)
+        expect(satelliteStatusInfo.carrierToNoiseDensitys instanceof Array);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>altitudes ", typeof satelliteStatusInfo.altitudes)
+        expect(satelliteStatusInfo.altitudes instanceof Array);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>azimuths ", typeof satelliteStatusInfo.azimuths)
+        expect(satelliteStatusInfo.azimuths instanceof Array);
+        console.info("Sub_Location_offSatelliteStatusChange_0100 ======>carrierFrequencies ", typeof satelliteStatusInfo.carrierFrequencies)
+        expect(satelliteStatusInfo.carrierFrequencies instanceof Array);
+        if (satelliteStatusInfo.satelliteConstellation) {
+          console.info("Sub_Location_offSatelliteStatusChange_0100 ======>satelliteConstellation ", typeof satelliteStatusInfo.satelliteConstellation)
+          expect(satelliteStatusInfo.satelliteConstellation instanceof Array);
+        }
+        if (satelliteStatusInfo.satelliteAdditionalInfo) {
+          console.info("Sub_Location_offSatelliteStatusChange_0100 ======>satelliteAdditionalInfo ", typeof satelliteStatusInfo.satelliteAdditionalInfo)
+          expect(satelliteStatusInfo.satelliteAdditionalInfo instanceof Array);
+        }
       }
       try {
         geoLocationManager.offSatelliteStatusChange(gnssStatusCb);
