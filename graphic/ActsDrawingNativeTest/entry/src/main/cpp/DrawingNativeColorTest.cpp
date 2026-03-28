@@ -85,7 +85,7 @@ int TestColorSetArgbNULL()
 {
     DrawingNativeColorTestSetUp();
     // 1、Passing empty for the first argument of OH_Drawing_ColorSetArgb
-   
+
     uint32_t color1 = OH_Drawing_ColorSetArgb(0, DRAWING_NUMBER_255, DRAWING_NUMBER_255,
         DRAWING_NUMBER_255);
     // add assert

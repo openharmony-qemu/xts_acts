@@ -936,9 +936,9 @@ int TestShaderEffectCreateRadialGradientMultipleCalls()
 int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
-    float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};      
-    float radius = DRAWING_NUMBER_5;                    
-    OH_Drawing_Point2D start = {100.f, 0}; 
+    float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};
+    float radius = DRAWING_NUMBER_5;
+    OH_Drawing_Point2D start = {100.f, 0};
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
@@ -991,9 +991,9 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal()
 int TestShaderEffectCreateRadialGradientWithLocalMatrixNull()
 {
     DrawingNativeShaderEffectTestSetUp();
-    float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};      
-    float radius = DRAWING_NUMBER_5;                    
-    OH_Drawing_Point2D start = {100.f, 0}; 
+    float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};
+    float radius = DRAWING_NUMBER_5;
+    OH_Drawing_Point2D start = {100.f, 0};
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with the first parameter set to nullptr and
@@ -1518,12 +1518,12 @@ int TestShaderEffectCreateTwoPointConicalGradientNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
-    float endRadius = DRAWING_NUMBER_10; 
+    float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_TileMode modes[] = {
         CLAMP,
         REPEAT,
@@ -1579,12 +1579,12 @@ int TestShaderEffectCreateTwoPointConicalGradientNull()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
-    float endRadius = DRAWING_NUMBER_10; 
+    float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // 1. Call OH_Drawing_ShaderEffectCreateTwoPointConicalGradient with the first parameter set to nullptr and check
     // the error code using OH_Drawing_ErrorCodeGet
@@ -1636,10 +1636,10 @@ int TestShaderEffectCreateTwoPointConicalGradientAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
     float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1716,12 +1716,12 @@ int TestShaderEffectCreateTwoPointConicalGradientMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
-    float endRadius = DRAWING_NUMBER_10; 
+    float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // 1. Call OH_Drawing_ShaderEffectCreateTwoPointConicalGradient with startPt set to a maximum value
     OH_Drawing_Point2D startPt2 = {FLT_MAX, FLT_MAX};
@@ -1797,7 +1797,7 @@ int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls()
     OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
     float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1830,10 +1830,10 @@ int TestShaderEffectDestroyNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
-    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
+    float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};
     float startRadius = DRAWING_NUMBER_5;
     float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1884,7 +1884,7 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
     float pos[] = {0.0f, 1.0f};
-    uint32_t size = DRAWING_NUMBER_2; 
+    uint32_t size = DRAWING_NUMBER_2;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1,
@@ -1940,7 +1940,7 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
     OH_Drawing_Point *centerPt2 = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
     float pos[] = {0.0f, 1.0f};
-    uint32_t size = DRAWING_NUMBER_2; 
+    uint32_t size = DRAWING_NUMBER_2;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1,
@@ -1998,9 +1998,9 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal()
     uint32_t colors1[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
     uint32_t colors2[] = {DRAWING_NUMBER_0XFFFFFFFF};
     float pos1[] = {0.0f, 1.0f};
-    float pos2[] = {-1.0f}; //     float pos2[] = {-1.0f}; 
+    float pos2[] = {-1.0f}; //     float pos2[] = {-1.0f};
     float pos3[] = {0xFFFFFFFF};
-    uint32_t size = DRAWING_NUMBER_2; 
+    uint32_t size = DRAWING_NUMBER_2;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1,
@@ -2054,7 +2054,7 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls()
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
     float pos[] = {0.0f, 1.0f};
-    uint32_t size = DRAWING_NUMBER_2; 
+    uint32_t size = DRAWING_NUMBER_2;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1,
@@ -2204,10 +2204,10 @@ int TestShaderEffectCreatePixelMapShaderNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -2254,10 +2254,10 @@ int TestShaderEffectCreatePixelMapShaderNull()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -2310,10 +2310,10 @@ int TestShaderEffectCreatePixelMapShaderMultiCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;

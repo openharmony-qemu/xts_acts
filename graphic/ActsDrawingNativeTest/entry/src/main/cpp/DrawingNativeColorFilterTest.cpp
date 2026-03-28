@@ -31,7 +31,7 @@
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-    
+
 void DrawingNativeColorFilterTestSetUp()
 {
     std::cout << "DrawingNativeColorFilterTest Setup code called before each test case." << std::endl;

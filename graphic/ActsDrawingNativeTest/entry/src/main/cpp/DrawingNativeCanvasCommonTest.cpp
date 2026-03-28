@@ -108,13 +108,13 @@ OH_PixelmapNative *GET_OH_PixelmapNative4KBoundary()
     size_t dataLength = width * height * DRAWING_NUMBER_4;
     vector<uint8_t> data(dataLength);
     uint8_t rgbaValue[] = {DRAWING_NUMBER_255, DRAWING_NUMBER_255, 0, DRAWING_NUMBER_255};
-    
+
     for (size_t i = 0; i < dataLength; i += DRAWING_NUMBER_4) {
         size_t offset = i;
         data[offset] = rgbaValue[0];     // R
-            data[offset + DRAWING_NUMBER_1] = rgbaValue[DRAWING_NUMBER_1]; 
-            data[offset + DRAWING_NUMBER_2] = rgbaValue[DRAWING_NUMBER_2]; 
-            data[offset + DRAWING_NUMBER_3] = rgbaValue[DRAWING_NUMBER_3]; 
+            data[offset + DRAWING_NUMBER_1] = rgbaValue[DRAWING_NUMBER_1];
+            data[offset + DRAWING_NUMBER_2] = rgbaValue[DRAWING_NUMBER_2];
+            data[offset + DRAWING_NUMBER_3] = rgbaValue[DRAWING_NUMBER_3];
     }
     // 4096 * 2160 means data length
     OH_PixelmapNative_CreatePixelmap(data.data(), dataLength, options, &pixelMap);

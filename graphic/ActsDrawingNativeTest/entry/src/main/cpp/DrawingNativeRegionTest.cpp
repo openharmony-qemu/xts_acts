@@ -1000,7 +1000,7 @@ int TestRegionGetBoundsNormal()
     EXPECT_EQ(OH_Drawing_RectGetTop(rect_1), DRAWING_NUMBER_100);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect_1), DRAWING_NUMBER_400);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect_1), DRAWING_NUMBER_400);
-    
+
     OH_Drawing_RectDestroy(rect_1);
     OH_Drawing_RectDestroy(rect_2);
     OH_Drawing_RegionDestroy(region1);
@@ -1100,7 +1100,7 @@ int TestRegionIsComplexNormal()
     errorCode = OH_Drawing_RegionIsComplex(region1, &isComplex);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isComplex, true);
-    
+
     OH_Drawing_RectDestroy(rect_1);
     OH_Drawing_RectDestroy(rect_2);
     OH_Drawing_RegionDestroy(region1);
@@ -1170,7 +1170,7 @@ int TestRegionIsComplexMultipleCalls()
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isComplex, true);
     }
-    
+
     OH_Drawing_RectDestroy(rect_1);
     OH_Drawing_RectDestroy(rect_2);
     OH_Drawing_RegionDestroy(region1);

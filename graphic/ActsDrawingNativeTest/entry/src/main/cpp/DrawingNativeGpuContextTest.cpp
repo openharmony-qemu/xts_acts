@@ -144,7 +144,7 @@ int TestGpuContextDestroyNULL()
 int TestGpuContextCreateFromGLDestroyMultipleCalls()
 {
     DrawingNativeGpuContextTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_NUMBER_10; i++) {
         OH_Drawing_GpuContextOptions options;
         options.allowPathMaskCaching = true;
         OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);

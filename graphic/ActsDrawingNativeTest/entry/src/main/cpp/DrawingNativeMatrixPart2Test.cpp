@@ -1484,7 +1484,7 @@ int TestMatrixPreSkewNormal()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    
+
     OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, -DRAWING_NUMBER_10, DRAWING_NUMBER_3,
         DRAWING_NUMBER_1, -DRAWING_NUMBER_12, 0, 0, DRAWING_NUMBER_1);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
@@ -1548,7 +1548,7 @@ int TestMatrixPreSkewNull()
     EXPECT_NE(matrix5, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    
+
     OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(nullptr, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
         DRAWING_NUMBER_4, DRAWING_NUMBER_5);
@@ -1728,7 +1728,7 @@ int TestMatrixSetSinCosNormal()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    
+
     OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_3, -DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_2,
         DRAWING_NUMBER_3, -DRAWING_NUMBER_18, 0, 0, DRAWING_NUMBER_1);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
@@ -1786,7 +1786,7 @@ int TestMatrixSetSinCosNull()
     EXPECT_NE(matrix5, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    
+
     OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(nullptr, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
         DRAWING_NUMBER_4, DRAWING_NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);

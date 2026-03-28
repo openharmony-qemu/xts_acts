@@ -16,6 +16,7 @@
 #include "include/DrawingNativePathTest.h"
 #include "include/OhosCommonTest.h"
 
+#define MAX_ALLOWED_SIZE 1024
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
 #define DRAWING_NUMBER_3 3
@@ -837,8 +838,9 @@ int TestPathGetSegmentMultiplies()
     bool result = false;
     OH_Drawing_ErrorCode errorCode;
     // 5. The function OH_Drawing_PathGetSegment is called 10 times
-    for (int i = 0; i < 10; i++) {
-        errorCode = OH_Drawing_PathGetSegment(path, false, 120, 180, true, dstPath, &result);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        errorCode =
+            OH_Drawing_PathGetSegment(path, false, DRAWING_NUMBER_120, DRAWING_NUMBER_180, true, dstPath, &result);
     }
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(result, true);
@@ -871,7 +873,7 @@ int TestPathSetPathNormal()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, 150,
+    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_150,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath is called normally.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathSetPath(path, other);
@@ -905,7 +907,7 @@ int TestPathSetPathNull()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, 150,
+    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_150,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath passes to nullptr.
     OH_Drawing_ErrorCode errorCode;
@@ -942,11 +944,11 @@ int TestPathSetPathMulptiCalls()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, 150,
+    OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_150,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath is called 10 times.
     OH_Drawing_ErrorCode errorCode;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathSetPath(path, other);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -1046,7 +1048,7 @@ int TestPathIsEmptyMultipleCalls()
     bool isEmpty = true;
     // 5. The function OH_Drawing_PathIsEmpty is called 10 times.
     OH_Drawing_ErrorCode errorCode;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsEmpty(path, &isEmpty);
         EXPECT_EQ(isEmpty, false);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1169,7 +1171,7 @@ int TestPathIsRectMultipleCalls()
     bool isRect = true;
     // 6. The interface OH_Drawing_PathIsRect is called 10 times.
     OH_Drawing_ErrorCode errorCode;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsRect(path, rect, &isRect);
         EXPECT_EQ(isRect, false);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1288,7 +1290,7 @@ int TestPathGetFillTypeMultipleCalls()
     OH_Drawing_ErrorCode errorCode;
     OH_Drawing_PathFillType pathFillType = PATH_FILL_TYPE_WINDING;
     OH_Drawing_PathSetFillType(path, pathFillType);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathGetFillType(path, &pathFillType);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -1320,16 +1322,20 @@ int TestPathApproximateNormal()
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
-    // 4. The interface OH_Drawing_PathApproximate is called normally.
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
-    EXPECT_EQ(count, DRAWING_NUMBER_6);
-    EXPECT_EQ(vals[0], 0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_1], 100.0f);
-    EXPECT_EQ(vals[DRAWING_NUMBER_2], 100.0f);
-    EXPECT_EQ(vals[DRAWING_NUMBER_3], 1.0f);
-    EXPECT_EQ(vals[DRAWING_NUMBER_4], 200.0f);
-    EXPECT_EQ(vals[DRAWING_NUMBER_5], 200.0f);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    if (count == 0 || count > MAX_ALLOWED_SIZE) {
+        return DRAWING_NUMBER_1;
+    } else {
+        // 4. The interface OH_Drawing_PathApproximate is called normally.
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
+        EXPECT_EQ(count, DRAWING_NUMBER_6);
+        EXPECT_EQ(vals[0], 0);
+        EXPECT_EQ(vals[DRAWING_NUMBER_1], 100.0f);
+        EXPECT_EQ(vals[DRAWING_NUMBER_2], 100.0f);
+        EXPECT_EQ(vals[DRAWING_NUMBER_3], 1.0f);
+        EXPECT_EQ(vals[DRAWING_NUMBER_4], 200.0f);
+        EXPECT_EQ(vals[DRAWING_NUMBER_5], 200.0f);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
@@ -1354,24 +1360,28 @@ int TestPathApproximateNull()
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
-    // 2. Verify the empty path.
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    // 3. The first parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathApproximate(nullptr, acceptableError, vals, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 4. The second parameter of the verification interface is passed as 0.
-    errorCode = OH_Drawing_PathApproximate(path, 0, vals, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    // 5. The third parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    // 6. The third parameter and the forth parameter of the verification interface are passed as null pointer.
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 7. The forth parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    if (count == 0 || count > MAX_ALLOWED_SIZE) {
+        return DRAWING_NUMBER_1;
+    } else {
+        // 2. Verify the empty path.
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        // 3. The first parameter of the verification interface is passed as a null pointer.
+        errorCode = OH_Drawing_PathApproximate(nullptr, acceptableError, vals, &count);
+        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+        // 4. The second parameter of the verification interface is passed as 0.
+        errorCode = OH_Drawing_PathApproximate(path, 0, vals, &count);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        // 5. The third parameter of the verification interface is passed as a null pointer.
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        // 6. The third parameter and the forth parameter of the verification interface are passed as null pointer.
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, nullptr);
+        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+        // 7. The forth parameter of the verification interface is passed as a null pointer.
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, nullptr);
+        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    }
     // 8. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
@@ -1400,17 +1410,21 @@ int TestPathApproximateAbnormal()
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
-    // 4. AcceptableError lesses than 0.
-    errorCode = OH_Drawing_PathApproximate(path, -0.1f, vals, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
-    // 3. The length of the array is greater than the length of the actual return point.
-    uint32_t count1 = DRAWING_NUMBER_10;
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count1);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    // 4. The length of the array is lesses than the length of the actual return point.
-    uint32_t count2 = DRAWING_NUMBER_2;
-    errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count2);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    if (count == 0 || count > MAX_ALLOWED_SIZE) {
+        return DRAWING_NUMBER_1;
+    } else {
+        // 4. AcceptableError lesses than 0.
+        errorCode = OH_Drawing_PathApproximate(path, -0.1f, vals, &count);
+        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+        // 3. The length of the array is greater than the length of the actual return point.
+        uint32_t count1 = DRAWING_NUMBER_10;
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count1);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        // 4. The length of the array is lesses than the length of the actual return point.
+        uint32_t count2 = DRAWING_NUMBER_2;
+        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count2);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
@@ -1439,10 +1453,14 @@ int TestPathApproximateMultiCalls()
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
-    // 4. The interface is called in a loop 10 times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
-        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    if (count == 0 || count > MAX_ALLOWED_SIZE) {
+        return DRAWING_NUMBER_1;
+    } else {
+        // 4. The interface is called in a loop 10 times.
+        for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+            errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
+            EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        }
     }
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1631,7 +1649,7 @@ int TestPathInterpolateMultiCalls()
     // 8. The interface is called in a loop 10 times.
     bool result = false;
     OH_Drawing_ErrorCode errorCode;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, &result, interpolatePath);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -1764,7 +1782,7 @@ int TestPathIsInterpolateMultiCalls()
     bool result = false;
     // 7. The interface is called in a loop 10 times.
     OH_Drawing_ErrorCode errorCode;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsInterpolate(path, other, &result);
         EXPECT_EQ(result, true);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1982,7 +2000,7 @@ int TestPathIsInverseFillTypeNull()
     // 预期：接口返回无效参数错误码，且初始状态值isInverseFillType仍为false
     OH_Drawing_ErrorCode code1 = OH_Drawing_PathIsInverseFillType(path, nullptr);
     EXPECT_EQ(isInverseFillType, false);  // 验证初始状态值未被修改
-    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);  
+    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 6. 销毁路径对象，释放内存资源，避免内存泄漏
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
@@ -2013,7 +2031,7 @@ int TestPathToggleInverseFillTypeNull()
     // 5. 测试空指针入参的异常场景：调用切换反向填充接口，传入nullptr
     OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(nullptr);
     EXPECT_EQ(isInverseFillType, false);  // 状态未被修改，仍为false
-    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);  
+    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 6. 销毁路径对象，释放内存资源（防止内存泄漏）
     code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, false);  // 验证状态：非反向填充

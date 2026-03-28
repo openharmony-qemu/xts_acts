@@ -502,7 +502,7 @@ int TestImageGetImageInfoMultipleCalls()
         OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
         // add assert
         EXPECT_NE(bitmap, nullptr);
-        srand(static_cast<unsigned int>(time(0)));
+        srand(static_cast<unsigned int>(time(nullptr)));
         OH_Drawing_BitmapFormat cFormat{cf[rand() % DRAWING_NUMBER_5 + DRAWING_NUMBER_1], af[rand() % DRAWING_NUMBER_3 +
             DRAWING_NUMBER_1]};
         uint32_t width = rand() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;

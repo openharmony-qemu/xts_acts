@@ -934,7 +934,7 @@ int TestFontTextToGlyphsNormal()
         TEXT_ENCODING_UTF32,
         TEXT_ENCODING_GLYPH_ID,
     };
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     for (OH_Drawing_TextEncoding encode : encodes) {
         int count = OH_Drawing_FontCountText(font, str, strlen(str), encode);
         OH_Drawing_FontTextToGlyphs(font, str, strlen(str), encode, glyphs, count);
@@ -963,7 +963,7 @@ int TestFontTextToGlyphsNULL()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     // 2. Pass nullptr as the first parameter to OH_Drawing_FontTextToGlyphs and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1017,7 +1017,7 @@ int TestFontTextToGlyphsMultipleCalls()
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
     };
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     for (const char *str : strs) {
         OH_Drawing_ErrorCodeReset();
         int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
@@ -1047,7 +1047,7 @@ int TestFontTextToGlyphsAbnormal()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     // 2. Set byteLength parameter to -1 for OH_Drawing_FontTextToGlyphs interface
     // Ignore, no need to test the case with byteLength parameter set to -1
     // 3. Set maxGlyphCount parameter to -1 for OH_Drawing_FontTextToGlyphs interface and check the error code using
@@ -1077,7 +1077,7 @@ int TestFontTextToGlyphsMaximum()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     // 2. Set byteLength parameter to maximum value for OH_Drawing_FontTextToGlyphs interface
     // Ignore, no need to test the case with maximum byteLength parameter
@@ -1109,7 +1109,7 @@ int TestFontGetWidthsNormal()
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_FontGetWidths
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
     float widths[DRAWING_NUMBER_50] = {0.f};
@@ -1139,7 +1139,7 @@ int TestFontGetWidthsNULL()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
     float widths[DRAWING_NUMBER_50] = {0.f};
@@ -1188,7 +1188,7 @@ int TestFontGetWidthsMultipleCalls()
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
     };
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     float widths[DRAWING_NUMBER_50] = {0.f};
     for (const char *str : strs) {
         OH_Drawing_ErrorCodeReset();
@@ -1221,7 +1221,7 @@ int TestFontGetWidthsAbnormal()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     float widths[DRAWING_NUMBER_50] = {0.f};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
@@ -1258,7 +1258,7 @@ int TestFontGetWidthsMaximum()
     // add assert
     EXPECT_NE(font, nullptr);
     const char *str = "Hello World";
-    uint16_t glyphs[DRAWING_NUMBER_50] = {0}; 
+    uint16_t glyphs[DRAWING_NUMBER_50] = {0};
     float widths[DRAWING_NUMBER_50] = {0.f};
     int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
@@ -2584,7 +2584,7 @@ int TestFontMeasureSingleCharacter()
     DrawingNativeFontTestSetUp();
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
-    OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50); 
+    OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
     const char* strOne = "a";
     const char* strTwo = "你好";
     float textWidth = 0;

@@ -1080,17 +1080,22 @@ int TestCanvasDrawShadowMaximum()
     OH_Drawing_Point3D p2{DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10};
     // 3. OH_Drawing_CanvasDrawShadow, set the x, y, z values in the planeParams parameter to maximum values
     p1 = {FLT_MAX, FLT_MAX, FLT_MAX};
-    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
+    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF,
+                                DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
     // 4. OH_Drawing_CanvasDrawShadow, set the x, y, z values in the devLightPos parameter to maximum values
     p1 = {DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     p2 = {FLT_MAX, FLT_MAX, FLT_MAX};
-    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
+    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF,
+                                DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
     // 5. OH_Drawing_CanvasDrawShadow, set the lightRadius parameter to maximum value
-    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, FLT_MAX, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
+    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, FLT_MAX, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF,
+                                SHADOW_FLAGS_ALL);
     // 6. OH_Drawing_CanvasDrawShadow, set the ambientColor parameter to maximum value
-    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
+    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF,
+                                DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
     // 7. OH_Drawing_CanvasDrawShadow, set the spotColor parameter to maximum value
-    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
+    OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, DRAWING_NUMBER_0XFFFFFFFF,
+                                DRAWING_NUMBER_0XFFFFFFFF, SHADOW_FLAGS_ALL);
     // 8. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_CanvasDestroy(canvas);

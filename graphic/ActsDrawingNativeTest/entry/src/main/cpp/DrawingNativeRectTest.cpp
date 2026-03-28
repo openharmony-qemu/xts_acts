@@ -1623,7 +1623,7 @@ int TestRectOffsetNormal()
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffset(rect, -100, -100);
+    errorCode = OH_Drawing_RectOffset(rect, -DRAWING_NUMBER_100, -DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
@@ -1659,7 +1659,7 @@ int TestRectOffsetNull()
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffset(rect, 100, 0);
+    errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
@@ -1769,7 +1769,7 @@ int TestRectOffsetToNull()
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffsetTo(rect, 100, 0);
+    errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);

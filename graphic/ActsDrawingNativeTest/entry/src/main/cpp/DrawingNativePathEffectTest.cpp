@@ -463,7 +463,7 @@ int TestCreatePathDashEffectNormal()
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     EXPECT_NE(path, nullptr);
     // 2. OH_Drawing_PathAddRect
-    OH_Drawing_PathAddRect(path, 10, 10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+    OH_Drawing_PathAddRect(path, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 3. OH_Drawing_PathCreate
     OH_Drawing_Path *path2 = OH_Drawing_PathCreate();
@@ -503,7 +503,7 @@ int TestCreatePathDashEffectNull()
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     EXPECT_NE(path, nullptr);
     // 2. OH_Drawing_PathAddRect
-    OH_Drawing_PathAddRect(path, 10, 10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+    OH_Drawing_PathAddRect(path, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 3. OH_Drawing_PathCreate
     OH_Drawing_Path *path2 = OH_Drawing_PathCreate();
@@ -544,7 +544,7 @@ int TestCreatePathDashEffectAbnormal()
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     EXPECT_NE(path, nullptr);
     // 2. OH_Drawing_PathAddRect
-    OH_Drawing_PathAddRect(path, 10, 10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+    OH_Drawing_PathAddRect(path, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 3. OH_Drawing_PathCreate
     OH_Drawing_Path *path2 = OH_Drawing_PathCreate();

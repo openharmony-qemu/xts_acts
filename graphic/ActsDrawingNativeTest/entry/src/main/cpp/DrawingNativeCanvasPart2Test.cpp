@@ -168,9 +168,9 @@ int TestCanvasDrawPixelMapRectNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, nullptr);
     OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
-    
+
     TestDrawPixelMapRectWithZeroRects(canvas, drPixelMap, dst, sampleOptions);
-    
+
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
     OH_Drawing_SamplingOptionsDestroy(sampleOptions);
@@ -264,11 +264,11 @@ int TestCanvasDrawPixelMapRectAbnormal()
     OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
-    
+
     TestDrawPixelMapRectWithInvalidSrcRects(canvas, drPixelMap, dst, sampleOptions);
     src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     TestDrawPixelMapRectWithInvalidDstRects(canvas, drPixelMap, src, sampleOptions);
-    
+
     OH_Drawing_RectDestroy(src);
     OH_Drawing_SamplingOptionsDestroy(sampleOptions);
     OH_Drawing_PixelMapDissolve(drPixelMap);
@@ -1276,7 +1276,7 @@ static void TestDrawBitmapRectWithDifferentBitmaps(OH_Drawing_Canvas* canvas, OH
     OH_Drawing_BitmapDestroy(*bitmap);
     *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
-    
+
     width = DRAWING_NUMBER_48;
     height = DRAWING_NUMBER_48;
     imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
@@ -1285,7 +1285,7 @@ static void TestDrawBitmapRectWithDifferentBitmaps(OH_Drawing_Canvas* canvas, OH
     OH_Drawing_BitmapDestroy(*bitmap);
     *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
-    
+
     width = DRAWING_NUMBER_48;
     height = DRAWING_NUMBER_48;
     imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
@@ -1312,7 +1312,7 @@ int TestCanvasDrawBitmapRectNull()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_LINEAR);
-    
+
     OH_Drawing_Rect* src =
         OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(src, nullptr);
@@ -1322,14 +1322,14 @@ int TestCanvasDrawBitmapRectNull()
     OH_Drawing_CanvasDrawBitmapRect(nullptr, bitmap, src, dst, options);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
-    
+
     OH_Drawing_CanvasDrawBitmapRect(canvas, nullptr, src, dst, options);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    
+
     TestDrawBitmapRectWithDifferentBitmaps(canvas, &bitmap, src, dst, options);
-    
+
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, nullptr);
-    
+
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_RectDestroy(src);
@@ -1348,7 +1348,7 @@ static void TestDrawBitmapRectWithInvalidSrcCoordinates(OH_Drawing_Canvas* canva
         DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     src = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
                               DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
@@ -1363,17 +1363,17 @@ static void TestDrawBitmapRectWithInvalidDstCoordinates(OH_Drawing_Canvas* canva
         DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     dst = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
                               DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     dst = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100,
                               DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     dst = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
                               DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
@@ -1397,7 +1397,7 @@ int TestCanvasDrawBitmapRectAbnormal()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_LINEAR);
-    
+
     OH_Drawing_Rect* src =
         OH_Drawing_RectCreate(TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET,
                               TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET);
@@ -1407,10 +1407,10 @@ int TestCanvasDrawBitmapRectAbnormal()
                               TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     TestDrawBitmapRectWithInvalidSrcCoordinates(canvas, bitmap, dst, options);
     TestDrawBitmapRectWithInvalidDstCoordinates(canvas, bitmap, src, options);
-    
+
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_RectDestroy(src);

@@ -426,13 +426,13 @@ int TestSurfaceCreateOnScreenMultipleCalls()
 
     std::vector<OH_Drawing_Image_Info> imageInfos;
     // Loop to create different imageInfo structures
-    for (int i = 0; i < 5; ++i) { // Loop through formats
-        for (int j = 0; j < 3; ++j) { // Loop through alphaFormats
+    for (int i = 0; i < DRAWING_NUMBER_5; ++i) { // Loop through formats
+        for (int j = 0; j < DRAWING_NUMBER_3; ++j) { // Loop through alphaFormats
             OH_Drawing_Image_Info imageInfo = {width, height, formats[i], alphaFormats[j]};
             imageInfos.push_back(imageInfo);
         }
     }
-    
+
     for (int index = 0; index < DRAWING_NUMBER_10; ++index) {
         OH_Drawing_Surface* surface_ = OH_Drawing_SurfaceCreateOnScreen(gpuContext_, imageInfos[index], nullptr);
         EXPECT_EQ(surface_, nullptr);

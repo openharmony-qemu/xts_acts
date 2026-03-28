@@ -67,23 +67,23 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     EXPECT_NE(features, nullptr);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str2, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str3, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str4, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str5, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str6, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str7, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str8, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str9, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        OH_DRAWING_SUCCESS);
     OH_Drawing_FontDestroy(font);
     OH_Drawing_FontFeaturesDestroy(features);
     OH_Drawing_CanvasDestroy(canvas);

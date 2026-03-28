@@ -560,7 +560,7 @@ int TestBitmapBuildMultipleCalls()
         alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap3);
         EXPECT_EQ(alphaFormat_, alphaFormats[i]);
     }
-    DrawingNativeBitmapTestTearDown(); 
+    DrawingNativeBitmapTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -1001,7 +1001,7 @@ int TestBitmapReadPixelsBoundary()
     DrawingNativeBitmapTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
- 
+
 /**
  * @tc.name   testBitmapBuildMaximum
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0600
@@ -1020,7 +1020,7 @@ int TestBitmapBuildMaximum()
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_PREMUL};
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
-    
+
     // Create a new canvas and draw the contents of the image
     OH_Drawing_Canvas *imageCanvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(imageCanvas, nullptr);

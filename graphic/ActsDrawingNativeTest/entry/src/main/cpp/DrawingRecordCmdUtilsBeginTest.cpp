@@ -85,10 +85,9 @@ int TestRecordCmdUtilsBeginRecordingCalls()
     OH_Drawing_Canvas** canvass = &canvas;
     OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate ();
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++)
-    {
-        drawingErrorCode = OH_Drawing_RecordCmdUtilsBeginRecording (nullptr, DRAWING_NUMBER_1, DRAWING_NUMBER_1,
-            canvass);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        drawingErrorCode =
+            OH_Drawing_RecordCmdUtilsBeginRecording (nullptr, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
         EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     }
     // 2. free memory
