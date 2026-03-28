@@ -99,10 +99,10 @@ struct TabSegmentButtonV2Example {
           itemIconFillColor: this.itemIconFillColor,
           itemSelectedIconFillColor: this.itemSelectedIconFillColor,
           enableStateAnimation:this.enableStateAnimation
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2_03')
         Button('true').key('true')
         .onClick(() => {
-        this.enableStateAnimation = true;
+        this.enableStateAnimation = !this.enableStateAnimation;
         })
         Text('' + this.enableStateAnimation).key('text')
       }
