@@ -1200,6 +1200,129 @@ export default function nfcTagTest() {
       done();
     })
 
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1600
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1600
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let elementName: ElementName = {
+        "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+        "abilityName": "MainAbility",
+        "moduleName": "entry"
+      };
+      let discTech: Array<int> = [1, 2, 4];
+      let interval: int = 200;
+      try {
+        tag.onReaderModeWithInterval(elementName, discTech, (data)=> {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval finish ');
+        }, interval);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 201) {
+          expect(error.code).assertEqual(201);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval error :  ' + error + " - " + error.code);
+          done();
+        } else if (error.code === 801) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(801);
+        } else if (error.code === 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100201);
+        } else if (error.code === 3100202) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100202);
+        } else {
+          expect().assertFail();
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 onReaderModeWithInterval fail :  ');
+        }
+      }
+      try {
+        tag.offReaderModeWithInterval(elementName, (data)=> {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval finish ');
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 201) {
+          expect(error.code).assertEqual(201);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          done();
+        } else if (error.code === 801) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(801);
+        } else if (error.code === 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100201);
+        } else if (error.code === 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100203);
+        } else {
+          expect().assertFail();
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1600 offReaderModeWithInterval fail :  ');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1601
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1601
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let elementName: ElementName = {
+        "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+        "abilityName": "MainAbility",
+        "moduleName": "entry"
+      };
+      let discTech: Array<int> = [];
+      let interval: int = 200;
+      try {
+        tag.onReaderModeWithInterval(elementName, discTech, (data)=> {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 onReaderModeWithInterval finish ');
+        }, interval);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 401) {
+          expect(error.code).assertEqual(401);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 onReaderModeWithInterval error :  ' + error + " - " + error.code);
+          done();
+        } else {
+          expect().assertFail();
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 onReaderModeWithInterval fail :  ');
+        }
+      }
+      try {
+        tag.offReaderModeWithInterval(elementName);
+      } catch (error) {
+        error = error as BusinessError;
+        if (error.code === 201) {
+          expect(error.code).assertEqual(201);
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          done();
+        } else if (error.code === 801) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(801);
+        } else if (error.code === 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100201);
+        } else if (error.code === 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 offReaderModeWithInterval error :  ' + error + " - " + error.code);
+          expect(error.code).assertEqual(3100203);
+        } else {
+          expect().assertFail();
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1601 offReaderModeWithInterval fail :  ');
+        }
+      }
+      done();
+    })
+
     console.info("*************[nfc_test] start nfc js unit test end*************");
   })
 }
