@@ -2044,5 +2044,164 @@ export default function windowNdk() {
         }
       })
 
+    /**
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_0100
+     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_0100
+     * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_RegisterFrameMetricsMeasuredCallback_0100';
+        try {
+          console.info(`${caseName} start`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`${caseName} windowId: ${windowId}`);
+          let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+          expect(Result).assertEqual(0);
+          console.info(`${caseName} Result: ${Result}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_0100
+     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_0100
+     * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_0100';
+        try {
+          console.info(`${caseName} start`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`${caseName} windowId: ${windowId}`);
+          let ResultOn: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+          await sleep(500);
+          let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
+          expect(ResultOff).assertEqual(0);
+          console.info(`${caseName} Result: ${ResultOff}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
+     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
+     * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401';
+        try {
+          console.info(`${caseName} start`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`${caseName} windowId: ${windowId}`);
+          let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallbackNullptr(windowId);
+          expect(Result).assertEqual(401);
+          console.info(`${caseName} Result: ${Result}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
+     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
+     * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401';
+        try {
+          console.info(`${caseName} start`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`${caseName} windowId: ${windowId}`);
+          let Result: number = windowNdkTest.unregisterFrameMetricsMeasuredCallbackNullptr(windowId);
+          expect(Result).assertEqual(401);
+          console.info(`${caseName} Result: ${Result}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300002
+     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300002
+     * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300002', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300002';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(-1);
+          expect(Result).assertEqual(1300002);
+          console.info(`${caseName} Result: ${Result}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300002
+     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300002
+     * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300002', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300002';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(-1);
+          expect(Result).assertEqual(1300002);
+          console.info(`${caseName} Result: ${Result}`);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+      
   })
 }

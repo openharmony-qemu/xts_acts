@@ -58,6 +58,11 @@ constexpr int32_t FIVE = 5;
 constexpr int32_t SIX = 6;
 constexpr int32_t TEN = 10;
 
+bool g_isFirstDrawFrame;
+uint64_t g_inputHandlingDuration;
+uint64_t g_duration;
+uint64_t g_timestamp;
+
 static napi_value filterKeyCode(napi_env env, napi_callback_info info){
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -707,6 +712,104 @@ static napi_value TestInjectTouchEventwithDestoryedSubwindow(napi_env env, napi_
     napi_value resultValue;
     napi_create_int32(env, res, &resultValue);
     return resultValue;
+}
+
+static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetrics* metrics)
+{
+    if (metrics == nullptr) {
+        return;
+    }
+    (void)windowId;
+    
+    OH_WindowManager_FrameMetrics_IsFirstDrawFrame(metrics, &g_isFirstDrawFrame);
+    OH_WindowManager_FrameMetrics_GetInputHandlingDuration(metrics, &g_inputHandlingDuration);
+    OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(metrics, &g_duration);
+    OH_WindowManager_FrameMetrics_GetVsyncTimestamp(metrics, &g_timestamp); 
+    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured callback isFirstDrawFrame=%{public}d", g_isFirstDrawFrame);
+    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured callback inputHandlingDuration=%{public}llu", g_inputHandlingDuration);
+    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured callback duration=%{public}llu", g_duration);
+    OH_LOG_ERROR(LOG_APP, "OnFrameMetricsMeasured callback timestamp=%{public}llu", g_timestamp);
+}
+
+static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "yuhao333");
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_RegisterFrameMetricsMeasuredCallback(windowId, OnFrameMetricsMeasured);
+            OH_LOG_INFO(LOG_APP, "RegisterFrameMetricsMeasuredCallback return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value UnregisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_UnregisterFrameMetricsMeasuredCallback(windowId, OnFrameMetricsMeasured);
+            OH_LOG_INFO(LOG_APP, "UnregisterFrameMetricsMeasuredCallback return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value RegisterFrameMetricsMeasuredCallbackNullptr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_RegisterFrameMetricsMeasuredCallback(windowId, nullptr);
+            OH_LOG_INFO(LOG_APP, "RegisterFrameMetricsMeasuredCallbackNullptr return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value UnregisterFrameMetricsMeasuredCallbackNullptr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_UnregisterFrameMetricsMeasuredCallback(windowId, nullptr);
+            OH_LOG_INFO(LOG_APP, "UnregisterFrameMetricsMeasuredCallbackNullptr return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
 }
 
 static napi_value TestInjectTouchEventwithWindowXWindowYBeyondScreen(napi_env env, napi_callback_info info)
@@ -1558,6 +1661,14 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testInjectTouchEventwithDestoryedSubwindow", nullptr, TestInjectTouchEventwithDestoryedSubwindow,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "registerFrameMetricsMeasuredCallback", nullptr, RegisterFrameMetricsMeasuredCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "unregisterFrameMetricsMeasuredCallback", nullptr, UnregisterFrameMetricsMeasuredCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "registerFrameMetricsMeasuredCallbackNullptr", nullptr, RegisterFrameMetricsMeasuredCallbackNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "unregisterFrameMetricsMeasuredCallbackNullptr", nullptr, UnregisterFrameMetricsMeasuredCallbackNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

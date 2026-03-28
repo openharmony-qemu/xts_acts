@@ -95,3 +95,8 @@ export const testUnLockCursorwithDestroyedWindow: (windowId: number) => number;
 export const testUnLockCursorwithUnfocusableWindow: (windowId: number) => number;
 
 export const testWindowManager_ErrorCode_enum: () => number;
+
+export const registerFrameMetricsMeasuredCallback: (windowId: number) => number;
+export const unregisterFrameMetricsMeasuredCallback: (windowId: number) => number;
+export const registerFrameMetricsMeasuredCallbackNullptr: (windowId: number) => number;
+export const unregisterFrameMetricsMeasuredCallbackNullptr: (windowId: number) => number;
