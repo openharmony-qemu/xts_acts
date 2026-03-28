@@ -212,7 +212,6 @@ struct SegmentButtonIndex {
                 { text: 'C' } as SegmentButtonTextItem,
                 { text: 'D' } as SegmentButtonTextItem
               ] as Array<SegmentButtonTextItem>);
-              arr.splice(1, 2);
               this.mSpliceDel = 'splice_del:' + arr.splice(1, 2).length + ':' + arr.length;
             })
 
