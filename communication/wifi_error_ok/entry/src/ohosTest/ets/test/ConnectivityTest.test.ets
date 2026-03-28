@@ -509,6 +509,88 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-  
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0900
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0900
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0900 start====");
+          let result: number = wifindktest.GetLinkedInfo0100();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0900 END====" + result);
+          if (result === 0){
+            expect(result).assertEqual(0);
+          }else if (result ===801){
+            expect(result).assertEqual(801);
+          }else{
+            expect().assertFail();
+          }
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0900 catch err: " + err);
+          expect().assertFail();
+        }
+        done();
+      })
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_1000
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_1000
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1000 start====");
+          let result: number = wifindktest.GetLinkedInfo0200();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1000 END====" + result);
+          if (result === 401){
+            expect(result).assertEqual(401);
+          }else if (result ===801){
+            expect(result).assertEqual(801);
+          }else{
+            expect().assertFail();
+          }
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_1000 catch err: " + err);
+          expect().assertFail();
+        }
+        done();
+      })
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_1100
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_1100
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          wifiMg.disableWifi();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 start====");
+          let result: number = wifindktest.GetLinkedInfo0200();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 END====" + result);
+          if (result === 2501001){
+            expect(result).assertEqual(2501001);
+          }else if (result ===801){
+            expect(result).assertEqual(801);
+          }else{
+            expect().assertFail();
+          }
+          wifiMg.enableWifi();
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_1100 catch err: " + err);
+          expect().assertFail();
+        }
+        done();
+      })
   })
 }
