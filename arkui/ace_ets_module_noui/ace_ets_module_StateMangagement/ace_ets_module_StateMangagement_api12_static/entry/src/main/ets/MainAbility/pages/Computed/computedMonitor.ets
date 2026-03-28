@@ -57,7 +57,7 @@ struct CompuutedMonitor {
 
   @Monitor(['kelvin'])
   onKelvinMonitor(mon: IMonitor) {
-    console.log('kelvin changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+    console.log('kelvin changed from ' + mon.value<String>()?.before + ' to ' + mon.value<String>()?.now);
   }
 
   build() {

@@ -147,7 +147,7 @@ export default function DeviceKvStoreNullEtsTestStatic() {
     })
 
     beforeEach(async (done: () => void): Promise<void> => {
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info('test logbeforeEach getKVStore success');
         done();

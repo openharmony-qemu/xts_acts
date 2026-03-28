@@ -31,7 +31,7 @@ export default class GlobalContext {
   }
 
   getObject<T>(value: string): ValueT<T> | null {
-    const result = AppStorage.get(value)
+    const result = AppStorage.get<ValueT<T>>(value)
     if (result !== null && result !== undefined) {
       return result as ValueT<T>
     }

@@ -67,7 +67,7 @@ struct Page12 {
 
   @Monitor(['fullName'])
   onFullNameMonitor(mon: IMonitor) {
-    console.log('fullname changed from ' + mon.value()?.before + ' to ' + mon.value()?.now)
+    console.log('fullname changed from ' + mon.value<String>()?.before + ' to ' + mon.value<String>()?.now)
   }
 
   rerenderText(): number {
