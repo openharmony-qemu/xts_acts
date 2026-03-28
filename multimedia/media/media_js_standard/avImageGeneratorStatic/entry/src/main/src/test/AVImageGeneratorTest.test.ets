@@ -516,36 +516,7 @@ export default function AVImageGeneratorTest() {
                 };
             });
         })
-        /**
-         * @tc.name   SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
-         * @tc.number SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100
-         * @tc.desc   Test fetchScaledFrameByTime with valid parameters and outputSize (success case)
-         * @tc.type   FUCNTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_FUNCTION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let avImageGenerator: media.AVImageGenerator | undefined = undefined;
-            let pixel_map : image.PixelMap | undefined = undefined;
-            let outputSize: media.OutputSize = {width :300, height : 300,};
-            media.createAVImageGenerator((err: BusinessError | null, generator: undefined | media.AVImageGenerator) => {
-                if (generator != null){
-                    let avImageGenerator = generator;
-                    console.info(`Succeeded in creating AVImageGenerator`);
-                    avImageGenerator!.fdSrc = fileDescriptor!;
-                    avImageGenerator!.fetchScaledFrameByTime(timeUs, queryOption, outputSize).then((pixelMap: image.PixelMap|undefined) => {
-                        let pixel_map = pixelMap;
-                        expect(pixel_map).not().assertNull()
-                    }).catch((error: Error) => {
-                        console.error(`Failed to fetch ScaledFrameByTime, error message:${error!!.message}`);
-                        expect().assertFail()
-                    });
-                } else {
-                    console.error(`Failed to creat AVImageGenerator, error message:${err!!.message}`);
-                    expect().assertFail()
-                }
-            });
-        })
+
          /**
           * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0100
           * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0100
