@@ -22,7 +22,7 @@ import {
 import { AppStorage, State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier1 implements AttributeModifier<ButtonAttribute> {
+export class MyModifier1 implements AttributeModifier<ButtonAttribute> {
   public isClickEffect1: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -32,7 +32,7 @@ class MyModifier1 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<ButtonAttribute> {
+export class MyModifier2 implements AttributeModifier<ButtonAttribute> {
   public isClickEffect2: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {

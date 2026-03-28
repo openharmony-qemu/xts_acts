@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,67 +18,67 @@ import { Entry, Component, AttributeModifier, SliderAttribute, SliderBlockStyle,
 import { State } from '@ohos.arkui.stateManagement';
 import { CircleShape, EllipseShape, PathShape, RectShape } from '@ohos.arkui.shape';
 
-class SliderBlockBorderColorModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderBlockBorderColorModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.blockBorderColor(0xFFA500)
   }
 }
-class SliderBlockBorderWidthModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderBlockBorderWidthModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.blockBorderWidth(5)
   }
 }
-class SliderStepColorModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderStepColorModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.stepColor(0xffa500)
   }
 }
-class SliderTrackBorderRadiusModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderTrackBorderRadiusModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.trackBorderRadius(0)
   }
 }
-class SliderBlockSizeModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderBlockSizeModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.blockSize({ width: 0, height: 0 })
   }
 }
-class SliderStepSizeModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderStepSizeModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.stepSize(0)
   }
 }
-class SliderBlockStyleModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderBlockStyleModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.blockStyle({ type: SliderBlockType.DEFAULT })
   }
 }
-class SliderBlockColorModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderBlockColorModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.blockColor(Color.Blue)
   }
 }
-class SliderTrackColorModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderTrackColorModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.trackColor(Color.Gray)
   }
 }
-class SliderSelectedColorModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderSelectedColorModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.selectedColor(Color.Blue)
   }
 }
-class SliderShowStepsModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderShowStepsModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.showSteps(true)
   }
 }
-class SliderShowTipsModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderShowTipsModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.showTips(true)
   }
 }
-class SliderTrackThicknessModifier1 implements AttributeModifier<SliderAttribute>{
+export class SliderTrackThicknessModifier1 implements AttributeModifier<SliderAttribute>{
   applyNormalAttribute(instance: SliderAttribute): void {
     instance.trackThickness(1)
   }

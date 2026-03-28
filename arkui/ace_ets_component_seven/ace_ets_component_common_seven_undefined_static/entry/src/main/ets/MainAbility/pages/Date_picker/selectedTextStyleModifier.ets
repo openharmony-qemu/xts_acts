@@ -8,7 +8,7 @@ import { DatePickerAttribute,ScrollSnapAlign,Axis,EdgeEffect,ChainEdgeEffect,Tex
 
 
 @Observed
-class MyEnableModifier implements AttributeModifier<DatePickerAttribute> {
+export class MyEnableModifier implements AttributeModifier<DatePickerAttribute> {
   public isChange:Boolean = true;
   public change: boolean | undefined = true;
 

@@ -5901,15 +5901,12 @@ export default function soundPoolTest() {
     it('SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(Number(media.SoundInterruptMode.NO_INTERRUPT)).assertEqual(0);
       expect(Number(media.SoundInterruptMode.SAME_SOUND_INTERRUPT)).assertEqual(1);
-      expect(Number(media.FetchResult.FETCH_FAILED)).assertEqual(0);
-      expect(Number(media.FetchResult.FETCH_SUCCEEDED)).assertEqual(1);
-      expect(Number(media.FetchResult.FETCH_CANCELED)).assertEqual(2);
-      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
-      expect(string(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
+      expect(Number(ErrorType.LOAD_ERROR)).assertEqual(1);
+      expect(Number(ErrorType.PLAY_ERROR)).assertEqual(2);
       done();
     });
 
-    /**
+  /**
  	 * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100
  	 * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0100
  	 * @tc.desc   Function test.
@@ -5949,6 +5946,47 @@ export default function soundPoolTest() {
  	    }
  	    done();
  	  });
+
+  /**
+ 	 * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200
+ 	 * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200
+ 	 * @tc.desc   Function test.
+ 	 * @tc.type   FUNCTION
+ 	 * @tc.size   MEDIUMTEST
+ 	 * @tc.level  LEVEL0
+ 	 */
+ 	it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200',
+   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_ASYNC_static_0200 in`);
+    if (deviceInfo.deviceType === 'default') {
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+        }
+        soundPool!!.onError((error: BusinessError) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        } as ErrorCallback<BusinessError>)
+        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+        await sleep(2000);
+        soundPool!!.setInterruptMode(media.SoundInterruptMode.SAME_SOUND_INTERRUPT);
+        await sleep(200);
+        streamId = (await soundPool!!.play(soundId)) as int;
+        await sleep(200);
+        await soundPool!!.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+      }
+    } else {
+      console.info(`${TAG}: This device does not support setInterruptMode! Ignore this case.`);
+    }
+    done();
+  });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100

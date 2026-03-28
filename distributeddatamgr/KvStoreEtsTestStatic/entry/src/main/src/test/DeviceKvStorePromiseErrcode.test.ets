@@ -143,7 +143,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
       };
       console.info(TAG + 'beforeAll config:' + JSON.stringify(config));
       kvManager = factory.createKVManager(config);
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeAll getKVStore for getDeviceId success');
       }).catch((err: Error) => {
@@ -199,7 +199,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
     beforeEach(async (done: () => void) => {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
 
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         waitForCompletion(async () => {
           kvStore = store;
           console.info(TAG + 'beforeEach getKVStore for getDeviceId success');

@@ -320,7 +320,7 @@ export default function typeArrayInt32ArrayTest() {
       expect(mapped.toString()).assertEqual('2,4,6,8,10');
       let filtered = arr.filter(x => x % 2 === 0);
       expect(filtered.toString()).assertEqual('2,4');
-      let sum = arr.reduce((acc, val) => acc + val, 0);
+      let sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(15);
       let allPositive = arr.every(x => x > 0);
       expect(allPositive).assertEqual(true);
@@ -727,9 +727,9 @@ export default function typeArrayInt32ArrayTest() {
 
       let calculateZScores = (data: Int32Array): Int32Array => {
 
-        let mean = data.reduce((sum, val) => sum + val, 0) / data.length;
+        let mean = data.reduce((sum, val) => sum + val, 0.) / data.length;
 
-        let variance = data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / data.length;
+        let variance = data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0.) / data.length;
         let stdDev = Math.sqrt(variance);
 
         if (stdDev < 0.0001) {
@@ -743,7 +743,7 @@ export default function typeArrayInt32ArrayTest() {
       let zScores = calculateZScores(data);
 
 
-      let scoreMean = zScores.reduce((sum, val) => sum + val, 0) / zScores.length;
+      let scoreMean = zScores.reduce((sum, val) => sum + val, 0.) / zScores.length;
       expect(Math.abs(scoreMean)).assertEqual(0);
 
       expect(zScores[0]).assertEqual(-1414);
@@ -1078,16 +1078,16 @@ export default function typeArrayInt32ArrayTest() {
         let windowSize = pattern.length;
         let result = new Int32Array(data.length - windowSize + 1);
 
-        let patternMean = pattern.reduce((sum, val) => sum + val, 0) / windowSize;
+        let patternMean = pattern.reduce((sum, val) => sum + val, 0.) / windowSize;
         let patternStd =
-          Math.sqrt(pattern.reduce((acc, val) => acc + Math.pow(val - patternMean, 2), 0) / windowSize) || 1;
+          Math.sqrt(pattern.reduce((acc, val) => acc + Math.pow(val - patternMean, 2), 0.) / windowSize) || 1;
 
         for (let i = 0; i < result.length; i++) {
           let window = data.subarray(i, i + windowSize);
 
-          let windowMean = window.reduce((sum, val) => sum + val, 0) / windowSize;
+          let windowMean = window.reduce((sum, val) => sum + val, 0.) / windowSize;
           let windowStd =
-            Math.sqrt(window.reduce((acc, val) => acc + Math.pow(val - windowMean, 2), 0) / windowSize) || 1;
+            Math.sqrt(window.reduce((acc, val) => acc + Math.pow(val - windowMean, 2), 0.) / windowSize) || 1;
 
           let covariance: number = 0;
           for (let j = 0; j < windowSize; j++) {
@@ -1376,10 +1376,10 @@ export default function typeArrayInt32ArrayTest() {
 
       let linearRegression = (x: Int32Array, y: Int32Array): GeneratedTypeLiteralInterface_5 => {
         let n = x.length;
-        let sumX = x.reduce((a, b) => a + b, 0);
-        let sumY = y.reduce((a, b) => a + b, 0);
-        let sumXY = x.reduce((sum, val, i) => sum + val * y[i], 0);
-        let sumX2 = x.reduce((sum, val) => sum + val * val, 0);
+        let sumX = x.reduce((a, b) => a + b, 0.);
+        let sumY = y.reduce((a, b) => a + b, 0.);
+        let sumXY = x.reduce((sum, val, i) => sum + val * y[i], 0.);
+        let sumX2 = x.reduce((sum, val) => sum + val * val, 0.);
 
         let slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX || 1);
         let intercept = (sumY - slope * sumX) / n;
@@ -1453,8 +1453,8 @@ export default function typeArrayInt32ArrayTest() {
     it('TypeArrayInt32Array0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let normalizeWithOutlierRemoval =
         (data: Int32Array, threshold: number = 3): GeneratedTypeLiteralInterface_6 => {
-          let mean = data.reduce((sum, val) => sum + val, 0) / data.length;
-          let stdDev = Math.sqrt(data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / data.length) || 1;
+          let mean = data.reduce((sum, val) => sum + val, 0.) / data.length;
+          let stdDev = Math.sqrt(data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0.) / data.length) || 1;
 
           let outliers: number[] = [];
           let filtered: number[] = [];
@@ -1468,9 +1468,9 @@ export default function typeArrayInt32ArrayTest() {
             }
           }
 
-          let filteredMean = filtered.reduce((sum, val) => sum + val, 0) / filtered.length;
+          let filteredMean = filtered.reduce((sum, val) => sum + val, 0.) / filtered.length;
           let filteredStd =
-            Math.sqrt(filtered.reduce((acc, val) => acc + Math.pow(val - filteredMean, 2), 0) / filtered.length) || 1;
+            Math.sqrt(filtered.reduce((acc, val) => acc + Math.pow(val - filteredMean, 2), 0.) / filtered.length) || 1;
 
           let normalized = new Int32Array(data.map(val =>
           Math.round(((val - filteredMean) / filteredStd) * 1000)
@@ -1750,7 +1750,7 @@ export default function typeArrayInt32ArrayTest() {
       let simplePCA = (data: Int32Array[]): Int32Array => {
 
         let means = data[0].map((_, dim) =>
-        data.reduce((sum, point) => sum + point[dim], 0) / data.length
+        data.reduce((sum, point) => sum + point[dim], 0.) / data.length
         );
 
 
@@ -1759,7 +1759,7 @@ export default function typeArrayInt32ArrayTest() {
         );
 
         let covariance = centered.reduce((sum, point) =>
-        sum + point[0] * point[0], 0) / (data.length - 1);
+        sum + point[0] * point[0], 0.) / (data.length - 1);
 
         let pc1 = covariance > 0 ? 1 : -1;
 
@@ -2070,7 +2070,7 @@ export default function typeArrayInt32ArrayTest() {
       let evens = squared.filter(x => x % 2 === 0);
       expect(evens.toString()).assertEqual('4,16');
 
-      let sum = evens.reduce((a, b) => a + b, 0);
+      let sum = evens.reduce((a, b) => a + b, 0.);
       expect(sum).assertEqual(20);
 
       let buffer = new ArrayBuffer(20);

@@ -55,7 +55,7 @@ export default function GraphicHdrInterface() {
           expect('5').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_VIVID_SINGLE + '');
           expect('6').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_ISO_DUAL + '');
           expect('7').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_ISO_SINGLE + '');
-          expect(true).assertTrue()
+          expect('8').assertEqual(hdrCapability.HDRFormat.VIDEO_AIHDR + '');
           done()
         } catch (err) {
           console.log(msg + " Faild in hdrCapability.HDRFormat " + JSON.stringify(err))

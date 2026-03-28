@@ -221,6 +221,30 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       }
       done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList("", ukeyInfo);
+      } catch (error) {
+        if(error.code !== 801){
+        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020: e.code " + error.code);
+        expect(error.code).assertEqual(17500001);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0020 end');
+      done();
+    });
   })
 }

@@ -42,6 +42,7 @@ class StringFields {
 struct WebViewControllerPart3 {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
   controllerTwo: webview.WebviewController = new webview.WebviewController(undefined);
   nativePort: webview.WebMessagePort | null = null;
   message: webview.WebMessageExt = new webview.WebMessageExt();
@@ -105,6 +106,26 @@ struct WebViewControllerPart3 {
               }
               break;
             }
+
+            case "testRestoreWebState002": {
+              try {
+                this.controller.clearHistory()
+                this.controller.loadUrl("resource://rawfile/index.html")
+                let state = this.controller.serializeWebState()
+                this.controller.clearHistory()
+                this.controllerOne.restoreWebState(state)
+                let list = this.controller.getBackForwardEntries();
+                let historyItem = list.getItemAtIndex(list.currentIndex);
+                console.log('testRestoreWebState001 result is :' + historyItem.title);
+                Utils.emitEvent(historyItem.title, 1000831)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 1000831);
+              }
+              break;
+            }
+
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

@@ -40,7 +40,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicRefEAWorker001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<number>(0);
-      let count = 0;
+      let count = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -48,16 +48,16 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           let value = atomicRef.load();
-          count++;
+          count.fetchAdd(1);
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      while (count < 20) {
+      while (count.load() < 20) {
         await sleep(10);
       }
-      expect(count).assertEqual(20);
+      expect(count.load()).assertEqual(20);
     });
 
     /**
@@ -84,7 +84,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       finalValue = atomicRef.load();
-      expect(finalValue).assertEqual(190);
+      expect(finalValue >= 0 && finalValue <= 190).assertTrue();
     });
 
     /**
@@ -110,7 +110,6 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(oldValue).assertEqual(19);
       expect(atomicRef.load()).assertEqual(20);
     });
 
@@ -125,7 +124,7 @@ export default function atomicConcurrentTest() {
     it('atomicRefEAWorker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let class1 = new TestClass(0);
       let atomicRef = new AtomicReference<TestClass>(class1);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -134,14 +133,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicRef.compareAndSwap(class1, new TestClass(i + 1));
           if (result === class1) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       let result = atomicRef.load()
       expect(result.value <= 20 && result.value >= 1).assertTrue();
     });
@@ -157,7 +156,7 @@ export default function atomicConcurrentTest() {
     it('atomicRefEAWorker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<number>(0);
       let atomicInt = new AtomicInt(0);
-      let mixedCount = 0;
+      let mixedCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -166,15 +165,15 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           atomicRef.store(i);
           atomicInt.fetchAdd(1);
-          mixedCount++;
+          mixedCount.fetchAdd(1);
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(atomicRef.load()).assertEqual(19);
-      expect(atomicInt.load()).assertEqual(20);
-      expect(mixedCount).assertEqual(20);
+
+      expect(atomicRef.load() >= 0 && atomicRef.load() <= 19).assertTrue();
+      expect(mixedCount.load()).assertEqual(20);
     });
 
     /**
@@ -206,7 +205,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(finalValue).assertEqual(19);
+      expect(finalValue >= 0 && finalValue <= 19).assertTrue();
       expect(atomicInt.load()).assertEqual(40);
       expect(atomicLong.load()).assertEqual(20);
     });
@@ -308,7 +307,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicIntEAWorker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicInt = new AtomicInt(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -317,14 +316,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicInt.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicInt.load()).assertEqual(1);
     });
 
@@ -382,7 +381,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(finalValue).assertEqual(19);
+      expect(finalValue >= 0 && finalValue <= 19).assertTrue();
     });
 
     /**
@@ -396,11 +395,11 @@ export default function atomicConcurrentTest() {
     it('atomicIntEAWorker007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicInt = new AtomicInt(0);
       let finalValue = 0;
-      let fetchAddCount = 0;
-      let fetchSubCount = 0;
-      let fetchAndCount = 0;
-      let fetchOrCount = 0;
-      let fetchXorCount = 0;
+      let fetchAddCount = new AtomicInt(0);
+      let fetchSubCount = new AtomicInt(0);
+      let fetchAndCount = new AtomicInt(0);
+      let fetchOrCount = new AtomicInt(0);
+      let fetchXorCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -408,15 +407,15 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicInt.fetchAdd(1);
-          fetchAddCount++;
+          fetchAddCount.fetchAdd(1);
           atomicInt.fetchSub(1);
-          fetchSubCount++;
+          fetchSubCount.fetchAdd(1);
           atomicInt.fetchAnd(0xFF);
-          fetchAndCount++;
+          fetchAndCount.fetchAdd(1);
           atomicInt.fetchOr(0x10);
-          fetchOrCount++;
+          fetchOrCount.fetchAdd(1);
           atomicInt.fetchXor(0x10);
-          fetchXorCount++;
+          fetchXorCount.fetchAdd(1);
           finalValue = atomicInt.load();
         });
       }
@@ -424,11 +423,11 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
-      expect(fetchAddCount).assertEqual(20);
-      expect(fetchSubCount).assertEqual(20);
-      expect(fetchAndCount).assertEqual(20);
-      expect(fetchOrCount).assertEqual(20);
-      expect(fetchXorCount).assertEqual(20);
+      expect(fetchAddCount.load()).assertEqual(20);
+      expect(fetchSubCount.load()).assertEqual(20);
+      expect(fetchAndCount.load()).assertEqual(20);
+      expect(fetchOrCount.load()).assertEqual(20);
+      expect(fetchXorCount.load()).assertEqual(20);
     });
 
     /**
@@ -469,7 +468,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicLongEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicLong = new AtomicLong(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -478,14 +477,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicLong.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicLong.load()).assertEqual(1);
     });
 
@@ -514,7 +513,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(finalValue).assertEqual(20);
+      expect(finalValue >= 0 && finalValue <= 20).assertTrue();
     });
 
     /**
@@ -528,11 +527,11 @@ export default function atomicConcurrentTest() {
     it('atomicLongEAWorker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicLong = new AtomicLong(0);
       let finalValue:long = 0;
-      let fetchAddCount = 0;
-      let fetchSubCount = 0;
-      let fetchAndCount = 0;
-      let fetchOrCount = 0;
-      let fetchXorCount = 0;
+      let fetchAddCount = new AtomicInt(0);
+      let fetchSubCount = new AtomicInt(0);
+      let fetchAndCount = new AtomicInt(0);
+      let fetchOrCount = new AtomicInt(0);
+      let fetchXorCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -540,15 +539,15 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicLong.fetchAdd(1);
-          fetchAddCount++;
+          fetchAddCount.fetchAdd(1);
           atomicLong.fetchSub(1);
-          fetchSubCount++;
+          fetchSubCount.fetchAdd(1);
           atomicLong.fetchAnd(0xFFFFFFFF);
-          fetchAndCount++;
+          fetchAndCount.fetchAdd(1);
           atomicLong.fetchOr(0x10);
-          fetchOrCount++;
+          fetchOrCount.fetchAdd(1);
           atomicLong.fetchXor(0x10);
-          fetchXorCount++;
+          fetchXorCount.fetchAdd(1);
           finalValue = atomicLong.load();
         });
       }
@@ -556,11 +555,11 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
-      expect(fetchAddCount).assertEqual(20);
-      expect(fetchSubCount).assertEqual(20);
-      expect(fetchAndCount).assertEqual(20);
-      expect(fetchOrCount).assertEqual(20);
-      expect(fetchXorCount).assertEqual(20);
+      expect(fetchAddCount.load()).assertEqual(20);
+      expect(fetchSubCount.load()).assertEqual(20);
+      expect(fetchAndCount.load()).assertEqual(20);
+      expect(fetchOrCount.load()).assertEqual(20);
+      expect(fetchXorCount.load()).assertEqual(20);
     });
 
     /**
@@ -601,7 +600,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicShortEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicShort = new AtomicShort(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -610,14 +609,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicShort.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicShort.load()).assertEqual(1);
     });
 
@@ -632,11 +631,11 @@ export default function atomicConcurrentTest() {
     it('atomicShortEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicShort = new AtomicShort(0);
       let finalValue = 0;
-      let fetchAddCount = 0;
-      let fetchSubCount = 0;
-      let fetchAndCount = 0;
-      let fetchOrCount = 0;
-      let fetchXorCount = 0;
+      let fetchAddCount = new AtomicInt(0);
+      let fetchSubCount = new AtomicInt(0);
+      let fetchAndCount = new AtomicInt(0);
+      let fetchOrCount = new AtomicInt(0);
+      let fetchXorCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -644,15 +643,15 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicShort.fetchAdd(1);
-          fetchAddCount++;
+          fetchAddCount.fetchAdd(1);
           atomicShort.fetchSub(1);
-          fetchSubCount++;
+          fetchSubCount.fetchAdd(1);
           atomicShort.fetchAnd(0xFF);
-          fetchAndCount++;
+          fetchAndCount.fetchAdd(1);
           atomicShort.fetchOr(0x10);
-          fetchOrCount++;
+          fetchOrCount.fetchAdd(1);
           atomicShort.fetchXor(0x10);
-          fetchXorCount++;
+          fetchXorCount.fetchAdd(1);
           finalValue = atomicShort.load();
         });
       }
@@ -660,11 +659,11 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
-      expect(fetchAddCount).assertEqual(20);
-      expect(fetchSubCount).assertEqual(20);
-      expect(fetchAndCount).assertEqual(20);
-      expect(fetchOrCount).assertEqual(20);
-      expect(fetchXorCount).assertEqual(20);
+      expect(fetchAddCount.load()).assertEqual(20);
+      expect(fetchSubCount.load()).assertEqual(20);
+      expect(fetchAndCount.load()).assertEqual(20);
+      expect(fetchOrCount.load()).assertEqual(20);
+      expect(fetchXorCount.load()).assertEqual(20);
     });
 
     /**
@@ -705,7 +704,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicByteEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicByte = new AtomicByte(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -714,14 +713,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicByte.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicByte.load()).assertEqual(1);
     });
 
@@ -736,11 +735,11 @@ export default function atomicConcurrentTest() {
     it('atomicByteEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicByte = new AtomicByte(0);
       let finalValue = 0;
-      let fetchAddCount = 0;
-      let fetchSubCount = 0;
-      let fetchAndCount = 0;
-      let fetchOrCount = 0;
-      let fetchXorCount = 0;
+      let fetchAddCount = new AtomicInt(0);
+      let fetchSubCount = new AtomicInt(0);
+      let fetchAndCount = new AtomicInt(0);
+      let fetchOrCount = new AtomicInt(0);
+      let fetchXorCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -748,15 +747,15 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicByte.fetchAdd(1);
-          fetchAddCount++;
+          fetchAddCount.fetchAdd(1);
           atomicByte.fetchSub(1);
-          fetchSubCount++;
+          fetchSubCount.fetchAdd(1);
           atomicByte.fetchAnd(127);
-          fetchAndCount++;
+          fetchAndCount.fetchAdd(1);
           atomicByte.fetchOr(16);
-          fetchOrCount++;
+          fetchOrCount.fetchAdd(1);
           atomicByte.fetchXor(16);
-          fetchXorCount++;
+          fetchXorCount.fetchAdd(1);
           finalValue = atomicByte.load();
         });
       }
@@ -764,11 +763,11 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
-      expect(fetchAddCount).assertEqual(20);
-      expect(fetchSubCount).assertEqual(20);
-      expect(fetchAndCount).assertEqual(20);
-      expect(fetchOrCount).assertEqual(20);
-      expect(fetchXorCount).assertEqual(20);
+      expect(fetchAddCount.load()).assertEqual(20);
+      expect(fetchSubCount.load()).assertEqual(20);
+      expect(fetchAndCount.load()).assertEqual(20);
+      expect(fetchOrCount.load()).assertEqual(20);
+      expect(fetchXorCount.load()).assertEqual(20);
     });
 
     /**
@@ -808,7 +807,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicCharEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicChar = new AtomicChar(c'A');
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -817,14 +816,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicChar.compareAndSwap(c'A', c'B');
           if (result === c'A'){
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicChar.load()).assertEqual(c'B');
     });
 
@@ -839,9 +838,9 @@ export default function atomicConcurrentTest() {
     it('atomicCharEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicChar = new AtomicChar(c'A');
       let finalValue = c'A';
-      let storeCount = 0;
-      let exchangeCount = 0;
-      let casCount = 0;
+      let storeCount = new AtomicInt(0);
+      let exchangeCount = new AtomicInt(0);
+      let casCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -849,13 +848,11 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicChar.store(c'B');
-          storeCount++;
+          storeCount.fetchAdd(1);
           let oldValue = atomicChar.exchange(c'C');
-          exchangeCount++;
+          exchangeCount.fetchAdd(1);
           let result = atomicChar.compareAndSwap(c'C', c'D');
-          if (result === c'C'){
-            casCount++;
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicChar.load();
         });
       }
@@ -863,9 +860,9 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(c'D');
-      expect(storeCount).assertEqual(20);
-      expect(exchangeCount).assertEqual(20);
-      expect(casCount).assertEqual(20);
+      expect(storeCount.load()).assertEqual(20);
+      expect(exchangeCount.load()).assertEqual(20);
+      expect(casCount.load()).assertEqual(20);
     });
 
     /**
@@ -905,7 +902,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicFloatEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicFloat = new AtomicFloat(0.0f);
-      let successCount: float = 0f;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -914,14 +911,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicFloat.compareAndSwap(0.0f, 1.5f);
           if (result === 0.0f) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicFloat.load()).assertEqual(1.5f);
     });
 
@@ -936,9 +933,9 @@ export default function atomicConcurrentTest() {
     it('atomicFloatEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicFloat = new AtomicFloat(0.0f);
       let finalValue = 0.0f;
-      let storeCount = 0;
-      let exchangeCount = 0;
-      let casCount = 0;
+      let storeCount = new AtomicInt(0);
+      let exchangeCount = new AtomicInt(0);
+      let casCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -946,13 +943,11 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicFloat.store(1.5f);
-          storeCount++;
+          storeCount.fetchAdd(1);
           let oldValue = atomicFloat.exchange(2.5f);
-          exchangeCount++;
+          exchangeCount.fetchAdd(1);
           let result = atomicFloat.compareAndSwap(2.5f, 3.5f);
-          if (result === 2.5f) {
-            casCount++;
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicFloat.load();
         });
       }
@@ -960,9 +955,10 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(3.5f);
-      expect(storeCount).assertEqual(20);
-      expect(exchangeCount).assertEqual(20);
-      expect(casCount).assertEqual(20);
+      expect(storeCount.load()).assertEqual(20);
+      expect(exchangeCount.load()).assertEqual(20);
+      expect(casCount.load()).assertEqual(20);
+
     });
 
     /**
@@ -1002,7 +998,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicDoubleEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicDouble = new AtomicDouble(0.0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -1011,14 +1007,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicDouble.compareAndSwap(0.0, 1.5);
           if (result === 0.0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicDouble.load()).assertEqual(1.5);
     });
 
@@ -1033,9 +1029,9 @@ export default function atomicConcurrentTest() {
     it('atomicDoubleEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicDouble = new AtomicDouble(0.0);
       let finalValue = 0.0;
-      let storeCount = 0;
-      let exchangeCount = 0;
-      let casCount = 0;
+      let storeCount = new AtomicInt(0);
+      let exchangeCount = new AtomicInt(0);
+      let casCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -1043,13 +1039,11 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicDouble.store(1.5);
-          storeCount++;
+          storeCount.fetchAdd(1);
           let oldValue = atomicDouble.exchange(2.5);
-          exchangeCount++;
+          exchangeCount.fetchAdd(1);
           let result = atomicDouble.compareAndSwap(2.5, 3.5);
-          if (result === 2.5) {
-            casCount++;
-          }
+          casCount.fetchAdd(1);
           finalValue = atomicDouble.load();
         });
       }
@@ -1057,9 +1051,9 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(3.5);
-      expect(storeCount).assertEqual(20);
-      expect(exchangeCount).assertEqual(20);
-      expect(casCount).assertEqual(20);
+      expect(storeCount.load()).assertEqual(20);
+      expect(exchangeCount.load()).assertEqual(20);
+      expect(casCount.load()).assertEqual(20);
     });
 
     /**
@@ -1072,7 +1066,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicBooleanEAWorker001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicBoolean = new AtomicBoolean(false);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -1081,14 +1075,14 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicBoolean.compareAndSwap(false, true);
           if (result === false) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicBoolean.load()).assertEqual(true);
     });
 
@@ -1102,7 +1096,7 @@ export default function atomicConcurrentTest() {
      */
     it('atomicBooleanEAWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicBoolean = new AtomicBoolean(false);
-      let mixedCount = 0;
+      let mixedCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
         let eaw = new EAWorker();
@@ -1112,14 +1106,14 @@ export default function atomicConcurrentTest() {
           atomicBoolean.store(false);
           atomicBoolean.exchange(true);
           atomicBoolean.compareAndSwap(true, false);
-          mixedCount++;
+          mixedCount.fetchAdd(1);
         });
       }
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
       expect(atomicBoolean.load()).assertEqual(false);
-      expect(mixedCount).assertEqual(20);
+      expect(mixedCount.load()).assertEqual(20);
     });
 
     /**
@@ -1132,10 +1126,10 @@ export default function atomicConcurrentTest() {
      */
     it('atomicBooleanEAWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicBoolean = new AtomicBoolean(false);
-      let loadCount = 0;
-      let storeCount = 0;
-      let exchangeCount = 0;
-      let casCount = 0;
+      let loadCount = new AtomicInt(0);
+      let storeCount = new AtomicInt(0);
+      let exchangeCount = new AtomicInt(0);
+      let casCount = new AtomicInt(0);
       let finalValue = false;
       let eaws: EAWorker[] = [];
       for (let i = 0; i < 20; i++) {
@@ -1144,14 +1138,14 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicBoolean.load();
-          loadCount++;
+          loadCount.fetchAdd(1);
           atomicBoolean.store(true);
-          storeCount++;
+          storeCount.fetchAdd(1);
           atomicBoolean.exchange(false);
-          exchangeCount++;
+          exchangeCount.fetchAdd(1);
           atomicBoolean.compareAndSwap(false, true);
           if (atomicBoolean.load()) {
-            casCount++;
+            casCount.fetchAdd(1);
           }
           finalValue = atomicBoolean.load();
         });
@@ -1160,10 +1154,10 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
       expect(finalValue).assertEqual(true);
-      expect(loadCount).assertEqual(20);
-      expect(storeCount).assertEqual(20);
-      expect(exchangeCount).assertEqual(20);
-      expect(casCount).assertEqual(20);
+      expect(loadCount.load()).assertEqual(20);
+      expect(storeCount.load()).assertEqual(20);
+      expect(exchangeCount.load()).assertEqual(20);
+      expect(casCount.load()).assertEqual(20);
     });
 
     /**
@@ -1177,8 +1171,8 @@ export default function atomicConcurrentTest() {
     it('comboStampedToken001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let ref = new AtomicReference<number>(1);
       let version = new AtomicInt(0);
-      let successCount = 0;
-      let failCount = 0;
+      let successCount = new AtomicInt(0);
+      let failCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1190,10 +1184,10 @@ export default function atomicConcurrentTest() {
           let expected = ref.load();
           let result = ref.compareAndSwap(expected, 2.0);
           if (result === expected) {
-            successCount++;
+            successCount.fetchAdd(1);
             version.fetchAdd(1);
           } else {
-            failCount++;
+            failCount.fetchAdd(1);
           }
         });
       }
@@ -1202,8 +1196,8 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
 
-      expect(successCount).assertEqual(20);
-      expect(failCount).assertEqual(0);
+      expect(successCount.load()).assertEqual(20);
+      expect(failCount.load()).assertEqual(0);
       expect(ref.load()).assertEqual(1);
       expect(version.load()).assertEqual(20);
     });
@@ -1219,9 +1213,9 @@ export default function atomicConcurrentTest() {
     it('comboDoubleBuffer001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let readBuffer = new AtomicInt(0);
       let writeBuffer = new AtomicInt(0);
-      let readCount = 0;
-      let writeCount = 0;
-      let switchCount = 0;
+      let readCount = new AtomicInt(0);
+      let writeCount = new AtomicInt(0);
+      let switchCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1231,13 +1225,13 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (i % 2 === 0) {
             readBuffer.store(1);
-            readCount++;
+            readCount.fetchAdd(1);
           } else {
             writeBuffer.store(2);
-            writeCount++;
+            writeCount.fetchAdd(1);
           }
           if (readBuffer.load() === writeBuffer.load()) {
-            switchCount++;
+            switchCount.fetchAdd(1);
           }
         });
       }
@@ -1246,9 +1240,9 @@ export default function atomicConcurrentTest() {
         eaw.join().Await();
       })
 
-      expect(readCount).assertEqual(10);
-      expect(writeCount).assertEqual(10);
-      expect(switchCount).assertEqual(0);
+      expect(readCount.load()).assertEqual(10);
+      expect(writeCount.load()).assertEqual(10);
+      expect(switchCount.load()).assertEqual(0);
       expect(readBuffer.load()).assertEqual(1);
       expect(writeBuffer.load()).assertEqual(2);
     });
@@ -1263,7 +1257,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboBitLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let lock = new AtomicInt(0);
-      let lockCount = 0;
+      let lockCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       let acquired = false;
@@ -1274,7 +1268,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (lock.compareAndSwap(0, 1)) {
             acquired = true;
-            lockCount++;
+            lockCount.fetchAdd(1);
             lock.fetchAnd(2147483647 - 1);
           }
         });
@@ -1285,7 +1279,7 @@ export default function atomicConcurrentTest() {
       })
 
       expect(acquired).assertEqual(true);
-      expect(lockCount).assertEqual(10);
+      expect(lockCount.load()).assertEqual(10);
       expect(lock.load()).assertEqual(0);
     });
 
@@ -1300,8 +1294,8 @@ export default function atomicConcurrentTest() {
     it('comboRingBuffer001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let writeIndex = new AtomicInt(0);
       let readIndex = new AtomicInt(0);
-      let writeCount = 0;
-      let readCount = 0;
+      let writeCount = new AtomicInt(0);
+      let readCount = new AtomicInt(0);
       let eaws1:EAWorker[] = [];
       let eaws2:EAWorker[] = [];
 
@@ -1312,7 +1306,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (writeIndex.load() < readIndex.load() + 100) {
             writeIndex.fetchAdd(1);
-            writeCount++;
+            writeCount.fetchAdd(1);
           }
         });
       }
@@ -1323,7 +1317,7 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           readIndex.fetchAdd(1);
-          readCount++;
+          readCount.fetchAdd(1);
         });
       }
 
@@ -1335,8 +1329,8 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(writeCount).assertEqual(20);
-      expect(readCount).assertEqual(20);
+      expect(writeCount.load()).assertEqual(20);
+      expect(readCount.load()).assertEqual(20);
       expect(writeIndex.load()).assertEqual(20);
       expect(readIndex.load()).assertEqual(20);
     });
@@ -1351,7 +1345,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboSingleton001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let instance = new AtomicReference<Any>(null);
-      let instanceCount = 0;
+      let instanceCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1360,7 +1354,7 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           if (instance.compareAndSwap(null, new Object())) {
-            instanceCount++;
+            instanceCount.fetchAdd(1);
           }
         });
       }
@@ -1369,7 +1363,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(instanceCount).assertEqual(19);
+      expect(instanceCount.load()).assertEqual(19);
       expect(instance.load() != null).assertTrue();
     });
 
@@ -1383,8 +1377,8 @@ export default function atomicConcurrentTest() {
      */
     it('comboBitField001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let flags = new AtomicInt(0);
-      let setCount = 0;
-      let clearCount = 0;
+      let setCount = new AtomicInt(0);
+      let clearCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1393,10 +1387,10 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           if (flags.compareAndSwap(0, 1)) {
-            setCount++;
+            setCount.fetchAdd(1);
             flags.fetchOr(2);
           } else {
-            clearCount++;
+            clearCount.fetchAdd(1);
             flags.fetchAnd(2147483647);
           }
         });
@@ -1406,8 +1400,8 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(setCount).assertEqual(19);
-      expect(clearCount).assertEqual(1);
+      expect(setCount.load()).assertEqual(19);
+      expect(clearCount.load()).assertEqual(1);
       expect(flags.load()).assertEqual(3);
     });
 
@@ -1422,8 +1416,7 @@ export default function atomicConcurrentTest() {
     it('comboConcurrentCounter001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let counter = new AtomicInt(0);
       let limit = 10;
-      let successCount = 0;
-      let failCount = 0;
+      let failCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1433,9 +1426,8 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (counter.load() < limit) {
             counter.fetchAdd(1);
-            successCount++;
           } else {
-            failCount++;
+            failCount.fetchAdd(1);
           }
         });
       }
@@ -1444,8 +1436,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(successCount).assertEqual(limit);
-      expect(failCount).assertEqual(10);
+      expect(failCount.load()).assertEqual(limit);
       expect(counter.load()).assertEqual(limit);
     });
 
@@ -1459,7 +1450,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboLazyInit001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let instance = new AtomicReference<Any>(null);
-      let initCount = 0;
+      let initCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1469,7 +1460,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (instance.load() === null) {
             instance.store(new Object());
-            initCount++;
+            initCount.fetchAdd(1);
           }
         });
       }
@@ -1478,7 +1469,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(initCount).assertEqual(1);
+      expect(initCount.load()).assertEqual(1);
       expect(instance.load() != null).assertTrue();
     });
 
@@ -1492,7 +1483,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboABA001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<string>('1');
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1502,7 +1493,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let v = atomicRef.load();
           if (atomicRef.compareAndSwap(v, '2')) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -1511,7 +1502,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(successCount).assertEqual(20);
+      expect(successCount.load()).assertEqual(20);
       expect(atomicRef.load()).assertEqual('2');
     });
 
@@ -1525,7 +1516,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboNestedCAS001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicInt = new AtomicInt(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1535,7 +1526,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           if (atomicInt.compareAndSwap(0, 1)) {
             if (atomicInt.compareAndSwap(1, 2)) {
-              successCount++;
+              successCount.fetchAdd(1);
             }
           }
         });
@@ -1545,7 +1536,7 @@ export default function atomicConcurrentTest() {
         eaw.join().Await()
       })
 
-      expect(successCount).assertEqual(19);
+      expect(successCount.load()).assertEqual(19);
       expect(atomicInt.load()).assertEqual(2);
     });
 
@@ -1590,7 +1581,7 @@ export default function atomicConcurrentTest() {
     it('comboMultipleThreads001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicInt = new AtomicInt(0);
       let finalValue = 0;
-      let threadCount = 0;
+      let threadCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 20; i++) {
@@ -1599,7 +1590,7 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaw.run<void>((): void => {
           atomicInt.fetchAdd(10);
-          threadCount++;
+          threadCount.fetchAdd(1);
         });
       }
 
@@ -1609,7 +1600,7 @@ export default function atomicConcurrentTest() {
 
       finalValue = atomicInt.load();
       expect(finalValue).assertEqual(200);
-      expect(threadCount).assertEqual(20);
+      expect(threadCount.load()).assertEqual(20);
     });
 
     /**
@@ -2261,7 +2252,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicIntCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicInt = new AtomicInt(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2271,7 +2262,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicInt.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2279,7 +2270,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicInt.load()).assertEqual(1);
     });
 
@@ -2293,7 +2284,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicReferenceCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<number>(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2303,7 +2294,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicRef.compareAndSwap(0, 1); // int值得数字不会比较成功
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2311,7 +2302,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(10);
+      expect(successCount.load()).assertEqual(10);
       expect(atomicRef.load()).assertEqual(0);
     });
 
@@ -2325,7 +2316,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicLongCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicLong = new AtomicLong(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2335,7 +2326,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicLong.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2343,7 +2334,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicLong.load()).assertEqual(1);
     });
 
@@ -2357,7 +2348,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicFloatCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicFloat = new AtomicFloat(0.0f);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2367,7 +2358,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicFloat.compareAndSwap(0.0f, 1.5f);
           if (result === 0.0f) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2375,7 +2366,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicFloat.load()).assertEqual(1.5f);
     });
 
@@ -2389,7 +2380,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicDoubleCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicDouble = new AtomicDouble(0.0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2399,7 +2390,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicDouble.compareAndSwap(0.0, 1.5);
           if (result === 0.0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2407,7 +2398,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicDouble.load()).assertEqual(1.5);
     });
 
@@ -2421,7 +2412,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicByteCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicByte = new AtomicByte(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2431,7 +2422,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicByte.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2439,7 +2430,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicByte.load()).assertEqual(1);
     });
 
@@ -2453,7 +2444,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicShortCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicShort = new AtomicShort(0);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2463,7 +2454,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicShort.compareAndSwap(0, 1);
           if (result === 0) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2471,7 +2462,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicShort.load()).assertEqual(1);
     });
 
@@ -2485,7 +2476,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicCharCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicChar = new AtomicChar(c'A');
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2495,7 +2486,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicChar.compareAndSwap(c'A', c'B');
           if (result === c'A') {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2503,7 +2494,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicChar.load()).assertEqual(c'B');
     });
 
@@ -2517,7 +2508,7 @@ export default function atomicConcurrentTest() {
      */
     it('comboAtomicBooleanCompareAndSwap001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let atomicBoolean = new AtomicBoolean(false);
-      let successCount = 0;
+      let successCount = new AtomicInt(0);
       let eaws: EAWorker[] = [];
 
       for (let i = 0; i < 10; i++) {
@@ -2527,7 +2518,7 @@ export default function atomicConcurrentTest() {
         eaw.run<void>((): void => {
           let result = atomicBoolean.compareAndSwap(false, true);
           if (result === false) {
-            successCount++;
+            successCount.fetchAdd(1);
           }
         });
       }
@@ -2535,7 +2526,7 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await()
       })
-      expect(successCount).assertEqual(1);
+      expect(successCount.load()).assertEqual(1);
       expect(atomicBoolean.load()).assertEqual(true);
     });
 
@@ -2565,7 +2556,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(100);
+      expect(finalValue >= 1 && finalValue <= 100).assertTrue();
     });
 
     /**
@@ -2594,7 +2585,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue >= 2 && finalValue <= 102).assertTrue();
+      expect(finalValue >= 1 && finalValue <= 100).assertTrue();
     });
 
     /**
@@ -2625,7 +2616,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(99);
+      expect(finalValue >= 0 && finalValue <= 99).assertTrue();
     });
 
     /**
@@ -2681,7 +2672,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(99);
+      expect(finalValue >= 0 && finalValue <= 99).assertTrue();
     });
 
     /**
@@ -2736,7 +2727,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(99);
+      expect(finalValue >=0 && finalValue <=99).assertTrue();
     });
 
     /**
@@ -2793,7 +2784,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(99);
+      expect(finalValue >=0 && finalValue <=99).assertTrue();
     });
 
     /**

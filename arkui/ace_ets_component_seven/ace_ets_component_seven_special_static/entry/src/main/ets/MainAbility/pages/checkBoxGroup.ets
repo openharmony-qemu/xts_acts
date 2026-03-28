@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, CheckboxGroup, CheckboxGroupAttribute, MarkStyle, ResourceColor } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TestCheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class TestCheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mMark: MarkStyle = { strokeColor: '#FF00FF', size: 10, strokeWidth: 15 }
   mUnselectedColor: ResourceColor = '#FF123456'
   mSelectAll: boolean = true

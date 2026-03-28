@@ -44,7 +44,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
   public totalCount(): int {
@@ -101,7 +101,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['/path/image0']
 
   public totalCount(): int {

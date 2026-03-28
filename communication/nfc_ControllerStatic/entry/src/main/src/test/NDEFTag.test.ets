@@ -186,7 +186,7 @@ export default function nfcNDEFTagTest() {
       }
       done();
     })
-    
+
     /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0200
      * @tc.name SUB_COMMUNICATION_NFC_NDEFTag_static_0200
@@ -602,6 +602,11 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0800 ndefMessage: ' + ndefMessage);
           let messageToBytes: Array<int> = tag.ndef.messageToBytes(ndefMessage);
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0800 messageToBytes: ' + messageToBytes);
+          if (messageToBytes.length > 0) {
+              expect(messageToBytes.length > 0).assertTrue();
+          } else {
+              expect(messageToBytes.length == 0).assertTrue();
+          }
         } catch (error) {
           error = error as BusinessError;
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0800 error is ' + error + " - " + error.code);

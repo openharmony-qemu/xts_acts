@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { Entry, Component, AttributeModifier, TextClockAttribute, TextClockContr
   ItemAlign, FlexAlign, Text, TextClock, Button, ClickEvent, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TextClockModifier1 implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier1 implements AttributeModifier<TextClockAttribute> {
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance
       .format('hh:mm:ss')

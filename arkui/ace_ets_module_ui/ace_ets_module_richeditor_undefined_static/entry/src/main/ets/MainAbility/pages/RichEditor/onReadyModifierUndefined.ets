@@ -5,7 +5,7 @@ import { Entry,Text,Column,Row,Component,Button,ClickEvent,Scroll,RichEditor,Ric
 import { State,Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyOnReadyModifier implements AttributeModifier<RichEditorAttribute> {
+export class MyOnReadyModifier implements AttributeModifier<RichEditorAttribute> {
   public count: int = 0
   public isOnReady: boolean = true;
   applyNormalAttribute(instance: RichEditorAttribute): void {

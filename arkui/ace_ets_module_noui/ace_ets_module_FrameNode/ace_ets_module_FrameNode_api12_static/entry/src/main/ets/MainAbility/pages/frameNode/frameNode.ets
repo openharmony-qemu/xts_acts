@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ for (let i= 0;i<10;i++){
   childList.push(childNode)
   frameNode?.appendChild(childNode!)
 }
-class Params{
+export class Params{
   text:string=''
   constructor(text:string) {
     this.text=text
@@ -44,7 +44,7 @@ function buildText(params:Params){
     }
   }
 }
-class MyNodeController extends NodeController{
+export class MyNodeController extends NodeController{
   rootNode:FrameNode|null=null
   textNode:BuilderNode<Params>|null=null
   private uiContext:UIContext|null=null

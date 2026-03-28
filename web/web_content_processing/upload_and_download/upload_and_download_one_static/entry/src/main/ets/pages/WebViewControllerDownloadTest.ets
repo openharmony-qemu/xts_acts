@@ -40,6 +40,7 @@ class StringFields {
 struct WebViewControllerDownloadTest {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   @State str: string = '';
   @State downloadUrl: string = 'https://consumer.huawei.com/content/dam/' +
@@ -63,6 +64,7 @@ struct WebViewControllerDownloadTest {
   @State start: boolean = true;
   @State savePath: string = '/data/storage/el2/base/cache/web/';
   downloadingItem: webview.WebDownloadItem = new webview.WebDownloadItem();
+  downloadItem: webview.WebDownloadItem = new webview.WebDownloadItem();
   @State currentDownloadState: number = -1;
   @State testCompleted: boolean = false;
   @State guids: string[] = new Array<string>();
@@ -75,6 +77,7 @@ struct WebViewControllerDownloadTest {
   @State suggestedFileName: string = '';
   @State receivedBytes: number = -1;
   @State fullPath: string = '';
+  @State isDownloadFail: boolean = false;
   failedDownloadSerializedData: Uint8Array  = new Uint8Array();
   failedDownload: webview.WebDownloadItem = new webview.WebDownloadItem();
 
@@ -122,6 +125,15 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
+            case 'testStartDownload002': {
+              try {
+                this.controller.startDownload("");
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79501)
+              }
+              break;
+            }
             case 'testWebDownloadState001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
@@ -137,6 +149,9 @@ struct WebViewControllerDownloadTest {
               try {
                 this.testCompleted = true
                 this.controller.startDownload(this.downloadUrlImg);
+                if (this.currentDownloadState == webview.WebDownloadState.COMPLETED) {
+                  Utils.emitEvent(this.currentDownloadState, 79542);
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -199,6 +214,36 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
+            case 'testWebDownloadState007': {
+              try {
+                this.controller.startDownload("");
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  console.log("get download status: ", this.currentDownloadState);
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
+                }
+              } catch (error) {
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
+                }
+              }
+              break;
+            }
+            case 'testWebDownloadPauseFail001': {
+              try {
+                this.controller.startDownload(this.downloadUrl);
+                if (this.downloadItem) {
+                  this.downloadItem.cancel()
+                }
+                this.isDownloadFail = false;
+                if (this.downloadItem) {
+                  this.downloadItem.pause();
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79503)
+              }
+              break;
+            }
             case 'testGetGuid001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
@@ -254,7 +299,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
                 if(this.percentComplete == 100) {
-                  Utils.emitEvent(this.percentComplete == 100, 79658)
+                  Utils.emitEvent(this.percentComplete, 79658)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -439,6 +484,18 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
+            case 'testResume002': {
+              try {
+                this.controller.startDownload(this.downloadUrl);
+                  if (this.downloadingItem) {
+                    this.downloadingItem.resume()
+                  }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79504)
+              }
+              break;
+            }
             case 'testOnBeforeDownload001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
@@ -478,6 +535,37 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
+
+            case "testSetDownloadDelegateErrorCode001": {
+              try {
+                this.controllerNull.setDownloadDelegate(this.delegate)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113930)
+              }
+              break;
+            }
+
+            case "testStartDownloadErrorCode001": {
+              try {
+                this.controllerNull.startDownload(this.downloadUrl)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113940)
+              }
+              break;
+            }
+
+            case "testStartDownloadErrorCode002": {
+              try {
+                this.controller.startDownload("");
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113950)
+              }
+              break;
+            }
+
             case 'testResumeDownload001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
@@ -533,6 +621,9 @@ struct WebViewControllerDownloadTest {
                 }
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(webview.WebDownloadState.PENDING, 79548)
+                }
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
                 }
                 console.info('webDownloadItem.getGuid() = ' + webDownloadItem.getGuid())
                 if (this.guids.indexOf(webDownloadItem.getGuid()) < 0) {
@@ -604,6 +695,9 @@ struct WebViewControllerDownloadTest {
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(this.currentDownloadState, 79548)
                 }
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(this.currentDownloadState, 79500)
+                }
                 if (this.guids.indexOf(webDownloadItem.getGuid()) < 0) {
                   this.guids.push(webDownloadItem.getGuid());
                 }
@@ -666,6 +760,7 @@ struct WebViewControllerDownloadTest {
 
               })
               this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItem = webDownloadItem;
                 this.onDownloadFailedCalled = true;
                 console.info('this.currentDownloadState onDownloadFailed before ' + this.currentDownloadState)
                 this.currentDownloadState = webDownloadItem.getState();
@@ -725,8 +820,10 @@ struct WebViewControllerDownloadTest {
                 webDownloadItem.cancel();
                 this.failedDownload = webDownloadItem;
                 this.failedDownloadSerializedData = webDownloadItem.serialize();
+                this.isDownloadFail = true;
               })
               this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItem = webDownloadItem;
                 this.onDownloadFinishCalled = true;
                 Utils.emitEvent(this.onDownloadFinishCalled, 79704)
                 console.info('this.currentDownloadState onDownloadFinish before ' + this.currentDownloadState)

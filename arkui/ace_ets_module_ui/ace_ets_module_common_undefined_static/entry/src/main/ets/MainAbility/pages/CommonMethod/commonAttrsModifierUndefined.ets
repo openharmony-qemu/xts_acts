@@ -25,7 +25,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ColumnAttribute> {
+export class MyModifier implements AttributeModifier<ColumnAttribute> {
   @State public isBackgroundImageResizableUndefined: boolean = true;
   @State public isHoverEffectUndefined: boolean = true;
   @State public isBackgroundImageSizeUndefined: boolean = true;
@@ -48,7 +48,7 @@ class MyModifier implements AttributeModifier<ColumnAttribute> {
 }
 
 @Observed
-class MyModifierButton implements AttributeModifier<ButtonAttribute> {
+export class MyModifierButton implements AttributeModifier<ButtonAttribute> {
   @State public cnt : int = 0;
   @State public isOnClickUndefined: boolean = true;
 

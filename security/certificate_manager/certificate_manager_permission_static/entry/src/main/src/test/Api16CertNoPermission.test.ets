@@ -265,5 +265,31 @@ export default function api16CertNoPermissionTestUnit() {
       }
       done();
     });
+	
+	 /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 start');
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        certManager.installUserTrustedCertificate(certBlob);
+      }catch(err){
+        err = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 Failed  Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 end');
+      done();
+    });
   })
 }

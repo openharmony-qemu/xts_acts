@@ -69,15 +69,9 @@ export class ArrayItemIterator<T> {
 
   next(): IteratorResult<T> {
     if (this.index < this.items.length) {
-      return {
-        value: this.items[this.index++],
-        done: false
-      };
+      return new IteratorResult<T>(false, this.items[this.index++]);
     } else {
-      return {
-        value: this.items.length > 0 ? this.items[0] : undefined,
-        done: true
-      };
+      return new IteratorResult<T>(true, this.items.length > 0 ? this.items[0] : undefined);
     }
   }
 }

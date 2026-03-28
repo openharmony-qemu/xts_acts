@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -213,7 +213,7 @@ import webview from '@ohos.web.webview';
 import router from '@ohos.router'
 import udmfType from '@ohos.data.uniformTypeDescriptor';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
@@ -221,7 +221,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: BadgeAttribute): void {
@@ -229,7 +229,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: BlankAttribute): void {
@@ -237,7 +237,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -245,7 +245,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
@@ -253,7 +253,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
@@ -261,7 +261,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
@@ -269,7 +269,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ColumnAttribute): void {
@@ -277,7 +277,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
@@ -285,7 +285,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: CounterAttribute): void {
@@ -293,7 +293,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: DataPanelAttribute): void {
@@ -301,7 +301,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: DatePickerAttribute): void {
@@ -309,7 +309,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: DividerAttribute): void {
@@ -317,7 +317,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: EffectComponentAttribute): void {
@@ -325,7 +325,7 @@ class EffectComponentModifier implements AttributeModifier<EffectComponentAttrib
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: FlexAttribute): void {
@@ -333,7 +333,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
@@ -341,7 +341,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
@@ -349,7 +349,7 @@ class FormComponentModifier implements AttributeModifier<FormComponentAttribute>
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: FormLinkAttribute): void {
@@ -357,7 +357,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   }
 }
 
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: GaugeAttribute): void {
@@ -365,7 +365,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: GridAttribute): void {
@@ -373,7 +373,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -381,7 +381,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: GridItemAttribute): void {
@@ -389,7 +389,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: GridRowAttribute): void {
@@ -397,7 +397,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: HyperlinkAttribute): void {
@@ -405,7 +405,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
@@ -413,7 +413,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ImageSpanAttribute): void {
@@ -421,7 +421,7 @@ class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -429,7 +429,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ListAttribute): void {
@@ -437,7 +437,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ListItemAttribute): void {
@@ -445,7 +445,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
@@ -453,7 +453,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
@@ -461,7 +461,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: MarqueeAttribute): void {
@@ -469,7 +469,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: MenuAttribute): void {
@@ -477,7 +477,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: MenuItemAttribute): void {
@@ -485,7 +485,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
@@ -493,7 +493,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: NavDestinationAttribute): void {
@@ -501,7 +501,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: NavigationAttribute): void {
@@ -509,7 +509,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class NavigatorModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigatorModifier implements AttributeModifier<NavigationAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: NavigationAttribute): void {
@@ -517,7 +517,7 @@ class NavigatorModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class NavRouterModifier implements AttributeModifier<NavigationAttribute> {
+export class NavRouterModifier implements AttributeModifier<NavigationAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: NavigationAttribute): void {
@@ -525,7 +525,7 @@ class NavRouterModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -533,7 +533,7 @@ class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   }
 }
 
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: PluginComponentAttribute): void {
@@ -541,7 +541,7 @@ class PluginComponentModifier implements AttributeModifier<PluginComponentAttrib
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: QRCodeAttribute): void {
@@ -549,7 +549,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RadioAttribute): void {
@@ -557,7 +557,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RatingAttribute): void {
@@ -565,7 +565,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RefreshAttribute): void {
@@ -573,7 +573,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
@@ -581,7 +581,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
@@ -589,7 +589,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -597,7 +597,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RichTextAttribute): void {
@@ -605,7 +605,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -613,7 +613,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: RowSplitAttribute): void {
@@ -621,7 +621,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ScrollAttribute): void {
@@ -629,7 +629,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ScrollBarAttribute): void {
@@ -637,7 +637,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: SearchAttribute): void {
@@ -645,7 +645,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: SelectAttribute): void {
@@ -653,7 +653,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -661,7 +661,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: SliderAttribute): void {
@@ -669,7 +669,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: StackAttribute): void {
@@ -677,7 +677,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -685,7 +685,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TabContentAttribute): void {
@@ -693,7 +693,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TabsAttribute): void {
@@ -701,7 +701,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextAttribute): void {
@@ -709,7 +709,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
@@ -717,7 +717,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextClockAttribute): void {
@@ -725,7 +725,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -733,7 +733,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextPickerAttribute): void {
@@ -741,7 +741,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
@@ -749,7 +749,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: TimePickerAttribute): void {
@@ -757,7 +757,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: ToggleAttribute): void {
@@ -765,7 +765,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
@@ -773,7 +773,7 @@ class UIExtensionComponentModifier implements AttributeModifier<UIExtensionCompo
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: WaterFlowAttribute): void {
@@ -781,7 +781,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: WebAttribute): void {
@@ -789,7 +789,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: XComponentAttribute): void {

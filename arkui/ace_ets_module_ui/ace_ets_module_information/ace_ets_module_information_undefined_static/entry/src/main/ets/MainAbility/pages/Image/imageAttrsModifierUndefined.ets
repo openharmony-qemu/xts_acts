@@ -24,7 +24,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ImageAttribute> {
+export class MyModifier implements AttributeModifier<ImageAttribute> {
   public isAutoResize: boolean = true;
   public isCopyOption: boolean = true;
   public isDraggable: boolean = true;

@@ -7,7 +7,7 @@ import hilog from '@ohos.hilog'
 import { Optional,PickerTextStyle,Color,CalendarAlign,DateRange,CalendarPicker,HorizontalAlign,Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
 
 @Observed
-class MyEnableModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class MyEnableModifier implements AttributeModifier<CalendarPickerAttribute> {
   public change: boolean | undefined = true;
   public textStyle_:Optional<PickerTextStyle> | undefined = { color: Color.Yellow} as Optional<PickerTextStyle>;
 

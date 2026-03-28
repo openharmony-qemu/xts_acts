@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, TextAttribute, Color, FontStyle, TextAlign, Text, Margin, ColumnOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TextModifier1 implements AttributeModifier<TextAttribute>{
+export class TextModifier1 implements AttributeModifier<TextAttribute>{
   fontColor: Color = Color.Red;
   fontSize: number = 20;
   fontStyle: FontStyle = FontStyle.Italic;

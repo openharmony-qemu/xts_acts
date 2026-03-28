@@ -22,7 +22,7 @@ import hilog from '@ohos.hilog'
 import { Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<PathAttribute> {
+export class MyModifier implements AttributeModifier<PathAttribute> {
   public isCommands: boolean = false;
   applyNormalAttribute(instance: PathAttribute): void {
     instance

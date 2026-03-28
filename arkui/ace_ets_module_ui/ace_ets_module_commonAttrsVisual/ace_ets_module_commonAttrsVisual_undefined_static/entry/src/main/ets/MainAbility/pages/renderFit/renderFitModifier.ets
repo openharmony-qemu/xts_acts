@@ -28,7 +28,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyRenderFitModifier implements AttributeModifier<TextAttribute> {
+export class MyRenderFitModifier implements AttributeModifier<TextAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: TextAttribute): void {

@@ -42,7 +42,6 @@ export default function testsuite() {
   LayoutInspectorTest();
   assemblyCallbackTest();
   enumTest();
-  LayoutChildrenTest();
   drawChildrenTest();
   xComponentNodeChangeRenderTypeNullUndefinedTest();
   xComponentNodeOnCreateNullUndefinedTest();
@@ -60,4 +59,5 @@ export default function testsuite() {
   embeddedComponentTerminationInfoTest();
   pluginComponentManagerParamTest();
   XComponentAttributeTest();
+  LayoutChildrenTest();
 }

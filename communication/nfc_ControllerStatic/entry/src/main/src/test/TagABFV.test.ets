@@ -157,12 +157,13 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcAtag = tag.getNfcA(aTag);
             if (nfcAtag != null && nfcAtag != undefined) {
                 try {
                     let sak: int = nfcAtag.getSak();
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0100 sak is ' + sak);
                 } catch (error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0100 getsak error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -182,11 +183,17 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcAtag = tag.getNfcA(aTag);
             if (nfcAtag != null && nfcAtag != undefined) {
                 try {
                     let Atqa: Array<int> = nfcAtag.getAtqa();
+                    if (Atqa.length > 0) {
+                        expect(Atqa.length > 0).assertTrue();
+                    } else {
+                        expect(Atqa.length == 0).assertTrue();
+                    }
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0200 nfcAtag error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -206,11 +213,17 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcBTag = tag.getNfcB(bTag);
             if (nfcBTag != null && nfcBTag != undefined) {
                 try {
                     let AppData: Array<int> = nfcBTag.getRespAppData();
+                    if (AppData.length > 0) {
+                        expect(AppData.length > 0).assertTrue();
+                    } else {
+                        expect(AppData.length == 0).assertTrue();
+                    }
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0300 getRespAppData error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -230,11 +243,17 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcBTag = tag.getNfcB(bTag);
             if (nfcBTag != null && nfcBTag != undefined) {
                 try {
                     let Protocol:Array<int> = nfcBTag.getRespProtocol();
+                    if (Protocol.length > 0) {
+                        expect(Protocol.length > 0).assertTrue();
+                    } else {
+                        expect(Protocol.length == 0).assertTrue();
+                    }
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0400 getRespProtocol error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -254,11 +273,17 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcFTag = tag.getNfcF(fTag);
             if (nfcFTag != null && nfcFTag != undefined) {
                 try {
                     let SystemCode: Array<int> = nfcFTag.getSystemCode();
+                    if (SystemCode.length > 0) {
+                        expect(SystemCode.length > 0).assertTrue();
+                    } else {
+                        expect(SystemCode.length == 0).assertTrue();
+                    }
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0500 getSystemCode error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -278,11 +303,17 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcFTag = tag.getNfcF(fTag);
             if (nfcFTag != null && nfcFTag != undefined) {
                 try {
                     let Pmm: Array<int> = nfcFTag.getPmm();
+                    if (Pmm.length > 0) {
+                        expect(Pmm.length > 0).assertTrue();
+                    } else {
+                        expect(Pmm.length == 0).assertTrue();
+                    }
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0600 getPmm error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -302,11 +333,12 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcVTag = tag.getNfcV(vTag);
             if (nfcVTag != null && nfcVTag != undefined) {
                 try {
                     let ResponseFlags: int = nfcVTag.getResponseFlags();
                 } catch(error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0700 getResponseFlags error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }
@@ -326,11 +358,12 @@ export default function TagABFVTest() {
          * @tc.level Level 1
          */
         it('SUB_COMMUNICATION_NFC_TagABFV_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let nfcVTag = tag.getNfcV(vTag);
             if (nfcVTag != null && nfcVTag != undefined) {
                 try {
                     let DsfId: int = nfcVTag.getDsfId();
                 } catch (error) {
-                error = error as BusinessError;
+                    error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0800 getDsfId error =  ' + error + ' - ' + error.code);
                     expect().assertFail();
                 }

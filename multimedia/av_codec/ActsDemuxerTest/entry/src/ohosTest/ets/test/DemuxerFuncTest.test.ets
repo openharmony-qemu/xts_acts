@@ -113,21 +113,23 @@ export default function DemuxerFuncTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    // it('DEMUXER_FUNCTION_0200', 0, () => {
-    //   let result:number = await testNapi.runFuncTest(0);
-    //   expect(result).assertEqual(0);
-    // });
-    //
-    // /**
-    //  * @tc.name DEMUXER_FUNCTION_0300
-    //  * @tc.desc test
-    //  * @tc.type FUNC
-    //  * @tc.require
-    //  */
-    // it('DEMUXER_FUNCTION_0300', 0, () => {
-    //   let result:number = await testNapi.runFuncTest(1);
-    //   expect(result).assertEqual(0);
-    // });
+    it('DEMUXER_FUNCTION_0200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runFuncTest(0);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_FUNCTION_0300
+     * @tc.number DEMUXER_FUNCTION_0300
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_FUNCTION_0300', Level.LEVEL0, async() => {
+      let result:number = await testNapi.runFuncTest(1);
+      expect(result).assertEqual(0);
+    });
 
     /**
      * @tc.name DEMUXER_FUNCTION_0400

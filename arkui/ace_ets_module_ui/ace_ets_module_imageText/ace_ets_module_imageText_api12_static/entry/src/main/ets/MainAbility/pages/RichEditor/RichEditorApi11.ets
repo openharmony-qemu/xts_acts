@@ -53,7 +53,7 @@ struct RichEditorApi11 {
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
   @State text: string = '';
 
-  textstyle_value1:TextStyle = {fontStyle:FontStyle.Italic,fontWeight:200,fontColor:Color.Pink} as TextStyle
+  textstyle_value1: TextStyle = new TextStyle({fontStyle:FontStyle.Italic,fontWeight:200,fontColor:Color.Pink})
   mutableStr:MutableStyledString = new MutableStyledString('属性字符串',[
     {start:0,length:7,styledKey:StyledStringKey.FONT,styledValue:this.textstyle_value1}
   ])

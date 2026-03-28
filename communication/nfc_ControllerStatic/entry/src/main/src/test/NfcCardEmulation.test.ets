@@ -218,7 +218,7 @@ export default function nfcCardEmulationTest() {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 failed.:  ' + error + " - " + error.code);
           expect().assertFail();
         }
-      } 
+      }
       done();
     })
 
@@ -262,10 +262,10 @@ export default function nfcCardEmulationTest() {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0400 failed.:  ' + error + " - " + error.code);
           expect().assertFail();
         }
-      } 
+      }
       done();
     })
-  
+
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Card_static_0500
      * @tc.name SUB_COMMUNICATION_NFC_Card_static_0500
@@ -321,11 +321,20 @@ export default function nfcCardEmulationTest() {
         abilityName: "EntryAbility"
       };
       let aidList: Array<string> = ["A0000000031010", "A0000000031011"];
+      let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
+        err: BusinessError<void> | null, data: Array<int> | undefined) => {
+        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 apduCallback data is :  ' + data);
+        if (data != undefined) {
+          if (data.length > 0) {
+              expect(data.length > 0).assertTrue();
+          } else {
+              expect(data.length == 0).assertTrue();
+          }
+        }
+      }
       try {
         hceService.start(elementName, aidList);
-        hceService.onHceCmd((data)=> {
-          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 apduCallback data is :  ' + data);
-        });
+        hceService.onHceCmd(AsyncCallback);
       } catch (err) {
         err = err as BusinessError;
         if (err.code === 201) {
@@ -361,6 +370,76 @@ export default function nfcCardEmulationTest() {
           expect(801).assertEqual(err.code);
         } else {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 failed.:  ' + err + " - " + err.code);
+          expect().assertFail();
+        }
+      }
+      hceService.stop(elementName);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Card_static_0601
+     * @tc.name SUB_COMMUNICATION_NFC_Card_static_0601
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Card_static_0601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let hceService: cardEmulation.HceService = new cardEmulation.HceService();
+      let elementName: ElementName = {
+        bundleName: "com.example.myapplication",
+        moduleName: "entry",
+        abilityName: "EntryAbility"
+      };
+      let aidList: Array<string> = ["A0000000031010", "A0000000031011"];
+      let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
+        err: BusinessError<void> | null, data: Array<int> | undefined) => {
+        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 apduCallback data is :  ' + data);
+        if (data != undefined) {
+          if (data.length > 0) {
+              expect(data.length > 0).assertTrue();
+          } else {
+              expect(data.length == 0).assertTrue();
+          }
+        }
+      }
+      try {
+        hceService.start(elementName, aidList);
+        hceService.onHceCmd(AsyncCallback);
+      } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Permission denied. ' + err + " - " + err.code);
+          expect(201).assertEqual(err.code);
+        } else if (err.code === 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Invalid parameter. ' + err + " - " + err.code);
+          expect(401).assertEqual(err.code);
+        } else if (err.code === 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Capability not supported. ' + err + " - " + err.code);
+          expect(801).assertEqual(err.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 failed.:  ' + err + " - " + err.code);
+          expect().assertFail();
+        }
+      }
+      hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 on finish:  ');
+      try {
+        hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 apduCallback:  ');
+        hceService.offHceCmd();
+      } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Permission denied. ' + err + " - " + err.code);
+          expect(201).assertEqual(err.code);
+        } else if (err.code === 401) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Invalid parameter. ' + err + " - " + err.code);
+          expect(401).assertEqual(err.code);
+        } else if (err.code === 801) {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 Capability not supported. ' + err + " - " + err.code);
+          expect(801).assertEqual(err.code);
+        } else {
+          hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0601 failed.:  ' + err + " - " + err.code);
           expect().assertFail();
         }
       }
@@ -447,7 +526,7 @@ export default function nfcCardEmulationTest() {
       }
       done();
     })
-  
+
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Card_static_0800
      * @tc.name SUB_COMMUNICATION_NFC_Card_static_0800

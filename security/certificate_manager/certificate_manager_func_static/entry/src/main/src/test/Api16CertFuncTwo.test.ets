@@ -909,5 +909,116 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0010
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_installUserTrustedCertificate_Static_0010: started ");
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        let cmResult = await certManager.installUserTrustedCertificate(certBlob);
+        let certUri = cmResult.uri ?? '';
+        expect(certUri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+        certManager.uninstallUserTrustedCertificateSync(certUri ?? '');
+      }catch(error){
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0010 Failed. Code: ${error.code}, message: ${error.message}`);
+        expect(null).assertFail();
+      } 
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0010 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0011
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_installUserTrustedCertificate_Static_0011: started ");
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.P7B,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        certManager.installUserTrustedCertificate(certBlob);
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0010 Failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500003);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0011 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0012
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_installUserTrustedCertificate_Static_0012: started ");
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.GLOBAL_USER
+      };
+      try {
+        let cmResult = await certManager.installUserTrustedCertificate(certBlob);
+        let certUri = cmResult.uri ?? '';
+        expect(certUri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+        certManager.uninstallUserTrustedCertificateSync(certUri ?? '');
+      } catch (error){
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0012 Failed. Code: ${error.code}, message: ${error.message}`);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0012 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0013
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0013
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void>=> {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_installUserTrustedCertificate_Static_0013: started ");
+      let certBlob: certManager.CertBlob = {
+        certData: caCertp7b,
+        certFormat: certManager.CertFileFormat.P7B,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        let cmResult = await certManager.installUserTrustedCertificate(certBlob);
+        let uriList = cmResult.uriList;
+        expect(uriList != null).assertTrue();
+        if(uriList !== undefined){
+			    for(let i=0;i<uriList?.length;i++){
+				  certManager.uninstallUserTrustedCertificateSync(uriList[i]);
+			  }
+		  }
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0013 Failed. Code: ${error.code}, message: ${error.message}`);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0013 end');
+      done();
+    });
   })
 }

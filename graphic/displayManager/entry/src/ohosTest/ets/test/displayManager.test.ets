@@ -3225,6 +3225,7 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3244,16 +3245,8 @@ export default function displayTest() {
 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            await terminateAbility(caseName);
-            expect(false).assertTrue();
-            done();
-
-          })
-
-
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport || deviceType === 'wearable') {
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3261,6 +3254,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3291,6 +3294,7 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3309,16 +3313,8 @@ export default function displayTest() {
             }
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            await terminateAbility(caseName);
-            expect(false).assertTrue();
-            done();
-
-          })
-
-
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport || deviceType === 'wearable') {
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3326,6 +3322,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3355,6 +3361,7 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3373,16 +3380,8 @@ export default function displayTest() {
             }
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            await terminateAbility(caseName);
-            expect(false).assertTrue();
-            done();
-
-          })
-
-
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport || deviceType === 'wearable') {
+           await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3390,6 +3389,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3420,6 +3429,7 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3439,22 +3449,22 @@ export default function displayTest() {
             }
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            display.destroyVirtualScreen(displayId);
-            expect(err.code).assertEqual(1300002)
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
+            expect(err.code).assertEqual(801)
             done();
+          } else {
+           expect(err.code).assertEqual(1300002)
+          done();
+          }
 
           })
 
 
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport || deviceType === 'wearable') {
-            expect(err.code).assertEqual(801)
-            done();
-          } else {
-            expect(err.code).assertEqual(1300002)
-            done();
-          }
+          expect(err.code).assertEqual(1300002)
+          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);

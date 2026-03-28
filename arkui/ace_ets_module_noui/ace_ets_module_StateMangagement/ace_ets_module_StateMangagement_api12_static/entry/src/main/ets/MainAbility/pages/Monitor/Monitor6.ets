@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ enum ENUM {
 }
 
 @ObservedV2
-class DMS {
+export class DMS {
   @Trace selectedDate: Date = new Date('2021-08-08');
   @Trace messageMap: Map<number, string> = new Map<number, string> ([[0, 'a'], [1, 'b'], [3, 'c']]);
   @Trace memberSet: Set<number> = new Set<number>([0, 1, 2, 3, 4]);

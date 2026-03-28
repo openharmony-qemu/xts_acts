@@ -138,7 +138,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
                 let height = windowLimits.minHeight;
-                await subWindowClass.resize(width!+200, height!+200);
+                await subWindowClass.resize(width!+200, height!+1000);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving8");
                 await Utils.msSleep(200)
@@ -152,7 +152,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 50);
+                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -206,7 +206,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
                 let height = windowLimits.minHeight;
-                await subWindowClass!.resize(width!+200, height!+200);
+                await subWindowClass!.resize(width!+200, height!+1000);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving9");
                 await Utils.msSleep(200)
@@ -220,7 +220,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 50);
+                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)

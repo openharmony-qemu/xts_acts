@@ -1045,7 +1045,7 @@ export default function MapValueTest() {
     it('MapValuesTest082',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map<number, number>([[1, 1], [2, 2], [3, 3], [4, 4]]);
       const values = Array.from(map.values());
-      const sum = values.reduce((acc, curr) => acc + curr, 0);
+      const sum = values.reduce((acc, curr) => acc + curr, 0.);
 
       expect(sum).assertEqual(10);
     });

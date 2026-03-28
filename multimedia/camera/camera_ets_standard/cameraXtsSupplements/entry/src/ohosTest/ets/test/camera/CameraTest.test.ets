@@ -38,6 +38,7 @@ let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPreviewProfile: camera.Profile;
+let mPhotoProfile: camera.Profile;
 let mPhotoOutput: camera.PhotoOutput;
 let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
@@ -139,6 +140,7 @@ function createPhotoOutput() {
   console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
   mPreviewProfile = previewProfile;
+  mPhotoProfile = photoProfile;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
@@ -1021,7 +1023,7 @@ export default function CameraTest() {
      */
     it('SUB_MULTIMEDIA_COLOR_MANAGEMENT_SET_COLOR_SPACE_00001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_COLOR_MANAGEMENT_SET_COLOR_SPACE_00001';
-      const formats = [
+      const colorSpaces = [
         colorSpaceManager.ColorSpace.ADOBE_RGB_1998,
         colorSpaceManager.ColorSpace.DCI_P3,
         colorSpaceManager.ColorSpace.SRGB,
@@ -1052,20 +1054,28 @@ export default function CameraTest() {
         colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB,
         colorSpaceManager.ColorSpace.CUSTOM
       ];
-
-      for (const format of formats) {
+      const colorSpaceMap = (space: colorSpaceManager.ColorSpace): boolean => {
+        if (space == colorSpaceManager.ColorSpace.SRGB || space == colorSpaceManager.ColorSpace.DISPLAY_P3) {
+          return mPhotoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YUV_420_SP;
+        }
+        if (space == colorSpaceManager.ColorSpace.BT2020_HLG) {
+          return mPhotoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 || mPhotoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCBCR_P010;
+        }
+        return false
+      }
+      for (const space of colorSpaces) {
         try {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           let colorSpaces: Array<colorSpaceManager.ColorSpace> = mPhotoSession.getSupportedColorSpaces();
           console.info(TAG, testName, colorSpaces, `json is`, JSON.stringify(colorSpaces));
-          const isSupported = colorSpaces.includes(format);
-          if (isSupported) {
-            mPhotoSession.setColorSpace(format);
-            expect(mPhotoSession.getActiveColorSpace()).assertEqual(format);
+          const isSupported = colorSpaces.includes(space);
+          if (isSupported && colorSpaceMap(space)) {
+            mPhotoSession.setColorSpace(space);
+            expect(mPhotoSession.getActiveColorSpace()).assertEqual(space);
             console.info(TAG, testName, `setColorSpace success`);
           } else {
-            console.info(TAG, testName, ` 当前设备不支持${format}色彩空间`);
+            console.info(TAG, testName, ` 当前设备不支持${space}色彩空间`);
           }
         } catch (error) {
           console.error(TAG, testName, 'setColorSpace, failed', JSON.stringify(error), error.code, error);
@@ -1075,6 +1085,6 @@ export default function CameraTest() {
         }
       }
       done();
-    });
+    })
   })
 }
