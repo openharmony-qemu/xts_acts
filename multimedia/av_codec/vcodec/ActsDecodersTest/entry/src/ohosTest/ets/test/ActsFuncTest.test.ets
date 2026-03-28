@@ -150,7 +150,7 @@ export default function actsFuncTest() {
     /**
      * @tc.number  VIDEO_VC1DEC_FUNCTION_0002
      * @tc.name    VIDEO_VC1DEC_FUNCTION_0002
-     * @tc.desc    Test VC1 decoder with surface mode
+     * @tc.desc    Test VC1 decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
@@ -164,7 +164,7 @@ export default function actsFuncTest() {
     /**
      * @tc.number  VIDEO_MJPEGDEC_FUNCTION_0004
      * @tc.name    VIDEO_MJPEGDEC_FUNCTION_0004
-     * @tc.desc    Test MJPEG decoder with surface mode
+     * @tc.desc    Test MJPEG decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
@@ -178,7 +178,7 @@ export default function actsFuncTest() {
     /**
      * @tc.number  VIDEO_MSVIDEO1DEC_FUNCTION_0006
      * @tc.name    VIDEO_MSVIDEO1DEC_FUNCTION_0006
-     * @tc.desc    Test MSVIDEO1 decoder with surface mode
+     * @tc.desc    Test MSVIDEO1 decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0

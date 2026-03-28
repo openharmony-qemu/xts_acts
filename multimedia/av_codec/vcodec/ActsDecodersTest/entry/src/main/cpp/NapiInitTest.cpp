@@ -196,53 +196,40 @@ static void CompleteFuncTest(napi_env env, napi_status status, void* data)
     delete context;
 }
 
+static napi_value CreateErrorPromise(napi_env env)
+{
+    napi_value promise;
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value error;
+    napi_create_int32(env, -1, &error);
+    napi_reject_deferred(env, deferred, error);
+    return promise;
+}
+
 static napi_value FuncTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok) {
-        napi_value promise;
-        napi_deferred deferred;
-        napi_create_promise(env, &deferred, &promise);
-        napi_value error;
-        napi_create_int32(env, -1, &error);
-        napi_reject_deferred(env, deferred, error);
-        return promise;
+        return CreateErrorPromise(env);
     }
 
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
-        napi_value promise;
-        napi_deferred deferred;
-        napi_create_promise(env, &deferred, &promise);
-        napi_value error;
-        napi_create_int32(env, -1, &error);
-        napi_reject_deferred(env, deferred, error);
-        return promise;
+        return CreateErrorPromise(env);
     }
 
     int32_t caseNum = -1;
     status = napi_get_value_int32(env, args[0], &caseNum);
     if (status != napi_ok) {
-        napi_value promise;
-        napi_deferred deferred;
-        napi_create_promise(env, &deferred, &promise);
-        napi_value error;
-        napi_create_int32(env, -1, &error);
-        napi_reject_deferred(env, deferred, error);
-        return promise;
+        return CreateErrorPromise(env);
     }
 
     if (caseNum < 0 || caseNum >= FUNC_TEST_FUNCTION_COUNT) {
-        napi_value promise;
-        napi_deferred deferred;
-        napi_create_promise(env, &deferred, &promise);
-        napi_value error;
-        napi_create_int32(env, -1, &error);
-        napi_reject_deferred(env, deferred, error);
-        return promise;
+        return CreateErrorPromise(env);
     }
 
     FuncTestContext* context = new FuncTestContext();

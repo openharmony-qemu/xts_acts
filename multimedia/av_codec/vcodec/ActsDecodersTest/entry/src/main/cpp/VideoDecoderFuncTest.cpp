@@ -58,6 +58,15 @@ static constexpr uint32_t FRAMESIZE100 = 100;
 static constexpr uint32_t FRAMESIZE180 = 180;
 static constexpr uint32_t FRAMESIZE45 = 45;
 
+// Profile index constants
+static constexpr uint32_t PROFILE_INDEX_0 = 0;
+static constexpr uint32_t PROFILE_INDEX_1 = 1;
+static constexpr uint32_t PROFILE_INDEX_2 = 2;
+static constexpr uint32_t PROFILE_INDEX_3 = 3;
+static constexpr uint32_t MIN_PROFILE_COUNT_2 = 2;
+static constexpr uint32_t MIN_PROFILE_COUNT_3 = 3;
+static constexpr uint32_t MIN_PROFILE_COUNT_4 = 4;
+
 static const char *GINP_DIR_VC1 = "/data/storage/el2/base/files/video/test_vc1.avi";
 static const char *GINP_DIR_MJPEG = "/data/storage/el2/base/files/video/1920_1080_30.avi";
 static const char *GINP_DIR_MSVIDEO1 = "/data/storage/el2/base/files/video/msvideo1_720x480.avi";
@@ -234,10 +243,10 @@ int VideoVc1DecFunction0002()
     if (vDecSample->gFd < 0) {
         return -1;
     }
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->outputYuvSurface = true;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDec_Surface(g_codecNameVc1) != AV_ERR_OK) {
+    if (vDecSample->RunVideoDecSurface(g_codecNameVc1) != AV_ERR_OK) {
         return -1;
     }
     vDecSample->WaitForEOS();
@@ -260,10 +269,10 @@ int VideoMjpegDecFunction0004()
     if (vDecSample->gFd < 0) {
         return -1;
     }
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->outputYuvSurface = true;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDec_Surface(g_codecNameMjpeg) != AV_ERR_OK) {
+    if (vDecSample->RunVideoDecSurface(g_codecNameMjpeg) != AV_ERR_OK) {
         return -1;
     }
     vDecSample->WaitForEOS();
@@ -286,10 +295,10 @@ int VideoMsvideo1DecFunction0006()
     if (vDecSample->gFd < 0) {
         return -1;
     }
-    vDecSample->SF_OUTPUT = true;
+    vDecSample->sfOutput = true;
     vDecSample->outputYuvSurface = true;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDec_Surface(g_codecNameMsvideo1) != AV_ERR_OK) {
+    if (vDecSample->RunVideoDecSurface(g_codecNameMsvideo1) != AV_ERR_OK) {
         return -1;
     }
     vDecSample->WaitForEOS();
@@ -308,7 +317,7 @@ int VideoVp8DecFunction0007()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP8;
+    vDecSample->inpDir = GINP_DIR_VP8;
     vDecSample->outputYuvFlag = true;
     
     if (vDecSample->CreateVideoDecoder(g_codecNameVp8) != AV_ERR_OK) {
@@ -339,7 +348,7 @@ int VideoVp9DecFunction0008()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_P0;
+    vDecSample->inpDir = GINP_DIR_VP9_P0;
     vDecSample->outputYuvFlag = true;
     
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
@@ -365,12 +374,12 @@ int VideoVp9DecFunction0009()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < 2 || profiles[1] != VP9_PROFILE_1) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_P1;
+    vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
         return -1;
@@ -395,12 +404,12 @@ int VideoVp9DecFunction0010()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < 3 || profiles[2] != VP9_PROFILE_2) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_3 || profiles[PROFILE_INDEX_2] != VP9_PROFILE_2) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_P1;
+    vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
         return -1;
@@ -425,12 +434,12 @@ int VideoVp9DecFunction0011()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < 4 || profiles[3] != VP9_PROFILE_3) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_4 || profiles[PROFILE_INDEX_3] != VP9_PROFILE_3) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_P1;
+    vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
         return -1;
@@ -460,7 +469,7 @@ int VideoAv1DecFunction0012()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_AV1_MAIN;
+    vDecSample->inpDir = GINP_DIR_AV1_MAIN;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
         return -1;
@@ -485,12 +494,12 @@ int VideoAv1DecFunction0013()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < 2 || profiles[1] != AV1_PROFILE_HIGH) {
+    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_AV1_HIGH;
+    vDecSample->inpDir = GINP_DIR_AV1_HIGH;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
         return -1;
@@ -520,7 +529,7 @@ int VideoAv1DecFunction0015()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_AV1_MAIN_8BIT;
+    vDecSample->inpDir = GINP_DIR_AV1_MAIN_8BIT;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
         return -1;
@@ -545,12 +554,12 @@ int VideoAv1DecFunction0016()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < 2 || profiles[1] != AV1_PROFILE_HIGH) {
+    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_AV1_HIGH_8BIT;
+    vDecSample->inpDir = GINP_DIR_AV1_HIGH_8BIT;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
         return -1;
@@ -580,7 +589,7 @@ int VideoVp9DecFunction0019()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_L4_P0;
+    vDecSample->inpDir = GINP_DIR_VP9_L4_P0;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
         return -1;
@@ -605,12 +614,12 @@ int VideoVp9DecFunction0020()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < 2 || profiles[1] != VP9_PROFILE_1) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
         return 0;
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_VP9_L4_P1;
+    vDecSample->inpDir = GINP_DIR_VP9_L4_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
         return -1;
@@ -637,7 +646,7 @@ int VideoVp8DecFunction0021()
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = GINP_DIR_1080P_VP8;
+    vDecSample->inpDir = GINP_DIR_1080P_VP8;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp8) != AV_ERR_OK) {
         return -1;
