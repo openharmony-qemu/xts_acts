@@ -54,7 +54,7 @@ namespace OHOS {
 namespace Media {
 
 static bool CheckProfileLevelSupport(OH_AVCapability *capability, int32_t profile,
-                const int32_t levels[], size_t levelCount)
+                                     const int32_t levels[], size_t levelCount)
 {
     for (size_t i = 0; i < levelCount; i++) {
         if (!OH_AVCapability_AreProfileAndLevelSupported(capability, profile, levels[i])) {
@@ -637,7 +637,7 @@ int VideoDvvideoDecCapApi0001()
 int VideoVp9DecCapApi0013()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VP9,
-                false, SOFTWARE);
+                                                                      false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -647,7 +647,7 @@ int VideoVp9DecCapApi0013()
         VP9_LEVEL_61, VP9_LEVEL_62
     };
     if (!CheckProfileLevelSupport(capability, VP9_PROFILE_0, vp9Profile0Levels,
-                sizeof(vp9Profile0Levels) / sizeof(vp9Profile0Levels[0]))) {
+                                  sizeof(vp9Profile0Levels) / sizeof(vp9Profile0Levels[0]))) {
         return -1;
     }
     if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_1, VP9_LEVEL_31)) {
@@ -660,7 +660,7 @@ int VideoVp9DecCapApi0013()
 int VideoAv1DecCapApi0014()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                false, SOFTWARE);
+                                                                      false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -670,7 +670,7 @@ int VideoAv1DecCapApi0014()
         AV1_LEVEL_50, AV1_LEVEL_51, AV1_LEVEL_52, AV1_LEVEL_53, AV1_LEVEL_60
     };
     if (!CheckProfileLevelSupport(capability, AV1_PROFILE_MAIN, av1MainLevels,
-                sizeof(av1MainLevels) / sizeof(av1MainLevels[0]))) {
+                                  sizeof(av1MainLevels) / sizeof(av1MainLevels[0]))) {
         return -1;
     }
     return 0;
@@ -680,7 +680,7 @@ int VideoAv1DecCapApi0014()
 int VideoAv1DecCapApi0015()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                false, SOFTWARE);
+                                                                      false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -718,7 +718,7 @@ int VideoAv1DecCapApi0015()
 int VideoWvc1DecCapApi0016()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WVC1,
-                false, SOFTWARE);
+                                                                      false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -750,7 +750,7 @@ int VideoAv1DecCapApi0017()
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                false, SOFTWARE);
+                                                                      false, SOFTWARE);
     if (capability != nullptr) {
         ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         if (ret != AV_ERR_OK || profiles == nullptr) {

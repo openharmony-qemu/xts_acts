@@ -63,7 +63,7 @@ public:
 class VDecAPI11Sample : public NoCopyable {
 public:
     VDecAPI11Sample();
-    ~VDecAPI11Sample();
+    ~VDecAPI11Sample() override;
     int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
     const char *inpDir = "";

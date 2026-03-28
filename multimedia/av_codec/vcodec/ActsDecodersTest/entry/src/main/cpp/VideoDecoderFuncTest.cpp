@@ -374,7 +374,8 @@ int VideoVp9DecFunction0009()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
+            profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
         return 0;
     }
     
@@ -404,7 +405,8 @@ int VideoVp9DecFunction0010()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_3 || profiles[PROFILE_INDEX_2] != VP9_PROFILE_2) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_3 ||
+            profiles[PROFILE_INDEX_2] != VP9_PROFILE_2) {
         return 0;
     }
     
@@ -434,7 +436,8 @@ int VideoVp9DecFunction0011()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_4 || profiles[PROFILE_INDEX_3] != VP9_PROFILE_3) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_4 ||
+            profiles[PROFILE_INDEX_3] != VP9_PROFILE_3) {
         return 0;
     }
     
@@ -494,7 +497,8 @@ int VideoAv1DecFunction0013()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
+    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
+            profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
         return 0;
     }
     
@@ -554,7 +558,8 @@ int VideoAv1DecFunction0016()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
+    if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
+            profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
         return 0;
     }
     
@@ -614,7 +619,8 @@ int VideoVp9DecFunction0020()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
-    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 || profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
+    if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
+            profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
         return 0;
     }
     
