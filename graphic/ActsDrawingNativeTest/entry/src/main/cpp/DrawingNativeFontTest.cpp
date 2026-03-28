@@ -71,7 +71,8 @@ void DrawingNativeFontTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontCreateDestroyNormal() {
+int TestFontCreateDestroyNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -91,7 +92,8 @@ int TestFontCreateDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontCreateDestroyNULL() {
+int TestFontCreateDestroyNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontDestroy with nullptr as parameter
     OH_Drawing_Font *font = nullptr;
@@ -109,7 +111,8 @@ int TestFontCreateDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontCreateDestroyMultipleCalls() {
+int TestFontCreateDestroyMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     OH_Drawing_Font *fonts[DRAWING_NUMBER_10];
     // 1. Call OH_Drawing_FontCreate 10 times
@@ -140,7 +143,8 @@ int TestFontCreateDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetBaselineSnapNormal() {
+int TestFontSetBaselineSnapNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -174,7 +178,8 @@ int TestFontSetBaselineSnapNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetBaselineSnapNULL() {
+int TestFontSetBaselineSnapNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetBaselineSnap with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -197,7 +202,8 @@ int TestFontSetBaselineSnapNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetBaselineSnapMultipleCalls() {
+int TestFontSetBaselineSnapMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -227,7 +233,8 @@ int TestFontSetBaselineSnapMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_NUMBER_2
  */
-int TestFontIsBaselineSnapWhenNoSet() {
+int TestFontIsBaselineSnapWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -248,7 +255,8 @@ int TestFontIsBaselineSnapWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetSubpixelNormal() {
+int TestFontSetSubpixelNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -282,7 +290,8 @@ int TestFontSetSubpixelNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetSubpixelNULL() {
+int TestFontSetSubpixelNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetSubpixel with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -305,7 +314,8 @@ int TestFontSetSubpixelNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetSubpixelMultipleCalls() {
+int TestFontSetSubpixelMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -335,7 +345,8 @@ int TestFontSetSubpixelMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_NUMBER_2
  */
-int TestFontIsSubpixelWhenNoSet() {
+int TestFontIsSubpixelWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -358,7 +369,8 @@ int TestFontIsSubpixelWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetForceAutoHintingNormal() {
+int TestFontSetForceAutoHintingNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -396,7 +408,8 @@ int TestFontSetForceAutoHintingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetForceAutoHintingNULL() {
+int TestFontSetForceAutoHintingNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetForceAutoHinting with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -419,7 +432,8 @@ int TestFontSetForceAutoHintingNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetForceAutoHintingMultipleCalls() {
+int TestFontSetForceAutoHintingMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -449,7 +463,8 @@ int TestFontSetForceAutoHintingMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsForceAutoHintingWhenNoSet() {
+int TestFontIsForceAutoHintingWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -472,7 +487,8 @@ int TestFontIsForceAutoHintingWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetTypefaceNormal() {
+int TestFontSetTypefaceNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -505,7 +521,8 @@ int TestFontSetTypefaceNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTypefaceNULL() {
+int TestFontSetTypefaceNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -543,7 +560,8 @@ int TestFontSetTypefaceNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTypefaceMultipleCalls() {
+int TestFontSetTypefaceMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -576,7 +594,8 @@ int TestFontSetTypefaceMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetTypefaceWhenNoSet() {
+int TestFontGetTypefaceWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -599,7 +618,8 @@ int TestFontGetTypefaceWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetTextSizeNormal() {
+int TestFontSetTextSizeNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -633,7 +653,8 @@ int TestFontSetTextSizeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSizeNULL() {
+int TestFontSetTextSizeNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -666,7 +687,8 @@ int TestFontSetTextSizeNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSizeMultipleCalls() {
+int TestFontSetTextSizeMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -700,7 +722,8 @@ int TestFontSetTextSizeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetTextSizeWhenNoSet() {
+int TestFontGetTextSizeWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -723,7 +746,8 @@ int TestFontGetTextSizeWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSizeAbnormal() {
+int TestFontSetTextSizeAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -748,7 +772,8 @@ int TestFontSetTextSizeAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontCountTextNormal() {
+int TestFontCountTextNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -793,7 +818,8 @@ int TestFontCountTextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontCountTextNULL() {
+int TestFontCountTextNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -826,7 +852,8 @@ int TestFontCountTextNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontCountTextMultipleCalls() {
+int TestFontCountTextMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -867,7 +894,8 @@ int TestFontCountTextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontCountTextAbnormal() {
+int TestFontCountTextAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -891,7 +919,8 @@ int TestFontCountTextAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontTextToGlyphsNormal() {
+int TestFontTextToGlyphsNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -926,7 +955,8 @@ int TestFontTextToGlyphsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontTextToGlyphsNULL() {
+int TestFontTextToGlyphsNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -975,7 +1005,8 @@ int TestFontTextToGlyphsNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontTextToGlyphsMultipleCalls() {
+int TestFontTextToGlyphsMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1008,7 +1039,8 @@ int TestFontTextToGlyphsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontTextToGlyphsAbnormal() {
+int TestFontTextToGlyphsAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1037,7 +1069,8 @@ int TestFontTextToGlyphsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontTextToGlyphsMaximum() {
+int TestFontTextToGlyphsMaximum()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1067,7 +1100,8 @@ int TestFontTextToGlyphsMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGetWidthsNormal() {
+int TestFontGetWidthsNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1097,7 +1131,8 @@ int TestFontGetWidthsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsNULL() {
+int TestFontGetWidthsNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1141,7 +1176,8 @@ int TestFontGetWidthsNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsMultipleCalls() {
+int TestFontGetWidthsMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1177,7 +1213,8 @@ int TestFontGetWidthsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsAbnormal() {
+int TestFontGetWidthsAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1195,8 +1232,8 @@ int TestFontGetWidthsAbnormal() {
     OH_Drawing_FontGetWidths(font, glyphs, -DRAWING_NUMBER_1, widths);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. Set widths parameter to -1 for OH_Drawing_FontGetWidths interface
-    float widthsDRAWING_NUMBER_2[DRAWING_NUMBER_50] = {-DRAWING_NUMBER_1};
-    OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widthsDRAWING_NUMBER_2);
+    float widths2[DRAWING_NUMBER_50] = {-DRAWING_NUMBER_1};
+    OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widths2);
     // 5. Set count parameter to a floating-point value greater than 0 for OH_Drawing_FontGetWidths interface
     OH_Drawing_FontGetWidths(font, glyphs, DRAWING_NUMBER_2, widths);
     // 6. Release memory
@@ -1213,7 +1250,8 @@ int TestFontGetWidthsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsMaximum() {
+int TestFontGetWidthsMaximum()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1232,8 +1270,8 @@ int TestFontGetWidthsMaximum() {
     // 3. Call OH_Drawing_FontGetWidths interface with maximum value for count parameter
     // Ignore, no need to test the case with maximum count parameter
     // 4. Call OH_Drawing_FontGetWidths interface with maximum value for widths parameter
-    float widthsDRAWING_NUMBER_2[DRAWING_NUMBER_50] = {FLT_MAX};
-    OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widthsDRAWING_NUMBER_2);
+    float widths2[DRAWING_NUMBER_50] = {FLT_MAX};
+    OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widths2);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Release memory
@@ -1250,7 +1288,8 @@ int TestFontGetWidthsMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetLinearTextNormal() {
+int TestFontSetLinearTextNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1284,7 +1323,8 @@ int TestFontSetLinearTextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetLinearTextNULL() {
+int TestFontSetLinearTextNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Pass nullptr as the first parameter to OH_Drawing_FontSetLinearText and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1307,7 +1347,8 @@ int TestFontSetLinearTextNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetLinearTextMultipleCalls() {
+int TestFontSetLinearTextMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1337,7 +1378,8 @@ int TestFontSetLinearTextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsLinearTextWhenNoSet() {
+int TestFontIsLinearTextWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1360,7 +1402,8 @@ int TestFontIsLinearTextWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetTextSkewXNormal() {
+int TestFontSetTextSkewXNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1394,7 +1437,8 @@ int TestFontSetTextSkewXNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSkewXNULL() {
+int TestFontSetTextSkewXNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1425,7 +1469,8 @@ int TestFontSetTextSkewXNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSkewXMultipleCalls() {
+int TestFontSetTextSkewXMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1459,7 +1504,8 @@ int TestFontSetTextSkewXMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetTextSkewXWhenNoSet() {
+int TestFontGetTextSkewXWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1484,7 +1530,8 @@ int TestFontGetTextSkewXWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSkewXAbnormal() {
+int TestFontSetTextSkewXAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1509,7 +1556,8 @@ int TestFontSetTextSkewXAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetTextSkewXMaximum() {
+int TestFontSetTextSkewXMaximum()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1531,7 +1579,8 @@ int TestFontSetTextSkewXMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetFakeBoldTextNormal() {
+int TestFontSetFakeBoldTextNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1565,7 +1614,8 @@ int TestFontSetFakeBoldTextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetFakeBoldTextNULL() {
+int TestFontSetFakeBoldTextNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Pass nullptr as the first parameter to OH_Drawing_FontSetFakeBoldText and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1588,7 +1638,8 @@ int TestFontSetFakeBoldTextNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetFakeBoldTextMultipleCalls() {
+int TestFontSetFakeBoldTextMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1618,7 +1669,8 @@ int TestFontSetFakeBoldTextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsFakeBoldTextWhenNoSet() {
+int TestFontIsFakeBoldTextWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1641,7 +1693,8 @@ int TestFontIsFakeBoldTextWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetScaleXNormal() {
+int TestFontSetScaleXNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1679,7 +1732,8 @@ int TestFontSetScaleXNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetScaleXNULL() {
+int TestFontSetScaleXNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1710,7 +1764,8 @@ int TestFontSetScaleXNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetScaleXMultipleCalls() {
+int TestFontSetScaleXMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1746,7 +1801,8 @@ int TestFontSetScaleXMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetScaleXWhenNoSet() {
+int TestFontGetScaleXWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1769,7 +1825,8 @@ int TestFontGetScaleXWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetScaleXAbnormal() {
+int TestFontSetScaleXAbnormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1794,7 +1851,8 @@ int TestFontSetScaleXAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetScaleXMaximum() {
+int TestFontSetScaleXMaximum()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1817,7 +1875,8 @@ int TestFontSetScaleXMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetHintingNormal() {
+int TestFontSetHintingNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1855,7 +1914,8 @@ int TestFontSetHintingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetHintingNULL() {
+int TestFontSetHintingNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetHinting with nullptr as the first parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1878,7 +1938,8 @@ int TestFontSetHintingNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetHintingMultipleCalls() {
+int TestFontSetHintingMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1909,7 +1970,8 @@ int TestFontSetHintingMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetHintingWhenNoSet() {
+int TestFontGetHintingWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1932,7 +1994,8 @@ int TestFontGetHintingWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetEmbeddedBitmapsNormal() {
+int TestFontSetEmbeddedBitmapsNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1970,7 +2033,8 @@ int TestFontSetEmbeddedBitmapsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetEmbeddedBitmapsNULL() {
+int TestFontSetEmbeddedBitmapsNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetEmbeddedBitmaps with nullptr as the first parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1993,7 +2057,8 @@ int TestFontSetEmbeddedBitmapsNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetEmbeddedBitmapsMultipleCalls() {
+int TestFontSetEmbeddedBitmapsMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2025,7 +2090,8 @@ int TestFontSetEmbeddedBitmapsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsEmbeddedBitmapsWhenNoSet() {
+int TestFontIsEmbeddedBitmapsWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2048,7 +2114,8 @@ int TestFontIsEmbeddedBitmapsWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetEdgingNormal() {
+int TestFontSetEdgingNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2083,7 +2150,8 @@ int TestFontSetEdgingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetEdgingNULL() {
+int TestFontSetEdgingNULL()
+{
     DrawingNativeFontTestSetUp();
     // 1. Call OH_Drawing_FontSetEdging with nullptr as the first parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -2106,7 +2174,8 @@ int TestFontSetEdgingNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontSetEdgingMultipleCalls() {
+int TestFontSetEdgingMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2140,7 +2209,8 @@ int TestFontSetEdgingMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetEdgingWhenNoSet() {
+int TestFontGetEdgingWhenNoSet()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2165,7 +2235,8 @@ int TestFontGetEdgingWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGetMetricsNormal() {
+int TestFontGetMetricsNormal()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2211,7 +2282,8 @@ int TestFontGetMetricsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetMetricsNull() {
+int TestFontGetMetricsNull()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2245,7 +2317,8 @@ int TestFontGetMetricsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetMetricsMultiplies() {
+int TestFontGetMetricsMultiplies()
+{
     DrawingNativeFontTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2276,7 +2349,8 @@ int TestFontGetMetricsMultiplies() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontMeasureSingleCharacterNormal() {
+int TestFontMeasureSingleCharacterNormal()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2309,7 +2383,8 @@ int TestFontMeasureSingleCharacterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureSingleCharacterNull() {
+int TestFontMeasureSingleCharacterNull()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2337,7 +2412,8 @@ int TestFontMeasureSingleCharacterNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureSingleCharacterMultipleCalls() {
+int TestFontMeasureSingleCharacterMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2365,7 +2441,8 @@ int TestFontMeasureSingleCharacterMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontMeasuretextNormal() {
+int TestFontMeasuretextNormal()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2411,7 +2488,8 @@ int TestFontMeasuretextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasuretextNull() {
+int TestFontMeasuretextNull()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -2458,7 +2536,8 @@ int TestFontMeasuretextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasuretextMultipleCalls() {
+int TestFontMeasuretextMultipleCalls()
+{
     DrawingNativeFontTestSetUp();
     //1. OH_Drawing_FontCreate
     OH_Drawing_Font *fonts[DRAWING_NUMBER_10];
@@ -2500,7 +2579,8 @@ int TestFontMeasuretextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_NUMBER_1
  */
-int TestFontMeasureSingleCharacter() {
+int TestFontMeasureSingleCharacter()
+{
     DrawingNativeFontTestSetUp();
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);

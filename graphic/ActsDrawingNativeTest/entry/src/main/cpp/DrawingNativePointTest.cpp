@@ -49,7 +49,8 @@ void DrawingNativePointTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPointCreateNormal() {
+int TestPointCreateNormal()
+{
     DrawingNativePointTestSetUp();
     // 1. Pass integer values for X and Y coordinates to OH_Drawing_PointCreate interface
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -74,7 +75,8 @@ int TestPointCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointCreateNull() {
+int TestPointCreateNull()
+{
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is empty
     OH_Drawing_Point *point = OH_Drawing_PointCreate(0, DRAWING_NUMBER_60);
@@ -99,7 +101,8 @@ int TestPointCreateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointCreateAbnormal() {
+int TestPointCreateAbnormal()
+{
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is negative
     OH_Drawing_Point *point = OH_Drawing_PointCreate(-DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -124,7 +127,8 @@ int TestPointCreateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointCreateMaximum() {
+int TestPointCreateMaximum()
+{
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is FLT_MAX
     OH_Drawing_Point *point = OH_Drawing_PointCreate(FLT_MAX, DRAWING_NUMBER_60);
@@ -149,7 +153,8 @@ int TestPointCreateMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointCreateMultipleCalls() {
+int TestPointCreateMultipleCalls()
+{
     DrawingNativePointTestSetUp();
     // 1. Call OH_Drawing_PointCreate 10 times with random values for X and Y coordinates
     std::random_device rd;
@@ -173,7 +178,8 @@ int TestPointCreateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPointDestroyNormal() {
+int TestPointDestroyNormal()
+{
     DrawingNativePointTestSetUp();
     // 1. Call OH_Drawing_PointCreate
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -193,7 +199,8 @@ int TestPointDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointDestroyNull() {
+int TestPointDestroyNull()
+{
     DrawingNativePointTestSetUp();
     // 1. The parameter of OH_Drawing_PointDestroy is nullptr
     OH_Drawing_Point *point = nullptr;
@@ -211,7 +218,8 @@ int TestPointDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPointGetXNormal() {
+int TestPointGetXNormal()
+{
     DrawingNativePointTestSetUp();
     //1. Pass integer values to OH_Drawing_PointGetX interface
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -239,7 +247,8 @@ int TestPointGetXNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointGetXNull() {
+int TestPointGetXNull()
+{
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointGetX with the first parameter as null
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -263,7 +272,8 @@ int TestPointGetXNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointGetXMultipleCalls() {
+int TestPointGetXMultipleCalls()
+{
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointGetX 10 times with random values
     float x;
@@ -288,7 +298,8 @@ int TestPointGetXMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPointGetYNormal() {
+int TestPointGetYNormal()
+{
     DrawingNativePointTestSetUp();
     //1. Pass integer values to OH_Drawing_PointGetY interface
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -320,7 +331,8 @@ int TestPointGetYNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointGetYNull() {
+int TestPointGetYNull()
+{
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointGetY with the first parameter as null
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -344,7 +356,8 @@ int TestPointGetYNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointGetYMultipleCalls() {
+int TestPointGetYMultipleCalls()
+{
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointGetX 10 times with random values
     float y;
@@ -369,7 +382,8 @@ int TestPointGetYMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPointSetNormal() {
+int TestPointSetNormal()
+{
     DrawingNativePointTestSetUp();
     //1. Pass integar point values to OH_Drawing_PointSet interface
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -394,7 +408,8 @@ int TestPointSetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointSetNull() {
+int TestPointSetNull()
+{
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointSet with the first parameter as null
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
@@ -419,7 +434,8 @@ int TestPointSetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPointSetMultipleCalls() {
+int TestPointSetMultipleCalls()
+{
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointSet 10 times with random values
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);

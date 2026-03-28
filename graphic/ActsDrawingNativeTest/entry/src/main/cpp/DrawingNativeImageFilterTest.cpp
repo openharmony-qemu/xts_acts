@@ -53,7 +53,8 @@ void DrawingNativeImageFilterTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterCreateBlurNormal() {
+int TestImageFilterCreateBlurNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_TileMode modes[] = {CLAMP, REPEAT, MIRROR, DECAL};
@@ -94,7 +95,8 @@ int TestImageFilterCreateBlurNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurNULL() {
+int TestImageFilterCreateBlurNULL()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur with the first parameter being null
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(0, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR,
@@ -119,7 +121,8 @@ int TestImageFilterCreateBlurNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurMultipleCalls() {
+int TestImageFilterCreateBlurMultipleCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur (pass random values for sigmaX and sigmaY, random enum value for
     // OH_Drawing_TileMode), call 10 times
@@ -146,7 +149,8 @@ int TestImageFilterCreateBlurMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurAbnormal() {
+int TestImageFilterCreateBlurAbnormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Pass negative values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_ImageFilter *filter =
@@ -167,7 +171,8 @@ int TestImageFilterCreateBlurAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurMaximum() {
+int TestImageFilterCreateBlurMaximum()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create a blur image filter with maximum values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_ImageFilter *filter =
@@ -188,7 +193,8 @@ int TestImageFilterCreateBlurMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterCreateFromColorFilterNormal() {
+int TestImageFilterCreateFromColorFilterNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
@@ -227,7 +233,8 @@ int TestImageFilterCreateFromColorFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateFromColorFilterNULL() {
+int TestImageFilterCreateFromColorFilterNULL()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
         OH_Drawing_TileMode::MIRROR, nullptr);
@@ -251,7 +258,8 @@ int TestImageFilterCreateFromColorFilterNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateFromColorFilterMultipleCalls() {
+int TestImageFilterCreateFromColorFilterMultipleCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
@@ -276,7 +284,8 @@ int TestImageFilterCreateFromColorFilterMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterDestroyNormal() {
+int TestImageFilterDestroyNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
         OH_Drawing_TileMode::MIRROR, nullptr);
@@ -295,7 +304,8 @@ int TestImageFilterDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterDestroyNULL() {
+int TestImageFilterDestroyNULL()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_ImageFilter *filter = nullptr;
     OH_Drawing_ImageFilterDestroy(nullptr);
@@ -312,7 +322,8 @@ int TestImageFilterDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterDestroyMultipleCalls() {
+int TestImageFilterDestroyMultipleCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Call OH_Drawing_ImageFilterCreateFromColorFilter 10 times
     OH_Drawing_ColorFilter *colorFilters[DRAWING_NUMBER_10];
@@ -350,7 +361,8 @@ int TestImageFilterDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterCreateOffsetNormal() {
+int TestImageFilterCreateOffsetNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -375,7 +387,8 @@ int TestImageFilterCreateOffsetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateOffsetNULL() {
+int TestImageFilterCreateOffsetNULL()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -410,7 +423,8 @@ int TestImageFilterCreateOffsetNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateOffsetAbnormal() {
+int TestImageFilterCreateOffsetAbnormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -448,7 +462,8 @@ int TestImageFilterCreateOffsetAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateOffsetMultipleCalls() {
+int TestImageFilterCreateOffsetMultipleCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -475,7 +490,8 @@ int TestImageFilterCreateOffsetMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterCreateFromShderEffectNormal() {
+int TestImageFilterCreateFromShderEffectNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ShaderEffectCreateColorShder.
     OH_Drawing_ShaderEffect *shaderEffect = OH_Drawing_ShaderEffectCreateColorShader(0xFF00FF00);
@@ -498,7 +514,8 @@ int TestImageFilterCreateFromShderEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateFromShderEffectNULL() {
+int TestImageFilterCreateFromShderEffectNULL()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
     OH_Drawing_ImageFilter *imageFilter = OH_Drawing_ImageFilterCreateFromShaderEffect(nullptr);
@@ -517,7 +534,8 @@ int TestImageFilterCreateFromShderEffectNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateFromShderEffectMultipleCalls() {
+int TestImageFilterCreateFromShderEffectMultipleCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ShaderEffectCreateColorShder.
     OH_Drawing_ShaderEffect *shaderEffect = OH_Drawing_ShaderEffectCreateColorShader(0xFF00FF00);
@@ -542,7 +560,8 @@ int TestImageFilterCreateFromShderEffectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageFilterCreateBlurWithCropNormal() {
+int TestImageFilterCreateBlurWithCropNormal()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -569,7 +588,8 @@ int TestImageFilterCreateBlurWithCropNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurWithCropNull() {
+int TestImageFilterCreateBlurWithCropNull()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     OH_Drawing_ImageFilter *imageFilter1 =
@@ -608,7 +628,8 @@ int TestImageFilterCreateBlurWithCropNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageFilterCreateBlurWithCropMultiCalls() {
+int TestImageFilterCreateBlurWithCropMultiCalls()
+{
     DrawingNativeImageFilterTestSetUp();
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     OH_Drawing_ImageFilter *imageFilter1 =

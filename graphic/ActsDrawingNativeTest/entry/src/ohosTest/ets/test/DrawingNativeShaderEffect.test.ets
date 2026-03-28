@@ -43,7 +43,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0100', Level.LEVEL0, () => {
+    it('testShaderEffectCreateColorShaderNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0101', Level.LEVEL3, () => {
+    it('testShaderEffectCreateColorShaderNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0102', Level.LEVEL3, () => {
+    it('testShaderEffectCreateColorShaderAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0103', Level.LEVEL3, () => {
+    it('testShaderEffectCreateColorShaderMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0104', Level.LEVEL3, () => {
+    it('testShaderEffectCreateColorShaderMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0200', Level.LEVEL0, () => {
+    it('testShaderEffectCreateLinearGradientWithLocalMatrixNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0201', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradientWithLocalMatrixNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0202', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0203', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradientWithLocalMatrixMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0204', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0300', Level.LEVEL0, () => {
+    it('testShaderEffectCreateLinearGradienNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0301', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradienNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0302', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradienAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0303', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradienMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0304', Level.LEVEL3, () => {
+    it('testShaderEffectCreateLinearGradienMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0400', Level.LEVEL0, () => {
+    it('testShaderEffectCreateRadialGradientNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0401', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0402', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(17);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0403', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(18);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0404', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(19);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0500', Level.LEVEL0, () => {
+    it('testShaderEffectCreateRadialGradientWithLocalMatrixNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(20);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0501', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientWithLocalMatrixNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(21);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0502', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(22);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0503', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientWithLocalMatrixMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(23);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0504', Level.LEVEL3, () => {
+    it('testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(24);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0600', Level.LEVEL0, () => {
+    it('testShaderEffectCreateSweepGradientNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(25);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0601', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(26);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0602', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(27);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0603', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(28);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0604', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateGradient(29);
       expect(result).assertEqual(0);
     })
@@ -434,7 +434,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0700', Level.LEVEL0, () => {
+    it('testShaderEffectCreateImageShaderNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(0);
       expect(result).assertEqual(0);
     })
@@ -447,7 +447,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0701', Level.LEVEL3, () => {
+    it('testShaderEffectCreateImageShaderNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(1);
       expect(result).assertEqual(0);
     })
@@ -460,7 +460,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0704', Level.LEVEL3, () => {
+    it('testShaderEffectCreateImageShaderMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(2);
       expect(result).assertEqual(0);
     })
@@ -473,7 +473,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0800', Level.LEVEL0, () => {
+    it('testShaderEffectCreateTwoPointConicalGradientNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(3);
       expect(result).assertEqual(0);
     })
@@ -486,7 +486,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0801', Level.LEVEL3, () => {
+    it('testShaderEffectCreateTwoPointConicalGradientNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(4);
       expect(result).assertEqual(0);
     })
@@ -499,7 +499,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0802', Level.LEVEL3, () => {
+    it('testShaderEffectCreateTwoPointConicalGradientAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(5);
       expect(result).assertEqual(0);
     })
@@ -512,7 +512,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0803', Level.LEVEL3, () => {
+    it('testShaderEffectCreateTwoPointConicalGradientMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(6);
       expect(result).assertEqual(0);
     })
@@ -525,7 +525,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0804', Level.LEVEL3, () => {
+    it('testShaderEffectCreateTwoPointConicalGradientMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(7);
       expect(result).assertEqual(0);
     })
@@ -538,7 +538,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0900', Level.LEVEL0, () => {
+    it('testShaderEffectDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -551,7 +551,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0901', Level.LEVEL3, () => {
+    it('testShaderEffectDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -564,7 +564,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1000', Level.LEVEL0, () => {
+    it('testShaderEffectCreateSweepGradientWithLocalMatrixNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(8);
       expect(result).assertEqual(0);
     })
@@ -577,7 +577,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1001', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientWithLocalMatrixNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(9);
       expect(result).assertEqual(0);
     })
@@ -590,7 +590,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1002', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(10);
       expect(result).assertEqual(0);
     })
@@ -603,7 +603,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1003', Level.LEVEL3, () => {
+    it('testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(11);
       expect(result).assertEqual(0);
     })
@@ -616,7 +616,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1100', Level.LEVEL0, () => {
+    it('testShaderEffectCreateComposeEnumTraversal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(12);
       expect(result).assertEqual(0);
     })
@@ -629,7 +629,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1101', Level.LEVEL3, () => {
+    it('testShaderEffectCreateComposeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(13);
       expect(result).assertEqual(0);
     })
@@ -642,7 +642,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1102', Level.LEVEL3, () => {
+    it('testShaderEffectCreateComposeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(14);
       expect(result).assertEqual(0);
     })
@@ -655,7 +655,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1200', Level.LEVEL0, () => {
+    it('testShaderEffectCreatePixelMapShaderNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(15);
       expect(result).assertEqual(0);
     })
@@ -668,7 +668,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1201', Level.LEVEL3, () => {
+    it('testShaderEffectCreatePixelMapShaderNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(16);
       expect(result).assertEqual(0);
     })
@@ -681,7 +681,7 @@ export default function DrawingNativeShaderEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1202', Level.LEVEL3, () => {
+    it('testShaderEffectCreatePixelMapShaderMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingShaderEffectCreateSpecial(17);
       expect(result).assertEqual(0);
     })

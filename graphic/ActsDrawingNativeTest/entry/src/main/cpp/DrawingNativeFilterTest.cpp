@@ -44,7 +44,8 @@ void DrawingNativeFilterTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFilterCreateDestroyNormal() {
+int TestFilterCreateDestroyNormal()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     EXPECT_NE(filter, nullptr);
@@ -62,7 +63,8 @@ int TestFilterCreateDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterCreateDestroyNULL() {
+int TestFilterCreateDestroyNULL()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *filter = nullptr;
     OH_Drawing_FilterDestroy(nullptr);
@@ -79,7 +81,8 @@ int TestFilterCreateDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterCreateDestroyMultipleCalls() {
+int TestFilterCreateDestroyMultipleCalls()
+{
     DrawingNativeFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
@@ -98,7 +101,8 @@ int TestFilterCreateDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFilterSetImageFilterNormal() {
+int TestFilterSetImageFilterNormal()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
     // add assert
@@ -126,7 +130,8 @@ int TestFilterSetImageFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetImageFilterNULL() {
+int TestFilterSetImageFilterNULL()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
     // add assert
@@ -155,7 +160,8 @@ int TestFilterSetImageFilterNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetImageFilterMultipleCalls() {
+int TestFilterSetImageFilterMultipleCalls()
+{
     DrawingNativeFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
@@ -184,7 +190,8 @@ int TestFilterSetImageFilterMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFilterSetMaskFilterNormal() {
+int TestFilterSetMaskFilterNormal()
+{
     DrawingNativeFilterTestSetUp();
     // 1. Create OH_Drawing_Filter using OH_Drawing_FilterCreate and OH_Drawing_MaskFilter using
     // OH_Drawing_MaskFilterCreateBlur
@@ -214,7 +221,8 @@ int TestFilterSetMaskFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetMaskFilterNULL() {
+int TestFilterSetMaskFilterNULL()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
@@ -251,7 +259,8 @@ int TestFilterSetMaskFilterNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetMaskFilterMultipleCalls() {
+int TestFilterSetMaskFilterMultipleCalls()
+{
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetMaskFilter 10 times with different OH_Drawing_Filter and OH_Drawing_MaskFilter
     // objects.
@@ -279,7 +288,8 @@ int TestFilterSetMaskFilterMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFilterSetColorFilterNormal() {
+int TestFilterSetColorFilterNormal()
+{
     DrawingNativeFilterTestSetUp();
     // 1. Create OH_Drawing_Filter using OH_Drawing_FilterCreate
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
@@ -318,7 +328,8 @@ int TestFilterSetColorFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetColorFilterNULL() {
+int TestFilterSetColorFilterNULL()
+{
     DrawingNativeFilterTestSetUp();
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
@@ -372,7 +383,8 @@ int TestFilterSetColorFilterNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFilterSetColorFilterMultipleCalls() {
+int TestFilterSetColorFilterMultipleCalls()
+{
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetColorFilter 10 times with different OH_Drawing_Filter and OH_Drawing_ColorFilter
     // objects. Call successful, errorcode returns OH_DRAWING_SUCCESS

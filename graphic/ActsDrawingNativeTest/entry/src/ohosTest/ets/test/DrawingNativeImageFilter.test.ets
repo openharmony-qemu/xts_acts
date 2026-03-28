@@ -43,7 +43,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0100', Level.LEVEL0, () => {
+    it('testImageFilterCreateBlurNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0101', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0102', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0103', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0104', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0200', Level.LEVEL0, () => {
+    it('testImageFilterCreateFromColorFilterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0201', Level.LEVEL3, () => {
+    it('testImageFilterCreateFromColorFilterNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0202', Level.LEVEL3, () => {
+    it('testImageFilterCreateFromColorFilterMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0300', Level.LEVEL0, () => {
+    it('testImageFilterDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0301', Level.LEVEL3, () => {
+    it('testImageFilterDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0302', Level.LEVEL3, () => {
+    it('testImageFilterDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0400', Level.LEVEL0, () => {
+    it('testImageFilterCreateOffsetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0401', Level.LEVEL3, () => {
+    it('testImageFilterCreateOffsetNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0402', Level.LEVEL3, () => {
+    it('testImageFilterCreateOffsetAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0403', Level.LEVEL3, () => {
+    it('testImageFilterCreateOffsetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0500', Level.LEVEL0, () => {
+    it('testImageFilterCreateFromShderEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0501', Level.LEVEL3, () => {
+    it('testImageFilterCreateFromShderEffectNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0502', Level.LEVEL3, () => {
+    it('testImageFilterCreateFromShderEffectMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(17);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600', Level.LEVEL0, () => {
+    it('testImageFilterCreateBlurWithCropNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImageFilter(18);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurWithCropNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(19);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeImageFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602', Level.LEVEL3, () => {
+    it('testImageFilterCreateBlurWithCropMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImageFilter(20);
       expect(result).assertEqual(0);
     })

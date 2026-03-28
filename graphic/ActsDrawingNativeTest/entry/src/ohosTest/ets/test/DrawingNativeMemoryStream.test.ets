@@ -43,7 +43,7 @@ export default function DrawingNativeMemoryStreamTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0100', Level.LEVEL0, () => {
+    it('testMemoryStreamCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMemoryStream(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeMemoryStreamTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0101', Level.LEVEL3, () => {
+    it('testMemoryStreamCreateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMemoryStream(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeMemoryStreamTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0102', Level.LEVEL3, () => {
+    it('testMemoryStreamCreateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMemoryStream(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeMemoryStreamTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0103', Level.LEVEL3, () => {
+    it('testMemoryStreamCreateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMemoryStream(3);
       expect(result).assertEqual(0);
     })

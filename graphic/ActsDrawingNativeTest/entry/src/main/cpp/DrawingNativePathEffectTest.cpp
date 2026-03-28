@@ -49,7 +49,8 @@ void DrawingNativePathEffectTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreateDashPathEffectNormal() {
+int TestCreateDashPathEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateDashPathEffect
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1};
@@ -72,7 +73,8 @@ int TestCreateDashPathEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateDashPathEffectNull() {
+int TestCreateDashPathEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     // 1. OH_Drawing_CreateDashPathEffect with nullptr as the first parameter, check the error code with
@@ -104,7 +106,8 @@ int TestCreateDashPathEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateDashPathEffectAbnormal() {
+int TestCreateDashPathEffectAbnormal()
+{
     DrawingNativePathEffectTestSetUp();
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     // 1. OH_Drawing_CreateDashPathEffect with the first parameter not being even
@@ -140,7 +143,8 @@ int TestCreateDashPathEffectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateDashPathEffectMultipleCalls() {
+int TestCreateDashPathEffectMultipleCalls()
+{
     DrawingNativePathEffectTestSetUp();
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     // 1. Call OH_Drawing_CreateDashPathEffect 10 times
@@ -163,7 +167,8 @@ int TestCreateDashPathEffectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathEffectDestroyNormal() {
+int TestPathEffectDestroyNormal()
+{
     DrawingNativePathEffectTestSetUp();
     float intervals[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1};
     // 1. OH_Drawing_CreateDashPathEffect
@@ -184,7 +189,8 @@ int TestPathEffectDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathEffectDestroyNull() {
+int TestPathEffectDestroyNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_PathEffectDestroy with nullptr as the parameter
     OH_Drawing_PathEffect *pathEffect = nullptr;
@@ -202,7 +208,8 @@ int TestPathEffectDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreateCornerPathEffectNormal() {
+int TestCreateCornerPathEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect with normal parameter
     OH_Drawing_PathEffect *pathEffect = OH_Drawing_CreateCornerPathEffect(10.0);
@@ -223,7 +230,8 @@ int TestCreateCornerPathEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateCornerPathEffectNull() {
+int TestCreateCornerPathEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect with 0 as the parameter
     OH_Drawing_PathEffect *pathEffect = OH_Drawing_CreateCornerPathEffect(0);
@@ -243,7 +251,8 @@ int TestCreateCornerPathEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateCornerPathEffectAbnormal() {
+int TestCreateCornerPathEffectAbnormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect with 0xFFFFFFFF as the parameter
     OH_Drawing_PathEffect *pathEffect1 = OH_Drawing_CreateCornerPathEffect(DRAWING_NUMBER_0XFFFFFFFF);
@@ -278,7 +287,8 @@ int TestCreateCornerPathEffectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreateDiscreatePathEffectNormal() {
+int TestCreateDiscreatePathEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateDiscretePathEffect with normal parameter
     OH_Drawing_PathEffect *pathEffect = OH_Drawing_CreateDiscretePathEffect(10.0, 2.0);
@@ -299,7 +309,8 @@ int TestCreateDiscreatePathEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateDiscreatePathEffectNull() {
+int TestCreateDiscreatePathEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateDiscretePathEffect with 0 as the first parameter
     OH_Drawing_PathEffect *pathEffect1 = OH_Drawing_CreateDiscretePathEffect(0, 2.0);
@@ -324,7 +335,8 @@ int TestCreateDiscreatePathEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateDiscreatePathEffectAbnormal() {
+int TestCreateDiscreatePathEffectAbnormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateDiscretePathEffect with 0xFFFFFFFF as the first and second parameter
     OH_Drawing_PathEffect *pathEffect1 = OH_Drawing_CreateDiscretePathEffect(DRAWING_NUMBER_0XFFFFFFFF,
@@ -371,7 +383,8 @@ int TestCreateDiscreatePathEffectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreateComposePathEffectNormal() {
+int TestCreateComposePathEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect
     OH_Drawing_PathEffect *cornerPathEffect = OH_Drawing_CreateCornerPathEffect(10.0);
@@ -405,7 +418,8 @@ int TestCreateComposePathEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateComposePathEffectNull() {
+int TestCreateComposePathEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect
     OH_Drawing_PathEffect *cornerPathEffect = OH_Drawing_CreateCornerPathEffect(10.0);
@@ -442,7 +456,8 @@ int TestCreateComposePathEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreatePathDashEffectNormal() {
+int TestCreatePathDashEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -481,7 +496,8 @@ int TestCreatePathDashEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreatePathDashEffectNull() {
+int TestCreatePathDashEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -521,7 +537,8 @@ int TestCreatePathDashEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreatePathDashEffectAbnormal() {
+int TestCreatePathDashEffectAbnormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -564,7 +581,8 @@ int TestCreatePathDashEffectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCreateSumPathEffectNormal() {
+int TestCreateSumPathEffectNormal()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect
     OH_Drawing_PathEffect *firstPathEffect = OH_Drawing_CreateCornerPathEffect(50.0f);
@@ -591,7 +609,8 @@ int TestCreateSumPathEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCreateSumPathEffectNull() {
+int TestCreateSumPathEffectNull()
+{
     DrawingNativePathEffectTestSetUp();
     // 1. OH_Drawing_CreateCornerPathEffect
     OH_Drawing_PathEffect *firstPathEffect = OH_Drawing_CreateCornerPathEffect(50.0f);

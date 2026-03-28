@@ -53,7 +53,8 @@ void DrawingNativeTextBlobTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobBuilderCreateDestroyNormal() {
+int TestTextBlobBuilderCreateDestroyNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(nullptr, canvas);
@@ -83,7 +84,8 @@ int TestTextBlobBuilderCreateDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderCreateDestroyNull() {
+int TestTextBlobBuilderCreateDestroyNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. OH_Drawing_TextBlobBuilderDestroy with nullptr parameter
     OH_Drawing_TextBlobBuilder *builder = nullptr;
@@ -101,7 +103,8 @@ int TestTextBlobBuilderCreateDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderCreateDestroyMultipleCalls() {
+int TestTextBlobBuilderCreateDestroyMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     OH_Drawing_TextBlobBuilder *builders[DRAWING_NUMBER_10];
     // 1. Call OH_Drawing_TextBlobBuilderCreate 10 times
@@ -137,7 +140,8 @@ int TestTextBlobBuilderCreateDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobCreateFromTextNormal() {
+int TestTextBlobCreateFromTextNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(nullptr, canvas);
@@ -158,9 +162,11 @@ int TestTextBlobCreateFromTextNormal() {
         size_t byteLength = 0;
         if (encode == TEXT_ENCODING_UTF8) {
             byteLength = strlen(str);
-        } else if (encode == TEXT_ENCODING_UTF32) {
+        } else if (encode == TEXT_ENCODING_UTF32)
+{
             byteLength = strlen(str) * DRAWING_NUMBER_4;
-        } else if (encode == TEXT_ENCODING_GLYPH_ID) {
+        } else if (encode == TEXT_ENCODING_GLYPH_ID)
+{
             byteLength = strlen(str) * DRAWING_NUMBER_16;
         }
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromText(str, byteLength, font, encode);
@@ -194,7 +200,8 @@ int TestTextBlobCreateFromTextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromTextNull() {
+int TestTextBlobCreateFromTextNull()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -237,7 +244,8 @@ int TestTextBlobCreateFromTextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromTextMultipleCalls() {
+int TestTextBlobCreateFromTextMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
@@ -277,7 +285,8 @@ int TestTextBlobCreateFromTextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromTextAbnormal() {
+int TestTextBlobCreateFromTextAbnormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -308,7 +317,8 @@ int TestTextBlobCreateFromTextAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobCreateFromPosTextNormal() {
+int TestTextBlobCreateFromPosTextNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -340,7 +350,8 @@ int TestTextBlobCreateFromPosTextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromPosTextNull() {
+int TestTextBlobCreateFromPosTextNull()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -389,7 +400,8 @@ int TestTextBlobCreateFromPosTextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromPosTextMultipleCalls() {
+int TestTextBlobCreateFromPosTextMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
@@ -429,7 +441,8 @@ int TestTextBlobCreateFromPosTextMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromPosTextAbnormal() {
+int TestTextBlobCreateFromPosTextAbnormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -463,7 +476,8 @@ int TestTextBlobCreateFromPosTextAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobCreateFromStringNormal() {
+int TestTextBlobCreateFromStringNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -506,7 +520,8 @@ int TestTextBlobCreateFromStringNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromStringNull() {
+int TestTextBlobCreateFromStringNull()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -545,7 +560,8 @@ int TestTextBlobCreateFromStringNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromStringMultipleCalls() {
+int TestTextBlobCreateFromStringMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
@@ -586,7 +602,8 @@ int TestTextBlobCreateFromStringMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobCreateFromStringAbnormal() {
+int TestTextBlobCreateFromStringAbnormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -617,7 +634,8 @@ int TestTextBlobCreateFromStringAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobGetBoundsNormal() {
+int TestTextBlobGetBoundsNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1、创建OH_Drawing_TextBlob、OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -649,7 +667,8 @@ int TestTextBlobGetBoundsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobGetBoundsNull() {
+int TestTextBlobGetBoundsNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -685,7 +704,8 @@ int TestTextBlobGetBoundsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobGetBoundsMultipleCalls() {
+int TestTextBlobGetBoundsMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -723,7 +743,8 @@ int TestTextBlobGetBoundsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobGetBoundsAbnormal() {
+int TestTextBlobGetBoundsAbnormal()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(-DRAWING_NUMBER_1, -DRAWING_NUMBER_1, -DRAWING_NUMBER_1,
@@ -756,7 +777,8 @@ int TestTextBlobGetBoundsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobUniqueIDNormal() {
+int TestTextBlobUniqueIDNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -785,7 +807,8 @@ int TestTextBlobUniqueIDNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobUniqueIDNull() {
+int TestTextBlobUniqueIDNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -813,7 +836,8 @@ int TestTextBlobUniqueIDNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobUniqueIDMultipleCalls() {
+int TestTextBlobUniqueIDMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -848,7 +872,8 @@ int TestTextBlobUniqueIDMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobBuilderAllocRunPosNormal() {
+int TestTextBlobBuilderAllocRunPosNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlobBuilder, OH_Drawing_Font, OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -882,7 +907,8 @@ int TestTextBlobBuilderAllocRunPosNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderAllocRunPosNull() {
+int TestTextBlobBuilderAllocRunPosNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlobBuilder, OH_Drawing_Font, OH_Drawing_Rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -929,7 +955,8 @@ int TestTextBlobBuilderAllocRunPosNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderAllocRunPosMultipleCalls() {
+int TestTextBlobBuilderAllocRunPosMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
     EXPECT_NE(rect, nullptr);
@@ -967,7 +994,8 @@ int TestTextBlobBuilderAllocRunPosMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobBuilderMakeNormal() {
+int TestTextBlobBuilderMakeNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlobBuilder
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
@@ -996,7 +1024,8 @@ int TestTextBlobBuilderMakeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderMakeNull() {
+int TestTextBlobBuilderMakeNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Call OH_Drawing_TextBlobBuilderMake with nullptr as the parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
@@ -1015,7 +1044,8 @@ int TestTextBlobBuilderMakeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobBuilderMakeMultipleCalls() {
+int TestTextBlobBuilderMakeMultipleCalls()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlobBuilder
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
@@ -1045,7 +1075,8 @@ int TestTextBlobBuilderMakeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTextBlobDestroyNormal() {
+int TestTextBlobDestroyNormal()
+{
     DrawingNativeTextBlobTestSetUp();
     const char *str = "123456";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1072,7 +1103,8 @@ int TestTextBlobDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTextBlobDestroyNull() {
+int TestTextBlobDestroyNull()
+{
     DrawingNativeTextBlobTestSetUp();
     // 1. OH_Drawing_TextBlobDestroy with null parameter
     OH_Drawing_TextBlob *textBlob = nullptr;

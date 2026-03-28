@@ -53,7 +53,8 @@ void DrawingNativePathTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathCreateNormal() {
+int TestPathCreateNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Call OH_Drawing_PathCreate to create a path object
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -72,7 +73,8 @@ int TestPathCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathCopyNormal() {
+int TestPathCopyNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object 1 by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path1 = OH_Drawing_PathCreate();
@@ -112,7 +114,8 @@ int TestPathCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathCopyNull() {
+int TestPathCopyNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -136,7 +139,8 @@ int TestPathCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathCopyInputDestroyed() {
+int TestPathCopyInputDestroyed()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object 1 by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path1 = OH_Drawing_PathCreate();
@@ -176,7 +180,8 @@ int TestPathCopyInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathDestroyNormal() {
+int TestPathDestroyNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Call OH_Drawing_PathCreate to create a path object
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -196,7 +201,8 @@ int TestPathDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathDestroyNull() {
+int TestPathDestroyNull()
+{
     DrawingNativePathTestSetUp();
     OH_Drawing_Path *path = nullptr;
     OH_Drawing_PathDestroy(nullptr);
@@ -213,7 +219,8 @@ int TestPathDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathMoveToNormal() {
+int TestPathMoveToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -237,7 +244,8 @@ int TestPathMoveToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathMoveToNull() {
+int TestPathMoveToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -265,7 +273,8 @@ int TestPathMoveToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathMoveToAbnormal() {
+int TestPathMoveToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -291,7 +300,8 @@ int TestPathMoveToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathMoveToMaximal() {
+int TestPathMoveToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -317,7 +327,8 @@ int TestPathMoveToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathLineToNormal() {
+int TestPathLineToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -343,7 +354,8 @@ int TestPathLineToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathLineToNull() {
+int TestPathLineToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -371,7 +383,8 @@ int TestPathLineToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathLineToAbnormal() {
+int TestPathLineToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -399,7 +412,8 @@ int TestPathLineToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathLineToMaximal() {
+int TestPathLineToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -427,7 +441,8 @@ int TestPathLineToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathArcToNormal() {
+int TestPathArcToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -463,7 +478,8 @@ int TestPathArcToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathArcToNull() {
+int TestPathArcToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -499,7 +515,8 @@ int TestPathArcToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathArcToAbnormal() {
+int TestPathArcToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -534,7 +551,8 @@ int TestPathArcToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathArcToMaximal() {
+int TestPathArcToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -587,7 +605,8 @@ int TestPathArcToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathQuadToNormal() {
+int TestPathQuadToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -616,7 +635,8 @@ int TestPathQuadToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathQuadToNull() {
+int TestPathQuadToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -648,7 +668,8 @@ int TestPathQuadToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathQuadToAbnormal() {
+int TestPathQuadToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -678,7 +699,8 @@ int TestPathQuadToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathQuadToMaximal() {
+int TestPathQuadToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -708,7 +730,8 @@ int TestPathQuadToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathConicToNormal() {
+int TestPathConicToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -736,7 +759,8 @@ int TestPathConicToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathConicToNull() {
+int TestPathConicToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -770,7 +794,8 @@ int TestPathConicToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathConicToAbnormal() {
+int TestPathConicToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -804,7 +829,8 @@ int TestPathConicToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathConicToMaximal() {
+int TestPathConicToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -843,7 +869,8 @@ int TestPathConicToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathCubicToNormal() {
+int TestPathCubicToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -870,7 +897,8 @@ int TestPathCubicToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathCubicToNull() {
+int TestPathCubicToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -909,7 +937,8 @@ int TestPathCubicToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathCubicToAbnormal() {
+int TestPathCubicToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -943,7 +972,8 @@ int TestPathCubicToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathCubicToMaximal() {
+int TestPathCubicToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -983,7 +1013,8 @@ int TestPathCubicToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathRMoveToNormal() {
+int TestPathRMoveToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1015,7 +1046,8 @@ int TestPathRMoveToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRMoveToNull() {
+int TestPathRMoveToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1044,7 +1076,8 @@ int TestPathRMoveToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRMoveToAbnormal() {
+int TestPathRMoveToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1072,7 +1105,8 @@ int TestPathRMoveToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRMoveToMaximal() {
+int TestPathRMoveToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1100,7 +1134,8 @@ int TestPathRMoveToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathRLineToNormal() {
+int TestPathRLineToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1137,7 +1172,8 @@ int TestPathRLineToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRLineToNull() {
+int TestPathRLineToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1165,7 +1201,8 @@ int TestPathRLineToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRLineToAbnormal() {
+int TestPathRLineToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1197,7 +1234,8 @@ int TestPathRLineToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRLineToMaximal() {
+int TestPathRLineToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1229,7 +1267,8 @@ int TestPathRLineToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathRQuadToNormal() {
+int TestPathRQuadToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1266,7 +1305,8 @@ int TestPathRQuadToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRQuadToNull() {
+int TestPathRQuadToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1298,7 +1338,8 @@ int TestPathRQuadToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRQuadToAbnormal() {
+int TestPathRQuadToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1332,7 +1373,8 @@ int TestPathRQuadToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRQuadToMaximal() {
+int TestPathRQuadToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1367,7 +1409,8 @@ int TestPathRQuadToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathRConicToNormal() {
+int TestPathRConicToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1404,7 +1447,8 @@ int TestPathRConicToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRConicToNull() {
+int TestPathRConicToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1438,7 +1482,8 @@ int TestPathRConicToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRConicToAbnormal() {
+int TestPathRConicToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1474,7 +1519,8 @@ int TestPathRConicToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRConicToMaximal() {
+int TestPathRConicToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1515,7 +1561,8 @@ int TestPathRConicToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathRCubicToNormal() {
+int TestPathRCubicToNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1553,7 +1600,8 @@ int TestPathRCubicToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRCubicToNull() {
+int TestPathRCubicToNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1593,7 +1641,8 @@ int TestPathRCubicToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRCubicToAbnormal() {
+int TestPathRCubicToAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1631,7 +1680,8 @@ int TestPathRCubicToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathRCubicToMaximal() {
+int TestPathRCubicToMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1675,7 +1725,8 @@ int TestPathRCubicToMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathAddRectNormal() {
+int TestPathAddRectNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1705,7 +1756,8 @@ int TestPathAddRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectNull() {
+int TestPathAddRectNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1741,7 +1793,8 @@ int TestPathAddRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectAbnormal() {
+int TestPathAddRectAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1777,7 +1830,8 @@ int TestPathAddRectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectMaximal() {
+int TestPathAddRectMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1813,7 +1867,8 @@ int TestPathAddRectMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathAddRectWithInitialCornerNormal() {
+int TestPathAddRectWithInitialCornerNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1848,7 +1903,8 @@ int TestPathAddRectWithInitialCornerNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectWithInitialCornerNull() {
+int TestPathAddRectWithInitialCornerNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1885,7 +1941,8 @@ int TestPathAddRectWithInitialCornerNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectWithInitialCornerAbnormal() {
+int TestPathAddRectWithInitialCornerAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1917,7 +1974,8 @@ int TestPathAddRectWithInitialCornerAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRectWithInitialCornerMaximal() {
+int TestPathAddRectWithInitialCornerMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1949,7 +2007,8 @@ int TestPathAddRectWithInitialCornerMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathAddRoundRectNormal() {
+int TestPathAddRoundRectNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1995,7 +2054,8 @@ int TestPathAddRoundRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddRoundRectNull() {
+int TestPathAddRoundRectNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -2034,7 +2094,8 @@ int TestPathAddRoundRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathAddOvalWithInitialPointNormal() {
+int TestPathAddOvalWithInitialPointNormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -2076,7 +2137,8 @@ int TestPathAddOvalWithInitialPointNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddOvalWithInitialPointNull() {
+int TestPathAddOvalWithInitialPointNull()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -2115,7 +2177,8 @@ int TestPathAddOvalWithInitialPointNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddOvalWithInitialPointAbnormal() {
+int TestPathAddOvalWithInitialPointAbnormal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -2147,7 +2210,8 @@ int TestPathAddOvalWithInitialPointAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathAddOvalWithInitialPointMaximal() {
+int TestPathAddOvalWithInitialPointMaximal()
+{
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();

@@ -64,7 +64,8 @@ void DrawingNativeCanvasTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasDestroyNormal() {
+int TestCanvasDestroyNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -83,7 +84,8 @@ int TestCanvasDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDestroyNull() {
+int TestCanvasDestroyNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = nullptr;
@@ -101,7 +103,8 @@ int TestCanvasDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasBindNormal() {
+int TestCanvasBindNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -134,7 +137,8 @@ int TestCanvasBindNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasBindNull() {
+int TestCanvasBindNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -172,7 +176,8 @@ int TestCanvasBindNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasBindDestroyBitmap() {
+int TestCanvasBindDestroyBitmap()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -213,7 +218,8 @@ int TestCanvasBindDestroyBitmap() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasBindMultipleCalls() {
+int TestCanvasBindMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -246,7 +252,8 @@ int TestCanvasBindMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasBindBoundaryMultipleCallsBoundary() {
+int TestCanvasBindBoundaryMultipleCallsBoundary()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -279,7 +286,8 @@ int TestCanvasBindBoundaryMultipleCallsBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasAttachPenDetachPenNormal() {
+int TestCanvasAttachPenDetachPenNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -321,7 +329,8 @@ int TestCanvasAttachPenDetachPenNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachPenDetachPenNull() {
+int TestCanvasAttachPenDetachPenNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -367,7 +376,8 @@ int TestCanvasAttachPenDetachPenNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachPenDetachPenMultipleCalls() {
+int TestCanvasAttachPenDetachPenMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -407,7 +417,8 @@ int TestCanvasAttachPenDetachPenMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachPenOnly() {
+int TestCanvasAttachPenOnly()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -434,7 +445,8 @@ int TestCanvasAttachPenOnly() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDetachPenOnly() {
+int TestCanvasDetachPenOnly()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -457,7 +469,8 @@ int TestCanvasDetachPenOnly() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasAttachPenDetachPenBoundary() {
+int TestCanvasAttachPenDetachPenBoundary()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -497,7 +510,8 @@ int TestCanvasAttachPenDetachPenBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachBrushDetachBrushNormal() {
+int TestCanvasAttachBrushDetachBrushNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -541,7 +555,8 @@ int TestCanvasAttachBrushDetachBrushNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachBrushDetachBrushNull() {
+int TestCanvasAttachBrushDetachBrushNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -584,7 +599,8 @@ int TestCanvasAttachBrushDetachBrushNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachBrushDetachBrushMultipleCalls() {
+int TestCanvasAttachBrushDetachBrushMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -624,7 +640,8 @@ int TestCanvasAttachBrushDetachBrushMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachBrushOnly() {
+int TestCanvasAttachBrushOnly()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -651,7 +668,8 @@ int TestCanvasAttachBrushOnly() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDetachBrushOnly() {
+int TestCanvasDetachBrushOnly()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -674,7 +692,8 @@ int TestCanvasDetachBrushOnly() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasAttachBrushDetachBrushBoudary() {
+int TestCanvasAttachBrushDetachBrushBoudary()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -714,7 +733,8 @@ int TestCanvasAttachBrushDetachBrushBoudary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasSaveNormal() {
+int TestCanvasSaveNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -753,7 +773,8 @@ int TestCanvasSaveNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSavetestCanvasGetSaveCountNull() {
+int TestCanvasSavetestCanvasGetSaveCountNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_CanvasSave(nullptr);
@@ -770,7 +791,8 @@ int TestCanvasSavetestCanvasGetSaveCountNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSavetestCanvasGetSaveCountMultipleCalls() {
+int TestCanvasSavetestCanvasGetSaveCountMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -822,7 +844,8 @@ int TestCanvasSavetestCanvasGetSaveCountMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSavetestCanvasGetSaveCountInputDestroyed() {
+int TestCanvasSavetestCanvasGetSaveCountInputDestroyed()
+{
     DrawingNativeCanvasTestSetUp();
     // Deprecated
     DrawingNativeCanvasTestTearDown();
@@ -837,7 +860,8 @@ int TestCanvasSavetestCanvasGetSaveCountInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasGetSaveCountWhenNoSave() {
+int TestCanvasGetSaveCountWhenNoSave()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -875,7 +899,8 @@ int TestCanvasGetSaveCountWhenNoSave() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasSaveLayerNormal() {
+int TestCanvasSaveLayerNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -906,7 +931,8 @@ int TestCanvasSaveLayerNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSaveLayerNull() {
+int TestCanvasSaveLayerNull()
+{
     DrawingNativeCanvasTestSetUp();
     // step 1
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -971,7 +997,8 @@ int TestCanvasSaveLayerNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSaveLayerAbnormal() {
+int TestCanvasSaveLayerAbnormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate, OH_Drawing_BrushCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1056,7 +1083,8 @@ int TestCanvasSaveLayerAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestCanvasSaveLayerRestore() {
+int TestCanvasSaveLayerRestore()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate, OH_Drawing_RectCreate, OH_Drawing_BrushCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1093,7 +1121,8 @@ int TestCanvasSaveLayerRestore() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasSaveLayerMultipleCalls() {
+int TestCanvasSaveLayerMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate, OH_Drawing_BrushCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1128,7 +1157,8 @@ int TestCanvasSaveLayerMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasRestoreNormal() {
+int TestCanvasRestoreNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1159,7 +1189,8 @@ int TestCanvasRestoreNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreNull() {
+int TestCanvasRestoreNull()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1189,7 +1220,8 @@ int TestCanvasRestoreNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreMultipleCalls() {
+int TestCanvasRestoreMultipleCalls()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1240,7 +1272,8 @@ int TestCanvasRestoreMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreBeforeSave() {
+int TestCanvasRestoreBeforeSave()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1272,7 +1305,8 @@ int TestCanvasRestoreBeforeSave() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreInputDestroyed() {
+int TestCanvasRestoreInputDestroyed()
+{
     DrawingNativeCanvasTestSetUp();
     // Deprecated
     DrawingNativeCanvasTestTearDown();
@@ -1287,7 +1321,8 @@ int TestCanvasRestoreInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreExceededSaveSavelayerTimes() {
+int TestCanvasRestoreExceededSaveSavelayerTimes()
+{
     DrawingNativeCanvasTestSetUp();
     // 1、OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1359,7 +1394,8 @@ int TestCanvasRestoreExceededSaveSavelayerTimes() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasRestoreToCountNormal() {
+int TestCanvasRestoreToCountNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1394,7 +1430,8 @@ int TestCanvasRestoreToCountNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreToCountNull() {
+int TestCanvasRestoreToCountNull()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1424,7 +1461,8 @@ int TestCanvasRestoreToCountNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreToCountAbnormal() {
+int TestCanvasRestoreToCountAbnormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1454,7 +1492,8 @@ int TestCanvasRestoreToCountAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreToCountMaximum() {
+int TestCanvasRestoreToCountMaximum()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1479,7 +1518,8 @@ int TestCanvasRestoreToCountMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreToCountExceeded() {
+int TestCanvasRestoreToCountExceeded()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1512,7 +1552,8 @@ int TestCanvasRestoreToCountExceeded() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasRestoreToCountInputDestroyed() {
+int TestCanvasRestoreToCountInputDestroyed()
+{
     DrawingNativeCanvasTestSetUp();
     // Deprecated
     DrawingNativeCanvasTestTearDown();
@@ -1527,7 +1568,8 @@ int TestCanvasRestoreToCountInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasDrawLineNormal() {
+int TestCanvasDrawLineNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     // 2. OH_Drawing_CanvasDrawLine, passing floating-point coordinates
@@ -1555,7 +1597,8 @@ int TestCanvasDrawLineNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawLineNull() {
+int TestCanvasDrawLineNull()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1592,7 +1635,8 @@ int TestCanvasDrawLineNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawLineAbnormal() {
+int TestCanvasDrawLineAbnormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1640,7 +1684,8 @@ int TestCanvasDrawLineAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawLineMaximum() {
+int TestCanvasDrawLineMaximum()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1672,7 +1717,8 @@ int TestCanvasDrawLineMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawLineInputDestroyed() {
+int TestCanvasDrawLineInputDestroyed()
+{
     DrawingNativeCanvasTestSetUp();
     // Deprecated
     DrawingNativeCanvasTestTearDown();
@@ -1687,7 +1733,8 @@ int TestCanvasDrawLineInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasDrawPathNormal() {
+int TestCanvasDrawPathNormal()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1723,7 +1770,8 @@ int TestCanvasDrawPathNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPathNull() {
+int TestCanvasDrawPathNull()
+{
     DrawingNativeCanvasTestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1761,7 +1809,8 @@ int TestCanvasDrawPathNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPathInputDestroyed() {
+int TestCanvasDrawPathInputDestroyed()
+{
     DrawingNativeCanvasTestSetUp();
     // Deprecated
     DrawingNativeCanvasTestTearDown();

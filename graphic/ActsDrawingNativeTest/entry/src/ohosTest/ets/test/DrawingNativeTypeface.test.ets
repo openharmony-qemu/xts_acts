@@ -43,7 +43,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0100', Level.LEVEL0, () => {
+    it('testTypefaceCreateDefaultNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0101', Level.LEVEL3, () => {
+    it('testTypefaceCreateDefaultNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0200', Level.LEVEL0, () => {
+    it('testTypefaceCreateFromFileNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0201', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromFileNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0300', Level.LEVEL0, () => {
+    it('testTypefaceCreateFromStreamNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0301', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromStreamNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0400', Level.LEVEL0, () => {
+    it('testTypefaceCreateDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0401', Level.LEVEL3, () => {
+    it('testTypefaceCreateDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0500', Level.LEVEL0, () => {
+    it('testTypefaceCreateFromFileWithArugumentsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0501', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromFileWithArugumentsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0502', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromFileWithArugumentsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0503', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromFileWithArugumentsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0600', Level.LEVEL0, () => {
+    it('testTypefaceCreateFromCurrentNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0601', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromCurrentNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0602', Level.LEVEL3, () => {
+    it('testTypefaceCreateFromCurrentMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceCreate(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0700', Level.LEVEL0, () => {
+    it('testTypefaceIsBoldNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(0);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0701', Level.LEVEL0, () => {
+    it('testTypefaceIsBoldNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(1);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0702', Level.LEVEL3, () => {
+    it('testTypefaceIsBoldMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(2);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0800', Level.LEVEL0, () => {
+    it('testTypefaceIsItalicNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(3);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0801', Level.LEVEL0, () => {
+    it('testTypefaceIsItalicNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(4);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeTypefaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0802', Level.LEVEL3, () => {
+    it('testTypefaceIsItalicMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTypefaceIsBoldItalic(5);
       expect(result).assertEqual(0);
     })

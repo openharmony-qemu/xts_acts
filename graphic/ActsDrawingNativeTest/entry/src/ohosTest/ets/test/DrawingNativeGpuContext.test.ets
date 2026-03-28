@@ -43,7 +43,7 @@ export default function DrawingNativeGpuContextTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0100', Level.LEVEL0, () => {
+    it('testGpuContextCreateFromGLDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingGpuContext(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeGpuContextTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0101', Level.LEVEL3, () => {
+    it('testGpuContextDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingGpuContext(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeGpuContextTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0102', Level.LEVEL3, () => {
+    it('testGpuContextCreateFromGLDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingGpuContext(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeGpuContextTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0200', Level.LEVEL0, () => {
+    it('testGpuContextCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingGpuContext(3);
       expect(result).assertEqual(0);
     })

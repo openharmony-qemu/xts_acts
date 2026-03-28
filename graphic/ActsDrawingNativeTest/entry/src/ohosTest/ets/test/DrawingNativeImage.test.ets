@@ -43,7 +43,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0100', Level.LEVEL0, () => {
+    it('testImageCreateDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImage(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0101', Level.LEVEL3, () => {
+    it('testImageCreateDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0102', Level.LEVEL3, () => {
+    it('testImageCreateDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0200', Level.LEVEL0, () => {
+    it('testImageBuildFromBitmapNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImage(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0201', Level.LEVEL3, () => {
+    it('testImageBuildFromBitmapNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0202', Level.LEVEL3, () => {
+    it('testImageBuildFromBitmapMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0203', Level.LEVEL3, () => {
+    it('testImageBuildFromBitmapMultipleCallsBoundary', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0300', Level.LEVEL0, () => {
+    it('testImageGetWidthHeightNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImage(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0301', Level.LEVEL3, () => {
+    it('testImageGetWidthHeightNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0302', Level.LEVEL3, () => {
+    it('testImageGetWidthHeightMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0303', Level.LEVEL3, () => {
+    it('testImageGetWidthHeightMultipleCallsBoundary', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0400', Level.LEVEL0, () => {
+    it('testImageGetImageInfoNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingImage(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0401', Level.LEVEL3, () => {
+    it('testImageGetImageInfoNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0402', Level.LEVEL3, () => {
+    it('testImageGetImageInfoMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0403', Level.LEVEL3, () => {
+    it('testImageGetImageInfoAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0404', Level.LEVEL3, () => {
+    it('testImageGetImageInfoMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeImageTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0405', Level.LEVEL3, () => {
+    it('testImageGetImageInfoBoundary', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingImage(16);
       expect(result).assertEqual(0);
     })

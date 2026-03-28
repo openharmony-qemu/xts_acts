@@ -68,7 +68,8 @@ void DrawingNativeCanvasPart5TestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasQuickRejectPathNull() {
+int TestCanvasQuickRejectPathNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     // OH_Drawing_CanvasCreate
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -105,7 +106,8 @@ int TestCanvasQuickRejectPathNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_VERTOFFEST_1
  */
-int TestCanvasQuickRejectPathNormal() {
+int TestCanvasQuickRejectPathNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     // OH_Drawing_CanvasCreate
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -151,7 +153,8 @@ int TestCanvasQuickRejectPathNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasQuickRejectPathCalls() {
+int TestCanvasQuickRejectPathCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     // OH_Drawing_CanvasCreate
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -185,7 +188,8 @@ int TestCanvasQuickRejectPathCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasQuickRejectRectNull() {
+int TestCanvasQuickRejectRectNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     // OH_Drawing_CanvasCreate
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -222,7 +226,8 @@ int TestCanvasQuickRejectRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_VERTOFFEST_1
  */
-int TestCanvasQuickRejectRectNormal() {
+int TestCanvasQuickRejectRectNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     // OH_Drawing_CanvasCreate
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -266,7 +271,8 @@ int TestCanvasQuickRejectRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasQuickRejectRectCalls() {
+int TestCanvasQuickRejectRectCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
@@ -295,7 +301,8 @@ int TestCanvasQuickRejectRectCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawArcWithCenterNull() {
+int TestCanvasDrawArcWithCenterNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
@@ -325,7 +332,8 @@ int TestCanvasDrawArcWithCenterNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_VERTOFFEST_1
  */
-int TestCanvasDrawArcWithCenterNormal() {
+int TestCanvasDrawArcWithCenterNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
@@ -366,7 +374,8 @@ int TestCanvasDrawArcWithCenterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasDrawArcWithCenterCalls() {
+int TestCanvasDrawArcWithCenterCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect* rect =
@@ -393,7 +402,8 @@ int TestCanvasDrawArcWithCenterCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawNestedRoundRectNull() {
+int TestCanvasDrawNestedRoundRectNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -432,7 +442,8 @@ int TestCanvasDrawNestedRoundRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_VERTOFFEST_1
  */
-int TestCanvasDrawNestedRoundRectNormal() {
+int TestCanvasDrawNestedRoundRectNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -471,7 +482,8 @@ int TestCanvasDrawNestedRoundRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasDrawNestedRoundRectCalls() {
+int TestCanvasDrawNestedRoundRectCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -504,7 +516,8 @@ int TestCanvasDrawNestedRoundRectCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapNineNull() {
+int TestCanvasDrawPixelMapNineNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_CanvasClear(canvas, 0xFFFFFFFF);
@@ -567,7 +580,8 @@ int TestCanvasDrawPixelMapNineNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_VERTOFFEST_1
  */
-int TestCanvasDrawPixelMapNineNormal() {
+int TestCanvasDrawPixelMapNineNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
@@ -624,7 +638,8 @@ int TestCanvasDrawPixelMapNineNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasDrawPixelMapNineCalls() {
+int TestCanvasDrawPixelMapNineCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
@@ -683,7 +698,8 @@ int TestCanvasDrawPixelMapNineCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasCreateWithPixelMapNormal() {
+int TestCanvasCreateWithPixelMapNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_500;
     uint32_t imageHeight = DRAWING_NUMBER_500;
@@ -727,7 +743,8 @@ int TestCanvasCreateWithPixelMapNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasCreateWithPixelMapNull() {
+int TestCanvasCreateWithPixelMapNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_500;
     uint32_t imageHeight = DRAWING_NUMBER_500;
@@ -771,7 +788,8 @@ int TestCanvasCreateWithPixelMapNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasCreateWithPixelMapMultipleCalls() {
+int TestCanvasCreateWithPixelMapMultipleCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_500;
     uint32_t imageHeight = DRAWING_NUMBER_500;
@@ -817,7 +835,8 @@ int TestCanvasCreateWithPixelMapMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVELDRAWING_MESHWIDTH_2
  */
-int TestCanvasDrawPixelMapRectConstraintNormal() {
+int TestCanvasDrawPixelMapRectConstraintNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -872,7 +891,8 @@ int TestCanvasDrawPixelMapRectConstraintNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapRectConstraintNull() {
+int TestCanvasDrawPixelMapRectConstraintNull()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -933,7 +953,8 @@ int TestCanvasDrawPixelMapRectConstraintNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapRectConstraintAbnormal() {
+int TestCanvasDrawPixelMapRectConstraintAbnormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -988,7 +1009,8 @@ int TestCanvasDrawPixelMapRectConstraintAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapRectConstraintMultiCalls() {
+int TestCanvasDrawPixelMapRectConstraintMultiCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1045,7 +1067,8 @@ int TestCanvasDrawPixelMapRectConstraintMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasDrawPixelMapMeshNormal() {
+int TestCanvasDrawPixelMapMeshNormal()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1107,7 +1130,8 @@ int TestCanvasDrawPixelMapMeshNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshNull01() {
+int TestCanvasDrawPixelMapMeshNull01()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1171,7 +1195,8 @@ int TestCanvasDrawPixelMapMeshNull01() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshNull02() {
+int TestCanvasDrawPixelMapMeshNull02()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1235,7 +1260,8 @@ int TestCanvasDrawPixelMapMeshNull02() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshNull03() {
+int TestCanvasDrawPixelMapMeshNull03()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1299,7 +1325,8 @@ int TestCanvasDrawPixelMapMeshNull03() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshNull04() {
+int TestCanvasDrawPixelMapMeshNull04()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1355,7 +1382,8 @@ int TestCanvasDrawPixelMapMeshNull04() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshBindAndUnbind() {
+int TestCanvasDrawPixelMapMeshBindAndUnbind()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1415,7 +1443,8 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshAbnormal01() {
+int TestCanvasDrawPixelMapMeshAbnormal01()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1475,7 +1504,8 @@ int TestCanvasDrawPixelMapMeshAbnormal01() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshAbnormal02() {
+int TestCanvasDrawPixelMapMeshAbnormal02()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1535,7 +1565,8 @@ int TestCanvasDrawPixelMapMeshAbnormal02() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshAbnormal03() {
+int TestCanvasDrawPixelMapMeshAbnormal03()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1595,7 +1626,8 @@ int TestCanvasDrawPixelMapMeshAbnormal03() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshAbnormal04() {
+int TestCanvasDrawPixelMapMeshAbnormal04()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -1655,7 +1687,8 @@ int TestCanvasDrawPixelMapMeshAbnormal04() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawPixelMapMeshMultipleCalls() {
+int TestCanvasDrawPixelMapMeshMultipleCalls()
+{
     DrawingNativeCanvasPar5TestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;

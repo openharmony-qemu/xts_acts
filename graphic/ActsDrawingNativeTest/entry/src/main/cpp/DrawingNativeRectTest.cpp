@@ -61,7 +61,8 @@ void DrawingNativeRectTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectCreateNormal() {
+int TestRectCreateNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
@@ -81,7 +82,8 @@ int TestRectCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectIntersectNormal() {
+int TestRectIntersectNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
@@ -139,7 +141,8 @@ int TestRectIntersectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectIntersectNull() {
+int TestRectIntersectNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
@@ -175,7 +178,8 @@ int TestRectIntersectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectJoinNormal() {
+int TestRectJoinNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -235,7 +239,8 @@ int TestRectJoinNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectJoinNull() {
+int TestRectJoinNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -272,7 +277,8 @@ int TestRectJoinNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSetLeftNormal() {
+int TestRectSetLeftNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -300,7 +306,8 @@ int TestRectSetLeftNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetLeftNull() {
+int TestRectSetLeftNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -326,7 +333,8 @@ int TestRectSetLeftNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetLeftAbnormal() {
+int TestRectSetLeftAbnormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -354,7 +362,8 @@ int TestRectSetLeftAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetLeftMultipleCalls() {
+int TestRectSetLeftMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
@@ -377,7 +386,8 @@ int TestRectSetLeftMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSetTopNormal() {
+int TestRectSetTopNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -405,7 +415,8 @@ int TestRectSetTopNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetTopNull() {
+int TestRectSetTopNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -431,7 +442,8 @@ int TestRectSetTopNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetTopAbnormal() {
+int TestRectSetTopAbnormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -459,7 +471,8 @@ int TestRectSetTopAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetTopMultipleCalls() {
+int TestRectSetTopMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -501,7 +514,8 @@ int TestRectSetTopMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSetRightNormal() {
+int TestRectSetRightNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -529,7 +543,8 @@ int TestRectSetRightNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetRightNull() {
+int TestRectSetRightNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -555,7 +570,8 @@ int TestRectSetRightNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetRightAbnormal() {
+int TestRectSetRightAbnormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -583,7 +599,8 @@ int TestRectSetRightAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetRightMultipleCalls() {
+int TestRectSetRightMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -625,7 +642,8 @@ int TestRectSetRightMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSetBottomNormal() {
+int TestRectSetBottomNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -653,7 +671,8 @@ int TestRectSetBottomNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetBottomNull() {
+int TestRectSetBottomNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -679,7 +698,8 @@ int TestRectSetBottomNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetBottomAbnormal() {
+int TestRectSetBottomAbnormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -706,7 +726,8 @@ int TestRectSetBottomAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetBottomMultipleCalls() {
+int TestRectSetBottomMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
@@ -731,7 +752,8 @@ int TestRectSetBottomMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetLeftNormal() {
+int TestRectGetLeftNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -756,7 +778,8 @@ int TestRectGetLeftNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetLeftNull() {
+int TestRectGetLeftNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -779,7 +802,8 @@ int TestRectGetLeftNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetTopNormal() {
+int TestRectGetTopNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -804,7 +828,8 @@ int TestRectGetTopNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetTopNull() {
+int TestRectGetTopNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -827,7 +852,8 @@ int TestRectGetTopNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetRightNormal() {
+int TestRectGetRightNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -852,7 +878,8 @@ int TestRectGetRightNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetRightNull() {
+int TestRectGetRightNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -876,7 +903,8 @@ int TestRectGetRightNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetBottomNormal() {
+int TestRectGetBottomNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -902,7 +930,8 @@ int TestRectGetBottomNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetBottomNull() {
+int TestRectGetBottomNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -926,7 +955,8 @@ int TestRectGetBottomNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetHeightNormal() {
+int TestRectGetHeightNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -958,7 +988,8 @@ int TestRectGetHeightNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetHeightNull() {
+int TestRectGetHeightNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -982,7 +1013,8 @@ int TestRectGetHeightNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetWidthNormal() {
+int TestRectGetWidthNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1014,7 +1046,8 @@ int TestRectGetWidthNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectGetWidthNull() {
+int TestRectGetWidthNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1038,7 +1071,8 @@ int TestRectGetWidthNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectGetWidthBoundary() {
+int TestRectGetWidthBoundary()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     uint32_t width = DRAWING_NUMBER_4096;
@@ -1072,7 +1106,8 @@ int TestRectGetWidthBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectCopyNormal() {
+int TestRectCopyNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1137,7 +1172,8 @@ int TestRectCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectCopyNull() {
+int TestRectCopyNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1171,7 +1207,8 @@ int TestRectCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectDestroyNormal() {
+int TestRectDestroyNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1191,7 +1228,8 @@ int TestRectDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectDestroyNull() {
+int TestRectDestroyNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1214,7 +1252,8 @@ int TestRectDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectInsetNormal() {
+int TestRectInsetNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
@@ -1244,7 +1283,8 @@ int TestRectInsetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectInsetAbNormal() {
+int TestRectInsetAbNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
@@ -1274,7 +1314,8 @@ int TestRectInsetAbNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectInsetNull() {
+int TestRectInsetNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
@@ -1304,7 +1345,8 @@ int TestRectInsetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectInsetCalls() {
+int TestRectInsetCalls()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
@@ -1336,7 +1378,8 @@ int TestRectInsetCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectContainsNormal() {
+int TestRectContainsNormal()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
@@ -1364,7 +1407,8 @@ int TestRectContainsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectContainsNull() {
+int TestRectContainsNull()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
@@ -1400,7 +1444,8 @@ int TestRectContainsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectContainsCalls() {
+int TestRectContainsCalls()
+{
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
@@ -1430,7 +1475,8 @@ int TestRectContainsCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSetEmptyNormal() {
+int TestRectSetEmptyNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1449,7 +1495,8 @@ int TestRectSetEmptyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetEmptyNull() {
+int TestRectSetEmptyNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1468,7 +1515,8 @@ int TestRectSetEmptyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSetEmptyMultipleCalls() {
+int TestRectSetEmptyMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1489,7 +1537,8 @@ int TestRectSetEmptyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectIsEmptyNormal() {
+int TestRectIsEmptyNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1514,7 +1563,8 @@ int TestRectIsEmptyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectIsEmptyNull() {
+int TestRectIsEmptyNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1538,7 +1588,8 @@ int TestRectIsEmptyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectIsEmptyMultipleCalls() {
+int TestRectIsEmptyMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1561,7 +1612,8 @@ int TestRectIsEmptyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectOffsetNormal() {
+int TestRectOffsetNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1590,7 +1642,8 @@ int TestRectOffsetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetNull() {
+int TestRectOffsetNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1625,7 +1678,8 @@ int TestRectOffsetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetAbnormal() {
+int TestRectOffsetAbnormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1648,7 +1702,8 @@ int TestRectOffsetAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetMultipleCalls() {
+int TestRectOffsetMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1673,7 +1728,8 @@ int TestRectOffsetMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectOffsetToNormal() {
+int TestRectOffsetToNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1696,7 +1752,8 @@ int TestRectOffsetToNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetToNull() {
+int TestRectOffsetToNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1731,7 +1788,8 @@ int TestRectOffsetToNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetToAbnormal() {
+int TestRectOffsetToAbnormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1754,7 +1812,8 @@ int TestRectOffsetToAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectOffsetToMultipleCalls() {
+int TestRectOffsetToMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1779,7 +1838,8 @@ int TestRectOffsetToMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectSortNormal() {
+int TestRectSortNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1809,7 +1869,8 @@ int TestRectSortNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSortNull() {
+int TestRectSortNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1832,7 +1893,8 @@ int TestRectSortNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectSortMultipleCalls() {
+int TestRectSortMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1857,7 +1919,8 @@ int TestRectSortMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRectUnionNormal() {
+int TestRectUnionNormal()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1884,7 +1947,8 @@ int TestRectUnionNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectUnionNull() {
+int TestRectUnionNull()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
@@ -1909,7 +1973,8 @@ int TestRectUnionNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRectUnionMultipleCalls() {
+int TestRectUnionMultipleCalls()
+{
     DrawingNativeRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);

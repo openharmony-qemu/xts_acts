@@ -130,7 +130,8 @@ void DrawingNativeSurFaceTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceCreateFromGpuContextNormal() {
+int TestSurfaceCreateFromGpuContextNormal()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -161,7 +162,8 @@ int TestSurfaceCreateFromGpuContextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceCreateFromGpuContextNull() {
+int TestSurfaceCreateFromGpuContextNull()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -190,7 +192,8 @@ int TestSurfaceCreateFromGpuContextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceCreateFromGpuContextBoundary() {
+int TestSurfaceCreateFromGpuContextBoundary()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -217,7 +220,8 @@ int TestSurfaceCreateFromGpuContextBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceDestroyNormal() {
+int TestSurfaceDestroyNormal()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -241,7 +245,8 @@ int TestSurfaceDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceDestroyNull() {
+int TestSurfaceDestroyNull()
+{
     DrawingNativeSurFaceTestSetUp();
     // free
     OH_Drawing_Surface *surface = nullptr;
@@ -259,7 +264,8 @@ int TestSurfaceDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceGetCanvasNormal() {
+int TestSurfaceGetCanvasNormal()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -291,7 +297,8 @@ int TestSurfaceGetCanvasNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceGetCanvasNull() {
+int TestSurfaceGetCanvasNull()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -319,7 +326,8 @@ int TestSurfaceGetCanvasNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceGetCanvasBoundary() {
+int TestSurfaceGetCanvasBoundary()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
@@ -349,7 +357,8 @@ int TestSurfaceGetCanvasBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceCreateOnScreenNormal() {
+int TestSurfaceCreateOnScreenNormal()
+{
     DrawingNativeSurFaceTestSetUp();
     // 1、OH_Drawing_SurfaceCreateOnScreen正常入参调用
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
@@ -375,7 +384,8 @@ int TestSurfaceCreateOnScreenNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceCreateOnScreenNull() {
+int TestSurfaceCreateOnScreenNull()
+{
     DrawingNativeSurFaceTestSetUp();
     // 1. OH_Drawing_SurfaceCreateOnScreen第一个参数传空
     const int32_t width = DRAWING_NUMBER_4096;
@@ -397,7 +407,8 @@ int TestSurfaceCreateOnScreenNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceCreateOnScreenMultipleCalls() {
+int TestSurfaceCreateOnScreenMultipleCalls()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
     EXPECT_NE(gpuContext_, nullptr);
@@ -441,7 +452,8 @@ int TestSurfaceCreateOnScreenMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSurfaceFlushNormal() {
+int TestSurfaceFlushNormal()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
     EXPECT_NE(gpuContext_, nullptr);
@@ -469,7 +481,8 @@ int TestSurfaceFlushNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceFlushNull() {
+int TestSurfaceFlushNull()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SurfaceFlush(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -485,7 +498,8 @@ int TestSurfaceFlushNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceFlushAbnormal() {
+int TestSurfaceFlushAbnormal()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     // 1. OH_Drawing_GPUContextCreateFromGL
@@ -514,7 +528,8 @@ int TestSurfaceFlushAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceFlushMultipleCalls() {
+int TestSurfaceFlushMultipleCalls()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
     EXPECT_NE(gpuContext_, nullptr);
@@ -581,7 +596,8 @@ int TestSurfaceFlushMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSurfaceFlushTiming() {
+int TestSurfaceFlushTiming()
+{
     DrawingNativeSurFaceTestSetUp();
     OH_Drawing_GpuContextOptions options{true};
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);

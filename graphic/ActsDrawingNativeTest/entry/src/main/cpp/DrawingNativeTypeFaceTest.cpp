@@ -46,7 +46,8 @@ void DrawingNativeTypeFaceTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateDefaultNormal() {
+int TestTypefaceCreateDefaultNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -77,7 +78,8 @@ int TestTypefaceCreateDefaultNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateDefaultNull() {
+int TestTypefaceCreateDefaultNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -114,7 +116,8 @@ int TestTypefaceCreateDefaultNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateFromFileNormal() {
+int TestTypefaceCreateFromFileNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -149,7 +152,8 @@ int TestTypefaceCreateFromFileNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromFileNull() {
+int TestTypefaceCreateFromFileNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -187,7 +191,8 @@ int TestTypefaceCreateFromFileNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateFromStreamNormal() {
+int TestTypefaceCreateFromStreamNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -221,7 +226,8 @@ int TestTypefaceCreateFromStreamNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromStreamNull() {
+int TestTypefaceCreateFromStreamNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -258,7 +264,8 @@ int TestTypefaceCreateFromStreamNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateDestroyNormal() {
+int TestTypefaceCreateDestroyNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_TypefaceCreateDefault
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
@@ -278,7 +285,8 @@ int TestTypefaceCreateDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateDestroyNull() {
+int TestTypefaceCreateDestroyNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_TypefaceDestroy
     OH_Drawing_Typeface *typeface = nullptr;
@@ -296,7 +304,8 @@ int TestTypefaceCreateDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateFromFileWithArugumentsNormal() {
+int TestTypefaceCreateFromFileWithArugumentsNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -325,7 +334,8 @@ int TestTypefaceCreateFromFileWithArugumentsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromFileWithArugumentsNull() {
+int TestTypefaceCreateFromFileWithArugumentsNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -358,7 +368,8 @@ int TestTypefaceCreateFromFileWithArugumentsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromFileWithArugumentsAbnormal() {
+int TestTypefaceCreateFromFileWithArugumentsAbnormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -390,7 +401,8 @@ int TestTypefaceCreateFromFileWithArugumentsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromFileWithArugumentsMultipleCalls() {
+int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -423,7 +435,8 @@ int TestTypefaceCreateFromFileWithArugumentsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceCreateFromCurrentNormal() {
+int TestTypefaceCreateFromCurrentNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_TypefaceCreateFromFile
     OH_Drawing_ErrorCodeReset();
@@ -460,7 +473,8 @@ int TestTypefaceCreateFromCurrentNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromCurrentNull() {
+int TestTypefaceCreateFromCurrentNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_TypefaceCreateFromFile
     OH_Drawing_ErrorCodeReset();
@@ -499,7 +513,8 @@ int TestTypefaceCreateFromCurrentNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceCreateFromCurrentMultipleCalls() {
+int TestTypefaceCreateFromCurrentMultipleCalls()
+{
     DrawingNativeTypeFaceTestSetUp();
     // 1. OH_Drawing_TypefaceCreateFromFile
     OH_Drawing_ErrorCodeReset();
@@ -538,7 +553,8 @@ int TestTypefaceCreateFromCurrentMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceIsBoldNormal() {
+int TestTypefaceIsBoldNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
     OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
@@ -563,7 +579,8 @@ int TestTypefaceIsBoldNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceIsBoldNull() {
+int TestTypefaceIsBoldNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
     OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
@@ -588,7 +605,8 @@ int TestTypefaceIsBoldNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceIsBoldMultipleCalls() {
+int TestTypefaceIsBoldMultipleCalls()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
     bool isBold = false;
@@ -610,7 +628,8 @@ int TestTypefaceIsBoldMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceIsItalicNormal() {
+int TestTypefaceIsItalicNormal()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
     OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
@@ -635,7 +654,8 @@ int TestTypefaceIsItalicNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestTypefaceIsItalicNull() {
+int TestTypefaceIsItalicNull()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
     OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
@@ -660,7 +680,8 @@ int TestTypefaceIsItalicNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestTypefaceIsItalicMultipleCalls() {
+int TestTypefaceIsItalicMultipleCalls()
+{
     DrawingNativeTypeFaceTestSetUp();
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
     bool isItalic = false;

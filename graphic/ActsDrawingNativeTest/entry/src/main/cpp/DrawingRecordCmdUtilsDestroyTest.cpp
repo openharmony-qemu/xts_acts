@@ -43,7 +43,8 @@ void DrawingRecordCmdUtilsDestroyTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRecordCmdUtilsDestroyNormal() {
+int TestRecordCmdUtilsDestroyNormal()
+{
     DrawingRecordCmdUtilsDestroyTestSetUp();
     // 1. OH_Drawing_RecordCmdUtilsCreate
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;

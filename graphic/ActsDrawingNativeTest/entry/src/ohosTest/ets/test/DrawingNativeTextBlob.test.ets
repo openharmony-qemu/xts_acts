@@ -43,7 +43,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0100', Level.LEVEL0, () => {
+    it('testTextBlobBuilderCreateDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0101', Level.LEVEL3, () => {
+    it('testTextBlobBuilderCreateDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0102', Level.LEVEL3, () => {
+    it('testTextBlobBuilderCreateDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0200', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromTextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(0);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0201', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(1);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0203', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(2);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0204', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(3);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0300', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromPosTextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(4);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0301', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(5);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0302', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(6);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0303', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(7);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0400', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromStringNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(8);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0401', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(9);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0402', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(10);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0403', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobCreate(11);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0500', Level.LEVEL0, () => {
+    it('testTextBlobGetBoundsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobOther(0);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0501', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(1);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0502', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(2);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0503', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(3);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0600', Level.LEVEL0, () => {
+    it('testTextBlobUniqueIDNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobOther(4);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0601', Level.LEVEL3, () => {
+    it('testTextBlobUniqueIDNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(5);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0602', Level.LEVEL3, () => {
+    it('testTextBlobUniqueIDMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(6);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0700', Level.LEVEL0, () => {
+    it('testTextBlobBuilderAllocRunPosNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(3);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0701', Level.LEVEL3, () => {
+    it('testTextBlobBuilderAllocRunPosNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(4);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0702', Level.LEVEL3, () => {
+    it('testTextBlobBuilderAllocRunPosMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(5);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0800', Level.LEVEL0, () => {
+    it('testTextBlobBuilderMakeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(6);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0801', Level.LEVEL3, () => {
+    it('testTextBlobBuilderMakeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(7);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0802', Level.LEVEL3, () => {
+    it('testTextBlobBuilderMakeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(8);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0900', Level.LEVEL0, () => {
+    it('testTextBlobDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobOther(7);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0901', Level.LEVEL3, () => {
+    it('testTextBlobDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingTextBlobOther(8);
       expect(result).assertEqual(0);
     })

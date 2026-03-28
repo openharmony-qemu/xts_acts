@@ -63,7 +63,8 @@ void DrawingNativeBrushTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushCreateNormal() {
+int TestBrushCreateNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Call OH_Drawing_BrushCreate to create a brush object
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -83,7 +84,8 @@ int TestBrushCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushCopyNormal() {
+int TestBrushCopyNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object 1 by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush1 = OH_Drawing_BrushCreate();
@@ -120,7 +122,8 @@ int TestBrushCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushCopyNull() {
+int TestBrushCopyNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -145,7 +148,8 @@ int TestBrushCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushCopyInputDestroyed() {
+int TestBrushCopyInputDestroyed()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Call OH_Drawing_BrushCreate to create a brush object 1
     OH_Drawing_Brush *brush1 = OH_Drawing_BrushCreate();
@@ -178,7 +182,8 @@ int TestBrushCopyInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushCopyMultipleCalls() {
+int TestBrushCopyMultipleCalls()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -205,7 +210,8 @@ int TestBrushCopyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushDestroyNormal() {
+int TestBrushDestroyNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Call OH_Drawing_BrushCreate to create a brush object
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -225,7 +231,8 @@ int TestBrushDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushDestroyNull() {
+int TestBrushDestroyNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -247,7 +254,8 @@ int TestBrushDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushIsAntiAliasNormal() {
+int TestBrushIsAntiAliasNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Call OH_Drawing_BrushCreate to create a brush object
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -276,7 +284,8 @@ int TestBrushIsAntiAliasNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushIsAntiAliasNull() {
+int TestBrushIsAntiAliasNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -301,7 +310,8 @@ int TestBrushIsAntiAliasNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetAntiAliasNormal() {
+int TestBrushSetAntiAliasNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Call OH_Drawing_BrushCreate to create a brush object
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -328,7 +338,8 @@ int TestBrushSetAntiAliasNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetAntiAliasNull() {
+int TestBrushSetAntiAliasNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -352,7 +363,8 @@ int TestBrushSetAntiAliasNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushGetColorNormal() {
+int TestBrushGetColorNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -379,7 +391,8 @@ int TestBrushGetColorNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetColorNull() {
+int TestBrushGetColorNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -403,7 +416,8 @@ int TestBrushGetColorNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetColorNormal() {
+int TestBrushSetColorNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -430,7 +444,8 @@ int TestBrushSetColorNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetColorNull() {
+int TestBrushSetColorNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -459,7 +474,8 @@ int TestBrushSetColorNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetColorAbnormal() {
+int TestBrushSetColorAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -485,7 +501,8 @@ int TestBrushSetColorAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetColorMaximum() {
+int TestBrushSetColorMaximum()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -511,7 +528,8 @@ int TestBrushSetColorMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushGetAlphaNormal() {
+int TestBrushGetAlphaNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -536,7 +554,8 @@ int TestBrushGetAlphaNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetAlphaNull() {
+int TestBrushGetAlphaNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -560,7 +579,8 @@ int TestBrushGetAlphaNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetAlphaNormal() {
+int TestBrushSetAlphaNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -585,7 +605,8 @@ int TestBrushSetAlphaNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetAlphaNull() {
+int TestBrushSetAlphaNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -611,7 +632,8 @@ int TestBrushSetAlphaNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetAlphaAbnormal() {
+int TestBrushSetAlphaAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -636,7 +658,8 @@ int TestBrushSetAlphaAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetAlphaMaximum() {
+int TestBrushSetAlphaMaximum()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -662,7 +685,8 @@ int TestBrushSetAlphaMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetShaderEffectNormal() {
+int TestBrushSetShaderEffectNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -698,7 +722,8 @@ int TestBrushSetShaderEffectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetShaderEffectNull() {
+int TestBrushSetShaderEffectNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -735,7 +760,8 @@ int TestBrushSetShaderEffectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetShadowLayerNormal() {
+int TestBrushSetShadowLayerNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -766,7 +792,8 @@ int TestBrushSetShadowLayerNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetShadowLayerNull() {
+int TestBrushSetShadowLayerNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -796,7 +823,8 @@ int TestBrushSetShadowLayerNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetFilterNormal() {
+int TestBrushSetFilterNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -825,7 +853,8 @@ int TestBrushSetFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetFilterNull() {
+int TestBrushSetFilterNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -855,7 +884,8 @@ int TestBrushSetFilterNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushGetFilterNormal() {
+int TestBrushGetFilterNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -892,7 +922,8 @@ int TestBrushGetFilterNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetFilterNull() {
+int TestBrushGetFilterNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -925,7 +956,8 @@ int TestBrushGetFilterNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushSetBlendModeNormal() {
+int TestBrushSetBlendModeNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -962,7 +994,8 @@ int TestBrushSetBlendModeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetBlendModeNull() {
+int TestBrushSetBlendModeNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -986,7 +1019,8 @@ int TestBrushSetBlendModeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushResetNormal() {
+int TestBrushResetNormal()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -1019,7 +1053,8 @@ int TestBrushResetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushResetNull() {
+int TestBrushResetNull()
+{
     DrawingNativeBrushTestSetUp();
     // 1. Create a brush object by calling OH_Drawing_BrushCreate
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
@@ -1043,7 +1078,8 @@ int TestBrushResetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestBrushGetAlphaFloatNormal() {
+int TestBrushGetAlphaFloatNormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float a = 0;
@@ -1063,7 +1099,8 @@ int TestBrushGetAlphaFloatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetAlphaFloatAbnormal() {
+int TestBrushGetAlphaFloatAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float a = 0;
@@ -1085,7 +1122,8 @@ int TestBrushGetAlphaFloatAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBrushGetRedFloatNormal() {
+int TestBrushGetRedFloatNormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float r = 0;
@@ -1105,7 +1143,8 @@ int TestBrushGetRedFloatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetRedFloatAbnormal() {
+int TestBrushGetRedFloatAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float r = 0;
@@ -1127,7 +1166,8 @@ int TestBrushGetRedFloatAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestBrushGetGreenFloatNormal() {
+int TestBrushGetGreenFloatNormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float g = 0;
@@ -1147,7 +1187,8 @@ int TestBrushGetGreenFloatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetGreenFloatAbnormal() {
+int TestBrushGetGreenFloatAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float g = 0;
@@ -1169,7 +1210,8 @@ int TestBrushGetGreenFloatAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestBrushGetBlueFloatNormal() {
+int TestBrushGetBlueFloatNormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float b = 0;
@@ -1189,7 +1231,8 @@ int TestBrushGetBlueFloatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushGetBlueFloatAbnormal() {
+int TestBrushGetBlueFloatAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float b = 0;
@@ -1211,7 +1254,8 @@ int TestBrushGetBlueFloatAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestBrushSetColor4fNormal() {
+int TestBrushSetColor4fNormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float a = 0;
@@ -1243,7 +1287,8 @@ int TestBrushSetColor4fNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetColor4fNull() {
+int TestBrushSetColor4fNull()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float a = 0;
@@ -1281,7 +1326,8 @@ int TestBrushSetColor4fNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBrushSetColor4fAbnormal() {
+int TestBrushSetColor4fAbnormal()
+{
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float a = 0;

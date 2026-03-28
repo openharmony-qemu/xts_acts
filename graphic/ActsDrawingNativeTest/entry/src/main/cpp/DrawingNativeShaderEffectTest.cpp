@@ -65,7 +65,8 @@ void DrawingNativeShaderEffectTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateColorShaderNormal() {
+int TestShaderEffectCreateColorShaderNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. OH_Drawing_ShaderEffectCreateColorShader
     uint32_t color = DRAWING_NUMBER_0XFFFF0000;
@@ -86,7 +87,8 @@ int TestShaderEffectCreateColorShaderNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateColorShaderNull() {
+int TestShaderEffectCreateColorShaderNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. OH_Drawing_ShaderEffectCreateColorShader with empty parameter
     OH_Drawing_ShaderEffect *colorShaderEffect = OH_Drawing_ShaderEffectCreateColorShader(0);
@@ -106,7 +108,8 @@ int TestShaderEffectCreateColorShaderNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateColorShaderAbnormal() {
+int TestShaderEffectCreateColorShaderAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. OH_Drawing_ShaderEffectCreateColorShader with a negative parameter
     OH_Drawing_ShaderEffect *colorShaderEffect = OH_Drawing_ShaderEffectCreateColorShader(-DRAWING_NUMBER_0XFFFF0000);
@@ -126,7 +129,8 @@ int TestShaderEffectCreateColorShaderAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateColorShaderMaximum() {
+int TestShaderEffectCreateColorShaderMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. OH_Drawing_ShaderEffectCreateColorShader with maximum value as parameter
     OH_Drawing_ShaderEffect *colorShaderEffect = OH_Drawing_ShaderEffectCreateColorShader(UINT32_MAX);
@@ -146,7 +150,8 @@ int TestShaderEffectCreateColorShaderMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateColorShaderMultipleCalls() {
+int TestShaderEffectCreateColorShaderMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Call OH_Drawing_ShaderEffectCreateColorShader 10 times with different colors
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -169,7 +174,8 @@ int TestShaderEffectCreateColorShaderMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateLinearGradientWithLocalMatrixNormal() {
+int TestShaderEffectCreateLinearGradientWithLocalMatrixNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D start = {0, 0};
     OH_Drawing_Point2D end = {100.f, 0};
@@ -225,7 +231,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradientWithLocalMatrixNull() {
+int TestShaderEffectCreateLinearGradientWithLocalMatrixNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D start = {0, 0};
     OH_Drawing_Point2D end = {100.f, 0};
@@ -278,7 +285,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal() {
+int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D start = {0, 0};
     OH_Drawing_Point2D end = {100.f, 0};
@@ -350,7 +358,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum() {
+int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D start = {0, 0};
     OH_Drawing_Point2D end = {100.f, 0};
@@ -422,7 +431,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls() {
+int TestShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D start = {0, 0};
     OH_Drawing_Point2D end = {100.f, 0};
@@ -454,7 +464,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-int TestShaderEffectCreateLinearGradienNormal() {
+int TestShaderEffectCreateLinearGradienNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateLinearGradient
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
@@ -500,7 +511,8 @@ int TestShaderEffectCreateLinearGradienNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradienNull() {
+int TestShaderEffectCreateLinearGradienNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(100.f, 0);
@@ -542,7 +554,8 @@ int TestShaderEffectCreateLinearGradienNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradienAbnormal() {
+int TestShaderEffectCreateLinearGradienAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(100.f, 0);
@@ -603,7 +616,8 @@ int TestShaderEffectCreateLinearGradienAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradienMaximum() {
+int TestShaderEffectCreateLinearGradienMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(100.f, 0);
@@ -664,7 +678,8 @@ int TestShaderEffectCreateLinearGradienMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateLinearGradienMultipleCalls() {
+int TestShaderEffectCreateLinearGradienMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(100.f, 0);
@@ -694,7 +709,8 @@ int TestShaderEffectCreateLinearGradienMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateRadialGradientNormal() {
+int TestShaderEffectCreateRadialGradientNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateRadialGradient
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -737,7 +753,8 @@ int TestShaderEffectCreateRadialGradientNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientNull() {
+int TestShaderEffectCreateRadialGradientNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -773,7 +790,8 @@ int TestShaderEffectCreateRadialGradientNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientAbnormal() {
+int TestShaderEffectCreateRadialGradientAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -829,7 +847,8 @@ int TestShaderEffectCreateRadialGradientAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientMaximum() {
+int TestShaderEffectCreateRadialGradientMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -884,7 +903,8 @@ int TestShaderEffectCreateRadialGradientMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientMultipleCalls() {
+int TestShaderEffectCreateRadialGradientMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -913,7 +933,8 @@ int TestShaderEffectCreateRadialGradientMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal() {
+int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};      
     float radius = DRAWING_NUMBER_5;                    
@@ -967,7 +988,8 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientWithLocalMatrixNull() {
+int TestShaderEffectCreateRadialGradientWithLocalMatrixNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradien    float pos[] = {0.0f, 0.5f, 1.0f};      
     float radius = DRAWING_NUMBER_5;                    
@@ -1010,7 +1032,8 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal() {
+int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with centerPt set to negative values
     OH_Drawing_Point2D centerPt = {-DRAWING_NUMBER_1, -DRAWING_NUMBER_1};
@@ -1072,7 +1095,8 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientWithLocalMatrixMaximum() {
+int TestShaderEffectCreateRadialGradientWithLocalMatrixMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with centerPt set to a large number
     OH_Drawing_Point2D centerPt = {FLT_MAX, FLT_MAX};
@@ -1134,7 +1158,8 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls() {
+int TestShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D centerPt = {DRAWING_NUMBER_100, DRAWING_NUMBER_100};
     float radius = DRAWING_NUMBER_5;
@@ -1164,7 +1189,8 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-int TestShaderEffectCreateSweepGradientNormal() {
+int TestShaderEffectCreateSweepGradientNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateSweepGradient
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -1205,7 +1231,8 @@ int TestShaderEffectCreateSweepGradientNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientNull() {
+int TestShaderEffectCreateSweepGradientNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -1237,7 +1264,8 @@ int TestShaderEffectCreateSweepGradientNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientAbnormal() {
+int TestShaderEffectCreateSweepGradientAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -1285,7 +1313,8 @@ int TestShaderEffectCreateSweepGradientAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientMaximum() {
+int TestShaderEffectCreateSweepGradientMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -1333,7 +1362,8 @@ int TestShaderEffectCreateSweepGradientMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientMultipleCalls() {
+int TestShaderEffectCreateSweepGradientMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
@@ -1361,7 +1391,8 @@ int TestShaderEffectCreateSweepGradientMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateImageShaderNormal() {
+int TestShaderEffectCreateImageShaderNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Call OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -1413,7 +1444,8 @@ int TestShaderEffectCreateImageShaderNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateImageShaderNull() {
+int TestShaderEffectCreateImageShaderNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. Call OH_Drawing_ShaderEffectCreateImageShader with the first parameter set to nullptr and check the error
     // code using OH_Drawing_ErrorCodeGet
@@ -1447,7 +1479,8 @@ int TestShaderEffectCreateImageShaderNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateImageShaderMultipleCalls() {
+int TestShaderEffectCreateImageShaderMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_SamplingOptions *options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_LINEAR, MIPMAP_MODE_LINEAR);
     // add assert
@@ -1481,7 +1514,8 @@ int TestShaderEffectCreateImageShaderMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateTwoPointConicalGradientNormal() {
+int TestShaderEffectCreateTwoPointConicalGradientNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1541,7 +1575,8 @@ int TestShaderEffectCreateTwoPointConicalGradientNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateTwoPointConicalGradientNull() {
+int TestShaderEffectCreateTwoPointConicalGradientNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1597,7 +1632,8 @@ int TestShaderEffectCreateTwoPointConicalGradientNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateTwoPointConicalGradientAbnormal() {
+int TestShaderEffectCreateTwoPointConicalGradientAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1676,7 +1712,8 @@ int TestShaderEffectCreateTwoPointConicalGradientAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateTwoPointConicalGradientMaximum() {
+int TestShaderEffectCreateTwoPointConicalGradientMaximum()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1753,7 +1790,8 @@ int TestShaderEffectCreateTwoPointConicalGradientMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls() {
+int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1788,7 +1826,8 @@ int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectDestroyNormal() {
+int TestShaderEffectDestroyNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
     OH_Drawing_Point2D endPt = {100.f, 0}; 
@@ -1820,7 +1859,8 @@ int TestShaderEffectDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectDestroyNull() {
+int TestShaderEffectDestroyNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     // 1. OH_Drawing_ShaderEffectDestroy parameter is null
     OH_Drawing_ShaderEffect *shaderEffect = nullptr;
@@ -1838,7 +1878,8 @@ int TestShaderEffectDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal() {
+int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
@@ -1892,7 +1933,8 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientWithLocalMatrixNull() {
+int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt1 = OH_Drawing_PointCreate(0, 0);
     OH_Drawing_Point *centerPt2 = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
@@ -1949,7 +1991,8 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal() {
+int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors1[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
@@ -2005,7 +2048,8 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls() {
+int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     uint32_t colors[] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFFFF00};
@@ -2037,7 +2081,8 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreateComposeEnumTraversal() {
+int TestShaderEffectCreateComposeEnumTraversal()
+{
     DrawingNativeShaderEffectTestSetUp();
     std::vector<OH_Drawing_BlendMode > blendMode = {
         BLEND_MODE_CLEAR,
@@ -2093,7 +2138,8 @@ int TestShaderEffectCreateComposeEnumTraversal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateComposeNull() {
+int TestShaderEffectCreateComposeNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_ShaderEffect *src = OH_Drawing_ShaderEffectCreateColorShader(DRAWING_NUMBER_0XFF00FF00);
     OH_Drawing_ShaderEffect *dst = OH_Drawing_ShaderEffectCreateColorShader(DRAWING_NUMBER_0XFF0000FF);
@@ -2122,7 +2168,8 @@ int TestShaderEffectCreateComposeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreateComposeMultipleCalls() {
+int TestShaderEffectCreateComposeMultipleCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_ShaderEffect *src = OH_Drawing_ShaderEffectCreateColorShader(DRAWING_NUMBER_0XFF00FF00);
     OH_Drawing_ShaderEffect *dst = OH_Drawing_ShaderEffectCreateColorShader(DRAWING_NUMBER_0XFF0000FF);
@@ -2148,7 +2195,8 @@ int TestShaderEffectCreateComposeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShaderEffectCreatePixelMapShaderNormal() {
+int TestShaderEffectCreatePixelMapShaderNormal()
+{
     DrawingNativeShaderEffectTestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -2197,7 +2245,8 @@ int TestShaderEffectCreatePixelMapShaderNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreatePixelMapShaderNull() {
+int TestShaderEffectCreatePixelMapShaderNull()
+{
     DrawingNativeShaderEffectTestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;
@@ -2252,7 +2301,8 @@ int TestShaderEffectCreatePixelMapShaderNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShaderEffectCreatePixelMapShaderMultiCalls() {
+int TestShaderEffectCreatePixelMapShaderMultiCalls()
+{
     DrawingNativeShaderEffectTestSetUp();
     uint32_t imageWidth = DRAWING_NUMBER_200;
     uint32_t imageHeight = DRAWING_NUMBER_200;

@@ -44,7 +44,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0102', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsBeginRecordingAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsBeginRecording(0);
       expect(result).assertEqual(0);
     })
@@ -57,7 +57,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0103', Level.LEVEL2, () => {
+    it('testRecordCmdUtilsBeginRecordingCalls', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsBeginRecording(1);
       expect(result).assertEqual(0);
     })
@@ -71,7 +71,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0200', Level.LEVEL0, () => {
+    it('testRecordCmdUtilsDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -85,7 +85,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0300', Level.LEVEL0, () => {
+    it('testRecordCmdUtilsFinishRecordingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsFinishRecording(0);
       expect(result).assertEqual(0);
     })
@@ -98,7 +98,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0301', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsFinishRecordingNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsFinishRecording(1);
       expect(result).assertEqual(0);
     })
@@ -111,7 +111,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0400', Level.LEVEL0, () => {
+    it('testRecordCmdDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRecordCmdDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -124,7 +124,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0401', Level.LEVEL0, () => {
+    it('testRecordCmdDestroyNULL', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRecordCmdDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -137,7 +137,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0500', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(0);
       expect(result).assertEqual(0);
     })
@@ -150,7 +150,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0501', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdABNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(1);
       expect(result).assertEqual(0);
     })
@@ -163,7 +163,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0600', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdNestingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(2);
       expect(result).assertEqual(0);
     })
@@ -176,7 +176,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0601', Level.LEVEL3, () => {
+    it('testCanvasDrawRecordCmdNestingAbNormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(3);
       expect(result).assertEqual(0);
     })
@@ -189,7 +189,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0602', Level.LEVEL3, () => {
+    it('testCanvasDrawRecordCmdNestingAbNormal1', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(4);
       expect(result).assertEqual(0);
     })

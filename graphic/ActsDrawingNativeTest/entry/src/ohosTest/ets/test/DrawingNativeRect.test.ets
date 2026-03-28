@@ -43,7 +43,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100', Level.LEVEL0, () => {
+    it('testRectCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200', Level.LEVEL0, () => {
+    it('testRectIntersectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201', Level.LEVEL3, () => {
+    it('testRectIntersectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0300', Level.LEVEL0, () => {
+    it('testRectJoinNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0301', Level.LEVEL3, () => {
+    it('testRectJoinNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0400', Level.LEVEL0, () => {
+    it('testRectSetLeftNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(0);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0401', Level.LEVEL3, () => {
+    it('testRectSetLeftNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(1);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0402', Level.LEVEL3, () => {
+    it('testRectSetLeftAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(2);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0403', Level.LEVEL3, () => {
+    it('testRectSetLeftMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(3);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0500', Level.LEVEL0, () => {
+    it('testRectSetTopNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(4);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0501', Level.LEVEL3, () => {
+    it('testRectSetTopNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(5);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0502', Level.LEVEL3, () => {
+    it('testRectSetTopAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(6);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0503', Level.LEVEL3, () => {
+    it('testRectSetTopMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(7);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0600', Level.LEVEL0, () => {
+    it('testRectSetRightNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(8);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0601', Level.LEVEL3, () => {
+    it('testRectSetRightNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(9);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0602', Level.LEVEL3, () => {
+    it('testRectSetRightAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(10);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0603', Level.LEVEL3, () => {
+    it('testRectSetRightMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(11);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0700', Level.LEVEL0, () => {
+    it('testRectSetBottomNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(12);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0701', Level.LEVEL3, () => {
+    it('testRectSetBottomNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(13);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0702', Level.LEVEL3, () => {
+    it('testRectSetBottomAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(14);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0703', Level.LEVEL3, () => {
+    it('testRectSetBottomMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(15);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0800', Level.LEVEL0, () => {
+    it('testRectGetLeftNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(16);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0801', Level.LEVEL3, () => {
+    it('testRectGetLeftNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(17);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0900', Level.LEVEL0, () => {
+    it('testRectGetTopNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(18);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0901', Level.LEVEL3, () => {
+    it('testRectGetTopNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(19);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1000', Level.LEVEL0, () => {
+    it('testRectGetRightNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(20);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1001', Level.LEVEL3, () => {
+    it('testRectGetRightNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(21);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1100', Level.LEVEL0, () => {
+    it('testRectGetBottomNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(22);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1101', Level.LEVEL3, () => {
+    it('testRectGetBottomNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectSetGetLeftTopRightBottom(23);
       expect(result).assertEqual(0);
     })
@@ -421,7 +421,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1200', Level.LEVEL0, () => {
+    it('testRectGetHeightNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectOtherOperations(0);
       expect(result).assertEqual(0);
     })
@@ -434,7 +434,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1201', Level.LEVEL3, () => {
+    it('testRectGetHeightNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectOtherOperations(1);
       expect(result).assertEqual(0);
     })
@@ -447,7 +447,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1300', Level.LEVEL0, () => {
+    it('testRectGetWidthNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectOtherOperations(2);
       expect(result).assertEqual(0);
     })
@@ -460,7 +460,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1301', Level.LEVEL3, () => {
+    it('testRectGetWidthNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectOtherOperations(3);
       expect(result).assertEqual(0);
     })
@@ -473,7 +473,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1302', Level.LEVEL0, () => {
+    it('testRectGetWidthBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectOtherOperations(4);
       expect(result).assertEqual(0);
     })
@@ -486,7 +486,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1400', Level.LEVEL0, () => {
+    it('testRectCopyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(5);
       expect(result).assertEqual(0);
     })
@@ -499,7 +499,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1401', Level.LEVEL3, () => {
+    it('testRectCopyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(6);
       expect(result).assertEqual(0);
     })
@@ -512,7 +512,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1500', Level.LEVEL0, () => {
+    it('testRectDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(7);
       expect(result).assertEqual(0);
     })
@@ -525,7 +525,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1501', Level.LEVEL3, () => {
+    it('testRectDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectCreateDestroyIntersectJoin(8);
       expect(result).assertEqual(0);
     })
@@ -538,7 +538,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600', Level.LEVEL0, () => {
+    it('testRectInsetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(0);
       expect(result).assertEqual(0);
     })
@@ -551,7 +551,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601', Level.LEVEL3, () => {
+    it('testRectInsetAbNormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(1);
       expect(result).assertEqual(0);
     })
@@ -564,7 +564,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602', Level.LEVEL3, () => {
+    it('testRectInsetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(2);
       expect(result).assertEqual(0);
     })
@@ -577,7 +577,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603', Level.LEVEL3, () => {
+    it('testRectInsetCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(3);
       expect(result).assertEqual(0);
     })
@@ -590,7 +590,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700', Level.LEVEL0, () => {
+    it('testRectContainsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(4);
       expect(result).assertEqual(0);
     })
@@ -603,7 +603,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701', Level.LEVEL3, () => {
+    it('testRectContainsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(5);
       expect(result).assertEqual(0);
     })
@@ -616,7 +616,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703', Level.LEVEL3, () => {
+    it('testRectContainsCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(6);
       expect(result).assertEqual(0);
     })
@@ -629,7 +629,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800', Level.LEVEL0, () => {
+    it('testRectSetEmptyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(7);
       expect(result).assertEqual(0);
     })
@@ -642,7 +642,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801', Level.LEVEL3, () => {
+    it('testRectSetEmptyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(8);
       expect(result).assertEqual(0);
     })
@@ -655,7 +655,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802', Level.LEVEL3, () => {
+    it('testRectSetEmptyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(9);
       expect(result).assertEqual(0);
     })
@@ -668,7 +668,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900', Level.LEVEL0, () => {
+    it('testRectIsEmptyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(10);
       expect(result).assertEqual(0);
     })
@@ -681,7 +681,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901', Level.LEVEL3, () => {
+    it('testRectIsEmptyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(11);
       expect(result).assertEqual(0);
     })
@@ -694,7 +694,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902', Level.LEVEL3, () => {
+    it('testRectIsEmptyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(12);
       expect(result).assertEqual(0);
     })
@@ -707,7 +707,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000', Level.LEVEL0, () => {
+    it('testRectOffsetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(13);
       expect(result).assertEqual(0);
     })
@@ -720,7 +720,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001', Level.LEVEL3, () => {
+    it('testRectOffsetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(14);
       expect(result).assertEqual(0);
     })
@@ -733,7 +733,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002', Level.LEVEL3, () => {
+    it('testRectOffsetAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(15);
       expect(result).assertEqual(0);
     })
@@ -746,7 +746,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003', Level.LEVEL3, () => {
+    it('testRectOffsetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(16);
       expect(result).assertEqual(0);
     })
@@ -759,7 +759,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100', Level.LEVEL0, () => {
+    it('testRectOffsetToNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(17);
       expect(result).assertEqual(0);
     })
@@ -772,7 +772,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101', Level.LEVEL3, () => {
+    it('testRectOffsetToNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(18);
       expect(result).assertEqual(0);
     })
@@ -785,7 +785,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102', Level.LEVEL3, () => {
+    it('testRectOffsetToAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(19);
       expect(result).assertEqual(0);
     })
@@ -798,7 +798,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103', Level.LEVEL3, () => {
+    it('testRectOffsetToMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(20);
       expect(result).assertEqual(0);
     })
@@ -811,7 +811,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200', Level.LEVEL0, () => {
+    it('testRectSortNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(21);
       expect(result).assertEqual(0);
     })
@@ -824,7 +824,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201', Level.LEVEL3, () => {
+    it('testRectSortNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(22);
       expect(result).assertEqual(0);
     })
@@ -837,7 +837,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202', Level.LEVEL3, () => {
+    it('testRectSortMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(23);
       expect(result).assertEqual(0);
     })
@@ -850,7 +850,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300', Level.LEVEL0, () => {
+    it('testRectUnionNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(24);
       expect(result).assertEqual(0);
     })
@@ -863,7 +863,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301', Level.LEVEL3, () => {
+    it('testRectUnionNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(25);
       expect(result).assertEqual(0);
     })
@@ -876,7 +876,7 @@ export default function DrawingNativeRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302', Level.LEVEL3, () => {
+    it('testRectUnionMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(26);
       expect(result).assertEqual(0);
     })

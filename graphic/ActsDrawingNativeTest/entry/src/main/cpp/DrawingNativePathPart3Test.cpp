@@ -61,7 +61,8 @@ void DrawingNativePathPart3TestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsClosedNormal() {
+int TestPathIsClosedNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -96,7 +97,8 @@ int TestPathIsClosedNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsClosedNormal2() {
+int TestPathIsClosedNormal2()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -125,7 +127,8 @@ int TestPathIsClosedNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsClosedNull() {
+int TestPathIsClosedNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -149,7 +152,8 @@ int TestPathIsClosedNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetPositionTangentNormal() {
+int TestPathGetPositionTangentNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -182,7 +186,8 @@ int TestPathGetPositionTangentNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetPositionTangentNormal2() {
+int TestPathGetPositionTangentNormal2()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -215,7 +220,8 @@ int TestPathGetPositionTangentNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetPositionTangentNull() {
+int TestPathGetPositionTangentNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -255,7 +261,8 @@ int TestPathGetPositionTangentNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetPositionTangentAbnormal() {
+int TestPathGetPositionTangentAbnormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -309,7 +316,8 @@ int TestPathGetPositionTangentAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetPositionTangentMaximal() {
+int TestPathGetPositionTangentMaximal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -364,7 +372,8 @@ int TestPathGetPositionTangentMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathOpNormal() {
+int TestPathOpNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -424,7 +433,8 @@ int TestPathOpNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathOpNull() {
+int TestPathOpNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -460,7 +470,8 @@ int TestPathOpNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetMatrixNormal() {
+int TestPathGetMatrixNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -506,7 +517,8 @@ int TestPathGetMatrixNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetMatrixNormal2() {
+int TestPathGetMatrixNormal2()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -552,7 +564,8 @@ int TestPathGetMatrixNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetMatrixNull() {
+int TestPathGetMatrixNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -590,7 +603,8 @@ int TestPathGetMatrixNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetMatrixAbnormal() {
+int TestPathGetMatrixAbnormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -626,7 +640,8 @@ int TestPathGetMatrixAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetMatrixMaximal() {
+int TestPathGetMatrixMaximal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -662,7 +677,8 @@ int TestPathGetMatrixMaximal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetSegmentNormal() {
+int TestPathGetSegmentNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -705,7 +721,8 @@ int TestPathGetSegmentNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetSegmentNull() {
+int TestPathGetSegmentNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -756,7 +773,8 @@ int TestPathGetSegmentNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetSegmentAbnormal() {
+int TestPathGetSegmentAbnormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -802,7 +820,8 @@ int TestPathGetSegmentAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetSegmentMultiplies() {
+int TestPathGetSegmentMultiplies()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -838,7 +857,8 @@ int TestPathGetSegmentMultiplies() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathSetPathNormal() {
+int TestPathSetPathNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -871,7 +891,8 @@ int TestPathSetPathNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathSetPathNull() {
+int TestPathSetPathNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -907,7 +928,8 @@ int TestPathSetPathNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathSetPathMulptiCalls() {
+int TestPathSetPathMulptiCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -943,7 +965,8 @@ int TestPathSetPathMulptiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsEmptyNormal() {
+int TestPathIsEmptyNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -973,7 +996,8 @@ int TestPathIsEmptyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsEmptyNull() {
+int TestPathIsEmptyNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1007,7 +1031,8 @@ int TestPathIsEmptyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsEmptyMultipleCalls() {
+int TestPathIsEmptyMultipleCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1040,7 +1065,8 @@ int TestPathIsEmptyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsRectNormal() {
+int TestPathIsRectNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path1 = OH_Drawing_PathCreate();
@@ -1084,7 +1110,8 @@ int TestPathIsRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsRectNull() {
+int TestPathIsRectNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1125,7 +1152,8 @@ int TestPathIsRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsRectMultipleCalls() {
+int TestPathIsRectMultipleCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1161,7 +1189,8 @@ int TestPathIsRectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathGetFillTypeNormal() {
+int TestPathGetFillTypeNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1209,7 +1238,8 @@ int TestPathGetFillTypeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetFillTypeNull() {
+int TestPathGetFillTypeNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1243,7 +1273,8 @@ int TestPathGetFillTypeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathGetFillTypeMultipleCalls() {
+int TestPathGetFillTypeMultipleCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1275,7 +1306,8 @@ int TestPathGetFillTypeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathApproximateNormal() {
+int TestPathApproximateNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1312,7 +1344,8 @@ int TestPathApproximateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathApproximateNull() {
+int TestPathApproximateNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1353,7 +1386,8 @@ int TestPathApproximateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathApproximateAbnormal() {
+int TestPathApproximateAbnormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1391,7 +1425,8 @@ int TestPathApproximateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathApproximateMultiCalls() {
+int TestPathApproximateMultiCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1423,7 +1458,8 @@ int TestPathApproximateMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathInterpolateNormal() {
+int TestPathInterpolateNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1474,7 +1510,8 @@ int TestPathInterpolateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathInterpolateNull() {
+int TestPathInterpolateNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1528,7 +1565,8 @@ int TestPathInterpolateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathInterpolateAbnormal() {
+int TestPathInterpolateAbnormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1570,7 +1608,8 @@ int TestPathInterpolateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathInterpolateMultiCalls() {
+int TestPathInterpolateMultiCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1612,7 +1651,8 @@ int TestPathInterpolateMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsInterpolateNormal() {
+int TestPathIsInterpolateNormal()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1659,7 +1699,8 @@ int TestPathIsInterpolateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsInterpolateNull() {
+int TestPathIsInterpolateNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1703,7 +1744,8 @@ int TestPathIsInterpolateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsInterpolateMultiCalls() {
+int TestPathIsInterpolateMultiCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -1742,7 +1784,8 @@ int TestPathIsInterpolateMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsInverseFillTypeNormalOne() {
+int TestPathIsInverseFillTypeNormalOne()
+{
     DrawingNativePathPart3TestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1786,7 +1829,8 @@ int TestPathIsInverseFillTypeNormalOne() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsInverseFillTypeNormalTwo() {
+int TestPathIsInverseFillTypeNormalTwo()
+{
     DrawingNativePathPart3TestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1830,7 +1874,8 @@ int TestPathIsInverseFillTypeNormalTwo() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsInverseFillTypeNormalThree() {
+int TestPathIsInverseFillTypeNormalThree()
+{
     DrawingNativePathPart3TestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1874,7 +1919,8 @@ int TestPathIsInverseFillTypeNormalThree() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIsInverseFillTypeNormalFour() {
+int TestPathIsInverseFillTypeNormalFour()
+{
     DrawingNativePathPart3TestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -1918,7 +1964,8 @@ int TestPathIsInverseFillTypeNormalFour() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsInverseFillTypeNull() {
+int TestPathIsInverseFillTypeNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. 创建有效的路径对象，作为后续测试的基础资源
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
@@ -1950,7 +1997,8 @@ int TestPathIsInverseFillTypeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathToggleInverseFillTypeNull() {
+int TestPathToggleInverseFillTypeNull()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. 创建路径对象（基础资源初始化）
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
@@ -1983,7 +2031,8 @@ int TestPathToggleInverseFillTypeNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIsInverseFillTypeCalls() {
+int TestPathIsInverseFillTypeCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. 创建路径对象：基础资源初始化，用于循环校验接口稳定性
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
@@ -2011,7 +2060,8 @@ int TestPathIsInverseFillTypeCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathToggleInverseFillTypeCalls() {
+int TestPathToggleInverseFillTypeCalls()
+{
     DrawingNativePathPart3TestSetUp();
     // 1. 创建路径对象：基础资源初始化，用于循环切换填充状态测试
     OH_Drawing_Path* path = OH_Drawing_PathCreate();

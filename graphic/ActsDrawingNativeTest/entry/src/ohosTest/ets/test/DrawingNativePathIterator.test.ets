@@ -43,7 +43,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0100', Level.LEVEL0, () => {
+    it('testPathIteratorCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0101', Level.LEVEL3, () => {
+    it('testPathIteratorCreateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathIterator(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0102', Level.LEVEL3, () => {
+    it('testPathIteratorCreateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathIterator(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0200', Level.LEVEL0, () => {
+    it('testPathIteratorDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0201', Level.LEVEL3, () => {
+    it('testPathIteratorDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathIterator(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0300', Level.LEVEL0, () => {
+    it('testPathIteratorHasNextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0301', Level.LEVEL3, () => {
+    it('testPathIteratorHasNextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathIterator(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0400', Level.LEVEL0, () => {
+    it('testPathIteratorNextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0401', Level.LEVEL3, () => {
+    it('testPathIteratorNextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathIterator(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0500', Level.LEVEL0, () => {
+    it('testPathIteratorPeekNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0501', Level.LEVEL0, () => {
+    it('testPathIteratorPeekNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathIterator(10);
       expect(result).assertEqual(0);
     })

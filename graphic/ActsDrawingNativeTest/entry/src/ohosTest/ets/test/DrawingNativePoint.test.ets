@@ -43,7 +43,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0100', Level.LEVEL0, () => {
+    it('testPointCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPointCreate(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0101', Level.LEVEL3, () => {
+    it('testPointCreateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointCreate(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0102', Level.LEVEL3, () => {
+    it('testPointCreateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointCreate(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0103', Level.LEVEL3, () => {
+    it('testPointCreateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointCreate(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0104', Level.LEVEL3, () => {
+    it('testPointCreateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointCreate(4);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0200', Level.LEVEL0, () => {
+    it('testPointDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPointDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0201', Level.LEVEL3, () => {
+    it('testPointDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -136,7 +136,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0300', Level.LEVEL0, () => {
+    it('testPointGetXNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPointGetSet(0);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0301', Level.LEVEL3, () => {
+    it('testPointGetXNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(1);
       expect(result).assertEqual(0);
     })
@@ -162,7 +162,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0302', Level.LEVEL3, () => {
+    it('testPointGetXMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(2);
       expect(result).assertEqual(0);
     })
@@ -175,7 +175,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400', Level.LEVEL0, () => {
+    it('testPointGetYNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPointGetSet(3);
       expect(result).assertEqual(0);
     })
@@ -188,7 +188,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401', Level.LEVEL3, () => {
+    it('testPointGetYNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(4);
       expect(result).assertEqual(0);
     })
@@ -201,7 +201,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402', Level.LEVEL3, () => {
+    it('testPointGetYMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(5);
       expect(result).assertEqual(0);
     })
@@ -214,7 +214,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0500', Level.LEVEL0, () => {
+    it('testPointSetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPointGetSet(6);
       expect(result).assertEqual(0);
     })
@@ -227,7 +227,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0501', Level.LEVEL3, () => {
+    it('testPointSetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(7);
       expect(result).assertEqual(0);
     })
@@ -240,7 +240,7 @@ export default function DrawingNativePointTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0502', Level.LEVEL3, () => {
+    it('testPointSetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPointGetSet(8);
       expect(result).assertEqual(0);
     })

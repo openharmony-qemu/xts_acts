@@ -56,7 +56,8 @@ void DrawingNativePathIteratorTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorCreateNormal() {
+int TestPathIteratorCreateNormal()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -84,7 +85,8 @@ int TestPathIteratorCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIteratorCreateNull() {
+int TestPathIteratorCreateNull()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -115,7 +117,8 @@ int TestPathIteratorCreateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIteratorCreateMultipleCalls() {
+int TestPathIteratorCreateMultipleCalls()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -146,7 +149,8 @@ int TestPathIteratorCreateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorDestroyNormal() {
+int TestPathIteratorDestroyNormal()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -172,7 +176,8 @@ int TestPathIteratorDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIteratorDestroyNull() {
+int TestPathIteratorDestroyNull()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorDestroy(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -188,7 +193,8 @@ int TestPathIteratorDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorHasNextNormal() {
+int TestPathIteratorHasNextNormal()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -225,7 +231,8 @@ int TestPathIteratorHasNextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIteratorHasNextNull() {
+int TestPathIteratorHasNextNull()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -257,7 +264,8 @@ int TestPathIteratorHasNextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorNextNormal() {
+int TestPathIteratorNextNormal()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -293,7 +301,8 @@ int TestPathIteratorNextNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestPathIteratorNextNull() {
+int TestPathIteratorNextNull()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -338,7 +347,8 @@ int TestPathIteratorNextNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorPeekNormal() {
+int TestPathIteratorPeekNormal()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
@@ -375,7 +385,8 @@ int TestPathIteratorPeekNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestPathIteratorPeekNull() {
+int TestPathIteratorPeekNull()
+{
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);

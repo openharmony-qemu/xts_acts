@@ -43,7 +43,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0100', Level.LEVEL0, () => {
+    it('testLatticeCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingLattice(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0101', Level.LEVEL3, () => {
+    it('testLatticeCreateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingLattice(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0102', Level.LEVEL3, () => {
+    it('testLatticeCreateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingLattice(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0103', Level.LEVEL3, () => {
+    it('testLatticeCreateEnumTraversal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingLattice(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0104', Level.LEVEL3, () => {
+    it('testLatticeCreateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingLattice(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0200', Level.LEVEL0, () => {
+    it('testLatticeDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingLattice(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeLatticeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0201', Level.LEVEL3, () => {
+    it('testLatticeDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingLattice(6);
       expect(result).assertEqual(0);
     })

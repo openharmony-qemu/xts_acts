@@ -44,7 +44,8 @@ void DrawingNativeColorSpaceTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorSpaceCreateSrgbNormal() {
+int TestColorSpaceCreateSrgbNormal()
+{
     DrawingNativeColorSpaceTestSetUp();
     OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
     EXPECT_NE(colorSpace, nullptr);
@@ -61,7 +62,8 @@ int TestColorSpaceCreateSrgbNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceDestroyNull() {
+int TestColorSpaceDestroyNull()
+{
     DrawingNativeColorSpaceTestSetUp();
     OH_Drawing_ColorSpace *colorSpace = nullptr;
     OH_Drawing_ColorSpaceDestroy(nullptr);
@@ -78,7 +80,8 @@ int TestColorSpaceDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceCreateSrgbMultipleCalls() {
+int TestColorSpaceCreateSrgbMultipleCalls()
+{
     DrawingNativeColorSpaceTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
@@ -97,7 +100,8 @@ int TestColorSpaceCreateSrgbMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorSpaceCreateSrgbLinearNormal() {
+int TestColorSpaceCreateSrgbLinearNormal()
+{
     DrawingNativeColorSpaceTestSetUp();
     OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
     EXPECT_NE(colorSpace, nullptr);
@@ -114,7 +118,8 @@ int TestColorSpaceCreateSrgbLinearNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorSpaceCreateSrgbLinearMultipleCalls() {
+int TestColorSpaceCreateSrgbLinearMultipleCalls()
+{
     DrawingNativeColorSpaceTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();

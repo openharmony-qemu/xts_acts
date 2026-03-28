@@ -43,7 +43,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0100', Level.LEVEL0, () => {
+    it('testColorFilterCreateBlendModeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0101', Level.LEVEL3, () => {
+    it('testColorFilterCreateBlendModeNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0102', Level.LEVEL3, () => {
+    it('testColorFilterCreateBlendModeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0103', Level.LEVEL3, () => {
+    it('testColorFilterCreateBlendModeAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0104', Level.LEVEL3, () => {
+    it('testColorFilterCreateBlendModeMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(4);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0200', Level.LEVEL0, () => {
+    it('testColorFilterCreateComposeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(0);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0201', Level.LEVEL3, () => {
+    it('testColorFilterCreateComposeNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(1);
       expect(result).assertEqual(0);
     })
@@ -135,7 +135,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0202', Level.LEVEL3, () => {
+    it('testColorFilterCreateComposeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(2);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0300', Level.LEVEL0, () => {
+    it('testColorFilterCreateMatrixNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(0);
       expect(result).assertEqual(0);
     })
@@ -162,7 +162,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0301', Level.LEVEL3, () => {
+    it('testColorFilterCreateMatrixNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(1);
       expect(result).assertEqual(0);
     })
@@ -175,7 +175,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0302', Level.LEVEL3, () => {
+    it('testColorFilterCreateMatrixAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(2);
       expect(result).assertEqual(0);
     })
@@ -188,7 +188,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0303', Level.LEVEL3, () => {
+    it('testColorFilterCreateMatrixMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(3);
       expect(result).assertEqual(0);
     })
@@ -202,7 +202,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0400', Level.LEVEL0, () => {
+    it('testColorFilterCreateLinearToSrgbGammaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLinearToSrgbGamma(0);
       expect(result).assertEqual(0);
     })
@@ -215,7 +215,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0401', Level.LEVEL3, () => {
+    it('testColorFilterCreateLinearToSrgbGammaMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLinearToSrgbGamma(1);
       expect(result).assertEqual(0);
     })
@@ -229,7 +229,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0500', Level.LEVEL0, () => {
+    it('testColorFilterCreateSrgbGammaToLinearNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateSrgbGammaToLinear(0);
       expect(result).assertEqual(0);
     })
@@ -242,7 +242,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0501', Level.LEVEL3, () => {
+    it('testColorFilterCreateSrgbGammaToLinearMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateSrgbGammaToLinear(1);
       expect(result).assertEqual(0);
     })
@@ -256,7 +256,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0600', Level.LEVEL0, () => {
+    it('testColorFilterCreateLumaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLuma(0);
       expect(result).assertEqual(0);
     })
@@ -269,7 +269,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0601', Level.LEVEL3, () => {
+    it('testColorFilterCreateLumaMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLuma(1);
       expect(result).assertEqual(0);
     })
@@ -283,7 +283,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0700', Level.LEVEL0, () => {
+    it('testColorFilterDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -296,7 +296,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0701', Level.LEVEL3, () => {
+    it('testColorFilterDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -310,7 +310,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0800', Level.LEVEL0, () => {
+    it('testColorFilterCreateLightingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(0);
       expect(result).assertEqual(0);
     })
@@ -323,7 +323,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0801', Level.LEVEL3, () => {
+    it('testColorFilterCreateLightingNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(1);
       expect(result).assertEqual(0);
     })
@@ -336,7 +336,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0802', Level.LEVEL3, () => {
+    it('testColorFilterCreateLightingAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(2);
       expect(result).assertEqual(0);
     })
@@ -349,7 +349,7 @@ export default function DrawingNativeColorFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0803', Level.LEVEL3, () => {
+    it('testColorFilterCreateLightingMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(3);
       expect(result).assertEqual(0);
     })

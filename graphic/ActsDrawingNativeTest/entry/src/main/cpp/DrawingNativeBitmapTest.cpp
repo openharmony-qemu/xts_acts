@@ -65,7 +65,8 @@ void DrawingNativeBitmapTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapDestroyNormal() {
+int TestBitmapDestroyNormal()
+{
     DrawingNativeBitmapTestSetUp();
     // step 1
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
@@ -84,7 +85,8 @@ int TestBitmapDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapDestroyNull() {
+int TestBitmapDestroyNull()
+{
     DrawingNativeBitmapTestSetUp();
     OH_Drawing_Bitmap *bitmap = nullptr;
     OH_Drawing_BitmapDestroy(nullptr);
@@ -113,7 +115,8 @@ OH_Drawing_AlphaFormat alphaFormats[] = {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapCreateFromPixelsNormal() {
+int TestBitmapCreateFromPixelsNormal()
+{
     DrawingNativeBitmapTestSetUp();
     // 1. Construct OH_Drawing_Image_Info by iterating through OH_Drawing_ColorFormat and OH_Drawing_AlphaFormat
     int width = DRAWING_NUMBER_100;
@@ -166,7 +169,8 @@ int TestBitmapCreateFromPixelsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapCreateFromPixelsNull() {
+int TestBitmapCreateFromPixelsNull()
+{
     DrawingNativeBitmapTestSetUp();
     int width = DRAWING_NUMBER_100;
     int height = DRAWING_NUMBER_100;
@@ -210,7 +214,8 @@ int TestBitmapCreateFromPixelsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapCreateFromPixelsMismatch() {
+int TestBitmapCreateFromPixelsMismatch()
+{
     DrawingNativeBitmapTestSetUp();
     int width = DRAWING_NUMBER_48;
     int height = DRAWING_NUMBER_48;
@@ -259,7 +264,8 @@ int TestBitmapCreateFromPixelsMismatch() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapCreateFromPixelsAbnormal() {
+int TestBitmapCreateFromPixelsAbnormal()
+{
     DrawingNativeBitmapTestSetUp();
     int width = DRAWING_NUMBER_48;
     int height = DRAWING_NUMBER_48;
@@ -286,7 +292,8 @@ int TestBitmapCreateFromPixelsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapCreateFromPixelsVeryBig() {
+int TestBitmapCreateFromPixelsVeryBig()
+{
     DrawingNativeBitmapTestSetUp();
     // 1. Construct OH_Drawing_Image_Info by iterating through OH_Drawing_ColorFormat and OH_Drawing_AlphaFormat
     OH_Drawing_ColorFormat formats[] = {
@@ -350,7 +357,8 @@ int TestBitmapCreateFromPixelsVeryBig() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapCreateFromPixelsBoundary() {
+int TestBitmapCreateFromPixelsBoundary()
+{
     DrawingNativeBitmapTestSetUp();
     // 1. Construct OH_Drawing_Image_Info by iterating through OH_Drawing_ColorFormat and OH_Drawing_AlphaFormat
     // 4K screen resolutionp
@@ -404,7 +412,8 @@ int TestBitmapCreateFromPixelsBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapBuildNormal() {
+int TestBitmapBuildNormal()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_500;
     const unsigned int height = DRAWING_NUMBER_500;
@@ -451,7 +460,8 @@ int TestBitmapBuildNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapBuildNull() {
+int TestBitmapBuildNull()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_500;
     const unsigned int height = DRAWING_NUMBER_500;
@@ -495,7 +505,8 @@ int TestBitmapBuildNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapBuildMultipleCalls() {
+int TestBitmapBuildMultipleCalls()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_500;
     const unsigned int height = DRAWING_NUMBER_500;
@@ -561,7 +572,8 @@ int TestBitmapBuildMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapBuildBoundary() {
+int TestBitmapBuildBoundary()
+{
     DrawingNativeBitmapTestSetUp();
     // 4K screen resolutionp
     const unsigned int width = DRAWING_NUMBER_4096;
@@ -609,7 +621,8 @@ int TestBitmapBuildBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapGetXXNormal() {
+int TestBitmapGetXXNormal()
+{
     DrawingNativeBitmapTestSetUp();
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
@@ -665,7 +678,8 @@ int TestBitmapGetXXNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapGetXXNull() {
+int TestBitmapGetXXNull()
+{
     DrawingNativeBitmapTestSetUp();
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
@@ -717,7 +731,8 @@ int TestBitmapGetXXNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapGetXXInputDestroyed() {
+int TestBitmapGetXXInputDestroyed()
+{
     DrawingNativeBitmapTestSetUp();
     // Deprecated
     DrawingNativeBitmapTestTearDown();
@@ -732,7 +747,8 @@ int TestBitmapGetXXInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapGetXXBoundary() {
+int TestBitmapGetXXBoundary()
+{
     DrawingNativeBitmapTestSetUp();
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
@@ -790,7 +806,8 @@ int TestBitmapGetXXBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapReadPixelsNormal() {
+int TestBitmapReadPixelsNormal()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_500;
     const unsigned int height = DRAWING_NUMBER_500;
@@ -825,7 +842,8 @@ int TestBitmapReadPixelsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapReadPixelsNull() {
+int TestBitmapReadPixelsNull()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_500;
     const unsigned int height = DRAWING_NUMBER_500;
@@ -879,7 +897,8 @@ int TestBitmapReadPixelsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapReadPixelsInputDestroyed() {
+int TestBitmapReadPixelsInputDestroyed()
+{
     DrawingNativeBitmapTestSetUp();
     // Deprecated
     DrawingNativeBitmapTestTearDown();
@@ -894,7 +913,8 @@ int TestBitmapReadPixelsInputDestroyed() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestBitmapReadPixelsMismatch() {
+int TestBitmapReadPixelsMismatch()
+{
     DrawingNativeBitmapTestSetUp();
     // step 1
     const unsigned int width = DRAWING_NUMBER_500;
@@ -952,7 +972,8 @@ int TestBitmapReadPixelsMismatch() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapReadPixelsBoundary() {
+int TestBitmapReadPixelsBoundary()
+{
     DrawingNativeBitmapTestSetUp();
     const unsigned int width = DRAWING_NUMBER_4096;
     const unsigned int height = DRAWING_NUMBER_2160;
@@ -989,7 +1010,8 @@ int TestBitmapReadPixelsBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestBitmapBuildMaximum() {
+int TestBitmapBuildMaximum()
+{
     DrawingNativeBitmapTestSetUp();
     // Build a very large bitmap
     const unsigned int width = DRAWING_NUMBER_10000;

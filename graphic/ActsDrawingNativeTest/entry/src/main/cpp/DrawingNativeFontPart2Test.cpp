@@ -84,7 +84,8 @@ void DrawingNativeFontPart2TestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontArgumentsCreateNormal() {
+int TestFontArgumentsCreateNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -103,7 +104,8 @@ int TestFontArgumentsCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontArgumentsAddVariationNormal() {
+int TestFontArgumentsAddVariationNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -135,7 +137,8 @@ int TestFontArgumentsAddVariationNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontArgumentsAddVariationNull() {
+int TestFontArgumentsAddVariationNull()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -160,7 +163,8 @@ int TestFontArgumentsAddVariationNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontArgumentsAddVariationAbnormal() {
+int TestFontArgumentsAddVariationAbnormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -185,7 +189,8 @@ int TestFontArgumentsAddVariationAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontArgumentsAddVariationMultipleCalls() {
+int TestFontArgumentsAddVariationMultipleCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -214,7 +219,8 @@ int TestFontArgumentsAddVariationMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontArgumentsDestoryNormal() {
+int TestFontArgumentsDestoryNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -236,7 +242,8 @@ int TestFontArgumentsDestoryNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontArgumentsDestoryNull() {
+int TestFontArgumentsDestoryNull()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontArgumentsCreate
     OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
@@ -259,7 +266,8 @@ int TestFontArgumentsDestoryNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontArgumentsDestoryMultiplieCalls() {
+int TestFontArgumentsDestoryMultiplieCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_FontArguments *fontArguments = nullptr;
@@ -286,7 +294,8 @@ int TestFontArgumentsDestoryMultiplieCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetThemeFontFollowedNormal() {
+int TestFontSetThemeFontFollowedNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -310,7 +319,8 @@ int TestFontSetThemeFontFollowedNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetThemeFontFollowedMuitipleCalls() {
+int TestFontSetThemeFontFollowedMuitipleCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -334,7 +344,8 @@ int TestFontSetThemeFontFollowedMuitipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontSetThemeFontFollowedNull() {
+int TestFontSetThemeFontFollowedNull()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -356,7 +367,8 @@ int TestFontSetThemeFontFollowedNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontIsThemeFontFollowedNormal() {
+int TestFontIsThemeFontFollowedNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -392,7 +404,8 @@ int TestFontIsThemeFontFollowedNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsThemeFontFollowedNull() {
+int TestFontIsThemeFontFollowedNull()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -419,7 +432,8 @@ int TestFontIsThemeFontFollowedNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontIsThemeFontFollowedMultipleCalls() {
+int TestFontIsThemeFontFollowedMultipleCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -450,7 +464,8 @@ int TestFontIsThemeFontFollowedMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontMeasureTextWithBrushOrPenNormal1() {
+int TestFontMeasureTextWithBrushOrPenNormal1()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -510,7 +525,8 @@ int TestFontMeasureTextWithBrushOrPenNormal1() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontMeasureTextWithBrushOrPenNormal2() {
+int TestFontMeasureTextWithBrushOrPenNormal2()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -559,7 +575,8 @@ int TestFontMeasureTextWithBrushOrPenNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureTextWithBrushOrPenNull() {
+int TestFontMeasureTextWithBrushOrPenNull()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -606,7 +623,8 @@ int TestFontMeasureTextWithBrushOrPenNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureTextWithBrushOrPenAbnormal() {
+int TestFontMeasureTextWithBrushOrPenAbnormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -637,7 +655,8 @@ int TestFontMeasureTextWithBrushOrPenAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureTextWithBrushOrPenMultiCalls() {
+int TestFontMeasureTextWithBrushOrPenMultiCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -668,7 +687,8 @@ int TestFontMeasureTextWithBrushOrPenMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGetWidthsBoundsNormal1() {
+int TestFontGetWidthsBoundsNormal1()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -714,7 +734,8 @@ int TestFontGetWidthsBoundsNormal1() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGetWidthsBoundsNormal2() {
+int TestFontGetWidthsBoundsNormal2()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -781,7 +802,8 @@ int TestFontGetWidthsBoundsNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsBoundsNull() {
+int TestFontGetWidthsBoundsNull()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -830,7 +852,8 @@ int TestFontGetWidthsBoundsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsBoundsAbnormal() {
+int TestFontGetWidthsBoundsAbnormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -873,7 +896,8 @@ int TestFontGetWidthsBoundsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGetWidthsBoundsMultiCalls() {
+int TestFontGetWidthsBoundsMultiCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -910,7 +934,8 @@ int TestFontGetWidthsBoundsMultiCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGePosNormal() {
+int TestFontGePosNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -964,7 +989,8 @@ int TestFontGePosNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGetPosNormal1() {
+int TestFontGetPosNormal1()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -1020,7 +1046,8 @@ int TestFontGetPosNormal1() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGePosNormal2() {
+int TestFontGePosNormal2()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -1076,7 +1103,8 @@ int TestFontGePosNormal2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGePosNull() {
+int TestFontGePosNull()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -1112,7 +1140,8 @@ int TestFontGePosNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGePosMultiplieCalls() {
+int TestFontGePosMultiplieCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -1145,7 +1174,8 @@ int TestFontGePosMultiplieCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGePosAbnormal() {
+int TestFontGePosAbnormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_50);
@@ -1176,7 +1206,8 @@ int TestFontGePosAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontGeSpacingNormal() {
+int TestFontGeSpacingNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     float spacing = 0;
@@ -1204,7 +1235,8 @@ int TestFontGeSpacingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGeSpacingMultiplieCalls() {
+int TestFontGeSpacingMultiplieCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_30);
@@ -1226,7 +1258,8 @@ int TestFontGeSpacingMultiplieCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontGeSpacingNull() {
+int TestFontGeSpacingNull()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, DRAWING_NUMBER_30);
@@ -1246,7 +1279,8 @@ int TestFontGeSpacingNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestFontMeasureSingleChaWithFeaturesNormal() {
+int TestFontMeasureSingleChaWithFeaturesNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     const char *str = "H";
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -1303,7 +1337,8 @@ int TestFontMeasureSingleChaWithFeaturesNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontMeasureSingleChaWithFeaturesAbNormal() {
+int TestFontMeasureSingleChaWithFeaturesAbNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     const char *str = "（";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1340,7 +1375,8 @@ int TestFontMeasureSingleChaWithFeaturesAbNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestFontMeasureSingleChaWithFeaturesCalls() {
+int TestFontMeasureSingleChaWithFeaturesCalls()
+{
     DrawingNativeFontPart2TestSetUp();
     const char *str = "H";
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -1369,7 +1405,8 @@ int TestFontMeasureSingleChaWithFeaturesCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestFontFeaturesAddFeatureNormal() {
+int TestFontFeaturesAddFeatureNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     OH_Drawing_ErrorCode code = OH_Drawing_FontFeaturesAddFeature(features, "aaaa", 0.1);
@@ -1394,7 +1431,8 @@ int TestFontFeaturesAddFeatureNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontFeaturesAddFeatureAbNormal() {
+int TestFontFeaturesAddFeatureAbNormal()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     OH_Drawing_ErrorCode code = OH_Drawing_FontFeaturesAddFeature(nullptr, "aaaa", 0.1);
@@ -1417,7 +1455,8 @@ int TestFontFeaturesAddFeatureAbNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestFontFeaturesandFeatureDestroyNull() {
+int TestFontFeaturesandFeatureDestroyNull()
+{
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     OH_Drawing_ErrorCode code = OH_Drawing_FontFeaturesDestroy(nullptr);

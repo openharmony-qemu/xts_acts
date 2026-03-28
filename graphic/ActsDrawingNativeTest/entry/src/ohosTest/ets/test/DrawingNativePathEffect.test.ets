@@ -43,7 +43,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0100', Level.LEVEL0, () => {
+    it('testCreateDashPathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0101', Level.LEVEL3, () => {
+    it('testCreateDashPathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0102', Level.LEVEL3, () => {
+    it('testCreateDashPathEffectAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0103', Level.LEVEL3, () => {
+    it('testCreateDashPathEffectMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0200', Level.LEVEL0, () => {
+    it('testPathEffectDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0201', Level.LEVEL3, () => {
+    it('testPathEffectDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0300', Level.LEVEL0, () => {
+    it('testCreateCornerPathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0301', Level.LEVEL3, () => {
+    it('testCreateCornerPathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0302', Level.LEVEL3, () => {
+    it('testCreateCornerPathEffectAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0400', Level.LEVEL0, () => {
+    it('testCreateDiscreatePathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0401', Level.LEVEL3, () => {
+    it('testCreateDiscreatePathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0402', Level.LEVEL3, () => {
+    it('testCreateDiscreatePathEffectAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0500', Level.LEVEL0, () => {
+    it('testCreateComposePathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0501', Level.LEVEL3, () => {
+    it('testCreateComposePathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0600', Level.LEVEL0, () => {
+    it('testCreatePathDashEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0601', Level.LEVEL3, () => {
+    it('testCreatePathDashEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0602', Level.LEVEL3, () => {
+    it('testCreatePathDashEffectAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0700', Level.LEVEL0, () => {
+    it('testCreateSumPathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathEffect(17);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativePathEffectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0701', Level.LEVEL3, () => {
+    it('testCreateSumPathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathEffect(18);
       expect(result).assertEqual(0);
     })

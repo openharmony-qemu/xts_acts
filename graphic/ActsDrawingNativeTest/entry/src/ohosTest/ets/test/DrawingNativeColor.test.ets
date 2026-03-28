@@ -43,7 +43,7 @@ export default function DrawingNativeColorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0100', Level.LEVEL0, () => {
+    it('testColorSetArgbNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorSetArgb(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeColorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0101', Level.LEVEL3, () => {
+    it('testColorSetArgbNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeColorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0102', Level.LEVEL3, () => {
+    it('testColorSetArgbMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeColorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0103', Level.LEVEL3, () => {
+    it('testColorSetArgbAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeColorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0104', Level.LEVEL3, () => {
+    it('testColorSetArgbMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(4);
       expect(result).assertEqual(0);
     })

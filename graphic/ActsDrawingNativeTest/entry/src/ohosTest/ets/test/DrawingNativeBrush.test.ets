@@ -43,7 +43,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0100', Level.LEVEL0, () => {
+    it('testBrushCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0200', Level.LEVEL0, () => {
+    it('testBrushCopyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0201', Level.LEVEL3, () => {
+    it('testBrushCopyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0202', Level.LEVEL3, () => {
+    it('testBrushCopyInputDestroyed', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0203', Level.LEVEL3, () => {
+    it('testBrushCopyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0300', Level.LEVEL0, () => {
+    it('testBrushDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0301', Level.LEVEL3, () => {
+    it('testBrushDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushCreateDestroy(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0400', Level.LEVEL0, () => {
+    it('testBrushIsAntiAliasNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushAntiAlias(0);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0401', Level.LEVEL3, () => {
+    it('testBrushIsAntiAliasNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAntiAlias(1);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0500', Level.LEVEL0, () => {
+    it('testBrushSetAntiAliasNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushAntiAlias(2);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0501', Level.LEVEL3, () => {
+    it('testBrushSetAntiAliasNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAntiAlias(3);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0600', Level.LEVEL0, () => {
+    it('testBrushGetColorNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushColor(0);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0601', Level.LEVEL3, () => {
+    it('testBrushGetColorNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushColor(1);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0700', Level.LEVEL0, () => {
+    it('testBrushSetColorNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushColor(2);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0701', Level.LEVEL3, () => {
+    it('testBrushSetColorNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushColor(3);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0702', Level.LEVEL3, () => {
+    it('testBrushSetColorAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushColor(4);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0703', Level.LEVEL3, () => {
+    it('testBrushSetColorMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushColor(5);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0800', Level.LEVEL0, () => {
+    it('testBrushGetAlphaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushAlpha(0);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0801', Level.LEVEL3, () => {
+    it('testBrushGetAlphaNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAlpha(1);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0900', Level.LEVEL0, () => {
+    it('testBrushSetAlphaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushAlpha(2);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0901', Level.LEVEL3, () => {
+    it('testBrushSetAlphaNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAlpha(3);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0902', Level.LEVEL3, () => {
+    it('testBrushSetAlphaAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAlpha(4);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0903', Level.LEVEL3, () => {
+    it('testBrushSetAlphaMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushAlpha(5);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1000', Level.LEVEL0, () => {
+    it('testBrushSetShaderEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushShaderEffect(0);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1001', Level.LEVEL3, () => {
+    it('testBrushSetShaderEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushShaderEffect(1);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1100', Level.LEVEL0, () => {
+    it('testBrushSetShadowLayerNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushShadowLayer(0);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1101', Level.LEVEL3, () => {
+    it('testBrushSetShadowLayerNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushShadowLayer(1);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1200', Level.LEVEL0, () => {
+    it('testBrushSetFilterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushFilter(0);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1201', Level.LEVEL3, () => {
+    it('testBrushSetFilterNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushFilter(1);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1300', Level.LEVEL0, () => {
+    it('testBrushGetFilterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushFilter(2);
       expect(result).assertEqual(0);
     })
@@ -433,7 +433,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1301', Level.LEVEL3, () => {
+    it('testBrushGetFilterNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushFilter(3);
       expect(result).assertEqual(0);
     })
@@ -446,7 +446,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1400', Level.LEVEL0, () => {
+    it('testBrushSetBlendModeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushBlendMode(0);
       expect(result).assertEqual(0);
     })
@@ -459,7 +459,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1401', Level.LEVEL3, () => {
+    it('testBrushSetBlendModeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushBlendMode(1);
       expect(result).assertEqual(0);
     })
@@ -472,7 +472,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1500', Level.LEVEL0, () => {
+    it('testBrushResetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBrushReset(0);
       expect(result).assertEqual(0);
     })
@@ -485,7 +485,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1501', Level.LEVEL3, () => {
+    it('testBrushResetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushReset(1);
       expect(result).assertEqual(0);
     })
@@ -498,7 +498,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1600', Level.LEVEL2, () => {
+    it('testBrushGetAlphaFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(0);
       expect(result).assertEqual(0);
     })
@@ -511,7 +511,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1601', Level.LEVEL3, () => {
+    it('testBrushGetAlphaFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(1);
       expect(result).assertEqual(0);
     })
@@ -524,7 +524,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1700', Level.LEVEL2, () => {
+    it('testBrushGetRedFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(2);
       expect(result).assertEqual(0);
     })
@@ -537,7 +537,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1701', Level.LEVEL3, () => {
+    it('testBrushGetRedFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(3);
       expect(result).assertEqual(0);
     })
@@ -550,7 +550,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1800', Level.LEVEL2, () => {
+    it('testBrushGetGreenFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(4);
       expect(result).assertEqual(0);
     })
@@ -563,7 +563,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1801', Level.LEVEL3, () => {
+    it('testBrushGetGreenFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(5);
       expect(result).assertEqual(0);
     })
@@ -576,7 +576,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1900', Level.LEVEL2, () => {
+    it('testBrushGetBlueFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(6);
       expect(result).assertEqual(0);
     })
@@ -589,7 +589,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1901', Level.LEVEL3, () => {
+    it('testBrushGetBlueFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushGetFloat(7);
       expect(result).assertEqual(0);
     })
@@ -602,7 +602,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2000', Level.LEVEL2, () => {
+    it('testBrushSetColor4fNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingBrushSetColor4f(0);
       expect(result).assertEqual(0);
     })
@@ -615,7 +615,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2001', Level.LEVEL3, () => {
+    it('testBrushSetColor4fNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushSetColor4f(1);
       expect(result).assertEqual(0);
     })
@@ -628,7 +628,7 @@ export default function DrawingNativeBrushTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2002', Level.LEVEL3, () => {
+    it('testBrushSetColor4fAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingBrushSetColor4f(2);
       expect(result).assertEqual(0);
     })

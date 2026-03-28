@@ -51,7 +51,8 @@ void DrawingNativeShadowLayerTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShadowLayerCreateNormal() {
+int TestShadowLayerCreateNormal()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate with integer values for blurRadius, x, and y
     OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3, DRAWING_NUMBER_3,
@@ -75,7 +76,8 @@ int TestShadowLayerCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShadowLayerCreateNull() {
+int TestShadowLayerCreateNull()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter being empty, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -111,7 +113,8 @@ int TestShadowLayerCreateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShadowLayerCreateAbnormal() {
+int TestShadowLayerCreateAbnormal()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter as a negative number, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -147,7 +150,8 @@ int TestShadowLayerCreateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShadowLayerCreateMaximum() {
+int TestShadowLayerCreateMaximum()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate with the first parameter as the maximum value
     OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(FLT_MAX, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
@@ -182,7 +186,8 @@ int TestShadowLayerCreateMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShadowLayerCreateMultipleCalls() {
+int TestShadowLayerCreateMultipleCalls()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate 10 times with random values for blurRadius, x, y, and different colors
     std::random_device rd;
@@ -209,7 +214,8 @@ int TestShadowLayerCreateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestShadowLayerDestroyNormal() {
+int TestShadowLayerDestroyNormal()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate
     OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
@@ -230,7 +236,8 @@ int TestShadowLayerDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestShadowLayerDestroyNull() {
+int TestShadowLayerDestroyNull()
+{
     DrawingNativeShadowLayerTestSetUp();
     // 1. OH_Drawing_ShadowLayerDestroy with null parameter
     OH_Drawing_ShadowLayer *shadowLayer = nullptr;

@@ -103,7 +103,8 @@ void DrawingNativeGpuContextTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestGpuContextCreateFromGLDestroyNormal() {
+int TestGpuContextCreateFromGLDestroyNormal()
+{
     DrawingNativeGpuContextTestSetUp();
     OH_Drawing_GpuContextOptions options;
     options.allowPathMaskCaching = true;
@@ -122,7 +123,8 @@ int TestGpuContextCreateFromGLDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestGpuContextDestroyNULL() {
+int TestGpuContextDestroyNULL()
+{
     DrawingNativeGpuContextTestSetUp();
     OH_Drawing_GpuContext *gpuContext = nullptr;
     OH_Drawing_GpuContextDestroy(nullptr);
@@ -139,7 +141,8 @@ int TestGpuContextDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestGpuContextCreateFromGLDestroyMultipleCalls() {
+int TestGpuContextCreateFromGLDestroyMultipleCalls()
+{
     DrawingNativeGpuContextTestSetUp();
     for (int i = 0; i < 10; i++) {
         OH_Drawing_GpuContextOptions options;
@@ -160,7 +163,8 @@ int TestGpuContextCreateFromGLDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestGpuContextCreateNormal() {
+int TestGpuContextCreateNormal()
+{
     DrawingNativeGpuContextTestSetUp();
     OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
     EXPECT_NE(gpuContext_, nullptr);

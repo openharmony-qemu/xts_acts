@@ -43,7 +43,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4600', Level.LEVEL0, () => {
+    it('testPathApproximateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(3);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4601', Level.LEVEL3, () => {
+    it('testPathApproximateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(4);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4602', Level.LEVEL3, () => {
+    it('testPathApproximateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(5);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4603', Level.LEVEL3, () => {
+    it('testPathApproximateMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(6);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4700', Level.LEVEL0, () => {
+    it('testPathInterpolateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(7);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4701', Level.LEVEL3, () => {
+    it('testPathInterpolateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(8);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4702', Level.LEVEL3, () => {
+    it('testPathInterpolateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(9);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4703', Level.LEVEL3, () => {
+    it('testPathInterpolateMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(10);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4800', Level.LEVEL0, () => {
+    it('testPathIsInterpolateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(11);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4801', Level.LEVEL3, () => {
+    it('testPathIsInterpolateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(12);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4802', Level.LEVEL3, () => {
+    it('testPathIsInterpolateMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(13);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4900', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalOne', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(0);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4901', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalTwo', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(1);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4902', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalThree', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(2);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4903', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalFour', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(3);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4904', Level.LEVEL3, () => {
+    it('testPathIsInverseFillTypeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(4);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4905', Level.LEVEL3, () => {
+    it('testPathToggleInverseFillTypeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(5);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4906', Level.LEVEL3, () => {
+    it('testPathIsInverseFillTypeCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(6);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4907', Level.LEVEL3, () => {
+    it('testPathToggleInverseFillTypeCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(7);
       expect(result).assertEqual(0);
     })

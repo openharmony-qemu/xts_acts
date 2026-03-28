@@ -45,7 +45,8 @@ void DrawingNativeMaskFilterTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMaskFilterCreateBlurDestroyNormal() {
+int TestMaskFilterCreateBlurDestroyNormal()
+{
     DrawingNativeMaskFilterTestSetUp();
     OH_Drawing_BlurType types[] = {
         NORMAL,
@@ -89,7 +90,8 @@ int TestMaskFilterCreateBlurDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMaskFilterCreateBlurDestroyNULL() {
+int TestMaskFilterCreateBlurDestroyNULL()
+{
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur with the second parameter as zero and check the error code using
     OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, 0, true);
@@ -108,7 +110,8 @@ int TestMaskFilterCreateBlurDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMaskFilterCreateBlurDestroyMultipleCalls() {
+int TestMaskFilterCreateBlurDestroyMultipleCalls()
+{
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur and OH_Drawing_MaskFilterDestroy 10 times in a loop
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -139,7 +142,8 @@ int TestMaskFilterCreateBlurDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMaskFilterCreateBlurDestroyAbnormal() {
+int TestMaskFilterCreateBlurDestroyAbnormal()
+{
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur with a negative value for sigma and check the error code using
     OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, -DRAWING_NUMBER_10, true);
@@ -157,7 +161,8 @@ int TestMaskFilterCreateBlurDestroyAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMaskFilterCreateBlurDestroyMaximum() {
+int TestMaskFilterCreateBlurDestroyMaximum()
+{
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur with a maximum value for sigma
     OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, FLT_MAX, true);

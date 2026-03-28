@@ -57,7 +57,8 @@ void DrawingNativeRegionTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionCreateNormal() {
+int TestRegionCreateNormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -75,7 +76,8 @@ int TestRegionCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionCreateMoreTimes() {
+int TestRegionCreateMoreTimes()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -99,7 +101,8 @@ int TestRegionCreateMoreTimes() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionDestroyNormal() {
+int TestRegionDestroyNormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region *regionObject = OH_Drawing_RegionCreate();
@@ -118,7 +121,8 @@ int TestRegionDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionDestroyNull() {
+int TestRegionDestroyNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionDestroy takes nullptr as input
     OH_Drawing_Region *region = nullptr;
@@ -136,7 +140,8 @@ int TestRegionDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionContainsInRange() {
+int TestRegionContainsInRange()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject, the call is successful and the return value is
     // not nullptr
@@ -168,7 +173,8 @@ int TestRegionContainsInRange() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionContainsXvalueNotInRange() {
+int TestRegionContainsXvalueNotInRange()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region *regionObject = OH_Drawing_RegionCreate();
@@ -199,7 +205,8 @@ int TestRegionContainsXvalueNotInRange() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionContainsYvalueNotInRange() {
+int TestRegionContainsYvalueNotInRange()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region *regionObject = OH_Drawing_RegionCreate();
@@ -230,7 +237,8 @@ int TestRegionContainsYvalueNotInRange() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionContainsAllNotInRange() {
+int TestRegionContainsAllNotInRange()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region *regionObject = OH_Drawing_RegionCreate();
@@ -261,7 +269,8 @@ int TestRegionContainsAllNotInRange() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionContainsRegionNull() {
+int TestRegionContainsRegionNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionContains takes nullptr as input, x: a value within the range, y: a value within the range
     bool ret = OH_Drawing_RegionContains(nullptr, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -279,7 +288,8 @@ int TestRegionContainsRegionNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionOpNormal() {
+int TestRegionOpNormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region *regionObject = OH_Drawing_RegionCreate();
@@ -319,7 +329,8 @@ int TestRegionOpNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionOpRegionNull() {
+int TestRegionOpRegionNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value dst
     OH_Drawing_Region *src = OH_Drawing_RegionCreate();
@@ -347,7 +358,8 @@ int TestRegionOpRegionNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionOpMultipleCalls() {
+int TestRegionOpMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionCreate returns a pointer value region
     OH_Drawing_Region *src = OH_Drawing_RegionCreate();
@@ -385,7 +397,8 @@ int TestRegionOpMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionSetRectResultTrue() {
+int TestRegionSetRectResultTrue()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -410,7 +423,8 @@ int TestRegionSetRectResultTrue() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionSetRectRegionNull() {
+int TestRegionSetRectRegionNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. OH_Drawing_RegionSetRect takes a correct rect object pointer as input, region is nullptr, returns
     // OH_DRAWING_ERROR_INVALID_PARAMETER
@@ -433,7 +447,8 @@ int TestRegionSetRectRegionNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionSetRectRectNull() {
+int TestRegionSetRectRectNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     // add assert
@@ -455,7 +470,8 @@ int TestRegionSetRectRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionSetRectResultFalse() {
+int TestRegionSetRectResultFalse()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -481,7 +497,8 @@ int TestRegionSetRectResultFalse() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionSetPathResultTrue() {
+int TestRegionSetPathResultTrue()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     // add assert
@@ -522,7 +539,8 @@ int TestRegionSetPathResultTrue() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionSetPathRegionNull() {
+int TestRegionSetPathRegionNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     // add assert
@@ -568,7 +586,8 @@ int TestRegionSetPathRegionNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL1
  */
-int TestRegionSetPathResultFalse() {
+int TestRegionSetPathResultFalse()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     // add assert
@@ -606,7 +625,8 @@ int TestRegionSetPathResultFalse() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionCopyNormal() {
+int TestRegionCopyNormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
@@ -635,7 +655,8 @@ int TestRegionCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionCopyNull() {
+int TestRegionCopyNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
@@ -664,7 +685,8 @@ int TestRegionCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionCopyAbnormal() {
+int TestRegionCopyAbnormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
@@ -721,7 +743,8 @@ int TestRegionCopyAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionCopyMultipleCalls() {
+int TestRegionCopyMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
@@ -754,7 +777,8 @@ int TestRegionCopyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionEmptyNormal() {
+int TestRegionEmptyNormal()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -783,7 +807,8 @@ int TestRegionEmptyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionEmptyNull() {
+int TestRegionEmptyNull()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -812,7 +837,8 @@ int TestRegionEmptyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionEmptyCalls() {
+int TestRegionEmptyCalls()
+{
     DrawingNativeRegionTestSetUp();
     // 1. Create a region object by OH_Drawing_RegionCreate.
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -843,7 +869,8 @@ int TestRegionEmptyCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionGetBoundaryNormal() {
+int TestRegionGetBoundaryNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -884,7 +911,8 @@ int TestRegionGetBoundaryNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionGetBoundaryNull() {
+int TestRegionGetBoundaryNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -914,7 +942,8 @@ int TestRegionGetBoundaryNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionGetBoundaryMultipleCalls() {
+int TestRegionGetBoundaryMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -941,7 +970,8 @@ int TestRegionGetBoundaryMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionGetBoundsNormal() {
+int TestRegionGetBoundsNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
@@ -987,7 +1017,8 @@ int TestRegionGetBoundsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionGetBoundsNull() {
+int TestRegionGetBoundsNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1013,7 +1044,8 @@ int TestRegionGetBoundsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionGetBoundsMultipleCalls() {
+int TestRegionGetBoundsMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1043,7 +1075,8 @@ int TestRegionGetBoundsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionIsComplexNormal() {
+int TestRegionIsComplexNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
@@ -1084,7 +1117,8 @@ int TestRegionIsComplexNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionIsComplexNull() {
+int TestRegionIsComplexNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1113,7 +1147,8 @@ int TestRegionIsComplexNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionIsComplexMultipleCalls() {
+int TestRegionIsComplexMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
@@ -1152,7 +1187,8 @@ int TestRegionIsComplexMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionIsEmptyNormal() {
+int TestRegionIsEmptyNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1182,7 +1218,8 @@ int TestRegionIsEmptyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionIsEmptyNull() {
+int TestRegionIsEmptyNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1206,7 +1243,8 @@ int TestRegionIsEmptyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionIsEmptyMultipleCalls() {
+int TestRegionIsEmptyMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1234,7 +1272,8 @@ int TestRegionIsEmptyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionIsRectNormal() {
+int TestRegionIsRectNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
@@ -1274,7 +1313,8 @@ int TestRegionIsRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionIsRectNull() {
+int TestRegionIsRectNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1298,7 +1338,8 @@ int TestRegionIsRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionIsRectMultipleCalls() {
+int TestRegionIsRectMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1321,7 +1362,8 @@ int TestRegionIsRectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionQuickContainsNormal() {
+int TestRegionQuickContainsNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1352,7 +1394,8 @@ int TestRegionQuickContainsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionQuickContainsNull() {
+int TestRegionQuickContainsNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1399,7 +1442,8 @@ int TestRegionQuickContainsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionQuickContainsAbnormal() {
+int TestRegionQuickContainsAbnormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1430,7 +1474,8 @@ int TestRegionQuickContainsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionQuickContainsMultipleCalls() {
+int TestRegionQuickContainsMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1459,7 +1504,8 @@ int TestRegionQuickContainsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionQuickRejectNormal() {
+int TestRegionQuickRejectNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1494,7 +1540,8 @@ int TestRegionQuickRejectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionQuickRejectNull() {
+int TestRegionQuickRejectNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1541,7 +1588,8 @@ int TestRegionQuickRejectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionQuickRejectAbnormal() {
+int TestRegionQuickRejectAbnormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1572,7 +1620,8 @@ int TestRegionQuickRejectAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionQuickRejectMultipleCalls() {
+int TestRegionQuickRejectMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1601,7 +1650,8 @@ int TestRegionQuickRejectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRegionTranslateNormal() {
+int TestRegionTranslateNormal()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1629,7 +1679,8 @@ int TestRegionTranslateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionTranslateNull() {
+int TestRegionTranslateNull()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
@@ -1657,7 +1708,8 @@ int TestRegionTranslateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRegionTranslateMultipleCalls() {
+int TestRegionTranslateMultipleCalls()
+{
     DrawingNativeRegionTestSetUp();
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);

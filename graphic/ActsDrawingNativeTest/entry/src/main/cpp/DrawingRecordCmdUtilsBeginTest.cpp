@@ -47,7 +47,8 @@ void DrawingRecordCmdUtilsBeginRecordingTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRecordCmdUtilsBeginRecordingAbnormal() {
+int TestRecordCmdUtilsBeginRecordingAbnormal()
+{
     DrawingRecordCmdUtilsBeginRecordingTestSetUp();
     // 1. The first and fourth parameters of the OH-Drawing-RecordCmdUtelsBeginRecording interface are not empty
     //with width and height being 0 and -1
@@ -74,7 +75,8 @@ int TestRecordCmdUtilsBeginRecordingAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestRecordCmdUtilsBeginRecordingCalls() {
+int TestRecordCmdUtilsBeginRecordingCalls()
+{
     DrawingRecordCmdUtilsBeginRecordingTestSetUp();
     // 1. Call OH-Drawing-RecordCmdUtelsBeginRecording 10 times
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();

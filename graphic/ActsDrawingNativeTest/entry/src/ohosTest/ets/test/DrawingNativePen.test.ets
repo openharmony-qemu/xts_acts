@@ -43,7 +43,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0100', Level.LEVEL0, () => {
+    it('testPenCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0200', Level.LEVEL0, () => {
+    it('testPenCopyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0201', Level.LEVEL3, () => {
+    it('testPenCopyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0202', Level.LEVEL3, () => {
+    it('testPenCopyInputDestroyed', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0300', Level.LEVEL0, () => {
+    it('testPenDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0301', Level.LEVEL3, () => {
+    it('testPenDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCreateDestroy(5);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0400', Level.LEVEL0, () => {
+    it('testPenIsAntiAliasNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenAntiAlias(0);
       expect(result).assertEqual(0);
     })
@@ -135,7 +135,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0401', Level.LEVEL3, () => {
+    it('testPenIsAntiAliasNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAntiAlias(1);
       expect(result).assertEqual(0);
     })
@@ -148,7 +148,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0500', Level.LEVEL0, () => {
+    it('testPenSetAntiAliasNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenAntiAlias(2);
       expect(result).assertEqual(0);
     })
@@ -161,7 +161,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0501', Level.LEVEL3, () => {
+    it('testPenSetAntiAliasNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAntiAlias(3);
       expect(result).assertEqual(0);
     })
@@ -175,7 +175,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0600', Level.LEVEL0, () => {
+    it('testPenGetColorNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenColor(0);
       expect(result).assertEqual(0);
     })
@@ -188,7 +188,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0601', Level.LEVEL3, () => {
+    it('testPenGetColorNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenColor(1);
       expect(result).assertEqual(0);
     })
@@ -201,7 +201,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0700', Level.LEVEL0, () => {
+    it('testPenSetColorNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenColor(2);
       expect(result).assertEqual(0);
     })
@@ -214,7 +214,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0701', Level.LEVEL3, () => {
+    it('testPenSetColorNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenColor(3);
       expect(result).assertEqual(0);
     })
@@ -227,7 +227,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0702', Level.LEVEL3, () => {
+    it('testPenSetColorAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenColor(4);
       expect(result).assertEqual(0);
     })
@@ -240,7 +240,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0703', Level.LEVEL3, () => {
+    it('testPenSetColorMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenColor(5);
       expect(result).assertEqual(0);
     })
@@ -254,7 +254,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0800', Level.LEVEL0, () => {
+    it('testPenGetAlphaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenAlpha(0);
       expect(result).assertEqual(0);
     })
@@ -267,7 +267,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0801', Level.LEVEL3, () => {
+    it('testPenGetAlphaNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAlpha(1);
       expect(result).assertEqual(0);
     })
@@ -280,7 +280,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0900', Level.LEVEL0, () => {
+    it('testPenSetAlphaNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenAlpha(2);
       expect(result).assertEqual(0);
     })
@@ -293,7 +293,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0901', Level.LEVEL3, () => {
+    it('testPenSetAlphaNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAlpha(3);
       expect(result).assertEqual(0);
     })
@@ -306,7 +306,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0902', Level.LEVEL3, () => {
+    it('testPenSetAlphaAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAlpha(4);
       expect(result).assertEqual(0);
     })
@@ -319,7 +319,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_0903', Level.LEVEL3, () => {
+    it('testPenSetAlphaMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenAlpha(5);
       expect(result).assertEqual(0);
     })
@@ -333,7 +333,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1000', Level.LEVEL0, () => {
+    it('testPenGetWidthNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenWidth(0);
       expect(result).assertEqual(0);
     })
@@ -346,7 +346,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1001', Level.LEVEL3, () => {
+    it('testPenGetWidthNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenWidth(1);
       expect(result).assertEqual(0);
     })
@@ -359,7 +359,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1002', Level.LEVEL0, () => {
+    it('testPenGetWidthBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenWidth(2);
       expect(result).assertEqual(0);
     })
@@ -372,7 +372,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1100', Level.LEVEL0, () => {
+    it('testPenSetWidthNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenWidth(3);
       expect(result).assertEqual(0);
     })
@@ -385,7 +385,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1101', Level.LEVEL3, () => {
+    it('testPenSetWidthNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenWidth(4);
       expect(result).assertEqual(0);
     })
@@ -398,7 +398,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1102', Level.LEVEL3, () => {
+    it('testPenSetWidthAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenWidth(5);
       expect(result).assertEqual(0);
     })
@@ -411,7 +411,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1103', Level.LEVEL3, () => {
+    it('testPenSetWidthMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenWidth(6);
       expect(result).assertEqual(0);
     })
@@ -424,7 +424,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1104', Level.LEVEL3, () => {
+    it('testPenSetWidthMultipleCallsBoundary', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenWidth(7);
       expect(result).assertEqual(0);
     })
@@ -438,7 +438,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1200', Level.LEVEL0, () => {
+    it('testPenGetMiterLimitNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(0);
       expect(result).assertEqual(0);
     })
@@ -451,7 +451,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1201', Level.LEVEL3, () => {
+    it('testPenGetMiterLimitNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(1);
       expect(result).assertEqual(0);
     })
@@ -464,7 +464,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1300', Level.LEVEL0, () => {
+    it('testPenSetMiterLimitNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(2);
       expect(result).assertEqual(0);
     })
@@ -477,7 +477,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1301', Level.LEVEL3, () => {
+    it('testPenSetMiterLimitNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(3);
       expect(result).assertEqual(0);
     })
@@ -490,7 +490,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1302', Level.LEVEL3, () => {
+    it('testPenSetMiterLimitAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(4);
       expect(result).assertEqual(0);
     })
@@ -503,7 +503,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1303', Level.LEVEL3, () => {
+    it('testPenSetMiterLimitMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenMiterLimit(5);
       expect(result).assertEqual(0);
     })
@@ -517,7 +517,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1400', Level.LEVEL0, () => {
+    it('testPenGetCapNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenCap(0);
       expect(result).assertEqual(0);
     })
@@ -530,7 +530,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1401', Level.LEVEL3, () => {
+    it('testPenGetCapNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCap(1);
       expect(result).assertEqual(0);
     })
@@ -543,7 +543,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1500', Level.LEVEL0, () => {
+    it('testPenSetCapNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenCap(2);
       expect(result).assertEqual(0);
     })
@@ -556,7 +556,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1501', Level.LEVEL3, () => {
+    it('testPenSetCapNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCap(3);
       expect(result).assertEqual(0);
     })
@@ -569,7 +569,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1502', Level.LEVEL3, () => {
+    it('testPenSetCapMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenCap(4);
       expect(result).assertEqual(0);
     })
@@ -583,7 +583,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1600', Level.LEVEL0, () => {
+    it('testPenGetJoinNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenJoin(0);
       expect(result).assertEqual(0);
     })
@@ -596,7 +596,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1601', Level.LEVEL3, () => {
+    it('testPenGetJoinNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenJoin(1);
       expect(result).assertEqual(0);
     })
@@ -609,7 +609,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1700', Level.LEVEL0, () => {
+    it('testPenSetJoinNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenJoin(2);
       expect(result).assertEqual(0);
     })
@@ -622,7 +622,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1701', Level.LEVEL3, () => {
+    it('testPenSetJoinNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenJoin(3);
       expect(result).assertEqual(0);
     })
@@ -635,7 +635,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1702', Level.LEVEL3, () => {
+    it('testPenSetJoinMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenJoin(4);
       expect(result).assertEqual(0);
     })
@@ -649,7 +649,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1800', Level.LEVEL0, () => {
+    it('testPenSetShaderEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenEffects(0);
       expect(result).assertEqual(0);
     })
@@ -662,7 +662,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1801', Level.LEVEL3, () => {
+    it('testPenSetShaderEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenEffects(1);
       expect(result).assertEqual(0);
     })
@@ -675,7 +675,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1900', Level.LEVEL0, () => {
+    it('testPenSetShadowLayerNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenEffects(2);
       expect(result).assertEqual(0);
     })
@@ -688,7 +688,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_1901', Level.LEVEL3, () => {
+    it('testPenSetShadowLayerNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenEffects(3);
       expect(result).assertEqual(0);
     })
@@ -701,7 +701,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2000', Level.LEVEL0, () => {
+    it('testPenSetPathEffectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenEffects(4);
       expect(result).assertEqual(0);
     })
@@ -714,7 +714,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2001', Level.LEVEL3, () => {
+    it('testPenSetPathEffectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenEffects(5);
       expect(result).assertEqual(0);
     })
@@ -728,7 +728,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2100', Level.LEVEL0, () => {
+    it('testPenSetFilterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenFilter(0);
       expect(result).assertEqual(0);
     })
@@ -741,7 +741,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2101', Level.LEVEL3, () => {
+    it('testPenSetFilterNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenFilter(1);
       expect(result).assertEqual(0);
     })
@@ -754,7 +754,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2200', Level.LEVEL0, () => {
+    it('testPenGetFilterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenFilter(2);
       expect(result).assertEqual(0);
     })
@@ -767,7 +767,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2201', Level.LEVEL3, () => {
+    it('testPenGetFilterNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenFilter(3);
       expect(result).assertEqual(0);
     })
@@ -781,7 +781,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2300', Level.LEVEL0, () => {
+    it('testPenSetBlendModeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenBlendMode(0);
       expect(result).assertEqual(0);
     })
@@ -794,7 +794,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2301', Level.LEVEL3, () => {
+    it('testPenSetBlendModeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenBlendMode(1);
       expect(result).assertEqual(0);
     })
@@ -808,7 +808,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2400', Level.LEVEL0, () => {
+    it('testPenGetFillPathNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenGetFillPath(0);
       expect(result).assertEqual(0);
     })
@@ -821,7 +821,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2401', Level.LEVEL3, () => {
+    it('testPenGetFillPathNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenGetFillPath(1);
       expect(result).assertEqual(0);
     })
@@ -835,7 +835,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2500', Level.LEVEL0, () => {
+    it('testPenResetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPenReset(0);
       expect(result).assertEqual(0);
     })
@@ -848,7 +848,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2501', Level.LEVEL3, () => {
+    it('testPenResetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenReset(1);
       expect(result).assertEqual(0);
     })
@@ -861,7 +861,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2502', Level.LEVEL3, () => {
+    it('testPenResetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenReset(2);
       expect(result).assertEqual(0);
     })
@@ -875,7 +875,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2600', Level.LEVEL2, () => {
+    it('testPenGetAlphaFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingPenGetFloat(0);
       expect(result).assertEqual(0);
     })
@@ -888,7 +888,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2601', Level.LEVEL3, () => {
+    it('testPenGetAlphaFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenGetFloat(1);
       expect(result).assertEqual(0);
     })
@@ -901,7 +901,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2700', Level.LEVEL2, () => {
+    it('testPenGetRedFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingPenGetFloat(2);
       expect(result).assertEqual(0);
     })
@@ -914,7 +914,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2701', Level.LEVEL3, () => {
+    it('testPenGetRedFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenGetFloat(3);
       expect(result).assertEqual(0);
     })
@@ -927,7 +927,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2800', Level.LEVEL2, () => {
+    it('testPenGetGreenFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingPenGetFloat(4);
       expect(result).assertEqual(0);
     })
@@ -940,7 +940,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2801', Level.LEVEL3, () => {
+    it('testPenGetGreenFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenGetFloat(5);
       expect(result).assertEqual(0);
     })
@@ -953,7 +953,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2900', Level.LEVEL2, () => {
+    it('testPenGetBlueFloatNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingPenGetFloat(6);
       expect(result).assertEqual(0);
     })
@@ -966,7 +966,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_2901', Level.LEVEL3, () => {
+    it('testPenGetBlueFloatAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenGetFloat(7);
       expect(result).assertEqual(0);
     })
@@ -980,7 +980,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_3000', Level.LEVEL2, () => {
+    it('testPenSetColor4fNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingPenSetColor4f(0);
       expect(result).assertEqual(0);
     })
@@ -993,7 +993,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_3001', Level.LEVEL3, () => {
+    it('testPenSetColor4fNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenSetColor4f(1);
       expect(result).assertEqual(0);
     })
@@ -1006,7 +1006,7 @@ export default function DrawingNativePenTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PEN_3002', Level.LEVEL3, () => {
+    it('testPenSetColor4fAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPenSetColor4f(2);
       expect(result).assertEqual(0);
     })

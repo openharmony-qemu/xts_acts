@@ -43,7 +43,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0100', Level.LEVEL0, () => {
+    it('testFontCreateDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0101', Level.LEVEL3, () => {
+    it('testFontCreateDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0102', Level.LEVEL3, () => {
+    it('testFontCreateDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -83,7 +83,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0200', Level.LEVEL0, () => {
+    it('testFontSetBaselineSnapNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(0);
       expect(result).assertEqual(0);
     })
@@ -96,7 +96,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0201', Level.LEVEL3, () => {
+    it('testFontSetBaselineSnapNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(1);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0202', Level.LEVEL3, () => {
+    it('testFontSetBaselineSnapMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(2);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0203', Level.LEVEL2, () => {
+    it('testFontIsBaselineSnapWhenNoSet', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(3);
       expect(result).assertEqual(0);
     })
@@ -136,7 +136,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0300', Level.LEVEL0, () => {
+    it('testFontSetSubpixelNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(0);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0301', Level.LEVEL3, () => {
+    it('testFontSetSubpixelNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(1);
       expect(result).assertEqual(0);
     })
@@ -162,7 +162,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0302', Level.LEVEL3, () => {
+    it('testFontSetSubpixelMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(2);
       expect(result).assertEqual(0);
     })
@@ -175,7 +175,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0303', Level.LEVEL2, () => {
+    it('testFontIsSubpixelWhenNoSet', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(3);
       expect(result).assertEqual(0);
     })
@@ -189,7 +189,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0400', Level.LEVEL0, () => {
+    it('testFontSetForceAutoHintingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(0);
       expect(result).assertEqual(0);
     })
@@ -202,7 +202,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0401', Level.LEVEL3, () => {
+    it('testFontSetForceAutoHintingNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(1);
       expect(result).assertEqual(0);
     })
@@ -215,7 +215,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0402', Level.LEVEL3, () => {
+    it('testFontSetForceAutoHintingMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(2);
       expect(result).assertEqual(0);
     })
@@ -228,7 +228,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0403', Level.LEVEL3, () => {
+    it('testFontIsForceAutoHintingWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(3);
       expect(result).assertEqual(0);
     })
@@ -242,7 +242,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0500', Level.LEVEL0, () => {
+    it('testFontSetTypefaceNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(0);
       expect(result).assertEqual(0);
     })
@@ -255,7 +255,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0501', Level.LEVEL3, () => {
+    it('testFontSetTypefaceNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(1);
       expect(result).assertEqual(0);
     })
@@ -268,7 +268,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0502', Level.LEVEL3, () => {
+    it('testFontSetTypefaceMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(2);
       expect(result).assertEqual(0);
     })
@@ -281,7 +281,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0503', Level.LEVEL3, () => {
+    it('testFontGetTypefaceWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(3);
       expect(result).assertEqual(0);
     })
@@ -294,7 +294,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0600', Level.LEVEL0, () => {
+    it('testFontSetTextSizeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetTextSize(0);
       expect(result).assertEqual(0);
     })
@@ -307,7 +307,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0601', Level.LEVEL3, () => {
+    it('testFontSetTextSizeNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSize(1);
       expect(result).assertEqual(0);
     })
@@ -320,7 +320,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0602', Level.LEVEL3, () => {
+    it('testFontSetTextSizeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSize(2);
       expect(result).assertEqual(0);
     })
@@ -333,7 +333,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0603', Level.LEVEL3, () => {
+    it('testFontGetTextSizeWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSize(3);
       expect(result).assertEqual(0);
     })
@@ -346,7 +346,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0604', Level.LEVEL3, () => {
+    it('testFontSetTextSizeAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSize(4);
       expect(result).assertEqual(0);
     })
@@ -360,7 +360,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0700', Level.LEVEL0, () => {
+    it('testFontCountTextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontCountText(0);
       expect(result).assertEqual(0);
     })
@@ -373,7 +373,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0701', Level.LEVEL3, () => {
+    it('testFontCountTextNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCountText(1);
       expect(result).assertEqual(0);
     })
@@ -386,7 +386,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0702', Level.LEVEL3, () => {
+    it('testFontCountTextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCountText(2);
       expect(result).assertEqual(0);
     })
@@ -399,7 +399,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0703', Level.LEVEL3, () => {
+    it('testFontCountTextAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCountText(3);
       expect(result).assertEqual(0);
     })
@@ -413,7 +413,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0800', Level.LEVEL0, () => {
+    it('testFontTextToGlyphsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontTextToGlyphs(0);
       expect(result).assertEqual(0);
     })
@@ -426,7 +426,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0801', Level.LEVEL3, () => {
+    it('testFontTextToGlyphsNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontTextToGlyphs(1);
       expect(result).assertEqual(0);
     })
@@ -439,7 +439,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0802', Level.LEVEL3, () => {
+    it('testFontTextToGlyphsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontTextToGlyphs(2);
       expect(result).assertEqual(0);
     })
@@ -452,7 +452,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0803', Level.LEVEL3, () => {
+    it('testFontTextToGlyphsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontTextToGlyphs(3);
       expect(result).assertEqual(0);
     })
@@ -465,7 +465,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0804', Level.LEVEL3, () => {
+    it('testFontTextToGlyphsMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontTextToGlyphs(4);
       expect(result).assertEqual(0);
     })
@@ -479,7 +479,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0900', Level.LEVEL0, () => {
+    it('testFontGetWidthsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetWidths(0);
       expect(result).assertEqual(0);
     })
@@ -492,7 +492,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0901', Level.LEVEL3, () => {
+    it('testFontGetWidthsNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidths(1);
       expect(result).assertEqual(0);
     })
@@ -505,7 +505,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0902', Level.LEVEL3, () => {
+    it('testFontGetWidthsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidths(2);
       expect(result).assertEqual(0);
     })
@@ -518,7 +518,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0903', Level.LEVEL3, () => {
+    it('testFontGetWidthsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidths(3);
       expect(result).assertEqual(0);
     })
@@ -531,7 +531,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0904', Level.LEVEL3, () => {
+    it('testFontGetWidthsMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidths(4);
       expect(result).assertEqual(0);
     })
@@ -545,7 +545,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1000', Level.LEVEL0, () => {
+    it('testFontSetLinearTextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetLinearText(0);
       expect(result).assertEqual(0);
     })
@@ -558,7 +558,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1001', Level.LEVEL3, () => {
+    it('testFontSetLinearTextNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetLinearText(1);
       expect(result).assertEqual(0);
     })
@@ -571,7 +571,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1002', Level.LEVEL3, () => {
+    it('testFontSetLinearTextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetLinearText(2);
       expect(result).assertEqual(0);
     })
@@ -584,7 +584,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1003', Level.LEVEL3, () => {
+    it('testFontIsLinearTextWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetLinearText(3);
       expect(result).assertEqual(0);
     })
@@ -598,7 +598,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1100', Level.LEVEL0, () => {
+    it('testFontSetTextSkewXNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(0);
       expect(result).assertEqual(0);
     })
@@ -611,7 +611,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1101', Level.LEVEL3, () => {
+    it('testFontSetTextSkewXNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(1);
       expect(result).assertEqual(0);
     })
@@ -624,7 +624,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1102', Level.LEVEL3, () => {
+    it('testFontSetTextSkewXMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(2);
       expect(result).assertEqual(0);
     })
@@ -637,7 +637,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1103', Level.LEVEL3, () => {
+    it('testFontGetTextSkewXWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(3);
       expect(result).assertEqual(0);
     })
@@ -650,7 +650,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1104', Level.LEVEL3, () => {
+    it('testFontSetTextSkewXAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(4);
       expect(result).assertEqual(0);
     })
@@ -663,7 +663,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1105', Level.LEVEL3, () => {
+    it('testFontSetTextSkewXMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTextSkewX(5);
       expect(result).assertEqual(0);
     })
@@ -677,7 +677,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1200', Level.LEVEL0, () => {
+    it('testFontSetFakeBoldTextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetFakeBoldText(0);
       expect(result).assertEqual(0);
     })
@@ -690,7 +690,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1201', Level.LEVEL3, () => {
+    it('testFontSetFakeBoldTextNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetFakeBoldText(1);
       expect(result).assertEqual(0);
     })
@@ -703,7 +703,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1202', Level.LEVEL3, () => {
+    it('testFontSetFakeBoldTextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetFakeBoldText(2);
       expect(result).assertEqual(0);
     })
@@ -716,7 +716,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1203', Level.LEVEL3, () => {
+    it('testFontIsFakeBoldTextWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetFakeBoldText(3);
       expect(result).assertEqual(0);
     })
@@ -730,7 +730,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1300', Level.LEVEL0, () => {
+    it('testFontSetScaleXNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(0);
       expect(result).assertEqual(0);
     })
@@ -743,7 +743,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1301', Level.LEVEL3, () => {
+    it('testFontSetScaleXNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(1);
       expect(result).assertEqual(0);
     })
@@ -756,7 +756,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1302', Level.LEVEL3, () => {
+    it('testFontSetScaleXMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(2);
       expect(result).assertEqual(0);
     })
@@ -769,7 +769,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1303', Level.LEVEL3, () => {
+    it('testFontGetScaleXWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(3);
       expect(result).assertEqual(0);
     })
@@ -782,7 +782,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1304', Level.LEVEL3, () => {
+    it('testFontSetScaleXAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(4);
       expect(result).assertEqual(0);
     })
@@ -795,7 +795,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1305', Level.LEVEL3, () => {
+    it('testFontSetScaleXMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetScaleX(5);
       expect(result).assertEqual(0);
     })
@@ -809,7 +809,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1400', Level.LEVEL0, () => {
+    it('testFontSetHintingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetHinting(0);
       expect(result).assertEqual(0);
     })
@@ -822,7 +822,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1401', Level.LEVEL3, () => {
+    it('testFontSetHintingNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetHinting(1);
       expect(result).assertEqual(0);
     })
@@ -835,7 +835,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1402', Level.LEVEL3, () => {
+    it('testFontSetHintingMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetHinting(2);
       expect(result).assertEqual(0);
     })
@@ -848,7 +848,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1403', Level.LEVEL3, () => {
+    it('testFontGetHintingWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetHinting(3);
       expect(result).assertEqual(0);
     })
@@ -862,7 +862,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1500', Level.LEVEL0, () => {
+    it('testFontSetEmbeddedBitmapsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetEmbeddedBitmaps(0);
       expect(result).assertEqual(0);
     })
@@ -875,7 +875,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1501', Level.LEVEL3, () => {
+    it('testFontSetEmbeddedBitmapsNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEmbeddedBitmaps(1);
       expect(result).assertEqual(0);
     })
@@ -888,7 +888,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1502', Level.LEVEL3, () => {
+    it('testFontSetEmbeddedBitmapsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEmbeddedBitmaps(2);
       expect(result).assertEqual(0);
     })
@@ -901,7 +901,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1503', Level.LEVEL3, () => {
+    it('testFontIsEmbeddedBitmapsWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEmbeddedBitmaps(3);
       expect(result).assertEqual(0);
     })
@@ -915,7 +915,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1600', Level.LEVEL0, () => {
+    it('testFontSetEdgingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetEdging(0);
       expect(result).assertEqual(0);
     })
@@ -928,7 +928,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1601', Level.LEVEL3, () => {
+    it('testFontSetEdgingNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEdging(1);
       expect(result).assertEqual(0);
     })
@@ -941,7 +941,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1602', Level.LEVEL3, () => {
+    it('testFontSetEdgingMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEdging(2);
       expect(result).assertEqual(0);
     })
@@ -954,7 +954,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1603', Level.LEVEL3, () => {
+    it('testFontGetEdgingWhenNoSet', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetEdging(3);
       expect(result).assertEqual(0);
     })
@@ -967,7 +967,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1700', Level.LEVEL0, () => {
+    it('testFontGetMetricsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetMetrics(0);
       expect(result).assertEqual(0);
     })
@@ -980,7 +980,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1701', Level.LEVEL3, () => {
+    it('testFontGetMetricsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetMetrics(1);
       expect(result).assertEqual(0);
     })
@@ -993,7 +993,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1702', Level.LEVEL3, () => {
+    it('TestFontGetMetricsMultiplies', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetMetrics(2);
       expect(result).assertEqual(0);
     })
@@ -1007,7 +1007,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1800', Level.LEVEL0, () => {
+    it('testFontMeasureSingleCharacterNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleCharacter(0);
       expect(result).assertEqual(0);
     })
@@ -1020,7 +1020,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1801', Level.LEVEL3, () => {
+    it('testFontMeasureSingleCharacterNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleCharacter(1);
       expect(result).assertEqual(0);
     })
@@ -1033,20 +1033,20 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1802', Level.LEVEL3, () => {
+    it('testFontMeasureSingleCharacterMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleCharacter(2);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   testFontMeasureSingleCharacterNormal
+     * @tc.name   testFontMeasureSingleCharacter
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1803
-     * @tc.desc   test for testFontMeasureSingleCharacterNormal.
+     * @tc.desc   test for testFontMeasureSingleCharacter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1803', Level.LEVEL1, () => {
+    it('testFontMeasureSingleCharacter', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleCharacter(3);
       expect(result).assertEqual(0);
     })
@@ -1060,7 +1060,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1900', Level.LEVEL0, () => {
+    it('testFontMeasuretextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontMeasuretext(0);
       expect(result).assertEqual(0);
     })
@@ -1073,7 +1073,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1901', Level.LEVEL3, () => {
+    it('testFontMeasuretextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasuretext(1);
       expect(result).assertEqual(0);
     })
@@ -1086,7 +1086,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1902', Level.LEVEL3, () => {
+    it('testFontMeasuretextMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasuretext(2);
       expect(result).assertEqual(0);
     })
@@ -1100,7 +1100,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2000', Level.LEVEL0, () => {
+    it('testFontArgumentsCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontArgumentsCreate(0);
       expect(result).assertEqual(0);
     })
@@ -1114,7 +1114,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100', Level.LEVEL0, () => {
+    it('testFontArgumentsAddVariationNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontArgumentsAddVariation(0);
       expect(result).assertEqual(0);
     })
@@ -1127,7 +1127,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101', Level.LEVEL3, () => {
+    it('testFontArgumentsAddVariationNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsAddVariation(1);
       expect(result).assertEqual(0);
     })
@@ -1140,7 +1140,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2102', Level.LEVEL3, () => {
+    it('testFontArgumentsAddVariationAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsAddVariation(2);
       expect(result).assertEqual(0);
     })
@@ -1153,7 +1153,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2103', Level.LEVEL3, () => {
+    it('testFontArgumentsAddVariationMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsAddVariation(3);
       expect(result).assertEqual(0);
     })
@@ -1167,7 +1167,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2200', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -1180,7 +1180,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2201', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1193,7 +1193,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2202', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryMultiplieCalls', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -1207,7 +1207,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2300', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(0);
       expect(result).assertEqual(0);
     })
@@ -1220,7 +1220,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2301', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedMuitipleCalls', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1233,7 +1233,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2302', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1247,7 +1247,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(0);
       expect(result).assertEqual(0);
     })
@@ -1260,7 +1260,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2402', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedMultipleCalls', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1273,7 +1273,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2401', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedNull', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1287,7 +1287,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2600', Level.LEVEL0, () => {
+    it('testFontMeasureTextWithBrushOrPenNormal1', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(0);
       expect(result).assertEqual(0);
     })
@@ -1300,7 +1300,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2601', Level.LEVEL0, () => {
+    it('testFontMeasureTextWithBrushOrPenNormal2', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(1);
       expect(result).assertEqual(0);
     })
@@ -1313,7 +1313,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2602', Level.LEVEL3, () => {
+    it('testFontMeasureTextWithBrushOrPenNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(2);
       expect(result).assertEqual(0);
     })
@@ -1326,7 +1326,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2603', Level.LEVEL3, () => {
+    it('testFontMeasureTextWithBrushOrPenAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(3);
       expect(result).assertEqual(0);
     })
@@ -1339,7 +1339,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2604', Level.LEVEL3, () => {
+    it('testFontMeasureTextWithBrushOrPenMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(4);
       expect(result).assertEqual(0);
     })
@@ -1353,7 +1353,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2700', Level.LEVEL0, () => {
+    it('testFontGetWidthsBoundsNormal1', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(0);
       expect(result).assertEqual(0);
     })
@@ -1366,7 +1366,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2701', Level.LEVEL0, () => {
+    it('testFontGetWidthsBoundsNormal2', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(1);
       expect(result).assertEqual(0);
     })
@@ -1379,7 +1379,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2702', Level.LEVEL3, () => {
+    it('testFontGetWidthsBoundsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(2);
       expect(result).assertEqual(0);
     })
@@ -1392,7 +1392,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2703', Level.LEVEL3, () => {
+    it('testFontGetWidthsBoundsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(3);
       expect(result).assertEqual(0);
     })
@@ -1405,7 +1405,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2704', Level.LEVEL3, () => {
+    it('testFontGetWidthsBoundsMultiCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(4);
       expect(result).assertEqual(0);
     })
@@ -1419,7 +1419,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2800', Level.LEVEL0, () => {
+    it('testFontGePosNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetPos(0);
       expect(result).assertEqual(0);
     })
@@ -1432,7 +1432,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2801', Level.LEVEL0, () => {
+    it('testFontGetPosNormal1', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetPos(1);
       expect(result).assertEqual(0);
     })
@@ -1445,7 +1445,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2802', Level.LEVEL0, () => {
+    it('testFontGePosNormal2', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetPos(2);
       expect(result).assertEqual(0);
     })
@@ -1458,7 +1458,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2803', Level.LEVEL3, () => {
+    it('testFontGePosNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetPos(3);
       expect(result).assertEqual(0);
     })
@@ -1471,7 +1471,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2804', Level.LEVEL3, () => {
+    it('testFontGePosMultiplieCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetPos(4);
       expect(result).assertEqual(0);
     })
@@ -1484,7 +1484,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2805', Level.LEVEL3, () => {
+    it('testFontGePosAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetPos(5);
       expect(result).assertEqual(0);
     })
@@ -1498,7 +1498,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2900', Level.LEVEL0, () => {
+    it('testFontGeSpacingNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetSpacing(0);
       expect(result).assertEqual(0);
     })
@@ -1511,7 +1511,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2901', Level.LEVEL3, () => {
+    it('testFontGeSpacingMultiplieCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetSpacing(1);
       expect(result).assertEqual(0);
     })
@@ -1524,7 +1524,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2902', Level.LEVEL3, () => {
+    it('testFontGeSpacingNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetSpacing(2);
       expect(result).assertEqual(0);
     })
@@ -1538,7 +1538,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3000', Level.LEVEL0, () => {
+    it('testFontMeasureSingleChaWithFeaturesNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleChaWithFeatures(0);
       expect(result).assertEqual(0);
     })
@@ -1551,7 +1551,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3001', Level.LEVEL3, () => {
+    it('testFontMeasureSingleChaWithFeaturesAbNormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleChaWithFeatures(1);
       expect(result).assertEqual(0);
     })
@@ -1564,7 +1564,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3002', Level.LEVEL2, () => {
+    it('testFontMeasureSingleChaWithFeaturesCalls', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontMeasureSingleChaWithFeatures(2);
       expect(result).assertEqual(0);
     })
@@ -1578,7 +1578,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3100', Level.LEVEL2, () => {
+    it('testFontFeaturesAddFeatureNormal', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontFeatures(0);
       expect(result).assertEqual(0);
     })
@@ -1591,7 +1591,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3101', Level.LEVEL3, () => {
+    it('testFontFeaturesAddFeatureAbNormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontFeatures(1);
       expect(result).assertEqual(0);
     })
@@ -1604,7 +1604,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3200', Level.LEVEL3, () => {
+    it('testFontFeaturesandFeatureDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontFeatures(2);
       expect(result).assertEqual(0);
     })

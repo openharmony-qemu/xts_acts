@@ -58,7 +58,8 @@ void DrawingNativeImageTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageCreateDestroyNormal() {
+int TestImageCreateDestroyNormal()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -78,7 +79,8 @@ int TestImageCreateDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageCreateDestroyNULL() {
+int TestImageCreateDestroyNULL()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageDestroy with a NULL parameter
     OH_Drawing_Image *image = nullptr;
@@ -96,7 +98,8 @@ int TestImageCreateDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageCreateDestroyMultipleCalls() {
+int TestImageCreateDestroyMultipleCalls()
+{
     DrawingNativeImageTestSetUp();
     // 1. Call OH_Drawing_ImageCreate and OH_Drawing_ImageDestroy 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -128,7 +131,8 @@ int TestImageCreateDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageBuildFromBitmapNormal() {
+int TestImageBuildFromBitmapNormal()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -162,7 +166,8 @@ int TestImageBuildFromBitmapNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageBuildFromBitmapNULL() {
+int TestImageBuildFromBitmapNULL()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -196,7 +201,8 @@ int TestImageBuildFromBitmapNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageBuildFromBitmapMultipleCalls() {
+int TestImageBuildFromBitmapMultipleCalls()
+{
     DrawingNativeImageTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -226,7 +232,8 @@ int TestImageBuildFromBitmapMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageBuildFromBitmapMultipleCallsBoundary() {
+int TestImageBuildFromBitmapMultipleCallsBoundary()
+{
     DrawingNativeImageTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -255,7 +262,8 @@ int TestImageBuildFromBitmapMultipleCallsBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageGetWidthHeightNormal() {
+int TestImageGetWidthHeightNormal()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -290,7 +298,8 @@ int TestImageGetWidthHeightNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetWidthHeightNULL() {
+int TestImageGetWidthHeightNULL()
+{
     DrawingNativeImageTestSetUp();
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
     // add assert
@@ -322,7 +331,8 @@ int TestImageGetWidthHeightNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetWidthHeightMultipleCalls() {
+int TestImageGetWidthHeightMultipleCalls()
+{
     DrawingNativeImageTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -355,7 +365,8 @@ int TestImageGetWidthHeightMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetWidthHeightMultipleCallsBoundary() {
+int TestImageGetWidthHeightMultipleCallsBoundary()
+{
     DrawingNativeImageTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -390,7 +401,8 @@ int TestImageGetWidthHeightMultipleCallsBoundary() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestImageGetImageInfoNormal() {
+int TestImageGetImageInfoNormal()
+{
     DrawingNativeImageTestSetUp();
     OH_Drawing_ColorFormat cfs[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
@@ -435,7 +447,8 @@ int TestImageGetImageInfoNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetImageInfoNULL() {
+int TestImageGetImageInfoNULL()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -469,7 +482,8 @@ int TestImageGetImageInfoNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetImageInfoMultipleCalls() {
+int TestImageGetImageInfoMultipleCalls()
+{
     DrawingNativeImageTestSetUp();
     OH_Drawing_ColorFormat cf[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
@@ -511,7 +525,8 @@ int TestImageGetImageInfoMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetImageInfoAbnormal() {
+int TestImageGetImageInfoAbnormal()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -542,7 +557,8 @@ int TestImageGetImageInfoAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetImageInfoMaximum() {
+int TestImageGetImageInfoMaximum()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();
@@ -573,7 +589,8 @@ int TestImageGetImageInfoMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestImageGetImageInfoBoundary() {
+int TestImageGetImageInfoBoundary()
+{
     DrawingNativeImageTestSetUp();
     // 1. OH_Drawing_ImageCreate
     OH_Drawing_Image *image = OH_Drawing_ImageCreate();

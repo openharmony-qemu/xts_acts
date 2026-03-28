@@ -61,7 +61,8 @@ void DrawingNativeLatticeTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestLatticeCreateNormal() {
+int TestLatticeCreateNormal()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -88,7 +89,8 @@ int TestLatticeCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestLatticeCreateNull() {
+int TestLatticeCreateNull()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -142,7 +144,8 @@ int TestLatticeCreateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestLatticeCreateAbnormal() {
+int TestLatticeCreateAbnormal()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs1[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -190,7 +193,8 @@ int TestLatticeCreateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestLatticeCreateEnumTraversal() {
+int TestLatticeCreateEnumTraversal()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -223,7 +227,8 @@ int TestLatticeCreateEnumTraversal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestLatticeCreateMultipleCalls() {
+int TestLatticeCreateMultipleCalls()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -252,7 +257,8 @@ int TestLatticeCreateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestLatticeDestroyNormal() {
+int TestLatticeDestroyNormal()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
@@ -278,7 +284,8 @@ int TestLatticeDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestLatticeDestroyNull() {
+int TestLatticeDestroyNull()
+{
     DrawingNativeLatticeTestSetUp();
     OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeDestroy(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);

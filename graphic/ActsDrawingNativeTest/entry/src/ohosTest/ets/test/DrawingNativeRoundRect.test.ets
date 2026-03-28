@@ -43,7 +43,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0100', Level.LEVEL0, () => {
+    it('testRoundRectCreateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRoundRect(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0101', Level.LEVEL3, () => {
+    it('testRoundRectCreateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0102', Level.LEVEL3, () => {
+    it('testRoundRectCreateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0103', Level.LEVEL3, () => {
+    it('testRoundRectCreateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0104', Level.LEVEL3, () => {
+    it('testRoundRectCreateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0200', Level.LEVEL0, () => {
+    it('testRoundRectSetGetCornerNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRoundRect(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0201', Level.LEVEL3, () => {
+    it('testRoundRectSetGetCornerNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0202', Level.LEVEL3, () => {
+    it('testRoundRectSetGetCornerAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0203', Level.LEVEL3, () => {
+    it('testRoundRectSetGetCornerMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0204', Level.LEVEL3, () => {
+    it('testRoundRectSetGetCornerMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0205', Level.LEVEL2, () => {
+    it('testRoundRectGetCornerWhenNoSet', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingRoundRect(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0300', Level.LEVEL0, () => {
+    it('testRoundRectDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRoundRect(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0301', Level.LEVEL3, () => {
+    it('testRoundRectDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0400', Level.LEVEL0, () => {
+    it('testRoundRectOffsetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRoundRect(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0401', Level.LEVEL3, () => {
+    it('testRoundRectOffsetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0402', Level.LEVEL3, () => {
+    it('testRoundRectOffsetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0500', Level.LEVEL0, () => {
+    it('testRoundRectCopyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRoundRect(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0501', Level.LEVEL3, () => {
+    it('testRoundRectCopyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(17);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeRoundRectTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0502', Level.LEVEL3, () => {
+    it('testRoundRectCopyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingRoundRect(18);
       expect(result).assertEqual(0);
     })

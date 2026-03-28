@@ -71,7 +71,8 @@ void DrawingNativeMatrixPart2TestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixPostTranslateNormal() {
+int TestMatrixPostTranslateNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -98,7 +99,8 @@ int TestMatrixPostTranslateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPostTranslateNull() {
+int TestMatrixPostTranslateNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -125,7 +127,8 @@ int TestMatrixPostTranslateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPostTranslateAbnormal() {
+int TestMatrixPostTranslateAbnormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -148,7 +151,8 @@ int TestMatrixPostTranslateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPostTranslateMaximum() {
+int TestMatrixPostTranslateMaximum()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -171,7 +175,8 @@ int TestMatrixPostTranslateMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPostTranslateMultipleCalls() {
+int TestMatrixPostTranslateMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -197,7 +202,8 @@ int TestMatrixPostTranslateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixResetNormal() {
+int TestMatrixResetNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -227,7 +233,8 @@ int TestMatrixResetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixResetNull() {
+int TestMatrixResetNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixReset with nullptr as the parameter, check the error code with OH_Drawing_ErrorCodeGet, no
     // crash, error code returns OH_DRAWING_ERROR_INVALID_PARAMETER
@@ -245,7 +252,8 @@ int TestMatrixResetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixResetMultipleCalls() {
+int TestMatrixResetMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -280,7 +288,8 @@ int TestMatrixResetMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixConcatNormal() {
+int TestMatrixConcatNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // Define matrices a and b
     OH_Drawing_Matrix *a = OH_Drawing_MatrixCreate();
@@ -318,7 +327,8 @@ int TestMatrixConcatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixConcatNull() {
+int TestMatrixConcatNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -352,7 +362,8 @@ int TestMatrixConcatNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixConcatMultipleCalls() {
+int TestMatrixConcatMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Call OH_Drawing_MatrixConcat 10 times with matrices a and b of different sizes,
     // and use OH_Drawing_MatrixGetAll to get the result of matrix a multiplied by matrix b
@@ -397,7 +408,8 @@ int TestMatrixConcatMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixInvertNormal() {
+int TestMatrixInvertNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
@@ -427,7 +439,8 @@ int TestMatrixInvertNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixInvertNull() {
+int TestMatrixInvertNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -457,7 +470,8 @@ int TestMatrixInvertNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixInvertMultipleCalls() {
+int TestMatrixInvertMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Call OH_Drawing_MatrixInvert 10 times with matrices of different sizes
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -497,7 +511,8 @@ int TestMatrixInvertMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixSetPolyToPolyNormal() {
+int TestMatrixSetPolyToPolyNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -546,7 +561,8 @@ int TestMatrixSetPolyToPolyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixSetPolyToPolyNull() {
+int TestMatrixSetPolyToPolyNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -585,7 +601,8 @@ int TestMatrixSetPolyToPolyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixSetPolyToPolyAbnormal() {
+int TestMatrixSetPolyToPolyAbnormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -617,7 +634,8 @@ int TestMatrixSetPolyToPolyAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixSetPolyToPolyMultipleCalls() {
+int TestMatrixSetPolyToPolyMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -647,7 +665,8 @@ int TestMatrixSetPolyToPolyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixMapPointsNormal() {
+int TestMatrixMapPointsNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -677,7 +696,8 @@ int TestMatrixMapPointsNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixMapPointsNull() {
+int TestMatrixMapPointsNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -716,7 +736,8 @@ int TestMatrixMapPointsNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixMapPointsAbnormal() {
+int TestMatrixMapPointsAbnormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -743,7 +764,8 @@ int TestMatrixMapPointsAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixMapPointsMultipleCalls() {
+int TestMatrixMapPointsMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -774,7 +796,8 @@ int TestMatrixMapPointsMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixMapRectNormal() {
+int TestMatrixMapRectNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -820,7 +843,8 @@ int TestMatrixMapRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixMapRectNull() {
+int TestMatrixMapRectNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -862,7 +886,8 @@ int TestMatrixMapRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixMapRectMultipleCalls() {
+int TestMatrixMapRectMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -901,7 +926,8 @@ int TestMatrixMapRectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixIsEqualNormal() {
+int TestMatrixIsEqualNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixIsEqual with the same matrix
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -944,7 +970,8 @@ int TestMatrixIsEqualNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsEqualNull() {
+int TestMatrixIsEqualNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -973,7 +1000,8 @@ int TestMatrixIsEqualNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsEqualMultipleCalls() {
+int TestMatrixIsEqualMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1015,7 +1043,8 @@ int TestMatrixIsEqualMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixIsIdentityNormal() {
+int TestMatrixIsIdentityNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixIsIdentity with an identity matrix
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1046,7 +1075,8 @@ int TestMatrixIsIdentityNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsIdentityNull() {
+int TestMatrixIsIdentityNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. OH_Drawing_MatrixCreate
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1069,7 +1099,8 @@ int TestMatrixIsIdentityNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsIdentityMultipleCalls() {
+int TestMatrixIsIdentityMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // Call OH_Drawing_MatrixIsIdentity 10 times with alternating identity or non-identity matrices
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -1103,7 +1134,8 @@ int TestMatrixIsIdentityMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixCopyNormal() {
+int TestMatrixCopyNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
@@ -1137,7 +1169,8 @@ int TestMatrixCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixCopyNull() {
+int TestMatrixCopyNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
@@ -1162,7 +1195,8 @@ int TestMatrixCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixCopyMultipleCalls() {
+int TestMatrixCopyMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
@@ -1191,7 +1225,8 @@ int TestMatrixCopyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixPerConcatNormal() {
+int TestMatrixPerConcatNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1228,7 +1263,8 @@ int TestMatrixPerConcatNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPerConcatNull1() {
+int TestMatrixPerConcatNull1()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1265,7 +1301,8 @@ int TestMatrixPerConcatNull1() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPerConcatNull2() {
+int TestMatrixPerConcatNull2()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1302,7 +1339,8 @@ int TestMatrixPerConcatNull2() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPerConcatCalls() {
+int TestMatrixPerConcatCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
@@ -1341,7 +1379,8 @@ int TestMatrixPerConcatCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixIsAffineNormal() {
+int TestMatrixIsAffineNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1389,7 +1428,8 @@ int TestMatrixIsAffineNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsAffineNull() {
+int TestMatrixIsAffineNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1413,7 +1453,8 @@ int TestMatrixIsAffineNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixIsAffineMultipleCalls() {
+int TestMatrixIsAffineMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1436,7 +1477,8 @@ int TestMatrixIsAffineMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixPreSkewNormal() {
+int TestMatrixPreSkewNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1491,7 +1533,8 @@ int TestMatrixPreSkewNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPreSkewNull() {
+int TestMatrixPreSkewNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix1, nullptr);
@@ -1558,7 +1601,8 @@ int TestMatrixPreSkewNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixPreSkewMultipleCalls() {
+int TestMatrixPreSkewMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1585,7 +1629,8 @@ int TestMatrixPreSkewMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixRectStaysRectNormal() {
+int TestMatrixRectStaysRectNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1627,7 +1672,8 @@ int TestMatrixRectStaysRectNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixRectStaysRectNull() {
+int TestMatrixRectStaysRectNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1651,7 +1697,8 @@ int TestMatrixRectStaysRectNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixRectStaysRectMultipleCalls() {
+int TestMatrixRectStaysRectMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1674,7 +1721,8 @@ int TestMatrixRectStaysRectMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestMatrixSetSinCosNormal() {
+int TestMatrixSetSinCosNormal()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
@@ -1723,7 +1771,8 @@ int TestMatrixSetSinCosNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixSetSinCosNull() {
+int TestMatrixSetSinCosNull()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix1, nullptr);
@@ -1789,7 +1838,8 @@ int TestMatrixSetSinCosNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestMatrixSetSinCosMultipleCalls() {
+int TestMatrixSetSinCosMultipleCalls()
+{
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);

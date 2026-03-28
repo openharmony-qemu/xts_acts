@@ -52,7 +52,8 @@ void DrawingNativeRoundRectTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRoundRectCreateNormal() {
+int TestRoundRectCreateNormal()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -78,7 +79,8 @@ int TestRoundRectCreateNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCreateNull() {
+int TestRoundRectCreateNull()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -112,7 +114,8 @@ int TestRoundRectCreateNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCreateAbnormal() {
+int TestRoundRectCreateAbnormal()
+{
     DrawingNativeRoundRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
@@ -145,7 +148,8 @@ int TestRoundRectCreateAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCreateMaximum() {
+int TestRoundRectCreateMaximum()
+{
     DrawingNativeRoundRectTestSetUp();
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
@@ -178,7 +182,8 @@ int TestRoundRectCreateMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCreateMultipleCalls() {
+int TestRoundRectCreateMultipleCalls()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. Call OH_Drawing_RoundRectCreate 10 times
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -201,7 +206,8 @@ int TestRoundRectCreateMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRoundRectSetGetCornerNormal() {
+int TestRoundRectSetGetCornerNormal()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -250,7 +256,8 @@ int TestRoundRectSetGetCornerNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectSetGetCornerNull() {
+int TestRoundRectSetGetCornerNull()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -285,7 +292,8 @@ int TestRoundRectSetGetCornerNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectSetGetCornerAbnormal() {
+int TestRoundRectSetGetCornerAbnormal()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -321,7 +329,8 @@ int TestRoundRectSetGetCornerAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectSetGetCornerMaximum() {
+int TestRoundRectSetGetCornerMaximum()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -357,7 +366,8 @@ int TestRoundRectSetGetCornerMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectSetGetCornerMultipleCalls() {
+int TestRoundRectSetGetCornerMultipleCalls()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -396,7 +406,8 @@ int TestRoundRectSetGetCornerMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestRoundRectGetCornerWhenNoSet() {
+int TestRoundRectGetCornerWhenNoSet()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -426,7 +437,8 @@ int TestRoundRectGetCornerWhenNoSet() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRoundRectDestroyNormal() {
+int TestRoundRectDestroyNormal()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -454,7 +466,8 @@ int TestRoundRectDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectDestroyNull() {
+int TestRoundRectDestroyNull()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectDestroy with nullptr as the parameter
     OH_Drawing_RoundRect *roundRect = nullptr;
@@ -472,7 +485,8 @@ int TestRoundRectDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRoundRectOffsetNormal() {
+int TestRoundRectOffsetNormal()
+{
     DrawingNativeRoundRectTestSetUp();
     //1. OH_Drawing_RoundRectCreate with the second parameter as integar values
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -520,7 +534,8 @@ int TestRoundRectOffsetNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectOffsetNull() {
+int TestRoundRectOffsetNull()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. Call OH_Drawing_RoundRectOffset with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -553,7 +568,8 @@ int TestRoundRectOffsetNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectOffsetMultipleCalls() {
+int TestRoundRectOffsetMultipleCalls()
+{
     DrawingNativeRoundRectTestSetUp();
     //1. Call OH_Drawing_RoundRectCreate with random values
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -584,7 +600,8 @@ int TestRoundRectOffsetMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRoundRectCopyNormal() {
+int TestRoundRectCopyNormal()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
     OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -638,7 +655,8 @@ int TestRoundRectCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCopyNull() {
+int TestRoundRectCopyNull()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -665,7 +683,8 @@ int TestRoundRectCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRoundRectCopyMultipleCalls() {
+int TestRoundRectCopyMultipleCalls()
+{
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);

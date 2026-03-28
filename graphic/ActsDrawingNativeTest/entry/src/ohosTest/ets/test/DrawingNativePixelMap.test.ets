@@ -43,7 +43,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100', Level.LEVEL0, () => {
+    it('testPixelMapGetFromNativePixelMapNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPixelMap(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101', Level.LEVEL3, () => {
+    it('testPixelMapGetFromNativePixelMapNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPixelMap(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102', Level.LEVEL3, () => {
+    it('testPixelMapGetFromNativePixelMapMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPixelMap(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0103', Level.LEVEL0, () => {
+    it('testPixelMapGetFromNativePixelMapBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPixelMap(3);
       expect(result).assertEqual(0);
     })
@@ -96,7 +96,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200', Level.LEVEL0, () => {
+    it('testPixelMapGetFromOhPixelMapNativeNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPixelMap(4);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201', Level.LEVEL3, () => {
+    it('testPixelMapGetFromOhPixelMapNativeNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPixelMap(5);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202', Level.LEVEL3, () => {
+    it('testPixelMapGetFromOhPixelMapNativeMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPixelMap(6);
       expect(result).assertEqual(0);
     })
@@ -135,7 +135,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203', Level.LEVEL0, () => {
+    it('testPixelMapGetFromOhPixelMapNativeBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPixelMap(7);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300', Level.LEVEL0, () => {
+    it('testPixelMapDissolveNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPixelMap(8);
       expect(result).assertEqual(0);
     })
@@ -162,7 +162,7 @@ export default function DrawingNativePixelMapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301', Level.LEVEL3, () => {
+    it('testPixelMapDissolveNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingPixelMap(9);
       expect(result).assertEqual(0);
     })

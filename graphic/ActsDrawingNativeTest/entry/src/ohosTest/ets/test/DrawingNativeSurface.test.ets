@@ -43,7 +43,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0100', Level.LEVEL0, () => {
+    it('testSurfaceCreateFromGpuContextNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0101', Level.LEVEL3, () => {
+    it('testSurfaceCreateFromGpuContextNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0102', Level.LEVEL0, () => {
+    it('testSurfaceCreateFromGpuContextBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0200', Level.LEVEL0, () => {
+    it('testSurfaceDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0201', Level.LEVEL3, () => {
+    it('testSurfaceDestroyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0300', Level.LEVEL0, () => {
+    it('testSurfaceGetCanvasNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0301', Level.LEVEL3, () => {
+    it('testSurfaceGetCanvasNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0302', Level.LEVEL0, () => {
+    it('testSurfaceGetCanvasBoundary', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0400', Level.LEVEL0, () => {
+    it('testSurfaceCreateOnScreenNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0401', Level.LEVEL3, () => {
+    it('testSurfaceCreateOnScreenNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0402', Level.LEVEL3, () => {
+    it('testSurfaceCreateOnScreenMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0500', Level.LEVEL0, () => {
+    it('testSurfaceFlushNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0501', Level.LEVEL3, () => {
+    it('testSurfaceFlushNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0502', Level.LEVEL3, () => {
+    it('testSurfaceFlushAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0503', Level.LEVEL3, () => {
+    it('testSurfaceFlushMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0504', Level.LEVEL3, () => {
+    it('testSurfaceFlushTiming', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(15);
       expect(result).assertEqual(0);
     })

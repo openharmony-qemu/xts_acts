@@ -48,7 +48,8 @@ void DrawingNativeCanvasTestPart6TestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestCanvasDrawSingleChaWithFeaturesNormal() {
+int TestCanvasDrawSingleChaWithFeaturesNormal()
+{
     DrawingNativeCanvasTestPart6TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     const char *str1 = "DRAWING_NUMBER_1";
@@ -97,7 +98,8 @@ int TestCanvasDrawSingleChaWithFeaturesNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestCanvasDrawSingleChaWithFeaturesAbNormal() {
+int TestCanvasDrawSingleChaWithFeaturesAbNormal()
+{
     DrawingNativeCanvasTestPart6TestSetUp();
     float curX = DRAWING_NUMBER_100;
     float curY = DRAWING_NUMBER_100;
@@ -141,7 +143,8 @@ int TestCanvasDrawSingleChaWithFeaturesAbNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL2
  */
-int TestCanvasDrawSingleChaWithFeaturesCalls() {
+int TestCanvasDrawSingleChaWithFeaturesCalls()
+{
     DrawingNativeCanvasTestPart6TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     const char *str1 = "DRAWING_NUMBER_1";

@@ -48,7 +48,8 @@ void DrawingNativeSamplingOptionsTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSamplingOptionsCreateDestroyDestroyNormal() {
+int TestSamplingOptionsCreateDestroyDestroyNormal()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     OH_Drawing_FilterMode filterModes[] = {
         FILTER_MODE_NEAREST,
@@ -82,7 +83,8 @@ int TestSamplingOptionsCreateDestroyDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCreateDestroyDestroyNull() {
+int TestSamplingOptionsCreateDestroyDestroyNull()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     // 1. OH_Drawing_SamplingOptionsDestroy with empty parameter
     OH_Drawing_SamplingOptions *options = nullptr;
@@ -100,7 +102,8 @@ int TestSamplingOptionsCreateDestroyDestroyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCreateDestroyDestroyMultipleCalls() {
+int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     // 1. Call OH_Drawing_SamplingOptionsCreate 10 times with random enum values
     std::random_device rd;
@@ -139,7 +142,8 @@ int TestSamplingOptionsCreateDestroyDestroyMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestSamplingOptionsCopyNormal() {
+int TestSamplingOptionsCopyNormal()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is called normally.
@@ -160,7 +164,8 @@ int TestSamplingOptionsCopyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCopyNull() {
+int TestSamplingOptionsCopyNull()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is passed null.
     OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCopy(nullptr);
@@ -179,7 +184,8 @@ int TestSamplingOptionsCopyNull() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestSamplingOptionsCopyMultiCalls() {
+int TestSamplingOptionsCopyMultiCalls()
+{
     DrawingNativeSamplingOptionsTestSetUp();
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_SamplingOptions *samplingOptions = nullptr;

@@ -43,7 +43,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0100', Level.LEVEL0, () => {
+    it('testMatrixCreateDestroyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixCreate(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0101', Level.LEVEL3, () => {
+    it('testMatrixCreateDestroyNULL', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0102', Level.LEVEL3, () => {
+    it('testMatrixCreateDestroyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0200', Level.LEVEL0, () => {
+    it('testMatrixCreateRotationNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixCreate(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0201', Level.LEVEL3, () => {
+    it('testMatrixCreateRotationNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0202', Level.LEVEL3, () => {
+    it('testMatrixCreateRotationAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0203', Level.LEVEL3, () => {
+    it('testMatrixCreateRotationMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0204', Level.LEVEL3, () => {
+    it('testMatrixCreateRotationMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0300', Level.LEVEL0, () => {
+    it('testMatrixCreateTranslationNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixCreate(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0301', Level.LEVEL3, () => {
+    it('testMatrixCreateTranslationNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0302', Level.LEVEL3, () => {
+    it('testMatrixCreateTranslationAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0303', Level.LEVEL3, () => {
+    it('testMatrixCreateTranslationMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0304', Level.LEVEL3, () => {
+    it('testMatrixCreateTranslationMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0400', Level.LEVEL0, () => {
+    it('testMatrixMatrixSetGetMatrixNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixTransform(0);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0401', Level.LEVEL3, () => {
+    it('testMatrixMatrixSetGetMatrixNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(1);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0402', Level.LEVEL3, () => {
+    it('testMatrixMatrixSetGetMatrixAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(2);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0403', Level.LEVEL3, () => {
+    it('testMatrixMatrixSetGetMatrixMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(3);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0404', Level.LEVEL3, () => {
+    it('testMatrixMatrixSetGetMatrixMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(4);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0500', Level.LEVEL0, () => {
+    it('testMatrixTranslateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixTransform(5);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0501', Level.LEVEL3, () => {
+    it('testMatrixTranslateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(6);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0502', Level.LEVEL3, () => {
+    it('testMatrixTranslateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(7);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0503', Level.LEVEL3, () => {
+    it('testMatrixTranslateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(8);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0504', Level.LEVEL3, () => {
+    it('testMatrixTranslateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(9);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0600', Level.LEVEL0, () => {
+    it('testMatrixRotateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixTransform(10);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0601', Level.LEVEL3, () => {
+    it('testMatrixRotateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(11);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0602', Level.LEVEL3, () => {
+    it('testMatrixRotateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(12);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0603', Level.LEVEL3, () => {
+    it('testMatrixRotateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(13);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0604', Level.LEVEL3, () => {
+    it('testMatrixRotateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(14);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0700', Level.LEVEL0, () => {
+    it('testMatrixCreateScaleNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixCreate(13);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0701', Level.LEVEL3, () => {
+    it('testMatrixCreateScaleNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(14);
       expect(result).assertEqual(0);
     })
@@ -433,7 +433,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0702', Level.LEVEL3, () => {
+    it('testMatrixCreateScaleAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(15);
       expect(result).assertEqual(0);
     })
@@ -446,7 +446,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0703', Level.LEVEL3, () => {
+    it('testMatrixCreateScaleMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(16);
       expect(result).assertEqual(0);
     })
@@ -459,7 +459,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0704', Level.LEVEL3, () => {
+    it('testMatrixCreateScaleMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixCreate(17);
       expect(result).assertEqual(0);
     })
@@ -472,7 +472,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0800', Level.LEVEL0, () => {
+    it('testMatrixScaleNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixTransform(15);
       expect(result).assertEqual(0);
     })
@@ -485,7 +485,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0801', Level.LEVEL3, () => {
+    it('testMatrixScaleNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(16);
       expect(result).assertEqual(0);
     })
@@ -498,7 +498,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0802', Level.LEVEL3, () => {
+    it('testMatrixScaleAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(17);
       expect(result).assertEqual(0);
     })
@@ -511,7 +511,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0803', Level.LEVEL3, () => {
+    it('testMatrixScaleMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(18);
       expect(result).assertEqual(0);
     })
@@ -524,7 +524,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0804', Level.LEVEL3, () => {
+    it('testMatrixScaleMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(19);
       expect(result).assertEqual(0);
     })
@@ -537,7 +537,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0900', Level.LEVEL0, () => {
+    it('testMatrixSetRectToRectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixTransform(20);
       expect(result).assertEqual(0);
     })
@@ -550,7 +550,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0901', Level.LEVEL3, () => {
+    it('testMatrixSetRectToRectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(21);
       expect(result).assertEqual(0);
     })
@@ -563,7 +563,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0902', Level.LEVEL3, () => {
+    it('testMatrixSetRectToRectMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixTransform(22);
       expect(result).assertEqual(0);
     })
@@ -577,7 +577,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1000', Level.LEVEL0, () => {
+    it('testMatrixPreRotateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixOperation(0);
       expect(result).assertEqual(0);
     })
@@ -590,7 +590,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1001', Level.LEVEL3, () => {
+    it('testMatrixPreRotateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(1);
       expect(result).assertEqual(0);
     })
@@ -603,7 +603,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1002', Level.LEVEL3, () => {
+    it('testMatrixPreRotateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(2);
       expect(result).assertEqual(0);
     })
@@ -616,7 +616,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1003', Level.LEVEL3, () => {
+    it('testMatrixPreRotateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(3);
       expect(result).assertEqual(0);
     })
@@ -629,7 +629,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1004', Level.LEVEL3, () => {
+    it('testMatrixPreRotateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(4);
       expect(result).assertEqual(0);
     })
@@ -642,7 +642,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1100', Level.LEVEL0, () => {
+    it('testMatrixPreScaleNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixOperation(5);
       expect(result).assertEqual(0);
     })
@@ -655,7 +655,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1101', Level.LEVEL3, () => {
+    it('testMatrixPreScaleNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(6);
       expect(result).assertEqual(0);
     })
@@ -668,7 +668,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1102', Level.LEVEL3, () => {
+    it('testMatrixPreScaleAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(7);
       expect(result).assertEqual(0);
     })
@@ -681,7 +681,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1103', Level.LEVEL3, () => {
+    it('testMatrixPreScaleMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(8);
       expect(result).assertEqual(0);
     })
@@ -694,7 +694,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1104', Level.LEVEL3, () => {
+    it('testMatrixPreScaleMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(9);
       expect(result).assertEqual(0);
     })
@@ -707,7 +707,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1200', Level.LEVEL0, () => {
+    it('testMatrixPreTranslateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixOperation(10);
       expect(result).assertEqual(0);
     })
@@ -720,7 +720,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1201', Level.LEVEL3, () => {
+    it('testMatrixPreTranslateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(11);
       expect(result).assertEqual(0);
     })
@@ -733,7 +733,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1202', Level.LEVEL3, () => {
+    it('testMatrixPreTranslateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(12);
       expect(result).assertEqual(0);
     })
@@ -746,7 +746,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1203', Level.LEVEL3, () => {
+    it('testMatrixPreTranslateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(13);
       expect(result).assertEqual(0);
     })
@@ -759,7 +759,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1204', Level.LEVEL3, () => {
+    it('testMatrixPreTranslateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(14);
       expect(result).assertEqual(0);
     })
@@ -772,7 +772,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1300', Level.LEVEL0, () => {
+    it('testMatrixPostRotateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixOperation(15);
       expect(result).assertEqual(0);
     })
@@ -785,7 +785,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1301', Level.LEVEL3, () => {
+    it('testMatrixPostRotateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(16);
       expect(result).assertEqual(0);
     })
@@ -798,7 +798,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1302', Level.LEVEL3, () => {
+    it('testMatrixPostRotateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(17);
       expect(result).assertEqual(0);
     })
@@ -811,7 +811,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1303', Level.LEVEL3, () => {
+    it('testMatrixPostRotateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(18);
       expect(result).assertEqual(0);
     })
@@ -824,7 +824,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1304', Level.LEVEL3, () => {
+    it('testMatrixPostRotateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixOperation(19);
       expect(result).assertEqual(0);
     })
@@ -838,7 +838,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1400', Level.LEVEL0, () => {
+    it('testMatrixPostScaleNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(0);
       expect(result).assertEqual(0);
     })
@@ -851,7 +851,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1401', Level.LEVEL3, () => {
+    it('testMatrixPostScaleNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(1);
       expect(result).assertEqual(0);
     })
@@ -864,7 +864,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1402', Level.LEVEL3, () => {
+    it('testMatrixPostScaleAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(2);
       expect(result).assertEqual(0);
     })
@@ -877,7 +877,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1403', Level.LEVEL3, () => {
+    it('testMatrixPostScaleMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(3);
       expect(result).assertEqual(0);
     })
@@ -890,7 +890,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1404', Level.LEVEL3, () => {
+    it('testMatrixPostScaleMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(4);
       expect(result).assertEqual(0);
     })
@@ -903,7 +903,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1500', Level.LEVEL0, () => {
+    it('testMatrixPostTranslateNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(5);
       expect(result).assertEqual(0);
     })
@@ -916,7 +916,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1501', Level.LEVEL3, () => {
+    it('testMatrixPostTranslateNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(6);
       expect(result).assertEqual(0);
     })
@@ -929,7 +929,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1502', Level.LEVEL3, () => {
+    it('testMatrixPostTranslateAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(7);
       expect(result).assertEqual(0);
     })
@@ -942,7 +942,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1503', Level.LEVEL3, () => {
+    it('testMatrixPostTranslateMaximum', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(8);
       expect(result).assertEqual(0);
     })
@@ -955,7 +955,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1504', Level.LEVEL3, () => {
+    it('testMatrixPostTranslateMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(9);
       expect(result).assertEqual(0);
     })
@@ -968,7 +968,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1600', Level.LEVEL0, () => {
+    it('testMatrixResetNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(10);
       expect(result).assertEqual(0);
     })
@@ -981,7 +981,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1601', Level.LEVEL3, () => {
+    it('testMatrixResetNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(11);
       expect(result).assertEqual(0);
     })
@@ -994,7 +994,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1602', Level.LEVEL3, () => {
+    it('testMatrixResetMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(12);
       expect(result).assertEqual(0);
     })
@@ -1007,7 +1007,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1700', Level.LEVEL0, () => {
+    it('testMatrixConcatNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(13);
       expect(result).assertEqual(0);
     })
@@ -1020,7 +1020,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1701', Level.LEVEL3, () => {
+    it('testMatrixConcatNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(14);
       expect(result).assertEqual(0);
     })
@@ -1033,7 +1033,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1702', Level.LEVEL3, () => {
+    it('testMatrixConcatMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(15);
       expect(result).assertEqual(0);
     })
@@ -1046,7 +1046,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1800', Level.LEVEL0, () => {
+    it('testMatrixInvertNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(16);
       expect(result).assertEqual(0);
     })
@@ -1059,7 +1059,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1801', Level.LEVEL3, () => {
+    it('testMatrixInvertNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(17);
       expect(result).assertEqual(0);
     })
@@ -1072,7 +1072,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1802', Level.LEVEL3, () => {
+    it('testMatrixInvertMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Transform(18);
       expect(result).assertEqual(0);
     })
@@ -1085,7 +1085,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1900', Level.LEVEL0, () => {
+    it('testMatrixSetPolyToPolyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(0);
       expect(result).assertEqual(0);
     })
@@ -1098,7 +1098,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1901', Level.LEVEL3, () => {
+    it('testMatrixSetPolyToPolyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(1);
       expect(result).assertEqual(0);
     })
@@ -1111,7 +1111,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1902', Level.LEVEL3, () => {
+    it('testMatrixSetPolyToPolyAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(2);
       expect(result).assertEqual(0);
     })
@@ -1124,7 +1124,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1903', Level.LEVEL3, () => {
+    it('testMatrixSetPolyToPolyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(3);
       expect(result).assertEqual(0);
     })
@@ -1137,7 +1137,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2000', Level.LEVEL0, () => {
+    it('testMatrixMapPointsNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(4);
       expect(result).assertEqual(0);
     })
@@ -1150,7 +1150,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2001', Level.LEVEL3, () => {
+    it('testMatrixMapPointsNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(5);
       expect(result).assertEqual(0);
     })
@@ -1163,7 +1163,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2002', Level.LEVEL3, () => {
+    it('testMatrixMapPointsAbnormal', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(6);
       expect(result).assertEqual(0);
     })
@@ -1176,7 +1176,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2003', Level.LEVEL3, () => {
+    it('testMatrixMapPointsMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(7);
       expect(result).assertEqual(0);
     })
@@ -1189,7 +1189,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2100', Level.LEVEL0, () => {
+    it('testMatrixMapRectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(8);
       expect(result).assertEqual(0);
     })
@@ -1202,7 +1202,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2101', Level.LEVEL3, () => {
+    it('testMatrixMapRectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(9);
       expect(result).assertEqual(0);
     })
@@ -1215,7 +1215,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2102', Level.LEVEL3, () => {
+    it('testMatrixMapRectMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(10);
       expect(result).assertEqual(0);
     })
@@ -1228,7 +1228,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2200', Level.LEVEL0, () => {
+    it('testMatrixIsEqualNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(11);
       expect(result).assertEqual(0);
     })
@@ -1241,7 +1241,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2201', Level.LEVEL3, () => {
+    it('testMatrixIsEqualNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(12);
       expect(result).assertEqual(0);
     })
@@ -1254,7 +1254,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2202', Level.LEVEL3, () => {
+    it('testMatrixIsEqualMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(13);
       expect(result).assertEqual(0);
     })
@@ -1267,7 +1267,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2300', Level.LEVEL0, () => {
+    it('testMatrixIsIdentityNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(14);
       expect(result).assertEqual(0);
     })
@@ -1280,7 +1280,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2301', Level.LEVEL3, () => {
+    it('testMatrixIsIdentityNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(15);
       expect(result).assertEqual(0);
     })
@@ -1293,7 +1293,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2302', Level.LEVEL3, () => {
+    it('testMatrixIsIdentityMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2MapQuery(16);
       expect(result).assertEqual(0);
     })
@@ -1306,7 +1306,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2400', Level.LEVEL0, () => {
+    it('testMatrixCopyNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart2Set(0);
       expect(result).assertEqual(0);
     })
@@ -1319,7 +1319,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2401', Level.LEVEL3, () => {
+    it('testMatrixCopyNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Set(1);
       expect(result).assertEqual(0);
     })
@@ -1332,7 +1332,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2402', Level.LEVEL3, () => {
+    it('testMatrixCopyMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart2Set(2);
       expect(result).assertEqual(0);
     })
@@ -1345,7 +1345,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2500', Level.LEVEL0, () => {
+    it('testMatrixPerConcatNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart3(0);
       expect(result).assertEqual(0);
     })
@@ -1358,7 +1358,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2501', Level.LEVEL3, () => {
+    it('testMatrixPerConcatNull1', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(1);
       expect(result).assertEqual(0);
     })
@@ -1371,7 +1371,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2502', Level.LEVEL3, () => {
+    it('testMatrixPerConcatNull2', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(2);
       expect(result).assertEqual(0);
     })
@@ -1384,7 +1384,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2503', Level.LEVEL3, () => {
+    it('testMatrixPerConcatCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(3);
       expect(result).assertEqual(0);
     })
@@ -1397,7 +1397,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2600', Level.LEVEL0, () => {
+    it('testMatrixIsAffineNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart3(4);
       expect(result).assertEqual(0);
     })
@@ -1410,7 +1410,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2601', Level.LEVEL3, () => {
+    it('testMatrixIsAffineNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(5);
       expect(result).assertEqual(0);
     })
@@ -1423,7 +1423,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2602', Level.LEVEL3, () => {
+    it('testMatrixIsAffineMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(6);
       expect(result).assertEqual(0);
     })
@@ -1436,7 +1436,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2700', Level.LEVEL0, () => {
+    it('testMatrixPreSkewNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart3(7);
       expect(result).assertEqual(0);
     })
@@ -1449,7 +1449,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2701', Level.LEVEL3, () => {
+    it('testMatrixPreSkewNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(8);
       expect(result).assertEqual(0);
     })
@@ -1462,7 +1462,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2702', Level.LEVEL3, () => {
+    it('testMatrixPreSkewMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(9);
       expect(result).assertEqual(0);
     })
@@ -1475,7 +1475,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2800', Level.LEVEL0, () => {
+    it('testMatrixRectStaysRectNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart3(10);
       expect(result).assertEqual(0);
     })
@@ -1488,7 +1488,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2801', Level.LEVEL3, () => {
+    it('testMatrixRectStaysRectNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(11);
       expect(result).assertEqual(0);
     })
@@ -1501,7 +1501,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2802', Level.LEVEL3, () => {
+    it('testMatrixRectStaysRectMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(12);
       expect(result).assertEqual(0);
     })
@@ -1514,7 +1514,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2900', Level.LEVEL0, () => {
+    it('testMatrixSetSinCosNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingMatrixPart3(13);
       expect(result).assertEqual(0);
     })
@@ -1527,7 +1527,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2901', Level.LEVEL3, () => {
+    it('testMatrixSetSinCosNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(14);
       expect(result).assertEqual(0);
     })
@@ -1540,7 +1540,7 @@ export default function DrawingNativeMatrixTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2902', Level.LEVEL3, () => {
+    it('testMatrixSetSinCosMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingMatrixPart3(15);
       expect(result).assertEqual(0);
     })

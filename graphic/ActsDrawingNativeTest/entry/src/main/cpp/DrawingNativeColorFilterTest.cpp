@@ -54,7 +54,8 @@ void DrawingNativeColorFilterTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateBlendModeNormal() {
+int TestColorFilterCreateBlendModeNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Enumerate OH_Drawing_BlendMode values in OH_Drawing_ColorFilterCreateBlendMode interface
     OH_Drawing_BlendMode blendMode[] = {
@@ -86,7 +87,8 @@ int TestColorFilterCreateBlendModeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateBlendModeNULL() {
+int TestColorFilterCreateBlendModeNULL()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Pass an empty value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(0, BLEND_MODE_CLEAR);
@@ -106,7 +108,8 @@ int TestColorFilterCreateBlendModeNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateBlendModeMultipleCalls() {
+int TestColorFilterCreateBlendModeMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode, random value between 0x00000000 and 0xFFFFFFFF
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -152,7 +155,8 @@ int TestColorFilterCreateBlendModeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateBlendModeAbnormal() {
+int TestColorFilterCreateBlendModeAbnormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Pass a negative value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(-1.0, BLEND_MODE_CLEAR);
@@ -172,7 +176,8 @@ int TestColorFilterCreateBlendModeAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateBlendModeMaximum() {
+int TestColorFilterCreateBlendModeMaximum()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Pass 0xFFFFFFFF as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(0xFFFFFFFF, BLEND_MODE_CLEAR);
@@ -192,7 +197,8 @@ int TestColorFilterCreateBlendModeMaximum() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateComposeNormal() {
+int TestColorFilterCreateComposeNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateBlendMode to create colorFilter1 and colorFilter2
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0X00FFFFFF,
@@ -246,7 +252,8 @@ int TestColorFilterCreateComposeNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateComposeNULL() {
+int TestColorFilterCreateComposeNULL()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Pass an empty value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(0, BLEND_MODE_CLEAR);
@@ -266,7 +273,8 @@ int TestColorFilterCreateComposeNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateComposeMultipleCalls() {
+int TestColorFilterCreateComposeMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode with a random value between 0x00000000 and 0xFFFFFFFF
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -324,7 +332,8 @@ int TestColorFilterCreateComposeMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateMatrixNormal() {
+int TestColorFilterCreateMatrixNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     const float matrix[DRAWING_NUMBER_20] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5f, 0};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
@@ -345,7 +354,8 @@ int TestColorFilterCreateMatrixNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateMatrixNULL() {
+int TestColorFilterCreateMatrixNULL()
+{
     DrawingNativeColorFilterTestSetUp();
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -368,7 +378,8 @@ int TestColorFilterCreateMatrixNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateMatrixAbnormal() {
+int TestColorFilterCreateMatrixAbnormal()
+{
     DrawingNativeColorFilterTestSetUp();
     const float matrix[DRAWING_NUMBER_19] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5f};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
@@ -396,7 +407,8 @@ int TestColorFilterCreateMatrixAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateMatrixMultipleCalls() {
+int TestColorFilterCreateMatrixMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         const float matrix[DRAWING_NUMBER_20] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5, 0};
@@ -416,7 +428,8 @@ int TestColorFilterCreateMatrixMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateLinearToSrgbGammaNormal() {
+int TestColorFilterCreateLinearToSrgbGammaNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateLinearToSrgbGamma
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
@@ -437,7 +450,8 @@ int TestColorFilterCreateLinearToSrgbGammaNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateLinearToSrgbGammaMultipleCalls() {
+int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1、OH_Drawing_ColorFilterCreateLinearToSrgbGamma 调用10次
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -457,7 +471,8 @@ int TestColorFilterCreateLinearToSrgbGammaMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateSrgbGammaToLinearNormal() {
+int TestColorFilterCreateSrgbGammaToLinearNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
@@ -477,7 +492,8 @@ int TestColorFilterCreateSrgbGammaToLinearNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateSrgbGammaToLinearMultipleCalls() {
+int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -497,7 +513,8 @@ int TestColorFilterCreateSrgbGammaToLinearMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateLumaNormal() {
+int TestColorFilterCreateLumaNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLuma
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLuma();
@@ -516,7 +533,8 @@ int TestColorFilterCreateLumaNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateLumaMultipleCalls() {
+int TestColorFilterCreateLumaMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateLuma 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -536,7 +554,8 @@ int TestColorFilterCreateLumaMultipleCalls() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterDestroyNormal() {
+int TestColorFilterDestroyNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLuma
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLuma();
@@ -555,7 +574,8 @@ int TestColorFilterDestroyNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterDestroyNULL() {
+int TestColorFilterDestroyNULL()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterDestroy with empty parameter
     OH_Drawing_ColorFilter *colorFilter = nullptr;
@@ -573,7 +593,8 @@ int TestColorFilterDestroyNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestColorFilterCreateLightingNormal() {
+int TestColorFilterCreateLightingNormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes parameters normally.
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLighting(0xFF00FF00, 0XFF0000FF);
@@ -592,7 +613,8 @@ int TestColorFilterCreateLightingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateLightingNULL() {
+int TestColorFilterCreateLightingNULL()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes NULL.
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateLighting(0, 0XFF0000FF);
@@ -615,7 +637,8 @@ int TestColorFilterCreateLightingNULL() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateLightingAbnormal() {
+int TestColorFilterCreateLightingAbnormal()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes maximum value.
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateLighting(0xFFFFFFFF, 0XFF0000FF);
@@ -638,7 +661,8 @@ int TestColorFilterCreateLightingAbnormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestColorFilterCreateLightingMultipleCalls() {
+int TestColorFilterCreateLightingMultipleCalls()
+{
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting is called multiple times.
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {

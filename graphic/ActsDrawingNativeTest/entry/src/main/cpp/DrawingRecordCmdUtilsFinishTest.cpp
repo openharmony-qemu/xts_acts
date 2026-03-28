@@ -46,7 +46,8 @@ void DrawingRecordCmdUtilsFinishRecordingTestTearDown()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-int TestRecordCmdUtilsFinishRecordingNormal() {
+int TestRecordCmdUtilsFinishRecordingNormal()
+{
     DrawingRecordCmdUtilsFinishRecordingTestSetUp();
     // 1. None of the OH_Drawing_RecordCmdUtilsFinishRecording parameters are empty
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -72,7 +73,8 @@ int TestRecordCmdUtilsFinishRecordingNormal() {
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-int TestRecordCmdUtilsFinishRecordingNull() {
+int TestRecordCmdUtilsFinishRecordingNull()
+{
     DrawingRecordCmdUtilsFinishRecordingTestSetUp();
     // 1. OH-Drawing-RecordCmdUtelsFinishRecording, RecordCmd or RecordCmdUtils parameter is empty
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
