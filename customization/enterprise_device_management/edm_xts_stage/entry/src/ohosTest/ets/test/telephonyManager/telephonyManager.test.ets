@@ -31,6 +31,8 @@ export default function telephonyManagerTest() {
     testSetSimDisabled();
     testSetSimEnabled();
     testIsSimDisabled();
+    testActiveSim();
+    testDeactiveSim();
     testAddOutgoingCallPolicyNumbers();
     testRemoveOutgoingCallPolicyNumbers();
     testGetOutgoingCallPolicyNumbers();
@@ -2890,5 +2892,488 @@ function testHangupCalling() {
     done();
     console.info(' --- testGetIncomingCallPolicyNumbers_0100_1  -------- END --------');
   })
+}
 
+function testActiveSim() {
+  /**
+   * @tc.name   test_ActiveSim_without_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0100
+   * @tc.desc   test ActiveSim without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_without_admin_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.activeSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_normal_admin_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0101
+   * @tc.desc   test ActiveSim with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_normal_admin_0101", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      telephonyManager.activeSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_invalid_admin_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0103
+   * @tc.desc   test ActiveSim with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_invalid_admin_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.activeSim(INVALID_WANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_null_admin_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0104
+   * @tc.desc   test ActiveSim with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_null_admin_0104", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.activeSim(null, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_undefined_admin_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0105
+   * @tc.desc   test ActiveSim with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_undefined_admin_0105", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.activeSim(undefined, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_null_slotId_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0106
+   * @tc.desc   test ActiveSim with null slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_null_slotId_0106", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.activeSim(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_undefined_slotId_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0107
+   * @tc.desc   test ActiveSim with undefined slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_undefined_slotId_0107", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.activeSim(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_negative_slotId_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0108
+   * @tc.desc   test ActiveSim with negative slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_negative_slotId_0108", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.activeSim(SELFWANT, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_out_of_range_slotId_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0109
+   * @tc.desc   test ActiveSim with out of range slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_out_of_range_slotId_0109", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.activeSim(SELFWANT, 999);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_ActiveSim_success_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0110
+   * @tc.desc   test ActiveSim failed
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_ActiveSim_success_0110", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.activeSim(SELFWANT, 0);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201017).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testDeactiveSim() {
+  /**
+   * @tc.name   test_DeactiveSim_without_admin_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0200
+   * @tc.desc   test DeactiveSim without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_without_admin_0200", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.deactiveSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_normal_admin_0201
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0201
+   * @tc.desc   test DeactiveSim with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_normal_admin_0201", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      telephonyManager.deactiveSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_invalid_admin_0203
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0203
+   * @tc.desc   test DeactiveSim with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_invalid_admin_0203", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.deactiveSim(INVALID_WANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_null_admin_0204
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0204
+   * @tc.desc   test DeactiveSim with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_null_admin_0204", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.deactiveSim(null, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_undefined_admin_0205
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0205
+   * @tc.desc   test DeactiveSim with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_undefined_admin_0205", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.deactiveSim(undefined, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_null_slotId_0206
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0206
+   * @tc.desc   test DeactiveSim with null slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_null_slotId_0206", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.deactiveSim(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_undefined_slotId_0207
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0207
+   * @tc.desc   test DeactiveSim with undefined slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_undefined_slotId_0207", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.deactiveSim(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_negative_slotId_0208
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0208
+   * @tc.desc   test DeactiveSim with negative slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_negative_slotId_0208", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.deactiveSim(SELFWANT, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_out_of_range_slotId_0209
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0209
+   * @tc.desc   test DeactiveSim with out of range slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_out_of_range_slotId_0209", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.deactiveSim(SELFWANT, 999);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_success_0210
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0210
+   * @tc.desc   test DeactiveSim success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_DeactiveSim_success_0210", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.deactiveSim(SELFWANT, 0);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201017).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
