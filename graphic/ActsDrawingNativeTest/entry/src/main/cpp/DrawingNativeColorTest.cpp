@@ -144,23 +144,23 @@ int TestColorSetArgbAbnormal()
 {
     DrawingNativeColorTestSetUp();
     // 1. The first argument of OH_Drawing_ColorSetArgb is a negative number
-    uint32_t color1 = OH_Drawing_ColorSetArgb(-1.0, DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF,
+    uint32_t color1 = OH_Drawing_ColorSetArgb(-1.0f, DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF,
         DRAWING_NUMBER_0XFF);
     // add assert
     EXPECT_NE(color1, 0);
     // 2. The second argument of OH_Drawing_ColorSetArgb is a negative number
-    uint32_t color2 = OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, -1.0, DRAWING_NUMBER_0XFF,
+    uint32_t color2 = OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, -1.0f, DRAWING_NUMBER_0XFF,
         DRAWING_NUMBER_0XFF);
     // add assert
     EXPECT_NE(color2, 0);
     // 3. The third argument of OH_Drawing_ColorSetArgb is a negative number
-    uint32_t color3 = OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF, -1.0,
+    uint32_t color3 = OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF, -1.0f,
         DRAWING_NUMBER_0XFF);
     // add assert
     EXPECT_NE(color3, 0);
     // 4. The fourth argument of OH_Drawing_ColorSetArgb is a negative number
     uint32_t color4 = OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF,
-        DRAWING_NUMBER_0XFF, -1.0);
+        DRAWING_NUMBER_0XFF, -1.0f);
     // add assert
     EXPECT_NE(color4, 0);
 

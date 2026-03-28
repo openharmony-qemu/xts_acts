@@ -890,11 +890,11 @@ int TestRegionGetBoundaryNormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_PathIsEmpty(path, &isEmpty);
     EXPECT_EQ(isEmpty, false);
-    bool ret = OH_Drawing_PathContains(path, 300.1, DRAWING_NUMBER_200);
+    bool ret = OH_Drawing_PathContains(path, 300.1f, DRAWING_NUMBER_200);
     EXPECT_EQ(ret, false);
-    ret = OH_Drawing_PathContains(path, DRAWING_NUMBER_200, 300.1);
+    ret = OH_Drawing_PathContains(path, DRAWING_NUMBER_200, 300.1f);
     EXPECT_EQ(ret, false);
-    ret = OH_Drawing_PathContains(path, 299.99, 299.99);
+    ret = OH_Drawing_PathContains(path, 299.99f, 299.99f);
     EXPECT_EQ(ret, true);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);

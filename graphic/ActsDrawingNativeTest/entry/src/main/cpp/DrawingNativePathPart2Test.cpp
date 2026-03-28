@@ -66,7 +66,7 @@ int TestPathAddArcNormal()
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 5. Add an arc to the path using OH_Drawing_PathAddArc, which serves as the starting point of the new contour.
-    OH_Drawing_PathAddArc(path, rect, 0.0, 0.0);
+    OH_Drawing_PathAddArc(path, rect, 0.0f, 0.0f);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 6. Free the memory.
@@ -97,17 +97,17 @@ int TestPathAddArcNull()
     EXPECT_NE(rect, nullptr);
     // 3. Call OH_Drawing_PathAddArc with a nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code.
-    OH_Drawing_PathAddArc(nullptr, rect, 0.0, 0.0);
+    OH_Drawing_PathAddArc(nullptr, rect, 0.0f, 0.0f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddArc with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathAddArc(path, nullptr, 0.0, 0.0);
+    OH_Drawing_PathAddArc(path, nullptr, 0.0f, 0.0f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddArc with 0.0 as the third parameter, expecting failure without crash.
-    OH_Drawing_PathAddArc(path, rect, 0.0, 0.0);
+    OH_Drawing_PathAddArc(path, rect, 0.0f, 0.0f);
     // 6. Call OH_Drawing_PathAddArc with 0.0 as the fourth parameter, expecting failure without crash.
-    OH_Drawing_PathAddArc(path, rect, 0.0, 0.0);
+    OH_Drawing_PathAddArc(path, rect, 0.0f, 0.0f);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -175,10 +175,10 @@ int TestPathAddArcMaximal()
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 5. Add an arc to the path using OH_Drawing_PathAddArc, passing FLT_MAX + 1 as the third parameter, which will
     // fail without crashing.
-    OH_Drawing_PathAddArc(path, rect, FLT_MAX + DRAWING_NUMBER_1, 0.0);
+    OH_Drawing_PathAddArc(path, rect, FLT_MAX + DRAWING_NUMBER_1, 0.0f);
     // 6. Add an arc to the path using OH_Drawing_PathAddArc, passing FLT_MAX + 1 as the fourth parameter, which will
     // fail without crashing.
-    OH_Drawing_PathAddArc(path, rect, 0.0, FLT_MAX + DRAWING_NUMBER_1);
+    OH_Drawing_PathAddArc(path, rect, 0.0f, FLT_MAX + DRAWING_NUMBER_1);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -289,7 +289,7 @@ int TestPathAddPathWithMatrixAndModeNormal()
     // 5. Add the transformed source path to the current path using OH_Drawing_PathAddPathWithMatrixAndMode. The fourth
     // parameter enumerates calling this interface.
     OH_Drawing_PathAddMode modes[] = {PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND};
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_2; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
         // add assert
@@ -453,9 +453,9 @@ int TestPathAddPathWithOffsetAndModeNormal()
     // 5. Add the transformed source path to the current path using OH_Drawing_PathAddPathWithOffsetAndMode. The fifth
     // parameter enumerates calling this interface.
     OH_Drawing_PathAddMode modes[] = {PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND};
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_2; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0, 10.0, modes[i]);
+        OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0f, 10.0f, modes[i]);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
@@ -487,19 +487,19 @@ int TestPathAddPathWithOffsetAndModeNull()
     EXPECT_NE(src, nullptr);
     // 3. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathAddPathWithOffsetAndMode(nullptr, src, 10.0, 10.0, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(nullptr, src, 10.0f, 10.0f, PATH_ADD_MODE_APPEND);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, nullptr, 10.0, 10.0, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(path, nullptr, 10.0f, 10.0f, PATH_ADD_MODE_APPEND);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with 0.00 as the third parameter, expecting failure without
     // crash.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 0.0, 10.0, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 0.0f, 10.0f, PATH_ADD_MODE_APPEND);
     // 6. Call OH_Drawing_PathAddPathWithOffsetAndMode with 0.00 as the fourth parameter, expecting failure without
     // crash.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0, 0.0, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0f, 0.0f, PATH_ADD_MODE_APPEND);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -604,7 +604,7 @@ int TestPathAddOvalNormal()
     // 5. Add an oval to the path with the specified direction using OH_Drawing_PathAddOval. The third parameter
     // enumerates calling this interface.
     OH_Drawing_PathDirection directions[] = {PATH_DIRECTION_CW, PATH_DIRECTION_CCW};
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_2; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddOval(path, rect, directions[i]);
         // add assert
@@ -906,14 +906,14 @@ int TestPathAddCircleNull()
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_PathAddCircle with the second parameter as 0.00, which will fail without crashing.
-    OH_Drawing_PathAddCircle(path, 0.00, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
+    OH_Drawing_PathAddCircle(path, 0.00f, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // 4. Call OH_Drawing_PathAddCircle with the third parameter as 0.00, which will fail without crashing.
-    OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, 0.00, DRAWING_NUMBER_10,
+    OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, 0.00f, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // 5. Call OH_Drawing_PathAddCircle with the fourth parameter less than or equal to 0.00, expecting
     // OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE error code.
-    OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50, 0.00,
+    OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50, 0.00f,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 6. Free the memory.
@@ -1114,10 +1114,10 @@ int TestPathContainsNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_PathContains with the second parameter as 0.00, the call fails without crashing.
-    ret = OH_Drawing_PathContains(path, 0.0, DRAWING_NUMBER_50);
+    ret = OH_Drawing_PathContains(path, 0.0f, DRAWING_NUMBER_50);
     EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_PathContains with the third parameter as 0.00, the call fails without crashing.
-    ret = OH_Drawing_PathContains(path, DRAWING_NUMBER_50, 0.0);
+    ret = OH_Drawing_PathContains(path, DRAWING_NUMBER_50, 0.0f);
     EXPECT_EQ(ret, false);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1773,9 +1773,9 @@ int TestPathOffsetNull()
     // 4. Call OH_Drawing_PathOffset with a nullptr as the second parameter, expecting failure without crashing.
     OH_Drawing_PathOffset(path, nullptr, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
     // 5. Call OH_Drawing_PathOffset with 0.00 as the third parameter, expecting failure without crashing.
-    OH_Drawing_PathOffset(path, dst, 0.00, DRAWING_NUMBER_10);
+    OH_Drawing_PathOffset(path, dst, 0.00f, DRAWING_NUMBER_10);
     // 6. Call OH_Drawing_PathOffset with 0.00 as the fourth parameter, expecting failure without crashing.
-    OH_Drawing_PathOffset(path, dst, DRAWING_NUMBER_10, 0.00);
+    OH_Drawing_PathOffset(path, dst, DRAWING_NUMBER_10, 0.00f);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(dst);

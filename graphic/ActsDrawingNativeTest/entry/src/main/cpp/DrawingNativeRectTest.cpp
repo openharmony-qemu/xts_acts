@@ -110,10 +110,10 @@ int TestRectIntersectNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 7. Repeat steps 3-6 to set the coordinates of the other rectangle object
-    OH_Drawing_RectSetLeft(other, 100);
+    OH_Drawing_RectSetLeft(other, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetTop(other, 100);
+    OH_Drawing_RectSetTop(other, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     OH_Drawing_RectSetRight(other, DRAWING_NUMBER_300);
@@ -207,10 +207,10 @@ int TestRectJoinNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 7. Repeat steps 3-6 to set the coordinates of the other rectangle object
-    OH_Drawing_RectSetLeft(other, 100);
+    OH_Drawing_RectSetLeft(other, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetTop(other, 100);
+    OH_Drawing_RectSetTop(other, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     OH_Drawing_RectSetRight(other, DRAWING_NUMBER_300);
@@ -285,13 +285,13 @@ int TestRectSetLeftNormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetLeft(rect, 100);
+    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect, Returns the value set
     // in step 2
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -315,10 +315,10 @@ int TestRectSetLeftNull()
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectSetLeft(nullptr, 0.00);
+    OH_Drawing_RectSetLeft(nullptr, 0.00f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_RectSetLeft with the second parameter as 0.00, Call fails without crashing
-    OH_Drawing_RectSetLeft(rect, 0.00);
+    OH_Drawing_RectSetLeft(rect, 0.00f);
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -341,13 +341,13 @@ int TestRectSetLeftAbnormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the second parameter as an integer or character data
-    OH_Drawing_RectSetLeft(rect, 100);
+    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect, Returns the value set
     // in step 2 (the passed parameter is forcibly converted)
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -394,13 +394,13 @@ int TestRectSetTopNormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetTop(rect, 100);
+    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect, Returns the value set in
     // step 2
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -424,10 +424,10 @@ int TestRectSetTopNull()
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectSetTop(nullptr, 0.00);
+    OH_Drawing_RectSetTop(nullptr, 0.00f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_RectSetTop with the second parameter as 0.00, Call fails without crashing
-    OH_Drawing_RectSetTop(rect, 0.00);
+    OH_Drawing_RectSetTop(rect, 0.00f);
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -450,13 +450,13 @@ int TestRectSetTopAbnormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the second parameter as an integer or character data
-    OH_Drawing_RectSetTop(rect, 100);
+    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect, Returns the value set in
     // step 2 (the passed parameter is forcibly converted)
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -552,10 +552,10 @@ int TestRectSetRightNull()
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectSetRight(nullptr, 0.00);
+    OH_Drawing_RectSetRight(nullptr, 0.00f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_RectSetRight with the second parameter as 0.00, 3. Call fails without crashing
-    OH_Drawing_RectSetRight(rect, 0.00);
+    OH_Drawing_RectSetRight(rect, 0.00f);
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -578,13 +578,13 @@ int TestRectSetRightAbnormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the second parameter as an integer or character data
-    OH_Drawing_RectSetRight(rect, 100);
+    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect, Returns the value set
     // in step 2 (the passed parameter is forcibly converted)
     float right = OH_Drawing_RectGetRight(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(right, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -680,10 +680,10 @@ int TestRectSetBottomNull()
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the first parameter as nullptr, returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectSetBottom(nullptr, 0.00);
+    OH_Drawing_RectSetBottom(nullptr, 0.00f);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_RectSetBottom with the second parameter as 0.00, the call fails without crashing
-    OH_Drawing_RectSetBottom(rect, 0.00);
+    OH_Drawing_RectSetBottom(rect, 0.00f);
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -706,12 +706,12 @@ int TestRectSetBottomAbnormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the second parameter as an integer or character data
-    OH_Drawing_RectSetBottom(rect, 100);
+    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetBottom to get the y-coordinate of the bottom-right corner of rect
     float bottom = OH_Drawing_RectGetBottom(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(bottom, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(bottom, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -760,10 +760,10 @@ int TestRectGetLeftNormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetLeft(rect, 100);
+    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -810,10 +810,10 @@ int TestRectGetTopNormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetTop(rect, 100);
+    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -1118,9 +1118,9 @@ int TestRectCopyNormal()
     // add assert
     EXPECT_NE(dst, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of src
-    OH_Drawing_RectSetLeft(src, 100);
+    OH_Drawing_RectSetLeft(src, DRAWING_NUMBER_100);
     // 4. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of src
-    OH_Drawing_RectSetTop(src, 100);
+    OH_Drawing_RectSetTop(src, DRAWING_NUMBER_100);
     // 5. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of src
     OH_Drawing_RectSetRight(src, DRAWING_NUMBER_300);
     // 6. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of src
@@ -1132,11 +1132,11 @@ int TestRectCopyNormal()
     // 8. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of dst, which should be the same as
     // the value set in src
     float left = OH_Drawing_RectGetLeft(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
     // 9. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of dst, which should be the same as
     // the value set in src
     float top = OH_Drawing_RectGetTop(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
     // 10. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of dst, which should be the
     // same as the value set in src
     float right = OH_Drawing_RectGetRight(dst);
@@ -1152,11 +1152,11 @@ int TestRectCopyNormal()
     // 14. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of dst, which should be the same
     // as the previous value (indicating that the modification in src does not affect the result in dst)
     left = OH_Drawing_RectGetLeft(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
     // 15. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of dst, which should be the same as
     // the previous value (indicating that the modification in src does not affect the result in dst)
     top = OH_Drawing_RectGetTop(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, 100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
     // 16. Free memory
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
@@ -1264,10 +1264,10 @@ int TestRectInsetNormal()
     float right = DRAWING_NUMBER_30;
     float bottom = -DRAWING_NUMBER_40;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 110.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 180.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 370.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 340.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 110.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 180.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 370.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 340.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
     OH_Drawing_RectDestroy(rect);
@@ -1295,10 +1295,10 @@ int TestRectInsetAbNormal()
     float right = DRAWING_NUMBER_200;
     float bottom = DRAWING_NUMBER_100;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
     OH_Drawing_RectDestroy(rect);
@@ -1326,10 +1326,10 @@ int TestRectInsetNull()
     float right = DRAWING_NUMBER_200;
     float bottom = DRAWING_NUMBER_100;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(nullptr, left, top, right, bottom);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 400.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 300.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 400.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 300.0f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
     OH_Drawing_RectDestroy(rect);
@@ -1360,10 +1360,10 @@ int TestRectInsetCalls()
         OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     }
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 700.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 700.0f);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -1619,16 +1619,16 @@ int TestRectOffsetNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     errorCode = OH_Drawing_RectOffset(rect, -100, -100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1649,22 +1649,22 @@ int TestRectOffsetNull()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(nullptr, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
-    errorCode = OH_Drawing_RectOffset(rect, 0, 100);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
+    errorCode = OH_Drawing_RectOffset(rect, 0, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     errorCode = OH_Drawing_RectOffset(rect, 100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1710,10 +1710,10 @@ int TestRectOffsetMultipleCalls()
     for (float i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 10.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 10.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 110.0 + i * 10.0);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 110.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 10.0f + i * 10.0f);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 10.0f + i * 10.0f);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 110.0f + i * 10.0f);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 110.0f + i * 10.0f);
     }
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -1735,10 +1735,10 @@ int TestRectOffsetToNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1759,22 +1759,22 @@ int TestRectOffsetToNull()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(nullptr, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
-    errorCode = OH_Drawing_RectOffsetTo(rect, 0, 100);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
+    errorCode = OH_Drawing_RectOffsetTo(rect, 0, DRAWING_NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     errorCode = OH_Drawing_RectOffsetTo(rect, 100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1820,10 +1820,10 @@ int TestRectOffsetToMultipleCalls()
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
-        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
-        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     }
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -1845,17 +1845,17 @@ int TestRectSortNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, 0, 0);
     errorCode = OH_Drawing_RectSort(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1876,10 +1876,10 @@ int TestRectSortNull()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1901,10 +1901,10 @@ int TestRectSortMultipleCalls()
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
     }
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -1929,10 +1929,10 @@ int TestRectUnionNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
     DrawingNativeRectTestTearDown();
@@ -1984,10 +1984,10 @@ int TestRectUnionMultipleCalls()
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
-        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
-        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
     }
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);

@@ -63,7 +63,7 @@ int TestPathIteratorCreateNormal()
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
     OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
     OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
         DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
@@ -92,7 +92,7 @@ int TestPathIteratorCreateNull()
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
     OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
     OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
         DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
@@ -124,7 +124,7 @@ int TestPathIteratorCreateMultipleCalls()
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
     OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
     OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
         DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
@@ -155,9 +155,10 @@ int TestPathIteratorDestroyNormal()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, 10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, 150, DRAWING_NUMBER_200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
+        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -199,9 +200,10 @@ int TestPathIteratorHasNextNormal()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, 10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, 150, DRAWING_NUMBER_200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
+        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -237,9 +239,10 @@ int TestPathIteratorHasNextNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, 10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, 150, DRAWING_NUMBER_200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
+        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -270,9 +273,10 @@ int TestPathIteratorNextNormal()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, 10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, 150, DRAWING_NUMBER_200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
+        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -307,9 +311,10 @@ int TestPathIteratorNextNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, 10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, 150, DRAWING_NUMBER_200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
+        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -354,7 +359,7 @@ int TestPathIteratorPeekNormal()
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
     OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
     OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
         DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);
@@ -392,7 +397,7 @@ int TestPathIteratorPeekNull()
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
     OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5);
+    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
     OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
         DRAWING_NUMBER_550, DRAWING_NUMBER_650);
     OH_Drawing_PathClose(path);

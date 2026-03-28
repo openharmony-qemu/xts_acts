@@ -527,10 +527,10 @@ int TestCanvasDrawPixelMapNineNull()
     int imageHeight = DRAWING_NUMBER_100;
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -592,10 +592,10 @@ int TestCanvasDrawPixelMapNineNormal()
     int32_t imageHeight = DRAWING_NUMBER_100;
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -650,10 +650,10 @@ int TestCanvasDrawPixelMapNineCalls()
     int32_t imageHeight = DRAWING_NUMBER_100;
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -707,10 +707,10 @@ int TestCanvasCreateWithPixelMapNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -752,10 +752,10 @@ int TestCanvasCreateWithPixelMapNull()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -797,10 +797,10 @@ int TestCanvasCreateWithPixelMapMultipleCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
     if (bitmapAddr == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -844,10 +844,10 @@ int TestCanvasDrawPixelMapRectConstraintNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -900,10 +900,10 @@ int TestCanvasDrawPixelMapRectConstraintNull()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) { return -DRAWING_NUMBER_1; }
     for (int i = 0; i < imageWidth * imageHeight; i++) { ((uint32_t*)buffer)[i] = 0xFFFF00FF; }
@@ -962,10 +962,10 @@ int TestCanvasDrawPixelMapRectConstraintAbnormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -1018,10 +1018,10 @@ int TestCanvasDrawPixelMapRectConstraintMultiCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
         return -DRAWING_NUMBER_1;
@@ -1076,10 +1076,10 @@ int TestCanvasDrawPixelMapMeshNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1139,10 +1139,10 @@ int TestCanvasDrawPixelMapMeshNull01()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1204,10 +1204,10 @@ int TestCanvasDrawPixelMapMeshNull02()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1269,10 +1269,10 @@ int TestCanvasDrawPixelMapMeshNull03()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1334,10 +1334,10 @@ int TestCanvasDrawPixelMapMeshNull04()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1391,10 +1391,10 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1452,10 +1452,10 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1513,10 +1513,10 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1574,10 +1574,10 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1635,10 +1635,10 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -1696,10 +1696,10 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);    
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3); 
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);      
-    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;                 
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, DRAWING_NUMBER_3);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
+    size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {

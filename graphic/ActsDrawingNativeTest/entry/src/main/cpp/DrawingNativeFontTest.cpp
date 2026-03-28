@@ -634,11 +634,11 @@ int TestFontSetTextSizeNormal()
     EXPECT_EQ(textSize, DRAWING_NUMBER_100);
     // 3. Call OH_Drawing_FontSetTextSize with textSize parameter set to 50.255, and call OH_Drawing_FontGetTextSize to
     // get the text size
-    OH_Drawing_FontSetTextSize(font, 50.255);
+    OH_Drawing_FontSetTextSize(font, 50.255f);
     textSize = OH_Drawing_FontGetTextSize(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(IsScalarAlmostEqual(textSize, 50.255), true);
+    EXPECT_EQ(IsScalarAlmostEqual(textSize, 50.255f), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();
@@ -698,7 +698,7 @@ int TestFontSetTextSizeMultipleCalls()
     // each time to get the text size
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCodeReset();
         float size = dis(gen);
@@ -1418,11 +1418,11 @@ int TestFontSetTextSkewXNormal()
     EXPECT_EQ(skewX, DRAWING_NUMBER_10);
     // 3. Call OH_Drawing_FontSetTextSkewX interface with skewX parameter set to 0.55, and then call
     // OH_Drawing_FontGetTextSkewX to get the text skew on the x-axis
-    OH_Drawing_FontSetTextSkewX(font, 0.55);
+    OH_Drawing_FontSetTextSkewX(font, 0.55f);
     skewX = OH_Drawing_FontGetTextSkewX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(IsScalarAlmostEqual(skewX, 0.55), true);
+    EXPECT_EQ(IsScalarAlmostEqual(skewX, 0.55f), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();
@@ -1711,13 +1711,13 @@ int TestFontSetScaleXNormal()
     EXPECT_EQ(scaleX, DRAWING_NUMBER_10);
     // 3. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to 0.55, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
-    OH_Drawing_FontSetScaleX(font, 0.55);
+    OH_Drawing_FontSetScaleX(font, 0.55f);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     scaleX = OH_Drawing_FontGetScaleX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(IsScalarAlmostEqual(scaleX, 0.55), true);
+    EXPECT_EQ(IsScalarAlmostEqual(scaleX, 0.55f), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();
@@ -2250,23 +2250,23 @@ int TestFontGetMetricsNormal()
     // 4. Get font measurement information
     float lineSpace = OH_Drawing_FontGetMetrics(font, metrics);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_FLOAT_EQ(lineSpace, 117.2);
-    EXPECT_EQ(metrics->flags, 31);
-    EXPECT_FLOAT_EQ(metrics->top, -105.6);
-    EXPECT_FLOAT_EQ(metrics->ascent, -92.7999954);
-    EXPECT_FLOAT_EQ(metrics->descent, 24.4);
-    EXPECT_FLOAT_EQ(metrics->bottom, 27.1);
-    EXPECT_FLOAT_EQ(metrics->leading, 0.000000);
-    EXPECT_FLOAT_EQ(metrics->avgCharWidth, 50.000000);
-    EXPECT_FLOAT_EQ(metrics->maxCharWidth, 248.6);
-    EXPECT_FLOAT_EQ(metrics->xMin, -54.8);
-    EXPECT_FLOAT_EQ(metrics->xMax, 193.8);
-    EXPECT_FLOAT_EQ(metrics->xHeight, 50.000000);
-    EXPECT_FLOAT_EQ(metrics->capHeight, 70.000000);
-    EXPECT_FLOAT_EQ(metrics->underlineThickness, 5.000000);
-    EXPECT_FLOAT_EQ(metrics->underlinePosition, 20.7);
-    EXPECT_FLOAT_EQ(metrics->strikeoutThickness, 5.000000);
-    EXPECT_FLOAT_EQ(metrics->strikeoutPosition, -30.0000019);
+    EXPECT_FLOAT_EQ(lineSpace, 117.2f);
+    EXPECT_EQ(metrics->flags, DRAWING_NUMBER_31);
+    EXPECT_FLOAT_EQ(metrics->top, -105.6f);
+    EXPECT_FLOAT_EQ(metrics->ascent, -92.7999954f);
+    EXPECT_FLOAT_EQ(metrics->descent, 24.4f);
+    EXPECT_FLOAT_EQ(metrics->bottom, 27.1f);
+    EXPECT_FLOAT_EQ(metrics->leading, 0.000000f);
+    EXPECT_FLOAT_EQ(metrics->avgCharWidth, 50.000000f);
+    EXPECT_FLOAT_EQ(metrics->maxCharWidth, 248.6f);
+    EXPECT_FLOAT_EQ(metrics->xMin, -54.8f);
+    EXPECT_FLOAT_EQ(metrics->xMax, 193.8f);
+    EXPECT_FLOAT_EQ(metrics->xHeight, 50.000000f);
+    EXPECT_FLOAT_EQ(metrics->capHeight, 70.000000f);
+    EXPECT_FLOAT_EQ(metrics->underlineThickness, 5.000000f);
+    EXPECT_FLOAT_EQ(metrics->underlinePosition, 20.7f);
+    EXPECT_FLOAT_EQ(metrics->strikeoutThickness, 5.000000f);
+    EXPECT_FLOAT_EQ(metrics->strikeoutPosition, -30.0000019f);
     // 5. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeface);

@@ -140,7 +140,7 @@ int TestMatrixCreateRotationNormal()
     // 1. OH_Drawing_MatrixCreateRotation, rotate angles deg traverse 0 degrees, 180 degrees, 360 degrees, -90 degrees,
     // -180 degrees, -360 degrees, 45.5 degrees, x\y cover decimals and integers
     float degs[] = {0, DRAWING_NUMBER_180, DRAWING_NUMBER_360, -DRAWING_NUMBER_90, -DRAWING_NUMBER_180,
-        -DRAWING_NUMBER_360, 45.5};
+        -DRAWING_NUMBER_360, 45.5f};
     float x[] = {0, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_20, DRAWING_NUMBER_20, DRAWING_NUMBER_30,
         DRAWING_NUMBER_30};
     float y[] = {0, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_20, DRAWING_NUMBER_20, DRAWING_NUMBER_30,
@@ -396,7 +396,7 @@ int TestMatrixCreateTranslationMultipleCalls()
     DrawingNativeMatrixTestSetUp();
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     // 1. Call OH_Drawing_MatrixCreateTranslation 10 times, each time with different random values for dx and dy
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float dx = dis(gen);
@@ -435,7 +435,7 @@ int TestMatrixMatrixSetGetMatrixNormal()
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), DRAWING_NUMBER_1);
     // 3. OH_Drawing_MatrixSetMatrix with floating-point parameters, calling OH_Drawing_MatrixGetAll and
     // OH_Drawing_MatrixGetValue interfaces
-    OH_Drawing_MatrixSetMatrix(matrix, 1.1, 0, 0, 0, -1.1, 0, 0, 0, 1.1);
+    OH_Drawing_MatrixSetMatrix(matrix, 1.1f, 0, 0, 0, -1.1f, 0, 0, 0, 1.1f);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     OH_Drawing_ErrorCode code2 = OH_Drawing_MatrixGetAll(matrix, value);
@@ -616,7 +616,7 @@ int TestMatrixMatrixSetGetMatrixMultipleCalls()
     // OH_Drawing_MatrixGetAll and OH_Drawing_MatrixGetValue interfaces
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float value[DRAWING_NUMBER_9];
         float val0 = dis(gen);
@@ -768,7 +768,7 @@ int TestMatrixTranslateMultipleCalls()
     // 2. OH_Drawing_MatrixTranslate, passing in random numbers for dx and dy
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float dx = dis(gen);
         float dy = dis(gen);
@@ -814,7 +814,7 @@ int TestMatrixRotateNormal()
     OH_Drawing_MatrixRotate(matrix, -DRAWING_NUMBER_360, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    OH_Drawing_MatrixRotate(matrix, 45.5, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
+    OH_Drawing_MatrixRotate(matrix, 45.5f, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Free memory
@@ -922,7 +922,7 @@ int TestMatrixRotateMultipleCalls()
     // 2. OH_Drawing_MatrixRotate, passing in random numbers for degree, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float degree = dis(gen);
         float px = dis(gen);
@@ -1096,7 +1096,7 @@ int TestMatrixCreateScaleMultipleCalls()
     // execution
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float sx = dis(gen);
         float sy = dis(gen);
@@ -1247,7 +1247,7 @@ int TestMatrixScaleMultipleCalls()
     // 2. Call OH_Drawing_MatrixCreateScale 10 times with random numbers for sx, sy, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float sx = dis(gen);
         float sy = dis(gen);
@@ -1361,7 +1361,7 @@ int TestMatrixSetRectToRectMultipleCalls()
     // 2. Call OH_Drawing_MatrixSetRectToRect 10 times with random enum values and different rect sizes
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     OH_Drawing_ScaleToFit fitList[] = {
         SCALE_TO_FIT_FILL,
         SCALE_TO_FIT_START,
@@ -1418,7 +1418,7 @@ int TestMatrixPreRotateNormal()
     OH_Drawing_MatrixPreRotate(matrix, -DRAWING_NUMBER_360, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    OH_Drawing_MatrixPreRotate(matrix, 45.5, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
+    OH_Drawing_MatrixPreRotate(matrix, 45.5f, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Free memory
@@ -1528,7 +1528,7 @@ int TestMatrixPreRotateMultipleCalls()
     // 2. OH_Drawing_MatrixPreRotate, pass in random numbers for degree, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float degree = dis(gen);
         float px = dis(gen);
@@ -1679,7 +1679,7 @@ int TestMatrixPreScaleMultipleCalls()
     // 2. Call OH_Drawing_MatrixCreateScale 10 times, passing in random numbers for sx, sy, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float sx = dis(gen);
         float sy = dis(gen);
@@ -1818,7 +1818,7 @@ int TestMatrixPreTranslateMultipleCalls()
     // 2. OH_Drawing_MatrixPreTranslate, pass in random numbers for dx and dy
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float dx = dis(gen);
         float dy = dis(gen);
@@ -1865,7 +1865,7 @@ int TestMatrixPostRotateNormal()
     OH_Drawing_MatrixPostRotate(matrix, -DRAWING_NUMBER_360, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    OH_Drawing_MatrixPostRotate(matrix, 45.5, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
+    OH_Drawing_MatrixPostRotate(matrix, 45.5f, DRAWING_NUMBER_30, DRAWING_NUMBER_30);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Free memory
@@ -1975,7 +1975,7 @@ int TestMatrixPostRotateMultipleCalls()
     // 2. OH_Drawing_MatrixPostRotate, pass in random numbers for degree, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float degree = dis(gen);
         float px = dis(gen);
@@ -2125,7 +2125,7 @@ int TestMatrixPostScaleMultipleCalls()
     // 2. Call OH_Drawing_MatrixCreateScale 10 times, passing in random numbers for sx, sy, px, and py
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, DRAWING_NUMBER_100);
+    std::uniform_real_distribution<float> dis(0.0f, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         float sx = dis(gen);
         float sy = dis(gen);

@@ -159,7 +159,7 @@ int TestColorFilterCreateBlendModeAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Pass a negative value as the first parameter to OH_Drawing_ColorFilterCreateBlendMode
-    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(-1.0, BLEND_MODE_CLEAR);
+    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(-1.0f, BLEND_MODE_CLEAR);
     // add assert
     EXPECT_NE(colorFilter, nullptr);
     // 2. Free memory
@@ -226,7 +226,7 @@ int TestColorFilterCreateComposeNormal()
     // add assert
     EXPECT_NE(colorFilter4, nullptr);
     // 6. Call OH_Drawing_ColorFilterCreateMatrix to create colorFilter5
-    const float matrix[DRAWING_NUMBER_20] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0};
+    const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0};
     OH_Drawing_ColorFilter *colorFilter5 = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_NE(colorFilter5, nullptr);
@@ -335,7 +335,7 @@ int TestColorFilterCreateComposeMultipleCalls()
 int TestColorFilterCreateMatrixNormal()
 {
     DrawingNativeColorFilterTestSetUp();
-    const float matrix[DRAWING_NUMBER_20] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5f, 0};
+    const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
@@ -381,13 +381,13 @@ int TestColorFilterCreateMatrixNULL()
 int TestColorFilterCreateMatrixAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
-    const float matrix[DRAWING_NUMBER_19] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5f};
+    const float matrix[DRAWING_NUMBER_19] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_NE(colorFilter, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
 
-    const float matrix2[DRAWING_NUMBER_21] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5f, 0, 0};
+    const float matrix2[DRAWING_NUMBER_21] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0, 0};
     OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateMatrix(matrix2);
     // add assert
     EXPECT_NE(colorFilter2, nullptr);
@@ -411,7 +411,7 @@ int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const float matrix[DRAWING_NUMBER_20] = {1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0.5, 0};
+        const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);

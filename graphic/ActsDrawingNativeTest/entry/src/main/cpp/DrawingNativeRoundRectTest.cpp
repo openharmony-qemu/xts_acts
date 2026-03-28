@@ -237,10 +237,10 @@ int TestRoundRectSetGetCornerNormal()
     EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_10), true);
     // 4. OH_Drawing_RoundRectSetCorner with decimal values for x and y radii, and call OH_Drawing_RoundRectGetCorner to
     // retrieve the values
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {10.1, 10.1});
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {10.1f, 10.1f});
     OH_Drawing_Corner_Radii radiiDRAWING_NUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.x, 10.1), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.y, 10.1), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.x, 10.1f), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.y, 10.1f), true);
     // 5. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);

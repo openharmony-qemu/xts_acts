@@ -715,7 +715,7 @@ int TestShaderEffectCreateRadialGradientNormal()
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateRadialGradient
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     OH_Drawing_TileMode modes[] = {
         CLAMP,
         REPEAT,
@@ -758,7 +758,7 @@ int TestShaderEffectCreateRadialGradientNull()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. OH_Drawing_ShaderEffectCreateRadialGradient with the first parameter set to nullptr, check the error code
     // using OH_Drawing_ErrorCodeGet
     OH_Drawing_ShaderEffect *effect = OH_Drawing_ShaderEffectCreateRadialGradient(nullptr, DRAWING_NUMBER_100, colors,
@@ -795,7 +795,7 @@ int TestShaderEffectCreateRadialGradientAbnormal()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradient with centerPt set to negative values
     OH_Drawing_Point *point2 = OH_Drawing_PointCreate(-DRAWING_NUMBER_100, -DRAWING_NUMBER_100);
     OH_Drawing_ShaderEffect *effect = OH_Drawing_ShaderEffectCreateRadialGradient(point2, DRAWING_NUMBER_100, colors,
@@ -852,7 +852,7 @@ int TestShaderEffectCreateRadialGradientMaximum()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradient with centerPt set to maximum values
     OH_Drawing_Point *point2 = OH_Drawing_PointCreate(FLT_MAX, FLT_MAX);
     OH_Drawing_ShaderEffect *effect = OH_Drawing_ShaderEffectCreateRadialGradient(point2, DRAWING_NUMBER_100, colors,
@@ -908,7 +908,7 @@ int TestShaderEffectCreateRadialGradientMultipleCalls()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradient 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ShaderEffect *effect =
@@ -1050,7 +1050,7 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with radius set to negative values
     centerPt = {DRAWING_NUMBER_100, 0};
-    radius = -5.0;
+    radius = -5.0f;
     OH_Drawing_ShaderEffect *effect2 =
         OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix(&centerPt, radius, colors, pos, DRAWING_NUMBER_3,
             CLAMP, matrix);
@@ -1195,7 +1195,7 @@ int TestShaderEffectCreateSweepGradientNormal()
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateSweepGradient
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     OH_Drawing_TileMode modes[] = {
         CLAMP,
         REPEAT,
@@ -1236,7 +1236,7 @@ int TestShaderEffectCreateSweepGradientNull()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateSweepGradient with the first parameter set to nullptr and check the error
     // code using OH_Drawing_ErrorCodeGet
     OH_Drawing_ShaderEffect *effect = OH_Drawing_ShaderEffectCreateSweepGradient(nullptr, colors, pos, DRAWING_NUMBER_3,
@@ -1269,7 +1269,7 @@ int TestShaderEffectCreateSweepGradientAbnormal()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateSweepGradient with centerPt set to negative values
     OH_Drawing_Point *centerPt2 = OH_Drawing_PointCreate(-DRAWING_NUMBER_1, -DRAWING_NUMBER_1);
     OH_Drawing_ShaderEffect *sweepGradientEffect =
@@ -1318,7 +1318,7 @@ int TestShaderEffectCreateSweepGradientMaximum()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateSweepGradient with centerPt set to a large number
     OH_Drawing_Point *centerPt2 = OH_Drawing_PointCreate(FLT_MAX, FLT_MAX);
     OH_Drawing_ShaderEffect *sweepGradientEffect =
@@ -1367,7 +1367,7 @@ int TestShaderEffectCreateSweepGradientMultipleCalls()
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     uint32_t colors[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00, DRAWING_NUMBER_0XFF0000FF};
-    float pos[] = {0, 0.5, 1.0};
+    float pos[] = {0, 0.5f, 1.0f};
     // 1. Call OH_Drawing_ShaderEffectCreateSweepGradient 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ShaderEffect *sweepGradientEffect =
@@ -1641,7 +1641,7 @@ int TestShaderEffectCreateTwoPointConicalGradientAbnormal()
         DRAWING_NUMBER_0XFFFFFF00};
     float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           
     float startRadius = DRAWING_NUMBER_5;
-    float endRadius = DRAWING_NUMBER_10; 
+    float endRadius = DRAWING_NUMBER_10;
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
@@ -1794,7 +1794,7 @@ int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
     OH_Drawing_Point2D startPt = {0, 0};
-    OH_Drawing_Point2D endPt = {100.f, 0}; 
+    OH_Drawing_Point2D endPt = {100.f, 0};
     uint32_t colors[DRAWING_NUMBER_3] = {DRAWING_NUMBER_0XFF00FFFF, DRAWING_NUMBER_0XFFFF00FF,
         DRAWING_NUMBER_0XFFFFFF00};
     float pos[3] = {0.0f, 0.5f, 1.0f};           // 0.5f: g    float pos[DRAWING_NUMBER_3] = {0.0f, 0.5f, 1.0f};           

@@ -955,7 +955,7 @@ int TestCanvasDrawShadowNormal()
         SHADOW_FLAGS_GEOMETRIC_ONLY,
         SHADOW_FLAGS_ALL,
     };
-    OH_Drawing_Point3D p1{0.0, 0.0, 0.0};
+    OH_Drawing_Point3D p1{0.0f, 0.0f, 0.0f};
     OH_Drawing_Point3D p2{DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10};
     for (int i = 0; i < sizeof(flags) / sizeof(flags[0]); i++) {
         OH_Drawing_ErrorCodeReset();
@@ -990,7 +990,7 @@ int TestCanvasDrawShadowNull()
     // add assert
     EXPECT_NE(path, nullptr);
     // 3. OH_Drawing_CanvasDrawShadow with the first parameter as null
-    OH_Drawing_Point3D p1{0.0, 0.0, 0.0};
+    OH_Drawing_Point3D p1{0.0f, 0.0f, 0.0f};
     OH_Drawing_Point3D p2{DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10};
     OH_Drawing_CanvasDrawShadow(nullptr, path, p1, p2, DRAWING_NUMBER_10, 0xFF000000, 0xFF000000, SHADOW_FLAGS_ALL);
     // add assert
@@ -1041,7 +1041,7 @@ int TestCanvasDrawShadowAbnormal()
     OH_Drawing_Point3D p2{DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10};
     OH_Drawing_CanvasDrawShadow(canvas, path, p1, p2, DRAWING_NUMBER_10, 0xFF000000, 0xFF000000, SHADOW_FLAGS_ALL);
     // 4. OH_Drawing_CanvasDrawShadow, the fourth parameter devLightPos x, y, z are set to negative values
-    OH_Drawing_Point3D p3{0.0, 0.0, 0.0};
+    OH_Drawing_Point3D p3{0.0f, 0.0f, 0.0f};
     OH_Drawing_Point3D p4{-DRAWING_NUMBER_10, -DRAWING_NUMBER_10, -DRAWING_NUMBER_10};
     OH_Drawing_CanvasDrawShadow(canvas, path, p3, p4, DRAWING_NUMBER_10, 0xFF000000, 0xFF000000, SHADOW_FLAGS_ALL);
     // 5. OH_Drawing_CanvasDrawShadow, the fifth parameter lightRadius is set to a negative value

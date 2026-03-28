@@ -235,7 +235,7 @@ int TestPathGetPositionTangentNull()
     // 3. Call OH_Drawing_PathGetPositionTangent with the third parameter as 0.00, no crash
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
-    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, true, 0.00, &position, &tangent);
+    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, true, 0.00f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess, false);
     // 4. Call OH_Drawing_PathGetPositionTangent with the fourth parameter as nullptr, expect
@@ -582,7 +582,7 @@ int TestPathGetMatrixNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathGetMatrix with the third parameter as 0.00, the call should fail without crashing
-    bool getMatrix = OH_Drawing_PathGetMatrix(path, true, 0.00, matrix, GET_POSITION_MATRIX);
+    bool getMatrix = OH_Drawing_PathGetMatrix(path, true, 0.00f, matrix, GET_POSITION_MATRIX);
     // add assert
     EXPECT_EQ(getMatrix, false);
     // 5. Call OH_Drawing_PathGetMatrix with the fourth parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
@@ -1316,7 +1316,7 @@ int TestPathApproximateNormal()
     OH_Drawing_PathMoveTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
-    float acceptableError = 0.1;
+    float acceptableError = 0.1f;
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
@@ -1324,11 +1324,11 @@ int TestPathApproximateNormal()
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
     EXPECT_EQ(count, DRAWING_NUMBER_6);
     EXPECT_EQ(vals[0], 0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_1], 100.0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_2], 100.0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_3], 1.0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_4], 200.0);
-    EXPECT_EQ(vals[DRAWING_NUMBER_5], 200.0);
+    EXPECT_EQ(vals[DRAWING_NUMBER_1], 100.0f);
+    EXPECT_EQ(vals[DRAWING_NUMBER_2], 100.0f);
+    EXPECT_EQ(vals[DRAWING_NUMBER_3], 1.0f);
+    EXPECT_EQ(vals[DRAWING_NUMBER_4], 200.0f);
+    EXPECT_EQ(vals[DRAWING_NUMBER_5], 200.0f);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1350,7 +1350,7 @@ int TestPathApproximateNull()
     // 1. Create a path object using OH_Drawing_PathCreate.
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
     EXPECT_NE(path, nullptr);
-    float acceptableError = 0.1;
+    float acceptableError = 0.1f;
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
@@ -1396,12 +1396,12 @@ int TestPathApproximateAbnormal()
     OH_Drawing_PathMoveTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
-    float acceptableError = 0.1;
+    float acceptableError = 0.1f;
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
     // 4. AcceptableError lesses than 0.
-    errorCode = OH_Drawing_PathApproximate(path, -0.1, vals, &count);
+    errorCode = OH_Drawing_PathApproximate(path, -0.1f, vals, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 3. The length of the array is greater than the length of the actual return point.
     uint32_t count1 = DRAWING_NUMBER_10;
@@ -1435,7 +1435,7 @@ int TestPathApproximateMultiCalls()
     OH_Drawing_PathMoveTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
-    float acceptableError = 0.1;
+    float acceptableError = 0.1f;
     uint32_t count = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
@@ -1486,11 +1486,11 @@ int TestPathInterpolateNormal()
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 10. Call the interface OH_Drawing_PathInterpolate to verify the straight line and the straight line.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 1.0, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 1.0f, &result, interpolatePath);
     EXPECT_EQ(result, true);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 11. Call the interface OH_Drawing_PathInterpolate to verify straight line and arc.
-    errorCode = OH_Drawing_PathInterpolate(path, other2, 1.0, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other2, 1.0f, &result, interpolatePath);
     EXPECT_EQ(result, false);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 9. Free the memory.
@@ -1524,7 +1524,7 @@ int TestPathInterpolateNull()
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 4. Call the interface OH_Drawing_PathInterpolate to verify the interpolation of the empty path.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, 0.5, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 4. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50);
@@ -1535,19 +1535,19 @@ int TestPathInterpolateNull()
     // 7. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(other, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
     // 8. The first parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathInterpolate(nullptr, other, 0.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(nullptr, other, 0.5f, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 9. The second parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathInterpolate(path, nullptr, 0.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, nullptr, 0.5f, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 10. The third parameter of the verification interface is passed as 0.
     errorCode = OH_Drawing_PathInterpolate(path, other, 0, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 11. The forth parameter of the verification interface is passed as a null pointer
-    errorCode = OH_Drawing_PathInterpolate(path, other, 0.5, nullptr, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, nullptr, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 12. The fifth parameter of the verification interface is passed as a null pointer.
-    errorCode = OH_Drawing_PathInterpolate(path, other, 0.5, &result, nullptr);
+    errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, &result, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 13. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1587,10 +1587,10 @@ int TestPathInterpolateAbnormal()
     EXPECT_NE(interpolatePath, nullptr);
     // 8. The third parameter of the verification interface is passed as a negative number.
     bool result = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -1.0, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -1.0f, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 9. The third parameter of the verification interface is passed as a number greater than 1.
-    errorCode = OH_Drawing_PathInterpolate(path, other, 2.0, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other, 2.0f, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 10. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1632,7 +1632,7 @@ int TestPathInterpolateMultiCalls()
     bool result = false;
     OH_Drawing_ErrorCode errorCode;
     for (int i = 0; i < 10; i++) {
-        errorCode = OH_Drawing_PathInterpolate(path, other, 0.5, &result, interpolatePath);
+        errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, &result, interpolatePath);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     // 9. Free the memory.
@@ -1796,8 +1796,8 @@ int TestPathIsInverseFillTypeNormalOne()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 200.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1808,8 +1808,8 @@ int TestPathIsInverseFillTypeNormalOne()
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 600.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1841,8 +1841,8 @@ int TestPathIsInverseFillTypeNormalTwo()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 200.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1853,8 +1853,8 @@ int TestPathIsInverseFillTypeNormalTwo()
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 600.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1886,8 +1886,8 @@ int TestPathIsInverseFillTypeNormalThree()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 200.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xFFFF0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1898,8 +1898,8 @@ int TestPathIsInverseFillTypeNormalThree()
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 600.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xFF00FF00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1931,8 +1931,8 @@ int TestPathIsInverseFillTypeNormalFour()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 200.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_0XFFFFFFFF);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -1943,8 +1943,8 @@ int TestPathIsInverseFillTypeNormalFour()
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 600.0f, 200.0f, 100.0f, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0f, 300.0f, 100.0f, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_0XFF00FF00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
