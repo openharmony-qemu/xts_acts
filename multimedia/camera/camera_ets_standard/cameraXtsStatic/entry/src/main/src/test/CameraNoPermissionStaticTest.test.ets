@@ -91,8 +91,8 @@ export default function cameraNoPermissionStaticTest() {
         })
 
         /**
-         * @tc.number CameraManager_createCameraInput_Static_001
-         * @tc.name CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_001
+         * @tc.name CameraManager_createCameraInput_Static_001
+         * @tc.number CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_001
          * @tc.desc  CameraManager-createCameraInput with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
@@ -113,8 +113,8 @@ export default function cameraNoPermissionStaticTest() {
         })
 
         /**
-         * @tc.number CameraManager_createCameraInput_Static_002
-         * @tc.name CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_002
+         * @tc.name CameraManager_createCameraInput_Static_002
+         * @tc.number CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_002
          * @tc.desc  CameraManager-createCameraInput with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
@@ -135,8 +135,8 @@ export default function cameraNoPermissionStaticTest() {
         })
 
         /**
-         * @tc.number PhotoOutput_enableMovingPhoto_Static_001
-         * @tc.name PHOTO_OUTPUT_ENABLE_MOVINGPHOTO_Static_001
+         * @tc.name PhotoOutput_enableMovingPhoto_Static_001
+         * @tc.number PHOTO_OUTPUT_ENABLE_MOVINGPHOTO_Static_001
          * @tc.desc  PhotoOutput-enableMovingPhoto with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
