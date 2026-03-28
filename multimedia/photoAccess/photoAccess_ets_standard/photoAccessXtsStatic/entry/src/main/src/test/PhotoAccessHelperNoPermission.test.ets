@@ -446,7 +446,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
 
         /**
          * @tc.name   mediaAssetChangeRequest_deleteAssets_static_001
-         * @tc.number SUB_MEDIA_ASSET_MANAGER_CANCEL_REQUEST_STATIC_0001
+         * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_STATIC_0001
          * @tc.desc   mediaAssetChangeRequest-deleteAssets(promise) with no permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -470,7 +470,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
 
         /**
          * @tc.name   mediaAssetChangeRequest_deleteAssetsToTrashWithUris_static_001
-         * @tc.number SUB_MEDIA_ASSET_MANAGER_CANCEL_REQUEST_STATIC_0001
+         * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_TO_TRASH_WITH_URIS_STATIC_0001
          * @tc.desc   mediaAssetChangeRequest-deleteAssetsToTrashWithUris(promise) with no permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -495,7 +495,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
 
         /**
          * @tc.name   mediaAssetChangeRequest_getWriteCacheHandler_static_001
-         * @tc.number SUB_MEDIA_ASSET_MANAGER_CANCEL_REQUEST_STATIC_0001
+         * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_STATIC_0001
          * @tc.desc   mediaAssetChangeRequest-getWriteCacheHandler(promise) with no permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
