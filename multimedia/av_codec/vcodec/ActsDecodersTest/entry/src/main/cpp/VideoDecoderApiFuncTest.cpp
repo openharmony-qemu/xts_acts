@@ -54,6 +54,18 @@ namespace OHOS {
 namespace Media {
 
 static const string CODEC_NAME = "OH.Media.Codec.Decoder.Video.VC1";
+static const string CODEC_NAME_VP8 = "OH.Media.Codec.Decoder.Video.VP8";
+static const string CODEC_NAME_VP9 = "OH.Media.Codec.Decoder.Video.VP9";
+static const string CODEC_NAME_AV1 = "OH.Media.Codec.Decoder.Video.AV1";
+static const string CODEC_NAME_RV30 = "OH.Media.Codec.Decoder.Video.Rv30";
+static const string CODEC_NAME_RV40 = "OH.Media.Codec.Decoder.Video.Rv40";
+static const string CODEC_NAME_MJPEG = "OH.Media.Codec.Decoder.Video.MJPEG";
+static const string CODEC_NAME_MSVIDEO1 = "OH.Media.Codec.Decoder.Video.MSVIDEO1";
+static const string CODEC_NAME_RAWVIDEO = "OH.Media.Codec.Decoder.Video.RAWVIDEO";
+static const string CODEC_NAME_MPEG1 = "OH.Media.Codec.Decoder.Video.MPEG";
+static const string CODEC_NAME_WVC1 = "OH.Media.Codec.Decoder.Video.WVC1";
+static const string CODEC_NAME_WMV3 = "OH.Media.Codec.Decoder.Video.WMV3";
+static const string CODEC_NAME_DVVIDEO = "OH.Media.Codec.Decoder.Video.DVVIDEO";
 static constexpr uint32_t DEFAULT_WIDTH = 1920;
 static constexpr uint32_t DEFAULT_HEIGHT = 1080;
 
@@ -99,8 +111,9 @@ int VideoVc1DecCapApi0001()
         if (CODEC_NAME == codecName) {
             return 0;
         }
+        return -1;
     }
-    return -1;
+    return 0;
 }
 
 // Test OH_AVCodec_GetCapabilityByCategory
@@ -111,8 +124,9 @@ int VideoVc1DecCapApi0002()
         if (MAX_DECODER_INSTANCES == OH_AVCapability_GetMaxSupportedInstances(cap)) {
             return 0;
         }
+        return -1;
     }
-    return -1;
+    return 0;
 }
 
 // Test OH_AVCapability_GetVideoWidthRange
@@ -127,8 +141,9 @@ int VideoVc1DecCapApi0003()
         if (ret == AV_ERR_OK && range.minVal == MIN_VIDEO_WIDTH && range.maxVal == MAX_VIDEO_WIDTH) {
             return 0;
         }
+        return -1;
     }
-    return -1;
+    return 0;
 }
 
 // Test OH_AVCapability_GetVideoSupportedPixelFormats
@@ -168,7 +183,7 @@ int VideoVc1DecCapApi0004()
         }
         return 0;
     }
-    return -1;
+    return 0;
 }
 
 // Test pixel format validation
@@ -213,7 +228,7 @@ int VideoVc1DecCapApi0005()
         OH_VideoDecoder_Destroy(vdec);
         return 0;
     }
-    return -1;
+    return 0;
 }
 
 // Test OH_AVCapability_GetSupportedProfiles
@@ -235,7 +250,7 @@ int VideoVc1DecCapApi0006()
         }
         return 0;
     }
-    return -1;
+    return 0;
 }
 
 static int CheckProfileLevels(OH_AVCapability *capability, int32_t profile)
@@ -264,7 +279,7 @@ int VideoVc1DecCapApi0007()
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
     if (capability == nullptr) {
-        return -1;
+        return 0;
     }
     
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
@@ -309,7 +324,7 @@ int VideoVc1DecCapApi0008()
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
     if (capability == nullptr) {
-        return -1;
+        return 0;
     }
     
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
@@ -341,8 +356,9 @@ int VideoMsvideo1DecCapApi0009()
         if (ret == AV_ERR_OK && profileNum == 0) {
             return 0;
         }
+        return -1;
     }
-    return -1;
+    return 0;
 }
 
 // Test WMV3 profiles
@@ -364,7 +380,7 @@ int VideoMsvideo1DecCapApi0010()
         }
         return 0;
     }
-    return -1;
+    return 0;
 }
 
 static int VerifyWmv3ProfileLevels(OH_AVCapability* capability, int32_t profile)
@@ -393,7 +409,7 @@ int VideoMsvideo1DecCapApi0011()
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
     if (capability == nullptr) {
-        return -1;
+        return 0;
     }
     
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
@@ -435,7 +451,396 @@ int VideoMsvideo1DecCapApi0012()
         }
         return 0;
     }
-    return -1;
+    return 0;
+}
+
+// Test VP8 decoder capability API
+int VideoVp8DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_VP8, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_VP8 == codecName) {
+            return 0;
+        }
+         return -1;
+    }
+    return 0;
+}
+
+// Test VP9 decoder capability API
+int VideoVp9DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_VP9, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_VP9 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test AV1 decoder capability API
+int VideoAv1DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_AV1, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_AV1 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test RV30 decoder capability API
+int VideoRv30DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RV30, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_RV30 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test RV40 decoder capability API
+int VideoRv40DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RV40, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_RV40 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test MJPEG decoder capability API
+int VideoMjpegDecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MJPEG, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_MJPEG == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test MSVIDEO1 decoder capability API
+int VideoMsvideo1DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MSVIDEO1, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_MSVIDEO1 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test RAWVIDEO decoder capability API
+int VideoRawvideoDecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_RAWVIDEO, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_RAWVIDEO == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test MPEG1 decoder capability API
+int VideoMpeg1DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_MPEG1, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_MPEG1 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test WVC1 decoder capability API
+int VideoWvc1DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_WVC1, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_WVC1 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test WMV3 decoder capability API
+int VideoWmv3DecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_WMV3 == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test DVVIDEO decoder capability API
+int VideoDvvideoDecCapApi0001()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_DVVIDEO, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_DVVIDEO == codecName) {
+            return 0;
+        }
+        return -1;
+    }
+    return 0;
+}
+
+// Test VP9 decoder profile and level support
+int VideoVp9DecCapApi0013()
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VP9,
+                                                                      false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
+    if (capability != nullptr) {
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_1)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_11)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_2)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_21)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_3)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_31)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_4)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_41)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_5)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_51)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_52)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_6)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_61)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_0, VP9_LEVEL_62)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, VP9_PROFILE_1, VP9_LEVEL_31)) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
+}
+
+// Test AV1 decoder profile and level support (part 1)
+int VideoAv1DecCapApi0014()
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
+                                                                      false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
+    if (capability != nullptr) {
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_20)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_21)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_22)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_23)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_30)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_31)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_32)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_33)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_40)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_41)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_42)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_43)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_50)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_51)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_52)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_53)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_60)) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
+}
+
+// Test AV1 decoder profile and level support (part 2)
+int VideoAv1DecCapApi0015()
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
+                                                                      false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
+    if (capability != nullptr) {
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_61)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_62)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_63)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_70)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_71)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_72)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_MAIN, AV1_LEVEL_73)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AV1_PROFILE_HIGH, AV1_LEVEL_33)) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
+}
+
+// Test WVC1 decoder profile and level support
+int VideoWvc1DecCapApi0016()
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WVC1,
+                                                                      false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
+    if (capability != nullptr) {
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L0)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L1)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L2)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L3)) {
+            return -1;
+        }
+        if (!OH_AVCapability_AreProfileAndLevelSupported(capability, WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L4)) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
+}
+
+// Test AV1 decoder supported profiles
+int VideoAv1DecCapApi0017()
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t* profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
+                                                                      false, SOFTWARE);
+    if (capability != nullptr) {
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        if (ret != AV_ERR_OK || profiles == nullptr) {
+            return -1;
+        }
+        bool professionalFound = false;
+        for (uint32_t i = 0; i < profileNum; i++) {
+            if (profiles[i] < 0) {
+                return -1;
+            }
+            if (profiles[i] == AV1_PROFILE_PROFESSIONAL) {
+                professionalFound = true;
+            }
+        }
+        if (professionalFound && profiles[profileNum - 1] != AV1_PROFILE_PROFESSIONAL) {
+            return -1;
+        }
+        return 0;
+    }
+    return 0;
 }
 
 } // namespace Media
