@@ -637,7 +637,7 @@ int VideoDvvideoDecCapApi0001()
 int VideoVp9DecCapApi0013()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VP9,
-                                                                      false, SOFTWARE);
+                                                                     false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -660,7 +660,7 @@ int VideoVp9DecCapApi0013()
 int VideoAv1DecCapApi0014()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                                                                      false, SOFTWARE);
+                                                                     false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -680,7 +680,7 @@ int VideoAv1DecCapApi0014()
 int VideoAv1DecCapApi0015()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                                                                      false, SOFTWARE);
+                                                                     false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -718,7 +718,7 @@ int VideoAv1DecCapApi0015()
 int VideoWvc1DecCapApi0016()
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WVC1,
-                                                                      false, SOFTWARE);
+                                                                     false, SOFTWARE);
     if (capability == nullptr) {
         return 0;
     }
@@ -750,7 +750,7 @@ int VideoAv1DecCapApi0017()
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1,
-                                                                      false, SOFTWARE);
+                                                                     false, SOFTWARE);
     if (capability != nullptr) {
         ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         if (ret != AV_ERR_OK || profiles == nullptr) {
