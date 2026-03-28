@@ -53,8 +53,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_003
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_003
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -67,8 +67,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_004
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_004
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,8 +81,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_005
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_005
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,8 +95,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_006
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_006
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,8 +109,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_007
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_007
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,8 +123,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_008
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_008
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,8 +137,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_009
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_009
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,8 +151,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_010
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_010
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,8 +165,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_011
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_011
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -179,8 +179,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_012
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_012
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,8 +193,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_013
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_013
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,8 +207,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_014
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_014
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -221,8 +221,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_015
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_015
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,8 +235,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_016
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_016
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,8 +249,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_017
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_017
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,8 +263,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_018
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_018
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,8 +277,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_019
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_019
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,8 +291,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_020
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_020
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -305,8 +305,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_001
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_021
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_021
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,8 +319,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_022
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_022
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,8 +333,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_023
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_023
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,8 +347,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_024
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_024
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -361,8 +361,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_025
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_025
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,8 +375,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_026
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_026
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,8 +389,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_027
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_027
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -403,8 +403,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_028
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_028
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -417,8 +417,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_029
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_029
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -431,8 +431,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_030
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_030
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,8 +445,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_031
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_031
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -459,8 +459,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_032
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_032
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -473,8 +473,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_033
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_033
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,8 +487,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_034
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_034
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -501,8 +501,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_035
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_035
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -515,8 +515,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_036
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_036
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,8 +529,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_037
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_037
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,8 +543,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_038
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_038
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -557,8 +557,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_039
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_039
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -571,8 +571,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_040
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_040
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -585,8 +585,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_041
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_041
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -599,8 +599,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_042
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_042
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -613,8 +613,8 @@ export default function OhHiAppEventSetEventConfig() {
     });
 
     /**
-     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
-     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_002
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
      * @tc.desc   test OH_HiAppEvent_Write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
