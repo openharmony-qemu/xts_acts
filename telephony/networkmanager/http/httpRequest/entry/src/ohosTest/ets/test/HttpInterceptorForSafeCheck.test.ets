@@ -443,7 +443,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           ExpectTrue(result == 401);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor failed, result1:${result1}`);
           ExpectTrue(result == 401);
-          console.info(`${TAG} ${caseName} AddWritableResponseInterceptor failed, result4:${result4}`);
           done();
         } catch (error) {
           const err: BusinessError = error as BusinessError;
@@ -471,7 +470,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          ExpectTrue(result == 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -520,7 +518,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(12, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          ExpectTrue(result == 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST,
@@ -568,7 +565,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(13, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          ExpectTrue(result == 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST,
@@ -616,7 +612,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(11, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          ExpectTrue(result == 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -663,7 +658,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let addReadOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(14, 1);
           ExpectTrue(addReadOnlyResult == 0);
           console.info(`${TAG} ${caseName}AddReadOnlyRequestInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
-          ExpectTrue(result == 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -1203,7 +1197,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           let readOnlyResult: number = testNetManager.AddReadOnlyRequestInterceptor(10, 1);
           ExpectTrue(readOnlyResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyRequestInterceptor success, readOnlyResult:${readOnlyResult}`);
-          ExpectTrue(result == 0);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
           ExpectTrue(readOnlyResResult == 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
@@ -1279,7 +1272,9 @@ export default function HttpInterceptorForSafeCheckTest() {
           let reqArr: Array<number> = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14];
           reqArr.forEach((item: number) => {
             if (item < 5) {
-              ExpectTrue(result === 0);
+              ExpectFail();
+              httpRequest.destroy();
+              done();
             } else {
               let result1:number = testNetManager.AddReadOnlyRequestInterceptor(item, 1);
               ExpectTrue(result1 === 0);
