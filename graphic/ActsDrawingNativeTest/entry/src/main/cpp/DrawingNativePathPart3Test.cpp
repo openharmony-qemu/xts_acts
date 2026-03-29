@@ -693,7 +693,7 @@ int TestPathGetSegmentNormal()
     OH_Drawing_Path *dstPath = OH_Drawing_PathCreate();
     EXPECT_NE(dstPath, nullptr);
     bool result = false;
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     // 5. Parameter enumeration traversal
     errorCode = OH_Drawing_PathGetSegment(path, true, DRAWING_NUMBER_120, DRAWING_NUMBER_180, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -737,7 +737,7 @@ int TestPathGetSegmentNull()
     OH_Drawing_Path *dstPath = OH_Drawing_PathCreate();
     EXPECT_NE(dstPath, nullptr);
     bool result = false;
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     // 5. The function OH_Drawing_PathGetSegment passes a null pointer to the first argument
     errorCode = OH_Drawing_PathGetSegment(nullptr, false, DRAWING_NUMBER_120, DRAWING_NUMBER_180, true, dstPath,
         &result);
@@ -789,7 +789,7 @@ int TestPathGetSegmentAbnormal()
     OH_Drawing_Path *dstPath = OH_Drawing_PathCreate();
     EXPECT_NE(dstPath, nullptr);
     bool result = false;
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     // 5. The third argument of the function OH_Drawing_PathGetSegment passes a negative number
     errorCode = OH_Drawing_PathGetSegment(path, false, -DRAWING_NUMBER_50, DRAWING_NUMBER_180, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -836,7 +836,7 @@ int TestPathGetSegmentMultiplies()
     OH_Drawing_Path *dstPath = OH_Drawing_PathCreate();
     EXPECT_NE(dstPath, nullptr);
     bool result = false;
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     // 5. The function OH_Drawing_PathGetSegment is called 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode =
@@ -910,7 +910,7 @@ int TestPathSetPathNull()
     OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_150,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath passes to nullptr.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     errorCode = OH_Drawing_PathSetPath(nullptr, other);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     errorCode = OH_Drawing_PathSetPath(path, nullptr);
@@ -947,7 +947,7 @@ int TestPathSetPathMulptiCalls()
     OH_Drawing_PathAddCircle(other, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_150,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath is called 10 times.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathSetPath(path, other);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1012,7 +1012,7 @@ int TestPathIsEmptyNull()
     // 4. Initialization of variable.
     bool isEmpty = false;
     // 5. The function OH_Drawing_PathIsEmpty passes to nullptr.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     errorCode = OH_Drawing_PathIsEmpty(nullptr, &isEmpty);
     EXPECT_EQ(isEmpty, false);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -1047,7 +1047,7 @@ int TestPathIsEmptyMultipleCalls()
     // 4. Initialization of variable.
     bool isEmpty = true;
     // 5. The function OH_Drawing_PathIsEmpty is called 10 times.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsEmpty(path, &isEmpty);
         EXPECT_EQ(isEmpty, false);
@@ -1170,7 +1170,7 @@ int TestPathIsRectMultipleCalls()
     // 5. Initialization of variable.
     bool isRect = true;
     // 6. The interface OH_Drawing_PathIsRect is called 10 times.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsRect(path, rect, &isRect);
         EXPECT_EQ(isRect, false);
@@ -1287,7 +1287,7 @@ int TestPathGetFillTypeMultipleCalls()
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_200);
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // 4. The function OH_Drawing_PathIsEmpty is called 10 times.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     OH_Drawing_PathFillType pathFillType = PATH_FILL_TYPE_WINDING;
     OH_Drawing_PathSetFillType(path, pathFillType);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -1323,7 +1323,7 @@ int TestPathApproximateNormal()
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
     if (count == 0 || count > MAX_ALLOWED_SIZE) {
-        return DRAWING_NUMBER_1;
+        return -DRAWING_NUMBER_1;
     } else {
         // 4. The interface OH_Drawing_PathApproximate is called normally.
         errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
@@ -1361,7 +1361,7 @@ int TestPathApproximateNull()
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
     if (count == 0 || count > MAX_ALLOWED_SIZE) {
-        return DRAWING_NUMBER_1;
+        return -DRAWING_NUMBER_1;
     } else {
         // 2. Verify the empty path.
         errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
@@ -1411,7 +1411,7 @@ int TestPathApproximateAbnormal()
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
     if (count == 0 || count > MAX_ALLOWED_SIZE) {
-        return DRAWING_NUMBER_1;
+        return -DRAWING_NUMBER_1;
     } else {
         // 4. AcceptableError lesses than 0.
         errorCode = OH_Drawing_PathApproximate(path, -0.1f, vals, &count);
@@ -1454,7 +1454,7 @@ int TestPathApproximateMultiCalls()
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     float *vals = new float[count];
     if (count == 0 || count > MAX_ALLOWED_SIZE) {
-        return DRAWING_NUMBER_1;
+        return -DRAWING_NUMBER_1;
     } else {
         // 4. The interface is called in a loop 10 times.
         for (int i = 0; i < DRAWING_NUMBER_10; i++) {
@@ -1648,7 +1648,7 @@ int TestPathInterpolateMultiCalls()
     EXPECT_NE(interpolatePath, nullptr);
     // 8. The interface is called in a loop 10 times.
     bool result = false;
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathInterpolate(path, other, 0.5f, &result, interpolatePath);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1781,7 +1781,7 @@ int TestPathIsInterpolateMultiCalls()
     OH_Drawing_PathLineTo(other, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
     bool result = false;
     // 7. The interface is called in a loop 10 times.
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_PathIsInterpolate(path, other, &result);
         EXPECT_EQ(result, true);

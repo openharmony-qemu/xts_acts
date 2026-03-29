@@ -813,6 +813,39 @@ int TestCanvasGetTotalMatrixNull()
     return OH_DRAWING_SUCCESS;
 }
 
+void CanvasConcatMatrixAndCanvasGetTotalMatrixMultipleCalls(OH_Drawing_Canvas *canvas)
+{
+    // 8. Repeat steps 2-7 10 times
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_Matrix *matrix =
+            OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+        EXPECT_NE(matrix, nullptr);
+        OH_Drawing_CanvasConcatMatrix(canvas, matrix);
+        OH_Drawing_Matrix *totalMatrix = OH_Drawing_MatrixCreate();
+        EXPECT_NE(totalMatrix, nullptr);
+        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix);
+        OH_Drawing_Matrix *matrix2 =
+            OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_180, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
+        EXPECT_NE(matrix2, nullptr);
+        OH_Drawing_CanvasConcatMatrix(canvas, matrix2);
+        OH_Drawing_Matrix *totalMatrix2 = OH_Drawing_MatrixCreate();
+        EXPECT_NE(totalMatrix2, nullptr);
+        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix2);
+        OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+        EXPECT_NE(matrix3, nullptr);
+        OH_Drawing_CanvasConcatMatrix(canvas, matrix3);
+        OH_Drawing_Matrix *totalMatrix3 = OH_Drawing_MatrixCreate();
+        EXPECT_NE(totalMatrix3, nullptr);
+        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix3);
+        OH_Drawing_MatrixDestroy(matrix);
+        OH_Drawing_MatrixDestroy(matrix2);
+        OH_Drawing_MatrixDestroy(matrix3);
+        OH_Drawing_MatrixDestroy(totalMatrix);
+        OH_Drawing_MatrixDestroy(totalMatrix2);
+        OH_Drawing_MatrixDestroy(totalMatrix3);
+    }
+}
+
 /**
  * @tc.name   testCanvasConcatMatrixtestCanvasGetTotalMatrixMultipleCalls
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_3203
@@ -826,86 +859,38 @@ int TestCanvasConcatMatrixtestCanvasGetTotalMatrixMultipleCalls()
     DrawingNativeCanvasPart4TestSetUp();
     // 1. OH_Drawing_CanvasCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
-    // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_MatrixCreateScale
     OH_Drawing_Matrix *matrix =
         OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-    // add assert
     EXPECT_NE(matrix, nullptr);
     // 3. Call OH_Drawing_CanvasConcatMatrix to get the 3x3 matrix of the canvas by calling
-    // OH_Drawing_CanvasGetTotalMatrix
     OH_Drawing_CanvasConcatMatrix(canvas, matrix);
     OH_Drawing_Matrix *totalMatrix = OH_Drawing_MatrixCreate();
-    // add assert
     EXPECT_NE(totalMatrix, nullptr);
     OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix);
     // 4. OH_Drawing_MatrixCreateRotation
     OH_Drawing_Matrix *matrix2 =
         OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_180, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
-    // add assert
     EXPECT_NE(matrix2, nullptr);
     // 5. Call OH_Drawing_CanvasConcatMatrix to get the 3x3 matrix of the canvas by calling
-    // OH_Drawing_CanvasGetTotalMatrix
     OH_Drawing_CanvasConcatMatrix(canvas, matrix2);
     OH_Drawing_Matrix *totalMatrix2 = OH_Drawing_MatrixCreate();
-    // add assert
     EXPECT_NE(totalMatrix2, nullptr);
     OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix2);
     // 6. OH_Drawing_MatrixCreateTranslation
     OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-    // add assert
     EXPECT_NE(matrix3, nullptr);
     // 7. Call OH_Drawing_CanvasConcatMatrix to get the 3x3 matrix of the canvas by calling
-    // OH_Drawing_CanvasGetTotalMatrix
     OH_Drawing_CanvasConcatMatrix(canvas, matrix3);
     OH_Drawing_Matrix *totalMatrix3 = OH_Drawing_MatrixCreate();
-    // add assert
     EXPECT_NE(totalMatrix3, nullptr);
     OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix3);
-    // 8. Repeat steps 2-7 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_Matrix *matrix =
-            OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-        // add assert
-        EXPECT_NE(matrix, nullptr);
-        OH_Drawing_CanvasConcatMatrix(canvas, matrix);
-        OH_Drawing_Matrix *totalMatrix = OH_Drawing_MatrixCreate();
-        // add assert
-        EXPECT_NE(totalMatrix, nullptr);
-        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix);
-
-        OH_Drawing_Matrix *matrix2 =
-            OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_180, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
-        // add assert
-        EXPECT_NE(matrix2, nullptr);
-        OH_Drawing_CanvasConcatMatrix(canvas, matrix2);
-        OH_Drawing_Matrix *totalMatrix2 = OH_Drawing_MatrixCreate();
-        // add assert
-        EXPECT_NE(totalMatrix2, nullptr);
-        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix2);
-
-        OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-        // add assert
-        EXPECT_NE(matrix3, nullptr);
-        OH_Drawing_CanvasConcatMatrix(canvas, matrix3);
-        OH_Drawing_Matrix *totalMatrix3 = OH_Drawing_MatrixCreate();
-        // add assert
-        EXPECT_NE(totalMatrix3, nullptr);
-        OH_Drawing_CanvasGetTotalMatrix(canvas, totalMatrix3);
-
-        OH_Drawing_MatrixDestroy(matrix);
-        OH_Drawing_MatrixDestroy(matrix2);
-        OH_Drawing_MatrixDestroy(matrix3);
-        OH_Drawing_MatrixDestroy(totalMatrix);
-        OH_Drawing_MatrixDestroy(totalMatrix2);
-        OH_Drawing_MatrixDestroy(totalMatrix3);
-    }
+    CanvasConcatMatrixAndCanvasGetTotalMatrixMultipleCalls(canvas);
     // 9. Call OH_Drawing_CanvasConcatMatrix 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_CanvasConcatMatrix(canvas, matrix);
     }
-
     // 10. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(matrix2);
@@ -1134,7 +1119,7 @@ int TestCanvasClearNormal()
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     // add assert
     EXPECT_NE(canvas, nullptr);
-    // 2. OH_Drawing_CanvasClear, covering the minimum value 0x00000000 and the maximum value DRAWING_NUMBER_0XFFFFFFFF for color
+    // 2. OH_Drawing_CanvasClear, covering the minimum value and the maximum value for color
     OH_Drawing_CanvasClear(canvas, 0x00000000);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
@@ -2276,15 +2261,15 @@ int TestCanvasDrawSingleCharacterNormal()
     float x = 0;
     float y = 0;
     const char* str = "a";
-    const char* strDRAWING_NUMBER_1 = "我";
+    const char* str1 = "我";
     OH_Drawing_CanvasDrawSingleCharacter(canvas, str, font, x, y);
-    OH_Drawing_CanvasDrawSingleCharacter(canvas, strDRAWING_NUMBER_1, font, x, y);
+    OH_Drawing_CanvasDrawSingleCharacter(canvas, str1, font, x, y);
     //7. OH_Drawing_CanvasDrawSingleCharacter parameters are entered normally, where str is a multi-character, UTF-8
     // encoded, and English/Chinese characters are in
     str = "abc";
-    strDRAWING_NUMBER_1 = "你是谁";
+    str1 = "你是谁";
     OH_Drawing_CanvasDrawSingleCharacter(canvas, str, font, x, y);
-    OH_Drawing_CanvasDrawSingleCharacter(canvas, strDRAWING_NUMBER_1, font, x, y);
+    OH_Drawing_CanvasDrawSingleCharacter(canvas, str1, font, x, y);
     //8. free memory
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BrushDestroy(brush);

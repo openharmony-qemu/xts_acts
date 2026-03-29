@@ -121,11 +121,12 @@ int TestColorSetArgbNULL()
 int TestColorSetArgbMultipleCalls()
 {
     DrawingNativeColorTestSetUp();
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_256);
     // 1. Call OH_Drawing_ColorSetArgb with random numbers between 0 and 255, 10 times
     for (int i = 0; i < 10; i++) {
-        uint32_t color = OH_Drawing_ColorSetArgb(rand() % DRAWING_NUMBER_256, rand() % DRAWING_NUMBER_256, rand() %
-            DRAWING_NUMBER_256, rand() % DRAWING_NUMBER_256);
-        // add assert
+        uint32_t color = OH_Drawing_ColorSetArgb(dis(gen), dis(gen), dis(gen), dis(gen));
         EXPECT_NE(color, 0);
     }
     DrawingNativeColorTestTearDown();

@@ -304,9 +304,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
     EXPECT_NE(matrix, nullptr);
     // 1. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with negative values for startPt
     start = {-DRAWING_NUMBER_1, -DRAWING_NUMBER_1};
-    OH_Drawing_ShaderEffect *linearGradientEffect =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect, nullptr);
     // add assert
@@ -314,18 +313,16 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
     // 2. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with negative values for endPt
     start = {0, 0};
     end = {-DRAWING_NUMBER_1, -DRAWING_NUMBER_1};
-    OH_Drawing_ShaderEffect *linearGradientEffect2 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect2 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect2, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with negative values for colors
     colors[0] = -0xFF00FFFF;
-    OH_Drawing_ShaderEffect *linearGradientEffect3 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect3 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect3, nullptr);
     // add assert
@@ -333,9 +330,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
     // 4. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with negative values for pos
     colors[0] = 0xFF00FFFF;
     pos[0] = -0.1f;
-    OH_Drawing_ShaderEffect *linearGradientEffect4 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect4 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect4, nullptr);
     // add assert
@@ -377,9 +373,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
     EXPECT_NE(matrix, nullptr);
     // 1. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with startPt set to maximum value
     start = {FLT_MAX, FLT_MAX};
-    OH_Drawing_ShaderEffect *linearGradientEffect =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect, nullptr);
     // add assert
@@ -387,18 +382,16 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
     // 2. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with endPt set to maximum value
     start = {0, 0};
     end = {FLT_MAX, FLT_MAX};
-    OH_Drawing_ShaderEffect *linearGradientEffect2 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect2 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect2, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with colors set to maximum value
     colors[0] = UINT32_MAX;
-    OH_Drawing_ShaderEffect *linearGradientEffect3 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect3 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect3, nullptr);
     // add assert
@@ -406,9 +399,8 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
     // 4. OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix interface with pos set to maximum value
     colors[0] = 0xFF00FFFF;
     pos[0] = FLT_MAX;
-    OH_Drawing_ShaderEffect *linearGradientEffect4 =
-        OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start, &end, colors, pos, DRAWING_NUMBER_3, modes[0]
-            , matrix);
+    OH_Drawing_ShaderEffect *linearGradientEffect4 = OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(&start,
+        &end, colors, pos, DRAWING_NUMBER_3, modes[0], matrix);
     // add assert
     EXPECT_NE(linearGradientEffect4, nullptr);
     // add assert

@@ -116,8 +116,8 @@ int TestColorFilterCreateBlendModeMultipleCalls()
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
-        uint32_t random_number = dis(gen);
-        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        uint32_t randomNumber = dis(gen);
+        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
@@ -137,9 +137,9 @@ int TestColorFilterCreateBlendModeMultipleCalls()
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0, DRAWING_NUMBER_28);
-        uint32_t random_number = dis(gen);
+        uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter *colorFilter =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
@@ -281,11 +281,11 @@ int TestColorFilterCreateComposeMultipleCalls()
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
-        uint32_t random_number = dis(gen);
-        OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        uint32_t randomNumber = dis(gen);
+        OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         // add assert
         EXPECT_NE(colorFilter1, nullptr);
-        OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         // add assert
         EXPECT_NE(colorFilter2, nullptr);
         OH_Drawing_ColorFilterCreateCompose(colorFilter1, colorFilter2);
@@ -307,13 +307,13 @@ int TestColorFilterCreateComposeMultipleCalls()
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0, DRAWING_NUMBER_28);
-        uint32_t random_number = dis(gen);
+        uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter *colorFilter1 =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter1, nullptr);
         OH_Drawing_ColorFilter *colorFilter2 =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter2, nullptr);
         OH_Drawing_ColorFilterCreateCompose(colorFilter1, colorFilter2);
@@ -387,7 +387,8 @@ int TestColorFilterCreateMatrixAbnormal()
     EXPECT_NE(colorFilter, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
 
-    const float matrix2[DRAWING_NUMBER_21] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0, 0};
+    const float matrix2[DRAWING_NUMBER_21] = {
+        1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0, 0};
     OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateMatrix(matrix2);
     // add assert
     EXPECT_NE(colorFilter2, nullptr);
@@ -411,7 +412,8 @@ int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
+        const float matrix[DRAWING_NUMBER_20] =
+            {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -598,7 +600,7 @@ int TestColorFilterCreateLightingNormal()
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes parameters normally.
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLighting(0xFF00FF00, 0XFF0000FF);
-    EXPECT_NE(colorFilter, nullptr);;
+    EXPECT_NE(colorFilter, nullptr);
     // 2. Destroy colorFilter
     OH_Drawing_ColorFilterDestroy(colorFilter);
     DrawingNativeColorFilterTestTearDown();
@@ -618,10 +620,10 @@ int TestColorFilterCreateLightingNULL()
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes NULL.
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateLighting(0, 0XFF0000FF);
-    EXPECT_NE(colorFilter1, nullptr);;
+    EXPECT_NE(colorFilter1, nullptr);
     // 2. OH_Drawing_ColorFilterCreateLighting passes NULL.
     OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateLighting(0xFF00FF00, 0);
-    EXPECT_NE(colorFilter2, nullptr);;
+    EXPECT_NE(colorFilter2, nullptr);
     // 3. Destroy colorFilter
     OH_Drawing_ColorFilterDestroy(colorFilter1);
     OH_Drawing_ColorFilterDestroy(colorFilter2);
@@ -642,10 +644,10 @@ int TestColorFilterCreateLightingAbnormal()
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting passes maximum value.
     OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateLighting(0xFFFFFFFF, 0XFF0000FF);
-    EXPECT_NE(colorFilter1, nullptr);;
+    EXPECT_NE(colorFilter1, nullptr);
     // 2. OH_Drawing_ColorFilterCreateLighting passes maximum value.
     OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateLighting(0xFF00FF00, 0xFFFFFFFF);
-    EXPECT_NE(colorFilter2, nullptr);;
+    EXPECT_NE(colorFilter2, nullptr);
     // 3. Destroy colorFilter
     OH_Drawing_ColorFilterDestroy(colorFilter1);
     OH_Drawing_ColorFilterDestroy(colorFilter2);
@@ -668,7 +670,7 @@ int TestColorFilterCreateLightingMultipleCalls()
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLighting(DRAWING_NUMBER_0XFFFFFFFF,
             DRAWING_NUMBER_0XFF0000FF);
-        EXPECT_NE(colorFilter, nullptr);;
+        EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
     DrawingNativeColorFilterTestTearDown();

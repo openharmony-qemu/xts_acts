@@ -40,7 +40,6 @@
 #define DRAWING_NUMBER_650 650
 #define DRAWING_NUMBER_1000 1000
 #define DRAWING_NUMBER_999999 999999
-#define DRAWING_NUMBER_0xFF0000FF 0xFF0000FF
 
 namespace OHOS {
 namespace Rosen {
@@ -84,8 +83,8 @@ int TestCanvasQuickRejectPathNull()
     EXPECT_EQ(result1, OH_DRAWING_ERROR_INVALID_PARAMETER);
 
     // path参数传nullptr
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasQuickRejectPath(canvas, nullptr, &quickReject);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    auto result2 = OH_Drawing_CanvasQuickRejectPath(canvas, nullptr, &quickReject);
+    EXPECT_EQ(result2, OH_DRAWING_ERROR_INVALID_PARAMETER);
 
     // quickReject参数传nullptr
     auto result3 = OH_Drawing_CanvasQuickRejectPath(canvas, path, nullptr);
@@ -127,9 +126,9 @@ int TestCanvasQuickRejectPathNormal()
     // 正常传参，path在画布外
     OH_Drawing_PathAddRect(path, -DRAWING_NUMBER_100, DRAWING_NUMBER_100, -DRAWING_NUMBER_200, DRAWING_NUMBER_300,
                            OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasQuickRejectPath(canvas, path, &quickReject);
+    auto result2 = OH_Drawing_CanvasQuickRejectPath(canvas, path, &quickReject);
     // add assert
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(result2, OH_DRAWING_SUCCESS);
 
     // 正常传参，path只有一个顶点与画布相接
     OH_Drawing_PathAddRect(path, -DRAWING_NUMBER_100, -DRAWING_NUMBER_100, 0, 0,
@@ -204,8 +203,8 @@ int TestCanvasQuickRejectRectNull()
     EXPECT_EQ(result1, OH_DRAWING_ERROR_INVALID_PARAMETER);
 
     // rect参数传nullptr
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasQuickRejectRect(canvas, nullptr, &quickReject);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    auto result2 = OH_Drawing_CanvasQuickRejectRect(canvas, nullptr, &quickReject);
+    EXPECT_EQ(result2, OH_DRAWING_ERROR_INVALID_PARAMETER);
 
     // quickReject参数传nullptr
     auto result3 = OH_Drawing_CanvasQuickRejectRect(canvas, rect, nullptr);
@@ -244,8 +243,8 @@ int TestCanvasQuickRejectRectNormal()
     OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(-DRAWING_NUMBER_100, -DRAWING_NUMBER_100, -DRAWING_NUMBER_200,
                                                    -DRAWING_NUMBER_200);
     EXPECT_NE(rect2, nullptr);
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasQuickRejectRect(canvas, rect2, &quickReject);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_SUCCESS);
+    auto result2 = OH_Drawing_CanvasQuickRejectRect(canvas, rect2, &quickReject);
+    EXPECT_EQ(result2, OH_DRAWING_SUCCESS);
 
     // 正常传参，rect比画布大包含画布
     OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(-DRAWING_NUMBER_20, -DRAWING_NUMBER_20, DRAWING_NUMBER_999999,
@@ -347,9 +346,9 @@ int TestCanvasDrawArcWithCenterNormal()
     // 正常传参，useCenter参数传true，起始角度小于0，扫描角度大于360
     OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasDrawArcWithCenter(canvas, rect2, -DRAWING_NUMBER_10,
+    auto result2 = OH_Drawing_CanvasDrawArcWithCenter(canvas, rect2, -DRAWING_NUMBER_10,
                                                                         DRAWING_NUMBER_650, true);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(result2, OH_DRAWING_SUCCESS);
 
     // 正常传参，useCenter参数传false，起始角度大于0，扫描角度小于0
     OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
@@ -461,8 +460,8 @@ int TestCanvasDrawNestedRoundRectNormal()
     outer = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
     rect1 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     inner = OH_Drawing_RoundRectCreate(rect1, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasDrawNestedRoundRect(canvas, outer, inner);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_SUCCESS);
+    auto result2 = OH_Drawing_CanvasDrawNestedRoundRect(canvas, outer, inner);
+    EXPECT_EQ(result2, OH_DRAWING_SUCCESS);
 
     // 调用销毁函数销毁指针
     OH_Drawing_RoundRectDestroy(inner);
@@ -532,11 +531,9 @@ int TestCanvasDrawPixelMapNineNull()
     OH_PixelmapInitializationOptions_SetAlphaType(createOps, DRAWING_NUMBER_2);
     size_t bufferSize = imageWidth * imageHeight * DRAWING_NUMBER_4;
     void* bitmapAddr = malloc(bufferSize);
-    if (bitmapAddr == nullptr) {
-        return -DRAWING_NUMBER_1;
-    }
+    EXPECT_NE(bitmapAddr, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     OH_Drawing_SamplingOptions* samplingOptions =
@@ -549,9 +546,9 @@ int TestCanvasDrawPixelMapNineNull()
     auto result1 = OH_Drawing_CanvasDrawPixelMapNine(nullptr, pixelMap, center, dstRect,
         OH_Drawing_FilterMode::FILTER_MODE_NEAREST);
     EXPECT_EQ(result1, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    auto resultDRAWING_MESHWIDTH_2 = OH_Drawing_CanvasDrawPixelMapNine(canvas, nullptr, center, dstRect,
+    auto result2 = OH_Drawing_CanvasDrawPixelMapNine(canvas, nullptr, center, dstRect,
         OH_Drawing_FilterMode::FILTER_MODE_NEAREST);
-    EXPECT_EQ(resultDRAWING_MESHWIDTH_2, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(result2, OH_DRAWING_ERROR_INVALID_PARAMETER);
     auto result3 = OH_Drawing_CanvasDrawPixelMapNine(canvas, pixelMap, nullptr, dstRect,
         OH_Drawing_FilterMode::FILTER_MODE_NEAREST);
     EXPECT_EQ(result3, OH_DRAWING_SUCCESS);
@@ -601,7 +598,7 @@ int TestCanvasDrawPixelMapNineNormal()
         return -DRAWING_NUMBER_1;
     }
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     OH_Drawing_SamplingOptions* samplingOptions =
@@ -659,7 +656,7 @@ int TestCanvasDrawPixelMapNineCalls()
         return -DRAWING_NUMBER_1;
     }
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     OH_Drawing_SamplingOptions* samplingOptions =
@@ -716,7 +713,7 @@ int TestCanvasCreateWithPixelMapNormal()
         return -DRAWING_NUMBER_1;
     }
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)bitmapAddr, bufferSize, createOps, &pixelMapNative);
@@ -761,7 +758,7 @@ int TestCanvasCreateWithPixelMapNull()
         return -DRAWING_NUMBER_1;
     }
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)bitmapAddr, bufferSize, createOps, &pixelMapNative);
@@ -806,7 +803,7 @@ int TestCanvasCreateWithPixelMapMultipleCalls()
         return -DRAWING_NUMBER_1;
     }
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)bitmapAddr)[i] = DRAWING_NUMBER_0xFF0000FF;
+        ((uint32_t*)bitmapAddr)[i] = 0xFF0000FF;
     }
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)bitmapAddr, bufferSize, createOps, &pixelMapNative);
@@ -866,7 +863,7 @@ int TestCanvasDrawPixelMapRectConstraintNormal()
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
         canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::STRICT_SRC_RECT_CONSTRAINT);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -914,10 +911,8 @@ int TestCanvasDrawPixelMapRectConstraintNull()
     OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
-    EXPECT_NE(src, nullptr);
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
-    EXPECT_NE(dst, nullptr);
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
         nullptr, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::STRICT_SRC_RECT_CONSTRAINT);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -984,8 +979,7 @@ int TestCanvasDrawPixelMapRectConstraintAbnormal()
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_ErrorCode errorCode;
-    errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
         canvas, pixelMap, src, dst, samplingOptions, static_cast<OH_Drawing_SrcRectConstraint>(DRAWING_NUMBER_3));
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 2. Destroy objects.
@@ -1040,7 +1034,7 @@ int TestCanvasDrawPixelMapRectConstraintMultiCalls()
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
             canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::FAST_SRC_RECT_CONSTRAINT);
@@ -1157,9 +1151,7 @@ int TestCanvasDrawPixelMapMeshNull01()
     uint32_t vertOffest = DRAWING_NUMBER_1;
     uint32_t colorOffest = DRAWING_NUMBER_1;
     std::vector<float> vertices = {0, 0, DRAWING_NUMBER_50, 0, DRAWING_NUMBER_410, 0, 0, DRAWING_NUMBER_180};
-    std::vector<uint32_t> colors = {
-        0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF
-    };
+    std::vector<uint32_t> colors = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF};
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -1222,20 +1214,16 @@ int TestCanvasDrawPixelMapMeshNull02()
     uint32_t vertOffest = DRAWING_NUMBER_1;
     uint32_t colorOffest = DRAWING_NUMBER_1;
     std::vector<float> vertices = {0, 0, DRAWING_NUMBER_50, 0, DRAWING_NUMBER_410, 0, 0, DRAWING_NUMBER_180};
-    std::vector<uint32_t> colors = {
-        0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF
-    };
+    std::vector<uint32_t> colors = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF};
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, 0, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, nullptr, vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), 0, vertOffest, colors.data(), colors.size(), colorOffest);
@@ -1287,20 +1275,16 @@ int TestCanvasDrawPixelMapMeshNull03()
     uint32_t vertOffest = DRAWING_NUMBER_1;
     uint32_t colorOffest = DRAWING_NUMBER_1;
     std::vector<float> vertices = {0, 0, DRAWING_NUMBER_50, 0, DRAWING_NUMBER_410, 0, 0, DRAWING_NUMBER_180};
-    std::vector<uint32_t> colors = {
-        0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF, 0xFF000000
-    };
+    std::vector<uint32_t> colors = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFFFFFF, 0xFF000000};
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), 0, colors.data(), colors.size(), colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, nullptr, colors.size(), colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), 0, colorOffest);
@@ -1721,7 +1705,7 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh is called 10 times.
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,

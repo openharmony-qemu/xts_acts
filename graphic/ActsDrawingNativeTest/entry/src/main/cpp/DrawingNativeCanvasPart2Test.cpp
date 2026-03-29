@@ -130,11 +130,11 @@ static void TestDrawPixelMapRectWithZeroRects(OH_Drawing_Canvas* canvas, OH_Draw
     };
     for (int i = 0; i < rectParamCount; ++i) {
         OH_Drawing_Rect* src = OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][DRAWING_NUMBER_1],
-             rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
+                                                     rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
         EXPECT_NE(src, nullptr);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_Rect* dst = OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][DRAWING_NUMBER_1],
-             rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
+                                                     rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
         EXPECT_NE(dst, nullptr);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(src);
@@ -205,7 +205,7 @@ static void TestDrawPixelMapRectWithInvalidSrcRects(OH_Drawing_Canvas* canvas, O
     };
     for (int i = 0; i < TEST_SRC_RECTS_COUNT; i++) {
         OH_Drawing_Rect* src = OH_Drawing_RectCreate(srcRects[i][0], srcRects[i][DRAWING_NUMBER_1],
-             srcRects[i][DRAWING_NUMBER_2], srcRects[i][DRAWING_NUMBER_3]);
+                                                     srcRects[i][DRAWING_NUMBER_2], srcRects[i][DRAWING_NUMBER_3]);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(src);
     }
@@ -222,7 +222,7 @@ static void TestDrawPixelMapRectWithInvalidDstRects(OH_Drawing_Canvas* canvas, O
     };
     for (int i = 0; i < TEST_DST_RECTS_COUNT; i++) {
         OH_Drawing_Rect* dst = OH_Drawing_RectCreate(dstRects[i][0], dstRects[i][DRAWING_NUMBER_1],
-             dstRects[i][DRAWING_NUMBER_2], dstRects[i][DRAWING_NUMBER_3]);
+                                                     dstRects[i][DRAWING_NUMBER_2], dstRects[i][DRAWING_NUMBER_3]);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(dst);
     }

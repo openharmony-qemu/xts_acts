@@ -152,10 +152,10 @@ int TestLatticeCreateAbnormal()
     int yDivs1[DRAWING_NUMBER_2] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20};
     int xDivs2[DRAWING_NUMBER_10] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20, DRAWING_NUMBER_30, DRAWING_NUMBER_40,
         DRAWING_NUMBER_50, DRAWING_NUMBER_60, DRAWING_NUMBER_70, DRAWING_NUMBER_80, DRAWING_NUMBER_90,
-            DRAWING_NUMBER_100};
+        DRAWING_NUMBER_100};
     int yDivs2[DRAWING_NUMBER_10] = {DRAWING_NUMBER_10, DRAWING_NUMBER_20, DRAWING_NUMBER_30, DRAWING_NUMBER_40,
         DRAWING_NUMBER_50, DRAWING_NUMBER_60, DRAWING_NUMBER_70, DRAWING_NUMBER_80, DRAWING_NUMBER_90,
-            DRAWING_NUMBER_100};
+        DRAWING_NUMBER_100};
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes1[DRAWING_NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
@@ -163,9 +163,8 @@ int TestLatticeCreateAbnormal()
     OH_Drawing_LatticeRectType rectTypes3[9] = {static_cast<OH_Drawing_LatticeRectType>(DRAWING_NUMBER_5)};
     uint32_t colors1[DRAWING_NUMBER_9] = {DRAWING_NUMBER_0XFFFF0000};
     uint32_t colors2[DRAWING_NUMBER_33] = {DRAWING_NUMBER_0XFFFF0000};
-    OH_Drawing_ErrorCode errorCode =
-        OH_Drawing_LatticeCreate(xDivs2, yDivs1, DRAWING_NUMBER_10, DRAWING_NUMBER_2, rect, rectTypes2,
-            DRAWING_NUMBER_33, colors2, DRAWING_NUMBER_33, &lattice);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeCreate(xDivs2, yDivs1, DRAWING_NUMBER_10, DRAWING_NUMBER_2, rect,
+        rectTypes2, DRAWING_NUMBER_33, colors2, DRAWING_NUMBER_33, &lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_LatticeCreate(xDivs1, yDivs2, DRAWING_NUMBER_2, DRAWING_NUMBER_10, rect, rectTypes2,
         DRAWING_NUMBER_33, colors2, DRAWING_NUMBER_33, &lattice);

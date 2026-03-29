@@ -162,11 +162,9 @@ int TestTextBlobCreateFromTextNormal()
         size_t byteLength = 0;
         if (encode == TEXT_ENCODING_UTF8) {
             byteLength = strlen(str);
-        } else if (encode == TEXT_ENCODING_UTF32)
-{
+        } else if (encode == TEXT_ENCODING_UTF32) {
             byteLength = strlen(str) * DRAWING_NUMBER_4;
-        } else if (encode == TEXT_ENCODING_GLYPH_ID)
-{
+        } else if (encode == TEXT_ENCODING_GLYPH_ID) {
             byteLength = strlen(str) * DRAWING_NUMBER_16;
         }
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromText(str, byteLength, font, encode);

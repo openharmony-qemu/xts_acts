@@ -1003,74 +1003,47 @@ int TestCanvasSaveLayerAbnormal()
     // 1. OH_Drawing_CanvasCreate, OH_Drawing_BrushCreate
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
-
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     EXPECT_NE(brush, nullptr);
-
     // 2. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, negative numbers are passed for left, top, right,
     // and bottom.
-    OH_Drawing_Rect *rect1 =
+    OH_Drawing_Rect *rect =
         OH_Drawing_RectCreate(-DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_600);
-    // add assert
-    EXPECT_NE(rect1, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect1, brush);
-    OH_Drawing_RectDestroy(rect1);
-    OH_Drawing_Rect *rect2 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, -DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_600);
-    // add assert
-    EXPECT_NE(rect2, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect2, brush);
-    OH_Drawing_RectDestroy(rect2);
-    OH_Drawing_Rect *rect3 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, -DRAWING_NUMBER_300, DRAWING_NUMBER_600);
-    // add assert
-    EXPECT_NE(rect3, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect3, brush);
-    OH_Drawing_RectDestroy(rect3);
-    OH_Drawing_Rect *rect4 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_300, -DRAWING_NUMBER_600);
-    // add assert
-    EXPECT_NE(rect4, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect4, brush);
-    OH_Drawing_RectDestroy(rect4);
-
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, -DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_600);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, -DRAWING_NUMBER_300, DRAWING_NUMBER_600);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
+    OH_Drawing_RectDestroy(rect);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_300, -DRAWING_NUMBER_600);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
     // 3. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the horizontal coordinate of the top-left corner
     // of the rectangle is equal to the horizontal coordinate of the bottom-right corner, or the vertical coordinate of
     // the top-left corner of the rectangle is equal to the vertical coordinate of the bottom-right corner.
-    OH_Drawing_Rect *rect5 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_200, DRAWING_NUMBER_600);
-    // add assert
-    EXPECT_NE(rect5, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect5, brush);
-    OH_Drawing_RectDestroy(rect5);
-    OH_Drawing_Rect *rect6 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_500);
-    // add assert
-    EXPECT_NE(rect6, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect6, brush);
-    OH_Drawing_RectDestroy(rect6);
-
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_200, DRAWING_NUMBER_600);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
     // 4. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the coordinates of the top-left corner are equal
     // to the coordinates of the bottom-right corner.
-    OH_Drawing_Rect *rect7 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_200, DRAWING_NUMBER_500);
-    // add assert
-    EXPECT_NE(rect7, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect7, brush);
-    OH_Drawing_RectDestroy(rect7);
-
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500, DRAWING_NUMBER_200, DRAWING_NUMBER_500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
     // 5. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the coordinates of the top-left corner are
     // greater than the coordinates of the bottom-right corner.
-    OH_Drawing_Rect *rect8 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_300, DRAWING_NUMBER_600, DRAWING_NUMBER_200, DRAWING_NUMBER_500);
-    // add assert
-    EXPECT_NE(rect8, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect8, brush);
-    OH_Drawing_RectDestroy(rect8);
-
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_300, DRAWING_NUMBER_600, DRAWING_NUMBER_200, DRAWING_NUMBER_500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
     // 6. Release memory.
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_RectDestroy(rect);
     DrawingNativeCanvasTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

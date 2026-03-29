@@ -1981,8 +1981,10 @@ napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info
         uint8_t *getMetadata = nullptr;
         int32_t setMetadataSize = strlen(setMetadataList[i]) + 1;
         int32_t getMetadataSize = 0;
-        int32_t flag1 = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, setMetadataSize, (uint8_t*)setMetadata);
-        int32_t flag2 = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, &getMetadataSize, &getMetadata);
+        int32_t flag1 = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, setMetadataSize,
+                                                         (uint8_t*)setMetadata);
+        int32_t flag2 = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, &getMetadataSize,
+                                                         &getMetadata);
         if (getMetadataSize != NUMBER_256 || memcmp(setMetadata, getMetadata, setMetadataSize) != 0) {
             napi_create_int32(env, FAIL, &result);
             return result;

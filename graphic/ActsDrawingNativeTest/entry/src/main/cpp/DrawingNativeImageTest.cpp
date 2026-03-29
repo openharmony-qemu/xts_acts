@@ -278,11 +278,11 @@ int TestImageGetWidthHeightNormal()
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageBuildFromBitmap(image, bitmap);
     // 2. OH_Drawing_ImageGetWidth
-    int32_t width_ = OH_Drawing_ImageGetWidth(image);
-    EXPECT_EQ(width_, DRAWING_NUMBER_200);
+    int32_t width2 = OH_Drawing_ImageGetWidth(image);
+    EXPECT_EQ(width2, DRAWING_NUMBER_200);
     // 3. OH_Drawing_ImageGetHeight
-    int32_t height_ = OH_Drawing_ImageGetHeight(image);
-    EXPECT_EQ(height_, DRAWING_NUMBER_200);
+    int32_t height2 = OH_Drawing_ImageGetHeight(image);
+    EXPECT_EQ(height2, DRAWING_NUMBER_200);
     // 4. Free memory
     OH_Drawing_ImageDestroy(image);
     OH_Drawing_BitmapDestroy(bitmap);
@@ -346,10 +346,10 @@ int TestImageGetWidthHeightMultipleCalls()
         uint32_t height = DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
-        int32_t width_ = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width_, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
-        int32_t height_ = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height_, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
+        int32_t width2 = OH_Drawing_ImageGetWidth(image);
+        EXPECT_EQ(width2, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
+        int32_t height2 = OH_Drawing_ImageGetHeight(image);
+        EXPECT_EQ(height2, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -382,10 +382,10 @@ int TestImageGetWidthHeightMultipleCallsBoundary()
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         EXPECT_NE(image, nullptr);
-        int32_t width_ = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width_, DRAWING_NUMBER_4096);
-        int32_t height_ = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height_, DRAWING_NUMBER_2160);
+        int32_t width2 = OH_Drawing_ImageGetWidth(image);
+        EXPECT_EQ(width2, DRAWING_NUMBER_4096);
+        int32_t height2 = OH_Drawing_ImageGetHeight(image);
+        EXPECT_EQ(height2, DRAWING_NUMBER_2160);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -495,6 +495,11 @@ int TestImageGetImageInfoMultipleCalls()
         ALPHA_FORMAT_PREMUL,
         ALPHA_FORMAT_UNPREMUL,
     };
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<int> dis1(0, DRAWING_NUMBER_3);
+    std::uniform_real_distribution<int> dis2(0, DRAWING_NUMBER_5);
+    std::uniform_real_distribution<int> dis3(0, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
@@ -502,11 +507,12 @@ int TestImageGetImageInfoMultipleCalls()
         OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
         // add assert
         EXPECT_NE(bitmap, nullptr);
-        srand(static_cast<unsigned int>(time(nullptr)));
-        OH_Drawing_BitmapFormat cFormat{cf[rand() % DRAWING_NUMBER_5 + DRAWING_NUMBER_1], af[rand() % DRAWING_NUMBER_3 +
-            DRAWING_NUMBER_1]};
-        uint32_t width = rand() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
-        uint32_t height = rand() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
+        time_t now = time(nullptr);
+        EXPECT_NE(now, static_cast<time_t>(-1));
+        srand(static_cast<unsigned int>(now));
+        OH_Drawing_BitmapFormat cFormat{cf[dis2(gen) + DRAWING_NUMBER_1], af[dis1(gen) + DRAWING_NUMBER_1]};
+        uint32_t width = dis3(gen) + DRAWING_NUMBER_1;
+        uint32_t height = dis3(gen) + DRAWING_NUMBER_1;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_Image_Info imageInfo;
         OH_Drawing_ImageGetImageInfo(image, &imageInfo);

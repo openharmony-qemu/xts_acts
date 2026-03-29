@@ -414,8 +414,7 @@ int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_TypefaceCreateFromFileWithArguments
     OH_Drawing_Typeface *typeface = nullptr;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++)
-    {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         typeface = OH_Drawing_TypefaceCreateFromFileWithArguments(
             "/system/fonts/NotoSansBengaliUI-Regular", fontArguments);
     }
@@ -531,8 +530,7 @@ int TestTypefaceCreateFromCurrentMultipleCalls()
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 4. OH_Drawing_TypefaceCreateFromCurrent
     OH_Drawing_Typeface *typeface1 = nullptr;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++)
-    {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         typeface1 = OH_Drawing_TypefaceCreateFromCurrent(typeface, fontArguments);
     }
     // 5. OH_Drawing_TypefaceDestroy typeface1

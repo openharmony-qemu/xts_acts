@@ -2464,7 +2464,7 @@ int TestFontMeasuretextNormal()
         TEXT_ENCODING_UTF32,
         TEXT_ENCODING_GLYPH_ID,
     };
-    OH_Drawing_ErrorCode errorCode;
+    OH_Drawing_ErrorCode errorCode = {};
     for (int i = 0; i < DRAWING_NUMBER_4; i++) {
         errorCode = OH_Drawing_FontMeasureText(font, text, byteLength, encodes[i], bounds, &textWidth);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
