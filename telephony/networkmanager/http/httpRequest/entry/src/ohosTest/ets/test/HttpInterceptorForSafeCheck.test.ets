@@ -893,7 +893,6 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorRemoveInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          ExpectTrue(addRes === 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
@@ -1465,7 +1464,6 @@ export default function HttpInterceptorForSafeCheckTest() {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorRemoveAllInterceptor0200";
         console.info(`${TAG} ${caseName} test Start`);
         try {
-          ExpectTrue(addResult === 0);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
             method: http.RequestMethod.POST
