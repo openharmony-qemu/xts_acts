@@ -15,7 +15,7 @@
  */
 import { Entry, Row, Column, Component,Button, ClickEvent,
   Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions,
-  CancelButtonStyle, IconOptions, SymbolGlyphModifier, Length, AttributeModifier, SearchAttribute, TextInputAttribute,
+  CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute,
   IconOptions, Color, CopyOptions, Resource, Font, ResourceColor, TextAreaAttribute, Scroll
 } from '@ohos.arkui.component'
 import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
