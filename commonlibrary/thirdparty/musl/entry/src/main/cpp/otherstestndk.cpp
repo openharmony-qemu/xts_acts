@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * You may obtain firstParam copy of the License at
+ * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -46,6 +46,7 @@
 #include <unistd.h>
 #include <utmp.h>
 #include <atomic>
+#include <sys/wait.h>
 #include <securec.h>
 
 #define NAMELEN 16
@@ -109,6 +110,15 @@ extern "C" void _pthread_cleanup_push(struct __ptcb *, void (*)(void *), void *)
 extern "C" int delete_module(const char *a, unsigned b);
 extern "C" pid_t pthread_gettid_np(pthread_t t);
 
+// 获取线程指针：使用内建函数（不需要链接符号）
+static inline void *GetTp()
+{
+    return __builtin_thread_pointer();
+}
+
+// 定义一个 thread_local 变量（initial-exec 模型确保在主模块）
+static __thread int g_testVar __attribute__((tls_model("initial-exec"))) = 42;
+
 static napi_value DlaDdr(napi_env env, napi_callback_info info)
 {
     int backParam = PARAM_0;
@@ -160,6 +170,169 @@ static napi_value DlError(napi_env env, napi_callback_info info)
     dlclose(ptr);
     napi_value result = nullptr;
     napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+typedef int (DlnsSetPermittedPathType)(const char *path);
+
+static napi_value PluginDefaultNsTest(napi_env env, napi_callback_info info)
+{
+    DlnsSetPermittedPathType *dlsymFunc =
+        (DlnsSetPermittedPathType *)dlsym(RTLD_DEFAULT, "dlns_add_plugin_default_ld_dictionary");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int res = dlsymFunc("/lib64/mytest\0");
+    napi_value result = nullptr;
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+typedef int (DlsymFuncType)(const char *path, Dl_namespace *ns);
+
+static napi_value PluginDefaultNsTest2(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/lib64/invalid", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest3(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/lib64/mytest", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest4(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/lib64/lib64", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest5(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/lib64/lib32", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest6(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/storage/test", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest7(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/storage/test/", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest8(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/storage/test:/lib64/test", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest9(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/storage/test:/lib64/test", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
+    return result;
+}
+
+static napi_value PluginDefaultNsTest10(napi_env env, napi_callback_info info)
+{
+    Dl_namespace ns;
+    strcpy_s(ns.name, NS_NAME_MAX, "moduleNs_plugin_default_namespace\0");
+    DlsymFuncType *dlsymFunc = (DlsymFuncType *)dlsym(RTLD_DEFAULT, "dlns_set_permitted_path");
+    if (dlsymFunc == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, FAILD, &result);
+        return result;
+    }
+    int rs = dlsymFunc("/storage/test", &ns);
+    napi_value result = nullptr;
+    napi_create_int32(env, rs, &result);
     return result;
 }
 
@@ -706,14 +879,24 @@ static napi_value Uflow(napi_env env, napi_callback_info info)
 
 static napi_value Tlsgetaddr(napi_env env, napi_callback_info infoS)
 {
-    errno = NO_ERROR;
+    int resultCode = NO_ERROR;
     pid_t pid = fork();
-    if (pid == PARAM_0) {
-        __tls_get_addr((tls_mod_off_t[]){});
-        exit(PARAM_0);
+    if (pid == 0) {
+        int *expectedAddr = &g_testVar;
+        void *tp = GetTp();
+        ptrdiff_t offset = (char *)expectedAddr - (char *)tp;
+        size_t ti[2] = {1, (size_t)offset};  // 主程序模块 ID 通常为 1
+        int *gotAddr = (int *)__tls_get_addr(ti);
+        if (gotAddr != expectedAddr) {
+            exit(FAILD);
+        }
+        exit(0);
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, errno, &result);
+    int status;
+    waitpid(pid, &status, 0);
+    resultCode = (WIFEXITED(status) && WEXITSTATUS(status) == 0) ? 0 : -1;
+    napi_value result;
+    napi_create_int32(env, resultCode, &result);
     return result;
 }
 
@@ -1354,6 +1537,16 @@ static napi_value Init(napi_env env, napi_value exports)
         {"dlopen", nullptr, DlOpen, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"dlclose", nullptr, DlClose, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"dlerror", nullptr, DlError, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest", nullptr, PluginDefaultNsTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest2", nullptr, PluginDefaultNsTest2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest3", nullptr, PluginDefaultNsTest3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest4", nullptr, PluginDefaultNsTest4, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest5", nullptr, PluginDefaultNsTest5, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest6", nullptr, PluginDefaultNsTest6, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest7", nullptr, PluginDefaultNsTest7, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest8", nullptr, PluginDefaultNsTest8, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest9", nullptr, PluginDefaultNsTest9, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PluginDefaultNsTest10", nullptr, PluginDefaultNsTest10, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"dladdr", nullptr, DlaDdr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"flock", nullptr, Flock, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"__umask_chk", nullptr, UMask_chk, nullptr, nullptr, nullptr, napi_default, nullptr},
