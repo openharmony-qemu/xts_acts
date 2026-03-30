@@ -44,7 +44,7 @@ export default function Sim_getSimAccountInfo_dual() {
       } catch (err) {
         console.info('isSimActive simCard0 Run failed');
       }
-      if (result0 = true) {
+      if (result0) {
         TRUE_SLOT_ID_0 = 0;
         simAmount = 1;
       }
