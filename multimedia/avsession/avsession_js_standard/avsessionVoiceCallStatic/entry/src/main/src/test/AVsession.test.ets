@@ -2137,7 +2137,7 @@ export default function abilityTest() {
                 console.info(`session on_customDataChange Successfully ${data}`);
                 flag = true;
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             console.info(`Testlog:flag = ${flag}`);
             expect(flag).assertTrue();
