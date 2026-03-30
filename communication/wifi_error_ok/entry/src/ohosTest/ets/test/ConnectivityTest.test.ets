@@ -18,7 +18,9 @@ import wifindktest from 'libwifindk.so';
 import wifiMg from '@ohos.wifiManager';
 
 const KEY_CODE_EVENT_OK = 0;
-
+function sleep(delay : number) : Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, delay));
+}
 export default function ConnectivityTest() {
   describe('ConnectivityTest', () => {
 
@@ -434,16 +436,18 @@ export default function ConnectivityTest() {
       async (done: Function) => {
         try {
           wifiMg.disableWifi();
+          await sleep(3000);
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0500 start====");
           let result: number = wifindktest.GetDeviceMacAddress0500();
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0500 END====" + result);
           expect(KEY_CODE_EVENT_OK).assertEqual(result);
           wifiMg.enableWifi();
-          done()
+          await sleep(3000);
         } catch (err) {
           console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0500 catch err: " + err);
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
+        done();
       })
 
     /**
@@ -575,6 +579,7 @@ export default function ConnectivityTest() {
       async (done: Function) => {
         try {
           wifiMg.disableWifi();
+          await sleep(3000);
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 start====");
           let result: number = wifindktest.GetLinkedInfo0300();
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 END====" + result);
@@ -586,6 +591,7 @@ export default function ConnectivityTest() {
             expect().assertFail();
           }
           wifiMg.enableWifi();
+          await sleep(3000);
         } catch (err) {
           console.error("====>SUB_COMMUNICATION_WIFI_NAPI_1100 catch err: " + err);
           expect().assertFail();
