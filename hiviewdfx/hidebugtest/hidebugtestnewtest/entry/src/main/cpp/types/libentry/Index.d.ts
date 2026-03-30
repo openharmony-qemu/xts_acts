@@ -37,3 +37,7 @@ export const testSetCrashObjType: (obj_type: number) => number;
 export const testSetCrashObjAddr: (obj_type: number) => number;
 export const checkSetCrashObj: () => number;
 export const testSetCrashObjAddrLen: (addr_len: number) => number;
+export const startProfiler: (resourceType: number, maxDuration: number, filterSize: number,
+  maxStackDepth: number, statisticsInterval: number, sampleInterval: number) => number;
+export const startProfilerNull: (resourceType: number) => number;
+export const stopProfiler: () => number;

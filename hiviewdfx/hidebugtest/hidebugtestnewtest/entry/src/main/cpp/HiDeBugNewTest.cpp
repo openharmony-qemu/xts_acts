@@ -24,6 +24,10 @@
 #include <thread>
 #include <future>
 #include <vector>
+#undef LOG_TAG
+#undef LOG_DOMAIN
+#define LOG_TAG "Hiprofiler"
+#define LOG_DOMAIN 0xD002D0C
 std::vector<uint32_t> tids;
 
 namespace {
@@ -573,6 +577,152 @@ static napi_value TestSetCrashObjAddrLen(napi_env env, napi_callback_info info)
     return ret;
 }
 
+static napi_value HiDebugStartProfiler(napi_env env, napi_callback_info info)
+{
+    size_t argc = 6;
+    napi_value args[6] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    // 检查第一个参数是否存在并且是一个数字
+    if (argc < 6) {
+        napi_throw_error(env, nullptr, "至少需要6个参数");
+        return nullptr;
+    }
+
+    // 获取第一个参数的 int32_t 值
+    int32_t configParam;
+    napi_status status = napi_get_value_int32(env, args[0], &configParam);
+    if (status != napi_ok) {
+        napi_throw_type_error(env, nullptr, "参数必须是一个整数");
+        return nullptr;
+    }
+
+    // OH_HiDebug_ResourceType
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t resourceType;
+    napi_get_value_int32(env, args[0], &resourceType);
+
+    // OH_HiDebug_ResProfilerConfig
+    // maxDuration
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+    uint32_t maxDuration;
+    napi_get_value_uint32(env, args[1], &maxDuration);
+
+    // filterSize
+    napi_valuetype valuetype2;
+    napi_typeof(env, args[2], &valuetype2);
+    uint32_t filterSize;
+    napi_get_value_uint32(env, args[2], &filterSize);
+
+    // maxStackDepth
+    napi_valuetype valuetype3;
+    napi_typeof(env, args[3], &valuetype3);
+    uint32_t maxStackDepth;
+    napi_get_value_uint32(env, args[3], &maxStackDepth);
+
+    // statisticsInterval
+    napi_valuetype valuetype4;
+    napi_typeof(env, args[4], &valuetype4);
+    uint32_t statisticsInterval;
+    napi_get_value_uint32(env, args[4], &statisticsInterval);
+
+    // sampleInterval
+    napi_valuetype valuetype5;
+    napi_typeof(env, args[5], &valuetype5);
+    uint32_t sampleInterval;
+    napi_get_value_uint32(env, args[5], &sampleInterval);
+
+    // config init
+    OH_HiDebug_ResProfilerConfig profilerConfig;
+    profilerConfig.maxDuration = static_cast<uint32_t>(maxDuration);
+    profilerConfig.filterSize = static_cast<uint32_t>(filterSize);
+    profilerConfig.maxStackDepth = static_cast<uint32_t>(maxStackDepth);
+    profilerConfig.statisticsInterval = static_cast<uint32_t>(statisticsInterval);
+    profilerConfig.sampleInterval = static_cast<uint32_t>(sampleInterval);
+
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input resourceType is:%{public}d", resourceType);
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input maxDuration is:%{public}d", maxDuration);
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input filterSize is:%{public}d", filterSize);
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input maxStackDepth is:%{public}d", maxStackDepth);
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input statisticsInterval is:%{public}d", statisticsInterval);
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input sampleInterval is:%{public}d", sampleInterval);
+
+    HiDebug_ErrorCode startResult = HIDEBUG_SUCCESS;
+    napi_value ret;
+    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), &profilerConfig);
+    if (startResult == HIDEBUG_SUCCESS) {
+        std::cout << "Profiler start successfully" << std::endl;
+    } else {
+        std::cout << "Failed to stop profiler" << std::endl;
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler errorcode is:%{public}d", startResult);
+        napi_create_int32(env, startResult, &ret);
+        return ret;
+    }
+    napi_create_int32(env, startResult, &ret);
+    return ret;
+}
+
+static napi_value HiDebugStartProfilerNull(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    // 检查第一个参数是否存在并且是一个数字
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "至少需要1个参数");
+        return nullptr;
+    }
+
+    // 获取第一个参数的 int32_t 值
+    int32_t configParam;
+    napi_status status = napi_get_value_int32(env, args[0], &configParam);
+    if (status != napi_ok) {
+        napi_throw_type_error(env, nullptr, "参数必须是一个整数");
+        return nullptr;
+    }
+
+    // OH_HiDebug_ResourceType
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t resourceType;
+    napi_get_value_int32(env, args[0], &resourceType);
+
+    OH_LOG_ERROR(LOG_APP, "Hiprofiler input resourceType is:%{public}d", resourceType);
+
+    HiDebug_ErrorCode startResult = HIDEBUG_SUCCESS;
+    napi_value ret;
+    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), nullptr);
+    if (startResult == HIDEBUG_SUCCESS) {
+        std::cout << "Profiler start successfully" << std::endl;
+    } else {
+        std::cout << "Failed to stop profiler" << std::endl;
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler errorcode is:%{public}d", startResult);
+        napi_create_int32(env, startResult, &ret);
+        return ret;
+    }
+    napi_create_int32(env, startResult, &ret);
+    return ret;
+}
+
+static napi_value HiDebugStopProfiler(napi_env env, napi_callback_info info)
+{
+    HiDebug_ErrorCode stopResult = OH_HiDebug_StopProfiler();
+    napi_value ret;
+    if (stopResult == HIDEBUG_SUCCESS) {
+        std::cout << "Profiler stopped successfully" << std::endl;
+    } else {
+        std::cout << "Failed to stop profiler" << std::endl;
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StopProfiler errorcode is:%{public}d", stopResult);
+        napi_create_int32(env, stopResult, &ret);
+        return ret;
+    }
+    napi_create_int32(env, stopResult, &ret);
+    return ret;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -601,6 +751,9 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testSetCrashObjAddr", nullptr, TestSetCrashObjAddr, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "checkSetCrashObj", nullptr, CheckSetCrashObj, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testSetCrashObjAddrLen", nullptr, TestSetCrashObjAddrLen, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "startProfiler", nullptr, HiDebugStartProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "startProfilerNull", nullptr, HiDebugStartProfilerNull, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "stopProfiler", nullptr, HiDebugStopProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
         
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
