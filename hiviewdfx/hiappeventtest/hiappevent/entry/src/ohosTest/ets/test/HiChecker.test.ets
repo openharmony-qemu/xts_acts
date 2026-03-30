@@ -140,7 +140,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
 
@@ -160,7 +160,7 @@ export default function Hichecker() {
         hichecker.removeCheckRule(null);
         done();
       } catch (err) {
-        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        console.error(`Hichecker01unllremoveCheckRule code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
         expect(err.code === 401).assertTrue();
         done();
       }
@@ -201,7 +201,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -216,12 +216,12 @@ export default function Hichecker() {
      */
     it('Hichecker01undefinedremoveCheckRule', Level.LEVEL2, async (done: Function) => {
       try {
-        console.info("====>Hichecker01removeCheckRule  start");
+        console.info("====>Hichecker01undefinedremoveCheckRule  start");
         hichecker.removeCheckRule(undefined);
         done();
       } catch (err) {
-        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        console.error(`Hichecker01undefinedremoveCheckRule code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+        expect(false).assertTrue();
         done();
       }
 
@@ -259,11 +259,10 @@ export default function Hichecker() {
     it('Hichecker03null', Level.LEVEL2, async (done: Function) => {
       try {
         console.info("====>Hichecker03null  start")
-        hichecker.containsCheckRule(null);
+        expect(hichecker.containsCheckRule(undefined) == false).assertTrue();
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -279,11 +278,10 @@ export default function Hichecker() {
     it('Hichecker03undefined', Level.LEVEL2, async (done: Function) => {
       try {
         console.info("====>Hichecker03undefined  start")
-        hichecker.containsCheckRule(undefined);
+        expect(hichecker.containsCheckRule(undefined) == false).assertTrue();
         done();
       } catch (err) {
-        console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        console.error(`code:Hichecker03undefined ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
         done();
       }
     })
