@@ -521,8 +521,8 @@ int TestMatrixSetPolyToPolyNormal()
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, DRAWING_NUMBER_1);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -572,8 +572,8 @@ int TestMatrixSetPolyToPolyNull()
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     bool ret = OH_Drawing_MatrixSetPolyToPoly(nullptr, src, dst, DRAWING_NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
@@ -611,8 +611,8 @@ int TestMatrixSetPolyToPolyAbnormal()
     // 2. OH_Drawing_MatrixSetPolyToPoly, pass -1 as count, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}};
     bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, -DRAWING_NUMBER_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     EXPECT_EQ(ret, false);
@@ -674,8 +674,8 @@ int TestMatrixMapPointsNormal()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, pass the float value 1.52 as count
     double value = 1.52f;
     uint32_t count = static_cast<uint32_t>(value);
@@ -705,8 +705,8 @@ int TestMatrixMapPointsNull()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, the first parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_MatrixMapPoints(nullptr, src, dst, DRAWING_NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -745,8 +745,8 @@ int TestMatrixMapPointsAbnormal()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, pass -1 as count, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_MatrixMapPoints(matrix, src, dst, -DRAWING_NUMBER_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -773,8 +773,8 @@ int TestMatrixMapPointsMultipleCalls()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
         DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100, DRAWING_NUMBER_70}
-        , {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
+        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
     // 2. Call OH_Drawing_MatrixMapPoints 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCodeReset();

@@ -346,8 +346,7 @@ int TestCanvasDrawArcWithCenterNormal()
     // 正常传参，useCenter参数传true，起始角度小于0，扫描角度大于360
     OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    auto result2 = OH_Drawing_CanvasDrawArcWithCenter(canvas, rect2, -DRAWING_NUMBER_10,
-                                                                        DRAWING_NUMBER_650, true);
+    auto result2 = OH_Drawing_CanvasDrawArcWithCenter(canvas, rect2, -DRAWING_NUMBER_10, DRAWING_NUMBER_650, true);
     EXPECT_EQ(result2, OH_DRAWING_SUCCESS);
 
     // 正常传参，useCenter参数传false，起始角度大于0，扫描角度小于0

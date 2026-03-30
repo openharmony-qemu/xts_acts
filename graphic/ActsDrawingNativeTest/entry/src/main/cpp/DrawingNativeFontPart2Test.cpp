@@ -272,8 +272,7 @@ int TestFontArgumentsDestoryMultiplieCalls()
     DrawingNativeFontPart2TestSetUp();
     // 1. OH_Drawing_FontCreate
     OH_Drawing_FontArguments *fontArguments = nullptr;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++)
-    {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         fontArguments = OH_Drawing_FontArgumentsCreate();
     }
     // 2. OH_Drawing_FontCreate, OH_Drawing_FontArgumentsAddVariation
@@ -790,7 +789,7 @@ int TestFontGetWidthsBoundsNormal2()
     float widths[DRAWING_NUMBER_50] = {0.f};
     OH_Drawing_Array *outRectarr = OH_Drawing_RectCreateArray(count);
     std::vector<int> widthArr = {DRAWING_NUMBER_50, DRAWING_NUMBER_50, DRAWING_NUMBER_50, DRAWING_NUMBER_50};
-    FontGetWidthsBoundsNormal2(font, glyphs, glyphsCount, brush,pen, widths,
+    FontGetWidthsBoundsNormal2(font, glyphs, glyphsCount, brush, pen, widths,
                                outRectarr, widthArr, count);
     OH_Drawing_RectDestroyArray(outRectarr);
     OH_Drawing_BrushDestroy(brush);

@@ -947,7 +947,7 @@ int TestCanvasSaveLayerNull()
     OH_Drawing_CanvasSaveLayer(nullptr, rect, brush);
 
     // step 3
-    OH_Drawing_Rect *rect2 =OH_Drawing_RectCreate(0, DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_600);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_500, DRAWING_NUMBER_300, DRAWING_NUMBER_600);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasSaveLayer(canvas, rect2, brush);

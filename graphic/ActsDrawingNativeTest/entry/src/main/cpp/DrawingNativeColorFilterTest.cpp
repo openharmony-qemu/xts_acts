@@ -412,8 +412,9 @@ int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const float matrix[DRAWING_NUMBER_20] =
-            {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
+        const float matrix[DRAWING_NUMBER_20] = {
+            1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0
+        };
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
