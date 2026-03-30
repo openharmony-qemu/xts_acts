@@ -15,10 +15,10 @@
 
 export const AddNullPtrReadOnlyRequestInterceptor: () => number;
 export const AddNullPtrWritableResponseInterceptor: () => number;
-export const AddReadOnlyRequestInterceptor: (groupId: number, enabled: number) => number;
+// export const AddReadOnlyRequestInterceptor: (groupId: number, enabled: number) => number;
 export const AddReadOnlyResponseInterceptor: (groupId: number, enabled: number) => number;
-export const AddWritableRequestInterceptor: (groupId: number, enabled: number) => number;
-export const AddWritableResponseInterceptor: (groupId: number, enabled: number) => number;
+// export const AddWritableRequestInterceptor: (groupId: number, enabled: number) => number;
+// export const AddWritableResponseInterceptor: (groupId: number, enabled: number) => number;
 export const StopAllInterceptor: (groupId: number) => number;
 export const RemoveAllInterceptor: (groupId: number) => number;
 export const RemoveRequestInterceptor: (groupId: number) => number;

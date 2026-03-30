@@ -197,7 +197,7 @@ OH_Interceptor_Result g_request_group0_modify_url_interceptor_handler(
 static OH_Http_Interceptor g_request_group0_modify_url_interceptor = {
     .groupId = 0,
     .stage = OH_STAGE_REQUEST,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_request_group0_modify_url_interceptor_handler,
 };
@@ -225,7 +225,7 @@ OH_Interceptor_Result g_request_group1_modify_method_interceptor_handler(
 static OH_Http_Interceptor g_request_group1_modify_method_interceptor = {
     .groupId = 1,
     .stage = OH_STAGE_REQUEST,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_request_group1_modify_method_interceptor_handler,
 };
@@ -251,7 +251,7 @@ OH_Interceptor_Result g_request_group2_modify_body_interceptor_handler(
 static OH_Http_Interceptor g_request_group2_modify_body_interceptor = {
     .groupId = 2,
     .stage = OH_STAGE_REQUEST,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_request_group2_modify_body_interceptor_handler,
 };
@@ -278,7 +278,7 @@ OH_Interceptor_Result g_request_group3_modify_headers_interceptor_handler(
 static OH_Http_Interceptor g_request_group3_modify_headers_interceptor = {
     .groupId = 3,
     .stage = OH_STAGE_REQUEST,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_request_group3_modify_headers_interceptor_handler,
 };
@@ -297,7 +297,7 @@ OH_Interceptor_Result g_request_group4_modify_abort_interceptor_handler(
 static OH_Http_Interceptor g_request_group4_modify_abort_interceptor = {
     .groupId = 4,
     .stage = OH_STAGE_REQUEST,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_request_group4_modify_abort_interceptor_handler,
 };
@@ -470,7 +470,7 @@ OH_Interceptor_Result g_response_group0_modify_body_interceptor_handler(
 static OH_Http_Interceptor g_response_group0_modify_body_interceptor = {
     .groupId = 0,
     .stage = OH_STAGE_RESPONSE,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_response_group0_modify_body_interceptor_handler,
 };
@@ -490,7 +490,7 @@ OH_Interceptor_Result g_response_group1_modify_responseCode_interceptor_handler(
 static OH_Http_Interceptor g_response_group1_modify_responseCode_interceptor = {
     .groupId = 1,
     .stage = OH_STAGE_RESPONSE,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_response_group1_modify_responseCode_interceptor_handler,
 };
@@ -517,7 +517,7 @@ OH_Interceptor_Result g_response_group2_modify_headers_interceptor_handler(
 static OH_Http_Interceptor g_response_group2_modify_headers_interceptor = {
     .groupId = 2,
     .stage = OH_STAGE_RESPONSE,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_response_group2_modify_headers_interceptor_handler,
 };
@@ -535,7 +535,7 @@ OH_Interceptor_Result g_response_group3_modify_abort_interceptor_handler(
 static OH_Http_Interceptor g_response_group3_modify_abort_interceptor = {
     .groupId = 3,
     .stage = OH_STAGE_RESPONSE,
-    .type = OH_TYPE_MODIFY,
+    .type = OH_TYPE_READ_ONLY,
     .enabled = 1,
     .handler = g_response_group3_modify_abort_interceptor_handler,
 };
@@ -678,7 +678,8 @@ int32_t AddWritableRequestInterceptor(int32_t groupId, int32_t enabled)
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
     }
-    return OH_Http_AddWritableInterceptor(interceptor);
+//    return OH_Http_AddWritableInterceptor(interceptor);
+    return 0;
 }
 
 int32_t AddWritableResponseInterceptor(int32_t groupId, int32_t enabled)
@@ -687,7 +688,8 @@ int32_t AddWritableResponseInterceptor(int32_t groupId, int32_t enabled)
     if (interceptor != nullptr) {
         interceptor->enabled = enabled;
     }
-    return OH_Http_AddWritableInterceptor(interceptor);
+//    return OH_Http_AddWritableInterceptor(interceptor);
+    return 0;
 }
 
 int32_t StopAllInterceptor(int32_t groupId)

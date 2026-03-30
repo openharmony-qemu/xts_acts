@@ -16,6 +16,7 @@
 #include "global_http_interceptor.h"
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
+#include <hilog/log.h>
 
 const int GLOBAL_NETSTACK = 0xFF00;
 const char* TAG = "[netstack]";
@@ -56,8 +57,10 @@ static napi_value NAPI_Global_AddNullPtrReadOnlyRequestInterceptor(
 static napi_value NAPI_Global_AddNullPtrWritableResponseInterceptor(
     napi_env env, napi_callback_info info)
 {
-    auto param = OH_Http_AddWritableInterceptor(nullptr);
-    return CreateInt32Result(env, param);
+//    auto param = OH_Http_AddWritableInterceptor(nullptr);
+//    return CreateInt32Result(env, param);
+    napi_value ret;
+    return ret;
 }
 
 static napi_value NAPI_Global_AddReadOnlyRequestInterceptor(
@@ -96,6 +99,7 @@ static napi_value NAPI_Global_AddWritableRequestInterceptor(
 static napi_value NAPI_Global_AddWritableResponseInterceptor(
     napi_env env, napi_callback_info info)
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "NAPI_Global_AddWritableResponseInterceptor 111111");
     int32_t params[PARAM_COUNT_TWO] = {0};
     if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddWritableResponseInterceptor(params[0], params[1]);
