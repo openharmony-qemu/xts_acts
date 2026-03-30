@@ -720,7 +720,7 @@ static napi_value TestInjectTouchEventwithDestoryedSubwindow(napi_env env, napi_
     return resultValue;
 }
 
-static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetrics* metrics)
+static void OnFrameMetricsMeasured(int32_t windowId, const OH_WindowManager_FrameMetrics* metrics)
 {
     if (metrics == nullptr) {
         return;
