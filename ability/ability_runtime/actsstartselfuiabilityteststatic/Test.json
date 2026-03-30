@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "actsStartSelfUIAbilityStaticTest.hap"
+                "ActsActsStartSelfUIAbilityStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
