@@ -799,6 +799,29 @@ void VEncAPI11Sample::InputEnableRepeatSleep()
     }
 }
 
+int32_t VEncAPI11Sample::MapNativeBuffer(OHNativeWindowBuffer *ohNativeWindowBuffer,
+    OH_NativeBuffer *&nativeBuffer, void *&virAddr)
+{
+    OH_LOG_INFO(LOG_APP, "virAddr is nullptr, using OH_NativeBuffer_FromNativeWindowBuffer");
+    int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+    if (convertRet != 0 || nativeBuffer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer failed: ret=%{public}d", convertRet);
+        cout << "OH_NativeBuffer_FromNativeWindowBuffer failed" << endl;
+        isRunning_.store(false);
+        return 0;
+    }
+    OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer success, calling OH_NativeBuffer_Map");
+    int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
+    if (ret != 0 || virAddr == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_Map failed: ret=%{public}d", ret);
+        cout << "OH_NativeBuffer_Map failed" << endl;
+        isRunning_.store(false);
+        return 0;
+    }
+    OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_Map success: virAddr=%{public}p", virAddr);
+    return 1;
+}
+
 int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
     OH_NativeBuffer *&nativeBuffer, uint8_t *&dst)
 {
@@ -825,40 +848,19 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
         return 0;
     }
     OH_LOG_INFO(LOG_APP, "GetBufferHandleFromNative success");
-    
     int32_t stride = bufferHandle->stride;
     void *virAddr = bufferHandle->virAddr;
-    
     OH_LOG_INFO(LOG_APP, "BufferHandle info: stride=%{public}d, width=%{public}d, height=%{public}d",
                 stride, bufferHandle->width, bufferHandle->height);
     OH_LOG_INFO(LOG_APP, "BufferHandle info: size=%{public}d, format=%{public}d, fd=%{public}d, virAddr=%{public}p",
                 bufferHandle->size, bufferHandle->format, bufferHandle->fd, virAddr);
-    
     if (virAddr == nullptr) {
-        OH_LOG_INFO(LOG_APP, "virAddr is nullptr, using OH_NativeBuffer_FromNativeWindowBuffer");
-
-        int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
-        if (convertRet != 0 || nativeBuffer == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer failed: ret=%{public}d", convertRet);
-            cout << "OH_NativeBuffer_FromNativeWindowBuffer failed" << endl;
-            isRunning_.store(false);
+        if (MapNativeBuffer(ohNativeWindowBuffer, nativeBuffer, virAddr) == 0) {
             return 0;
         }
-        
-        OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer success, calling OH_NativeBuffer_Map");
-        int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
-        if (ret != 0 || virAddr == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_Map failed: ret=%{public}d", ret);
-            cout << "OH_NativeBuffer_Map failed" << endl;
-            isRunning_.store(false);
-            return 0;
-        }
-        
-        OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_Map success: virAddr=%{public}p", virAddr);
     } else {
         OH_LOG_INFO(LOG_APP, "virAddr is valid: %{public}p", virAddr);
     }
-    
     dst = reinterpret_cast<uint8_t *>(virAddr);
     if (stride < static_cast<int32_t>(DEFAULT_WIDTH)) {
         OH_LOG_ERROR(LOG_APP, "invalid stride=%{public}d, DEFAULT_WIDTH=%{public}d", stride, DEFAULT_WIDTH);
@@ -866,7 +868,6 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
         isRunning_.store(false);
         return 0;
     }
-    
     stride_ = stride;
     OH_LOG_INFO(LOG_APP, "InitBuffer success, stride_=%{public}d, dst=%{public}p", stride_, dst);
     return 1;

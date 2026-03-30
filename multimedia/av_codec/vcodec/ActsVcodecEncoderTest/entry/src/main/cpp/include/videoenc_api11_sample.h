@@ -146,6 +146,8 @@ public:
     void DumpInfo(OH_AVCodecBufferAttr attr, OH_AVBuffer *buffer);
     void readMultiFilesFunc();
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
+    int32_t MapNativeBuffer(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer,
+        void *&virAddr);
     void InputEnableRepeatSleep();
     int32_t ReadFrameData(uint8_t *dst, int32_t &readFileIndex, OHNativeWindowBuffer *ohNativeWindowBuffer);
     int32_t HandleParamSwitch(int32_t inputframeCount, bool &isParamSetSurface);

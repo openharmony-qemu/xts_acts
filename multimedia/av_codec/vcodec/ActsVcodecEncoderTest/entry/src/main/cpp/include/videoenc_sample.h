@@ -66,6 +66,7 @@ public:
     uint32_t DEFAULT_KEY_FRAME_INTERVAL = 1000;
     uint32_t repeat_time = 0;
     int32_t CreateVideoEncoder(const char *codecName);
+    int32_t CreateEncoderThreads();
     int32_t ConfigureVideoEncoder();
     int32_t ConfigureVideoEncoder_Temporal(int32_t temporal_gop_size);
     int32_t ConfigureVideoEncoder_fuzz(int32_t data);
@@ -97,6 +98,10 @@ public:
     void InputFunc();
     int32_t state_EOS();
     void InputFuncSurface();
+    int32_t InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer,
+        uint8_t *&dst, int &stride);
+    int32_t ProcessSurfaceFrame(uint8_t *dst, OHNativeWindowBuffer *ohNativeWindowBuffer,
+        OH_NativeBuffer *nativeBuffer);
     uint32_t ReadOneFrameYUV420SP(uint8_t *dst);
     void ReadOneFrameRGBA8888(uint8_t *dst);
     int32_t CheckAttrFlag(OH_AVCodecBufferAttr attr);

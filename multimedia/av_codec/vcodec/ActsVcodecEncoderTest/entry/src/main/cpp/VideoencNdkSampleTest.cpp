@@ -370,6 +370,36 @@ int32_t VEncNdkSample::OpenFile()
     return ret;
 }
 
+int32_t VEncNdkSample::CreateEncoderThreads()
+{
+    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: File opened, creating input thread...");
+    if (SURF_INPUT) {
+        inputLoop_ = make_unique<thread>(&VEncNdkSample::InputFuncSurface, this);
+    } else {
+        inputLoop_ = make_unique<thread>(&VEncNdkSample::InputFunc, this);
+    }
+    if (inputLoop_ == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::StartVideoEncoder: Failed to create input thread");
+        isRunning_.store(false);
+        (void)OH_VideoEncoder_Stop(venc_);
+        ReleaseInFile();
+        return AV_ERR_UNKNOWN;
+    }
+    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: Input thread created, creating output thread...");
+    outputLoop_ = make_unique<thread>(&VEncNdkSample::OutputFunc, this);
+    if (outputLoop_ == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::StartVideoEncoder: Failed to create output thread");
+        isRunning_.store(false);
+        (void)OH_VideoEncoder_Stop(venc_);
+        ReleaseInFile();
+        StopInloop();
+        Release();
+        return AV_ERR_UNKNOWN;
+    }
+    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: Both threads created successfully");
+    return AV_ERR_OK;
+}
+
 int32_t VEncNdkSample::StartVideoEncoder()
 {
     OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: START, SURF_INPUT=%{public}d", SURF_INPUT);
@@ -402,32 +432,7 @@ int32_t VEncNdkSample::StartVideoEncoder()
         OH_LOG_ERROR(LOG_APP, "VEncNdkSample::StartVideoEncoder: OpenFile FAILED, returning AV_ERR_UNKNOWN");
         return AV_ERR_UNKNOWN;
     }
-    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: File opened, creating input thread...");
-    if (SURF_INPUT) {
-        inputLoop_ = make_unique<thread>(&VEncNdkSample::InputFuncSurface, this);
-    } else {
-        inputLoop_ = make_unique<thread>(&VEncNdkSample::InputFunc, this);
-    }
-    if (inputLoop_ == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::StartVideoEncoder: Failed to create input thread");
-        isRunning_.store(false);
-        (void)OH_VideoEncoder_Stop(venc_);
-        ReleaseInFile();
-        return AV_ERR_UNKNOWN;
-    }
-    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: Input thread created, creating output thread...");
-    outputLoop_ = make_unique<thread>(&VEncNdkSample::OutputFunc, this);
-    if (outputLoop_ == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::StartVideoEncoder: Failed to create output thread");
-        isRunning_.store(false);
-        (void)OH_VideoEncoder_Stop(venc_);
-        ReleaseInFile();
-        StopInloop();
-        Release();
-        return AV_ERR_UNKNOWN;
-    }
-    OH_LOG_INFO(LOG_APP, "VEncNdkSample::StartVideoEncoder: Both threads created successfully");
-    return AV_ERR_OK;
+    return CreateEncoderThreads();
 }
 
 int32_t VEncNdkSample::CreateVideoEncoder(const char *codecName)
@@ -522,6 +527,86 @@ uint32_t VEncNdkSample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH
     return 0;
 }
 
+int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
+    OH_NativeBuffer *&nativeBuffer, uint8_t *&dst, int &stride)
+{
+    if (nativeWindow == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: nativeWindow is nullptr, exiting");
+        cout << "nativeWindow == nullptr" << endl;
+        return -1;
+    }
+    int fenceFd = -1;
+    int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &ohNativeWindowBuffer, &fenceFd);
+    if (err != 0) {
+        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: RequestBuffer failed, GSError=%{public}d", err);
+        cout << "RequestBuffer failed, GSError=" << err << endl;
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: RequestBuffer success, fenceFd=%{public}d", fenceFd);
+    if (fenceFd > 0) {
+        close(fenceFd);
+    }
+    BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(ohNativeWindowBuffer);
+    if (bufferHandle == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: GetBufferHandleFromNative failed");
+        cout << "GetBufferHandleFromNative failed" << endl;
+        isRunning_.store(false);
+        return -1;
+    }
+    stride = bufferHandle->stride;
+    void *virAddr = bufferHandle->virAddr;
+    OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: stride=%{public}d, virAddr=%{public}p", stride, virAddr);
+    if (virAddr == nullptr) {
+        OH_LOG_INFO(LOG_APP,
+            "VEncNdkSample::InputFuncSurface: virAddr is nullptr, using OH_NativeBuffer_Map");
+        int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+        if (convertRet != 0 || nativeBuffer == nullptr) {
+            OH_LOG_ERROR(LOG_APP,
+                "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_FromNativeWindowBuffer failed: %{public}d",
+                convertRet);
+            cout << "OH_NativeBuffer_FromNativeWindowBuffer failed" << endl;
+            isRunning_.store(false);
+            return -1;
+        }
+        int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
+        if (ret != 0 || virAddr == nullptr) {
+            OH_LOG_ERROR(LOG_APP,
+                "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_Map failed: %{public}d", ret);
+            cout << "OH_NativeBuffer_Map failed" << endl;
+            isRunning_.store(false);
+            return -1;
+        }
+        OH_LOG_INFO(LOG_APP,
+            "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_Map success, virAddr=%{public}p", virAddr);
+    }
+    dst = (uint8_t *)virAddr;
+    if (dst == nullptr || stride < static_cast<int>(DEFAULT_WIDTH)) {
+        OH_LOG_ERROR(LOG_APP,
+            "VEncNdkSample::InputFuncSurface: invalid dst=%{public}p or stride=%{public}d", dst, stride);
+        cout << "invalid va or stride=" << stride << endl;
+        isRunning_.store(false);
+        return -1;
+    }
+    stride_ = stride;
+    return 0;
+}
+
+int32_t VEncNdkSample::ProcessSurfaceFrame(uint8_t *dst, OHNativeWindowBuffer *ohNativeWindowBuffer,
+    OH_NativeBuffer *nativeBuffer)
+{
+    if (!ReadOneFrameYUV420SP(dst)) {
+        int32_t err = OH_VideoEncoder_NotifyEndOfStream(venc_);
+        if (err != 0) {
+            cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
+        }
+        return -1;
+    }
+    if (FlushSurf(ohNativeWindowBuffer, nativeBuffer)) {
+        return -1;
+    }
+    return 0;
+}
+
 void VEncNdkSample::InputFuncSurface()
 {
     OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: Thread started");
@@ -531,88 +616,18 @@ void VEncNdkSample::InputFuncSurface()
             OH_VideoEncoder_NotifyEndOfStream(venc_);
             break;
         }
-        OHNativeWindowBuffer *ohNativeWindowBuffer;
-        int fenceFd = -1;
-        if (nativeWindow == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: nativeWindow is nullptr, exiting");
-            cout << "nativeWindow == nullptr" << endl;
-            break;
-        }
-
-        int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &ohNativeWindowBuffer, &fenceFd);
-        if (err != 0) {
-            OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: RequestBuffer failed, GSError=%{public}d", err);
-            cout << "RequestBuffer failed, GSError=" << err << endl;
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: RequestBuffer success, fenceFd=%{public}d", fenceFd);
-        if (fenceFd > 0) {
-            close(fenceFd);
-        }
-        
-        BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(ohNativeWindowBuffer);
-        if (bufferHandle == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: GetBufferHandleFromNative failed");
-            cout << "GetBufferHandleFromNative failed" << endl;
-            isRunning_.store(false);
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: GetBufferHandleFromNative success");
-        
-        int stride = bufferHandle->stride;
-        void *virAddr = bufferHandle->virAddr;
+        OHNativeWindowBuffer *ohNativeWindowBuffer = nullptr;
         OH_NativeBuffer *nativeBuffer = nullptr;
-        
-        OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: stride=%{public}d, virAddr=%{public}p", stride, virAddr);
-        
-        if (virAddr == nullptr) {
-            OH_LOG_INFO(LOG_APP,
-                "VEncNdkSample::InputFuncSurface: virAddr is nullptr, using OH_NativeBuffer_Map");
-            int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
-            if (convertRet != 0 || nativeBuffer == nullptr) {
-                OH_LOG_ERROR(LOG_APP,
-                    "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_FromNativeWindowBuffer failed: %{public}d",
-                    convertRet);
-                cout << "OH_NativeBuffer_FromNativeWindowBuffer failed" << endl;
-                isRunning_.store(false);
-                break;
-            }
-            
-            int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
-            if (ret != 0 || virAddr == nullptr) {
-                OH_LOG_ERROR(LOG_APP,
-                    "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_Map failed: %{public}d", ret);
-                cout << "OH_NativeBuffer_Map failed" << endl;
-                isRunning_.store(false);
-                break;
-            }
-            OH_LOG_INFO(LOG_APP,
-                "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_Map success, virAddr=%{public}p",
-                virAddr);
-        }
-        
-        uint8_t *dst = (uint8_t *)virAddr;
-        if (dst == nullptr || stride < static_cast<int>(DEFAULT_WIDTH)) {
-            OH_LOG_ERROR(LOG_APP,
-                "VEncNdkSample::InputFuncSurface: invalid dst=%{public}p or stride=%{public}d",
-                dst, stride);
-            cout << "invalid va or stride=" << stride << endl;
-            isRunning_.store(false);
+        uint8_t *dst = nullptr;
+        int stride = 0;
+        if (InitSurfaceBuffer(ohNativeWindowBuffer, nativeBuffer, dst, stride) != 0) {
             break;
         }
-        stride_ = stride;
         OH_LOG_INFO(LOG_APP,
-            "VEncNdkSample::InputFuncSurface: Buffer ready, dst=%{public}p, stride=%{public}d",
-            dst, stride);
-        if (!ReadOneFrameYUV420SP(dst)) {
-            err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
-                cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
-            }
+            "VEncNdkSample::InputFuncSurface: Buffer ready, dst=%{public}p, stride=%{public}d", dst, stride);
+        if (ProcessSurfaceFrame(dst, ohNativeWindowBuffer, nativeBuffer) != 0) {
             break;
         }
-        if (FlushSurf(ohNativeWindowBuffer, nativeBuffer))
-            break;
         usleep(FRAME_INTERVAL);
     }
 }

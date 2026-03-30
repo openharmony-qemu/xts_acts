@@ -573,56 +573,47 @@ static napi_value RunStateTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== TemporalTest Module ====================
+static std::vector<TestFunction> GetTemporalTestPart1()
+{
+    return {
+        VideoTemporalEncodeApi0020Test, VideoTemporalEncodeApi0030Test,
+        VideoTemporalEncodeFunction0010Test, VideoTemporalEncodeFunction0020Test,
+        VideoTemporalEncodeFunction0030Test, VideoTemporalEncodeFunction0040Test,
+        VideoTemporalEncodeFunction0440Test, VideoTemporalEncodeFunction0050Test,
+        VideoTemporalEncodeFunction0060Test, VideoTemporalEncodeFunction0070Test,
+        VideoTemporalEncodeFunction0080Test, VideoTemporalEncodeFunction0090Test,
+        VideoTemporalEncodeFunction0100Test, VideoTemporalEncodeFunction0110Test,
+        VideoTemporalEncodeFunction0120Test, VideoTemporalEncodeFunction0130Test,
+        VideoTemporalEncodeFunction0140Test, VideoTemporalEncodeFunction0150Test,
+        VideoTemporalEncodeFunction0160Test, VideoTemporalEncodeFunction0170Test,
+        VideoTemporalEncodeFunction0180Test, LTR_FUNC_001Test, LTR_FUNC_002Test,
+        LTR_FUNC_004Test, LTR_FUNC_005Test
+    };
+}
+
+static std::vector<TestFunction> GetTemporalTestPart2()
+{
+    return {
+        LTR_FUNC_006Test, LTR_FUNC_007Test, LTR_FUNC_008Test, LTR_FUNC_009Test,
+        LTR_FUNC_010Test, LTR_FUNC_011Test, LTR_FUNC_012Test, LTR_FUNC_013Test,
+        LTR_FUNC_014Test, LTR_FUNC_015Test, LTR_FUNC_016Test,
+        VideoUniformlyEncodeFunction0100Test, VideoUniformlyEncodeFunction0200Test,
+        VideoUniformlyEncodeFunction0300Test, VideoUniformlyEncodeFunction0400Test,
+        VideoUniformlyEncodeFunction0500Test, VideoUniformlyEncodeFunction0600Test,
+        VideoUniformlyEncodeFunction0700Test, VideoUniformlyEncodeFunction0800Test,
+        VideoUniformlyEncodeFunction0900Test, VideoUniformlyEncodeFunction1000Test
+    };
+}
+
 static const std::vector<TestFunction>& GetTemporalTestFunctions()
 {
-    static const std::vector<TestFunction> functions = {
-    VideoTemporalEncodeApi0020Test,
-    VideoTemporalEncodeApi0030Test,
-    VideoTemporalEncodeFunction0010Test,
-    VideoTemporalEncodeFunction0020Test,
-    VideoTemporalEncodeFunction0030Test,
-    VideoTemporalEncodeFunction0040Test,
-    VideoTemporalEncodeFunction0440Test,
-    VideoTemporalEncodeFunction0050Test,
-    VideoTemporalEncodeFunction0060Test,
-    VideoTemporalEncodeFunction0070Test,
-    VideoTemporalEncodeFunction0080Test,
-    VideoTemporalEncodeFunction0090Test,
-    VideoTemporalEncodeFunction0100Test,
-    VideoTemporalEncodeFunction0110Test,
-    VideoTemporalEncodeFunction0120Test,
-    VideoTemporalEncodeFunction0130Test,
-    VideoTemporalEncodeFunction0140Test,
-    VideoTemporalEncodeFunction0150Test,
-    VideoTemporalEncodeFunction0160Test,
-    VideoTemporalEncodeFunction0170Test,
-    VideoTemporalEncodeFunction0180Test,
-    LTR_FUNC_001Test,
-    LTR_FUNC_002Test,
-    LTR_FUNC_004Test,
-    LTR_FUNC_005Test,
-    LTR_FUNC_006Test,
-    LTR_FUNC_007Test,
-    LTR_FUNC_008Test,
-    LTR_FUNC_009Test,
-    LTR_FUNC_010Test,
-    LTR_FUNC_011Test,
-    LTR_FUNC_012Test,
-    LTR_FUNC_013Test,
-    LTR_FUNC_014Test,
-    LTR_FUNC_015Test,
-    LTR_FUNC_016Test,
-    VideoUniformlyEncodeFunction0100Test,
-    VideoUniformlyEncodeFunction0200Test,
-    VideoUniformlyEncodeFunction0300Test,
-    VideoUniformlyEncodeFunction0400Test,
-    VideoUniformlyEncodeFunction0500Test,
-    VideoUniformlyEncodeFunction0600Test,
-    VideoUniformlyEncodeFunction0700Test,
-    VideoUniformlyEncodeFunction0800Test,
-    VideoUniformlyEncodeFunction0900Test,
-    VideoUniformlyEncodeFunction1000Test,
-    };
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetTemporalTestPart1();
+        auto part2 = GetTemporalTestPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
