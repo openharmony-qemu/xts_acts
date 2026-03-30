@@ -147,6 +147,8 @@ public:
     void readMultiFilesFunc();
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
     void InputEnableRepeatSleep();
+    int32_t ReadFrameData(uint8_t *dst, int32_t &readFileIndex, OHNativeWindowBuffer *ohNativeWindowBuffer);
+    int32_t HandleParamSwitch(int32_t inputframeCount, bool &isParamSetSurface);
     int32_t QueryInputBuffer(uint32_t index, int64_t timeoutUs);
     int32_t QueryOutputBuffer(uint32_t index, int64_t timeoutUs);
     OH_AVBuffer *GetInputBuffer(uint32_t index);

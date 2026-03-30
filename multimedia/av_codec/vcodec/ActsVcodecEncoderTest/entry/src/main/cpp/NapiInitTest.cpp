@@ -141,7 +141,7 @@ static std::vector<TestFunction> GetApiTestFunctionsPart2()
         VideoEncodeApi0900Test, VideoEncodeApi1000Test, VideoEncodeApi1100Test,
         VideoEncodeApi1200Test, VideoEncodeApi1300Test, VideoEncodeApi1400Test,
         VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0020Test,
-        VideoEncodeSyncApi0030Test, VideoEncodeSyncApi0040Test,VideoEncodeSyncApi0050Test,
+        VideoEncodeSyncApi0030Test, VideoEncodeSyncApi0040Test, VideoEncodeSyncApi0050Test,
         VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test, VideoEncodeSyncApi0080Test
     };
 }
