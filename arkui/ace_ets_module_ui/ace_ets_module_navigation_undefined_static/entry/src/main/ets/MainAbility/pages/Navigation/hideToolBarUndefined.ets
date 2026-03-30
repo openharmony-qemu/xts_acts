@@ -65,7 +65,6 @@ import {
   ResourceStr,
   OptionWidthMode,
   Dimension,
-  SymbolGlyphModifier,
   Entry
 } from '@ohos.arkui.component'
 import { Provide, State, Observed } from '@ohos.arkui.stateManagement'
