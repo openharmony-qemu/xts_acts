@@ -322,7 +322,9 @@ export default function windowPCTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-        } else {
+        } else if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(1300002);
+        }else {
           console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(true).assertFalse();
         }
@@ -3746,12 +3748,7 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (!isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          } else {
-            expect(err.code).assertEqual(1300002);
-          }
+          expect(err.code).assertEqual(1300002);
           done();
         });
       } catch (err) {

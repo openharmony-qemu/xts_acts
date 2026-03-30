@@ -203,6 +203,8 @@ export default function windowLayoutTest() {
       let caseName: string = 'test_maximize_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let mainWindow = windowStage.getMainWindowSync();
         mainWindow.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
@@ -223,8 +225,14 @@ export default function windowLayoutTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
+          if(!canIUseRes){
+            expect(err.code).assertEqual(801);
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
+          
         });
       } catch (err) {
         console.error(`${caseName} :Failed to get mainWindow. Cause code: ${err.code}, message: ${err.message}`);
@@ -245,6 +253,8 @@ export default function windowLayoutTest() {
       let caseName: string = 'test_maximize_mainWindow_withparam';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let mainWindow = windowStage.getMainWindowSync();
         mainWindow.maximize(window.MaximizePresentation.EXIT_IMMERSIVE, false).then(() => {
@@ -265,8 +275,13 @@ export default function windowLayoutTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
+          if(!canIUseRes){
+            expect(err.code).assertEqual(801);
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         });
 
       } catch (err) {
@@ -408,7 +423,11 @@ export default function windowLayoutTest() {
         })
       } catch (err) {
         console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
-        if (!isFreeWindowMode) {
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+          done();
+        }
+        else if (!isFreeWindowMode) {
           expect(err.code).assertEqual(1300010);
           done();
         } else {
@@ -471,7 +490,11 @@ export default function windowLayoutTest() {
 
       } catch (err) {
         console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
-        if (!isFreeWindowMode) {
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+          done();
+        }
+        else if (!isFreeWindowMode) {
           expect(err.code).assertEqual(1300010);
           done();
         } else {
@@ -533,7 +556,11 @@ export default function windowLayoutTest() {
 
       } catch (err) {
         console.error(`${caseName} :Failed to get mainWindow . Cause code: ${err.code}, message: ${err.message}`);
-        if (!isFreeWindowMode) {
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+          done();
+        }
+        else if (!isFreeWindowMode) {
           expect(err.code).assertEqual(1300010);
           done();
         } else {
@@ -1005,14 +1032,9 @@ export default function windowLayoutTest() {
           done()
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
-          if ((deviceType !== 'tablet' && deviceType !== '2in1' && deviceType !== 'phone') || !isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            console.error(`The device not support setSupportedWindowModes`);
-            done()
-          } else {
-            expect(err.code).assertEqual(1300002);
-            done()
-          }
+          expect(err.code).assertEqual(1300002);
+          done()
+          
         });
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
@@ -1044,14 +1066,9 @@ export default function windowLayoutTest() {
           done()
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
-          if ((deviceType !== 'tablet' && deviceType !== '2in1' && deviceType !== 'phone') || !isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            console.error(`The device not support setSupportedWindowModes`);
-            done()
-          } else {
-            expect(err.code).assertEqual(1300004);
-            done()
-          }
+          expect(err.code).assertEqual(1300004);
+          done()
+          
 
         });
       } catch (e) {
@@ -1090,14 +1107,9 @@ export default function windowLayoutTest() {
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
           await windowClass.destroyWindow();
-          if ((deviceType !== 'tablet' && deviceType !== '2in1' && deviceType !== 'phone') || !isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            console.error(`The device not support setSupportedWindowModes`);
-            done()
-          } else {
-            expect(err.code).assertEqual(1300004);
-            done()
-          }
+          expect(err.code).assertEqual(1300004);
+          done()
+          
         });
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
@@ -1242,10 +1254,6 @@ export default function windowLayoutTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
-          if (!isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            done();
-          }
           if (err.code == 1300002) {
             done();
           } else {
@@ -2107,8 +2115,14 @@ export default function windowLayoutTest() {
         });
       } catch (exception) {
         console.error(msgStr + `Failed to get mainWindow. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFail();
-        done();
+        if(!isSyscapSessionManagerSupported){
+          expect(exception.code).assertEqual(801);
+          done();
+        }else{
+          expect(false).assertFail();
+          done();
+        }
+        
       }
     })
 
@@ -2154,8 +2168,13 @@ export default function windowLayoutTest() {
         });
       } catch (exception) {
         console.error(msgStr + `Failed to get mainWindow. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFail();
-        done();
+        if(!isSyscapSessionManagerSupported){
+          expect(exception.code).assertEqual(801);
+          done();
+        }else{
+          expect(false).assertFail();
+          done();
+        }
       }
     })
 
@@ -2540,11 +2559,7 @@ export default function windowLayoutTest() {
               done();
             }).catch((err: BusinessError) => {
               console.error(caseName + `Failed to set window draggable. Cause code: ${err.code}, message: ${err.message}`);
-              if (!isSyscapSessionManagerSupported || (deviceType !== '2in1' && deviceType !== 'phone' && deviceType !== 'tablet')) {
-                expect(err.code).assertEqual(801);
-              } else {
-                expect(err.code).assertEqual(1300002);
-              }
+              expect(err.code).assertEqual(1300002);
               done();
             })
           } catch (exception) {
@@ -3002,12 +3017,8 @@ export default function windowLayoutTest() {
         done();
       } catch (err) {
         console.error(`${caseName} failed main window, err: ${JSON.stringify(err)}`);
-        if (!isSyscapSessionManagerSupported) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(err.code).assertEqual(1300004);
-        }
+        expect(err.code).assertEqual(1300004);
+        
       }
       // dilog窗
       let config: window.Configuration = {
@@ -3025,12 +3036,8 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed dialog window, err: ${JSON.stringify(err)}`);
         await windowClass2.destroyWindow();
-        if (!isSyscapSessionManagerSupported) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(err.code).assertEqual(1300004);
-        }
+        expect(err.code).assertEqual(1300004);
+        
       }
       // 悬浮窗
       let config2: window.Configuration = {
@@ -3051,13 +3058,9 @@ export default function windowLayoutTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
-          if (!isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect(err.code).assertEqual(1300004);
-            done();
-          }
+          expect(err.code).assertEqual(1300004);
+          done();
+          
         });
       } catch (e) {
         console.error(`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
@@ -3118,8 +3121,14 @@ export default function windowLayoutTest() {
           };
         }).catch((error: BusinessError) => {
           console.error(caseName + 'Failed to create the subwindow 1. Cause: ' + JSON.stringify(error));
-          expect().assertFail();
-          done();
+          if(!isSyscapSessionManagerSupported){
+            expect(error.code).assertEqual(1300002);
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
+          
         });
       } catch (e) {
         console.error(`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
@@ -3145,10 +3154,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabled');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
         windowClass.setRelativePositionToParentWindowEnabled(true).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3192,7 +3201,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3217,9 +3226,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowUnEnabled');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(false).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3252,7 +3262,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3277,10 +3287,11 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTopStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3324,7 +3335,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3349,10 +3360,11 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTop');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3396,7 +3408,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3421,10 +3433,11 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_END).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3468,7 +3481,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3493,10 +3506,11 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.START).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3540,7 +3554,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3565,9 +3579,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorCenter');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.CENTER).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3611,7 +3626,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3636,9 +3651,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.END).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3685,7 +3701,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3710,10 +3726,11 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000);
       await windowClass.moveWindowToAsync(100, 100);
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_START).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3760,7 +3777,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3785,9 +3802,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottom');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3834,7 +3852,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3859,9 +3877,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_END).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3908,7 +3927,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3933,9 +3952,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, 100).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3982,7 +4002,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -4007,9 +4027,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, -100).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -4057,7 +4078,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -4082,9 +4103,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, 100).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -4131,7 +4153,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -4156,9 +4178,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
-      try {
+      
         windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, -100).then(async () => {
           console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
           let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -4205,7 +4228,7 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if (!isSyscapSessionManagerSupported || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -4282,13 +4305,14 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         windowClass.off('rectChangeInGlobalDisplay');
         await terminateAbility(caseName);
-        if (!isFreeWindowMode) {
-          expect(err.code).assertEqual(1300010);
-          done();
-        } else if (!isSyscapSessionManagerSupported) {
+       if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done()
-        } else {
+        } 
+        else if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(1300010);
+          done();
+        } else  {
           expect().assertFail();
           done();
         }
@@ -4339,13 +4363,14 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         windowClass.off('rectChangeInGlobalDisplay');
         await terminateAbility(caseName);
-        if (!isFreeWindowMode) {
-          expect(err.code).assertEqual(1300010);
-          done();
-        } else if (!isSyscapSessionManagerSupported) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done()
-        } else {
+        } 
+        else if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(1300010);
+          done();
+        }  else {
           expect().assertFail();
           done();
         }
@@ -4396,12 +4421,13 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         windowClass.off('rectChangeInGlobalDisplay');
         await terminateAbility(caseName);
-        if (!isFreeWindowMode) {
-          expect(err.code).assertEqual(1300010);
-          done();
-        } else if (!isSyscapSessionManagerSupported) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done()
+        } 
+        else if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(1300010);
+          done();
         } else {
           expect().assertFail();
           done();
@@ -4467,12 +4493,13 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         windowClass.off('rectChangeInGlobalDisplay');
         await terminateAbility(caseName);
-        if (!isFreeWindowMode) {
-          expect(err.code).assertEqual(1300010);
-          done();
-        } else if (!isSyscapSessionManagerSupported) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done()
+        } 
+        else if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(1300010);
+          done();
         } else {
           expect().assertFail();
           done();
@@ -4537,12 +4564,12 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         windowClass.off('rectChangeInGlobalDisplay');
         await terminateAbility(caseName);
-        if (!isFreeWindowMode) {
-          expect(err.code).assertEqual(1300010);
-          done();
-        } else if (!isSyscapSessionManagerSupported) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done()
+        } else if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(1300010);
+          done();
         } else {
           expect().assertFail();
           done();
@@ -4915,7 +4942,7 @@ export default function windowLayoutTest() {
         if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
         }
-        if (isFreeWindowMode == false) {
+        else if (isFreeWindowMode == false) {
           expect(err.code).assertEqual(1300010);
         } else {
           expect().assertFail();
@@ -5030,13 +5057,14 @@ export default function windowLayoutTest() {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
-        }
-        let windowStatus = windowClass.getWindowStatus();
-        console.log(caseName + ' windowStatus: ' + JSON.stringify(windowStatus));
-        if (windowStatus === window.WindowStatusType.FLOATING) {
-          expect(err.code).assertEqual(1300016);
-        } else {
-          expect(err.code).assertEqual(1300010);
+        }else{
+          let windowStatus = windowClass.getWindowStatus();
+          console.log(caseName + ' windowStatus: ' + JSON.stringify(windowStatus));
+          if (windowStatus === window.WindowStatusType.FLOATING) {
+            expect(err.code).assertEqual(1300016);
+          } else {
+            expect(err.code).assertEqual(1300010);
+          }
         }
         await terminateAbility(caseName);
         done()
@@ -5122,9 +5150,10 @@ export default function windowLayoutTest() {
       let windowClass = await windowStage.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
+      try {
       await windowClass.moveWindowToAsync(50, 50);
       await sleep(1000);
-      try {
+      
         const maxInt = 2 ** 31 - 1;
         let position = windowClass.clientToGlobalDisplay(maxInt, maxInt);
         console.log(caseName + ' position: ' + JSON.stringify(position));
@@ -5209,9 +5238,10 @@ export default function windowLayoutTest() {
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
       await sleep(200)
+      try {
       await windowClass.moveWindowTo(-50, -50);
       await sleep(200);
-      try {
+      
         const maxInt = 2 ** 31 - 1;
         windowClass.globalDisplayToClient(maxInt, maxInt);
         await windowClass.destroyWindow()
