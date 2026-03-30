@@ -14,8 +14,12 @@
  */
 import HidebugrawTest from './hidebugraw.test';
 import HidebuggwpasanTest from './HiDeBugGwpAsan.test';
+import hidebugrawcleanTest from './HidebugRawClean.test';
+import hidebugheapcleanTest from './HidebugHeapClean.test';
 
 export default function testsuite() {
   HidebugrawTest();
   HidebuggwpasanTest();
+  hidebugrawcleanTest();
+  hidebugheapcleanTest();
 }
