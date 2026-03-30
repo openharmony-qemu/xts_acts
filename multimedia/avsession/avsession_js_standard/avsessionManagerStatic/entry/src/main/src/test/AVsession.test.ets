@@ -3266,13 +3266,12 @@ export default function abilityTest() {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
                     }
-                    done();
                 });
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-                done();
             }
+            done();
         })
 
         /**
@@ -3311,14 +3310,13 @@ export default function abilityTest() {
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
-                    }
-                    done();
+                    } 
                 });
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
-                done();
             }
+            done();
         })
 
         /**
