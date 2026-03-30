@@ -153,8 +153,7 @@ static napi_value TestArkUICapi_441(napi_env env, napi_callback_info info)
 /*
  * 测试接口: OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAttachment *, float **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: colorFilter 必须由调用方提供可写缓冲区（styled_string.h @note）；*colorFilter 为 nullptr 时实现可能 SIGSEGV。
- * colorFilterSize 取 16，降低 BUFFER_SIZE_ERROR 概率。
+ * 实际测试: colorFilter 传调用方可写缓冲区（容量 16），断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_442(napi_env env, napi_callback_info info)
 {

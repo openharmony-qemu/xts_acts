@@ -22,17 +22,10 @@ namespace ArkUICapiTest {
 
 namespace {
 /*
- * styled_string.h，并对照 OpenHarmony 公开文档「属性字符串」指南与 capi-styled-string-h.md：
- * 对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类接口，文档允许 INVALID_STYLED_STRING；
- * 入参须为有效属性串。单独 Descriptor_Create() 无文本内容时多属无效。
- * API 24 CreateWithString：length 为 span 样式槽数量，与 UTF-8 文本字节长度一致（每字节一槽，槽可为 nullptr）。
- * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
- *
- * 【防 cppcrash —— 改 gated 代码或增删用例时务必扫一遍同类接口】
- * 1) SubStyledString 等写入型 API：输出/输入 descriptor 须有有效文本场景（优先 XtsDescriptorFromUtf8，勿用裸空描述符探实现）。
- * 2) Descriptor_GetStyles 类：styles[] 每个元素须为已 Create 的 SpanStyle（实现向槽内赋值，nullptr 槽会 SIGSEGV）。
- * 3) GetTextShadow / GetTextShadows、GetColorFilter 等头文件标「指针由调用方管理 / @note」且带缓冲长度者：
- *    ShadowOptions**/float** 要么指向已 Create 的对象槽，要么指向调用方栈/堆上的可写 float 缓冲（*链非空），勿传 nullptr 写入目标。
+ * styled_string 用例约定：
+ * 1) 需要有效描述符的接口统一通过 XtsDescriptorFromUtf8 构造输入/输出对象；
+ * 2) 带 ** 输出参数的接口需提供可写目标（已创建对象槽或可写缓冲区），不传空写入目标；
+ * 3) Set* 成功后由调用方负责 Destroy 入参对象。
  */
 ArkUI_StyledString_Descriptor* XtsDescriptorFromUtf8(const char* utf8)
 {
@@ -558,8 +551,7 @@ static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_StyledString_Descriptor *,
  *     ArkUI_StyledString_Descriptor *, uint32_t, uint32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 源串 CreateWithString("ab")；子串输出槽也用 CreateWithString 单字节占位（仅 Descriptor_Create 时
- * SubStyledString 在部分版本上写子串会 cppcrash）。
+ * 实际测试: 源串和输出描述符均使用 XtsDescriptorFromUtf8 构造，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
 {
@@ -596,8 +588,7 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledString_Descriptor *, uint32_t, uint32_t,
  *     OH_ArkUI_StyledStringKey, OH_ArkUI_SpanStyle **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)；GetStyles 的 styles[] 元素须为已 Create 的 SpanStyle（实现向槽内赋值，
- * 传 nullptr 会在 libace_ndk GetStyles 内对 SpanStyle 赋值时 SIGSEGV）。
+ * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)，styles[] 传已创建 SpanStyle 槽，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
 {

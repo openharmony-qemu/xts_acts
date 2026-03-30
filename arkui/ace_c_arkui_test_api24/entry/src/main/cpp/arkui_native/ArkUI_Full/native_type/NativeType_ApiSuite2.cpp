@@ -470,8 +470,7 @@ static napi_value TestArkUICapi_174(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorTextStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
  *     uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: shadowOptions 各槽须为已 Create 的对象（与 styled_string 侧 GetTextShadow / Descriptor_GetStyles 同类：传 nullptr 槽易 SIGSEGV）；
- * shadowOptionsSize 取 1；勿用 0 容量 + nullptr 槽 combinations 探实现。
+ * 实际测试: shadowOptions 传已创建对象槽，容量为 1，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_175(napi_env env, napi_callback_info info)
 {
