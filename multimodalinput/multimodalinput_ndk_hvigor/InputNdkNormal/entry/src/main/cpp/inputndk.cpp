@@ -1487,7 +1487,7 @@ static napi_value AddHotkeyMonitor(napi_env env, napi_callback_info info)
         napi_create_int32(env, (ret1 == INPUT_DEVICE_NOT_SUPPORTED && ret2 == INPUT_DEVICE_NOT_SUPPORTED)
         ? 1 : 0, &result);
     } else {
-        napi_create_int32(env, (ret1 == INPUT_SERVICE_EXCEPTION && ret2 == INPUT_SUCCESS
+        napi_create_int32(env, (ret1 == INPUT_PARAMETER_ERROR && ret2 == INPUT_SUCCESS
 		&& hotkey == nullptr) ? 1 : 0, &result);
     };
     return result;
@@ -1713,7 +1713,7 @@ static napi_value AddHotkeyMonitor12(napi_env env, napi_callback_info info)
     if (ret == INPUT_DEVICE_NOT_SUPPORTED) {
         napi_create_int32(env, (ret == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
     } else {
-        napi_create_int32(env, (ret == INPUT_SERVICE_EXCEPTION && hotkey == nullptr) ? 1 : 0, &result);
+        napi_create_int32(env, (ret == INPUT_PARAMETER_ERROR && hotkey == nullptr) ? 1 : 0, &result);
     };
     return result;
 }

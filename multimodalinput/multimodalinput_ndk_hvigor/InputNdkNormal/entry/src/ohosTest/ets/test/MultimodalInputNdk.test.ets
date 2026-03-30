@@ -2268,7 +2268,7 @@ export default function MultimodalInputNdkTest() {
       try {
         let data = input.AddHotkeyMonitor();
         console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
-        ExpectTrue(data != 1);
+        ExpectTrue(data == 1);
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
@@ -2532,7 +2532,7 @@ export default function MultimodalInputNdkTest() {
       try {
         let data = input.AddHotkeyMonitor12();
         console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
-        ExpectTrue(data != 1);
+        ExpectTrue(data == 1);
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
