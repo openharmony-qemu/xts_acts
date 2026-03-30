@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want';
 import PrintExtension from '../testability/PrintExtension';
+import print from '@ohos.print';
 
 const DOMAIN: number = 0x0023
 const TAG: string = 'printExtensionTestXTS';
@@ -105,6 +106,84 @@ export default function printExtensionTest() {
     it('printExtension_function_0600', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0600 onDestroy begin');
       printExtension.onDestroy();
+    })
+
+    /**
+     * @tc.name   printExtension_function_0700
+     * @tc.number printExtension_function_0700
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('printExtension_function_0700', Level.LEVEL2, () => {
+      hilog.info(DOMAIN, TAG, 'printExtension_function_0700 onStartPrintJob begin');
+      let jobInfo: print.PrintJob = {
+        fdList: [],
+        jobId: '',
+        printerId: '',
+        jobState: print.PrintJobState.PRINT_JOB_PREPARE,
+        jobSubstate: print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS,
+        copyNumber: 1,
+        pageRange: {},
+        isSequential: false,
+        pageSize: {
+          id: '',
+          name: '',
+          width: 0,
+          height: 0
+        },
+        isLandscape: false,
+        colorMode: 0,
+        duplexMode: 0
+      };
+      printExtension.onStartPrintJob(jobInfo);
+    })
+
+    /**
+     * @tc.name   printExtension_function_0800
+     * @tc.number printExtension_function_0800
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('printExtension_function_0800', Level.LEVEL2, () => {
+      hilog.info(DOMAIN, TAG, 'printExtension_function_0800 onCancelPrintJob begin');
+      let jobInfo: print.PrintJob = {
+        fdList: [],
+        jobId: '',
+        printerId: '',
+        jobState: print.PrintJobState.PRINT_JOB_PREPARE,
+        jobSubstate: print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS,
+        copyNumber: 1,
+        pageRange: {},
+        isSequential: false,
+        pageSize: {
+          id: '',
+          name: '',
+          width: 0,
+          height: 0
+        },
+        isLandscape: false,
+        colorMode: 0,
+        duplexMode: 0
+      };
+      printExtension.onCancelPrintJob(jobInfo);
+    })
+
+    /**
+     * @tc.name   printExtension_function_0900
+     * @tc.number printExtension_function_0900
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('printExtension_function_0900', Level.LEVEL2, () => {
+      hilog.info(DOMAIN, TAG, 'printExtension_function_0900 onRequestPrinterCapability begin');
+      let printerId: number = 1;
+      printExtension.onRequestPrinterCapability(printerId);
     })
   })
 }
