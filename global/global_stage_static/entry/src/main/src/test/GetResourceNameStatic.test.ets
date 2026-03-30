@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -7,7 +7,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an " "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -17,345 +17,383 @@ import {
   describe,
   it,
   expect,
+  TestType,
+  Size,
   Level,
   beforeAll,
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium/index";
+} from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
-import Context from 'application.Context';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 
 export default function getResourceNameStaticTest() {
 
-  describe("getResourceNameStaticTest", (): void => {
-    hilog.info(0x0000, 'testTag', '%{public}s', '*************start getResourceNameStaticTest*************');
+  describe('getResourceNameStaticTest', () => {
     let resContext: Context;
     let res: resourceManager.ResourceManager | undefined;
 
-    beforeAll(async () => {
-      console.info("beforeAll case");
+    beforeAll(async (done: Function) => {
+      console.info('beforeAll called');
+      done();
     });
+
     beforeEach(() => {
-      console.info("beforeEach case");
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      resContext = abilityDelegator.getAppContext()
-      res = resContext.resourceManager
+      console.info('beforeEach called');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      resContext = abilityDelegator.getAppContext();
+      res = resContext.resourceManager;
     });
-    afterEach(async () => {
-      console.info("afterEach case");
+
+    afterEach(async (done: Function) => {
+      console.info('afterEach called');
+      done();
     });
-    afterAll(() => {
-      console.info("afterAll case");
+
+    afterAll(async (done: Function) => {
+      console.info('afterAll called');
+      done();
     });
 
     /**
-     * @tc.number  getResourceName_static_test_0100
-     * @tc.name    getResourceName_static_test_0100
-     * @tc.desc    当前测试hap应用下的string资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_String_0100
+     * @tc.name SUB_RM_ResourceManager_getResourceName_String_0100
+     * @tc.desc Test getResourceName with app string resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0100", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_String_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_String_0100 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000000);
+        let resName: string = res?.getResourceName(0x0100001B);
         hilog.info(domain, tag, 'getResourceName_static_test_0100 value: ' + resName);
         expect(resName).assertEqual('test_stringOne');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0100 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_String_0100 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_String_0100 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0200
-     * @tc.name    getResourceName_static_test_0200
-     * @tc.desc    当前测试hap应用下的media资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Media_0110
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Media_0110
+     * @tc.desc Test getResourceName with app media resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0200", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Media_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Media_0110 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01000001);
         hilog.info(domain, tag, 'getResourceName_static_test_0200 value: ' + resName);
-        expect(resName).assertEqual('icon');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0200 error code: ' + error.code);
+        expect(resName).assertEqual('app_icon');
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Media_0110 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Media_0110 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0300
-     * @tc.name    getResourceName_static_test_0300
-     * @tc.desc    当前测试hap应用下的color资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Color_0120
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Color_0120
+     * @tc.desc Test getResourceName with app color resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0300", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Color_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Color_0120 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000002);
+        let resName: string = res?.getResourceName(0x01000033);
         hilog.info(domain, tag, 'getResourceName_static_test_0300 value: ' + resName);
-        expect(resName).assertEqual('color_test1');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0300 error code: ' + error.code);
+        expect(resName).assertEqual('loop_A');
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Color_0120 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Color_0120 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0400
-     * @tc.name    getResourceName_static_test_0400
-     * @tc.desc    当前测试hap应用下的float资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Float_0130
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Float_0130
+     * @tc.desc Test getResourceName with app float resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0400", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Float_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Float_0130 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000003);
+        let resName: string = res?.getResourceName(0x0100003B);
         hilog.info(domain, tag, 'getResourceName_static_test_0400 value: ' + resName);
         expect(resName).assertEqual('float_loopA');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0400 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Float_0130 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Float_0130 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0500
-     * @tc.name    getResourceName_static_test_0500
-     * @tc.desc    当前测试hap应用下的strarray资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_StrArray_0140
+     * @tc.name SUB_RM_ResourceManager_getResourceName_StrArray_0140
+     * @tc.desc Test getResourceName with app strarray resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0500", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_StrArray_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_StrArray_0140 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000004);
+        let resName: string = res?.getResourceName(0x0100002C);
         hilog.info(domain, tag, 'getResourceName_static_test_0500 value: ' + resName);
         expect(resName).assertEqual('sizeList');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0500 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_StrArray_0140 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_StrArray_0140 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0600
-     * @tc.name    getResourceName_static_test_0600
-     * @tc.desc    当前测试hap应用下的boolean资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Boolean_0150
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Boolean_0150
+     * @tc.desc Test getResourceName with app boolean resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0600", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Boolean_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Boolean_0150 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000005);
+        let resName: string = res?.getResourceName(0x0100002F);
         hilog.info(domain, tag, 'getResourceName_static_test_0600 value: ' + resName);
         expect(resName).assertEqual('boolean_1');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0600 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Boolean_0150 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Boolean_0150 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0700
-     * @tc.name    getResourceName_static_test_0700
-     * @tc.desc    当前测试hap应用下的integer资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Integer_0160
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Integer_0160
+     * @tc.desc Test getResourceName with app integer resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0700", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Integer_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Integer_0160 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000006);
+        let resName: string = res?.getResourceName(0x01000002);
         hilog.info(domain, tag, 'getResourceName_static_test_0700 value: ' + resName);
         expect(resName).assertEqual('integer_1');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0700 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Integer_0160 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Integer_0160 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0800
-     * @tc.name    getResourceName_static_test_0800
-     * @tc.desc    当前测试hap应用下的plural资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Plural_0170
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Plural_0170
+     * @tc.desc Test getResourceName with app plural resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0800", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Plural_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Plural_0170 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000007);
+        let resName: string = res?.getResourceName(0x01000037);
         hilog.info(domain, tag, 'getResourceName_static_test_0800 value: ' + resName);
         expect(resName).assertEqual('plural_name');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0800 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Plural_0170 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Plural_0170 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_0900
-     * @tc.name    getResourceName_static_test_0900
-     * @tc.desc    当前测试hap应用下的symbol资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Symbol_0180
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Symbol_0180
+     * @tc.desc Test getResourceName with app symbol resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_0900", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Symbol_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Symbol_0180 begin-----------------");
       try {
-        let resName: string = res?.getResourceName(0x01000008);
+        let resName: string = res?.getResourceName(0x0100003E);
         hilog.info(domain, tag, 'getResourceName_static_test_0900 value: ' + resName);
         expect(resName).assertEqual('symbolTest1');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_0900 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Symbol_0180 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Symbol_0180 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1000
-     * @tc.name    getResourceName_static_test_1000
-     * @tc.desc    系统资源string资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_SysString_0190
+     * @tc.name SUB_RM_ResourceManager_getResourceName_SysString_0190
+     * @tc.desc Test getResourceName with system string resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_1000", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_SysString_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysString_0190 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01010000);
         hilog.info(domain, tag, 'getResourceName_static_test_1000 value: ' + resName);
         expect(resName).assertEqual('ohos_id_text_font_family_regular');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1000 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_SysString_0190 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysString_0190 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1100
-     * @tc.name    getResourceName_static_test_1100
-     * @tc.desc    系统资源media资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_SysMedia_0200
+     * @tc.name SUB_RM_ResourceManager_getResourceName_SysMedia_0200
+     * @tc.desc Test getResourceName with system media resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_1100", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_SysMedia_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysMedia_0200 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01010001);
         hilog.info(domain, tag, 'getResourceName_static_test_1100 value: ' + resName);
         expect(resName).assertEqual('ohos_app_icon');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1100 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_SysMedia_0200 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysMedia_0200 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1200
-     * @tc.name    getResourceName_static_test_1200
-     * @tc.desc    系统资源color资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_SysColor_0210
+     * @tc.name SUB_RM_ResourceManager_getResourceName_SysColor_0210
+     * @tc.desc Test getResourceName with system color resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_1200", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_SysColor_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysColor_0210 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01010002);
         hilog.info(domain, tag, 'getResourceName_static_test_1200 value: ' + resName);
         expect(resName).assertEqual('ohos_id_color_foreground');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1200 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_SysColor_0210 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysColor_0210 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1300
-     * @tc.name    getResourceName_static_test_1300
-     * @tc.desc    系统资源float资源id的值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.number SUB_RM_ResourceManager_getResourceName_SysFloat_0220
+     * @tc.name SUB_RM_ResourceManager_getResourceName_SysFloat_0220
+     * @tc.desc Test getResourceName with system float resource id value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-    it("getResourceName_static_test_1300", Level.LEVEL0, () => {
+    it('SUB_RM_ResourceManager_getResourceName_SysFloat_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysFloat_0220 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01010003);
         hilog.info(domain, tag, 'getResourceName_static_test_1300 value: ' + resName);
         expect(resName).assertEqual('ohos_id_alpha_content_primary');
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1300 error code: ' + error.code);
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_SysFloat_0220 failed, code is ' + error.code + ', message is ' + error.message);
         expect().assertFail();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_SysFloat_0220 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1400
-     * @tc.name    getResourceName_static_test_1400
-     * @tc.desc    传参传入null
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Null_0200
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Null_0200
+     * @tc.desc Test getResourceName with null parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it("getResourceName_static_test_1400", Level.LEVEL3, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Null_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Null_0200 begin-----------------");
       try {
         let resName: string = res?.getResourceName(null as number);
         hilog.info(domain, tag, 'getResourceName_static_test_1400 value: ' + resName);
-        expect().assertFail();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1400 error code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(false).assertFail();
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Null_0200 failed, code is ' + error.code + ', message is ' + error.message);
+        expect(error.code == 401).assertTrue();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Null_0200 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1500
-     * @tc.name    getResourceName_static_test_1500
-     * @tc.desc    传参传入undefined
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.number SUB_RM_ResourceManager_getResourceName_Undefined_0201
+     * @tc.name SUB_RM_ResourceManager_getResourceName_Undefined_0201
+     * @tc.desc Test getResourceName with undefined parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it("getResourceName_static_test_1500", Level.LEVEL3, () => {
+    it('SUB_RM_ResourceManager_getResourceName_Undefined_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Undefined_0201 begin-----------------");
       try {
         let resName: string = res?.getResourceName(undefined as number);
         hilog.info(domain, tag, 'getResourceName_static_test_1500 value: ' + resName);
-        expect().assertFail();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1500 error code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(false).assertFail();
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_Undefined_0201 failed, code is ' + error.code + ', message is ' + error.message);
+        expect(error.code == 401).assertTrue();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_Undefined_0201 end-----------------");
     })
 
     /**
-     * @tc.number  getResourceName_static_test_1600
-     * @tc.name    getResourceName_static_test_1600
-     * @tc.desc    传参传入不存在的id值
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.number SUB_RM_ResourceManager_getResourceName_InvalidId_0300
+     * @tc.name SUB_RM_ResourceManager_getResourceName_InvalidId_0300
+     * @tc.desc Test getResourceName with invalid resource id
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it("getResourceName_static_test_1600", Level.LEVEL3, () => {
+    it('SUB_RM_ResourceManager_getResourceName_InvalidId_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_InvalidId_0300 begin-----------------");
       try {
         let resName: string = res?.getResourceName(0x01234567);
         hilog.info(domain, tag, 'getResourceName_static_test_1600 value: ' + resName);
-        expect().assertFail();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, 'getResourceName_static_test_1600 error code: ' + error.code);
-        expect(error.code).assertEqual(9001001);
+        expect(false).assertFail();
+      } catch (error) {
+        console.error('SUB_RM_ResourceManager_getResourceName_InvalidId_0300 failed, code is ' + error.code + ', message is ' + error.message);
+        expect(error.code == 9001001).assertTrue();
       }
+      console.info("-----------------SUB_RM_ResourceManager_getResourceName_InvalidId_0300 end-----------------");
     })
   })
 }
