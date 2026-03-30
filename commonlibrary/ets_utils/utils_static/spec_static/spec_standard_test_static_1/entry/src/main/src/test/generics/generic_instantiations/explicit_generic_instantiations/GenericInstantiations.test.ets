@@ -139,7 +139,7 @@ function foo_14<T, U>(p: T, q: U): T|U {
 }
 
 function bar_15<T>(p: T): Array<T> {
-    let x = Array<T>(5)
+    let x = new Array<T>(5)
     return x.fill(p)
 }
 // no constraints
@@ -243,7 +243,7 @@ class Cls_33 {
 
 class Bar_34 {
   static bar<T>(p: T): Array<T> {
-    let x = Array<T>(5)
+    let x = new Array<T>(5)
     return x.fill(p)
   }
 }

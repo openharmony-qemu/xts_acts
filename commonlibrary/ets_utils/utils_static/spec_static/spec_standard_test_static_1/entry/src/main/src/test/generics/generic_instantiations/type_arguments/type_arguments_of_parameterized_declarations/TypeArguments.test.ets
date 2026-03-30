@@ -1120,7 +1120,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<X009[]> = new A<X009[]>(new X009[0])
+      let v: A<X009[]> = new A<X009[]>([]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -1133,7 +1133,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<X010[]> = new A<X010[]>(new X010[0])
+      let v: A<X010[]> = new A<X010[]>([]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -1185,7 +1185,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<A<X014[]>[]> = new A<A<X014[]>[]>([new A<X014[]>(new X014[1])])
+      let v: A<A<X014[]>[]> = new A<A<X014[]>[]>([new A<X014[]>([new X014()])]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -1289,7 +1289,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<D022> = new A<D022>(new X022[0])
+      let v: A<D022> = new A<D022>([]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -1328,7 +1328,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<G025> = new A<G025>([new A<X025[]>(new X025[1])])
+      let v: A<G025> = new A<G025>([new A<X025[]>([new X025()])]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -2019,7 +2019,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A<FixedArray<X078[]>[]> = new A<FixedArray<X078[]>[]>([[new X078[0]]])
+      let v: A<FixedArray<X078[]>[]> = new A<FixedArray<X078[]>[]>([[[]]]);
       expect(v instanceof A).assertTrue()
     })
 
@@ -2175,7 +2175,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A1<Y0091, B0091> = new A1<Y0091, B0091>(new Y0091(), new Y0091[0])
+      let v: A1<Y0091, B0091> = new A1<Y0091, B0091>(new Y0091(), []);
       expect(v instanceof A1).assertTrue()
     })
 
@@ -2188,7 +2188,7 @@ export default function TypeArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testTypeArguments0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: A1<Y0092, B0092> = new A1<Y0092, B0092>(new Y0092(), new Y0092[0])
+      let v: A1<Y0092, B0092> = new A1<Y0092, B0092>(new Y0092(), []);
       expect(v instanceof A1).assertTrue()
     })
 

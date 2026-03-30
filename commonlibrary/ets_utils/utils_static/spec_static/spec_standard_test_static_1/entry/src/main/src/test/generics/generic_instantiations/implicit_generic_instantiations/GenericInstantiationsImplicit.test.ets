@@ -37,7 +37,7 @@ function foo_1<T, U>(p: T, q: U): T|U {
 }
 
 function bar_2<T>(p: T): Array<T> {
-    let x = Array<T>(5)
+    let x = new Array<T>(5)
     return x.fill(p)
 }
 function foo_2<T, U>(p: T, q: U): [Array<T>, Array<U>] {
@@ -85,10 +85,10 @@ class Cls_9 {
 }
 
 class Bar_10 {
-    static bar<T>(p: T): Array<T> {
-        let x = Array<T>(5)
-        return x.fill(p)
-    }
+  static bar<T>(p: T): Array<T> {
+    let x = new Array<T>(5); // 创建一个长度为5的数组，内容默认为 `undefined`
+    return x.fill(p); // 将数组中的所有元素填充为 `p`
+  }
 }
 class Foo_10 {
     foo<T, U>(p: T, q: U): [Array<T>, Array<U>] {
