@@ -2270,7 +2270,7 @@ export default function abilityTest() {
                 console.info('controller off_customDataChange Successfully')
             });
             console.info('controller off_customDataChange end')
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
