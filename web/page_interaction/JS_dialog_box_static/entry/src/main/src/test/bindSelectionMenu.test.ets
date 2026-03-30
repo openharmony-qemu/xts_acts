@@ -142,15 +142,14 @@ export default function webViewSrollableJsunit() {
         done();
       })
 
-
-    /**
-  * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
-  * @tc.name       : bindSelectionMenuTypeStatic03
-  * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 3
-  */
+  /**
+   * @tc.name        bindSelectionMenuTypeStatic03
+   * @tc.number      SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+   * @tc.desc        test bindSelectionMenuType02 interface when choose callback mode.
+   * @tc.size        MediumTest
+   * @tc.type        Function
+   * @tc.level       Level 3
+   */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

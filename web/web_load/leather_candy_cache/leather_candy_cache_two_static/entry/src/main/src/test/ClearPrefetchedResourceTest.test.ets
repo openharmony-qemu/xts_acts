@@ -30,22 +30,6 @@ export default function ClearPrefetchedResourceTest() {
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log("App start")
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
-        },
-      }, (err: BusinessError | null, data: undefined): void => {
-        if (err != null) {
-          console.log("-----" + err.code)
-        }
-        console.log("BusinessError  end")
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.leathercandycachetwotest.static")
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });

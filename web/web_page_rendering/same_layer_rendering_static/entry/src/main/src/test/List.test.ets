@@ -13,12 +13,23 @@
  * limitations under the License.
  */
 import WebEmbedVisibilityChange from './EmbedVisibilityChange.test';
-import webViewControllerPart2 from './webViewControllerPart2.test';
-import webViewRegisterNativeEmbedRule from './webViewRegisterNativeEmbedRule.test';
-import webViewObjectEmbed from './webViewObjectEmbed.test';
+import webViewControllerPart2 from './WebViewControllerPart2.test';
+import webViewRegisterNativeEmbedRule from './WebViewRegisterNativeEmbedRule.test';
+import webViewObjectEmbed from './WebViewObjectEmbed.test';
+import webOnNativeEmbedObjectParamChange from './WebOnNativeEmbedObjectParamChange.test';
+import webDefaultTextEncodingFormat from './WebDefaultTextEncodingFormat.test';
+import WebOnNativeEmbedObjectParamChange from './NativeEmbedParamStatusUpdate.test';
+import webViewEventResult from "./WebViewEventResult.test";
+import webViewInitTest from "./WebViewInitTest.test";
+
  export default function testsuite() {
    WebEmbedVisibilityChange();
    webViewControllerPart2();
    webViewRegisterNativeEmbedRule();
    webViewObjectEmbed();
+   webOnNativeEmbedObjectParamChange();
+   webDefaultTextEncodingFormat();
+   WebOnNativeEmbedObjectParamChange();
+   webViewEventResult();
+   webViewInitTest();
  }
