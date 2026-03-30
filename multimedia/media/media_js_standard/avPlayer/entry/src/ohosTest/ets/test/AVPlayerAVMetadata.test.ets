@@ -1605,7 +1605,7 @@ export default function AVMetadata() {
           expect(extractor.fdSrc?.fd).assertEqual(0);
           expect(extractor.fdSrc?.offset).assertEqual(0);
           expect(extractor.fdSrc?.length).assertEqual(-1);
-          expect(extractor.dataSrc?.fileSize).assertEqual(0);
+          expect(extractor.dataSrc?.fileSize).assertEqual(undefined);
         });
         done();
     })
@@ -1627,7 +1627,7 @@ export default function AVMetadata() {
               expect(extractor.fdSrc?.fd).assertEqual(0);
               expect(extractor.fdSrc?.offset).assertEqual(0);
               expect(extractor.fdSrc?.length).assertEqual(-1);
-              expect(extractor.dataSrc?.fileSize).assertEqual(0);
+              expect(extractor.dataSrc?.fileSize).assertEqual(undefined);
             }     
         }).catch((error: BusinessError) => {
             console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
