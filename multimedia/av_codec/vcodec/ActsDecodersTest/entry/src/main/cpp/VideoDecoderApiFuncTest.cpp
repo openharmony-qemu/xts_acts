@@ -29,7 +29,7 @@
 // 测试常量定义
 constexpr int MAX_DECODER_INSTANCES = 64;        // 最大解码器实例数
 constexpr int MIN_VIDEO_WIDTH = 2;               // 最小视频宽度
-constexpr int MAX_VIDEO_WIDTH = 2048;            // 最大视频宽度
+constexpr int MAX_VIDEO_WIDTH = 1920;            // 最大视频宽度
 constexpr int VC1_PROFILE_COUNT = 3;             // VC1 支持的 profile 数量
 constexpr int WMV3_PROFILE_COUNT = 2;            // WMV3 支持的 profile 数量
 constexpr int PIXEL_FORMAT_COUNT = 3;            // 支持的像素格式数量
