@@ -79,7 +79,7 @@ export default function settingUiJsunit() {
     console.info("beforeAll end");
   })
 
-  describe('appInfoTest', ()=> {
+  describe('appInfoTestAdapt001', ()=> {
     console.log("************* settings Test start*************");
     /**
      * @tc.name   settings_uri_test_001

@@ -24,7 +24,7 @@ import { testSendableSimpleDate, testSendableSimpleString, testSendableSimpleNum
 
 export default function SendablesTestWithAlloc() {
   let printLog = 'SendablesTestWithAlloc:';
-  describe('SendablesTestWithAlloc', () => {
+  describe('SendablesTestWithAllocAdapt001', () => {
 
     afterAll(() => {
       console.info(printLog + 'total case over');

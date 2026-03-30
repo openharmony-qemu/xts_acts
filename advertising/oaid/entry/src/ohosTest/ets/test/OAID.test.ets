@@ -29,7 +29,7 @@
  	 }
  	  
  	 export default function OAIDTest(abilityContext: common.UIAbilityContext) {
- 	   describe('ActsOAIDTest', () => {
+ 	   describe('ActsOAIDTestAdapt001', () => {
  	  
  	     beforeAll(async () => {
  	       console.log(TAG, `beforeAll case`);
