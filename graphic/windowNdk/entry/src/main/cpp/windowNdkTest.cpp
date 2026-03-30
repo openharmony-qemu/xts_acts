@@ -63,11 +63,11 @@ uint64_t g_inputHandlingDuration;
 uint64_t g_duration;
 uint64_t g_timestamp;
 
-uint64_t g_FrameMetricsCBCount;
-bool g_isFirstDrawFrame_return;
-uint64_t g_inputHandlingDuration_return;
-uint64_t g_duration_return;
-uint64_t g_timestamp_return;
+uint64_t g_frameMetricsCbCount;
+bool g_isFirstDrawFrameReturn;
+uint64_t g_inputDurationReturn;
+uint64_t g_durationReturn;
+uint64_t g_timestampReturn;
 
 static napi_value filterKeyCode(napi_env env, napi_callback_info info){
     size_t argc = 2;
@@ -727,7 +727,7 @@ static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetri
     }
     (void)windowId;
 
-    g_FrameMetricsCBCount++;
+    g_frameMetricsCbCount++;
     
     OH_WindowManager_FrameMetrics_IsFirstDrawFrame(metrics, &g_isFirstDrawFrame);
     OH_WindowManager_FrameMetrics_GetInputHandlingDuration(metrics, &g_inputHandlingDuration);
@@ -742,34 +742,34 @@ static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetri
 static napi_value getFrameMetricsCBCount(napi_env env, napi_callback_info info)
 {
     napi_value index;
-    OH_LOG_INFO(LOG_APP, "getFrameMetricsCBCount count:%{public}d", g_FrameMetricsCBCount);
-    napi_create_uint32(env, g_FrameMetricsCBCount, &index);
+    OH_LOG_INFO(LOG_APP, "getFrameMetricsCBCount count:%{public}d", g_frameMetricsCbCount);
+    napi_create_uint32(env, g_frameMetricsCbCount, &index);
     return index;
 }
 
 static napi_value getFrameMetrics(napi_env env, napi_callback_info info)
 {
-    g_isFirstDrawFrame_return = g_isFirstDrawFrame;
-    g_inputHandlingDuration_return = g_inputHandlingDuration;
-    g_duration_return = g_duration;
-    g_timestamp_return = g_timestamp;
-    OH_LOG_INFO(LOG_APP, "get g_isFirstDrawFrame_return=%{public}d", g_isFirstDrawFrame_return);
-    OH_LOG_INFO(LOG_APP, "get g_inputHandlingDuration_return=%{public}llu", g_inputHandlingDuration_return);
-    OH_LOG_INFO(LOG_APP, "get g_duration_return=%{public}llu", g_duration_return);
-    OH_LOG_INFO(LOG_APP, "get g_timestamp_return=%{public}llu", g_timestamp_return);
+    g_isFirstDrawFrameReturn = g_isFirstDrawFrame;
+    g_inputDurationReturn = g_inputHandlingDuration;
+    g_durationReturn = g_duration;
+    g_timestampReturn = g_timestamp;
+    OH_LOG_INFO(LOG_APP, "get g_isFirstDrawFrameReturn=%{public}d", g_isFirstDrawFrameReturn);
+    OH_LOG_INFO(LOG_APP, "get g_inputDurationReturn=%{public}llu", g_inputDurationReturn);
+    OH_LOG_INFO(LOG_APP, "get g_durationReturn=%{public}llu", g_durationReturn);
+    OH_LOG_INFO(LOG_APP, "get g_timestampReturn=%{public}llu", g_timestampReturn);
     napi_value result;
     napi_create_object(env, &result);
     napi_value return_isFirstDrawFrame;
-    napi_get_boolean(env, g_isFirstDrawFrame_return, &return_isFirstDrawFrame);
+    napi_get_boolean(env, g_isFirstDrawFrameReturn, &return_isFirstDrawFrame);
     napi_set_named_property(env, result, "isFirstDrawFrame", return_isFirstDrawFrame);
     napi_value return_inputHandlingDuration;
-    napi_create_int64(env, g_inputHandlingDuration_return, &return_inputHandlingDuration);
+    napi_create_int64(env, g_inputDurationReturn, &return_inputHandlingDuration);
     napi_set_named_property(env, result, "inputHandlingDuration", return_inputHandlingDuration);
     napi_value return_duration;
-    napi_create_int64(env, g_duration_return, &return_duration);
+    napi_create_int64(env, g_durationReturn, &return_duration);
     napi_set_named_property(env, result, "duration", return_duration);
     napi_value return_timestamp;
-    napi_create_int64(env, g_timestamp_return, &return_timestamp);
+    napi_create_int64(env, g_timestampReturn, &return_timestamp);
     napi_set_named_property(env, result, "timestamp", return_timestamp);
 
     return result;
@@ -777,7 +777,7 @@ static napi_value getFrameMetrics(napi_env env, napi_callback_info info)
 
 static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
 {
-    g_FrameMetricsCBCount = 0;
+    g_frameMetricsCbCount = 0;
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -798,7 +798,7 @@ static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callba
 
 static napi_value UnregisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
 {
-    g_FrameMetricsCBCount = 0;
+    g_frameMetricsCbCount = 0;
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -1664,6 +1664,10 @@ static napi_value windowEnumInit(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         {"testWindowManager_ErrorCode_enum", nullptr,
             TestWindowManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "getFrameMetrics", nullptr, getFrameMetrics,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getFrameMetricsCBCount", nullptr, getFrameMetricsCBCount,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
@@ -1713,10 +1717,6 @@ static napi_value Init(napi_env env, napi_value exports)
         { "registerFrameMetricsMeasuredCallbackNullptr", nullptr, RegisterFrameMetricsMeasuredCallbackNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterFrameMetricsMeasuredCallbackNullptr", nullptr, UnregisterFrameMetricsMeasuredCallbackNullptr,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getFrameMetrics", nullptr, getFrameMetrics,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getFrameMetricsCBCount", nullptr, getFrameMetricsCBCount,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
