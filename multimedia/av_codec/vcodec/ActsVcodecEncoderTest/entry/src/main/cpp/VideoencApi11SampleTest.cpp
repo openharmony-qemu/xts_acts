@@ -18,6 +18,14 @@
 #include <random>
 #include "videoenc_api11_sample.h"
 #include <multimedia/player_framework/native_avcapability.h>
+#include <native_buffer/native_buffer.h>
+#include <hilog/log.h>
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "VcodecEncoderTest"
+
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
@@ -407,26 +415,33 @@ void VEncAPI11Sample::testApi()
 
 int32_t VEncAPI11Sample::CreateSurface()
 {
+    OH_LOG_INFO(LOG_APP, "CreateSurface: Starting");
     int32_t ret = 0;
     ret = OH_VideoEncoder_GetSurface(venc_, &nativeWindow);
     if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_VideoEncoder_GetSurface fail, ret=%{public}d", ret);
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
         return ret;
     }
+    OH_LOG_INFO(LOG_APP, "GetSurface success, DEFAULT_PIX_FMT=%{public}d", DEFAULT_PIX_FMT);
     if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_RGBA1010102) {
         ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102);
     } else {
         ret = AV_ERR_OK;
     }
     if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "NativeWindowHandleOpt SET_FORMAT fail, ret=%{public}d", ret);
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;
     }
+    OH_LOG_INFO(LOG_APP, "Setting buffer geometry: %{public}dx%{public}d", DEFAULT_WIDTH, DEFAULT_HEIGHT);
     ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "NativeWindowHandleOpt SET_BUFFER_GEOMETRY fail, ret=%{public}d", ret);
         cout << "NativeWindowHandleOpt SET_BUFFER_GEOMETRY fail" << endl;
         return ret;
     }
+    OH_LOG_INFO(LOG_APP, "CreateSurface: Success");
     return AV_ERR_OK;
 }
 
@@ -549,12 +564,17 @@ int32_t VEncAPI11Sample::CreateVideoEncoder(const char *codecName)
 
 void VEncAPI11Sample::WaitForEOS()
 {
+    OH_LOG_INFO(LOG_APP, "WaitForEOS: Waiting for input thread to finish");
     if (inputLoop_)
         inputLoop_->join();
+    OH_LOG_INFO(LOG_APP, "WaitForEOS: Input thread finished");
+    OH_LOG_INFO(LOG_APP, "WaitForEOS: Waiting for output thread to finish");
     if (outputLoop_)
         outputLoop_->join();
+    OH_LOG_INFO(LOG_APP, "WaitForEOS: Output thread finished");
     inputLoop_ = nullptr;
     outputLoop_ = nullptr;
+    OH_LOG_INFO(LOG_APP, "WaitForEOS: All threads finished");
 }
 
 uint32_t VEncAPI11Sample::ReturnZeroIfEOS(uint32_t expectedSize)
@@ -568,21 +588,40 @@ uint32_t VEncAPI11Sample::ReturnZeroIfEOS(uint32_t expectedSize)
 
 uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
 {
+    static int frameReadCount = 0;
+    frameReadCount++;
+    OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: Reading frame #%{public}d", frameReadCount);
+    
+    if (!inFile_ || !inFile_->is_open()) {
+        OH_LOG_ERROR(LOG_APP, "ReadOneFrameYUV420SP: Input file not open");
+        return 0;
+    }
+    
     uint8_t *start = dst;
-    // copy Y
+    uint32_t compactFrameSize = DEFAULT_WIDTH * DEFAULT_HEIGHT * 3 / 2;
+    
+    OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: Reading frame, compact size=%{public}u", compactFrameSize);
+    
     for (uint32_t i = 0; i < DEFAULT_HEIGHT; i++) {
         inFile_->read(reinterpret_cast<char *>(dst), DEFAULT_WIDTH);
-        if (!ReturnZeroIfEOS(DEFAULT_WIDTH))
+        if (!ReturnZeroIfEOS(DEFAULT_WIDTH)) {
+            OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: End of file at Y line %{public}d", i);
             return 0;
-        dst += stride_;
+        }
+        dst += DEFAULT_WIDTH;
     }
-    // copy UV
+    
     for (uint32_t i = 0; i < DEFAULT_HEIGHT / SAMPLE_RATIO; i++) {
         inFile_->read(reinterpret_cast<char *>(dst), DEFAULT_WIDTH);
-        if (!ReturnZeroIfEOS(DEFAULT_WIDTH))
+        if (!ReturnZeroIfEOS(DEFAULT_WIDTH)) {
+            OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: End of file at UV line %{public}d", i);
             return 0;
-        dst += stride_;
+        }
+        dst += DEFAULT_WIDTH;
     }
+    
+    OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: Frame #%{public}d read successfully, wrote %{public}ld bytes", 
+                frameReadCount, dst - start);
     return dst - start;
 }
 
@@ -622,6 +661,16 @@ uint32_t VEncAPI11Sample::ReadOneFrameRGBA8888(uint8_t *dst)
 uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *nativeBuffer)
 {
     int32_t ret = 0;
+    
+    if (nativeBuffer != nullptr) {
+        ret = OH_NativeBuffer_Unmap(nativeBuffer);
+        if (ret != 0) {
+            OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_Unmap failed: ret=%{public}d", ret);
+        } else {
+            OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_Unmap success");
+        }
+    }
+    
     struct Region region;
     struct Region::Rect *rect = new Region::Rect();
     rect->x = 0;
@@ -629,12 +678,6 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
     rect->w = DEFAULT_WIDTH;
     rect->h = DEFAULT_HEIGHT;
     region.rects = rect;
-    ret = OH_NativeBuffer_Unmap(nativeBuffer);
-    if (ret != 0) {
-        cout << "OH_NativeBuffer_Unmap failed" << endl;
-        delete rect;
-        return ret;
-    }
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, ohNativeWindowBuffer, -1, region);
     delete rect;
     if (ret != 0) {
@@ -646,18 +689,22 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
 
 void VEncAPI11Sample::InputFuncSurface()
 {
+    OH_LOG_INFO(LOG_APP, "InputFuncSurface thread started");
     int32_t readFileIndex = 0;
-    while (!false) {
-        if (!isRunning_.load()) {
-            break;
-        }
+    int32_t inputframeCount = 0;
+    bool isParamSetSurface = false;
+    while (isRunning_.load()) {
+        OH_LOG_INFO(LOG_APP, "InputFuncSurface loop iteration, frameCount=%{public}d", inputframeCount);
         OHNativeWindowBuffer *ohNativeWindowBuffer;
         OH_NativeBuffer *nativeBuffer = nullptr;
         uint8_t *dst = nullptr;
         int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
+        OH_LOG_INFO(LOG_APP, "InitBuffer returned: %{public}d", err);
         if (err == 0) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned 0, breaking loop");
             break;
         } else if (err == -1) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned -1, continuing");
             continue;
         }
         if (readMultiFiles) {
@@ -670,9 +717,13 @@ void VEncAPI11Sample::InputFuncSurface()
                 continue;
             }
         } else if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_NV12 && !ReadOneFrameYUV420SP(dst)) {
+            OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP returned false, notifying EOS");
             err = OH_VideoEncoder_NotifyEndOfStream(venc_);
             if (err != 0) {
+                OH_LOG_ERROR(LOG_APP, "OH_VideoEncoder_NotifyEndOfStream failed: %{public}d", err);
                 cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
+            } else {
+                OH_LOG_INFO(LOG_APP, "NotifyEndOfStream success");
             }
             break;
         } else if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_RGBA1010102 && !ReadOneFrameRGBA8888(dst)) {
@@ -683,12 +734,29 @@ void VEncAPI11Sample::InputFuncSurface()
             break;
         }
         err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
+        OH_LOG_INFO(LOG_APP, "FlushSurf returned: %{public}d", err);
         if (err != 0) {
+            OH_LOG_ERROR(LOG_APP, "FlushSurf failed, breaking loop");
             break;
         }
-        usleep(FRAME_INTERVAL);
+        if (inputframeCount == 5 && !isParamSetSurface && enableAutoSwitchParam) {
+            OH_AVFormat *format = OH_AVFormat_Create();
+            int32_t paramResult = SetParameter(format);
+            OH_AVFormat_Destroy(format);
+            if (paramResult != 0) {
+                cout << "set param failed, error:" << paramResult << endl;
+                errCount = errCount + 1;
+                break;
+            }
+            isParamSetSurface = true;
+        }
+        inputframeCount++;
+        if (sleepOnFPS) {
+            usleep(FRAME_INTERVAL);
+        }
         InputEnableRepeatSleep();
     }
+    OH_LOG_INFO(LOG_APP, "InputFuncSurface thread exiting, total frames: %{public}d", inputframeCount);
 }
 
 void VEncAPI11Sample::InputEnableRepeatSleep()
@@ -715,33 +783,71 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
 {
     int fenceFd = -1;
     if (nativeWindow == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "InitBuffer: nativeWindow is nullptr");
         return 0;
     }
     int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &ohNativeWindowBuffer, &fenceFd);
     if (err != 0) {
+        OH_LOG_ERROR(LOG_APP, "RequestBuffer failed, GSError=%{public}d", err);
         cout << "RequestBuffer failed, GSError=" << err << endl;
         return -1;
     }
+    OH_LOG_INFO(LOG_APP, "RequestBuffer success, fenceFd=%{public}d", fenceFd);
     if (fenceFd > 0) {
         close(fenceFd);
     }
-    nativeBuffer = nullptr;
-    void *virAddr = nullptr;
-    err = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
-    if (err != 0) {
-        cout << "OH_NativeBuffer_Map failed, GSError=" << err << endl;
+    BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(ohNativeWindowBuffer);
+    if (bufferHandle == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "GetBufferHandleFromNative failed");
+        cout << "OH_NativeWindow_GetBufferHandleFromNative failed" << endl;
         isRunning_.store(false);
         return 0;
     }
-    dst = (uint8_t *)virAddr;
-    int32_t stride = DEFAULT_WIDTH;
-    if (dst == nullptr || stride < (int32_t)DEFAULT_WIDTH) {
-        cout << "invalid va or stride=" << stride << endl;
-        err = 0;
+    OH_LOG_INFO(LOG_APP, "GetBufferHandleFromNative success");
+    
+    int32_t stride = bufferHandle->stride;
+    void *virAddr = bufferHandle->virAddr;
+    
+    OH_LOG_INFO(LOG_APP, "BufferHandle info: stride=%{public}d, width=%{public}d, height=%{public}d", 
+                stride, bufferHandle->width, bufferHandle->height);
+    OH_LOG_INFO(LOG_APP, "BufferHandle info: size=%{public}d, format=%{public}d, fd=%{public}d, virAddr=%{public}p", 
+                bufferHandle->size, bufferHandle->format, bufferHandle->fd, virAddr);
+    
+    if (virAddr == nullptr) {
+        OH_LOG_INFO(LOG_APP, "virAddr is nullptr, using OH_NativeBuffer_FromNativeWindowBuffer");
+        
+        int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+        if (convertRet != 0 || nativeBuffer == nullptr) {
+            OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer failed: ret=%{public}d", convertRet);
+            cout << "OH_NativeBuffer_FromNativeWindowBuffer failed" << endl;
+            isRunning_.store(false);
+            return 0;
+        }
+        
+        OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_FromNativeWindowBuffer success, calling OH_NativeBuffer_Map");
+        int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
+        if (ret != 0 || virAddr == nullptr) {
+            OH_LOG_ERROR(LOG_APP, "OH_NativeBuffer_Map failed: ret=%{public}d", ret);
+            cout << "OH_NativeBuffer_Map failed" << endl;
+            isRunning_.store(false);
+            return 0;
+        }
+        
+        OH_LOG_INFO(LOG_APP, "OH_NativeBuffer_Map success: virAddr=%{public}p", virAddr);
+    } else {
+        OH_LOG_INFO(LOG_APP, "virAddr is valid: %{public}p", virAddr);
+    }
+    
+    dst = reinterpret_cast<uint8_t *>(virAddr);
+    if (stride < static_cast<int32_t>(DEFAULT_WIDTH)) {
+        OH_LOG_ERROR(LOG_APP, "invalid stride=%{public}d, DEFAULT_WIDTH=%{public}d", stride, DEFAULT_WIDTH);
+        cout << "invalid stride=" << stride << endl;
         isRunning_.store(false);
         return 0;
     }
+    
     stride_ = stride;
+    OH_LOG_INFO(LOG_APP, "InitBuffer success, stride_=%{public}d, dst=%{public}p", stride_, dst);
     return 1;
 }
 

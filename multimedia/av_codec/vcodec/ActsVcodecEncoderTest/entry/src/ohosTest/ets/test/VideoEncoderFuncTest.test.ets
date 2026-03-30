@@ -109,6 +109,18 @@ export default function VideoEncoderFuncTest() {
       expect(result).assertEqual(0);
     });
     /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_0200
+     * @tc.number VIDEO_ENCODE_FUNCTION_0200
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_0200', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(1);
+      expect(result).assertEqual(0);
+    });
+    /**
      * @tc.name VIDEO_ENCODE_FUNCTION_0300
      * @tc.number VIDEO_ENCODE_FUNCTION_0300
      * @tc.desc   function test
@@ -117,7 +129,43 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(1);
+      let result: number = await testNapi.runFuncTest(2);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_0400
+     * @tc.number VIDEO_ENCODE_FUNCTION_0400
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_0400', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(3);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_0500
+     * @tc.number VIDEO_ENCODE_FUNCTION_0500
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_0500', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(4);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_0600
+     * @tc.number VIDEO_ENCODE_FUNCTION_0600
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_0600', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(5);
       expect(result).assertEqual(0);
     });
     /**
@@ -129,7 +177,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_0700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(2);
+      let result: number = await testNapi.runFuncTest(6);
       expect(result).assertEqual(0);
     });
     /**
@@ -141,7 +189,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_0800', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(3);
+      let result: number = await testNapi.runFuncTest(7);
       expect(result).assertEqual(0);
     });
     /**
@@ -153,7 +201,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_0810', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(4);
+      let result: number = await testNapi.runFuncTest(8);
       expect(result).assertEqual(0);
     });
     /**
@@ -165,7 +213,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_0900', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(5);
+      let result: number = await testNapi.runFuncTest(9);
       expect(result).assertEqual(0);
     });
     /**
@@ -177,7 +225,31 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_1000', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(6);
+      let result: number = await testNapi.runFuncTest(10);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_1100
+     * @tc.number VIDEO_ENCODE_FUNCTION_1100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_1100', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(11);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_1400
+     * @tc.number VIDEO_ENCODE_FUNCTION_1400
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_1400', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(12);
       expect(result).assertEqual(0);
     });
     /**
@@ -189,7 +261,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_1600', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(7);
+      let result: number = await testNapi.runFuncTest(13);
       expect(result).assertEqual(0);
     });
     /**
@@ -201,7 +273,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_1700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(8);
+      let result: number = await testNapi.runFuncTest(14);
       expect(result).assertEqual(0);
     });
     /**
@@ -213,7 +285,19 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_1800', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(9);
+      let result: number = await testNapi.runFuncTest(15);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name VIDEO_ENCODE_FUNCTION_1900
+     * @tc.number VIDEO_ENCODE_FUNCTION_1900
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('VIDEO_ENCODE_FUNCTION_1900', Level.LEVEL1, async () => {
+      let result: number = await testNapi.runFuncTest(16);
       expect(result).assertEqual(0);
     });
     /**
@@ -225,7 +309,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_ENCODE_FUNCTION_2000', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runFuncTest(10);
+      let result: number = await testNapi.runFuncTest(17);
       expect(result).assertEqual(0);
     });
     /**
@@ -237,7 +321,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(11);
+      let result: number = await testNapi.runFuncTest(18);
       expect(result).assertEqual(0);
     });
     /**
@@ -249,7 +333,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(12);
+      let result: number = await testNapi.runFuncTest(19);
       expect(result).assertEqual(0);
     });
     /**
@@ -261,7 +345,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(13);
+      let result: number = await testNapi.runFuncTest(20);
       expect(result).assertEqual(0);
     });
     /**
@@ -273,7 +357,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(14);
+      let result: number = await testNapi.runFuncTest(21);
       expect(result).assertEqual(0);
     });
     /**
@@ -285,7 +369,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(15);
+      let result: number = await testNapi.runFuncTest(22);
       expect(result).assertEqual(0);
     });
     /**
@@ -297,7 +381,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_9900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(16);
+      let result: number = await testNapi.runFuncTest(23);
       expect(result).assertEqual(0);
     });
     /**
@@ -309,7 +393,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(17);
+      let result: number = await testNapi.runFuncTest(24);
       expect(result).assertEqual(0);
     });
     /**
@@ -321,7 +405,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(18);
+      let result: number = await testNapi.runFuncTest(25);
       expect(result).assertEqual(0);
     });
     /**
@@ -333,7 +417,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(19);
+      let result: number = await testNapi.runFuncTest(26);
       expect(result).assertEqual(0);
     });
     /**
@@ -345,7 +429,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_0900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(20);
+      let result: number = await testNapi.runFuncTest(27);
       expect(result).assertEqual(0);
     });
     /**
@@ -357,7 +441,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1000', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(21);
+      let result: number = await testNapi.runFuncTest(28);
       expect(result).assertEqual(0);
     });
     /**
@@ -369,7 +453,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(22);
+      let result: number = await testNapi.runFuncTest(29);
       expect(result).assertEqual(0);
     });
     /**
@@ -381,7 +465,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(23);
+      let result: number = await testNapi.runFuncTest(30);
       expect(result).assertEqual(0);
     });
     /**
@@ -393,7 +477,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(24);
+      let result: number = await testNapi.runFuncTest(31);
       expect(result).assertEqual(0);
     });
     /**
@@ -405,7 +489,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1310', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(25);
+      let result: number = await testNapi.runFuncTest(32);
       expect(result).assertEqual(0);
     });
     /**
@@ -417,7 +501,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(26);
+      let result: number = await testNapi.runFuncTest(33);
       expect(result).assertEqual(0);
     });
     /**
@@ -429,7 +513,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(27);
+      let result: number = await testNapi.runFuncTest(34);
       expect(result).assertEqual(0);
     });
     /**
@@ -441,7 +525,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(28);
+      let result: number = await testNapi.runFuncTest(35);
       expect(result).assertEqual(0);
     });
     /**
@@ -453,7 +537,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(29);
+      let result: number = await testNapi.runFuncTest(36);
       expect(result).assertEqual(0);
     });
     /**
@@ -465,7 +549,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_1900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(30);
+      let result: number = await testNapi.runFuncTest(37);
       expect(result).assertEqual(0);
     });
     /**
@@ -477,7 +561,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_8400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(31);
+      let result: number = await testNapi.runFuncTest(38);
       expect(result).assertEqual(0);
     });
     /**
@@ -489,7 +573,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_8500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(32);
+      let result: number = await testNapi.runFuncTest(39);
       expect(result).assertEqual(0);
     });
     /**
@@ -501,7 +585,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_8600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(33);
+      let result: number = await testNapi.runFuncTest(40);
       expect(result).assertEqual(0);
     });
     /**
@@ -513,7 +597,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2000', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(34);
+      let result: number = await testNapi.runFuncTest(41);
       expect(result).assertEqual(0);
     });
     /**
@@ -525,7 +609,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(35);
+      let result: number = await testNapi.runFuncTest(42);
       expect(result).assertEqual(0);
     });
     /**
@@ -537,7 +621,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(36);
+      let result: number = await testNapi.runFuncTest(43);
       expect(result).assertEqual(0);
     });
     /**
@@ -549,7 +633,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(37);
+      let result: number = await testNapi.runFuncTest(44);
       expect(result).assertEqual(0);
     });
     /**
@@ -561,7 +645,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(38);
+      let result: number = await testNapi.runFuncTest(45);
       expect(result).assertEqual(0);
     });
     /**
@@ -573,7 +657,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(39);
+      let result: number = await testNapi.runFuncTest(46);
       expect(result).assertEqual(0);
     });
     /**
@@ -585,7 +669,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(40);
+      let result: number = await testNapi.runFuncTest(47);
       expect(result).assertEqual(0);
     });
     /**
@@ -597,7 +681,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_2800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(41);
+      let result: number = await testNapi.runFuncTest(48);
       expect(result).assertEqual(0);
     });
     /**
@@ -609,7 +693,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(42);
+      let result: number = await testNapi.runFuncTest(49);
       expect(result).assertEqual(0);
     });
     /**
@@ -621,7 +705,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(43);
+      let result: number = await testNapi.runFuncTest(50);
       expect(result).assertEqual(0);
     });
     /**
@@ -633,7 +717,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(44);
+      let result: number = await testNapi.runFuncTest(51);
       expect(result).assertEqual(0);
     });
     /**
@@ -645,7 +729,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(45);
+      let result: number = await testNapi.runFuncTest(52);
       expect(result).assertEqual(0);
     });
     /**
@@ -657,7 +741,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(46);
+      let result: number = await testNapi.runFuncTest(53);
       expect(result).assertEqual(0);
     });
     /**
@@ -669,7 +753,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(47);
+      let result: number = await testNapi.runFuncTest(54);
       expect(result).assertEqual(0);
     });
     /**
@@ -681,7 +765,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(48);
+      let result: number = await testNapi.runFuncTest(55);
       expect(result).assertEqual(0);
     });
     /**
@@ -693,7 +777,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(49);
+      let result: number = await testNapi.runFuncTest(56);
       expect(result).assertEqual(0);
     });
     /**
@@ -705,7 +789,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_3900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(50);
+      let result: number = await testNapi.runFuncTest(57);
       expect(result).assertEqual(0);
     });
     /**
@@ -717,7 +801,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(51);
+      let result: number = await testNapi.runFuncTest(58);
       expect(result).assertEqual(0);
     });
     /**
@@ -729,7 +813,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(52);
+      let result: number = await testNapi.runFuncTest(59);
       expect(result).assertEqual(0);
     });
     /**
@@ -741,7 +825,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(53);
+      let result: number = await testNapi.runFuncTest(60);
       expect(result).assertEqual(0);
     });
     /**
@@ -753,7 +837,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(54);
+      let result: number = await testNapi.runFuncTest(61);
       expect(result).assertEqual(0);
     });
     /**
@@ -765,7 +849,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(55);
+      let result: number = await testNapi.runFuncTest(62);
       expect(result).assertEqual(0);
     });
     /**
@@ -777,7 +861,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(56);
+      let result: number = await testNapi.runFuncTest(63);
       expect(result).assertEqual(0);
     });
     /**
@@ -789,7 +873,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_4900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(57);
+      let result: number = await testNapi.runFuncTest(64);
       expect(result).assertEqual(0);
     });
     /**
@@ -801,7 +885,7 @@ export default function VideoEncoderFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_ENCODE_CAPABILITY_9800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(58);
+      let result: number = await testNapi.runFuncTest(65);
       expect(result).assertEqual(0);
     });
   });

@@ -148,6 +148,35 @@ bool IsSupportRgba1010102Format()
     }
     return false;
 }
+
+bool capConfigCheck(OH_AVCapability *capability, int32_t profile, int32_t level)
+{
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    bool isGetContain = false;
+    bool isSupport = OH_AVCapability_AreProfileAndLevelSupported(capability, profile, level);
+    OH_AVErrCode err = OH_AVCapability_GetSupportedLevelsForProfile(capability, profile, &levels, &levelNum);
+    if (!isSupport && err != AV_ERR_OK) {
+        return true;
+    }
+    if (err != AV_ERR_OK) {
+        cout << "OH_AVCapability_GetSupportedLevelsForProfile false err: " << err << endl;
+        return false;
+    }
+    for (int j = 0; j < levelNum; j++) {
+        if (levels[j] == level) {
+            isGetContain = true;
+            break;
+        }
+    }
+    if (isSupport != isGetContain) {
+        cout << "isSupport != isGetContain isSupport:" << (int32_t)isSupport <<
+            "   isGetContain:" << (int32_t)isGetContain << endl;
+        return false;
+    }
+    return true;
+}
+
 int VideoEncodeHevcCapability3100Test()
 {
     if (cap) {
@@ -1489,6 +1518,106 @@ int VideoEncodeSyncFormat0010Test()
         return 0;
     }
     return 0;
+}
+
+int VideoEncodeAnother0010Test()
+{
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_hevc != nullptr && InitHEVCCodecName()) {
+        auto vEncSample = make_unique<VEncNdkSample>();
+        vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_30_INT;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        auto vEncSample2 = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Flush());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Stop());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Reset());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
+
+int VideoCapabilityConfig0010Test()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap != nullptr) {
+        const char *tmpCodecName = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(AV_ERR_OK, SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1));
+        venc_ = OH_VideoEncoder_CreateByName(g_codecName);
+        ASSERT_NE(nullptr, venc_);
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_1));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_1b));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_11));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_12));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_13));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_2));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_21));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_22));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_3));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_31));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_32));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_4));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_41));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_42));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_5));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_51));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_52));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_6));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_61));
+        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_62));
+        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Destroy(venc_));
+        venc_ = nullptr;
+        return 0;
+    } else {
+        venc_ = OH_VideoEncoder_CreateByName(nullptr);
+        ASSERT_EQ(nullptr, venc_);
+        return 0;
+    }
+}
+
+int VideoCapabilityConfig0020Test()
+{
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_hevc != nullptr) {
+        const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
+        ASSERT_EQ(AV_ERR_OK, SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC),
+            tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1));
+        venc_ = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
+        ASSERT_NE(nullptr, venc_);
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_1));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_2));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_21));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_3));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_31));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_4));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_41));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_5));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_51));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_52));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_6));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_61));
+        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_62));
+        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Destroy(venc_));
+        venc_ = nullptr;
+        return 0;
+    } else {
+        venc_ = OH_VideoEncoder_CreateByName(nullptr);
+        ASSERT_EQ(nullptr, venc_);
+        return 0;
+    }
 }
 
 void InitFunc2Test()

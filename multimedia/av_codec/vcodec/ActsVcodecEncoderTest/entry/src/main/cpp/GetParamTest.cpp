@@ -120,8 +120,8 @@ int VideoEncodeMseQp0200Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
-} else {
+        return 0;
+    } else {
         return 0;
     }
 }
@@ -145,8 +145,8 @@ int VideoEncodeMseQp0300Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
-} else {
+        return 0;
+    } else {
         return 0;
     }
 }
@@ -170,8 +170,8 @@ int VideoEncodeMseQp0400Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
-} else {
+        return 0;
+    } else {
         return 0;
     }
 }
