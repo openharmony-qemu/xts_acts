@@ -576,7 +576,7 @@ export default function ConnectivityTest() {
         try {
           wifiMg.disableWifi();
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 start====");
-          let result: number = wifindktest.GetLinkedInfo0200();
+          let result: number = wifindktest.GetLinkedInfo0300();
           console.info("====>SUB_COMMUNICATION_WIFI_NAPI_1100 END====" + result);
           if (result === 2501001){
             expect(result).assertEqual(2501001);
