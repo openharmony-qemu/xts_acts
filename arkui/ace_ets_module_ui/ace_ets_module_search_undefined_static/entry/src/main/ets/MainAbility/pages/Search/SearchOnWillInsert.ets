@@ -43,9 +43,9 @@ struct SearchOnWillInsert {
   build() {
     Column() {
       Text(this.insertValue + this.searchModifier.insertValue)
-        .id('SearchText').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
+        .id('Text_SearchOnWillInsert').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Search()
-        .id('Search')
+        .id('Search_SearchOnWillInsert')
         .width('95%')
         .height('10%')
         .onWillInsert(this.isCallback ? undefined :
@@ -55,7 +55,7 @@ struct SearchOnWillInsert {
           })
 
       Button('callback ' + this.isCallback ? 'false' : 'true')
-        .id('change')
+        .id('Button_SearchOnWillInsert')
         .onClick((e: ClickEvent)=>{
           this.isCallback = !this.isCallback;
           this.searchModifier.isCallback = !this.searchModifier.isCallback;
@@ -65,7 +65,7 @@ struct SearchOnWillInsert {
 
       Text('Search Modifier')
       Search()
-        .id('Modifier')
+        .id('Search_SearchOnWillInsertModifier')
         .attributeModifier(this.searchModifier)
     }.height('100%').width('100%');
   }

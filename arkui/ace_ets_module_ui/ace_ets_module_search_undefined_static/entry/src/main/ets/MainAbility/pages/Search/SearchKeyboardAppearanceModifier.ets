@@ -49,7 +49,7 @@ struct TextInputExample {
     Row() {
       Column( { space: 10 } as ColumnOptions ) {
         Button(`keyboardAppearance: ${this.searchModifier.state}`)
-          .id('button_keyboardAppearance')
+          .id('Button_SearchKeyboardAppearanceModifier')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -57,11 +57,11 @@ struct TextInputExample {
             this.searchModifier.state = !this.searchModifier.state;
           })
         Search({value:''})
-          .id('Search2')
+          .id('Search_SearchKeyboardAppearanceModifier2')
         Search({value: this.text})
           .attributeModifier(this.searchModifier)
           .height(56)
-          .id('Search')
+          .id('Search_SearchKeyboardAppearanceModifier')
       }.width('100%')
     }
     .height('100%')

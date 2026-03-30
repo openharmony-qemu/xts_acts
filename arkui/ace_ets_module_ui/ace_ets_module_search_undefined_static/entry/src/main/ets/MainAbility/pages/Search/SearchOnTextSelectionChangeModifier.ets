@@ -73,9 +73,9 @@ struct TextInputExample {
     Row() {
       Column( { space: 10 } as ColumnOptions ) {
         Text(`${this.searchModifier.content}`)
-          .id('Text')
+          .id('Text_SearchOnTextSelectionChangeModifier')
         Button(`onTextSelectionChange: ${this.searchModifier.state}`)
-          .id('button_onTextSelectionChange')
+          .id('Button_SearchOnTextSelectionChangeModifier')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -84,11 +84,11 @@ struct TextInputExample {
             this.searchModifier.state = ! this.searchModifier.state;
           })
         Search({value: ''})
-          .id('Search2')
+          .id('Search_SearchOnTextSelectionChangeModifier2')
         Search({value: this.text})
           .attributeModifier(this.searchModifier)
           .height(56)
-          .id('Search')
+          .id('Search_SearchOnTextSelectionChangeModifier')
 
       }.width('100%')
     }

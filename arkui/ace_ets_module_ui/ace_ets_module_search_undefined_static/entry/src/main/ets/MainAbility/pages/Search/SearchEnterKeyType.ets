@@ -61,19 +61,19 @@ struct Index {
       Scroll(undefined){
         Column(undefined) {
           Button('search enterKeyType' + this.searchArrayStr[this.searchIndex])
-            .id('change')
+            .id('Button_SearchEnterKeyType')
             .onClick((e: ClickEvent)=>{
               this.searchIndex = ++this.searchIndex % this.searchArray.length;
               this.searchModifier.index = ++this.searchModifier.index % this.searchArray.length;
             })
           Search({ value: this.text })
-            .id('Search')
+            .id('Search_SearchEnterKeyType')
             .height(56)
             .enterKeyType(this.searchArray[this.searchIndex])
 
           Text('Search Modifier')
           Search({ value: this.text })
-            .id('Modifier')
+            .id('Search_SearchEnterKeyTypeModifier')
             .attributeModifier(this.searchModifier)
         }
       }.height('100%')

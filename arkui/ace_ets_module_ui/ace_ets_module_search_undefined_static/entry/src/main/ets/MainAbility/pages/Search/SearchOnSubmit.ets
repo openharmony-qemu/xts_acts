@@ -35,9 +35,9 @@ struct SearchExample {
     Row(undefined) {
       Column( { space: 10 } as ColumnOptions ) {
         Text(`${this.content}`)
-          .id('Text')
+          .id('Text_SearchOnSubmit')
         Button(`onSubmit: ${this.state}`)
-          .id('button_onSubmit')
+          .id('Button_SearchOnSubmit')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -48,13 +48,13 @@ struct SearchExample {
 
         Search({value: this.text})
           .height(56)
-          .id('Search')
+          .id('Search_SearchOnSubmit')
           .enterKeyType(EnterKeyType.Go)
           .onSubmit(this.state ? (enterKey: string, event?: SubmitEvent) => {
             this.content = true;
          } as SearchSubmitCallback : undefined)
         Search({value: ''})
-          .id('Search2')
+          .id('Search_SearchOnSubmit2')
 
       }.width('100%')
     }

@@ -49,7 +49,7 @@ struct TextInputExample {
     Row() {
       Column( { space: 10 } as ColumnOptions ) {
         Button(`letterSpacing: ${this.searchModifier.state}`)
-          .id('button_letterSpacing')
+          .id('Button_SearchLetterSpacingModifier')
           .width(240)
           .fontSize(16)
           .margin(10)
@@ -59,7 +59,7 @@ struct TextInputExample {
         Search({value: this.text})
           .attributeModifier(this.searchModifier)
           .height(56)
-          .id('Search')
+          .id('Search_SearchLetterSpacingModifier')
       }.width('100%')
     }
     .height('100%')

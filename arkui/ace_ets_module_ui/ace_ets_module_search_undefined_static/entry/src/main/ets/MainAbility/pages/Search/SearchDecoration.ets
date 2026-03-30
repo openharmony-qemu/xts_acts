@@ -65,11 +65,11 @@ struct SearchDecorationTest {
         .onClick((e: ClickEvent)=>{
           this.searchIndex = ++this.searchIndex % this.searchArray.length;
         })
-        .id('button_decoration')
+        .id('Button_SearchDecoration')
       Search({value:this.text})
         .height(50)
         .decoration(this.searchArray[this.searchIndex])
-        .id('SearchTest')
+        .id('Search_SearchDecoration')
     }
     .height('100%')
   }

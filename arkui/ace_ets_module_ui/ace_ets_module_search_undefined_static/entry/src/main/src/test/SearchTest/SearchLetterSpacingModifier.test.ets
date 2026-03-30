@@ -76,25 +76,25 @@ export default function SearchLetterSpacingModifierTest() {
       console.info('[SearchLetterSpacingModifierTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('Search');
+      let strJson = inspector.getInspectorByKey('Search_SearchLetterSpacingModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('0.00px');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('button_letterSpacing')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchLetterSpacingModifier')) as Component;
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchLetterSpacingModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('3.50vp');
 
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchLetterSpacingModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('0.00px');
       await CommonFunc.sleep(1000);

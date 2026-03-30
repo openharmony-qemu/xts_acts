@@ -28,9 +28,9 @@ struct SearchEnableHapticFeedBackTest {
       Column() {
         Search({ value: 'placeholder(Search)' })
           .width('100%')
-          .key('key_search_enableHapticFeedback_001')
+          .id('Search_SearchEnableHapticFeedBack')
           .enableHapticFeedback(this.isChange ? false : undefined)
-        Button('点击切换Undefined').id('button_enableHapticFeedback').onClick((event: ClickEvent) => {
+        Button('点击切换Undefined').id('Button_SearchEnableHapticFeedBack').onClick((event: ClickEvent) => {
           this.isChange = !this.isChange
         })
       }

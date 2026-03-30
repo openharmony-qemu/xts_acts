@@ -76,23 +76,23 @@ export default function SearchOnSubmitModifierTest() {
       console.info('[SearchOnSubmitModifierTest_static_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let search = await driver.findComponent(ON.id('Search')) as Component;
+      let search = await driver.findComponent(ON.id('Search_SearchOnSubmitModifier')) as Component;
       await CommonFunc.sleep(1000);
       await search.longClick();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Text');
+      let strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         'false');
       await CommonFunc.sleep(1000);
-      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      let search2 = await driver.findComponent(ON.id('Search_SearchOnSubmitModifier2')) as Component;
       await CommonFunc.sleep(1000);
       await search2.click();
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('button_onSubmit')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchOnSubmitModifier')) as Component;
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
@@ -102,7 +102,7 @@ export default function SearchOnSubmitModifierTest() {
 
       await driver.triggerKey(2054)
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         'true');
@@ -118,7 +118,7 @@ export default function SearchOnSubmitModifierTest() {
 
       await driver.triggerKey(2054);
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Text');
+      strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual(
         'false');

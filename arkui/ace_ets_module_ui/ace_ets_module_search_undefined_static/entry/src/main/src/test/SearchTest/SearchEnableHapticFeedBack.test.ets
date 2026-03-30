@@ -88,21 +88,21 @@ export default function searchEnableHapticFeedBack() {
       let tagName = 'searchEnableHapticFeedBack0100';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('button_enableHapticFeedback'))
+      let button = await driver.findComponent(ON.id('Button_SearchEnableHapticFeedBack'))
       await CommonFunc.sleep(500);
       button?.click()
       await CommonFunc.sleep(500);
-      let strJsonNew = inspector.getInspectorByKey('key_search_enableHapticFeedback_001');
+      let strJsonNew = inspector.getInspectorByKey('Search_SearchEnableHapticFeedBack');
       console.info('[' + tagName + '] Search enableHapticFeedback is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')
         .getString('enableHapticFeedback')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('true');
 
-      let button1 = await driver.findComponent(ON.id('button_enableHapticFeedback'))
+      let button1 = await driver.findComponent(ON.id('Button_SearchEnableHapticFeedBack'))
       await CommonFunc.sleep(500);
       button1?.click()
       await CommonFunc.sleep(500);
-      let strJsonNew1 = inspector.getInspectorByKey('key_search_enableHapticFeedback_001');
+      let strJsonNew1 = inspector.getInspectorByKey('Search_SearchEnableHapticFeedBack');
       console.info('[' + tagName + '] Search enableHapticFeedback is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
         .getElement('$attrs')
         .getString('enableHapticFeedback')));

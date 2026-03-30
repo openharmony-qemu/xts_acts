@@ -76,15 +76,15 @@ export default function SearchKeyboardAppearanceModifierTest() {
       console.info('[SearchKeyboardAppearanceModifierTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('Search');
+      let strJson = inspector.getInspectorByKey('Search_SearchKeyboardAppearanceModifier');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('keyboardAppearance')).assertEqual(0);
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('button_keyboardAppearance')) as Component;
-      let search = await driver.findComponent(ON.id('Search')) as Component;
-      let search2 = await driver.findComponent(ON.id('Search2')) as Component;
+      let button = await driver.findComponent(ON.id('Button_SearchKeyboardAppearanceModifier')) as Component;
+      let search = await driver.findComponent(ON.id('Search_SearchKeyboardAppearanceModifier')) as Component;
+      let search2 = await driver.findComponent(ON.id('Search_SearchKeyboardAppearanceModifier2')) as Component;
 
       await CommonFunc.sleep(1000);
       await button.click();
@@ -93,7 +93,7 @@ export default function SearchKeyboardAppearanceModifierTest() {
       await search.click();
       await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchKeyboardAppearanceModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('keyboardAppearance')).assertEqual(3);
 
@@ -106,7 +106,7 @@ export default function SearchKeyboardAppearanceModifierTest() {
 
       await search.click();
       await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('Search');
+      strJson = inspector.getInspectorByKey('Search_SearchKeyboardAppearanceModifier');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('keyboardAppearance')).assertEqual(0);
 
