@@ -21,9 +21,9 @@ import EmptyTest from './Empty.test';
 let simState: sim.SimState = sim.getSimStateSync(0);
 export default function testsuite() {
     if (sim.getMaxSimCount()!==0 && simState != sim.SimState.SIM_STATE_UNKNOWN){
-	SimGetActiveSimAccountInfoList();
-	SimGetSimAccountInfo();
-    }else{
-        EmptyTest()
+	    SimGetActiveSimAccountInfoList();
+	    SimGetSimAccountInfo();
+    } else {
+        EmptyTest();
     }
 }
