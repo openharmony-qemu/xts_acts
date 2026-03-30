@@ -41,6 +41,7 @@ export default function OHMediaAssetCreateTest() {
       await getPermission();
       await driveFn();
       testNapi.TestOhMediaAsset(CASE_INDEX_1,indexSurfaceId);
+      await sleep(2000);
       console.info(TAG, 'beforeAll case', indexSurfaceId);
     });
     beforeEach(() => {

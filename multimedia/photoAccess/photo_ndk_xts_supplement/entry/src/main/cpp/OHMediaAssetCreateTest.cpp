@@ -194,12 +194,6 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     Camera_OutputCapability *cameraOutputCapability = nullptr;
     code = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(cameraManager, cameras, sceneMode,
                                                                             &cameraOutputCapability);
-    LOGI("Get 5  %{public}d", code);
-    Camera_Profile *profile = cameraOutputCapability->previewProfiles[0];
-    Camera_PreviewOutput *previewOutput = nullptr;
-    code = OH_CameraManager_CreatePreviewOutput(cameraManager, profile, surfaceId, &previewOutput);
-    LOGI("Get 6  %{public}d", code);
-    code = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
     LOGI("Get 7  %{public}d", code);
     Camera_Input *cameraInput = nullptr;
     code = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &cameraInput);
@@ -215,14 +209,37 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     LOGI("Get 12  %{public}d", code);
     code = OH_CaptureSession_AddInput(captureSession, cameraInput);
     LOGI("Get 13  %{public}d", code);
+    Camera_Profile *preProfile = NULL;
+    Camera_Profile *photoProfile = NULL;
+    for (int i = 0; i < cameraOutputCapability->previewProfilesSize; i++) {
+        Camera_Profile *currPre = cameraOutputCapability->previewProfiles[i];
+        for (int j = 0; j < cameraOutputCapability->photoProfilesSize; j++) {
+            Camera_Profile *currPhoto = cameraOutputCapability->photoProfiles[j];
+            if (currPre->size.width * currPhoto->size.height == currPhoto->size.width * currPre->size.height) {
+                preProfile = currPre;
+                photoProfile = currPhoto;
+                goto match_end; // 直接跳出所有循环
+            }
+        }
+    }
+    match_end:
+// 兜底
+    if (!preProfile)
+        preProfile = cameraOutputCapability->previewProfiles[0];
+    if (!photoProfile)
+        photoProfile = cameraOutputCapability->photoProfiles[0];
+    Camera_PreviewOutput *previewOutput = nullptr;
+    code = OH_CameraManager_CreatePreviewOutput(cameraManager, preProfile, surfaceId, &previewOutput);
+    LOGI("Get 5  %{public}d", code);
+    code = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
+    LOGI("Get 6  %{public}d", code);
     isSuccess = false;
     code = OH_CaptureSession_CanAddPreviewOutput(captureSession, previewOutput, &isSuccess);
     LOGI("Get 14  %{public}d", code);
     code = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
     LOGI("Get 15  %{public}d", code);
-    profile = cameraOutputCapability->photoProfiles[0];
     Camera_PhotoOutput *photoOutput = nullptr;
-    code = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, profile, &photoOutput);
+    code = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
     LOGI("Get 16  %{public}d", code);
     isSuccess = false;
     code = OH_CaptureSession_CanAddPhotoOutput(captureSession, photoOutput, &isSuccess);
