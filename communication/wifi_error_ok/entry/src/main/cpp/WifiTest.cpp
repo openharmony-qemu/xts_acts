@@ -301,47 +301,23 @@ static napi_value GetLinkedInfo0100(napi_env env, napi_callback_info info)
 {
     OH_WifiLinkedInfo wifiLinkedInfo;
     int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
-    int32_t confirmResult;
-    if (result == WIFI_SUCCESS) {
-        confirmResult = WIFI_SUCCESS;
-    } else if (result == WIFI_NOT_SUPPORTED) {
-        confirmResult = WIFI_NOT_SUPPORTED;
-    } else {
-        confirmResult = 1;
-    };
     napi_value retValue;
-    napi_create_int32(env, confirmResult, &retValue);
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 static napi_value GetLinkedInfo0200(napi_env env, napi_callback_info info)
 {
     int32_t result = OH_Wifi_GetLinkedInfo(nullptr);
-    int32_t confirmResult;
-    if (result == WIFI_INVALID_PARAM) {
-        confirmResult = WIFI_INVALID_PARAM;
-    } else if (result == WIFI_NOT_SUPPORTED) {
-        confirmResult = WIFI_NOT_SUPPORTED;
-    } else {
-        confirmResult = 1;
-    };
     napi_value retValue;
-    napi_create_int32(env, confirmResult, &retValue);
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 static napi_value GetLinkedInfo0300(napi_env env, napi_callback_info info)
 {
     OH_WifiLinkedInfo wifiLinkedInfo;
     int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
-    int32_t confirmResult;
-    if (result == WIFI_STA_DISABLED) {
-        confirmResult = WIFI_STA_DISABLED;
-    } else if (result == WIFI_NOT_SUPPORTED) {
-        confirmResult = WIFI_NOT_SUPPORTED;
-    } else {
-        confirmResult = 1;
-    };
     napi_value retValue;
-    napi_create_int32(env, confirmResult, &retValue);
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 EXTERN_C_START
