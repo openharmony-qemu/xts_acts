@@ -33,7 +33,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 export default function Sim_getActiveSimAccountInfoList_dual() {
-    describe('telephonyRadioNoPermissionPublicTest',  () => {
+    describe('Sim_getActiveSimAccountInfoList_dual',  () => {
 
         let TRUE_SLOT_ID_0: int = 0;
         let simAmount: int = 0;
