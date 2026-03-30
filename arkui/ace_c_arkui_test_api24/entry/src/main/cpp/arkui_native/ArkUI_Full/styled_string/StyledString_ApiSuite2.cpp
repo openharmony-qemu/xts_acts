@@ -1406,9 +1406,10 @@ static napi_value TestArkUICapi_321(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
+    int32_t userSlot = 0;
     {
-        auto ecSet = OH_ArkUI_SpanStyle_SetUserDataSpan(obj, sub);
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
+        auto ecData = OH_ArkUI_UserDataSpan_SetUserData(sub, static_cast<void*>(&userSlot));
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecData), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_SpanStyle_Destroy(obj);
             OH_ArkUI_UserDataSpan_Destroy(sub);
@@ -1416,10 +1417,9 @@ static napi_value TestArkUICapi_321(napi_env env, napi_callback_info info)
         }
     }
 
-    int32_t userSlot = 0;
     {
-        auto ecData = OH_ArkUI_UserDataSpan_SetUserData(sub, static_cast<void*>(&userSlot));
-        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecData), (ARKUI_ERROR_CODE_NO_ERROR));
+        auto ecSet = OH_ArkUI_SpanStyle_SetUserDataSpan(obj, sub);
+        napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ecSet), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_SpanStyle_Destroy(obj);
             OH_ArkUI_UserDataSpan_Destroy(sub);

@@ -1107,7 +1107,7 @@ static napi_value TestArkUICapi_377(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
  *     uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: shadowOptionsSize 须为可容纳输出的非零容量（styled_string.h：过小将可能 BUFFER_SIZE_ERROR / PARAM_INVALID）。
+ * 实际测试: shadowOptions 传已创建对象槽，容量为 1，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
 {
@@ -1118,18 +1118,24 @@ static napi_value TestArkUICapi_378(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions* holder1 = nullptr;
-    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
+    auto *recv = OH_ArkUI_ShadowOptions_Create();
+    if (recv == nullptr) {
+        OH_ArkUI_TextShadowStyle_Destroy(obj);
+        return nullptr;
+    }
+    OH_ArkUI_ShadowOptions* shadowSlots[1] = { recv };
     uint32_t v3 = 0U;
-    auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, outPtr1, 1U, &v3);
+    auto ec = OH_ArkUI_TextShadowStyle_GetTextShadow(obj, shadowSlots, 1U, &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ShadowOptions_Destroy(recv);
             OH_ArkUI_TextShadowStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ShadowOptions_Destroy(recv);
     OH_ArkUI_TextShadowStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }
