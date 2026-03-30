@@ -470,7 +470,8 @@ static napi_value TestArkUICapi_174(napi_env env, napi_callback_info info)
  *     OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorTextStyle *, OH_ArkUI_ShadowOptions **, uint32_t,
  *     uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 通过 OH_ArkUI_TextEditorTextStyle_Create 创建对象，调用接口，断言 ARKUI_ERROR_CODE_NO_ERROR，再释放对象。
+ * 实际测试: shadowOptions 各槽须为已 Create 的对象（与 styled_string 侧 GetTextShadow / Descriptor_GetStyles 同类：传 nullptr 槽易 SIGSEGV）；
+ * shadowOptionsSize 取 1；勿用 0 容量 + nullptr 槽 combinations 探实现。
  */
 static napi_value TestArkUICapi_175(napi_env env, napi_callback_info info)
 {
@@ -481,17 +482,24 @@ static napi_value TestArkUICapi_175(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    OH_ArkUI_ShadowOptions* holder1 = nullptr;
-    OH_ArkUI_ShadowOptions** outPtr1 = &holder1;
+    auto *recv = OH_ArkUI_ShadowOptions_Create();
+    if (recv == nullptr) {
+        OH_ArkUI_TextEditorTextStyle_Destroy(obj);
+        return nullptr;
+    }
+    OH_ArkUI_ShadowOptions* shadowSlots[1] = { recv };
     uint32_t v3 = 0U;
-    auto ec = OH_ArkUI_TextEditorTextStyle_GetTextShadows(obj, outPtr1, 0U, &v3);
+    auto ec = OH_ArkUI_TextEditorTextStyle_GetTextShadows(obj, shadowSlots, 1U, &v3);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
+            OH_ArkUI_ShadowOptions_Destroy(recv);
+            OH_ArkUI_TextEditorTextStyle_Destroy(obj);
             return napiAssertErr;
         }
     }
 
+    OH_ArkUI_ShadowOptions_Destroy(recv);
     OH_ArkUI_TextEditorTextStyle_Destroy(obj);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
 }

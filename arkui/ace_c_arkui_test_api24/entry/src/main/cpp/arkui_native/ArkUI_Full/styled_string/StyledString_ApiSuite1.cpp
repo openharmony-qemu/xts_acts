@@ -27,6 +27,12 @@ namespace {
  * 入参须为有效属性串。单独 Descriptor_Create() 无文本内容时多属无效。
  * API 24 CreateWithString：length 为 span 样式槽数量，与 UTF-8 文本字节长度一致（每字节一槽，槽可为 nullptr）。
  * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
+ *
+ * 【防 cppcrash —— 改 gated 代码或增删用例时务必扫一遍同类接口】
+ * 1) SubStyledString 等写入型 API：输出/输入 descriptor 须有有效文本场景（优先 XtsDescriptorFromUtf8，勿用裸空描述符探实现）。
+ * 2) Descriptor_GetStyles 类：styles[] 每个元素须为已 Create 的 SpanStyle（实现向槽内赋值，nullptr 槽会 SIGSEGV）。
+ * 3) GetTextShadow / GetTextShadows、GetColorFilter 等头文件标「指针由调用方管理 / @note」且带缓冲长度者：
+ *    ShadowOptions**/float** 要么指向已 Create 的对象槽，要么指向调用方栈/堆上的可写 float 缓冲（*链非空），勿传 nullptr 写入目标。
  */
 ArkUI_StyledString_Descriptor* XtsDescriptorFromUtf8(const char* utf8)
 {
@@ -590,8 +596,8 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledString_Descriptor *, uint32_t, uint32_t,
  *     OH_ArkUI_StyledStringKey, OH_ArkUI_SpanStyle **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)，再 GetStyles(range length 1, FONT, stylesSize 1)。
- * 成功后仅 OH_ArkUI_StyledString_Descriptor_Destroy(descriptor)，不对输出槽中的 OH_ArkUI_SpanStyle* 调用 SpanStyle_Destroy。
+ * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)；GetStyles 的 styles[] 元素须为已 Create 的 SpanStyle（实现向槽内赋值，
+ * 传 nullptr 会在 libace_ndk GetStyles 内对 SpanStyle 赋值时 SIGSEGV）。
  */
 static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
 {
@@ -617,21 +623,29 @@ static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
             return napiAssertErr;
         }
     }
-    OH_ArkUI_SpanStyle* holder4 = nullptr;
-    OH_ArkUI_SpanStyle** outPtr4 = &holder4;
+    auto *recv = OH_ArkUI_SpanStyle_Create();
+    if (recv == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        OH_ArkUI_SpanStyle_Destroy(sty);
+        OH_ArkUI_TextStyle_Destroy(ts);
+        return nullptr;
+    }
+    OH_ArkUI_SpanStyle* styleSlots[1] = { recv };
     uint32_t v6 = 0U;
     auto ec = OH_ArkUI_StyledString_Descriptor_GetStyles(
-        obj, 0U, 1U, OH_ARKUI_STYLEDSTRINGKEY_FONT, outPtr4, 1U, &v6);
+        obj, 0U, 1U, OH_ARKUI_STYLEDSTRINGKEY_FONT, styleSlots, 1U, &v6);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+            OH_ArkUI_SpanStyle_Destroy(recv);
             OH_ArkUI_SpanStyle_Destroy(sty);
             OH_ArkUI_TextStyle_Destroy(ts);
             return napiAssertErr;
         }
     }
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+    OH_ArkUI_SpanStyle_Destroy(recv);
     OH_ArkUI_SpanStyle_Destroy(sty);
     OH_ArkUI_TextStyle_Destroy(ts);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
