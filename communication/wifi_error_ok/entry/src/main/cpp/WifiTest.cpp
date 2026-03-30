@@ -299,8 +299,8 @@ static napi_value GetDeviceMacAddress0800(napi_env env, napi_callback_info info)
 }
 static napi_value GetLinkedInfo0100(napi_env env, napi_callback_info info)
 {
-    OH_WifiLinkedInfo info;
-    int32_t result = OH_Wifi_GetLinkedInfo(&info);
+    OH_WifiLinkedInfo wifiLinkedInfo;
+    int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
     int32_t confirmResult;
     if (result == WIFI_SUCCESS) {
         confirmResult = WIFI_SUCCESS;
@@ -330,8 +330,8 @@ static napi_value GetLinkedInfo0200(napi_env env, napi_callback_info info)
 }
 static napi_value GetLinkedInfo0300(napi_env env, napi_callback_info info)
 {
-    OH_WifiLinkedInfo info;
-    int32_t result = OH_Wifi_GetLinkedInfo(&info);
+    OH_WifiLinkedInfo wifiLinkedInfo;
+    int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
     int32_t confirmResult;
     if (result == WIFI_STA_DISABLED) {
         confirmResult = WIFI_STA_DISABLED;
