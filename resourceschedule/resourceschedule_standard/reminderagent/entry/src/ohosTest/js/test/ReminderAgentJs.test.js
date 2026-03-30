@@ -3443,7 +3443,7 @@ export default function ReminderAgentTest() {
                     done()
                 }).catch((error) => {
                     console.error(`testPublishReminderNorAlarmFun_0122 failed code is ${error.code} message is ${error.message}`);
-                    expect(reminderId).assertEqual(-1);
+                    expect(error.code).assertEqual(-1);
                     done();
                 })
             } catch (error) {
@@ -3476,7 +3476,7 @@ export default function ReminderAgentTest() {
                     done()
                 }).catch((error) => {
                     console.error(`testPublishReminderNorAlarmFun_0123 failed code is ${error.code} message is ${error.message}`);
-                    expect(reminderId).assertEqual(-1);
+                    expect(error.code).assertEqual(-1);
                     done();
                 })
             } catch (error) {
@@ -3684,7 +3684,7 @@ export default function ReminderAgentTest() {
                 })
             } catch (error) {
                 console.info("testPublishReminderNorAlarmFun_0130 slot err.code");
-                expect(reminderId).assertLarger(-1);
+                expect(error.code).assertLarger(-1);
                 done();
             }
         })
