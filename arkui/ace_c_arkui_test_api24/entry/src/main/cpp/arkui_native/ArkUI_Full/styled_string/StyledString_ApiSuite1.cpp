@@ -656,8 +656,8 @@ static napi_value TestArkUICapi_260(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    char buf1[32] = {0};
-    auto ec = OH_ArkUI_StyledString_Descriptor_FromHtml(obj, buf1);
+    const char html[] = "a";
+    auto ec = OH_ArkUI_StyledString_Descriptor_FromHtml(obj, html);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
