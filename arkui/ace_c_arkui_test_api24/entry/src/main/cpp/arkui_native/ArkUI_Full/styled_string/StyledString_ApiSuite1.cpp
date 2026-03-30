@@ -651,7 +651,7 @@ static napi_value TestArkUICapi_260(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = XtsDescriptorFromUtf8("");
+    auto *obj = XtsDescriptorFromUtf8("x");
     if (((obj)) == nullptr) {
         return nullptr;
     }

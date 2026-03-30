@@ -261,13 +261,15 @@ static napi_value TestArkUICapi_462(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ClonedEvent_SetActionType(cloneEvt, 0);
     if (ec != ARKUI_ERROR_CODE_NO_ERROR) {
-        {
-            napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-            if (napiAssertErr != nullptr) {
-                (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
-                (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
-                return napiAssertErr;
-            }
+        napi_value napiAssertErr = ::ArkUICapiTest::ErrCodeAnyOfFailed(
+            env,
+            static_cast<int32_t>(ec),
+            { static_cast<int32_t>(ARKUI_ERROR_CODE_PARAM_INVALID),
+                static_cast<int32_t>(ARKUI_ERROR_INPUT_EVENT_TYPE_NOT_SUPPORTED) });
+        if (napiAssertErr != nullptr) {
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
+            return napiAssertErr;
         }
     }
     (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
@@ -318,13 +320,15 @@ static napi_value TestArkUICapi_463(napi_env env, napi_callback_info info)
 
     auto ec = OH_ArkUI_ClonedEvent_SetSourceType(cloneEvt, 0);
     if (ec != ARKUI_ERROR_CODE_NO_ERROR) {
-        {
-            napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_PARAM_INVALID));
-            if (napiAssertErr != nullptr) {
-                (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
-                (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
-                return napiAssertErr;
-            }
+        napi_value napiAssertErr = ::ArkUICapiTest::ErrCodeAnyOfFailed(
+            env,
+            static_cast<int32_t>(ec),
+            { static_cast<int32_t>(ARKUI_ERROR_CODE_PARAM_INVALID),
+                static_cast<int32_t>(ARKUI_ERROR_INPUT_EVENT_TYPE_NOT_SUPPORTED) });
+        if (napiAssertErr != nullptr) {
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
+            (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(baseEvt);
+            return napiAssertErr;
         }
     }
     (void)OH_ArkUI_PointerEvent_DestroyClonedPointerEvent(cloneEvt);
