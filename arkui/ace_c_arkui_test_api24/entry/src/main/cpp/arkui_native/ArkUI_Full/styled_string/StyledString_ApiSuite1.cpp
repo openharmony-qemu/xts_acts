@@ -552,7 +552,8 @@ static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_StyledString_Descriptor *,
  *     ArkUI_StyledString_Descriptor *, uint32_t, uint32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 源串用 CreateWithString 保证有效；输出槽仍 Create()，截取 "ab" 的子串长度 1。
+ * 实际测试: 源串 CreateWithString("ab")；子串输出槽也用 CreateWithString 单字节占位（仅 Descriptor_Create 时
+ * SubStyledString 在部分版本上写子串会 cppcrash）。
  */
 static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
 {
@@ -563,7 +564,7 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto *outDesc = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *outDesc = XtsDescriptorFromUtf8(".");
     if (outDesc == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
