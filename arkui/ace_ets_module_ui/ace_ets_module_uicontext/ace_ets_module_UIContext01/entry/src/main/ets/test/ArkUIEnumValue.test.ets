@@ -14,8 +14,6 @@
  */
 
 import { describe, it, expect, Level } from '@ohos/hypium';
-import { CompetitionStrategy } from '@ohos.arkui.UIContext';
-import { NavigationMode } from '@kit.ArkUI';
 
 export default function ArkUIEnumValueTest() {
   describe('ArkUIEnumValueTest', () => {

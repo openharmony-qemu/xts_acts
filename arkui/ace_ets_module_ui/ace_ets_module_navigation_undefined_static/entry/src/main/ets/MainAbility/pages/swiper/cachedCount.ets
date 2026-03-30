@@ -9,7 +9,7 @@ import { Entry, Builder, Color, Text, TextAttribute,IDataSource,
 import { Observed } from '@ohos.arkui.stateManagement'
 
 // xxx.ets
-class MyDataSource implements IDataSource<String> {
+export class MyDataSource implements IDataSource<String> {
   constructor() {
   }
 

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { Entry, Component, AttributeModifier, TextTimerAttribute, TextTimerContr
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
-class TextTimerModifier1 implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier1 implements AttributeModifier<TextTimerAttribute> {
   applyNormalAttribute(instance: TextTimerAttribute): void {
     instance
       .fontSize(20)

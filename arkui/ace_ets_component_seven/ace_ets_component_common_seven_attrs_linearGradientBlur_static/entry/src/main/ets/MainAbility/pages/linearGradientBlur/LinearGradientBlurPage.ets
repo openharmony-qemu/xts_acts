@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,259 +43,259 @@ import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
@@ -316,238 +316,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)

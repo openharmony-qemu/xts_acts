@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { Entry, Component, Column, AttributeModifier, ProgressAttribute, Flex, F
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
-class ProgressModifier1 implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier1 implements AttributeModifier<ProgressAttribute> {
   applyNormalAttribute(instance: ProgressAttribute): void {
     instance
       .color('#FF123456')

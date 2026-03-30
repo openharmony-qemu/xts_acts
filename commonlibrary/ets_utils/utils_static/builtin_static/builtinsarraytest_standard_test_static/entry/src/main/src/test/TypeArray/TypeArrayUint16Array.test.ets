@@ -379,7 +379,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300, 400]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(1000);
       expect(arr.length).assertEqual(4);
       expect(arr[0]).assertEqual(100);
@@ -1178,7 +1178,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65530, 10, 5]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(65545);
     })
 
@@ -1622,7 +1622,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30, 40]);
-      const sumOfDoubles = arr.reduce((acc, val) => acc + (val * 2), 0);
+      const sumOfDoubles = arr.reduce((acc, val) => acc + (val * 2), 0.);
       expect(sumOfDoubles).assertEqual(200);
     })
 
@@ -1915,7 +1915,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
-      const sum = emptyArr.reduce((acc, val) => acc + val, 100);
+      const sum = emptyArr.reduce((acc, val) => acc + val, 100.);
       expect(sum).assertEqual(100);
     })
 

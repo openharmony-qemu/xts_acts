@@ -138,7 +138,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = context!.databaseDir;
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -186,7 +186,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = g_rootDir;
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -234,7 +234,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = '';
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(null).assertFail();
                     done();
@@ -282,7 +282,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = ' ';
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(null).assertFail();
                     done();
@@ -328,7 +328,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = '/data';
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(null).assertFail();
                     done();
@@ -375,7 +375,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = '/data/storage/el2/database/111/';
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(null).assertFail();
                     done();
@@ -420,7 +420,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = undefined;
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -475,7 +475,7 @@ export default function KVManagerRootDir() {
                     securityLevel: factory.SecurityLevel.S1,
                 };
 
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir00).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir00).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined).assertTrue();
                 }).catch((err: Error) => {
@@ -504,7 +504,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined).assertTrue();
                 }).catch((err: Error) => {
@@ -560,7 +560,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined).assertTrue();
                 }).catch((err: Error) => {
@@ -616,7 +616,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined).assertTrue();
                 }).catch((err: Error) => {
@@ -672,7 +672,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(null).assertFail();
                     done();
@@ -708,6 +708,42 @@ export default function KVManagerRootDir() {
         });
 
         /**
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_callback_0110
+         * @tc.name SingleKv_rootDir_GetKVStore_callback_0110
+         * @tc.type: FUNC
+         * @tc.size: MediumTest
+         * @tc.level: Level 2
+         * @tc.desc  get callback;第2个参数属性kvStoreType:未覆盖枚举:['DEVICE_COLLABORATION']；属性rootDir:缺少空值""覆盖；
+         */
+        it('SingleKv_rootDir_GetKVStore_callback_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info(TAG + '---------SingleKv_rootDir_GetKVStore_callback_0110---------');
+            try {
+                const optionsDir: factory.Options = {
+                    createIfMissing: true,
+                    encrypt: true,
+                    backup: true,
+                    autoSync: true,
+                    kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
+                    rootDir: "",
+                    securityLevel: factory.SecurityLevel.S3,
+                };
+
+                console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
+                console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
+                kvManager!.getKVStore<Any>(TEST_STORE_ID, optionsDir, (err, store) => {
+                    console.info(TAG + ' getKVStore success, err.code='+ err!.code);
+                    expect(err!.code).assertEqual(401);
+                    done();
+                });
+
+            } catch (e) {
+                console.error(TAG + ' getKVStore e ' + `, code=${e.code}, message=${e.message}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0111
          * @tc.name SingleKv_rootDir_GetKVStore_0111
          * @tc.type: FUNC
@@ -730,7 +766,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined).assertTrue();
                 }).catch((err: Error) => {
@@ -790,7 +826,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' options.rootDir=' + optionsDir.rootDir);
 
                 try{
-                    await kvManager!.getKVStore(storeIdd, optionsDir);
+                    await kvManager!.getKVStore<Any>(storeIdd, optionsDir);
                     expect(null).assertFail();
                     done();
                 } catch (e) {
@@ -889,7 +925,7 @@ export default function KVManagerRootDir() {
                 g_optionsDir.rootDir = g_rootDir;
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -955,7 +991,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -1019,7 +1055,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -1075,7 +1111,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -1139,7 +1175,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' context!.databaseDir=' + context!.databaseDir);
                 console.info(TAG + ' options.rootDir=' + g_optionsDir.rootDir);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_options).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_options).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     expect(store != undefined && store != null).assertTrue();
                 }).catch((err: Error) => {
@@ -1204,7 +1240,7 @@ export default function KVManagerRootDir() {
                 g_backupConfig.filePath = g_rootDirDefault;
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1277,7 +1313,7 @@ export default function KVManagerRootDir() {
                 g_backupConfig.filePath = g_rootDir;
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1350,7 +1386,7 @@ export default function KVManagerRootDir() {
                 g_backupConfig.filePath = g_rootDir;
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' 1. getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1476,7 +1512,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1555,7 +1591,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1633,7 +1669,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1710,7 +1746,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1789,7 +1825,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1867,7 +1903,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -1945,7 +1981,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2020,7 +2056,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2097,7 +2133,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_optionsDir.rootDir   =' + g_optionsDir.rootDir);
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2174,7 +2210,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
                 console.info(TAG + ' g_backupConfig.fileName=' + g_backupConfig.fileName);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2254,7 +2290,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
                 console.info(TAG + ' g_backupConfig.fileName=' + g_backupConfig.fileName);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2330,7 +2366,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
                 console.info(TAG + ' g_backupConfig.fileName=' + g_backupConfig.fileName);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2406,7 +2442,7 @@ export default function KVManagerRootDir() {
                 console.info(TAG + ' g_backupConfig.filePath=' + g_backupConfig.filePath);
                 console.info(TAG + ' g_backupConfig.fileName=' + g_backupConfig.fileName);
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' getKVStore success');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2498,7 +2534,7 @@ export default function KVManagerRootDir() {
                 let TEST_VALUE_Dir3 = 65.4;
                 let TEST_VALUE_Dir4 = "stringDir4";
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_optionsDir).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' 1.1 getKVStore success, kvStoreDir');
                     kvStoreDir = store;
                     expect(store != undefined && store != null).assertTrue();
@@ -2508,7 +2544,7 @@ export default function KVManagerRootDir() {
                     done();
                 });
 
-                await kvManager!.getKVStore(TEST_STORE_ID, g_options).then((store: factory.SingleKVStore) => {
+                await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, g_options).then((store: factory.SingleKVStore) => {
                     console.info(TAG + ' 1.2 getKVStore success, kvStore');
                     kvStore = store;
                     expect(store != undefined && store != null).assertTrue();

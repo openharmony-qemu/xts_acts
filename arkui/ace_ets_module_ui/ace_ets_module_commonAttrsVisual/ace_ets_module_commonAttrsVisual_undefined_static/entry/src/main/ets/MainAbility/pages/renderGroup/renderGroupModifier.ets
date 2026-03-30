@@ -29,7 +29,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyRowAttributeModifier implements AttributeModifier<RowAttribute> {
+export class MyRowAttributeModifier implements AttributeModifier<RowAttribute> {
   @State public isChange: boolean = true
 
   applyNormalAttribute(instance: RowAttribute): void {

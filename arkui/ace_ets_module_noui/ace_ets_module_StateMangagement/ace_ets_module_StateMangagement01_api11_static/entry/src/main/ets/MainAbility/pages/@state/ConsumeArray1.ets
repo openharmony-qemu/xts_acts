@@ -48,7 +48,7 @@ import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
 
-interface Num{
+export interface Num{
   number: number
 }
 

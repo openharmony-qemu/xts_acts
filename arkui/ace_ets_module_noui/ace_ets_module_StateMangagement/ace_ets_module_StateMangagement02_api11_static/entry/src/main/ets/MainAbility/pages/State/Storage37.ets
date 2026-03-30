@@ -58,8 +58,8 @@ import hilog from "@ohos.hilog";
 AppStorage.clear()
 AppStorage.setOrCreate('PropA', 122);
 let storage37 = new LocalStorage();
-let prop: SubscribedAbstractProperty<number> = AppStorage.link('PropA') as SubscribedAbstractProperty<number>
-let prop137: SubscribedAbstractProperty<number> = AppStorage.link('sss') as SubscribedAbstractProperty<number>
+let prop: SubscribedAbstractProperty<number> = AppStorage.link<number>('PropA') as SubscribedAbstractProperty<number>
+let prop137: SubscribedAbstractProperty<number> = AppStorage.link<number>('sss') as SubscribedAbstractProperty<number>
 
 // @Entry(storage37)
 @Entry

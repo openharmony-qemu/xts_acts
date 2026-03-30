@@ -244,7 +244,7 @@ export default function typeArrayFloat64ArrayTest() {
       const filtered = arr.filter((val) => val > 2.0);
       expect(filtered.toString()).assertEqual('3,4');
       expect(filtered.length).assertEqual(2);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(10.0);
     })
 
@@ -482,7 +482,7 @@ export default function typeArrayFloat64ArrayTest() {
 
       const sumRight = arr.reduceRight((acc, val) => {
         return acc + val;
-      }, 0);
+      }, 0.);
       expect(sumRight).assertEqual(10.0);
 
       const str = arr.reduceRight((acc, val) => {
@@ -606,7 +606,7 @@ export default function typeArrayFloat64ArrayTest() {
       }
       expect(errorThrown).assertEqual(true);
 
-      const result = emptyArr.reduce((acc, val) => acc + val, 0);
+      const result = emptyArr.reduce((acc, val) => acc + val, 0.);
       expect(result).assertEqual(0);
     })
 
@@ -1927,7 +1927,7 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(largeArr[0], 0.0)).assertEqual(true);
       expect(approxEqual(largeArr[largeSize - 1], 999.999)).assertEqual(true);
       expect(approxEqual(largeArr[500000], 500.0)).assertEqual(true);
-      const sum = largeArr.reduce((acc, val) => acc + val, 0);
+      const sum = largeArr.reduce((acc, val) => acc + val, 0.);
       const expectedSum = (largeSize * (largeSize - 1) / 2) * 0.001;
       const largeSub = largeArr.subarray(1000, 2000);
       expect(largeSub.length).assertEqual(1000);
@@ -2104,7 +2104,7 @@ export default function typeArrayFloat64ArrayTest() {
             throw new Error('Final value reached');
           }
           return acc + val;
-        }, 0);
+        }, 0.);
       } catch (e) {
         errorThrown = true;
         expect((e as Error).message).assertEqual('Final value reached');

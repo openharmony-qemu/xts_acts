@@ -15,8 +15,10 @@
 
 import ClearPrefetchedResourceTest from './ClearPrefetchedResourceTest.test'
 import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test'
+import WebBlanklessErrorCodeJsunit from './WebBlanklessErrorCode.test'
 
 export default function testsuite() {
   ClearPrefetchedResourceTest();
   InjectOfflineResourcesTest();
+  WebBlanklessErrorCodeJsunit();
 }

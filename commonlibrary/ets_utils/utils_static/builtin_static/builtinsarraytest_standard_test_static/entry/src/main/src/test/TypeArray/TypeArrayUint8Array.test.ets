@@ -1994,7 +1994,7 @@ export default function typeArrayUint8ArrayTest() {
      */
     it('TypeArrayUint8ArrayBound0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint8Arr: Uint8Array = new Uint8Array([200, 100]);
-      const total: number = uint8Arr.reduce((acc, val) => acc + val, 0);
+      const total: number = uint8Arr.reduce((acc, val) => acc + val, 0.);
       expect(total).assertEqual(300);
     })
 
@@ -3250,15 +3250,15 @@ export default function typeArrayUint8ArrayTest() {
       const dv: DataView = new DataView(buf);
 
       uint8Arr.set([10, 20, 30]);
-      const sum1: number = uint8Arr.reduce((acc, val) => acc + val, 0);
+      const sum1: number = uint8Arr.reduce((acc, val) => acc + val, 0.);
       expect(sum1).assertEqual(60);
 
       dv.setUint8(1, 25);
-      const sum2: number = uint8Arr.reduce((acc, val) => acc + val, 0);
+      const sum2: number = uint8Arr.reduce((acc, val) => acc + val, 0.);
       expect(sum2).assertEqual(65);
 
       uint8Arr[2] = 35;
-      const sum3: number = uint8Arr.reduce((acc, val) => acc + val, 0);
+      const sum3: number = uint8Arr.reduce((acc, val) => acc + val, 0.);
       expect(sum3).assertEqual(70);
     })
 
@@ -4217,14 +4217,14 @@ export default function typeArrayUint8ArrayTest() {
       const dataView: DataView = new DataView(buffer);
 
       uint8View.set([10, 20, 30]);
-      let sum1: number = uint8View.reduce((acc, val) => acc + val, 0);
+      let sum1: number = uint8View.reduce((acc, val) => acc + val, 0.);
       expect(sum1).assertEqual(60);
 
       dataView.setUint8(1, 25);
-      let sum2: number = uint8View.reduce((acc, val) => acc + val, 0);
+      let sum2: number = uint8View.reduce((acc, val) => acc + val, 0.);
       expect(sum2).assertEqual(65);
       uint8View[2] = 35;
-      let sum3: number = uint8View.reduce((acc, val) => acc + val, 0);
+      let sum3: number = uint8View.reduce((acc, val) => acc + val, 0.);
       expect(sum3).assertEqual(70);
     })
 
@@ -4926,10 +4926,10 @@ export default function typeArrayUint8ArrayTest() {
       dataView.setUint8(1, 20);
       dataView.setUint8(2, 30);
 
-      let total = uint8View.reduce((acc, val) => acc + val, 5);
+      let total = uint8View.reduce((acc, val) => acc + val, 5.);
       expect(total).assertEqual(65);
       dataView.setUint8(1, 25);
-      total = uint8View.reduce((acc, val) => acc + val, 5);
+      total = uint8View.reduce((acc, val) => acc + val, 5.);
       expect(total).assertEqual(70);
     })
 

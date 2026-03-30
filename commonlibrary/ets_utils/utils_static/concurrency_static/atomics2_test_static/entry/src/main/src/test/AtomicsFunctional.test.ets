@@ -843,16 +843,34 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicInt(0);
-      const storesDone = new AtomicInt(0);
-      const results = await runTaskpoolResults(10, (index: int): int => {
-        if (index < 5) {
-          atom.store(index + 1);
-          storesDone.fetchAdd(1);
+      const earlyStoresDone = new AtomicInt(0);
+      const finalStoreDone = new AtomicBoolean(false);
+      const tasks: Promise<Any>[] = new Array<Promise<Any>>();
+
+      for (let i = 1; i <= 4; i++) {
+        tasks.push(taskpool.execute((value: int): int => {
+          atom.store(value);
+          earlyStoresDone.fetchAdd(1);
           return atom.load();
-        }
-        waitUntil(storesDone, 5);
+        }, i));
+      }
+
+      tasks.push(taskpool.execute((): int => {
+        waitUntil(earlyStoresDone, 4);
+        atom.store(5);
+        finalStoreDone.store(true);
         return atom.load();
-      });
+      }));
+
+      for (let i = 0; i < 5; i++) {
+        tasks.push(taskpool.execute((): int => {
+          while (!finalStoreDone.load()) {
+          }
+          return atom.load();
+        }));
+      }
+
+      const results = await Promise.all(tasks) as Any[];
 
       for (let i = 5; i < results.length; i++) {
         const result: int = results[i] as int;

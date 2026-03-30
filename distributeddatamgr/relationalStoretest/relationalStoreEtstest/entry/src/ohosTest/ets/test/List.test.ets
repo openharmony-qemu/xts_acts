@@ -83,7 +83,7 @@ import RdbStoreParamErrorTest from './RdbStoreParamError.test';
 import rdbStoreAttachErrorTest from './RdbStoreAttachError.test';
 
 import RdbStoreGetRdbStoreSyncEtsTest from './RdbStoreGetRdbStoreSyncEts.test';
-
+import RdbStoreGetRdbStoreSyncEtsAddTest from './RdbStoreGetRdbStoreSyncEtsAddTest.test'
 export default function testsuite() {
   relationalStoreEncryptTest()
   relationalStoreUpdateTest()
@@ -157,4 +157,5 @@ export default function testsuite() {
   rdbStoreAttachErrorTest()
 
   RdbStoreGetRdbStoreSyncEtsTest();
+  RdbStoreGetRdbStoreSyncEtsAddTest();
 }

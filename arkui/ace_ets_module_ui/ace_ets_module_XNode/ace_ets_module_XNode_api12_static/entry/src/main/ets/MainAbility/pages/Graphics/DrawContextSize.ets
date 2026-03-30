@@ -64,7 +64,7 @@ class TestRenderNode extends RenderNode {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private testRenderNode: TestRenderNode | null = null;
 

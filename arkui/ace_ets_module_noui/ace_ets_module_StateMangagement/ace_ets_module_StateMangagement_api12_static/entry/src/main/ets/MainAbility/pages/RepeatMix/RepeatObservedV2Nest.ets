@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import {
 //测试：Repeat组件和@ObservedV2和@Trace装饰器混用场景
 
 @ObservedV2
-class OuterClass {
+export class OuterClass {
   @Trace public msg: InnerClass;
 
   constructor(msg: InnerClass) {
@@ -46,7 +46,7 @@ class OuterClass {
 }
 
 @ObservedV2
-class InnerClass {
+export class InnerClass {
   @Trace
   public id: number
   @Trace

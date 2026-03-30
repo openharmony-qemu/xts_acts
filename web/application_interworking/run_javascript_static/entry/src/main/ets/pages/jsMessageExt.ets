@@ -59,7 +59,7 @@ struct jsMessageExt {
   build() {
     Column() {
       Row() {
-        Button('JsMessageExt click').key('JsMessageExtButton').onClick( (e:ClickEvent) => {
+        Button('JsMessageExt click').key('JsMessageExtButton').onClick((e:ClickEvent) => {
           console.info('key==>' +  this.stringObj.str)
           switch (this.stringObj.str) {
 
@@ -237,6 +237,42 @@ struct jsMessageExt {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30204)
+              }
+              break;
+            }
+
+            case 'testJsMessageExtGetType006': {
+              try {
+                this.controller.loadUrl('resource://rawfile/getJsMessageExt.html');
+                setTimeout(() => {
+                  this.controller.runJavaScriptExt(
+                    'getNotSupport()',
+                    (error, result) => {
+                      if (error) {
+                        let e: BusinessError = error as BusinessError;
+                        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        Utils.emitEvent(e.code, 30211)
+                      }
+                      if (result) {
+                        try {
+                          let type = result.getType();
+                          console.info(`get result :` + type)
+                          console.info(`get result :` + result.getString())
+                          Utils.emitEvent(type, 30211)
+                        }
+                        catch (resError) {
+                          resError = resError as BusinessError;
+                          let e: BusinessError = resError as BusinessError;
+                          console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        }
+                      }
+                    });
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                let e: BusinessError = error as BusinessError;
+                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(e.code, 30211)
               }
               break;
             }
@@ -499,6 +535,46 @@ struct jsMessageExt {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100018)
+              }
+              break;
+            }
+
+            case 'testJsMessageExtGetErrorDescription001': {
+              try {
+                this.controller.loadUrl('resource://rawfile/getJsMessageExt.html');
+                setTimeout(() => {
+                  this.controller.runJavaScriptExt(
+                    'getErrorDescription()',
+                    (error, result) => {
+                      if (error) {
+                        let e: BusinessError = error as BusinessError;
+                        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        Utils.emitEvent(e.code, 100019)
+                      }
+                      if (result) {
+                        try {
+                          let value = result.getErrorDescription();
+                          console.info(`get result :` + value)
+                          if (value != null) {
+                            Utils.emitEvent(true, 100019)
+                          } else {
+                            Utils.emitEvent(false, 100019)
+                          }
+                        }
+                        catch (resError) {
+                          resError = resError as BusinessError;
+                          let e: BusinessError = resError as BusinessError;
+                          console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                          Utils.emitEvent(e.code, 100019)
+                        }
+                      }
+                    });
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                let e: BusinessError = error as BusinessError;
+                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(e.code, 100019)
               }
               break;
             }

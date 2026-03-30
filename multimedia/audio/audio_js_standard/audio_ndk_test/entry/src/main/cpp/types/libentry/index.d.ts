@@ -378,3 +378,6 @@ export const AudioSessionManager_SetBehavior_001: () => number;
 export const AudioSessionManager_SetBehavior_002: () => number;
 export const AudioSessionManager_SetBehavior_003: () => number;
 export const AudioSessionManager_SetBehavior_004: () => number;
+export const AudioStreamManagerIsMultichannelPlaybackSupported_001: () => number;
+export const AudioStreamManagerIsDirectPlaybackSupported_001: () => number;
+export const AudioStreamManagerIsOffloadPlaybackSupported_001: () => number;

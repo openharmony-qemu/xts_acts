@@ -32,7 +32,7 @@ import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,
 @Entry
 @Component
 struct styled_string_StyleString {
-    fontStyleAttr1: TextStyle ={ fontColor: Color.Blue };
+    fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
     mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world",[
         {
             start: 0,

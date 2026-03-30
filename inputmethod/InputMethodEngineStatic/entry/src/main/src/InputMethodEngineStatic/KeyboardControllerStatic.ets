@@ -1,6 +1,6 @@
  'use static'
 
-import { inputMethodEngine, InputMethodExtensionContext, InputMethodSubtype } from '@kit.IMEKit';
+import { inputMethodEngine, InputMethodExtensionContext, InputMethodSubtype, InputMethodExtraConfig } from '@kit.IMEKit';
 import display from '@ohos.display';
 import windowManager from '@ohos.window';
 import commonEventManager from '@ohos.commonEventManager';
@@ -228,7 +228,12 @@ export class KeyboardControllerStatic {
         console.info(`${TAG} ====>receive inputMethodEngine_test_static_038 getEditorAttribute err: ${JSON.stringify(err)}`);
       } else {
         console.info(`${TAG} ====>receive inputMethodEngine_test_static_038 getEditorAttribute value: ${JSON.stringify(value)}`);
-        if (value) {
+        if (typeof (value!.enterKeyType) === 'int' && typeof (value!.inputPattern) === 'int' &&
+         typeof (value!.isTextPreviewSupported) === 'boolean' && typeof (value!.windowId) === 'int' &&
+ 	       typeof (value!.placeholder) === 'string' && typeof (value!.immersiveMode) === 'int' &&
+ 	       typeof (value!.gradientMode) === 'int' && typeof (value!.extraConfig) === 'object' &&
+ 	       typeof (value!.capitalizeMode) === 'int' && typeof (value!.bundleName) === 'string' &&
+ 	       typeof (value!.displayId) === 'long' && typeof (value!.abilityName) === 'string') {
           commonEventPublishData = {
             data: 'SUCCESS'
           };
@@ -321,6 +326,29 @@ export class KeyboardControllerStatic {
       }      
     }
     commonEventManager.publish('Sub_InputMethod_IME_PrivateDateTransferred_static_0600', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_PrivateDateTransferred_static_0700(): Promise<void> {
+    console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700`);
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
+        console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700 onPrivateCommand into`);
+        inputMethodAbility!.offPrivateCommand((): void => {});
+      });
+      console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700 sendPrivateCommond success`);
+    } catch (err) {
+      err = err as BusinessError;
+      console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700 catch err: ${JSON.stringify(err)}`);
+      if (err.code === 12800010) {
+        commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+      }      
+    }
+    commonEventManager.publish('Sub_InputMethod_IME_PrivateDateTransferred_static_0700', commonEventPublishData, this.publishCallback);
   }
 
   private async Sub_InputMethod_IME_Custom_static_0900(): Promise<void> {
@@ -1324,6 +1352,45 @@ export class KeyboardControllerStatic {
     commonEventManager.publish('inputMethodEngine_test_050', commonEventPublishData, this.publishCallback);
   }
 
+  async inputMethodEngine_test_072(): Promise<void> {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    console.info(TAG + '====>receive inputMethodEngine_test_072 success');
+    let count = 0;
+    inputKeyboardDelegate!.onKeyDown((keyEvent) => {
+      inputKeyboardDelegate!.offKeyDown((keyEvent) => {
+        console.info(TAG + '====>inputKeyboardDelegate.off("keyDown") count: ' + count);
+        return true;
+      });
+      console.info(TAG + '====>inputKeyboardDelegate.on("keyDown") count: ' + count);
+      console.info(TAG + '====>inputKeyboardDelegate.keyEvent.keyAction ' + keyEvent.keyAction);
+      if (keyEvent.keyCode === 2000 && keyEvent.keyAction === 2) {
+        count += 1;
+      }
+      return true;
+    });
+    inputKeyboardDelegate!.onKeyUp((keyEvent) => {
+      inputKeyboardDelegate!.offKeyUp((keyEvent) => {
+        console.info(TAG + '====>inputKeyboardDelegate.off("keyUp") count: ' + count);
+        return true;
+      });
+      console.info(TAG + '====>inputKeyboardDelegate.on("keyUp") count: ' + count);
+      console.info(TAG + '====>inputKeyboardDelegate.keyEvent.keyAction ' + keyEvent.keyAction);
+      if (keyEvent.keyCode === 2000 && keyEvent.keyAction === 3) {
+        count += 1;
+      }
+      return true;
+    });
+    setTimeout((t: int) => {
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      commonEventManager.publish('inputMethodEngine_test_072', commonEventPublishData, this.publishCallback);
+      clearTimeout(t);
+    }, 1000);
+  }
+
   async inputMethodEngine_test_073(): Promise<void> {
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -1399,6 +1466,48 @@ export class KeyboardControllerStatic {
     }, 4000);
   }
 
+  async inputMethodEngine_test_075(): Promise<void> {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    console.info(TAG + '====>receive inputMethodEngine_test_075 success');
+    let count = 0;
+
+    setTimeout((t: int) => {
+      clearTimeout(t);
+      inputKeyboardDelegate!.onCursorContextChange((x, y, h) => {
+        console.info(TAG + '====>inputKeyboardDelegate.on("cursorContextChange") count: ' + count);
+        if (count === 1) {
+          inputKeyboardDelegate!.offCursorContextChange((): void => {});
+          console.info(TAG + '====>inputMethodEngine_test_075 inputKeyboardDelegate.off');
+        }
+        count += 1;
+        console.info(TAG + '====>inputMethodEngine_test_075 x,y,z: ' + x + '---' + y + '---' + h);
+      });
+
+      let loop = 0;
+      setInterval(async (t1: int) => {
+        await this.InputClient!.insertText('ttt');
+        console.info(TAG + '====>keyboardController.insertText count: ' + count);
+        console.info(TAG + '====>keyboardController.insertText loop: ' + loop);
+        loop += 1;
+        if (loop === 3) {
+          clearInterval(t1);
+        }
+      }, 500);
+    }, 1000);
+
+    setTimeout((t1: int) => {
+      if (count === 2) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('inputMethodEngine_test_075', commonEventPublishData, this.publishCallback);
+      clearTimeout(t1);
+    }, 4000);
+  }
+
   async inputMethodEngine_test_076(): Promise<void> {
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
@@ -1453,6 +1562,64 @@ export class KeyboardControllerStatic {
         };
       }
       commonEventManager.publish('inputMethodEngine_test_077', commonEventPublishData, this.publishCallback);
+      clearTimeout(t1);
+    }, 2000);
+  }
+
+  async inputMethodEngine_test_078(): Promise<void> {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    await this.InputClient!.moveCursor(inputMethodEngine.CURSOR_LEFT);
+    console.info(TAG + '====>receive inputMethodEngine_test_078 success');
+    inputKeyboardDelegate!.onSelectionChange((oldBegin, oldEnd, newBegin, newEnd) => {
+      console.info(TAG + '====>inputKeyboardDelegate.on("selectionChange")');
+      inputKeyboardDelegate!.offSelectionChange((): void => {});
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>inputMethodEngine_test_078 oldBegin,oldEnd,newBegin,newEnd: ' + oldBegin + '---' +
+        oldEnd + '---' + newBegin + '---' + newEnd);
+    });
+
+    setTimeout((t: int) => {
+      commonEventManager.publish('inputMethodEngine_test_078', commonEventPublishData, this.publishCallback);
+      clearTimeout(t);
+    }, 2000);
+  }
+
+  async inputMethodEngine_test_079(): Promise<void> {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    console.info(TAG + '====>receive inputMethodEngine_test_079 success');
+    let count = 0;
+    inputKeyboardDelegate!.onTextChange((text) => {
+      console.info(TAG + '====>inputKeyboardDelegate.on("textChange") count:' + count);
+      if (count === 1) {
+        inputKeyboardDelegate!.offTextChange((): void => {});
+      }
+      count += 1;
+      console.info(TAG + '====>inputMethodEngine_test_079 text: ' + text);
+    });
+
+    let loopCount = 0;
+    setInterval(async (t: int):void => {
+      await this.InputClient!.insertText('tttt');
+      console.info(TAG + '====>keyboardController.insertText count: ' + count);
+      if (loopCount === 2) {
+        clearInterval(t);
+      }
+      loopCount += 1;
+    }, 300);
+
+    setTimeout((t1: int) => {
+      if (count === 2) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('inputMethodEngine_test_079', commonEventPublishData, this.publishCallback);
       clearTimeout(t1);
     }, 2000);
   }
@@ -2664,12 +2831,17 @@ export class KeyboardControllerStatic {
     };
     inputKeyboardDelegate!.onEditorAttributeChanged((attr:inputMethodEngine.EditorAttribute) => {
       console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)}`);
-      if (typeof (attr.windowId) === 'int' && typeof (attr.displayId) === 'long') {
+      if (typeof (attr!.enterKeyType) === 'int' && typeof (attr!.inputPattern) === 'int' &&
+         typeof (attr!.isTextPreviewSupported) === 'boolean' && typeof (attr!.windowId) === 'int' &&
+ 	       typeof (attr!.placeholder) === 'string' && typeof (attr!.immersiveMode) === 'int' &&
+ 	       typeof (attr!.gradientMode) === 'int' && typeof (attr!.extraConfig) === 'object' &&
+ 	       typeof (attr!.capitalizeMode) === 'int' && typeof (attr!.bundleName) === 'string' &&
+ 	       typeof (attr!.displayId) === 'long' && typeof (attr!.abilityName) === 'string') {
         commonEventPublishData = {
           data: 'SUCCESS'
         };
       };
-      inputKeyboardDelegate!.offEditorAttributeChanged();
+      inputKeyboardDelegate!.offEditorAttributeChanged((): void => {});
       commonEventManager.publish('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100', commonEventPublishData, this.publishCallback);
     });
     try {
@@ -2686,6 +2858,38 @@ export class KeyboardControllerStatic {
       };
       console.info(TAG + '====>Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100 cathch err: ' + JSON.stringify(err));
       commonEventManager.publish('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    inputKeyboardDelegate!.onEditorAttributeChanged((attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)}`);
+      if (typeof (attr.windowId) === 'int' && typeof (attr.displayId) === 'long') {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      inputKeyboardDelegate!.offEditorAttributeChanged();
+      commonEventManager.publish('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200', commonEventPublishData, this.publishCallback);
+    });
+    try {
+      let callingDisplayDidChangeCallback = (num: int): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200 display id: ${num}`);
+      };
+      inputMethodAbility!.onCallingDisplayDidChange(callingDisplayDidChangeCallback);
+      inputMethodAbility!.offCallingDisplayDidChange();
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200 cathch err: ' + JSON.stringify(err));
+      commonEventManager.publish('Sub_InputMethod_IMF_onoffcallingDisplayDidChange_0200', commonEventPublishData, this.publishCallback);
     }
   }
 
@@ -2806,7 +3010,12 @@ export class KeyboardControllerStatic {
     let editorAttribute = await this.InputClient!.getEditorAttribute();
     console.info(TAG + '====>receive inputMethodEngine_test_static_029 editorAttribute' + JSON.stringify(editorAttribute));
     let value: boolean = false;
-    if(editorAttribute){
+    if(typeof (editorAttribute!.enterKeyType) === 'int' && typeof (editorAttribute!.inputPattern) === 'int' &&
+         typeof (editorAttribute!.isTextPreviewSupported) === 'boolean' && typeof (editorAttribute!.windowId) === 'int' &&
+ 	       typeof (editorAttribute!.placeholder) === 'string' && typeof (editorAttribute!.immersiveMode) === 'int' &&
+ 	       typeof (editorAttribute!.gradientMode) === 'int' && typeof (editorAttribute!.extraConfig) === 'object' &&
+ 	       typeof (editorAttribute!.capitalizeMode) === 'int' && typeof (editorAttribute!.bundleName) === 'string' &&
+ 	       typeof (editorAttribute!.displayId) === 'long' && typeof (editorAttribute!.abilityName) === 'string'){
       let a:int = editorAttribute?.inputPattern as int;
       value = await this.InputClient!.sendKeyFunction(a);
     }
@@ -2824,7 +3033,7 @@ export class KeyboardControllerStatic {
     try {
       inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {
         console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 inputStart`); 
-        inputMethodAbility!.offInputStart((): void => {});
+        inputMethodAbility!.offInputStart();
         if(InputClient == null) {
           console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 InputClient is null`); 
         } else {
@@ -3157,6 +3366,8 @@ export class KeyboardControllerStatic {
     console.info(TAG +
       '====>Sub_Misc_inputMethod_getEditorAttribute_sync_0230 getEditorAttributeSync isTextPreviewSupported: ' +
     JSON.stringify(obj!.isTextPreviewSupported!));
+    let exConfig:InputMethodExtraConfig = obj!.extraConfig as InputMethodExtraConfig;
+    let customSettings = exConfig.customSettings;
     if (typeof (obj!.enterKeyType) === 'int' && typeof (obj!.inputPattern) === 'int' &&
       typeof (obj!.isTextPreviewSupported) === 'boolean' && typeof (obj!.windowId) === 'int' &&
  	       typeof (obj!.placeholder) === 'string' && typeof (obj!.immersiveMode) === 'int' &&
@@ -3501,7 +3712,7 @@ export class KeyboardControllerStatic {
     await this.keyboardController!.hide();
     inputMethodAbility!.onKeyboardShow(() => {
       count += 1;
-      inputMethodAbility!.offKeyboardShow();
+      inputMethodAbility!.offKeyboardShow((): void => {});
       console.info(TAG + '====>inputMethodAbility.off("keyboardShow") count: ' + count);
     });
     setTimeout(() => {
@@ -3511,6 +3722,30 @@ export class KeyboardControllerStatic {
         };
       }
       commonEventManager.publish("inputMethodAbility_test_072", commonEventPublishData, this.publishCallback);
+    }, 2000);
+  }
+
+  async inputMethodAbility_test_073() {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    console.info(TAG + '====>receive inputMethodAbility_test_073 success');
+    let count = 0;
+    inputMethodAbility!.onKeyboardHide(() => {
+      count += 1;
+      inputMethodAbility!.offKeyboardHide((): void => {});
+      console.info(TAG + '====>inputMethodAbility.off("keyboardHide") count: ' + count);
+    });
+    await Utils.msSleep(500)
+    await this.keyboardController!.hide();
+    console.info(TAG + '====>inputMethodAbility_test_073 hideKeyboard success');
+    setTimeout(() => {
+      if (count === 1) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('inputMethodAbility_test_073', commonEventPublishData, this.publishCallback);
     }, 2000);
   }
 
@@ -3526,11 +3761,39 @@ export class KeyboardControllerStatic {
       });
       if (typeof (wid) === 'int') {
         commonEventPublishData = {
-          data: "SUCCESS"
+          data: 'SUCCESS'
         };
       }
-      commonEventManager.publish("inputMethodAbility_test_074", commonEventPublishData, this.publishCallback);
+      commonEventManager.publish('inputMethodAbility_test_074', commonEventPublishData, this.publishCallback);
     });
+  }
+
+  async inputMethodAbility_test_075() {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    console.info(TAG + '====>receive inputMethodAbility_test_075 success');
+    let count = 0;
+    await this.keyboardController!.hide();
+    inputMethodAbility!.onKeyboardShow(() => {
+      inputMethodAbility!.offKeyboardShow();
+      console.info(TAG + '====>inputMethodAbility.on("keyboardShow") count: ' + count);
+      count += 1;
+    });
+    inputMethodAbility!.onSetSubtype(() => {
+      inputMethodAbility!.offSetSubtype((): void => {});
+      console.info(TAG + '====>inputMethodAbility.on("setSubtype") count: ' + count);
+      count += 1;
+    });
+
+    setTimeout(() => {
+      if (count === 1) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('inputMethodAbility_test_075', commonEventPublishData, this.publishCallback);
+    }, 2000);
   }
 
   async SUB_InputMethod_IME_onoffsecurityModeChanged_0100() {
@@ -3551,6 +3814,26 @@ export class KeyboardControllerStatic {
       console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0100 on(privateCommand) err: ' + JSON.stringify(err));
     }
     commonEventManager.publish("SUB_InputMethod_IME_onoffsecurityModeChanged_0100", commonEventPublishData, this.publishCallback);
+  }
+
+  async SUB_InputMethod_IME_onoffsecurityModeChanged_0200() {
+    console.info(TAG + '====>receive SUB_InputMethod_IME_onoffsecurityModeChanged_0200 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility!.onSecurityModeChange((securityMode: inputMethodEngine.SecurityMode) => {
+        console.log(`InputMethodAbility securityModeChange, security is ${securityMode}`);
+      })
+      inputMethodAbility!.offSecurityModeChange((): void => {});
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 privateCommand on success');
+    } catch (err) {
+      console.info(TAG + '====>SUB_InputMethod_IME_onoffsecurityModeChanged_0200 on(privateCommand) err: ' + JSON.stringify(err));
+    }
+    commonEventManager.publish('SUB_InputMethod_IME_onoffsecurityModeChanged_0200', commonEventPublishData, this.publishCallback);
   }
 
   async inputMethodEngine_test_exitCurrentInputType_static_0200(): Promise<void> {
@@ -3837,8 +4120,11 @@ export class KeyboardControllerStatic {
     };
     console.info(TAG + '====>receive SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 success');
     inputKeyboardDelegate!.onKeyEvent((KeyEvents) => {
-      inputKeyboardDelegate!.offKeyEvent();
-      console.info(TAG + "====>inputKeyboardDelegate.on('keyEvent')");
+      inputKeyboardDelegate!.offKeyEvent((KeyEvents) => {
+        console.info(TAG + "====>inputKeyboardDelegate.off('KeyEvents')");
+        return true;
+      });
+      console.info(TAG + "====>inputKeyboardDelegate.on('KeyEvents')");
       try {
         console.info(TAG + "====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 keyEvent: " + KeyEvents.action);
         console.info(TAG + "====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 keyEvent: " + KeyEvents.key.code);
@@ -4015,6 +4301,7 @@ export class KeyboardControllerStatic {
       this.InputClient!.onAttachOptionsDidChange((newAttachOptions: inputMethodEngine.AttachOptions) => {
           console.info(TAG + `====>${caseName}  newAttachOptions is ` + JSON.stringify(newAttachOptions));
           let result:inputMethodEngine.RequestKeyboardReason = newAttachOptions!.requestKeyboardReason!;
+          let result1:boolean = newAttachOptions!.isSimpleKeyboardEnabled!;
           if (result === inputMethodEngine.RequestKeyboardReason.TOUCH) {
             commonEventPublishData = {
               data: 'SUCCESS'
@@ -4057,6 +4344,79 @@ export class KeyboardControllerStatic {
     } catch (error) {
       console.info(TAG + `====>${caseName} catch err.code:${error.code} err.message:${error.message}`);
       commonEventManager.publish(caseName, commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_static_0200(): Promise<void> {
+    let caseName: string = 'Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_static_0200';
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient!.onAttachOptionsDidChange((newAttachOptions: inputMethodEngine.AttachOptions) => {
+          console.info(TAG + `====>${caseName}  newAttachOptions is ` + JSON.stringify(newAttachOptions));
+          let result:inputMethodEngine.RequestKeyboardReason = newAttachOptions!.requestKeyboardReason!;
+          if (result === inputMethodEngine.RequestKeyboardReason.TOUCH) {
+            commonEventPublishData = {
+              data: 'SUCCESS'
+            };
+          }
+          this.InputClient!.offAttachOptionsDidChange((): void => {});
+          commonEventManager.publish(caseName, commonEventPublishData, this.publishCallback);
+        });
+    } catch (err) {
+      console.info(TAG + `====>${caseName} catch err.code:${ err.code} err.message:${ err.message}`);
+      commonEventManager.publish(caseName, commonEventPublishData, this.publishCallback);
+    }
+  } 
+
+  async SUB_InputMethod_IME_PrivateDateTransferred_static_1100() {
+    console.info(TAG + '====>receive SUB_InputMethod_IME_PrivateDateTransferred_static_1100 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    let want: Want = {
+      bundleName: 'aaa',
+      abilityName: 'aaa',
+    }
+    try {
+      await this.mContext!.startAbility(want);
+      console.info(TAG + '====>SUB_InputMethod_IME_PrivateDateTransferred_static_1100 startAbility success');
+    } catch (err) {
+      console.info(TAG + '====>SUB_InputMethod_IME_PrivateDateTransferred_static_1100 err: ' + JSON.stringify(err));
+      if (err.code === 16000001) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    }
+    commonEventManager.publish('SUB_InputMethod_IME_PrivateDateTransferred_static_1100', commonEventPublishData,
+      this.publishCallback);
+  }
+
+  public async offInputStop_test1() {
+    console.info(TAG + '====>inputMethodAbility_test_091.offInputStop_test callback');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    this.mContext!.destroy((err) => {
+      console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
+      commonEventManager.publish('inputMethodAbility_test_091', commonEventPublishData, () => {
+      });
+    })
+  }
+
+  public async offInputStop_test() {
+    console.info(TAG + '====>inputMethodAbility_test_092.offInputStop_test callback');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.mContext!.destroy();
+    } catch (err) {
+      console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
+      commonEventManager.publish('inputMethodAbility_test_092', commonEventPublishData, () => {
+      });
     }
   }
 

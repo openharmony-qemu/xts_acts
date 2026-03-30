@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,12 +35,12 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 @Observed
-class pro_con{
+export class pro_con{
   @Track memberA:number=20
   @Track memberB:string='MemberB'
 }
 @Observed
-class pro_Parent extends pro_con {
+export class pro_Parent extends pro_con {
   @Track memberC:number=30
 }
 @Component

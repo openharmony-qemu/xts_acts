@@ -54,14 +54,14 @@ struct Page7 {
   @Monitor(['varObject.name', 'varObject.age'])
   onNameChanged(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.log(`Provider path: ${path} change to ${monitor.value(path)?.now}`)
+      console.log(`Provider path: ${path} change to ${monitor.value<String>(path)?.now}`)
     })
   }
 
   @Monitor(['varOnceObject.name', 'varOnceObject.age'])
   onNameChanged2(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.log(`Provider path: ${path} change to ${monitor.value(path)?.now}`)
+      console.log(`Provider path: ${path} change to ${monitor.value<String>(path)?.now}`)
     })
   }
 
@@ -117,14 +117,14 @@ struct ParamOnceChild {
   @Monitor(['varObject.name', 'varObject.age'])
   onNameChanged(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.log(`Consumer path: ${path} change to ${monitor.value(path)?.now}`)
+      console.log(`Consumer path: ${path} change to ${monitor.value<String>(path)?.now}`)
     })
   }
 
   @Monitor(['varOnceObject.name', 'varOnceObject.age'])
   onNameChanged2(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.log(`Consumer path: ${path} change to ${monitor.value(path)?.now}`)
+      console.log(`Consumer path: ${path} change to ${monitor.value<String>(path)?.now}`)
     })
   }
 

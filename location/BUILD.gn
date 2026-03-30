@@ -23,6 +23,8 @@ group("location") {
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
       "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_GeofenceStatic:ActslocationGeofenceStaticTest",
+      "geolocation_GeocoderStatic:ActslocationGeocoderStaticTest",
       "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   } else {
@@ -34,6 +36,8 @@ group("location") {
       "geolocation_standard:ActslocationJsTest",
       "geolocation_NopStatic:ActslocationNopStaticTest",
       "geolocation_capiStatic:ActslocationCapiStaticTest",
+      "geolocation_GeofenceStatic:ActslocationGeofenceStaticTest",
+      "geolocation_GeocoderStatic:ActslocationGeocoderStaticTest",
       "geolocation_CoreStatic:ActslocationCoreStaticTest"
     ]
   }

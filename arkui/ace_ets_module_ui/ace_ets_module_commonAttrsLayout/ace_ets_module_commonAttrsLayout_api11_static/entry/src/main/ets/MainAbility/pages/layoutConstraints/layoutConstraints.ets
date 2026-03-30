@@ -42,7 +42,7 @@ import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { Callback, RecordData } from '@ohos.base';
 
-class ContainerInfo {
+export class ContainerInfo {
   label: string = ''
   size: string = ''
 }
@@ -54,7 +54,7 @@ class ChildInfo {
 }
 ;
 
-interface PriorityChild {
+export interface PriorityChild {
   text: string;
   priority: number;
 }

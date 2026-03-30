@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { ButtonModifier } from "@ohos.arkui.modifier";
 
-class CustomModifier extends ButtonModifier {
+export class CustomModifier extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }
@@ -34,7 +34,7 @@ class CustomModifier extends ButtonModifier {
   }
 }
 
-class CustomModifier2 extends ButtonModifier {
+export class CustomModifier2 extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }

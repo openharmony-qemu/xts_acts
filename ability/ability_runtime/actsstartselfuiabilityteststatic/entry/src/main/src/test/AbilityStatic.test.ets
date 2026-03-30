@@ -76,7 +76,7 @@ export default function abilitystaticTest() {
             .then(() => {
               waitForCompletion(async () => {
                 await Utils.msSleep(2000);
-                hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get('startFlag'));
+                hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get<Any>('startFlag'));
                 hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
                 let abilityInfos: Array<abilityManager.AbilityRunningInfo> =
                   await abilityManager.getAbilityRunningInfos();
@@ -433,7 +433,7 @@ export default function abilitystaticTest() {
           await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag)
             .then(async () => {
               await Utils.msSleep(2000);
-              hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get('startFlag'));
+              hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get<Any>('startFlag'));
               hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
               let abilityInfos: Array<abilityManager.AbilityRunningInfo> =
                 await abilityManager.getAbilityRunningInfos();

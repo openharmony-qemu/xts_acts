@@ -19,7 +19,7 @@ import { Entry, Component, Column, AttributeModifier, ButtonAttribute, Margin, B
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
-class GeometryTransitionModifier1 implements AttributeModifier<ButtonAttribute> {
+export class GeometryTransitionModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.geometryTransition('geometryTransition');
   }

@@ -16,7 +16,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import { AttributeModifier, CommonAttribute, TextAttribute} from '@ohos.arkui.component'
 
 @Observed
-class MyDetachModifier implements AttributeModifier<CommonAttribute> {
+export class MyDetachModifier implements AttributeModifier<CommonAttribute> {
 
   public controlValue: boolean | undefined = undefined
   public count: int = 0

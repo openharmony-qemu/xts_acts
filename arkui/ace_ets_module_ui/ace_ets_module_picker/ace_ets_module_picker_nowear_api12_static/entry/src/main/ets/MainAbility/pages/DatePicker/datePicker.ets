@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, DatePickerAttribute, DatePicker, FontWeight } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
-class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance
       .selectedTextStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })

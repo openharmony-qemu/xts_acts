@@ -85,7 +85,7 @@ export default function SingleKvStoreConcurrencyTest() {
     })
 
     beforeEach(async (done: () => void): Promise<void> => {
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
+      await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
         kvStore = store;
         console.info('test logbeforeEach getKVStore success');
         done();
@@ -128,7 +128,7 @@ export default function SingleKvStoreConcurrencyTest() {
         let count: number = 200;
         for (let i = 0; i < 200; i++) {
           try {
-            kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
+            kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
               expect(store != undefined).assertTrue();
               kvStore = store;
               count--;
@@ -162,7 +162,7 @@ export default function SingleKvStoreConcurrencyTest() {
         let count1: number = 200;
         for (let i = 0; i < 200; i++) {
           try {
-            kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
+            kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
               expect(store != undefined).assertTrue();
               count--;
               if (count == 0 && count1 == 0) {
@@ -203,7 +203,7 @@ export default function SingleKvStoreConcurrencyTest() {
         let count: number = 200;
         let count1: number = 200;
         for (let i = 0; i < 200; i++) {
-          await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
             expect(store != undefined).assertTrue();
             kvStore = store;
             kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
@@ -257,7 +257,7 @@ export default function SingleKvStoreConcurrencyTest() {
           done();
         });
         for (let i = 0; i < 200; i++) {
-          await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
             expect(store != undefined).assertTrue();
             kvStore = store;
             kvStore!.get(KEY_TEST_STRING_ELEMENT).

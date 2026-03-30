@@ -385,7 +385,7 @@ export default function promiseCombTest(){
       results.push(await reliableTask(3, 10));
       results.push(await sometimesFails(7));
 
-      const sum = results.reduce((a, b) => a + b, 0);
+      const sum = results.reduce((a, b) => a + b, 0.);
 
       expect(sum).assertEqual(126);
     });
@@ -644,7 +644,7 @@ export default function promiseCombTest(){
 
       let level1 = async (numbers: number[]): Promise<number> => {
         const res = await level2(numbers);
-        return res.reduce((sum, n) => sum + n, 0);
+        return res.reduce((sum, n) => sum + n, 0.);
       }
 
       const result = await level1([3, 4, 5, 6, 7, 8, 9]);
@@ -1012,7 +1012,7 @@ export default function promiseCombTest(){
 
       let level9 = async (): Promise<number> => {
         const results = await level10();
-        return results.reduce((sum, val) => sum + val, 0);
+        return results.reduce((sum, val) => sum + val, 0.);
       }
 
       let level8 = async (): Promise<number[]> => {
@@ -1024,7 +1024,7 @@ export default function promiseCombTest(){
 
       let level7 = async (): Promise<number> => {
         const results = await level8();
-        return results.reduce((sum, val) => sum + val, 0);
+        return results.reduce((sum, val) => sum + val, 0.);
       }
 
       let level6 = async (): Promise<number[]> => {
@@ -1036,7 +1036,7 @@ export default function promiseCombTest(){
 
       let level5 = async (): Promise<number> => {
         const results = await level6();
-        return results.reduce((sum, val) => sum + val, 0);
+        return results.reduce((sum, val) => sum + val, 0.);
       }
 
       let level4 = async (): Promise<number[]> => {
@@ -1048,7 +1048,7 @@ export default function promiseCombTest(){
 
       let level3 = async (): Promise<number> => {
         const results = await level4();
-        return results.reduce((sum, val) => sum + val, 0);
+        return results.reduce((sum, val) => sum + val, 0.);
       }
 
       let level2 = async (): Promise<number[]> => {
@@ -1060,7 +1060,7 @@ export default function promiseCombTest(){
 
       let level1 = async (): Promise<number> => {
         const results = await level2();
-        return results.reduce((sum, val) => sum + val, 0);
+        return results.reduce((sum, val) => sum + val, 0.);
       }
 
       const result = await level1();

@@ -23,19 +23,19 @@ import { LevelOrder, LevelMode } from '@ohos.promptAction'
 import { UIContext } from '@ohos.arkui.UIContext'
 
 @Observed
-class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.canLoop(true)
   }
 }
 @Observed
-class DatePickerModifier2 implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier2 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.canLoop(false)
   }
 }
 @Observed
-class DatePickerModifier3 implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier3 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.canLoop(undefined)
   }

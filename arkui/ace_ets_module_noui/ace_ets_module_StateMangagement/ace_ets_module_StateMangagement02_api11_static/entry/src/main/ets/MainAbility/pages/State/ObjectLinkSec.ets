@@ -55,7 +55,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Observed
-class SecClassB {
+export class SecClassB {
   public b: number = 1;
 
   constructor(b: number) {
@@ -63,7 +63,7 @@ class SecClassB {
   }
 }
 
-class SecClassA {
+export class SecClassA {
   // ClassA成员变量a的类型为ClassB，从而形成嵌套结构，ClassB的成员变量b为第二层变量
   public a:SecClassB = new SecClassB(1)
 

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppStorage, Link, State, StorageLink } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 
-class Params {
+export class Params {
   text: string = ""
   offset: Position
 

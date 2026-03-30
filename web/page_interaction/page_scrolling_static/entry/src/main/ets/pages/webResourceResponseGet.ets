@@ -126,6 +126,20 @@ struct webResourceResponseGet {
               break;
             }
 
+            case 'testscrollByWithResult002': {
+              try {
+                this.controllerone.loadUrl('resource://rawfile/theScrolltwo.html');
+                let result = this.controllerone.scrollByWithResult(200, 200);
+                console.log('original result: ' + result);
+                Utils.emitEvent(result, 370241);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 370241);
+              }
+              break;
+            }
+
             case 'emitonSwitchNextPage3': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

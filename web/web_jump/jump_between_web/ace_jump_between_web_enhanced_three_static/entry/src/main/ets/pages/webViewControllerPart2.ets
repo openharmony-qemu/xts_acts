@@ -46,6 +46,7 @@ class StringFields {
 struct WebOnDataResubmitted {
   stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
+  controllerOne: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = '';
   @State onDataResubmittedCalled: boolean = false;
   @State resend: boolean = true;
@@ -127,6 +128,25 @@ struct WebOnDataResubmitted {
                 }, 4000)
               } catch (error) {
                 hilog.info(0X0000,"testTag",`ErrorCode: ` + error);
+              }
+              break;
+            }
+
+            case "testBackOrForward005": {
+              try {
+                this.controllerOne.clearHistory()
+                this.controllerOne.loadUrl("resource://rawfile/index.html");
+                setTimeout(() => {
+                  this.controllerOne.backOrForward(3)
+                }, 2000)
+                setTimeout(() => {
+                  let title = this.controllerOne.getTitle();
+                  Utils.emitEvent(title, 370081)
+                }, 4000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 370081);
               }
               break;
             }

@@ -15,7 +15,7 @@
  */
 
 import { Entry, Column,Builder, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, SymbolGlyphModifier, NavPathStack, Navigation, ColumnOptions,
+  Row, ClickEvent, Margin, ButtonType, NavPathStack, Navigation, ColumnOptions,
   NavDestination, Navigation, LaunchMode, NavigationTitleMode, NavPathInfo, NavigationOptions} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

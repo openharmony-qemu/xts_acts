@@ -259,23 +259,42 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testIsReverseBypassEnabled
-     * @tc.number SUB_WEB_NETWORKPROXY_1200
+     * @tc.name   testIsReverseBypassEnabledTrueStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_0000
      * @tc.desc   test isReverseBypassEnabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testIsReverseBypassEnabled',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsReverseBypassEnabledTrueStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
-      Utils.emitEvent('testIsReverseBypassEnabled', 10);
+      Utils.emitEvent('testIsReverseBypassEnabledTrue', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testIsReverseBypassEnabled', false, 202502192, done);
+      Utils.registerEvent('testIsReverseBypassEnabledTrue', true, 202502192, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('networkProxyButton', 10, '');
       await Utils.msSleep(2000);
       done();
     })
+
+    /**
+     * @tc.name   testIsReverseBypassEnabledFalseStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1200
+     * @tc.desc   test isReverseBypassEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsReverseBypassEnabledFalseStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        Utils.emitEvent('testIsReverseBypassEnabledFalse', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testIsReverseBypassEnabledFalse', false, 302502192, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
 
     /**
      * @tc.name   testGetSchemeFilter

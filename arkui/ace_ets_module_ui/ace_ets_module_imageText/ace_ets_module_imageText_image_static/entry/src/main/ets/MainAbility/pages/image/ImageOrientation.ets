@@ -31,7 +31,7 @@ import http from '@ohos.net.http';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 @Observed
-class MyModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyModifier1 implements AttributeModifier<ImageAttribute> {
   private value: ImageRotateOrientation| undefined = undefined;
 
   constructor(v: ImageRotateOrientation| undefined) {
