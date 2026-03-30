@@ -923,8 +923,10 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 error.code is " + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 error.message is " + error.message);
           expect().assertFail();
+        }finally {
+          connection.close();
+          console.info(logTag + "reclaim done");
         }
-        connection.close();
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 createConnection error.code is:" + error.code);
         expect().assertFail();
@@ -996,8 +998,10 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 error.code is " + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 error.message is " + error.message);
           expect().assertFail();
+        }finally {
+          connection.close();
+          console.info(logTag + "reclaim done");
         }
-        connection.close();
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 createConnection error.code is:" + error.code);
         expect().assertFail();
@@ -1069,8 +1073,10 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 error.code is " + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 error.message is " + error.message);
           expect().assertFail();
+        }finally {
+          connection.close();
+          console.info(logTag + "reclaim done");
         }
-        connection.close();
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 createConnection error.code is:" + error.code);
         expect().assertFail();
@@ -1473,8 +1479,10 @@ export default function LinkEnhanceAPI() {
         }catch (error) {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 error.code is:" + error.code);
           expect().assertFail();
-        }
-        server.close();
+        }finally {
+          server.close();
+          console.info(logTag + "reclaim done");
+          }
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 createServer error.code is:" + error.code);
         expect().assertFail();
@@ -1539,8 +1547,10 @@ export default function LinkEnhanceAPI() {
           flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 error.code is:" + error.code);
           expect().assertFail();
-        }
-        server.close();
+        }finally {
+          server.close();
+          console.info(logTag + "reclaim done");
+          }
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 createServer error.code is:" + error.code);
         expect().assertFail();
