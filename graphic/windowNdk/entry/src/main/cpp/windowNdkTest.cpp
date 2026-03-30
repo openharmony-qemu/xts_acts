@@ -733,7 +733,6 @@ static void OnFrameMetricsMeasured(int32_t windowId, OH_WindowManager_FrameMetri
 
 static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
 {
-    OH_LOG_INFO(LOG_APP, "yuhao333");
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
