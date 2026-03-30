@@ -29,7 +29,7 @@ struct GetBarRect {
     'hdc file send appdata-sandbox.json /system/etc/sandbox/\n' +
     'hdc shell reboot\n' +
     '操作步骤：1.点击‘测试PluginComponent拉起同应用页面按钮\n' + '预期结果：页面显示123456和使用方图标,证明通信成功“\n';
-  @State Vue: boolean = true;
+  @State Vue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -156,46 +156,17 @@ struct GetBarRect {
 
       Text(this.message)
         .id('HelloArkUI')
-        .fontSize(30)
+        .fontSize(10)
         .fontWeight(FontWeight.Bold)
         .alignRules({
           center: { anchor: '__container__', align: VerticalAlign.Center },
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
 
-      Button('测试PluginComponent基本功能').onClick(() => {
-        router.pushUrl({
-          url: 'pages/ArkUI/pluginComponent/Test1'
-        })
-      })
-
-      Button('测试PluginComponent onError1').onClick(() => {
-        router.pushUrl({
-          url: 'pages/ArkUI/pluginComponent/Test2'
-        })
-      })
-
-      Button('测试PluginComponent onError2').onClick(() => {
-        router.pushUrl({
-          url: 'pages/ArkUI/pluginComponent/Test2_2'
-        })
-      })
-
       Button('测试PluginComponent拉起同应用页面').onClick(() => {
+        this.Vue = true
         router.pushUrl({
           url: 'pages/ArkUI/pluginComponent/Test3'
-        })
-      })
-
-      Button('测试PluginComponent异常值测试').onClick(() => {
-        router.pushUrl({
-          url: 'pages/ArkUI/pluginComponent/Test4'
-        })
-      })
-
-      Button('测试PluginComponent异常值测试-ETS').onClick(() => {
-        router.pushUrl({
-          url: 'pages/ArkUI/pluginComponent/Test5'
         })
       })
 
@@ -233,5 +204,6 @@ struct GetBarRect {
     }.width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
