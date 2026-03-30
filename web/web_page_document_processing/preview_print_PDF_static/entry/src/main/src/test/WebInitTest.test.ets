@@ -70,13 +70,13 @@ export default function webInitTest() {
      * @tc.level  LEVEL0
      */
     it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-	  await Utils.msSleep(4000);
+	    await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundOne', 10)
-	  await Utils.msSleep(4000);
+	    await Utils.msSleep(4000);
       Utils.registerEvent('testSetPrintBackgroundOne', false, 214, done);
-	  await Utils.msSleep(4000);
-	  inspector.sendEventByKey('WebInitTestButton', 10, '');
-	  await Utils.msSleep(12000);
+	    await Utils.msSleep(4000);
+	    inspector.sendEventByKey('WebInitTestButton', 10, '');
+	    await Utils.msSleep(12000);
       Utils.emitEvent("emitonSwitchNextPage", 10)
       await Utils.msSleep(5000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');

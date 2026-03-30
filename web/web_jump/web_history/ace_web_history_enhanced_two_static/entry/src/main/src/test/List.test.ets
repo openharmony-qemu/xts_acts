@@ -15,7 +15,9 @@
 
 import  webViewControllerPart3Test from './WebViewControllerPart3.test'
 import  webViewControllerPart2Test from './WebViewControllerPart2.test'
+import  resumeAndPauseAlltimersError from './ResumeAndPauseAlltimersError.test'
 export default function testsuite() {
   webViewControllerPart3Test();
   webViewControllerPart2Test();
+  resumeAndPauseAlltimersError();
 }

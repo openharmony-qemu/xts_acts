@@ -83,7 +83,67 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   testGetPreviewWidthStatic001
+     * @tc.number SUB_ACE_BASIC_ETS_GETPREVIEWIDTH_0100
+     * @tc.desc   test getPreviewWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPreviewWidthStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testGetPreviewWidth001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetPreviewWidth001", true, 11000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetPreviewHeightStatic001
+     * @tc.number SUB_ACE_BASIC_ETS_GETPREVIEWHEIGTH_0100
+     * @tc.desc   test getPreviewHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPreviewHeightStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testGetPreviewHeight001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetPreviewHeight001", true, 12000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testYStatic001
+     * @tc.number SUB_ACE_BASIC_ETS__Y_0100
+     * @tc.desc   test y
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testYStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testY001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testY001", true, 13000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+
+    /**
   * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
   * @tc.name       : bindSelectionMenuTypeStatic03
   * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.

@@ -139,5 +139,23 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(4000);
         done();
       })
+
+    /**
+     * @tc.name   testOfflineResourceTypeStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0200
+     * @tc.desc   test OfflineResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOfflineResourceTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

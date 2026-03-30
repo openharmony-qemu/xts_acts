@@ -258,13 +258,26 @@ struct webviewNetworkProxy {
               break;
             }
 
-            case 'testIsReverseBypassEnabled': {
+            case 'testIsReverseBypassEnabledTrue': {
+              try {
+                this.proxyConfig.insertBypassRule('www.baidu.com');
+                this.proxyConfig.enableReverseBypass(true);
+                let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
+                console.log('true isReverseBypass:' + isReverseBypass);
+                Utils.emitEvent(isReverseBypass, 202502192);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testIsReverseBypassEnabledFalse': {
               try {
                 this.proxyConfig.insertBypassRule('www.baidu.com');
                 this.proxyConfig.enableReverseBypass(false);
                 let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
-                console.log('isReverseBypass:' + isReverseBypass);
-                Utils.emitEvent(isReverseBypass, 202502192);
+                console.log('false isReverseBypass:' + isReverseBypass);
+                Utils.emitEvent(isReverseBypass, 302502192);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }

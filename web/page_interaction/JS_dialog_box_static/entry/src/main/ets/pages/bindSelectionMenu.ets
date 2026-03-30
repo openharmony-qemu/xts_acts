@@ -56,6 +56,9 @@ struct WebComponent {
   @State previewImage: Resource | string | undefined = undefined;
   @State previewWidth: number = 0;
   @State previewHeight: number = 0;
+  @State previewWidthResult: int = -1;
+  @State previewHeightResult: int = -1;
+  @State resultY: int = -1;
   @State str: string = '';
   @State userAgentPC:StringFields = new StringFields ();
 
@@ -115,6 +118,36 @@ struct WebComponent {
                 break;
             }
 
+            case "testGetPreviewWidth001": {
+              console.log("get getPreviewWidth = ", this.previewWidthResult);
+              if (this.previewWidthResult >= 0) {
+                Utils.emitEvent(true, 11000);
+              } else {
+                Utils.emitEvent(false, 11000);
+              }
+              break;
+            }
+
+            case "testGetPreviewHeight001": {
+              console.log("get GetPreviewHeight = ", this.previewHeightResult);
+              if (this.previewHeightResult >= 0) {
+                Utils.emitEvent(true, 12000);
+              } else {
+                Utils.emitEvent(false, 12000);
+              }
+              break;
+            }
+
+            case "testY001": {
+              console.log("get testY001 = ", this.resultY);
+              if (this.resultY >= 0) {
+                Utils.emitEvent(true, 13000);
+              } else {
+                Utils.emitEvent(false, 13000);
+              }
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -148,6 +181,9 @@ struct WebComponent {
             }
             const rawW = event.param.getPreviewWidth?.() ?? 0;
             const rawH = event.param.getPreviewHeight?.() ?? 0;
+            this.previewWidthResult = event.param.getPreviewWidth();
+            this.previewHeightResult = event.param.getPreviewHeight();
+            this.resultY = event.param.y();
             this.previewWidth  = px2vp(rawW);
             this.previewHeight = px2vp(rawH);
             Utils.emitEvent(this.previewWidth > 0 && this.previewHeight > 0, 8301)
