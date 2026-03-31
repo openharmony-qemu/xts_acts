@@ -106,253 +106,253 @@ export default function actsFuncTest() {
     });
 
     /**
-     * @tc.number  VIDEO_VC1DEC_FUNCTION_0100
-     * @tc.name    VIDEO_VC1DEC_FUNCTION_0100
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0100
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0100
      * @tc.desc    Test VC1 decoder with buffer mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VC1DEC_FUNCTION_0100', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VC1DEC_FUNCTION_0100');
+    it('SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0100', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0100');
       let result = await testNapi.functest(0);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_MJPEGDEC_FUNCTION_0300
-     * @tc.name    VIDEO_MJPEGDEC_FUNCTION_0300
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0300
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0300
      * @tc.desc    Test MJPEG decoder with buffer mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_MJPEGDEC_FUNCTION_0300', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_MJPEGDEC_FUNCTION_0300');
+    it('SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0300', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0300');
       let result = await testNapi.functest(1);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_MSVIDEO1DEC_FUNCTION_0500
-     * @tc.name    VIDEO_MSVIDEO1DEC_FUNCTION_0500
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0500
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0500
      * @tc.desc    Test MSVIDEO1 decoder with buffer mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_MSVIDEO1DEC_FUNCTION_0500', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_MSVIDEO1DEC_FUNCTION_0500');
+    it('SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0500', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0500');
       let result = await testNapi.functest(2);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VC1DEC_FUNCTION_0200
-     * @tc.name    VIDEO_VC1DEC_FUNCTION_0200
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0200
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0200
      * @tc.desc    Test VC1 decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VC1DEC_FUNCTION_0200', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VC1DEC_FUNCTION_0200');
+    it('SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0200', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VC1DEC_FUNCTION_0200');
       let result = await testNapi.functest(3);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_MJPEGDEC_FUNCTION_0400
-     * @tc.name    VIDEO_MJPEGDEC_FUNCTION_0400
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0400
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0400
      * @tc.desc    Test MJPEG decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_MJPEGDEC_FUNCTION_0400', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_MJPEGDEC_FUNCTION_0400');
+    it('SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0400', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_MJPEGDEC_FUNCTION_0400');
       let result = await testNapi.functest(4);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_MSVIDEO1DEC_FUNCTION_0600
-     * @tc.name    VIDEO_MSVIDEO1DEC_FUNCTION_0600
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0600
      * @tc.desc    Test MSVIDEO1 decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_MSVIDEO1DEC_FUNCTION_0600', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_MSVIDEO1DEC_FUNCTION_0600');
+    it('SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0600', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_MSVIDEO1DEC_FUNCTION_0600');
       let result = await testNapi.functest(5);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP8DEC_FUNCTION_0700
-     * @tc.name    VIDEO_VP8DEC_FUNCTION_0700
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_0700
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_0700
      * @tc.desc    Test VP8 decoder function
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP8DEC_FUNCTION_0700', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP8DEC_FUNCTION_0700');
+    it('SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_0700', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_0700');
       let result = await testNapi.functest(6);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_0800
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_0800
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0800
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0800
      * @tc.desc    Test VP9 decoder function with profile 0
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_0800', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_0800');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0800', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0800');
       let result = await testNapi.functest(7);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_0900
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_0900
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0900
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0900
      * @tc.desc    Test VP9 decoder function with profile 1
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_0900', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_0900');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0900', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_0900');
       let result = await testNapi.functest(8);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_1000
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_1000
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1000
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1000
      * @tc.desc    Test VP9 decoder function with profile 2
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_1000', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_1000');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1000', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1000');
       let result = await testNapi.functest(9);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_1100
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_1100
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1100
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1100
      * @tc.desc    Test VP9 decoder function with profile 3
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_1100', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_1100');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1100', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1100');
       let result = await testNapi.functest(10);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_AV1DEC_FUNCTION_1200
-     * @tc.name    VIDEO_AV1DEC_FUNCTION_1200
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1200
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1200
      * @tc.desc    Test AV1 decoder function with main profile
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_AV1DEC_FUNCTION_1200', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_AV1DEC_FUNCTION_1200');
+    it('SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1200', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1200');
       let result = await testNapi.functest(11);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_AV1DEC_FUNCTION_1300
-     * @tc.name    VIDEO_AV1DEC_FUNCTION_1300
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1300
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1300
      * @tc.desc    Test AV1 decoder function with high profile
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_AV1DEC_FUNCTION_1300', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_AV1DEC_FUNCTION_1300');
+    it('SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1300', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1300');
       let result = await testNapi.functest(12);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_AV1DEC_FUNCTION_1500
-     * @tc.name    VIDEO_AV1DEC_FUNCTION_1500
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1500
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1500
      * @tc.desc    Test AV1 decoder function with main profile 8bit
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_AV1DEC_FUNCTION_1500', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_AV1DEC_FUNCTION_1500');
+    it('SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1500', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1500');
       let result = await testNapi.functest(13);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_AV1DEC_FUNCTION_1600
-     * @tc.name    VIDEO_AV1DEC_FUNCTION_1600
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1600
      * @tc.desc    Test AV1 decoder function with high profile 8bit
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_AV1DEC_FUNCTION_1600', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_AV1DEC_FUNCTION_1600');
+    it('SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1600', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_AV1DEC_FUNCTION_1600');
       let result = await testNapi.functest(14);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_1900
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_1900
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1900
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1900
      * @tc.desc    Test VP9 decoder function with level 4 profile 0
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_1900', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_1900');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1900', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_1900');
       let result = await testNapi.functest(15);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP9DEC_FUNCTION_2000
-     * @tc.name    VIDEO_VP9DEC_FUNCTION_2000
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_2000
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_2000
      * @tc.desc    Test VP9 decoder function with level 4 profile 1
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP9DEC_FUNCTION_2000', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP9DEC_FUNCTION_2000');
+    it('SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_2000', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP9DEC_FUNCTION_2000');
       let result = await testNapi.functest(16);
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  VIDEO_VP8DEC_FUNCTION_2100
-     * @tc.name    VIDEO_VP8DEC_FUNCTION_2100
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100
      * @tc.desc    Test VP8 decoder function with 1080p
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('VIDEO_VP8DEC_FUNCTION_2100', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test VIDEO_VP8DEC_FUNCTION_2100');
+    it('SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100');
       let result = await testNapi.functest(17);
       expect(result).assertEqual(TEST_SUCCESS);
     });
