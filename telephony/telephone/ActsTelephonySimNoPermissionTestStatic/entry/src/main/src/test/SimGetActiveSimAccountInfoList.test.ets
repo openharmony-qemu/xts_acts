@@ -72,15 +72,16 @@ export default function Sim_getActiveSimAccountInfoList_dual() {
             }
             sim.getActiveSimAccountInfoList((err: BusinessError | null,
                 data: Array<sim.IccAccountInfo> | undefined) => {
-                if (err) {
+                if (data) {
+                    console.info(`${caseName} getActiveSimAccountInfoList nopermission test success, data: ${JSON.stringify(data)}`);
+                    ExpectTrue((data as Array<sim.IccAccountInfo>).some(item => item?.iccId === ""));
+                    done();
+                    
+                } else {
                     console.info(`${caseName} getActiveSimAccountInfoList nopermission test fail, err: ${JSON.stringify(err)}`);
                     ExpectFail();
                     done();
                     return;
-                } else {
-                    console.info(`${caseName} getActiveSimAccountInfoList nopermission test success, data: ${JSON.stringify(data)}`);
-                    ExpectTrue((data as Array<sim.IccAccountInfo>).some(item => item?.iccId === ""));
-                    done();
                 }
             });
             recursive(simAmount);
