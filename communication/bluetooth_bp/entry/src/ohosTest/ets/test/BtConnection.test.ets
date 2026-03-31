@@ -3599,7 +3599,7 @@ describe('btConnectionTest', () => {
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
-     * @tc.desc   Test connectAllowedProfiles callback.
+     * @tc.desc   Test disconnectAllowedProfiles callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
