@@ -38,168 +38,168 @@ export default function cryptoFrameworkKdfTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0100
-     * @tc.number SubCryptoFrameworkNapiKdfTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0100
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0200
-     * @tc.number SubCryptoFrameworkNapiKdfTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0200
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0300
-     * @tc.number SubCryptoFrameworkNapiKdfTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0300
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0400
-     * @tc.number SubCryptoFrameworkNapiKdfTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0400
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0500
-     * @tc.number SubCryptoFrameworkNapiKdfTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0500
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0600
-     * @tc.number SubCryptoFrameworkNapiKdfTest0600
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0600
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0600
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0600', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(5);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0700
-     * @tc.number SubCryptoFrameworkNapiKdfTest0700
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0700
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0700
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0700', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(6);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0800
-     * @tc.number SubCryptoFrameworkNapiKdfTest0800
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0800
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0800
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0800', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(7);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest0900
-     * @tc.number SubCryptoFrameworkNapiKdfTest0900
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_0900
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_0900
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest0900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_0900', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(8);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest1000
-     * @tc.number SubCryptoFrameworkNapiKdfTest1000
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_1000
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_1000
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest1000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_1000', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(9);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest1100
-     * @tc.number SubCryptoFrameworkNapiKdfTest1100
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_1100
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_1100
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest1100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_1100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(10);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest1200
-     * @tc.number SubCryptoFrameworkNapiKdfTest1200
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_1200
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_1200
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest1200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_1200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(11);
       expect(result).assertEqual(0);
       done();
@@ -207,7 +207,7 @@ export default function cryptoFrameworkKdfTest() {
 
     /**
      * @tc.name   SubCryptoFrameworkNapiKdfVectorTest0100
-     * @tc.number SubCryptoFrameworkNapiKdfVectorTest0100
+     * @tc.number SUB_CryptoFramework_Napi_KdfVector_Test_0100
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,14 +220,14 @@ export default function cryptoFrameworkKdfTest() {
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiKdfTest1300
-     * @tc.number SubCryptoFrameworkNapiKdfTest1300
+     * @tc.name   SUB_CryptoFramework_Napi_Kdf_Test_1300
+     * @tc.number SUB_CryptoFramework_Napi_Kdf_Test_1300
      * @tc.desc   algorithm is Kdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiKdfTest1300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Kdf_Test_1300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Kdf_Test(13);
       expect(result).assertEqual(0);
       done();

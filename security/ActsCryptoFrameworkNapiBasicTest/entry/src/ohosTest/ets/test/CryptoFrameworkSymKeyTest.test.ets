@@ -38,154 +38,154 @@ export default function cryptoFrameworkSymKeyTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0100
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0100
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0200
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0200
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0300
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0300
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0400
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0400
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0500
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0500
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0600
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0600
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0600
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0600
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0600', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(5);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0700
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0700
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0700
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0700
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0700', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(6);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0800
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0800
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0800
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0800
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0800', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(7);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest0900
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest0900
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_0900
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_0900
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest0900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_0900', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(8);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest1000
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest1000
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_1000
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_1000
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest1000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_1000', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(9);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiSymKeyTest1100
-     * @tc.number SubCryptoFrameworkNapiSymKeyTest1100
+     * @tc.name   SUB_CryptoFramework_Napi_SymKey_Test_1100
+     * @tc.number SUB_CryptoFramework_Napi_SymKey_Test_1100
      * @tc.desc   algorithm is SymKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiSymKeyTest1100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_SymKey_Test_1100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Key_Test(10);
       expect(result).assertEqual(0);
       done();

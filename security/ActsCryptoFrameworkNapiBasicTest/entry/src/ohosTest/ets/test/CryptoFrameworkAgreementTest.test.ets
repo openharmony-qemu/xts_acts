@@ -38,112 +38,112 @@ export default function cryptoFrameworkAgreementTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementTest0100
-     * @tc.number SubCryptoFrameworkNapiAgreementTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Test_0100
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementTest0200
-     * @tc.number SubCryptoFrameworkNapiAgreementTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Test_0200
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementTest0300
-     * @tc.number SubCryptoFrameworkNapiAgreementTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Test_0300
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementTest0400
-     * @tc.number SubCryptoFrameworkNapiAgreementTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Test_0400
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementTest0500
-     * @tc.number SubCryptoFrameworkNapiAgreementTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Test_0500
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementVectorTest0100
-     * @tc.number SubCryptoFrameworkNapiAgreementVectorTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Vector_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Vector_Test_0100
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementVectorTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Vector_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(5);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementVectorTest0200
-     * @tc.number SubCryptoFrameworkNapiAgreementVectorTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Vector_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Vector_Test_0200
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementVectorTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Vector_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(6);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiAgreementVectorTest0300
-     * @tc.number SubCryptoFrameworkNapiAgreementVectorTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Agreement_Vector_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Agreement_Vector_Test_0300
      * @tc.desc   algorithm is Agreement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiAgreementVectorTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Agreement_Vector_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Agreement_Test(7);
       expect(result).assertEqual(0);
       done();

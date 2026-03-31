@@ -38,84 +38,84 @@ export default function cryptoFrameworkRandomTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0100
-     * @tc.number SubCryptoFrameworkNapiRandomTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0100
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0200
-     * @tc.number SubCryptoFrameworkNapiRandomTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0200
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0300
-     * @tc.number SubCryptoFrameworkNapiRandomTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0300
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0400
-     * @tc.number SubCryptoFrameworkNapiRandomTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0400
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0500
-     * @tc.number SubCryptoFrameworkNapiRandomTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0500
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiRandomTest0600
-     * @tc.number SubCryptoFrameworkNapiRandomTest0600
+     * @tc.name   SUB_CryptoFramework_Napi_Random_Test_0600
+     * @tc.number SUB_CryptoFramework_Napi_Random_Test_0600
      * @tc.desc   algorithm is Random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiRandomTest0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Random_Test_0600', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Random_Test(5);
       expect(result).assertEqual(0);
       done();

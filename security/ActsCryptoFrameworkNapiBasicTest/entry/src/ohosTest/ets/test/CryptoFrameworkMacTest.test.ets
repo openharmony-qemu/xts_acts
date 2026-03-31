@@ -38,126 +38,126 @@ export default function cryptoFrameworkMacTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0100
-     * @tc.number SubCryptoFrameworkNapiMacTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0100
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0200
-     * @tc.number SubCryptoFrameworkNapiMacTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0200
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0300
-     * @tc.number SubCryptoFrameworkNapiMacTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0300
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0400
-     * @tc.number SubCryptoFrameworkNapiMacTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0400
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0500
-     * @tc.number SubCryptoFrameworkNapiMacTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0500
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0600
-     * @tc.number SubCryptoFrameworkNapiMacTest0600
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0600
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0600
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0600', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(5);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0700
-     * @tc.number SubCryptoFrameworkNapiMacTest0700
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0700
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0700
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0700', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(6);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0800
-     * @tc.number SubCryptoFrameworkNapiMacTest0800
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0800
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0800
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0800', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(7);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacTest0900
-     * @tc.number SubCryptoFrameworkNapiMacTest0900
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_0900
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_0900
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacTest0900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Mac_Test_0900', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(8);
       expect(result).assertEqual(0);
       done();
@@ -165,7 +165,7 @@ export default function cryptoFrameworkMacTest() {
 
     /**
      * @tc.name   SubCryptoFrameworkNapiMacVectorTest0100
-     * @tc.number SubCryptoFrameworkNapiMacVectorTest0100
+     * @tc.number SUB_CryptoFramework_Napi_MacVector_Test_0100
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

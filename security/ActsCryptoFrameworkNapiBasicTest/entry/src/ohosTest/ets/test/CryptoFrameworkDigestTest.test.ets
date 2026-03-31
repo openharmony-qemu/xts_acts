@@ -38,126 +38,126 @@ export default function cryptoFrameworkDigestTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0100
-     * @tc.number SubCryptoFrameworkNapiDigestTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0100
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0100
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(0);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0200
-     * @tc.number SubCryptoFrameworkNapiDigestTest0200
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0200
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0200
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0200', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(1);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0300
-     * @tc.number SubCryptoFrameworkNapiDigestTest0300
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0300
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0300
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0300', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(2);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0400
-     * @tc.number SubCryptoFrameworkNapiDigestTest0400
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0400
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0400
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0400', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(3);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0500
-     * @tc.number SubCryptoFrameworkNapiDigestTest0500
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0500
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0500
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0500', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(4);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0600
-     * @tc.number SubCryptoFrameworkNapiDigestTest0600
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0600
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0600
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0600', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(5);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0700
-     * @tc.number SubCryptoFrameworkNapiDigestTest0700
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0700
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0700
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0700', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(6);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0800
-     * @tc.number SubCryptoFrameworkNapiDigestTest0800
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0800
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0800
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0800', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(7);
       expect(result).assertEqual(0);
       done();
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiDigestTest0900
-     * @tc.number SubCryptoFrameworkNapiDigestTest0900
+     * @tc.name   SUB_CryptoFramework_Napi_Digest_Test_0900
+     * @tc.number SUB_CryptoFramework_Napi_Digest_Test_0900
      * @tc.desc   algorithm is Digest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiDigestTest0900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_Digest_Test_0900', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Digest_Test(8);
       expect(result).assertEqual(0);
       done();
