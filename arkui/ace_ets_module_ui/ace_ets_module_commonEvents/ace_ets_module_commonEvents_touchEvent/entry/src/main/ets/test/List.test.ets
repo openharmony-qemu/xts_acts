@@ -24,6 +24,7 @@ import RollAngle from './RollAngle/RollAngle.test';
 import BlockDescendantsTest from './HitTestBehaviorTest/BlockDescendants.test';
 import BlockHierarchyTest from './HitTestBehaviorTest/BlockHierarchy.test';
 import postInputEvent from './BuilderNode/postInputEvent.test';
+import BuilderNodePostInputEventWithStrategyTest from './migratedActs/BuilderNodePostInputEventWithStrategy.test';
 
 export default function testsuite() {
   touchAbleJsunit();
@@ -37,4 +38,5 @@ export default function testsuite() {
   BlockHierarchyTest();
   postInputEvent();
   touchJsunit();
+  BuilderNodePostInputEventWithStrategyTest();
 }
