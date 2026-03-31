@@ -1440,19 +1440,19 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
       /**
-     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031
-     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100
      * @tc.desc   test subscribeReminderState promise function and unsubscribeReminderState promise function
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      */
-    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031',
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
 
         let reminderStateCallback = (states: Array<reminderAgentManager.ReminderState>) =>{
-          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 length is : ' + states.length)
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 length is : ' + states.length)
           expect(states.length === 0).assertTrue();
           done();
         }
@@ -1460,11 +1460,11 @@ export default function ActsReminderAgentManagerStaticTest() {
         try {
           let callbakFlag1 = 1;
           await reminderAgentManager.subscribeReminderState(reminderStateCallback);
-          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 subscribe succeed');
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 subscribe succeed');
           expect(callbakFlag1 === 1).assertTrue();
           done();
         } catch (error) {
-          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 subscribeReminderState:" + error.code + error.message);
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 subscribeReminderState:" + error.code + error.message);
           expect(false).assertTrue();
           done();
         }
@@ -1472,43 +1472,43 @@ export default function ActsReminderAgentManagerStaticTest() {
         try {
           let callbakFlag2 = 1;
           await reminderAgentManager.unsubscribeReminderState(reminderStateCallback);
-          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 unsubscribe succeed');
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 unsubscribe succeed');
           expect(callbakFlag2 === 1).assertTrue();
           done();
         } catch (error) {
-          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 unsubscribeReminderState error.code:" + error.code);
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 unsubscribeReminderState error.code:" + error.code);
           expect(false).assertTrue();
           done();
         }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_031 end---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 end---');
       })
 
     /**
-     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032
-     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200
      * @tc.desc   test api23 unsubscribeReminderState promise function and input is empty
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      */
-    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032',
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
 
         try {
           let callbakFlag2 = 1;
           await reminderAgentManager.unsubscribeReminderState();
-          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032 unsubscribe succeed');
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 unsubscribe succeed');
           expect(callbakFlag2 === 1).assertTrue();
           done();
         } catch (error) {
-          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032 unsubscribeReminderState error.code:" + error.code);
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 unsubscribeReminderState error.code:" + error.code);
           expect(false).assertTrue();
           done();
         }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_032 end---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 end---');
       })
 
   })

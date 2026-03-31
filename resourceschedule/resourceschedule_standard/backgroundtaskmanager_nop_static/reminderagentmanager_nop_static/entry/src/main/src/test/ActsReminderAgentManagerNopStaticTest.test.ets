@@ -202,31 +202,31 @@ export default function ActsReminderAgentManagerNopStaticTest() {
          })
 
          /**
-         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008
-         * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800
          * @tc.desc   Using the subscribeReminderState then method without permission
          * @tc.level  LEVEL0
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          */
-        it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008',
+        it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
 
                 let reminderStateCallback = (states: Array<reminderAgentManager.ReminderState>) =>{
-                    console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008 length is : ' + states.length)
+                    console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800 length is : ' + states.length)
                 }
 
                 try {
                     await reminderAgentManager.subscribeReminderState(reminderStateCallback);
-                    console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008 subscribe succeed');
+                    console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800 subscribe succeed');
                 } catch (error) {
-                    console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008 subscribeReminderState:" + error.code + error.message);
+                    console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800 subscribeReminderState:" + error.code + error.message);
                     expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
                     done();
                 }
 
-                console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_008----after----');
+                console.info('--------SUB_RESOURCESCHEDULE_REMINDER_MANAGER_NOP_STATIC_XTS_0800----after----');
             })
 
     })
