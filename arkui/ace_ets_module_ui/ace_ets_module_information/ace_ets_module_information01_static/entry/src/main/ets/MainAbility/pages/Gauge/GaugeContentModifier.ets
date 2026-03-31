@@ -137,7 +137,7 @@ class MyGaugeStyle implements ContentModifier<GaugeConfiguration> {
 }
 
 @Observed
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   applyNormalAttribute(instance: GaugeAttribute): void {
     instance.contentModifier(new MyGaugeStyle(30, 20, 100))
   }

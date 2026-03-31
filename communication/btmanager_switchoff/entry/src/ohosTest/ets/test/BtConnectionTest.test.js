@@ -16,6 +16,7 @@
 import bluetoothManager from '@ohos.bluetoothManager';
 import bluetooth from '@ohos.bluetooth';
 import connection from '@ohos.bluetooth.connection';
+import bluetoothBle from '@ohos.bluetooth.ble';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
@@ -253,6 +254,408 @@ export default function btConnectionSwitchOffTest() {
                 expect(true).assertTrue();
                 done();
             }
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_STARTADVERTISING_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_STARTADVERTISING_0100
+         * @tc.desc Test startAdvertising when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_STARTADVERTISING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let manufactureValueBuffer = new Uint8Array(4);
+                    manufactureValueBuffer[0] = 1;
+                    manufactureValueBuffer[1] = 2;
+                    manufactureValueBuffer[2] = 3;
+                    manufactureValueBuffer[3] = 4;
+
+                    let serviceValueBuffer = new Uint8Array(4);
+                    serviceValueBuffer[0] = 4;
+                    serviceValueBuffer[1] = 6;
+                    serviceValueBuffer[2] = 7;
+                    serviceValueBuffer[3] = 8;
+                    console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
+                    console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
+
+                    let setting = {
+                        interval:150,
+                        txPower:0,
+                        connectable:true
+                    };
+                    let manufactureDataUnit = {
+                        manufactureId:4567,
+                        manufactureValue:manufactureValueBuffer.buffer
+                    };
+                    let serviceDataUnit = {
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+                        serviceValue:serviceValueBuffer.buffer
+                    };
+                    let advData = {
+                        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                        manufactureData:[manufactureDataUnit],
+                        serviceData:[serviceDataUnit]
+                    };
+                    let advResponse = {
+                        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                        manufactureData:[manufactureDataUnit],
+                        serviceData:[serviceDataUnit]
+                    };
+                    let advertisingParams = {
+                        advertisingSettings: setting,
+                        advertisingData: advData,
+                        advertisingResponse: advResponse,
+                        duration: 300
+                    }
+                    let advHandle = 0xFF;
+                    bluetoothBle.startAdvertising(advertisingParams, (err, advId) => {
+                        console.info('[bluetooth_js] startAdvertising should fail when bluetooth is disabled');
+                        expect(err.code === 2900003 || err.code === 2900099).assertTrue();
+                        done();
+                    });
+                } catch (error) {
+                    console.error('[bluetooth_js]startAdvertising error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] startAdvertising is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003 || errorCode === 2900099) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
+                    } else {
+                        console.error('[bluetooth_js] unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_NOTIFYCHARACTERISTIC_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_NOTIFYCHARACTERISTIC_0100
+         * @tc.desc Test notifyCharacteristicChanged when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_NOTIFYCHARACTERISTIC_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let gattServer = bluetoothBle.createGattServer();
+                    let buf = new ArrayBuffer(1);
+                    let val = new Uint8Array(buf);
+                    val[0] = 1;
+                    let notifyCharacteristic = {
+                        serviceUuid: '0000180A-0000-1000-8000-00805f9b34fb',
+                        characteristicUuid: '0000180A-0000-1000-8000-00805f9b34fb',
+                        characteristicValue: buf,
+                        confirm: false
+                    };
+                    gattServer.notifyCharacteristicChanged('00:11:22:33:44:55', notifyCharacteristic, (err) => {
+                        console.info('[bluetooth_js] notifyCharacteristicChanged should fail when bluetooth is disabled'+`${err.code}`);
+                        expect(err.code === 2900003 || err.code === 2900099).assertTrue();
+                        done();
+                    });
+                } catch (error) {
+                    console.error('[bluetooth_js]notifyCharacteristicChanged error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] notifyCharacteristicChanged is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003 || errorCode === 2900099) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
+                    } else {
+                        console.error('[bluetooth_js] unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIREDEVICES_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIREDEVICES_0100
+         * @tc.desc Test getPairedDevices when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIREDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let pairedDevices = connection.getPairedDevices();
+                    console.info('[bluetooth_js] getPairedDevices should fail when bluetooth is disabled');
+                    expect(true).assertFalse();
+                } catch (error) {
+                    console.error('[bluetooth_js]getPairedDevices error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] getPairedDevices is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003 || errorCode === 2900099) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode === 2900003 || errorCode === 2900099).assertTrue();
+                    } else {
+                        console.error('[bluetooth_js] unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINCODE_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINCODE_0100
+         * @tc.desc Test setDevicePinCode when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await new Promise((resolve, reject) => {
+                        connection.setDevicePinCode('11:22:33:AA:BB:FF', '1234', (error) => {
+                            if (error) {
+                                console.error('[bluetooth_js]setDevicePinCode callback error.code:'+JSON.stringify(error.code)+
+                                    'error.message:'+JSON.stringify(error.message));
+                                reject(error);
+                            } else {
+                                console.info('[bluetooth_js] setDevicePinCode success, should not reach here');
+                                resolve();
+                            }
+                        });
+                    });
+                    expect(true).assertFalse();
+                } catch (error) {
+                    console.error('[bluetooth_js]setDevicePinCode error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] setDevicePinCode is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003) {
+                        console.info('[bluetooth_js] Got expected error 2900003 (Bluetooth disabled)');
+                        expect(errorCode).assertEqual(2900003);
+                    } else if (errorCode === 2900099) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode).assertEqual(2900099);
+                    } else {
+                        console.error('[bluetooth_js] Unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILEUUIDS_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILEUUIDS_0100
+         * @tc.desc Test getRemoteProfileUuids when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILEUUIDS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await connection.getRemoteProfileUuids('11:22:33:AA:BB:FF').then((value) => {
+                        console.info('[bluetooth_js] getRemoteProfileUuids success, should not reach here');
+                        expect(true).assertFalse();
+                    });
+                } catch (error) {
+                    console.error('[bluetooth_js]getRemoteProfileUuids error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] getRemoteProfileUuids is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode).assertEqual(2900003);
+                    } else if (errorCode === 2900099) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode).assertEqual(2900099);
+                    } else {
+                        console.error('[bluetooth_js] unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYINFO_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYINFO_0100
+         * @tc.desc Test getRemoteDeviceBatteryInfo when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYINFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await connection.getRemoteDeviceBatteryInfo('11:22:33:AA:BB:FF').then((value) => {
+                        console.info('[bluetooth_js] getRemoteDeviceBatteryInfo success, should not reach here');
+                        expect(true).assertFalse();
+                    });
+                } catch (error) {
+                    console.error('[bluetooth_js]getRemoteDeviceBatteryInfo error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 801) {
+                        console.info('[bluetooth_js] getRemoteDeviceBatteryInfo is not support');
+                        expect(errorCode).assertEqual(801);
+                    } else if (errorCode === 2900003) {
+                        console.info('[bluetooth_js] bluetooth is disabled');
+                        expect(errorCode).assertEqual(2900003);
+                    } else {
+                        console.error('[bluetooth_js] unexpected error code: ' + error.code);
+                        expect(errorCode).assertEqual(2900099);
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0100
+         * @tc.desc Test connectAllowedProfiles callback when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await new Promise((resolve, reject) => {
+                        connection.connectAllowedProfiles('11:22:33:AA:BB:FF', (error) => {
+                            if (error) {
+                                console.error('[bluetooth_js]connectAllowedProfiles callback error.code:'+JSON.stringify(error.code)+
+                                    'error.message:'+JSON.stringify(error.message));
+                                reject(error);
+                            } else {
+                                console.info('[bluetooth_js] connectAllowedProfiles success, should not reach here');
+                                resolve();
+                            }
+                        });
+                    });
+                    expect(true).assertFalse();
+                    done();
+                } catch (error) {
+                    console.error('[bluetooth_js]connectAllowedProfiles error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 2900003) {
+                        console.info('[bluetooth_js] Got expected error 2900003 (Bluetooth disabled)');
+                        expect(errorCode).assertEqual(2900003);
+                    } else if (errorCode === 801) {
+                        console.info('[bluetooth_js] connectAllowedProfiles is not supported');
+                        expect(errorCode).assertEqual(801);
+                    } else {
+                        console.error('[bluetooth_js] Unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                expect(true).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0200
+         * @tc.desc Test connectAllowedProfiles promise when bluetooth is disabled (error code 2900003)
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTALLOWEDPROFILE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await connection.connectAllowedProfiles('11:22:33:AA:BB:FF').then((value) => {
+                        console.info('[bluetooth_js] connectAllowedProfiles success, should not reach here');
+                        expect(true).assertFalse();
+                    });
+                } catch (error) {
+                    console.error('[bluetooth_js]connectAllowedProfiles error.code:'+JSON.stringify(error.code)+
+                        'error.message:'+JSON.stringify(error.message));
+                    let errorCode = Number(error.code);
+                    if (errorCode === 2900003) {
+                        console.info('[bluetooth_js] Got expected error 2900003 (Bluetooth disabled)');
+                        expect(errorCode).assertEqual(2900003);
+                    } else if (errorCode === 801) {
+                        console.info('[bluetooth_js] connectAllowedProfiles is not supported');
+                        expect(errorCode).assertEqual(801);
+                    } else {
+                        console.error('[bluetooth_js] Unexpected error code: ' + error.code);
+                        expect().assertFail();
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100
+         * @tc.desc   Test pairDevice when bluetooth is disabled (error code 2900003)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if (!closeUnsupport) {
+                let hashValue = "c10b57deb2e1aafd255596e0d4fd6789";
+                try {
+                    connection.getVirtualAddressByHash(connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+                    expect().assertFail();
+                } catch (err) {
+                    console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+                    if (err.code === 801) {
+                        console.info('[bluetooth_js] RK板 is not support');
+                        expect(err.code === 801).assertTrue();
+                    } else {
+                        console.info('[bluetooth_js] getVirtualAddressByHash fail 201');
+                        expect(Number(err.code)).assertEqual(2900003);
+                    }
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
         })
     })
 }

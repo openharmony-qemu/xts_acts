@@ -18,7 +18,13 @@ import observer from '@ohos.telephony.observer';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from "@ohos.base";
 
-
+const ExpectFail =() =>{
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -199,5 +205,162 @@ export default function observerManagerSimStateTest1() {
       }
       console.info(`${caseName} test end`);
     });
+
+    /**
+     * @tc.name   testTelephonyObserverOnSimStateChange0100
+     * @tc.number SUB_Telephony_Observer_On_SimStateChange_0100
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnSimStateChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnSimStateChange0100';
+      console.info(`${caseName} test start`);
+      try {
+        observer.onSimStateChange( {
+          slotId: 3
+        }, (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffSimStateChange0100
+     * @tc.number SUB_Telephony_Observer_Off_SimStateChange_0100
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffSimStateChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOff0300';
+      console.info(`${caseName} test start`);
+      try {
+        let myNumber: int = 1;
+        let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          myNumber++;
+          console.info(`${caseName} myNumber ` + myNumber);
+        };
+        observer.onSimStateChange(callback);
+        observer.offSimStateChange(callback);
+        ExpectTrue(true);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffSimStateChange0200
+     * @tc.number SUB_Telephony_Observer_Off_SimStateChange_0200
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffSimStateChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffSimStateChange0200';
+      console.info(`${caseName} test start`);
+      try {
+        let myNumber: int = 1;
+        let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          myNumber++;
+          console.info(`${caseName} myNumber ` + myNumber);
+        };
+        observer.offSimStateChange(callback);
+        ExpectTrue(myNumber === 1);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnIccAccountInfoChange0100
+     * @tc.number SUB_Telephony_Observer_On_IccAccountInfoChange_0100
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverOnIccAccountInfoChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnIccAccountInfoChange0100';
+      let simState = sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        runTestCaseWithJudgeHasSimCard(caseName, done, async () => {
+          try {
+            observer.onIccAccountInfoChange( () => {
+              waitForCompletion(async () => {
+                let accInfo: sim.IccAccountInfo = await sim.getSimAccountInfo(0);
+                console.info(`${caseName} data ${JSON.stringify(accInfo)}`);
+                ExpectTrue(accInfo.isActive);
+                done();
+              })
+            });
+            // await sim.activateSim(0);
+            done();
+          } catch (error) {
+            console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+            ExpectTrue(false);
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffIccAccountInfoChange0200
+     * @tc.number SUB_Telephony_Observer_Off_IccAccountInfoChange_0200
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverOffIccAccountInfoChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffIccAccountInfoChange0200';
+      console.info(`${caseName} test start`);
+      try {
+        let myNumber: int = 1;
+        let callback: () => void = () => {
+          myNumber++;
+        };
+        console.info(caseName + 'myNmuber -> ' + myNumber);
+        observer.offIccAccountInfoChange(callback);
+        ExpectTrue(myNumber == 1);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+
+
+
+
+
+
   });
 }

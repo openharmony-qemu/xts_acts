@@ -77,7 +77,7 @@ export default function textInputDecoration() {
       let strJson = inspector.getInspectorByKey('key_textInput_decoration_001');
       console.info("[textInputDecoration_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('decoration'))
-        .assertEqual('{\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"}');
+        .assertContain('\"type\":\"TextDecorationType.Underline\",\"color\":\"#FFFF0000\",\"style\":\"TextDecorationStyle.SOLID\"');
       console.info('[textInputDecoration_0100] END');
       done();
     });

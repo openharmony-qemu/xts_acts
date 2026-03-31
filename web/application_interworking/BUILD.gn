@@ -18,6 +18,7 @@ group("ActsApplicationInterworkingTest") {
       "inject_javascript:ActsWebInjectJavascriptTest",
       "run_javascript:ActsWebRunJavascriptTest",
       "run_javascript_static:ActsWebRunJavascriptStaticTest",
+      "run_javascript_two_static:ActsWebRunJavascriptTwoStaticTest",
       "sending_messages_to_each_other:ActsWebSendingMessagesToEachotherTest",
       "sending_messages_to_each_other_static:ActsWebSendingMessagesToEachotherStaticTest",
     ]

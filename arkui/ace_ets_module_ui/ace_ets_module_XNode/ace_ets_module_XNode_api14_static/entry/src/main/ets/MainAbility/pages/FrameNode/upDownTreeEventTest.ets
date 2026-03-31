@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ function buttonBuilder2(params: Params) {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public attachValue: string = '0';
   public detachValue: string = '0';
   public bindValue: string = '0';
@@ -120,7 +120,7 @@ class MyNodeController extends NodeController {
   }
 }
 
-class MyNodeController2 extends NodeController {
+export class MyNodeController2 extends NodeController {
   public attachValue: string = '0';
   public detachValue: string = '0';
   public bindValue: string = '0';

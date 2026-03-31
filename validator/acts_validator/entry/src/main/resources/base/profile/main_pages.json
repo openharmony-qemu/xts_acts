@@ -193,6 +193,7 @@
     "pages/ArkUI/pluginComponent/Test4",
     "pages/ArkUI/pluginComponent/Test5",
     "pages/ArkUI/pluginComponent/Plugin",
-    "pages/ArkUI/CapiDragDropTest"
+    "pages/ArkUI/CapiDragDropTest",
+    "pages/ArkUI/CapionDigitalCrown"
   ]
 }

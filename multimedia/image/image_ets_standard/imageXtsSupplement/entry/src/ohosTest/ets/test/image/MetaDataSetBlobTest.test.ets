@@ -266,29 +266,17 @@ export default function MetaDataSetBlobTest() {
      */
     it('SUB_IMAGE_METADATA_EXIF_METADATA_GET_PROPERTIES_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_METADATA_EXIF_METADATA_GET_PROPERTIES_TEST_001';
-      const path = 'test_exif_v2.jpg';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(imageMetadata);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          await metaData.exifMetadata.getProperties(null).then((data) => {
-            console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,
-              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-            expect().assertFail();
-          });
-        } else {
-          console.error(TAG, testName, 'Metadata is null.');
+        await testExifMetadata.getProperties(null).then((data) => {
+          console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
           expect().assertFail();
-        }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName,
+            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        });
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);

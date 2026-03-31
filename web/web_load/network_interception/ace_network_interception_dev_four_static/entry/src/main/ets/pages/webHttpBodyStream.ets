@@ -29,6 +29,8 @@ import Utils from '../../src/test/Utils.test';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { WebNetErrorList } from '@ohos.web.netErrorList'
+
 class StringFields {
   public str: string = '';
 }
@@ -36,6 +38,7 @@ class StringFields {
 
 @Entry
 @Component
+
 struct WebHttpBodyStream {
   stringObj: StringFields  = new StringFields ();
   @State str: string = ""
@@ -43,6 +46,7 @@ struct WebHttpBodyStream {
   controller: webview.WebviewController = new webview.WebviewController(undefined)
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   htmlData: string = "<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>";
+
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -97,19 +101,33 @@ struct WebHttpBodyStream {
           try {
             this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
               console.log("[schemeHandler] onRequestStart")
+              Utils.emitEvent(true, 1418)
               try {
                 let stream = request.getHttpBodyStream();
                 if (stream) {
+                  Utils.emitEvent(true,1419)
                   stream.initialize().then(() => {
+                    console.log("[schemeHandler] initialize success");
+                    Utils.emitEvent(true,1420)
                     console.log("[schemeHandler] onRequestStart postDataStream size:" + stream.getSize());
+                    Utils.emitEvent(stream.getSize(),1421)
                     console.log("[schemeHandler] onRequestStart postDataStream position:" + stream.getPosition());
+                    Utils.emitEvent(stream.getPosition(),1422)
                     console.log("[schemeHandler] onRequestStart postDataStream isChunked:" + stream.isChunked());
+                    Utils.emitEvent(stream.isChunked(),1423)
                     console.log("[schemeHandler] onRequestStart postDataStream isEof:" + stream.isEof());
+                    Utils.emitEvent(stream.isEof(),1424)
                     console.log("[schemeHandler] onRequestStart postDataStream isInMemory:" + stream.isInMemory());
+                    Utils.emitEvent(stream.isInMemory(),1425)
                     if(stream.getSize() == 66 && stream.getPosition() == 0 && stream.isChunked() == false && stream.isEof() == false && stream.isInMemory() == true){
                       Utils.emitEvent(true, 8820)
                     }
+                    stream.read(66).then(buffer => {
+                      console.log('[schemeHandler] onRequestStart postDataStream read:' + buffer.byteLength);
+                      Utils.emitEvent(true,1426)
+                    })
                   })
+
                 } else {
                   console.log("[schemeHandler] onRequestStart has no http body stream")
                   if(this.WebHttpBodyStream0100){

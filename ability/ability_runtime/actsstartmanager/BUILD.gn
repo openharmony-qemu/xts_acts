@@ -18,6 +18,7 @@ group("ActsStartManager") {
   if (is_standard_system) {
     deps = [
       "actsgetautostartupstatusforselftest:ActsGetAutoStartupStatusForSelfTest",
+      "actsgetautostartupstatusforselfteststatic:ActsGetAutoStartupStatusForSelfStaticTest",
       "actsstartmanagertest:ActsStartManagerTest",
       "autostartupmanageone:AutoStartupManageOne"
     ]

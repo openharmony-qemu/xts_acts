@@ -38,13 +38,15 @@ struct Index {
       Text('Hello World')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
+        .height('10%')
       Button('') {
         Text('next page')
           .fontSize(25)
           .fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule)
+      .height('8%')
       .margin({
-        top: 20
+        top: '3%'
       } as Margin)
       .backgroundColor('#0D9FFB')
       .onClick((e:ClickEvent) => {

@@ -102,6 +102,7 @@ import listItemGroupModifierNullUndefined from './list/groupModifierNullUndefine
 import refreshModifierNullUndefined from './refresh/refreshModifierNullUndefined.test';
 import scrollModifierNullUndefined from './scroll/scrollModifierNullUndefined.test';
 import waterFlowModifierNullUndefined from './waterFlow/waterFlowModifierNullUndefined.test';
+import IsInstanceOfTest from './AttributeModifier/IsInstanceOf.test';
 
 export default function testsuite() {
   ButtonDrawModifierNullUndefined();
@@ -193,4 +194,5 @@ export default function testsuite() {
   DrawForegroundTest();
   DrawOverlayTest();
   UseEffectIndexTest();
+  IsInstanceOfTest();
 }

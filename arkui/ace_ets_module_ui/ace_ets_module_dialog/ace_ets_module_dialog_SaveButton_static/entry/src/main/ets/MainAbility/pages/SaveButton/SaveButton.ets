@@ -39,8 +39,8 @@ import {
   SaveButtonOnClickResult,
   ColumnOptions,
   ButtonType,
-  Scroll,
-  FlexAlign
+  FlexAlign,
+  TextOverflow
 } from '@ohos.arkui.component';
 
 @Entry
@@ -83,27 +83,38 @@ struct SaveButtonIndex {
 
   build() {
     Column() {
-      Row(){
+      Row() {
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .id('saveButton')
           .onClick((this.handleSaveButtonClick))
-          .fontSize(16)
+          .fontSize(10)
           .setIcon($r('app.media.icon'))
           .setText('setText')
-          .iconBorderRadius(6)
+          .iconBorderRadius(4)
           .stateEffect(false)
           .userCancelEvent(false)
           .constraintSize({
             minWidth: 0,
-            maxWidth: 90,
+            maxWidth: '90%',
             minHeight: 0,
-            maxHeight: 50
+            maxHeight: '12%'
           })
-      }.height(50)
+      }
+      .width('100%')
+      .layoutWeight(1)
+      .constraintSize({ minHeight: 0, maxHeight: '52%' })
+      .justifyContent(FlexAlign.Center)
+
       Text('' + this.resultValue)
         .id('saveButtonResultText')
-        .fontSize(16)
-        .margin({top: 20})
-    }.width('100%')
+        .fontSize(9)
+        .maxLines(2)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
+        .margin({ top: 4 })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

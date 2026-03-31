@@ -36,7 +36,7 @@ struct DNSHostIP {
   @State value: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController(undefined);
 
-   aboutToAppear() {
+  aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -94,6 +94,114 @@ struct DNSHostIP {
               }
               setTimeout(() => {
                 Utils.emitEvent(this.value, 8770)
+              }, 3000)
+              break;
+            }
+
+            case "setHostIP0200": {
+              this.userAgentPC = this.controller.getUserAgent();
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(true, 87701)
+                break;
+              } else if ((this.userAgentPC).includes("Tablet")) {
+                Utils.emitEvent(true, 87701)
+                break;
+              }
+              this.value = false;
+              this.getURL = '';
+              this.getURL1 = '';
+              try {
+                this.getURL = this.controller.getUrl();
+                console.log('setHostIP0200_getUrl: ' + this.getURL);
+                webview.WebviewController.setHostIP('', '124.95.179.4', 30);
+                this.controller.loadUrl('www.baidu.com');
+                webview.WebviewController.clearHostIP('www.dnstest.com');
+                this.controller.removeCache(true);
+                this.controller.loadUrl('www.baidu.com');
+                this.getURL1 = this.controller.getUrl();
+                console.log('setHostIP0200_getUrl: ' + this.getURL1)
+                if (this.getURL != this.getURL1) {
+                  this.value = true;
+                }
+                console.log('setHostIP0200_value: ' + this.value)
+                this.controller.removeCache(true);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              setTimeout(() => {
+                Utils.emitEvent(this.value, 87701)
+              }, 3000)
+              break;
+            }
+
+            case "setHostIP0300": {
+              this.userAgentPC = this.controller.getUserAgent();
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(true, 87702)
+                break;
+              } else if ((this.userAgentPC).includes("Tablet")) {
+                Utils.emitEvent(true, 87702)
+                break;
+              }
+              this.value = false;
+              this.getURL = '';
+              this.getURL1 = '';
+              try {
+                this.getURL = this.controller.getUrl();
+                console.log('setHostIP0300_getUrl: ' + this.getURL);
+                webview.WebviewController.setHostIP('www.baidu.com', '', 30);
+                this.controller.loadUrl('www.baidu.com');
+                webview.WebviewController.clearHostIP('www.dnstest.com');
+                this.controller.removeCache(true);
+                this.controller.loadUrl('www.baidu.com');
+                this.getURL1 = this.controller.getUrl();
+                console.log('setHostIP0300_getUrl: ' + this.getURL1)
+                if (this.getURL != this.getURL1) {
+                  this.value = true;
+                }
+                console.log('setHostIP0300_value: ' + this.value)
+                this.controller.removeCache(true);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              setTimeout(() => {
+                Utils.emitEvent(this.value, 87702)
+              }, 3000)
+              break;
+            }
+
+            case "setHostIP0400": {
+              this.userAgentPC = this.controller.getUserAgent();
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(true, 87703)
+                break;
+              } else if ((this.userAgentPC).includes("Tablet")) {
+                Utils.emitEvent(true, 87703)
+                break;
+              }
+              this.value = false;
+              this.getURL = '';
+              this.getURL1 = '';
+              try {
+                this.getURL = this.controller.getUrl();
+                console.log('setHostIP0400_getUrl: ' + this.getURL);
+                webview.WebviewController.setHostIP('www.baidu.com', '124.95.179.4', 30);
+                this.controller.loadUrl('www.baidu.com');
+                webview.WebviewController.clearHostIP('');
+                this.controller.removeCache(true);
+                this.controller.loadUrl('www.baidu.com');
+                this.getURL1 = this.controller.getUrl();
+                console.log('setHostIP0400_getUrl: ' + this.getURL1)
+                if (this.getURL != this.getURL1) {
+                  this.value = true;
+                }
+                console.log('setHostIP0400_value: ' + this.value)
+                this.controller.removeCache(true);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              setTimeout(() => {
+                Utils.emitEvent(this.value, 87703)
               }, 3000)
               break;
             }

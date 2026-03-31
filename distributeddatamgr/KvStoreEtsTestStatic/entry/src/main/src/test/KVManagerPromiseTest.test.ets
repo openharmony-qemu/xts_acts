@@ -89,7 +89,7 @@ export default function KVManagerPromiseTest(){
     })
 
     beforeEach(async (done: () => void) => {
-      kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         hilog.info(domain, tag, 'beforeEach getKVStore success');
         done();

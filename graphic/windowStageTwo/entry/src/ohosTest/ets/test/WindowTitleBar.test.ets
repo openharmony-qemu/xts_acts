@@ -79,6 +79,8 @@ export default function windowTitleBarTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let isSyscapSessionManagerSupported = false;
+    let isSupportFreeWindowMode = false;
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -99,6 +101,17 @@ export default function windowTitleBarTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
+      let promise = windowClass.getWindowStateSnapshot();
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+
       driver = Driver.create();
     });
     beforeEach(() => {
@@ -141,7 +154,11 @@ export default function windowTitleBarTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
-          expect(err.code).assertEqual(801);
+          if (!isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
+          } else{
+            expect().assertFail();
+          }
           done();
         })
       } catch (err) {
@@ -170,7 +187,11 @@ export default function windowTitleBarTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
-          expect(err.code).assertEqual(801);
+          if (!isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
+          } else{
+            expect().assertFail();
+          }
           done();
         })
       } catch (err) {
@@ -2204,8 +2225,9 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (error.code == 801) {
+        if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
           expect(error.code).assertEqual(801);
+          console.error(`The device not support setSupportedWindowModes`);
         } else {
           expect(error.code).assertEqual(1300016);
         }
@@ -2223,8 +2245,9 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (error.code == 801) {
+        if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
           expect(error.code).assertEqual(801);
+          console.error(`The device not support setSupportedWindowModes`);
         } else {
           expect(error.code).assertEqual(1300016);
         }
@@ -2242,8 +2265,9 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (error.code == 801) {
+        if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
           expect(error.code).assertEqual(801);
+          console.error(`The device not support setSupportedWindowModes`);
         } else {
           expect(error.code).assertEqual(1300016);
         }
@@ -2280,9 +2304,11 @@ export default function windowTitleBarTest() {
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
-          if(err.code == 801){
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
+            console.error(`The device not support setSupportedWindowModes`);
             done();
-          }else{
+          } else{
             expect(err.code).assertEqual(1300016)
             await terminateAbility(caseName);
             done();
@@ -2638,7 +2664,7 @@ export default function windowTitleBarTest() {
         console.info(caseName+ ' Succeeded in setting the height');
         let height =  mainWindow.getWindowDecorHeight();
         console.info(caseName+ ' Succeeded in getting the height'+height);
-        if(isFreeWindowMode){
+        if(isFreeWindowMode || isSupportFreeWindowMode){
           expect(Math.abs(112-height)).assertLessOrEqual(1);
         }else{
           expect(height).assertEqual(0);

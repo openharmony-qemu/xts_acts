@@ -21,18 +21,15 @@ struct HasAxisTest {
   @State axisEventReceived: boolean = false
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: '1%' }) {
       Text('AxisEvent HasAxis Test')
-        .fontSize(24)
         .fontWeight(FontWeight.Bold)
         .margin({ top: 20 })
-
-      
-
+        .height('10%')
       // 测试null参数
       Row() {
-        Text('Null Axis:').width('30%').fontSize(16)
-        Text(this.hasAxisNull ? 'true' : 'false').width('20%').fontSize(16)
+        Text('Null Axis:').width('30%')
+        Text(this.hasAxisNull ? 'true' : 'false').width('20%')
       }
       .width('90%')
       .height('10%')
@@ -41,8 +38,8 @@ struct HasAxisTest {
 
       // 测试undefined参数
       Row() {
-        Text('Undefined Axis:').width('30%').fontSize(16)
-        Text(this.hasAxisUndefined ? 'true' : 'false').width('20%').fontSize(16)
+        Text('Undefined Axis:').width('30%')
+        Text(this.hasAxisUndefined ? 'true' : 'false').width('20%')
       }
       .width('90%')
       .height('10%')
@@ -51,20 +48,18 @@ struct HasAxisTest {
 
       // 事件接收状态
       Row() {
-        Text('Event Received:').width('30%').fontSize(16)
-        Text(this.axisEventReceived ? 'true' : 'false').width('20%').fontSize(16)
+        Text('Event Received:').width('30%')
+        Text(this.axisEventReceived ? 'true' : 'false').width('20%')
       }
       .width('90%')
       .height('10%')
       .justifyContent(FlexAlign.SpaceBetween)
       .key('eventReceived')
 
-      
 
       Button('Test Null Axis')
         .width('90%')
         .height('8%')
-        .fontSize(16)
         .key('testNull')
         .onClick(() => {
           // 重置状态
@@ -76,7 +71,7 @@ struct HasAxisTest {
             try {
               // 测试null参数
               this.hasAxisNull = event.hasAxis(null);
-              console.log('aaa'+this.hasAxisNull)
+              console.log('aaa' + this.hasAxisNull)
               AppStorage.setOrCreate('nullAxisResult', this.hasAxisNull);
             } catch (error) {
               this.hasAxisNull = false;
@@ -89,7 +84,6 @@ struct HasAxisTest {
       Button('Test Undefined Axis')
         .width('90%')
         .height('8%')
-        .fontSize(16)
         .key('testUndefined')
         .onClick(() => {
           // 重置状态
@@ -102,7 +96,7 @@ struct HasAxisTest {
               // 测试undefined参数
 
               this.hasAxisUndefined = event.hasAxis(undefined);
-              console.log('aaa'+this.hasAxisUndefined)
+              console.log('aaa' + this.hasAxisUndefined)
               AppStorage.setOrCreate('undefinedAxisResult', this.hasAxisUndefined);
             } catch (error) {
               this.hasAxisUndefined = false;
@@ -115,15 +109,13 @@ struct HasAxisTest {
       Button('Reset States')
         .width('90%')
         .height('8%')
-        .fontSize(16)
         .key('resetStates')
         .onClick(() => {
           this.resetStates();
         })
     }
     .width('100%')
-    .height('100%')
-    .padding(20)
+    .height('90%')
   }
 
   private resetStates(): void {

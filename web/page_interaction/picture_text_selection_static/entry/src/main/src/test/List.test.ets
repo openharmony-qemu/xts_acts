@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import WebInitTest from './WebInitTest.test'
+import webContextMenuEditStateFlagTest from "./WebContextMenuEditStateFlagTest.test"
 
 export default function testsuite() {
   WebInitTest();
+  webContextMenuEditStateFlagTest()
 }

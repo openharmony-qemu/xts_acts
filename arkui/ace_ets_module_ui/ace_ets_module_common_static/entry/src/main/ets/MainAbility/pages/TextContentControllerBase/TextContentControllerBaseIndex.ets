@@ -40,10 +40,12 @@ struct TextContentControllerBaseIndex {
         placeholder: 'text_content_controller',
         controller: this.controller
       })
-        .id('textContentControllerInput');
+        .id('textContentControllerInput')
+        .height('8%');
 
       Button('setStyledPlaceholder')
         .id('textContentSetStyledPlaceholderBtn')
+        .height('8%')
         .onClick(() => {
           try {
             this.controller.setStyledPlaceholder(new StyledString('placeholder'));
@@ -52,10 +54,11 @@ struct TextContentControllerBaseIndex {
             this.setStyledPlaceholderStatus = 'setStyledPlaceholder_fail';
           }
         });
-      Text(this.setStyledPlaceholderStatus).key('textContentSetStyledPlaceholderStatus');
+      Text(this.setStyledPlaceholderStatus).key('textContentSetStyledPlaceholderStatus').height('5%');
 
       Button('deleteBackward')
         .id('textContentDeleteBackwardBtn')
+        .height('8%')
         .onClick(() => {
           try {
             this.controller.deleteBackward();
@@ -64,10 +67,11 @@ struct TextContentControllerBaseIndex {
             this.deleteBackwardStatus = 'deleteBackward_fail';
           }
         });
-      Text(this.deleteBackwardStatus).key('textContentDeleteBackwardStatus');
+      Text(this.deleteBackwardStatus).key('textContentDeleteBackwardStatus').height('5%');
 
       Button('scrollToVisible')
         .id('textContentScrollToVisibleBtn')
+        .height('8%')
         .onClick(() => {
           try {
             this.controller.scrollToVisible({ start: 0, end: 1 } as TextRange);
@@ -76,7 +80,7 @@ struct TextContentControllerBaseIndex {
             this.scrollToVisibleStatus = 'scrollToVisible_fail';
           }
         });
-      Text(this.scrollToVisibleStatus).key('textContentScrollToVisibleStatus');
+      Text(this.scrollToVisibleStatus).key('textContentScrollToVisibleStatus').height('5%');
     }
     .width('100%')
     .height('100%');

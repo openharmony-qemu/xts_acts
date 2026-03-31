@@ -79,3 +79,5 @@ export const normalMultiDisplayCaptureCapabilityTest: () => number;
 export const normalAVScreenCaptureResizeCanvas: () => number;
 export const normalAVScreenCaptureSetDisplayCallback: () => number;
 export const normalAVScreenCaptureExcludeContent: () => number;
+export const OH_AVScreenCapture_SetPrivacyProtectCallback0100: () => number;
+export const OH_AVScreenCapture_SetPrivacyProtectCallback0101: () => number;

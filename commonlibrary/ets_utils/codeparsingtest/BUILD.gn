@@ -42,6 +42,7 @@ group("codeparsingtest") {
       "jsontest:ActsJsonTest",
       "cachecombotest:ActsCacheComboTest",
       "base2libtest:ActsBase2LibTest",
+      "base3libtest:ActsBase3LibTest",
     ]
   }
 }

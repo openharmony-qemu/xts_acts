@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -195,7 +195,7 @@ export default function avMusicTemplateControllerTest() {
           let pid = 3;
           CommonUtils.logInfo(TAG, `0500: to query`);
           let res: avMusicTemplate.PageMediaEntity =
-            await controller!.queryPlaylist(pid, tSort as avMusicTemplate.Sort);
+            await controller!.queryPlaylist(pid, avMusicTemplate.Sort.fromValue(tSort));
           CommonUtils.logInfo(TAG, `0500: res=${JSON.stringify(res)}`);
           expect(res.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
           expect(res.errorMsg?.length).assertLarger(0);
@@ -361,7 +361,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 1 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(1);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -402,7 +402,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 1 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(1);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -433,7 +433,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 2 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(2);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -464,7 +464,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 3 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(3);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -495,7 +495,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 4 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(4);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -526,7 +526,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 5 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(5);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -557,7 +557,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 6 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(6);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -588,7 +588,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 7 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(7);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -619,7 +619,7 @@ export default function avMusicTemplateControllerTest() {
           });
           await CommonUtils.msSleep();
           const keyword = 'KEY_WORD';
-          const searchType = 8 as avMusicTemplate.EntityType;
+          const searchType = avMusicTemplate.EntityType.fromValue(8);
           const pageIndex = 3;
           let res: avMusicTemplate.PageMediaEntity | undefined =
             await controller!.queryMediaEntityByKeyword(keyword, searchType, pageIndex);
@@ -1054,7 +1054,7 @@ export default function avMusicTemplateControllerTest() {
             return [data];
           });
           await CommonUtils.msSleep();
-          const memberPurchaseType = 'normal' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('normal');
           let res: avMusicTemplate.MemberPurchaseInfo[] = await controller!.queryMemberPurchase(memberPurchaseType);
           CommonUtils.logInfo(TAG, `1800: before off res=${JSON.stringify(res)}`);
           expect(res.length).assertEqual(1);
@@ -1083,7 +1083,7 @@ export default function avMusicTemplateControllerTest() {
             return [] as avMusicTemplate.MemberPurchaseInfo[];
           });
           await CommonUtils.msSleep();
-          const memberPurchaseType = 'banner' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('banner');
           let res: avMusicTemplate.MemberPurchaseInfo[] = await controller!.queryMemberPurchase(memberPurchaseType);
           CommonUtils.logInfo(TAG, `1801: before off res=${JSON.stringify(res)}`);
           expect(res.length).assertEqual(0);
@@ -1106,7 +1106,7 @@ export default function avMusicTemplateControllerTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           template!.onQueryMemberPurchase(async (memberPurchaseType: avMusicTemplate.MemberPurchaseType): Promise<avMusicTemplate.MemberPurchaseInfo[]> => {
-            if (memberPurchaseType as string !== 'normal' && memberPurchaseType as string !== 'banner') {
+            if (memberPurchaseType.valueOf() !== 'normal' && memberPurchaseType.valueOf() !== 'banner') {
               return [] as avMusicTemplate.MemberPurchaseInfo[];
             }
             let data: avMusicTemplate.MemberPurchaseInfo =
@@ -1115,7 +1115,7 @@ export default function avMusicTemplateControllerTest() {
             return [data];
           });
           await CommonUtils.msSleep();
-          const memberPurchaseType = 'unknwotype' as avMusicTemplate.MemberPurchaseType;
+          const memberPurchaseType = avMusicTemplate.MemberPurchaseType.fromValue('unknwotype');
           let res: avMusicTemplate.MemberPurchaseInfo[] = await controller!.queryMemberPurchase(memberPurchaseType);
           CommonUtils.logInfo(TAG, `1802: before off res=${JSON.stringify(res)}`);
           expect(res.length).assertEqual(0);
@@ -1298,14 +1298,14 @@ export default function avMusicTemplateControllerTest() {
           template!.onPlayForSearch(async (command: avMusicTemplate.SearchPlayInfoType,
             args: avMusicTemplate.SearchPlayInfo): Promise<avMusicTemplate.OperResult> => {
             let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: 'success' };
-            let commandStr = command as string;
+            let commandStr: string = command;
             if (commandStr !== 'playMusic' && commandStr !== 'playVideo') {
               data.errorCode = -1;
             }
             return data;
           });
           await CommonUtils.msSleep();
-          let command = 'playMusic' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playMusic');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult = await controller!.playForSearch(command, args);
           CommonUtils.logInfo(TAG, `2100: res=${JSON.stringify(res)}`);
@@ -1332,14 +1332,14 @@ export default function avMusicTemplateControllerTest() {
           template!.onPlayForSearch(async (command: avMusicTemplate.SearchPlayInfoType,
             args: avMusicTemplate.SearchPlayInfo): Promise<avMusicTemplate.OperResult> => {
             let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
-            let commandStr = command as string;
+            let commandStr: string = command;
             if (commandStr !== 'playMusic' && commandStr !== 'playVideo') {
               data.errorCode = -1;
             }
             return data;
           });
           await CommonUtils.msSleep();
-          let command = 'playVideo' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('playVideo');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           CommonUtils.logInfo(TAG, `2101: res=${JSON.stringify(res)}`);
@@ -1365,14 +1365,14 @@ export default function avMusicTemplateControllerTest() {
           template!.onPlayForSearch(async (command: avMusicTemplate.SearchPlayInfoType,
             args: avMusicTemplate.SearchPlayInfo): Promise<avMusicTemplate.OperResult> => {
             let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
-            let commandStr = command as string;
+            let commandStr: string = command;
             if (commandStr !== 'playMusic' && commandStr !== 'playVideo') {
               data.errorCode = -1;
             }
             return data;
           });
           await CommonUtils.msSleep();
-          let command = 'aaaa' as avMusicTemplate.SearchPlayInfoType;
+          let command = avMusicTemplate.SearchPlayInfoType.fromValue('aaaa');
           const args: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
           let res: avMusicTemplate.OperResult | undefined = await controller!.playForSearch(command, args);
           CommonUtils.logInfo(TAG, `2102: res=${JSON.stringify(res)}`);
@@ -2383,7 +2383,7 @@ export default function avMusicTemplateControllerTest() {
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let temp: avMusicTemplate.AVMusicTemplate =
-          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE as avMusicTemplate.AVMusicTemplateType);
+          avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
         let des: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
         expect(des.length).assertLarger(0);
         const sid: string = des[0].sessionId;

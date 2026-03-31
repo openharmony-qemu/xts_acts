@@ -201,5 +201,25 @@ export default function localUnitTest() {
         done();
       }
     })
-  });
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_0100
+     * @tc.number SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_0100
+     * @tc.desc   isShortcutSupported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_0100';
+      hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
+      let data = shortcutManager.isShortcutSupported();
+      hilog.info(DOMAIN, 'isShortcutSupported Data:', JSON.stringify(data));
+      if (data === true) {
+        expect(data).assertTrue();
+      } else {
+        expect(data).assertFalse();
+      }
+      done();
+    })
+  })
 }

@@ -41,7 +41,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 
 @Observed
-class MyCheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class MyCheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   public checkboxGroupCheckboxShapeMFlag : Boolean = true;
   public checkboxGroupMarkMFlag: Boolean = true;
   public checkboxGroupOnChangeMFlag: Boolean = true;

@@ -215,6 +215,10 @@
     {
       "name": "RichEditor_addTextSpan_two",
       "value": "RichEditor_addTextSpan_two"
+    },
+    {
+      "name": "my_color_str",
+      "value": "#FF0000FF"
     }
   ]
 }

@@ -553,7 +553,23 @@ napi_property_descriptor desc[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"ohDrawingDestroyPositionAndAffinity002", nullptr, OHDrawingDestroyPositionAndAffinity002,
         nullptr, nullptr, nullptr, napi_default, nullptr},
-
+    // cpp6
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0100", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0200", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0300", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0300,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0400", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0400,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0500", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0500,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0600", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0600,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0700", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0700,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingTypographyLayoutWithConstraintsWithBuffer0800", nullptr, OHDrawingTypographyLayoutWithConstraintsWithBuffer0800,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

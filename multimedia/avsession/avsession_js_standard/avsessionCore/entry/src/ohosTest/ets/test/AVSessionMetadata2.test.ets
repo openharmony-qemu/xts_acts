@@ -89,8 +89,8 @@ let playbackState0: avSession.AVPlaybackState = {
 
 
 export default function abilityTest() {
-  describe('AVSessionMetadata', () => {
-    let TAG: string = "[AVSessionMetadata]";
+  describe('AVSessionMetadata2', () => {
+    let TAG: string = "[AVSessionMetadata2]";
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
     let receivedCallback1: boolean = false;
@@ -750,6 +750,106 @@ export default function abilityTest() {
         console.info(`${TAG}TestLog: setCallMetadata error, error code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       });
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0100
+     * @tc.desc   test setCallMetadata-promise input param with rewindSkipIntervals/forwardSkipIntervals only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0100]';
+      let metadata1: avSession.AVMetadata = {
+        assetId : 'testId',
+        rewindSkipIntervals:30,
+        fastForwardSkipIntervals:10
+      };
+
+      await session.setAVMetadata(metadata1).then(() => {
+        console.info(`${TAG}TestLog: setAVMetadata done.`);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+        expect(data.rewindSkipIntervals).assertEqual(metadata1.rewindSkipIntervals);
+        expect(data.fastForwardSkipIntervals).assertEqual(metadata1.fastForwardSkipIntervals);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await sleep(300);
+      done();
+    })
+
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0200
+     * @tc.desc   test setCallMetadata-promise input param with skipIntervals/rewindSkipIntervals/fastForwardSkipIntervals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_SETAVMETADATA_PROMISE_SKIPINTERVALS_0200]';
+      let metadata1: avSession.AVMetadata = {
+        assetId : 'testId111',
+        skipIntervals: 30,
+        rewindSkipIntervals:10,
+        fastForwardSkipIntervals:15
+      };
+
+      let metadata2: avSession.AVMetadata = {
+        assetId : 'testId123',
+        skipIntervals: 10,
+        rewindSkipIntervals:15,
+        fastForwardSkipIntervals:30
+      };
+
+      await session.setAVMetadata(metadata1).then(() => {
+        console.info(`${TAG}TestLog: setAVMetadata done.`);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+        expect(data.skipIntervals).assertEqual(metadata1.skipIntervals);
+        expect(data.rewindSkipIntervals).assertEqual(metadata1.rewindSkipIntervals);
+        expect(data.fastForwardSkipIntervals).assertEqual(metadata1.fastForwardSkipIntervals);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await sleep(300);
+
+      await session.setAVMetadata(metadata2).then(() => {
+        console.info(`${TAG}TestLog: setAVMetadata done.`);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+        expect(data.skipIntervals).assertEqual(metadata2.skipIntervals);
+        expect(data.rewindSkipIntervals).assertEqual(metadata2.rewindSkipIntervals);
+        expect(data.fastForwardSkipIntervals).assertEqual(metadata2.fastForwardSkipIntervals);
+      }).catch((err:BusinessError) => {
+        console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+
+      await sleep(300);
       done();
     })
 

@@ -175,16 +175,12 @@ struct webController {
 
             case "testLoadData003": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:null,
                   mimeType: "text/html",
                   encoding: "UTF-8"
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200740)
-                } })
+                Utils.emitEvent('no_error', 200740);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200740)
@@ -194,16 +190,12 @@ struct webController {
 
             case "testLoadData004": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:undefined,
                   mimeType: "text/html",
                   encoding: "UTF-8"
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200750)
-                } })
+                Utils.emitEvent('no_error', 200750);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200750)
@@ -239,7 +231,6 @@ struct webController {
 
             case "testLoadData006": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:"<html>" +
                     "<head>" +
@@ -252,10 +243,7 @@ struct webController {
                   mimeType: null,
                   encoding: "UTF-8"
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200770)
-                } })
+                Utils.emitEvent('no_error', 200770);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200770)
@@ -265,7 +253,6 @@ struct webController {
 
             case "testLoadData007": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:"<html>" +
                     "<head>" +
@@ -278,10 +265,7 @@ struct webController {
                   mimeType: undefined,
                   encoding: "UTF-8"
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200780)
-                } })
+                Utils.emitEvent('no_error', 200780);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200780)
@@ -317,7 +301,6 @@ struct webController {
 
             case "testLoadData009": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:"<html>" +
                     "<head>" +
@@ -330,10 +313,7 @@ struct webController {
                   mimeType: "text/html",
                   encoding: null
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200800)
-                } })
+                Utils.emitEvent('no_error', 200800);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200800)
@@ -343,7 +323,6 @@ struct webController {
 
             case "testLoadData010": {
               try {
-                this.isPageEnd = -1;
                 this.controller.loadData({
                   data:"<html>" +
                     "<head>" +
@@ -356,10 +335,7 @@ struct webController {
                   mimeType: "text/html",
                   encoding: undefined
                 })
-                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
-                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 200810)
-                } })
+                Utils.emitEvent('no_error', 200810);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 200810)

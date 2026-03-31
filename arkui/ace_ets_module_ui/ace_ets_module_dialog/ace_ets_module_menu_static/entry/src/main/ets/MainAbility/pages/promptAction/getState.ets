@@ -66,22 +66,36 @@ struct CustomDialogUser {
     Column() {
       Text(this.stateInfo)
         .id('customText')
-        .margin({bottom:30})
-        .fontSize(28)
-        .height(40)
+        .fontSize(10)
+        .maxLines(2)
+        .width('100%')
+        .textAlign(TextAlign.Center)
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
 
-      Button('click me')
+      Button('打开')
         .id('btnGetCustomDialogOpen')
-        .margin({bottom:30})
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController.open();
         })
 
-      Button('click me')
+      Button('状态')
         .id('btnGetCustomState')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
+        .fontSize(10)
         .onClick(() => {
           this.stateInfo = '' + this.dialogController.getState();
         })
-    }.width('100%').margin({ top: 5 })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

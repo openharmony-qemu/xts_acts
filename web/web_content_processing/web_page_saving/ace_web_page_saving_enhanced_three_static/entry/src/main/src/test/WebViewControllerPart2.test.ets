@@ -75,7 +75,45 @@ export default function webViewControllerPart2() {
       done();
     })
 
-     /**
+    /**
+     * @tc.name   testSearchAllAsyncStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0200
+     * @tc.desc   test searchAllAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSearchAllAsyncStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(3000);
+      Utils.emitEvent('testSearchAllAsync002', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testSearchAllAsync002', 0, 370121, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+      await Utils.msSleep(10000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSearchAllAsyncStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHALLASYNC_0300
+     * @tc.desc   test searchAllAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSearchAllAsyncStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(3000);
+      Utils.emitEvent('testSearchAllAsync003', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testSearchAllAsync003', "17100001", 370122, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+      await Utils.msSleep(10000);
+      done();
+    })
+
+    /**
       * @tc.name   testSearchNextStatic001
       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SEARCHNEXT_0100
       * @tc.desc   test searchNext
@@ -111,7 +149,5 @@ export default function webViewControllerPart2() {
       await Utils.msSleep(6000);
       done()
     })
-
-
   })
 }

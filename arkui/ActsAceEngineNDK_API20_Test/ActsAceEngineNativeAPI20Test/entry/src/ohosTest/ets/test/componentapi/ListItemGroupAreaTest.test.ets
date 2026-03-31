@@ -24,7 +24,7 @@ export default function ListItemGroupAreaTest() {
     let ComponentPoint: Point;
     let y1: number;
     let y2: number;
-    beforeEach(async (done: Function) => {
+    beforeAll(async (done: Function) => {
       await Utils.sleep(1000);
       await Utils.pushPageNoClear(`componentapi/ListItemGroupArea`);
       Component = await Utils.driver.findComponent(ON.id('SwiperList'));
@@ -139,7 +139,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.sleep(1000);
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 8000);
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
         await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
         let result: number = nativexcomponent.TestAreaHeader();
         expect(1).assertEqual(result);

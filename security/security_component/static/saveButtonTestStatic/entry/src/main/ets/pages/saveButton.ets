@@ -76,8 +76,8 @@ struct saveButton {
   @State top: number | undefined = 4
   @State bottom: number | undefined = 4
   @State middle: number | undefined = 4
-  @State compWidth: number | undefined = undefined
-  @State compHeight: number | undefined = undefined
+  @State compWidth: string | undefined = undefined
+  @State compHeight: string | undefined = undefined
   @State clipSet: boolean | undefined = false
   @State rowWidth: string | undefined = '100'
   @State rowHeight: string | undefined = undefined
@@ -92,11 +92,11 @@ struct saveButton {
   @State alignRule: AlignRuleOption | LocalizedAlignRuleOptions | undefined = undefined
   @State chainDirection: Axis | undefined = undefined
   @State chainStyle: ChainStyle | undefined = undefined
-  @State strokeMargin: double = 0.0
+  @State strokeMargin: int = 0
   @State strokeColorR: int = 0
   @State strokeColorG: int = 0
   @State strokeColorB: int = 0
-  @State strokeWidth: double = 0.0
+  @State strokeWidth: int = 0
   private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
     (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
@@ -187,12 +187,12 @@ struct saveButton {
         this.middle = data['middle'] as Int
       }
       if (data['buWidth'] != null) {
-        this.compWidth = data['buWidth'] as number
+        this.compWidth = data['buWidth'] as String
       }else{
         this.compWidth = undefined
       }
       if (data['buHeight'] != null) {
-        this.compHeight = data['buHeight'] as number
+        this.compHeight = data['buHeight'] as String
       }else{
         this.compHeight = undefined
       }
@@ -213,7 +213,7 @@ struct saveButton {
         this.sbAlign = data['align'] as Alignment
       }
       if (data['strokeMag'] != null) {
-        this.strokeMargin = data['strokeMag'] as Double
+        this.strokeMargin = data['strokeMag'] as Int
       }
       if (data['strokeColR'] != null) {
         this.strokeColorR = data['strokeColR'] as Int
@@ -225,7 +225,7 @@ struct saveButton {
         this.strokeColorB = data['strokeColB'] as Int
       }
       if (data['strokeWth'] != null) {
-        this.strokeWidth = data['strokeWth'] as Double
+        this.strokeWidth = data['strokeWth'] as Int
       }
       if (data['maxFontSize'] != null) {
         this.maxFontSize = data['maxFontSize'] as Double
@@ -248,10 +248,8 @@ struct saveButton {
       if (data['maxLines'] != null) {
         this.maxLines = data['maxLines'] as Int
       }
-      if (data['alignRule_A'] != null) {
-        this.alignRule = data['alignRule_A'] as AlignRuleOption
-      } else if (data['alignRule_L'] != null) {
-        this.alignRule = data['alignRule_L'] as LocalizedAlignRuleOptions
+      if (data['alignRule'] != null) {
+        this.alignRule = data['alignRule'] as LocalizedAlignRuleOptions
       }
       if (data['chainDirection'] != null) {
         this.chainDirection = data['chainDirection'] as Axis

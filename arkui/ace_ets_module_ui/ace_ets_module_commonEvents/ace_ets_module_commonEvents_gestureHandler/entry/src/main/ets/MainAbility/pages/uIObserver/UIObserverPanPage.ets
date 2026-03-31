@@ -162,17 +162,15 @@ struct UIObserverPanPage {
   }
 
   build() {
-    Column() {
+    Column({space:'2%'}) {
       Text('UIObserver Pan Event Tests')
         .fontWeight(FontWeight.Bold)
-        .height('5%')
-        
+        .height('10%')
+
 
       Text(this.testResults)
         .id('test_results_text')
-        .height('5%')
-
-      Text('Pan Gesture Area (Drag Me)').height('5%')
+        .height('25%')
 
       // 可拖动区域 - 执行 Pan 手势会触发 UIObserver 回调
       Column() {
@@ -185,6 +183,7 @@ struct UIObserverPanPage {
       .justifyContent(FlexAlign.Center)
       .translate({ x: this.offsetX, y: this.offsetY })
       .id('pan_area')
+      .margin({ top: '3%' })
       .gesture(
         PanGesture({ direction: PanDirection.All })
           .onActionStart((event: GestureEvent) => {

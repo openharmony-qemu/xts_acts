@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import OsAccountParamCheckStatic from './OsAccountCheckStatic.test'
+import OsAccountParamCheckStatic from './OsAccountParamCheckStatic.test'
 import ActsOsAccountTestStatic from './OsAccountStatic.test'
 import ActsOsAccountThirdPartyTest_third_3_Static from './OsAccountCheckStatic.test'
 import ActsOsAccountThirdPartyTest_third_4_Static from './OsAccountQueryStatic.test'

@@ -48,6 +48,22 @@ struct Humidity {
       // 打开湿度传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.HUMIDITY);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == false) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备湿度传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'false', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.HUMIDITY, (data: sensor.HumidityResponse) => {
           this.backCount += 1;
           console.info('Succeeded in invoking on. HeartRate: ' + data.humidity);
@@ -72,7 +88,7 @@ struct Humidity {
           })
           router.back({
             url: 'pages/Sensor/Sensor_index',
-            params: { result: 'true ', title: this.name }
+            params: { result: 'false', title: this.name }
           })
         }
         console.error(TAG, `Failed to invoke on. Code: ${e.code}, message: ${e.message}`);

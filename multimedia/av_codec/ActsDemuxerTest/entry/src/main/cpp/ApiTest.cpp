@@ -33,6 +33,8 @@ static constexpr int32_t MEMORY_BUFFER_WIDTH = 3840;
 static constexpr int32_t MEMORY_BUFFER_HEIGHT = 2160;
 static constexpr int INVALID_FD_2 = 2;
 static constexpr int INVALID_FD_3 = 3;
+static constexpr int32_t MEMORY_SIZE_1KB = 1024;
+static constexpr int32_t MEMORY_SIZE_SMALL = 2;
 
 static int32_t g_width = MEMORY_BUFFER_WIDTH;
 static int32_t g_height = MEMORY_BUFFER_HEIGHT;
@@ -383,6 +385,224 @@ int DemuxerIllegalPara1700()
     return 0;
 }
 
+int DemuxerIllegalPara1800()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, trackIndex, memory, nullptr) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara1900()
+{
+    TestSetUp();
+    if (OH_AVDemuxer_SeekToTime(nullptr, 1, SEEK_MODE_NEXT_SYNC) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2100()
+{
+    TestSetUp();
+    memory = OH_AVMemory_Create(-1);
+    if (memory != nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2200()
+{
+    TestSetUp();
+    if (OH_AVMemory_Destroy(nullptr) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2400()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    OH_AVMemory *memory1 = OH_AVMemory_Create(2);
+    OH_AVCodecBufferAttr bufferAttr;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, trackIndex, memory1, &bufferAttr) != AV_ERR_OPERATE_NOT_PERMIT) {
+        OH_AVMemory_Destroy(memory1);
+        TestTearDown();
+        return -1;
+    }
+
+    OH_AVMemory_Destroy(memory1);
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2500()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    OH_AVCodecBufferAttr bufferAttr;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, trackIndex, nullptr, &bufferAttr) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2600()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    if (OH_AVDemuxer_ReadSampleBuffer(nullptr, trackIndex, buffer) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2700()
+{
+    TestSetUp();
+    uint32_t trackIndex = -1;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer) != AV_ERR_OPERATE_NOT_PERMIT) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2800()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    OH_AVBuffer *buffer1 = OH_AVBuffer_Create(2);
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer1) != AV_ERR_NO_MEMORY) {
+        OH_AVBuffer_Destroy(buffer1);
+        TestTearDown();
+        return -1;
+    }
+
+    OH_AVBuffer_Destroy(buffer1);
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara2900()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    OH_AVBuffer *buffer1 = OH_AVBuffer_Create(2);
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer1) != AV_ERR_OPERATE_NOT_PERMIT) {
+        OH_AVBuffer_Destroy(buffer1);
+        TestTearDown();
+        return -1;
+    }
+
+    OH_AVBuffer_Destroy(buffer1);
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerIllegalPara3000()
+{
+    TestSetUp();
+    uint32_t trackIndex = 0;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, nullptr) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
 int DemuxerApi0200()
 {
     TestSetUp();
@@ -423,6 +643,98 @@ int DemuxerApi0200()
     return 0;
 }
 
+int DemuxerApi0300()
+{
+    TestSetUp();
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (OH_AVSource_Destroy(source) != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    source = nullptr;
+    if (OH_AVSource_Destroy(source) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi0500()
+{
+    TestSetUp();
+    OH_AVFormat *format;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    format = OH_AVSource_GetSourceFormat(source);
+    if (format == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    format = OH_AVSource_GetSourceFormat(source);
+    if (format == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi0700()
+{
+    TestSetUp();
+    OH_AVFormat *format;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+
+    format = OH_AVSource_GetTrackFormat(source, 0);
+    if (format == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    format = OH_AVSource_GetTrackFormat(source, 0);
+    if (format == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi1000()
+{
+    TestSetUp();
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+
+    if (OH_AVDemuxer_Destroy(demuxer) != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = nullptr;
+    if (OH_AVDemuxer_Destroy(demuxer) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
 int DemuxerApi1100()
 {
     TestSetUp();
@@ -444,6 +756,175 @@ int DemuxerApi1100()
         return -1;
     }
     ret = OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi1200()
+{
+    TestSetUp();
+    OH_AVErrCode ret = AV_ERR_OK;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_UnselectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_UnselectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi1300()
+{
+    TestSetUp();
+    OH_AVErrCode ret = AV_ERR_OK;
+    OH_AVCodecBufferAttr attr;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi1400()
+{
+    TestSetUp();
+    OH_AVErrCode ret = AV_ERR_OK;
+    uint32_t ms = 1000;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SeekToTime(demuxer, ms, SEEK_MODE_NEXT_SYNC);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SeekToTime(demuxer, ms, SEEK_MODE_NEXT_SYNC);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi2300()
+{
+    TestSetUp();
+    memory = OH_AVMemory_Create(MEMORY_SIZE_1KB);
+    if (memory == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    memory = OH_AVMemory_Create(MEMORY_SIZE_SMALL);
+    if (memory == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi2400()
+{
+    TestSetUp();
+    memory = OH_AVMemory_Create(MEMORY_SIZE_SMALL);
+    if (OH_AVMemory_Destroy(memory) != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    memory = nullptr;
+    if (OH_AVMemory_Destroy(memory) != AV_ERR_INVALID_VAL) {
+        TestTearDown();
+        return -1;
+    }
+    TestTearDown();
+    return 0;
+}
+
+int DemuxerApi2500()
+{
+    TestSetUp();
+    OH_AVErrCode ret = AV_ERR_OK;
+    source = OH_AVSource_CreateWithFD(g_fd1, 0, g_size);
+    if (source == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, buffer);
+    if (ret != AV_ERR_OK) {
+        TestTearDown();
+        return -1;
+    }
+    ret = OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, buffer);
     if (ret != AV_ERR_OK) {
         TestTearDown();
         return -1;

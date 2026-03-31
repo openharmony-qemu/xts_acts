@@ -11,7 +11,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyEnableModifier implements AttributeModifier<LineAttribute> {
+export class MyEnableModifier implements AttributeModifier<LineAttribute> {
   public change: boolean | undefined = true;
 
   public end:	ShapePoint | undefined = [50, 100] as ShapePoint;

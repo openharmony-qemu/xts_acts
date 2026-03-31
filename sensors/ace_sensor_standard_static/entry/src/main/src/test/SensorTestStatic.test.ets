@@ -4373,7 +4373,7 @@ export default function SensorJsStaticTest() {
       console.info("------------------GetSingleSensorByDeviceSync_JSTest_002-------------------------");
       const TAG = 'GetSingleSensorByDeviceSync_JSTest_002'
       try {
-        const invalidType = -1 as sensor.SensorId;
+        const invalidType = sensor.SensorId.fromValue(-1);
         const deviceId = 1;
         const result = sensor.getSingleSensorByDeviceSync(invalidType, deviceId);
         if (Array.isArray(result) && result.length === 0) {
@@ -5355,6 +5355,97 @@ export default function SensorJsStaticTest() {
         expect(data51 !== undefined).assertTrue();
         let data52 = sensor.getSingleSensorSync(sensor.SensorId.FUSION_PRESSURE);
         expect(data52 !== undefined).assertTrue();
+
+        sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION,(error, data) => {
+          if (error) {
+            expect(error.code === PARAMETER_ERROR_CODE).assertTrue();
+          } else {
+            expect().assertFail();
+          }
+        })
+
+        try {
+          await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === SERVICE_EXCEPTION_CODE).assertTrue();
+        }
+
+        try {
+          sensor.getSingleSensorSync(sensor.SensorId.FUSION_PRESSURE);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.getDeviceAltitude(1013.2, 1500.0)
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getDeviceAltitude(1013.2, 1500.0, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.getAngleVariation([1013.2], [1500.0])
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getAngleVariation([1013.2,1], [1500.0,2], (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.transformRotationMatrix([1013.2],  { x: 1, y: 3 })
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.transformRotationMatrix([1013.2,1],  { x: 1, y: 3 }, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          sensor.offSensorStatusChange(onSensorCallback28);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === SERVICE_EXCEPTION_CODE).assertTrue();
+        }
 
         expect(false).assertTrue();
         done();

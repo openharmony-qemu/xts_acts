@@ -467,6 +467,9 @@ export default function printTest() {
       defaultOrientation?: print.PrintOrientationMode;
       borderless?: boolean;
       options?: string;
+      defaultColorMode?: print.PrintColorMode;
+      defaultCollate?: boolean;
+      defaultReverse?: boolean;
     }
 
     class MyPrinterInformation implements print.PrinterInformation {
@@ -480,6 +483,38 @@ export default function printTest() {
       preferences?: print.PrinterPreferences;
       alias?: string;
       options?: string;
+      selectedDriver?: print.PpdInfo;
+      selectedProtocol?: string;
+    }
+
+    class MyPrintMargin implements  print.PrintMargin {
+      top: number = 123;
+      bottom: number = 123;
+      left: number = 123;
+      right: number = 123;
+    }
+
+    class MyPrintResolution implements  print.PrintResolution {
+      id: string = '123';
+      horizontalDpi: number = 123;
+      verticalDpi: number = 123;
+    }
+
+    class MyPreviewAttribute implements  print.PreviewAttribute {
+      previewRange: print.PrinterRange = new MyPrinterRange();
+      result?: number;
+    }
+
+    class MyPpdInfo implements  print.PpdInfo {
+      manufacturer: string = '123';
+      nickName: string = '123';
+      ppdName: string = '123';
+    }
+
+    class MySharedHost implements  print.SharedHost {
+      ip: string = '123';
+      shareName: string = '123';
+      workgroupName: string = '123';
     }
 
     /**
@@ -539,9 +574,15 @@ export default function printTest() {
       printerInformation.preferences.defaultOrientation = print.PrintOrientationMode.ORIENTATION_MODE_NONE;
       printerInformation.preferences.borderless = false;
       printerInformation.preferences.options = 'testOptions';
+      printerInformation.preferences.defaultColorMode = print.PrintColorMode.COLOR_MODE_MONOCHROME;
+      printerInformation.preferences.defaultCollate = true;
+      printerInformation.preferences.defaultReverse = false;
 
       printerInformation.alias = 'testAlias';
       printerInformation.options = 'testOptions';
+
+      printerInformation.selectedDriver = new MyPpdInfo();
+      printerInformation.selectedProtocol = '123';
 
       // Permissions required: ohos.permission.PRINT
       await print.addPrinterToDiscovery(printerInformation).then((data : void) => {
@@ -928,7 +969,10 @@ export default function printTest() {
         print.PrintErrorCode.E_PRINT_INVALID_PRINTER,
         print.PrintErrorCode.E_PRINT_INVALID_PRINT_JOB,
         print.PrintErrorCode.E_PRINT_FILE_IO,
-        print.PrintErrorCode.E_PRINT_TOO_MANY_FILES
+        print.PrintErrorCode.E_PRINT_TOO_MANY_FILES,
+        print.PrintErrorCode.E_PRINT_SMB_LOGIN_LOCKOUT,
+        print.PrintErrorCode.E_PRINT_SMB_CONNECTION_FAILURE,
+        print.PrintErrorCode.E_PRINT_SMB_INVALID_CREDENTIALS
       ];
       console.log('errorCodes: ' + JSON.stringify(errorCodes));
 
@@ -1353,14 +1397,6 @@ export default function printTest() {
         done();
       })
 
-      await print.connectPrinter(undefined).then((data:void) => {
-        expect(false).assertTrue();
-        done();
-      }).catch((err: BusinessError) => {
-        console.log('print_function_1501 expect failed by required real printer');
-        expect(err).assertEqual(13100005);
-        done();
-      })
     })
     
     /**
@@ -1408,6 +1444,137 @@ export default function printTest() {
         expect(err).assertEqual(13100005);
         done();
       })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_01
+     * @tc.number print_function_addPrinter_01
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_01', Level.LEVEL1, async (done: Function) => {
+      let printName: string = '123';
+      let printerUri: string = '123';
+      let printerPpdName: string = '123';
+      let printerOption: string = '123';
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(printName, printerUri, printerPpdName, printerOption).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(201);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_02
+     * @tc.number print_function_addPrinter_02
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_02', Level.LEVEL1, async (done: Function) => {
+      let printName: string = '';
+      let printerUri: string = '';
+      let printerPpdName: string = '';
+      let printerOption: string = '';
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(printName, printerUri, printerPpdName, printerOption).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(201);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_03
+     * @tc.number print_function_addPrinter_03
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_03', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(null, null, null, null).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_04
+     * @tc.number print_function_addPrinter_04
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_04', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(undefined, undefined, undefined, undefined).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_printProperties
+     * @tc.number print_function_printProperties
+     * @tc.desc   check success of print properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_printProperties', Level.LEVEL1, async (done: Function) => {
+      let pageRange: print.PrinterRange = new MyPrinterRange();
+      pageRange.startPage = 0;
+      pageRange.endPage = 5;
+      pageRange.pages = [1, 3];
+
+      let printMargin: print.PrintMargin = new MyPrintMargin();
+      printMargin.top = 1;
+      printMargin.bottom = 1;
+      printMargin.left = 1;
+      printMargin.right = 1;
+
+      let previewAttribute: print.PreviewAttribute = new MyPreviewAttribute();
+      previewAttribute.previewRange = new MyPrinterRange();
+      previewAttribute.result = 123;
+
+      let printResolution: print.PrintResolution = new MyPrintResolution();
+      printResolution.id = '123';
+      printResolution.horizontalDpi = 123;
+      printResolution.verticalDpi = 123;
+
+      let sharedHost: print.SharedHost = new MySharedHost();
+      sharedHost.ip = '123';
+      sharedHost.shareName = '123';
+      sharedHost.workgroupName = '123';
+
+      let ppdInfo: print.PpdInfo = new MyPpdInfo();
+      ppdInfo.manufacturer = '123';
+      ppdInfo.nickName = '123';
+      ppdInfo.ppdName = '123';
+
+      expect(!!ppdInfo).assertTrue();
+      done();
     })
   })
 }

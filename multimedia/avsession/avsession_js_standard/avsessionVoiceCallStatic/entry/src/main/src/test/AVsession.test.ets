@@ -2132,14 +2132,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             session!.onCustomDataChange((data: Record<string, Object>) => {
-                console.info(`session on_customDataChange Successfully ${data}`)
-                session!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                console.info(`session on_customDataChange Successfully ${data}`);
+                flag = true;
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2175,14 +2176,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                controller!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                flag = true;
             })
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2223,9 +2225,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            session!.offCustomDataChange();
+            session!.offCustomDataChange((data: Record<string, Object>) => {
+                console.info(`session off_customDataChange Successfully ${data}`);
+            });
             console.info('session off_customDataChange end')
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2264,9 +2268,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            controller!.offCustomDataChange();
+            controller!.offCustomDataChange((data: Record<string, Object>) => {
+                console.info('controller off_customDataChange Successfully')
+            });
             console.info('controller off_customDataChange end')
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })

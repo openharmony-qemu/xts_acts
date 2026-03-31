@@ -61,9 +61,9 @@ export default function TimerTest1() {
       console.info(`${TAG} test start`);
       try {
         const timer = setTimeout("delay：-100.1", 100 as Int);
-        let startTime = new Date().getTime();
+        let startTime: Long = Chrono.nanoNow();
         setTimeout(() => {
-          const elapsed = new Date().getTime() - startTime;
+          const elapsed = Chrono.nanoNow() - startTime;
           expect(elapsed > 0).assertTrue();
           clearTimeout(timer);
         }, 0);

@@ -252,6 +252,8 @@
  	       await Utils.sleep(200);
  	       await btn.click()
  	       await Utils.sleep(200);
+		   await driver.triggerKey(2070)
+      	   await Utils.sleep(200);
  	       expect(AppStorage.get('promptActionShowDialog1')).assertEqual(true)
  	       console.log('PromptActionMethodNullUndefinedTest_009 END')
  	       done();
@@ -340,12 +342,39 @@
  	       await Utils.sleep(200);
  	       await btn.click()
  	       await Utils.sleep(200);
+		   await driver.triggerKey(2070)
+      	   await Utils.sleep(200);
  	       expect(AppStorage.get('promptActionShowDialog5')).assertEqual(true)
  	       console.log('PromptActionMethodNullUndefinedTest_013 END')
  	       done();
  	     });
+
+		 /**
+ 	      * @tc.name   PromptActionMethodNullUndefinedTest_014
+ 	      * @tc.number PromptActionMethodNullUndefinedTest_014
+ 	      * @tc.desc   To test the promptAction showDialog
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('PromptActionMethodNullUndefinedTest_014', Level.LEVEL2, async (done: Function) => {
+ 	       await Utils.sleep(1000);
+ 	       console.log('PromptActionMethodNullUndefinedTest_014 START')
+ 	       let driver: Driver = Driver.create();
+ 	       let btn = await driver.findComponent(ON.id('promptActionShowDialog6'));
+ 	       await Utils.sleep(200);
+      	   await btn.click()
+      	   await Utils.sleep(1000);
+      	   let cancel = await driver.findComponent(ON.text('2'));
+      	   await Utils.sleep(200);
+      	   await cancel?.click()
+      	   await Utils.sleep(200);
+      	   expect(AppStorage.get('promptActionShowDialog6')).assertEqual(true)
+ 	       console.log('PromptActionMethodNullUndefinedTest_014 END')
+ 	       done();
+ 	     });
  	 
- 	 
+		
  	     /**
  	      * @tc.name   PromptActionMethodNullUndefinedTest_015
  	      * @tc.number PromptActionMethodNullUndefinedTest_015

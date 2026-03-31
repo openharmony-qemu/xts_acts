@@ -32,3 +32,7 @@ export const testHiCollieStuckWithTimeoutNdk2: () => number;
 export const OH_HiCollie_Report_sucess: () => number;
 export const OH_HiCollie_Report_Main: () => number;
 export const OH_HiCollie_Report_Remote: () => boolean;
+export const OH_HiCollie_ReportInputBlock_Main: () => number;
+export const OH_HiCollie_ReportInputBlock_Remote: () => boolean;
+export const TestHiCollieSetFreezeCallback: () => number;
+export const TestHiCollieAssociateProcessReport: () => number;

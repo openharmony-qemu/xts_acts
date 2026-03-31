@@ -17,7 +17,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<TextAttribute> {
+export class MyModifier implements AttributeModifier<TextAttribute> {
   @State public cnt : int = 0;
   @State public isOnSizeChangeUndefined: boolean = false;
 

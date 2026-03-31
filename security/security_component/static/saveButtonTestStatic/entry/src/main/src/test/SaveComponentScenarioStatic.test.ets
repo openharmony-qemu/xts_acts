@@ -835,13 +835,52 @@ export default function saveComponentScenarioStaticTest() {
     /**
      * @tc.name   Test_Security_SaveButton_ScenariosStatic_1000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1000
-     * @tc.desc   Test SecurityComponent fontWeight set 400 and Authorization is successful
+     * @tc.desc   Test SecurityComponent fontWeight set '' and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
      it('Test_Security_SaveButton_ScenariosStatic_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1000';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'fontWeight_S': '',
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      console.info(`====>${TCNAME} get fontWeight is: ` + JSON.stringify(obj.getElement('$attrs').getString('fontWeight')));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1100
+     * @tc.desc   Test SecurityComponent fontWeight set 400 and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_ScenariosStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1100';
       console.info(`====>${TCNAME} START====`);
       try {
         let data: Record<string, RecordData> = {
@@ -871,15 +910,15 @@ export default function saveComponentScenarioStaticTest() {
     });
 
     /**
-     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1100
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1100
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1200
      * @tc.desc   Test SecurityComponent fontWeight set 'lighter' and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('Test_Security_SaveButton_ScenariosStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1100';
+     it('Test_Security_SaveButton_ScenariosStatic_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1200';
       console.info(`====>${TCNAME} START====`);
       try {
         let data: Record<string, RecordData> = {
@@ -982,6 +1021,81 @@ export default function saveComponentScenarioStaticTest() {
       sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1500
+     * @tc.desc   Test SecurityComponent maxFontSize&minFontSize set string and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_ScenariosStatic_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1500';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'maxFontSize': '20.00vp',
+          'minFontSize': '10.00vp',
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00vp');
+      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1600
+     * @tc.desc   Test SecurityComponent enabled set false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_ScenariosStatic_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1600';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'enable': false
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
+      done();
     });
   })
 }

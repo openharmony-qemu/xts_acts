@@ -43,9 +43,9 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
      * @tc.desc   test onPageVisible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
       Utils.emitEvent('emitOnPageVisible', 10)
@@ -60,5 +60,22 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
       done();
     })
 
+    /**
+    * @tc.name         SwitchNextPageStatic
+    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_0500
+    * @tc.desc         test onHttpErrorReceive callback when returned error code is 500
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }

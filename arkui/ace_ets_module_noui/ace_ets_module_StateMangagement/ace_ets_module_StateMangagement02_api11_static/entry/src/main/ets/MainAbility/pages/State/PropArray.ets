@@ -54,14 +54,14 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class ModelArr {
+export class ModelArr {
   public value: number = 1;
   constructor(value: number) {
     this.value = value;
   }
 }
 
-class ClassA1 {
+export class ClassA1 {
   public value: string = '';
   public data: ModelArr = new ModelArr(1);
   constructor(value: string, num: ModelArr) {

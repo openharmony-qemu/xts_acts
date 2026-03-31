@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,259 +43,259 @@ import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 
-  class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+  export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+  export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: BadgeAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class BlankModifier implements AttributeModifier<BlankAttribute> {
+  export class BlankModifier implements AttributeModifier<BlankAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: BlankAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+  export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ButtonAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+  export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: CalendarPickerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+  export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: CheckboxAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+  export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: CheckboxGroupAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+  export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ColumnAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+  export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ColumnSplitAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class CounterModifier implements AttributeModifier<CounterAttribute> {
+  export class CounterModifier implements AttributeModifier<CounterAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: CounterAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+  export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: DataPanelAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+  export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: DatePickerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class DividerModifier implements AttributeModifier<DividerAttribute> {
+  export class DividerModifier implements AttributeModifier<DividerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: DividerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+  export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: EffectComponentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class FlexModifier implements AttributeModifier<FlexAttribute> {
+  export class FlexModifier implements AttributeModifier<FlexAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: FlexAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+  export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: FlowItemAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+  export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: FormComponentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: FormLinkAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+  export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: GaugeAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class GridModifier implements AttributeModifier<GridAttribute> {
+  export class GridModifier implements AttributeModifier<GridAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: GridAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class GridColModifier implements AttributeModifier<GridColAttribute> {
+  export class GridColModifier implements AttributeModifier<GridColAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: GridColAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+  export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: GridItemAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+  export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: GridRowAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+  export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: HyperlinkAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+  export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ImageAnimatorAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+  export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ImageSpanAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ImageModifier implements AttributeModifier<ImageAttribute> {
+  export class ImageModifier implements AttributeModifier<ImageAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ImageAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ListModifier implements AttributeModifier<ListAttribute> {
+  export class ListModifier implements AttributeModifier<ListAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ListAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+  export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ListItemAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+  export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ListItemGroupAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+  export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: LoadingProgressAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+  export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: MarqueeAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class MenuModifier implements AttributeModifier<MenuAttribute> {
+  export class MenuModifier implements AttributeModifier<MenuAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: MenuAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+  export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: MenuItemAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+  export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: MenuItemGroupAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+  export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: NavDestinationAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+  export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: NavigationAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
@@ -316,238 +316,238 @@ import { SetValue, RouterParams } from '../../common/Utils';
   
   
   
-  class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+  export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: PatternLockAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+  export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: PluginComponentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+  export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: QRCodeAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RadioModifier implements AttributeModifier<RadioAttribute> {
+  export class RadioModifier implements AttributeModifier<RadioAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RadioAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RatingModifier implements AttributeModifier<RatingAttribute> {
+  export class RatingModifier implements AttributeModifier<RatingAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RatingAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+  export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RefreshAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+  export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RelativeContainerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+  export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RemoteWindowAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+  export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RichEditorAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+  export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RichTextAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RowModifier implements AttributeModifier<RowAttribute> {
+  export class RowModifier implements AttributeModifier<RowAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RowAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+  export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: RowSplitAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+  export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ScrollAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+  export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ScrollBarAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class SearchModifier implements AttributeModifier<SearchAttribute> {
+  export class SearchModifier implements AttributeModifier<SearchAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: SearchAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class SelectModifier implements AttributeModifier<SelectAttribute> {
+  export class SelectModifier implements AttributeModifier<SelectAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: SelectAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+  export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: SideBarContainerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class SliderModifier implements AttributeModifier<SliderAttribute> {
+  export class SliderModifier implements AttributeModifier<SliderAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: SliderAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class StackModifier implements AttributeModifier<StackAttribute> {
+  export class StackModifier implements AttributeModifier<StackAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: StackAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+  export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: SwiperAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+  export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TabContentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TabsModifier implements AttributeModifier<TabsAttribute> {
+  export class TabsModifier implements AttributeModifier<TabsAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TabsAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextModifier implements AttributeModifier<TextAttribute> {
+  export class TextModifier implements AttributeModifier<TextAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextAreaAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+  export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextClockAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+  export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextInputAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+  export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextPickerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+  export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TextTimerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+  export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: TimePickerAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+  export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: ToggleAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+  export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+  export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: WaterFlowAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class WebModifier implements AttributeModifier<WebAttribute> {
+  export class WebModifier implements AttributeModifier<WebAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: WebAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
   }
-  class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+  export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: XComponentAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)

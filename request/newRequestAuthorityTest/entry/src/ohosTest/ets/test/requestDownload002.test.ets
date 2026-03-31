@@ -19,6 +19,7 @@ import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import Server from '../common/ServerDownload'
 
 export default function requestDownloadTwoUnitTest() {
   describe('requestDownloadTwoJSUnit', () => {
@@ -38,6 +39,9 @@ export default function requestDownloadTwoUnitTest() {
      */
     beforeAll((done: Function) => {
       try {
+        console.info('====>beforeAll: startServer');
+        new Server().startServer();
+        console.info('====>beforeAll: startServer success!');
         let context: common.Context | undefined = AppStorage.get('context');
         if (context !== undefined){
           baseContext = context;
@@ -266,7 +270,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Download_Completed_0030 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Misc_REQUEST_On_Download_Completed_0030.txt',
@@ -327,7 +331,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Download_Completed_0030 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Misc_REQUEST_Off_Download_Completed_0030.txt',
@@ -392,7 +396,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Download_Completed_0020 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Misc_REQUEST_Off_Download_Completed_0020.txt',
@@ -652,7 +656,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0070 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0070.txt',
         network: request.agent.Network.WIFI,
@@ -701,7 +705,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0071 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0071.txt',
         network: request.agent.Network.WIFI,
@@ -747,7 +751,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0080 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0080.txt',
         network: request.agent.Network.WIFI,
@@ -801,7 +805,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0080 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0080.txt',
         network: request.agent.Network.WIFI,
@@ -904,7 +908,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0090 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0090.txt',
         network: request.agent.Network.WIFI,
@@ -954,7 +958,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Show_Callback_0010 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Show_Callback_0010.txt',
         network: request.agent.Network.WIFI,
@@ -1029,7 +1033,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Show_Promise_0010 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Show_Promise_0010.txt',
         network: request.agent.Network.WIFI,
@@ -1203,7 +1207,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0010 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0010.txt',
         network: request.agent.Network.WIFI,
@@ -1256,7 +1260,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0011 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0011.txt',
         network: request.agent.Network.WIFI,
@@ -1308,7 +1312,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0020 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0020.txt',
         network: request.agent.Network.WIFI,
@@ -1360,7 +1364,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0030 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0030.txt',
         network: request.agent.Network.WIFI,
@@ -1414,7 +1418,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0060 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0060.txt',
         network: request.agent.Network.WIFI,
@@ -1469,7 +1473,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Promise_0060 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Promise_0060.txt',
         network: request.agent.Network.WIFI,
@@ -1579,7 +1583,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Search_Callback_0100 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Search_Callback_0100.txt',
         network: request.agent.Network.WIFI,
@@ -1808,7 +1812,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Touch_Callback_0010 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Touch_Callback_0010.txt',
         network: request.agent.Network.WIFI,
@@ -1865,7 +1869,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Touch_Promise_0010 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Touch_Promise_0010.txt',
         network: request.agent.Network.WIFI,
@@ -1924,7 +1928,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info("====>-----------------------SUB_Misc_REQUEST_Touch_Callback_0040 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         saveas: './SUB_Misc_REQUEST_Touch_Callback_0040.txt',
         network: request.agent.Network.WIFI,
@@ -2272,7 +2276,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info('====>-----------------------SUB_REQUEST_On_Download_Completed_0500 is starting-----------------------');
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_REQUEST_On_Download_Completed_0500.txt',
@@ -2326,7 +2330,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info('====>-----------------------SUB_REQUEST_Off_Download_Completed_0500 is starting-----------------------');
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_REQUEST_Off_Download_Completed_0500.txt',
@@ -2397,7 +2401,7 @@ export default function requestDownloadTwoUnitTest() {
       console.info('====>-----------------------SUB_REQUEST_Download_backgroundOnCompleted_0500 is starting-----------------------');
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_REQUEST_Off_Download_Completed_0600.txt',

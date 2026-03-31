@@ -284,3 +284,12 @@ export const ohDrawingGetTypographyStyleAttributeBool004: () => number;
 export const ohDrawingGetTypographyStyleAttributeBool005: () => number;
 export const ohDrawingDestroyPositionAndAffinity001: () => number;
 export const ohDrawingDestroyPositionAndAffinity002: () => number;
+// cpp6
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0100: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0200: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0300: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0400: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0500: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0600: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0700: () => number;
+export const ohDrawingTypographyLayoutWithConstraintsWithBuffer0800: () => number;

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ struct Badge3Example {
 
       Badge({
         value: '',
-        position: 1 as BadgePosition,
+        position: BadgePosition.fromValue(1),
         style: { badgeSize: 6, badgeColor: Color.Red }
       } as BadgeParamWithString) {
         Text('message')

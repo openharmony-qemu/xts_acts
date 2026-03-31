@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyHueRotateModifier implements AttributeModifier<CommonAttribute> {
+export class MyHueRotateModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

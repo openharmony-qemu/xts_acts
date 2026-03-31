@@ -667,6 +667,29 @@ export default function btBleServiceTest() {
     })
 
     /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_0400
+       * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_0400
+       * @tc.desc   Test the function that the first parameter of the addService interface is null.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      try {
+        gattServer.removeService("");
+      } catch (error) {
+        console.error(`[bluetooth_js]removeService failed, code is ${error.code},message is ${error.message}`);
+        if (error.code == 801 || error.code == 2900004) {
+          console.info('[bluetooth_js]removeService is not support or profile not support');
+          expect(true).assertTrue();
+        } else {
+          expect(true).assertEqual(Number(error.code) == 401);
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_ADD_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_ADD_0100
      * @tc.desc   Test NotifyCharacteristicChanged api10.

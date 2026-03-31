@@ -602,6 +602,66 @@ export default function ConnectionPublicTest() {
       }
     });
 
+
+    /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1800
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1800
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1800";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection({
+          netCapabilities: {
+            networkCap: [],
+            bearerTypes: []
+          }
+        });
+        ExpectTrue(netCon != undefined);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1900
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1900
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1900";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection({
+          netCapabilities: {
+            networkCap: [connection.NetCap.NET_CAPABILITY_PORTAL, connection.NetCap.NET_CAPABILITY_CHECKING_CONNECTIVITY],
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR]
+          }
+        });
+        ExpectTrue(netCon != undefined);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback_static_0100
      * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0100
@@ -618,6 +678,42 @@ export default function ConnectionPublicTest() {
            hilog.info(domain, tag, '%{public}s', caseName +' data -> '+JSON.stringify(data)+' err -> '+JSON.stringify(err));
           if (err?.code == 0) {
             ExpectTrue(true);
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          } else {
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0200
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultNetCallback_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultNetCallback_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+         connection.getDefaultNet((err: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+           hilog.info(domain, tag, '%{public}s', caseName +' data -> '+JSON.stringify(data)+' err -> '+JSON.stringify(err));
+          if (err?.code == 0) {
+            if(data != undefined){
+              ExpectTrue(data.netId != 0);
+            }else{
+              ExpectFail();
+            }
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
@@ -671,6 +767,46 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetPromise_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0200
+     * @tc.desc   test obtain the default activated data network and use Promise as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultNetPromise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultNetPromise_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultNet().then((data: connection.NetHandle) => {
+          let netBlockStatus: connection.NetBlockStatusInfo = {
+            netHandle: data,
+            blocked: true
+          }
+          hilog.info(domain, tag, '%{public}s', caseName +':getDefaultNet: data-'+JSON.stringify(data));
+          if(data != undefined){
+            ExpectTrue(data.netId != 0);
+          }else{
+            ExpectFail();
+          }
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetDefaultNetSync_static_0100
      * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0100
      * @tc.desc   test use synchronization method to obtain default activated data network
@@ -684,6 +820,34 @@ export default function ConnectionPublicTest() {
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
         ExpectTrue(typeof netHandle.netId == 'int');
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSync_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0200
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultNetSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultNetSync_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netHandle: connection.NetHandle = connection.getDefaultNetSync();
+        if(netHandle != undefined){
+          ExpectTrue(netHandle.netId != 0);
+        }else{
+          ExpectFail();
+        }
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (err) {
@@ -771,6 +935,53 @@ export default function ConnectionPublicTest() {
       }
     });
 
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Callback_0300
+     * @tc.desc   test obtain default proxy configuration information for the network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0300";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultHttpProxy((err: BusinessError<void>|null, data: connection.HttpProxy| undefined) => {
+          hilog.info(domain, tag, '%{public}s', caseName +' getDefaultHttpProxy data -> '+JSON.stringify(data)+' err -> '+JSON.stringify(err));
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName +' getDefaultHttpProxy success ');
+            if(data != undefined){
+              ExpectTrue(data.host != null);
+              ExpectTrue(data.port != null);
+              ExpectTrue(data.username != null);
+              ExpectTrue(data.password != null);
+              if(data.exclusionList != undefined){
+                ExpectTrue(data.exclusionList.length > 0);
+              }else{
+                ExpectFail();
+              }
+            }else{
+              ExpectFail();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          }
+        });
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0100
      * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Promise_0100
@@ -786,6 +997,50 @@ export default function ConnectionPublicTest() {
         connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
           hilog.info(domain, tag, '%{public}s', caseName +': getDefaultHttpProxy data ->'+JSON.stringify(data));
           ExpectTrue(data != undefined);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Promise_0200
+     * @tc.desc   test obtain default proxy configuration information for the network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
+          hilog.info(domain, tag, '%{public}s', caseName +': getDefaultHttpProxy data ->'+JSON.stringify(data));
+          if(data != undefined){
+            ExpectTrue(data.host != null);
+            ExpectTrue(data.port != null);
+            ExpectTrue(data.username != null);
+            ExpectTrue(data.password != null);
+            if(data.exclusionList != undefined){
+              ExpectTrue(data.exclusionList.length > 0);
+            }else{
+              ExpectFail();
+            }
+          }else{
+            ExpectFail();
+          }
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }).catch((error: Error) => {
@@ -892,6 +1147,7 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0100
      * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0100
@@ -909,6 +1165,68 @@ export default function ConnectionPublicTest() {
             if (error?.code == 0) {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
               ExpectTrue(true);
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+           let err = error as BusinessError;
+           hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+           ExpectFail();
+           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
+ /**
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0200
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0200
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetConnectionProperties_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
+            if (error?.code == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
+              if(data != undefined){
+                ExpectTrue(data.interfaceName != null);
+                ExpectTrue(data.domains != null);
+                ExpectTrue(data.mtu != null);
+                if(data.linkAddresses != undefined){
+                  ExpectTrue(data.linkAddresses.length > 0);
+                }else{
+                  ExpectFail();
+                }
+                if(data.dnses != undefined){
+                  ExpectTrue(data.dnses.length > 0);
+                }else{
+                  ExpectFail();
+                }
+                if(data.routes != undefined){
+                  ExpectTrue(data.routes.length > 0);
+                }else{
+                  ExpectFail();
+                }
+              }else{
+                ExpectFail();
+              }         
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
@@ -1333,6 +1651,54 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0200
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0200
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netHandle: connection.NetHandle = connection.getDefaultNetSync();
+        let connectionProperties: connection.ConnectionProperties = connection.getConnectionPropertiesSync(netHandle);
+        hilog.info(domain, tag, '%{public}s', caseName +': GetConnectionPropertiesSync data ->'+JSON.stringify(connectionProperties));
+        if(connectionProperties != undefined){
+          ExpectTrue(connectionProperties.interfaceName != null);
+          ExpectTrue(connectionProperties.domains != null);
+          ExpectTrue(connectionProperties.mtu != null);
+          if(connectionProperties.linkAddresses != undefined){
+            ExpectTrue(connectionProperties.linkAddresses.length > 0);
+          }else{
+            ExpectFail();
+          }
+          if(connectionProperties.dnses != undefined){
+            ExpectTrue(connectionProperties.dnses.length > 0);
+          }else{
+            ExpectFail();
+          }
+          if(connectionProperties.routes != undefined){
+            ExpectTrue(connectionProperties.routes.length > 0);
+          }else{
+            ExpectFail();
+          }
+        }else{
+          ExpectFail();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0600
      * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0600
@@ -1458,6 +1824,63 @@ export default function ConnectionPublicTest() {
             if (error?.code == 0) {
               hilog.info(domain, tag, '%{public}s', caseName +': getNetCapabilities data ->'+JSON.stringify(data));
               ExpectTrue(true);
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  getDefaultNet error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0200
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0200
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilities_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getNetCapabilities(netHandle, (error: BusinessError<void>|null, data: connection.NetCapabilities| undefined) => {
+            if (error?.code == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName +': getNetCapabilities data ->'+JSON.stringify(data));
+              if(data != undefined){
+                ExpectTrue(data.linkUpBandwidthKbps != null);
+                ExpectTrue(data.linkDownBandwidthKbps != null);
+                let networkCap = data.networkCap;
+                if(networkCap != undefined){
+                  ExpectTrue(networkCap.length > 0);
+                }else{
+                  ExpectFail();
+                }
+                if(data.bearerTypes != undefined){
+                  ExpectTrue(data.bearerTypes.length > 0);
+                }else{
+                  ExpectFail();
+                }
+              }else{
+                ExpectFail();
+              }
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
@@ -1693,6 +2116,67 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1000
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1000
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilities_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1000";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
+            let netCapInfo: connection.NetCapabilityInfo= {
+              netHandle: netHandle,
+              netCap:data
+            }
+            hilog.info(domain, tag, '%{public}s', caseName +': GetNetCapabilities data ->'+JSON.stringify(data));
+            if(data != undefined){
+              ExpectTrue(data.linkUpBandwidthKbps != null);
+              ExpectTrue(data.linkDownBandwidthKbps != null);
+              let networkCap = data.networkCap;
+              if(networkCap != undefined){
+                ExpectTrue(networkCap.length > 0);
+              }else{
+                ExpectFail();
+              }
+              if(data.bearerTypes != undefined){
+                ExpectTrue(data.bearerTypes.length > 0);
+              }else{
+                ExpectFail();
+              }
+            }else{
+              ExpectFail();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s', caseName +'  GetNetCapabilities error is '+JSON.stringify(err));
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  getDefaultNet: err->'+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1400
      * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1400
@@ -1882,6 +2366,49 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0200
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0200
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0200";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let netHandle: connection.NetHandle =  connection.getDefaultNetSync();
+        let data: connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+        hilog.info(domain, tag, '%{public}s', caseName +': getNetCapabilitiesSync data ->'+JSON.stringify(data));
+        if(data != undefined){
+          ExpectTrue(data.linkUpBandwidthKbps != null);
+          ExpectTrue(data.linkDownBandwidthKbps != null);
+          let networkCap = data.networkCap;
+          if(networkCap != undefined){
+            ExpectTrue(networkCap.length > 0);
+          }else{
+            ExpectFail();
+          }
+          if(data.bearerTypes != undefined){
+            ExpectTrue(data.bearerTypes.length > 0);
+          }else{
+            ExpectFail();
+          }
+        }else{
+          ExpectFail();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch(err){
+        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0600
      * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0600
@@ -2226,6 +2753,66 @@ export default function ConnectionPublicTest() {
           host: '127.0.0.1',
           port: 8080,
           exclusionList: ['*'],
+          username: 'admin',
+          password: '123456'
+        } as connection.HttpProxy);
+        ExpectTrue(true);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionHttpProxy_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_HttpProxy_0400
+     * @tc.desc   Network proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionHttpProxy_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrConnectionHttpProxy_static_0400';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.setAppHttpProxy({
+          host: '192.168.1.1',
+          port: 8080,
+          exclusionList: [],
+          username: 'admin',
+          password: '123456'
+        } as connection.HttpProxy);
+        ExpectTrue(true);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionHttpProxy_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_HttpProxy_0500
+     * @tc.desc   Network proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionHttpProxy_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrConnectionHttpProxy_static_0500';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.setAppHttpProxy({
+          host: '192.168.1.1',
+          port: 8080,
+          exclusionList: [""],
           username: 'admin',
           password: '123456'
         } as connection.HttpProxy);
@@ -3183,6 +3770,47 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_1100
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_1100
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionRouteInfo_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionRouteInfo_static_1100";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
+            if (error?.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName +'  getConnectionProperties: BusinessError-> '+JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
+              ExpectTrue(typeof data?.routes[0].iface != null);
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionLinkAddress_static_0100
      * @tc.number SUB_NetworkMgr_Connection_LinkAddress_0100
      * @tc.desc   Network routing information.
@@ -3592,118 +4220,6 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrConnectionOn_static_0100
-     * @tc.number SUB_NetworkMgr_Connection_On_0100
-     * @tc.desc   Subscribe to network available events.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrConnectionOn_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const caseName: string = "testNetworkMgrConnectionOn_static_0100";
-      console.info(`${caseName} test start`);
-      try {
-        let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netAvailable', (data: connection.NetHandle) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' on netAvailable  success : '+JSON.stringify(data));
-        });
-        netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', caseName +' register success ');
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      } catch (err) {
-        hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrConnectionOn_static_0200
-     * @tc.number SUB_NetworkMgr_Connection_On_0200
-     * @tc.desc   Subscription to network capability change events.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrConnectionOn_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const caseName: string = "testNetworkMgrConnectionOn_static_0200";
-      console.info(`${caseName} test start`);
-      try {
-        let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data:  '+JSON.stringify(data));
-        });
-        netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  register error is '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            console.info(`${caseName}register success`);
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      } catch (err) {
-        hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrConnectionOn_static_0300
-     * @tc.number SUB_NetworkMgr_Connection_On_0300
-     * @tc.desc   Subscription network connection information change events.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrConnectionOn_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const caseName: string = "testNetworkMgrConnectionOn_static_0300";
-      console.info(`${caseName} test start`);
-      try {
-        let netCon: connection.NetConnection = connection.createNetConnection();
-        netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data: ');
-          console.info(`${caseName}  + ${JSON.stringify(data)}}`);
-        });
-        netCon.register((error: BusinessError<void>|null) => {
-          hilog.info(domain, tag, '%{public}s', caseName +'  register error  '+JSON.stringify(error));
-          if (error?.code != 0) {
-            ExpectFail();
-            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', caseName +' register success');
-            ExpectTrue(true);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      } catch (err) {
-        hilog.info(domain, tag, '%{public}s', caseName +' catch: err-> '+JSON.stringify(err));
-        ExpectFail();
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    });
-
-    /**
      * @tc.name   testNetworkMgrConnectionRegister_static_0100
      * @tc.number SUB_NetworkMgr_Connection_Register_0100
      * @tc.desc   test subscribe to notifications of specified network status changes
@@ -3780,7 +4296,41 @@ export default function ConnectionPublicTest() {
       }
     });
 
-
+    /**
+     * @tc.name   testNetworkMgrConnectionSetAppNetCallback_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_SetAppNet_Callback_0100
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionSetAppNetCallback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionSetAppNetCallback_static_0100";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultNet().then( async (netHandle: connection.NetHandle)=>{
+          netHandle.netId = -1;
+          hilog.info(domain, tag, '%{public}s', caseName +': netHandle ->'+JSON.stringify(netHandle));
+          connection.setAppNet(netHandle, (err: BusinessError<void>|null) => {
+            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+            if (err != undefined) {
+              ExpectTrue(err.code == 2100001);
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }else{
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
 
   })
 }

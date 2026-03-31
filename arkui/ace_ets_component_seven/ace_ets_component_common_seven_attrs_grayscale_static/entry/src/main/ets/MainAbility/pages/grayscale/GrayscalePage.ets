@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,259 +43,259 @@ import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
@@ -316,238 +316,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)
      instance.grayscale(this.mGrayscale)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mGrayscale: number = 0.9
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`grayscale page show ${JSON.stringify(this.mGrayscale)}`)

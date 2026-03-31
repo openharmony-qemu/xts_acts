@@ -119,13 +119,14 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err + "code:" + JSON.stringify(err))
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           console.log("Get preferences success");
           expect(preferences != undefined).assertTrue();
+          done()
         }
       })
-      done()
     })
 
 
@@ -506,23 +507,26 @@ export default function preferenceTest() {
       dataPreferences.getPreferences(context!, NAME, (err : BusinessError | null, preferences : dataPreferences.Preferences | undefined): void => {
         // if(err != null){
         if(err && err.code != 0){
-          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
+          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err);
           expect(false).assertTrue();
+          done();
         }else{
-          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
+          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success");
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.removePreferencesFromCache(context!, NAME, (err  : BusinessError | null) : void => {
         // if(err != null){
         if(err && err.code != 0){
-          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache error: " + err)
+          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache error: " + err);
           expect(false).assertTrue();
+          done();
         }else{
-          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache success")
+          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache success");
+          done();
         }
       })
-      done();
     })
 
 
@@ -567,8 +571,6 @@ export default function preferenceTest() {
 
       });
       hilog.info(domain, tag, '%{public}s', "SUB_DDM_Preferences_removePreferencesFromCacheSync_0100 1235");
-
-      done();
     })
 
 
@@ -740,20 +742,23 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.deletePreferences(context!, NAME, (err : BusinessError | null) : void => {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Delete preferences err: " + err)
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Delete preferences success")
+          done();
         }
       })
-      done()
     });
 
 
@@ -808,7 +813,6 @@ export default function preferenceTest() {
         done();
         console.log("PreferencesRemovePreferencesFromCacheSync0100 end.");
       });
-      done();
     });
 
     

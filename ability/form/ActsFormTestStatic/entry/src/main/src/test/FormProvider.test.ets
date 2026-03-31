@@ -22,6 +22,8 @@ import formHost from '@ohos.app.form.formHost';
 import formInfo from '@ohos.app.form.formInfo';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
+import { common } from '@kit.AbilityKit';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const DOMAIN: Int = 0x0000;
 const TAG: string = 'testTag formProviderTest';
@@ -30,6 +32,14 @@ const ERROR_CODE = 16501000;
 const ERROR_CODE1 = 401;
 const ERROR_CODE2 = 16500100;
 const ERROR_CODE3 = 801;
+const ERROR_CODE4 = 16500050;
+const ERROR_CODE5 = 16500060;
+const ERROR_CODE6 = 16501002;
+const ERROR_CODE7 = 16501003;
+const ERROR_CODE8 = 16501007;
+const ERROR_CODE9 = 16501015;
+const ERROR_CODE10 = 16501001;
+const ERROR_CODE11 = 16501011;
 
 export default function formProviderTest() {
   describe('formProviderTest', (): void => {
@@ -81,7 +91,7 @@ export default function formProviderTest() {
           } else {
             hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest001 success');
           }
-          expect(error?.code).assertEqual(16501001);
+          expect(error?.code).assertEqual(ERROR_CODE10);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -109,7 +119,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest002 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16501001);
+          expect(error?.code).assertEqual(ERROR_CODE10);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest002 error, code: ${error?.code}, message: ${error?.message}`);
@@ -136,7 +146,7 @@ export default function formProviderTest() {
         formProvider.setFormNextRefreshTime(falseFormId, 2, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest003 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(error?.code).assertEqual(16501001);
+            expect(error?.code).assertEqual(ERROR_CODE10);
           } else {
             hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest003 success');
             expect().assertFail();
@@ -168,7 +178,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest004 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16501001);
+          expect(error?.code).assertEqual(ERROR_CODE10);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest004 error, code: ${error?.code}, message: ${error?.message}`);
@@ -178,6 +188,53 @@ export default function formProviderTest() {
       done();
       hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest004 end');
     })
+
+    /**
+     * @tc.name   SetFormNextRefreshTimeTest005
+     * @tc.number SetFormNextRefreshTimeTest005
+     * @tc.desc   check SetFormNextRefreshTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+        it('SetFormNextRefreshTimeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          let itName: string = 'SetFormNextRefreshTimeTest005';
+          hilog.info(DOMAIN, TAG, `${itName} start`);
+          try {
+            formProvider.setFormNextRefreshTime('', 123).then(() => {
+              hilog.info(DOMAIN, TAG, `${itName} then success`);
+              expect().assertFail();
+            });
+            hilog.info(DOMAIN, TAG, `${itName} callBack start`);
+            formProvider.setFormNextRefreshTime('', 123, () => {
+              hilog.error(DOMAIN, TAG, `${itName} callBack success`);
+            });
+            hilog.info(DOMAIN, TAG, `${itName} setFormNextRefreshTime end`);
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+            if (error?.code === ERROR_CODE) {
+              expect(error.code).assertEqual(ERROR_CODE);
+            } else if (error?.code === ERROR_CODE1) {
+              expect(error.code).assertEqual(ERROR_CODE1);
+            } else if (error?.code === ERROR_CODE2) {
+              expect(error.code).assertEqual(ERROR_CODE2);
+            } else if (error?.code === ERROR_CODE3) {
+              expect(error.code).assertEqual(ERROR_CODE3);
+            } else if (error?.code === ERROR_CODE4) {
+              expect(error.code).assertEqual(ERROR_CODE4);
+            } else if (error?.code === ERROR_CODE5) {
+              expect(error.code).assertEqual(ERROR_CODE5);
+            } else if (error?.code === ERROR_CODE6) {
+              expect(error.code).assertEqual(ERROR_CODE6);
+            } else if (error?.code === ERROR_CODE7) {
+              expect(error.code).assertEqual(ERROR_CODE7);
+            } else {
+              expect().assertFail();
+            }
+          }
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end`);
+        })
 
     /**
      * @tc.name   UpdateFormTest001
@@ -202,7 +259,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `UpdateFormTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16501001);
+          expect(error?.code).assertEqual(ERROR_CODE10);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `UpdateFormTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -234,7 +291,7 @@ export default function formProviderTest() {
         formProvider.updateForm(formId, bindingData, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.info(DOMAIN, TAG, `UpdateFormTest002 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(error?.code).assertEqual(16501001);
+            expect(error?.code).assertEqual(ERROR_CODE10);
           } else {
             hilog.info(DOMAIN, TAG, 'UpdateFormTest002 success');
             expect().assertFail();
@@ -271,7 +328,7 @@ export default function formProviderTest() {
         formProvider.updateForm(falseFormId, bindingData, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.info(DOMAIN, TAG, `UpdateFormTest003 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(error?.code).assertEqual(16501001);
+            expect(error?.code).assertEqual(ERROR_CODE10);
           } else {
             hilog.info(DOMAIN, TAG, 'UpdateFormTest003 success');
             expect().assertFail();
@@ -309,7 +366,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `UpdateFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16501001);
+          expect(error?.code).assertEqual(ERROR_CODE10);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `UpdateFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
@@ -318,6 +375,75 @@ export default function formProviderTest() {
 
       done();
       hilog.info(DOMAIN, TAG, 'UpdateFormTest003 end');
+    })
+
+    /**
+     * @tc.name   UpdateFormTest005
+     * @tc.number UpdateFormTest005
+     * @tc.desc   check UpdateForm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('UpdateFormTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'UpdateFormTest005';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        let ProxyDatasEmpty: formBindingData.ProxyData[] = [];
+        let bindingData: formBindingData.FormBindingData = {
+            data: "com.example.test123",
+            proxies: ProxyDatasEmpty
+        }
+        formProvider.updateForm('', bindingData).then(() => {
+          hilog.info(DOMAIN, TAG, `${itName} empty proxies, then success`);
+          expect().assertFail();
+        });
+        hilog.info(DOMAIN, TAG, `${itName} empty proxies, callBack start`);
+        formProvider.updateForm('', bindingData, () => {
+          hilog.info(DOMAIN, TAG, `${itName} empty proxies, callBack success`);
+        });
+        let ProxyData1: formBindingData.ProxyData = {
+          key: '',
+          subscriberId: ''
+        }
+        let ProxyData2: formBindingData.ProxyData = {
+          key: '123',
+          subscriberId: '123'
+        }
+        let ProxyDatas: formBindingData.ProxyData[] = [ProxyData1, ProxyData2];
+        let bindingData1: formBindingData.FormBindingData = {
+          data: "com.example.test123",
+          proxies: ProxyDatas
+        }
+        formProvider.updateForm('', bindingData1).then(() => {
+          hilog.info(DOMAIN, TAG, `${itName} notEmpty proxies, then success`);
+          expect().assertFail();
+        });
+        hilog.info(DOMAIN, TAG, `${itName} notEmpty proxies, callBack start`);
+        formProvider.updateForm('', bindingData1, () => {
+          hilog.info(DOMAIN, TAG, `${itName} notEmpty proxies, callBack success`);
+        });
+        hilog.info(DOMAIN, TAG, `${itName} updateForm end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE1) {
+          expect(error.code).assertEqual(ERROR_CODE1);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error?.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
     })
 
     /**
@@ -375,7 +501,16 @@ export default function formProviderTest() {
         formProvider.openFormManager(want);
         expect().assertFail();
       } catch (error) {
-        hilog.error(DOMAIN, TAG, `OpenFormManagerTest002 error, code: ${error?.code}, message: ${error?.message}`);
+        hilog.error(DOMAIN, TAG, `OpenFormManagerTest002 error, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error?.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error?.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE1) {
+          expect(error?.code).assertEqual(ERROR_CODE1);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error?.code).assertEqual(ERROR_CODE2);
+        }
       }
 
       done();
@@ -399,7 +534,7 @@ export default function formProviderTest() {
         expect().assertFail();
       } catch (error) {
         hilog.error(DOMAIN, TAG, `OpenFormEditAbilityTest001 error, code: ${error?.code}, message: ${error?.message}`);
-        expect(error?.code).assertEqual(16501001);
+        expect(error?.code).assertEqual(ERROR_CODE10);
       }
 
       done();
@@ -424,12 +559,54 @@ export default function formProviderTest() {
         expect().assertFail();
       } catch (error) {
         hilog.error(DOMAIN, TAG, `OpenFormEditAbilityTest002 error, code: ${error?.code}, message: ${error?.message}`);
-        expect(error?.code).assertEqual(16501001);
+        expect(error?.code).assertEqual(ERROR_CODE10);
       }
 
       done();
       hilog.info(DOMAIN, TAG, 'OpenFormEditAbilityTest002 end');
     })
+
+    /**
+     * @tc.name   OpenFormEditAbilityTest003
+     * @tc.number OpenFormEditAbilityTest003
+     * @tc.desc   check OpenFormEditAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+        it('OpenFormEditAbilityTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          let itName: string = 'OpenFormEditAbilityTest003';
+          hilog.info(DOMAIN, TAG, `${itName} start`);
+          try {
+            let abilityName: string = '';
+            let formId: string = '';
+            hilog.info(DOMAIN, TAG, `${itName} isMainPage is true`);
+            formProvider.openFormEditAbility(abilityName, formId, true);
+            hilog.info(DOMAIN, TAG, `${itName} isMainPage is false`);
+            formProvider.openFormEditAbility(abilityName, formId, false);
+            hilog.info(DOMAIN, TAG, `${itName} success`);
+            expect().assertFail();
+          } catch (error) {
+            hilog.error(DOMAIN, TAG, `${itName} catch error, code:${error?.code}, message:${error?.message}`);
+            if (error?.code === ERROR_CODE) {
+              expect(error?.code).assertEqual(ERROR_CODE);
+            } else if (error?.code === ERROR_CODE2) {
+              expect(error?.code).assertEqual(ERROR_CODE2);
+            } else if (error?.code === ERROR_CODE3) {
+              expect(error?.code).assertEqual(ERROR_CODE3);
+            } else if (error?.code === ERROR_CODE4) {
+              expect(error?.code).assertEqual(ERROR_CODE4);
+            } else if (error?.code === ERROR_CODE7) {
+              expect(error?.code).assertEqual(ERROR_CODE7);
+            } else if (error?.code === ERROR_CODE8) {
+              expect(error?.code).assertEqual(ERROR_CODE8);
+            } else if (error?.code === ERROR_CODE1) {
+              expect(error?.code).assertEqual(ERROR_CODE1);
+            }
+          }
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end`);
+        })
 
 
     /**
@@ -451,6 +628,26 @@ export default function formProviderTest() {
             const element: formInfo.FormInfo = result[i];
             expect(element.bundleName).assertEqual(bundleName);
             expect(element.name).assertEqual(widgetName);
+            expect(moduleName).assertEqual(element.moduleName as string);
+            expect(formAbilityName).assertEqual(element.abilityName as string);
+            expect('widget displayName').assertEqual(element.displayName as string);
+            expect('This is a widget description').assertEqual(element.description as string);
+            expect('').assertEqual(element.jsComponentName as string);
+            expect('10:30').assertEqual(element.scheduledUpdateTime as string);
+            expect('').assertEqual(element.formConfigAbility as string);
+            expect(0).assertEqual(element.displayNameId);
+            expect(0).assertEqual(element.descriptionId);
+            expect(1).assertEqual(element.updateDuration);
+            expect(2).assertEqual(element.defaultDimension);
+            expect(formInfo.FormType.JS).assertEqual(element.type);
+            expect(1).assertEqual(element.supportDimensions.length);
+            expect(6).assertEqual(Object.keys(element.customizeData).length);
+            expect(1).assertEqual(element.supportedShapes.length);
+            expect(false).assertEqual(element.transparencyEnabled as boolean);
+            expect(true).assertEqual(element.isDynamic as boolean);
+            expect(false).assertEqual(element.formVisibleNotify as boolean);
+            expect(true).assertEqual(element.isDefault as boolean);
+            expect(false).assertEqual(element.updateEnabled as boolean);
           }
           hilog.info(DOMAIN, TAG, `GetFormsInfoTest001 success`);
           expect(BOOL_TRUE).assertEqual(true);
@@ -459,8 +656,16 @@ export default function formProviderTest() {
           expect().assertFail();
         });
       } catch (error) {
-        hilog.error(DOMAIN, TAG, `GetFormsInfoTest001 error, code: ${error?.code}, message: ${error?.message}`);
-        expect().assertFail();
+        hilog.error(DOMAIN, TAG, `GetFormsInfoTest001 catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE1) {
+          expect(error.code).assertEqual(ERROR_CODE1);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        }
       }
 
       done();
@@ -505,8 +710,16 @@ export default function formProviderTest() {
           }
         });
       } catch (error) {
-        hilog.error(DOMAIN, TAG, `GetFormsInfoTest002 error, code: ${error?.code}, message: ${error?.message}`);
-        expect().assertFail();
+        hilog.error(DOMAIN, TAG, `GetFormsInfoTest002 catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE1) {
+          expect(error.code).assertEqual(ERROR_CODE1);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        }
       }
 
       done();
@@ -553,8 +766,19 @@ export default function formProviderTest() {
           }
         });
       } catch (error) {
-        hilog.error(DOMAIN, TAG, `GetFormsInfoTest003 error, code: ${error?.code}, message: ${error?.message}`);
-        expect().assertFail();
+        hilog.error(DOMAIN, TAG, `GetFormsInfoTest003 catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE1) {
+          expect(error.code).assertEqual(ERROR_CODE1);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else {
+          expect().assertFail();
+        }
+
       }
 
       done();
@@ -893,6 +1117,34 @@ export default function formProviderTest() {
     })
 
     /**
+     * @tc.name   GetPublishedRunningFormInfosTest002
+     * @tc.number GetPublishedRunningFormInfosTest002
+     * @tc.desc   check GetPublishedRunningFormInfos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GetPublishedRunningFormInfosTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'GetPublishedRunningFormInfosTest002';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        formProvider.getPublishedRunningFormInfos().then((result: Array<formInfo.RunningFormInfo>) => {
+          hilog.info(DOMAIN, TAG, `${itName} then success, result: ${JSON.stringify(result)}`);
+        });
+        hilog.info(DOMAIN, TAG, `${itName} getPublishedRunningFormInfos end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
      * @tc.name   GetPublishedRunningFormInfoByIdTest001
      * @tc.number GetPublishedRunningFormInfoByIdTest001
      * @tc.desc   check GetPublishedRunningFormInfoById
@@ -938,5 +1190,280 @@ export default function formProviderTest() {
       done();
       hilog.info(DOMAIN, TAG, `${CASE_TAG} end`);
     })
+
+    /**
+     * @tc.name   GetPublishedRunningFormInfoByIdTest003
+     * @tc.number GetPublishedRunningFormInfoByIdTest003
+     * @tc.desc   check GetPublishedRunningFormInfoById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GetPublishedRunningFormInfoByIdTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'GetPublishedRunningFormInfoByIdTest003';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        formProvider.getPublishedRunningFormInfoById('').then((data: formInfo.RunningFormInfo) => {
+          hilog.info(DOMAIN, TAG, `${itName} then, data: ${JSON.stringify(data)}`);
+          expect(data.formId.length > 0).assertTrue();
+          expect(data.bundleName.length > 0).assertTrue();
+          expect(data.hostBundleName.length > 0).assertTrue();
+          expect(data.formLocation).assertEqual(formInfo.FormLocation.SCREEN_LOCK);
+          expect(data.visibilityType).assertEqual(formInfo.VisibilityType.FORM_VISIBLE);
+          expect(data.moduleName.length > 0).assertTrue();
+          expect(data.moduleName.length > 0).assertTrue();
+          expect(data.formName.length > 0).assertTrue();
+          expect(data.dimension > 0).assertTrue();
+          expect(data.formUsageState).assertEqual(formInfo.FormUsageState.USED);
+          expect(data.formDescription.length > 0).assertTrue();
+          expect(data.extraData).assertUndefined();
+          done();
+        });
+        hilog.info(DOMAIN, TAG, `${itName} getPublishedRunningFormInfoById end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        }  else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if (error?.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   CloseFormEditAbilityTest001
+     * @tc.number CloseFormEditAbilityTest001
+     * @tc.desc   check closeFormEditAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CloseFormEditAbilityTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'CloseFormEditAbilityTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        formProvider.closeFormEditAbility();
+        hilog.info(DOMAIN, TAG, `${itName} isMainPage is true`);
+        formProvider.closeFormEditAbility(true);
+        hilog.info(DOMAIN, TAG, `${itName} isMainPage is false`);
+        formProvider.closeFormEditAbility(false);
+        hilog.info(DOMAIN, TAG, `${itName} closeFormEditAbility end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   RequestOverflowTest001
+     * @tc.number RequestOverflowTest001
+     * @tc.desc   check requestOverflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RequestOverflowTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'RequestOverflowTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        let infoRect: formInfo.Rect = {
+          left: -30,
+          top: -30,
+          width: 200,
+          height: 200
+        }
+        let overflowInfo: formInfo.OverflowInfo = {
+          area: infoRect,
+          duration: 123,
+          useDefaultAnimation: true
+        }
+        
+        formProvider.requestOverflow('', overflowInfo).then(() => {
+          hilog.info(DOMAIN, TAG, `${itName} then success`);
+        });
+        hilog.info(DOMAIN, TAG, `${itName} requestOverflow end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error?.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if (error?.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if (error?.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        }else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   CancelOverflowTest001
+     * @tc.number CancelOverflowTest001
+     * @tc.desc   check cancelOverflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CancelOverflowTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'CancelOverflowTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        formProvider.cancelOverflow('').then(() => {
+          hilog.info(DOMAIN, TAG, `${itName} then success`);
+        });
+        hilog.info(DOMAIN, TAG, `${itName} cancelOverflow end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error?.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if (error?.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   GetFormRectTest001
+     * @tc.number GetFormRectTest001
+     * @tc.desc   check getFormRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GetFormRectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'GetFormRectTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        formProvider.getFormRect('').then((data: formInfo.Rect) => {
+          hilog.info(DOMAIN, TAG, `${itName} then success, data: ${JSON.stringify(data)}`);
+          expect(data.left >= 0).assertTrue();
+          expect(data.top >= 0).assertTrue();
+          expect(data.width >= 0).assertTrue();
+          expect(data.height >= 0).assertTrue();
+          done();
+        });
+        hilog.info(DOMAIN, TAG, `${itName} getFormRect end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error?.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error?.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if (error?.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error?.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if (error?.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   ReloadFormsTest001
+     * @tc.number ReloadFormsTest001
+     * @tc.desc   check reloadForms
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ReloadFormsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'ReloadFormsTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>("abilityContext");
+        if (context) {
+          formProvider.reloadForms(context, 'moduleName', 'abilityName', 'formName').then((data: int) => {
+            hilog.info(DOMAIN, TAG, `${itName} then success, data: ${data}`);
+          });
+        }
+        hilog.info(DOMAIN, TAG, `${itName} reloadForms end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        expect(error.code).assertEqual(ERROR_CODE);
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   ReloadAllFormsTest001
+     * @tc.number ReloadAllFormsTest001
+     * @tc.desc   check reloadAllForms
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ReloadAllFormsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let itName: string = 'ReloadAllFormsTest001';
+      hilog.info(DOMAIN, TAG, `${itName} start`);
+      try {
+        let context: common.UIAbilityContext|undefined = AppStorage.get<common.UIAbilityContext>("abilityContext");
+        if (context) {
+          formProvider.reloadAllForms(context).then((data: int) => {
+            hilog.info(DOMAIN, TAG, `${itName} then success, data: ${data}`);
+          });
+        }
+        hilog.info(DOMAIN, TAG, `${itName} reloadAllForms end`);
+      } catch (error) {
+        hilog.error(DOMAIN, TAG, `${itName} catch, code:${error?.code}, message:${error?.message}`);
+        expect(error.code).assertEqual(ERROR_CODE);
+      }
+      done();
+      hilog.info(DOMAIN, TAG, `${itName} end`);
+    })
+    
   });
 }

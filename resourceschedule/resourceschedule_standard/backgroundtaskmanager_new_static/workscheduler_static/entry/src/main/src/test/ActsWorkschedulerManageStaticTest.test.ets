@@ -616,4 +616,496 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: false,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_MOBILE,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_AC,
+            batteryLevel: 20 as int,
+            batteryStatus: workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
+            storageRequest: workScheduler.StorageRequest.STORAGE_LEVEL_LOW,
+            repeatCycleTime: 1200000 as int,
+            repeatCount: 2 as int,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023---startWork success---');
+            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+              if (err) {
+                console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
+                expect(false).assertEqual(true);
+                done();
+              } else {
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023---getWorkStatus success---');
+                console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023 getWorkStatus success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(1);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.isPersisted).assertEqual(false);
+                expect(res?.networkType).assertEqual(1);
+                expect(res?.isCharging).assertEqual(true);
+                expect(res?.chargerType).assertEqual(1);
+                expect(res?.batteryLevel).assertEqual(20);
+                expect(res?.batteryStatus).assertEqual(0);
+                expect(res?.storageRequest).assertEqual(0);
+                expect(res?.repeatCycleTime).assertEqual(1200000);
+                expect(res?.repeatCount).assertEqual(2);
+                expect(res?.earliestStartTime).assertEqual(0);
+          }
+        });
+        done();
+        }catch(err){
+        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_023 failed. code is ${err.code} message is ${err.message}`);
+        expect(false).assertTrue();
+        done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 10 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_USB,
+            batteryLevel: 20 as int,
+            batteryStatus: workScheduler.BatteryStatus.BATTERY_STATUS_LOW_OR_OKAY,
+            storageRequest: workScheduler.StorageRequest.STORAGE_LEVEL_LOW_OR_OKAY,
+            repeatCycleTime: 1200000 as int,
+            repeatCount: 2 as int,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024---startWork success---');
+            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+              if (err) {
+                console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
+                expect(false).assertEqual(true);
+                done();
+              } else {
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024---getWorkStatus success---');
+                console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 getWorkStatus success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(10);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.networkType).assertEqual(2);
+                expect(res?.isCharging).assertEqual(true);
+                expect(res?.chargerType).assertEqual(2);
+                expect(res?.batteryLevel).assertEqual(20);
+                expect(res?.batteryStatus).assertEqual(2);
+                expect(res?.storageRequest).assertEqual(2);
+              }
+            });
+            done();
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_BLUETOOTH,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_WIRELESS,
+            batteryLevel: 20 as int,
+            isRepeat: true,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025---startWork success---');
+            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+              if (err) {
+                console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
+                expect(false).assertEqual(true);
+                done();
+              } else {
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025---getWorkStatus success---');
+                console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 getWorkStatus success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(1);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.isPersisted).assertEqual(true);
+                expect(res?.networkType).assertEqual(3);
+                expect(res?.isCharging).assertEqual(true);
+                expect(res?.chargerType).assertEqual(3);
+                expect(res?.batteryLevel).assertEqual(20);
+              }
+            });
+            done();
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_025 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI_P2P,
+            isCharging: false,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026---startWork success---');
+
+            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+              if (err) {
+                console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
+                expect(false).assertEqual(true);
+                done();
+              } else {
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026---getWorkStatus success---');
+                console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 getWorkStatus success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(1);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.isPersisted).assertEqual(true);
+                expect(res?.networkType).assertEqual(4);
+                expect(res?.isCharging).assertEqual(false);
+              }
+            });
+            done();
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_026 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_ETHERNET,
+            isCharging: false,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027---startWork success---');
+
+            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+              if (err) {
+                console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
+                expect(false).assertEqual(true);
+                done();
+              } else {
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027---getWorkStatus success---');
+                console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 getWorkStatus success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(1);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.isPersisted).assertEqual(true);
+                expect(res?.networkType).assertEqual(5);
+                expect(res?.isCharging).assertEqual(false);
+                expect(res?.idleWaitTime).assertEqual(-1);
+              }
+            });
+            done();
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_027 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: false,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_MOBILE,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_AC,
+            batteryLevel: 20 as int,
+            batteryStatus: workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
+            storageRequest: workScheduler.StorageRequest.STORAGE_LEVEL_LOW,
+            repeatCycleTime: 1200000 as int,
+            repeatCount: 2 as int,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028---startWork success---');
+            workScheduler.getWorkStatus(1).then((res: workScheduler.WorkInfo|undefined) => {
+            console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 getWorkStatus promise success, ${JSON.stringify(res)}`);
+            expect(res?.workId).assertEqual(1);
+            expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+            expect(res?.abilityName).assertEqual("EntryAbility");
+            expect(res?.isPersisted).assertEqual(false);
+            expect(res?.networkType).assertEqual(1);
+            expect(res?.isCharging).assertEqual(true);
+            expect(res?.chargerType).assertEqual(1);
+            expect(res?.batteryLevel).assertEqual(20);
+            expect(res?.batteryStatus).assertEqual(0);
+            expect(res?.storageRequest).assertEqual(0);
+            expect(res?.repeatCycleTime).assertEqual(1200000);
+            expect(res?.repeatCount).assertEqual(2);
+            expect(res?.earliestStartTime).assertEqual(0);
+            done();
+          }).catch((error: Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+          })
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_028 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 10 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_USB,
+            batteryLevel: 20 as int,
+            batteryStatus: workScheduler.BatteryStatus.BATTERY_STATUS_LOW_OR_OKAY,
+            storageRequest: workScheduler.StorageRequest.STORAGE_LEVEL_LOW_OR_OKAY,
+            repeatCycleTime: 1200000 as int,
+            repeatCount: 2 as int,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029---startWork success---');
+            workScheduler.getWorkStatus(10).then((res: workScheduler.WorkInfo|undefined) => {
+            console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 getWorkStatus promise success, ${JSON.stringify(res)}`);
+                expect(res?.workId).assertEqual(10);
+                expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+                expect(res?.abilityName).assertEqual("EntryAbility");
+                expect(res?.networkType).assertEqual(2);
+                expect(res?.isCharging).assertEqual(true);
+                expect(res?.chargerType).assertEqual(2);
+                expect(res?.batteryLevel).assertEqual(20);
+                expect(res?.batteryStatus).assertEqual(2);
+                expect(res?.storageRequest).assertEqual(2);
+            done();
+          }).catch((error: Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+          })
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_029 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_BLUETOOTH,
+            isCharging: true,
+            chargerType: workScheduler.ChargingType.CHARGING_PLUGGED_WIRELESS,
+            batteryLevel: 20 as int,
+            isRepeat: true,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030---startWork success---');
+            workScheduler.getWorkStatus(1).then((res: workScheduler.WorkInfo|undefined) => {
+            console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 getWorkStatus promise success, ${JSON.stringify(res)}`);
+            expect(res?.workId).assertEqual(1);
+            expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+            expect(res?.abilityName).assertEqual("EntryAbility");
+            expect(res?.isPersisted).assertEqual(true);
+            expect(res?.networkType).assertEqual(3);
+            expect(res?.isCharging).assertEqual(true);
+            expect(res?.chargerType).assertEqual(3);
+            expect(res?.batteryLevel).assertEqual(20);
+            done();
+          }).catch((error: Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+          })
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_030 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031
+     * @tc.desc   promise getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI_P2P,
+            isCharging: false,
+        }
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031---startWork success---');
+            workScheduler.getWorkStatus(1).then((res: workScheduler.WorkInfo|undefined) => {
+            console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 getWorkStatus promise success, ${JSON.stringify(res)}`);
+            expect(res?.workId).assertEqual(1);
+            expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+            expect(res?.abilityName).assertEqual("EntryAbility");
+            expect(res?.isPersisted).assertEqual(true);
+            expect(res?.networkType).assertEqual(4);
+            expect(res?.isCharging).assertEqual(false);
+            done();
+          }).catch((error: Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+          })
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_031 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+          }
+        })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032
+     * @tc.desc   callback getWorkStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 begin---');
+        workScheduler.stopAndClearWorks();
+          let workInfo: workScheduler.WorkInfo = {
+            workId: 1 as int,
+            bundleName: "com.acts.actsworkschedulertest.static",
+            abilityName: "EntryAbility",
+            isPersisted: true,
+            networkType: workScheduler.NetworkType.NETWORK_TYPE_ETHERNET,
+            isCharging: false,
+        }
+
+        try{
+            workScheduler.startWork(workInfo)
+            hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032---startWork success---');
+            workScheduler.getWorkStatus(1).then((res: workScheduler.WorkInfo|undefined) => {
+            console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 getWorkStatus promise success, ${JSON.stringify(res)}`);
+            expect(res?.workId).assertEqual(1);
+            expect(res?.bundleName).assertEqual("com.acts.actsworkschedulertest.static");
+            expect(res?.abilityName).assertEqual("EntryAbility");
+            expect(res?.isPersisted).assertEqual(true);
+            expect(res?.networkType).assertEqual(5);
+            expect(res?.isCharging).assertEqual(false);
+            expect(res?.idleWaitTime).assertEqual(-1);
+            done();
+          }).catch((error: Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+          })
+        }catch(err){
+          console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_032 failed. code is ${err.code} message is ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
   })}

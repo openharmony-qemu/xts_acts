@@ -1122,6 +1122,23 @@ export default function abilityTest() {
       done();
     })
 
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AVSESSION_BACKGROUNDPLAYMODE_ENUM_0100
+     * @tc.name        SUB_MULTIMEDIA_AVSESSION_BACKGROUNDPLAYMODE_ENUM_0100
+     * @tc.desc        compare all value in BackgroundPlayMode to number value
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_BACKGROUNDPLAYMODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info(`TestLog: ENABLE_BACKGROUND_PLAY is ${avSession.BackgroundPlayMode.ENABLE_BACKGROUND_PLAY}`);
+      expect(avSession.BackgroundPlayMode.ENABLE_BACKGROUND_PLAY).assertEqual(0 as avSession.BackgroundPlayMode);
+      console.info(`TestLog: DISABLE_BACKGROUND_PLAY is ${avSession.BackgroundPlayMode.DISABLE_BACKGROUND_PLAY}`);
+      expect(avSession.BackgroundPlayMode.DISABLE_BACKGROUND_PLAY).assertEqual(1 as avSession.BackgroundPlayMode);
+      done();
+    })
+
   })
 }
 

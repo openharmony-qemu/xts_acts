@@ -44,7 +44,7 @@ export default function abilityTest() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await driver.waitForComponent(ON.id("001"), 10000);
+      await Utils.waitForComponent(driver, '001');
       done()
     })
 

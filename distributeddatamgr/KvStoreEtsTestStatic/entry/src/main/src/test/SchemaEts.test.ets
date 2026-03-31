@@ -49,7 +49,7 @@ function putBatchString(len: number, prefix: string) {
 async function testPutAndGet(kvManager: ddm.KVManager | null, options: ddm.Options): Promise<void> {
   try {
 
-    await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+    await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
 
       console.info('testPutAndGet getKVStore success' + JSON.stringify(options));
       kvStore = store;
@@ -299,7 +299,7 @@ export default function schemaTest(){
 
         }
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
           waitForCompletion(async () => {
             console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 getKVStore success' + JSON.stringify(options));
             kvStore = store;
@@ -361,7 +361,7 @@ export default function schemaTest(){
           expect(null).assertFail();
         }
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
           waitForCompletion(async () => {
             console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 getKVStore success' + JSON.stringify(options));
             kvStore = store;

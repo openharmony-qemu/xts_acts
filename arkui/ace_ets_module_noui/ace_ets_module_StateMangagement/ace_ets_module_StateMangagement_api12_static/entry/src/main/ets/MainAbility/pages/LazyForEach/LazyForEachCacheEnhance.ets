@@ -48,7 +48,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class MyDataSource0427 implements IDataSource<string> {
+export class MyDataSource0427 implements IDataSource<string> {
   private dataArray: string[] = new Array<string>()
   private listeners: DataChangeListener[] = new Array<DataChangeListener>()
 

@@ -2759,6 +2759,114 @@ export default function VibratorJsTest_misc_9() {
         };
         vibrator.onVibratorStateChange(validCallback);
 
+        await vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_TIME);
+        await vibrator.stopVibration();
+        await vibrator.stopVibration({ deviceId: 1, vibratorId: 3 });
+        vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, (error) => {
+          hilog.info(domain, tag, TAG + `stopVibration , error.code: ${error?.code} , error.message: ${error?.message}`);
+        })
+
+        let builder = new vibrator.VibratorPatternBuilder();
+        try {
+          let pattern = builder.build();
+          expect(pattern.time === 1).assertTrue();
+          expect(pattern.events[0].time === 1).assertTrue();
+          expect(pattern.events[0].duration === 1).assertTrue();
+          expect(pattern.events[0].intensity === 1).assertTrue();
+          expect(pattern.events[0].frequency === 1).assertTrue();
+          expect(pattern.events[0].index === 1).assertTrue();
+          done();
+        } catch (error) {
+          error = error as BusinessError;
+          expect(false).assertTrue();
+          done();
+        }
+
+        try {
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            expect().assertFail();
+          });
+        } catch (err) {
+          expect(err.code === PERMISSION_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            expect().assertFail();
+          });
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await vibrator.startVibration(effect, attribute);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PERMISSION_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await vibrator.startVibration(effect, attribute);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === OPERATION_FAIL_CODE).assertTrue();
+        }
+
+        try {
+          await vibrator.stopVibration({ deviceId: 1, vibratorId: 3 });
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PERMISSION_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const vibrators = vibrator.getVibratorInfoSync();
+          const vibratorInfoParam:vibrator.VibratorInfoParam = {
+            deviceId: vibrators[0].deviceId,
+            vibratorId: vibrators[0].vibratorId
+          };
+          vibrator.getEffectInfoSync(effectId, vibratorInfoParam);
+        } catch (err) {
+          expect(err.code === OPERATION_FAIL_CODE).assertTrue();
+        }
+
+        try {
+          const validCallback = (statusEvent: vibrator.VibratorStatusEvent) => {
+            expect(statusEvent.timestamp === 4).assertTrue();
+            expect(statusEvent.deviceId === 1).assertTrue();
+            expect(statusEvent.vibratorCount === 5).assertTrue();
+            expect(statusEvent.isVibratorOnline === true).assertTrue();
+          };
+          vibrator.onVibratorStateChange(validCallback);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === OPERATION_FAIL_CODE).assertTrue();
+        }
+
+        try {
+          vibrator.offVibratorStateChange(validCallback);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === OPERATION_FAIL_CODE).assertTrue();
+        }
+
+        let builder1 = new vibrator.VibratorPatternBuilder();
+        try {
+          let pattern = builder1.build();
+          expect(pattern.events.length === 0).assertTrue();
+        } catch (error) {
+          error = error as BusinessError;
+          expect(false).assertTrue();
+        }
+
       } catch (error) {
         hilog.info(domain, tag, TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE);

@@ -88,7 +88,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -122,7 +121,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -156,7 +154,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -190,7 +187,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -224,7 +220,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -258,7 +253,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));

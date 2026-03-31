@@ -61,15 +61,35 @@ static const std::vector<TestFunction> apiTestFunctions = {
     DemuxerIllegalPara1500,                       // 17
     DemuxerIllegalPara1600,                       // 18
     DemuxerIllegalPara1700,                       // 19
-    DemuxerApi0200,                               // 20
-    DemuxerApi1100                                // 21
+    DemuxerIllegalPara1800,                       // 20
+    DemuxerIllegalPara1900,                       // 21
+    DemuxerIllegalPara2100,                       // 22
+    DemuxerIllegalPara2200,                       // 23
+    DemuxerIllegalPara2400,                       // 24
+    DemuxerIllegalPara2500,                       // 25
+    DemuxerIllegalPara2600,                       // 26
+    DemuxerIllegalPara2700,                       // 27
+    DemuxerIllegalPara2800,                       // 28
+    DemuxerIllegalPara2900,                       // 29
+    DemuxerIllegalPara3000,                       // 30
+    DemuxerApi0200,                               // 31
+    DemuxerApi0300,                               // 32
+    DemuxerApi0500,                               // 33
+    DemuxerApi0700,                               // 34
+    DemuxerApi1000,                               // 35
+    DemuxerApi1100,                               // 36
+    DemuxerApi1200,                               // 37
+    DemuxerApi1300,                               // 38
+    DemuxerApi1400,                               // 39
+    DemuxerApi2300,                               // 40
+    DemuxerApi2400,                               // 41
+    DemuxerApi2500                                // 42
 };
 
 // 功能测试函数映射表
-// 注意: 索引 0 和 1 对应的 DemuxerFunction0200 和 DemuxerFunction0300 已被删除
 static const std::vector<TestFunction> funcTestFunctions = {
-    nullptr,                                      // 0 - DemuxerFunction0200 已删除
-    nullptr,                                      // 1 - DemuxerFunction0300 已删除
+    DemuxerFunction0200,                          // 0
+    DemuxerFunction0300,                          // 1
     DemuxerFunction0400,                          // 2
     DemuxerFunction0500,                          // 3
     DemuxerFunction0700,                          // 4
@@ -184,7 +204,9 @@ static const std::vector<TestFunction> func2TestFunctions = {
     DemuxerFunctionAudioTrack0190,                // 45
     DemuxerFunctionAdd0010,                       // 46
     DemuxerFunctionAdd0020,                       // 47
-    DemuxerFunctionAdd0030                        // 48
+    DemuxerFunctionAdd0030,                       // 48
+    DemuxerSkipSampleFunc0010,                    // 49
+    DemuxerSkipSampleFunc0020                     // 50
 };
 
 // 流程测试函数映射表
@@ -200,20 +222,21 @@ static const std::vector<TestFunction> procTestFunctions = {
     SubMediaDemuxerProcess2200,                   // 8
     SubMediaDemuxerProcess2300,                   // 9
     SubMediaDemuxerProcess2400,                   // 10
-    SubMediaDemuxerProcess2600,                   // 11
-    SubMediaDemuxerProcess2700,                   // 12
-    SubMediaDemuxerProcess2800,                   // 13
-    SubMediaDemuxerProcess2900,                   // 14
-    SubMediaDemuxerProcess3000,                   // 15
-    SubMediaDemuxerProcess3100,                   // 16
-    SubMediaDemuxerProcess3200,                   // 17
-    SubMediaDemuxerProcess3300,                   // 18
-    SubMediaDemuxerProcess3400,                   // 19
-    SubMediaDemuxerProcess3800,                   // 20
-    SubMediaDemuxerProcess3700,                   // 21
-    SubMediaDemuxerProcess3600,                   // 22
-    SubMediaDemuxerProcess3510,                   // 23
-    SubMediaDemuxerProcess3500                    // 24
+    SubMediaDemuxerProcess2500,                   // 11
+    SubMediaDemuxerProcess2600,                   // 12
+    SubMediaDemuxerProcess2700,                   // 13
+    SubMediaDemuxerProcess2800,                   // 14
+    SubMediaDemuxerProcess2900,                   // 15
+    SubMediaDemuxerProcess3000,                   // 16
+    SubMediaDemuxerProcess3100,                   // 17
+    SubMediaDemuxerProcess3200,                   // 18
+    SubMediaDemuxerProcess3300,                   // 19
+    SubMediaDemuxerProcess3400,                   // 20
+    SubMediaDemuxerProcess3800,                   // 21
+    SubMediaDemuxerProcess3700,                   // 22
+    SubMediaDemuxerProcess3600,                   // 23
+    SubMediaDemuxerProcess3510,                   // 24
+    SubMediaDemuxerProcess3500                    // 25
 };
 
 // ============================================
@@ -245,6 +268,20 @@ static void executeAsyncTest(napi_env env, void* data)
     if (context->testCase >= 0 && context->testCase < static_cast<int>(funcTestFunctions.size())
         && funcTestFunctions[context->testCase] != nullptr) {
         context->result = funcTestFunctions[context->testCase]();
+    } else {
+        context->result = -1;
+    }
+}
+
+// 异步执行流程测试函数 (在工作线程中执行)
+static void executeProcAsyncTest(napi_env env, void* data)
+{
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+
+    // 使用函数映射表执行测试
+    if (context->testCase >= 0 && context->testCase < static_cast<int>(procTestFunctions.size())
+        && procTestFunctions[context->testCase] != nullptr) {
+        context->result = procTestFunctions[context->testCase]();
     } else {
         context->result = -1;
     }
@@ -493,42 +530,63 @@ static napi_value runFunc2Test(napi_env env, napi_callback_info info)
     return createResultValue(env, result);
 }
 
-// 流程测试 - 25 个测试用例
+// 流程测试 - 25 个测试用例（异步版本）
 static napi_value runProcTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc < 1) {
-        return createResultValue(env, -1);
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Invalid arguments", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return createResultValue(env, -1);
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Argument must be a number", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
     int32_t testCase = -1;
     status = napi_get_value_int32(env, args[0], &testCase);
-    if (status != napi_ok) {
-        return createResultValue(env, -1);
+    if (status != napi_ok || testCase < 0 || testCase >= static_cast<int>(procTestFunctions.size()) ||
+        procTestFunctions[testCase] == nullptr) {
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Invalid test case number", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
-    // 使用函数映射表执行测试
-    int result = -1;
-    if (testCase >= 0 && testCase < static_cast<int>(procTestFunctions.size())
-        && procTestFunctions[testCase] != nullptr) {
-        result = procTestFunctions[testCase]();
-    } else {
-        napi_throw_type_error(env, nullptr, "Invalid test case number");
-        CleanupResources();
-        return createResultValue(env, -1);
-    }
+    AsyncTestContext* context = new AsyncTestContext();
+    context->env = env;
+    context->testCase = testCase;
+    context->result = -1;
 
-    CleanupResources();
-    return createResultValue(env, result);
+    napi_value promise;
+    napi_create_promise(env, &context->deferred, &promise);
+
+    napi_value resourceName;
+    napi_create_string_utf8(env, "ProcTestAsync", NAPI_AUTO_LENGTH, &resourceName);
+
+    napi_create_async_work(env, nullptr, resourceName, executeProcAsyncTest, completeAsyncTest, context,
+                           &context->work);
+    napi_queue_async_work(env, context->work);
+
+    return promise;
 }
 
 // ============================================

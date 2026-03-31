@@ -37,7 +37,11 @@ import {
   HorizontalAlign,
   ColorMetrics,
   LengthMetrics,
-  Color
+  Color,
+  AlignRuleOption,
+  LocalizedAlignRuleOptions,
+  Axis,
+  ChainStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, RecordData } from '@ohos.base'
@@ -82,6 +86,9 @@ struct pasteButton {
   @State strokeColorG: int = 0
   @State strokeColorB: int = 0
   @State strokeWidth: int = 0
+  @State alignRule: AlignRuleOption | LocalizedAlignRuleOptions | undefined = undefined
+  @State chainDirection: Axis | undefined = undefined
+  @State chainStyle: ChainStyle | undefined = undefined
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
@@ -210,6 +217,15 @@ struct pasteButton {
       if (data['strokeWth'] != null) {
         this.strokeWidth = data['strokeWth'] as Int
       }
+      if (data['alignRule'] != null) {
+        this.alignRule = data['alignRule'] as AlignRuleOption
+      }
+      if (data['chainDirection'] != null) {
+        this.chainDirection = data['chainDirection'] as Axis
+      }
+      if (data['chainStyle'] != null) {
+        this.chainStyle = data['chainStyle'] as ChainStyle
+      }
     }
   }
 
@@ -275,6 +291,8 @@ struct pasteButton {
               strokeColor: ColorMetrics.rgba(this.strokeColorR, this.strokeColorG, this.strokeColorB),
               strokeWidth: LengthMetrics.px(this.strokeWidth)
             })
+            .alignRules(this.alignRule)
+            .chainMode(this.chainDirection, this.chainStyle)
             .id('keyPaste')
             .key('keyPaste')
         }.width(this.rowWidth).height(this.rowHeight)

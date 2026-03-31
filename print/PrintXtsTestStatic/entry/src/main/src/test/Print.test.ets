@@ -2084,6 +2084,10 @@ export default function printTest() {
         hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_RUNNING_CONVERTING_FILES = ' + print.PrintJobSubState.PRINT_JOB_RUNNING_CONVERTING_FILES);
         hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR);
         hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_UNKNOWN = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_UNKNOWN);
+        hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION);
+        hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING);
+        hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT);
+        hilog.info(domain, tag, 'PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE = ' + print.PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE);
 
         // PrintErrorCode
         hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_NONE = ' + print.PrintErrorCode.E_PRINT_NONE);
@@ -2126,6 +2130,7 @@ export default function printTest() {
         hilog.info(domain, tag, 'PrinterEvent.PRINTER_EVENT_STATE_CHANGED = ' + print.PrinterEvent.PRINTER_EVENT_STATE_CHANGED);
         hilog.info(domain, tag, 'PrinterEvent.PRINTER_EVENT_INFO_CHANGED = ' + print.PrinterEvent.PRINTER_EVENT_INFO_CHANGED);
         hilog.info(domain, tag, 'PrinterEvent.PRINTER_EVENT_PREFERENCE_CHANGED = ' + print.PrinterEvent.PRINTER_EVENT_PREFERENCE_CHANGED);
+        hilog.info(domain, tag, 'PrinterEvent.PRINTER_EVENT_LAST_USED_PRINTER_CHANGED = ' + print.PrinterEvent.PRINTER_EVENT_LAST_USED_PRINTER_CHANGED);
 
         // DefaultPrinterType
         hilog.info(domain, tag, 'DefaultPrinterType.DEFAULT_PRINTER_TYPE_SET_BY_USER = ' + print.DefaultPrinterType.DEFAULT_PRINTER_TYPE_SET_BY_USER);
@@ -2553,11 +2558,6 @@ export default function printTest() {
         expect().assertFail();
         done();
       }
-      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_DRIVER_EXCEPTION = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION);
-      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_DRIVER_MISSING = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING);
-      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_INTERRUPT = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT);
-      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE);
-      hilog.info(domain, tag, 'PRINTER_EVENT_LAST_USED_PRINTER_CHANGED = %{public}s', print.PrinterEvent.PRINTER_EVENT_LAST_USED_PRINTER_CHANGED);
       hilog.info(domain, tag, '%{public}s', 'print_function_7000 end');
     });
 
@@ -2800,6 +2800,465 @@ export default function printTest() {
       }
       hilog.info(domain, tag, '%{public}s', 'print_function_7700 end');
     });
+
+    /**
+     * @tc.name   print_function_7800
+     * @tc.number print_function_7800
+     * @tc.desc   check PrintJobData interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_7800', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7800 start');
+      try {
+        let pageSize: print.PrintPageSize = new MyPrintPageSize();
+        pageSize.id = '0';
+        pageSize.name = '0';
+        pageSize.width = 210;
+        pageSize.height = 297;
+        let jobData: print.PrintJobData = {
+          printerId: 'testPrinterId',
+          jobName: 'testJobName',
+          documentFormat: print.PrintDocumentFormat.DOCUMENT_FORMAT_PDF,
+          docFlavor: print.DocFlavor.FILE_DESCRIPTOR,
+          copyNumber: 1,
+          isLandscape: false,
+          colorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+          duplexMode: print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          pageSize: pageSize,
+          jobId: 'testJobId',
+          fdList: [1, 2],
+          binaryData: new Uint8Array([1, 2, 3]),
+          printQuality: print.PrintQuality.QUALITY_NORMAL,
+          mediaType: 'testMediaType',
+          isBorderless: false,
+          isAutoRotate: true,
+          isReverse: false,
+          isCollate: true,
+          isSequential: false,
+          options: 'testOptions'
+        };
+        hilog.info(domain, tag, 'printJobData: %{public}s', JSON.stringify(jobData));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_7800 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7800 end');
+    })
+
+    /**
+     * @tc.name   print_function_7900
+     * @tc.number print_function_7900
+     * @tc.desc   check PrintDocumentFormat enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_7900', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7900 start');
+      try {
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_AUTO = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_AUTO);
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_JPEG = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_JPEG);
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_PDF = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_PDF);
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_POSTSCRIPT = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_POSTSCRIPT);
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_TEXT = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_TEXT);
+        hilog.info(domain, tag, 'PrintDocumentFormat.DOCUMENT_FORMAT_RAW = ' + print.PrintDocumentFormat.DOCUMENT_FORMAT_RAW);
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_7900 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7900 end');
+    })
+
+    /**
+     * @tc.name   print_function_8000
+     * @tc.number print_function_8000
+     * @tc.desc   check DocFlavor enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8000', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8000 start');
+      try {
+        hilog.info(domain, tag, 'DocFlavor.FILE_DESCRIPTOR = ' + print.DocFlavor.FILE_DESCRIPTOR);
+        hilog.info(domain, tag, 'DocFlavor.BYTES = ' + print.DocFlavor.BYTES);
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8000 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8000 end');
+    })
+
+    /**
+     * @tc.name   print_function_8100
+     * @tc.number print_function_8100
+     * @tc.desc   check SharedHost interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8100', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8100 start');
+      try {
+        let sharedHost: print.SharedHost = {
+          ip: '192.168.1.1',
+          shareName: 'printer_share',
+          workgroupName: 'WORKGROUP'
+        };
+        hilog.info(domain, tag, 'sharedHost:%{public}s', JSON.stringify(sharedHost));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8100 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8100 end');
+    })
+
+    /**
+     * @tc.name   print_function_8200
+     * @tc.number print_function_8200
+     * @tc.desc   check PpdInfo interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8200', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8200 start');
+      try {
+        let ppdInfo: print.PpdInfo = {
+          manufacturer: 'HP',
+          nickName: 'HP LaserJet',
+          ppdName: 'HP-LaserJet.ppd'
+        };
+        hilog.info(domain, tag, 'ppdInfo:%{public}s', JSON.stringify(ppdInfo));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8200 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8200 end');
+    })
+
+    /**
+     * @tc.name   print_function_8300
+     * @tc.number print_function_8300
+     * @tc.desc   check PrinterInformation interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8300', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8300 start');
+      try {
+        let printerInformation: print.PrinterInformation = {
+          printerId: 'printer001',
+          printerName: 'Office Printer',
+          printerStatus: print.PrinterStatus.PRINTER_UNAVAILABLE,
+          description: 'Main office printer',
+          capability: new MyPrinterCapabilities(),
+          uri: 'ipp://192.168.1.100:631/printers/printer',
+          printerMake: 'HP',
+          preferences: new MyPrinterPreferences(),
+          alias: 'OfficePrinter',
+          options: undefined
+        };
+        hilog.info(domain, tag, 'printerInformation:%{public}s', JSON.stringify(printerInformation));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8300 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8300 end');
+    })
+
+    /**
+     * @tc.name   print_function_8400
+     * @tc.number print_function_8400
+     * @tc.desc   check PrinterPreferences interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8400', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8400 start');
+      try {
+        let printerPreferences: print.PrinterPreferences = {
+          defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          defaultPrintQuality: print.PrintQuality.QUALITY_NORMAL,
+          defaultMediaType: 'A4',
+          defaultPageSizeId: 'iso_a4_210x297mm',
+          defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          borderless: false,
+          options: undefined
+        };
+        hilog.info(domain, tag, 'printerPreferences:%{public}s', JSON.stringify(printerPreferences));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8400 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8400 end');
+    })
+
+    /**
+     * @tc.name   print_function_8500
+     * @tc.number print_function_8500
+     * @tc.desc   check PrintJob interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8500', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8500 start');
+      try {
+        let printJob: print.PrintJob = {
+          fdList: [1, 2, 3],
+          jobId: 'job001',
+          printerId: 'printer001',
+          jobState: print.PrintJobState.PRINT_JOB_QUEUED,
+          jobSubstate: print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS,
+          copyNumber: 2,
+          pageRange: {
+            startPage: 1,
+            endPage: 5,
+            pages: [1, 2, 3, 4, 5]
+          },
+          isSequential: false,
+          pageSize: {
+            id: 'iso_a4_210x297mm',
+            name: 'A4',
+            width: 210,
+            height: 297
+          },
+          isLandscape: false,
+          colorMode: 1,
+          duplexMode: 1,
+          margin: {
+            top: 10,
+            bottom: 10,
+            left: 10,
+            right: 10
+          },
+          preview: {
+            previewRange: {
+              startPage: 1,
+              endPage: 5,
+              pages: [1, 2, 3, 4, 5]
+            },
+            result: 0
+          },
+          options: undefined
+        };
+        hilog.info(domain, tag, 'printJob:%{public}s', JSON.stringify(printJob));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8500 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8500 end');
+    })
+
+    /**
+     * @tc.name   print_function_8600
+     * @tc.number print_function_8600
+     * @tc.desc   check PrinterInfo interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8600', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8600 start');
+      try {
+        let printerInfo: print.PrinterInfo = {
+          printerId: 'printer001',
+          printerName: 'Office Printer',
+          printerState: print.PrinterState.PRINTER_CONNECTED,
+          printerIcon: 1001,
+          description: 'Main office printer',
+          capability: {
+            colorMode: 1,
+            duplexMode: 1,
+            pageSize: [
+              {
+                id: 'iso_a4_210x297mm',
+                name: 'A4',
+                width: 210,
+                height: 297
+              }
+            ],
+            resolution: [
+              {
+                id: '600dpi',
+                horizontalDpi: 600,
+                verticalDpi: 600
+              }
+            ],
+            minMargin: {
+              top: 5,
+              bottom: 5,
+              left: 5,
+              right: 5
+            },
+            options: undefined
+          },
+          options: undefined
+        };
+        hilog.info(domain, tag, 'printerInfo:%{public}s', JSON.stringify(printerInfo));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8600 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8600 end');
+    })
+
+    /**
+     * @tc.name   print_function_8700
+     * @tc.number print_function_8700
+     * @tc.desc   check PrinterCapability interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8700', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8700 start');
+      try {
+        let printerCapability: print.PrinterCapability = {
+          colorMode: 1,
+          duplexMode: 1,
+          pageSize: [
+            {
+              id: 'iso_a4_210x297mm',
+              name: 'A4',
+              width: 210,
+              height: 297
+            },
+            {
+              id: 'iso_a3_297x420mm',
+              name: 'A3',
+              width: 297,
+              height: 420
+            }
+          ],
+          resolution: [
+            {
+              id: '300dpi',
+              horizontalDpi: 300,
+              verticalDpi: 300
+            },
+            {
+              id: '600dpi',
+              horizontalDpi: 600,
+              verticalDpi: 600
+            }
+          ],
+          minMargin: {
+            top: 5,
+            bottom: 5,
+            left: 5,
+            right: 5
+          },
+          options: undefined
+        };
+        hilog.info(domain, tag, 'printerCapability:%{public}s', JSON.stringify(printerCapability));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8700 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8700 end');
+    })
+
+    /**
+     * @tc.name   print_function_8800
+     * @tc.number print_function_8800
+     * @tc.desc   check PrintResolution interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8800', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8800 start');
+      try {
+        let printResolution: print.PrintResolution = {
+          id: '600dpi',
+          horizontalDpi: 600,
+          verticalDpi: 600
+        };
+        hilog.info(domain, tag, 'printResolution:%{public}s', JSON.stringify(printResolution));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8800 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8800 end');
+    })
+
+    /**
+     * @tc.name   print_function_8900
+     * @tc.number print_function_8900
+     * @tc.desc   check PreviewAttribute interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_8900', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_8900 start');
+      try {
+        let previewAttribute: print.PreviewAttribute = {
+          previewRange: {
+            startPage: 1,
+            endPage: 5,
+            pages: [1, 2, 3, 4, 5]
+          },
+          result: 0
+        };
+        hilog.info(domain, tag, 'previewAttribute:%{public}s', JSON.stringify(previewAttribute));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_8900 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_8900 end');
+    })
+
+    /**
+     * @tc.name   print_function_9000
+     * @tc.number print_function_9000
+     * @tc.desc   check PrintMargin interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_9000', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_9000 start');
+      try {
+        let printMargin: print.PrintMargin = {
+          top: 10,
+          bottom: 10,
+          left: 10,
+          right: 10
+        };
+        hilog.info(domain, tag, 'printMargin:%{public}s', JSON.stringify(printMargin));
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_9000 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_9000 end');
+    })
+
+    /**
+     * @tc.name   print_function_9100
+     * @tc.number print_function_9100
+     * @tc.desc   check WatermarkHandleResult enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('print_function_9100', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_9100 start');
+      try {
+        hilog.info(domain, tag, 'WatermarkHandleResult.WATERMARK_HANDLE_SUCCESS = ' + print.WatermarkHandleResult.WATERMARK_HANDLE_SUCCESS);
+        hilog.info(domain, tag, 'WatermarkHandleResult.WATERMARK_HANDLE_FAILURE = ' + print.WatermarkHandleResult.WATERMARK_HANDLE_FAILURE);
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_9100 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_9100 end');
+    })
 
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });

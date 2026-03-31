@@ -32,6 +32,9 @@ import AddMonitorObservedV2Map from './AddMonitorTest/AddMonitorObservedV2Map.te
 import AddMonitorObservedV2Set from './AddMonitorTest/AddMonitorObservedV2Set.test';
 import AddMonitorParentChild from './AddMonitorTest/AddMonitorParentChild.test';
 import AddMonitorTwoDimensionalArray from './AddMonitorTest/AddMonitorTwoDimensionalArray.test';
+import BasicPrefetcherMethods from './Prefetcher/BasicPrefetcherMethods.test';
+import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMethods.test';
+import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -52,4 +55,7 @@ export default function testsuite() {
   AddMonitorErrorCode();
   AddMonitorParentChild(); 
   AddMonitorTwoDimensionalArray(); 
+  BasicPrefetcherMethods();
+  IDataSourcePrefetchingMethods();
+  ReuseObjectRawTest(); 
 }

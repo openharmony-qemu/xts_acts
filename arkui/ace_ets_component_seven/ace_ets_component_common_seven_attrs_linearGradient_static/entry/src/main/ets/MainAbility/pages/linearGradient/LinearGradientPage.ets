@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -55,7 +55,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 	}
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -68,7 +68,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	}
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -81,7 +81,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	}
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -94,7 +94,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 	}
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -107,7 +107,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 	}
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -120,7 +120,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	}
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -133,7 +133,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	}
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -146,7 +146,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 	}
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -159,7 +159,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 	}
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -172,7 +172,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	}
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -185,7 +185,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	}
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -198,7 +198,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 	}
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -211,7 +211,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	}
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -224,7 +224,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	}
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -237,7 +237,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 	}
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -250,7 +250,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	}
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -263,7 +263,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 	}
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -276,7 +276,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	}
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
+export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -289,7 +289,7 @@ class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
 	}
 }
 
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -302,7 +302,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	}
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -315,7 +315,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 	}
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -328,7 +328,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 	}
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -341,7 +341,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	}
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -354,7 +354,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	}
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -367,7 +367,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	}
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -380,7 +380,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 	}
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -393,7 +393,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 	}
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -406,7 +406,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 	}
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -419,7 +419,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 	}
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -432,7 +432,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	}
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -445,7 +445,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 	}
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -458,7 +458,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 	}
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -471,7 +471,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	}
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -484,7 +484,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 	}
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -497,7 +497,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	}
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -510,7 +510,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 	}
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -523,7 +523,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 	}
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -575,7 +575,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 // 	}
 // }
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -588,7 +588,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 	}
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -601,7 +601,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	}
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -614,7 +614,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	}
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -627,7 +627,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	}
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -640,7 +640,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	}
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -653,7 +653,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 	}
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -666,7 +666,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 	}
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -679,7 +679,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 	}
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -692,7 +692,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	}
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -705,7 +705,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 	}
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -718,7 +718,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	}
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -731,7 +731,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	}
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -744,7 +744,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	}
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -757,7 +757,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 	}
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -770,7 +770,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	}
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -783,7 +783,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	}
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -796,7 +796,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	}
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -809,7 +809,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 	}
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -822,7 +822,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 	}
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -835,7 +835,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	}
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -848,7 +848,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 	}
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -861,7 +861,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 	}
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -874,7 +874,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -887,7 +887,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -900,7 +900,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	}
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -913,7 +913,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	}
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -926,7 +926,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 	}
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -939,7 +939,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 	}
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -952,7 +952,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	}
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -965,7 +965,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	}
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -978,7 +978,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	}
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -991,7 +991,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	}
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1004,7 +1004,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	}
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1017,7 +1017,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	}
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1030,7 +1030,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	}
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1043,7 +1043,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 	}
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1056,7 +1056,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	}
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1069,7 +1069,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 	}
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,
@@ -1082,7 +1082,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	}
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
 	repeating: true,

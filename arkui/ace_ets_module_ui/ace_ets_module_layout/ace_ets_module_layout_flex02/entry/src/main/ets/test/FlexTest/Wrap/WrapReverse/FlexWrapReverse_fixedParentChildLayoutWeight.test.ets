@@ -75,31 +75,33 @@ export default function flexWrapReverse_fixedParentChildLayoutWeight() {
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest69');
       let locationFlexParent: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest23');
 
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi1:'+ Math.floor(Math.abs(locationText1.top - locationFlexParent.top)))
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi1:' + Math.floor(Math.abs(locationText1.top - locationFlexParent.top)));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi2:' + Math.floor(Math.abs(locationText1.top - locationText2.top)));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi3:' + Math.floor(Math.abs(locationText2.top - locationText3.top)));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi4:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(100))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi5:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(150))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi6:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(200))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi7:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi8:' + Math.floor(Math.abs((locationText2.right - locationText2.left) - vp2px(100))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi9:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - vp2px(100))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi10:' + Math.floor(Math.abs((locationText2.right - locationText2.left) - (locationText3.right - locationText3.left))));
+      console.info('testWrapReverseParentfixedLayoutWeight_chazhi11:' + Math.floor(Math.abs(((locationText1.right - locationText1.left) * 100) / 100 -
+       (150 * (locationText3.right - locationText3.left)) / 100)));
+
       expect(Math.floor(Math.abs(locationText1.top - locationFlexParent.top)) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi2:'+ Math.floor(Math.abs(locationText1.top - locationText2.top)))
       expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi3:'+ Math.floor(Math.abs(locationText2.top - locationText3.top)))
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi4:'+ Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(100))))
-      expect(Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(100))) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi5:'+ Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(150))))
-      expect(Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(150))) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi6:'+ Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(200))))
-      expect(Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(200))) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi7:'+ Math.floor(Math.abs(locationText1.right - locationText1.left - vp2px(150))))
-      expect(Math.floor(Math.abs(locationText1.right - locationText1.left - vp2px(150))) <= 1).assertTrue();
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi8:'+ Math.floor(Math.abs(locationText2.right - locationText2.left - vp2px(100))))
-      expect(Math.floor(Math.abs(locationText2.right - locationText2.left - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi9:'+ Math.floor(Math.abs(locationText3.right - locationText3.left - vp2px(100))))
-      expect(Math.floor(Math.abs(locationText3.right - locationText3.left - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi10:'+ Math.floor(Math.abs((locationText2.right - locationText2.left) - (locationText3.right - locationText3.left))))
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(100))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(200))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - (locationText3.right - locationText3.left))) <= 1).assertTrue()
-      console.info('testWrapReverseParentfixedLayoutWeight_chazhi11:'+ Math.floor(Math.abs((locationText1.right - locationText1.left) * 100 / 100 - 150 * (locationText3.right - locationText3.left) / 100)))
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) * 100 / 100 - 150 * (locationText3.right - locationText3.left) / 100)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(((locationText1.right - locationText1.left) * 100) / 100 - (150 * (locationText3.right - locationText3.left)) / 100)) <= 1).assertTrue()
 
       console.info('new testWrapReverseParentfixedLayoutWeight END');
-    });
 
+    });
   })
 }

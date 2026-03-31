@@ -73,6 +73,7 @@ import getTest from './photoAccessHelper/PhotoAsset/get.test';
 import getThumbnailTest from './photoAccessHelper/PhotoAsset/getThumbnail.test';
 import setTest from './photoAccessHelper/PhotoAsset/set.test';
 import createAssetTest from './photoAccessHelper/photoAccessHelper/createAsset.test';
+import getAssetsByPredicatesTest from './photoAccessHelper/photoAccessHelper/getAssetsByPredicates.test'
 import getAlbumsTest from './photoAccessHelper/photoAccessHelper/getAlbums.test';
 import getAssetsTest from './photoAccessHelper/photoAccessHelper/getAssets.test';
 import getBurstAssetsTest from './photoAccessHelper/photoAccessHelper/getBurstAssets.test';
@@ -116,6 +117,7 @@ export default function testsuite() {
   sendableSetTest();
   createAssetTest();
   getAssetsTest();
+  getAssetsByPredicatesTest();
   getBurstAssetsTest();
   registerChangeTest();
   releaseTest();

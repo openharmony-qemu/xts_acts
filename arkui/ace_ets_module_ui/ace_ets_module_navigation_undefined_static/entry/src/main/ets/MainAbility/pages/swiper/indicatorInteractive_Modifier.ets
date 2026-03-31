@@ -28,7 +28,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class SliderModifierTest0 implements AttributeModifier<SwiperAttribute>{
+export class SliderModifierTest0 implements AttributeModifier<SwiperAttribute>{
   public isUndefined: boolean = false;
   applyNormalAttribute(instance: SwiperAttribute):void{
     instance

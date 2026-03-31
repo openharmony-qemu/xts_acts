@@ -21,6 +21,7 @@
     "MainAbility/pages/getUIContext/WidthBreakpointEnumsTest",
     "MainAbility/pages/getUIContext/GetWindowIdTest",
     "MainAbility/pages/getUIContext/UIContextOnFrameTest",
-    "MainAbility/pages/getUIContext/UIContextOnIdleTest"
+    "MainAbility/pages/getUIContext/UIContextOnIdleTest",
+    "MainAbility/pages/UIContext/UIContextIsEasySplitPage"
   ]
 }

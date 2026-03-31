@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ import {
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
-class MyFullDrawModifier extends DrawModifier {
+export class MyFullDrawModifier extends DrawModifier {
   public scaleX: number = 1;
   public scaleY: number = 1;
   public scaleZ: number = 1;
@@ -124,7 +124,7 @@ class MyFullDrawModifier extends DrawModifier {
   }
 }
 
-class MyFrontDrawModifier extends DrawModifier {
+export class MyFrontDrawModifier extends DrawModifier {
   public scaleX: number = 1;
   public scaleY: number = 1;
 

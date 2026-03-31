@@ -15,7 +15,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ImageAttribute> {
+export class MyModifier implements AttributeModifier<ImageAttribute> {
   public isOnError: boolean = false;
   public cnt : int = 0;
 

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthMetrics } from '@kit.ArkUI'
 
-class MyTextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class MyTextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   isDark: boolean = false
 
   applyNormalAttribute(instance: TextPickerAttribute): void {

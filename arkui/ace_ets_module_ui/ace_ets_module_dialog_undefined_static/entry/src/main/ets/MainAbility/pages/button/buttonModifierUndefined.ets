@@ -37,7 +37,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   public isMaxFontScaleModifier: Boolean = false
   public isMinFontScaleModifier: Boolean = false
   public isLabelStyleModifier: Boolean = false
@@ -61,7 +61,7 @@ class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonFontModifier implements AttributeModifier<ButtonAttribute> {
+export class MyButtonFontModifier implements AttributeModifier<ButtonAttribute> {
   public isFontFamilyModifier: Boolean = false
   public isFontStyleModifier: Boolean = false
   public isFontWeightModifier: Boolean = false
@@ -80,7 +80,7 @@ class MyButtonFontModifier implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonFontSizeModifier implements AttributeModifier<ButtonAttribute> {
+export class MyButtonFontSizeModifier implements AttributeModifier<ButtonAttribute> {
   public isFontSizeModifier1: Boolean = false
 
   applyNormalAttribute(instance: ButtonAttribute): void {

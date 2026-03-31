@@ -47,35 +47,30 @@ struct PromptActionOpenMenuNullTest {
     Row() {
       Column() {
         Text('openMenu Null/Undefined Test Page')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
 
         Text('Test Result: ' + this.testResult)
-          .fontSize(16)
-          .margin({ bottom: 10 })
+          .fontSize(10)
           .id('openmenu_test_result')
 
         Text('Last Error: ' + this.lastError)
           .fontSize(14)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
           .id('openmenu_last_error')
 
-        Divider().margin({ bottom: 20 })
+        Divider()
 
         // ========== openMenu with null/undefined parameters ==========
         Text('=== Null/Undefined Parameter Tests ===')
           .fontSize(16)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
 
         // Test openMenu with null contentNode (param 1)
         Button('openMenu with null contentNode')
           .id('btn_openmenu_null_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -95,7 +90,6 @@ struct PromptActionOpenMenuNullTest {
           .id('btn_openmenu_undefined_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -115,7 +109,6 @@ struct PromptActionOpenMenuNullTest {
           .id('btn_openmenu_null_target')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -136,7 +129,7 @@ struct PromptActionOpenMenuNullTest {
           .id('btn_openmenu_undefined_target')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -157,7 +150,7 @@ struct PromptActionOpenMenuNullTest {
           .id('btn_openmenu_null_options')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -180,7 +173,7 @@ struct PromptActionOpenMenuNullTest {
           .id('btn_openmenu_undefined_options')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -201,6 +194,7 @@ struct PromptActionOpenMenuNullTest {
       .width('100%')
       .height('100%')
       .padding(20)
+      .margin({top:30})
     }
     .height('100%')
   }

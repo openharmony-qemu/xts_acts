@@ -777,6 +777,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_DAGGER_CLICK == 3211);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_DOUBLE_CLICK == 3212);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_LONG_PRESS == 3213);
+        expect(KeyCode.KEYCODE_DIV).assertEqual(3220);
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

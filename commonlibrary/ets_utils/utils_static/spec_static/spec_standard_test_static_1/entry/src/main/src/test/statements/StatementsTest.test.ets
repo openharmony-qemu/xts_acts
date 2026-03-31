@@ -289,10 +289,8 @@ class CIterator implements Iterator<string> {
     this.base = base;
   }
   next(): IteratorResult<string> {
-    return {
-      done: this.index >= this.base.data.length,
-      value: this.index >= this.base.data.length ? undefined : this.base.data[this.index++]
-    }
+    return new IteratorResult<string>(this.index >= this.base.data.length,
+      this.index >= this.base.data.length ? undefined : this.base.data[this.index++]);
   }
 }
 function foo21<T extends String>(s: T): T[] {
@@ -1390,7 +1388,7 @@ export default function StatementsTest() {
      */
     it("testStatements0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[] = new int[0];
+      let arr: int[] = new int[0](0);
       for (let v of arr) res += v;
       expect(res).assertEqual("");
     });
@@ -1405,7 +1403,7 @@ export default function StatementsTest() {
      */
     it("testStatements0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[]|null = new int[0];
+      let arr: int[]|null = new int[0](0);
       for (let v of arr) res += v;
       expect(res).assertEqual("");
     });
@@ -1483,7 +1481,7 @@ export default function StatementsTest() {
      */
     it("testStatements0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: Long[] = new Long[3];
+      let arr: Long[] = new Long[3](0);
       for (let i: int = 0; i < 3; i++) arr[i] = new Long(i.toLong());
       for (let i of arr) res += i;
       expect(res).assertEqual("012");
@@ -1544,7 +1542,7 @@ export default function StatementsTest() {
      */
     it("testStatements0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[]|null = (): int[]|null => { return new int[0]; }();
+      let arr: int[]|null = (): int[]|null => { return new int[0](0); }();
       for (let v of arr!) res += v;
       expect(res).assertEqual("");
     });
@@ -1620,7 +1618,7 @@ export default function StatementsTest() {
       let res = "";
       let i = 0;
       i = 0;
-      let array: A1[] = new A1[10];
+      let array: A1[] = new A1[10](new A1());
       let c = 0;
       for (let x of array) c += x.i;
       expect(c).assertEqual(10);

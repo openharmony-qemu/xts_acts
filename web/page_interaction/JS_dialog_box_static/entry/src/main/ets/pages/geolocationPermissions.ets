@@ -14,7 +14,7 @@
  */
 
 import webView from '@ohos.web.webview';
-import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web, WebDarkMode } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
@@ -28,6 +28,11 @@ class StringFields {
   str: string = '';
 }
 
+interface objectCss {
+  code: int;
+  message: string;
+}
+
 @Entry
 @Component
 struct geolocationPermissions {
@@ -37,6 +42,8 @@ struct geolocationPermissions {
   @State javaScriptAccess: boolean = true;
   @State incognito: boolean = false;
   @State origin: string = 'resource://rawfile/'
+  @State errorCode: int = 0;
+  @State errorMsg: string = 'failed';
   no_error: string = 'no error happened'
 
 
@@ -162,6 +169,45 @@ struct geolocationPermissions {
               break;
             }
 
+            case "testGetStoredGeolocation005": {
+              try {
+                webView.GeolocationPermissions.allowGeolocation("file:///")
+                webView.GeolocationPermissions.getStoredGeolocation(false)
+                  .then(origins => {
+                    let origins_str: string = origins.join();
+                    console.log('getStoredGeolocationPromise origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 30062);
+                  }).catch((error) => {
+                  //console.log('getStoredGeolocationPromise error: ' + JSON.stringify(error));
+                  console.error(`getStoredGeolocationPromise error: ErrorCode: ${error.code},  Message: ${error.message}`);
+
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocation006': {
+              try {
+                webView.GeolocationPermissions.deleteGeolocation(this.origin, this.incognito)
+                webView.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error?.code) {
+                    console.log('getStoredGeolocationAsync error: ' + JSON.stringify(error))
+                    return;
+                  }
+                  if (origins) {
+                    let origins_str: string = origins.join()
+                    console.log('getStoredGeolocationAsync origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 100013);
+                  }
+                },false);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
             case 'testDeleteAllGeolocation001': {
               let text: undefined | String = '123'
               webView.GeolocationPermissions.allowGeolocation('resource://rawfile/')
@@ -216,6 +262,49 @@ struct geolocationPermissions {
               break;
             }
 
+            case "testGetAccessibleGeolocation003": {
+              try {
+
+                this.errorMsg = 'failed';
+                webView.GeolocationPermissions.getAccessibleGeolocation("", (error, result) => {
+                  if (error) {
+                    console.log('getAccessibleGeolocationAsync error: ' + JSON.stringify(error));
+                    this.errorCode = error.code;
+                    this.errorMsg = error.message;
+                    console.error("emitGetAccessibleGeolocationCallbackValueNullErr getAccessibleGeolocation return result is :" + this.errorCode + this.errorMsg);
+                    Utils.emitEvent(this.errorCode, 110580)
+                    return;
+                  }
+                  console.log('getAccessibleGeolocationAsync result: ' + result);
+                });
+              } catch (error) {
+                console.error(`emitGetAccessibleGeolocationCallbackValueNullErr ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "testGetAccessibleGeolocation004": {
+              try {
+
+                this.errorMsg = 'failed';
+                webView.GeolocationPermissions.getAccessibleGeolocation("")
+                  .then(result => {
+                    console.log('getAccessibleGeolocationPromise result: ' + result);
+                    Utils.emitEvent(result, 110630)
+                  })
+                  .catch((error) => {
+                    console.error(`testGetAccessibleGeolocation004 ErrorCode: ${error.code},  Message: ${error.message}`);
+                    this.errorCode = error.code;
+                    this.errorMsg = error.message;
+                    console.error("emitGetAccessibleGeolocationPromiseValueNullErr getAccessibleGeolocation return result is :" + this.errorCode + this.errorMsg);
+                  });
+              } catch (error) {
+                console.error(`emitGetAccessibleGeolocationPromiseValueNullErr ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -228,6 +317,7 @@ struct geolocationPermissions {
 
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .darkMode(WebDarkMode.ON)
 
     }
   }

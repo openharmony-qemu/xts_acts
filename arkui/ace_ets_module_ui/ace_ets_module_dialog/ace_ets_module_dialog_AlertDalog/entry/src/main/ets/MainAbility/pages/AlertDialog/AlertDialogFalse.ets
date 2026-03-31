@@ -19,7 +19,6 @@ struct AlertDialogFalseExample {
     Column({ space: 5 }) {
       Button('one button dialog')
         .id("AlertDialogFalse")
-        .margin(100)
         .onClick(() => {
           AlertDialog.show(
             {

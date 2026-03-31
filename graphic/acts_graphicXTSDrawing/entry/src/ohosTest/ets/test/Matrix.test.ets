@@ -890,10 +890,11 @@ export default function drawingTsMatrixTest() {
         matrix1.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
-        matrix1.isEqual(matrix2);
-        console.info(msg + ' isEqual successed');
+        let result = matrix1.isEqual(matrix2);
+        expect(result).assertEqual(false);
+        console.info(msg + ' 1 isEqual successed result: ' + result);
       } catch (e) {
-        console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 1 isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
 
@@ -902,10 +903,11 @@ export default function drawingTsMatrixTest() {
         matrix1.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-        matrix1.isEqual(matrix2)
-        console.info(msg + ' isEqual successed');
+        let result = matrix1.isEqual(matrix2)
+        expect(result).assertEqual(true);
+        console.info(msg + ' 2 isEqual successed result: ' + result);
       } catch (e) {
-        console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 1 isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
     })
@@ -966,7 +968,9 @@ export default function drawingTsMatrixTest() {
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
         for (let i = 0; i < loop_times; i++) {
-          matrix1.isEqual(matrix2);
+          let result =  matrix1.isEqual(matrix2);
+          expect(result).assertEqual(false);
+          console.info(msg + ' isEqual successed result: ' + result + " step: " + i);
         }
         console.info(msg + ' isEqual successed');
       } catch (e) {
@@ -989,8 +993,9 @@ export default function drawingTsMatrixTest() {
         let matrix1 = new drawing.Matrix();
         let matrix2 = new drawing.Matrix();
         matrix2 .setScale(0, 0, 0.5, 0.5);
-        matrix1.invert(matrix2);
-        console.info(msg + ' invert successed');
+        let result = matrix1.invert(matrix2);
+        expect(result).assertEqual(true);
+        console.info(msg + ' 1 invert successed result: ' + result);
       } catch (e) {
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -1000,8 +1005,9 @@ export default function drawingTsMatrixTest() {
         let matrix1 = new drawing.Matrix();
         let matrix2 = new drawing.Matrix();
         matrix1 .setScale(0, 0, 0.5, 0.5);
-        matrix1.invert(matrix2);
-        console.info(msg + ' invert successed');
+        let result = matrix1.invert(matrix2);
+        expect(result).assertEqual(false);
+        console.info(msg + ' 2 invert successed result: ' + result);
       } catch (e) {
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -1064,9 +1070,10 @@ export default function drawingTsMatrixTest() {
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
         for (let i = 0; i < loop_times; i++) {
-          matrix1.invert(matrix2);
+          let result = matrix1.invert(matrix2);
+          expect(result).assertEqual(true);
+          console.info(msg + ' invert successed result: ' + result + " step: " + i);
         }
-        console.info(msg + ' invert successed');
       } catch (e) {
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -1085,8 +1092,9 @@ export default function drawingTsMatrixTest() {
       const msg = 'testMatrixIsIdentityNormal';
       try {
         let matrix1 = new drawing.Matrix();
-        matrix1.isIdentity();
-        console.info(msg + ' isIdentity successed');
+        let result = matrix1.isIdentity();
+        expect(result).assertEqual(true);
+        console.info(msg + ' isIdentity successed 1 result: ' + result);
       } catch (e) {
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -1095,8 +1103,9 @@ export default function drawingTsMatrixTest() {
       try {
         let matrix1 = new drawing.Matrix();
         matrix1.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
-        matrix1.isIdentity();
-        console.info(msg + ' isIdentity successed');
+        let result = matrix1.isIdentity();
+        expect(result).assertEqual(false);
+        console.info(msg + ' isIdentity successed 2 result: ' + result);
       } catch (e) {
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -1116,9 +1125,10 @@ export default function drawingTsMatrixTest() {
       try {
         let matrix1 = new drawing.Matrix();
         for (let i = 0; i < loop_times; i++) {
-          matrix1.isIdentity();
+          let result = matrix1.isIdentity();
+          expect(result).assertEqual(true);
+          console.info(msg + ' isIdentity successed  result: ' + result + " step: " + i);
         }
-        console.info(msg + ' isIdentity successed');
       } catch (e) {
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()

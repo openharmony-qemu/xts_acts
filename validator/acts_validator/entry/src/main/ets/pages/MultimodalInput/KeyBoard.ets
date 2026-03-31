@@ -14,7 +14,7 @@
 */
 
 import router from '@ohos.router';
-import { CustomContainer } from '../common/CanvasCustomContainer2';
+import { CustomContainer } from '../common/CanvasCustomContainer3';
 import FirstDialog from '../model/FirstDialog';
 
 @Entry

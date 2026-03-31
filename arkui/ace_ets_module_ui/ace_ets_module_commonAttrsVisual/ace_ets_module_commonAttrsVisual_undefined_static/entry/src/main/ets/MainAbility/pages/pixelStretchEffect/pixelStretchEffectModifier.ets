@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyPixelStretchEffectModifier implements AttributeModifier<TextAttribute> {
+export class MyPixelStretchEffectModifier implements AttributeModifier<TextAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: TextAttribute): void {

@@ -58,7 +58,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
-class ArrayLinkObject {
+export class ArrayLinkObject {
   public id: number = 1
   public value: string = ''
 

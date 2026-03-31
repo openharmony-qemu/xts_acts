@@ -167,4 +167,5 @@ private:
 };
 } // namespace Media
 } // namespace OHOS
+extern bool g_flagValue;
 #endif // VIDEOENC_API11_SAMPLE_H

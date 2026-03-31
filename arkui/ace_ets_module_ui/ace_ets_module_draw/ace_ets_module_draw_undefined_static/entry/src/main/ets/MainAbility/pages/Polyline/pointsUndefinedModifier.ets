@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import { Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<PolylineAttribute> {
+export class MyModifier implements AttributeModifier<PolylineAttribute> {
   public isPoints: boolean = false;
   applyNormalAttribute(instance: PolylineAttribute): void {
     instance

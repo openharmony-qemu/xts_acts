@@ -14,7 +14,10 @@
  */
 import enableFollowSystemFontWeight from './enableFollowSystemFontWeight.test'
 import webFantasyFont from './WebFantasyFont.test'
+import webViewMinLogicalFontSize from "./WebViewMinLogicalFontSize.test";
+
 export default function testsuite() {
+    webViewMinLogicalFontSize();
     enableFollowSystemFontWeight();
     webFantasyFont();
 }

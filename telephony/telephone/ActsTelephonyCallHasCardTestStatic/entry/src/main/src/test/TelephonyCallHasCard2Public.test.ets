@@ -632,7 +632,7 @@ export default function HasCard2PublicTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
-        /**
+    /**
      * @tc.name   testTelephonyCallManagerFormatPhoneNumber1700
      * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_1700
      * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the callback asynchronous callback api7+.
@@ -640,31 +640,31 @@ export default function HasCard2PublicTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-        it('testTelephonyCallManagerFormatPhoneNumber1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-          let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1700';
-          hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-          let options: call.NumberFormatOptions = {
-            countryCode: "CN"
-          };
-          try {
-            call.formatPhoneNumber("", options, (err: BusinessError<void>|null, data: String|undefined) => {
-              if (err) {
-                hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber success, err->'+JSON.stringify(err));
-                ExpectTrue(err.code == 8300001);
-                done();
-              } else {
-                hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
-                ExpectFail();
-                done();
-              }
-            });
-          } catch (err) {
-            hilog.info(domain, tag, '%{public}s', caseName +'  fail, err->'+JSON.stringify(err));
+    it('testTelephonyCallManagerFormatPhoneNumber1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber1700';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      let options: call.NumberFormatOptions = {
+        countryCode: "CN"
+      };
+      try {
+        call.formatPhoneNumber("", options, (err: BusinessError<void>|null, data: String|undefined) => {
+          if (err) {
+            hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber success, err->'+JSON.stringify(err));
+            ExpectTrue(err.code == 8300001);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
             ExpectFail();
             done();
-          }
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+           }
         });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  fail, err->'+JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+    });
 
     /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_0100
@@ -685,7 +685,38 @@ export default function HasCard2PublicTest() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-            expect(true).assertEqual(data === false);
+            expect(data === false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_0200
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0200
+     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_0200';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        call.isEmergencyPhoneNumber(emergencyPhoneNumber, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (err?.code) {
+            hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            expect(data === true).assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            ExpectFail();
             done();
           }
         });
@@ -716,7 +747,7 @@ export default function HasCard2PublicTest() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-            expect(true).assertEqual(data === false);
+            expect(data === false).assertTrue();
             done();
           }
         });
@@ -782,7 +813,7 @@ export default function HasCard2PublicTest() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-            expect(true).assertEqual(data === false);
+            expect(data === false).assertTrue();
             done();
           }
         });
@@ -848,7 +879,7 @@ export default function HasCard2PublicTest() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-            expect(true).assertEqual(data === false);
+            expect(data === false).assertTrue();
             done();
           }
         });
@@ -884,7 +915,43 @@ export default function HasCard2PublicTest() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-            expect(true).assertEqual(data === false);
+            expect(data === false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_0900
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0900
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_0900';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        const options: call.EmergencyNumberOptions = {
+          slotId: 0
+        };
+        call.isEmergencyPhoneNumber(emergencyPhoneNumber, options, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (err?.code) {
+            hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            expect(data === true).assertTrue();
             done();
           }
         });
@@ -1083,6 +1150,42 @@ export default function HasCard2PublicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1500
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        const options: call.EmergencyNumberOptions = {
+          slotId: 0
+        };
+        call.isEmergencyPhoneNumber("", options, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (err?.code) {
+            hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            expect(true).assertEqual(err?.code === 8300001);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_1800
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1800
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
@@ -1216,7 +1319,41 @@ export default function HasCard2PublicTest() {
         }
         call.isEmergencyPhoneNumber(phoneNumber, options).then((data: boolean) => {
           hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
-          expect(true).assertEqual(data === false);
+          expect(data === false).assertEqual(true);
+          done();
+        }).catch((error: Error) => {
+          hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_2500
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2500
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_2500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let options: call.EmergencyNumberOptions = {
+          slotId: 0
+        }
+        call.isEmergencyPhoneNumber(emergencyPhoneNumber, options).then((data: boolean) => {
+          hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
+          expect(data === true).assertTrue();
           done();
         }).catch((error: Error) => {
           hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(error)}`);
@@ -1316,6 +1453,40 @@ export default function HasCard2PublicTest() {
           slotId: 0
         }
         call.isEmergencyPhoneNumber(phoneNumber, options).then((data: boolean) => {
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
+          done();
+        }).catch((error: Error) => {
+          hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail,promise err->${JSON.stringify(error)}`);
+          expect(true).assertEqual((error as BusinessError)?.code == 8300001);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_2900
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_2900
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_2900';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let options: call.EmergencyNumberOptions = {
+          slotId: 0
+        }
+        call.isEmergencyPhoneNumber("", options).then((data: boolean) => {
           ExpectFail();
           hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
           done();

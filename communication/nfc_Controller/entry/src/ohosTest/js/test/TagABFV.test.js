@@ -1882,13 +1882,13 @@ export default function nfcTagABFVTest() {
             }).catch((error)=> {
                 if (error.code === 201) {
                     console.info("[NFC_test]25 getBarcode error is " + error);
-                    expect(201).assertEqual(error.code);
+                    expect(error.code).assertEqual(201);
                 } else if (error.code === 3100201) {
                     console.info("[NFC_test]25 getBarcode error is " + error);
-                    expect(3100201).assertEqual(error.code);
+                    expect(error.code).assertEqual(3100201);
                 } else if (error.code === 3100204) {
                     console.info("[NFC_test]25 getBarcode error is " + error);
-                    expect(3100204).assertEqual(error.code);
+                    expect(error.code).assertEqual(3100204);
                 } else {
                     console.info("[NFC_test]25 getBarcode error is " + error)
                     expect().assertFail();
