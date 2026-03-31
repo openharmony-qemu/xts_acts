@@ -16,7 +16,7 @@
 import { ModifierUtils } from '@kit.ArkUI';
 
 class MyModifier implements AttributeModifier<TextAttribute | ButtonAttribute> {
-  isDark: boolean = false
+  public isDark: boolean = false;
 
   constructor(dark?: boolean) {
     this.isDark = dark ?? false;
@@ -26,8 +26,10 @@ class MyModifier implements AttributeModifier<TextAttribute | ButtonAttribute> {
     AppStorage.setOrCreate('IsInstanceOf_aaa', ModifierUtils.isInstanceOf(instance, 'aaa'));
     AppStorage.setOrCreate('IsInstanceOf_Button', ModifierUtils.isInstanceOf(instance, 'Button'));
     AppStorage.setOrCreate('IsInstanceOf_empty_string', ModifierUtils.isInstanceOf(instance, ''));
-    AppStorage.setOrCreate('IsInstanceOf_null', ModifierUtils.isInstanceOf(null, 'Button'));
-    AppStorage.setOrCreate('IsInstanceOf_undefined', ModifierUtils.isInstanceOf(undefined, 'Button'));
+    AppStorage.setOrCreate('IsInstanceOf_null_1', ModifierUtils.isInstanceOf(null, 'Button'));
+    AppStorage.setOrCreate('IsInstanceOf_undefined_1', ModifierUtils.isInstanceOf(undefined, 'Button'));
+    AppStorage.setOrCreate('IsInstanceOf_null_2', ModifierUtils.isInstanceOf(instance, null));
+    AppStorage.setOrCreate('IsInstanceOf_undefined_2', ModifierUtils.isInstanceOf(instance, undefined));
   }
 }
 

@@ -70,11 +70,17 @@ export default function IsInstanceOfTest() {
       expect(AppStorage.get('IsInstanceOf_empty_string')).assertEqual(false);
       AppStorage.delete('IsInstanceOf_empty_string');
 
-      expect(AppStorage.get('IsInstanceOf_null')).assertEqual(false);
-      AppStorage.delete('IsInstanceOf_null');
+      expect(AppStorage.get('IsInstanceOf_null_1')).assertEqual(false);
+      AppStorage.delete('IsInstanceOf_null_1');
 
-      expect(AppStorage.get('IsInstanceOf_undefined')).assertEqual(false);
-      AppStorage.delete('IsInstanceOf_undefined');
+      expect(AppStorage.get('IsInstanceOf_undefined_1')).assertEqual(false);
+      AppStorage.delete('IsInstanceOf_undefined_1');
+
+      expect(AppStorage.get('IsInstanceOf_null_2')).assertEqual(false);
+      AppStorage.delete('IsInstanceOf_null_2');
+
+      expect(AppStorage.get('IsInstanceOf_undefined_2')).assertEqual(false);
+      AppStorage.delete('IsInstanceOf_undefined_2');
 
       console.info('[IsInstanceOfTest_0100] END');
     })
