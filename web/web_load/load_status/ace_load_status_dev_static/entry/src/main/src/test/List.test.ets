@@ -14,7 +14,9 @@
  */
 
 import webOnActivateContentTest from './OnActivateContent.test'
+import ControllerAttachStateChange from './ControllerAttachStateChange.test'
 
 export default function testsuite() {
+    ControllerAttachStateChange();
     webOnActivateContentTest();
 }

@@ -57,13 +57,14 @@ export default function WebViewEnumAndFontLibrary() {
       await Utils.msSleep(2000);
       done();
     })
+
     /**
-     * * @tc.name     : SwitchNextPageStatic
-     * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
-     * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_FILESELECTORMODE_020031
+     * @tc.desc   test FileSelectorModeFileOpenMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

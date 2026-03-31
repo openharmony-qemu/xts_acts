@@ -50,7 +50,18 @@
         "name": "ohos.permission.INTERNET"
       },
       {
-        "name": "ohos.permission.GET_NETWORK_INFO"
+        "name": "ohos.permission.MICROPHONE",
+        "reason": "$string:mic_permission_reason",
+        // 必填：权限申请的原因（需清晰易懂）
+        "usedScene": {
+          // 必填：权限使用场景
+          "abilities": [
+            "EntryAbility"
+          ],
+          // 关联的Ability名称（和上面abilities中的name一致）
+          "when": "inuse"
+          // 使用时机：inuse（使用时申请）/always（始终需要）
+        }
       }
     ]
   }

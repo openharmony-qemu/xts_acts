@@ -15,11 +15,9 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
-import { Driver, ON } from '@ohos.UiTest';
 import { RecordData } from '@ohos.base';
 
 export default class Utils{
-
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
@@ -28,21 +26,10 @@ export default class Utils{
     })
   }
 
-  static async clickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.text(id));
-    if( component != null ){
-      await component.click();
-    }
-  }
-
-  static async emitEvent(actualValue: boolean | string | Int | object, eventId: Int) {
+  static async emitEvent(actualValue: boolean | string | number | object, eventId: Long) {
     try {
-      console.info("Entry emitEvent, actualValue = " + actualValue);
-      const tempData: Record<string, RecordData> = {
-        "ACTION": actualValue as object
-      };
-
+      let tempData: Record<string, RecordData> = {};
+      tempData['ACTION'] = actualValue;
       let backData: events_emitter.EventData = {
         data: tempData
       }
@@ -51,26 +38,23 @@ export default class Utils{
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      const actionValue = (backData.data as Record<string, RecordData> )["ACTION"];
-      console.info("webFlag start to emit action state, ackData.data[\"ACTION\"] = " + String(actionValue));
       events_emitter.emit(backEvent, backData);
+      console.info('Utils sleep start');
       await Utils.msSleep(2000)
+      console.info('Finish emit, Utils sleep over');
     } catch (err) {
-      console.info("webFlag emit action state err: " + JSON.stringify(err));
+      console.info('webFlag emit action state err: ' + JSON.stringify(err));
     }
   }
 
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Int,
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
     done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
-    console.info('registerBaseEvent start')
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
-        console.info('registerBaseEvent before second try')
         try {
           console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
           expectFunction(backData, expected);
-          console.info(`[${testCaseName}] END`);
         } catch (err) {
           console.info(`[${testCaseName}] err:` + JSON.stringify(err));
         }
@@ -81,19 +65,16 @@ export default class Utils{
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(innerEvent, callBack)
-      console.info("Finish registerBaseEvent, innerEvent.eventId=" + innerEvent.eventId + ", innerEvent.priority=" +
-      innerEvent.priority);
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
-    console.info('registerBaseEvent end')
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Int, done: () => void) {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];
-      console.info(`Begin to assert [${action}] Equal [${expected}]`);
+      console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
       expect(action).assertEqual(expected);
     });
   }

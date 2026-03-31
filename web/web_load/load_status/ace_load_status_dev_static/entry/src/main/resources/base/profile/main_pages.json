@@ -1,5 +1,6 @@
 {
   "src": [
-    "pages/OnActivateContent"
+    "pages/OnActivateContent",
+    "pages/ControllerAttachStateChange"
   ]
 }
