@@ -1058,5 +1058,44 @@ export default function cameraManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100--------------");
+      let camerasArray = mCameraDevicesArray;
+      for (let i = 0; i < camerasArray.length; i++) {
+        let cameraOutputCap = getSupportedOutputCapability(camerasArray[i]);
+        console.info("SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100 camera:" +
+        camerasArray[i].cameraId);
+        if (cameraOutputCap != undefined) {
+          let previewProfilesArray = cameraOutputCap.previewProfiles;
+          if (previewProfilesArray == null || previewProfilesArray == undefined) {
+            console.info(TAG +
+              "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100 previewProfilesArray == null || undefined")
+            expect().assertFail();
+          } else {
+            for (let j = 0; j < previewProfilesArray!.length; j++) {
+              let previewOutputPromise =
+                mCameraManager!.createDeferredPreviewOutput(previewProfilesArray![j]);
+              if (previewOutputPromise == undefined) {
+                console.info(TAG +
+                  "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_DEFERRED_PREVIEW_OUTPUT_PROMISE_STATIC_0100 previewOutputPromise == null || undefined")
+                expect().assertFail();
+              }
+            }
+          }
+        }
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_STATIC_0100 PASS");
+      await Utils.msSleep(1000);
+      done();
+    })
   })
 }
