@@ -67,14 +67,14 @@ export default function getRectangleByIdTest() {
     });
 
     /**
-     * @tc.number getRectangleByIdTest_001
-     * @tc.name getRectangleById
-     * @tc.desc Test getRectangleById
+     * @tc.name   getRectangleById
+     * @tc.number SUB_ARKUI_API_getRectangleById_0100
+     * @tc.desc   ArkUIAPI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL2
      */
-    it('getRectangleByIdTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('getRectangleById', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] getRectangleByIdTest execute: getRectangleByIdTest START');
       try {
         const driver = Driver.create();
