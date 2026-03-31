@@ -95,70 +95,70 @@ export default function VideoEncoderGetparamTest() {
     });
 
     /**
-     * @tc.name VideoEncodeMseQp0100Test
-     * @tc.number VIDEO_ENCODE_MSE_QP_0100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VideoEncodeMseQp0100Test', Level.LEVEL0, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0100', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0100Test start');
       let result: number = await testNapi.runGetparamTest(0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name VideoEncodeMseQp0200Test
-     * @tc.number VIDEO_ENCODE_MSE_QP_0200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VideoEncodeMseQp0200Test', Level.LEVEL0, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0200', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0200Test start');
       let result: number = await testNapi.runGetparamTest(1);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name VideoEncodeMseQp0300Test
-     * @tc.number VIDEO_ENCODE_MSE_QP_0300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VideoEncodeMseQp0300Test', Level.LEVEL0, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0300', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0300Test start');
       let result: number = await testNapi.runGetparamTest(2);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name VideoEncodeMseQp0400Test
-     * @tc.number VIDEO_ENCODE_MSE_QP_0400
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VideoEncodeMseQp0400Test', Level.LEVEL0, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0400', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0400Test start');
       let result: number = await testNapi.runGetparamTest(3);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name VideoEncodeRepeat0100Test
-     * @tc.number VIDEO_ENCODE_REPEAT_0100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_REPEAT_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_REPEAT_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VideoEncodeRepeat0100Test', Level.LEVEL0, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_REPEAT_0100', Level.LEVEL0, async () => {
       console.info('VideoEncodeRepeat0100Test start');
       let result: number = await testNapi.runGetparamTest(4);
       expect(result).assertEqual(0);
