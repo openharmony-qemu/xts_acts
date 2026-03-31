@@ -580,7 +580,7 @@ export class KeyboardController {
           break;
         case 565:
           console.debug(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0600 event:' + data.event);
-          that.SSub_InputMethod_IMF_PerceptionScreen_0600();
+          that.Sub_InputMethod_IMF_PerceptionScreen_0600();
           break;
       }
     }
