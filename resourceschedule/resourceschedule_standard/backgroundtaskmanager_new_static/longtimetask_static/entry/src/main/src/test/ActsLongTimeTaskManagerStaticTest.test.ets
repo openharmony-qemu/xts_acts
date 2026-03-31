@@ -3112,7 +3112,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         try {
           isModeSupported = continuousTaskRequest.isModeSupported();
           console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069 Operation isModeSupported succeeded. isModeSupported is ${isModeSupported}`);
-          expect(isModeSupported == true).assertTrue();
+          expect(isModeSupported === true).assertTrue();
           done();
         } catch (error) {
           console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069 Operation startBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
@@ -3141,12 +3141,11 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         try {
           isModeSupported = continuousTaskRequest.isModeSupported();
           console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070 Operation isModeSupported succeeded. isModeSupported is ${isModeSupported}`);
-          expect(isModeSupported == false).assertTrue();
+          expect(isModeSupported === false).assertTrue();
           done();
         } catch (error) {
           console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070 Operation startBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
           expect(error.code === 9800005).assertTrue();
-          expect(false).assertTrue();
           done();
         }
 
