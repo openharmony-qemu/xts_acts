@@ -514,7 +514,84 @@ export default function geoLocationManager_nop_test() {
       console.info('geolocation_fenceStatusChange_nop_test_006 end');
     })
 
+    /**
+     * @tc.name   geolocation_getCurrentLocation_nop_test_007
+     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_007
+     * @tc.desc   Using the geolocation.getCurrentLocation method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("geolocation_getCurrentLocation_nop_test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const requestInfo: geolocation.CurrentLocationRequest = {
+        'priority': geolocation.LocationRequestPriority.FIRST_FIX,
+        'scenario': geolocation.LocationRequestScenario.UNSET,
+        'maxAccuracy': 0
+      };
 
+      const locationChange = (err: BusinessError, location: geolocation.Location) => {
+        if (err) {
+          console.info('geolocation_getCurrentLocation_nop_test_007 locationChanger: err=' + JSON.stringify(err));
+          expect(err.code).assertEqual(3301200);
+        } else if (location) {
+          console.info('geolocation_getCurrentLocation_nop_test_007 locationChanger: location=' + JSON.stringify(location));
+          expect(location !== null).assertTrue();
+        } else {
+          console.info('geolocation_getCurrentLocation_nop_test_007 locationChanger: no location, no err ');
+          expect().assertFail();
+        }
+        done();
+      };
+
+      try {
+        await geolocation.getCurrentLocation(requestInfo, locationChange);
+        console.info('---geolocation_getCurrentLocation_nop_test_007  request success---');
+        done();
+      } catch (err) {
+        console.info('---geolocation_getCurrentLocation_nop_test_007 catch end type---' + typeof err.code + ',err:' + err.code);
+        if (err.code === 106) {
+          expect(err.code).assertEqual(106);
+        } else {
+          expect().assertFalse();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   geolocation_getCurrentLocation_nop_test_008
+     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_008
+     * @tc.desc   Using the geolocation.getCurrentLocation method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("geolocation_getCurrentLocation_nop_test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      try {
+        geolocation.getCurrentLocation((err: BusinessError, location: geolocation.Location) => {
+          if (err) {
+            console.info('geolocation_getCurrentLocation_nop_test_008  err=' + JSON.stringify(err) + ', type err:' + typeof err.code);
+            expect(err.code).assertEqual(3301200);
+          } else if (location) {
+            console.info('geolocation_getCurrentLocation_nop_test_008  location=' + JSON.stringify(location));
+            expect(location !== null).assertTrue();
+            console.info('---geolocation_getCurrentLocation_nop_test_008 location success---');
+          } else {
+            console.info('geolocation_getCurrentLocation_nop_test_008 locationChanger: no location, no err ');
+            expect().assertFail();
+          }
+        });
+        done();
+      } catch (err) {
+        console.info('---geolocation_getCurrentLocation_nop_test_008 catch end type---' + typeof err.code + ',err:' + err.code);
+        if (err.code === 106) {
+          expect(err.code).assertEqual(106);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
 
     /**
      * @tc.name   geolocation_getLastLocation_nop_test_010
@@ -1013,6 +1090,58 @@ export default function geoLocationManager_nop_test() {
     });
 
     /**
+     * @tc.name   geolocation_requestEnableLocation_nop_test_026
+     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_026
+     * @tc.desc   requestEnableLocation(callback: AsyncCallback<boolean>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("geolocation_requestEnableLocation_nop_test_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        geolocation.requestEnableLocation((err, data) => {
+          if (err) {
+            console.info('geolocation_requestEnableLocation_nop_test_026 requestEnableLocation: err=' + typeof err.code + ',err:' + err.code);
+            expect(err.code === 201).assertTrue();
+          }
+          if (data) {
+            console.info('geolocation_requestEnableLocation_nop_test_026 requestEnableLocation: data=' + JSON.stringify(data));
+            expect(typeof data).assertEqual('boolean');
+          }
+        });
+        done();
+      } catch (err) {
+        console.info('geolocation_requestEnableLocation_nop_test_026 requestEnableLocation: catch:' + typeof err.code + ',err:' + err.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   geolocation_requestEnableLocation_nop_test_027
+     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_027
+     * @tc.desc   requestEnableLocation(): Promise<boolean>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("geolocation_requestEnableLocation_nop_test_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      geolocation.requestEnableLocation().then((result) => {
+        console.info('geolocation_requestEnableLocation_nop_test_027 promise, requestEnableLocation: ' + JSON.stringify(result));
+        if (result) {
+          expect(typeof result).assertEqual('boolean');
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }).catch((err: BusinessError) => {
+        console.info('promise, getCachedGnssLocationsSize: catch errtype=' + typeof err.code + ',err:' + err.code);
+        expect(err.code).assertEqual(201);
+        done();
+      })
+    });
+
+    /**
      * @tc.name   geoLocationManager_locationError_nop_test_001
      * @tc.number SUB_geolocation_locationError_nop_test_001
      * @tc.desc   Using the locationError method without permission
@@ -1334,7 +1463,26 @@ export default function geoLocationManager_nop_test() {
       console.info('geoLocationManager_getCurrentLocation_nop_test_009 end');
     })
 
-
+    /**
+     * @tc.name   geoLocationManager_getLastLocation_nop_test_011
+     * @tc.number SUB_geoLocationManager_getLastLocation_nop_test_011
+     * @tc.desc   Using the geoLocationManager.getCurrentLocation method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("geoLocationManager_getLastLocation_nop_test_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let location = geoLocationManager.getLastLocation();
+        console.info('geoLocationManager_getLastLocation_nop_test_011 location: ' + JSON.stringify(location));
+        console.info('---geoLocationManager_getLastLocation_nop_test_011 catch success---');
+        done();
+      } catch (err) {
+        console.info('---geoLocationManager_getLastLocation_nop_test_011 catch ---' + ', type err: ' + typeof err.code + ', err: ' + err.code);
+        expect(err.code).assertEqual('201');
+        done();
+      }
+    })
 
     /**
      * @tc.name   geoLocationManager_getCachedGnssLocationsSize_nop_test_013
