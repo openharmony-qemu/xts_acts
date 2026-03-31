@@ -1116,6 +1116,7 @@ export default function DisplayNdkTest() {
             console.info('Succeeded in get the count.' + count);
             await sleep(1000);
             expect(count).assertLarger(0);
+            windowClass!.recover();
             done()
           } else if (deviceType === 'tablet' && !isPCMode) {
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);

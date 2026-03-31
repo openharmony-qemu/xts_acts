@@ -553,6 +553,7 @@ static napi_value getAreaLinsterCount(napi_env env, napi_callback_info info)
 
 static napi_value RegisterAvailableAreaChangeListener(napi_env env, napi_callback_info info)
 {
+    g_areaCount = 0;
     uint32_t listenerIndex = 0;
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterAvailableAreaChangeListener(
         AvailableAreaChangeCallback, &listenerIndex);
