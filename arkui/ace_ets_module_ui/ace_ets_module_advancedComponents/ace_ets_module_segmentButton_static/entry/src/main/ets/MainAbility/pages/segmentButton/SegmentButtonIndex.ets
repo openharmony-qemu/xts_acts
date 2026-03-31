@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-'use static'
+
 
 import {
   Entry,
@@ -76,6 +77,7 @@ struct SegmentButtonIndex {
       Column({ space: 25 } as ColumnOptions) {
           Button(this.mCreateText)
             .id('btnCreateText')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -86,6 +88,7 @@ struct SegmentButtonIndex {
 
           Button(this.mCreateIcon)
             .id('btnCreateIcon')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock') } as SegmentButtonIconItem,
@@ -96,6 +99,7 @@ struct SegmentButtonIndex {
 
           Button(this.mCreateIconText)
             .id('btnCreateIconText')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { icon: $r('sys.media.ohos_ic_public_email'), selectedIcon: $r('sys.media.ohos_ic_public_clock'), text: 'A' } as SegmentButtonIconTextItem,
@@ -107,6 +111,7 @@ struct SegmentButtonIndex {
           // --- push 系列：操作 SegmentButtonOptions.buttons ---
           Button(this.mPush2)
             .id('btnPush2')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -121,6 +126,7 @@ struct SegmentButtonIndex {
 
           Button(this.mPush3)
             .id('btnPush3')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -137,6 +143,7 @@ struct SegmentButtonIndex {
           // --- pop/shift ---
           Button(this.mPop)
             .id('btnPop')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -150,6 +157,7 @@ struct SegmentButtonIndex {
 
           Button(this.mShift)
             .id('btnShift')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -164,6 +172,7 @@ struct SegmentButtonIndex {
           // --- unshift 系列 ---
           Button(this.mUnshift1)
             .id('btnUnshift1')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -175,6 +184,7 @@ struct SegmentButtonIndex {
 
           Button(this.mUnshift2)
             .id('btnUnshift2')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -189,6 +199,7 @@ struct SegmentButtonIndex {
 
           Button(this.mUnshift3)
             .id('btnUnshift3')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -205,6 +216,7 @@ struct SegmentButtonIndex {
           // --- splice 系列 ---
           Button(this.mSpliceDel)
             .id('btnSpliceDel')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
@@ -212,12 +224,12 @@ struct SegmentButtonIndex {
                 { text: 'C' } as SegmentButtonTextItem,
                 { text: 'D' } as SegmentButtonTextItem
               ] as Array<SegmentButtonTextItem>);
-              arr.splice(1, 2);
               this.mSpliceDel = 'splice_del:' + arr.splice(1, 2).length + ':' + arr.length;
             })
 
           Button(this.mSpliceIns)
             .id('btnSpliceIns')
+            .height('3%')
             .onClick(() => {
               let arr = SegmentButtonItemOptionsArray.create([
                 { text: 'A' } as SegmentButtonTextItem,
