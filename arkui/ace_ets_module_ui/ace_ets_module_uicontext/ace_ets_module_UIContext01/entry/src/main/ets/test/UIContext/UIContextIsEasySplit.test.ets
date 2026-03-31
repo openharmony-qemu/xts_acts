@@ -27,12 +27,12 @@ const PROBE_CAP_MS: number = 8000;
 export default function UIContextIsEasySplitTest() {
   describe('UIContextIsEasySplitTest', () => {
     /**
-     * @tc.number   ui_context_is_easy_split_return_boolean_0100
-     * @tc.name     ui_context_is_easy_split_return_boolean_0100
+     * @tc.number   SUB_ArkUI_UIContext_IsEasySplit_Return_Boolean_0100
+     * @tc.name     SUB_ArkUI_UIContext_IsEasySplit_Return_Boolean_0100
      * @tc.desc     ohos.arkui.UIContext UIContext.isEasySplit() returns boolean and is stored from probe page
      * @tc.level    Level.LEVEL0
      */
-    it('ui_context_is_easy_split_return_boolean_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_UIContext_IsEasySplit_Return_Boolean_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(UI_CONTEXT_IS_EASY_SPLIT_STATUS_KEY, 'pending');
       let routed: boolean = await CommonFunc.openRouterPage(UI_CONTEXT_IS_EASY_SPLIT_PAGE);
       if (!routed) {
