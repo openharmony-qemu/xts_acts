@@ -82,15 +82,15 @@ export default function actsNotificationAnsEnableBatchNoSystemStaticTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Enable_Batch_Static_0100
-     * @tc.number Sub_Notification_Ans_Enable_Batch_Static_0100
+     * @tc.name   SUB_Notification_Ans_Enable_Batch_Static_0100
+     * @tc.number SUB_Notification_Ans_Enable_Batch_Static_0100
      * @tc.desc   1.2 Call the setReminderInfoByBundles, getReminderInfoByBundles, getBadgeDisplayStatusByBundles, and setBadgeDisplayStatusByBundles interfaces, where hap is a third-party application, and an error 202 is reported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_Enable_Batch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Enable_Batch_Static_0100';
+    it('SUB_Notification_Ans_Enable_Batch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Enable_Batch_Static_0100';
       let nullStr:string=''
       let reminderInfosOne: Array<notificationManager.NotificationReminderInfo> = [
         {
