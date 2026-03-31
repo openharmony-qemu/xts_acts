@@ -2880,6 +2880,18 @@ Camera_ErrorCode NDKCamera::SetTorchMode(int useCaseCode)
     return ret_;
 }
 
+bool NDKCamera::IsTorchLevelControlSupported()
+{
+    bool ret = false;
+    OH_CameraManager_IsTorchLevelControlSupported(cameraManager_, &ret);
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::SetTorchModeOnWithLevel(double level)
+{
+    return OH_CameraManager_SetTorchModeOnWithLevel(cameraManager_, level);
+}
+
 Camera_ErrorCode NDKCamera::GetExposureValue(int useCaseCode)
 {
     float exposureValue;

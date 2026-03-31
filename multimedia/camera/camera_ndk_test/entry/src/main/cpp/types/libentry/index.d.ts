@@ -482,6 +482,10 @@ export const oHCameraManagerIsTorchSupportedByTorchMode: (index:number) => isTor
 
 export const oHCameraManagerSetTorchMode: (index:number) => number;
 
+export const oHCameraManagerIsTorchLevelControlSupported: () => number;
+ 
+export const oHCameraManagerSetTorchModeOnWithLevel: (level:number) => number;
+
 export const oHCaptureSessionGetExposureValue: (index:number) => number;
 
 export const oHCaptureSessionGetFocalLength: (index:number) => number;

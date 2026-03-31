@@ -2272,6 +2272,29 @@ static napi_value OHCameraManagerSetTorchMode(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value OHCameraManagerIsTorchLevelControlSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool code = ndkCamera_->IsTorchLevelControlSupported();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCameraManagerSetTorchModeOnWithLevel(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    double level;
+    napi_get_value_double(env, args[0], &level);
+    Camera_ErrorCode ret = ndkCamera_->SetTorchModeOnWithLevel(level);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value OHCaptureSessionGetExposureValue(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3502,6 +3525,10 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, napi_default, nullptr},
         {"oHCameraManagerSetTorchMode", nullptr, OHCameraManagerSetTorchMode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"oHCameraManagerIsTorchLevelControlSupported", nullptr, OHCameraManagerIsTorchLevelControlSupported,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerSetTorchModeOnWithLevel", nullptr, OHCameraManagerSetTorchModeOnWithLevel,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHCaptureSessionGetExposureValue", nullptr, OHCaptureSessionGetExposureValue, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"oHCaptureSessionGetFocalLength", nullptr, OHCaptureSessionGetFocalLength, nullptr, nullptr, nullptr,
