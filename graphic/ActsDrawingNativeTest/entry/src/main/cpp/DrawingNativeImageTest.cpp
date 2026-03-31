@@ -495,24 +495,24 @@ int TestImageGetImageInfoMultipleCalls()
         ALPHA_FORMAT_PREMUL,
         ALPHA_FORMAT_UNPREMUL,
     };
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<int> dis1(0, DRAWING_NUMBER_3);
-    std::uniform_real_distribution<int> dis2(0, DRAWING_NUMBER_5);
-    std::uniform_real_distribution<int> dis3(0, DRAWING_NUMBER_100);
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_Image *image = OH_Drawing_ImageCreate();
+        OH_Drawing_Image* image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
-        OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+        OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
         // add assert
         EXPECT_NE(bitmap, nullptr);
         time_t now = time(nullptr);
-        EXPECT_NE(now, static_cast<time_t>(-1));
-        srand(static_cast<unsigned int>(now));
-        OH_Drawing_BitmapFormat cFormat{cf[dis2(gen) + DRAWING_NUMBER_1], af[dis1(gen) + DRAWING_NUMBER_1]};
-        uint32_t width = dis3(gen) + DRAWING_NUMBER_1;
-        uint32_t height = dis3(gen) + DRAWING_NUMBER_1;
+        if (now != static_cast<time_t>(-1)) {
+            srand(static_cast<unsigned int>(now));
+        } else {
+            // 兜底处理，避免未初始化随机种子
+            srand(1U);
+        }
+        OH_Drawing_BitmapFormat cFormat{ cf[std::random_device{}() % DRAWING_NUMBER_5 + DRAWING_NUMBER_1],
+                                         af[std::random_device{}() % DRAWING_NUMBER_3 + DRAWING_NUMBER_1] };
+        uint32_t width = std::random_device{}() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
+        uint32_t height = std::random_device{}() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_Image_Info imageInfo;
         OH_Drawing_ImageGetImageInfo(image, &imageInfo);
