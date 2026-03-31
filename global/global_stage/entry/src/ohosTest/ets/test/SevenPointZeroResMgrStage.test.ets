@@ -31,10 +31,10 @@ import { GlobalContext } from '../test/global';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function getResourceNameTest() {
+export default function SevenPointZeroResMgrStageTest() {
 
-  describe("getResourceNameTest", (): void => {
-    hilog.info(0x0000, 'testTag', '%{public}s', '*************start getResourceNameTest*************');
+  describe("SevenPointZeroResMgrStageTest", (): void => {
+    hilog.info(0x0000, 'testTag', '%{public}s', '*************start SevenPointZeroResMgrStageTest*************');
     let resContext: Context;
     let res: resourceManager.ResourceManager;
 
@@ -54,9 +54,9 @@ export default function getResourceNameTest() {
     });
 
     /**
-     * @tc.number  getResourceName_test_0100
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0010
      * @tc.name    getResourceName_test_0100
-     * @tc.desc    $引用当前测试hap应用下的string资源id
+     * @tc.desc    app string resource
      * @tc.size    MEDIUM
      * @tc.type    Function
      * @tc.level   Level 0
@@ -73,14 +73,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0200
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0020
      * @tc.name    getResourceName_test_0200
-     * @tc.desc    $引用当前测试hap应用下的media资源id
+     * @tc.desc    app media resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0200", Level.LEVEL0, () => {
+    it("getResourceName_test_0200", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.media.icon').id);
         hilog.info(domain, tag, 'getResourceName_test_0200 value: ' + resName);
@@ -92,14 +92,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0300
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0040
      * @tc.name    getResourceName_test_0300
-     * @tc.desc    $引用当前测试hap应用下的color资源id
+     * @tc.desc    app color resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0300", Level.LEVEL0, () => {
+    it("getResourceName_test_0300", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.color.color_test1').id);
         hilog.info(domain, tag, 'getResourceName_test_0300 value: ' + resName);
@@ -111,14 +111,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0400
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0050
      * @tc.name    getResourceName_test_0400
-     * @tc.desc    $引用当前测试hap应用下的float资源id
+     * @tc.desc    app float resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0400", Level.LEVEL0, () => {
+    it("getResourceName_test_0400", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.float.float_loopA').id);
         hilog.info(domain, tag, 'getResourceName_test_0400 value: ' + resName);
@@ -130,14 +130,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0500
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0080
      * @tc.name    getResourceName_test_0500
-     * @tc.desc    $引用当前测试hap应用下的strarray资源id
+     * @tc.desc    app strarray resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0500", Level.LEVEL0, () => {
+    it("getResourceName_test_0500", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.strarray.sizeList').id);
         hilog.info(domain, tag, 'getResourceName_test_0500 value: ' + resName);
@@ -149,14 +149,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0600
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0030
      * @tc.name    getResourceName_test_0600
-     * @tc.desc    $引用当前测试hap应用下的boolean资源id
+     * @tc.desc    app boolean resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0600", Level.LEVEL0, () => {
+    it("getResourceName_test_0600", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.boolean.boolean_1').id);
         hilog.info(domain, tag, 'getResourceName_test_0600 value: ' + resName);
@@ -168,14 +168,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0700
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0060
      * @tc.name    getResourceName_test_0700
-     * @tc.desc    $引用当前测试hap应用下的integer资源id
+     * @tc.desc    app integer resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0700", Level.LEVEL0, () => {
+    it("getResourceName_test_0700", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.integer.integer_1').id);
         hilog.info(domain, tag, 'getResourceName_test_0700 value: ' + resName);
@@ -187,14 +187,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0800
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0070
      * @tc.name    getResourceName_test_0800
-     * @tc.desc    $引用当前测试hap应用下的plural资源id
+     * @tc.desc    app plural resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0800", Level.LEVEL0, () => {
+    it("getResourceName_test_0800", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.plural.plural_name').id);
         hilog.info(domain, tag, 'getResourceName_test_0800 value: ' + resName);
@@ -206,14 +206,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_0900
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0090
      * @tc.name    getResourceName_test_0900
-     * @tc.desc    $引用当前测试hap应用下的symbol资源id
+     * @tc.desc    app symbol resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_0900", Level.LEVEL0, () => {
+    it("getResourceName_test_0900", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('app.symbol.symbolTest1').id);
         hilog.info(domain, tag, 'getResourceName_test_0900 value: ' + resName);
@@ -225,14 +225,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1000
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0120
      * @tc.name    getResourceName_test_1000
-     * @tc.desc    $引用系统资源string资源id
+     * @tc.desc    system string resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_1000", Level.LEVEL0, () => {
+    it("getResourceName_test_1000", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('sys.string.ohos_id_text_font_family_regular').id);
         hilog.info(domain, tag, 'getResourceName_test_1000 value: ' + resName);
@@ -244,14 +244,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1100
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0150
      * @tc.name    getResourceName_test_1100
-     * @tc.desc    $引用系统资源media资源id
+     * @tc.desc    system media resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_1100", Level.LEVEL0, () => {
+    it("getResourceName_test_1100", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('sys.media.ohos_app_icon').id);
         hilog.info(domain, tag, 'getResourceName_test_1100 value: ' + resName);
@@ -263,14 +263,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1200
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0140
      * @tc.name    getResourceName_test_1200
-     * @tc.desc    $引用系统资源color资源id
+     * @tc.desc    system color resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_1200", Level.LEVEL0, () => {
+    it("getResourceName_test_1200", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('sys.color.ohos_id_color_foreground').id);
         hilog.info(domain, tag, 'getResourceName_test_1200 value: ' + resName);
@@ -282,14 +282,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1300
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0130
      * @tc.name    getResourceName_test_1300
-     * @tc.desc    $引用系统资源float资源id
+     * @tc.desc    system float resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_1300", Level.LEVEL0, () => {
+    it("getResourceName_test_1300", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('sys.float.ohos_id_alpha_content_primary').id);
         hilog.info(domain, tag, 'getResourceName_test_1300 value: ' + resName);
@@ -301,9 +301,9 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1800
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0170
      * @tc.name    getResourceName_test_1800
-     * @tc.desc    传参传入null
+     * @tc.desc    null parameter
      * @tc.size    MEDIUM
      * @tc.type    Function
      * @tc.level   Level 3
@@ -320,9 +320,9 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_1900
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0180
      * @tc.name    getResourceName_test_1900
-     * @tc.desc    传参传入undefined
+     * @tc.desc    undefined parameter
      * @tc.size    MEDIUM
      * @tc.type    Function
      * @tc.level   Level 3
@@ -339,9 +339,9 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_2000
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0190
      * @tc.name    getResourceName_test_2000
-     * @tc.desc    传参传入不存在的id值
+     * @tc.desc    invalid resource id
      * @tc.size    MEDIUM
      * @tc.type    Function
      * @tc.level   Level 3
@@ -358,14 +358,14 @@ export default function getResourceNameTest() {
     })
 
     /**
-     * @tc.number  getResourceName_test_2100
+     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0160
      * @tc.name    getResourceName_test_2100
-     * @tc.desc    $引用系统overlay资源color
+     * @tc.desc    system overlay color resource
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.level   Level 2
      */
-    it("getResourceName_test_2100", Level.LEVEL0, () => {
+    it("getResourceName_test_2100", Level.LEVEL2, () => {
       try {
         let resName: string = res.getResourceName($r('sys.color.multi_color_01').id);
         hilog.info(domain, tag, 'getResourceName_test_2100 value: ' + resName);
@@ -376,5 +376,6 @@ export default function getResourceNameTest() {
       }
     })
 
+    console.log('*************end SevenPointZeroResMgrStageTest*************');
   })
 }
