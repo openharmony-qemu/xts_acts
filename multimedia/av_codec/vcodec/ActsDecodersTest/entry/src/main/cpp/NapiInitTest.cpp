@@ -15,13 +15,13 @@
 
 
 #include "napi/native_api.h"
+#include "include/VideoDecoderApiTest.h"
 #include "include/VideoDecoderFuncTest.h"
 
 using namespace OHOS::Media;
 
-// Test case number enum
-enum TestCaseNumber {
-    // API Tests
+// API Test case number enum
+enum ApiTestCaseNumber {
     TEST_CASE_VC1_CAP_API_0001 = 0,
     TEST_CASE_VC1_CAP_API_0002 = 1,
     TEST_CASE_VC1_CAP_API_0003 = 2,
@@ -34,13 +34,45 @@ enum TestCaseNumber {
     TEST_CASE_MSVIDEO1_CAP_API_0010 = 9,
     TEST_CASE_MSVIDEO1_CAP_API_0011 = 10,
     TEST_CASE_MSVIDEO1_CAP_API_0012 = 11,
-    // Function Tests (Buffer mode only, Surface mode tests disabled)
-    TEST_CASE_VC1_FUNCTION_0001 = 12,
-    // TEST_CASE_VC1_FUNCTION_0002 = 13,  // Surface mode - disabled
-    TEST_CASE_MJPEG_FUNCTION_0003 = 13,
-    // TEST_CASE_MJPEG_FUNCTION_0004 = 15,  // Surface mode - disabled
-    TEST_CASE_MSVIDEO1_FUNCTION_0005 = 14
-    // TEST_CASE_MSVIDEO1_FUNCTION_0006 = 17  // Surface mode - disabled
+    TEST_CASE_VP8_CAP_API_0001 = 12,
+    TEST_CASE_VP9_CAP_API_0001 = 13,
+    TEST_CASE_AV1_CAP_API_0001 = 14,
+    TEST_CASE_RV30_CAP_API_0001 = 15,
+    TEST_CASE_RV40_CAP_API_0001 = 16,
+    TEST_CASE_MJPEG_CAP_API_0001 = 17,
+    TEST_CASE_MSVIDEO1_CAP_API_0001 = 18,
+    TEST_CASE_RAWVIDEO_CAP_API_0001 = 19,
+    TEST_CASE_MPEG1_CAP_API_0001 = 20,
+    TEST_CASE_WVC1_CAP_API_0001 = 21,
+    TEST_CASE_WMV3_CAP_API_0001 = 22,
+    TEST_CASE_DVVIDEO_CAP_API_0001 = 23,
+    TEST_CASE_VP9_CAP_API_0013 = 24,
+    TEST_CASE_AV1_CAP_API_0014 = 25,
+    TEST_CASE_AV1_CAP_API_0015 = 26,
+    TEST_CASE_WVC1_CAP_API_0016 = 27,
+    TEST_CASE_AV1_CAP_API_0017 = 28
+};
+
+// Function Test case number enum
+enum FuncTestCaseNumber {
+    TEST_CASE_VC1_FUNCTION_0001 = 0,
+    TEST_CASE_MJPEG_FUNCTION_0003 = 1,
+    TEST_CASE_MSVIDEO1_FUNCTION_0005 = 2,
+    TEST_CASE_VC1_FUNCTION_0002 = 3,
+    TEST_CASE_MJPEG_FUNCTION_0004 = 4,
+    TEST_CASE_MSVIDEO1_FUNCTION_0006 = 5,
+    TEST_CASE_VP8_FUNCTION_0007 = 6,
+    TEST_CASE_VP9_FUNCTION_0008 = 7,
+    TEST_CASE_VP9_FUNCTION_0009 = 8,
+    TEST_CASE_VP9_FUNCTION_0010 = 9,
+    TEST_CASE_VP9_FUNCTION_0011 = 10,
+    TEST_CASE_AV1_FUNCTION_0012 = 11,
+    TEST_CASE_AV1_FUNCTION_0013 = 12,
+    TEST_CASE_AV1_FUNCTION_0015 = 13,
+    TEST_CASE_AV1_FUNCTION_0016 = 14,
+    TEST_CASE_VP9_FUNCTION_0019 = 15,
+    TEST_CASE_VP9_FUNCTION_0020 = 16,
+    TEST_CASE_VP8_FUNCTION_0021 = 17
 };
 
 static napi_value CreateResultValue(napi_env env, int result)
@@ -53,8 +85,8 @@ static napi_value CreateResultValue(napi_env env, int result)
 // Type definition for test function pointer
 typedef int (*TestFunction)();
 
-// Test function lookup table (Surface mode tests removed)
-static const TestFunction TEST_FUNCTIONS[] = {
+// API Test function lookup table
+static const TestFunction API_TEST_FUNCTIONS[] = {
     VideoVc1DecCapApi0001,           // 0
     VideoVc1DecCapApi0002,           // 1
     VideoVc1DecCapApi0003,           // 2
@@ -67,17 +99,51 @@ static const TestFunction TEST_FUNCTIONS[] = {
     VideoMsvideo1DecCapApi0010,      // 9
     VideoMsvideo1DecCapApi0011,      // 10
     VideoMsvideo1DecCapApi0012,      // 11
-    VideoVc1DecFunction0001,         // 12 - Buffer mode
-    // VideoVc1DecFunction0002,      // 13 - Surface mode (disabled)
-    VideoMjpegDecFunction0003,       // 13 - Buffer mode
-    // VideoMjpegDecFunction0004,    // 15 - Surface mode (disabled)
-    VideoMsvideo1DecFunction0005     // 14 - Buffer mode
-    // VideoMsvideo1DecFunction0006  // 17 - Surface mode (disabled)
+    VideoVp8DecCapApi0001,           // 12
+    VideoVp9DecCapApi0001,           // 13
+    VideoAv1DecCapApi0001,           // 14
+    VideoRv30DecCapApi0001,          // 15
+    VideoRv40DecCapApi0001,          // 16
+    VideoMjpegDecCapApi0001,         // 17
+    VideoMsvideo1DecCapApi0001,      // 18
+    VideoRawvideoDecCapApi0001,      // 19
+    VideoMpeg1DecCapApi0001,         // 20
+    VideoWvc1DecCapApi0001,          // 21
+    VideoWmv3DecCapApi0001,          // 22
+    VideoDvvideoDecCapApi0001,       // 23
+    VideoVp9DecCapApi0013,           // 24
+    VideoAv1DecCapApi0014,           // 25
+    VideoAv1DecCapApi0015,           // 26
+    VideoWvc1DecCapApi0016,          // 27
+    VideoAv1DecCapApi0017            // 28
 };
 
-static const int32_t TEST_FUNCTION_COUNT = sizeof(TEST_FUNCTIONS) / sizeof(TEST_FUNCTIONS[0]);
+// Function Test function lookup table
+static const TestFunction FUNC_TEST_FUNCTIONS[] = {
+    VideoVc1DecFunction0001,         // 0 - Buffer mode
+    VideoMjpegDecFunction0003,       // 1 - Buffer mode
+    VideoMsvideo1DecFunction0005,    // 2 - Buffer mode
+    VideoVc1DecFunction0002,         // 3 - Surface mode
+    VideoMjpegDecFunction0004,       // 4 - Surface mode
+    VideoMsvideo1DecFunction0006,    // 5 - Surface mode
+    VideoVp8DecFunction0007,         // 6
+    VideoVp9DecFunction0008,         // 7
+    VideoVp9DecFunction0009,         // 8
+    VideoVp9DecFunction0010,         // 9
+    VideoVp9DecFunction0011,         // 10
+    VideoAv1DecFunction0012,         // 11
+    VideoAv1DecFunction0013,         // 12
+    VideoAv1DecFunction0015,         // 13
+    VideoAv1DecFunction0016,         // 14
+    VideoVp9DecFunction0019,         // 15
+    VideoVp9DecFunction0020,         // 16
+    VideoVp8DecFunction0021          // 17
+};
 
-static napi_value VideoDecoderTest(napi_env env, napi_callback_info info)
+static const int32_t API_TEST_FUNCTION_COUNT = sizeof(API_TEST_FUNCTIONS) / sizeof(API_TEST_FUNCTIONS[0]);
+static const int32_t FUNC_TEST_FUNCTION_COUNT = sizeof(FUNC_TEST_FUNCTIONS) / sizeof(FUNC_TEST_FUNCTIONS[0]);
+
+static napi_value ApiTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1];
@@ -99,22 +165,97 @@ static napi_value VideoDecoderTest(napi_env env, napi_callback_info info)
         return CreateResultValue(env, -1);
     }
 
-    // Validate test case number and execute corresponding test function
-    if (caseNum < 0 || caseNum >= TEST_FUNCTION_COUNT) {
-        napi_throw_type_error(env, nullptr, "Invalid test case number");
+    if (caseNum < 0 || caseNum >= API_TEST_FUNCTION_COUNT) {
+        napi_throw_type_error(env, nullptr, "Invalid API test case number");
         return CreateResultValue(env, -1);
     }
 
-    int result = TEST_FUNCTIONS[caseNum]();
+    int result = API_TEST_FUNCTIONS[caseNum]();
     return CreateResultValue(env, result);
+}
+
+struct FuncTestContext {
+    napi_env env;
+    napi_deferred deferred;
+    int32_t caseNum;
+    int result;
+};
+
+static void ExecuteFuncTest(napi_env env, void* data)
+{
+    FuncTestContext* context = static_cast<FuncTestContext*>(data);
+    context->result = FUNC_TEST_FUNCTIONS[context->caseNum]();
+}
+
+static void CompleteFuncTest(napi_env env, napi_status status, void* data)
+{
+    FuncTestContext* context = static_cast<FuncTestContext*>(data);
+    napi_value result;
+    napi_create_int32(env, context->result, &result);
+    napi_resolve_deferred(env, context->deferred, result);
+    delete context;
+}
+
+static napi_value CreateErrorPromise(napi_env env)
+{
+    napi_value promise;
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value error;
+    napi_create_int32(env, -1, &error);
+    napi_reject_deferred(env, deferred, error);
+    return promise;
+}
+
+static napi_value FuncTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok) {
+        return CreateErrorPromise(env);
+    }
+
+    napi_valuetype valuetype;
+    napi_typeof(env, args[0], &valuetype);
+    if (valuetype != napi_number) {
+        return CreateErrorPromise(env);
+    }
+
+    int32_t caseNum = -1;
+    status = napi_get_value_int32(env, args[0], &caseNum);
+    if (status != napi_ok) {
+        return CreateErrorPromise(env);
+    }
+
+    if (caseNum < 0 || caseNum >= FUNC_TEST_FUNCTION_COUNT) {
+        return CreateErrorPromise(env);
+    }
+
+    FuncTestContext* context = new FuncTestContext();
+    context->env = env;
+    context->caseNum = caseNum;
+    context->result = 0;
+
+    napi_value promise;
+    napi_create_promise(env, &context->deferred, &promise);
+
+    napi_value resourceName;
+    napi_create_string_utf8(env, "FuncTest", NAPI_AUTO_LENGTH, &resourceName);
+
+    napi_async_work work;
+    napi_create_async_work(env, nullptr, resourceName, ExecuteFuncTest, CompleteFuncTest, context, &work);
+    napi_queue_async_work(env, work);
+
+    return promise;
 }
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"videoDecoderTest", nullptr, VideoDecoderTest,
-            nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"apitest", nullptr, ApiTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"functest", nullptr, FuncTest, nullptr, nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
