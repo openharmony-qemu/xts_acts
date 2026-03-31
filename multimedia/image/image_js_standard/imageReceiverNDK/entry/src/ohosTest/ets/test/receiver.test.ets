@@ -27,6 +27,7 @@ import { isSupportedCameras } from './common';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
 import arriveOnNdkTest from 'libArriveOnNdk.so';
+import { BusinessError } from '@ohos.base';
 
 let WIDTH = 1280;
 let HEIGHT = 960;
@@ -181,6 +182,18 @@ let waitUntilImageArrival = async (TAG: string) => {
     console.info(`${TAG} image arrival cost(ms) ${waitTime}`);
   }
 
+let waitForTrigger = async (check: () => boolean, timeoutMs: number = 15000, intervalMs: number = 100): Promise<boolean> => {
+  let elapsed: number = 0;
+  while (elapsed < timeoutMs) {
+    if (check()) {
+      return true;
+    }
+    await sleep(intervalMs);
+    elapsed += intervalMs;
+  }
+  return check();
+}
+
 //相机拍照
 export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject) {
     let captureLocation: cameraObj.Location = {
@@ -196,8 +209,13 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject)
     }
     //使用当前拍照设置进行拍照。
     console.info(`${TAG} start take first photo`);
+    let ready: boolean = false;
+    photoOutput!.on('captureReady', (err: BusinessError) => { ready = true; });
     await photoOutput.capture(photoCaptureSetting);
     await waitUntilImageArrival(TAG);
+    let result: boolean = await waitForTrigger((): boolean => ready);
+    expect(result).assertTrue();
+    photoOutput!.off('captureReady');
     await sleep(1000);
     console.info(`${TAG} start take second photo`);
     imageArrival = false;
