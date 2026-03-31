@@ -17,7 +17,6 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import statistics from '@ohos.net.statistics';
-import bundleManager from '@ohos.bundle.bundleManager';
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -607,14 +606,7 @@ export default function statisticsHasNetTest() {
             try{
                 const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
-                let uid :int = 1;
-                if(bundleInfo != undefined){
-                    const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
-                    if(appInfo && appInfo.uid != undefined){
-                        uid = appInfo.uid;
-                    }
-                }
+                let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidRxBytes(uid).then((stats: long) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
@@ -682,14 +674,7 @@ export default function statisticsHasNetTest() {
             try{
                 const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
-                let uid :int = 1;
-                if(bundleInfo != undefined){
-                    const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
-                    if(appInfo && appInfo.uid != undefined){
-                        uid = appInfo.uid;
-                    }
-                }
+                let uid :int = 1010;
                 statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -755,14 +740,7 @@ export default function statisticsHasNetTest() {
             try{
                 const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
-                let uid :int = 1;
-                if(bundleInfo != undefined){
-                    const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
-                    if(appInfo && appInfo.uid != undefined){
-                        uid = appInfo.uid;
-                    }
-                }
+                let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidTxBytes(uid).then((stats: long) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
@@ -830,14 +808,7 @@ export default function statisticsHasNetTest() {
             try{
                 const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
-                let uid :int = 1;
-                if(bundleInfo != undefined){
-                    const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
-                    if(appInfo && appInfo.uid != undefined){
-                        uid = appInfo.uid;
-                    }
-                }
+                let uid :int = 1010;
                 statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
