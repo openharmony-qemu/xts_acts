@@ -2138,7 +2138,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2181,7 +2181,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             })
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2223,7 +2223,7 @@ export default function abilityTest() {
                 console.info(`${TAG}session on_customDataChange Successfully ${data}`)
                 expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
