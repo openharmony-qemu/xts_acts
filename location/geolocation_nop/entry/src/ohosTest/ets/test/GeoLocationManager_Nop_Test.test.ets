@@ -1479,7 +1479,7 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_getLastLocation_nop_test_011 catch ---' + ', type err: ' + typeof err.code + ', err: ' + err.code);
-        expect(err.code).assertEqual('201');
+        expect(Number(err.code)).assertEqual(201);
         done();
       }
     })
