@@ -183,7 +183,7 @@ export default function searchJsunit() {
       let strJsonNew = getInspectorByKey('search');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("searchTest_009 component  is: " + JSON.stringify(objNew.$attrs));
-      expect(objNew.$attrs.selectionMenuHidden).assertEqual(undefined);
+      expect(objNew.$attrs.selectionMenuHidden).assertEqual('true');
       console.info('searchTest_009 END');
       done();
     });

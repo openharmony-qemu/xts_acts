@@ -153,6 +153,11 @@ struct WebComponent {
                   Utils.emitEvent(error, 2026033)
                 }
               }
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/ClearPrefetchedResourceTest' })
+              }
             }
           })
       }

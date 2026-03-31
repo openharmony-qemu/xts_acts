@@ -17,9 +17,15 @@ import webViewControllerJsunit from "./WebViewControllerJsunit.test";
 import webviewTerminateRenderProcess from "./TerminateRenderProcess.test"
 import webOnFirstContFour from './WebOnFirstContFour.test'
 import wholeWebPageDrawing from "./wholeWebPageDrawing.test";
+import webOnFirstScreenPaint from "./WebOnFirstScreenPaint.test";
+import webOnLargestContentfulPaint from "./WebOnLargestContentfulPaint.test";
+import webOnFirstMeaningfulPaint from "./WebOnFirstMeaningfulPaint.test";
 export default function testsuite() {
     webViewControllerJsunit();
     webviewTerminateRenderProcess();
     webOnFirstContFour();
     wholeWebPageDrawing();
+    webOnFirstScreenPaint();
+    webOnLargestContentfulPaint();
+    webOnFirstMeaningfulPaint();
 }

@@ -14,7 +14,10 @@
  */
 import JsLeakWatcherTest from './JsLeakWatcher.test';
 import JsLeakWatcherNewTest from './JsLeakNewEnable.test';
+import JsLeakNewConfigEnable from './JsLeakNewConfigEnable.test';
+
 export default function testsuite() {
   JsLeakWatcherTest();
   JsLeakWatcherNewTest();
+  JsLeakNewConfigEnable();
 }

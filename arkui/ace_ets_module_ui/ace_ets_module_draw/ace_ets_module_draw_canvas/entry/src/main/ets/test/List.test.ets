@@ -89,6 +89,7 @@ import offCanvasToDataURLNullUndefinedTest from './CanvasNullUndefined/offCanvas
 import canvasOnReadyNullUndefinedTest from './CanvasNullUndefined/canvasOnReadyNullUndefinedTest.test';
 import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMatrixRotateNullUndefinedTest.test';
 import CanvasRendererAntialiasTest from './migratedActs/CanvasRendererAntialias.test';
+import AntialiasTest from './CanvasRenderingContext2D/Antialias.test';
 
 export default function testsuite() {
 
@@ -169,5 +170,5 @@ export default function testsuite() {
   canvasOnReadyNullUndefinedTest();
   canvasMatrixRotateNullUndefinedTest();
   CanvasRendererAntialiasTest();
-
+  AntialiasTest();
 }

@@ -52,6 +52,8 @@ struct SelectedBackgroundColor3 {
 
   build() {
     Column( { space: 10 } as ColumnOptions ) {
+      Search({ value: 'SearchDefault' })
+        .id('isSelectedBackgroundColorDefault')
       Search({ value: 'Search onCut undefined long long long long text' })
         .attributeModifier(this.searchSelectedBackgroundColorModifier)
         .id('isSelectedBackgroundColorModifier')

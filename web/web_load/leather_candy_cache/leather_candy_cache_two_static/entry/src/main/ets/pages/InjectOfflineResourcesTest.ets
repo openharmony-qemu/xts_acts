@@ -228,7 +228,7 @@ struct injectOfflineResourcesTest {
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/WebBlanklessErrorCode' })
+              router.pushUrl({ url: 'pages/SetBlanklessLoadingWithParamsTest' })
             }
           }
         })

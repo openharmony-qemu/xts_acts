@@ -436,14 +436,14 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.name   OH_UdsHyperlink_SetDescription_003
+     * @tc.name   OH_UdsHyperlink_SetDescription_003Adapt001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
      * @tc.desc   OH_UdsHyperlink_SetDescription_003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_UdsHyperlink_SetDescription_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('OH_UdsHyperlink_SetDescription_003Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003');
       let data = testNapi.OH_UdsHyperlink_SetDescription_003();
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003 data= ' + JSON.stringify(data));

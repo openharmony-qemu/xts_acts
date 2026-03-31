@@ -57,5 +57,26 @@ export default function WebViewEnumAndFontLibrary() {
       await Utils.msSleep(2000);
       done();
     })
+    /**
+     * * @tc.name     : SwitchNextPageStatic
+     * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+     * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('buttonEnumAndFontLibrary'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(4000)
+        done()
+      })
   })
 }
