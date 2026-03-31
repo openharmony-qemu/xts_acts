@@ -49,12 +49,12 @@ async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
 export default function LayoutManagerTextCommonTest() {
   describe('LayoutManagerTextCommonTest', () => {
     /**
-     * @tc.number   layout_manager_get_character_position_at_coordinate_0100
-     * @tc.name     layout_manager_get_character_position_at_coordinate_0100
+     * @tc.number   SUB_ArkUI_LayoutManagerTextCommon_GetCharacterPositionAtCoordinate_0100
+     * @tc.name     SUB_ArkUI_LayoutManagerTextCommon_GetCharacterPositionAtCoordinate_0100
      * @tc.desc     text_common LayoutManager.getCharacterPositionAtCoordinate(x, y) via TextController layout
      * @tc.level    Level.LEVEL0
      */
-    it('layout_manager_get_character_position_at_coordinate_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_LayoutManagerTextCommon_GetCharacterPositionAtCoordinate_0100', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome =
         await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_POSITION);
       if (!outcome.routed) {
@@ -71,12 +71,12 @@ export default function LayoutManagerTextCommonTest() {
     });
 
     /**
-     * @tc.number   layout_manager_get_glyph_range_for_character_range_0100
-     * @tc.name     layout_manager_get_glyph_range_for_character_range_0100
+     * @tc.number   SUB_ArkUI_LayoutManagerTextCommon_GetGlyphRangeForCharacterRange_0200
+     * @tc.name     SUB_ArkUI_LayoutManagerTextCommon_GetGlyphRangeForCharacterRange_0200
      * @tc.desc     text_common LayoutManager.getGlyphRangeForCharacterRange(TextRange) returns glyph spans
      * @tc.level    Level.LEVEL0
      */
-    it('layout_manager_get_glyph_range_for_character_range_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_LayoutManagerTextCommon_GetGlyphRangeForCharacterRange_0200', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(LayoutManagerTextCommonProbeRoute.GLYPH_RANGE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -92,12 +92,12 @@ export default function LayoutManagerTextCommonTest() {
     });
 
     /**
-     * @tc.number   layout_manager_get_character_range_for_glyph_range_0100
-     * @tc.name     layout_manager_get_character_range_for_glyph_range_0100
+     * @tc.number   SUB_ArkUI_LayoutManagerTextCommon_GetCharacterRangeForGlyphRange_0300
+     * @tc.name     SUB_ArkUI_LayoutManagerTextCommon_GetCharacterRangeForGlyphRange_0300
      * @tc.desc     text_common LayoutManager.getCharacterRangeForGlyphRange(TextRange) maps glyphs to char ranges
      * @tc.level    Level.LEVEL0
      */
-    it('layout_manager_get_character_range_for_glyph_range_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_LayoutManagerTextCommon_GetCharacterRangeForGlyphRange_0300', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(LayoutManagerTextCommonProbeRoute.CHARACTER_RANGE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();

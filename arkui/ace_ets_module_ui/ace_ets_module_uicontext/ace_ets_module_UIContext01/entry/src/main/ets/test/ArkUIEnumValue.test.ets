@@ -18,30 +18,30 @@ import { describe, it, expect, Level } from '@ohos/hypium';
 export default function ArkUIEnumValueTest() {
   describe('ArkUIEnumValueTest', () => {
     /**
-     * @tc.number   competition_strategy_default_zero_0100
-     * @tc.name     competition_strategy_default_zero_0100
+     * @tc.number   SUB_ArkUI_CompetitionStrategy_Default_Zero_0100
+     * @tc.name     SUB_ArkUI_CompetitionStrategy_Default_Zero_0100
      * @tc.desc     enums CompetitionStrategy.DEFAULT value is 0 (BuilderNode postInput competition default)
      * @tc.level    Level.LEVEL0
      */
-    it('competition_strategy_default_zero_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_CompetitionStrategy_Default_Zero_0100', Level.LEVEL0, () => {
       expect(CompetitionStrategy.DEFAULT).assertEqual(0);
     });
     /**
-     * @tc.number   competition_strategy_competition_one_0100
-     * @tc.name     competition_strategy_competition_one_0100
+     * @tc.number   SUB_ArkUI_CompetitionStrategy_Competition_One_0200
+     * @tc.name     SUB_ArkUI_CompetitionStrategy_Competition_One_0200
      * @tc.desc     enums CompetitionStrategy.COMPETITION value is 1
      * @tc.level    Level.LEVEL0
      */
-    it('competition_strategy_competition_one_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_CompetitionStrategy_Competition_One_0200', Level.LEVEL0, () => {
       expect(CompetitionStrategy.COMPETITION).assertEqual(1);
     });
     /**
-     * @tc.number   navigation_mode_auto_with_aspect_ratio_0100
-     * @tc.name     navigation_mode_auto_with_aspect_ratio_0100
+     * @tc.number   SUB_ArkUI_NavigationMode_Auto_With_Aspect_Ratio_0300
+     * @tc.name     SUB_ArkUI_NavigationMode_Auto_With_Aspect_Ratio_0300
      * @tc.desc     navigation NavigationMode.AUTO_WITH_ASPECT_RATIO numeric value is 3
      * @tc.level    Level.LEVEL0
      */
-    it('navigation_mode_auto_with_aspect_ratio_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_NavigationMode_Auto_With_Aspect_Ratio_0300', Level.LEVEL0, () => {
       expect(NavigationMode.AUTO_WITH_ASPECT_RATIO).assertEqual(3);
     });
   });

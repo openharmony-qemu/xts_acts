@@ -49,30 +49,30 @@ async function runOneHdrProbeCase(caseName: string): Promise<RoutedProbeOutcome>
 export default function XComponentHdrTest() {
   describe('XComponentHdrTest', () => {
     /**
-     * @tc.number   hdr_type_default_zero_0100
-     * @tc.name     hdr_type_default_zero_0100
+     * @tc.number   SUB_ArkUI_XComponentHdr_HdrType_Default_Zero_0100
+     * @tc.name     SUB_ArkUI_XComponentHdr_HdrType_Default_Zero_0100
      * @tc.desc     xcomponent HdrType.DEFAULT enum numeric value is 0
      * @tc.level    Level.LEVEL0
      */
-    it('hdr_type_default_zero_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_XComponentHdr_HdrType_Default_Zero_0100', Level.LEVEL0, () => {
       expect(HdrType.DEFAULT).assertEqual(0);
     });
     /**
-     * @tc.number   hdr_type_aihdr_one_0100
-     * @tc.name     hdr_type_aihdr_one_0100
+     * @tc.number   SUB_ArkUI_XComponentHdr_HdrType_Aihdr_One_0200
+     * @tc.name     SUB_ArkUI_XComponentHdr_HdrType_Aihdr_One_0200
      * @tc.desc     xcomponent HdrType.AIHDR enum numeric value is 1
      * @tc.level    Level.LEVEL0
      */
-    it('hdr_type_aihdr_one_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_XComponentHdr_HdrType_Aihdr_One_0200', Level.LEVEL0, () => {
       expect(HdrType.AIHDR).assertEqual(1);
     });
     /**
-     * @tc.number   xcomponent_hdr_brightness_with_hdr_type_0100
-     * @tc.name     xcomponent_hdr_brightness_with_hdr_type_0100
+     * @tc.number   SUB_ArkUI_XComponentHdr_Brightness_With_HdrType_0300
+     * @tc.name     SUB_ArkUI_XComponentHdr_Brightness_With_HdrType_0300
      * @tc.desc     XComponentAttribute.hdrBrightness(brightness, type) two-argument overload with HdrType.AIHDR
      * @tc.level    Level.LEVEL0
      */
-    it('xcomponent_hdr_brightness_with_hdr_type_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_XComponentHdr_Brightness_With_HdrType_0300', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_WITH_TYPE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -87,12 +87,12 @@ export default function XComponentHdrTest() {
       }
     });
     /**
-     * @tc.number   xcomponent_hdr_brightness_single_arg_0100
-     * @tc.name     xcomponent_hdr_brightness_single_arg_0100
+     * @tc.number   SUB_ArkUI_XComponentHdr_Brightness_Single_Arg_0400
+     * @tc.name     SUB_ArkUI_XComponentHdr_Brightness_Single_Arg_0400
      * @tc.desc     XComponentAttribute.hdrBrightness(brightness) single-argument overload without HdrType
      * @tc.level    Level.LEVEL0
      */
-    it('xcomponent_hdr_brightness_single_arg_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_XComponentHdr_Brightness_Single_Arg_0400', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneHdrProbeCase(XComponentHdrProbeRoute.BRIGHTNESS_SINGLE_ARG);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();

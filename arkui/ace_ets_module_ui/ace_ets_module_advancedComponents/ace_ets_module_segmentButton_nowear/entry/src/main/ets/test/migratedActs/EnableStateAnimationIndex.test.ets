@@ -48,52 +48,52 @@ export default function EnableStateAnimationIndexTest() {
     });
 
     /**
-     * @tc.number   enableStateAnimationIndex_mirror_initial_true_0100
-     * @tc.name     enableStateAnimationIndex_mirror_initial_true_0100
+     * @tc.number   SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100
+     * @tc.name     SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100
      * @tc.desc     SegmentButton @Prop enableStateAnimation true; TabSegmentButtonV2 and CapsuleSegmentButtonV2 @Param match
      * @tc.level    Level.LEVEL0
      */
-    it('enableStateAnimationIndex_mirror_initial_true_0100', Level.LEVEL0, async () => {
-      console.info('[enableStateAnimationIndex_mirror_initial_true_0100]');
+    it('SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100', Level.LEVEL0, async () => {
+      console.info('[SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100]');
       await ensureAllEnablesTrueByClick();
       assertEnableStateAnimationAttr(KEY_SEGMENT_BUTTON, KEY_MIRROR_SEGMENT, true,
-        'enableStateAnimationIndex_mirror_initial_true_0100:SegmentButton@Prop');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100:SegmentButton@Prop');
       assertEnableStateAnimationAttr(KEY_TAB_SEGMENT_V2, KEY_MIRROR_TAB, true,
-        'enableStateAnimationIndex_mirror_initial_true_0100:TabSegmentButtonV2@Param');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100:TabSegmentButtonV2@Param');
       assertEnableStateAnimationAttr(KEY_CAPSULE_SEGMENT_V2, KEY_MIRROR_CAPSULE, true,
-        'enableStateAnimationIndex_mirror_initial_true_0100:CapsuleSegmentButtonV2@Param');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Mirror_Initial_True_0100:CapsuleSegmentButtonV2@Param');
       expect(KEY_SEGMENT_BUTTON.length > 0).assertTrue();
     });
 
     /**
-     * @tc.number   enableStateAnimationIndex_click_false_mirrors_false_0100
-     * @tc.name     enableStateAnimationIndex_click_false_mirrors_false_0100
+     * @tc.number   SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200
+     * @tc.name     SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200
      * @tc.desc     After UI click sets SegmentButton @Prop and both V2 @Param enableStateAnimation to false
      * @tc.level    Level.LEVEL0
      */
-    it('enableStateAnimationIndex_click_false_mirrors_false_0100', Level.LEVEL0, async () => {
-      console.info('[enableStateAnimationIndex_click_false_mirrors_false_0100]');
+    it('SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200', Level.LEVEL0, async () => {
+      console.info('[SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200]');
       await ensureAllEnablesTrueByClick();
       let sent: boolean = sendEventByKey(KEY_BTN_ALL_FALSE, UI_EVENT_CLICK, '');
       expect(sent).assertTrue();
       await CommonFunc.sleep(600);
       assertEnableStateAnimationAttr(KEY_SEGMENT_BUTTON, KEY_MIRROR_SEGMENT, false,
-        'enableStateAnimationIndex_click_false_mirrors_false_0100:SegmentButton@Prop');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200:SegmentButton@Prop');
       assertEnableStateAnimationAttr(KEY_TAB_SEGMENT_V2, KEY_MIRROR_TAB, false,
-        'enableStateAnimationIndex_click_false_mirrors_false_0100:TabSegmentButtonV2@Param');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200:TabSegmentButtonV2@Param');
       assertEnableStateAnimationAttr(KEY_CAPSULE_SEGMENT_V2, KEY_MIRROR_CAPSULE, false,
-        'enableStateAnimationIndex_click_false_mirrors_false_0100:CapsuleSegmentButtonV2@Param');
+        'SUB_ArkUI_SegmentButton_EnableStateAnimation_Click_False_Mirrors_False_0200:CapsuleSegmentButtonV2@Param');
       expect(KEY_MIRROR_SEGMENT.length > 0).assertTrue();
     });
 
     /**
-     * @tc.number   enableStateAnimationIndex_toggle_false_then_true_0100
-     * @tc.name     enableStateAnimationIndex_toggle_false_then_true_0100
+     * @tc.number   SUB_ArkUI_SegmentButton_EnableStateAnimation_Toggle_False_Then_True_0300
+     * @tc.name     SUB_ArkUI_SegmentButton_EnableStateAnimation_Toggle_False_Then_True_0300
      * @tc.desc     Toggle enableStateAnimation false then true on SegmentButton, TabSegmentButtonV2, CapsuleSegmentButtonV2
      * @tc.level    Level.LEVEL0
      */
-    it('enableStateAnimationIndex_toggle_false_then_true_0100', Level.LEVEL0, async () => {
-      console.info('[enableStateAnimationIndex_toggle_false_then_true_0100]');
+    it('SUB_ArkUI_SegmentButton_EnableStateAnimation_Toggle_False_Then_True_0300', Level.LEVEL0, async () => {
+      console.info('[SUB_ArkUI_SegmentButton_EnableStateAnimation_Toggle_False_Then_True_0300]');
       await ensureAllEnablesTrueByClick();
       expect(sendEventByKey(KEY_BTN_ALL_FALSE, UI_EVENT_CLICK, '')).assertTrue();
       await CommonFunc.sleep(600);

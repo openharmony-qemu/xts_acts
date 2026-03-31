@@ -183,12 +183,12 @@ function tryCreateObserver(id: string): object | undefined {
 export default function ComponentObserverDrawChildrenTest() {
   describe('ComponentObserverDrawChildrenTest', () => {
     /**
-     * @tc.number   component_observer_on_draw_children_0100
-     * @tc.name     component_observer_on_draw_children_0100
+     * @tc.number   SUB_ArkUI_ComponentObserver_OnDrawChildren_0100
+     * @tc.name     SUB_ArkUI_ComponentObserver_OnDrawChildren_0100
      * @tc.desc     ohos.arkui.inspector ComponentObserver.onDrawChildren registers callback and receives drawChildren signal
      * @tc.level    Level.LEVEL0
      */
-    it('component_observer_on_draw_children_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_ComponentObserver_OnDrawChildren_0100', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE);
       if (!routed) {
         console.warn('[ComponentObserverDrawChildren] router.pushUrl 失败，弱环境兜底通过');
@@ -254,12 +254,12 @@ export default function ComponentObserverDrawChildrenTest() {
     });
 
     /**
-     * @tc.number   component_observer_off_draw_children_optional_callback_0100
-     * @tc.name     component_observer_off_draw_children_optional_callback_0100
+     * @tc.number   SUB_ArkUI_ComponentObserver_OffDrawChildren_Optional_Callback_0200
+     * @tc.name     SUB_ArkUI_ComponentObserver_OffDrawChildren_Optional_Callback_0200
      * @tc.desc     ComponentObserver.offDrawChildren() called with no callback unregisters after prior onDrawChildren
      * @tc.level    Level.LEVEL0
      */
-    it('component_observer_off_draw_children_optional_callback_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_ComponentObserver_OffDrawChildren_Optional_Callback_0200', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPage(COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE);
       if (!routed) {
         console.warn('[ComponentObserverDrawChildren] router.pushUrl 失败，弱环境兜底通过');

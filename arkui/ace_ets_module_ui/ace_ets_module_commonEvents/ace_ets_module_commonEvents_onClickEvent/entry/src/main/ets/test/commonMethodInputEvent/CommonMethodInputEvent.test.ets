@@ -47,12 +47,12 @@ async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
 export default function CommonMethodInputEventTest() {
   describe('CommonMethodInputEventTest', () => {
     /**
-     * @tc.number   mouse_event_event_handle_id_optional_number_0100
-     * @tc.name     mouse_event_event_handle_id_optional_number_0100
+     * @tc.number   SUB_ArkUI_CommonMethodInput_MouseEvent_EventHandleId_Optional_Number_0100
+     * @tc.name     SUB_ArkUI_CommonMethodInput_MouseEvent_EventHandleId_Optional_Number_0100
      * @tc.desc     MouseEvent: optional eventHandleId accepts a number when present and undefined when absent
      * @tc.level    Level.LEVEL0
      */
-    it('mouse_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CommonMethodInput_MouseEvent_EventHandleId_Optional_Number_0100', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.MOUSE_EVENT_HANDLE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -68,12 +68,12 @@ export default function CommonMethodInputEventTest() {
     });
 
     /**
-     * @tc.number   touch_event_event_handle_id_optional_number_0100
-     * @tc.name     touch_event_event_handle_id_optional_number_0100
+     * @tc.number   SUB_ArkUI_CommonMethodInput_TouchEvent_EventHandleId_Optional_Number_0200
+     * @tc.name     SUB_ArkUI_CommonMethodInput_TouchEvent_EventHandleId_Optional_Number_0200
      * @tc.desc     TouchEvent: optional eventHandleId on synthetic Down event (set vs omitted)
      * @tc.level    Level.LEVEL0
      */
-    it('touch_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CommonMethodInput_TouchEvent_EventHandleId_Optional_Number_0200', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.TOUCH_EVENT_HANDLE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -89,12 +89,12 @@ export default function CommonMethodInputEventTest() {
     });
 
     /**
-     * @tc.number   axis_event_event_handle_id_optional_number_0100
-     * @tc.name     axis_event_event_handle_id_optional_number_0100
+     * @tc.number   SUB_ArkUI_CommonMethodInput_AxisEvent_EventHandleId_Optional_Number_0300
+     * @tc.name     SUB_ArkUI_CommonMethodInput_AxisEvent_EventHandleId_Optional_Number_0300
      * @tc.desc     AxisEvent: optional eventHandleId accepts numeric value or remains undefined
      * @tc.level    Level.LEVEL0
      */
-    it('axis_event_event_handle_id_optional_number_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CommonMethodInput_AxisEvent_EventHandleId_Optional_Number_0300', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.AXIS_EVENT_HANDLE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -110,12 +110,12 @@ export default function CommonMethodInputEventTest() {
     });
 
     /**
-     * @tc.number   drag_result_unknown_minus_one_0100
-     * @tc.name     drag_result_unknown_minus_one_0100
+     * @tc.number   SUB_ArkUI_CommonMethodInput_DragResult_Unknown_Minus_One_0400
+     * @tc.name     SUB_ArkUI_CommonMethodInput_DragResult_Unknown_Minus_One_0400
      * @tc.desc     DragResult documented UNKNOWN (-1) is mutually exclusive with known enum members in SDK
      * @tc.level    Level.LEVEL0
      */
-    it('drag_result_unknown_minus_one_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CommonMethodInput_DragResult_Unknown_Minus_One_0400', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.DRAG_RESULT_UNKNOWN);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -131,12 +131,12 @@ export default function CommonMethodInputEventTest() {
     });
 
     /**
-     * @tc.number   common_method_enable_click_sound_effect_0100
-     * @tc.name     common_method_enable_click_sound_effect_0100
+     * @tc.number   SUB_ArkUI_CommonMethodInput_EnableClickSoundEffect_0500
+     * @tc.name     SUB_ArkUI_CommonMethodInput_EnableClickSoundEffect_0500
      * @tc.desc     CommonMethod.enableClickSoundEffect on Button: chain with boolean then undefined argument
      * @tc.level    Level.LEVEL0
      */
-    it('common_method_enable_click_sound_effect_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CommonMethodInput_EnableClickSoundEffect_0500', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(CommonMethodInputProbeRoute.ENABLE_CLICK_SOUND);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();

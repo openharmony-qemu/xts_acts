@@ -26,12 +26,12 @@ const PROBE_POLL_WAIT_MS: number = 12000;
 export default function CanvasRendererAntialiasTest() {
   describe('CanvasRendererAntialiasTest', () => {
     /**
-     * @tc.number   canvas_renderer_antialias_boolean_or_undefined_0100
-     * @tc.name     canvas_renderer_antialias_boolean_or_undefined_0100
+     * @tc.number   SUB_ArkUI_CanvasRenderer_Antialias_Boolean_Or_Undefined_0100
+     * @tc.name     SUB_ArkUI_CanvasRenderer_Antialias_Boolean_Or_Undefined_0100
      * @tc.desc     Canvas: OffscreenCanvas getContext('2d') with RenderingContextSettings antialias; component Canvas onReady fallback
      * @tc.level    Level.LEVEL0
      */
-    it('canvas_renderer_antialias_boolean_or_undefined_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_CanvasRenderer_Antialias_Boolean_Or_Undefined_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(CANVAS_RENDERER_ANTIALIAS_STATUS_KEY, 'pending');
       expect(await CommonFunc.openRouterPage(CANVAS_RENDERER_ANTIALIAS_PAGE)).assertTrue();
 

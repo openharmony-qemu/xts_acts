@@ -27,12 +27,12 @@ const PROBE_CAP_MS: number = 8000;
 export default function BuilderNodePostInputEventWithStrategyTest() {
   describe('BuilderNodePostInputEventWithStrategyTest', () => {
     /**
-     * @tc.number   builder_node_post_input_event_with_strategy_returns_boolean_0100
-     * @tc.name     builder_node_post_input_event_with_strategy_returns_boolean_0100
+     * @tc.number   SUB_ArkUI_BuilderNode_PostInputEventWithStrategy_Returns_Boolean_0100
+     * @tc.name     SUB_ArkUI_BuilderNode_PostInputEventWithStrategy_Returns_Boolean_0100
      * @tc.desc     BuilderNode.postInputEventWithStrategy(TouchEvent, CompetitionStrategy) returns boolean for synthetic down event
      * @tc.level    Level.LEVEL0
      */
-    it('builder_node_post_input_event_with_strategy_returns_boolean_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_BuilderNode_PostInputEventWithStrategy_Returns_Boolean_0100', Level.LEVEL0, async () => {
       AppStorage.setOrCreate(BUILDER_NODE_POST_INPUT_STATUS_KEY, 'pending');
       let routed: boolean = await CommonFunc.openRouterPage(BUILDER_NODE_POST_INPUT_PAGE);
       if (!routed) {

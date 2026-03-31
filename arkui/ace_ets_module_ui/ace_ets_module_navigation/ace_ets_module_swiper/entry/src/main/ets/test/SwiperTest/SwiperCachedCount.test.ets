@@ -49,12 +49,12 @@ async function runOneProbeCase(caseName: string): Promise<RoutedProbeOutcome> {
 export default function SwiperCachedCountTest() {
   describe('SwiperCachedCountTest', () => {
     /**
-     * @tc.number   swiper_cached_count_options_both_true_0100
-     * @tc.name     swiper_cached_count_options_both_true_0100
+     * @tc.number   SUB_ArkUI_SwiperCachedCount_Options_Both_True_0100
+     * @tc.name     SUB_ArkUI_SwiperCachedCount_Options_Both_True_0100
      * @tc.desc     SwiperAttribute.cachedCount(count, options): CachedCountOptions with both isShown and independent set true
      * @tc.level    Level.LEVEL0
      */
-    it('swiper_cached_count_options_both_true_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SwiperCachedCount_Options_Both_True_0100', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.BOTH_TRUE);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -70,12 +70,12 @@ export default function SwiperCachedCountTest() {
     });
 
     /**
-     * @tc.number   swiper_cached_count_options_is_shown_only_0100
-     * @tc.name     swiper_cached_count_options_is_shown_only_0100
+     * @tc.number   SUB_ArkUI_SwiperCachedCount_Options_Is_Shown_Only_0200
+     * @tc.name     SUB_ArkUI_SwiperCachedCount_Options_Is_Shown_Only_0200
      * @tc.desc     SwiperAttribute.cachedCount: CachedCountOptions carries isShown:true only (independent omitted)
      * @tc.level    Level.LEVEL0
      */
-    it('swiper_cached_count_options_is_shown_only_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SwiperCachedCount_Options_Is_Shown_Only_0200', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.IS_SHOWN_ONLY);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -91,12 +91,12 @@ export default function SwiperCachedCountTest() {
     });
 
     /**
-     * @tc.number   swiper_cached_count_options_independent_only_0100
-     * @tc.name     swiper_cached_count_options_independent_only_0100
+     * @tc.number   SUB_ArkUI_SwiperCachedCount_Options_Independent_Only_0300
+     * @tc.name     SUB_ArkUI_SwiperCachedCount_Options_Independent_Only_0300
      * @tc.desc     SwiperAttribute.cachedCount: CachedCountOptions carries independent:true only (isShown omitted)
      * @tc.level    Level.LEVEL0
      */
-    it('swiper_cached_count_options_independent_only_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SwiperCachedCount_Options_Independent_Only_0300', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.INDEPENDENT_ONLY);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();
@@ -112,12 +112,12 @@ export default function SwiperCachedCountTest() {
     });
 
     /**
-     * @tc.number   swiper_cached_count_options_empty_0100
-     * @tc.name     swiper_cached_count_options_empty_0100
+     * @tc.number   SUB_ArkUI_SwiperCachedCount_Options_Empty_0400
+     * @tc.name     SUB_ArkUI_SwiperCachedCount_Options_Empty_0400
      * @tc.desc     SwiperAttribute.cachedCount: empty CachedCountOptions object {} after count argument
      * @tc.level    Level.LEVEL0
      */
-    it('swiper_cached_count_options_empty_0100', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SwiperCachedCount_Options_Empty_0400', Level.LEVEL0, async () => {
       let outcome: RoutedProbeOutcome = await runOneProbeCase(SwiperCachedCountProbeRoute.EMPTY_OPTIONS);
       if (!outcome.routed) {
         expect(outcome.routed).assertFalse();

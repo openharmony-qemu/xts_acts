@@ -30,30 +30,30 @@ interface AnimationOptionsLike {
 export default function AnimationStopModeTest() {
   describe('AnimationStopModeTest', () => {
     /**
-     * @tc.number   drawable_animation_stop_mode_first_frame_0100
-     * @tc.name     drawable_animation_stop_mode_first_frame_0100
+     * @tc.number   SUB_ArkUI_AnimationStopMode_First_Frame_0100
+     * @tc.name     SUB_ArkUI_AnimationStopMode_First_Frame_0100
      * @tc.desc     drawableDescriptor AnimationStopMode.FIRST_FRAME equals 0
      * @tc.level    Level.LEVEL0
      */
-    it('drawable_animation_stop_mode_first_frame_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_AnimationStopMode_First_Frame_0100', Level.LEVEL0, () => {
       expect(AnimationStopMode.FIRST_FRAME).assertEqual(0);
     });
     /**
-     * @tc.number   drawable_animation_stop_mode_last_frame_0100
-     * @tc.name     drawable_animation_stop_mode_last_frame_0100
+     * @tc.number   SUB_ArkUI_AnimationStopMode_Last_Frame_0200
+     * @tc.name     SUB_ArkUI_AnimationStopMode_Last_Frame_0200
      * @tc.desc     drawableDescriptor AnimationStopMode.LAST_FRAME equals 1
      * @tc.level    Level.LEVEL0
      */
-    it('drawable_animation_stop_mode_last_frame_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_AnimationStopMode_Last_Frame_0200', Level.LEVEL0, () => {
       expect(AnimationStopMode.LAST_FRAME).assertEqual(1);
     });
     /**
-     * @tc.number   drawable_animation_options_stop_mode_field_0100
-     * @tc.name     drawable_animation_options_stop_mode_field_0100
+     * @tc.number   SUB_ArkUI_AnimationOptions_StopMode_Field_0300
+     * @tc.name     SUB_ArkUI_AnimationOptions_StopMode_Field_0300
      * @tc.desc     AnimationOptions-like object: read/write stopMode with FIRST_FRAME and LAST_FRAME values
      * @tc.level    Level.LEVEL0
      */
-    it('drawable_animation_options_stop_mode_field_0100', Level.LEVEL0, () => {
+    it('SUB_ArkUI_AnimationOptions_StopMode_Field_0300', Level.LEVEL0, () => {
       let withFirst: AnimationOptionsLike = {
         duration: 100,
         stopMode: AnimationStopMode.FIRST_FRAME
