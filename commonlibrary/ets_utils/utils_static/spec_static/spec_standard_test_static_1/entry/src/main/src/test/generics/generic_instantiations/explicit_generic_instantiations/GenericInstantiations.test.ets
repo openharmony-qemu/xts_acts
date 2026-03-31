@@ -342,7 +342,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0100
      * @tc.name      testGenericInstantiations0001
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -358,7 +358,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0200
      * @tc.name      testGenericInstantiations0002
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -375,7 +375,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0300
      * @tc.name      testGenericInstantiations0003
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -391,7 +391,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0400
      * @tc.name      testGenericInstantiations0004
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -407,7 +407,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0500
      * @tc.name      testGenericInstantiations0005
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -422,7 +422,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0600
      * @tc.name      testGenericInstantiations0006
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -437,7 +437,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0700
      * @tc.name      testGenericInstantiations0007
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -452,7 +452,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0800
      * @tc.name      testGenericInstantiations0008
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -467,7 +467,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_0900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_0900
      * @tc.name      testGenericInstantiations0009
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -482,7 +482,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1000
      * @tc.name      testGenericInstantiations0010
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -497,7 +497,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1100
      * @tc.name      testGenericInstantiations0011
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -512,7 +512,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1200
      * @tc.name      testGenericInstantiations0012
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -527,7 +527,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1300
      * @tc.name      testGenericInstantiations0013
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -543,7 +543,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1400
      * @tc.name      testGenericInstantiations0014
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -563,7 +563,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1500
      * @tc.name      testGenericInstantiations0015
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -579,7 +579,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1600
      * @tc.name      testGenericInstantiations0016
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -598,7 +598,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1700
      * @tc.name      testGenericInstantiations0017
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -615,7 +615,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1800
      * @tc.name      testGenericInstantiations0018
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -631,7 +631,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_1900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_1900
      * @tc.name      testGenericInstantiations0019
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -648,7 +648,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2000
      * @tc.name      testGenericInstantiations0020
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -663,7 +663,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2100
      * @tc.name      testGenericInstantiations0021
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -679,7 +679,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2200
      * @tc.name      testGenericInstantiations0022
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -694,7 +694,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2300
      * @tc.name      testGenericInstantiations0023
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -709,7 +709,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2400
      * @tc.name      testGenericInstantiations0024
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -724,7 +724,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2500
      * @tc.name      testGenericInstantiations0025
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -739,7 +739,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2600
      * @tc.name      testGenericInstantiations0026
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -754,7 +754,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2700
      * @tc.name      testGenericInstantiations0027
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -769,7 +769,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2800
      * @tc.name      testGenericInstantiations0028
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -784,7 +784,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_2900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_2900
      * @tc.name      testGenericInstantiations0029
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -799,7 +799,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3000
      * @tc.name      testGenericInstantiations0030
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -815,7 +815,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3100
      * @tc.name      testGenericInstantiations0031
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -832,7 +832,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3200
      * @tc.name      testGenericInstantiations0032
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -848,7 +848,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3300
      * @tc.name      testGenericInstantiations0033
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -864,7 +864,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3400
      * @tc.name      testGenericInstantiations0034
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -879,7 +879,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3500
      * @tc.name      testGenericInstantiations0035
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -894,7 +894,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3600
      * @tc.name      testGenericInstantiations0036
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -909,7 +909,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3700
      * @tc.name      testGenericInstantiations0037
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -924,7 +924,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3800
      * @tc.name      testGenericInstantiations0038
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -939,7 +939,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_3900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_3900
      * @tc.name      testGenericInstantiations0039
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -954,7 +954,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4000
      * @tc.name      testGenericInstantiations0040
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -969,7 +969,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4100
      * @tc.name      testGenericInstantiations0041
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -984,7 +984,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4200
      * @tc.name      testGenericInstantiations0042
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1011,7 +1011,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4300
      * @tc.name      testGenericInstantiations0043
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1030,7 +1030,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4400
      * @tc.name      testGenericInstantiations0044
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1046,7 +1046,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4500
      * @tc.name      testGenericInstantiations0045
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1066,7 +1066,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4600
      * @tc.name      testGenericInstantiations0046
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1084,7 +1084,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4700
      * @tc.name      testGenericInstantiations0047
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1100,7 +1100,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4800
      * @tc.name      testGenericInstantiations0048
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1115,7 +1115,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_4900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_4900
      * @tc.name      testGenericInstantiations0049
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1130,7 +1130,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5000
      * @tc.name      testGenericInstantiations0050
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1145,7 +1145,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5100
      * @tc.name      testGenericInstantiations0051
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1160,7 +1160,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5200
      * @tc.name      testGenericInstantiations0052
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1175,7 +1175,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5300
      * @tc.name      testGenericInstantiations0053
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1190,7 +1190,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5400
      * @tc.name      testGenericInstantiations0054
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1205,7 +1205,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5500
      * @tc.name      testGenericInstantiations0055
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1220,7 +1220,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5600
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5600
      * @tc.name      testGenericInstantiations0056
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1235,7 +1235,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5700
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5700
      * @tc.name      testGenericInstantiations0057
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1250,7 +1250,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5800
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5800
      * @tc.name      testGenericInstantiations0058
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1266,7 +1266,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_5900
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_5900
      * @tc.name      testGenericInstantiations0059
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1281,7 +1281,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6000
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6000
      * @tc.name      testGenericInstantiations0060
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1296,7 +1296,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6100
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6100
      * @tc.name      testGenericInstantiations0061
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1311,7 +1311,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6200
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6200
      * @tc.name      testGenericInstantiations0062
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1326,7 +1326,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6300
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6300
      * @tc.name      testGenericInstantiations0063
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1341,7 +1341,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6400
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6400
      * @tc.name      testGenericInstantiations0064
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
@@ -1356,7 +1356,7 @@ export default function GenericFunctionsConstraintTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_INSTANTIATIONS_6500
+     * @tc.number    SUB_GENERIC_INSTANTIATIONS_TEST_6500
      * @tc.name      testGenericInstantiations0065
      * @tc.desc      An explicit generic instantiation is a language construct, which provides a
      *               list of type arguments that specify real types or type parameters to substitute
