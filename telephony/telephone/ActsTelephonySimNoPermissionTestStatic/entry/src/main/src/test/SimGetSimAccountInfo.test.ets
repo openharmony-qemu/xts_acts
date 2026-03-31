@@ -32,8 +32,8 @@ const ExpectFail = () => {
   }
 }
 
-export default function Sim_getSimAccountInfo_dual() {
-  describe('Sim_getSimAccountInfo_dual', () => {
+export default function SimGetSimAccountInfo () {
+  describe('SimGetSimAccountInfo ', () => {
 
     let TRUE_SLOT_ID_0: int = 0;
     let simAmount: int = 0;
