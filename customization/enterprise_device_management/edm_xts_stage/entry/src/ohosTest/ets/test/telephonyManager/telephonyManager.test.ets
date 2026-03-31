@@ -33,6 +33,8 @@ export default function telephonyManagerTest() {
     testIsSimDisabled();
     testActiveSim();
     testDeactiveSim();
+    testSetDefaultData();
+    testGetDefaultData();
     testAddOutgoingCallPolicyNumbers();
     testRemoveOutgoingCallPolicyNumbers();
     testGetOutgoingCallPolicyNumbers();
@@ -41,6 +43,415 @@ export default function telephonyManagerTest() {
     testGetIncomingCallPolicyNumbers();
     testHangupCalling();
   })
+}
+
+function testSetDefaultData() {
+  /**
+   * @tc.name   test_setDefaultData_without_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0100
+   * @tc.desc   test setDefaultData without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_without_admin_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.setDefaultData(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_normal_admin_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0101
+   * @tc.desc   test setDefaultData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_normal_admin_0101", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      telephonyManager.setDefaultData(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code == 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_invalid_admin_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0103
+   * @tc.desc   test setDefaultData with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_invalid_admin_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setDefaultData(INVALID_WANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_null_admin_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0104
+   * @tc.desc   test setDefaultData with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_null_admin_0104", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.setDefaultData(null, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_undefined_admin_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0105
+   * @tc.desc   test setDefaultData with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_undefined_admin_0105", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.setDefaultData(undefined, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_null_slotId_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0106
+   * @tc.desc   test setDefaultData with null slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_null_slotId_0106", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.setDefaultData(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_undefined_slotId_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0107
+   * @tc.desc   test setDefaultData with undefined slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_undefined_slotId_0107", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.setDefaultData(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_negative_slotId_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0108
+   * @tc.desc   test setDefaultData with negative slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_negative_slotId_0108", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.setDefaultData(SELFWANT, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_out_of_range_slotId_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0109
+   * @tc.desc   test setDefaultData with out of range slotId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_out_of_range_slotId_0109", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.setDefaultData(SELFWANT, 999);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_success_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0110
+   * @tc.desc   test setDefaultData success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setDefaultData_success_0110", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setDefaultData(SELFWANT, 0);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201020).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setDefaultData_slotId_disabled_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_SETDEFAULTDATA_JS_0111
+   * @tc.desc   test setDefaultData with disabled sim id.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_slotId_disabled_0111", Level.LEVEL2, async (done: Function) => {
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      telephonyManager.setSimDisabled(SELFWANT, 0);
+      telephonyManager.setDefaultData(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetDefaultData() {
+  /**
+   * @tc.name   test_getDefaultData_without_admin_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0200
+   * @tc.desc   test getDefaultData without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_without_admin_0200", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.getDefaultData(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getDefaultData_normal_admin_0201
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0201
+   * @tc.desc   test getDefaultData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_normal_admin_0201", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      telephonyManager.getDefaultData(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(error.code === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getDefaultData_invalid_admin_0203
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0203
+   * @tc.desc   test getDefaultData with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_invalid_admin_0203", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getDefaultData(INVALID_WANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getDefaultData_null_admin_0204
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0204
+   * @tc.desc   test getDefaultData with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_null_admin_0204", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.getDefaultData(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getDefaultData_undefined_admin_0205
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0205
+   * @tc.desc   test getDefaultData with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_undefined_admin_0205", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.getDefaultData(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getDefaultData_success_0206
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_GETDEFAULTDATA_JS_0206
+   * @tc.desc   test getDefaultData success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_getDefaultData_success_0206", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: number = telephonyManager.getDefaultData(SELFWANT);
+      expect(typeof result === 'number').assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testSetSimDisabled() {
