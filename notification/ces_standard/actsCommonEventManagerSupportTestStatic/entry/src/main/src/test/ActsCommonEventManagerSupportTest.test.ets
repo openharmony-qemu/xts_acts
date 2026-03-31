@@ -930,5 +930,22 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4500
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4500
+     * @tc.desc   UIAbility first start after installation common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4500 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_APP_FIRST_LAUNCH)
+        .assertEqual('usual.event.APP_FIRST_LAUNCH')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4500 END`)
+      done()
+    })
+
   })
 }
