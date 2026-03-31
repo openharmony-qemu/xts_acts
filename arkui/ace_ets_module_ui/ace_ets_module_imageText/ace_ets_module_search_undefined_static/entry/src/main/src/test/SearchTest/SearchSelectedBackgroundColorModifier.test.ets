@@ -83,7 +83,11 @@ export default function SearchSelectedBackgroundColor() {
       let strJson = inspector.getInspectorByKey('isSelectedBackgroundColorModifier');
       console.info('jk,search true value: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectedBackgroundColor')));
       let searchValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectedBackgroundColor');
-      expect(searchValue.asString()).assertEqual('#FF000000');
+      
+      let strJsonDefault = inspector.getInspectorByKey('isSelectedBackgroundColorDefault');
+      console.info('jk,search true value: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonDefault).getElement('$attrs').getElement('selectedBackgroundColor')));
+      let searchDefaultValue = JSON.parseJsonElement(strJsonDefault).getElement('$attrs').getElement('selectedBackgroundColor');
+      expect(searchValue.asString()).assertEqual(searchDefaultValue.asString());
 
       await CommonFunc.sleep(500);
 
@@ -99,7 +103,7 @@ export default function SearchSelectedBackgroundColor() {
       let strJson2 = inspector.getInspectorByKey('isSelectedBackgroundColorModifier1');
       console.info('jk,search true value: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('selectedBackgroundColor')));
       let searchValue2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('selectedBackgroundColor');
-      expect(searchValue2.asString()).assertEqual('#FF000000');
+      expect(searchValue2.asString()).assertEqual(searchDefaultValue.asString());
       console.info('[SearchSelectedBackgroundColorModifier_static_0010] END');
       done();
     });

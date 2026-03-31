@@ -15,7 +15,7 @@ interface errobj {
 }
 
 export default function configEventPolicyStrongTest() {
-  describe('configEventPolicyTest', (): void => {
+  describe('configEventPolicyTestAdapt001', (): void => {
     hilog.info(domain, tag, 'describe start');
     /**
      * @tc.name   testHiAppEventconfigEventPolicy020

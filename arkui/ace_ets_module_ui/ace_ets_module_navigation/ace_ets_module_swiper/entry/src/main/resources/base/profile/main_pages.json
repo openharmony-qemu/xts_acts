@@ -140,6 +140,7 @@
         "MainAbility/pages/ArcSwiper/arcSwiperShow",
         "MainAbility/pages/ArcSwiper/arcSwiperContent",
         "MainAbility/pages/Swiper/SwiperContentUpdate/SwiperContentUpdateOne",
-        "MainAbility/pages/Swiper/SwiperContentUpdate/SwiperContentUpdateTwo"
+        "MainAbility/pages/Swiper/SwiperContentUpdate/SwiperContentUpdateTwo",
+        "MainAbility/pages/Swiper/SwiperCachedCountProbePage"
     ]
 }

@@ -313,5 +313,17 @@ napi_value OHDrawingGetTypographyStyleAttributeBool004(napi_env env, napi_callba
 napi_value OHDrawingGetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info);
 napi_value OHDrawingDestroyPositionAndAffinity001(napi_env env, napi_callback_info info);
 napi_value OHDrawingDestroyPositionAndAffinity002(napi_env env, napi_callback_info info);
+// cpp6
+napi_value OHDrawingTextStyleAddFontVariation001(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariation002(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization001(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0500(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0600(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0700(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0800(napi_env env, napi_callback_info info);
 
 #endif // NATIVEFONTNDK_USELESS_H

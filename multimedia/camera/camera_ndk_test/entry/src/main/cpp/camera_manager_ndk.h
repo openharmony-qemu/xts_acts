@@ -184,6 +184,7 @@ public:
     Camera_ErrorCode GetSupportedOutputCapability(void);
     Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
+    Camera_ErrorCode CreateDeferredPreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
     Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
     int AdjustHeifIdx(int idx);
@@ -358,6 +359,7 @@ public:
     Camera_ErrorCode EnableMovingPhoto(int useCaseCode, bool enable);
     Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
     Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
+    Camera_ErrorCode AddDeferredSurface(int useCaseCode, char* surfaceId);
     Camera_ErrorCode GetMainImage(int useCaseCode);
     Camera_ErrorCode GetUncompressedImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);

@@ -17,9 +17,15 @@ import webJavaScriptOnDocumentStartTest from './WebJavaScriptOnDocumentStartTest
 import webJsunitTwo from './WebJsunitTwo.test'
 import webViewMetaViewportFalse from './webViewMetaViewportFalse.test'
 import webViewControllerPart3Test from './WebViewControllerPart3.test'
+import webJavaScriptOnDoucmentEnd from './WebJavaScriptOnDoucmentEndTest.test'
+import webJavaScriptOnDocumentStartUndefined from './WebJavaScriptOnDocumentStartUndefinedTest.test'
+import webJavaScriptOnDocumentEndUndefined from './WebJavaScriptOnDoucmentEndUndefinedTest.test'
 export default function testsuite() {
     webJavaScriptOnDocumentStartTest();
     webJsunitTwo();
     webViewMetaViewportFalse();
     webViewControllerPart3Test();
+    webJavaScriptOnDoucmentEnd();
+    webJavaScriptOnDocumentStartUndefined();
+    webJavaScriptOnDocumentEndUndefined();
 }

@@ -37,6 +37,8 @@ struct WebComponent{
   @State controllerY: number =-100;
   @State mode: OverScrollMode = OverScrollMode.ALWAYS;
   @State str: string = 'scrollByTo01';
+  @State getScrollOffsetTag: boolean = false;
+
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -75,6 +77,20 @@ struct WebComponent{
               break;
             }
 
+            case 'emitWebViewGetScrollOffset': {
+              try {
+                this.controller.refresh()
+                setTimeout(() => {
+                  Utils.emitEvent(this.getScrollOffsetTag,1601319)
+                }, 3000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,1601319)
+              }
+              break;
+            }
+
             case 'emitonSwitchNextPage1': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -98,6 +114,7 @@ struct WebComponent{
         .key('webScrollByTo')
         .overScrollMode(this.mode)
         .onTouch((event:TouchEvent):void => {
+          this.getScrollOffsetTag = true
           this.controllerX = this.controller.getScrollOffset().x;
           this.controllerY = this.controller.getScrollOffset().y;
           if (this.controllerY < 0) {

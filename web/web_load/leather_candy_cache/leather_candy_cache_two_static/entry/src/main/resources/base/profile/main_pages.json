@@ -2,6 +2,7 @@
   "src": [
     "pages/ClearPrefetchedResourceTest",
     "pages/InjectOfflineResourcesTest",
-    "pages/WebBlanklessErrorCode"
+    "pages/WebBlanklessErrorCode",
+    "pages/SetBlanklessLoadingWithParamsTest"
   ]
 }

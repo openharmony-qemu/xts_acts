@@ -12,7 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import RectValue from './Rect';
+import router from '@ohos.router';
+
+export class RectValue {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+}
 
 export default class CommonFunc {
   static rect_left: number;
@@ -57,8 +64,46 @@ export default class CommonFunc {
       left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
     }
   }
-}
 
+  static async openRouterPage(url: string, params?: ESObject): Promise<boolean> {
+    try {
+      if (params !== undefined) {
+        await router.pushUrl({ url: url, params: params });
+      } else {
+        await router.pushUrl({ url: url });
+      }
+      return true;
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  static async openRouterPageWithParamKey(url: string, key: string, val: string): Promise<boolean> {
+    let p: Record<string, Object> = {};
+    p[key] = val;
+    return CommonFunc.openRouterPage(url, p);
+  }
+
+  static popRouterPage(): void {
+    try {
+      router.back();
+    } catch (_e) {
+    }
+  }
+
+  static async pollAppStorageStatus(statusKey: string, capMs: number, stepMs: number = 200): Promise<string> {
+    let u: number = 0;
+    while (u <= capMs) {
+      let x: string | undefined = AppStorage.get<string>(statusKey);
+      if (x === 'ok' || x === 'fail') {
+        return x;
+      }
+      await CommonFunc.sleep(stepMs);
+      u += stepMs;
+    }
+    return AppStorage.get<string>(statusKey) ?? 'pending';
+  }
+}
 
 
 

@@ -41,7 +41,7 @@ const context = delegator.getAppContext().getApplicationContext();
 const TAG = ['testlog']
 
 export default function sendablePreferencesPromiseTest() {
-  describe('preferencesPromiseTest', () => {
+  describe('preferencesPromiseTestAdapt001', () => {
     beforeAll(async () => {
       console.info('beforeAll');
 

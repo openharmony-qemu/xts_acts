@@ -1,4 +1,4 @@
-/**
+/***
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,8 +54,6 @@ export default function webOnFirstContentfulPaint() {
       console.info('web beforeEach start');
     })
 
-
-
     /**
      * @tc.name   testOnFirstContentfulPaintStatic001
      * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
@@ -96,5 +94,23 @@ export default function webOnFirstContentfulPaint() {
         done();
       }, 10000);
     })
+
+    /**
+    * @tc.name        SwitchNextPageStatic
+    * @tc.number      SUB_WEB_SWITCH_NEXT_PAGE1112
+    * @tc.desc        test SwitchNextPageStatic
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }
