@@ -2210,15 +2210,15 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0001
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0001
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
          * @tc.desc   Testing session.on(customDataChange) callback return
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let TAG: string = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0001]';
+        it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100]';
             session!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`${TAG}session on_customDataChange Successfully ${data}`)
                 expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
@@ -2229,14 +2229,14 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_0002
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_0002
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
          * @tc.desc   Testing controller.on(customDataChange) callback return
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
                 expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
