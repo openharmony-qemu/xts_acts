@@ -818,7 +818,7 @@ export default function statisticsHasNetTest() {
 
         /**
          * @tc.name   testManagergetUidTxBytesAsync_static_0200
-         * @tc.number SUB_Manager_getUidRxBytes_Async_0200
+         * @tc.number SUB_Manager_getUidTxBytes_Async_0200
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
