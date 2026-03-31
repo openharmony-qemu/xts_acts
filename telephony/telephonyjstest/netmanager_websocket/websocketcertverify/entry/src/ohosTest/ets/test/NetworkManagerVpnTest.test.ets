@@ -912,7 +912,173 @@ export default function NetworkManagerVpnTest() {
         expect(error.code == 401).assertTrue();
         done();
       }
-    })    
+    })
+    
+    /**
+ 	   * @tc.name   testNetworkManagerVPNcreateVpnObserver0100
+ 	   * @tc.number SUB_NetworkManager_VPN_createVpnObserver_0100
+ 	   * @tc.desc   Function test
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+    it('testNetworkManagerVPNcreateVpnObserver0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNcreateVpnObserver0100';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        console.log(`${caseName} createVpnObserver success`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} createVpnObserver fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerVPNonAuthorizationResult0100
+     * @tc.number SUB_NetworkManager_VPN_onAuthorizationResult_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkManagerVPNonAuthorizationResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNonAuthorizationResult0100';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        vpnObserver.onAuthorizationResult((result: boolean) => {
+          console.log(`${caseName} onAuthorizationResult callback ${result}`);
+        });
+        console.log(`${caseName} onAuthorizationResult success`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} onAuthorizationResult fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testNetworkManagerVPNonAuthorizationResult0200
+     * @tc.number SUB_NetworkManager_VPN_onAuthorizationResult_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkManagerVPNonAuthorizationResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNonAuthorizationResult0200';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        vpnObserver.onAuthorizationResult((result: boolean) => {
+          console.log(`${caseName} onAuthorizationResult callback ${result}`);
+        });
+        console.log(`${caseName} onAuthorizationResult success`);
+        vpnObserver.onAuthorizationResult((result: boolean) => {
+          console.log(`${caseName} onAuthorizationResult callback ${result}`);
+        });
+        console.log(`${caseName} onAuthorizationResult success`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} onAuthorizationResult fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerVPNoffAuthorizationResult0100
+     * @tc.number SUB_NetworkManager_VPN_offAuthorizationResult_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkManagerVPNoffAuthorizationResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNoffAuthorizationResult0100';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        let callback = (result: boolean) => {
+          console.log(`${caseName} offAuthorizationResult callback ${result}`);
+        };
+        vpnObserver.onAuthorizationResult(callback);
+        vpnObserver.offAuthorizationResult(callback);
+        console.log(`${caseName} offAuthorizationResult success`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} offAuthorizationResult fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerVPNoffAuthorizationResult0200
+     * @tc.number SUB_NetworkManager_VPN_offAuthorizationResult_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkManagerVPNoffAuthorizationResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNoffAuthorizationResult0200';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        let callback = (result: boolean) => {
+          console.log(`${caseName} offAuthorizationResult callback ${result}`);
+        };
+        vpnObserver.offAuthorizationResult(callback);
+        console.log(`${caseName} offAuthorizationResult success`);
+        console.log(`${caseName} vpnObserver = ${JSON.stringify(vpnObserver)}`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} offAuthorizationResult fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testNetworkManagerVPNoffAuthorizationResult0300
+     * @tc.number SUB_NetworkManager_VPN_offAuthorizationResult_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkManagerVPNoffAuthorizationResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNoffAuthorizationResult0300';
+      try {
+        let vpnObserver = vpnExtension.createVpnObserver();
+        let callback = (result: boolean) => {
+          console.log(`${caseName} offAuthorizationResult callback ${result}`);
+        };
+        vpnObserver.offAuthorizationResult(callback);
+        console.log(`${caseName} offAuthorizationResult success`);
+        vpnObserver.offAuthorizationResult(callback);
+        console.log(`${caseName} offAuthorizationResult success`);
+        expect(vpnObserver != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} offAuthorizationResult fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
 
   });
 }
