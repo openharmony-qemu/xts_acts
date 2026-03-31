@@ -83,15 +83,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0100
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0100
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0100
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0100
      * @tc.desc   [setBundlePriorityConfig] Error Code 202 Is Reported When a Third-Party App Calls This Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0100';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0100';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
@@ -125,15 +125,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0200
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0200
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0200
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0200
      * @tc.desc   [getBundlePriorityConfig] When a third-party application invokes the interface, error 202 is reported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0200';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0200';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
@@ -167,15 +167,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0300
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0300
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0300
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0300
      * @tc.desc   [setPriorityEnabled] Error Code 202 Is Reported When a Third-Party App Calls This Interfaces
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0300';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0300';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
@@ -209,15 +209,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0400
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0400
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0400
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0400
      * @tc.desc   [isPriorityEnabled] Error Code 202 Is Reported When a Third-Party App Calls This Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0400';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0400';
       try {
         notificationManager.isPriorityEnabled().then((result : boolean) => {
           console.info(`${testNum}isPriorityEnabled result is ${result}`);
@@ -248,15 +248,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0500
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0500
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0500
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0500
      * @tc.desc   [setPriorityEnabledByBundle] Error Code 202 Is Reported When a Third-Party App Calls This Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0500';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0500';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
@@ -290,15 +290,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0600
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0600
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0600
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0600
      * @tc.desc   [isPriorityEnabledByBundle] Error Code 202 Is Reported When a Third-Party App Calls This Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0600';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0600';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
@@ -332,15 +332,15 @@ export default function actsNotificationAnsPriorityNotificationNoSystemStaticTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_static_0700
-     * @tc.number Sub_Notification_Ans_Priority_Notification_static_0700
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_Static_0700
+     * @tc.number SUB_Notification_Ans_Priority_Notification_Static_0700
      * @tc.desc   [setAdditionalConfig] Error Code 202 Is Reported When a Third-Party App Calls This Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_static_0700';
+    it('SUB_Notification_Ans_Priority_Notification_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_Static_0700';
       const bundleOption : notificationManager.BundleOption = {
         bundle: 'com.example.actsnotificationansprioritynotificationnosystemstatictest.static',
       };
