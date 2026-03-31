@@ -83,15 +83,15 @@ export default function actsNotificationAnsDisableNotificationNoSystemStaticTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_DisableNotification_Static_0100
-     * @tc.number Sub_Notification_Ans_DisableNotification_Static_0100
+     * @tc.name   SUB_Notification_Ans_DisableNotification_Static_0100
+     * @tc.number SUB_Notification_Ans_DisableNotification_Static_0100
      * @tc.desc   The error code 202 of the notificationManager.disableNotificationFeature interface is replaced
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_DisableNotification_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_DisableNotification_Static_017';
+    it('SUB_Notification_Ans_DisableNotification_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_DisableNotification_Static_017';
       let disabled: boolean = true;
       let bundleList: Array<string> = ["com.example.actsnotificationansdisablenotificationnosystemstatictest.static"];
       let num:int=0
