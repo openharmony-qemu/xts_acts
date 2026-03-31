@@ -41,3 +41,17 @@ export const startProfiler: (resourceType: number, maxDuration: number, filterSi
   maxStackDepth: number, statisticsInterval: number, sampleInterval: number) => number;
 export const startProfilerNull: (resourceType: number) => number;
 export const stopProfiler: () => number;
+export const TestRequestTrace: () => number;
+export const TestRequestTraceIdentifier1: () => number;
+export const TestRequestTraceIdentifier2: () => number;
+export const TestRequestTraceIdentifier3: () => number;
+export const TestRequestTraceBufferSize1: () => number;
+export const TestRequestTraceBufferSize2: () => number;
+export const TestRequestTraceBufferSize3: () => number;
+export const TestRequestTraceBufferSize4: () => number;
+export const TestRequestTraceBufferSize5: () => number;
+export const TestRequestTracedurationMs1: () => number;
+export const TestRequestTracedurationMs2: () => number;
+export const TestRequestTracedurationMs3: () => number;
+export const TestRequestTracedurationMs4: () => number;
+export const TestRequestTraceReserved1: () => number;
