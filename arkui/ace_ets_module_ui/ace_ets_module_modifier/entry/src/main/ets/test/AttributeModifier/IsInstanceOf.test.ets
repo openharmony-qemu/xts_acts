@@ -52,7 +52,7 @@ export default function IsInstanceOfTest() {
 
     /**
      * @tc.name   IsInstanceOfTest_0100
-     * @tc.number IsInstanceOfTest_0100
+     * @tc.number SUB_ARKUI_API_Modifier_IsInstanceOfTest_0100
      * @tc.desc   Test ModifierUtils.isInstanceOf with Text component
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
