@@ -272,7 +272,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_1300 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1300 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1300 end");
