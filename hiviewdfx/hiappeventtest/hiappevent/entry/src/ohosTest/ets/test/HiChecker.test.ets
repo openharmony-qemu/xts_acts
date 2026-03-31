@@ -1,6 +1,7 @@
 import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, expect, it, Level } from '@ohos/hypium'
 import hichecker from '@ohos.hichecker';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 export default function Hichecker() {
   describe('Hichecker', () => {
@@ -20,7 +21,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -40,7 +41,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -60,7 +61,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -80,7 +81,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -100,7 +101,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -120,7 +121,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -137,6 +138,7 @@ export default function Hichecker() {
       try {
         console.info("====>Hichecker01addCheckRule  start");
         hichecker.addCheckRule(null);
+        console.info("====>Hichecker01addCheckRule  end");
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
@@ -161,7 +163,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`Hichecker01unllremoveCheckRule code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -181,7 +183,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -243,7 +245,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
     })
