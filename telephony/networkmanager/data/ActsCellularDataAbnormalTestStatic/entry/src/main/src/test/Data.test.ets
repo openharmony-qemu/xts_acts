@@ -417,7 +417,7 @@ export default function dataTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let simId: int = data.getDefaultCellularDataSimId();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled: '+ isEnabled);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' simId: '+ simId);
                 ExpectTrue(simId != undefined);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
