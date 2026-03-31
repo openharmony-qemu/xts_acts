@@ -1,18 +1,7 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/zwx1494964/.ohos/config/openharmony/default_actsNotificationAnsPCPADsoftbusNoSystemTestStatic_zvOkWukP1Q3RYVVPUnhQgscIdj_HH8Ix7qDmQhBbki8=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B4D0298677C5AF4C70C9674EC39C3AD352961E6F482A94C6789499BA5BEF338C0197E8177E7E760",
-          "profile": "C:/Users/zwx1494964/.ohos/config/openharmony/default_actsNotificationAnsPCPADsoftbusNoSystemTestStatic_zvOkWukP1Q3RYVVPUnhQgscIdj_HH8Ix7qDmQhBbki8=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/zwx1494964/.ohos/config/openharmony/default_actsNotificationAnsPCPADsoftbusNoSystemTestStatic_zvOkWukP1Q3RYVVPUnhQgscIdj_HH8Ix7qDmQhBbki8=.p12",
-          "storePassword": "0000001B172D8550D61898C7645EF75FD95A370DDFE3AE91CD1FDAE7412A6DEFBA3DF60A5106DB4EFE05CF"
-        }
-      }
+      
     ],
     "products": [
       {
