@@ -3053,7 +3053,7 @@ export default function WindowLifecycle() {
      * @tc.level  LEVEL0
      */
     it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = "testGetMainWindowSnapshot_1100";
+      let caseName = "testGetMainWindowSnapshot_1200";
       console.log(caseName + " begin");
       let windowClass = windowStage.getMainWindowSync();
       let windowId = windowClass.getWindowProperties().id;
@@ -3079,6 +3079,7 @@ export default function WindowLifecycle() {
         try {
           let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
           console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          done();
         } catch (exception) {
           console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
           expect(exception.code).assertEqual(801)
