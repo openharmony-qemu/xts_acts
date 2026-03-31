@@ -15,7 +15,7 @@
 
 import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium';
 import { UiDriver, UiComponent, BY, Driver, Component, ON } from '@ohos.UiTest'
-import Utils from './Utils';
+import Utils from '../Utils';
 import router from '@ohos.router';
 
 export default function IsInstanceOfTest() {
@@ -39,15 +39,6 @@ export default function IsInstanceOfTest() {
         console.error("push alphabetIndexer page error: " + err);
       }
       done();
-    })
-
-    beforeEach(() => {
-    })
-
-    afterEach(() => {
-    })
-
-    afterAll(async () => {
     })
 
     /**
