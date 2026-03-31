@@ -61,7 +61,7 @@ int SubCryptoFrameworkNapiSymCipherTest0100 ();
 int SubCryptoFrameworkNapiSymCipherTest0200 ();
 int SubCryptoFrameworkNapiSymCipherTest0300 ();
 int SubCryptoFrameworkNapiSymCipherTest0400 ();
-int SubCryptoFrameworkNapiSymCipherTest0401 ();
+int SubCryptoFrameworkNapiSymCipherTest3000 ();
 int SubCryptoFrameworkNapiSymCipherTest0500 ();
 int SubCryptoFrameworkNapiSymCipherTest0600 ();
 int SubCryptoFrameworkNapiSymCipherTest0700 ();

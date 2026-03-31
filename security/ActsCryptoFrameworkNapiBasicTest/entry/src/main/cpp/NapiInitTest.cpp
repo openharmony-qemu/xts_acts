@@ -402,7 +402,7 @@ static const std::array<TestHandler, CRYPTO_FRAMEWORK_SYM_CIPHER_TEST_COUNT> g_s
     SubCryptoFrameworkNapiSymCipherTest0200,
     SubCryptoFrameworkNapiSymCipherTest0300,
     SubCryptoFrameworkNapiSymCipherTest0400,
-    SubCryptoFrameworkNapiSymCipherTest0401,
+    SubCryptoFrameworkNapiSymCipherTest3000,
     SubCryptoFrameworkNapiSymCipherTest0500,
     SubCryptoFrameworkNapiSymCipherTest0600,
     SubCryptoFrameworkNapiSymCipherTest0700,
@@ -445,7 +445,7 @@ static const std::array<TestHandler, CRYPTO_FRAMEWORK_SYM_KEY_TEST_COUNT> g_symK
 static const std::array<TestHandler, CRYPTO_FRAMEWORK_VERIFY_TEST_COUNT> g_verifyTestHandlers = {
     SubCryptoFrameworkNapiVerifyTest0100,
     SubCryptoFrameworkNapiVerifyTest0200,
-    SubCryptoFrameworkNapiVerifyTest0301,
+    SubCryptoFrameworkNapiVerifyTest2800,
     SubCryptoFrameworkNapiVerifyTest0300,
     SubCryptoFrameworkNapiVerifyTest0400,
     SubCryptoFrameworkNapiVerifyTest0500,

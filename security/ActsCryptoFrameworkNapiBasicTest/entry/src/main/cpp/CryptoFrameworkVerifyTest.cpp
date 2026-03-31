@@ -251,7 +251,7 @@ int SubCryptoFrameworkNapiVerifyTest0200()
     return 0;
 }
 
-int SubCryptoFrameworkNapiVerifyTest0301()
+int SubCryptoFrameworkNapiVerifyTest2800()
 {
     OH_CryptoAsymKeyGenerator *keyCtx = nullptr;
     OH_CryptoKeyPair *keyPair = nullptr;

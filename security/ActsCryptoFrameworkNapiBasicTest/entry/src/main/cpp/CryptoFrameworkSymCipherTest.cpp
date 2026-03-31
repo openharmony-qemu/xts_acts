@@ -780,7 +780,7 @@ static void GcmBlockTestCtxDestroy(GcmBlockTestCtx *ctx)
     HcfBlobDataClearAndFree(&ctx->decUpdate);
 }
 
-int SubCryptoFrameworkNapiSymCipherTest0401()
+int SubCryptoFrameworkNapiSymCipherTest3000()
 {
     const int symCipherSpecCount = SYM_CIPHER_GCM_DATA_COUNT;
     for (int i = 0; i < symCipherSpecCount; i++) {

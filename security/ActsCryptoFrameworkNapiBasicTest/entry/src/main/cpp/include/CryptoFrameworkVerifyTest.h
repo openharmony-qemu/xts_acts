@@ -42,7 +42,7 @@ extern VerifySpec g_verifyRsaOnlySignData[VERIFY_RSA_ONLY_SIGN_DATA_COUNT];
 
 int SubCryptoFrameworkNapiVerifyTest0100 ();
 int SubCryptoFrameworkNapiVerifyTest0200 ();
-int SubCryptoFrameworkNapiVerifyTest0301 ();
+int SubCryptoFrameworkNapiVerifyTest2800 ();
 int SubCryptoFrameworkNapiVerifyTest0300 ();
 int SubCryptoFrameworkNapiVerifyTest0400 ();
 int SubCryptoFrameworkNapiVerifyTest0500 ();
