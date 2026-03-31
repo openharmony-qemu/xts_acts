@@ -609,7 +609,7 @@ export default function cameraTorchTest() {
           console.info(`${TAG} IsTorchLevelControlSupported: ${isSupported}`);
         } catch (error) {
           console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200 err` + error.code);
-          expect(error.code == camera.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue()
+          expect().assertFail();
         }
       }
       done();
@@ -641,7 +641,7 @@ export default function cameraTorchTest() {
  
         } catch (error) {
           console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 err` + error.code);
-          expect(error.code == camera.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue()
+          expect().assertFail();
         }
       }
       done();
