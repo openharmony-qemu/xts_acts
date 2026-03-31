@@ -72,7 +72,14 @@ group("ans_standard") {
       "actsNotificationAnsGetNotificationParametersTest:ActsNotificationAnsGetNotificationParametersTest",
       "actsNotificationAnsGetNotificationParametersTestStatic:ActsNotificationAnsGetNotificationParametersStaticTest",
       "actsNotificationAnsPriorityNotificationNoSystemTestStatic:ActsNotificationAnsPriorityNotificationNoSystemStaticTest",
-      "actsNotificationAnsPriorityNotificationTest:ActsNotificationAnsPriorityNotificationTest"
+      "actsNotificationAnsPriorityNotificationTest:ActsNotificationAnsPriorityNotificationTest",
+      "actsNotificationEmitterLittleTestStatic:ActsNotificationEmitterLittleStaticTest",
+      "actsNotificationAnsEnableBatchNoSystemTest:ActsNotificationAnsEnableBatchNoSystemTest",
+      "actsNotificationAnsPCPADsoftbusNoSystemTestStatic:ActsNotificationAnsPCPADsoftbusNoSystemStaticTest",
+      "actsNotificationAnsPCPADsoftbusTest:ActsNotificationAnsPCPADSoftBusTest",
+      "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
+      "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
+      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest"
     ]
   }
 }
