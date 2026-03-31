@@ -104,7 +104,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0300
-         * @tc.number SUB_telephony_data_nop0300
+         * @tc.number SUB_Telephony_Data_Nop_0300
          * @tc.desc   Using the isCellularDataEnabledSync method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -129,7 +129,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0400
-         * @tc.number SUB_telephony_data_nop0400
+         * @tc.number SUB_Telephony_Data_Nop_0400
          * @tc.desc   Using the isCellularDataRoamingEnabled (promise) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -161,7 +161,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0500
-         * @tc.number SUB_telephony_data_nop0500
+         * @tc.number SUB_Telephony_Data_Nop_0500
          * @tc.desc   Using the isCellularDataRoamingEnabled (callback) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0600
-         * @tc.number SUB_telephony_data_nop0600
+         * @tc.number SUB_Telephony_Data_Nop_0600
          * @tc.desc   Using the isCellularDataRoamingEnabledSync method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0700
-         * @tc.number SUB_telephony_data_nop0700
+         * @tc.number SUB_Telephony_Data_Nop_0700
          * @tc.desc   Using the queryAllApns (promise) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0800
-         * @tc.number SUB_telephony_data_nop0800
+         * @tc.number SUB_Telephony_Data_Nop_0800
          * @tc.desc   Using the getActiveApnName (promise) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_0900
-         * @tc.number SUB_telephony_data_nop0900
+         * @tc.number SUB_Telephony_Data_Nop_0900
          * @tc.desc   Using the queryApnIds (promise) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -325,7 +325,7 @@ export default function dataNoPTest() {
 
         /**
          * @tc.name   testTelephonyDataNop_static_1000
-         * @tc.number SUB_telephony_data_nop1000
+         * @tc.number SUB_Telephony_Data_Nop_1000
          * @tc.desc   Using the setPreferredApn (promise) method without permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
