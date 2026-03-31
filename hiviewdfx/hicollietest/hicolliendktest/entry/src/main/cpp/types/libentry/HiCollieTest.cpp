@@ -23,6 +23,7 @@
 
 #undef LOG_TAG
 #define LOG_TAG "StruckTest"
+const int64_t BLOCK_TIME = 3; 
 
 // 设置上报应用线程卡死事件标志位
 std::shared_ptr<std::atomic<bool>> isSixSecondEvent1_ = std::make_shared<std::atomic<bool>>(false);
@@ -125,7 +126,7 @@ napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info i
 {
     // 上报3秒事件
     OH_HiCollie_AssociateProcessReport(false);
-    sleep(3);
+    sleep(BLOCK_TIME);
     // 上报6秒事件
     OH_HiCollie_AssociateProcessReport(true);
     napi_value result;
