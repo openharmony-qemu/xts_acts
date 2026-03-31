@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import statistics from '@ohos.net.statistics';
+import bundleManager from '@ohos.bundle.bundleManager';
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -593,6 +594,49 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetUidRxBytesPromise_static_0200
+         * @tc.number SUB_Manager_getUidRxBytes_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidRxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidRxBytesPromise_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
+                let uid :int = 1;
+                if(bundleInfo != undefined){
+                    const appInfo = bundleInfo.appInfo;
+                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
+                    if(appInfo && appInfo.uid != undefined){
+                        uid = appInfo.uid;
+                    }
+                }
+                hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
+                statistics.getUidRxBytes(uid).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectTrue(stats >= 0);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
          * @tc.name   testManagergetUidRxBytesAsync_static_0100
          * @tc.number SUB_Manager_getUidRxBytes_Async_0100
          * @tc.desc   Function test
@@ -625,6 +669,46 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetUidRxBytesAsync_static_0200
+         * @tc.number SUB_Manager_getUidRxBytes_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidRxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidRxBytesAsync_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
+                let uid :int = 1;
+                if(bundleInfo != undefined){
+                    const appInfo = bundleInfo.appInfo;
+                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
+                    if(appInfo && appInfo.uid != undefined){
+                        uid = appInfo.uid;
+                    }
+                }
+                statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectFail();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectTrue(stats != null);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+        /**
          * @tc.name   testManagergetUidTxBytesPromise_static_0100
          * @tc.number SUB_Manager_getUidTxBytes_Promise_0100
          * @tc.desc   Function test
@@ -646,6 +730,49 @@ export default function statisticsHasNetTest() {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103005);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testManagergetUidTxBytesPromise_static_0200
+         * @tc.number SUB_Manager_getUidTxBytes_Promise_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidTxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidTxBytesPromise_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
+                let uid :int = 1;
+                if(bundleInfo != undefined){
+                    const appInfo = bundleInfo.appInfo;
+                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
+                    if(appInfo && appInfo.uid != undefined){
+                        uid = appInfo.uid;
+                    }
+                }
+                hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
+                statistics.getUidTxBytes(uid).then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectTrue(stats >= 0);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
@@ -688,6 +815,48 @@ export default function statisticsHasNetTest() {
                 done();
             }
         })
+
+        /**
+         * @tc.name   testManagergetUidTxBytesAsync_static_0200
+         * @tc.number SUB_Manager_getUidRxBytes_Async_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetUidTxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetUidTxBytesAsync_static_0200';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
+                let uid :int = 1;
+                if(bundleInfo != undefined){
+                    const appInfo = bundleInfo.appInfo;
+                    hilog.info(domain, tag, '%{public}s', caseName +': appInfo is'+ appInfo);
+                    if(appInfo && appInfo.uid != undefined){
+                        uid = appInfo.uid;
+                    }
+                }
+                statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectFail();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectTrue(stats != null);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
         /**
          * @tc.name   testManagergetSockfdRxBytesPromise_static_0100
          * @tc.number SUB_Manager_getSockfdRxBytes_Promise_0100
