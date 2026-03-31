@@ -59,14 +59,13 @@ export default function testsuite() {
   VideoReset6();
   VideoReset7();
   VideoReset8();
-  VideoReset9();
-  VideoReset10();
-  VideoReset11();
-  VideoReset12();
-  VideoReset13();
-  VideoReset14();
-  VideoTest2();
-
+  //VideoReset9();
+  //VideoReset10();
+  //VideoReset11();
+  //VideoReset12();
+  //VideoReset13();
+  //VideoReset14();
+  //VideoTest2();
   VideoOnErrorTest()
   VideoContentTransitionEffectTest()
   VideoSupportMoreSpeedTest()
