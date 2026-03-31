@@ -58,8 +58,12 @@ export default class AVRecorderNdkTestBase {
   GET_RECORDER_CONFIG = 'get_recorder_config';
   GET_AVAILABLE_ENCODER = 'get_available_encoder';
   SET_WILL_MUTE_WHEN_INTERRUPTED = 'set_will_mute_when_interrupted';
-  GET_MAX_AMPLITUDE = 'get_max_amplitude';
-  SET_METADATA = 'set_metadata';
+  GET_MAX_AMPLITUDE_OK = 'get_max_amplitude_ok';
+  GET_MAX_AMPLITUDE_ERR_INVALID_VALUE = 'get_max_amplitude_err_invalid_value';
+  GET_MAX_AMPLITUDE_ERR_INVALID_STATE = 'get_max_amplitude_err_invalid_state';
+  SET_METADATA_OK = 'set_metadata_ok';
+  SET_METADATA_ERR_INVALID_VALUE = 'set_metadata_err_invalid_value';
+  SET_METADATA_ERR_INVALID_STATE = 'set_metadata_err_invalid_state';
   END_EVENT = 'end';
   AV_CREATEAVPLAYER = 'createAVPlayer';
   AV_IDLE = 'idle';
@@ -71,6 +75,9 @@ export default class AVRecorderNdkTestBase {
   AV_STOPPED = 'stopped';
   AV_RELEASED = 'released';
   AV_ERROR = 'error';
+  AV_ERR_OK: number = 0;
+  AV_ERR_INVALID_VAL: number = 3;
+  AV_ERR_INVALID_STATE: number = 8;
   result: number = 0;
   isRelease: boolean = false;
   focusMode: number = 2;
@@ -244,15 +251,39 @@ export default class AVRecorderNdkTestBase {
           this.toNextStep(config, fdNumber, steps, done);
           break;
 
-        case this.GET_MAX_AMPLITUDE:
+        case this.GET_MAX_AMPLITUDE_OK:
           this.result = await testNapi.getMaxAmplitude();
-          expect(this.result).assertEqual(0);
+          expect(this.result).assertEqual(this.AV_ERR_OK);
           this.toNextStep(config, fdNumber, steps, done);
           break;
 
-        case this.SET_METADATA:
+        case this.GET_MAX_AMPLITUDE_ERR_INVALID_VALUE:
+          this.result = await testNapi.getMaxAmplitude();
+          expect(this.result).assertEqual(this.AV_ERR_INVALID_VAL);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.GET_MAX_AMPLITUDE_ERR_INVALID_STATE:
+          this.result = await testNapi.getMaxAmplitude();
+          expect(this.result).assertEqual(this.AV_ERR_INVALID_STATE);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.SET_METADATA_OK:
           this.result = await testNapi.setMetadata();
-          expect(this.result).assertEqual(0);
+          expect(this.result).assertEqual(this.AV_ERR_OK);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.SET_METADATA_ERR_INVALID_VALUE:
+          this.result = await testNapi.setMetadata();
+          expect(this.result).assertEqual(this.AV_ERR_INVALID_VAL);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.SET_METADATA_ERR_INVALID_STATE:
+          this.result = await testNapi.setMetadata();
+          expect(this.result).assertEqual(this.AV_ERR_INVALID_STATE);
           this.toNextStep(config, fdNumber, steps, done);
           break;
 

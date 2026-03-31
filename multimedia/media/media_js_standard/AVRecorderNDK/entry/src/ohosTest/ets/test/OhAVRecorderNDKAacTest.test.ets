@@ -1293,15 +1293,15 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.name   testOhAvRecorder_aac_success_025
-     * @tc.number testOhAvRecorder_aac_success_025
+     * @tc.name   testOhAvRecorder_aac_getMaxAmplitude_success_001
+     * @tc.number testOhAvRecorder_aac_getMaxAmplitude_success_001
      * @tc.desc   get max amplitude.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     * @tc.level  LEVEL1
      */
-    it('testOhAvRecorder_aac_success_025', 0, async (done: Function) => {
-      console.info(`testOhAvRecorder_aac_success_025 test start `);
+    it('testOhAvRecorder_aac_getMaxAmplitude_success_001', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_success_001 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1313,7 +1313,7 @@ export default function OhAVRecorderNDKAacTest() { // L2
         audioSampleRate: audioSampleRate,
         audioBitrate: audioBitrate,
         recorderTimer: 2000
-      }
+      };
       let mySteps = new Array(
         // create recorder
         avRecorderNdkTestBase.CREATE_RECORDER_EVENT,
@@ -1326,7 +1326,7 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.WAIT_RECORDER_EVENT,
         avRecorderNdkTestBase.WAIT_RECORDER_EVENT,
         // get max amplitude
-        avRecorderNdkTestBase.GET_MAX_AMPLITUDE,
+        avRecorderNdkTestBase.GET_MAX_AMPLITUDE_OK,
         // stop recorder
         avRecorderNdkTestBase.STOP_RECORDER_EVENT,
         // release recorder
@@ -1337,19 +1337,87 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_aac_success_025 test end `);
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_success_001 test end `);
     });
 
     /**
-     * @tc.name   testOhAvRecorder_aac_success_026
-     * @tc.number testOhAvRecorder_aac_success_026
-     * @tc.desc   set custom info.
+     * @tc.name   testOhAvRecorder_aac_getMaxAmplitude_fail_001
+     * @tc.number testOhAvRecorder_aac_getMaxAmplitude_fail_001
+     * @tc.desc   get max amplitude.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     * @tc.level  LEVEL1
      */
-    it('testOhAvRecorder_aac_success_026', 0, async (done: Function) => {
-      console.info(`testOhAvRecorder_aac_success_026 test start `);
+    it('testOhAvRecorder_aac_getMaxAmplitude_fail_001', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_fail_001 test start `);
+      let fileName: string = avRecorderNdkTestBase.resourceAACName();
+      fdObject = await avRecorderNdkTestBase.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      let config: ESObject = {
+        fdNumber: fdObject.fdNumber,
+        avOutName: fileName,
+        fileFormat: 11,
+        audioCodec: 3,
+        audioSampleRate: audioSampleRate,
+        audioBitrate: audioBitrate,
+        recorderTimer: 2000
+      };
+      let mySteps = new Array(
+        // get max amplitude
+        avRecorderNdkTestBase.GET_MAX_AMPLITUDE_ERR_INVALID_VALUE,
+        // done recorder
+        avRecorderNdkTestBase.END_EVENT
+      );
+      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_fail_001 test end `);
+    });
+
+    /**
+     * @tc.name   testOhAvRecorder_aac_getMaxAmplitude_fail_002
+     * @tc.number testOhAvRecorder_aac_getMaxAmplitude_fail_002
+     * @tc.desc   get max amplitude.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOhAvRecorder_aac_getMaxAmplitude_fail_002', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_fail_002 test start `);
+      let fileName: string = avRecorderNdkTestBase.resourceAACName();
+      fdObject = await avRecorderNdkTestBase.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      let config: ESObject = {
+        fdNumber: fdObject.fdNumber,
+        avOutName: fileName,
+        fileFormat: 11,
+        audioCodec: 3,
+        audioSampleRate: audioSampleRate,
+        audioBitrate: audioBitrate,
+        recorderTimer: 2000
+      };
+      let mySteps = new Array(
+        // create recorder
+        avRecorderNdkTestBase.CREATE_RECORDER_EVENT,
+        // get max amplitude
+        avRecorderNdkTestBase.GET_MAX_AMPLITUDE_ERR_INVALID_STATE,
+        // release recorder
+        avRecorderNdkTestBase.RELEASE_RECORDER_EVENT,
+        // done recorder
+        avRecorderNdkTestBase.END_EVENT
+      );
+      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+      console.info(`testOhAvRecorder_aac_getMaxAmplitude_fail_002 test end `);
+    });
+
+    /**
+     * @tc.name   testOhAvRecorder_aac_setMetadata_success_001
+     * @tc.number testOhAvRecorder_aac_setMetadata_success_001
+     * @tc.desc   set metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOhAvRecorder_aac_setMetadata_success_001', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_setMetadata_success_001 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1374,7 +1442,7 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.WAIT_RECORDER_EVENT,
         avRecorderNdkTestBase.WAIT_RECORDER_EVENT,
         // set metadata
-        avRecorderNdkTestBase.SET_METADATA,
+        avRecorderNdkTestBase.SET_METADATA_OK,
         // stop recorder
         avRecorderNdkTestBase.STOP_RECORDER_EVENT,
         // release recorder
@@ -1385,7 +1453,75 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_aac_success_026 test end `);
+      console.info(`testOhAvRecorder_aac_setMetadata_success_001 test end `);
+    });
+
+    /**
+     * @tc.name   testOhAvRecorder_aac_setMetadata_fail_001
+     * @tc.number testOhAvRecorder_aac_setMetadata_fail_001
+     * @tc.desc   set metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOhAvRecorder_aac_setMetadata_fail_001', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_setMetadata_fail_001 test start `);
+      let fileName: string = avRecorderNdkTestBase.resourceAACName();
+      fdObject = await avRecorderNdkTestBase.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      let config: ESObject = {
+        fdNumber: fdObject.fdNumber,
+        avOutName: fileName,
+        fileFormat: 11,
+        audioCodec: 3,
+        audioSampleRate: audioSampleRate,
+        audioBitrate: audioBitrate,
+        recorderTimer: 2000
+      };
+      let mySteps = new Array(
+        // set metadata
+        avRecorderNdkTestBase.SET_METADATA_ERR_INVALID_VALUE,
+        // done recorder
+        avRecorderNdkTestBase.END_EVENT
+      );
+      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+      console.info(`testOhAvRecorder_aac_setMetadata_fail_001 test end `);
+    });
+
+    /**
+     * @tc.name   testOhAvRecorder_aac_setMetadata_fail_002
+     * @tc.number testOhAvRecorder_aac_setMetadata_fail_002
+     * @tc.desc   set metadata.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOhAvRecorder_aac_setMetadata_fail_002', 0, async (done: Function) => {
+      console.info(`testOhAvRecorder_aac_setMetadata_fail_002 test start `);
+      let fileName: string = avRecorderNdkTestBase.resourceAACName();
+      fdObject = await avRecorderNdkTestBase.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      let config: ESObject = {
+        fdNumber: fdObject.fdNumber,
+        avOutName: fileName,
+        fileFormat: 11,
+        audioCodec: 3,
+        audioSampleRate: audioSampleRate,
+        audioBitrate: audioBitrate,
+        recorderTimer: 2000
+      };
+      let mySteps = new Array(
+        // create recorder
+        avRecorderNdkTestBase.CREATE_RECORDER_EVENT,
+        // set metadata
+        avRecorderNdkTestBase.SET_METADATA_ERR_INVALID_STATE,
+        // release recorder
+        avRecorderNdkTestBase.RELEASE_RECORDER_EVENT,
+        // done recorder
+        avRecorderNdkTestBase.END_EVENT
+      );
+      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+      console.info(`testOhAvRecorder_aac_setMetadata_fail_002 test end `);
     });
 
   });
