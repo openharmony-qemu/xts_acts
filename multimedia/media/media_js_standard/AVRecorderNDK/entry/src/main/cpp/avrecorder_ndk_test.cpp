@@ -566,6 +566,29 @@ static napi_value setWillMuteWhenInterrupted(napi_env env, napi_callback_info in
     return res;
 }
 
+static napi_value getMaxAmplitude(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    int32_t amplitude;
+    int result = OH_AVRecorder_GetAudioCapturerMaxAmplitude(g_avRecorder, &amplitude);
+    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_GetAudioCapturerMaxAmplitude result :%{public}d", result);
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value setMetadata(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    OH_AVFormat *metadata = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(metadata, "com.openharmony.test", "setMetadata");
+    int result = OH_AVRecorder_SetMetadata(g_avRecorder, metadata);
+    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_SetMetadata result :%{public}d", result);
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -586,7 +609,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getAVRecorderConfig", nullptr, getAVRecorderConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getAvailableEncoder", nullptr, getAvailableEncoder, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setWillMuteWhenInterrupted", nullptr,
-            setWillMuteWhenInterrupted, nullptr, nullptr, nullptr, napi_default, nullptr}
+            setWillMuteWhenInterrupted, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getMaxAmplitude", nullptr, getMaxAmplitude, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setMetadata", nullptr, setMetadata, nullptr, nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

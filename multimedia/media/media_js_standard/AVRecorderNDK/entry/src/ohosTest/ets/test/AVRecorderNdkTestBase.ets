@@ -58,6 +58,8 @@ export default class AVRecorderNdkTestBase {
   GET_RECORDER_CONFIG = 'get_recorder_config';
   GET_AVAILABLE_ENCODER = 'get_available_encoder';
   SET_WILL_MUTE_WHEN_INTERRUPTED = 'set_will_mute_when_interrupted';
+  GET_MAX_AMPLITUDE = 'get_max_amplitude';
+  SET_METADATA = 'set_metadata';
   END_EVENT = 'end';
   AV_CREATEAVPLAYER = 'createAVPlayer';
   AV_IDLE = 'idle';
@@ -238,6 +240,18 @@ export default class AVRecorderNdkTestBase {
 
         case this.SET_WILL_MUTE_WHEN_INTERRUPTED:
           this.result = await testNapi.setWillMuteWhenInterrupted();
+          expect(this.result).assertEqual(0);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.GET_MAX_AMPLITUDE:
+          this.result = await testNapi.getMaxAmplitude();
+          expect(this.result).assertEqual(0);
+          this.toNextStep(config, fdNumber, steps, done);
+          break;
+
+        case this.SET_METADATA:
+          this.result = await testNapi.setMetadata();
           expect(this.result).assertEqual(0);
           this.toNextStep(config, fdNumber, steps, done);
           break;
