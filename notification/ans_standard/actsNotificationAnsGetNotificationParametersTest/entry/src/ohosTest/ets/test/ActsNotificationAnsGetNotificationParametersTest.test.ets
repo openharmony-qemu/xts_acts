@@ -68,15 +68,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0100
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0100
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0100
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0100
      * @tc.desc   [Notification does not exist] When the getNotificationParameters interface is called and an ID of a notification that does not exist is passed, error 1600007 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0100', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0100';
+    it('SUB_Notification_Ans_GetNotificationParameters_0100', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0100';
       try {
         await notificationManager.getNotificationParameters(99)
           .then((data: notificationManager.NotificationParameters) => {
@@ -107,15 +107,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0200
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0200
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0200
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0200
      * @tc.desc   [Notification does not exist] When the getNotificationParameters interface is called and an existing notification is passed as the label, error 1600007 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0200', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0200';
+    it('SUB_Notification_Ans_GetNotificationParameters_0200', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0200';
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1,
         notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
@@ -174,15 +174,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0300
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0300
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0300
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0300
      * @tc.desc   [Parameter verification] The getNotificationParameters interface is successfully invoked when the label parameter is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0300', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0300';
+    it('SUB_Notification_Ans_GetNotificationParameters_0300', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0300';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -291,15 +291,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0400
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0400
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0400
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0400
      * @tc.desc   [Parameter verification] The getNotificationParameters interface is successfully invoked when the label parameter is set to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0400', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0400';
+    it('SUB_Notification_Ans_GetNotificationParameters_0400', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0400';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -408,15 +408,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0500
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0500
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0500
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0500
      * @tc.desc   [Parameter verification] The getNotificationParameters interface is successfully invoked when the label parameter is set to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0500', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0500';
+    it('SUB_Notification_Ans_GetNotificationParameters_0500', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0500';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -526,15 +526,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0600
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0600
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0600
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0600
      * @tc.desc   [Parameter verification] The getNotificationParameters interface is successfully invoked when the label parameter contains special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0600', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0600';
+    it('SUB_Notification_Ans_GetNotificationParameters_0600', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0600';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -644,15 +644,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0700
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0700
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0700
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0700
      * @tc.desc   [Parameter verification] The getNotificationParameters interface is called, and the id and label parameters have normal values. The interface is successfully called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0700', Level.LEVEL0, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0700';
+    it('SUB_Notification_Ans_GetNotificationParameters_0700', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0700';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -762,15 +762,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0800
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0800
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0800
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0800
      * @tc.desc   [Local release] The getNotificationParameters interface is called, where the notification ID is an existing one and the label parameter is not passed. The call is successful.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0800', Level.LEVEL0, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0800';
+    it('SUB_Notification_Ans_GetNotificationParameters_0800', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0800';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -879,15 +879,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_0900
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_0900
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_0900
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_0900
      * @tc.desc   [Local release] The getNotificationParameters interface is called, where the notification ID is an existing one and the label parameter is not passed. The call is successful.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_0900', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_0900';
+    it('SUB_Notification_Ans_GetNotificationParameters_0900', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_0900';
       let num = 0
       let wantAgentObj: WantAgent;
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -996,15 +996,15 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_1000
-     * @tc.number Sub_Notification_Ans_GetNotificationParameters_1000
+     * @tc.name   SUB_Notification_Ans_GetNotificationParameters_1000
+     * @tc.number SUB_Notification_Ans_GetNotificationParameters_1000
      * @tc.desc   [Notification update] After a notification is published with a normal WantAgent, the WantAgent is updated when the notification is updated, and getNotificationParameters is successfully called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_GetNotificationParameters_1000', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_1000';
+    it('SUB_Notification_Ans_GetNotificationParameters_1000', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_GetNotificationParameters_1000';
       let num = 0
       let wantAgentInfo1: wantAgent.WantAgentInfo = {
         wants: [
