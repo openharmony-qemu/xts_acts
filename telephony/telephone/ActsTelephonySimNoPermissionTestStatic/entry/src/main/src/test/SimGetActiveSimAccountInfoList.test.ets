@@ -32,8 +32,8 @@ const ExpectTrue = (n: boolean) => {
     }
 }
 
-export default function Sim_getActiveSimAccountInfoList_dual() {
-    describe('Sim_getActiveSimAccountInfoList_dual',  () => {
+export default function SimGetActiveSimAccountInfoList() {
+    describe('SimGetActiveSimAccountInfoList',  () => {
 
         let TRUE_SLOT_ID_0: int = 0;
         let simAmount: int = 0;
