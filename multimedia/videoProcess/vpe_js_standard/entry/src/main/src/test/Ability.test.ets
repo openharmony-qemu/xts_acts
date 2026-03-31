@@ -251,6 +251,8 @@ export default function abilityTest() {
                     let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
                         sourceImage, 2.0, videoProcessingEngine.QualityLevel.NONE);
                     expect(enhancedPixelmap != null).assertTrue();
+                    expect(enhancedPixelmap.isEditable).assertFalse();
+                    expect(enhancedPixelmap.isStrideAlignment).assertFalse();
                     done();
                 } catch (err) {
                     console.info('testVideoProcessTs007 failed, error is' + err.message);
@@ -410,7 +412,7 @@ export default function abilityTest() {
                 done();
             }
             try {
-                let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
+                let sourceImage = src as image.PixelMap;
                 const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
                 let targetWidth = imageInfo.size.width * 2;
                 let targetHeight = imageInfo.size.height * 2;
@@ -438,7 +440,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-        });
+        })
 
         /**
         * @tc.name   testVideoProcessTs013
@@ -464,11 +466,11 @@ export default function abilityTest() {
                 expect(imageProcessor != null).assertTrue();
 
                 let enhancedPixelmap: image.PixelMap  = await imageProcessor.enhanceDetail(
-                    pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
+                    pixelMap, 2.0, videoProcessingEngine.QualityLevel.NONE);
 
                 expect(pixelMap.isEditable).assertTrue();
                 enhancedPixelmap = imageProcessor.enhanceDetailSync(
-                    pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
+                    pixelMap, 2.0, videoProcessingEngine.QualityLevel.NONE);
 
                 expect(pixelMap.isEditable).assertTrue();
                 enhancedPixelmap = await imageProcessor.enhanceDetail(
@@ -487,6 +489,6 @@ export default function abilityTest() {
                 expect(true).assertTrue();
                 done();
             }
-        });
+        })
     })
 }
