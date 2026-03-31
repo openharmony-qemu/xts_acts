@@ -527,8 +527,7 @@ uint32_t VEncNdkSample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH
     return 0;
 }
 
-int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
-    OH_NativeBuffer *&nativeBuffer, uint8_t *&dst, int &stride)
+int32_t VEncNdkSample::RequestWindowBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer)
 {
     if (nativeWindow == nullptr) {
         OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: nativeWindow is nullptr, exiting");
@@ -546,6 +545,12 @@ int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBu
     if (fenceFd > 0) {
         close(fenceFd);
     }
+    return 0;
+}
+
+int32_t VEncNdkSample::GetBufferAddress(OHNativeWindowBuffer *ohNativeWindowBuffer,
+    OH_NativeBuffer *&nativeBuffer, void *&virAddr, int &stride)
+{
     BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(ohNativeWindowBuffer);
     if (bufferHandle == nullptr) {
         OH_LOG_ERROR(LOG_APP, "VEncNdkSample::InputFuncSurface: GetBufferHandleFromNative failed");
@@ -554,7 +559,7 @@ int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBu
         return -1;
     }
     stride = bufferHandle->stride;
-    void *virAddr = bufferHandle->virAddr;
+    virAddr = bufferHandle->virAddr;
     OH_LOG_INFO(LOG_APP, "VEncNdkSample::InputFuncSurface: stride=%{public}d, virAddr=%{public}p", stride, virAddr);
     if (virAddr == nullptr) {
         OH_LOG_INFO(LOG_APP,
@@ -578,6 +583,19 @@ int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBu
         }
         OH_LOG_INFO(LOG_APP,
             "VEncNdkSample::InputFuncSurface: OH_NativeBuffer_Map success, virAddr=%{public}p", virAddr);
+    }
+    return 0;
+}
+
+int32_t VEncNdkSample::InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
+    OH_NativeBuffer *&nativeBuffer, uint8_t *&dst, int &stride)
+{
+    if (RequestWindowBuffer(ohNativeWindowBuffer) != 0) {
+        return -1;
+    }
+    void *virAddr = nullptr;
+    if (GetBufferAddress(ohNativeWindowBuffer, nativeBuffer, virAddr, stride) != 0) {
+        return -1;
     }
     dst = (uint8_t *)virAddr;
     if (dst == nullptr || stride < static_cast<int>(DEFAULT_WIDTH)) {

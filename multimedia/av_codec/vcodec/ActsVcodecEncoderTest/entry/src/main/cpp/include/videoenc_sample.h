@@ -100,6 +100,9 @@ public:
     void InputFuncSurface();
     int32_t InitSurfaceBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer,
         uint8_t *&dst, int &stride);
+    int32_t RequestWindowBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer);
+    int32_t GetBufferAddress(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer,
+        void *&virAddr, int &stride);
     int32_t ProcessSurfaceFrame(uint8_t *dst, OHNativeWindowBuffer *ohNativeWindowBuffer,
         OH_NativeBuffer *nativeBuffer);
     uint32_t ReadOneFrameYUV420SP(uint8_t *dst);
