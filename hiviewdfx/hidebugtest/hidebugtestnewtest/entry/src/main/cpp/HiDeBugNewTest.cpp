@@ -649,14 +649,13 @@ static napi_value HiDebugStartProfiler(napi_env env, napi_callback_info info)
     OH_LOG_ERROR(LOG_APP, "Hiprofiler input statisticsInterval is:%{public}d", statisticsInterval);
     OH_LOG_ERROR(LOG_APP, "Hiprofiler input sampleInterval is:%{public}d", sampleInterval);
 
-    HiDebug_ErrorCode startResult = HIDEBUG_SUCCESS;
+    HiDebug_ErrorCode startResult = HIDEBUG_RES_PROF_SUCCESS;
     napi_value ret;
     startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), &profilerConfig);
-    if (startResult == HIDEBUG_SUCCESS) {
-        std::cout << "Profiler start successfully" << std::endl;
+    if (startResult == HIDEBUG_RES_PROF_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler success return code is:%{public}d", startResult);
     } else {
-        std::cout << "Failed to stop profiler" << std::endl;
-        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler errorcode is:%{public}d", startResult);
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler fail return code is:%{public}d", startResult);
         napi_create_int32(env, startResult, &ret);
         return ret;
     }
@@ -692,14 +691,13 @@ static napi_value HiDebugStartProfilerNull(napi_env env, napi_callback_info info
 
     OH_LOG_ERROR(LOG_APP, "Hiprofiler input resourceType is:%{public}d", resourceType);
 
-    HiDebug_ErrorCode startResult = HIDEBUG_SUCCESS;
+    HiDebug_ErrorCode startResult = HIDEBUG_RES_PROF_SUCCESS;
     napi_value ret;
     startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), nullptr);
-    if (startResult == HIDEBUG_SUCCESS) {
-        std::cout << "Profiler start successfully" << std::endl;
+    if (startResult == HIDEBUG_RES_PROF_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler success return code is:%{public}d", startResult);
     } else {
-        std::cout << "Failed to stop profiler" << std::endl;
-        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler errorcode is:%{public}d", startResult);
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler fail return code is:%{public}d", startResult);
         napi_create_int32(env, startResult, &ret);
         return ret;
     }
@@ -711,11 +709,10 @@ static napi_value HiDebugStopProfiler(napi_env env, napi_callback_info info)
 {
     HiDebug_ErrorCode stopResult = OH_HiDebug_StopProfiler();
     napi_value ret;
-    if (stopResult == HIDEBUG_SUCCESS) {
-        std::cout << "Profiler stopped successfully" << std::endl;
+    if (stopResult == HIDEBUG_RES_PROF_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StopProfiler success return code is:%{public}d", stopResult);
     } else {
-        std::cout << "Failed to stop profiler" << std::endl;
-        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StopProfiler errorcode is:%{public}d", stopResult);
+        OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StopProfiler fail return code is:%{public}d", stopResult);
         napi_create_int32(env, stopResult, &ret);
         return ret;
     }
