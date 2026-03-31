@@ -28,7 +28,7 @@ export default function abilityManagerTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityManager_IsEmbeddedUIExtensionSupported_0100', Level.LEVEL0, async (done: Function) => {
-      let multiProcessModel: string = systemParameterEnhance.get('persist.sys.abilityms.multi_process_model', 'false');
+      let multiProcessModel: string = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
       let isSupported: boolean = abilityManager.isEmbeddedUIExtensionSupported();
       if (multiProcessModel === 'true') {
         expect(isSupported).assertTrue();
