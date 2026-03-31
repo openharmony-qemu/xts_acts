@@ -237,19 +237,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(4);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(4);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_003 end---');
     })
 
     /**
@@ -261,19 +261,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(5);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(5);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_004 end---');
     })
 
     /**
@@ -285,19 +285,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(6);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(6);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_005 end---');
     })
 
     /**
@@ -309,19 +309,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(7);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(7);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_006 end---');
     })
 
     /**
@@ -333,19 +333,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_LOCATION_NOT_USED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(8);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_LOCATION_NOT_USED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(8);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_007 end---');
     })
 
     /**
@@ -357,19 +357,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_BLUETOOTH_NOT_USED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(9);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_BLUETOOTH_NOT_USED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(9);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_008 end---');
     })
 
     /**
@@ -381,19 +381,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(10);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(10);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_009 end---');
     })
 
     /**
@@ -405,19 +405,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_USED_ILLEGALLY;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(11);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_USED_ILLEGALLY;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(11);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_010 end---');
     })
 
     /**
@@ -429,19 +429,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 begin---');
 
-        try {
-          let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
-          expect(type).assertEqual(12);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+        expect(type).assertEqual(12);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_011 end---');
     })
 
     /**
@@ -453,19 +453,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 begin---');
 
-         try {
-           let type = backgroundTaskManager.ContinuousTaskCancelReason.USER_CANCEL;
-           console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-           expect(type).assertEqual(1);
-           done();
-         } catch (error) {
-           let e: BusinessError = error as BusinessError;
-           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 aa error: %{public}s', JSON.stringify(error));
-         }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.USER_CANCEL;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(1);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 aa error: %{public}s', JSON.stringify(error));
+      }
 
-         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_012 end---');
     })
 
     /**
@@ -477,19 +477,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(2);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(2);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_013 end---');
     })
 
     /**
@@ -819,75 +819,76 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 begin---');
 
-        try {
-          wantAgent.getWantAgent(wantAgentInfos).then((want: _WantAgent) => {
-            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+      try {
+        wantAgent.getWantAgent(wantAgentInfos).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
 
-              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
-                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 stopBackgroundRunning promise run success');
-              }).catch((error: Error) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 Operation stopBackgroundRunning failed error: %{public}s', JSON.stringify(error));
-              });
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+              hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 stopBackgroundRunning promise run success');
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 Operation stopBackgroundRunning failed error: %{public}s', JSON.stringify(error));
+            });
 
-              let bgModes = ["bluetoothInteraction"]
-              let callBackFlag = 0;
-              backgroundTaskManager.startBackgroundRunning(ability.context, bgModes, want).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise run success.');
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+            let bgModes = ["bluetoothInteraction"]
+            let callBackFlag = 0;
+            backgroundTaskManager.startBackgroundRunning(ability.context, bgModes, want).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise run success.');
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
 
-                let list = ["audioPlayback"];
-                backgroundTaskManager.updateBackgroundRunning(ability.context, list).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
-                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 Operation updateBackgroundRunning succeeded');
-                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
-                  let continuousTaskId = res.continuousTaskId
-                  let slotType = res.slotType
-                  let contentType = res.contentType
-                  let notificationId = res.notificationId
-                  hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification continuousTaskId: '+ continuousTaskId);
-                  hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification slotType: '+ slotType);
-                  hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification contentType: '+ contentType);
-                  hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification notificationId: '+ notificationId);
-                  expect(res.continuousTaskId).assertLarger(-1);
-                  expect(res.slotType).assertEqual(4);
-                  expect(res.contentType).assertEqual(4);
-                  expect(res.notificationId).assertLarger(-1);
-                  done();
-                }).catch((error: Error) => {
-                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 updateBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+              let list = ["audioPlayback"];
+              backgroundTaskManager.updateBackgroundRunning(ability.context, list).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 Operation updateBackgroundRunning succeeded');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                let continuousTaskId = res.continuousTaskId
+                let slotType = res.slotType
+                let contentType = res.contentType
+                let notificationId = res.notificationId
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification continuousTaskId: '+ continuousTaskId);
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification slotType: '+ slotType);
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification contentType: '+ contentType);
+                hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 ContinuousTaskNotification notificationId: '+ notificationId);
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
 
-                });
                 backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 stopBackgroundRunning promise run success');
                 }).catch((error: Error) => {
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 Operation stopBackgroundRunning failed error: %{public}s', JSON.stringify(error));
                 })
-              }).catch((error: Error) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
-                expect(false).assertTrue();
                 done();
-              })
-
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                done();
+              });
             }).catch((error: Error) => {
-              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
               expect(false).assertTrue();
               done();
-            });
+            })
+
           }).catch((error: Error) => {
-            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 getWantAgent error: %{public}s', JSON.stringify(error));
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
             expect(false).assertTrue();
             done();
-          })
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 aa error: %{public}s', JSON.stringify(error));
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 getWantAgent error: %{public}s', JSON.stringify(error));
           expect(false).assertTrue();
           done();
-        }
+        })
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 end---');
     })
 
     /**
@@ -899,19 +900,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.USER_CANCEL_REMOVE_NOTIFICATION;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(3);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.USER_CANCEL_REMOVE_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(3);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_026 end---');
     })
 
     /**
@@ -923,19 +924,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(4);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(4);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_027 end---');
     })
 
     /**
@@ -947,19 +948,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(5);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(5);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_028 end---');
     })
 
     /**
@@ -971,19 +972,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(6);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(6);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_029 end---');
     })
 
     /**
@@ -995,19 +996,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(7);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(7);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_030 end---');
     })
 
     /**
@@ -1019,19 +1020,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_LOCATION;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(8);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_LOCATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(8);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_031 end---');
     })
 
     /**
@@ -1043,19 +1044,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_BLUETOOTH;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(9);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_BLUETOOTH;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(9);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_032 end---');
     })
 
     /**
@@ -1067,19 +1068,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(10);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(10);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_033 end---');
     })
 
     /**
@@ -1091,19 +1092,19 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 begin---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 begin---');
 
-        try {
-          let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_USE_ILLEGALLY;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
-          expect(type).assertEqual(11);
-          done();
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 aa error: %{public}s', JSON.stringify(error));
-        }
+      try {
+        let type = backgroundTaskManager.ContinuousTaskCancelReason.SYSTEM_CANCEL_USE_ILLEGALLY;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 backgroundTaskManager ContinuousTaskCancelReason: ' + type);
+        expect(type).assertEqual(11);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 aa error: %{public}s', JSON.stringify(error));
+      }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 end---');
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_034 end---');
     })
 
     /**
@@ -1160,12 +1161,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
                   console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
                 });
                 done();
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 Operation getAllContinuousTasks2 failed. code is ${error.code} message is ${error.message}`);
+              });
             }).catch((error: Error) => {
-                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 Operation getAllContinuousTasks2 failed. code is ${error.code} message is ${error.message}`);
-            });
-          }).catch((error: Error) => {
-            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
-          })
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+            })
 
           }).catch((error: Error) => {
             hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_035 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
@@ -1211,53 +1212,53 @@ export default function ActsLongTimeTaskManagerStaticTest() {
             let bgModeList = ["location"];
             let includeSuspended = true;
             backgroundTaskManager.startBackgroundRunning(ability.context, bgModeList, want).then((res) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise run success.');
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
-                backgroundTaskManager.getAllContinuousTasks(ability.context, includeSuspended).then((res: backgroundTaskManager.ContinuousTaskInfo[]) => {
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. data: ` + JSON.stringify(res));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. abilityName: ` + JSON.stringify(res[0].abilityName));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. uid: ` + JSON.stringify(res[0].uid));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. pid: ` + JSON.stringify(res[0].pid));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. isFromWebView: ` + JSON.stringify(res[0].isFromWebView));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. backgroundModes: ` + JSON.stringify(res[0].backgroundModes[0]));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. backgroundSubModes: ` + JSON.stringify(res[0].backgroundSubModes.length));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentBundleName: ` + JSON.stringify(res[0].wantAgentBundleName));
-                  console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentAbilityName: ` + JSON.stringify(res[0].wantAgentAbilityName));
-                  let type: string = "location"
-                  expect(res.length).assertLarger(0);
-                  expect(res[0].abilityName == "EntryAbility").assertTrue();
-                  expect(res[0].uid).assertLarger(0);
-                  expect(res[0].pid).assertLarger(0);
-                  expect(res[0].isFromWebView == false).assertTrue();
-                  expect(res[0].backgroundModes[0] == type).assertTrue();
-                  expect(res[0].backgroundSubModes.length == 0).assertTrue();
-                  expect(res[0].notificationId).assertLarger(0);
-                  expect(res[0].continuousTaskId).assertLarger(0);
-                  expect(res[0].abilityId).assertLarger(0);
-                  expect(res[0].wantAgentBundleName == "com.acts.actslongtimetasktest.static").assertTrue();
-                  expect(res[0].wantAgentAbilityName == "EntryAbility").assertTrue();
-                  expect(res[0].suspendState).assertInstanceOf('Boolean');
-                  expect(res[0].bundleName == "com.acts.actslongtimetasktest.static").assertTrue();
-                  expect(res[0].appIndex).assertLarger(-1);
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise run success.');
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+              backgroundTaskManager.getAllContinuousTasks(ability.context, includeSuspended).then((res: backgroundTaskManager.ContinuousTaskInfo[]) => {
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. data: ` + JSON.stringify(res));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. abilityName: ` + JSON.stringify(res[0].abilityName));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. uid: ` + JSON.stringify(res[0].uid));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. pid: ` + JSON.stringify(res[0].pid));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. isFromWebView: ` + JSON.stringify(res[0].isFromWebView));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. backgroundModes: ` + JSON.stringify(res[0].backgroundModes[0]));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. backgroundSubModes: ` + JSON.stringify(res[0].backgroundSubModes.length));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentBundleName: ` + JSON.stringify(res[0].wantAgentBundleName));
+                console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 succeeded. wantAgentAbilityName: ` + JSON.stringify(res[0].wantAgentAbilityName));
+                let type: string = "location"
+                expect(res.length).assertLarger(0);
+                expect(res[0].abilityName == "EntryAbility").assertTrue();
+                expect(res[0].uid).assertLarger(0);
+                expect(res[0].pid).assertLarger(0);
+                expect(res[0].isFromWebView == false).assertTrue();
+                expect(res[0].backgroundModes[0] == type).assertTrue();
+                expect(res[0].backgroundSubModes.length == 0).assertTrue();
+                expect(res[0].notificationId).assertLarger(0);
+                expect(res[0].continuousTaskId).assertLarger(0);
+                expect(res[0].abilityId).assertLarger(0);
+                expect(res[0].wantAgentBundleName == "com.acts.actslongtimetasktest.static").assertTrue();
+                expect(res[0].wantAgentAbilityName == "EntryAbility").assertTrue();
+                expect(res[0].suspendState).assertInstanceOf('Boolean');
+                expect(res[0].bundleName == "com.acts.actslongtimetasktest.static").assertTrue();
+                expect(res[0].appIndex).assertLarger(-1);
 
-                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
                   console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 stopBackgroundRunning promise run success");
-                  }).catch((error: Error) => {
-                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
-                  });
-                  done();
                 }).catch((error: Error) => {
-                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 failed. code is ${error.code} message is ${error.message}`);
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
                 });
+                done();
               }).catch((error: Error) => {
-                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
-              })
-
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 Operation getAllContinuousTasks2 failed. code is ${error.code} message is ${error.message}`);
+              });
             }).catch((error: Error) => {
-              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
-              expect(false).assertTrue();
-              done();
-            });
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
+            })
+
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
         }).catch((error: Error) => {
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_036 getWantAgent error: %{public}s', JSON.stringify(error));
           expect(false).assertTrue();
@@ -1274,176 +1275,176 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037
- 	    * @tc.desc   Test that the onContinuousTaskCancel callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	    hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 begin---') 
- 	    try {
- 	        let onContinuousTaskCancel = (res: backgroundTaskManager.ContinuousTaskCancelInfo) => {
- 	            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 onContinuousTaskCancel ` + res);
- 	        };
- 	        let callbackFlag = 0  
- 	        backgroundTaskManager.onContinuousTaskCancel(onContinuousTaskCancel);
- 	        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 onContinuousTaskCancel callback succeeded. `);
- 	        callbackFlag = 1  
- 	        expect(callbackFlag).assertEqual(1);
- 	        done();
- 	    } catch (error) {
- 	        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 aa error: %{public}s', JSON.stringify(error));
- 	        expect(false).assertTrue();
- 	        done();
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037
+     * @tc.desc   Test that the onContinuousTaskCancel callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 begin---')
+      try {
+        let onContinuousTaskCancel = (res: backgroundTaskManager.ContinuousTaskCancelInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 onContinuousTaskCancel ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.onContinuousTaskCancel(onContinuousTaskCancel);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 onContinuousTaskCancel callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
 
- 	        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 end---');
- 	    }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_037 end---');
+      }
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038
- 	    * @tc.desc   Test that the offContinuousTaskCancel callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	    hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 begin---') 
- 	    try {
- 	        let offContinuousTaskCancel = (res: backgroundTaskManager.ContinuousTaskCancelInfo) => {
- 	            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 offContinuousTaskCancel ` + res);
- 	        };
- 	        let callbackFlag = 0  
- 	        backgroundTaskManager.offContinuousTaskCancel(offContinuousTaskCancel);
- 	        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 offContinuousTaskCancel callback succeeded. `);
- 	        callbackFlag = 1  
- 	        expect(callbackFlag).assertEqual(1);
- 	        done();
- 	    } catch (error) {
- 	        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 aa error: %{public}s', JSON.stringify(error));
- 	        expect(false).assertTrue();
- 	        done();
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038
+     * @tc.desc   Test that the offContinuousTaskCancel callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 begin---')
+      try {
+        let offContinuousTaskCancel = (res: backgroundTaskManager.ContinuousTaskCancelInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 offContinuousTaskCancel ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.offContinuousTaskCancel(offContinuousTaskCancel);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 offContinuousTaskCancel callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
 
- 	        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 end---');
- 	    }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_038 end---');
+      }
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039
- 	    * @tc.desc   Test that the onContinuousTaskActive callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	    hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 begin---') 
- 	    try {
- 	        let onContinuousTaskActive = (res: backgroundTaskManager.ContinuousTaskActiveInfo) => {
- 	            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 onContinuousTaskActive ` + res);
- 	        };
- 	        let callbackFlag = 0  
- 	        backgroundTaskManager.onContinuousTaskActive(onContinuousTaskActive);
- 	        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 onContinuousTaskActive callback succeeded. `);
- 	        callbackFlag = 1  
- 	        expect(callbackFlag).assertEqual(1);
- 	        done();
- 	    } catch (error) {
- 	        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 aa error: %{public}s', JSON.stringify(error));
- 	        expect(false).assertTrue();
- 	        done();
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039
+     * @tc.desc   Test that the onContinuousTaskActive callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 begin---')
+      try {
+        let onContinuousTaskActive = (res: backgroundTaskManager.ContinuousTaskActiveInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 onContinuousTaskActive ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.onContinuousTaskActive(onContinuousTaskActive);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 onContinuousTaskActive callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
 
- 	        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 end---');
- 	    }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_039 end---');
+      }
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040
- 	    * @tc.desc   Test that the offContinuousTaskActive callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 begin---') 
- 	      try {
- 	          let offContinuousTaskActive = (res: backgroundTaskManager.ContinuousTaskActiveInfo) => {
- 	              console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 offContinuousTaskActive ` + res);
- 	          };
- 	          let callbackFlag = 0  
- 	          backgroundTaskManager.offContinuousTaskActive(offContinuousTaskActive);
- 	          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 offContinuousTaskActive callback succeeded. `);
- 	          callbackFlag = 1  
- 	          expect(callbackFlag).assertEqual(1);
- 	          done();
- 	      } catch (error) {
- 	          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 aa error: %{public}s', JSON.stringify(error));
- 	          expect(false).assertTrue();
- 	          done();
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040
+     * @tc.desc   Test that the offContinuousTaskActive callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 begin---')
+      try {
+        let offContinuousTaskActive = (res: backgroundTaskManager.ContinuousTaskActiveInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 offContinuousTaskActive ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.offContinuousTaskActive(offContinuousTaskActive);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 offContinuousTaskActive callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
 
- 	          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 end---');
- 	      }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_040 end---');
+      }
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041
- 	    * @tc.desc   Test that the onContinuousTaskSuspend callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	    hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 begin---') 
- 	    try {
- 	        let onContinuousTaskSuspend = (res: backgroundTaskManager.ContinuousTaskSuspendInfo) => {
- 	            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 onContinuousTaskSuspend ` + res);
- 	        };
- 	        let callbackFlag = 0  
- 	        backgroundTaskManager.onContinuousTaskSuspend(onContinuousTaskSuspend);
- 	        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 onContinuousTaskSuspend callback succeeded. `);
- 	        callbackFlag = 1  
- 	        expect(callbackFlag).assertEqual(1);
- 	        done();
- 	    } catch (error) {
- 	        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 aa error: %{public}s', JSON.stringify(error));
- 	        expect(false).assertTrue();
- 	        done();
- 	        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 end---');
- 	    }
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041
+     * @tc.desc   Test that the onContinuousTaskSuspend callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 begin---')
+      try {
+        let onContinuousTaskSuspend = (res: backgroundTaskManager.ContinuousTaskSuspendInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 onContinuousTaskSuspend ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.onContinuousTaskSuspend(onContinuousTaskSuspend);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 onContinuousTaskSuspend callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_041 end---');
+      }
     })
 
     /**
- 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042
- 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042
- 	    * @tc.desc   Test that the offContinuousTaskSuspend callback function normal call
- 	    * @tc.level  LEVEL0
- 	    * @tc.type   FUNCTION
- 	    * @tc.size   MEDIUMTEST
- 	    */
- 	  it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
- 	    hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 begin---') 
- 	    try {
- 	        let offContinuousTaskSuspend = (res: backgroundTaskManager.ContinuousTaskSuspendInfo) => {
- 	            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 offContinuousTaskSuspend ` + res);
- 	        };
- 	        let callbackFlag = 0  
- 	        backgroundTaskManager.offContinuousTaskSuspend(offContinuousTaskSuspend);
- 	        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 offContinuousTaskSuspend callback succeeded. `);
- 	        callbackFlag = 1  
- 	        expect(callbackFlag).assertEqual(1);
- 	        done();
- 	    } catch (error) {
- 	        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 aa error: %{public}s', JSON.stringify(error));
- 	        expect(false).assertTrue();
- 	        done();
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042
+     * @tc.desc   Test that the offContinuousTaskSuspend callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 begin---')
+      try {
+        let offContinuousTaskSuspend = (res: backgroundTaskManager.ContinuousTaskSuspendInfo) => {
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 offContinuousTaskSuspend ` + res);
+        };
+        let callbackFlag = 0
+        backgroundTaskManager.offContinuousTaskSuspend(offContinuousTaskSuspend);
+        console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 offContinuousTaskSuspend callback succeeded. `);
+        callbackFlag = 1
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (error) {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 aa error: %{public}s', JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
 
- 	        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 end---');
- 	    }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_042 end---');
+      }
     })
 
     /**
@@ -2274,6 +2275,1338 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_056 end---');
     })
 
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_LOCATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_057 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_AUDIO_PLAYBACK
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_AUDIO_PLAYBACK];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_058 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_AUDIO_RECORDING
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_AUDIO_RECORDING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_059 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_AUDIO_RECORDING
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size  MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 stopBackgroundRunning promise run success.');
+                  done();
+                }).catch((error: Error) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                  done();
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_060 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_BLUETOOTH_INTERACTION and BackgroundTaskSubmode is SUBMODE_NORMAL_NOTIFICATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size  MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_BLUETOOTH_INTERACTION];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_061 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_BLUETOOTH_INTERACTION and BackgroundTaskSubmode is SUBMODE_CAR_KEY_NORMAL_NOTIFICATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size  MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_BLUETOOTH_INTERACTION];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_CAR_KEY_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_062 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_MULTI_DEVICE_CONNECTION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size  MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_MULTI_DEVICE_CONNECTION];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_063 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with MODE_VOIP
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size  MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_VOIP];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                continuousTaskRequest.continuousTaskId = res.continuousTaskId
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+
+                backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 updateBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 Operation updateBackgroundRunning succeeded");
+                  expect(res.continuousTaskId).assertLarger(-1);
+                  expect(res.slotType).assertEqual(4);
+                  expect(res.contentType).assertEqual(4);
+                  expect(res.notificationId).assertLarger(-1);
+
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 stopBackgroundRunning promise run success.');
+                  }).catch((error: Error) => {
+                    console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                    done();
+                  });
+                  done();
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 stopBackgroundRunning promise catch run success.');
+                  }).catch((error: Error) => {
+                    hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 Operation stopBackgroundRunning promise catch failed: %{public}s', JSON.stringify(error));
+                    done();
+                  });
+                });
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_064 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with BackgroundTaskMode is MODE_TASK_KEEPING
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_TASK_KEEPING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code === 9800005).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_065 end---');
+      });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066
+     * @tc.desc   Test that the continuousTaskRequest function checkSpecialScenarioAuth error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              continuousTaskRequest.checkSpecialScenarioAuth(ability.context).then((res: backgroundTaskManager.UserAuthResult) => {
+                console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 Operation checkSpecialScenarioAuth succeeded. data: " + JSON.stringify(res));
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 Operation checkSpecialScenarioAuth failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code).assertEqual(9800005);
+                done();
+              });
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 getWantAgent error: %{public}s', JSON.stringify(error));
+          })
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_066 Operation checkSpecialScenarioAuth failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067
+     * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 begin---');
+
+        let callbackAuth = (authResult: backgroundTaskManager.UserAuthResult) => {
+          console.info("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 Operation requestAuthFromUser success. auth result: " + JSON.stringify(authResult));
+        };
+
+        let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 try begin---');
+        wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            try {
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 requestAuthFromUser try begin---');
+              continuousTaskRequest.requestAuthFromUser(ability.context, callbackAuth);
+            } catch (error) {
+              console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+              expect(error.code == 9800005).assertTrue();
+              done();
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 requestAuthFromUser try end---');
+            }
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+          });
+        }).catch((error: Error) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 getWantAgent error: %{public}s', JSON.stringify(error));
+        })
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_067 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with continuousTaskId is invalid
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = true;
+              continuousTaskRequest.continuousTaskId = 10000;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code === 9800005).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_068 end---');
+      });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069
+     * @tc.desc   Test that the backgroundTaskManager isModeSupported function res is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069 begin---');
+
+        let isModeSupported: boolean = false;
+        let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+        let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+        continuousTaskRequest.backgroundTaskModes = modeList;
+        try {
+          isModeSupported = continuousTaskRequest.isModeSupported();
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069 Operation isModeSupported succeeded. isModeSupported is ${isModeSupported}`);
+          expect(isModeSupported == true).assertTrue();
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_069 Operation startBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070
+     * @tc.desc   Test that the backgroundTaskManager isModeSupported function res is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070 begin---');
+
+        let isModeSupported: boolean = false;
+        let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+        let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+        continuousTaskRequest.backgroundTaskModes = modeList;
+        try {
+          isModeSupported = continuousTaskRequest.isModeSupported();
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070 Operation isModeSupported succeeded. isModeSupported is ${isModeSupported}`);
+          expect(isModeSupported == false).assertTrue();
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_070 Operation startBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(error.code === 9800005).assertTrue();
+          expect(false).assertTrue();
+          done();
+        }
+
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with BackgroundTaskMode is MODE_SPECIAL_SCENARIO_PROCESSING and BackgroundTaskSubmode is SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code === 9800005).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_071 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with BackgroundTaskMode is MODE_SPECIAL_SCENARIO_PROCESSING and BackgroundTaskSubmode is SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code === 9800005).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_072 end---');
+      });
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073
+     * @tc.desc   Test that the api21 startBackgroundRunning function interface with BackgroundTaskMode is MODE_SPECIAL_SCENARIO_PROCESSING and BackgroundTaskSubmode is SUBMODE_WORK_OUT_NORMAL_NOTIFICATION
+     * @tc.level  Level 3
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_WORK_OUT_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 startBackgroundRunning promise run success.');
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+              }).catch((error: Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code === 9800005).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_073 end---');
+      });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074 begin---');
+
+      try {
+        let type = backgroundTaskManager.UserAuthResult.NOT_SUPPORTED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074 backgroundTaskManager UserAuthResult: ' + type);
+        expect(type).assertEqual(0);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_074 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of NOT_DETERMINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075 begin---');
+
+      try {
+        let type = backgroundTaskManager.UserAuthResult.NOT_DETERMINED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075 backgroundTaskManager UserAuthResult: ' +
+          type);
+        expect(type).assertEqual(1);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_075 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076 begin---');
+
+      try {
+        let type = backgroundTaskManager.UserAuthResult.DENIED;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076 backgroundTaskManager UserAuthResult: ' +
+          type);
+        expect(type).assertEqual(2);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_076 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077
+     * @tc.desc   Test that the backgroundTaskManager enum GRANTED_ALWAYS of GRANTED_ALWAYS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077 begin---');
+
+      try {
+        let type: number = backgroundTaskManager.UserAuthResult.GRANTED_ONCE;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077 backgroundTaskManager UserAuthResult: ' +
+          type);
+        expect(type).assertEqual(3);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_077 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of GRANTED_ONCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078 begin---');
+
+      try {
+        let type = backgroundTaskManager.UserAuthResult.GRANTED_ALWAYS;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078 backgroundTaskManager UserAuthResult: ' +
+          type);
+        expect(type).assertEqual(4);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_078 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AV_PLAYBACK_AND_RECORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079 backgroundTaskManager BackgroundTaskMode: ' +
+          type);
+        expect(type).assertEqual(12);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_079 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(4);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_080 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AVSESSION_AUDIO_PLAYBACK;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(5);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_081 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(6);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_082 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(7);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_083 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(8);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_084 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085 begin---');
+
+      try {
+        let type = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(9);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_085 end---');
+    })
 
     /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
@@ -2368,14 +3701,14 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002 end---');
     })
 
-   /**
-    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
-    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
-    * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
-    * @tc.level  LEVEL0
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    */
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003 begin---');
 

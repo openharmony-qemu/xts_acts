@@ -51,6 +51,8 @@
           "multiDeviceConnection",
           "voip",
           "taskKeeping",
+          "avPlaybackAndRecord",
+          "specialScenarioProcessing"
         ]
       }
     ],
