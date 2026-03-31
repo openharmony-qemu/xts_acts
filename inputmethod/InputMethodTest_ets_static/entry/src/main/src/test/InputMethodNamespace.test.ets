@@ -77,9 +77,9 @@ export default function inputMethodNamespaceTest() {
          * @tc.desc   Test getDefaultInputMethod interface
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_getDefaultInputMethod_static_0100', Level.LEVEL1, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_getDefaultInputMethod_static_0100', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME: string = 'SUB_Misc_inputMethod_getDefaultInputMethod_static_0100';
             try {
                 let defaultIme: inputMethod.InputMethodProperty = inputMethod.getDefaultInputMethod();

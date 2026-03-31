@@ -172,9 +172,9 @@ export default function inputMethodTest() {
          * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_showTextInput_Promise_static_0400', Level.LEVEL2, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_showTextInput_Promise_static_0400', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0400';
             try {
                 let data = await inputMethod.getController().detach();
