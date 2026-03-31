@@ -20,14 +20,14 @@ import systemParameterEnhance from "@ohos.systemParameterEnhance"
 export default function abilityManagerTest() {
   describe('abilityManagerTestTest', () => {
     /**
-     * @tc.name   SUB_Ability_AbilityManager_isEmbeddedUIExtensionSupported_RETURN_001
-     * @tc.number SUB_Ability_AbilityManager_isEmbeddedUIExtensionSupported_RETURN_001
+     * @tc.name   SUB_Ability_AbilityManager_IsEmbeddedUIExtensionSupported_0100
+     * @tc.number SUB_Ability_AbilityManager_IsEmbeddedUIExtensionSupported_0100
      * @tc.desc   Test isEmbeddedUIExtensionSupported() returns true when multi_process_model is true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityManager_isEmbeddedUIExtensionSupported_RETURN_001', 0, async (done: Function) => {
+    it('SUB_Ability_AbilityManager_IsEmbeddedUIExtensionSupported_0100', Level.LEVEL0, async (done: Function) => {
       let multiProcessModel: string = systemParameterEnhance.get('persist.sys.abilityms.multi_process_model', 'false');
       let isSupported: boolean = abilityManager.isEmbeddedUIExtensionSupported();
       if (multiProcessModel === 'true') {
