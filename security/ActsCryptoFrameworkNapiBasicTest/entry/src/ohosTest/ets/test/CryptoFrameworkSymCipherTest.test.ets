@@ -94,20 +94,6 @@ export default function cryptoFrameworkSymCipherTest() {
     });
 
     /**
-     * @tc.name   SUB_CryptoFramework_Napi_SymCipher_Test_0401
-     * @tc.number SUB_CryptoFramework_Napi_SymCipher_Test_0401
-     * @tc.desc   algorithm is SymCipher
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_CryptoFramework_Napi_SymCipher_Test_0401', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Sym_Cipher_Test(4);
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   SUB_CryptoFramework_Napi_SymCipher_Test_0500
      * @tc.number SUB_CryptoFramework_Napi_SymCipher_Test_0500
      * @tc.desc   algorithm is SymCipher
@@ -425,6 +411,20 @@ export default function cryptoFrameworkSymCipherTest() {
      */
     it('SUB_CryptoFramework_Napi_SymCipher_Test_2900', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Sym_Cipher_Test(27);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_CryptoFramework_Napi_SymCipher_Test_3000 // SUB_CryptoFramework_Napi_SymCipher_Test_0401
+     * @tc.number SUB_CryptoFramework_Napi_SymCipher_Test_3000
+     * @tc.desc   algorithm is SymCipher
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CryptoFramework_Napi_SymCipher_Test_3000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Sym_Cipher_Test(4);
       expect(result).assertEqual(0);
       done();
     });

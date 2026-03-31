@@ -66,20 +66,6 @@ export default function cryptoFrameworkVerifyTest() {
     });
 
     /**
-     * @tc.name   SUB_CryptoFramework_Napi_Verify_Test_0301
-     * @tc.number SUB_CryptoFramework_Napi_Verify_Test_0301
-     * @tc.desc   algorithm is Verify
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_CryptoFramework_Napi_Verify_Test_0301', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Verify_Test(2);
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   SUB_CryptoFramework_Napi_Verify_Test_0300
      * @tc.number SUB_CryptoFramework_Napi_Verify_Test_0300
      * @tc.desc   algorithm is Verify
@@ -425,6 +411,20 @@ export default function cryptoFrameworkVerifyTest() {
      */
     it('SUB_CryptoFramework_Napi_Verify_Test_2700', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Verify_Test(27);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_CryptoFramework_Napi_Verify_Test_2800 // SUB_CryptoFramework_Napi_Verify_Test_0301
+     * @tc.number SUB_CryptoFramework_Napi_Verify_Test_2800
+     * @tc.desc   algorithm is Verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CryptoFramework_Napi_Verify_Test_2800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Verify_Test(2);
       expect(result).assertEqual(0);
       done();
     });
