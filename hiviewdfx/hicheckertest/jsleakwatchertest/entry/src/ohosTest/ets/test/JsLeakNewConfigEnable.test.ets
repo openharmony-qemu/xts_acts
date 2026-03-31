@@ -161,7 +161,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('testJsLeakWatcher heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_0900 isEnabled false')
         done();
       } catch (err) {
@@ -244,7 +244,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_1200 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1200 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1200 end");
@@ -588,7 +588,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2200 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2200 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2200 end");
@@ -616,7 +616,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2300 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2300 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2300 end");
@@ -644,7 +644,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2400 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2400 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2400 end");
@@ -672,7 +672,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2500 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2500 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2500 end");
@@ -700,7 +700,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2600 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2600 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2600 end");
@@ -728,7 +728,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2700 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2700 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2700 end");
@@ -756,7 +756,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2800 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2800 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2800 end");
@@ -784,7 +784,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_2900 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2900 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_2900 end");
@@ -812,7 +812,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3000 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3000 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3000 end");
@@ -840,7 +840,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3100 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3100 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3100 end");
@@ -868,7 +868,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3200 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3200 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3200 end");
@@ -896,7 +896,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3300 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3300 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3300 end");
@@ -924,7 +924,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3400 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3400 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3400 end");
@@ -952,7 +952,7 @@ export default function JsLeakNewConfigEnable() {
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_3500 > err code: ${err.code}, err msg: ${err.message}`)
         console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3500 fail!");
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3500 end");
