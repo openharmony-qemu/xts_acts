@@ -137,12 +137,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Title_Options_Id_0400
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Title_Options_Id_0400
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Title_Options_Id_0400
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Title_Options_Id_0400
      * @tc.desc     SubHeaderV2: SubHeaderV2TitleOptions.id on title row (options-mode id string)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Title_Options_Id_0400', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Title_Options_Id_0400', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
@@ -164,12 +164,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Title_Trace_Id_0500
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Title_Trace_Id_0500
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Title_Trace_Id_0500
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Title_Trace_Id_0500
      * @tc.desc     SubHeaderV2: same title mount; @Trace id on SubHeaderV2 title segment (trace id path)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Title_Trace_Id_0500', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Title_Trace_Id_0500', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
@@ -191,12 +191,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Select_Options_Id_0600
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Select_Options_Id_0600
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Select_Options_Id_0600
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Select_Options_Id_0600
      * @tc.desc     SubHeaderV2: SubHeaderV2SelectOptions.id on select control (options-mode)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Select_Options_Id_0600', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Select_Options_Id_0600', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
@@ -218,12 +218,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Select_Trace_Id_0700
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Select_Trace_Id_0700
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Select_Trace_Id_0700
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Select_Trace_Id_0700
      * @tc.desc     SubHeaderV2: same select mount; @Trace id on SubHeaderV2Select (trace id path)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Select_Trace_Id_0700', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Select_Trace_Id_0700', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
@@ -245,12 +245,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Operation_Item_Options_Id_0800
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Operation_Item_Options_Id_0800
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Options_Id_0800
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Options_Id_0800
      * @tc.desc     SubHeaderV2: SubHeaderV2OperationItemOptions.id on operation item (options-mode)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Operation_Item_Options_Id_0800', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Options_Id_0800', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
@@ -272,12 +272,12 @@ export default function SubHeaderPropsTest() {
     });
 
     /**
-     * @tc.number   SUB_ArkUI_SubHeaderV2_Operation_Item_Trace_Id_0900
-     * @tc.name     SUB_ArkUI_SubHeaderV2_Operation_Item_Trace_Id_0900
+     * @tc.number   SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Trace_Id_0900
+     * @tc.name     SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Trace_Id_0900
      * @tc.desc     SubHeaderV2: same operation mount; @Trace id on SubHeaderV2OperationItem (trace id path)
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ArkUI_SubHeaderV2_Operation_Item_Trace_Id_0900', Level.LEVEL0, async () => {
+    it('SUB_ArkUI_SubHeader_VersionTwo_Operation_Item_Trace_Id_0900', Level.LEVEL0, async () => {
       let routed: boolean = await CommonFunc.openRouterPageWithParamKey(
         SUBHEADER_PROPS_PAGE,
         SUBHEADER_ROUTE_PARAM,
