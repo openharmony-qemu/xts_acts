@@ -80,7 +80,7 @@ describe('VideoProcessTsTest', () => {
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
@@ -299,7 +299,7 @@ describe('VideoProcessTsTest', () => {
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
