@@ -604,8 +604,6 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetUidRxBytesPromise_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidRxBytes(uid).then((stats: long) => {
@@ -672,8 +670,6 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetUidRxBytesAsync_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 let uid :int = 1010;
                 statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
@@ -738,8 +734,6 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetUidTxBytesPromise_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidTxBytes(uid).then((stats: long) => {
@@ -806,8 +800,6 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetUidTxBytesAsync_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                const bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-                const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 let uid :int = 1010;
                 statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
