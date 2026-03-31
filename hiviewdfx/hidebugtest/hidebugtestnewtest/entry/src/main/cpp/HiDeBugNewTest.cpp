@@ -720,6 +720,192 @@ static napi_value HiDebugStopProfiler(napi_env env, napi_callback_info info)
     return ret;
 }
 
+static napi_value TestRequestTrace(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, 0 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceIdentifier1(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {"ahdaiAddaEE220_a1214", 0, 0 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceIdentifier2(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {"bhdaiAddaEE220_a1214dada", 0, 0 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceIdentifier3(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {"chdaiAddaEE220_a121中", 0, 0 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceBufferSize1(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 1024, 0 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceBufferSize2(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback BufferSize2 errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, INT32_MAX, 0 ,0 };
+    OH_LOG_INFO(LOG_APP, "testTag buffer size %{public}d ", config.bufferSizeKb);
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d ", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceBufferSize3(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback BufferSize2 errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 10240, 0 ,0 };
+    OH_LOG_INFO(LOG_APP, "testTag buffer size %{public}d ", config.bufferSizeKb);
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d ", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceBufferSize4(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback BufferSize2 errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 1024, 0 ,0 };
+    OH_LOG_INFO(LOG_APP, "testTag buffer size %{public}d ", config.bufferSizeKb);
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d ", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceBufferSize5(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback BufferSize2 errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 15360, 0 ,0 };
+    OH_LOG_INFO(LOG_APP, "testTag buffer size %{public}d ", config.bufferSizeKb);
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d ", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTracedurationMs1(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, INT32_MAX ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTracedurationMs2(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, 10000,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTracedurationMs3(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, 1000 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTracedurationMs4(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, 15000 ,0 };
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestRequestTraceReserved1(napi_env env, napi_callback_info info)
+{
+    auto callback = [](HiDebug_ErrorCode errorCode, const char* filePath) {
+        OH_LOG_INFO(LOG_APP, "testTag callback errorCode %{public}d, filePath: %{public}s", errorCode, filePath);
+    };
+    OH_HiDebug_RequestTraceConfig config = {nullptr, 0, 0 , 1000};
+    auto ret = OH_HiDebug_RequestTrace(&config, callback);
+    OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -751,6 +937,20 @@ static napi_value Init(napi_env env, napi_value exports)
         { "startProfiler", nullptr, HiDebugStartProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "startProfilerNull", nullptr, HiDebugStartProfilerNull, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "stopProfiler", nullptr, HiDebugStopProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTrace", nullptr, TestRequestTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceIdentifier1", nullptr, TestRequestTraceIdentifier1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceIdentifier2", nullptr, TestRequestTraceIdentifier2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceIdentifier3", nullptr, TestRequestTraceIdentifier3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceBufferSize1", nullptr, TestRequestTraceBufferSize1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceBufferSize2", nullptr, TestRequestTraceBufferSize2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceBufferSize3", nullptr, TestRequestTraceBufferSize3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceBufferSize4", nullptr, TestRequestTraceBufferSize4, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceBufferSize5", nullptr, TestRequestTraceBufferSize5, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTracedurationMs1", nullptr, TestRequestTracedurationMs1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTracedurationMs2", nullptr, TestRequestTracedurationMs2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTracedurationMs3", nullptr, TestRequestTracedurationMs3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTracedurationMs4", nullptr, TestRequestTracedurationMs4, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestRequestTraceReserved1", nullptr, TestRequestTraceReserved1, nullptr, nullptr, nullptr, napi_default, nullptr },
         
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
