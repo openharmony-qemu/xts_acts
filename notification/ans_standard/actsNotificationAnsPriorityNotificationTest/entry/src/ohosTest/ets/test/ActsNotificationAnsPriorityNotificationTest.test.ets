@@ -32,15 +32,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0100
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0100
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0100
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0100
      * @tc.desc   [setBundlePriorityConfig] When a third-party app invokes an interface, error 202 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0100', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0100';
+    it('SUB_Notification_Ans_Priority_Notification_0100', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0100';
       const bundleOption: notificationManager.BundleOption = { bundle: bundleName };
       try {
         await notificationManager.setBundlePriorityConfig(bundleOption, '小红')
@@ -73,15 +73,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0200
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0200
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0200
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0200
      * @tc.desc   [getBundlePriorityConfig] When a third-party application invokes the interface, error 202 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0200', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0200';
+    it('SUB_Notification_Ans_Priority_Notification_0200', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0200';
       const bundleName = 'com.example.actsnotificationansprioritynotificationtest'
       const bundleOption: notificationManager.BundleOption = { bundle: bundleName };
       try {
@@ -115,15 +115,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0300
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0300
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0300
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0300
      * @tc.desc   [setPriorityEnabled] Error 202 Is Reported When a Third-Party App Invokes an API
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0300', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0300';
+    it('SUB_Notification_Ans_Priority_Notification_0300', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0300';
       try {
         await notificationManager.setPriorityEnabled(true)
           .then(() => {
@@ -155,15 +155,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0400
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0400
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0400
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0400
      * @tc.desc   [isPriorityEnabled] When a third-party application invokes an interface, error 202 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0400', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0400';
+    it('SUB_Notification_Ans_Priority_Notification_0400', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0400';
       try {
         await notificationManager.isPriorityEnabled()
           .then(() => {
@@ -195,15 +195,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0500
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0500
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0500
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0500
      * @tc.desc   [setPriorityEnabledByBundle] Error 202 Is Reported When a Third-Party Application Invokes an Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0500', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0500';
+    it('SUB_Notification_Ans_Priority_Notification_0500', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0500';
       try {
         await notificationManager.setPriorityEnabledByBundle({ bundle: bundleName },
           notificationManager.PriorityEnableStatus.DISABLE)
@@ -236,15 +236,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0600
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0600
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0600
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0600
      * @tc.desc   [isPriorityEnabledByBundle] Error 202 Is Reported When a Third-Party Application Invokes an Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0600', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0600';
+    it('SUB_Notification_Ans_Priority_Notification_0600', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0600';
       try {
         await notificationManager.isPriorityEnabledByBundle({ bundle: bundleName })
           .then(() => {
@@ -276,15 +276,15 @@ export default function actsnotificationansprioritynotificationtest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Priority_Notification_0700
-     * @tc.number Sub_Notification_Ans_Priority_Notification_0700
+     * @tc.name   SUB_Notification_Ans_Priority_Notification_0700
+     * @tc.number SUB_Notification_Ans_Priority_Notification_0700
      * @tc.desc   [setAdditionalConfig] When a third-party application invokes an interface, error 202 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Priority_Notification_0700', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Priority_Notification_0700';
+    it('SUB_Notification_Ans_Priority_Notification_0700', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Priority_Notification_0700';
       const value = '{"rules":[{"appAllowList":["com.example.actsnotificationansprioritynotificationtest"],"appDenyList":[],"id":502,"messageSource":0,"messageCategoryList":["IM"],"negativeKeywords":["地图","轿车"],"ruleLabelList":["ACCOUNT_ALERT"],"ruleName":"优先通知","ruleType":0,"textCondition":[["早报","晚报"],["晴","雨"]],"titleCondition":[["早报","晚报"],["晴","雨"]],"titleTextRelation":"and"}]}'
       try {
         await notificationManager.setAdditionalConfig('notificationRuleConfig',value)
