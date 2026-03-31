@@ -32,3 +32,6 @@ export const GetDeviceMacAddress0500: () => number;
 export const GetDeviceMacAddress0600: () => number;
 export const GetDeviceMacAddress0700: () => number;
 export const GetDeviceMacAddress0800: () => number;
+export const GetLinkedInfo0100: () => number;
+export const GetLinkedInfo0200: () => number;
+export const GetLinkedInfo0300: () => number;
