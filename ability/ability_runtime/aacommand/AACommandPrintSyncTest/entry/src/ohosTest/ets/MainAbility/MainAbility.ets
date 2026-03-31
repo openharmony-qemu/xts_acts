@@ -95,7 +95,7 @@ export default class MainAbility extends Ability {
     await sleep(3000);
 
     cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
-      'AACommandPrintTest#ACTS_AACommand_printSync_01_0500 -s unittest OpenHarmonyTestRunner';
+      'AACommandPrintTest#SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 -s unittest OpenHarmonyTestRunner';
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0500 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0500 stdResult = ' + data.stdResult);
