@@ -54,7 +54,7 @@ export default function dataTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-          * @tc.number  SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
+          * @tc.number  SUB_Telephony_Data_IsCellularDataEnabledSync_0200
           * @tc.name    testTelephonyDataIsCellularDataEnabledSync_static_0200
           * @tc.desc    Check whether cellular data services are enabled.
           * @tc.size    MediumTest
@@ -398,7 +398,7 @@ export default function dataTest() {
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
-                ExpectTrue(err.code == 8300001);
+                ExpectTrue(err.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
@@ -437,8 +437,8 @@ export default function dataTest() {
          * @tc.type    Function
          * @tc.level   level 3
          */
-        it('SUB_Telephony_CellularData_GetActiveApnName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'SUB_Telephony_CellularData_GetActiveApnName_0100';
+        it('testTelephonyCellularDataGetActiveApnName_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyCellularDataGetActiveApnName_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 data.getActiveApnName().then((apn: string) => {
