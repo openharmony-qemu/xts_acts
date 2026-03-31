@@ -51,7 +51,7 @@ export default function AntialiasTest() {
 
     /**
      * @tc.name   AntialiasTest_0100
-     * @tc.number AntialiasTest_0100
+     * @tc.number SUB_ARKUI_API_CANVAS_AntialiasTest_0100
      * @tc.desc   Test CanvasRenderingContext2D antialias property with true value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -71,7 +71,7 @@ export default function AntialiasTest() {
 
     /**
      * @tc.name   AntialiasTest_0200
-     * @tc.number AntialiasTest_0200
+     * @tc.number SUB_ARKUI_API_CANVAS_AntialiasTest_0200
      * @tc.desc   Test CanvasRenderingContext2D antialias property with false value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -91,7 +91,7 @@ export default function AntialiasTest() {
 
     /**
      * @tc.name   AntialiasTest_0300
-     * @tc.number AntialiasTest_0300
+     * @tc.number SUB_ARKUI_API_CANVAS_AntialiasTest_0300
      * @tc.desc   Test CanvasRenderingContext2D antialias property with undefined value (default)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
