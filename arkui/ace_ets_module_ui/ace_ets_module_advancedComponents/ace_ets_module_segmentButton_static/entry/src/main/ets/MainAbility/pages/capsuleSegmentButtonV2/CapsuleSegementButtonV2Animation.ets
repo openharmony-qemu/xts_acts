@@ -15,7 +15,7 @@
  */
 
 import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,$r } from '@ohos.arkui.component';
+import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,$r,Button,Text } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
 import { SegmentButtonV2Items, CapsuleSegmentButtonV2, SegmentButtonV2ItemOptions, TabSegmentButtonV2,SegmentButtonV2ItemOptions } from '@ohos.arkui.advanced.SegmentButtonV2'
 
@@ -64,7 +64,7 @@ struct CapsuleSegmentButtonV2Example {
 
   build() {
     Scroll() {
-      Column({ space: 12 } as ColumnOptions) {
+      Column() {
           TabSegmentButtonV2({
           items: this.textItems,
           selectedIndex: this.textSelectedIndex!!,
@@ -111,11 +111,18 @@ struct CapsuleSegmentButtonV2Example {
           buttonPadding: this.buttonPadding,
           enableStateAnimation:this.enableStateAnimation
         }).key('TabSegmentButtonV2_03')     
-        Button('true').key('true')
+        
+        Button('true')
         .onClick(() => {
         this.enableStateAnimation = !this.enableStateAnimation;
         })
-       Text('' + this.enableStateAnimation).key('text')
+        .width(50)
+        .height(50)
+        .id('true')
+
+       Text('' + this.enableStateAnimation)
+       .id('text')
+       
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)
