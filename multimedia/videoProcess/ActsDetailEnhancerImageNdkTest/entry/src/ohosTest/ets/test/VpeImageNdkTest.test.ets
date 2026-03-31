@@ -38,626 +38,626 @@ export default function VpeImageNdkTest() {
     })
 
     /**
-     * @tc.name   VpeImageNdk0100
-     * @tc.number VpeImageNdk0100
-     * @tc.desc   VpeImageNdk0100
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0100
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0100
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0100', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0100', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(0)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0200
-     * @tc.number VpeImageNdk0200
-     * @tc.desc   VpeImageNdk0200
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0200
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0200
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0200', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0200', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(1)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0300
-     * @tc.number VpeImageNdk0300
-     * @tc.desc   VpeImageNdk0300
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0300
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0300
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0300', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0300', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(2)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0400
-     * @tc.number VpeImageNdk0400
-     * @tc.desc   VpeImageNdk0400
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0400
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0400
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0400', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0400', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(3)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0500
-     * @tc.number VpeImageNdk0500
-     * @tc.desc   VpeImageNdk0500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0500
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0500
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0500', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(4)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0600
-     * @tc.number VpeImageNdk0600
-     * @tc.desc   VpeImageNdk0600
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0600
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0600
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0600', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0600', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(5)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0700
-     * @tc.number VpeImageNdk0700
-     * @tc.desc   VpeImageNdk0700
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0700
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0700
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0700', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0700', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(6)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0800
-     * @tc.number VpeImageNdk0800
-     * @tc.desc   VpeImageNdk0800
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0800
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0800
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0800', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0800', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(7)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk0900
-     * @tc.number VpeImageNdk0900
-     * @tc.desc   VpeImageNdk0900
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0900
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0900
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk0900', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_0900', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(8)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1000
-     * @tc.number VpeImageNdk1000
-     * @tc.desc   VpeImageNdk1000
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1000
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1000
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1000', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1000', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(9)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk110
-     * @tc.number VpeImageNdk110
-     * @tc.desc   VpeImageNdk110
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1100
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1100
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk110', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1100', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(10)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1120
-     * @tc.number VpeImageNdk1120
-     * @tc.desc   VpeImageNdk1120
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1120
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1120
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1120
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1120', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1120', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(11)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1130
-     * @tc.number VpeImageNdk1130
-     * @tc.desc   VpeImageNdk1130
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1130
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1130
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1130
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1130', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1130', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(12)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1140
-     * @tc.number VpeImageNdk1140
-     * @tc.desc   VpeImageNdk1140
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1140
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1140
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1140
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1140', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1140', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(13)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk11500
-     * @tc.number VpeImageNdk11500
-     * @tc.desc   VpeImageNdk11500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1150
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1150
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1150
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk11500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1150', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(14)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1200
-     * @tc.number VpeImageNdk1200
-     * @tc.desc   VpeImageNdk1200
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1200
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1200
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1200', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1200', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(15)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1300
-     * @tc.number VpeImageNdk1300
-     * @tc.desc   VpeImageNdk1300
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1300
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1300
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1300', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1300', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(16)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1400
-     * @tc.number VpeImageNdk1400
-     * @tc.desc   VpeImageNdk1400
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1400
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1400
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1400', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1400', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(17)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1500
-     * @tc.number VpeImageNdk1500
-     * @tc.desc   VpeImageNdk1500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1500
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1500
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1500', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(18)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1600
-     * @tc.number VpeImageNdk1600
-     * @tc.desc   VpeImageNdk1600
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1600
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1600
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1600', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1600', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(19)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1700
-     * @tc.number VpeImageNdk1700
-     * @tc.desc   VpeImageNdk1700
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1700
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1700
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1700', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1700', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(20)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1800
-     * @tc.number VpeImageNdk1800
-     * @tc.desc   VpeImageNdk1800
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1800
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1800
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1800', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1800', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(21)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk1900
-     * @tc.number VpeImageNdk1900
-     * @tc.desc   VpeImageNdk1900
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1900
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1900
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk1900', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_1900', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(22)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2000
-     * @tc.number VpeImageNdk2000
-     * @tc.desc   VpeImageNdk2000
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2000
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2000
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2000', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2000', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(23)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2100
-     * @tc.number VpeImageNdk2100
-     * @tc.desc   VpeImageNdk2100
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2100
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2100
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2100', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2100', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(24)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2200
-     * @tc.number VpeImageNdk2200
-     * @tc.desc   VpeImageNdk2200
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2200
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2200
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2200', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2200', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(25)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2300
-     * @tc.number VpeImageNdk2300
-     * @tc.desc   VpeImageNdk2300
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2300
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2300
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2300', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2300', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(26)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2400
-     * @tc.number VpeImageNdk2400
-     * @tc.desc   VpeImageNdk2400
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2400
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2400
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2400', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2400', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(27)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2500
-     * @tc.number VpeImageNdk2500
-     * @tc.desc   VpeImageNdk2500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2500
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2500
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2500', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(28)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2600
-     * @tc.number VpeImageNdk2600
-     * @tc.desc   VpeImageNdk2600
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2600
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2600
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2600', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2600', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(29)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2700
-     * @tc.number VpeImageNdk2700
-     * @tc.desc   VpeImageNdk2700
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2700
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2700
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2700', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2700', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(30)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2800
-     * @tc.number VpeImageNdk2800
-     * @tc.desc   VpeImageNdk2800
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2800
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2800
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2800', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2800', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(31)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk2900
-     * @tc.number VpeImageNdk2900
-     * @tc.desc   VpeImageNdk2900
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2900
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2900
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk2900', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_2900', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(32)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3000
-     * @tc.number VpeImageNdk3000
-     * @tc.desc   VpeImageNdk3000
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3000
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3000
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3000', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3000', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(33)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3100
-     * @tc.number VpeImageNdk3100
-     * @tc.desc   VpeImageNdk3100
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3100
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3100
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3100', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3100', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(34)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3200
-     * @tc.number VpeImageNdk3200
-     * @tc.desc   VpeImageNdk3200
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3200
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3200
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3200', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3200', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(35)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3300
-     * @tc.number VpeImageNdk3300
-     * @tc.desc   VpeImageNdk3300
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3300
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3300
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3300', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3300', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(36)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3400
-     * @tc.number VpeImageNdk3400
-     * @tc.desc   VpeImageNdk3400
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3400
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3400
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3400', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3400', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(37)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3500
-     * @tc.number VpeImageNdk3500
-     * @tc.desc   VpeImageNdk3500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3500
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3500
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3500', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(38)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3600
-     * @tc.number VpeImageNdk3600
-     * @tc.desc   VpeImageNdk3600
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3600
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3600
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3600', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3600', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(39)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3700
-     * @tc.number VpeImageNdk3700
-     * @tc.desc   VpeImageNdk3700
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3700
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3700
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3700', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3700', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(40)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3800
-     * @tc.number VpeImageNdk3800
-     * @tc.desc   VpeImageNdk3800
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3800
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3800
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3800', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3800', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(41)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk3900
-     * @tc.number VpeImageNdk3900
-     * @tc.desc   VpeImageNdk3900
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3900
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3900
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk3900', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_3900', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(42)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4000
-     * @tc.number VpeImageNdk4000
-     * @tc.desc   VpeImageNdk4000
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4000
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4000
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4000', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4000', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(43)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4100
-     * @tc.number VpeImageNdk4100
-     * @tc.desc   VpeImageNdk4100
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4100
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4100
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4100', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4100', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(44)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4200
-     * @tc.number VpeImageNdk4200
-     * @tc.desc   VpeImageNdk4200
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4200
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4200
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4200', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4200', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(45)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4300
-     * @tc.number VpeImageNdk4300
-     * @tc.desc   VpeImageNdk4300
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4300
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4300
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4300', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4300', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(46)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4400
-     * @tc.number VpeImageNdk4400
-     * @tc.desc   VpeImageNdk4400
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4400
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4400
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4400', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4400', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(47)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4500
-     * @tc.number VpeImageNdk4500
-     * @tc.desc   VpeImageNdk4500
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4500
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4500
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4500', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4500', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(48)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4600
-     * @tc.number VpeImageNdk4600
-     * @tc.desc   VpeImageNdk4600
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4600
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4600
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4600', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4600', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(49)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4700
-     * @tc.number VpeImageNdk4700
-     * @tc.desc   VpeImageNdk4700
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4700
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4700
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4700', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4700', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(50)).assertEqual(0);
     })
 
     /**
-     * @tc.name   VpeImageNdk4800
-     * @tc.number VpeImageNdk4800
-     * @tc.desc   VpeImageNdk4800
+     * @tc.name   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4800
+     * @tc.number SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4800
+     * @tc.desc   SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VpeImageNdk4800', Level.LEVEL0, () => {
+    it('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VPE_IMAGE_NDK_4800', Level.LEVEL0, () => {
       expect(libNdk.VpeImageTest(51)).assertEqual(0);
     })
   })
