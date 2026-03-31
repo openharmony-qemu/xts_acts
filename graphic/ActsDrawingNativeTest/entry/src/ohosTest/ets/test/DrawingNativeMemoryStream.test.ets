@@ -37,7 +37,7 @@ export default function DrawingNativeMemoryStreamTest() {
 
     /**
      * @tc.name   testMemoryStreamCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMemoryStream_0100
      * @tc.desc   Test for creating memory stream with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeMemoryStreamTest() {
 
     /**
      * @tc.name   testMemoryStreamCreateNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMemoryStream_0200
      * @tc.desc   Test for creating memory stream with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeMemoryStreamTest() {
 
     /**
      * @tc.name   testMemoryStreamCreateAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMemoryStream_0300
      * @tc.desc   Test for creating memory stream with abnormal parameters (negative values).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeMemoryStreamTest() {
 
     /**
      * @tc.name   testMemoryStreamCreateMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMemoryStream_0400
      * @tc.desc   Test for creating memory stream with multiple calls using different data segments.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

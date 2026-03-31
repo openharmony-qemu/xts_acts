@@ -37,7 +37,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0100
      * @tc.desc   test for testPathIteratorCreateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorCreateNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0200
      * @tc.desc   test for testPathIteratorCreateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorCreateMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0300
      * @tc.desc   test for testPathIteratorCreateMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0400
      * @tc.desc   test for testPathIteratorDestroyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0500
      * @tc.desc   test for testPathIteratorDestroyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorHasNextNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0600
      * @tc.desc   test for testPathIteratorHasNextNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorHasNextNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0700
      * @tc.desc   test for testPathIteratorHasNextNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorNextNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0800
      * @tc.desc   test for testPathIteratorNextNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorNextNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_0900
      * @tc.desc   test for testPathIteratorNextNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorPeekNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_1000
      * @tc.desc   test for testPathIteratorPeekNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativePathIteratorTest() {
 
     /**
      * @tc.name   testPathIteratorPeekNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathIterator_1100
      * @tc.desc   test for testPathIteratorPeekNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

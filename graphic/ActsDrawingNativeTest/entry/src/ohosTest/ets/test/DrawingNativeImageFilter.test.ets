@@ -37,7 +37,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0100
      * @tc.desc   Test for creating a blur image filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0200
      * @tc.desc   Test for creating a blur image filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0300
      * @tc.desc   Test for multiple calls of creating a blur image filter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0400
      * @tc.desc   Test for creating a blur image filter with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0500
      * @tc.desc   Test for creating a blur image filter with maximum values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromColorFilterNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0600
      * @tc.desc   Test for creating an image filter from a color filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromColorFilterNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0700
      * @tc.desc   Test for creating an image filter from a color filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromColorFilterMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0800
      * @tc.desc   Test for multiple calls of creating an image filter from a color filter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_0900
      * @tc.desc   Test for destroying an image filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterDestroyNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1000
      * @tc.desc   Test for destroying an image filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterDestroyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1100
      * @tc.desc   Test for multiple calls of destroying an image filter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateOffsetNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1200
      * @tc.desc   test for testImageFilterCreateOffsetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateOffsetNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1300
      * @tc.desc   test for testImageFilterCreateOffsetNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateOffsetAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1400
      * @tc.desc   test for testImageFilterCreateOffsetAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateOffsetMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0403
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1500
      * @tc.desc   test for testImageFilterCreateOffsetMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromShderEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1600
      * @tc.desc   test for testImageFilterCreateFromShderEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromShderEffectNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1700
      * @tc.desc   test for testImageFilterCreateFromShderEffectNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateFromShderEffectMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0502
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1800
      * @tc.desc   test for testImageFilterCreateFromShderEffectMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurWithCropNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_1900
      * @tc.desc   test for testImageFilterCreateBlurWithCropNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurWithCropNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_2000
      * @tc.desc   test for testImageFilterCreateBlurWithCropNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeImageFilterTest() {
 
     /**
      * @tc.name   testImageFilterCreateBlurWithCropMultiCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImageFilter_2100
      * @tc.desc   test for testImageFilterCreateBlurWithCropMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

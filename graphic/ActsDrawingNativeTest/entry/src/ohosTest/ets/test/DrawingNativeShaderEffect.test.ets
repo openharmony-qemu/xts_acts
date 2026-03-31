@@ -37,7 +37,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateColorShaderNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0100
      * @tc.desc   test for testShaderEffectCreateColorShaderNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateColorShaderNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0200
      * @tc.desc   test for testShaderEffectCreateColorShaderNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateColorShaderAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0300
      * @tc.desc   test for testShaderEffectCreateColorShaderAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateColorShaderMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0400
      * @tc.desc   test for testShaderEffectCreateColorShaderMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateColorShaderMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0500
      * @tc.desc   test for testShaderEffectCreateColorShaderMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0600
      * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0700
      * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0800
      * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0203
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_0900
      * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0204
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1000
      * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradienNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1100
      * @tc.desc   test for testShaderEffectCreateLinearGradienNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradienNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1200
      * @tc.desc   test for testShaderEffectCreateLinearGradienNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradienAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1300
      * @tc.desc   test for testShaderEffectCreateLinearGradienAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradienMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0303
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1400
      * @tc.desc   test for testShaderEffectCreateLinearGradienMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateLinearGradienMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0304
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1500
      * @tc.desc   test for testShaderEffectCreateLinearGradienMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1600
      * @tc.desc   test for testShaderEffectCreateRadialGradientNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1700
      * @tc.desc   test for testShaderEffectCreateRadialGradientNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1800
      * @tc.desc   test for testShaderEffectCreateRadialGradientAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0403
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_1900
      * @tc.desc   test for testShaderEffectCreateRadialGradientMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0404
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2000
      * @tc.desc   test for testShaderEffectCreateRadialGradientMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2100
      * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2200
      * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0502
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2300
      * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0503
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2400
      * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0504
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2500
      * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0600
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2600
      * @tc.desc   test for testShaderEffectCreateSweepGradientNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0601
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2700
      * @tc.desc   test for testShaderEffectCreateSweepGradientNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0602
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2800
      * @tc.desc   test for testShaderEffectCreateSweepGradientAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0603
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_2900
      * @tc.desc   test for testShaderEffectCreateSweepGradientMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0604
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateGradient_3000
      * @tc.desc   test for testShaderEffectCreateSweepGradientMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -428,7 +428,7 @@ export default function DrawingNativeShaderEffectTest() {
     // ShaderEffect Create Special test cases (18 cases)
     /**
      * @tc.name   testShaderEffectCreateImageShaderNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0700
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0100
      * @tc.desc   test for testShaderEffectCreateImageShaderNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -441,7 +441,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateImageShaderNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0701
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0200
      * @tc.desc   test for testShaderEffectCreateImageShaderNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -454,7 +454,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateImageShaderMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0704
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0300
      * @tc.desc   test for testShaderEffectCreateImageShaderMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -467,7 +467,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateTwoPointConicalGradientNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0800
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0400
      * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -480,7 +480,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateTwoPointConicalGradientNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0801
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0500
      * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -493,7 +493,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateTwoPointConicalGradientAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0802
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0600
      * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -506,7 +506,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateTwoPointConicalGradientMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0803
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0700
      * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -519,7 +519,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateTwoPointConicalGradientMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0804
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0800
      * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -532,7 +532,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0900
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectDestroy_0100
      * @tc.desc   test for testShaderEffectDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -545,7 +545,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0901
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectDestroy_0200
      * @tc.desc   test for testShaderEffectDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -558,7 +558,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1000
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_0900
      * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -571,7 +571,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1001
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1000
      * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -584,7 +584,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1002
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1100
      * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -597,7 +597,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1003
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1200
      * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -610,7 +610,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateComposeEnumTraversal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1300
      * @tc.desc   test for testShaderEffectCreateComposeEnumTraversal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -623,7 +623,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateComposeNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1400
      * @tc.desc   test for testShaderEffectCreateComposeNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -636,7 +636,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreateComposeMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1500
      * @tc.desc   test for testShaderEffectCreateComposeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -649,7 +649,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreatePixelMapShaderNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1600
      * @tc.desc   test for testShaderEffectCreatePixelMapShaderNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -662,7 +662,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreatePixelMapShaderNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1700
      * @tc.desc   test for testShaderEffectCreatePixelMapShaderNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -675,7 +675,7 @@ export default function DrawingNativeShaderEffectTest() {
 
     /**
      * @tc.name   testShaderEffectCreatePixelMapShaderMultiCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShaderEffectCreateSpecial_1800
      * @tc.desc   test for testShaderEffectCreatePixelMapShaderMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

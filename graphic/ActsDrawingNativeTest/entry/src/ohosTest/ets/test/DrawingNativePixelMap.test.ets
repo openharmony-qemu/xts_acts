@@ -37,7 +37,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromNativePixelMapNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0100
      * @tc.desc   test for testPixelMapGetFromNativePixelMapNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromNativePixelMapNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0200
      * @tc.desc   test for testPixelMapGetFromNativePixelMapNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromNativePixelMapMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0300
      * @tc.desc   test for testPixelMapGetFromNativePixelMapMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromNativePixelMapBoundary
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0400
      * @tc.desc   test for testPixelMapGetFromNativePixelMapBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -90,7 +90,7 @@ export default function DrawingNativePixelMapTest() {
     // PixelMap GetFromOhPixelMapNative related test cases (4 cases)
     /**
      * @tc.name   testPixelMapGetFromOhPixelMapNativeNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0500
      * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromOhPixelMapNativeNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0600
      * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -116,7 +116,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromOhPixelMapNativeMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0700
      * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -129,7 +129,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapGetFromOhPixelMapNativeBoundary
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0800
      * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ export default function DrawingNativePixelMapTest() {
     // PixelMap Dissolve related test cases (2 cases)
     /**
      * @tc.name   testPixelMapDissolveNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_0900
      * @tc.desc   test for testPixelMapDissolveNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -156,7 +156,7 @@ export default function DrawingNativePixelMapTest() {
 
     /**
      * @tc.name   testPixelMapDissolveNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPixelMap_1000
      * @tc.desc   test for testPixelMapDissolveNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

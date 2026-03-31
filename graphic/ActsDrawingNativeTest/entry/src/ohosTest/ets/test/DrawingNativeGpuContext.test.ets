@@ -37,7 +37,7 @@ export default function DrawingNativeGpuContextTest() {
 
     /**
      * @tc.name   testGpuContextCreateFromGLDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingGpuContext_0100
      * @tc.desc   Test for creating and destroying GPU context with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeGpuContextTest() {
 
     /**
      * @tc.name   testGpuContextDestroyNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingGpuContext_0200
      * @tc.desc   Test for destroying GPU context with NULL parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeGpuContextTest() {
 
     /**
      * @tc.name   testGpuContextCreateFromGLDestroyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingGpuContext_0300
      * @tc.desc   Test for repeatedly creating and destroying GPU context.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeGpuContextTest() {
 
     /**
      * @tc.name   testGpuContextCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingGpuContext_0400
      * @tc.desc   Test for creating GPU context with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

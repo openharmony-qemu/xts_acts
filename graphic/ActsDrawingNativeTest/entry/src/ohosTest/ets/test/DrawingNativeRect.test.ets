@@ -37,7 +37,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0100
      * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectIntersectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0200
      * @tc.desc   Test for intersecting two rectangles with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectIntersectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0300
      * @tc.desc   Test for intersecting rectangles with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectJoinNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0400
      * @tc.desc   Test for joining two rectangles with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectJoinNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0500
      * @tc.desc   Test for joining rectangles with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetLeftNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0100
      * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetLeftNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0200
      * @tc.desc   Test for setting the left coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetLeftAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0300
      * @tc.desc   Test for setting the left coordinate of a rectangle with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetLeftMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0403
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0400
      * @tc.desc   Test for repeatedly setting and getting the left coordinate of a rectangle.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetTopNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0500
      * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetTopNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0600
      * @tc.desc   Test for setting the top coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetTopAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0502
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0700
      * @tc.desc   Test for setting the top coordinate of a rectangle with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetTopMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0503
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0800
      * @tc.desc   Test for repeatedly setting and getting the top coordinate of a rectangle.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetRightNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0600
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_0900
      * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetRightNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0601
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1000
      * @tc.desc   Test for setting the right coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetRightAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0602
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1100
      * @tc.desc   Test for setting the right coordinate of a rectangle with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetRightMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0603
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1200
      * @tc.desc   Test for repeatedly setting and getting the right coordinate of a rectangle.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetBottomNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0700
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1300
      * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetBottomNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0701
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1400
      * @tc.desc   Test for setting the bottom coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetBottomAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0702
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1500
      * @tc.desc   Test for setting the bottom coordinate of a rectangle with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetBottomMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0703
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1600
      * @tc.desc   Test for repeatedly setting and getting the bottom coordinate of a rectangle.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetLeftNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0800
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1700
      * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetLeftNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0801
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1800
      * @tc.desc   Test for getting the left coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetTopNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0900
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_1900
      * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetTopNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0901
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_2000
      * @tc.desc   Test for getting the top coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetRightNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1000
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_2100
      * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetRightNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1001
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_2200
      * @tc.desc   Test for getting the right coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetBottomNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_2300
      * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetBottomNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectSetGetLeftTopRightBottom_2400
      * @tc.desc   Test for getting the bottom coordinate of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -415,7 +415,7 @@ export default function DrawingNativeRectTest() {
     // Rect GetWidth/GetHeight related test cases (5 cases)
     /**
      * @tc.name   testRectGetHeightNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectOtherOperations_0100
      * @tc.desc   Test for setting coordinates and getting the height of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -428,7 +428,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetHeightNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectOtherOperations_0200
      * @tc.desc   Test for getting the height of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -441,7 +441,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetWidthNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectOtherOperations_0300
      * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -454,7 +454,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetWidthNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectOtherOperations_0400
      * @tc.desc   Test for getting the width of a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -467,7 +467,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectGetWidthBoundary
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectOtherOperations_0500
      * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -480,7 +480,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectCopyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0600
      * @tc.desc   Test for copying a rectangle with normal parameters and checking the copied values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -493,7 +493,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectCopyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0700
      * @tc.desc   Test for copying a rectangle with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -506,7 +506,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0800
      * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -519,7 +519,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectCreateDestroyIntersectJoin_0900
      * @tc.desc   Test for destroying a rectangle object with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -532,7 +532,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectInsetNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0100
      * @tc.desc   Test for testRectInsetNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -545,7 +545,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectInsetAbNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0200
      * @tc.desc   Test for testRectInsetAbNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -558,7 +558,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectInsetNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0300
      * @tc.desc   Test for testRectInsetNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -571,7 +571,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectInsetCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0400
      * @tc.desc   Test for testRectInsetCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -584,7 +584,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectContainsNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0500
      * @tc.desc   Test for testRectContainsNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -597,7 +597,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectContainsNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0600
      * @tc.desc   Test for testRectContainsNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -610,7 +610,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectContainsCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0700
      * @tc.desc   Test for testRectContainsCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -623,7 +623,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetEmptyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0800
      * @tc.desc   Test for testRectSetEmptyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -636,7 +636,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetEmptyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_0900
      * @tc.desc   Test for testRectSetEmptyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -649,7 +649,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSetEmptyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1000
      * @tc.desc   Test for testRectSetEmptyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -662,7 +662,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectIsEmptyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1100
      * @tc.desc   Test for testRectIsEmptyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -675,7 +675,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectIsEmptyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1200
      * @tc.desc   Test for testRectIsEmptyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -688,7 +688,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectIsEmptyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1300
      * @tc.desc   Test for testRectIsEmptyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -701,7 +701,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1400
      * @tc.desc   Test for testRectOffsetNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -714,7 +714,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1500
      * @tc.desc   Test for testRectOffsetNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -727,7 +727,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1600
      * @tc.desc   Test for testRectOffsetAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -740,7 +740,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1700
      * @tc.desc   Test for testRectOffsetMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -753,7 +753,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetToNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1800
      * @tc.desc   Test for testRectOffsetToNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -766,7 +766,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetToNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_1900
      * @tc.desc   Test for testRectOffsetToNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -779,7 +779,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetToAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2000
      * @tc.desc   Test for testRectOffsetToAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -792,7 +792,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectOffsetToMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2100
      * @tc.desc   Test for testRectOffsetToMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -805,7 +805,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSortNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2200
      * @tc.desc   Test for testRectSortNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -818,7 +818,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSortNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2300
      * @tc.desc   Test for testRectSortNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -831,7 +831,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectSortMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2400
      * @tc.desc   Test for testRectSortMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -844,7 +844,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectUnionNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2500
      * @tc.desc   Test for testRectUnionNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -857,7 +857,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectUnionNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2600
      * @tc.desc   Test for testRectUnionNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -870,7 +870,7 @@ export default function DrawingNativeRectTest() {
 
     /**
      * @tc.name   testRectUnionMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRectPart2OtherOperations_2700
      * @tc.desc   Test for testRectUnionMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

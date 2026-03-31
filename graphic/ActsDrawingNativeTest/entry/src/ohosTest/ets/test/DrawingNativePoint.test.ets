@@ -37,7 +37,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointCreate_0100
      * @tc.desc   test for testPointCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointCreateNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointCreate_0200
      * @tc.desc   test for testPointCreateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointCreateAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointCreate_0300
      * @tc.desc   test for testPointCreateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointCreateMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointCreate_0400
      * @tc.desc   test for testPointCreateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointCreateMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointCreate_0500
      * @tc.desc   test for testPointCreateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ export default function DrawingNativePointTest() {
     // Point Destroy related test cases
     /**
      * @tc.name   testPointDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointDestroy_0100
      * @tc.desc   test for testPointDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -116,7 +116,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointDestroy_0200
      * @tc.desc   test for testPointDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -130,7 +130,7 @@ export default function DrawingNativePointTest() {
     // Point GetSet related test cases
     /**
      * @tc.name   testPointGetXNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0100
      * @tc.desc   test for testPointGetXNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointGetXNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0200
      * @tc.desc   test for testPointGetXNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -156,7 +156,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointGetXMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0300
      * @tc.desc   test for testPointGetXMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -169,7 +169,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointGetYNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0400
      * @tc.desc   test for testPointGetYNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -182,7 +182,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointGetYNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0500
      * @tc.desc   test for testPointGetYNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -195,7 +195,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointGetYMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0600
      * @tc.desc   test for testPointGetYMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -208,7 +208,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointSetNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0700
      * @tc.desc   test for testPointSetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -221,7 +221,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointSetNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0800
      * @tc.desc   test for testPointSetNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -234,7 +234,7 @@ export default function DrawingNativePointTest() {
 
     /**
      * @tc.name   testPointSetMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0502
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPointGetSet_0900
      * @tc.desc   test for testPointSetMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

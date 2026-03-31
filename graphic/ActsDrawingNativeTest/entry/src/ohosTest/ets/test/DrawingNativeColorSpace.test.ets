@@ -37,7 +37,7 @@ export default function DrawingNativeColorSpaceTest() {
 
     /**
      * @tc.name   testColorSpaceCreateSrgbNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSpaceCreateSrgb_0100
      * @tc.desc   Test for creating an sRGB color space with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeColorSpaceTest() {
 
     /**
      * @tc.name   testColorSpaceDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSpaceDestroy_0100
      * @tc.desc   Test for destroying a color space with a NULL parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeColorSpaceTest() {
 
     /**
      * @tc.name   testColorSpaceCreateSrgbMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSpaceCreateSrgb_0200
      * @tc.desc   Test for creating an sRGB color space with multiple calls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -77,7 +77,7 @@ export default function DrawingNativeColorSpaceTest() {
     // ColorSpace CreateSrgbLinear related test cases
     /**
      * @tc.name   testColorSpaceCreateSrgbLinearNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSpaceCreateSrgbLinear_0100
      * @tc.desc   Test for creating an sRGB linear color space with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -90,7 +90,7 @@ export default function DrawingNativeColorSpaceTest() {
 
     /**
      * @tc.name   testColorSpaceCreateSrgbLinearMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSpaceCreateSrgbLinear_0200
      * @tc.desc   Test for creating an sRGB linear color space with multiple calls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

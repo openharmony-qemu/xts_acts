@@ -37,7 +37,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCreateDestroyDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0100
      * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCreateDestroyDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0200
      * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCreateDestroyDestroyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0300
      * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCopyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0400
      * @tc.desc   test for testSamplingOptionsCopyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCopyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0500
      * @tc.desc   test for testSamplingOptionsCopyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeSamplingOptionsTest() {
 
     /**
      * @tc.name   testSamplingOptionsCopyMultiCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSamplingOptions_0600
      * @tc.desc   test for testSamplingOptionsCopyMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

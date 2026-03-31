@@ -37,7 +37,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0100attice_0100
      * @tc.desc   Test for testLatticeCreateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeCreateNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0200attice_0101
      * @tc.desc   Test for testLatticeCreateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeCreateAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0300attice_0102
      * @tc.desc   Test for testLatticeCreateAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeCreateEnumTraversal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0400attice_0103
      * @tc.desc   Test for testLatticeCreateEnumTraversal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeCreateMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0500attice_0104
      * @tc.desc   Test for testLatticeCreateMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0600attice_0200
      * @tc.desc   Test for testLatticeDestroyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeLatticeTest() {
 
     /**
      * @tc.name   testLatticeDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingLattice_0700attice_0201
      * @tc.desc   Test for testLatticeDestroyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

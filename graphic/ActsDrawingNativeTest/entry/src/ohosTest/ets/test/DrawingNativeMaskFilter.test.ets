@@ -37,7 +37,7 @@ export default function DrawingNativeMaskFilterTest() {
 
     /**
      * @tc.name   testMaskFilterCreateBlurDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMaskFilter_0100
      * @tc.desc   Test for creating and destroying a blur mask filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeMaskFilterTest() {
 
     /**
      * @tc.name   testMaskFilterCreateBlurDestroyNULL
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMaskFilter_0200
      * @tc.desc   Test for creating and destroying a blur mask filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeMaskFilterTest() {
 
     /**
      * @tc.name   testMaskFilterCreateBlurDestroyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMaskFilter_0300
      * @tc.desc   Test for multiple calls of creating and destroying a blur mask filter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeMaskFilterTest() {
 
     /**
      * @tc.name   testMaskFilterCreateBlurDestroyAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMaskFilter_0400
      * @tc.desc   Test for creating and destroying a blur mask filter with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeMaskFilterTest() {
 
     /**
      * @tc.name   testMaskFilterCreateBlurDestroyMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMaskFilter_0500
      * @tc.desc   Test for creating and destroying a blur mask filter with maximum values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

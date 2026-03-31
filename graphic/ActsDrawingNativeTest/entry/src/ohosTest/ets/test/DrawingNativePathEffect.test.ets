@@ -37,7 +37,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDashPathEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0100
      * @tc.desc   test for testCreateDashPathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDashPathEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0200
      * @tc.desc   test for testCreateDashPathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDashPathEffectAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0300
      * @tc.desc   test for testCreateDashPathEffectAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDashPathEffectMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0400
      * @tc.desc   test for testCreateDashPathEffectMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testPathEffectDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0500
      * @tc.desc   test for testPathEffectDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testPathEffectDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0600
      * @tc.desc   test for testPathEffectDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateCornerPathEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0700
      * @tc.desc   test for testCreateCornerPathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateCornerPathEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0800
      * @tc.desc   test for testCreateCornerPathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateCornerPathEffectAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0302
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_0900
      * @tc.desc   test for testCreateCornerPathEffectAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDiscreatePathEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1000
      * @tc.desc   test for testCreateDiscreatePathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDiscreatePathEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1100
      * @tc.desc   test for testCreateDiscreatePathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateDiscreatePathEffectAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1200
      * @tc.desc   test for testCreateDiscreatePathEffectAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateComposePathEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1300
      * @tc.desc   test for testCreateComposePathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateComposePathEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1400
      * @tc.desc   test for testCreateComposePathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreatePathDashEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0600
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1500
      * @tc.desc   test for testCreatePathDashEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreatePathDashEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0601
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1600
      * @tc.desc   test for testCreatePathDashEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreatePathDashEffectAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0602
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1700
      * @tc.desc   test for testCreatePathDashEffectAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateSumPathEffectNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0700
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1800
      * @tc.desc   test for testCreateSumPathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativePathEffectTest() {
 
     /**
      * @tc.name   testCreateSumPathEffectNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0701
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathEffect_1900
      * @tc.desc   test for testCreateSumPathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

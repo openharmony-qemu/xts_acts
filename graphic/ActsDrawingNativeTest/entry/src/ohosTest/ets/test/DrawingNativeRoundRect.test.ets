@@ -37,7 +37,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCreateNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0100
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0100
      * @tc.desc   test for testRoundRectCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCreateNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0101
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0200
      * @tc.desc   test for testRoundRectCreateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCreateAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0102
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0300
      * @tc.desc   test for testRoundRectCreateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCreateMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0103
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0400
      * @tc.desc   test for testRoundRectCreateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCreateMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0104
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0500
      * @tc.desc   test for testRoundRectCreateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectSetGetCornerNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0200
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0600
      * @tc.desc   test for testRoundRectSetGetCornerNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectSetGetCornerNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0201
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0700
      * @tc.desc   test for testRoundRectSetGetCornerNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectSetGetCornerAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0202
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0800
      * @tc.desc   test for testRoundRectSetGetCornerAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectSetGetCornerMaximum
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0203
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_0900
      * @tc.desc   test for testRoundRectSetGetCornerMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectSetGetCornerMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0204
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1000
      * @tc.desc   test for testRoundRectSetGetCornerMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectGetCornerWhenNoSet
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0205
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1100
      * @tc.desc   test for testRoundRectGetCornerWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectDestroyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0300
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1200
      * @tc.desc   test for testRoundRectDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectDestroyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0301
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1300
      * @tc.desc   test for testRoundRectDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectOffsetNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0400
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1400
      * @tc.desc   test for testRoundRectOffsetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectOffsetNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0401
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1500
      * @tc.desc   test for testRoundRectOffsetNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectOffsetMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0402
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1600
      * @tc.desc   test for testRoundRectOffsetMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCopyNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0500
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1700
      * @tc.desc   test for testRoundRectCopyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCopyNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0501
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1800
      * @tc.desc   test for testRoundRectCopyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeRoundRectTest() {
 
     /**
      * @tc.name   testRoundRectCopyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0502
+     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRoundRect_1900
      * @tc.desc   test for testRoundRectCopyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
