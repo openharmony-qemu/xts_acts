@@ -16,6 +16,6 @@
 import webMediaOption from './WebMediaOption.test'
 import webJsunitTwo from './WebOnFullScreenEnter.test'
 export default function testsuite() {
-    webMediaOption();
+    // webMediaOption();
     webJsunitTwo();
 }

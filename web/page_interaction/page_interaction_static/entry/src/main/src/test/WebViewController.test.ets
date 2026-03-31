@@ -175,6 +175,96 @@ export default function webViewController() {
         done()
       })
 
+    /**
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETSUGGESTEDNAME_0100
+     * @tc.name        testFileSelectorParamGetSuggestedNameStatic001
+     * @tc.desc        test FileSelectorParam getSuggestedName
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testFileSelectorParamGetSuggestedNameStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParamGetSuggestedName001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParamGetSuggestedName001', 'Documents', 31036, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDEFAULTPATH_0100
+     * @tc.name        testFileSelectorParamGetDefaultPathStatic001
+     * @tc.desc        test FileSelectorParam getDefaultPath
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testFileSelectorParamGetDefaultPathStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParamGetDefaultPath001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParamGetDefaultPath001', '/storage/Users/currentUser/', 31037, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDESCRIPTIONS_0100
+     * @tc.name        testFileSelectorParamGetDescriptionsStatic001
+     * @tc.desc        test FileSelectorParam getDescriptions
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testFileSelectorParamGetDescriptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParamGetDescriptions001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParamGetDescriptions001', 1, 31038, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_ISACCEPTALLOPTIONEXCLUDED_0100
+     * @tc.name        testFileSelectorParamIsAcceptAllOptionExcludedStatic001
+     * @tc.desc        test FileSelectorParam isAcceptAllOptionExcluded
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testFileSelectorParamIsAcceptAllOptionExcludedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParamIsAcceptAllOptionExcluded001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParamIsAcceptAllOptionExcluded001', false, 31039, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETACCEPTABLEFILETYPES_0100
+     * @tc.name        testFileSelectorParamGetAcceptableFileTypesStatic001
+     * @tc.desc        test FileSelectorParam getAcceptableFileTypes
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testFileSelectorParamGetAcceptableFileTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParamGetAcceptableFileTypes001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParamGetAcceptableFileTypes001', 0, 31040, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
     afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)

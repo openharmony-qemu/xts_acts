@@ -217,14 +217,74 @@ export default function WebBlanklessErrorCodeJsunit() {
     })
 
     /**
-     * @tc.name   SwitchNextPage
+     * @tc.name   testBlanklessFrameInterpolationStateStatic00
+     * @tc.number SUB_WEB_BLANKLESSFRAMEINTERPOLATIONSTATE_0000
+     * @tc.desc   test BlanklessFrameInterpolationState.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testBlanklessFrameInterpolationStateStatic00',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000)
+      Utils.emitEvent("testBlanklessFrameInterpolationState00", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testBlanklessFrameInterpolationState00",0,20260324,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('WebBlanklessErrorCodeButton',10,'');
+      console.info(`testBlanklessFrameInterpolationState00 finish`);
+      await Utils.msSleep(2000)
+      done();
+    })
+
+    /**
+     * @tc.name   testBlanklessFrameInterpolationStateStatic01
+     * @tc.number SUB_WEB_BLANKLESSFRAMEINTERPOLATIONSTATE_0001
+     * @tc.desc   test BlanklessFrameInterpolationState.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testBlanklessFrameInterpolationStateStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000)
+      Utils.emitEvent("testBlanklessFrameInterpolationState01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testBlanklessFrameInterpolationState01",1,20260325,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('WebBlanklessErrorCodeButton',10,'');
+      console.info(`testBlanklessFrameInterpolationState01 finish`);
+      await Utils.msSleep(2000)
+      done();
+    })
+
+    /**
+     * @tc.name   testBlanklessFrameInterpolationStateStatic02
+     * @tc.number SUB_WEB_BLANKLESSFRAMEINTERPOLAtionstate_0002
+     * @tc.desc   test BlanklessFrameInterpolationState.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testBlanklessFrameInterpolationStateStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000)
+      Utils.emitEvent("testBlanklessFrameInterpolationState02", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testBlanklessFrameInterpolationState02",2,20260326,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('WebBlanklessErrorCodeButton',10,'');
+      console.info(`testBlanklessFrameInterpolationState02 finish`);
+      await Utils.msSleep(2000)
+      done();
+    })
+
+    /**
+     * @tc.name   SwitchNextPageStatic
      * @tc.number SwitchNextPage_20260323
      * @tc.desc   SwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitonSwitchNextPage", 10)

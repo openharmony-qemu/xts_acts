@@ -46,6 +46,13 @@ struct webViewController {
   @State onOverScrollCallBack: boolean = false
   @State forceDarkAccess: boolean = false
   @State userAgentPC: string = '';
+  @State FileSelectorParamGetSuggestedName: string = ''
+  @State FileSelectorParamGetDefaultPath: string = ''
+  @State FileSelectorParamGetDescriptions: number = 90
+  @State FileSelectorParamIsAcceptAllOptionExcluded: boolean = true;
+  @State mimeType: string = ''
+  @State acceptableType: string = ''
+  @State FileSelectorParamGetAcceptableFileTypesArr: number = 70
 
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
@@ -224,6 +231,91 @@ struct webViewController {
               break;
             }
 
+            case 'testFileSelectorParamGetSuggestedName001': {
+              try {
+                this.onShowFileSelectorCallBack = false
+                this.FileSelectorParamGetSuggestedName = ""
+                this.controller.loadUrl('resource://rawfile/showFileSelector.html');
+                Utils.clickComponent('onShowFileSelectorKey')
+                setTimeout(() => {
+                  Utils.emitEvent(this.FileSelectorParamGetSuggestedName, 31036)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 31032)
+              }
+              break;
+            }
+
+            case 'testFileSelectorParamGetDefaultPath001': {
+              try {
+                this.onShowFileSelectorCallBack = false
+                this.FileSelectorParamGetDefaultPath = ""
+                this.controller.loadUrl('resource://rawfile/showFileSelector.html');
+                Utils.clickComponent('onShowFileSelectorKey')
+                setTimeout(() => {
+                  Utils.emitEvent(this.FileSelectorParamGetDefaultPath, 31037)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 31032)
+              }
+              break;
+            }
+
+            case 'testFileSelectorParamGetDescriptions001': {
+              try {
+                this.onShowFileSelectorCallBack = false
+                let getDescriptions = this.FileSelectorParamGetDescriptions;
+                this.controller.loadUrl('resource://rawfile/showFileSelector.html');
+                Utils.clickComponent('onShowFileSelectorKey')
+                setTimeout(() => {
+                  Utils.emitEvent(getDescriptions, 31038)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 31032)
+              }
+              break;
+            }
+
+            case 'testFileSelectorParamIsAcceptAllOptionExcluded001': {
+              try {
+                this.onShowFileSelectorCallBack = false
+                this.FileSelectorParamIsAcceptAllOptionExcluded = true
+                this.controller.loadUrl('resource://rawfile/showFileSelector.html');
+                Utils.clickComponent('onShowFileSelectorKey')
+                setTimeout(() => {
+                  Utils.emitEvent(this.FileSelectorParamIsAcceptAllOptionExcluded, 31039)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 31032)
+              }
+              break;
+            }
+
+            case 'testFileSelectorParamGetAcceptableFileTypes001': {
+              try {
+                this.onShowFileSelectorCallBack = false
+                let getAcceptableFileTypesArr = this.FileSelectorParamGetAcceptableFileTypesArr
+                this.controller.loadUrl('resource://rawfile/showFileSelector.html');
+                Utils.clickComponent('onShowFileSelectorKey')
+                setTimeout(() => {
+                  Utils.emitEvent(getAcceptableFileTypesArr, 31040)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 31032)
+              }
+              break;
+            }
+
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
@@ -251,11 +343,22 @@ struct webViewController {
             console.info('isCapture:', event.fileSelector.isCapture())
             console.info('getAcceptType:', event.fileSelector.getAcceptType())
             console.info('getMimeTypes:', event.fileSelector.getMimeTypes())
+            console.info('getSuggestedName:', event.fileSelector.getSuggestedName())
+            console.info('getDefaultPath:', event.fileSelector.getDefaultPath())
+            console.info('getDescriptions:', event.fileSelector.getDescriptions())
+            console.info('isAcceptAllOptionExcluded:', event.fileSelector.isAcceptAllOptionExcluded())
+            console.info('getAcceptableFileTypes_length:', event.fileSelector.getAcceptableFileTypes().length)
             this.FileSelectorParamGetTitle = event.fileSelector.getTitle()
             this.FileSelectorParamGetGetMode = event.fileSelector.getMode()
             this.FileSelectorParamGetIsCapture = event.fileSelector.isCapture()
             this.FileSelectorParamGetGetAcceptType = event.fileSelector.getAcceptType()
             this.FileSelectorParamGetGetMimeTypes = event.fileSelector.getMimeTypes()
+            this.FileSelectorParamGetSuggestedName = event.fileSelector.getSuggestedName()
+            this.FileSelectorParamGetDefaultPath = event.fileSelector.getDefaultPath()
+            this.FileSelectorParamGetDescriptions = event.fileSelector.getDescriptions().length
+            this.FileSelectorParamIsAcceptAllOptionExcluded = event.fileSelector.isAcceptAllOptionExcluded()
+            this.FileSelectorParamGetAcceptableFileTypesArr = event.fileSelector.getAcceptableFileTypes().length;
+
           }
           return true
         })

@@ -163,6 +163,56 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
 
+            case 'emitWebContextMenuResultPaste': {
+              Utils.longClickComponent('webCenter')
+              console.log("start Paste test");
+              setTimeout(() => {
+                this.result?.paste()
+                Utils.emitEvent('paste', 12521);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultRedo': {
+              Utils.longClickComponent('webCenter')
+              console.log("start redo test");
+              setTimeout(() => {
+                this.result?.redo()
+                Utils.emitEvent('redo', 12522);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultUndo': {
+              Utils.longClickComponent('webCenter')
+              console.log("start undo test");
+              setTimeout(() => {
+                this.result?.undo()
+                Utils.emitEvent('undo', 12523);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultPasteAndMatchStyle': {
+              Utils.longClickComponent('webCenter')
+              console.log("start pasteAndMatchStyle test");
+              setTimeout(() => {
+                this.result?.pasteAndMatchStyle()
+                Utils.emitEvent('pasteAndMatchStyle', 12524);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultRequestPasswordAutoFill': {
+              Utils.longClickComponent('webCenter')
+              console.log("start requestPasswordAutoFill test");
+              setTimeout(() => {
+                this.result?.requestPasswordAutoFill()
+                Utils.emitEvent('requestPasswordAutoFill', 12525);
+              }, 2500)
+              break;
+            }
+
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
