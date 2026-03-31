@@ -25,12 +25,12 @@ let maxValue = 2147483647;
 export default function HiDeBugTrace() {
   describe('HiDeBugTrace', () => {
     /**
-     * @tc.name   HidebugTest_0001
-     * @tc.number HidebugTest_0001
+     * @tc.name   testHidebugrequestTrace01
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0100
      * @tc.desc   startProfiling函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0100 start");
@@ -59,11 +59,11 @@ export default function HiDeBugTrace() {
 
     /**
      * @tc.name   testHidebugrequestTrace02
-     * @tc.number testHidebugrequestTrace02
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0200
      * @tc.desc   startProfiling函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0200 start");
@@ -90,12 +90,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0200 end");
     })
     /**
-     * @tc.name   HidebugTest_0017
-     * @tc.number HidebugTest_0017
+     * @tc.name   testHidebugrequestTrace03
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0300
      * @tc.desc   startProfiling函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0300 start");
@@ -122,12 +122,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0300 end");
     })
     /**
-     * @tc.name   HidebugTest_0002
-     * @tc.number HidebugTest_0002
+     * @tc.name   testHidebugrequestTrace04
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0400
      * @tc.desc   dumpHeapData函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0400 start");
@@ -153,12 +153,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0400 end");
     })
     /**
-     * @tc.name   HidebugTest_0018
-     * @tc.number HidebugTest_0018
+     * @tc.name   testHidebugrequestTrace05
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0500
      * @tc.desc   dumpHeapData函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0500 start");
@@ -184,12 +184,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0500 end");
     })
     /**
-     * @tc.name   HidebugTest_0019
-     * @tc.number HidebugTest_0019
+     * @tc.name   testHidebugrequestTrace06
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0600
      * @tc.desc   dumpHeapData函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0600 start");
@@ -216,12 +216,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0600 end");
     })
     /**
-     * @tc.name   HidebugTest_0003
-     * @tc.number HidebugTest_0003
+     * @tc.name   testHidebugrequestTrace07
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0700
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0700 start");
@@ -248,12 +248,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0700 end");
     })
     /**
-     * @tc.name   HidebugTest_0020
-     * @tc.number HidebugTest_0020
+     * @tc.name   testHidebugrequestTrace08
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0800
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0800 start");
@@ -279,12 +279,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0800 end");
     })
     /**
-     * @tc.name   HidebugTest_0021
-     * @tc.number HidebugTest_0021
+     * @tc.name   testHidebugrequestTrace09
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_0900
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0900 start");
@@ -310,12 +310,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_0900 end");
     })
     /**
-     * @tc.name   HidebugTest_0004
-     * @tc.number HidebugTest_0004
+     * @tc.name   testHidebugrequestTrace10
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1000
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1000 start");
@@ -342,12 +342,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1000 end");
     })
     /**
-     * @tc.name   HidebugTest_0022
-     * @tc.number HidebugTest_0022
+     * @tc.name   testHidebugrequestTrace11
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1100
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1100 start");
@@ -374,12 +374,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1100 end");
     })
     /**
-     * @tc.name   HidebugTest_0023
-     * @tc.number HidebugTest_0023
+     * @tc.name   testHidebugrequestTrace12
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1200
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,""//null/undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1200 start");
@@ -406,12 +406,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1200 end");
     })
     /**
-     * @tc.name   HidebugTest_0014
-     * @tc.number HidebugTest_0014
+     * @tc.name   testHidebugrequestTrace13
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1300
      * @tc.desc   getServiceDump函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1300 start");
@@ -437,12 +437,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1300 end");
     })
     /**
-     * @tc.name   HidebugTest_0024
-     * @tc.number HidebugTest_0024
+     * @tc.name   testHidebugrequestTrace14
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1400
      * @tc.desc   getServiceDump函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1400 start");
@@ -468,12 +468,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1400 end");
     })
     /**
-     * @tc.name   HidebugTest_0005
-     * @tc.number HidebugTest_0005
+     * @tc.name   testHidebugrequestTrace15
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1500
      * @tc.desc   getServiceDump函数的异常值覆盖,第2个参数的null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1500 start");
@@ -500,12 +500,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1500 end");
     })
     /**
-     * @tc.name   HidebugTest_0025
-     * @tc.number HidebugTest_0025
+     * @tc.name   testHidebugrequestTrace16
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1600
      * @tc.desc   getServiceDump函数的异常值覆盖,第2个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1600 start");
@@ -531,12 +531,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1600 end");
     })
     /**
-     * @tc.name   HidebugTest_0015
-     * @tc.number HidebugTest_0015
+     * @tc.name   testHidebugrequestTrace17
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1700
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1700 start");
@@ -563,12 +563,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1700 end");
     })
     /**
-     * @tc.name   HidebugTest_0026
-     * @tc.number HidebugTest_0026
+     * @tc.name   testHidebugrequestTrace18
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1800
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1800 start");
@@ -594,12 +594,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1800 end");
     })
     /**
-     * @tc.name   HidebugTest_0027
-     * @tc.number HidebugTest_0027
+     * @tc.name   testHidebugrequestTrace19
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_1900
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1900 start");
@@ -616,12 +616,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_1900 end");
     })
     /**
-     * @tc.name   HidebugTest_0006
-     * @tc.number HidebugTest_0006
+     * @tc.name   testHidebugrequestTrace20
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2000
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2000 start");
@@ -637,12 +637,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2000 end");
     })
     /**
-     * @tc.name   HidebugTest_0028
-     * @tc.number HidebugTest_0028
+     * @tc.name   testHidebugrequestTrace21
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2100
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2100 start");
@@ -658,12 +658,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2100 end");
     })
     /**
-     * @tc.name   HidebugTest_0029
-     * @tc.number HidebugTest_0029
+     * @tc.name   testHidebugrequestTrace22
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2200
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2200 start");
@@ -679,12 +679,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2200 end");
     })
     /**
-     * @tc.name   HidebugTest_0007
-     * @tc.number HidebugTest_0007
+     * @tc.name   testHidebugrequestTrace23
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2300
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第3个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2300 start");
@@ -700,12 +700,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2300 end");
     })
     /**
-     * @tc.name   HidebugTest_0030
-     * @tc.number HidebugTest_0030
+     * @tc.name   testHidebugrequestTrace24
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2400
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第3个参数的null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2400 start");
@@ -721,12 +721,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2400 end");
     })
     /**
-     * @tc.name   HidebugTest_0008
-     * @tc.number HidebugTest_0008
+     * @tc.name   testHidebugrequestTrace25
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2500
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2500 start");
@@ -742,12 +742,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2500 end");
     })
     /**
-     * @tc.name   HidebugTest_0031
-     * @tc.number HidebugTest_0031
+     * @tc.name   testHidebugrequestTrace26
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2600
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2600 start");
@@ -763,12 +763,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2600 end");
     })
     /**
-     * @tc.name   HidebugTest_0032
-     * @tc.number HidebugTest_0032
+     * @tc.name   testHidebugrequestTrace27
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2700
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2700 start");
@@ -784,12 +784,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2700 end");
     })
     /**
-     * @tc.name   HidebugTest_0009
-     * @tc.number HidebugTest_0009
+     * @tc.name   testHidebugrequestTrace28
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2800
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2800 start");
@@ -805,12 +805,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2800 end");
     })
     /**
-     * @tc.name   HidebugTest_0033
-     * @tc.number HidebugTest_0033
+     * @tc.name   testHidebugrequestTrace29
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_2900
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2900 start");
@@ -826,12 +826,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_2900 end");
     })
     /**
-     * @tc.name   HidebugTest_0034
-     * @tc.number HidebugTest_0034
+     * @tc.name   testHidebugrequestTrace30
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_3000
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的空值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_3000 start");
@@ -847,12 +847,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_3000 end");
     })
     /**
-     * @tc.name   HidebugTest_0010
-     * @tc.number HidebugTest_0010
+     * @tc.name   testHidebugrequestTrace31
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_3100
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第2个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_3100 start");
@@ -868,12 +868,12 @@ export default function HiDeBugTrace() {
       console.info("SUB_DFX_DFR_requestTrace_Interface_3100 end");
     })
     /**
-     * @tc.name   HidebugTest_0035
-     * @tc.number HidebugTest_0035
+     * @tc.name   testHidebugrequestTrace32
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_3200
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第2个参数的null覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it('testHidebugrequestTrace32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_requestTrace_Interface_3200 start");
