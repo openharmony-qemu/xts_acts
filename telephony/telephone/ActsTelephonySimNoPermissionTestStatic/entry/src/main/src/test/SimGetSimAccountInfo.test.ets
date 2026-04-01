@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
 
-const ExpectTrue = (n: boolean) => {
+const ExpectTrue = (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
@@ -37,18 +37,17 @@ export default function SimGetSimAccountInfo () {
 
     let TRUE_SLOT_ID_0: int = 0;
     let simAmount: int = 0;
-    beforeAll(async (done: () => void): Promise<void> => {
+    beforeAll(async() => {
       let result0: boolean = true;
       try {
         result0 = await sim.isSimActive(0);
       } catch (err) {
         console.info('isSimActive simCard0 Run failed');
       }
-      if (result0) {
+      if (result0 == true) {
         TRUE_SLOT_ID_0 = 0;
         simAmount = 1;
-      }
-      
+      }  
       console.info(`beforeAll, slotId: ${TRUE_SLOT_ID_0}, simAmount: ${simAmount}`);
     });
 
@@ -79,8 +78,7 @@ export default function SimGetSimAccountInfo () {
           console.info(`${caseName} getSimAccountInfo nopermission test fail, err: ${JSON.stringify(err)}`);
           ExpectFail();
           done();
-          return;
-          
+          return;  
         }
       });
       recursive(simAmount);
@@ -112,6 +110,7 @@ export default function SimGetSimAccountInfo () {
         console.info(`${caseName} getSimAccountInfo nopermission test fail, err: ${JSON.stringify(err)}`);
         ExpectFail();
         done();
+        return();
       });
       recursive(simAmount);
     });
