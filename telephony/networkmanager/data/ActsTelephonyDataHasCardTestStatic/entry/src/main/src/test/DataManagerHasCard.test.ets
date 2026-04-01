@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import data from '@ohos.telephony.data';
-
+import statistics from '@ohos.net.statistics';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'DataTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -296,5 +296,132 @@ export default function dataManagerTest() {
                 done();
             }
         });
+
+        /**
+         * @tc.name   testManagergetCellularRxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getCellularRxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularRxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try {
+                statistics.getCellularRxBytes().then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectTrue(stats >= 0);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            } catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   testManagergetCellularRxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getCellularRxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularRxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try {
+                statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code !== 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectFail();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectTrue(stats !== null);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            } catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   testManagergetCellularTxBytesPromise_static_0100
+         * @tc.number SUB_Manager_getCellularTxBytes_Promise_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularTxBytesPromise_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try {
+                statistics.getCellularTxBytes().then((stats: long) => {
+                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
+                    ExpectTrue(stats >= 0);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            } catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   testManagergetCellularTxBytesAsync_static_0100
+         * @tc.number SUB_Manager_getCellularTxBytes_Async_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testManagergetCellularTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagergetCellularTxBytesAsync_static_0100';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try {
+                statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
+                    if (err && err.code !== 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        ExpectFail();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
+                        ExpectTrue(stats !== null);
+                    }
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            } catch(err){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectFail();
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        });
+
     })
 }
