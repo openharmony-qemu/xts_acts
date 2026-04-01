@@ -13,7 +13,19 @@
  * limitations under the License.
  */
 import DragControllerTest from './DragControllerTest/DragController.test';
+import CommonEventGlobalDisplayTest from './CommonEventGlobalDisplayTest/CommonEventGlobalDisplay.test';
+import CommonDragEventTest from './CommonDragEventTest/CommonDragEvent.test';
+import CommonKeyEventTest from './CommonKeyEventTest/CommonKeyEvent.test';
+import GestureStaticSuiteTest from './GestureStaticSuite/GestureStaticSuite.test';
+import UIContextGestureTest from './UIContextGestureTest/UIContextGesture.test';
+import UIContextUIObserverApiTest from './UIContextUIObserverApiTest/UIContextUIObserverApi.test';
 
 export default function testsuite() {
-  DragControllerTest()
+  DragControllerTest();
+  CommonEventGlobalDisplayTest();
+  CommonDragEventTest();
+  CommonKeyEventTest();
+  GestureStaticSuiteTest();
+  UIContextGestureTest();
+  UIContextUIObserverApiTest();
 }

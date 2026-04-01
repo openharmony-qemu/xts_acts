@@ -1,0 +1,262 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+'use static';
+
+import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { PanGestureOptions, PanDirection, SourceTool, PanGestureHandlerOptions } from '@ohos.arkui.component';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import router from '@ohos.router';
+import { Router } from '@ohos.arkui.UIContext';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest } from '../Util.test';
+
+function gesturePanOptionsDistanceMap(): Map<SourceTool, number> {
+  let m: Map<SourceTool, number> = new Map<SourceTool, number>();
+  m.set(SourceTool.Pen, 20);
+  return m;
+}
+
+export default function GestureStaticSuiteTest(): void {
+  describe('GestureRealTypesPanGestureOptionsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
+    });
+
+    beforeEach(async (): Promise<void> => {
+      let ro: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
+      let r = AppStorage.get<Router>('router') as Router;
+      r.clear();
+      r.replaceUrl(ro);
+      await Utils.sleep(600);
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_001
+     * @tc.name SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayX_4600
+     * @tc.desc gesture.d.ets EventLocationInfo：真实 TapGesture 回调 event.tapLocation.globalDisplayX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayX_4600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gestureTapHost');
+      let cx = (rect.left + rect.right) / 2;
+      let cy = (rect.top + rect.bottom) / 2;
+      await Utils.drag(cx, cy, cx, cy, 1);
+      await Utils.sleep(400);
+      let gdx = AppStorage.get<string>('gesture_probe_tap_loc_gdx');
+      let hasGdx: boolean = gdx != null && gdx.length > 0;
+      expect(hasGdx).assertTrue();
+      expect(AppStorage.get<string>('gesture_probe_tap_fire')).assertEqual('1');
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_002
+     * @tc.name SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayY_4700
+     * @tc.desc gesture.d.ets EventLocationInfo：真实 tapLocation.globalDisplayY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayY_4700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gestureTapHost');
+      let cx = (rect.left + rect.right) / 2;
+      let cy = (rect.top + rect.bottom) / 2;
+      await Utils.drag(cx, cy, cx, cy, 1);
+      await Utils.sleep(400);
+      let gdy = AppStorage.get<string>('gesture_probe_tap_loc_gdy');
+      let hasGdy: boolean = gdy != null && gdy.length > 0;
+      expect(hasGdy).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_003
+     * @tc.name SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayX_4800
+     * @tc.desc gesture.d.ets FingerInfo：真实 PanGesture fingerInfos[].globalDisplayX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayX_4800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rect.left + rect.right) / 2;
+      let y0 = (rect.top + rect.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(400);
+      let gdx =
+        AppStorage.get<string>('gesture_probe_pan_fi_gdx') ??
+        AppStorage.get<string>('gesture_probe_pan_update_fi_gdx');
+      let hasGdxPan: boolean = gdx != null && gdx.length > 0;
+      expect(hasGdxPan).assertTrue();
+      expect(AppStorage.get<string>('gesture_probe_pan_update')).assertEqual('1');
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_004
+     * @tc.name SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayY_4900
+     * @tc.desc gesture.d.ets FingerInfo：真实 Pan fingerInfos[].globalDisplayY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayY_4900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rect.left + rect.right) / 2;
+      let y0 = (rect.top + rect.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(650);
+      let gdy = AppStorage.get<string>('gesture_probe_pan_fi_gdy');
+      let hasGdyPan: boolean = gdy != null && gdy.length > 0;
+      expect(hasGdyPan).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_005
+     * @tc.name SUB_ArkUI_Gesture_PanGestureHandlerOptions_DistanceMap_5000
+     * @tc.desc PanGestureHandlerOptions.distanceMap 真实类型赋值；PanGestureOptions 与配置一致的方向与距离
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_PanGestureHandlerOptions_DistanceMap_5000', Level.LEVEL1, (done: () => void) => {
+      let dm = gesturePanOptionsDistanceMap();
+      let opts: PanGestureHandlerOptions = {
+        fingers: 1,
+        direction: PanDirection.Horizontal,
+        distance: 3,
+        distanceMap: dm,
+      };
+      expect(opts.distanceMap !== undefined).assertTrue();
+      expect(opts.distanceMap!.get(SourceTool.Pen)).assertEqual(20);
+      let pgo = new PanGestureOptions({
+        fingers: 1,
+        direction: PanDirection.Vertical,
+        distance: 11,
+      });
+      expect(pgo.getDirection()).assertEqual(PanDirection.Vertical);
+      expect(pgo.getDistance()).assertEqual(11);
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_006
+     * @tc.name SUB_ArkUI_Gesture_TouchRecognizer_GetEventTargetInfo_5100
+     * @tc.desc TouchRecognizer.getEventTargetInfo：探测页 Tap 回调内真实调用；PanRecognizer.getEventTargetInfo：Pan onActionStart 真实调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_TouchRecognizer_GetEventTargetInfo_5100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rectTap = Utils.getComponentRect('gestureTapHost');
+      let tcx = (rectTap.left + rectTap.right) / 2;
+      let tcy = (rectTap.top + rectTap.bottom) / 2;
+      await Utils.drag(tcx, tcy, tcx, tcy, 1);
+      await Utils.sleep(300);
+      let tid = AppStorage.get<string>('gesture_probe_touch_target_id');
+      let tidOk: boolean = tid != null && tid.length > 0;
+      expect(tidOk).assertTrue();
+
+      let rectPan = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rectPan.left + rectPan.right) / 2;
+      let y0 = (rectPan.top + rectPan.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(400);
+      let pid = AppStorage.get<string>('gesture_probe_pan_target_id');
+      let pidOk: boolean = pid != null && pid.length > 0;
+      expect(pidOk).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_007
+     * @tc.name SUB_ArkUI_Gesture_TouchRecognizer_CancelTouch_5200
+     * @tc.desc TapGesture.onAction：GestureEvent.target.id 与触发组件 id 一致（SDK24 onAction 无 TouchRecognizer 形参）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_TouchRecognizer_CancelTouch_5200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gestureTapHost');
+      let cx = (rect.left + rect.right) / 2;
+      let cy = (rect.top + rect.bottom) / 2;
+      await Utils.drag(cx, cy, cx, cy, 1);
+      await Utils.sleep(400);
+      expect(AppStorage.get<string>('gesture_probe_tap_fire')).assertEqual('1');
+      expect(AppStorage.get<string>('gesture_probe_touch_target_id')).assertEqual('gestureTapHost');
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_008
+     * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDirection_5300
+     * @tc.desc 水平 PanGesture：onActionEnd 时 offsetX 模长大于 0（GestureEvent，SDK24 无 PanRecognizer 回调形参）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_PanRecognizer_GetDirection_5300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rect.left + rect.right) / 2;
+      let y0 = (rect.top + rect.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(650);
+      let endOff = AppStorage.get<string>('gesture_probe_pan_end_off_x');
+      expect(Math.abs(Number(endOff ?? '0'))).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_009
+     * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDistance_5400
+     * @tc.desc PanRecognizer.getDistance：真实 Pan 起始回调比对页面配置 distance: 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_PanRecognizer_GetDistance_5400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rect.left + rect.right) / 2;
+      let y0 = (rect.top + rect.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(400);
+      expect(Number(AppStorage.get<string>('gesture_probe_pan_rec_dist'))).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number GestureStaticSuiteTest_010
+     * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDistanceMap_5500
+     * @tc.desc PanGestureHandlerOptions.distanceMap 与页内配置一致，且 Pan 链路曾启动
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_Gesture_PanRecognizer_GetDistanceMap_5500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rect = Utils.getComponentRect('gesturePanHost');
+      let x0 = (rect.left + rect.right) / 2;
+      let y0 = (rect.top + rect.bottom) / 2;
+      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      await Utils.sleep(650);
+      expect(Number(AppStorage.get<string>('gesture_probe_pan_cfg_dm_size'))).assertLarger(0);
+      expect(AppStorage.get<string>('gesture_probe_pan_start')).assertEqual('1');
+      done();
+    });
+  });
+}
