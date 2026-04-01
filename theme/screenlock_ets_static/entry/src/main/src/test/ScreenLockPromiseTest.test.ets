@@ -27,23 +27,23 @@ export default function ScreenLockPromiseTest() {
     });   
  
     /**
-     * @tc.name   SUB_MISC_screenLock_API_Promise_001
-     * @tc.number SUB_MISC_screenLock_API_Promise_001
+     * @tc.name   SUB_MISC_screenLock_API_Promise_static_0100
+     * @tc.number SUB_MISC_screenLock_API_Promise_static_0100
      * @tc.desc   Test ScreenLock API functionality.
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 0
      */
-    it("SUB_MISC_screenLock_API_Promise_001", Level.LEVEL2, async (done: () => void) => {
-      console.info("------------------start SUB_MISC_screenLock_API_Promise_001-------------------");
+    it("SUB_MISC_screenLock_API_Promise_static_0100", Level.LEVEL2, async (done: () => void) => {
+      console.info("------------------start SUB_MISC_screenLock_API_Promise_static_0100-------------------");
       try {
         let data: Boolean = await screenLock.isScreenLocked();
-        console.info("SUB_MISC_screenLock_API_Promise_001 isScreenLocked result is " + data);
+        console.info("SUB_MISC_screenLock_API_Promise_static_0100 isScreenLocked result is " + data);
         expect(data).assertEqual(false);
-        console.info("------------------end SUB_MISC_screenLock_API_Promise_001-------------------");
+        console.info("------------------end SUB_MISC_screenLock_API_Promise_static_0100-------------------");
         done();
       } catch (error) {
-        console.info("SUB_MISC_screenLock_API_Promise_001 test_setScreenLocked : error = " + error);
+        console.info("SUB_MISC_screenLock_API_Promise_static_0100 test_setScreenLocked : error = " + error);
         expect().assertFail();
         done();
       }
@@ -51,23 +51,23 @@ export default function ScreenLockPromiseTest() {
     });
  
     /**
-     * @tc.name   SUB_MISC_screenLock_API_Promise_002
-     * @tc.number SUB_MISC_screenLock_API_Promise_002
+     * @tc.name   SUB_MISC_screenLock_API_Promise_static_0200
+     * @tc.number SUB_MISC_screenLock_API_Promise_static_0200
      * @tc.desc   Test ScreenLock API functionality.
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 0
      */
-    it("SUB_MISC_screenLock_API_Promise_002", Level.LEVEL2, async (done: () => void) => {
-      console.info("------------------start SUB_MISC_screenLock_API_Promise_002-------------------");
+    it("SUB_MISC_screenLock_API_Promise_static_0200", Level.LEVEL2, async (done: () => void) => {
+      console.info("------------------start SUB_MISC_screenLock_API_Promise_static_0200-------------------");
       try {
         let data = await screenLock.isSecureMode();
-        console.info("SUB_MISC_screenLock_API_Promise_002 isSecureMode result is " + data);
+        console.info("SUB_MISC_screenLock_API_Promise_static_0200 isSecureMode result is " + data);
         expect(data).assertEqual(false);
-        console.info("------------------end SUB_MISC_screenLock_API_Promise_002-------------------");
+        console.info("------------------end SUB_MISC_screenLock_API_Promise_static_0200-------------------");
         done();
       } catch (error) {
-        console.info("SUB_MISC_screenLock_API_Promise_002 isSecureMode TRUE: error = " + error);
+        console.info("SUB_MISC_screenLock_API_Promise_static_0200 isSecureMode TRUE: error = " + error);
         expect().assertFail();
         done();
       }      
