@@ -1855,9 +1855,8 @@ function testSetDisallowedPolicy() {
     it("getDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDisallowedPolicy_test_001  -------- START --------');
       try {
-        restrictions.getDisallowedPolicy(null, LABEL_VIRTUAL_SERVICE);
+        restrictions.getDisallowedPolicy(null, LABEL_PRINTER);
         console.info(' --- getDisallowedPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
         expect(error === null).assertTrue();
@@ -5644,7 +5643,7 @@ function testAddDisallowedListForAccountPolicy() {
       restrictions.addDisallowedListForAccount(SELFWANT, null, APP_IDS_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

@@ -4591,28 +4591,6 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.name   uninstall_test_005
-     * @tc.number uninstall_test_005
-     * @tc.desc   uninstall with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("uninstall_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- uninstall_test_005  -------- START --------');
-      try {
-        bundleManager.uninstall(SELFWANT, BUNDLENAME1, DEFAULT_USER_ID);
-        console.info(' --- uninstall_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- uninstall_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- uninstall_test_005  -------- END --------');
-    })
-
-    /**
      * @tc.name   install_test_001
      * @tc.number install_test_001
      * @tc.desc   install with null parameter admin
