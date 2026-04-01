@@ -147,8 +147,8 @@ export default function dataTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 data.isCellularDataRoamingEnabled(ERR_SLOT_ID, (err: BusinessError<void>|null, enabled: boolean|undefined) => {
-                    if (err?.code != 0) {
-                        ExpectTrue(err?.code == 8300001);
+                    if (err?.code !== 0) {
+                        ExpectTrue(err?.code === 8300001);
                     } else {
                         ExpectFail();
                     }
@@ -176,15 +176,15 @@ export default function dataTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 data.isCellularDataRoamingEnabled(0, (err: BusinessError<void>|null, enabled: boolean|undefined) => {
-                    if (err?.code != 0) {
+                    if (err?.code !== 0) {
                         ExpectFail();
                     } else {
-                        ExpectTrue(enabled == false);
+                        ExpectTrue(enabled === false);
                     }
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -212,11 +212,11 @@ export default function dataTest() {
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectTrue(err.code == 8300001);
+                    ExpectTrue(err.code === 8300001);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -239,7 +239,7 @@ export default function dataTest() {
                 data.isCellularDataRoamingEnabled(0).then((data: boolean) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    ExpectTrue(data == false);
+                    ExpectTrue(data === false);
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
@@ -248,7 +248,7 @@ export default function dataTest() {
                     ExpectFail();
                     done();
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -269,19 +269,19 @@ export default function dataTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 data.getDefaultCellularDataSlotId((err: BusinessError<void>|null, data: int|undefined) => {
-                    if (err?.code != 0) {
+                    if (err?.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         ExpectFail();
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
-                        ExpectTrue(data == 0 || data == 1);
+                        ExpectTrue(data === 0 || data === 1);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
@@ -304,7 +304,7 @@ export default function dataTest() {
                 data.getCellularDataFlowType().then((flowType: data.DataFlowType) => {
                     hilog.info(domain, tag, '%{public}s', caseName + ': flowType ->' + flowType);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    ExpectTrue(flowType != undefined);
+                    ExpectTrue(flowType !== undefined);
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
@@ -313,7 +313,7 @@ export default function dataTest() {
                     ExpectFail();
                     done();
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
@@ -334,7 +334,7 @@ export default function dataTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 data.getCellularDataFlowType((err: BusinessError<void>|null, flowType: data.DataFlowType|undefined) => {
-                    if (err?.code != 0) {
+                    if (err?.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         ExpectFail();
@@ -342,11 +342,11 @@ export default function dataTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName + ': flowType ->' + flowType);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        ExpectTrue(flowType != undefined);
+                        ExpectTrue(flowType !== undefined);
                         done();
                     }
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
@@ -368,10 +368,10 @@ export default function dataTest() {
             try{
                 let isEnabled: boolean = data.isCellularDataRoamingEnabledSync(0);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled: '+ isEnabled);
-                ExpectTrue(isEnabled == false);
+                ExpectTrue(isEnabled === false);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -396,7 +396,7 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 ExpectFail();
                 done();
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectTrue(err.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -418,10 +418,10 @@ export default function dataTest() {
             try{
                 let simId: int = data.getDefaultCellularDataSimId();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' simId: '+ simId);
-                ExpectTrue(simId != undefined);
+                ExpectTrue(simId !== undefined);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -444,7 +444,7 @@ export default function dataTest() {
                 data.getActiveApnName().then((apn: string) => {
                     hilog.info(domain, tag, '%{public}s', caseName + ': apn ->' + apn);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    ExpectTrue(apn != undefined);
+                    ExpectTrue(apn !== undefined);
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
@@ -453,7 +453,7 @@ export default function dataTest() {
                     ExpectFail();
                     done();
                 });
-            }catch(err){
+            } catch(err) {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
