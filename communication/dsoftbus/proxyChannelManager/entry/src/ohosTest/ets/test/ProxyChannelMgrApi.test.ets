@@ -1482,7 +1482,7 @@ export default function proxyChannelMgr() {
         flag = true;
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3630 error.code is " + error.code);
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3630 error.message is " + error.message);
-        expect(error.code == 32390004).assertTrue();
+        expect(error.code === 32390004).assertTrue();
         expect(error.message != null).assertTrue();
       } finally {
         expect(flag).assertTrue();
@@ -1956,7 +1956,7 @@ export default function proxyChannelMgr() {
         flag = true;
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4830 error.code is " + error.code);
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4830 error.message is " + error.message);
-        expect(error.code == 32390004).assertTrue();
+        expect(error.code === 32390004).assertTrue();
         expect(error.message != null).assertTrue();
       } finally {
         expect(flag).assertTrue();

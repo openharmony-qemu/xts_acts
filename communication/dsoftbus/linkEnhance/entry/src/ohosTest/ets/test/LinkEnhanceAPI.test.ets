@@ -900,38 +900,38 @@ export default function LinkEnhanceAPI() {
     });
 
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101
-     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400
      * @tc.desc   linkEnhance.connection.off(type:'connectResult')接口可选参数不填
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101----------------");
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400----------------");
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "demo");
-        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 connection is" + connection);
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400 connection is" + connection);
         try {
-          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 connect_on  start");
+          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400 connect_on  start");
           connection.on('connectResult', (result: linkEnhance.ConnectResult): void => {
             console.info(logTag + 'clientConnectResultCallback result = ' + result.success);
           });
           connection.off('connectResult');
         }catch (error) {
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 error.code is " + error.code);
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 error.message is " + error.message);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400 error.code is " + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400 error.message is " + error.message);
           expect().assertFail();
         }finally {
           connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101 createConnection error.code is:" + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400 createConnection error.code is:" + error.code);
         expect().assertFail();
       }
-      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0101----------------");
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0400----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200
@@ -975,38 +975,38 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200----------------");
     });
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201
-     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500
      * @tc.desc   linkEnhance.connection.off(type:'disconnected')接口可选参数不填
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201----------------");
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500----------------");
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "demo");
-        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 connection is" + connection);
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500 connection is" + connection);
         try {
-          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 connect_on  start");
+          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500 connect_on  start");
           connection.on('disconnected', (number: number)=> {
             console.info(logTag +  'connection disconnected reason = ' + number);
         });
           connection.off('disconnected');
         }catch (error) {
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 error.code is " + error.code);
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 error.message is " + error.message);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500 error.code is " + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500 error.message is " + error.message);
           expect().assertFail();
         }finally {
           connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201 createConnection error.code is:" + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500 createConnection error.code is:" + error.code);
         expect().assertFail();
       }
-      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0201----------------");
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0500----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300
@@ -1050,38 +1050,38 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300----------------");
     });
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301
-     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600
      * @tc.desc   linkEnhance.connection.off(type:'dataReceived')接口可选参数不填
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301----------------");
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600----------------");
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "demo");
-        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 connection is" + connection);
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600 connection is" + connection);
         try {
-          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 connect_on  start");
+          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600 connect_on  start");
           connection.on('dataReceived', (data: ArrayBuffer)=> {
             console.info(logTag +'recv dataLen = ' + data.byteLength);
         });
           connection.off('dataReceived');
         }catch (error) {
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 error.code is " + error.code);
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 error.message is " + error.message);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600 error.code is " + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600 error.message is " + error.message);
           expect().assertFail();
         }finally {
           connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301 createConnection error.code is:" + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600 createConnection error.code is:" + error.code);
         expect().assertFail();
       }
-      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0301----------------");
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0600----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100
@@ -1459,35 +1459,35 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100----------------");
     });
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101
-     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400
      * @tc.desc   linkEnhance.off(type: 'connectionAccepted')接口可选参数不填
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101----------------");
+    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400----------------");
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("demo");
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 server is" + server);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400 server is" + server);
         try {
           server.on('connectionAccepted', (connection: linkEnhance.Connection): void => {
             console.info(logTag + 'accept new connection');
           });
           server.off('connectionAccepted');
         }catch (error) {
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 error.code is:" + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400 error.code is:" + error.code);
           expect().assertFail();
         }finally {
           server.close();
           console.info(logTag + "reclaim done");
           }
       }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101 createServer error.code is:" + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400 createServer error.code is:" + error.code);
         expect().assertFail();
     }
-    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0101----------------");
+    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0400----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200
@@ -1525,19 +1525,19 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200----------------");
     });
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201
-     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500
      * @tc.desc   linkEnhance.off(type: 'serverStopped')接口可选参数不填
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201----------------");
+    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500----------------");
       let flag = false;
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("demo");
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 server is" + server);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500 server is" + server);
         try {
           server.on('serverStopped', (reason: number): void => {
             console.info(logTag + 'serverStopped， reason= ' + reason);
@@ -1545,17 +1545,17 @@ export default function LinkEnhanceAPI() {
           server.off('serverStopped');
         }catch (error) {
           flag = true;
-          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 error.code is:" + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500 error.code is:" + error.code);
           expect().assertFail();
         }finally {
           server.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
-        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 createServer error.code is:" + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500 createServer error.code is:" + error.code);
         expect().assertFail();
     }
-    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201----------------");
+    console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0500----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300
@@ -1567,18 +1567,15 @@ export default function LinkEnhanceAPI() {
      */
     it('SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");
-      let flag = false;
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("demo");
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 server is" + server);
         try {
           server.off('serverStopped', undefined);
         }catch (error) {
-          flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.code is:" + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 error.message is:" + error.message);
-          expect(error.code == 32390206).assertTrue();
-          expect(error.message != null).assertTrue();
+          expect().assertFail();
         }finally {
           server.close();
           console.info(logTag + "reclaim done");

@@ -958,7 +958,7 @@ export default function proxyChannelManagerTest() {
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_2401
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_2401
-     * @tc.desc   proxyChannelManager.offReceiveData接口入参channelId为 max
+     * @tc.desc   proxyChannelManager.offReceiveData接口入参channelId为 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1226,7 +1226,7 @@ export default function proxyChannelManagerTest() {
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_3201
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_3201
-     * @tc.desc   proxyChannelManager.offChannelStateChange接口入参channelId为 max值
+     * @tc.desc   proxyChannelManager.offChannelStateChange接口入参channelId为 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
