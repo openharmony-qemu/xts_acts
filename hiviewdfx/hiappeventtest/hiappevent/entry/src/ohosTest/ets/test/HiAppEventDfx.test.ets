@@ -806,7 +806,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertFalse();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -829,7 +829,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_size_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertFalse();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -852,7 +852,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_row_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertFalse();
+        expect(false).assertTrue();
         done();
       }
     })
@@ -875,7 +875,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_row_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertFalse();
+        expect(false).assertTrue();
         done();
       }
     })
