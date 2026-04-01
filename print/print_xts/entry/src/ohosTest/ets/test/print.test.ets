@@ -1578,14 +1578,14 @@ export default function printTest() {
     })
 
     /**
-     * @tc.name   print_function_1700
-     * @tc.number print_function_1700
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0100
      * @tc.desc   check success of updatePrintJobState function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_1700', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrintJobState_0100', Level.LEVEL1, async (done: Function) => {
       let jobId : string = "";
       let state = print.PrintJobState.PRINT_JOB_PREPARE;
       let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
@@ -1594,7 +1594,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1612,7 +1612,7 @@ export default function printTest() {
       print.updatePrintJobState(null, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_COMPLETED_FAILED expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_FAILED expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1630,7 +1630,7 @@ export default function printTest() {
       print.updatePrintJobState(undefined, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_COMPLETED_CANCELLED expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_CANCELLED expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1648,7 +1648,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1666,7 +1667,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_OFFLINE expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OFFLINE expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1683,7 +1684,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_BUSY expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_BUSY expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1700,7 +1701,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_CANCELLED expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_CANCELLED expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1717,7 +1718,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1734,7 +1735,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1751,7 +1752,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1768,7 +1769,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_JAMMED expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_JAMMED expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1785,7 +1786,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1802,7 +1803,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1819,7 +1820,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1836,7 +1837,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1853,7 +1854,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1870,7 +1872,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1887,7 +1889,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1904,7 +1906,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1921,7 +1923,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1938,7 +1940,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 ' +
+              'PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1955,7 +1958,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1972,7 +1975,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -1989,7 +1993,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2006,7 +2010,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2023,7 +2028,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2040,7 +2046,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2057,7 +2064,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2074,7 +2082,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2091,7 +2100,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2108,7 +2117,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_INTERRUPT expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_INTERRUPT expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2125,7 +2134,8 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2142,7 +2152,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1700 PRINT_JOB_BLOCK_UNKNOWN expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_UNKNOWN expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -2156,14 +2166,14 @@ export default function printTest() {
     })
 
     /**
-     * @tc.name   print_function_1800
-     * @tc.number print_function_1800
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0200
      * @tc.desc   check success of updatePrintJobState function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_1800', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrintJobState_0200', Level.LEVEL1, async (done: Function) => {
       let jobId : string = "";
       let state = print.PrintJobState.PRINT_JOB_PREPARE;
       let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
@@ -2173,7 +2183,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2185,7 +2195,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_COMPLETED_FAILED expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_FAILED expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2197,7 +2207,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_COMPLETED_CANCELLED expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_CANCELLED expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2209,7 +2219,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2221,7 +2231,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_OFFLINE expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OFFLINE expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2232,7 +2242,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_BUSY expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_BUSY expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2243,7 +2253,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_CANCELLED expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_CANCELLED expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2254,7 +2264,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2265,7 +2275,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2276,7 +2286,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2287,7 +2297,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_JAMMED expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_JAMMED expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2298,7 +2308,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2309,7 +2319,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2320,7 +2330,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2331,7 +2341,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2342,7 +2352,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2353,7 +2363,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2364,7 +2374,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2375,7 +2385,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2386,7 +2396,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2397,7 +2407,8 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
+        console.log(
+          'SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2408,7 +2419,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2419,7 +2430,8 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
+        console.log(
+          'SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2430,7 +2442,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2441,7 +2453,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2452,7 +2464,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2463,7 +2475,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2474,7 +2486,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2485,7 +2497,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2496,7 +2508,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2507,7 +2519,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_INTERRUPT expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_INTERRUPT expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2518,7 +2530,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
         expect(err).assertEqual(401);
         done();
       })
@@ -2529,21 +2541,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1800 PRINT_JOB_BLOCK_UNKNOWN expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_UNKNOWN expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_1900
-     * @tc.number print_function_1900
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0100
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0100
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_1900', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0100', Level.LEVEL1, async (done: Function) => {
       let ppdInfo: print.PpdInfo = {
         manufacturer: '',
         nickName: '',
@@ -2590,21 +2602,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1900 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0100 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2000
-     * @tc.number print_function_2000
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0200
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0200
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2000', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0200', Level.LEVEL1, async (done: Function) => {
       let ppdInfo: print.PpdInfo = {
         manufacturer: '',
         nickName: '',
@@ -2673,21 +2685,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2000 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0200 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2100
-     * @tc.number print_function_2100
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0300
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0300
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2100', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0300', Level.LEVEL1, async (done: Function) => {
       let ppdInfo: print.PpdInfo = {
         manufacturer: '',
         nickName: '',
@@ -2756,21 +2768,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2100 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0300 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2200
-     * @tc.number print_function_2200
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0400
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0400
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2200', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0400', Level.LEVEL1, async (done: Function) => {
       let ppdInfo: print.PpdInfo = {
         manufacturer: '',
         nickName: '',
@@ -2839,21 +2851,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2200 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0400 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2300
-     * @tc.number print_function_2300
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0500
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0500
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2300', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0500', Level.LEVEL1, async (done: Function) => {
       let ppdInfo: print.PpdInfo = {
         manufacturer: '',
         nickName: '',
@@ -2922,21 +2934,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2300 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0500 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2400
-     * @tc.number print_function_2400
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0600
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0600
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2400', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0600', Level.LEVEL1, async (done: Function) => {
       let printerInformation: print.PrinterInformation | null = null;
       // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
 
@@ -2944,21 +2956,21 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2400 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0600 expect success');
         expect(err).assertEqual(401);
         done();
       })
     })
 
     /**
-     * @tc.name   print_function_2500
-     * @tc.number print_function_2500
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0700
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0700
      * @tc.desc   check success of updatePrinterInformation function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('print_function_2500', Level.LEVEL1, async (done: Function) => {
+    it('SUB_print_print_fwk_updatePrinterInformation_0700', Level.LEVEL1, async (done: Function) => {
       let printerInformation: print.PrinterInformation | undefined = undefined;
       // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
 
@@ -2966,7 +2978,7 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_2500 expect success');
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0700 expect success');
         expect(err).assertEqual(401);
         done();
       })

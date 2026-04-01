@@ -783,15 +783,15 @@ export default function printTest() {
     })
 
     /**
-     * @tc.name   print_function_1800
-     * @tc.number print_function_1800
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0100
      * @tc.desc   check 201 of updatePrintJobState function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('print_function_1800', Level.LEVEL2, async (done: Function) => {
-      let jobId : string = "print_function_1800";
+    it('SUB_print_print_fwk_updatePrintJobState_0100', Level.LEVEL2, async (done: Function) => {
+      let jobId : string = "SUB_print_print_fwk_updatePrintJobState_0100";
       let state = print.PrintJobState.PRINT_JOB_PREPARE;
       let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
       // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
@@ -799,7 +799,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            console.log('print_function_1800 expect success');
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 expect success');
             expect(err).assertEqual(201);
             done();
           } else {
@@ -813,15 +813,15 @@ export default function printTest() {
     })
 
     /**
-     * @tc.name   print_function_1900
-     * @tc.number print_function_1900
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0200
      * @tc.desc   check 201 of updatePrintJobState function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('print_function_1900', Level.LEVEL2, async (done: Function) => {
-      let jobId : string = "print_function_1900";
+    it('SUB_print_print_fwk_updatePrintJobState_0200', Level.LEVEL2, async (done: Function) => {
+      let jobId : string = "SUB_print_print_fwk_updatePrintJobState_0200";
       let state = print.PrintJobState.PRINT_JOB_PREPARE;
       let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
       // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
@@ -830,18 +830,10 @@ export default function printTest() {
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        console.log('print_function_1900 expect success');
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 expect success');
         expect(err).assertEqual(201);
         done();
       })
-      try {
-        await print.updatePrintJobState(jobId, state, subState);
-        expect(false).assertTrue();
-        done;
-      } catch (error) {
-        console.log('print_function_1900 expect success');
-        expect(error).assertEqual(201);
-      }
     })
   })
 }
