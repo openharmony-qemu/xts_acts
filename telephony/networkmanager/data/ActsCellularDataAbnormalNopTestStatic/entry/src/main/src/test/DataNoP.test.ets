@@ -229,7 +229,7 @@ export default function dataNoPTest() {
             let caseName: string = 'testTelephonyDataNop_static_0700';
             hilog.info(domain, tag, '%{public}s', caseName + ' start');
             try{
-                data.queryAllApns(0).then((apnInfos: Array<data.ApnInfo>) => {
+                data.queryAllApns().then((apnInfos: Array<data.ApnInfo>) => {
                     hilog.info(domain, tag, '%{public}s', caseName + ': apnInfos ->' + apnInfos);
                     hilog.info(domain, tag, '%{public}s', caseName + '---test end');
                     ExpectFail();
