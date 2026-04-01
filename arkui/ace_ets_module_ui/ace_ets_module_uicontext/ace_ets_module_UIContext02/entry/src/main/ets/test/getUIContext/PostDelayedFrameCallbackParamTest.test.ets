@@ -48,15 +48,15 @@ export default function PostDelayedFrameCallbackParamTest() {
     });
 
     /**
-     * @tc.name   PostDelayedFrameCallbackParamTest_0100
-     * @tc.number PostDelayedFrameCallbackParamTest_0100
+     * @tc.name   PostDelayedFrameCallbackParamTest_1000
+     * @tc.number SUB_ARKUI_UICONTEXT_PostDelayedFrameCallback_1000
      * @tc.desc   postDelayedFrameCallback test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostDelayedFrameCallbackParamTest_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('PostDelayedFrameCallbackParamTest_0100 START');
+    it('PostDelayedFrameCallbackParamTest_1000', Level.LEVEL0, async (done: Function) => {
+      console.info('PostDelayedFrameCallbackParamTest_1000 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('postDelayedFrameCallback_id1'));
@@ -80,7 +80,7 @@ export default function PostDelayedFrameCallbackParamTest() {
       AppStorage.delete('postDelayedFrameCallback2');
       AppStorage.delete('postDelayedFrameCallback3');
       AppStorage.delete('postDelayedFrameCallback4');
-      console.info('[PostDelayedFrameCallbackParamTest_0100] END');
+      console.info('[PostDelayedFrameCallbackParamTest_1000] END');
       done();
     });
 
