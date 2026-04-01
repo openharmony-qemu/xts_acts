@@ -51,7 +51,8 @@ export default function actsFuncTest() {
         "av1_main_L3.1_1280x720.ivf",
         "av1_main_L4.0_1920x1080.ivf",
         "av1_high_L3.0_854x480.ivf",
-        "av1_high_L4.0_1920x1080.ivf"
+        "av1_high_L4.0_1920x1080.ivf",
+        "cinepak_720_480_25.mkv"
       ];
       
       let videoDir = dir + "video";
@@ -354,6 +355,20 @@ export default function actsFuncTest() {
     it('SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100', Level.LEVEL0, async () => {
       hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_VP8DEC_FUNCTION_2100');
       let result = await testNapi.functest(17);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200
+     * @tc.desc    Test CINEPAK decoder with buffer mode
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200');
+      let result = await testNapi.functest(0);
       expect(result).assertEqual(TEST_SUCCESS);
     });
   });
