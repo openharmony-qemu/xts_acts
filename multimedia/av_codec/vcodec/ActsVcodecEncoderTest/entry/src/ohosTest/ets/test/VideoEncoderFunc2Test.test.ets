@@ -641,7 +641,7 @@ export default function VideoEncoderFunc2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_1000', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0100Test start');
       let result: number = await testNapi.runFunc2Test(38);
       expect(result).assertEqual(0);
