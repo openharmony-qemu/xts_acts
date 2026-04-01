@@ -18,10 +18,14 @@ import ButtonTest from './ButtonTest/Button.test';
 import ArcButtonEnumTest from './ButtonTest/ArcButtonEnum.test';
 import ArcButtonTest from './ArcButtonTest/ArcButton.test';
 import ButtonLabelStyleTest from './ButtonLabelStyleTest/ButtonLabelStyle.test';
+import DialogButtonOptionsTextAlignTest from './DialogButtonOptionsTextAlignTest/DialogButtonOptionsTextAlign.test';
+import DialogV2ButtonTextAlignTest from './DialogV2ButtonTextAlignTest/DialogV2ButtonTextAlign.test';
 
 export default function testsuite() {
   ButtonTest();
   ArcButtonEnumTest();
   ArcButtonTest();
   ButtonLabelStyleTest();
+  DialogButtonOptionsTextAlignTest();
+  DialogV2ButtonTextAlignTest();
 }

@@ -1,0 +1,62 @@
+/**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { Column, ColumnOptions, Button, Text, TextAlign, Entry, Component } from '@ohos.arkui.component';
+import { CustomDialogController } from '@ohos.arkui.component';
+import { AlertDialogV2, AdvancedDialogV2Button } from '@ohos.arkui.advanced.DialogV2';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+
+@Builder
+function DialogV2TextAlignBuilder() {
+  AlertDialogV2({
+    primaryTitle: 'V2',
+    content: 'AdvancedDialogV2Button.textAlign',
+    primaryButton: new AdvancedDialogV2Button({
+      content: 'OK',
+      textAlign: TextAlign.End,
+      action: () => {
+        AppStorage.setOrCreate<string>('dlgV2_textAlign', 'end');
+      },
+    }),
+  });
+}
+
+@Entry
+@Component
+struct DialogV2ButtonTextAlign {
+  dialogV2TextAlign: CustomDialogController = new CustomDialogController({
+    builder: DialogV2TextAlignBuilder,
+  });
+
+  build() {
+    Column({ space: 8 } as ColumnOptions) {
+      Text('@ohos.arkui.advanced.DialogV2 AdvancedDialogV2Button.textAlign')
+        .fontSize(11)
+        .width('100%')
+        .height('10%')
+        .id('dlgV2_title');
+      Button('Open AlertDialogV2')
+        .id('dlgV2_open')
+        .width('100%')
+        .height('8%')
+        .onClick(() => {
+          this.dialogV2TextAlign.open();
+        });
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' });
+  }
+}
