@@ -101,7 +101,7 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === "401").assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -142,7 +142,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.cod === "401").assertTrue();
+        expect(err.cod === 401).assertTrue();
         done();
       }
 
@@ -163,7 +163,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`Hichecker01unllremoveCheckRule code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code === "401").assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
