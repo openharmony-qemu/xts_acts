@@ -169,7 +169,7 @@ export default function StateMgmtDecoratorShapeTest(): void {
 
   describe('StateMgmtProbePageTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonMethodStyles.api24.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.stateManagement.api24.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {

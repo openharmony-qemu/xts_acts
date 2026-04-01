@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-import SelectTest from './SelectTest/Select.test';
+import StateMgmtDecoratorShapeTest from './StateMgmtDecoratorShapeTest/StateMgmtDecoratorShape.test';
+import StateMgmtUtilsTest from './StateMgmtUtilsTest/StateMgmtUtils.test';
 
 export default function testsuite() {
-  SelectTest();
+  StateMgmtDecoratorShapeTest();
+  StateMgmtUtilsTest();
 }

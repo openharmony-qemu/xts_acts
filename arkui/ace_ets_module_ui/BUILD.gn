@@ -127,6 +127,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
       "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
       "ace_ets_module_common_methodstyles_api24_static:ActsAceEtsModuleCommonMethodStylesAPI24StaticTest"
+      "ace_ets_module_stateManagement_api24_static:ActsAceEtsModuleStateManagementApi24StaticTest"
     ]
   }
 }
