@@ -19,13 +19,13 @@ import { Driver } from '@kit.TestKit';
 import common from '@ohos.app.ability.common';
 
 // @Concurrent
-export function test() {
+export function test(): void {
   let s: string[] = []
   s[0].split('')[1].toString()
 }
 
 
-export function test1() {
+export function test1(): void {
 }
 
 export function test2(): Promise<string> {
