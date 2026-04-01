@@ -4,7 +4,9 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core"
+                    "SystemCapability.FileManagement.StorageService.SpatialStatistics",
+                    "SystemCapability.FileManagement.StorageService.Volume",
+                    "SystemCapability.FileManagement.StorageService.Encryption"
                 ]
             }
         ]
