@@ -20,8 +20,7 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from "@kit.BasicServicesKit";
 
-let domain: int= 0x0000;
-let tag: string = ' PhotoAccessHelperNoPermission: ';
+let TAG: string = ' PhotoAccessHelperNoPermission: ';
 export default function photoAccessHelperNoPermissionStaticTest() {
     describe("photoAccessHelperNoPermissionStaticTest", (): void => {
 
@@ -35,25 +34,27 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getAssets_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getAssets_static_001", 'test begin');
-                try {
-                    let context: Context = Hypium.get("Context") as Context;
-                    let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
-                    let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-                    let fetchOptions: photoAccessHelper.FetchOptions = {
-                        fetchColumns: ['date_added', 'date_modified', 'size'],
-                        predicates: predicates
-                    };
-                    await helper!.getAssets(fetchOptions);
-                    expect().assertFail();
+            const testName:string = 'photoAccessHelper_getAssets_static_001 ';
+            console.info(TAG, testName + 'begin');
+            try {
+                let context: Context = Hypium.get("Context") as Context;
+                let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+                let fetchOptions: photoAccessHelper.FetchOptions = {
+                    fetchColumns: ['date_added', 'date_modified', 'size'],
+                    predicates: predicates
+                };
+                console.info(TAG, testName + 'fetchOptions:' + fetchOptions);
+                await helper!.getAssets(fetchOptions);
+                expect().assertFail();
 
-                     done();
-                } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getAssets_static_001 failed' + err.name + err.message);
-                    expect(err.code).assertEqual(201);
-                    done();
-                }
-            })
+                 done();
+            } catch (err) {
+                console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+        })
 
         /**
          * @tc.name   photoAccessHelper_getAssets_static_002
@@ -65,7 +66,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getAssets_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getAssets_static_002", 'test begin');
+                const testName:string = 'photoAccessHelper_getAssets_static_002 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -74,29 +76,17 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                         fetchColumns: ['date_added', 'date_modified', 'size'],
                         predicates: predicates
                     };
-
+                    console.info(TAG, testName + 'fetchOptions:' + fetchOptions);
                     helper!.getAssets(fetchOptions, (err: BusinessError<void> | null,
                         fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-                        try {
-                            if (err?.code !== 0) {
-                                hilog.info(domain, tag,
-                                    'getAssets failed' + ", err.code:" + err?.code + ", err.message:" + err?.message);
-                                expect(false).assertTrue();
-                            } else {
-                                expect(fetchResult !== undefined).assertTrue();
-                                fetchResult?.close();
-                            }
-                        } catch (error) {
-                            hilog.info(domain, tag,
-                               ' getAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
-                        }
-                        expect().assertFail();
+                        console.info(TAG, testName + 'getAssets failed. fetchResult:' + fetchResult + ' code:' + err?.code);
+                        expect(err?.code).assertEqual(201);
                         done();
                     });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getAssets_static_002 failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -112,7 +102,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getBurstAssets_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getBurstAssets_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_getBurstAssets_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -126,7 +117,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getBurstAssets_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -142,7 +133,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_createAsset_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_createAsset_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_createAsset_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -151,7 +143,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_createAsset_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -167,27 +159,21 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_createAsset_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_createAsset_static_002", 'test begin');
+                const testName:string = 'photoAccessHelper_createAsset_static_002 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     const extension = 'jpg';
                     helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, extension, (err: BusinessError<void> | null, uri: string | undefined): void => {
-                        try {
-                            if (err?.code !== 0) {
-                                hilog.info(domain, tag, " err.code: " + err?.code + ", err.message: " + err?.message)
-                                expect(false).assertTrue();
-                            } else {
-                                hilog.info(domain, tag, " uri: " + uri)
-                            }
-                        } catch (error) {
-                            hilog.info(domain, tag, " error.name: " + error.name + ", error.message: " + error.message)
-                        }
-                    })
+                        console.info(TAG, testName + 'getAssets failed. uri:' + uri + ' code:' + err?.code);
+                        expect(err?.code).assertEqual(201);
+                        done();
+                    });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_createAsset_static_002   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -203,7 +189,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_createAsset_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_createAsset_static_003", 'test begin');
+                const testName:string = 'photoAccessHelper_createAsset_static_003 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -213,25 +200,46 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     }
                     helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, extension, options, (
                       err: BusinessError<void> | null, uri: string | undefined): void => {
-                        try {
-                            if (err?.code !== 0) {
-                                hilog.info(domain, tag, " err.code: " + err?.code + ", err.message: " + err?.message)
-                                expect(false).assertTrue();
-                            } else {
-                                hilog.info(domain, tag, " uri: " + uri)
-                            }
-                        } catch (error) {
-                            hilog.info(domain, tag, " error.name: " + error.name + ", error.message: " + error.message)
-                        }
-                    })
+                        console.info(TAG, testName + 'getAssets failed. uri:' + uri + ' code:' + err?.code);
+                        expect(err?.code).assertEqual(201);
+                        done();
+                    });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_createAsset_static_003   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
             })
+
+        /**
+         * @tc.name   photoAccessHelper_createPhotoAsset_static_001
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_CREATE_PHOTO_ASSET_STATIC_0001
+         * @tc.desc   photoAccessHelper-createPhotoAsset(promise) with no permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('photoAccessHelper_createPhotoAsset_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const testName:string = 'photoAccessHelper_createPhotoAsset_static_001 ';
+            console.info(TAG, testName + 'begin');
+            const type: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+            const extension = 'jpg';
+            const title = 'createPhotoAsset' + new Date().getTime();
+            try {
+                let context: Context = Hypium.get("Context") as Context;
+                let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                let uri = await helper!.createPhotoAsset(type, extension, title);
+                console.info(TAG, testName + `createPhotoAsset success; uri: ${uri}`);
+                expect().assertFail();
+                done();
+            } catch (err) {
+                console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
+                expect(err.code).assertEqual(201);
+                done();
+            }
+        })
 
         /**
          * @tc.name   photoAccessHelper_getAlbums_static_001
@@ -243,7 +251,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getAlbums_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getAlbums_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_getAlbums_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -251,7 +260,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getAlbums_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -267,27 +276,21 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getAlbums_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getAlbums_static_002", 'test begin');
+                const testName:string = 'photoAccessHelper_getAlbums_static_002 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, (
                         err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
-                        try {
-                            if (err?.code !== 0) {
-                                hilog.info(domain, tag, " err.code: " + err?.code + ", err.message: " + err?.message)
-                                expect(false).assertTrue();
-                            } else {
-                                hilog.info(domain, tag, " result: " + result)
-                            }
-                        } catch (error) {
-                            hilog.info(domain, tag, " error.name: " + error.name + ", error.message: " + error.message)
-                        }
-                    })
+                        console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
+                        expect(err?.code).assertEqual(201);
+                        done();
+                    });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getAlbums_static_002   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -303,7 +306,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_getAlbums_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_getAlbums_static_003", 'test begin');
+                const testName:string = 'photoAccessHelper_getAlbums_static_003 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
@@ -314,21 +318,14 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     };
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
                         fetchOptions, (err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
-                        try {
-                            if (err?.code !== 0) {
-                                hilog.info(domain, tag, " err.code: " + err?.code + ", err.message: " + err?.message)
-                                expect(false).assertTrue();
-                            } else {
-                                hilog.info(domain, tag, " result: " + result)
-                            }
-                        } catch (error) {
-                            hilog.info(domain, tag, " error.name: " + error.name + ", error.message: " + error.message)
-                        }
-                    })
+                            console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
+                            expect(err?.code).assertEqual(201);
+                            done();
+                        });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_getAlbums_static_003   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -344,7 +341,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("photoAccessHelper_applyChanges_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_applyChanges_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_applyChanges_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
                     let context: Context = Hypium.get("Context") as Context;
@@ -360,7 +358,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_applyChanges_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -369,19 +367,20 @@ export default function photoAccessHelperNoPermissionStaticTest() {
         /**
          * @tc.name   photoAccessHelper_onPhotoChange_static_001
          * @tc.number SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_CHANGE_STATIC_0001
-         * @tc.desc   photoAccessHelper-onPhotoChange(promise) with no permission
+         * @tc.desc   photoAccessHelper-onPhotoChange(callback) with no permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it("photoAccessHelper_onPhotoChange_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_onPhotoChange_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_onPhotoChange_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     helper!.onPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-                        console.info(` changeData: ${JSON.stringify(changeData)}`);
+                        console.info(TAG, testName + ` changeData: ${JSON.stringify(changeData)}`);
                         expect().assertFail();
                     });
                     expect().assertFail();
@@ -396,25 +395,82 @@ export default function photoAccessHelperNoPermissionStaticTest() {
         /**
          * @tc.name   photoAccessHelper_offPhotoChange_static_001
          * @tc.number SUB_PHOTO_ACCESS_HELPER_OFF_PHOTO_CHANGE_STATIC_0001
-         * @tc.desc   photoAccessHelper-offPhotoChange(promise) with no permission
+         * @tc.desc   photoAccessHelper-offPhotoChange(callback) with no permission
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it("photoAccessHelper_offPhotoChange_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "photoAccessHelper_offPhotoChange_static_001", 'test begin');
+                const testName:string = 'photoAccessHelper_offPhotoChange_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     helper!.offPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-                        console.info(` changeData: ${JSON.stringify(changeData)}`);
+                        console.info(TAG, testName + ` changeData: ${JSON.stringify(changeData)}`);
                         expect().assertFail();
                     });
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'photoAccessHelper_offPhotoChange_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
+                    expect(err.code).assertEqual(201);
+                    done();
+                }
+            })
+
+        /**
+         * @tc.name   photoAccessHelper_onPhotoAlbumChange_static_001
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_STATIC_0001
+         * @tc.desc   photoAccessHelper-onPhotoAlbumChange(callback) with no permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("photoAccessHelper_onPhotoChange_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async (done: () => void): Promise<void> => {
+                const testName:string = 'photoAccessHelper_onPhotoChange_static_001 ';
+                console.info(TAG, testName + 'begin');
+                try {
+                    let context: Context = Hypium.get("Context") as Context;
+                    let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                    helper!.onPhotoAlbumChange((changeData: photoAccessHelper.AlbumChangeInfos) => {
+                        console.info(TAG, testName + ` changeData: ${JSON.stringify(changeData)}`);
+                        expect().assertFail();
+                    });
+                    expect().assertFail();
+                    done();
+                } catch (err) {
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
+                    expect(err.code).assertEqual(201);
+                    done();
+                }
+            })
+
+        /**
+         * @tc.name   photoAccessHelper_offPhotoAlbumChange_static_001
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_OFF_PHOTO_ALBUM_CHANGE_STATIC_0001
+         * @tc.desc   photoAccessHelper-offPhotoAlbumChange(callback) with no permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("photoAccessHelper_offPhotoAlbumChange_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async (done: () => void): Promise<void> => {
+                const testName:string = 'photoAccessHelper_offPhotoAlbumChange_static_001 ';
+                console.info(TAG, testName + 'begin');
+                try {
+                    let context: Context = Hypium.get("Context") as Context;
+                    let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                    helper!.offPhotoAlbumChange((changeData: photoAccessHelper.AlbumChangeInfos) => {
+                        console.info(TAG, testName + ` changeData: ${JSON.stringify(changeData)}`);
+                        expect().assertFail();
+                    });
+                    expect().assertFail();
+                    done();
+                } catch (err) {
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -430,7 +486,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("mediaAssetManager_cancelRequest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "mediaAssetManager_cancelRequest_static_001", 'test begin');
+                const testName:string = 'mediaAssetManager_cancelRequest_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let requestId: string = '123123';
@@ -438,7 +495,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'mediaAssetManager_cancelRequest_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -454,7 +511,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("mediaAssetChangeRequest_deleteAssets_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "mediaAssetChangeRequest_deleteAssets_static_001", 'test begin');
+                const testName:string = 'mediaAssetChangeRequest_deleteAssets_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     const objList: Array<photoAccessHelper.PhotoAsset> = new Array<photoAccessHelper.PhotoAsset>();
@@ -462,7 +520,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'mediaAssetChangeRequest_deleteAssets_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -478,16 +536,17 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("mediaAssetChangeRequest_deleteAssetsToTrashWithUris_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "mediaAssetChangeRequest_deleteAssetsToTrashWithUris_static_001", 'test begin');
+                const testName:string = 'mediaAssetChangeRequest_deleteAssetsToTrashWithUris_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     const uriList: Array<string> = new Array<string>();
-                    console.info(`uriList: ${JSON.stringify(uriList)}`)
+                    console.info(TAG, testName + `uriList: ${JSON.stringify(uriList)}`)
                     await photoAccessHelper.MediaAssetChangeRequest.deleteAssetsToTrashWithUris(context, uriList);
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'mediaAssetChangeRequest_deleteAssetsToTrashWithUris_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -503,7 +562,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("mediaAssetChangeRequest_getWriteCacheHandler_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "mediaAssetChangeRequest_getWriteCacheHandler_static_001", 'test begin');
+                const testName:string = 'mediaAssetChangeRequest_getWriteCacheHandler_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest|null =
@@ -512,7 +572,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'mediaAssetChangeRequest_getWriteCacheHandler_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -528,7 +588,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("movingPhoto_requestContent_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "movingPhoto_requestContent_static_001", 'test begin');
+                const testName:string = 'movingPhoto_requestContent_static_001 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let imageFileUri: string =
@@ -541,7 +602,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'movingPhoto_requestContent_static_001   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -557,7 +618,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("movingPhoto_requestContent_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "movingPhoto_requestContent_static_002", 'test begin');
+                const testName:string = 'movingPhoto_requestContent_static_002 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let imageFileUri: string =
@@ -570,7 +632,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'movingPhoto_requestContent_static_002   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
@@ -586,7 +648,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
          */
         it("movingPhoto_requestContent_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                hilog.info(0x0000, "movingPhoto_requestContent_static_003", 'test begin');
+                const testName:string = 'movingPhoto_requestContent_static_003 ';
+                console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let imageFileUri: string =
@@ -599,7 +662,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     expect().assertFail();
                     done();
                 } catch (err) {
-                    hilog.info(0x0000, 'testTag', 'movingPhoto_requestContent_static_003   failed' + err.name + err.message);
+                    console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
                     expect(err.code).assertEqual(201);
                     done();
                 }
