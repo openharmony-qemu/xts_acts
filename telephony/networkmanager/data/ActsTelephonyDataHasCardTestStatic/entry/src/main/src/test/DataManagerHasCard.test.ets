@@ -342,12 +342,12 @@ export default function dataManagerTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
-                    if (err && err.code != 0) {
+                    if (err && err.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         ExpectFail();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
-                        ExpectTrue(stats != null);
+                        ExpectTrue(stats !== null);
                     }
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
@@ -405,12 +405,12 @@ export default function dataManagerTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
-                    if (err && err.code != 0) {
+                    if (err && err.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         ExpectFail();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
-                        ExpectTrue(stats != null);
+                        ExpectTrue(stats !== null);
                     }
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
