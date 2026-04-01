@@ -44,12 +44,14 @@ static OH_AVCapability* g_capMsvideo1 = nullptr;
 static OH_AVCapability* g_capVp8 = nullptr;
 static OH_AVCapability* g_capVp9 = nullptr;
 static OH_AVCapability* g_capAv1 = nullptr;
+static OH_AVCapability* g_capCinepak = nullptr;
 static string g_codecNameVc1 = "";
 static string g_codecNameMjpeg = "";
 static string g_codecNameMsvideo1 = "";
 static string g_codecNameVp8 = "";
 static string g_codecNameVp9 = "";
 static string g_codecNameAv1 = "";
+static string g_codecNameCinepak = "";
 static constexpr uint32_t FRAMESIZE60 = 60;
 static constexpr uint32_t FRAMESIZE30 = 30;
 static constexpr uint32_t FRAMESIZE98 = 98;
@@ -57,6 +59,7 @@ static constexpr uint32_t FRAMESIZE52 = 52;
 static constexpr uint32_t FRAMESIZE100 = 100;
 static constexpr uint32_t FRAMESIZE180 = 180;
 static constexpr uint32_t FRAMESIZE45 = 45;
+static constexpr uint32_t FRAMESIZE5 = 5;
 
 // Profile index constants
 static constexpr uint32_t PROFILE_INDEX_0 = 0;
@@ -82,6 +85,7 @@ static const char *GINP_DIR_AV1_MAIN = "/data/storage/el2/base/files/video/av1_m
 static const char *GINP_DIR_AV1_HIGH = "/data/storage/el2/base/files/video/av1_high_L3.0_854x480.ivf";
 static const char *GINP_DIR_AV1_MAIN_8BIT = "/data/storage/el2/base/files/video/av1_main_L4.0_1920x1080.ivf";
 static const char *GINP_DIR_AV1_HIGH_8BIT = "/data/storage/el2/base/files/video/av1_high_L4.0_1920x1080.ivf";
+static const char *GINP_DIR_CINEPAK = "/data/test/media/cinepak_720_480_25.mkv";
 
 static void InitCapabilities()
 {
@@ -119,6 +123,12 @@ static void InitCapabilities()
         g_capAv1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AV1, false, SOFTWARE);
         if (g_capAv1 != nullptr) {
             g_codecNameAv1 = OH_AVCapability_GetName(g_capAv1);
+        }
+    }
+    if (g_capCinepak == nullptr) {
+        g_capCinepak = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_CINEPAK, false, SOFTWARE);
+        if (g_capCinepak != nullptr) {
+            g_codecNameCinepak = OH_AVCapability_GetName(g_capCinepak);
         }
     }
 }
@@ -670,5 +680,28 @@ int VideoVp8DecFunction0021()
     return VerifyDecodingResult(vDecSample, FRAMESIZE52);
 }
 
+// Test cinepak decoder function with buffer mode
+int VideoCinepakDecFunction0022()
+{
+    InitCapabilities();
+    if (g_capCinepak == nullptr) {
+        return 0;
+    }
+    
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    vDecSample->GetFormat(GINP_DIR_CINEPAK);
+    if (vDecSample->gFd < 0) {
+        return -1;
+    }
+    
+    if (SetupDecoder(vDecSample, g_codecNameCinepak) != 0) {
+        return -1;
+    }
+    
+    vDecSample->WaitForEOS();
+    
+    int result = VerifyDecodingResult(vDecSample, FRAMESIZE5);
+    return result;
+}
 } // namespace Media
 } // namespace OHOS
