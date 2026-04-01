@@ -46,8 +46,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
     })
 
     /**
-     * @tc.name   EnableDefaultContextMenu01
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENU_API_001
+     * @tc.name   EnableDefaultContextMenuStatic01
+     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_001
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,8 +82,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
       })
 
     /**
-     * @tc.name   EnableDefaultContextMenu02
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENU_API_002
+     * @tc.name   EnableDefaultContextMenuStatic02
+     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_002
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic03
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENU_API_003
+     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_003
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic04
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENU_API_004
+     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_004
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
