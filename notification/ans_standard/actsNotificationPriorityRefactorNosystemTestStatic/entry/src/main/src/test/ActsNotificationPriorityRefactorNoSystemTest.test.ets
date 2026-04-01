@@ -97,7 +97,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
             });
         }catch(err){
           console.error(TAG + `getPriorityEnabledByBundles trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
@@ -138,7 +138,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           });
         }catch(err){
           console.error(TAG + `getPriorityStrategyByBundles trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
@@ -177,7 +177,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           });
         }catch(err){
           console.error(TAG + `isPriorityIntelligentEnabled trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
@@ -217,7 +217,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           });
         }catch(err){
           console.error(TAG + `setPriorityEnabledByBundles trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
@@ -255,7 +255,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           });
         }catch(err){
           console.error(TAG + `setPriorityIntelligentEnabled trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
@@ -296,7 +296,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
           });
         }catch(err){
           console.error(TAG + `setPriorityStrategyByBundles trycatch failed, err is ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
