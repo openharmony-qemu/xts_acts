@@ -24,7 +24,7 @@ const ExpectFail = () => {
         console.info('expectInfo', 'test failed');
     }
 }
-const ExpectTrue = (n: boolean) => void = (n: boolean) => {
+const ExpectTrue = (n: boolean) => {
     try {
         expect(n).assertTrue();
     } catch (err) {
