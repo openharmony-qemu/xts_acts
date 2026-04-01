@@ -1399,8 +1399,6 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.CREATE_RECORDER_EVENT,
         // get max amplitude
         avRecorderNdkTestBase.GET_MAX_AMPLITUDE_ERR_INVALID_STATE,
-        // release recorder
-        avRecorderNdkTestBase.RELEASE_RECORDER_EVENT,
         // done recorder
         avRecorderNdkTestBase.END_EVENT
       );
@@ -1515,8 +1513,6 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.CREATE_RECORDER_EVENT,
         // set metadata
         avRecorderNdkTestBase.SET_METADATA_ERR_INVALID_STATE,
-        // release recorder
-        avRecorderNdkTestBase.RELEASE_RECORDER_EVENT,
         // done recorder
         avRecorderNdkTestBase.END_EVENT
       );

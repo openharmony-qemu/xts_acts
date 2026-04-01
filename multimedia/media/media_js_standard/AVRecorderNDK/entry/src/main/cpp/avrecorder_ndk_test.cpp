@@ -571,7 +571,7 @@ static napi_value getMaxAmplitude(napi_env env, napi_callback_info info)
     (void)info;
     int32_t amplitude;
     int result = OH_AVRecorder_GetAudioCapturerMaxAmplitude(g_avRecorder, &amplitude);
-    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_GetAudioCapturerMaxAmplitude result :%{public}d", result);
+    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_GetAudioCapturerMaxAmplitude result: %{public}d", result);
     napi_value res;
     napi_create_int32(env, result, &res);
     return res;
@@ -583,7 +583,7 @@ static napi_value setMetadata(napi_env env, napi_callback_info info)
     OH_AVFormat *metadata = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(metadata, "com.openharmony.test", "setMetadata");
     int result = OH_AVRecorder_SetMetadata(g_avRecorder, metadata);
-    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_SetMetadata result :%{public}d", result);
+    OH_LOG_INFO(LOG_APP, "AVRecorder OH_AVRecorder_SetMetadata result: %{public}d", result);
     napi_value res;
     napi_create_int32(env, result, &res);
     return res;
