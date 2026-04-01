@@ -3741,5 +3741,132 @@ export default function abilityTest() {
             }
             done();
         });
+
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100
+         * @tc.desc   test onPlay callback registrations with commandInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100]";
+            let cmdInfo : avSession.CommandInfo = {
+                callerBundleName : 'com.example.hmsapp.music',
+                callerModuleName : 'BroadCastCenter',
+                callerDeviceId : '123123123123',
+                callerType : avSession.CallerType.TYPE_APP
+            }
+
+            try {
+                session!.onPlay((info : avSession.CommandInfo) => {
+                    console.info(`${TAG}TestLog: Play command callback registration successful`);
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
+                });
+                let controlCommand : avSession.AVControlCommand = {
+                    command : 'play',
+                    commandInfo : cmdInfo
+                }
+                await controller!.sendControlCommand(controlCommand);
+                console.info(`${TAG}TestLog: Controller send command successfully`);
+                await Utils.msSleep(300);
+            } catch (err) {
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            await Utils.msSleep(200);
+            done();
+        })
+
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100
+         * @tc.desc   test onPlayPrevious callback registrations with commandInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100]";
+            let cmdInfo : avSession.CommandInfo = {
+                callerBundleName : 'com.example.hmsapp.music',
+                callerModuleName : 'BroadCastCenter',
+                callerDeviceId : '123123123123',
+                callerType : avSession.CallerType.TYPE_APP
+            }
+
+            try {
+                session!.onPlayPrevious((info : avSession.CommandInfo) => {
+                    console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
+                });
+                let controlCommand : avSession.AVControlCommand = {
+                    command : 'playPrevious',
+                    commandInfo : cmdInfo
+                }
+                await controller!.sendControlCommand(controlCommand);
+                console.info(`${TAG}TestLog: Controller send command successfully`);
+                await Utils.msSleep(300);
+            } catch (err) {
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            await Utils.msSleep(200);
+            done();
+        })
+
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100
+         * @tc.desc   test onPlayNext callback registrations with commandInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100]";
+            let cmdInfo : avSession.CommandInfo = {
+                callerBundleName : 'com.example.hmsapp.music',
+                callerModuleName : 'BroadCastCenter',
+                callerDeviceId : '123123123123',
+                callerType : avSession.CallerType.TYPE_APP
+            }
+
+            try {
+                session!.onPlayNext((info : avSession.CommandInfo) => {
+                    console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
+                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
+                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
+                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
+                });
+                let controlCommand : avSession.AVControlCommand = {
+                    command : 'playNext',
+                    commandInfo : cmdInfo
+                }
+                await controller!.sendControlCommand(controlCommand);
+                console.info(`${TAG}TestLog: Controller send command successfully`);
+                await Utils.msSleep(300);
+            } catch (err) {
+                console.info(`${TAG}TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            await Utils.msSleep(200);
+            done();
+        })
+
     })
 }

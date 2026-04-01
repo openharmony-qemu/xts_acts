@@ -1192,6 +1192,44 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_STATIC_2100
+     * @tc.desc   Testing onDesktopLyricStateChanged return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_STATIC_2100';
+      try {
+        const isSupported: boolean = await avSession.isDesktopLyricSupported();
+        if (!isSupported) {
+          done();
+          return;
+        }
+        let isLocked: boolean = false;
+        await session!.enableDesktopLyric(true);
+        controller!.onDesktopLyricStateChanged((data: avSession.DesktopLyricState) => {
+          console.info(`${TAG}Testlog: onDesktopLyricStateChanged callback triggered (visible=${data})`);
+          isLocked = data.isLocked;
+        });
+
+        let state1: avSession.DesktopLyricState = { isLocked: true };
+        let state2: avSession.DesktopLyricState = { isLocked: false };
+        await session!.setDesktopLyricState(state1);
+        await Utils.msSleep(200);
+        expect(isLocked).assertTrue();
+        await session!.setDesktopLyricState(state2);
+        await Utils.msSleep(200);
+        expect(isLocked).assertFalse();
+      } catch (err) {
+        console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_STATIC_0100
      * @tc.desc   Testing offDesktopLyricStateChanged unregisters all callbacks
