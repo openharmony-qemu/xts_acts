@@ -80,12 +80,12 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled().then((isEnable: boolean )=>{
                     data.getCellularDataState((err: BusinessError<void>|null , data: data.DataConnectState| undefined) => {
-                        if (err?.code != 0) {
+                        if (err?.code !== 0) {
                             ExpectFail();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         } else {
-                            ExpectTrue(data != undefined);
+                            ExpectTrue(data !== undefined);
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         }
@@ -121,7 +121,7 @@ export default function dataManagerTest() {
                 if (isEnable) {
                     data.getCellularDataState().then((data: data.DataConnectState) => {
                         console.info(`${caseName} data->${JSON.stringify(data)}`);
-                        ExpectTrue(data != undefined);
+                        ExpectTrue(data !== undefined);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }).catch((error: Error) => {
