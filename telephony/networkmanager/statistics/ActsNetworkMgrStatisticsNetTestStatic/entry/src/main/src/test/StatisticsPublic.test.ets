@@ -603,7 +603,7 @@ export default function statisticsHasNetTest() {
         it("testManagergetUidRxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetUidRxBytesPromise_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidRxBytes(uid).then((stats: long) => {
@@ -618,13 +618,13 @@ export default function statisticsHasNetTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetUidRxBytesAsync_static_0100
@@ -669,7 +669,7 @@ export default function statisticsHasNetTest() {
         it("testManagergetUidRxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetUidRxBytesAsync_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 let uid :int = 1010;
                 statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
@@ -682,13 +682,13 @@ export default function statisticsHasNetTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
         /**
          * @tc.name   testManagergetUidTxBytesPromise_static_0100
          * @tc.number SUB_Manager_getUidTxBytes_Promise_0100
@@ -733,7 +733,7 @@ export default function statisticsHasNetTest() {
         it("testManagergetUidTxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetUidTxBytesPromise_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 let uid :int = 1010;
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidTxBytes(uid).then((stats: long) => {
@@ -748,13 +748,13 @@ export default function statisticsHasNetTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetUidTxBytesAsync_static_0100
@@ -799,7 +799,7 @@ export default function statisticsHasNetTest() {
         it("testManagergetUidTxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetUidTxBytesAsync_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 let uid :int = 1010;
                 statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
@@ -812,13 +812,13 @@ export default function statisticsHasNetTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetSockfdRxBytesPromise_static_0100
