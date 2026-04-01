@@ -391,12 +391,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390300).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_connect_0100 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -433,12 +433,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390204).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_connect_0200 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -472,12 +472,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390300).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_connect_0300 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -515,12 +515,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390300).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_connect_0400 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == false).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -557,12 +557,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_connect_0500 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -598,12 +598,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -640,12 +640,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390205).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -680,12 +680,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_sendData_0300 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -720,12 +720,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_sendData_0400 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -761,12 +761,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0100 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -802,12 +802,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0200 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -843,12 +843,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0300 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -884,12 +884,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -960,12 +960,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1035,12 +1035,12 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          connection.close();
           if(flag == false){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300 createConnection success" +
               ",ecpect fail");
           }
           expect(flag == true).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1106,12 +1106,12 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 error.code is " + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 error.message is " + error.message);
         }finally {
+          connection.close();
           if(flag == true){
             console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 disconnect fail" +
               ",ecpect fail");
           }
           expect(flag == false).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1142,11 +1142,11 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 error.code is " + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 error.message is " + error.message);
         }finally {
+          connection.close();
           if(flag == true){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 getPeerDeviceId fail,expect success");
           }
           expect(flag == false).assertTrue();
-          connection.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1212,11 +1212,11 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390203).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          server.close();
           if(flag == false){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100 createServer success,expect faile");
           }
           expect(flag == true).assertTrue();
-          server.close();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1375,13 +1375,13 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          server.close();
           if(flag == false){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100 on(type: 'connectionAccepted') success,expect faile");
           }
           expect(flag == true).assertTrue();
-          server.close();
           console.info(logTag + "reclaim done");
-          }
+        }
       }catch (error) {
         expect(error.message == null).assertTrue();
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100 createServer error.code is:" + error.code);
@@ -1410,13 +1410,13 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          server.close();
           if(flag == false){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200 on(type: 'serverStopped') success,expect faile");
           }
           expect(flag == true).assertTrue();
-          server.close();
           console.info(logTag + "reclaim done");
-          }
+        }
       }catch (error) {
         expect(error.message == null).assertTrue();
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200 createServer error.code is:" + error.code);
@@ -1445,11 +1445,11 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          server.close();
           if(flag == false){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100 off(type: 'connectionAccepted') success,expect faile");
           }
           expect(flag == true).assertTrue();
-          server.close();
           console.info(logTag + "reclaim done");
           }
       }catch (error) {
@@ -1511,13 +1511,13 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
+          server.close();
           if(flag == false){
             console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200 off(type: 'serverStopped') success,expect faile");
           }
           expect(flag == true).assertTrue();
-          server.close();
           console.info(logTag + "reclaim done");
-          }
+        }
       }catch (error) {
         expect(error.message == null).assertTrue();
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200 createServer error.code is:" + error.code);
@@ -1550,7 +1550,7 @@ export default function LinkEnhanceAPI() {
         }finally {
           server.close();
           console.info(logTag + "reclaim done");
-          }
+        }
       }catch (error) {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0201 createServer error.code is:" + error.code);
         expect().assertFail();
@@ -1580,13 +1580,9 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390206).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
-          if(flag == false){
-            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 off(type: 'serverStopped') success,expect faile");
-          }
-          expect(flag == true).assertTrue();
           server.close();
           console.info(logTag + "reclaim done");
-          }
+        }
       }catch (error) {
         expect(error.message == null).assertTrue();
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300 createServer error.code is:" + error.code);
@@ -1657,10 +1653,6 @@ export default function LinkEnhanceAPI() {
           expect(error.code == 32390202).assertTrue();
           expect(error.message != null).assertTrue();
         }finally {
-          if(flag == false){
-            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 satart success,expect faile");
-          }
-          expect(flag == true).assertTrue();
           server1.close();
           server2.close();
           server3.close();
@@ -1672,6 +1664,10 @@ export default function LinkEnhanceAPI() {
           server9.close();
           server10.close();
           server11.close();
+          if(flag == false){
+            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 satart success,expect faile");
+          }
+          expect(flag == true).assertTrue();
           console.info(logTag + "reclaim done");
         }
       }catch (error) {
@@ -1704,8 +1700,8 @@ export default function LinkEnhanceAPI() {
          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200 error.code is:" + error.code);
         }finally {
           server.close();
-        expect(flag == false).assertTrue();
-        console.info(logTag + "reclaim done");
+          expect(flag == false).assertTrue();
+          console.info(logTag + "reclaim done");
         }
       }catch (error){
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.code is:" + error.code);
@@ -1764,13 +1760,13 @@ export default function LinkEnhanceAPI() {
           flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 error.code is:" + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 error.message is:" + error.message);
-          }finally {
-            if(flag == true){
-              console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 stop fail,expect success");
-        }
-        expect(flag == false).assertTrue();
-        server.close();
-        console.info(logTag + "reclaim done");
+        }finally {
+          server.close();
+          if(flag == true){
+            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 stop fail,expect success");
+          }
+          expect(flag == false).assertTrue();
+          console.info(logTag + "reclaim done");
         }
       }catch (error) {
         expect(error.message == null).assertTrue();
@@ -1799,12 +1795,12 @@ export default function LinkEnhanceAPI() {
           flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 error.code is:" + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 error.message is:" + error.message);
-          }finally {
+        }finally {
             if(flag == true){
               console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 close fail,expect success");
-        }
-        expect(flag == false).assertTrue();
-        console.info(logTag + "reclaim done");
+            }
+            expect(flag == false).assertTrue();
+            console.info(logTag + "reclaim done");
         }
       }catch (error) {
         expect(error.message == null).assertTrue();
@@ -1848,11 +1844,11 @@ export default function LinkEnhanceAPI() {
           flag = true;
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 error.code is:" + error.code);
           console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 error.message is:" + error.message);
-          }finally {
+        }finally {
+          connection.close();
           expect(flag == false).assertTrue();
           console.info(logTag + "reclaim done");
-          connection.close();
-          }
+        }
       }catch (error) {
         expect(error.message == null).assertTrue();
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 createConnection error.code is:" + error.code); 
