@@ -603,14 +603,14 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VP8DEC_FUNCTION_0021, TestSize.Level0)
 }
 
 /**
- * @tc.name   VIDEO_CINEPAKDEC_FUNCTION_0100
- * @tc.number VIDEO_CINEPAKDEC_FUNCTION_0100
+ * @tc.name   VIDEO_CINEPAKDEC_FUNCTION_0121
+ * @tc.number SUB_VIDEO_CINEPAKDEC_FUNCTION_0121
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DecFuncNdkTest, VIDEO_CINEPAKDEC_FUNCTION_0100, TestSize.Level0)
+HWTEST_F(DecFuncNdkTest, VIDEO_CINEPAKDEC_FUNCTION_0121, TestSize.Level0)
 {
     if (g_capVc1 != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
