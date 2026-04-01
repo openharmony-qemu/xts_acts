@@ -605,7 +605,7 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VP8DEC_FUNCTION_0021, TestSize.Level0)
 /**
  * @tc.name   VIDEO_CINEPAKDEC_FUNCTION_0200
  * @tc.number SUB_VIDEO_CINEPAKDEC_FUNCTION_0200
- * @tc.desc   function test   
+ * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
