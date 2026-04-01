@@ -672,12 +672,12 @@ export default function statisticsHasNetTest() {
             try {
                 let uid :int = 1010;
                 statistics.getUidRxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
-                    if (err && err.code != 0) {
+                    if (err && err.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         ExpectFail();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
-                        ExpectTrue(stats != null);
+                        ExpectTrue(stats !== null);
                     }
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
@@ -802,12 +802,12 @@ export default function statisticsHasNetTest() {
             try {
                 let uid :int = 1010;
                 statistics.getUidTxBytes(uid, (err: BusinessError<void> | null, stats: long | undefined) => {
-                    if (err && err.code != 0) {
+                    if (err && err.code !== 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         ExpectFail();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' getAllTxBytes success stats ->'+ stats);
-                        ExpectTrue(stats != null);
+                        ExpectTrue(stats !== null);
                     }
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
