@@ -24,7 +24,7 @@ const ExpectFail = () => {
         console.info('expectInfo', 'test failed');
     }
 }
-const ExpectTrue = (n: boolean) => {
+const ExpectTrue = (n: boolean) => void = (n: boolean) => {
     try {
         expect(n).assertTrue();
     } catch (err) {
@@ -37,14 +37,14 @@ export default function SimGetActiveSimAccountInfoList() {
 
         let TRUE_SLOT_ID_0: int = 0;
         let simAmount: int = 0;
-        beforeAll(async (done: () => void): Promise<void> => {
+        beforeAll(async() => {
             let result0: boolean = true;
             try {
                 result0 = await sim.isSimActive(0);
             } catch (err) {
                 console.info('isSimActive simCard0 Run failed');
             }
-            if (result0) {
+            if (result0 == true) {
                 TRUE_SLOT_ID_0 = 0;
                 simAmount = 1;
             }
