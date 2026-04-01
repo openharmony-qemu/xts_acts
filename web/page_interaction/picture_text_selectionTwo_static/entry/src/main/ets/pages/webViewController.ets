@@ -160,6 +160,13 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case "emitonSwitchNextPage": {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/EnableDefaultContextMenuStatic' })
+              console.log('push URL success')
+            }
           }
         })
       }
