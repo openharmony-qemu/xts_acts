@@ -516,7 +516,7 @@ export default function geoLocationManager_nop_test() {
 
     /**
      * @tc.name   geolocation_getCurrentLocation_nop_test_007
-     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_007
+     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_0700
      * @tc.desc   Using the geolocation.getCurrentLocation method without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -560,7 +560,7 @@ export default function geoLocationManager_nop_test() {
 
     /**
      * @tc.name   geolocation_getCurrentLocation_nop_test_008
-     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_008
+     * @tc.number SUB_geolocation_getCurrentLocation_nop_test_0800
      * @tc.desc   Using the geolocation.getCurrentLocation method without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1091,7 +1091,7 @@ export default function geoLocationManager_nop_test() {
 
     /**
      * @tc.name   geolocation_requestEnableLocation_nop_test_026
-     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_026
+     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_2600
      * @tc.desc   requestEnableLocation(callback: AsyncCallback<boolean>): void
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1119,7 +1119,7 @@ export default function geoLocationManager_nop_test() {
 
     /**
      * @tc.name   geolocation_requestEnableLocation_nop_test_027
-     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_027
+     * @tc.number SUB_geolocation_requestEnableLocation_nop_test_2700
      * @tc.desc   requestEnableLocation(): Promise<boolean>
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1465,7 @@ export default function geoLocationManager_nop_test() {
 
     /**
      * @tc.name   geoLocationManager_getLastLocation_nop_test_011
-     * @tc.number SUB_geoLocationManager_getLastLocation_nop_test_011
+     * @tc.number SUB_geoLocationManager_getLastLocation_nop_test_1100
      * @tc.desc   Using the geoLocationManager.getCurrentLocation method without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
