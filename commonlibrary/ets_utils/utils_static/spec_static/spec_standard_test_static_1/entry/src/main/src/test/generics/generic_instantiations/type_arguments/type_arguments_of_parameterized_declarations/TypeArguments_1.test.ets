@@ -1008,7 +1008,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0100
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0100
      * @tc.name      testTypeArgumentsOne0001
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0200
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0200
      * @tc.name      testTypeArgumentsOne0002
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1040,7 +1040,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0300
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0300
      * @tc.name      testTypeArgumentsOne0003
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0400
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0400
      * @tc.name      testTypeArgumentsOne0004
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1066,7 +1066,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0500
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0500
      * @tc.name      testTypeArgumentsOne0005
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0600
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0600
      * @tc.name      testTypeArgumentsOne0006
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0700
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0700
      * @tc.name      testTypeArgumentsOne0007
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1105,7 +1105,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0800
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0800
      * @tc.name      testTypeArgumentsOne0008
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1118,7 +1118,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_0900
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0900
      * @tc.name      testTypeArgumentsOne0009
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1131,7 +1131,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1000
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1000
      * @tc.name      testTypeArgumentsOne0010
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1145,7 +1145,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1100
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1100
      * @tc.name      testTypeArgumentsOne0011
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1159,7 +1159,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1200
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1200
      * @tc.name      testTypeArgumentsOne0012
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1172,7 +1172,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1300
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1300
      * @tc.name      testTypeArgumentsOne0013
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1185,7 +1185,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1400
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1400
      * @tc.name      testTypeArgumentsOne0014
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1199,7 +1199,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1500
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1500
      * @tc.name      testTypeArgumentsOne0015
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1213,7 +1213,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1600
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1600
      * @tc.name      testTypeArgumentsOne0016
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1700
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1700
      * @tc.name      testTypeArgumentsOne0017
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1241,7 +1241,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1800
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1800
      * @tc.name      testTypeArgumentsOne0018
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1254,7 +1254,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_1900
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1900
      * @tc.name      testTypeArgumentsOne0019
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1267,7 +1267,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2000
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2000
      * @tc.name      testTypeArgumentsOne0020
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1280,7 +1280,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2100
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2100
      * @tc.name      testTypeArgumentsOne0021
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1293,7 +1293,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2200
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2200
      * @tc.name      testTypeArgumentsOne0022
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1306,7 +1306,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2300
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2300
      * @tc.name      testTypeArgumentsOne0023
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1322,7 +1322,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2400
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2400
      * @tc.name      testTypeArgumentsOne0024
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1335,7 +1335,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2500
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2500
      * @tc.name      testTypeArgumentsOne0025
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1348,7 +1348,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2600
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2600
      * @tc.name      testTypeArgumentsOne0026
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1361,7 +1361,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2700
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2700
      * @tc.name      testTypeArgumentsOne0027
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1374,7 +1374,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2800
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2800
      * @tc.name      testTypeArgumentsOne0028
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1387,7 +1387,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_2900
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2900
      * @tc.name      testTypeArgumentsOne0029
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1400,7 +1400,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3000
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3000
      * @tc.name      testTypeArgumentsOne0030
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3100
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3100
      * @tc.name      testTypeArgumentsOne0031
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1426,7 +1426,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3200
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3200
      * @tc.name      testTypeArgumentsOne0032
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1439,7 +1439,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3300
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3300
      * @tc.name      testTypeArgumentsOne0033
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1452,7 +1452,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3400
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3400
      * @tc.name      testTypeArgumentsOne0034
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1465,7 +1465,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3500
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3500
      * @tc.name      testTypeArgumentsOne0035
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1478,7 +1478,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3600
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3600
      * @tc.name      testTypeArgumentsOne0036
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3700
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3700
      * @tc.name      testTypeArgumentsOne0037
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1504,7 +1504,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3800
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3800
      * @tc.name      testTypeArgumentsOne0038
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1517,7 +1517,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_3900
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3900
      * @tc.name      testTypeArgumentsOne0039
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1530,7 +1530,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_4000
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_4000
      * @tc.name      testTypeArgumentsOne0040
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1543,7 +1543,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_4100
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_4100
      * @tc.name      testTypeArgumentsOne0041
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1556,7 +1556,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_4200
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_4200
      * @tc.name      testTypeArgumentsOne0042
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1569,7 +1569,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_4300
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_4300
      * @tc.name      testTypeArgumentsOne0043
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
@@ -1582,7 +1582,7 @@ export default function TypeArgumentsTest() {
     })
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_TEST1_4400
+     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_4400
      * @tc.name      testTypeArgumentsOne0044
      * @tc.desc      Type arguments
      * @tc.size      MediumTest
