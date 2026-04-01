@@ -368,7 +368,7 @@ export default function actsFuncTest() {
      */
     it('SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200', Level.LEVEL0, async () => {
       hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_2200');
-      let result = await testNapi.functest(0);
+      let result = await testNapi.functest(18);
       expect(result).assertEqual(TEST_SUCCESS);
     });
   });
