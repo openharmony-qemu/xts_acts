@@ -1491,7 +1491,7 @@ export default function HiAppEvent1() {
       catch (err) {
 
         hilog.error(domain, tag, `testHiAppEvent027 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code === "401").assertTrue()
+        expect(false).assertTrue()
         done();
       }
     });
@@ -1533,7 +1533,7 @@ export default function HiAppEvent1() {
       catch (err) {
 
         hilog.error(domain, tag, `testHiAppEvent028 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code === "401").assertTrue()
+        expect(false).assertTrue()
         done();
       }
     });
