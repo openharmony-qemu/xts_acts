@@ -247,7 +247,7 @@ export default function HiAppEvent1() {
       }catch (err) {
         console.info(`hiAppEventdfx_addWatcher_null_1 > error code: ${err.code}, error msg: ${err.message}`);
         // hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
-        expect(err.code === 401).assertTrue()
+        expect(err.code == 401).assertTrue()
         done();
       }
     })
