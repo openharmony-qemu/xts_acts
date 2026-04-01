@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
 
-const ExpectTrue = (n: boolean) => void = (n: boolean) => {
+const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
@@ -110,7 +110,6 @@ export default function SimGetSimAccountInfo () {
         console.info(`${caseName} getSimAccountInfo nopermission test fail, err: ${JSON.stringify(err)}`);
         ExpectFail();
         done();
-        return();
       });
       recursive(simAmount);
     });
