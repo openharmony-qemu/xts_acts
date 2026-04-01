@@ -300,7 +300,7 @@ export default function ObserverManagerTest() {
       try {
         let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-          ExpectTrue(data != null);
+          ExpectTrue(data !== null && data !== undefined);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         };
         observer.onCellularDataConnectionStateChange(callback);
@@ -481,7 +481,7 @@ export default function ObserverManagerTest() {
       try {
         let callback: (data: observer.DataFlowType) => void = (data: observer.DataFlowType) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(data !== null && data !== undefined);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }
