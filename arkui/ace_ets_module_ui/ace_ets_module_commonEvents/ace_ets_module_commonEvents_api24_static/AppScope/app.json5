@@ -14,7 +14,7 @@
  */
 {
   app: {
-    bundleName: 'com.arkui.ace.slider_static',
+    bundleName: 'com.arkui.ace.commonEvents.api24.static',
     vendor: 'example',
     versionCode: 1000000,
     versionName: '1.0.0',
