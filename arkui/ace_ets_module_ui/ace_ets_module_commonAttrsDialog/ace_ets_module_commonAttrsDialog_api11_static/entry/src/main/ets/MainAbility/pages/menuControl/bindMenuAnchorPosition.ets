@@ -91,7 +91,7 @@ struct BindMenuAnchorPosition {
           this.textPosition3.y = newValue.globalPosition.y;
         })
         .bindMenu(this.MenuBuilder,
-          { anchorPosition: { x: -20, y: 20 }, }
+          { anchorPosition: { x: -20, y: 20 }, showinsubwindow: false }
         )
     }
     .alignItems(HorizontalAlign.Start)

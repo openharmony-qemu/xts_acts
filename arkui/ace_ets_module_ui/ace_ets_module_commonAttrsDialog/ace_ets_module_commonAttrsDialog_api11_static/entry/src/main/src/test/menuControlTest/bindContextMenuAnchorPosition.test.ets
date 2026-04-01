@@ -94,7 +94,7 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       expect(textPositionX).assertLess(menuPositionX)
       expect(textPositionY).assertLess(menuPositionY)
       await CommonFunc.sleep(1000);
-      await driver.click(2, 2);
+      await driver.click(2, 100);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0100] END');
       done();
@@ -133,7 +133,7 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 2);
+      await driver.click(2, 100);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0200] END');
       done();
@@ -172,7 +172,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 2);
+      await driver.click(2, 100);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0300] END');
       done();
