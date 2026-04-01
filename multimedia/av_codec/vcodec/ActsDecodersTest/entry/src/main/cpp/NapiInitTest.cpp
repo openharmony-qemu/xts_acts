@@ -72,7 +72,8 @@ enum FuncTestCaseNumber {
     TEST_CASE_AV1_FUNCTION_0016 = 14,
     TEST_CASE_VP9_FUNCTION_0019 = 15,
     TEST_CASE_VP9_FUNCTION_0020 = 16,
-    TEST_CASE_VP8_FUNCTION_0021 = 17
+    TEST_CASE_VP8_FUNCTION_0021 = 17,
+    TEST_CASE_CINEPAK_FUNCTION_0022 = 18
 };
 
 static napi_value CreateResultValue(napi_env env, int result)
@@ -137,7 +138,8 @@ static const TestFunction FUNC_TEST_FUNCTIONS[] = {
     VideoAv1DecFunction0016,         // 14
     VideoVp9DecFunction0019,         // 15
     VideoVp9DecFunction0020,         // 16
-    VideoVp8DecFunction0021          // 17
+    VideoVp8DecFunction0021,         // 17
+    VideoCinepakDecFunction0022      // 18
 };
 
 static const int32_t API_TEST_FUNCTION_COUNT = sizeof(API_TEST_FUNCTIONS) / sizeof(API_TEST_FUNCTIONS[0]);
