@@ -660,14 +660,14 @@ export default function VideoEncoderSetparamTest() {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0200
-     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0200', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0100', Level.LEVEL1, async () => {
       let result: number = await testNapi.runSetparamTest(47);
       expect(result).assertEqual(0);
     });

@@ -102,7 +102,7 @@ export default function VideoEncoderTemporalTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_API_0020', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_API_0200', Level.LEVEL2, async () => {
       console.info('VideoTemporalEncodeApi0020Test start');
       let result: number = await testNapi.runTemporalTest(0);
       expect(result).assertEqual(0);

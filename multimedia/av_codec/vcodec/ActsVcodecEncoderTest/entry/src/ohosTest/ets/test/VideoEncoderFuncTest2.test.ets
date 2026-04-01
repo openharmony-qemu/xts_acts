@@ -489,7 +489,7 @@ export default function VideoEncoderFuncTest2() {
     });
     /**
      * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_0700
-     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_07
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_0700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
