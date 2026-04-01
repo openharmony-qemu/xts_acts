@@ -30,6 +30,7 @@ import GenericDeclarationsTypeAlias from "./generics/generic_declarations/generi
 import GenericInstantiations from "./generics/generic_instantiations/explicit_generic_instantiations/GenericInstantiations.test";
 import GenericInstantiationsImplicit from "./generics/generic_instantiations/implicit_generic_instantiations/GenericInstantiationsImplicit.test";
 import TypeArguments from "./generics/generic_instantiations/type_arguments/type_arguments_of_parameterized_declarations/TypeArguments.test";
+import TypeArguments_1 from "./generics/generic_instantiations/type_arguments/type_arguments_of_parameterized_declarations/TypeArguments_1.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
@@ -53,6 +54,7 @@ export default function testsuite() {
   GenericInstantiations();
   GenericInstantiationsImplicit();
   TypeArguments();
+  TypeArguments_1();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
   StatementsTest();
