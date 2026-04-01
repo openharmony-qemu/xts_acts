@@ -142,7 +142,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.cod == 401).assertTrue();
+        expect(Number(err.code) === 401).assertTrue();
         done();
       }
 
