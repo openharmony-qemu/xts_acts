@@ -308,7 +308,7 @@ export default function dataManagerTest() {
         it("testManagergetCellularRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetCellularRxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 statistics.getCellularRxBytes().then((stats: long) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
@@ -321,13 +321,13 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetCellularRxBytesAsync_static_0100
@@ -340,7 +340,7 @@ export default function dataManagerTest() {
         it("testManagergetCellularRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetCellularRxBytesAsync_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -352,13 +352,13 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetCellularTxBytesPromise_static_0100
@@ -371,7 +371,7 @@ export default function dataManagerTest() {
         it("testManagergetCellularTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetCellularTxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 statistics.getCellularTxBytes().then((stats: long) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
@@ -384,13 +384,13 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
         /**
          * @tc.name   testManagergetCellularTxBytesAsync_static_0100
@@ -403,7 +403,7 @@ export default function dataManagerTest() {
         it("testManagergetCellularTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetCellularTxBytesAsync_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
+            try {
                 statistics.getCellularRxBytes((err: BusinessError<void> | null, stats: long | undefined) => {
                     if (err && err.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -415,13 +415,13 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err){
+            } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
-        })
+        });
 
     })
 }
