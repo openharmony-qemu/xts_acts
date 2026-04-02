@@ -47,7 +47,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic01
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_001
+     * @tc.number SUB_WEB_ENABLEDEFAULTCONTEXTMENUSTATIC_0001
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic02
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_002
+     * @tc.number SUB_WEB_ENABLEDEFAULTCONTEXTMENUSTATIC_0002
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic03
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_003
+     * @tc.number SUB_WEB_ENABLEDEFAULTCONTEXTMENUSTATIC_0003
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
 
     /**
      * @tc.name   EnableDefaultContextMenuStatic04
-     * @tc.number SUB_ACE_ENABLEDEFAULTCONTEXTMENUSTATIC_API_004
+     * @tc.number SUB_WEB_ENABLEDEFAULTCONTEXTMENUSTATIC_0004
      * @tc.desc   saveImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
