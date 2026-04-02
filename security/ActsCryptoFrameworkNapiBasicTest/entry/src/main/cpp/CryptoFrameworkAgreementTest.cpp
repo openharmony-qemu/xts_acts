@@ -297,7 +297,10 @@ static VectorAgreementSpec g_vec[] = {
 static OH_Crypto_ErrCode OHTEST_HexStringToDataBlob(const char *in, Crypto_DataBlob *out, bool isBigEnd)
 {
     uint32_t inLen = static_cast<uint32_t>(strlen(in));
-    if (in == nullptr && inLen % VALUE_2 != 0) {
+    if (in == nullptr) {
+        return CRYPTO_PARAMETER_CHECK_FAILED;
+    }
+    if (inLen % VALUE_2 != 0) {
         return CRYPTO_PARAMETER_CHECK_FAILED;
     }
     out->data = (uint8_t *)malloc(inLen / VALUE_2);
@@ -308,6 +311,8 @@ static OH_Crypto_ErrCode OHTEST_HexStringToDataBlob(const char *in, Crypto_DataB
         uint32_t bit1 = ((static_cast<uint8_t>(in[i] % VALUE_32 + VALUE_9) % VALUE_25));
         uint32_t bit2 = ((static_cast<uint8_t>(in[i + VALUE_1] % VALUE_32 + VALUE_9) % VALUE_25));
         if (bit1 > VALUE_15 || bit2 > VALUE_15) {
+            free(out->data);
+            out->data = nullptr;
             return CRYPTO_PARAMETER_CHECK_FAILED;
         }
         if (isBigEnd) {
