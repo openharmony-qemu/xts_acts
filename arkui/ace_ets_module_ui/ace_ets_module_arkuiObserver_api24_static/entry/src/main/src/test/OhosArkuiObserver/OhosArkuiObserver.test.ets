@@ -277,14 +277,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700
-     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_0700
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_0700
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[textInputObserverTest_0010] START');
       try {
         const driver: Driver = Driver.create();

@@ -108,14 +108,14 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_ImageSpan_Support_Svg2_Test001_0100
-     * @tc.name SUB_ArkUI_ImageSpan_Support_Svg2_Test001_0100
+     * @tc.number SUB_ArkUI_ImageSpan_Support_SvgTwo_0100
+     * @tc.name SUB_ArkUI_ImageSpan_Support_SvgTwo_0100
      * @tc.desc Verify ImageSpan supportSvg2 true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ArkUI_ImageSpan_Support_Svg2_Test001_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_ImageSpan_Support_SvgTwo_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = readSupportSvg2('SupportSvg2_imageSpan1');
@@ -130,14 +130,14 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_ImageSpan_Support_Svg2_Test002_0200
-     * @tc.name SUB_ArkUI_ImageSpan_Support_Svg2_Test002_0200
+     * @tc.number SUB_ArkUI_ImageSpan_Support_SvgTwo_0200
+     * @tc.name SUB_ArkUI_ImageSpan_Support_SvgTwo_0200
      * @tc.desc Verify ImageSpan supportSvg2 false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ArkUI_ImageSpan_Support_Svg2_Test002_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_ImageSpan_Support_SvgTwo_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = readSupportSvg2('SupportSvg2_imageSpan2');
@@ -152,14 +152,14 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_ImageSpan_Support_Svg2_Test003_0300
-     * @tc.name SUB_ArkUI_ImageSpan_Support_Svg2_Test003_0300
+     * @tc.number SUB_ArkUI_ImageSpan_Support_SvgTwo_0300
+     * @tc.name SUB_ArkUI_ImageSpan_Support_SvgTwo_0300
      * @tc.desc Verify ImageSpan supportSvg2 default when unset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ArkUI_ImageSpan_Support_Svg2_Test003_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_ImageSpan_Support_SvgTwo_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = readSupportSvg2('SupportSvg2_imageSpan3');
@@ -174,14 +174,14 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_ImageSpan_Support_Svg2_Test004_0400
-     * @tc.name SUB_ArkUI_ImageSpan_Support_Svg2_Test004_0400
+     * @tc.number SUB_ArkUI_ImageSpan_Support_SvgTwo_0400
+     * @tc.name SUB_ArkUI_ImageSpan_Support_SvgTwo_0400
      * @tc.desc Verify ImageSpan supportSvg2 undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ArkUI_ImageSpan_Support_Svg2_Test004_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_ImageSpan_Support_SvgTwo_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = readSupportSvg2('SupportSvg2_imageSpan4');
@@ -196,14 +196,14 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ArkUI_ImageSpan_Support_Svg2_Test005_0500
-     * @tc.name SUB_ArkUI_ImageSpan_Support_Svg2_Test005_0500
+     * @tc.number SUB_ArkUI_ImageSpan_Support_SvgTwo_0500
+     * @tc.name SUB_ArkUI_ImageSpan_Support_SvgTwo_0500
      * @tc.desc Verify ImageSpan supportSvg2 default variant
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ArkUI_ImageSpan_Support_Svg2_Test005_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_ImageSpan_Support_SvgTwo_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = readSupportSvg2('SupportSvg2_imageSpan5');
