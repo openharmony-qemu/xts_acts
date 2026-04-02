@@ -21,10 +21,10 @@ import {
   Text,
   Row,
   Color,
-  SymbolGlyphModifier,
   Builder,
   $r
 } from '@ohos.arkui.component';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';

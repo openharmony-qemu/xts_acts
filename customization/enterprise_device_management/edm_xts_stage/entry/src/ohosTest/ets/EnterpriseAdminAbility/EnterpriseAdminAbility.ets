@@ -35,6 +35,11 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     expect(bundleName != null).assertTrue();
     expect(accountId != null).assertTrue();
   }
+  onBundleUpdated(bundleName: string, accountId?: number) {
+    console.log(`EnterpriseAdminExtensionAbility onBundleUpdated: ${bundleName}, accountId: ${accountId}`);
+    expect(bundleName != null).assertTrue();
+    expect(accountId != null).assertTrue();
+  }
   onAppStart(bundleName: string) {
     console.log('EnterpriseAdminExtensionAbility onAppStart: ' + bundleName);
     expect(bundleName != null).assertTrue();

@@ -23,9 +23,7 @@ import { Driver, ON } from '@ohos.UiTest';
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
-
-let context = getContext(this) as common.UIAbilityContext;
-
+let context:common.UIAbilityContext;
 export default function abilityWMSTest() {
   describe('abilityWMSTest', () => {
 
@@ -40,6 +38,7 @@ export default function abilityWMSTest() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       context = globalThis.context;
+      hilog.info(0x0000, 'testTag', `context is: ${JSON.stringify(context)}`);
     })
     beforeEach(() => {
     })

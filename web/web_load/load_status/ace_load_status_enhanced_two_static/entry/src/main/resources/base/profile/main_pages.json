@@ -2,6 +2,8 @@
   "src": [
     "pages/webViewJavaScriptProxyAndOnPageVisible",
     "pages/webOnHttpErrorReceive",
-    "pages/WebConsoleMessageSource"
+    "pages/WebConsoleMessageSource",
+    "pages/webViewEnumAndSetWebController",
+    "pages/NativeEmbedParamStatusDelete"
   ]
 }

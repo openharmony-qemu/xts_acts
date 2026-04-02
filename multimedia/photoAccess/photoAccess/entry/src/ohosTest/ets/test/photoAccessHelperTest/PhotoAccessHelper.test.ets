@@ -27,7 +27,7 @@ import { getPermission, driveFn } from '../common';
 let phAccessHelper: photoAccessHelper.PhotoAccessHelper;
 let predicates: dataSharePredicates.DataSharePredicates;
 export default function photoAccessHelperTest() {
-  describe('PhotoAccessHelperTest', () => {
+  describe('PhotoAccessHelperTestAdapt002', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;

@@ -75,5 +75,22 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
       await Utils.msSleep(5000);
       done();
     })
+
+    /**
+     * @tc.name   emitonSwitchNextStaticPage
+     * @tc.number emitonSwitchNextStaticPage_0001
+     * @tc.desc   test emitonSwitchNextStaticPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitonSwitchNextStaticPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewSharedRenderProcessToken', 10, '');
+        await Utils.msSleep(5000)
+        done();
+      })
   })
 }

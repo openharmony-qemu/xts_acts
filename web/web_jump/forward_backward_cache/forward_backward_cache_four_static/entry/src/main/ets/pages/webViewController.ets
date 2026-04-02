@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
+import { Entry, Component, Column, Row, Button, ClickEvent, Web, WebBypassVsyncCondition } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../hypium';
@@ -39,6 +39,7 @@ struct Index {
   @State no_error: string = 'no error happened';
   @State userAgent: string = "";
   @State errorCode: int = 0;
+  @State condition: WebBypassVsyncCondition = WebBypassVsyncCondition.NONE;
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -250,6 +251,7 @@ struct Index {
 
       Web({ src: 'https://www.example.com', controller: this.controller })
         .webFixedFont('monospace')
+        .bypassVsyncCondition(this.condition)
         .onControllerAttached(() => {
           try {
             let arrayVersions: Array<webview.UserAgentBrandVersion> = new Array<webview.UserAgentBrandVersion>;

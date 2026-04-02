@@ -14,13 +14,20 @@
  */
 
 import geolocationPermissions from './geolocationPermissions.test'
+import webInitTest from './WebInitTest.test'
+import NativeEmbedParamStatusUpdate from './NativeEmbedParamStatusUpdate.test'
 import webViewSrollableJsunit from './bindSelectionMenu.test'
 import webAttributeTest from './WebAttributeTest.test'
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
+import WebKeyboardAvoidMode from './WebEmulateTouchFromMouseEvent.test'
+
 
 export default function testsuite() {
     geolocationPermissions();
     webViewSrollableJsunit();
     webAttributeTest();
     WebViewEnumAndFontLibrary();
+    webInitTest();
+    NativeEmbedParamStatusUpdate();
+    WebKeyboardAvoidMode();
 }

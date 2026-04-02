@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, ScaleOptions } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -148,12 +148,6 @@ let matrix1 = matrix4.init([1.0, 0.0, 0.0, 0.0,
   export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mTransform: matrix4.Matrix4Transit = matrix1
     applyNormalAttribute(instance: FormComponentAttribute): void {
-      instance.transform(this.mTransform)
-    }
-  }
-  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mTransform: matrix4.Matrix4Transit = matrix1
-    applyNormalAttribute(instance: FormLinkAttribute): void {
       instance.transform(this.mTransform)
     }
   }
@@ -573,12 +567,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -980,7 +968,6 @@ struct transformPage {
   @State _transformFlexMod: FlexModifier = new FlexModifier()
   @State _transformFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _transformFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _transformFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _transformGaugeMod: GaugeModifier = new GaugeModifier()
   @State _transformGridMod: GridModifier = new GridModifier()
   @State _transformGridColMod: GridColModifier = new GridColModifier()

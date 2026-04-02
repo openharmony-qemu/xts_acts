@@ -2,6 +2,7 @@
   "src": [
     "pages/webJavaScriptOnDocumentStartTest",
     "pages/webtwo",
-    "pages/webViewMetaViewportFalse"
+    "pages/webViewMetaViewportFalse",
+    "pages/webViewControllerPart3"
   ]
 }

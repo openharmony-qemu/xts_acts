@@ -29,7 +29,7 @@ export class GlobalContext {
   }
 
   /*getObject(value: string, tType: Type): Object | undefined {
-    return AppStorage.get(value, tType);
+    return AppStorage.get<Object>(value, tType);
   }*/
 
   setObject(key: string, objectClass: Object): void {

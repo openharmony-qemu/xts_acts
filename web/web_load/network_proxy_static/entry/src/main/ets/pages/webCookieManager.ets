@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
 import { Button, ClickEvent, Column, Component, Entry, Row, Web } from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -78,6 +79,196 @@ struct webCookieManager {
                 Utils.emitEvent('fail', 202502211);
               }
               break;
+            }
+            case 'testRemoveAllCache002': {
+              try {
+                webView.WebviewController.removeAllCache(false);
+                Utils.emitEvent('success', 202502212);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 202502212);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_NONE': {
+              try {
+                Utils.emitEvent(webView.WebHttpCookieSameSitePolicy.NONE, 202502213)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_LAX': {
+              try {
+                Utils.emitEvent(webView.WebHttpCookieSameSitePolicy.LAX, 202502214)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_STRICT': {
+              try {
+                Utils.emitEvent(webView.WebHttpCookieSameSitePolicy.STRICT, 202502215)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_samesitePolicy': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].expiresDate);
+                    if (cookies && cookies.length > 0 && cookies[0].expiresDate != undefined) {
+                       Utils.emitEvent(true, 202502216)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'WebHttpCookieSameSitePolicy_name': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].name);
+                    if (cookies && cookies.length > 0 && cookies[0].name != undefined) {
+                      Utils.emitEvent(true, 202502217)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_isSessionCookie': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].isSessionCookie);
+                    if (cookies && cookies.length > 0 && cookies[0].isSessionCookie != undefined) {
+                      Utils.emitEvent(true, 202502218)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_value': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].value);
+                    if (cookies && cookies.length > 0 && cookies[0].value != undefined) {
+                      Utils.emitEvent(true, 202502219)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_path': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].path);
+                    if (cookies && cookies.length > 0 && cookies[0].path != undefined) {
+                      Utils.emitEvent(true, 202502220)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_isHttpOnly': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].isHttpOnly);
+                    if (cookies && cookies.length > 0 && cookies[0].isHttpOnly != undefined) {
+                      Utils.emitEvent(true, 202502221)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_isSecure': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].isSecure);
+                    if (cookies && cookies.length > 0 && cookies[0].isSecure != undefined) {
+                      Utils.emitEvent(true, 202502222)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'WebHttpCookieSameSitePolicy_domain': {
+              try {
+                webView.WebCookieManager.configCookieSync("https://" + "www.example.com", "a=b; path=/example; domain=.example.com; Secure; HttpOnly; SameSite=STRICT");
+                webView.WebCookieManager.fetchAllCookies(false)
+                  .then(cookies => {
+                    console.log("cookies"+cookies[0].domain);
+                    if (cookies && cookies.length > 0 && cookies[0].domain != undefined) {
+                      Utils.emitEvent(true, 202502223)
+
+                    }
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: "pages/webViewController" })
             }
           }
         })

@@ -214,6 +214,8 @@ export const getSupportedFullOutputCapability: () => cameraOutputCapability;
 
 export const createPreviewOutput: () => number;
 
+export const createDeferredPreviewOutput: () => number;
+
 export const adjustHeifIdx: (idx: number) => number;
 
 export const createPhotoOutput: (surfaceId: string) => number;
@@ -438,6 +440,8 @@ export const oHPreviewOutputGetActiveProfile: (index:number) => number;
 
 export const oHPreviewOutputDeleteProfile: (index:number) => number;
 
+export const oHPreviewOutputAddDeferredSurface: (index:number, surfaceId: string) => number;
+
 export const oHPhotoOutputGetActiveProfile: (index:number) => number;
 
 export const oHPhotoOutputDeleteProfile: (index:number) => number;
@@ -477,6 +481,10 @@ export const oHCameraManagerIsTorchSupported: (index:number) => isTorchSupported
 export const oHCameraManagerIsTorchSupportedByTorchMode: (index:number) => isTorchSupportedByTorchMode;
 
 export const oHCameraManagerSetTorchMode: (index:number) => number;
+
+export const oHCameraManagerIsTorchLevelControlSupported: () => number;
+ 
+export const oHCameraManagerSetTorchModeOnWithLevel: (level:number) => number;
 
 export const oHCaptureSessionGetExposureValue: (index:number) => number;
 

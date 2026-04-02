@@ -22,9 +22,10 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { GlobalThis } from './Constants';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { Camera_MediaType } from './Constants';
+import { Camera_MediaType, Parameter_Setting } from './Constants';
 
 const TAG = "CameraXts CameraUnitTest: ";
+const CAMERA_INVALID_ARGUMENT = 7400101;
 
 // 创建视频录制的参数
 let mediaUtil = MediaUtils.getInstance();
@@ -822,6 +823,65 @@ export default function cameraJSUnitOutput() {
         console.info(TAG + "ERRORCODE: " + err.code);
         expect().assertFail();
       }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.ALL_PARAMETER_OK, surfaceId);
+      if (ret) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100 sessionAddPreviewOutput fail");
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.FIRST_PARAMETER_ERROR, surfaceId);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.SECOND_PARAMETER_ERROR, surfaceId);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
     /**
       * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200

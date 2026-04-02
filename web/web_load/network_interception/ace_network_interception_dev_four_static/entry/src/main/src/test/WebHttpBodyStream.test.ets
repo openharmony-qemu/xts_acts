@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -21,59 +21,54 @@ import { BusinessError } from '@ohos.base'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext:common.UIAbilityContext;
+
 export default function WebHttpBodyStream() {
+  describe('WebHttpBodyStream', (): void => {
+        beforeAll(async (): Promise<void> => {
+          console.log('App start')
+        });
+        beforeEach(async () => {
+          await Utils.msSleep(2000);
+          console.info('web beforeEach start');
+        })
 
-  describe('WebHttpBodyStream', () => {
-    beforeAll(async (): Promise<void> => {
-      console.log("App start")
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void=> {
-          testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
-        },
-      }, (err: BusinessError<void> | null): void => {
-        if (err != null) {
-          console.log("-----" + err.code)
-        }
-        console.log("BusinessError  end")
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.logdottingfivetest.static")
-      await Utils.msSleep(2000)
-      console.log("beforeAll end,%s", "Succeed!")
-    });
-
-    /*
-    * @tc.number     : SUB_WEB_WEBHTTPBODYSTREAM_100
-    * @tc.name       : testWebHttpBodyStreamStatic0100
-    * @tc.desc       : test WebHttpBodyStream
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebHttpBodyStreamStatic0100
+    * @tc.number      SUB_WEB_WEBHTTPBODYSTREAM_100
+    * @tc.desc        test WebHttpBodyStream
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebHttpBodyStreamStatic0100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebHttpBodyStreamStatic0100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("WebHttpBodyStream0100", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("WebHttpBodyStream0100", true, 8820, done);
-      await Utils.msSleep(2000);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_onRequestStart", true, 1418, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getHttpBodyStream", true, 1419, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_initialize", true, 1420, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getSize", 66, 1421, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", 0, 1422, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked", false, 1423, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isOF", false, 1424, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory", true, 1425, done);
+      Utils.registerEvent("testWebViewSdkSchemeHandler_read", true, 1426, done);
+      await Utils.msSleep(5000);
       inspector.sendEventByKey('WebHttpBodyStream', 10, '');
-      await Utils.msSleep(2000);
+      await Utils.msSleep(5000);
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBHTTPBODYSTREAM_200
-    * @tc.name       : testWebHttpBodyStreamStatic0200
-    * @tc.desc       : change page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        emitOnSwitchNextPageStatic02
+    * @tc.number      SUB_WEB_WEBHTTPBODYSTREAM_200
+    * @tc.desc        change page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('emitonSwitchNextPage02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitOnSwitchNextPageStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('emitonSwitchNextPage', 10)
@@ -82,7 +77,5 @@ export default function WebHttpBodyStream() {
         await Utils.msSleep(2000);
         done();
       })
-
-
   })
 }

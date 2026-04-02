@@ -28,6 +28,7 @@ import common from '@ohos.app.ability.common';
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 interface ResourceConfig {
   urlList: string[],
@@ -223,6 +224,11 @@ struct injectOfflineResourcesTest {
               Utils.emitEvent(Type.of(web_webview.OfflineResourceType.IMAGE) + ' ' +
               number(web_webview.OfflineResourceType.IMAGE), 20006)
               break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/SetBlanklessLoadingWithParamsTest' })
             }
           }
         })

@@ -1073,7 +1073,7 @@ export default function SearchPropertiesNullUndefined02Test() {
       console.info("[searchSelectionMenuHidden_true_0100] selectionMenuHidden is: " + obj.$attrs.selectionMenuHidden);
 
       // true 应该设置为 true
-      expect(obj.$attrs.selectionMenuHidden).assertEqual(true);
+      expect(obj.$attrs.selectionMenuHidden).assertEqual('true');
       console.info('[searchSelectionMenuHidden_true_0100] END');
     })
 
@@ -1095,7 +1095,7 @@ export default function SearchPropertiesNullUndefined02Test() {
       console.info("[searchSelectionMenuHidden_false_0100] selectionMenuHidden is: " + obj.$attrs.selectionMenuHidden);
 
       // false 应该设置为 false
-      expect(obj.$attrs.selectionMenuHidden).assertEqual(false);
+      expect(obj.$attrs.selectionMenuHidden).assertEqual('false');
       console.info('[searchSelectionMenuHidden_false_0100] END');
     })
 

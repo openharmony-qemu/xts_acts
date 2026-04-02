@@ -168,6 +168,12 @@ void OnCaptureContentChanged(struct OH_AVScreenCapture *capture, OH_AVScreenCapt
     (void)userData;
 }
 
+void OnPrivacyProtect(OH_AVScreenCapture* capture, OH_PrivacyProtectInfo* privacyProtect, void *userData)
+{
+    (void)capture;
+    (void)privacyProtect;
+    (void)userData;
+}
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100
 static napi_value NormalAVScreenCaptureTest(napi_env env, napi_callback_info info)
 {
@@ -2687,7 +2693,35 @@ static napi_value normalAVScreenCaptureStrategy1(napi_env env, napi_callback_inf
     napi_create_int32(env, result, &res);
     return res;
 }
+static napi_value OH_AVScreenCapture_SetPrivacyProtectCallback0100(napi_env env, napi_callback_info info)
+{
+    void *userData;
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
+    auto res1 = OH_AVScreenCapture_SetPrivacyProtectCallback(screenCaptureNormal, OnPrivacyProtect, userData);
+    int32_t res = 1;
+    if (res1 == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    OH_AVScreenCapture_Release(screenCaptureNormal);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 
+static napi_value OH_AVScreenCapture_SetPrivacyProtectCallback0101(napi_env env, napi_callback_info info)
+{
+    void *userData;
+    auto res1 = OH_AVScreenCapture_SetPrivacyProtectCallback(nullptr, OnPrivacyProtect, userData);
+    int32_t res = 1;
+    if (res1 == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 static napi_value normalMultiDisplayCaptureCapabilityTest(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2854,6 +2888,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureExcludeContent", nullptr, normalAVScreenCaptureExcludeContent, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"OH_AVScreenCapture_SetPrivacyProtectCallback0100", nullptr,
+            OH_AVScreenCapture_SetPrivacyProtectCallback0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_AVScreenCapture_SetPrivacyProtectCallback0101", nullptr,
+            OH_AVScreenCapture_SetPrivacyProtectCallback0101, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

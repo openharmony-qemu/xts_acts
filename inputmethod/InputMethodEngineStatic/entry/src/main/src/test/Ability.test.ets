@@ -367,9 +367,9 @@ export default function inputMethodEngineStatic() {
          * @tc.desc   Switch current input method subtype.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('Sub_InputMethod_IME_Custom_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('Sub_InputMethod_IME_Custom_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {
                     textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
@@ -627,9 +627,9 @@ export default function inputMethodEngineStatic() {
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('Sub_InputMethod_IME_InputMethodState_static_0900', Level.LEVEL2, async (done: () => void) => {
+        it('Sub_InputMethod_IME_InputMethodState_static_0900', Level.LEVEL0, async (done: () => void) => {
             try {
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0900 getSetting success');

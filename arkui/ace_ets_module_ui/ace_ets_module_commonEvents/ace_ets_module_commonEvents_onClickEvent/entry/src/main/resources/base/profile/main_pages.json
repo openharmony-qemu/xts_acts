@@ -10,6 +10,7 @@
         "MainAbility/pages/Background/BackgroundOptions",
         "MainAbility/pages/NodeRenderState/nodeRenderState",
         "MainAbility/pages/ClickEvent/ClickEventNullAndUndefined",
-        "MainAbility/pages/enableClickSoundEffect/enableClickSoundEffect"
+        "MainAbility/pages/enableClickSoundEffect/enableClickSoundEffect",
+        "MainAbility/pages/commonMethodInputEvent/CommonMethodInputEventProbePage"
     ]
 }
