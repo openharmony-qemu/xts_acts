@@ -53,21 +53,21 @@ export default function CanvasRoundRectErrorCodeTest() {
     }); 
 
     /**
-    * @tc.name   CanvasRoundRectErrorCodeTest_0010
-    * @tc.number CanvasRoundRectErrorCodeTest_0010
+    * @tc.name   CanvasRoundRectErrorCodeTestFirst
+    * @tc.number Sub_Ace_CanvasRoundRectErrorCodeTestFirst
     * @tc.desc   ArkUI Api
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('CanvasRoundRectErrorCodeTest_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-    console.info('[CanvasRoundRectErrorCodeTest_0010] START');
+    it('CanvasRoundRectErrorCodeTestFirst', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    console.info('[CanvasRoundRectErrorCodeTestFirst] START');
     await CommonFunc.sleep(1000);
 
-    console.info('[CanvasRoundRectErrorCodeTest_0010] get result:' + AppStorage.get<int>('StaticRoundRectErrorCode'));
-    expect(AppStorage.get<int>('CanvasHeight')).assertEqual(103701);
+    console.info('[CanvasRoundRectErrorCodeTestFirst] get result:' + AppStorage.get<int>('StaticRoundRectErrorCode'));
+    expect(AppStorage.get<int>('StaticRoundRectErrorCode')).assertEqual(103701);
 
-    console.info('[CanvasRoundRectErrorCodeTest_0010] END');
+    console.info('[CanvasRoundRectErrorCodeTestFirst] END');
     done();
     });
     
