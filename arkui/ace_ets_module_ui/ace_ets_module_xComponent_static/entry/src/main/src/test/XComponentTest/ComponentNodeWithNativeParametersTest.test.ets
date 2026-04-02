@@ -62,7 +62,7 @@ export default function ComponentNodeWithNativeParametersTest() {
     });
 
     /**
-     * @tc.number ComponentNodeWithNativeParametersTest_001
+     * @tc.number SUB_ARKUI_ComponentNodeWithNativeParametersTest_001
      * @tc.name ComponentNodeWithNativeParametersTest_001
      * @tc.desc Test XComponent page title renders
      */
