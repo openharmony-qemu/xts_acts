@@ -77,7 +77,7 @@ export default function multiNavigationValue() {
       console.info('[multiNavigationValue_0100] content2: ' + JSON.stringify(JSON.parse(text2).$attrs.content));
       expect(String(JSON.parse(text2).$attrs.content)).assertEqual('["PageDetail","PageDetail2"]');
 
-      let btn_neg1 = await driver.findComponent(ON.id('multiNavigationValue_neg1'));
+      let btn_neg1 = await driver.findComponent(ON.id('MultiNavigation_popToIndex_neg1'));
       await btn_neg1.click()
       console.info('[multiNavigationValue_0100] btn_neg1 click');
       await CommonFunc.sleep(1500);
@@ -87,7 +87,7 @@ export default function multiNavigationValue() {
       console.info('[multiNavigationValue_0100] content3: ' + JSON.stringify(JSON.parse(text3).$attrs.content));
       expect(String(JSON.parse(text3).$attrs.content)).assertEqual('["PageDetail","PageDetail2"]');
 
-      let btn_0 = await driver.findComponent(ON.id('multiNavigationValue_0'));
+      let btn_0 = await driver.findComponent(ON.id('MultiNavigation_popToIndex_0'));
       await btn_0.click()
       console.info('[multiNavigationValue_0100] btn_0 click');
       await CommonFunc.sleep(1500);
@@ -134,7 +134,7 @@ export default function multiNavigationValue() {
       console.info('[multiNavigationValue_0200] content2: ' + JSON.stringify(JSON.parse(text2).$attrs.content));
       expect(String(JSON.parse(text2).$attrs.content)).assertEqual('["PageDetail","PageDetail2"]');
 
-      let btn2_neg1 = await driver.findComponent(ON.id('multiNavigationValue2_neg1'));
+      let btn2_neg1 = await driver.findComponent(ON.id('MultiNavigation_popToIndex2_neg1'));
       await btn2_neg1.click()
       console.info('[multiNavigationValue_0200] btn2_neg1 click');
       await CommonFunc.sleep(1500);
@@ -144,7 +144,7 @@ export default function multiNavigationValue() {
       console.info('[multiNavigationValue_0200] content3: ' + JSON.stringify(JSON.parse(text3).$attrs.content));
       expect(String(JSON.parse(text3).$attrs.content)).assertEqual('["PageDetail","PageDetail2"]');
 
-      let btn2_0 = await driver.findComponent(ON.id('multiNavigationValue2_0'));
+      let btn2_0 = await driver.findComponent(ON.id('MultiNavigation_popToIndex2_0'));
       await btn2_0.click()
       console.info('[multiNavigationValue_0200] btn2_0 click');
       await CommonFunc.sleep(1500);
