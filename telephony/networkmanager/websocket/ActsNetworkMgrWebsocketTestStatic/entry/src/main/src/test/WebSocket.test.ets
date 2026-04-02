@@ -452,6 +452,197 @@ export default function WebSocketTest() {
         done();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
       }
-    })
+    });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0100
+     * @tc.number testNetworkMgrWebSocketWebSocketRequestOptions_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let options: webSocket.WebSocketRequestOptions = {
+            skipServerCertVerification: true,
+            proxy: 'system',
+            protocol: '',
+            pingInterval: 50,
+            pongTimeout: 50
+          };
+          ExpectTrue(options.skipServerCertVerification != undefined);
+          ExpectTrue(options.proxy != undefined);
+          ExpectTrue(options.protocol != undefined);
+          ExpectTrue(options.pingInterval != undefined);
+          ExpectTrue(options.pongTimeout != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketOpenResult_static_0100
+     * @tc.number testNetworkMgrWebSocketOpenResult_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketOpenResult_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketOpenResult_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let openResult: webSocket.OpenResult = {
+            status: 0,
+            message: 'system'
+          };
+          ExpectTrue(openResult.status != undefined);
+          ExpectTrue(openResult.message != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketServerConfig_static_0100
+     * @tc.number testNetworkMgrWebSocketServerConfig_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketServerConfig_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketServerConfig_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let serverCert: webSocket.ServerCert = {
+            certPath: "",
+            keyPath: ""
+          }
+          let webSocketServerConfig: webSocket.WebSocketServerConfig = {
+            serverIP: '0.0.0.0',
+            serverPort: 8800,
+            serverCert: serverCert,
+            protocol: '',
+            maxConcurrentClientsNumber: 10,
+            maxConnectionsForOneClient: 10
+          };
+          ExpectTrue(webSocketServerConfig.serverIP != undefined);
+          ExpectTrue(webSocketServerConfig.serverPort != undefined);
+          ExpectTrue(webSocketServerConfig.serverCert != undefined);
+          ExpectTrue(webSocketServerConfig.protocol != undefined);
+          ExpectTrue(webSocketServerConfig.maxConcurrentClientsNumber != undefined);
+          ExpectTrue(webSocketServerConfig.maxConnectionsForOneClient != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketServerCert_static_0100
+     * @tc.number testNetworkMgrWebSocketServerCert_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketServerCert_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketServerCert_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let serverCert: webSocket.ServerCert = {
+            certPath: "",
+            keyPath: ""
+          }
+          ExpectTrue(serverCert.certPath != undefined);
+          ExpectTrue(serverCert.certPath != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnection_static_0100
+     * @tc.number testNetworkMgrWebSocketConnection_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnection_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketConnection_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let webSocketConnection: webSocket.WebSocketConnection = {
+            clientIP: "",
+            clientPort: 8080
+          }
+          ExpectTrue(webSocketConnection.clientIP != undefined);
+          ExpectTrue(webSocketConnection.clientPort != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketMessage_static_0100
+     * @tc.number testNetworkMgrWebSocketMessage_static_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketMessage_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketMessage_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let webSocketConnection: webSocket.WebSocketConnection = {
+            clientIP: "",
+            clientPort: 8080
+          }
+          let webSocketMessage: webSocket.WebSocketMessage = {
+            data: "",
+            clientConnection: webSocketConnection
+          }
+          ExpectTrue(webSocketMessage.data != undefined);
+          ExpectTrue(webSocketMessage.clientConnection != undefined);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, '%{public}s', caseName + error.code);
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      });
+
   })
 }
