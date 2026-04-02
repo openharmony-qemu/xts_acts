@@ -376,14 +376,14 @@ export default function CallManageImsCall() {
          * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            call.isEmergencyPhoneNumber('911', (err, data) => {
+            await call.isEmergencyPhoneNumber('911', (err, data) => {
                 if (err) {
                     console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 finish err = ${err}`);
                     expect().assertFail();
                     done();
                     return;
                 }
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 PASSED ');
+                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 PASSED data:'+ data);
                 expect(data).assertTrue();
                 done();
             });
@@ -400,7 +400,7 @@ export default function CallManageImsCall() {
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 let data = await call.isEmergencyPhoneNumber('112');
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400 PASSED ');
+                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400 PASSED data:'+ data);
                 expect(data).assertTrue();
                 done();
             } catch (err) {
