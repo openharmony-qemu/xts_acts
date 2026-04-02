@@ -58,21 +58,21 @@ export default function GetWindowIdTest() {
     });
 
     /**
-     * @tc.number   GetWindowIdTest_static_0100
-     * @tc.name     GetWindowIdTest_static_0100
-     * @tc.desc     GetWindowIdTest_static_0100
+     * @tc.number   GetWindowIdTest_static_1000
+     * @tc.name     GetWindowIdTest_static_1000
+     * @tc.desc     GetWindowIdTest_static_1000
      * @tc.level    Level.LEVEL0
      */
-    it('GetWindowIdTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('GetWindowIdTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('GetWindowIdTest_static_0100 START');
+      console.info('GetWindowIdTest_static_1000 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       expect(AppStorage.get<Int|undefined>('getWindowIdValue1')).assertEqual(0);
       expect(AppStorage.get<Int|undefined>('getWindowIdValue2')).assertEqual(undefined);
       AppStorage.delete('getWindowIdValue1');
       AppStorage.delete('getWindowIdValue2');
-      console.info('[GetWindowIdTest_static_0100] END');
+      console.info('[GetWindowIdTest_static_1000] END');
       done();
     });
   })
