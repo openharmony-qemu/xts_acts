@@ -121,7 +121,6 @@ interface B_31<T, U> extends A_31<T> {
   b: U
 }
 
-// 来自 meth_*.js
 class Cls_32 {
   foo<T, U>(p: T, q: U): [T, U] {
     return [p, q]
@@ -165,7 +164,6 @@ class Cls_37 {
   }
 }
 
-// 来自 variance_*.js
 class Base_30 {}
 class Derived_30 extends Base_30 {}
 
