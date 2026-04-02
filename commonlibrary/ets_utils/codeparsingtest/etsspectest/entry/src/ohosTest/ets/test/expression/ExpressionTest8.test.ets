@@ -40,7 +40,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1403
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0100
      * @tc.desc   Test instanceof with String object vs string literal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1404
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0200
      * @tc.desc   Test instanceof with Date object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1405
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0300
      * @tc.desc   Test instanceof with Array object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1406
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0400
      * @tc.desc   Test instanceof with Object literal and Object constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1407
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0500
      * @tc.desc   Test instanceof with Function object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1408
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0600
      * @tc.desc   Test instanceof with RegExp object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1409
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_140900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0700
      * @tc.desc   Test instanceof with Error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1410
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_141000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0800
      * @tc.desc   Test instanceof with complete error types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1412
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_141200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_0900
      * @tc.desc   Test instanceof with Map and Set objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1413
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_141300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1000
      * @tc.desc   Test instanceof with WeakMap and WeakSet objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1420
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_142000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1100
      * @tc.desc   Test instanceof with wrapper objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1423
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_142300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1200
      * @tc.desc   Test instanceof with ES6 class
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1424
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_142400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1300
      * @tc.desc   Test instanceof with multi-level inheritance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1435
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_143500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1400
      * @tc.desc   Test instanceof with TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1436
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_143600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1500
      * @tc.desc   Test instanceof with complete TypedArray types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +332,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1437
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_143700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1600
      * @tc.desc   Test instanceof with ArrayBuffer and DataView
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1441
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_144100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1700
      * @tc.desc   Test instanceof with Iterator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function expressionTest8() {
     });
     /**
      * @tc.name   ExpressionTest1444
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_144400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1800
      * @tc.desc   Test instanceof with Reflect object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -376,7 +376,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1450
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_14500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_1900
      * @tc.desc   Test instanceof with Array.isArray comparison
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -390,7 +390,7 @@ export default function expressionTest8() {
 
     /**
      * @tc.name   ExpressionTest1452
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_145200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_EXPRESSION_TEST_2000
      * @tc.desc   Test instanceof with BigInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
