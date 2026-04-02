@@ -96,20 +96,16 @@ void OHPrintf(const char* fmt, ...)
 
 int OHPrintf(char* buf, size_t bufSize, const char* fmt, ...)
 {
-    
     if (!buf || bufSize == 0) {
         return ERROR_CODE_NEGATIVE_ONE;
     }
-    
     va_list args;
     va_start(args, fmt);
-    int ret = vsnprintf(buf, bufSize, fmt, args);
+int ret = vsnprintf(buf, bufSize, fmt, args);
     va_end(args);
-    
     if (ret < 0) {
         return ERROR_CODE_NEGATIVE_ONE;
     }
-    
     return ret;
 }
 

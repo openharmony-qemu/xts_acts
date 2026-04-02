@@ -948,7 +948,6 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
         s.erase(0, s.find_first_not_of(" \t\n\r\f\v"));
         s.erase(s.find_last_not_of(" \t\n\r\f\v") + 1);
     };
-    
     std::ifstream file(filePath);
     if (!file.is_open()) {
         return AV_ERR_IO;
@@ -956,48 +955,36 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
     std::string temp;
     int32_t num = 0;
     while (getline(file, temp)) {
-        if (num == ZERO) {
-            trim(temp);
-            config.inputDir = temp;
-            num++;
-            continue;
+        switch (num) {
+            case ZERO:
+                trim(temp);
+                config.inputDir = temp;
+                break;
+            case ONE:
+                trim(temp);
+                config.outputDir = temp;
+                break;
+            case TWO:
+                config.width = stoi(temp);
+                break;
+            case THREE:
+                config.height = stoi(temp);
+                break;
+            case FOUR:
+                config.bitrateMode = stoi(temp);
+                break;
+            case FIVE:
+                config.bitRate = stoi(temp);
+                break;
+            case SIX:
+                config.surfaceMode = stoi(temp) == 1;
+                break;
+            default:
+                timeList.push_back(stoll(temp));
+                break;
         }
-        if (num == ONE) {
-            trim(temp);
-            config.outputDir = temp;
-            num++;
-            continue;
-        }
-        if (num == TWO) {
-            config.width = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == THREE) {
-            config.height = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == FOUR) {
-            config.bitrateMode = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == FIVE) {
-            config.bitRate = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == SIX) {
-            config.surfaceMode = stoi(temp) == 1 ? true : false;
-            num++;
-            continue;
-        }
-        timeList.push_back(stoll(temp));
         num++;
     }
     file.close();
-                config.inputDir.c_str(), config.inputDir.length());
-                config.outputDir.c_str(), config.outputDir.length());
     return AV_ERR_OK;
 }
