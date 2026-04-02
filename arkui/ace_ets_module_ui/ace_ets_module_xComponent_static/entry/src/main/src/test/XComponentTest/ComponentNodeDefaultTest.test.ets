@@ -62,7 +62,7 @@ export default function ComponentNodeDefaultTest() {
     });
 
     /**
-     * @tc.number ComponentNodeDefaultTest_001
+     * @tc.number SUB_ARKUI_ComponentNodeDefaultTest_001
      * @tc.name ComponentNodeDefaultTest_001
      * @tc.desc Test XComponent page title renders
      */
