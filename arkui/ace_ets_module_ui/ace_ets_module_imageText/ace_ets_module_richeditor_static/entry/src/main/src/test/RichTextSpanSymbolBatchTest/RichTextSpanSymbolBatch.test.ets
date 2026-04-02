@@ -70,7 +70,7 @@ export default function RichTextSpanSymbolBatchTest() {
 
     /**
      * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_page_loads_0100
-     * @tc.name rtsb_pageLoads
+     * @tc.name SUB_arkui_richtext_span_symbol_batch_rtsb_page_loads_0100
      * @tc.desc Test RichTextSpanSymbolBatch page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +92,7 @@ export default function RichTextSpanSymbolBatchTest() {
 
     /**
      * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_ready_flag_0200
-     * @tc.name rtsb_ready_flag
+     * @tc.name SUB_arkui_richtext_span_symbol_batch_rtsb_ready_flag_0200
      * @tc.desc Test RichTextSpanSymbolBatch: aboutToAppear sets AppStorage rtsb_ready
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function RichTextSpanSymbolBatchTest() {
 
     /**
      * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_composite_text_0300
-     * @tc.name rtsb_inspector_composite_text
+     * @tc.name SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_composite_text_0300
      * @tc.desc Test inspector.getInspectorByKey: node rtsb_text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function RichTextSpanSymbolBatchTest() {
 
     /**
      * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_symbol_0400
-     * @tc.name rtsb_inspector_symbol
+     * @tc.name SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_symbol_0400
      * @tc.desc Test inspector.getInspectorByKey: node rtsb_symbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function RichTextSpanSymbolBatchTest() {
 
     /**
      * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_driver_symbol_0500
-     * @tc.name rtsb_driver_symbol
+     * @tc.name SUB_arkui_richtext_span_symbol_batch_rtsb_driver_symbol_0500
      * @tc.desc Test Driver.findComponent: id rtsb_symbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

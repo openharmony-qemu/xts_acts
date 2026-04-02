@@ -76,7 +76,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_list_api_page_loads_0100
-     * @tc.name listApi_pageLoads
+     * @tc.name SUB_arkui_list_scroll_api_list_api_page_loads_0100
      * @tc.desc Test listScrollApi page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_wire_get_list_event_flag_0200
-     * @tc.name wire_getListEvent_flag
+     * @tc.name SUB_arkui_list_scroll_api_wire_get_list_event_flag_0200
      * @tc.desc Test UIListEvent setOn* wiring: AppStorage listApi_wire true after wire button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_body_0300
-     * @tc.name inspector_listApi_body
+     * @tc.name SUB_arkui_list_scroll_api_inspector_list_api_body_0300
      * @tc.desc inspector listApi_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_title_0400
-     * @tc.name inspector_listApi_title
+     * @tc.name SUB_arkui_list_scroll_api_inspector_list_api_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node listApi_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -166,7 +166,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_wire_0500
-     * @tc.name inspector_listApi_wire
+     * @tc.name SUB_arkui_list_scroll_api_inspector_list_api_wire_0500
      * @tc.desc inspector listApi_wire
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function ListScrollApiTest() {
 
     /**
      * @tc.number SUB_arkui_list_scroll_api_list_api_scroll_snap_slow_toggle_0600
-     * @tc.name listApi_scrollSnap_slow_toggle
+     * @tc.name SUB_arkui_list_scroll_api_list_api_scroll_snap_slow_toggle_0600
      * @tc.desc Test List scrollSnapAnimationSpeed: SLOW vs NORMAL toggle AppStorage listApi_snap_slow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

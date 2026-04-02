@@ -74,7 +74,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_page_loads_0100
-     * @tc.name segmentV2_pageLoads
+     * @tc.name SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_page_loads_0100
      * @tc.desc Test segmentButtonV2EnableStateAnimation page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200
-     * @tc.name segmentV2_mounted_flag
+     * @tc.name SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200
      * @tc.desc Test AppStorage: segV2_mounted after aboutToAppear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300
-     * @tc.name inspector_segV2_tab_and_capsule
+     * @tc.name SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300
      * @tc.desc Test inspector.getInspectorByKey: nodes segV2_tab and segV2_cap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400
-     * @tc.name inspector_segV2_title
+     * @tc.name SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400
      * @tc.desc inspector segV2_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500
-     * @tc.name driver_find_tab_text_A
+     * @tc.name SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500
      * @tc.desc Test Driver.findComponent: tab text A
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

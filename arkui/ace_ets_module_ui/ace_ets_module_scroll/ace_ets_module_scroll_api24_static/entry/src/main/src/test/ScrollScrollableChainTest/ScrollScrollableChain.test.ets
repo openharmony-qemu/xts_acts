@@ -77,7 +77,7 @@ export default function ScrollScrollableChainTest() {
 
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_scroll_ch_page_loads_0100
-     * @tc.name scrollCh_pageLoads
+     * @tc.name SUB_arkui_scroll_scrollable_chain_scroll_ch_page_loads_0100
      * @tc.desc Test scrollScrollableChain page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function ScrollScrollableChainTest() {
 
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_scroller_content_size_after_mount_0200
-     * @tc.name scroller_contentSize_after_mount
+     * @tc.name SUB_arkui_scroll_scrollable_chain_scroller_content_size_after_mount_0200
      * @tc.desc Test aboutToAppear: writes AppStorage scrollCh_contentSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function ScrollScrollableChainTest() {
 
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_wire_get_scroll_event_flag_0300
-     * @tc.name wire_getScrollEvent_flag
+     * @tc.name SUB_arkui_scroll_scrollable_chain_wire_get_scroll_event_flag_0300
      * @tc.desc UIScrollEvent wiring; Scroller.scrollTo(canOverScroll); AppStorage scrollCh_wire,
      *     scrollCh_canOverScroll_ok
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function ScrollScrollableChainTest() {
 
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_body_0400
-     * @tc.name inspector_scrollCh_body
+     * @tc.name SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_body_0400
      * @tc.desc Test inspector.getInspectorByKey: node scrollCh_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function ScrollScrollableChainTest() {
 
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_wire_btn_0500
-     * @tc.name inspector_scrollCh_wire_btn
+     * @tc.name SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_wire_btn_0500
      * @tc.desc Test inspector.getInspectorByKey: node scrollCh_wire
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

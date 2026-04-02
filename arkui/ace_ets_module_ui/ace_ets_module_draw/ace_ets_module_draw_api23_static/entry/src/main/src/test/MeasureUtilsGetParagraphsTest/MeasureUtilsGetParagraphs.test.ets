@@ -76,7 +76,7 @@ export default function MeasureUtilsGetParagraphsTest() {
 
     /**
      * @tc.number SUB_arkui_measure_utils_get_paragraphs_mu_para_page_loads_0100
-     * @tc.name muPara_pageLoads
+     * @tc.name SUB_arkui_measure_utils_get_paragraphs_mu_para_page_loads_0100
      * @tc.desc Test MeasureUtilsGetParagraphs page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function MeasureUtilsGetParagraphsTest() {
 
     /**
      * @tc.number SUB_arkui_measure_utils_get_paragraphs_mu_para_ready_flag_0200
-     * @tc.name muPara_ready_flag
+     * @tc.name SUB_arkui_measure_utils_get_paragraphs_mu_para_ready_flag_0200
      * @tc.desc Test MeasureUtilsGetParagraphs: aboutToAppear sets AppStorage muPara_ready
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function MeasureUtilsGetParagraphsTest() {
 
     /**
      * @tc.number SUB_arkui_measure_utils_get_paragraphs_mu_para_get_paragraphs_smoke_0300
-     * @tc.name muPara_getParagraphs_smoke
+     * @tc.name SUB_arkui_measure_utils_get_paragraphs_mu_para_get_paragraphs_smoke_0300
      * @tc.desc Test MeasureUtils.getParagraphs: button click sets muPara_ok and paragraph length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function MeasureUtilsGetParagraphsTest() {
 
     /**
      * @tc.number SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_title_0400
-     * @tc.name muPara_inspector_title
+     * @tc.name SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node muPara_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function MeasureUtilsGetParagraphsTest() {
 
     /**
      * @tc.number SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_btn_0500
-     * @tc.name muPara_inspector_btn
+     * @tc.name SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_btn_0500
      * @tc.desc Test inspector.getInspectorByKey: node muPara_btn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

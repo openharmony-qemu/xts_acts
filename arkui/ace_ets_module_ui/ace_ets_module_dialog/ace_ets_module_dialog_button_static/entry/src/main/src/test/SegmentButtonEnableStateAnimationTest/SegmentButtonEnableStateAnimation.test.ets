@@ -74,7 +74,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_segment_v1_page_loads_0100
-     * @tc.name segmentV1_pageLoads
+     * @tc.name SUB_arkui_segment_button_enable_state_anim_segment_v1_page_loads_0100
      * @tc.desc Test segmentButtonEnableStateAnimation page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_segment_v1_mounted_flag_0200
-     * @tc.name segmentV1_mounted_flag
+     * @tc.name SUB_arkui_segment_button_enable_state_anim_segment_v1_mounted_flag_0200
      * @tc.desc Test aboutToAppear: AppStorage segV1_mounted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_body_0300
-     * @tc.name inspector_segV1_body
+     * @tc.name SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_body_0300
      * @tc.desc Test inspector.getInspectorByKey: node segV1_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_title_0400
-     * @tc.name inspector_segV1_title
+     * @tc.name SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node segV1_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
 
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500
-     * @tc.name driver_find_segment_tab_text_T1
+     * @tc.name SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500
      * @tc.desc Test Driver.findComponent: segment tab text T1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

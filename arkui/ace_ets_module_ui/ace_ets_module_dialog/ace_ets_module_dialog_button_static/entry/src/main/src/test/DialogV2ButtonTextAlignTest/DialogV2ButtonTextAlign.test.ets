@@ -73,7 +73,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_page_loads_0100
-     * @tc.name dialogV2ButtonTextAlign_pageLoads
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_page_loads_0100
      * @tc.desc Test dialogV2ButtonTextAlign page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_advanced_dialog_v2_button_text_align_end_action_0200
-     * @tc.name advancedDialogV2Button_textAlign_end_action
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_advanced_dialog_v2_button_text_align_end_action_0200
      * @tc.desc AlertDialogV2 primary: AdvancedDialogV2Button.textAlign -> AppStorage dlgV2_textAlign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_inspector_open_button_node_0300
-     * @tc.name inspector_openButton_node
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_inspector_open_button_node_0300
      * @tc.desc Test inspector.getInspectorByKey: node dlgV2_open
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_inspector_title_node_0400
-     * @tc.name inspector_title_node
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_inspector_title_node_0400
      * @tc.desc Test inspector.getInspectorByKey: node dlgV2_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_app_storage_v2_align_key_cleared_before_case_0500
-     * @tc.name appStorage_v2_align_key_cleared_before_case
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_app_storage_v2_align_key_cleared_before_case_0500
      * @tc.desc Test AppStorage: dlgV2_textAlign undefined before primary button click
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -208,7 +208,7 @@ export default function DialogV2ButtonTextAlignTest() {
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_driver_find_v2_open_stable_0600
-     * @tc.name driver_find_v2_open_stable
+     * @tc.name SUB_arkui_dialog_v2_button_text_align_driver_find_v2_open_stable_0600
      * @tc.desc Test Driver.findComponent: dlgV2_open found repeatedly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

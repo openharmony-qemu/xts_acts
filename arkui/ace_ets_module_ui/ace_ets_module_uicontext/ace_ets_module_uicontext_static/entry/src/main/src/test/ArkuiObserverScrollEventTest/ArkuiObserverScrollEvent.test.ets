@@ -80,7 +80,7 @@ export default function ArkuiObserverScrollEventTest() {
 
     /**
      * @tc.number SUB_arkui_observer_scroll_event_obs_scroll_page_loads_0100
-     * @tc.name obsScroll_pageLoads
+     * @tc.name SUB_arkui_observer_scroll_event_obs_scroll_page_loads_0100
      * @tc.desc Test arkuiObserverScrollEvent page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ export default function ArkuiObserverScrollEventTest() {
 
     /**
      * @tc.number SUB_arkui_observer_scroll_event_on_scroll_event_axis_sample_written_0200
-     * @tc.name onScrollEvent_axis_sample_written
+     * @tc.name SUB_arkui_observer_scroll_event_on_scroll_event_axis_sample_written_0200
      * @tc.desc Test UIObserver.onScrollEvent: button click writes AppStorage obsScroll_axis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function ArkuiObserverScrollEventTest() {
 
     /**
      * @tc.number SUB_arkui_observer_scroll_event_inspector_obs_scroll_host_0300
-     * @tc.name inspector_obsScroll_host
+     * @tc.name SUB_arkui_observer_scroll_event_inspector_obs_scroll_host_0300
      * @tc.desc Test inspector.getInspectorByKey: node obsScroll_host
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function ArkuiObserverScrollEventTest() {
 
     /**
      * @tc.number SUB_arkui_observer_scroll_event_inspector_obs_scroll_title_0400
-     * @tc.name inspector_obsScroll_title
+     * @tc.name SUB_arkui_observer_scroll_event_inspector_obs_scroll_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node obsScroll_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -205,7 +205,7 @@ export default function ArkuiObserverScrollEventTest() {
 
     /**
      * @tc.number SUB_arkui_observer_scroll_event_inspector_obs_scroll_btn_0500
-     * @tc.name inspector_obsScroll_btn
+     * @tc.name SUB_arkui_observer_scroll_event_inspector_obs_scroll_btn_0500
      * @tc.desc Test inspector.getInspectorByKey: node obsScroll_btn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -74,7 +74,7 @@ export default function ListItemSwipeManagerTest() {
 
     /**
      * @tc.number SUB_arkui_list_item_swipe_manager_list_swipe_page_loads_0100
-     * @tc.name listSwipe_pageLoads
+     * @tc.name SUB_arkui_list_item_swipe_manager_list_swipe_page_loads_0100
      * @tc.desc Test listItemSwipeManager page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function ListItemSwipeManagerTest() {
 
     /**
      * @tc.number SUB_arkui_list_item_swipe_manager_expand_collapse_api_ok_0200
-     * @tc.name expand_collapse_api_ok
+     * @tc.name SUB_arkui_list_item_swipe_manager_expand_collapse_api_ok_0200
      * @tc.desc Test ListItemSwipeActionDirection START/END expand-collapse API AppStorage flags
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function ListItemSwipeManagerTest() {
 
     /**
      * @tc.number SUB_arkui_list_item_swipe_manager_inspector_list_swipe_item_0300
-     * @tc.name inspector_listSwipe_item
+     * @tc.name SUB_arkui_list_item_swipe_manager_inspector_list_swipe_item_0300
      * @tc.desc Test inspector.getInspectorByKey: node listSwipe_item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function ListItemSwipeManagerTest() {
 
     /**
      * @tc.number SUB_arkui_list_item_swipe_manager_inspector_list_swipe_list_0400
-     * @tc.name inspector_listSwipe_list
+     * @tc.name SUB_arkui_list_item_swipe_manager_inspector_list_swipe_list_0400
      * @tc.desc inspector listSwipe_list
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function ListItemSwipeManagerTest() {
 
     /**
      * @tc.number SUB_arkui_list_item_swipe_manager_inspector_list_swipe_title_0500
-     * @tc.name inspector_listSwipe_title
+     * @tc.name SUB_arkui_list_item_swipe_manager_inspector_list_swipe_title_0500
      * @tc.desc Test inspector.getInspectorByKey: node listSwipe_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

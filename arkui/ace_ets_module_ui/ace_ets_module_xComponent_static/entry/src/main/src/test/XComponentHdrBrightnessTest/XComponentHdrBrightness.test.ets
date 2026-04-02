@@ -76,7 +76,7 @@ export default function XComponentHdrBrightnessTest() {
 
     /**
      * @tc.number SUB_arkui_xcomponent_hdr_brightness_xc_hdr_page_loads_0100
-     * @tc.name xcHdr_pageLoads
+     * @tc.name SUB_arkui_xcomponent_hdr_brightness_xc_hdr_page_loads_0100
      * @tc.desc Test xComponentHdrBrightness page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function XComponentHdrBrightnessTest() {
 
     /**
      * @tc.number SUB_arkui_xcomponent_hdr_brightness_xc_hdr_mounted_flag_0200
-     * @tc.name xcHdr_mounted_flag
+     * @tc.name SUB_arkui_xcomponent_hdr_brightness_xc_hdr_mounted_flag_0200
      * @tc.desc Test AppStorage: xcHdr_mounted and xcHdr_hdr_brightness_typed (HdrType DEFAULT/AIHDR paths)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function XComponentHdrBrightnessTest() {
 
     /**
      * @tc.number SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_body_0300
-     * @tc.name inspector_xcHdr_body
+     * @tc.name SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_body_0300
      * @tc.desc Test inspector: xcHdr_body (HdrType.DEFAULT) and xcHdr_body_ai (HdrType.AIHDR)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function XComponentHdrBrightnessTest() {
 
     /**
      * @tc.number SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_title_0400
-     * @tc.name inspector_xcHdr_title
+     * @tc.name SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_title_0400
      * @tc.desc inspector xcHdr_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -166,7 +166,7 @@ export default function XComponentHdrBrightnessTest() {
 
     /**
      * @tc.number SUB_arkui_xcomponent_hdr_brightness_driver_find_xc_text_0500
-     * @tc.name driver_find_xc_text
+     * @tc.name SUB_arkui_xcomponent_hdr_brightness_driver_find_xc_text_0500
      * @tc.desc Test Driver.findComponent: node xcHdr_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -80,7 +80,7 @@ export default function UIObserverTextChangeTest() {
 
     /**
      * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_page_loads_0100
-     * @tc.name txtCh_pageLoads
+     * @tc.name SUB_arkui_uiobserver_text_change_txt_ch_page_loads_0100
      * @tc.desc Test UIObserver onTextChange page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function UIObserverTextChangeTest() {
 
     /**
      * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_ready_flag_0200
-     * @tc.name txtCh_ready_flag
+     * @tc.name SUB_arkui_uiobserver_text_change_txt_ch_ready_flag_0200
      * @tc.desc Test UIObserver onTextChange page: aboutToAppear sets AppStorage txtCh_ready
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ export default function UIObserverTextChangeTest() {
 
     /**
      * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_inspector_title_0300
-     * @tc.name txtCh_inspector_title
+     * @tc.name SUB_arkui_uiobserver_text_change_txt_ch_inspector_title_0300
      * @tc.desc Test inspector.getInspectorByKey: node txtCh_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function UIObserverTextChangeTest() {
 
     /**
      * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_on_plain_registers_0400
-     * @tc.name txtCh_on_plain_registers
+     * @tc.name SUB_arkui_uiobserver_text_change_txt_ch_on_plain_registers_0400
      * @tc.desc Test UIObserver.onTextChange: plain callback registers and sets txtCh_on_plain_ok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -173,7 +173,7 @@ export default function UIObserverTextChangeTest() {
 
     /**
      * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_on_opt_registers_0500
-     * @tc.name txtCh_on_opt_registers
+     * @tc.name SUB_arkui_uiobserver_text_change_txt_ch_on_opt_registers_0500
      * @tc.desc Test UIObserver.onTextChange with ObserverOptions: overload registers and sets txtCh_on_opt_ok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

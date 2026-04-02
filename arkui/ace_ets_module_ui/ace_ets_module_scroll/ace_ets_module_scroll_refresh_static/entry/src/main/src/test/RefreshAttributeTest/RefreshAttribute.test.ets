@@ -73,7 +73,7 @@ export default function RefreshAttributeTest() {
 
     /**
      * @tc.number SUB_arkui_refresh_attribute_refresh_attr_page_loads_0100
-     * @tc.name refreshAttr_pageLoads
+     * @tc.name SUB_arkui_refresh_attribute_refresh_attr_page_loads_0100
      * @tc.desc Test refreshAttribute page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function RefreshAttributeTest() {
 
     /**
      * @tc.number SUB_arkui_refresh_attribute_refresh_attr_ready_flag_0200
-     * @tc.name refreshAttr_ready_flag
+     * @tc.name SUB_arkui_refresh_attribute_refresh_attr_ready_flag_0200
      * @tc.desc refreshAttr_ready
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function RefreshAttributeTest() {
 
     /**
      * @tc.number SUB_arkui_refresh_attribute_inspector_refresh_attr_body_0300
-     * @tc.name inspector_refreshAttr_body
+     * @tc.name SUB_arkui_refresh_attribute_inspector_refresh_attr_body_0300
      * @tc.desc Test inspector.getInspectorByKey: node refreshAttr_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function RefreshAttributeTest() {
 
     /**
      * @tc.number SUB_arkui_refresh_attribute_inspector_refresh_attr_title_0400
-     * @tc.name inspector_refreshAttr_title
+     * @tc.name SUB_arkui_refresh_attribute_inspector_refresh_attr_title_0400
      * @tc.desc inspector refreshAttr_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -161,7 +161,7 @@ export default function RefreshAttributeTest() {
 
     /**
      * @tc.number SUB_arkui_refresh_attribute_driver_find_pull_text_0500
-     * @tc.name driver_find_pull_text
+     * @tc.name SUB_arkui_refresh_attribute_driver_find_pull_text_0500
      * @tc.desc Test Driver.findComponent: refresh pull-down label text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

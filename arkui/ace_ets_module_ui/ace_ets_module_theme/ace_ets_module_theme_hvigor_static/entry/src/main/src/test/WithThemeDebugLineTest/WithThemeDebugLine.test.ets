@@ -74,7 +74,7 @@ export default function WithThemeDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_with_theme_debug_line_wt_dl_page_loads_0100
-     * @tc.name wtDl_pageLoads
+     * @tc.name SUB_arkui_with_theme_debug_line_wt_dl_page_loads_0100
      * @tc.desc Test withThemeDebugLine page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function WithThemeDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_with_theme_debug_line_wt_dl_mounted_flag_0200
-     * @tc.name wtDl_mounted_flag
+     * @tc.name SUB_arkui_with_theme_debug_line_wt_dl_mounted_flag_0200
      * @tc.desc Test AppStorage: wtDl_mounted after aboutToAppear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function WithThemeDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_with_theme_debug_line_inspector_wt_dl_body_0300
-     * @tc.name inspector_wtDl_body
+     * @tc.name SUB_arkui_with_theme_debug_line_inspector_wt_dl_body_0300
      * @tc.desc inspector wtDl_body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function WithThemeDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_with_theme_debug_line_inspector_wt_dl_title_0400
-     * @tc.name inspector_wtDl_title
+     * @tc.name SUB_arkui_with_theme_debug_line_inspector_wt_dl_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node wtDl_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function WithThemeDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_with_theme_debug_line_driver_find_content_text_0500
-     * @tc.name driver_find_content_text
+     * @tc.name SUB_arkui_with_theme_debug_line_driver_find_content_text_0500
      * @tc.desc Test Driver.findComponent: themed content text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

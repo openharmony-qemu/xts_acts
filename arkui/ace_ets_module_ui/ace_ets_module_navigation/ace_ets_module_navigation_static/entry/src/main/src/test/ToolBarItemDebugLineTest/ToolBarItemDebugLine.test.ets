@@ -74,7 +74,7 @@ export default function ToolBarItemDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_toolbar_item_debug_line_tb_dl_page_loads_0100
-     * @tc.name tbDl_pageLoads
+     * @tc.name SUB_arkui_toolbar_item_debug_line_tb_dl_page_loads_0100
      * @tc.desc Test toolBarItemDebugLine page: route loads and title node exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function ToolBarItemDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_toolbar_item_debug_line_tb_dl_mounted_flag_0200
-     * @tc.name tbDl_mounted_flag
+     * @tc.name SUB_arkui_toolbar_item_debug_line_tb_dl_mounted_flag_0200
      * @tc.desc tbDl_mounted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function ToolBarItemDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_row_0300
-     * @tc.name inspector_tbDl_row
+     * @tc.name SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_row_0300
      * @tc.desc Test inspector.getInspectorByKey: node tbDl_row
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function ToolBarItemDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_title_0400
-     * @tc.name inspector_tbDl_title
+     * @tc.name SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_title_0400
      * @tc.desc Test inspector.getInspectorByKey: node tbDl_title
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function ToolBarItemDebugLineTest() {
 
     /**
      * @tc.number SUB_arkui_toolbar_item_debug_line_driver_find_item_text_0500
-     * @tc.name driver_find_item_text
+     * @tc.name SUB_arkui_toolbar_item_debug_line_driver_find_item_text_0500
      * @tc.desc Test Driver.findComponent: toolbar item text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
