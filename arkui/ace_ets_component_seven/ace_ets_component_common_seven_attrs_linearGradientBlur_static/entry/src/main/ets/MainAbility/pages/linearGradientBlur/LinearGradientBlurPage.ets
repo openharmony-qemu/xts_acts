@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -158,13 +158,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mLinearGradientBlur: number = 60
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
-    instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mLinearGradientBlur: number = 60
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`linearGradientBlur page show ${JSON.stringify(this.mLinearGradientBlur)}`)
     instance.linearGradientBlur(this.mLinearGradientBlur, undefined)
   }
@@ -576,7 +569,6 @@ struct linearGradientBlurPage {
   @State _linearGradientBlurFlexMod: FlexModifier = new FlexModifier()
   @State _linearGradientBlurFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _linearGradientBlurFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _linearGradientBlurFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _linearGradientBlurGaugeMod: GaugeModifier = new GaugeModifier()
   @State _linearGradientBlurGridMod: GridModifier = new GridModifier()
   @State _linearGradientBlurGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct linearGradientBlurPage {
       this._linearGradientBlurFlexMod.mLinearGradientBlur = value.linearGradientBlur
       this._linearGradientBlurFlowItemMod.mLinearGradientBlur = value.linearGradientBlur
       this._linearGradientBlurFormComponentMod.mLinearGradientBlur = value.linearGradientBlur
-      this._linearGradientBlurFormLinkMod.mLinearGradientBlur = value.linearGradientBlur
       this._linearGradientBlurGaugeMod.mLinearGradientBlur = value.linearGradientBlur
       this._linearGradientBlurGridMod.mLinearGradientBlur = value.linearGradientBlur
       this._linearGradientBlurGridColMod.mLinearGradientBlur = value.linearGradientBlur
