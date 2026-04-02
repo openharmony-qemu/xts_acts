@@ -50,10 +50,10 @@ class ASYMKEY_ASYM_SEG_CIPHER_TEST {
         static void TearDownTestCase() {}
 };
 
-const int VALUE_0 = 0;
-const int VALUE_20 = 20;
-const int VALUE_53 = 53;
-const int VALUE_100 = 100;
+const int32_t VALUE_0 = 0;
+const int32_t VALUE_20 = 20;
+const int32_t VALUE_53 = 53;
+const int32_t VALUE_100 = 100;
 
 static OH_CryptoKeyPair *OHTEST_GenAsymKey(const char *algoName)
 {
@@ -521,6 +521,9 @@ static void OHTEST_DoSM2EncryptCipher(const SM2EnCipherParams &params)
     params.cipherText->data = static_cast<uint8_t*>(malloc(params.cipherText->len));
     uint8_t *tmp = params.cipherText->data;
     EXPECT_TRUE(params.cipherText->data != nullptr);
+    if (params.cipherText->data == nullptr) {
+        return;
+    }
 
     EXPECT_EQ(OH_CryptoAsymCipher_Create(params.algoName, &ctx), CRYPTO_SUCCESS);
     EXPECT_TRUE(ctx != nullptr);
@@ -581,6 +584,9 @@ static void OHTEST_DoSM2DecryptCipher(const SM2DeCipherParams &params)
     params.cipherText->data = static_cast<uint8_t*>(malloc(params.cipherText->len));
     uint8_t *tmp = params.cipherText->data;
     EXPECT_TRUE(params.cipherText->data != nullptr);
+    if (params.cipherText->data == nullptr) {
+        return;
+    }
 
     EXPECT_EQ(OH_CryptoAsymCipher_Create(params.algoName, &ctx), CRYPTO_SUCCESS);
     EXPECT_TRUE(ctx != nullptr);

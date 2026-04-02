@@ -28,8 +28,9 @@ const std::string DEFAULT_TAG = "ActsCryptoFrameworkNapiBasicTestTag";
 int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
     size_t argc = index + 1;
-    napi_value args[index + 1];
-
+    std::vector<napi_value> argsStorage(argc);
+    napi_value* args = argsStorage.data();
+    
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc <= index) {
         napi_throw_type_error(env, nullptr, "Argument missing");

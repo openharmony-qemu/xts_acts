@@ -55,13 +55,13 @@ class AGREEMENT_VECTOR_DH_TEST {
         static void TearDownTestCase() {};
 };
 
-const int VALUE_1 = 1;
-const int VALUE_2 = 2;
-const int VALUE_9 = 9;
-const int VALUE_15 = 15;
-const int VALUE_16 = 16;
-const int VALUE_25 = 25;
-const int VALUE_32 = 32;
+const int32_t VALUE_1 = 1;
+const int32_t VALUE_2 = 2;
+const int32_t VALUE_9 = 9;
+const int32_t VALUE_15 = 15;
+const int32_t VALUE_16 = 16;
+const int32_t VALUE_25 = 25;
+const int32_t VALUE_32 = 32;
 
 static OH_Crypto_ErrCode OHTEST_GetAgreementKeyPair(const char *algoNameA, const char *algoNameB,
     OH_CryptoKeyPair **keyPairA, OH_CryptoKeyPair **keyPairB)
@@ -88,6 +88,8 @@ static OH_Crypto_ErrCode OHTEST_GetAgreementKeyPair(const char *algoNameA, const
     }
 
 EXIT:
+    OH_CryptoKeyPair_Destroy(keyPairA);
+    OH_CryptoKeyPair_Destroy(keyPairB);
     OH_CryptoAsymKeyGenerator_Destroy(ctxA);
     OH_CryptoAsymKeyGenerator_Destroy(ctxB);
     return ret;
