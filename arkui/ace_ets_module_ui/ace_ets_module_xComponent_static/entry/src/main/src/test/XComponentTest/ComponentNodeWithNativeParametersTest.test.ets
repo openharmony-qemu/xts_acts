@@ -62,26 +62,26 @@ export default function ComponentNodeWithNativeParametersTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ComponentNodeWithNativeParametersTest_001
-     * @tc.name ComponentNodeWithNativeParametersTest_001
+     * @tc.number SUB_ARKUI_ComponentNodeWithNativeParametersTest_1000
+     * @tc.name ComponentNodeWithNativeParametersTest_1000
      * @tc.desc Test XComponent page title renders
      */
-    it('ComponentNodeWithNativeParametersTest_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ComponentNodeWithNativeParametersTest_001 execute: START');
+    it('ComponentNodeWithNativeParametersTest_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('ComponentNodeWithNativeParametersTest_1000 execute: START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('componentNodeWithNativeParameters_id'));
         let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('componentNodeWithNativeParameters1_id'));
-        console.info("[ComponentNodeWithNativeParametersTest_001] component obj is: " + obj.getElement('$attrs'));
-        console.info("[ComponentNodeWithNativeParametersTest_001] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
-        console.info("[ComponentNodeWithNativeParametersTest_001] component obj1 is: " + obj1.getElement('$attrs'));
-        console.info("[ComponentNodeWithNativeParametersTest_001] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithNativeParametersTest_1000] component obj is: " + obj.getElement('$attrs'));
+        console.info("[ComponentNodeWithNativeParametersTest_1000] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithNativeParametersTest_1000] component obj1 is: " + obj1.getElement('$attrs'));
+        console.info("[ComponentNodeWithNativeParametersTest_1000] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
 
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF808080')
         expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000')
         done();
       } catch (error) {
-        console.error('ComponentNodeWithNativeParametersTest_001 execute: ComponentNodeWithOptions error:' + error);
+        console.error('ComponentNodeWithNativeParametersTest_1000 execute: ComponentNodeWithOptions error:' + error);
         expect().assertFail();
         done();
       }
