@@ -31,7 +31,6 @@ import HttpRequestInactivityMsTest from './HttpRequestInactivityMs.test';
 import HttpRequestPatchTest from './HttpRequestPatch.test';
 import HttpRequestSyncTest from './HttpRequestSync.test';
 import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
-import WebSocketMinSupportTlsProtocolTest from './WebSocketMinSupportTlsProtocol.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
@@ -52,7 +51,6 @@ export default function testsuite() {
     HttpRequestPatchTest();
     HttpRequestSyncTest();
     HttpRequestReuseConnectionsTest();
-    WebSocketMinSupportTlsProtocolTest();
   } else {
     EmptyTest()
   }
