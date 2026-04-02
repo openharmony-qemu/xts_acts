@@ -816,6 +816,51 @@ export default function ActsCommonEventManagerSupportTest() {
         .assertEqual('usual.event.APP_FIRST_LAUNCH')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4500 END`)
     })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600
+     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
+        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600 END`)
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700
+     * @tc.desc   specific volumes on the device have been encrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTED)
+        .assertEqual('usual.event.VOLUME_ENCRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700 END`)
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800
+     * @tc.desc   specific volumes on the device have had their encryption policy set common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTION_POLICY_SET)
+        .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 END`)
+    })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
 }

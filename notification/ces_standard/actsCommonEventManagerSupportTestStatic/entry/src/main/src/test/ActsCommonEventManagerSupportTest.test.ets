@@ -947,5 +947,55 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600
+     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
+        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700
+     * @tc.desc   specific volumes on the device have been encrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTED)
+        .assertEqual('usual.event.VOLUME_ENCRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800
+     * @tc.desc   specific volumes on the device have had their encryption policy set common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTION_POLICY_SET)
+        .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800 END`)
+      done()
+    })
   })
 }
