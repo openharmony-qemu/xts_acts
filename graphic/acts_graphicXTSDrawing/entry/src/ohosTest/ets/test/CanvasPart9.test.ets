@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5601
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5700
      * @tc.desc   testCanvasResetClipMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipAfterClipPath
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5602
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5800
      * @tc.desc   testCanvasResetClipAfterClipPath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipAfterClipRoundRect
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5603
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5900
      * @tc.desc   testCanvasResetClipAfterClipRoundRect
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipWithoutClip
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5604
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_6000
      * @tc.desc   testCanvasResetClipWithoutClip
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipWithSaveRestore
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5605
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_6100
      * @tc.desc   testCanvasResetClipWithSaveRestore
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipWithDifferentClipOps
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5606
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_6200
      * @tc.desc   testCanvasResetClipWithDifferentClipOps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +225,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipWithDrawOperations
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5607
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_6300
      * @tc.desc   testCanvasResetClipWithDrawOperations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function drawingTsCanvasPart9Test() {
     })
     /**
      * @tc.name   testCanvasResetClipWithTransform
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_5608
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_6400
      * @tc.desc   testCanvasResetClipWithTransform
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
