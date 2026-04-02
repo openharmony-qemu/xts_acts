@@ -192,7 +192,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImage-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0200';
@@ -229,7 +229,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImage-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0300';
@@ -266,7 +266,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImage-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_STATIC_0400';
@@ -303,7 +303,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImageData-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0500';
@@ -341,7 +341,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImageData-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0600';
@@ -378,7 +378,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImageData-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0700';
@@ -415,7 +415,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestImageData-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0800';
@@ -452,7 +452,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestMovingPhoto-HIGH_QUALITY_MODE-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_STATIC_0900';
@@ -480,7 +480,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestMovingPhoto-BALANCE_MODE-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_STATIC_1000';
@@ -508,7 +508,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      MovingPhoto-getUri-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_GET_URI_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_GET_URI_STATIC_1100';
@@ -536,7 +536,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestContent-imageUri-''
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1200';
@@ -570,7 +570,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestContent-videoUri-''
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1300';
@@ -604,7 +604,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestContent-fileUri-''
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1400';
@@ -638,7 +638,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestContent-resourceType-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_STATIC_1500';
@@ -666,7 +666,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      cancelRequest-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600';
@@ -703,7 +703,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      cancelRequest-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700';
@@ -740,7 +740,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-401
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_1800';
@@ -779,7 +779,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_1900';
@@ -818,7 +818,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2000';
@@ -857,7 +857,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2100';
@@ -896,7 +896,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-801
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2200';
@@ -936,7 +936,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestVideoFile-401
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_REQUEST_VIDEO_FILE_STATIC_2300';
@@ -1046,7 +1046,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      requestContent-resourceType-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_VIDEO_RESOURCE_STATIC_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_CONTENT_VIDEO_RESOURCE_STATIC_2700';
@@ -1155,8 +1155,8 @@ export default function MediaAssetManagerStaticTest(): void {
             console.info('photoAsset displayName: ', photoAsset.displayName);
             expect(photoAsset.displayName.length > 0).assertTrue();
           }
+          done();
         });
-        done();
       }
       catch (error) {
         console.error(`${testNum} failed; error: ${error.code}`);
@@ -1351,7 +1351,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      getObjectByPosition-最小值-success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_STATIC_3600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_STATIC_3600';
@@ -1381,7 +1381,7 @@ export default function MediaAssetManagerStaticTest(): void {
      * @tc.desc      getObjectByPosition-最小值-1
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_STATIC_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_STATIC_3700';
