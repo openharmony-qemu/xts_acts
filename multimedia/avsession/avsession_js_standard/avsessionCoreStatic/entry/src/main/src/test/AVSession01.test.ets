@@ -171,9 +171,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0100]';
-            await session!.setBackgroundPlayMode(0).then(()=>{
+            await session!.setBackgroundPlayMode(avSession.BackgroundPlayMode.ENABLE_BACKGROUND_PLAY).then(()=>{
                 console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
-            }).catch((err: BusinessError) => {
+            }).catch((err) => {
                 console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -192,9 +192,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0200]';
-            await session!.setBackgroundPlayMode(1).then(()=>{
+            await session!.setBackgroundPlayMode(avSession.BackgroundPlayMode.DISABLE_BACKGROUND_PLAY).then(()=>{
                 console.info(`${TAG}TestLog: setBackgroundPlayMode success, DISABLE_BACKGROUND_PLAY set successful!`);
-            }).catch((err: BusinessError) => {
+            }).catch((err) => {
                 console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -214,10 +214,10 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_ERRORCODE_0100]';
             await session!.destroy();
-            await session!.setBackgroundPlayMode(0).then(()=>{
+            await session!.setBackgroundPlayMode(avSession.BackgroundPlayMode.ENABLE_BACKGROUND_PLAY).then(()=>{
                 console.info(`${TAG}TestLog: setBackgroundPlayMode without avsession test fail, set successful!`);
                 expect(false).assertTrue();
-            }).catch((err: BusinessError) => {
+            }).catch((err) => {
                 console.info(`${TAG}TestLog: setBackgroundPlayMode without avsession error occured, error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             });

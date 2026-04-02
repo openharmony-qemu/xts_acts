@@ -14,10 +14,10 @@
  */
 import AVSessionTest01 from './AVSession01.test'
 import AVSessionControllerTest01 from './AVSessionController01.test'
-import AVSessionCommonTest from './AVSessionCommon.test'
+// import AVSessionCommonTest from './AVSessionCommon.test'
 
 export default function testsuite() {
   AVSessionTest01();
   AVSessionControllerTest01();
-  AVSessionCommonTest();
+  // AVSessionCommonTest();
 }

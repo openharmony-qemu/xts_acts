@@ -26,7 +26,7 @@ export default function abilityTest() {
     let session: avSession.AVSession | null = null;
     let controller: avSession.AVSessionController | undefined;
     let tag: string = 'AVSessionCoreXTS';
-    let customData: Record<string,string> = {'customData': 'appdata'}
+    let customData: Record<string,Object> = {'customData': 'appdata'}
 
     beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
