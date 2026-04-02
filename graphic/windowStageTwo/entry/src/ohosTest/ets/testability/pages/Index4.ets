@@ -87,7 +87,7 @@ export struct V1ContentComponent {
             this.text = value
           })
           .id('textInput')
-        Button('����keyBoard����')
+        Button('keyBoard监听')
           .id('index4Btn3')
           .onClick(()=>{
             let windowClass = AppStorage.get('windowClass3') as window.Window;
