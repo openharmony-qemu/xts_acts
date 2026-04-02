@@ -116,14 +116,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_OPTIMIZE_TRAILING_SPACE_0100
-     * @tc.name TextAttribute_optimizeTrailingSpace
+     * @tc.number SUB_ArkUI_Text_Attribute_Optimize_Trailing_Space_0100
+     * @tc.name SUB_ArkUI_Text_Attribute_Optimize_Trailing_Space_0100
      * @tc.desc Verify TextAttribute_optimizeTrailingSpace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_optimizeTrailingSpace', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Optimize_Trailing_Space_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -153,14 +153,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_SHADER_STYLE_0200
-     * @tc.name TextAttribute_shaderStyle
+     * @tc.number SUB_ArkUI_Text_Attribute_Shader_Style_0200
+     * @tc.name SUB_ArkUI_Text_Attribute_Shader_Style_0200
      * @tc.desc Verify TextAttribute_shaderStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_shaderStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Shader_Style_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textRaw();
@@ -179,14 +179,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_ENABLE_AUTO_SPACING_0300
-     * @tc.name TextAttribute_enableAutoSpacing
+     * @tc.number SUB_ArkUI_Text_Attribute_Enable_Auto_Spacing_0300
+     * @tc.name SUB_ArkUI_Text_Attribute_Enable_Auto_Spacing_0300
      * @tc.desc Verify TextAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_enableAutoSpacing', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Enable_Auto_Spacing_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -215,14 +215,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_TEXT_VERTICAL_ALIGN_0400
-     * @tc.name TextAttribute_textVerticalAlign
+     * @tc.number SUB_ArkUI_Text_Attribute_Text_Vertical_Align_0400
+     * @tc.name SUB_ArkUI_Text_Attribute_Text_Vertical_Align_0400
      * @tc.desc Verify TextAttribute_textVerticalAlign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_textVerticalAlign', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Text_Vertical_Align_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -250,14 +250,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_CONTENT_TRANSITION_0500
-     * @tc.name TextAttribute_contentTransition
+     * @tc.number SUB_ArkUI_Text_Attribute_Content_Transition_0500
+     * @tc.name SUB_ArkUI_Text_Attribute_Content_Transition_0500
      * @tc.desc Verify TextAttribute_contentTransition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_contentTransition', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Content_Transition_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textRaw();
@@ -277,14 +277,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_TEXT_CONTENT_ALIGN_0600
-     * @tc.name TextAttribute_textContentAlign
+     * @tc.number SUB_ArkUI_Text_Attribute_Text_Content_Align_0600
+     * @tc.name SUB_ArkUI_Text_Attribute_Text_Content_Align_0600
      * @tc.desc Verify TextAttribute_textContentAlign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_textContentAlign', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Text_Content_Align_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -312,14 +312,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_MIN_LINES_0700
-     * @tc.name TextAttribute_minLines
+     * @tc.number SUB_ArkUI_Text_Attribute_Min_Lines_0700
+     * @tc.name SUB_ArkUI_Text_Attribute_Min_Lines_0700
      * @tc.desc Verify TextAttribute_minLines
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_minLines', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Min_Lines_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -345,14 +345,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_MIN_LINE_HEIGHT_0800
-     * @tc.name TextAttribute_minLineHeight
+     * @tc.number SUB_ArkUI_Text_Attribute_Min_Line_Height_0800
+     * @tc.name SUB_ArkUI_Text_Attribute_Min_Line_Height_0800
      * @tc.desc Verify TextAttribute_minLineHeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_minLineHeight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Min_Line_Height_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textRaw();
@@ -368,14 +368,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_MAX_LINE_HEIGHT_0900
-     * @tc.name TextAttribute_maxLineHeight
+     * @tc.number SUB_ArkUI_Text_Attribute_Max_Line_Height_0900
+     * @tc.name SUB_ArkUI_Text_Attribute_Max_Line_Height_0900
      * @tc.desc Verify TextAttribute_maxLineHeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_maxLineHeight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Max_Line_Height_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textRaw();
@@ -391,14 +391,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_LINE_HEIGHT_MULTIPLE_1000
-     * @tc.name TextAttribute_lineHeightMultiple
+     * @tc.number SUB_ArkUI_Text_Attribute_Line_Height_Multiple_1000
+     * @tc.name SUB_ArkUI_Text_Attribute_Line_Height_Multiple_1000
      * @tc.desc Verify TextAttribute_lineHeightMultiple
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_lineHeightMultiple', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Line_Height_Multiple_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();
@@ -427,14 +427,14 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_TEXT_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_1100
-     * @tc.name TextAttribute_enableSelectedDataDetector
+     * @tc.number SUB_ArkUI_Text_Attribute_Enable_Selected_Data_Detector_1100
+     * @tc.name SUB_ArkUI_Text_Attribute_Enable_Selected_Data_Detector_1100
      * @tc.desc Verify TextAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAttribute_enableSelectedDataDetector', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Text_Attribute_Enable_Selected_Data_Detector_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAttrs();

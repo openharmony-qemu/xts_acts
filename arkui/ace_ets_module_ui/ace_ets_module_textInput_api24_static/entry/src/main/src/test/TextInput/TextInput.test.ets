@@ -125,14 +125,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_TYPE_0100
-     * @tc.name TextInputAttribute_type
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Type_0100
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Type_0100
      * @tc.desc Verify TextInputAttribute_type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_type', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Type_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_ONE_TIME_CODE`)))?.click();
       await Utils.sleep(SLEEP);
@@ -141,14 +141,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_AUTO_FILL_ANIMATION_0200
-     * @tc.name TextInputAttribute_enableAutoFillAnimation
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Enable_Auto_Fill_Animation_0200
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Enable_Auto_Fill_Animation_0200
      * @tc.desc Verify TextInputAttribute_enableAutoFillAnimation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_enableAutoFillAnimation', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Enable_Auto_Fill_Animation_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         expect(textInputAttrs().getBoolean('enableAutoFillAnimation')).assertEqual(true);
@@ -161,14 +161,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_ON_WILL_ATTACH_IME_0300
-     * @tc.name TextInputAttribute_onWillAttachIME
+     * @tc.number SUB_ArkUI_TextInput_Attribute_On_Will_Attach_IME_0300
+     * @tc.name SUB_ArkUI_TextInput_Attribute_On_Will_Attach_IME_0300
      * @tc.desc Verify TextInputAttribute_onWillAttachIME
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_onWillAttachIME', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_On_Will_Attach_IME_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textInputRaw();
@@ -187,14 +187,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_STROKE_COLOR_0400
-     * @tc.name TextInputAttribute_strokeColor
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Stroke_Color_0400
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Stroke_Color_0400
      * @tc.desc Verify TextInputAttribute_strokeColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_strokeColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Stroke_Color_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         expect(textInputAttrs().getString('strokeColor')).assertEqual('#FF334455');
@@ -207,14 +207,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_AUTO_SPACING_0500
-     * @tc.name TextInputAttribute_enableAutoSpacing
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Enable_Auto_Spacing_0500
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Enable_Auto_Spacing_0500
      * @tc.desc Verify TextInputAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_enableAutoSpacing', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Enable_Auto_Spacing_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textInputAttrs();
@@ -243,14 +243,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_STROKE_WIDTH_0600
-     * @tc.name TextInputAttribute_strokeWidth
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Stroke_Width_0600
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Stroke_Width_0600
      * @tc.desc Verify TextInputAttribute_strokeWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_strokeWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Stroke_Width_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textInputAttrs();
@@ -283,14 +283,14 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTINPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0700
-     * @tc.name TextInputAttribute_enableSelectedDataDetector
+     * @tc.number SUB_ArkUI_TextInput_Attribute_Enable_Selected_Data_Detector_0700
+     * @tc.name SUB_ArkUI_TextInput_Attribute_Enable_Selected_Data_Detector_0700
      * @tc.desc Verify TextInputAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextInputAttribute_enableSelectedDataDetector', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextInput_Attribute_Enable_Selected_Data_Detector_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textInputAttrs();

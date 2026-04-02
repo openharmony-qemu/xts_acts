@@ -113,14 +113,14 @@ export default function CommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_INPUT_COUNTER_OPTIONS_COUNTER_TEXT_COLOR_0100
-     * @tc.name InputCounterOptions_counterTextColor
+     * @tc.number SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Color_0100
+     * @tc.name SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Color_0100
      * @tc.desc Verify InputCounterOptions counterTextColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('InputCounterOptions_counterTextColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Color_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const color = readShowCounterOptionColor('Common_textArea_counterTextColor', 'counterTextColor');
@@ -135,14 +135,14 @@ export default function CommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_INPUT_COUNTER_OPTIONS_COUNTER_TEXT_OVERFLOW_COLOR_0200
-     * @tc.name InputCounterOptions_counterTextOverflowColor
+     * @tc.number SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Overflow_Color_0200
+     * @tc.name SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Overflow_Color_0200
      * @tc.desc Verify InputCounterOptions counterTextOverflowColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('InputCounterOptions_counterTextOverflowColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_CommonPage_Input_Counter_Options_Counter_Text_Overflow_Color_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const color = readShowCounterOptionColor('Common_textArea_counterTextOverflowColor', 'counterTextOverflowColor');

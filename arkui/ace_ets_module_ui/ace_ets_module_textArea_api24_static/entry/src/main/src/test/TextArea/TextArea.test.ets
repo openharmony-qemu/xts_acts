@@ -125,14 +125,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_TYPE_0100
-     * @tc.name TextAreaAttribute_type
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Type_0100
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Type_0100
      * @tc.desc Verify TextAreaAttribute_type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_type', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Type_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_ONE_TIME_CODE`)))?.click();
       await Utils.sleep(SLEEP);
@@ -141,14 +141,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_MIN_LINES_0200
-     * @tc.name TextAreaAttribute_minLines
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Min_Lines_0200
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Min_Lines_0200
      * @tc.desc Verify TextAreaAttribute_minLines
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_minLines', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Min_Lines_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAreaAttrs();
@@ -174,14 +174,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_ENABLE_AUTO_SPACING_0300
-     * @tc.name TextAreaAttribute_enableAutoSpacing
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Enable_Auto_Spacing_0300
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Enable_Auto_Spacing_0300
      * @tc.desc Verify TextAreaAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_enableAutoSpacing', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Enable_Auto_Spacing_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAreaAttrs();
@@ -211,14 +211,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_STROKE_WIDTH_0400
-     * @tc.name TextAreaAttribute_strokeWidth
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Stroke_Width_0400
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Stroke_Width_0400
      * @tc.desc Verify TextAreaAttribute_strokeWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_strokeWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Stroke_Width_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAreaAttrs();
@@ -251,14 +251,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_STROKE_COLOR_0500
-     * @tc.name TextAreaAttribute_strokeColor
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Stroke_Color_0500
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Stroke_Color_0500
      * @tc.desc Verify TextAreaAttribute_strokeColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_strokeColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Stroke_Color_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = textAreaAttrs().getString('strokeColor');
@@ -272,14 +272,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_ON_WILL_ATTACH_IME_0600
-     * @tc.name TextAreaAttribute_onWillAttachIME
+     * @tc.number SUB_ArkUI_TextArea_Attribute_On_Will_Attach_IME_0600
+     * @tc.name SUB_ArkUI_TextArea_Attribute_On_Will_Attach_IME_0600
      * @tc.desc Verify TextAreaAttribute_onWillAttachIME
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_onWillAttachIME', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_On_Will_Attach_IME_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = textAreaRaw();
@@ -294,14 +294,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_SCROLL_BAR_COLOR_0700
-     * @tc.name TextAreaAttribute_scrollBarColor
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Scroll_Bar_Color_0700
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Scroll_Bar_Color_0700
      * @tc.desc Verify TextAreaAttribute_scrollBarColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_scrollBarColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Scroll_Bar_Color_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = inspector.getInspectorByKey(TEXT_AREA_KEY);
@@ -319,14 +319,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0800
-     * @tc.name TextAreaAttribute_enableSelectedDataDetector
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Enable_Selected_Data_Detector_0800
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Enable_Selected_Data_Detector_0800
      * @tc.desc Verify TextAreaAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_enableSelectedDataDetector', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Enable_Selected_Data_Detector_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAreaAttrs();
@@ -356,14 +356,14 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTAREA_TEXT_AREA_ATTRIBUTE_HORIZONTAL_SCROLLING_0900
-     * @tc.name TextAreaAttribute_horizontalScrolling
+     * @tc.number SUB_ArkUI_TextArea_Attribute_Horizontal_Scrolling_0900
+     * @tc.name SUB_ArkUI_TextArea_Attribute_Horizontal_Scrolling_0900
      * @tc.desc Verify TextAreaAttribute_horizontalScrolling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextAreaAttribute_horizontalScrolling', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextArea_Attribute_Horizontal_Scrolling_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = textAreaAttrs();

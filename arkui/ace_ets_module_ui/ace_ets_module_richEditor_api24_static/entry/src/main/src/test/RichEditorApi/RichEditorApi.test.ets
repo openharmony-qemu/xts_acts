@@ -136,11 +136,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_UNDO_STYLE_CLEAR_STYLE_0100
-     * @tc.name UndoStyle_CLEAR_STYLE
+     * @tc.number SUB_ArkUI_RichEditor_Undo_Style_CLEAR_STYLE_0100
+     * @tc.name SUB_ArkUI_RichEditor_Undo_Style_CLEAR_STYLE_0100
      * @tc.desc Verify UndoStyle.CLEAR_STYLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('UndoStyle_CLEAR_STYLE', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Undo_Style_CLEAR_STYLE_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_UndoStyle_CLEAR_STYLE`)))?.click();
       await Utils.sleep(SLEEP);
@@ -149,11 +152,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_UNDO_STYLE_KEEP_STYLE_0200
-     * @tc.name UndoStyle_KEEP_STYLE
+     * @tc.number SUB_ArkUI_RichEditor_Undo_Style_KEEP_STYLE_0200
+     * @tc.name SUB_ArkUI_RichEditor_Undo_Style_KEEP_STYLE_0200
      * @tc.desc Verify UndoStyle.KEEP_STYLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('UndoStyle_KEEP_STYLE', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Undo_Style_KEEP_STYLE_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_UndoStyle_KEEP_STYLE`)))?.click();
       await Utils.sleep(SLEEP);
@@ -162,11 +168,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_PARAGRAPH_STYLE_TEXT_VERTICAL_ALIGN_0300
-     * @tc.name RichEditorParagraphStyle_textVerticalAlign
+     * @tc.number SUB_ArkUI_RichEditor_Paragraph_Style_Text_Vertical_Align_0300
+     * @tc.name SUB_ArkUI_RichEditor_Paragraph_Style_Text_Vertical_Align_0300
      * @tc.desc Verify RichEditorParagraphStyle.textVerticalAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorParagraphStyle_textVerticalAlign', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Paragraph_Style_Text_Vertical_Align_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_paragraphStyle_textVerticalAlign`)))?.click();
       await Utils.sleep(SLEEP);
@@ -175,11 +184,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_BASE_CONTROLLER_SET_TYPING_PARAGRAPH_STYLE_0400
-     * @tc.name RichEditorBaseController_setTypingParagraphStyle
+     * @tc.number SUB_ArkUI_RichEditor_Base_Controller_Set_Typing_Paragraph_Style_0400
+     * @tc.name SUB_ArkUI_RichEditor_Base_Controller_Set_Typing_Paragraph_Style_0400
      * @tc.desc Verify RichEditorBaseController.setTypingParagraphStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorBaseController_setTypingParagraphStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Base_Controller_Set_Typing_Paragraph_Style_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_setTypingParagraphStyle`)))?.click();
       await Utils.sleep(SLEEP);
@@ -187,14 +199,15 @@ export default function RichEditorApiTest(): void {
       done();
     });
 
-    // 这个接口导致页面进不去
-
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0500
-     * @tc.name RichEditorAttribute_enableSelectedDataDetector
+     * @tc.number SUB_ArkUI_RichEditor_Attribute_Enable_Selected_Data_Detector_0500
+     * @tc.name SUB_ArkUI_RichEditor_Attribute_Enable_Selected_Data_Detector_0500
      * @tc.desc Verify RichEditorAttribute.enableSelectedDataDetector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorAttribute_enableSelectedDataDetector', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Attribute_Enable_Selected_Data_Detector_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = richAttrs();
@@ -222,11 +235,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_ON_WILL_ATTACH_IME_0600
-     * @tc.name RE_attr_onWillAttachIME
+     * @tc.number SUB_ArkUI_RichEditor_RE_Attr_On_Will_Attach_IME_0600
+     * @tc.name SUB_ArkUI_RichEditor_RE_Attr_On_Will_Attach_IME_0600
      * @tc.desc Verify RichEditorAttribute.onWillAttachIME (IMEClient callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RE_attr_onWillAttachIME', Level.LEVEL1, async (): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_RE_Attr_On_Will_Attach_IME_0600', Level.LEVEL1, async (): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const driver = Driver.create();
@@ -248,11 +264,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_ENABLE_AUTO_SPACING_0700
-     * @tc.name RichEditorAttribute_enableAutoSpacing
+     * @tc.number SUB_ArkUI_RichEditor_Attribute_Enable_Auto_Spacing_0700
+     * @tc.name SUB_ArkUI_RichEditor_Attribute_Enable_Auto_Spacing_0700
      * @tc.desc Verify RichEditorAttribute.enableAutoSpacing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorAttribute_enableAutoSpacing', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Attribute_Enable_Auto_Spacing_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = richAttrs();
@@ -280,11 +299,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_UNDO_STYLE_0800
-     * @tc.name RichEditorAttribute_undoStyle
+     * @tc.number SUB_ArkUI_RichEditor_Attribute_Undo_Style_0800
+     * @tc.name SUB_ArkUI_RichEditor_Attribute_Undo_Style_0800
      * @tc.desc Verify RichEditorAttribute.undoStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorAttribute_undoStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Attribute_Undo_Style_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = richAttrs();
@@ -313,11 +335,14 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_SCROLL_BAR_COLOR_0900
-     * @tc.name RichEditorAttribute_scrollBarColor
+     * @tc.number SUB_ArkUI_RichEditor_Attribute_Scroll_Bar_Color_0900
+     * @tc.name SUB_ArkUI_RichEditor_Attribute_Scroll_Bar_Color_0900
      * @tc.desc Verify RichEditorAttribute.scrollBarColor (ColorMetrics)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('RichEditorAttribute_scrollBarColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_RichEditor_Attribute_Scroll_Bar_Color_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = richInspectorRaw();

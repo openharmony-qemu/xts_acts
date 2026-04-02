@@ -137,14 +137,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_ID_0100
-     * @tc.name TextChangeEventInfo_id
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_0100
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_0100
      * @tc.desc Verify TextChangeEventInfo id global onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_id', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await globalOnAndInput(driver, 'evt_id');
@@ -161,14 +161,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_UNIQUE_ID_0200
-     * @tc.name TextChangeEventInfo_uniqueId
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_0200
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_0200
      * @tc.desc Verify TextChangeEventInfo uniqueId global onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_uniqueId', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await globalOnAndInput(driver, 'evt_uid');
@@ -185,14 +185,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_CONTENT_0300
-     * @tc.name TextChangeEventInfo_content
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_0300
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_0300
      * @tc.desc Verify TextChangeEventInfo content global onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_content', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await globalOnAndInput(driver, 'evt_content_body');
@@ -207,14 +207,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_ID_LOCAL_0400
-     * @tc.name TextChangeEventInfo_id_local
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_Local_0400
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_Local_0400
      * @tc.desc Verify TextChangeEventInfo id local onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_id_local', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_Local_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await localOnAndInput(driver, 'lid_probe');
@@ -231,14 +231,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_UNIQUE_ID_LOCAL_0500
-     * @tc.name TextChangeEventInfo_uniqueId_local
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_Local_0500
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_Local_0500
      * @tc.desc Verify TextChangeEventInfo uniqueId local onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_uniqueId_local', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_Local_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await localOnAndInput(driver, 'luid_probe');
@@ -255,14 +255,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_CHANGE_EVENT_INFO_CONTENT_LOCAL_0600
-     * @tc.name TextChangeEventInfo_content_local
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_Local_0600
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_Local_0600
      * @tc.desc Verify TextChangeEventInfo content local onTextChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextChangeEventInfo_content_local', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_Local_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const driver: Driver = Driver.create();
         await localOnAndInput(driver, 'evt_content_local');
@@ -277,14 +277,14 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_INPUT_OBSERVER_GLOBAL_TOGGLE_0700
-     * @tc.name textInputObserverTest_0010
+     * @tc.number SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700
+     * @tc.name SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textInputObserverTest_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_Test_0010_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[textInputObserverTest_0010] START');
       try {
         const driver: Driver = Driver.create();

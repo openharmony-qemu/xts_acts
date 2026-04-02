@@ -111,14 +111,14 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_ELLIPSIS_MODE_MULTILINE_START_0100
-     * @tc.name EllipsisMode_MULTILINE_START
+     * @tc.number SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_START_0100
+     * @tc.name SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_START_0100
      * @tc.desc Verify EllipsisMode_MULTILINE_START
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EllipsisMode_MULTILINE_START', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_START_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_START`)))?.click();
       await Utils.sleep(SLEEP);
@@ -127,14 +127,14 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_ELLIPSIS_MODE_MULTILINE_CENTER_0200
-     * @tc.name EllipsisMode_MULTILINE_CENTER
+     * @tc.number SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_CENTER_0200
+     * @tc.name SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_CENTER_0200
      * @tc.desc Verify EllipsisMode_MULTILINE_CENTER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EllipsisMode_MULTILINE_CENTER', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_CENTER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_CENTER`)))?.click();
       await Utils.sleep(SLEEP);

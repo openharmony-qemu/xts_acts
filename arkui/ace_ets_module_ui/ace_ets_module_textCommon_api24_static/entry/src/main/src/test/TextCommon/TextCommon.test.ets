@@ -165,14 +165,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_CONTENT_ALIGN_TOP_0100
-     * @tc.name TextCommon_textContentAlign_TOP
+     * @tc.number SUB_ArkUI_TextCommon_Text_Content_Align_TOP_0100
+     * @tc.name SUB_ArkUI_TextCommon_Text_Content_Align_TOP_0100
      * @tc.desc Verify TextCommon_textContentAlign_TOP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_textContentAlign_TOP', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Content_Align_TOP_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_TOP`);
@@ -187,14 +187,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_CONTENT_ALIGN_CENTER_0200
-     * @tc.name TextCommon_textContentAlign_CENTER
+     * @tc.number SUB_ArkUI_TextCommon_Text_Content_Align_CENTER_0200
+     * @tc.name SUB_ArkUI_TextCommon_Text_Content_Align_CENTER_0200
      * @tc.desc Verify TextCommon_textContentAlign_CENTER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_textContentAlign_CENTER', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Content_Align_CENTER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_CENTER`);
@@ -209,14 +209,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_CONTENT_ALIGN_BOTTOM_0300
-     * @tc.name TextCommon_textContentAlign_BOTTOM
+     * @tc.number SUB_ArkUI_TextCommon_Text_Content_Align_BOTTOM_0300
+     * @tc.name SUB_ArkUI_TextCommon_Text_Content_Align_BOTTOM_0300
      * @tc.desc Verify TextCommon_textContentAlign_BOTTOM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_textContentAlign_BOTTOM', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Content_Align_BOTTOM_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_BOTTOM`);
@@ -231,14 +231,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_FLIP_DIRECTION_DOWN_0400
-     * @tc.name TextCommon_FlipDirection_DOWN
+     * @tc.number SUB_ArkUI_TextCommon_Flip_Direction_DOWN_0400
+     * @tc.name SUB_ArkUI_TextCommon_Flip_Direction_DOWN_0400
      * @tc.desc Verify TextCommon_FlipDirection_DOWN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_FlipDirection_DOWN', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Flip_Direction_DOWN_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_FLIP_DIRECTION_DOWN`);
@@ -253,14 +253,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_FLIP_DIRECTION_UP_0500
-     * @tc.name TextCommon_FlipDirection_UP
+     * @tc.number SUB_ArkUI_TextCommon_Flip_Direction_UP_0500
+     * @tc.name SUB_ArkUI_TextCommon_Flip_Direction_UP_0500
      * @tc.desc Verify TextCommon_FlipDirection_UP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_FlipDirection_UP', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Flip_Direction_UP_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_FLIP_DIRECTION_UP`);
@@ -275,14 +275,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_SUPERSCRIPT_STYLE_NORMAL_0600
-     * @tc.name TextCommon_SuperscriptStyle_NORMAL
+     * @tc.number SUB_ArkUI_TextCommon_Superscript_Style_NORMAL_0600
+     * @tc.name SUB_ArkUI_TextCommon_Superscript_Style_NORMAL_0600
      * @tc.desc Verify TextCommon_SuperscriptStyle_NORMAL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_SuperscriptStyle_NORMAL', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Superscript_Style_NORMAL_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_NORMAL`);
@@ -297,14 +297,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_SUPERSCRIPT_STYLE_SUPERSCRIPT_0700
-     * @tc.name TextCommon_SuperscriptStyle_SUPERSCRIPT
+     * @tc.number SUB_ArkUI_TextCommon_Superscript_Style_SUPERSCRIPT_0700
+     * @tc.name SUB_ArkUI_TextCommon_Superscript_Style_SUPERSCRIPT_0700
      * @tc.desc Verify TextCommon_SuperscriptStyle_SUPERSCRIPT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_SuperscriptStyle_SUPERSCRIPT', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Superscript_Style_SUPERSCRIPT_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_SUPERSCRIPT`);
@@ -319,14 +319,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_SUPERSCRIPT_STYLE_SUBSCRIPT_0800
-     * @tc.name TextCommon_SuperscriptStyle_SUBSCRIPT
+     * @tc.number SUB_ArkUI_TextCommon_Superscript_Style_SUBSCRIPT_0800
+     * @tc.name SUB_ArkUI_TextCommon_Superscript_Style_SUBSCRIPT_0800
      * @tc.desc Verify TextCommon_SuperscriptStyle_SUBSCRIPT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_SuperscriptStyle_SUBSCRIPT', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Superscript_Style_SUBSCRIPT_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_SUBSCRIPT`);
@@ -341,14 +341,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_VERTICAL_ALIGN_BASELINE_0900
-     * @tc.name TextCommon_TextVerticalAlign_BASELINE
+     * @tc.number SUB_ArkUI_TextCommon_Text_Vertical_Align_BASELINE_0900
+     * @tc.name SUB_ArkUI_TextCommon_Text_Vertical_Align_BASELINE_0900
      * @tc.desc Verify TextCommon_TextVerticalAlign_BASELINE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextVerticalAlign_BASELINE', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Vertical_Align_BASELINE_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_BASELINE`);
@@ -363,14 +363,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_VERTICAL_ALIGN_BOTTOM_1000
-     * @tc.name TextCommon_TextVerticalAlign_BOTTOM
+     * @tc.number SUB_ArkUI_TextCommon_Text_Vertical_Align_BOTTOM_1000
+     * @tc.name SUB_ArkUI_TextCommon_Text_Vertical_Align_BOTTOM_1000
      * @tc.desc Verify TextCommon_TextVerticalAlign_BOTTOM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextVerticalAlign_BOTTOM', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Vertical_Align_BOTTOM_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_BOTTOM`);
@@ -385,14 +385,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_VERTICAL_ALIGN_CENTER_1100
-     * @tc.name TextCommon_TextVerticalAlign_CENTER
+     * @tc.number SUB_ArkUI_TextCommon_Text_Vertical_Align_CENTER_1100
+     * @tc.name SUB_ArkUI_TextCommon_Text_Vertical_Align_CENTER_1100
      * @tc.desc Verify TextCommon_TextVerticalAlign_CENTER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextVerticalAlign_CENTER', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Vertical_Align_CENTER_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_CENTER`);
@@ -407,14 +407,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_VERTICAL_ALIGN_TOP_1200
-     * @tc.name TextCommon_TextVerticalAlign_TOP
+     * @tc.number SUB_ArkUI_TextCommon_Text_Vertical_Align_TOP_1200
+     * @tc.name SUB_ArkUI_TextCommon_Text_Vertical_Align_TOP_1200
      * @tc.desc Verify TextCommon_TextVerticalAlign_TOP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextVerticalAlign_TOP', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Vertical_Align_TOP_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_TOP`);
@@ -429,14 +429,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_DATA_DETECTOR_CONFIG_ENABLE_PREVIEW_MENU_1300
-     * @tc.name TextCommon_TextDataDetectorConfig_enablePreviewMenu
+     * @tc.number SUB_ArkUI_TextCommon_Text_Data_Detector_Config_Enable_Preview_Menu_1300
+     * @tc.name SUB_ArkUI_TextCommon_Text_Data_Detector_Config_Enable_Preview_Menu_1300
      * @tc.desc Verify TextDataDetectorConfig.enablePreviewMenu
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextDataDetectorConfig_enablePreviewMenu', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Data_Detector_Config_Enable_Preview_Menu_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_enablePreviewMenu`);
@@ -451,14 +451,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_LAYOUT_MANAGER_GET_CHARACTER_POSITION_AT_COORDINATE_1400
-     * @tc.name TextCommon_LayoutManager_getCharacterPositionAtCoordinate
+     * @tc.number SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Position_At_Coordinate_1400
+     * @tc.name SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Position_At_Coordinate_1400
      * @tc.desc Verify LayoutManager.getCharacterPositionAtCoordinate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_LayoutManager_getCharacterPositionAtCoordinate', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Position_At_Coordinate_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_m_getCharacterPositionAtCoordinate`);
@@ -475,14 +475,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_LAYOUT_MANAGER_GET_GLYPH_RANGE_FOR_CHARACTER_RANGE_1500
-     * @tc.name TextCommon_LayoutManager_getGlyphRangeForCharacterRange
+     * @tc.number SUB_ArkUI_TextCommon_Layout_Manager_Get_Glyph_Range_For_Character_Range_1500
+     * @tc.name SUB_ArkUI_TextCommon_Layout_Manager_Get_Glyph_Range_For_Character_Range_1500
      * @tc.desc Verify LayoutManager.getGlyphRangeForCharacterRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_LayoutManager_getGlyphRangeForCharacterRange', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Glyph_Range_For_Character_Range_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_m_getGlyphRangeForCharacterRange`);
@@ -499,14 +499,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_LAYOUT_MANAGER_GET_CHARACTER_RANGE_FOR_GLYPH_RANGE_1600
-     * @tc.name TextCommon_LayoutManager_getCharacterRangeForGlyphRange
+     * @tc.number SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Range_For_Glyph_Range_1600
+     * @tc.name SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Range_For_Glyph_Range_1600
      * @tc.desc Verify LayoutManager.getCharacterRangeForGlyphRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_LayoutManager_getCharacterRangeForGlyphRange', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Range_For_Glyph_Range_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_m_getCharacterRangeForGlyphRange`);
@@ -523,14 +523,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_EDIT_MENU_OPTIONS_ON_PREPARE_MENU_1700
-     * @tc.name TextCommon_EditMenuOptions_onPrepareMenu
+     * @tc.number SUB_ArkUI_TextCommon_Edit_Menu_Options_On_Prepare_Menu_1700
+     * @tc.name SUB_ArkUI_TextCommon_Edit_Menu_Options_On_Prepare_Menu_1700
      * @tc.desc Verify EditMenuOptions.onPrepareMenu
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_EditMenuOptions_onPrepareMenu', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Edit_Menu_Options_On_Prepare_Menu_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_onPrepareMenu_invoke`);
@@ -545,14 +545,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_DECORATION_STYLE_RESULT_THICKNESS_SCALE_1800
-     * @tc.name TextCommon_DecorationStyleResult_thicknessScale
+     * @tc.number SUB_ArkUI_TextCommon_Decoration_Style_Result_Thickness_Scale_1800
+     * @tc.name SUB_ArkUI_TextCommon_Decoration_Style_Result_Thickness_Scale_1800
      * @tc.desc Verify DecorationStyleResult.thicknessScale from RichEditor span
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_DecorationStyleResult_thicknessScale', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Decoration_Style_Result_Thickness_Scale_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_decoration_thicknessScale`);
@@ -568,14 +568,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_LINEAR_GRADIENT_OPTIONS_COLORS_1900
-     * @tc.name TextCommon_LinearGradientOptions_colors
+     * @tc.number SUB_ArkUI_TextCommon_Linear_Gradient_Options_Colors_1900
+     * @tc.name SUB_ArkUI_TextCommon_Linear_Gradient_Options_Colors_1900
      * @tc.desc Verify LinearGradientOptions bound via Text.linearGradient
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_LinearGradientOptions_colors', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Linear_Gradient_Options_Colors_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_linear_gradient_options`);
@@ -590,14 +590,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_RADIAL_GRADIENT_OPTIONS_RADIUS_2000
-     * @tc.name TextCommon_RadialGradientOptions_radius
+     * @tc.number SUB_ArkUI_TextCommon_Radial_Gradient_Options_Radius_2000
+     * @tc.name SUB_ArkUI_TextCommon_Radial_Gradient_Options_Radius_2000
      * @tc.desc Verify RadialGradientOptions bound via Text.radialGradient
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_RadialGradientOptions_radius', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Radial_Gradient_Options_Radius_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_radial_gradient_options`);
@@ -612,14 +612,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_NUMERIC_TEXT_TRANSITION_OPTIONS_FLIP_AND_BLUR_2100
-     * @tc.name TextCommon_NumericTextTransitionOptions_flip_and_blur
+     * @tc.number SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_And_Blur_2100
+     * @tc.name SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_And_Blur_2100
      * @tc.desc Verify NumericTextTransition with NumericTextTransitionOptions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_NumericTextTransitionOptions_flip_and_blur', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_And_Blur_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_numeric_transition_options`);
@@ -634,14 +634,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_NUMERIC_TEXT_TRANSITION_OPTIONS_FLIP_DIRECTION_2200
-     * @tc.name TextCommon_NumericTextTransitionOptions_flipDirection
+     * @tc.number SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_Direction_2200
+     * @tc.name SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_Direction_2200
      * @tc.desc Verify NumericTextTransitionOptions.flipDirection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_NumericTextTransitionOptions_flipDirection', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_Direction_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_nto_flip`);
@@ -656,14 +656,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_NUMERIC_TEXT_TRANSITION_OPTIONS_ENABLE_BLUR_2300
-     * @tc.name TextCommon_NumericTextTransitionOptions_enableBlur
+     * @tc.number SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Enable_Blur_2300
+     * @tc.name SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Enable_Blur_2300
      * @tc.desc Verify NumericTextTransitionOptions.enableBlur
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_NumericTextTransitionOptions_enableBlur', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Enable_Blur_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_nto_blur`);
@@ -678,14 +678,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_NUMERIC_TEXT_TRANSITION_FLIP_DIRECTION_2400
-     * @tc.name TextCommon_NumericTextTransition_flipDirection
+     * @tc.number SUB_ArkUI_TextCommon_Numeric_Text_Transition_Flip_Direction_2400
+     * @tc.name SUB_ArkUI_TextCommon_Numeric_Text_Transition_Flip_Direction_2400
      * @tc.desc Verify NumericTextTransition.flipDirection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_NumericTextTransition_flipDirection', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Flip_Direction_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_nt_inst_flip`);
@@ -700,14 +700,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_NUMERIC_TEXT_TRANSITION_ENABLE_BLUR_2500
-     * @tc.name TextCommon_NumericTextTransition_enableBlur
+     * @tc.number SUB_ArkUI_TextCommon_Numeric_Text_Transition_Enable_Blur_2500
+     * @tc.name SUB_ArkUI_TextCommon_Numeric_Text_Transition_Enable_Blur_2500
      * @tc.desc Verify NumericTextTransition.enableBlur
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_NumericTextTransition_enableBlur', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Enable_Blur_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_nt_inst_blur`);
@@ -723,14 +723,14 @@ export default function TextCommonTest(): void {
 
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_TEXT_LAYOUT_OPTIONS_CONSTRAINT_WIDTH_2600
-     * @tc.name TextCommon_TextLayoutOptions_constraintWidth
+     * @tc.number SUB_ArkUI_TextCommon_Text_Layout_Options_Constraint_Width_2600
+     * @tc.name SUB_ArkUI_TextCommon_Text_Layout_Options_Constraint_Width_2600
      * @tc.desc Verify TextLayoutOptions.constraintWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_TextLayoutOptions_constraintWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_Text_Layout_Options_Constraint_Width_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_btn_text_layout_options`);
@@ -745,14 +745,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_IMECLIENT_NODE_ID_2700
-     * @tc.name TextCommon_IMEClient_nodeId
+     * @tc.number SUB_ArkUI_TextCommon_IME_Client_Node_Id_2700
+     * @tc.name SUB_ArkUI_TextCommon_IME_Client_Node_Id_2700
      * @tc.desc Verify IMEClient.nodeId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_IMEClient_nodeId', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_IME_Client_Node_Id_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_textinput_ime`);
@@ -772,14 +772,14 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXTCOMMON_TEXT_COMMON_IMECLIENT_SET_EXTRA_CONFIG_2800
-     * @tc.name TextCommon_IMEClient_setExtraConfig
+     * @tc.number SUB_ArkUI_TextCommon_IME_Client_Set_Extra_Config_2800
+     * @tc.name SUB_ArkUI_TextCommon_IME_Client_Set_Extra_Config_2800
      * @tc.desc Verify IMEClient.setExtraConfig
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TextCommon_IMEClient_setExtraConfig', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_TextCommon_IME_Client_Set_Extra_Config_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         await findAndClickById(d, `${PFX}_textinput_ime`);

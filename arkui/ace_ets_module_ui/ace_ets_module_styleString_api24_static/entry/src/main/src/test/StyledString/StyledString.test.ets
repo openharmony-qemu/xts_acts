@@ -133,14 +133,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_TEXT_INSPECTOR_NON_EMPTY_0100
-     * @tc.name StyledString_Text_inspector_nonEmpty
+     * @tc.number SUB_ArkUI_StyledString_Text_Inspector_Non_Empty_0100
+     * @tc.name SUB_ArkUI_StyledString_Text_Inspector_Non_Empty_0100
      * @tc.desc Verify StyledString Text inspector non-empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_Text_inspector_nonEmpty', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Text_Inspector_Non_Empty_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = styledTextRaw();
@@ -160,14 +160,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_TEXT_STROKE_COLOR_IN_TREE_0200
-     * @tc.name StyledString_Text_strokeColor_inTree
+     * @tc.number SUB_ArkUI_StyledString_Text_Stroke_Color_In_Tree_0200
+     * @tc.name SUB_ArkUI_StyledString_Text_Stroke_Color_In_Tree_0200
      * @tc.desc Verify StyledString strokeColor in inspector tree
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_Text_strokeColor_inTree', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Text_Stroke_Color_In_Tree_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = styledTextRaw();
@@ -186,14 +186,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_TEXT_PARAGRAPH_OR_ATTACHMENT_HINTS_0300
-     * @tc.name StyledString_Text_paragraphOrAttachmentHints
+     * @tc.number SUB_ArkUI_StyledString_Text_Paragraph_Or_Attachment_Hints_0300
+     * @tc.name SUB_ArkUI_StyledString_Text_Paragraph_Or_Attachment_Hints_0300
      * @tc.desc Verify StyledString paragraph or attachment hints
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_Text_paragraphOrAttachmentHints', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Text_Paragraph_Or_Attachment_Hints_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = styledTextRaw();
@@ -213,28 +213,28 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_TEXT_STYLE_SUPERSCRIPT_0400
-     * @tc.name StyledString_TextStyle_superscript
+     * @tc.number SUB_ArkUI_StyledString_Text_Style_Superscript_0400
+     * @tc.name SUB_ArkUI_StyledString_Text_Style_Superscript_0400
      * @tc.desc Verify TextStyle superscript
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_TextStyle_superscript', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Text_Style_Superscript_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const ts = new TextStyle({ superscript: SuperscriptStyle.NORMAL });
       expect(ts.superscript === SuperscriptStyle.NORMAL).assertTrue();
       done();
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_GESTURE_STYLE_INTERFACE_ON_TOUCH_0500
-     * @tc.name StyledString_GestureStyleInterface_onTouch
+     * @tc.number SUB_ArkUI_StyledString_Gesture_Style_Interface_On_Touch_0500
+     * @tc.name SUB_ArkUI_StyledString_Gesture_Style_Interface_On_Touch_0500
      * @tc.desc Verify GestureStyleInterface onTouch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_GestureStyleInterface_onTouch', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Gesture_Style_Interface_On_Touch_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const gsi: GestureStyleInterface = { onTouch: (_ev) => {
       } };
       expect(gsi.onTouch !== undefined).assertTrue();
@@ -242,14 +242,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_PARAGRAPH_STYLE_LEADING_MARGIN_SPAN_0600
-     * @tc.name StyledString_ParagraphStyle_leadingMarginSpan
+     * @tc.number SUB_ArkUI_StyledString_Paragraph_Style_Leading_Margin_Span_0600
+     * @tc.name SUB_ArkUI_StyledString_Paragraph_Style_Leading_Margin_Span_0600
      * @tc.desc Verify ParagraphStyle leadingMarginSpan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_ParagraphStyle_leadingMarginSpan', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Paragraph_Style_Leading_Margin_Span_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const span = new TestLeadingMarginSpan();
       const ps = new ParagraphStyle({ textVerticalAlign: TextVerticalAlign.TOP, leadingMarginSpan: span });
       const paragraphStyleInfo: ParagraphStyleInterface = { leadingMarginSpan: span };
@@ -258,14 +258,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_IMAGE_ATTACHMENT_SIZE_IN_VP_0700
-     * @tc.name StyledString_ImageAttachment_sizeInVp
+     * @tc.number SUB_ArkUI_StyledString_Image_Attachment_Size_In_Vp_0700
+     * @tc.name SUB_ArkUI_StyledString_Image_Attachment_Size_In_Vp_0700
      * @tc.desc Verify ImageAttachment sizeInVp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_ImageAttachment_sizeInVp', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Image_Attachment_Size_In_Vp_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const rio: ResourceImageAttachmentOptions = {
         resourceValue: $r('sys.media.ohos_ic_public_voice'),
         supportSvg2: true
@@ -276,14 +276,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_LEADING_MARGIN_SPAN_DRAW_INFO_FIELDS_0800
-     * @tc.name StyledString_LeadingMarginSpanDrawInfo_fields
+     * @tc.number SUB_ArkUI_StyledString_Leading_Margin_Span_Draw_Info_Fields_0800
+     * @tc.name SUB_ArkUI_StyledString_Leading_Margin_Span_Draw_Info_Fields_0800
      * @tc.desc Verify LeadingMarginSpanDrawInfo fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_LeadingMarginSpanDrawInfo_fields', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Leading_Margin_Span_Draw_Info_Fields_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const info: LeadingMarginSpanDrawInfo = {
         x: 0,
         top: 0,
@@ -301,14 +301,14 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_STYLED_STRING_LEADING_MARGIN_SPAN_ON_DRAW_GET_LEADING_MARGIN_0900
-     * @tc.name StyledString_LeadingMarginSpan_onDraw_getLeadingMargin
+     * @tc.number SUB_ArkUI_StyledString_Leading_Margin_Span_On_Draw_Get_Leading_Margin_0900
+     * @tc.name SUB_ArkUI_StyledString_Leading_Margin_Span_On_Draw_Get_Leading_Margin_0900
      * @tc.desc Verify LeadingMarginSpan getLeadingMargin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('StyledString_LeadingMarginSpan_onDraw_getLeadingMargin', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_StyledString_Leading_Margin_Span_On_Draw_Get_Leading_Margin_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const span = new TestLeadingMarginSpan();
       const lm = span.getLeadingMargin();
       expect(lm !== undefined).assertTrue();

@@ -110,14 +110,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_TYPE_0100
-     * @tc.name SearchAttribute_type
+     * @tc.number SUB_ArkUI_Search_Attribute_Type_0100
+     * @tc.name SUB_ArkUI_Search_Attribute_Type_0100
      * @tc.desc Verify Search SearchType attribute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_type', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_Type_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(SearchType.ONE_TIME_CODE === 14).assertTrue();
         done();
@@ -129,14 +129,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_STROKE_WIDTH_0200
-     * @tc.name SearchAttribute_strokeWidth
+     * @tc.number SUB_ArkUI_Search_Attribute_Stroke_Width_0200
+     * @tc.name SUB_ArkUI_Search_Attribute_Stroke_Width_0200
      * @tc.desc Verify Search strokeWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_strokeWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_Stroke_Width_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = inspector.getInspectorByKey(SEARCH_KEY);
@@ -171,14 +171,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_STROKE_COLOR_0300
-     * @tc.name SearchAttribute_strokeColor
+     * @tc.number SUB_ArkUI_Search_Attribute_Stroke_Color_0300
+     * @tc.name SUB_ArkUI_Search_Attribute_Stroke_Color_0300
      * @tc.desc Verify Search strokeColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_strokeColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_Stroke_Color_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const v = searchAttrs().getString('strokeColor');
@@ -193,14 +193,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_ON_WILL_ATTACH_IME_0400
-     * @tc.name SearchAttribute_onWillAttachIME
+     * @tc.number SUB_ArkUI_Search_Attribute_On_Will_Attach_IME_0400
+     * @tc.name SUB_ArkUI_Search_Attribute_On_Will_Attach_IME_0400
      * @tc.desc Verify Search onWillAttachIME
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_onWillAttachIME', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_On_Will_Attach_IME_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const raw = inspector.getInspectorByKey(SEARCH_KEY);
@@ -215,14 +215,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_ENABLE_AUTO_SPACING_0500
-     * @tc.name SearchAttribute_enableAutoSpacing
+     * @tc.number SUB_ArkUI_Search_Attribute_Enable_Auto_Spacing_0500
+     * @tc.name SUB_ArkUI_Search_Attribute_Enable_Auto_Spacing_0500
      * @tc.desc Verify Search enableAutoSpacing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_enableAutoSpacing', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_Enable_Auto_Spacing_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = searchAttrs();
@@ -251,14 +251,14 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SEARCH_SEARCH_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0600
-     * @tc.name SearchAttribute_enableSelectedDataDetector
+     * @tc.number SUB_ArkUI_Search_Attribute_Enable_Selected_Data_Detector_0600
+     * @tc.name SUB_ArkUI_Search_Attribute_Enable_Selected_Data_Detector_0600
      * @tc.desc Verify Search enableSelectedDataDetector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SearchAttribute_enableSelectedDataDetector', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_Search_Attribute_Enable_Selected_Data_Detector_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(SLEEP);
         const attrs = searchAttrs();
