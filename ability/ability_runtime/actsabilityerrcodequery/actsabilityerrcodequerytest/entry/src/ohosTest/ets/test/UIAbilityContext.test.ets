@@ -35,7 +35,7 @@ const DOMAIN = 0xeeee;
 const TAG: string = '[openLinkDemo]';
 let buffer = new ArrayBuffer(640 * 1024);
 
-const TWO_HUNDRED_KB = 500 * 1024;
+const FIVE_HUNDRED_KB = 500 * 1024;
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 // 生成一个指定长度的字符串
 function generateLargeString(length: number): string {
@@ -762,7 +762,7 @@ export default function UIAbilityContext() {
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       // 构造一个超过 200KB 的对象
-      const largeObject = generateLargeString(TWO_HUNDRED_KB + 100)
+      const largeObject = generateLargeString(FIVE_HUNDRED_KB + 100)
       let startWant: Want = {
         bundleName: 'com.test.actsabilityerrcodequerytest',
         abilityName: 'MainAbility1',
