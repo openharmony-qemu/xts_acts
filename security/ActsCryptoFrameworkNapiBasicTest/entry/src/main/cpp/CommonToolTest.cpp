@@ -106,11 +106,25 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     if (len > dstSize) {
         return ERROR_CODE_NEGATIVE_TWO;
     }
-    if (dst == src) {
-        return SUCCESS_CODE;
+    // 处理重叠情况的安全复制
+    unsigned char* dstPtr = (unsigned char*)dst;
+    const unsigned char* srcPtr = static_cast<const unsigned char*>(src);
+    if (dstPtr == srcPtr) {
+        return SUCCESS_CODE; // 源和目标相同，无需复制
     }
-    memmove(dst, src, len);
-    return SUCCESS_CODE;
+    // 判断是否有重叠以及重叠类型
+    if (dstPtr < srcPtr) {
+ 	// 正向复制：目标在源前面，或者不重叠
+ 	    for (size_t i = 0; i < len; ++i) {
+            dstPtr[i] = srcPtr[i];
+ 	    }
+ 	} else if (dstPtr > srcPtr) {
+ 	// 反向复制：目标在源后面，有重叠
+ 	    for (size_t i = len; i > 0; --i) {
+ 	        dstPtr[i - 1] = srcPtr[i - 1];
+ 	    }
+ 	}
+ 	return SUCCESS_CODE;
 }
 
 int SafeMemset(void* dst, size_t dstSize, const void* src, size_t len)
