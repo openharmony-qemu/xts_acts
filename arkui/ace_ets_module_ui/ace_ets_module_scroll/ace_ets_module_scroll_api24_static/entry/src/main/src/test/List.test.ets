@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
-import SaveScrollSearchTest from './SaveScrollSearchTest/SaveScrollSearch.test';
+import ListScrollApiTest from './ListScrollApiTest/ListScrollApi.test';
+import ListItemSwipeManagerTest from './ListItemSwipeManagerTest/ListItemSwipeManager.test';
+import ScrollBarAttributeTest from './ScrollBarAttributeTest/ScrollBarAttribute.test';
+import ScrollScrollableChainTest from './ScrollScrollableChainTest/ScrollScrollableChain.test';
 
 export default function testsuite() {
-  TipsOptionsTest();
-  SaveScrollSearchTest();
+  ListScrollApiTest();
+  ListItemSwipeManagerTest();
+  ScrollBarAttributeTest();
+  ScrollScrollableChainTest();
 }
