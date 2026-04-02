@@ -504,7 +504,7 @@ export default function drawingTsPath7Test() {
     
     /**
      * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6200
-     * @tc.name      testPathGetVerbDataWithCon
+     * @tc.name      testPathGetVerbDataWithConic
      * @tc.desc      testPathGetVerbDataWithConic
      * @tc.size      MediumTest
      * @tc.type      Function
