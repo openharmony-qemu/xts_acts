@@ -136,7 +136,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_UNDOSTYLE_CLEAR_STYLE_0100
+     * @tc.number SUB_ARKUI_RICH_EDITOR_UNDO_STYLE_CLEAR_STYLE_0100
      * @tc.name UndoStyle_CLEAR_STYLE
      * @tc.desc Verify UndoStyle.CLEAR_STYLE
      */
@@ -149,7 +149,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_UNDOSTYLE_KEEP_STYLE_0200
+     * @tc.number SUB_ARKUI_RICH_EDITOR_UNDO_STYLE_KEEP_STYLE_0200
      * @tc.name UndoStyle_KEEP_STYLE
      * @tc.desc Verify UndoStyle.KEEP_STYLE
      */
@@ -162,7 +162,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORPARAGRAPHSTYLE_TEXTVERTICALALIGN_0300
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_PARAGRAPH_STYLE_TEXT_VERTICAL_ALIGN_0300
      * @tc.name RichEditorParagraphStyle_textVerticalAlign
      * @tc.desc Verify RichEditorParagraphStyle.textVerticalAlign
      */
@@ -175,7 +175,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORBASECONTROLLER_SETTYPINGPARAGRAPHSTYLE_0400
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_BASE_CONTROLLER_SET_TYPING_PARAGRAPH_STYLE_0400
      * @tc.name RichEditorBaseController_setTypingParagraphStyle
      * @tc.desc Verify RichEditorBaseController.setTypingParagraphStyle
      */
@@ -190,7 +190,7 @@ export default function RichEditorApiTest(): void {
     // 这个接口导致页面进不去
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORATTRIBUTE_ENABLESELECTEDDATADETECTOR_0500
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0500
      * @tc.name RichEditorAttribute_enableSelectedDataDetector
      * @tc.desc Verify RichEditorAttribute.enableSelectedDataDetector
      */
@@ -222,7 +222,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RE_ATTR_ONWILLATTACHIME_0600
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RE_ATTR_ON_WILL_ATTACH_IME_0600
      * @tc.name RE_attr_onWillAttachIME
      * @tc.desc Verify RichEditorAttribute.onWillAttachIME (IMEClient callback)
      */
@@ -248,7 +248,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORATTRIBUTE_ENABLEAUTOSPACING_0700
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_ATTRIBUTE_ENABLE_AUTO_SPACING_0700
      * @tc.name RichEditorAttribute_enableAutoSpacing
      * @tc.desc Verify RichEditorAttribute.enableAutoSpacing
      */
@@ -280,7 +280,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORATTRIBUTE_UNDOSTYLE_0800
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_ATTRIBUTE_UNDO_STYLE_0800
      * @tc.name RichEditorAttribute_undoStyle
      * @tc.desc Verify RichEditorAttribute.undoStyle
      */
@@ -313,7 +313,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_RICHEDITORATTRIBUTE_SCROLLBARCOLOR_0900
+     * @tc.number SUB_ARKUI_RICH_EDITOR_RICH_EDITOR_ATTRIBUTE_SCROLL_BAR_COLOR_0900
      * @tc.name RichEditorAttribute_scrollBarColor
      * @tc.desc Verify RichEditorAttribute.scrollBarColor (ColorMetrics)
      */
