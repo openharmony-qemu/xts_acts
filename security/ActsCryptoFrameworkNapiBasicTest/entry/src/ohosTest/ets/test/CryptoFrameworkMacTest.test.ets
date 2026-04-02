@@ -185,7 +185,7 @@ export default function cryptoFrameworkMacTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SubCryptoFrameworkNapiMacVectorTest0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_CryptoFramework_Napi_MacVector_Test_0100', Level.LEVEL0, async (done: Function) => {
       const result = await entry.Mac_Test(10);
       expect(result).assertEqual(0);
       done();
