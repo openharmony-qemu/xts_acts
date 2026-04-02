@@ -29,7 +29,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -88,15 +88,22 @@ it('testRectRadiusTest_static_0010', Level.LEVEL0, async (done: () => void): Pro
       console.info('[testRectRadiusTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('RectRadius_2');
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
+
+      let strJson = inspector.getInspectorByKey('RectRadius_1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[testRectRadiusTest_static_0010] Rect obj is: ' + obj);
       console.info('[testRectRadiusTest_static_0010] Rect obj.$type is: ' + obj.getString('$type'));
-      console.info('[testRectRadiusTest_static_0010] Rect obj.$attrs.radius is: ' +
-      obj.getElement('$attrs').getBoolean('radius'));
+      console.info('[testRectRadiusTest_static_0010] Rect obj.$attrs.radius is: ' + obj.getElement('$attrs').getElement('radius'));
 
       expect(obj.getString('$type')).assertEqual('Rect');
-      expect(obj.getElement('$attrs').getBoolean('radius')).assertEqual(true);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble())).assertEqual(20);
 
       console.info('[testRectRadiusTest_static_0010] END');
       done();
@@ -114,15 +121,22 @@ it('testRectRadiusTest_static_0020', Level.LEVEL0, async (done: () => void): Pro
       console.info('[testRectRadiusTest_static_0020] START');
       await CommonFunc.sleep(1000);
 
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
+
       let strJson = inspector.getInspectorByKey('RectRadius_2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[testRectRadiusTest_static_0020] Rect obj is: ' + obj);
       console.info('[testRectRadiusTest_static_0020] Rect obj.$type is: ' + obj.getString('$type'));
-      console.info('[testRectRadiusTest_static_0020] Rect obj.$attrs.radius is: ' +
-      obj.getElement('$attrs').getBoolean('radius'));
+      console.info('[testRectRadiusTest_static_0020] Rect obj.$attrs.radius is: ' + obj.getElement('$attrs').getElement('radius'));
 
       expect(obj.getString('$type')).assertEqual('Rect');
-      expect(obj.getElement('$attrs').getBoolean('radius')).assertEqual(true);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble())).assertEqual(20);
 
       console.info('[testRectRadiusTest_static_0020] END');
       done();

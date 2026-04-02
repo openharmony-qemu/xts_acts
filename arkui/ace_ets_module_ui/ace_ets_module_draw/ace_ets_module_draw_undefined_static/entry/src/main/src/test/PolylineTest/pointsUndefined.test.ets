@@ -23,7 +23,7 @@ import {
   ON,
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test';
@@ -66,6 +66,7 @@ export default function PointsUndefinedTest() {
     it('PointsUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[PointsUndefinedTest_static_0100] START');
       await CommonFunc.sleep(500);
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
 
       let driver = Driver.create();
       let points_action = await driver.findComponent(ON.id('points_action')) as Component;
@@ -73,15 +74,22 @@ export default function PointsUndefinedTest() {
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('polyline_action');
-      let pointsValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('points');
-      expect(pointsValue.asBoolean()).assertEqual(true);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('[PointsUndefinedTest_static_0100] points 1 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points')));
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(20);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(0);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(0);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(90);
 
       await points_action.click();
       await CommonFunc.sleep(500);
 
       let strJson1 = inspector.getInspectorByKey('polyline_action');
-      let pointsValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('points');
-      expect(pointsValue1.asBoolean()).assertEqual(false);
+      let obj1 = JSON.parseJsonElement(strJson1);
+      console.info('[PointsUndefinedTest_static_0100] points 2 is: ' + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('points')));
+      expect(JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('points'))).assertEqual('[]');
 
       console.info('[PointsUndefinedTest_static_0100] END');
       done();

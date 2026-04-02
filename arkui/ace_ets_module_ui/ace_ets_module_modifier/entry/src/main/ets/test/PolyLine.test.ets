@@ -61,7 +61,7 @@ export default function polyLineJsunit() {
       console.info("[testpolyLine] obj is : " + JSON.stringify(obj1.$attrs));
 
       //与原生做对比
-      expect(obj.$attrs.points).assertEqual(obj1.$attrs.points);
+      expect(JSON.stringify(obj.$attrs.points)).assertEqual(JSON.stringify(obj1.$attrs.points));
 
       console.info('[testpolyLine] END');
       done();
@@ -90,7 +90,7 @@ export default function polyLineJsunit() {
 
       console.info("testpolyLine_001 objNew component  is: " + JSON.stringify(objNew.$attrs));
       console.info("testpolyLine_001 objNew2 component  is: " + JSON.stringify(objNew2.$attrs));
-      expect(objNew.$attrs.points).assertEqual(objNew2.$attrs.points); //
+      expect(JSON.stringify(objNew.$attrs.points)).assertEqual(JSON.stringify(objNew2.$attrs.points)); //
       console.info('testpolyLine_001 END');
       done();
     });
