@@ -6111,13 +6111,12 @@ export default function bundleManagerTest() {
         const bundleNames: string[] = ['com.edm.acts.normal'];
         let result: bundleManager.BundleStorageStats[] =
           await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
-        console.info(' --- test_getInstalledBundleStorageStats_1300 error is expected, but it done.');
         expect(result != null).assertTrue();
         expect(result[0]?.bundleName === 'com.edm.acts.normal').assertTrue();
         expect(result[0]?.appSize > 0).assertTrue();
         expect(result[0]?.dataSize >= 0).assertTrue();
       } catch (error) {
-        console.info(' --- test_getInstalledBundleStorageStats_1300 error 9200012 is expected, actually catch: ' + error.code);
+        console.info(' --- test_getInstalledBundleStorageStats_1300 error is not expected, actually catch: ' + error.code);
         expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
