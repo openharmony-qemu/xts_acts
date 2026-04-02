@@ -117,7 +117,7 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
  	// 正向复制：目标在源前面，或者不重叠
         for (size_t i = 0; i < len; ++i) {
             dstPtr[i] = srcPtr[i];
- 	    }
+        }
     } else if (dstPtr > srcPtr) {
  	    // 反向复制：目标在源后面，有重叠
         for (size_t i = len; i > 0; --i) {
