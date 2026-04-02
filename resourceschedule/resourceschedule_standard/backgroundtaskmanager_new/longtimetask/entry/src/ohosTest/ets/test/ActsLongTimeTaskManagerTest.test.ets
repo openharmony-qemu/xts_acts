@@ -1535,6 +1535,8 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042 begin---');
 
         try {
+          let callback = (ContinuousTaskCancelInfo: backgroundTaskManager.ContinuousTaskCancelInfo) => {
+          }
           try {
             backgroundTaskManager.on(null, callback);
             console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_042 continuousTaskCancel on call succeeded ');
@@ -1577,6 +1579,8 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_043 begin---');
 
         try {
+          let callback = (ContinuousTaskCancelInfo: backgroundTaskManager.ContinuousTaskCancelInfo) => {
+          }
           try {
             backgroundTaskManager.on(undefined, callback);
             console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_043 continuousTaskCancel on call succeeded ');
