@@ -2337,14 +2337,14 @@ export default function AVCodeTest3() {
       });
 	  
     /**
-     * @tc.name   testAVCodeOHEnableSkipSamples001
-     * @tc.number SUB_AVCode_OH_EnableSkipSamples_001
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0100
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0100
      * @tc.desc   Set OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES enable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAVCodeOHEnableSkipSamples001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           let result: number = libavcode.EnumOHEnableSkipSamples1();
@@ -2357,14 +2357,14 @@ export default function AVCodeTest3() {
       });
 	  
     /**
-     * @tc.name   testAVCodeOHEnableSkipSamples002
-     * @tc.number SUB_AVCode_OH_EnableSkipSamples_002
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0200
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0200
      * @tc.desc   Set OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES disenable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAVCodeOHEnableSkipSamples002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_MULTIMEDIA_AVCODEC_SKIP_SAMPLES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           let result: number = libavcode.EnumOHEnableSkipSamples2();
