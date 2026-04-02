@@ -266,7 +266,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_16300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1300
      * @tc.desc   Test empty string error in startElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
