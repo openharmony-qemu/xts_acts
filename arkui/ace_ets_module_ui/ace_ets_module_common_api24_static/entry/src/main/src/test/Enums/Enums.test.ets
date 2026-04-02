@@ -111,7 +111,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_ELLIPSIS_MODE_MULTILINE_START_0100
+     * @tc.number SUB_ARKUI_ENUMS_ELLIPSISMODE_MULTILINE_START_0100
      * @tc.name EllipsisMode_MULTILINE_START
      * @tc.desc Verify EllipsisMode_MULTILINE_START
      * @tc.type   FUNCTION
@@ -127,7 +127,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMON_ELLIPSIS_MODE_MULTILINE_CENTER_0200
+     * @tc.number SUB_ARKUI_ENUMS_ELLIPSISMODE_MULTILINE_CENTER_0200
      * @tc.name EllipsisMode_MULTILINE_CENTER
      * @tc.desc Verify EllipsisMode_MULTILINE_CENTER
      * @tc.type   FUNCTION

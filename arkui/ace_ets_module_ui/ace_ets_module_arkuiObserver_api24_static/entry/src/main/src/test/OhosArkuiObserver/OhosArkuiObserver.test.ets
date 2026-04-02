@@ -137,7 +137,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_ID_0100
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_ID_0100
      * @tc.name TextChangeEventInfo_id
      * @tc.desc Verify TextChangeEventInfo id global onTextChange
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_UNIQUE_ID_0200
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_UNIQUEID_0200
      * @tc.name TextChangeEventInfo_uniqueId
      * @tc.desc Verify TextChangeEventInfo uniqueId global onTextChange
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_CONTENT_0300
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_CONTENT_0300
      * @tc.name TextChangeEventInfo_content
      * @tc.desc Verify TextChangeEventInfo content global onTextChange
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_ID_LOCAL_0400
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_ID_LOCAL_0400
      * @tc.name TextChangeEventInfo_id_local
      * @tc.desc Verify TextChangeEventInfo id local onTextChange
      * @tc.type   FUNCTION
@@ -231,7 +231,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_UNIQUE_ID_LOCAL_0500
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_UNIQUEID_LOCAL_0500
      * @tc.name TextChangeEventInfo_uniqueId_local
      * @tc.desc Verify TextChangeEventInfo uniqueId local onTextChange
      * @tc.type   FUNCTION
@@ -255,7 +255,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_CHANGE_EVENT_INFO_CONTENT_LOCAL_0600
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTCHANGEEVENTINFO_CONTENT_LOCAL_0600
      * @tc.name TextChangeEventInfo_content_local
      * @tc.desc Verify TextChangeEventInfo content local onTextChange
      * @tc.type   FUNCTION
@@ -277,7 +277,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUI_OBSERVER_TEXT_INPUT_OBSERVER_TEST_0010_0700
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXTINPUTOBSERVERTEST_0010_0700
      * @tc.name textInputObserverTest_0010
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION

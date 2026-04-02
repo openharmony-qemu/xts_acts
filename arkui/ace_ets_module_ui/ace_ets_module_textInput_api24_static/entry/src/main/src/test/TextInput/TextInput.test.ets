@@ -125,7 +125,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_TYPE_0100
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_TYPE_0100
      * @tc.name TextInputAttribute_type
      * @tc.desc Verify TextInputAttribute_type
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_AUTO_FILL_ANIMATION_0200
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_ENABLEAUTOFILLANIMATION_0200
      * @tc.name TextInputAttribute_enableAutoFillAnimation
      * @tc.desc Verify TextInputAttribute_enableAutoFillAnimation
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_ON_WILL_ATTACH_IME_0300
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_ONWILLATTACHIME_0300
      * @tc.name TextInputAttribute_onWillAttachIME
      * @tc.desc Verify TextInputAttribute_onWillAttachIME
      * @tc.type   FUNCTION
@@ -187,7 +187,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_STROKE_COLOR_0400
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_STROKECOLOR_0400
      * @tc.name TextInputAttribute_strokeColor
      * @tc.desc Verify TextInputAttribute_strokeColor
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_AUTO_SPACING_0500
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_ENABLEAUTOSPACING_0500
      * @tc.name TextInputAttribute_enableAutoSpacing
      * @tc.desc Verify TextInputAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
@@ -243,7 +243,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_STROKE_WIDTH_0600
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_STROKEWIDTH_0600
      * @tc.name TextInputAttribute_strokeWidth
      * @tc.desc Verify TextInputAttribute_strokeWidth
      * @tc.type   FUNCTION
@@ -283,7 +283,7 @@ export default function TextInputTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TEXT_INPUT_TEXT_INPUT_ATTRIBUTE_ENABLE_SELECTED_DATA_DETECTOR_0700
+     * @tc.number SUB_ARKUI_TEXTINPUT_TEXTINPUTATTRIBUTE_ENABLESELECTEDDATADETECTOR_0700
      * @tc.name TextInputAttribute_enableSelectedDataDetector
      * @tc.desc Verify TextInputAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
