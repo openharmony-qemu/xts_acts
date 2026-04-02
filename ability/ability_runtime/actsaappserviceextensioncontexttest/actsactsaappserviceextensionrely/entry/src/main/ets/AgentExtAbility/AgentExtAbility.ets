@@ -19,28 +19,28 @@ const TAG: string = '[AppServiceExtAbility]';
 
 export default class AgentExt extends AgentExtensionAbility {
   // 创建AgentExtensionAbility
-  onCreate(want: Want) {
+  onCreate(want: Want):void {
     hilog.info(0x0000, TAG, `onCreate, want: ${want.abilityName}, bundlename: ${want.bundleName}`);
     hilog.info(0x0000, TAG, `onCreate, want: ${this.context.filesDir}`);
   }
 
-  onConnect(want: Want, proxy: common.AgentHostProxy){
+  onConnect(want: Want, proxy: common.AgentHostProxy):void {
     hilog.info(0x0000, TAG, `onConnect, want: ${want.abilityName}, bundlename: ${want.bundleName}`);
   }
 
-  onDisconnect(want: Want, proxy: common.AgentHostProxy) {
+  onDisconnect(want: Want, proxy: common.AgentHostProxy):void {
     hilog.info(0x0000, TAG, `onDisconnect, want: ${want.abilityName}, bundlename: ${want.bundleName}`);
   }
 
-  onData(proxy : common.AgentHostProxy, data : string ){
+  onData(proxy : common.AgentHostProxy, data : string ):void {
     hilog.info(0x0000, TAG, `onData, data: ${data}`);
   }
 
-  onAuth(proxy : common.AgentHostProxy, handshakeData : string ){
+  onAuth(proxy : common.AgentHostProxy, handshakeData : string ):void {
     hilog.info(0x0000, TAG, `onAuth, handshakeData: ${handshakeData}`);
   }
 
-  onDestroy() {
+  onDestroy():void {
     hilog.info(0x0000, TAG, `onDestroy`);
   }
 }
