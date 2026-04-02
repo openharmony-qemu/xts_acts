@@ -7,19 +7,21 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -44,14 +46,19 @@ class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageDestroy');
   }
 
   onForeground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    if (this.context) {
+    }else{
+      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
+    }
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onBackground');
+    hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
   }
 }

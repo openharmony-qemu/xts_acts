@@ -256,7 +256,7 @@ export default function webViewControllerDownloadTest() {
 
     /**
      * @tc.name   testWebDownloadStateGroupStatic007
-     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0700
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0700111
      * @tc.desc   test WebDownloadState.IN_PROGRESS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function webViewControllerDownloadTest() {
 
     /**
      * @tc.name   testWebDownloadPauseFailStatic001
-     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0000
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0700
      * @tc.desc   test WebDownloadState.IN_PROGRESS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -789,6 +789,26 @@ export default function webViewControllerDownloadTest() {
         Utils.emitEvent("testStartDownloadErrorCode002", 10);
         await Utils.msSleep(2000);
         Utils.registerEvent("testStartDownloadErrorCode002", 17100002, 113950, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testResumeDownloadErrorCodetatic001
+     * @tc.number SUB_WEB_WEBDOWNLOADMANAGER_RESUMEDOWNLOAD_ERRORCODE_GROUP_0100
+     * @tc.desc   test WebDownloadManager.ResumeDownload ErrorCode 17100018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testResumeDownloadErrorCodetatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testResumeDownloadErrorCode001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testResumeDownloadErrorCode001", 17100018, 114070, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
         await Utils.msSleep(2000);

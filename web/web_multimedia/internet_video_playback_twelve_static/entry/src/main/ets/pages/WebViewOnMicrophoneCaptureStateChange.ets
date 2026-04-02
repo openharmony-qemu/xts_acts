@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, Header, OnInterceptRequestEvent, MicrophoneCaptureState, OnTitleReceiveEvent} from '@ohos.arkui.component';
+import { Entry, Component, $rawfile, Column, Row, Button, ClickEvent, Web, $rawfile, MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -22,30 +22,26 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
+import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
+import { Driver, ON } from '@ohos.UiTest';
+const driver = Driver.create();
 class StringFields {
   public str: string = '';
 }
+
 
 @Entry
 @Component
 struct webViewController {
   stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
-  @State str: string = ''
-  @State httpErrorReceive: Int = 0
-  @State responseCode: Int = 200
-  heads: Header[] = new Array<Header>()
-  responseWeb: WebResourceResponse = new WebResourceResponse()
-  webData: string = '<!DOCTYPE html>\n' +
-    '<html>\n' +
-    '<head>\n' +
-    '<title>intercept test</title>\n' +
-    '</head>\n' +
-    '<body>\n' +
-    '<h1>intercept test</h1>\n' +
-    '</body>\n' +
-    '</html>'
-  @State title: string = 'test';
+  uiContext: UIContext = this.getUIContext();
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State flag:number = 1;
+  @State str:string = ""
+  @State newState:number = 3;
+  @State MicrophoneCaptureStateArr:MicrophoneCaptureState[] = [MicrophoneCaptureState.NONE,MicrophoneCaptureState.PAUSED,MicrophoneCaptureState.ACTIVE]
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -67,86 +63,93 @@ struct webViewController {
     }
   }
 
+
+
   build() {
-    Row() {
-      Column() {
-        Button('webViewOnMicrophoneCaptureStateChangeButton')
-          .key('webViewOnMicrophoneCaptureStateChangeButton')
-          .onClick((e: ClickEvent) => {
-            console.info('key==>' +  this.stringObj.str)
-            switch (this.stringObj.str) {
-              case 'testOnMicrophoneCaptureStateChange001': {
-                try {
-                  console.log("whz===========================================================");
-                  if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                    Utils.emitEvent(MicrophoneCaptureState.PAUSED, 60700);
-                  } else {
-                    this.controller.stopCamera();
-                    setTimeout(() => {
-                      Utils.emitEvent(3, 60700);
-                    },1000)
-                  }
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                }
-                break;
+    Column() {
+      Row() {
+        Button("WebViewController click").key('webViewOnMicrophoneCaptureStateChangeButton').onClick((e:ClickEvent) => {
+          console.info("key==>" + this.stringObj.str)
+          switch (this.stringObj.str) {
+            case "emitOnMicrophoneCaptureStateChange001": {
+              try {
+                setTimeout(() => {
+                  Utils.emitEvent(true, 20260101);
+                },1000)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              case 'testOnMicrophoneCaptureStateChange002': {
-                try {
-                  console.log("whz===========================================================");
-                  if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                    Utils.emitEvent(MicrophoneCaptureState.ACTIVE, 60701);
-                  } else {
-                    this.controller.stopCamera();
-                    setTimeout(() => {
-                      Utils.emitEvent(3, 60701);
-                    },1000)
-                  }
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              break;
+            }
+            case "emitOnMicrophoneCaptureStateChange002": {
+              try {
+                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                  Utils.emitEvent(MicrophoneCaptureState.PAUSED, 20251229);
+                } else {
+                  this.controller.pauseMicrophone();
+                  setTimeout(() => {
+                    Utils.emitEvent(this.newState, 20251229);
+                  }, 1000)
                 }
-                break;
-              }
-              case 'testOnMicrophoneCaptureStateChange003': {
-                try {
-                  console.log("whz===========================================================");
 
-                  if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                    Utils.emitEvent(MicrophoneCaptureState.NONE, 60702);
-                  } else {
-                    this.controller.stopCamera();
-                    setTimeout(() => {
-                      Utils.emitEvent(3, 60702);
-                    },1000)
-                  }
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitOnMicrophoneCaptureStateChange003": {
+              try {
+                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                  Utils.emitEvent(MicrophoneCaptureState.ACTIVE, 20251230);
+                } else {
+                  this.controller.resumeMicrophone();
+                  setTimeout(() => {
+                    Utils.emitEvent(this.newState, 20251230);
+                  },1000)
                 }
-                break;
+
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
+              break;
             }
-          })
+            case "emitOnMicrophoneCaptureStateChange004": {
+              try {
+                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                  Utils.emitEvent(MicrophoneCaptureState.NONE, 20251231);
+                } else {
+                  this.controller.stopMicrophone();
+                  setTimeout(() => {
+                  Utils.emitEvent(this.newState, 20251231);
+                },1000)
+              }
 
-        Web({ src: 'resource://rawfile/index.html', controller: this.controller })
-          .javaScriptAccess(true)
-          .geolocationAccess(true)
-          .databaseAccess(true)
-
-          .onTitleReceive((event:OnTitleReceiveEvent):void => {
-            if (event) {
-              console.log('title:' + event.title);
-              this.title = event.title
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
             }
-          })
 
-          .onHttpErrorReceive((event) => {
-            console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
-            if (event) {
-              this.httpErrorReceive = event.response.getResponseCode()
-              console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
-            }
-          })
+          }
+        })
       }
+
+      Web({ src: $rawfile('microphone.html'), controller: this.controller })
+        .onPermissionRequest((event) => {
+          if (event) {
+            event.request.grant(event.request.getAccessibleResource());
+          }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
+        .onMicrophoneCaptureStateChange((event:MicrophoneCaptureStateChangeInfo)=>{
+          console.info("Microphone from ", event.originalState, " to ", event.newState);
+          console.info("newState" + event.newState);
+          this.newState = event.newState;
+        })
     }
+
   }
 }

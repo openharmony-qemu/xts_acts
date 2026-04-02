@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, Header, OnInterceptRequestEvent, CameraCaptureState, OnTitleReceiveEvent} from '@ohos.arkui.component';
+import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, Header, OnInterceptRequestEvent, CameraCaptureState, OnTitleReceiveEvent, CameraCaptureStateChangeInfo } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -34,6 +34,8 @@ struct webViewController {
   @State str: string = ''
   @State httpErrorReceive: Int = 0
   @State responseCode: Int = 200
+  @State newState:number = 3;
+  @State CameraCaptureStateArr:CameraCaptureState[] = [CameraCaptureState.NONE,CameraCaptureState.PAUSED,CameraCaptureState.ACTIVE]
   heads: Header[] = new Array<Header>()
   responseWeb: WebResourceResponse = new WebResourceResponse()
   webData: string = '<!DOCTYPE html>\n' +
@@ -77,7 +79,6 @@ struct webViewController {
             switch (this.stringObj.str) {
               case 'testOnCameraCaptureStateChange001': {
                 try {
-                  console.log("whz===========================================================");
                   if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     Utils.emitEvent(CameraCaptureState.PAUSED, 60600);
                   } else {
@@ -93,7 +94,6 @@ struct webViewController {
               }
               case 'testOnCameraCaptureStateChange002': {
                 try {
-                  console.log("whz===========================================================");
                   if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     Utils.emitEvent(CameraCaptureState.ACTIVE, 60601);
                   } else {
@@ -109,12 +109,10 @@ struct webViewController {
               }
               case 'testOnCameraCaptureStateChange003': {
                 try {
-                  console.log("whz===========================================================");
-
                   if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     Utils.emitEvent(CameraCaptureState.NONE, 60602);
                   } else {
-                    this.controller.stopCamera();
+                    this.controller.startCamera();
                     setTimeout(() => {
                       Utils.emitEvent(3, 60602);
                     },1000)
@@ -144,15 +142,21 @@ struct webViewController {
               this.title = event.title
             }
           })
-
-           .onHttpErrorReceive((event) => {
-             console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
-             if (event) {
-               this.httpErrorReceive = event.response.getResponseCode()
-               console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
-             }
-           })
+          .onPermissionRequest((event) => {
+            if (event) {
+              event.request.grant(event.request.getAccessibleResource());
+            }
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+          })
+          .onCameraCaptureStateChange((info:CameraCaptureStateChangeInfo):void=>{
+            console.info("Camera from ", info.originalState, " to ", info.newState);
+            console.info("newState" + info.newState);
+            this.newState = info.newState;
+          })
       }
     }
   }
 }
+
