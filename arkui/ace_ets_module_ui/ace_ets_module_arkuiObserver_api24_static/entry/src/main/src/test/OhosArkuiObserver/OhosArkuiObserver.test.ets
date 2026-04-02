@@ -277,7 +277,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_INPUT_OBSERVER_TEST_0010_0700
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_TEXT_INPUT_OBSERVER_GLOBAL_TOGGLE_0700
      * @tc.name textInputObserverTest_0010
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION

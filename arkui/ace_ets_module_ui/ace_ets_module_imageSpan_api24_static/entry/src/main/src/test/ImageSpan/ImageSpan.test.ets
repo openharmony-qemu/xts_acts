@@ -108,7 +108,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG2_TEST001_0100
+     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG_TWO_TRUE_0100
      * @tc.name ImageSpanSupportSvg2Test001
      * @tc.desc Verify ImageSpan supportSvg2 true
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG2_TEST002_0200
+     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG_TWO_FALSE_0200
      * @tc.name ImageSpanSupportSvg2Test002
      * @tc.desc Verify ImageSpan supportSvg2 false
      * @tc.type   FUNCTION
@@ -152,7 +152,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG2_TEST003_0300
+     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG_TWO_DEFAULT_WHEN_UNSET_0300
      * @tc.name ImageSpanSupportSvg2Test003
      * @tc.desc Verify ImageSpan supportSvg2 default when unset
      * @tc.type   FUNCTION
@@ -174,7 +174,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG2_TEST004_0400
+     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG_TWO_UNDEFINED_PARAMETER_0400
      * @tc.name ImageSpanSupportSvg2Test004
      * @tc.desc Verify ImageSpan supportSvg2 undefined parameter
      * @tc.type   FUNCTION
@@ -196,7 +196,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG2_TEST005_0500
+     * @tc.number SUB_ARKUI_IMAGESPAN_IMAGE_SPAN_SUPPORT_SVG_TWO_DEFAULT_VARIANT_0500
      * @tc.name ImageSpanSupportSvg2Test005
      * @tc.desc Verify ImageSpan supportSvg2 default variant
      * @tc.type   FUNCTION

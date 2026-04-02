@@ -222,7 +222,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_RICHEDITOR_RE_ATTR_ON_WILL_ATTACH_IME_0600
+     * @tc.number SUB_ARKUI_RICHEDITOR_RICH_EDITOR_ATTRIBUTE_ON_WILL_ATTACH_IME_0600
      * @tc.name RE_attr_onWillAttachIME
      * @tc.desc Verify RichEditorAttribute.onWillAttachIME (IMEClient callback)
      */
