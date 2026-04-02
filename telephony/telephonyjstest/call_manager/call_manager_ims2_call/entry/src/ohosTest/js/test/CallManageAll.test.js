@@ -391,7 +391,7 @@ export default function CallManageImsCall() {
 
         /**
          * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_1400
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400
          * @tc.desc   PhoneNumber: 911, no options. Call isEmergencyPhoneNumber() api by promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
