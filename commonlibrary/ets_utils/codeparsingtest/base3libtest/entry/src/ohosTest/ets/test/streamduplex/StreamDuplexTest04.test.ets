@@ -29,7 +29,7 @@ export default function StreamDuplex04Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0100
      * @tc.name      testStreamDuplex04Chapter0001
      * @tc.desc      test setDefaultEncoding with string containing only spaces.
      * @tc.size      MediumTest
@@ -60,7 +60,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0200
      * @tc.name      testStreamDuplex04Chapter0002
      * @tc.desc      test setDefaultEncoding with string containing tabs and newlines.
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0300
      * @tc.name      testStreamDuplex04Chapter0003
      * @tc.desc      test setDefaultEncoding with string containing zero-width characters.
      * @tc.size      MediumTest
@@ -122,7 +122,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0400
      * @tc.name      testStreamDuplex04Chapter0004
      * @tc.desc      test setDefaultEncoding with string containing right-to-left characters.
      * @tc.size      MediumTest
@@ -153,7 +153,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0500
      * @tc.name      testStreamDuplex04Chapter0005
      * @tc.desc      test setDefaultEncoding with string containing combining characters.
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0600
      * @tc.name      testStreamDuplex04Chapter0006
      * @tc.desc      test setDefaultEncoding with string containing surrogate pairs.
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0700
      * @tc.name      testStreamDuplex04Chapter0007
      * @tc.desc      test setDefaultEncoding with string containing all TypedArray names.
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0800
      * @tc.name      testStreamDuplex04Chapter0008
      * @tc.desc      test setDefaultEncoding with string containing all number type names.
      * @tc.size      MediumTest
@@ -278,7 +278,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_0900
      * @tc.name      testStreamDuplex04Chapter0009
      * @tc.desc      test setDefaultEncoding with string containing boolean type names.
      * @tc.size      MediumTest
@@ -309,7 +309,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1000
      * @tc.name      testStreamDuplex04Chapter0010
      * @tc.desc      test setDefaultEncoding with string containing array type names.
      * @tc.size      MediumTest
@@ -340,7 +340,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1100
      * @tc.name      testStreamDuplex04Chapter0011
      * @tc.desc      test setDefaultEncoding with string containing object type names.
      * @tc.size      MediumTest
@@ -371,7 +371,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1200
      * @tc.name      testStreamDuplex04Chapter0012
      * @tc.desc      test setDefaultEncoding with string containing delete keyword.
      * @tc.size      MediumTest
@@ -402,7 +402,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1300
      * @tc.name      testStreamDuplex04Chapter0013
      * @tc.desc      Test cork method of Duplex stream, normal call should return true
      * @tc.size      MediumTest
@@ -418,7 +418,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1400
      * @tc.name      testStreamDuplex04Chapter0014
      * @tc.desc      Test cork method of Duplex stream, check writableCorked property increment after cork
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1500
      * @tc.name      testStreamDuplex04Chapter0015
      * @tc.desc      Test cork method of Duplex stream, multiple consecutive cork calls should increment writableCorked each time
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1600
      * @tc.name      testStreamDuplex04Chapter0016
      * @tc.desc      Test cork method of Duplex stream, check writableCorked initial value is 0
      * @tc.size      MediumTest
@@ -475,7 +475,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1700
      * @tc.name      testStreamDuplex04Chapter0017
      * @tc.desc      Test cork method of Duplex stream, verify cork and uncork pairing
      * @tc.size      MediumTest
@@ -501,7 +501,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1800
      * @tc.name      testStreamDuplex04Chapter0018
      * @tc.desc      Test cork method of Duplex stream, call cork after stream is destroyed
      * @tc.size      MediumTest
@@ -522,7 +522,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_1900
      * @tc.name      testStreamDuplex04Chapter0019
      * @tc.desc      Test cork method of Duplex stream, call cork after stream is ended
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2000
      * @tc.name      testStreamDuplex04Chapter0020
      * @tc.desc      Test cork method of Duplex stream, multiple cork calls followed by single uncork
      * @tc.size      MediumTest
@@ -565,7 +565,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2100
      * @tc.name      testStreamDuplex04Chapter0021
      * @tc.desc      Test cork method of Duplex stream, ensure cork returns boolean type
      * @tc.size      MediumTest
@@ -581,7 +581,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2200
      * @tc.name      testStreamDuplex04Chapter0022
      * @tc.desc      Test cork method of Duplex stream, verify writableCorked property exists and is number
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2300
      * @tc.name      testStreamDuplex04Chapter0023
      * @tc.desc      Test cork method of Duplex stream, call on multiple independent Duplex instances
      * @tc.size      MediumTest
@@ -621,7 +621,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2400
      * @tc.name      testStreamDuplex04Chapter0024
      * @tc.desc      Test cork method of Duplex stream, call cork with write operations
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2500
      * @tc.name      testStreamDuplex04Chapter0025
      * @tc.desc      Test cork method of Duplex stream, call after uncork when writableCorked is 0
      * @tc.size      MediumTest
@@ -678,7 +678,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2600
      * @tc.name      testStreamDuplex04Chapter0026
      * @tc.desc      Test cork method of Duplex stream, verify method exists on Duplex instance
      * @tc.size      MediumTest
@@ -693,7 +693,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2700
      * @tc.name      testStreamDuplex04Chapter0027
      * @tc.desc      Test cork method of Duplex stream, stress test with many cork calls
      * @tc.size      MediumTest
@@ -718,7 +718,7 @@ export default function StreamDuplex04Test() {
       expect(finalCorked).assertEqual(initialCorked + callCount);
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2800
      * @tc.name      testStreamDuplex04Chapter0028
      * @tc.desc      test cork method in async context, should work properly
      * @tc.size      MediumTest
@@ -735,7 +735,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_2900
      * @tc.name      testStreamDuplex04Chapter0029
      * @tc.desc      test cork method with promise chain, ensure state consistency
      * @tc.size      MediumTest
@@ -758,7 +758,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3000
      * @tc.name      testStreamDuplex04Chapter0030
      * @tc.desc      test cork method with setTimeout callback, verify timing behavior
      * @tc.size      MediumTest
@@ -778,7 +778,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3100
      * @tc.name      testStreamDuplex04Chapter0031
      * @tc.desc      test cork method with setInterval, multiple timed calls
      * @tc.size      MediumTest
@@ -803,7 +803,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3200
      * @tc.name      testStreamDuplex04Chapter0032
      * @tc.desc      test cork method with requestAnimationFrame (or similar timing function)
      * @tc.size      MediumTest
@@ -823,7 +823,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3300
      * @tc.name      testStreamDuplex04Chapter0033
      * @tc.desc      test cork method with immediate callback (setImmediate equivalent)
      * @tc.size      MediumTest
@@ -843,7 +843,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3400
      * @tc.name      testStreamDuplex04Chapter0034
      * @tc.desc      test cork method in try-catch block, ensure no exceptions
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3500
      * @tc.name      testStreamDuplex04Chapter0035
      * @tc.desc      test cork method with finally block, ensure cleanup
      * @tc.size      MediumTest
@@ -889,7 +889,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3600
      * @tc.name      testStreamDuplex04Chapter0036
      * @tc.desc      test cork method after uncork when writableCorked is negative (edge case)
      * @tc.size      MediumTest
@@ -909,7 +909,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3700
      * @tc.name      testStreamDuplex04Chapter0037
      * @tc.desc      test cork method with object that has cork property (should not interfere)
      * @tc.size      MediumTest
@@ -927,7 +927,7 @@ export default function StreamDuplex04Test() {
       expect(duplexStream.writableCorked).assertEqual(1);
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3800
      * @tc.name      testStreamDuplex04Chapter0038
      * @tc.desc      test cork method with null stream reference (should fail in creation)
      * @tc.size      MediumTest
@@ -953,7 +953,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_3900
      * @tc.name      testStreamDuplex04Chapter0039
      * @tc.desc      test cork method with undefined stream reference
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function StreamDuplex04Test() {
       expect(errorCaught || duplexStream === undefined).assertTrue();
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4000
      * @tc.name      testStreamDuplex04Chapter0040
      * @tc.desc      test cork method with stream that has writableCorked overridden
      * @tc.size      MediumTest
@@ -994,7 +994,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4100
      * @tc.name      testStreamDuplex04Chapter0041
      * @tc.desc      test cork method with stream that has cork method overridden
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4200
      * @tc.name      testStreamDuplex04Chapter0042
      * @tc.desc      test cork method with stream created in strict mode context
      * @tc.size      MediumTest
@@ -1029,7 +1029,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4300
      * @tc.name      testStreamDuplex04Chapter0043
      * @tc.desc      test cork method in non-strict mode (default mode)
      * @tc.size      MediumTest
@@ -1046,7 +1046,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4400
      * @tc.name      testStreamDuplex04Chapter0044
      * @tc.desc      test cork method with stream that has been garbage collected (reference lost)
      * @tc.size      MediumTest
@@ -1068,7 +1068,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4500
      * @tc.name      testStreamDuplex04Chapter0045
      * @tc.desc      test cork method with stream in closure, testing scope and lifetime
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4600
      * @tc.name      testStreamDuplex04Chapter0046
      * @tc.desc      test cork method with stream in IIFE (Immediately Invoked Function Expression)
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4700
      * @tc.name      testStreamDuplex04Chapter0047
      * @tc.desc      test cork method with stream created in eval context (if supported)
      * @tc.size      MediumTest
@@ -1137,7 +1137,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4800
      * @tc.name      testStreamDuplex04Chapter0048
      * @tc.desc      test cork method with stream created using Function constructor
      * @tc.size      MediumTest
@@ -1153,7 +1153,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_4900
      * @tc.name      testStreamDuplex04Chapter0049
      * @tc.desc      test cork method with stream in different execution context
      * @tc.size      MediumTest
@@ -1176,7 +1176,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5000
      * @tc.name      testStreamDuplex04Chapter0050
      * @tc.desc      test cork method with stream prototype chain manipulation
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5100
      * @tc.name      testStreamDuplex04Chapter0051
      * @tc.desc      test cork method with stream that has been Object.freeze applied
      * @tc.size      MediumTest
@@ -1210,7 +1210,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5200
      * @tc.name      testStreamDuplex04Chapter0052
      * @tc.desc      test cork method with stream that has been Object.seal applied
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5300
      * @tc.name      testStreamDuplex04Chapter0053
      * @tc.desc      test cork method with stream that has been Object.preventExtensions applied
      * @tc.size      MediumTest
@@ -1244,7 +1244,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5400
      * @tc.name      testStreamDuplex04Chapter0054
      * @tc.desc      test cork method with stream that has been proxied
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5500
      * @tc.name      testStreamDuplex04Chapter0055
      * @tc.desc      test cork method with stream in worker-like context
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5600
      * @tc.name      testStreamDuplex04Chapter0056
      * @tc.desc      test cork method with stream in recursion depth test
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5700
      * @tc.name      testStreamDuplex04Chapter0057
      * @tc.desc      test cork method with stream in memory pressure test
      * @tc.size      MediumTest
@@ -1337,7 +1337,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5800
      * @tc.name      testStreamDuplex04Chapter0058
      * @tc.desc      test cork method with stream and JSON.stringify interaction
      * @tc.size      MediumTest
@@ -1356,7 +1356,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_5900
      * @tc.name      testStreamDuplex04Chapter0059
      * @tc.desc      test cork method with stream and console.log interaction
      * @tc.size      MediumTest
@@ -1375,7 +1375,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6000
      * @tc.name      testStreamDuplex04Chapter0060
      * @tc.desc      test cork method with stream and performance timing
      * @tc.size      MediumTest
@@ -1397,7 +1397,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6100
      * @tc.name      testStreamDuplex04Chapter0061
      * @tc.desc      test cork method with stream in module import/export context
      * @tc.size      MediumTest
@@ -1416,7 +1416,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6200
      * @tc.name      testStreamDuplex04Chapter0062
      * @tc.desc      test cork method with stream in event loop different phases
      * @tc.size      MediumTest
@@ -1438,7 +1438,7 @@ export default function StreamDuplex04Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6300
      * @tc.name      testStreamDuplex04Chapter0063
      * @tc.desc      Test uncork method of Duplex stream, normal call after cork should return true
      * @tc.size      MediumTest
@@ -1467,7 +1467,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6400
      * @tc.name      testStreamDuplex04Chapter0064
      * @tc.desc      Test uncork method of Duplex stream, check writableCorked property decrement after uncork
      * @tc.size      MediumTest
@@ -1488,7 +1488,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6500
      * @tc.name      testStreamDuplex04Chapter0065
      * @tc.desc      Test uncork method of Duplex stream, flush buffered data after uncork
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6600
      * @tc.name      testStreamDuplex04Chapter0066
      * @tc.desc      Test uncork method of Duplex stream, multiple cork calls followed by single uncork
      * @tc.size      MediumTest
@@ -1542,7 +1542,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6700
      * @tc.name      testStreamDuplex04Chapter0067
      * @tc.desc      Test uncork method of Duplex stream, multiple cork calls followed by multiple uncork calls
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6800
      * @tc.name      testStreamDuplex04Chapter0068
      * @tc.desc      Test uncork method of Duplex stream, call uncork without cork
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_6900
      * @tc.name      testStreamDuplex04Chapter0069
      * @tc.desc      Test uncork method of Duplex stream, call uncork after stream is destroyed
      * @tc.size      MediumTest
@@ -1616,7 +1616,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7000
      * @tc.name      testStreamDuplex04Chapter0070
      * @tc.desc      Test uncork method of Duplex stream, call uncork after stream is ended
      * @tc.size      MediumTest
@@ -1636,7 +1636,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7100
      * @tc.name      testStreamDuplex04Chapter0071
      * @tc.desc      Test uncork method of Duplex stream, more uncork calls than cork calls
      * @tc.size      MediumTest
@@ -1661,7 +1661,7 @@ export default function StreamDuplex04Test() {
       }
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7200
      * @tc.name      testStreamDuplex04Chapter0072
      * @tc.desc      Test uncork method of Duplex stream, flush Uint8Array data after uncork
      * @tc.size      MediumTest
@@ -1699,7 +1699,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7300
      * @tc.name      testStreamDuplex04Chapter0073
      * @tc.desc      Test uncork method of Duplex stream, ensure uncork returns boolean type
      * @tc.size      MediumTest
@@ -1716,7 +1716,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7400
      * @tc.name      testStreamDuplex04Chapter0074
      * @tc.desc      Test uncork method of Duplex stream, data not flushed until writableCorked reaches 0
      * @tc.size      MediumTest
@@ -1749,7 +1749,7 @@ export default function StreamDuplex04Test() {
       expect(dataWritten).assertEqual('data1data2');
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7500
      * @tc.name      testStreamDuplex04Chapter0075
      * @tc.desc      Test uncork method of Duplex stream, verify method exists on Duplex instance
      * @tc.size      MediumTest
@@ -1763,7 +1763,7 @@ export default function StreamDuplex04Test() {
       expect(typeof duplexStream.uncork).assertEqual('function');
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7600
      * @tc.name      testStreamDuplex04Chapter0076
      * @tc.desc      Test uncork method of Duplex stream, stress test with many cork and uncork calls
      * @tc.size      MediumTest
@@ -1803,7 +1803,7 @@ export default function StreamDuplex04Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST04_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST04_7700
      * @tc.name      testStreamDuplex04Chapter0077
      * @tc.desc      Test uncork method of Duplex stream, write empty string and uncork
      * @tc.size      MediumTest

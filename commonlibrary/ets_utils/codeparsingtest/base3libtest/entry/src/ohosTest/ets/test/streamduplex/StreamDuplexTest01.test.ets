@@ -29,7 +29,7 @@ export default function StreamDuplex01Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0100
      * @tc.name      testStreamDuplex01Chapter0001
      * @tc.desc      Create Duplex instance with default constructor
      * @tc.size      MediumTest
@@ -44,7 +44,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0200
      * @tc.name      testStreamDuplex01Chapter0002
      * @tc.desc      Create multiple Duplex instances and verify they are independent
      * @tc.size      MediumTest
@@ -60,7 +60,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0300
      * @tc.name      testStreamDuplex01Chapter0003
      * @tc.desc      Verify Duplex instance prototype chain is correct
      * @tc.size      MediumTest
@@ -76,7 +76,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0400
      * @tc.name      testStreamDuplex01Chapter0004
      * @tc.desc      Verify Duplex instance methods exist
      * @tc.size      MediumTest
@@ -92,7 +92,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0500
      * @tc.name      testStreamDuplex01Chapter0005
      * @tc.desc      Create Duplex instance in loop to verify memory handling
      * @tc.size      MediumTest
@@ -111,7 +111,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0600
      * @tc.name      testStreamDuplex01Chapter0006
      * @tc.desc      Verify Duplex instance properties are initialized correctly
      * @tc.size      MediumTest
@@ -127,7 +127,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0700
      * @tc.name      testStreamDuplex01Chapter0007
      * @tc.desc      Create Duplex instance and verify it is not a primitive value
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0800
      * @tc.name      testStreamDuplex01Chapter0008
      * @tc.desc      Verify Duplex constructor name is correct
      * @tc.size      MediumTest
@@ -162,7 +162,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_0900
      * @tc.name      testStreamDuplex01Chapter0009
      * @tc.desc      Create Duplex instance and verify it can be assigned to variable with correct type
      * @tc.size      MediumTest
@@ -178,7 +178,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1000
      * @tc.name      testStreamDuplex01Chapter0010
      * @tc.desc      Verify Duplex instance has correct default readable and writable states
      * @tc.size      MediumTest
@@ -194,7 +194,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1100
      * @tc.name      testStreamDuplex01Chapter0011
      * @tc.desc      Test write with normal string chunk and default encoding
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1200
      * @tc.name      testStreamDuplex01Chapter0012
      * @tc.desc      Test write with Uint8Array chunk
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1300
      * @tc.name      testStreamDuplex01Chapter0013
      * @tc.desc      Test write with specific encoding 'gbk'
      * @tc.size      MediumTest
@@ -276,7 +276,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1400
      * @tc.name      testStreamDuplex01Chapter0014
      * @tc.desc      Test write with callback function
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1500
      * @tc.name      testStreamDuplex01Chapter0015
      * @tc.desc      Test write with empty string chunk
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1600
      * @tc.name      testStreamDuplex01Chapter0016
      * @tc.desc      Test write with undefined chunk
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1700
      * @tc.name      testStreamDuplex01Chapter0017
      * @tc.desc      Test write with null chunk
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1800
      * @tc.name      testStreamDuplex01Chapter0018
      * @tc.desc      Test write with unsupported encoding
      * @tc.size      MediumTest
@@ -427,7 +427,7 @@ export default function StreamDuplex01Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_1900
      * @tc.name      testStreamDuplex01Chapter0019
      * @tc.desc      Test write with string containing special characters
      * @tc.size      MediumTest
@@ -455,7 +455,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2000
      * @tc.name      testStreamDuplex01Chapter0020
      * @tc.desc      Test write with ASCII characters
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2100
      * @tc.name      testStreamDuplex01Chapter0021
      * @tc.desc      Test write with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2200
      * @tc.name      testStreamDuplex01Chapter0022
      * @tc.desc      Test write with Uint8Array containing out of range values
      * @tc.size      MediumTest
@@ -541,7 +541,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2300
      * @tc.name      testStreamDuplex01Chapter0023
      * @tc.desc      Test write with gb18030 encoding
      * @tc.size      MediumTest
@@ -568,7 +568,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2400
      * @tc.name      testStreamDuplex01Chapter0024
      * @tc.desc      Test write with gb2312 encoding
      * @tc.size      MediumTest
@@ -595,7 +595,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2500
      * @tc.name      testStreamDuplex01Chapter0025
      * @tc.desc      Test write with callback invoked multiple times
      * @tc.size      MediumTest
@@ -627,7 +627,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2600
      * @tc.name      testStreamDuplex01Chapter0026
      * @tc.desc      Test write with string containing escape characters
      * @tc.size      MediumTest
@@ -655,7 +655,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2700
      * @tc.name      testStreamDuplex01Chapter0027
      * @tc.desc      Test write with Uint8Array containing multiple zeros
      * @tc.size      MediumTest
@@ -685,7 +685,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2800
      * @tc.name      testStreamDuplex01Chapter0028
      * @tc.desc      Test write with string containing emoji characters
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_2900
      * @tc.name      testStreamDuplex01Chapter0029
      * @tc.desc      Test write with Uint8Array containing negative numbers
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3000
      * @tc.name      testStreamDuplex01Chapter0030
      * @tc.desc      Test write with string containing repeated special characters
      * @tc.size      MediumTest
@@ -783,7 +783,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3100
      * @tc.name      testStreamDuplex01Chapter0031
      * @tc.desc      Test write with empty Uint8Array
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3200
      * @tc.name      testStreamDuplex01Chapter0032
      * @tc.desc      Test write with large string
      * @tc.size      MediumTest
@@ -843,7 +843,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3300
      * @tc.name      testStreamDuplex01Chapter0033
      * @tc.desc      Test write with Uint8Array containing NaN and Infinity
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3400
      * @tc.name      testStreamDuplex01Chapter0034
      * @tc.desc      Test write with string containing keywords
      * @tc.size      MediumTest
@@ -905,7 +905,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3500
      * @tc.name      testStreamDuplex01Chapter0035
      * @tc.desc      Test write with Uint8Array containing non-numeric types
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3600
      * @tc.name      testStreamDuplex01Chapter0036
      * @tc.desc      Test write without implementing doWrite method
      * @tc.size      MediumTest
@@ -966,7 +966,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3700
      * @tc.name      testStreamDuplex01Chapter0037
      * @tc.desc      Test write with Uint8Array containing overflow values
      * @tc.size      MediumTest
@@ -997,7 +997,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3800
      * @tc.name      testStreamDuplex01Chapter0038
      * @tc.desc      Test write with all supported encodings
      * @tc.size      MediumTest
@@ -1035,7 +1035,7 @@ export default function StreamDuplex01Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST01_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST01_3900
      * @tc.name      testStreamDuplex01Chapter0039
      * @tc.desc      Test write with multiple consecutive writes
      * @tc.size      MediumTest

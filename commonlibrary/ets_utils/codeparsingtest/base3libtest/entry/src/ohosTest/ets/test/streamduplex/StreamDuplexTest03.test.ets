@@ -29,7 +29,7 @@ export default function StreamDuplex03Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0100
      * @tc.name      testStreamDuplex03Chapter0001
      * @tc.desc      Test doFlush with composite data structure (final comprehensive test)
      * @tc.size      LargeTest
@@ -55,7 +55,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0200
      * @tc.name      testStreamDuplex03Chapter0002
      * @tc.desc      Test setDefaultEncoding with valid encoding
      * @tc.size      LargeTest
@@ -81,7 +81,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0300
      * @tc.name      testStreamDuplex03Chapter0003
      * @tc.desc      Test setDefaultEncoding with valid encoding 'gb18030'.
      * @tc.size      MediumTest
@@ -108,7 +108,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0400
      * @tc.name      testStreamDuplex03Chapter0004
      * @tc.desc      Test setDefaultEncoding with valid encoding 'gbk'.
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0500
      * @tc.name      testStreamDuplex03Chapter0005
      * @tc.desc      Test setDefaultEncoding with valid encoding 'gb2312'.
      * @tc.size      MediumTest
@@ -162,7 +162,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0600
      * @tc.name      testStreamDuplex03Chapter0006
      * @tc.desc      Test setDefaultEncoding with default parameter.
      * @tc.size      MediumTest
@@ -189,7 +189,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0700
      * @tc.name      testStreamDuplex03Chapter0007
      * @tc.desc      Test setDefaultEncoding with empty string.
      * @tc.size      MediumTest
@@ -220,7 +220,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0800
      * @tc.name      testStreamDuplex03Chapter0008
      * @tc.desc      Test setDefaultEncoding with special characters.
      * @tc.size      MediumTest
@@ -252,7 +252,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_0900
      * @tc.name      testStreamDuplex03Chapter0009
      * @tc.desc      Test setDefaultEncoding with ASCII characters.
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1000
      * @tc.name      testStreamDuplex03Chapter0010
      * @tc.desc      Test setDefaultEncoding with repeated special characters.
      * @tc.size      MediumTest
@@ -317,7 +317,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1100
      * @tc.name      testStreamDuplex03Chapter0011
      * @tc.desc      Test setDefaultEncoding with escape characters.
      * @tc.size      MediumTest
@@ -349,7 +349,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1200
      * @tc.name      testStreamDuplex03Chapter0012
      * @tc.desc      Test setDefaultEncoding with emoji characters.
      * @tc.size      MediumTest
@@ -381,7 +381,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1300
      * @tc.name      testStreamDuplex03Chapter0013
      * @tc.desc      Test setDefaultEncoding with invalid Unicode encoding.
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1400
      * @tc.name      testStreamDuplex03Chapter0014
      * @tc.desc      Test setDefaultEncoding with keyword-like strings.
      * @tc.size      MediumTest
@@ -446,7 +446,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1500
      * @tc.name      testStreamDuplex03Chapter0015
      * @tc.desc      Test setDefaultEncoding with very long string.
      * @tc.size      MediumTest
@@ -478,7 +478,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1600
      * @tc.name      testStreamDuplex03Chapter0016
      * @tc.desc      Test setDefaultEncoding with number parameter (should fail at runtime).
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1700
      * @tc.name      testStreamDuplex03Chapter0017
      * @tc.desc      Test setDefaultEncoding with boolean parameter as string.
      * @tc.size      MediumTest
@@ -540,7 +540,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1800
      * @tc.name      testStreamDuplex03Chapter0018
      * @tc.desc      Test setDefaultEncoding with null as string.
      * @tc.size      MediumTest
@@ -571,7 +571,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_1900
      * @tc.name      testStreamDuplex03Chapter0019
      * @tc.desc      Test setDefaultEncoding with mixed valid and invalid encodings.
      * @tc.size      MediumTest
@@ -604,7 +604,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2000
      * @tc.name      testStreamDuplex03Chapter0020
      * @tc.desc      Test setDefaultEncoding with case-sensitive encoding names.
      * @tc.size      MediumTest
@@ -636,7 +636,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2100
      * @tc.name      testStreamDuplex03Chapter0021
      * @tc.desc      Test setDefaultEncoding with whitespace characters.
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2200
      * @tc.name      testStreamDuplex03Chapter0022
      * @tc.desc      Test setDefaultEncoding with control characters.
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2300
      * @tc.name      testStreamDuplex03Chapter0023
      * @tc.desc      Test setDefaultEncoding with octal escape sequences.
      * @tc.size      MediumTest
@@ -732,7 +732,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2400
      * @tc.name      testStreamDuplex03Chapter0024
      * @tc.desc      Test setDefaultEncoding with hexadecimal escape sequences.
      * @tc.size      MediumTest
@@ -764,7 +764,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2500
      * @tc.name      testStreamDuplex03Chapter0025
      * @tc.desc      Test setDefaultEncoding with string containing only numbers.
      * @tc.size      MediumTest
@@ -798,7 +798,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2600
      * @tc.name      testStreamDuplex03Chapter0026
      * @tc.desc      Test setDefaultEncoding with string containing valid encoding as part of larger string.
      * @tc.size      MediumTest
@@ -831,7 +831,7 @@ export default function StreamDuplex03Test() {
         }
       });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2700
      * @tc.name      testStreamDuplex03Chapter0027
      * @tc.desc      Test setDefaultEncoding with string containing all supported encodings concatenated.
      * @tc.size      MediumTest
@@ -863,7 +863,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2800
      * @tc.name      testStreamDuplex03Chapter0028
      * @tc.desc      Test setDefaultEncoding with very short valid encoding.
      * @tc.size      MediumTest
@@ -895,7 +895,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_2900
      * @tc.name      testStreamDuplex03Chapter0029
      * @tc.desc      Test setDefaultEncoding with string containing only delimiter characters.
      * @tc.size      MediumTest
@@ -927,7 +927,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3000
      * @tc.name      testStreamDuplex03Chapter0030
      * @tc.desc      Test setDefaultEncoding multiple times with different valid encodings.
      * @tc.size      MediumTest
@@ -957,7 +957,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3100
      * @tc.name      testStreamDuplex03Chapter0031
      * @tc.desc      Test setDefaultEncoding with string containing null character.
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function StreamDuplex03Test() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3200
      * @tc.name      testStreamDuplex03Chapter0032
      * @tc.desc      Test setDefaultEncoding with null parameter directly
      * @tc.size      MediumTest
@@ -1019,7 +1019,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3300
      * @tc.name      testStreamDuplex03Chapter0033
      * @tc.desc      Test setDefaultEncoding with undefined parameter directly
      * @tc.size      MediumTest
@@ -1049,7 +1049,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3400
      * @tc.name      testStreamDuplex03Chapter0034
      * @tc.desc      Test setDefaultEncoding with number parameter directly
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3500
      * @tc.name      testStreamDuplex03Chapter0035
      * @tc.desc      Test setDefaultEncoding with boolean true parameter directly
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3600
      * @tc.name      testStreamDuplex03Chapter0036
      * @tc.desc      Test setDefaultEncoding with boolean false parameter directly
      * @tc.size      MediumTest
@@ -1139,7 +1139,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3700
      * @tc.name      testStreamDuplex03Chapter0037
      * @tc.desc      Test setDefaultEncoding with array parameter
      * @tc.size      MediumTest
@@ -1169,7 +1169,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3800
      * @tc.name      testStreamDuplex03Chapter0038
      * @tc.desc      Test setDefaultEncoding with object parameter
      * @tc.size      MediumTest
@@ -1199,7 +1199,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_3900
      * @tc.name      testStreamDuplex03Chapter0039
      * @tc.desc      Test setDefaultEncoding with Symbol parameter
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4000
      * @tc.name      testStreamDuplex03Chapter0040
      * @tc.desc      Test setDefaultEncoding with function parameter
      * @tc.size      MediumTest
@@ -1259,7 +1259,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4100
      * @tc.name      testStreamDuplex03Chapter0041
      * @tc.desc      Test setDefaultEncoding with regular expression parameter
      * @tc.size      MediumTest
@@ -1289,7 +1289,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4200
      * @tc.name      testStreamDuplex03Chapter0042
      * @tc.desc      Test setDefaultEncoding with Date parameter
      * @tc.size      MediumTest
@@ -1319,7 +1319,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4300
      * @tc.name      testStreamDuplex03Chapter0043
      * @tc.desc      Test setDefaultEncoding with Map parameter
      * @tc.size      MediumTest
@@ -1351,7 +1351,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4400
      * @tc.name      testStreamDuplex03Chapter0044
      * @tc.desc      Test setDefaultEncoding with Set parameter
      * @tc.size      MediumTest
@@ -1382,7 +1382,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4500
      * @tc.name      testStreamDuplex03Chapter0045
      * @tc.desc      Test setDefaultEncoding with Promise parameter
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4600
      * @tc.name      testStreamDuplex03Chapter0046
      * @tc.desc      Test setDefaultEncoding with BigInt parameter
      * @tc.size      MediumTest
@@ -1443,7 +1443,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4700
      * @tc.name      testStreamDuplex03Chapter0047
      * @tc.desc      Test setDefaultEncoding with TypedArray parameter
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4800
      * @tc.name      testStreamDuplex03Chapter0048
      * @tc.desc      Test setDefaultEncoding with NaN parameter directly
      * @tc.size      MediumTest
@@ -1504,7 +1504,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_4900
      * @tc.name      testStreamDuplex03Chapter0049
      * @tc.desc      Test setDefaultEncoding with Infinity parameter directly
      * @tc.size      MediumTest
@@ -1534,7 +1534,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5000
      * @tc.name      testStreamDuplex03Chapter0050
      * @tc.desc      Test setDefaultEncoding with -Infinity parameter directly
      * @tc.size      MediumTest
@@ -1564,7 +1564,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5100
      * @tc.name      testStreamDuplex03Chapter0051
      * @tc.desc      Test setDefaultEncoding with very large string (memory test).
      * @tc.size      MEDIUMTEST
@@ -1595,7 +1595,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5200
      * @tc.name      testStreamDuplex03Chapter0052
      * @tc.desc      Test setDefaultEncoding with treeString type.
      * @tc.size      MediumTest
@@ -1630,7 +1630,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5300
      * @tc.name      testStreamDuplex03Chapter0053
      * @tc.desc      Test setDefaultEncoding with sliceString type.
      * @tc.size      MediumTest
@@ -1662,7 +1662,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5400
      * @tc.name      testStreamDuplex03Chapter0054
      * @tc.desc      Test setDefaultEncoding with number.MAX_VALUE as string.
      * @tc.size      MediumTest
@@ -1693,7 +1693,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5500
      * @tc.name      testStreamDuplex03Chapter0055
      * @tc.desc      Test setDefaultEncoding with number.MIN_VALUE as string.
      * @tc.size      MediumTest
@@ -1724,7 +1724,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5600
      * @tc.name      testStreamDuplex03Chapter0056
      * @tc.desc      Test setDefaultEncoding with number.EPSILON as string.
      * @tc.size      MediumTest
@@ -1755,7 +1755,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5700
      * @tc.name      testStreamDuplex03Chapter0057
      * @tc.desc      Test setDefaultEncoding with Number.MAX_SAFE_INTEGER as string.
      * @tc.size      MediumTest
@@ -1786,7 +1786,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5800
      * @tc.name      testStreamDuplex03Chapter0058
      * @tc.desc      Test setDefaultEncoding with scientific notation string.
      * @tc.size      MediumTest
@@ -1819,7 +1819,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_5900
      * @tc.name      testStreamDuplex03Chapter0059
      * @tc.desc      Test setDefaultEncoding with hexadecimal string.
      * @tc.size      MediumTest
@@ -1852,7 +1852,7 @@ export default function StreamDuplex03Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_6000
      * @tc.name      testStreamDuplex03Chapter0060
      * @tc.desc      Test setDefaultEncoding with exponent operator string.
      * @tc.size      MediumTest
@@ -1882,7 +1882,7 @@ export default function StreamDuplex03Test() {
       }
     });
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST03_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST03_6100
      * @tc.name      testStreamDuplex03Chapter0061
      * @tc.desc      Test setDefaultEncoding with BigInt string.
      * @tc.size      MediumTest

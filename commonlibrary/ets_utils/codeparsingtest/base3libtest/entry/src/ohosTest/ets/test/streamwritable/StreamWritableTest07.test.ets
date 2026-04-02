@@ -29,7 +29,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0100
      * @tc.name      testStreamWritable07Chapter0001
      * @tc.desc      Test doInitialize with normal callback function
      * @tc.size      MediumTest
@@ -60,7 +60,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0200
      * @tc.name      testStreamWritable07Chapter0002
      * @tc.desc      Test doInitialize with callback that returns value
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0300
      * @tc.name      testStreamWritable07Chapter0003
      * @tc.desc      Test doInitialize with arrow function callback
      * @tc.size      MediumTest
@@ -122,7 +122,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0400
      * @tc.name      testStreamWritable07Chapter0004
      * @tc.desc      Test doInitialize with async callback function
      * @tc.size      MediumTest
@@ -153,7 +153,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0500
      * @tc.name      testStreamWritable07Chapter0005
      * @tc.desc      Test doInitialize with callback that throws error
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0600
      * @tc.name      testStreamWritable07Chapter0006
      * @tc.desc      Test doInitialize with callback that has parameters
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0700
      * @tc.name      testStreamWritable07Chapter0007
      * @tc.desc      Test doInitialize without calling super.doInitialize
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0800
      * @tc.name      testStreamWritable07Chapter0010
      * @tc.desc      Test doInitialize with callback accessing this context
      * @tc.size      MediumTest
@@ -279,7 +279,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_0900
      * @tc.name      testStreamWritable07Chapter0011
      * @tc.desc      Test doInitialize with null callback (reverse test)
      * @tc.size      MediumTest
@@ -309,7 +309,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1000
      * @tc.name      testStreamWritable07Chapter0012
      * @tc.desc      Test doInitialize with undefined callback (reverse test)
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1100
      * @tc.name      testStreamWritable07Chapter0013
      * @tc.desc      Test doInitialize with number instead of callback (reverse test)
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1200
      * @tc.name      testStreamWritable07Chapter0014
      * @tc.desc      Test doInitialize with string instead of callback (reverse test)
      * @tc.size      MediumTest
@@ -399,7 +399,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1300
      * @tc.name      testStreamWritable07Chapter0015
      * @tc.desc      Test doInitialize with object instead of callback (reverse test)
      * @tc.size      MediumTest
@@ -429,7 +429,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1400
      * @tc.name      testStreamWritable07Chapter0016
      * @tc.desc      Test doInitialize with array instead of callback (reverse test)
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1500
      * @tc.name      testStreamWritable07Chapter0017
      * @tc.desc      Test doInitialize with boolean instead of callback (reverse test)
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function StreamWritable07Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1600
      * @tc.name      testStreamWritable07Chapter0018
      * @tc.desc      Test doInitialize without overriding doWrite method (reverse test)
      * @tc.size      MediumTest
@@ -514,7 +514,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1700
      * @tc.name      testStreamWritable07Chapter0019
      * @tc.desc      Test doInitialize with empty class extending Writable
      * @tc.size      MediumTest
@@ -542,7 +542,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1800
      * @tc.name      testStreamWritable07Chapter0020
      * @tc.desc      Test doInitialize with callback that uses setTimeout
      * @tc.size      MediumTest
@@ -573,7 +573,7 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_1900
      * @tc.name      testStreamWritable07Chapter0021
      * @tc.desc      Write normal UTF-8 encoded string
      * @tc.size      MediumTest
@@ -605,7 +605,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2000
      * @tc.name      testStreamWritable07Chapter0022
      * @tc.desc      Write Uint8Array with UTF-8 encoding
      * @tc.size      MediumTest
@@ -639,7 +639,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2100
      * @tc.name      testStreamWritable07Chapter0023
      * @tc.desc      Write empty string with UTF-8 encoding
      * @tc.size      MediumTest
@@ -674,7 +674,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2200
      * @tc.name      testStreamWritable07Chapter0024
      * @tc.desc      Write string with GBK encoding
      * @tc.size      MediumTest
@@ -705,7 +705,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2300
      * @tc.name      testStreamWritable07Chapter0025
      * @tc.desc      Write string with GB18030 encoding
      * @tc.size      MediumTest
@@ -735,7 +735,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2400
      * @tc.name      testStreamWritable07Chapter0026
      * @tc.desc      Write string with GB2312 encoding
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2500
      * @tc.name      testStreamWritable07Chapter0027
      * @tc.desc      Write string with special characters
      * @tc.size      MediumTest
@@ -798,7 +798,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2600
      * @tc.name      testStreamWritable07Chapter0028
      * @tc.desc      Write string containing emoji characters
      * @tc.size      MediumTest
@@ -831,7 +831,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2700
      * @tc.name      testStreamWritable07Chapter0029
      * @tc.desc      Write Uint8Array with boundary values
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2800
      * @tc.name      testStreamWritable07Chapter0030
      * @tc.desc      Write large Uint8Array data
      * @tc.size      MediumTest
@@ -903,7 +903,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_2900
      * @tc.name      testStreamWritable07Chapter0031
      * @tc.desc      Test with invalid encoding parameter (negative case)
      * @tc.size      MediumTest
@@ -953,7 +953,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3000
      * @tc.name      testStreamWritable07Chapter0032
      * @tc.desc      Test with null chunk parameter (negative case)
      * @tc.size      MediumTest
@@ -997,7 +997,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3100
      * @tc.name      testStreamWritable07Chapter0033
      * @tc.desc      Test with undefined chunk parameter (negative case)
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3200
      * @tc.name      testStreamWritable07Chapter0034
      * @tc.desc      Test with invalid chunk type (negative case)
      * @tc.size      MediumTest
@@ -1081,7 +1081,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3300
      * @tc.name      testStreamWritable07Chapter0035
      * @tc.desc      Test with empty encoding parameter (negative case)
      * @tc.size      MediumTest
@@ -1128,7 +1128,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3400
      * @tc.name      testStreamWritable07Chapter0036
      * @tc.desc      Test doWrite callback error handling
      * @tc.size      MediumTest
@@ -1171,7 +1171,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3500
      * @tc.name      testStreamWritable07Chapter0037
      * @tc.desc      Test multiple sequential write calls
      * @tc.size      MediumTest
@@ -1211,7 +1211,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3600
      * @tc.name      testStreamWritable07Chapter0038
      * @tc.desc      Test mixed string and Uint8Array writes
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3700
      * @tc.name      testStreamWritable07Chapter0039
      * @tc.desc      Test with long string data
      * @tc.size      MediumTest
@@ -1299,7 +1299,7 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST07_3800
      * @tc.name      testStreamWritable07Chapter0044
      * @tc.desc      Test with zero-length Uint8Array
      * @tc.size      MediumTest

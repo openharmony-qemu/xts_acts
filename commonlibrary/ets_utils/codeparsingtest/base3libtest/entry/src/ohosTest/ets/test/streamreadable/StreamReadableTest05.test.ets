@@ -29,7 +29,7 @@ export default function StreamReadable05Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0100
      * @tc.name      testStreamReadable05Chapter0001
      * @tc.desc      Push a normal string with default encoding
      * @tc.size      MediumTest
@@ -57,7 +57,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0200
      * @tc.name      testStreamReadable05Chapter0002
      * @tc.desc      Push string with utf8 encoding
      * @tc.size      MediumTest
@@ -85,7 +85,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0300
      * @tc.name      testStreamReadable05Chapter0003
      * @tc.desc      Push string with gb18030 encoding
      * @tc.size      MediumTest
@@ -112,7 +112,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0400
      * @tc.name      testStreamReadable05Chapter0004
      * @tc.desc      Push string with gbk encoding
      * @tc.size      MediumTest
@@ -139,7 +139,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0500
      * @tc.name      testStreamReadable05Chapter0005
      * @tc.desc      Push string with gb2312 encoding
      * @tc.size      MediumTest
@@ -166,7 +166,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0600
      * @tc.name      testStreamReadable05Chapter0006
      * @tc.desc      Push undefined chunk
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0700
      * @tc.name      testStreamReadable05Chapter0007
      * @tc.desc      Push null chunk
      * @tc.size      MediumTest
@@ -218,7 +218,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0800
      * @tc.name      testStreamReadable05Chapter0008
      * @tc.desc      Push empty string
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_0900
      * @tc.name      testStreamReadable05Chapter0009
      * @tc.desc      Push string with special characters
      * @tc.size      MediumTest
@@ -276,7 +276,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1000
      * @tc.name      testStreamReadable05Chapter0010
      * @tc.desc      Push string with ASCII characters
      * @tc.size      MediumTest
@@ -303,7 +303,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1100
      * @tc.name      testStreamReadable05Chapter0011
      * @tc.desc      Push string with repeated special characters
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1200
      * @tc.name      testStreamReadable05Chapter0012
      * @tc.desc      Push string with escape characters
      * @tc.size      MediumTest
@@ -357,7 +357,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1300
      * @tc.name      testStreamReadable05Chapter0013
      * @tc.desc      Push string with emoji characters
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1400
      * @tc.name      testStreamReadable05Chapter0014
      * @tc.desc      Push string with Unicode escape sequences
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1500
      * @tc.name      testStreamReadable05Chapter0015
      * @tc.desc      Push string with illegal Unicode sequences
      * @tc.size      MediumTest
@@ -439,7 +439,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1600
      * @tc.name      testStreamReadable05Chapter0016
      * @tc.desc      Push string with keywords
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1700
      * @tc.name      testStreamReadable05Chapter0017
      * @tc.desc      Push Uint8Array with normal values
      * @tc.size      MediumTest
@@ -493,7 +493,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1800
      * @tc.name      testStreamReadable05Chapter0018
      * @tc.desc      Push Uint8Array with boundary values (0 and 255)
      * @tc.size      MediumTest
@@ -520,7 +520,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_1900
      * @tc.name      testStreamReadable05Chapter0019
      * @tc.desc      Push Uint8Array with out of range values (should be clamped)
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2000
      * @tc.name      testStreamReadable05Chapter0020
      * @tc.desc      Push Uint8Array with multiple zeros
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2100
      * @tc.name      testStreamReadable05Chapter0021
      * @tc.desc      Push Uint8Array with negative numbers (should be wrapped)
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2200
      * @tc.name      testStreamReadable05Chapter0022
      * @tc.desc      Push Uint8Array with NaN and Infinity values
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2300
      * @tc.name      testStreamReadable05Chapter0023
      * @tc.desc      Push empty Uint8Array
      * @tc.size      MediumTest
@@ -660,7 +660,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2400
      * @tc.name      testStreamReadable05Chapter0024
      * @tc.desc      Push large Uint8Array
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2500
      * @tc.name      testStreamReadable05Chapter0025
      * @tc.desc      Push string then Uint8Array
      * @tc.size      MediumTest
@@ -718,7 +718,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2600
      * @tc.name      testStreamReadable05Chapter0026
      * @tc.desc      Test buffer full scenario
      * @tc.size      MediumTest
@@ -748,7 +748,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2700
      * @tc.name      testStreamReadable05Chapter0027
      * @tc.desc      Test push with invalid encoding (reverse test)
      * @tc.size      MediumTest
@@ -785,7 +785,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2800
      * @tc.name      testStreamReadable05Chapter0028
      * @tc.desc      Test push with Uint8Array from string
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_2900
      * @tc.name      testStreamReadable05Chapter0029
      * @tc.desc      Test push with Uint8Array containing boolean representation
      * @tc.size      MediumTest
@@ -840,7 +840,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3000
      * @tc.name      testStreamReadable05Chapter0030
      * @tc.desc      Test push with JSON string
      * @tc.size      MediumTest
@@ -867,7 +867,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3100
      * @tc.name      testStreamReadable05Chapter0031
      * @tc.desc      Test push with JSON array string
      * @tc.size      MediumTest
@@ -894,7 +894,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3200
      * @tc.name      testStreamReadable05Chapter0032
      * @tc.desc      Test push with default encoding (null means default)
      * @tc.size      MediumTest
@@ -921,7 +921,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3300
      * @tc.name      testStreamReadable05Chapter0033
      * @tc.desc      Test push with undefined encoding
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3400
      * @tc.name      testStreamReadable05Chapter0034
      * @tc.desc      Test push with valid encoding string
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3500
      * @tc.name      testStreamReadable05Chapter0035
      * @tc.desc      Test multiple pushes
      * @tc.size      MediumTest
@@ -1009,7 +1009,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3600
      * @tc.name      testStreamReadable05Chapter0036
      * @tc.desc      Test push after null
      * @tc.size      MediumTest
@@ -1037,7 +1037,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3700
      * @tc.name      testStreamReadable05Chapter0037
      * @tc.desc      Test push after undefined
      * @tc.size      MediumTest
@@ -1065,7 +1065,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3800
      * @tc.name      testStreamReadable05Chapter0038
      * @tc.desc      Test push with large string
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_3900
      * @tc.name      testStreamReadable05Chapter0039
      * @tc.desc      Test push with treeString-like structure
      * @tc.size      MediumTest
@@ -1123,7 +1123,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4000
      * @tc.name      testStreamReadable05Chapter0040
      * @tc.desc      Test push with sliceString
      * @tc.size      MediumTest
@@ -1151,7 +1151,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4100
      * @tc.name      testStreamReadable05Chapter0041
      * @tc.desc      Test push with number-like string
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4200
      * @tc.name      testStreamReadable05Chapter0042
      * @tc.desc      Test push with scientific notation string
      * @tc.size      MediumTest
@@ -1205,7 +1205,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4300
      * @tc.name      testStreamReadable05Chapter0043
      * @tc.desc      Test push with hex string
      * @tc.size      MediumTest
@@ -1232,7 +1232,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4400
      * @tc.name      testStreamReadable05Chapter0044
      * @tc.desc      Test push with octal string
      * @tc.size      MediumTest
@@ -1259,7 +1259,7 @@ export default function StreamReadable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST05_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST05_4500
      * @tc.name      testStreamReadable05Chapter0045
      * @tc.desc      Test push with binary string
      * @tc.size      MediumTest

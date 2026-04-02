@@ -42,7 +42,7 @@ export default function StreamReadable02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST02_0100
      * @tc.name      testStreamReadable02Chapter0001
      * @tc.desc      Test pause during flowing mode, should switch to paused mode
      * @tc.size      MediumTest
@@ -88,7 +88,7 @@ export default function StreamReadable02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST02_0200
      * @tc.name      testStreamReadable02Chapter0002
      * @tc.desc      Test pause when stream has ended, should still return readable and isPaused true
      * @tc.size      MediumTest
@@ -128,7 +128,7 @@ export default function StreamReadable02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST02_0300
      * @tc.name      testStreamReadable02Chapter0003
      * @tc.desc      Test pause on empty stream, should not throw error
      * @tc.size      MediumTest
@@ -168,7 +168,7 @@ export default function StreamReadable02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST02_0400
      * @tc.name      testStreamReadable02Chapter0004
      * @tc.desc      Test pause return type is Readable
      * @tc.size      MediumTest
@@ -198,7 +198,7 @@ export default function StreamReadable02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_READABLE_TEST02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETEST02_0500
      * @tc.name      testStreamReadable02Chapter0005
      * @tc.desc      Test pause after resume, should switch back to paused mode
      * @tc.size      MediumTest

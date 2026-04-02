@@ -212,7 +212,7 @@ export default function StreamTest_09() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_CORK_0011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0100
      * @tc.name      testDuplexCork0011
      * @tc.desc      Verify writableCorked level after single cork operation
      * @tc.size      MediumTest
@@ -230,7 +230,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_CORK_0012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0200
      * @tc.name      testDuplexCork0012
      * @tc.desc      Verify error handling for empty write after cork/end
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0300
      * @tc.name      testDuplexUnCork0001
      * @tc.desc      Verify basic uncork operation on custom Duplex
      * @tc.size      MediumTest
@@ -271,7 +271,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0400
      * @tc.name      testDuplexUnCork0002
      * @tc.desc      Verify writableCorked status after nested uncork on custom Duplex
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0500
      * @tc.name      testDuplexUnCork0003
      * @tc.desc      Verify write count after uncork on custom Duplex
      * @tc.size      MediumTest
@@ -319,7 +319,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0600
      * @tc.name      testDuplexUnCork0004
      * @tc.desc      Verify uncork on non-corked custom Duplex
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0700
      * @tc.name      testDuplexUnCork0005
      * @tc.desc      Verify multiple uncork operations on custom Duplex
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0800
      * @tc.name      testDuplexUnCork0006
      * @tc.desc      Verify uncork on ended custom Duplex stream
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_0900
      * @tc.name      testDuplexUnCork0007
      * @tc.desc      Verify uncork on non-writable custom Duplex stream
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_UNCORK_0008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1000
      * @tc.name      testDuplexUnCork0008
      * @tc.desc      Verify write count after nested cork/uncork on custom Duplex
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_UNCORK_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1100
      * @tc.name      testDuplexUnCork0009
      * @tc.desc      Verify uncork and write new data for Duplex stream.
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1200
      * @tc.name      testDuplexDowrite0001
      * @tc.desc      Validate string data handling in doWrite method.
      * @tc.size      MediumTest
@@ -486,7 +486,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1300
      * @tc.name      testDuplexDowrite0002
      * @tc.desc      Verify string and Uint8Array data type handling.
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1400
      * @tc.name      testDuplexDowrite0003
      * @tc.desc      Ensure execution order in chained write operations.
      * @tc.size      MediumTest
@@ -536,7 +536,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1500
      * @tc.name      testDuplexDowrite0004
      * @tc.desc      Validate write blocking when callback is not called.
      * @tc.size      MediumTest
@@ -555,7 +555,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1600
      * @tc.name      testDuplexDowrite0005
      * @tc.desc      Verify error propagation via write callback.
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1700
      * @tc.name      testDuplexDowrite0006
      * @tc.desc      Detect write attempts after stream termination.
      * @tc.size      MediumTest
@@ -599,7 +599,7 @@ export default function StreamTest_09() {
 
       });
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1800
      * @tc.name      testDuplexDowrite0007
      * @tc.desc      Enforce data type and encoding validation checks.
      * @tc.size      MediumTest
@@ -629,7 +629,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_1900
      * @tc.name      testDuplexDowritev0001
      * @tc.desc      Validate doWritev handles single string chunk writing
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2000
      * @tc.name      testDuplexDowritev0002
      * @tc.desc      Verify doWritev processes mixed string and Uint8Array chunks
      * @tc.size      MediumTest
@@ -675,7 +675,7 @@ export default function StreamTest_09() {
 
       });
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2100
      * @tc.name      testDuplexDowritev0003
      * @tc.desc      Create Duplex instance with doWritev and push normal string & Uint8Array chunks.
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2200
      * @tc.name      testDuplexDowritev0004
      * @tc.desc      Create Duplex instance with doWritev and verify buffered data integrity.
      * @tc.size      MediumTest
@@ -724,7 +724,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2300
      * @tc.name      testDuplexDowritev0005
      * @tc.desc      Validate doWritev throws error for non-array chunks parameter
      * @tc.size      MediumTest
@@ -748,7 +748,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2400
      * @tc.name      testDuplexDowritev0006
      * @tc.desc      Validate doWritev rejects invalid data types in chunks
      * @tc.size      MediumTest
@@ -774,7 +774,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2500
      * @tc.name      testDuplexDowritev0007
      * @tc.desc      Verify behavior when doWritev calls callback multiple times
      * @tc.size      MediumTest
@@ -796,7 +796,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_DUPLEX_DOWRITEV_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2600
      * @tc.name      testDuplexDowritev0008
      * @tc.desc      Validate hybrid type handling and highWaterMark check in async doWritev
      * @tc.size      MediumTest
@@ -828,7 +828,7 @@ export default function StreamTest_09() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_TRANSFROM_CONSTRUCTOR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST09_2700
      * @tc.name      constructorTest0001
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest

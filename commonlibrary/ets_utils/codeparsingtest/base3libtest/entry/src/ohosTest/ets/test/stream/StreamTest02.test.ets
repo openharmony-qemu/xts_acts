@@ -514,7 +514,7 @@ export default function StreamTest_02() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0100
      * @tc.name      corkTest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0200
      * @tc.name      corkTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -551,7 +551,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0300
      * @tc.name      corkTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -575,7 +575,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0400
      * @tc.name      corkTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -606,7 +606,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0500
      * @tc.name      corkTest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -623,7 +623,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0600
      * @tc.name      corkTest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0700
      * @tc.name      corkTest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0800
      * @tc.name      corkTest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_0900
      * @tc.name      uncorkTest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -704,7 +704,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1000
      * @tc.name      uncorkTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1100
      * @tc.name      uncorkTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -750,7 +750,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1200
      * @tc.name      uncorkTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -769,7 +769,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1300
      * @tc.name      uncorkTest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -786,7 +786,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1400
      * @tc.name      uncorkTest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -803,7 +803,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1500
      * @tc.name      uncorkTest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1600
      * @tc.name      uncorkTest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1700
      * @tc.name      uncorkTest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1800
      * @tc.name      uncorkTest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -884,7 +884,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_1900
      * @tc.name      uncorkTest0011
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -905,7 +905,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2000
      * @tc.name      uncorkTest0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -922,7 +922,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2100
      * @tc.name      uncorkTest0013
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -941,7 +941,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2200
      * @tc.name      uncorkTest0014
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -963,7 +963,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2300
      * @tc.name      ontest0001
      * @tc.desc      Verify close event trigger correctly
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2400
      * @tc.name      ontest0002
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1014,7 +1014,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2500
      * @tc.name      ontest0003
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1047,7 +1047,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2600
      * @tc.name      ontest0004
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1066,7 +1066,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2700
      * @tc.name      ontest0005
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1089,7 +1089,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2800
      * @tc.name      ontest0006
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1105,7 +1105,7 @@ export default function StreamTest_02() {
 
     });
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_2900
      * @tc.name      ontest0007
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1127,7 +1127,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3000
      * @tc.name      ontest0008
      * @tc.desc      Verify event priority execution order
      * @tc.size      MediumTest
@@ -1144,7 +1144,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3100
      * @tc.name      ontest0009
      * @tc.desc      Verify unregistered event emit handling
      * @tc.size      MediumTest
@@ -1189,7 +1189,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3200
      * @tc.name      ontest0010
      * @tc.desc      Verify basic event handling in writable
      * @tc.size      MediumTest
@@ -1209,7 +1209,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3300
      * @tc.name      ontest0011
      * @tc.desc      Verify typed event data handling
      * @tc.size      MediumTest
@@ -1233,7 +1233,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3400
      * @tc.name      ontest0012
      * @tc.desc      Verify event priority execution sequence
      * @tc.size      MediumTest
@@ -1253,7 +1253,7 @@ export default function StreamTest_02() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST02_3500
      * @tc.name      ontest0013
      * @tc.desc      Verify emitter once works correctly
      * @tc.size      MediumTest

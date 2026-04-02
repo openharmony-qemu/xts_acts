@@ -188,7 +188,7 @@ export default function StreamTest_06() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLESETENCODING_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0100
      * @tc.name      ReadableSetEncodingTest0011
      * @tc.desc      Mixed scenario: setEncoding() success (empty buffer) -> push chunk -> setEncoding() fail (buffer has data).
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLESETENCODING_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0200
      * @tc.name      ReadableSetEncodingTest0012
      * @tc.desc      Mixed scenario: push chunk -> setEncoding() fail -> read all data -> setEncoding() success.
      * @tc.size      MediumTest
@@ -273,7 +273,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLESETENCODING_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0300
      * @tc.name      ReadableSetEncodingTest0013
      * @tc.desc      Mixed scenario: setEncoding() success -> push empty + non-empty chunks -> read -> setEncoding() success again.
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0400
      * @tc.name      ReadableIsPausedTest0001
      * @tc.desc      Verify isPaused returns false for default Readable instance (no pause called) with string chunk.
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0500
      * @tc.name      ReadableIsPausedTest0002
      * @tc.desc      Verify isPaused returns true after calling pause() with string chunk.
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0600
      * @tc.name      ReadableIsPausedTest0003
      * @tc.desc      Verify isPaused returns false after calling resume() after pause() with string chunk.
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0700
      * @tc.name      ReadableIsPausedTest0004
      * @tc.desc      Verify isPaused returns false for default Readable instance with Uint8Array chunk.
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0800
      * @tc.name      ReadableIsPausedTest0005
      * @tc.desc      Verify isPaused returns true after calling pause() with Uint8Array chunk.
      * @tc.size      MediumTest
@@ -542,7 +542,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_0900
      * @tc.name      ReadableIsPausedTest0006
      * @tc.desc      Verify isPaused returns false after calling resume() after pause() with Uint8Array chunk.
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1000
      * @tc.name      ReadableIsPausedTest0007
      * @tc.desc      Verify isPaused status with empty string chunk after pause and resume.
      * @tc.size      MediumTest
@@ -634,7 +634,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1100
      * @tc.name      ReadableIsPausedTest0008
      * @tc.desc      Verify isPaused status with empty Uint8Array chunk after pause and resume.
      * @tc.size      MediumTest
@@ -676,7 +676,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1200
      * @tc.name      ReadableIsPausedTest0009
      * @tc.desc      Verify isPaused status with empty Uint8Array chunk after pause and resume.
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1300
      * @tc.name      ReadableIsPausedTest0010
      * @tc.desc      Verify isPaused status when calling resume multiple times without pause with string chunk.
      * @tc.size      MediumTest
@@ -743,7 +743,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1400
      * @tc.name      ReadableIsPausedTest0011
      * @tc.desc      Verify isPaused status when calling pause and resume alternately with Uint8Array chunk.
      * @tc.size      MediumTest
@@ -793,7 +793,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1500
      * @tc.name      ReadableIsPausedTest0012
      * @tc.desc      Mixed scenario: isPaused status + partial read + mixed string-Uint8Array chunks.
      * @tc.size      MediumTest
@@ -855,7 +855,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1600
      * @tc.name      ReadableIsPausedTest0013
      * @tc.desc      Mixed scenario: multiple Readable instances + empty-mixed chunks + pause-resume cycle.
      * @tc.size      MediumTest
@@ -928,7 +928,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_ISPAUSED_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1700
      * @tc.name      ReadableIsPausedTest0014
      * @tc.desc      Mixed scenario: isPaused status + stream end + mixed chunks.
      * @tc.size      MediumTest
@@ -990,7 +990,7 @@ export default function StreamTest_06() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1800
      * @tc.name      PipeTest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1013,7 +1013,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_1900
      * @tc.name      PipeTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2000
      * @tc.name      PipeTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1064,7 +1064,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2100
      * @tc.name      PipeTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1089,7 +1089,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2200
      * @tc.name      PipeTest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2300
      * @tc.name      PipeTest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1136,7 +1136,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2400
      * @tc.name      PipeTest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1160,7 +1160,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2500
      * @tc.name      PipeTest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1191,7 +1191,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2600
      * @tc.name      PipeTest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1215,7 +1215,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2700
      * @tc.name      PipeTest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1236,7 +1236,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2800
      * @tc.name      PipeTest0011
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_PIPE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_2900
      * @tc.name      PipeTest0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3000
      * @tc.name      UnpipeTest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3100
      * @tc.name      UnpipeTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1334,7 +1334,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3200
      * @tc.name      UnpipeTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3300
      * @tc.name      UnpipeTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1378,7 +1378,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3400
      * @tc.name      UnpipeTest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1400,7 +1400,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3500
      * @tc.name      UnpipeTest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1422,7 +1422,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3600
      * @tc.name      UnpipeTest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1443,7 +1443,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3700
      * @tc.name      UnpipeTest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1467,7 +1467,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3800
      * @tc.name      UnpipeTest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1487,7 +1487,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLE_UNPIPE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_3900
      * @tc.name      UnpipeTest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1510,7 +1510,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4000
      * @tc.name      Readableontest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1530,7 +1530,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4100
      * @tc.name      Readableontest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1552,7 +1552,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4200
      * @tc.name      Readableontest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1576,7 +1576,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4300
      * @tc.name      Readableontest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1600,7 +1600,7 @@ export default function StreamTest_06() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4400
      * @tc.name      Readableontest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1624,7 +1624,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4500
      * @tc.name      Readableontest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1671,7 +1671,7 @@ export default function StreamTest_06() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4600
      * @tc.name      Readableontest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1691,7 +1691,7 @@ export default function StreamTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEON_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST06_4700
      * @tc.name      Readableontest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
