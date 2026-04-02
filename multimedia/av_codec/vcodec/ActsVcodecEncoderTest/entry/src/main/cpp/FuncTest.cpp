@@ -15,7 +15,6 @@
 #include <string>
 #include <iostream>
 #include <memory>
-#include <hilog/log.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include "videoenc_sample.h"
@@ -24,12 +23,6 @@
 #include <multimedia/player_framework/native_avcapability.h>
 #include "include/OhosCommonTest.h"
 #include "SecureMemory.h"
-
-
-#undef LOG_DOMAIN
-#undef LOG_TAG
-#define LOG_DOMAIN 0x0000
-#define LOG_TAG "EncoderFunc2Test12"
 
 static OH_AVCodec *venc_ = nullptr;
 static OH_AVFormat *format = nullptr;
@@ -130,16 +123,26 @@ static int TestIFrameIntervalConfig(const char *mimeType, int32_t pixelFormat, i
 {
     venc_ = OH_VideoEncoder_CreateByMime(mimeType);
     ASSERT_NE(nullptr, venc_);
+    
     format = OH_AVFormat_Create();
-    ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, intervalValue));
+    ASSERT_NE(nullptr, format);
+    
+    bool setResult = OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, intervalValue);
+    ASSERT_EQ(true, setResult);
+    
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat);
-    ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    
+    OH_AVErrCode configResult = OH_VideoEncoder_Configure(venc_, format);
+    ASSERT_EQ(AV_ERR_OK, configResult);
+    
     OH_AVFormat_Destroy(format);
     format = nullptr;
+    
     OH_VideoEncoder_Destroy(venc_);
     venc_ = nullptr;
+    
     return 0;
 }
 
@@ -651,9 +654,9 @@ int VideoEncodeCapability1200Test()
 
 int VideoEncodeCapability1300Test()
 {
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
         ASSERT_NE(nullptr, cap);
-
         string codecName = OH_AVCapability_GetName(cap);
         if (codecName == "OMX.hisi.video.encoder.avc") {
             ASSERT_EQ(MAX_INSTANCES_HISI, OH_AVCapability_GetMaxSupportedInstances(cap));
@@ -1158,6 +1161,18 @@ int VideoEncodeCapability9800Test()
         return 0;
     }
     return 0;
+}
+
+int VideoEncodeFunction0200Test()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap && InitAVCCodecName()) {
+        venc_ = OH_VideoEncoder_CreateByName(g_codecName);
+        ASSERT_NE(nullptr, venc_);
+        return 0;
+    } else {
+        return 0;
+    }
 }
 
 void InitFuncTest()
