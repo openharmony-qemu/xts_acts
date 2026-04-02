@@ -48,7 +48,7 @@ export default function multiNavigationValue() {
 
     /**
      * @tc.name   multiNavigationValue_0100
-     * @tc.number SUB_ARKUI_multiNavigationValue_0100
+     * @tc.number SUB_ARKUI_MULTINAVIGATION_POPTOINDEX_0100
      * @tc.desc   Test MultiNavigation popToIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function multiNavigationValue() {
 
     /**
      * @tc.name   multiNavigationValue_0200
-     * @tc.number SUB_ARKUI_multiNavigationValue_0200
+     * @tc.number SUB_ARKUI_MULTINAVIGATION_POPTOINDEX_0200
      * @tc.desc   Test MultiNavigation popToIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

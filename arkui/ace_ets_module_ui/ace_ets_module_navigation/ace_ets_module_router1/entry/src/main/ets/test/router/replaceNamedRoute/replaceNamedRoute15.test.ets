@@ -49,7 +49,7 @@ export default function replaceNamedRoute15() {
 
     /**
      * @tc.name   replaceNamedRoute_401
-     * @tc.number SUB_ARKUI_replaceNamedRoute_401
+     * @tc.number SUB_ARKUI_REPLACENAMEDROUTE_ERRCODE_0100
      * @tc.desc   Test replaceNamedRoute errCode 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
