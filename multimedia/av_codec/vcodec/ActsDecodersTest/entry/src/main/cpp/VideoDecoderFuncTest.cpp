@@ -85,7 +85,7 @@ static const char *GINP_DIR_AV1_MAIN = "/data/storage/el2/base/files/video/av1_m
 static const char *GINP_DIR_AV1_HIGH = "/data/storage/el2/base/files/video/av1_high_L3.0_854x480.ivf";
 static const char *GINP_DIR_AV1_MAIN_8BIT = "/data/storage/el2/base/files/video/av1_main_L4.0_1920x1080.ivf";
 static const char *GINP_DIR_AV1_HIGH_8BIT = "/data/storage/el2/base/files/video/av1_high_L4.0_1920x1080.ivf";
-static const char *GINP_DIR_CINEPAK = "/data/test/media/cinepak_720_480_25.mkv";
+static const char *GINP_DIR_CINEPAK = "/data/storage/el2/base/files/video/cinepak_720_480_25.mkv";
 
 static void InitCapabilities()
 {
