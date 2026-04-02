@@ -1017,63 +1017,6 @@ export default function httpRequestErrorCodeTest() {
         }
       })
 
-          /**
-     * @tc.name   testHttpRequestMethodErrorCode_static_2400
-     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
-     * @tc.desc   test http request(url, options, Promise) with request error code 2300005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testHttpRequestMethodErrorCode_static_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testHttpRequestMethodErrorCode_static_2400';
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        try {
-          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
-            if (data?.netId == 0) {
-              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
-              ExpectFail();
-              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-              done();
-            } else {
-              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
-              let httpRequest: http.HttpRequest = http.createHttp();
-              let ExclusionList = "";
-              let array = ExclusionList.split(',');
-              let httpProxy: http.HttpProxy = {
-                host: "host",
-                port: 1,
-                exclusionList: array
-              };
-              let httpRequestOptions_noParm: http.HttpRequestOptions = {
-                method: http.RequestMethod.GET,
-                usingProxy: httpProxy
-              };
-              let promise = httpRequest.request('https://www.baidu.com', httpRequestOptions_noParm);
-              promise.then((data: http.HttpResponse) => {
-                hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                ExpectFail();
-                httpRequest.destroy();
-                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-                done();
-              }).catch((error: Error) => {
-                hilog.info(domain, tag, '%{public}s', caseName + '  get error code is ' + error.code);
-                ExpectTrue(error?.code == 2300005);
-                httpRequest.destroy();
-                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-                done();
-              });
-            }
-          });
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
-          ExpectFail();
-          hilog.info(domain, tag, '%{public}s', caseName + ' end');
-          done();
-        }
-      })
-
     /**
      * @tc.name   testHttpRequestMethodErrorCode_static_2400
      * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
