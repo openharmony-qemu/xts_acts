@@ -54,7 +54,7 @@ export default function CanvasRoundRectErrorCodeTest() {
 
     /**
     * @tc.name   CanvasRoundRectErrorCodeTestFirst
-    * @tc.number Sub_Ace_CanvasRoundRectErrorCodeTestFirst
+    * @tc.number CanvasRoundRectErrorCodeTestFirst
     * @tc.desc   ArkUI Api
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
