@@ -69,7 +69,7 @@ export default function BadgeStyleOuterAvoidTest() {
     });
 
     /**
-     * @tc.number BadgeStyleOuterAvoidTest_001
+     * @tc.number SUB_arkui_badge_style_outer_avoid_bdg_out_page_loads_0100
      * @tc.name bdgOut_pageLoads
      * @tc.desc Test BadgeStyleOuterAvoid page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -88,7 +88,7 @@ export default function BadgeStyleOuterAvoidTest() {
     });
 
     /**
-     * @tc.number BadgeStyleOuterAvoidTest_002
+     * @tc.number SUB_arkui_badge_style_outer_avoid_bdg_out_ready_flag_0200
      * @tc.name bdgOut_ready_flag
      * @tc.desc Test BadgeStyleOuterAvoid: aboutToAppear sets AppStorage bdgOut_ready
      * @tc.type   FUNCTION
@@ -107,7 +107,7 @@ export default function BadgeStyleOuterAvoidTest() {
     });
 
     /**
-     * @tc.number BadgeStyleOuterAvoidTest_003
+     * @tc.number SUB_arkui_badge_style_outer_avoid_bdg_out_inspector_host_0300
      * @tc.name bdgOut_inspector_host
      * @tc.desc Test inspector.getInspectorByKey: node bdgOut_host
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function BadgeStyleOuterAvoidTest() {
     });
 
     /**
-     * @tc.number BadgeStyleOuterAvoidTest_004
+     * @tc.number SUB_arkui_badge_style_outer_avoid_bdg_out_inspector_title_0400
      * @tc.name bdgOut_inspector_title
      * @tc.desc Test inspector.getInspectorByKey: node bdgOut_title
      * @tc.type   FUNCTION
@@ -145,7 +145,7 @@ export default function BadgeStyleOuterAvoidTest() {
     });
 
     /**
-     * @tc.number BadgeStyleOuterAvoidTest_005
+     * @tc.number SUB_arkui_badge_style_outer_avoid_bdg_out_driver_title_0500
      * @tc.name bdgOut_driver_title
      * @tc.desc Test Driver.findComponent: id bdgOut_title
      * @tc.type   FUNCTION

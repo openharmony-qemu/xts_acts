@@ -19,7 +19,7 @@ import { AlertDialogV2, AdvancedDialogV2Button } from '@ohos.arkui.advanced.Dial
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Builder
-function DialogV2TextAlignBuilder() {
+function dialogV2TextAlignBuilder() {
   AlertDialogV2({
     primaryTitle: 'V2',
     content: 'AdvancedDialogV2Button.textAlign',
@@ -37,7 +37,7 @@ function DialogV2TextAlignBuilder() {
 @Component
 struct DialogV2ButtonTextAlign {
   dialogV2TextAlign: CustomDialogController = new CustomDialogController({
-    builder: DialogV2TextAlignBuilder,
+    builder: dialogV2TextAlignBuilder,
   });
 
   build() {

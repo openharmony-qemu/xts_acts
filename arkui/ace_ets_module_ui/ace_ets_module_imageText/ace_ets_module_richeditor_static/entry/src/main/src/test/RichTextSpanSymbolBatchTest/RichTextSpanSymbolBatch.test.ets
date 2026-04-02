@@ -69,7 +69,7 @@ export default function RichTextSpanSymbolBatchTest() {
     });
 
     /**
-     * @tc.number RichTextSpanSymbolBatchTest_001
+     * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_page_loads_0100
      * @tc.name rtsb_pageLoads
      * @tc.desc Test RichTextSpanSymbolBatch page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -88,7 +88,7 @@ export default function RichTextSpanSymbolBatchTest() {
     });
 
     /**
-     * @tc.number RichTextSpanSymbolBatchTest_002
+     * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_ready_flag_0200
      * @tc.name rtsb_ready_flag
      * @tc.desc Test RichTextSpanSymbolBatch: aboutToAppear sets AppStorage rtsb_ready
      * @tc.type   FUNCTION
@@ -107,7 +107,7 @@ export default function RichTextSpanSymbolBatchTest() {
     });
 
     /**
-     * @tc.number RichTextSpanSymbolBatchTest_003
+     * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_composite_text_0300
      * @tc.name rtsb_inspector_composite_text
      * @tc.desc Test inspector.getInspectorByKey: node rtsb_text
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function RichTextSpanSymbolBatchTest() {
     });
 
     /**
-     * @tc.number RichTextSpanSymbolBatchTest_004
+     * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_symbol_0400
      * @tc.name rtsb_inspector_symbol
      * @tc.desc Test inspector.getInspectorByKey: node rtsb_symbol
      * @tc.type   FUNCTION
@@ -145,7 +145,7 @@ export default function RichTextSpanSymbolBatchTest() {
     });
 
     /**
-     * @tc.number RichTextSpanSymbolBatchTest_005
+     * @tc.number SUB_arkui_richtext_span_symbol_batch_rtsb_driver_symbol_0500
      * @tc.name rtsb_driver_symbol
      * @tc.desc Test Driver.findComponent: id rtsb_symbol
      * @tc.type   FUNCTION

@@ -33,7 +33,7 @@ import { ComponentContent } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Builder
-function NavSplitPhBuilder() {
+function navSplitPhBuilder() {
   Text('ph').fontSize(8).height('5%');
 }
 
@@ -67,7 +67,7 @@ struct NavigationNavDestination {
         .title('t');
       }
       .enableVisibilityLifecycleWithContentCover(true)
-      .splitPlaceholder(new ComponentContent(this.getUIContext(), wrapBuilder(NavSplitPhBuilder)))
+      .splitPlaceholder(new ComponentContent(this.getUIContext(), wrapBuilder(navSplitPhBuilder)))
       .height('32%')
       .width('100%')
       .id('navNd_body');

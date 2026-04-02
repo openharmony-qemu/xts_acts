@@ -64,7 +64,7 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_001
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_str2fr_0100
      * @tc.name waterFlowColTemplateStr2fr
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with '1fr 1fr'
      */
@@ -87,7 +87,7 @@ export default function WaterFlowAttributeTest() {
     });
 
     /**
-     * @tc.number WaterFlowAttributeTest_002
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_str3fr_0200
      * @tc.name waterFlowColTemplateStr3fr
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with '1fr 1fr 1fr'
      */
@@ -110,7 +110,7 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_003
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_0300
      * @tc.name waterFlowColTemplateItemFillPolicy
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with ItemFillPolicy
      */
@@ -129,7 +129,7 @@ export default function WaterFlowAttributeTest() {
     });
 
     /**
-     * @tc.number WaterFlowAttributeTest_004
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_with_page_0400
      * @tc.name waterFlowColTemplateItemFillPolicyWithPage
      * @tc.desc Test WaterFlow with ItemFillPolicy renders via inspector
      */
@@ -154,7 +154,7 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_006
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_undefined_0500
      * @tc.name waterFlowColTemplateUndefined
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with undefined
      */

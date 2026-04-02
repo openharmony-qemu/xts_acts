@@ -73,7 +73,7 @@ export default function UIContextStaticMethodsTest() {
     });
 
     /**
-     * @tc.number UIContextStaticMethodsTest_001
+     * @tc.number SUB_arkui_uicontext_static_methods_ui_ctx_st_page_loads_0100
      * @tc.name uiCtxSt_pageLoads
      * @tc.desc Test uiContextStaticMethods page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -93,7 +93,7 @@ export default function UIContextStaticMethodsTest() {
     });
 
     /**
-     * @tc.number UIContextStaticMethodsTest_002
+     * @tc.number SUB_arkui_uicontext_static_methods_snapshot_result_0200
      * @tc.name static_methods_snapshot_result
      * @tc.desc Test UIContext static methods and getPageRootNode snapshot via invoke button
      * @tc.type   FUNCTION
@@ -121,7 +121,7 @@ export default function UIContextStaticMethodsTest() {
     });
 
     /**
-     * @tc.number UIContextStaticMethodsTest_003
+     * @tc.number SUB_arkui_uicontext_static_methods_inspector_ui_ctx_st_title_0300
      * @tc.name inspector_uiCtxSt_title
      * @tc.desc Test inspector.getInspectorByKey: node uiCtxSt_title
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function UIContextStaticMethodsTest() {
     });
 
     /**
-     * @tc.number UIContextStaticMethodsTest_004
+     * @tc.number SUB_arkui_uicontext_static_methods_inspector_ui_ctx_st_btn_0400
      * @tc.name inspector_uiCtxSt_btn
      * @tc.desc inspector uiCtxSt_btn
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function UIContextStaticMethodsTest() {
     });
 
     /**
-     * @tc.number UIContextStaticMethodsTest_005
+     * @tc.number SUB_arkui_uicontext_static_methods_driver_find_invoke_button_twice_0500
      * @tc.name driver_find_invoke_button_twice
      * @tc.desc Test Driver.findComponent: uiCtxSt_btn found repeatedly
      * @tc.type   FUNCTION

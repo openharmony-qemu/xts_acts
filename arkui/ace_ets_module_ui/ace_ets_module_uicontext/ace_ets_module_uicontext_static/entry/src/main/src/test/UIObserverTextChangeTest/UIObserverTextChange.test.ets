@@ -79,7 +79,7 @@ export default function UIObserverTextChangeTest() {
     });
 
     /**
-     * @tc.number UIObserverTextChangeTest_001
+     * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_page_loads_0100
      * @tc.name txtCh_pageLoads
      * @tc.desc Test UIObserver onTextChange page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -98,7 +98,7 @@ export default function UIObserverTextChangeTest() {
     });
 
     /**
-     * @tc.number UIObserverTextChangeTest_002
+     * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_ready_flag_0200
      * @tc.name txtCh_ready_flag
      * @tc.desc Test UIObserver onTextChange page: aboutToAppear sets AppStorage txtCh_ready
      * @tc.type   FUNCTION
@@ -117,7 +117,7 @@ export default function UIObserverTextChangeTest() {
     });
 
     /**
-     * @tc.number UIObserverTextChangeTest_003
+     * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_inspector_title_0300
      * @tc.name txtCh_inspector_title
      * @tc.desc Test inspector.getInspectorByKey: node txtCh_title
      * @tc.type   FUNCTION
@@ -136,7 +136,7 @@ export default function UIObserverTextChangeTest() {
     });
 
     /**
-     * @tc.number UIObserverTextChangeTest_004
+     * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_on_plain_registers_0400
      * @tc.name txtCh_on_plain_registers
      * @tc.desc Test UIObserver.onTextChange: plain callback registers and sets txtCh_on_plain_ok
      * @tc.type   FUNCTION
@@ -160,7 +160,7 @@ export default function UIObserverTextChangeTest() {
     });
 
     /**
-     * @tc.number UIObserverTextChangeTest_005
+     * @tc.number SUB_arkui_uiobserver_text_change_txt_ch_on_opt_registers_0500
      * @tc.name txtCh_on_opt_registers
      * @tc.desc Test UIObserver.onTextChange with ObserverOptions: overload registers and sets txtCh_on_opt_ok
      * @tc.type   FUNCTION

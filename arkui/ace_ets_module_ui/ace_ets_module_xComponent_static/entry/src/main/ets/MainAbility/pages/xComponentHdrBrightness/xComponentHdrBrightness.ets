@@ -51,7 +51,8 @@ struct XComponentHdrBrightness {
         .height('8%')
         .id('xcHdr_title');
       XComponent({
-        type: XComponentType.SURFACE,
+        // XComponentType 取值 0，与官方枚举默认项一致（见 component/enums.d.ets）
+        type: 0 as XComponentType,
         controller: this.xcDef,
       } as XComponentOptions)
       .hdrBrightness(1.0, HdrType.DEFAULT)
@@ -59,7 +60,7 @@ struct XComponentHdrBrightness {
       .width('100%')
       .id('xcHdr_body');
       XComponent({
-        type: XComponentType.SURFACE,
+        type: 0 as XComponentType,
         controller: this.xcAi,
       } as XComponentOptions)
       .hdrBrightness(1.0, HdrType.AIHDR)

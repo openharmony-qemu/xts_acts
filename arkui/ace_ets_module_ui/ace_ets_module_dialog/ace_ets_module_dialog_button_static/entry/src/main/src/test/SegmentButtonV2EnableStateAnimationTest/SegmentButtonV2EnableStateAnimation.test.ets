@@ -73,7 +73,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
     });
 
     /**
-     * @tc.number SegmentButtonV2EnableStateAnimationTest_001
+     * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_page_loads_0100
      * @tc.name segmentV2_pageLoads
      * @tc.desc Test segmentButtonV2EnableStateAnimation page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -93,7 +93,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
     });
 
     /**
-     * @tc.number SegmentButtonV2EnableStateAnimationTest_002
+     * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200
      * @tc.name segmentV2_mounted_flag
      * @tc.desc Test AppStorage: segV2_mounted after aboutToAppear
      * @tc.type   FUNCTION
@@ -113,7 +113,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
     });
 
     /**
-     * @tc.number SegmentButtonV2EnableStateAnimationTest_003
+     * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300
      * @tc.name inspector_segV2_tab_and_capsule
      * @tc.desc Test inspector.getInspectorByKey: nodes segV2_tab and segV2_cap
      * @tc.type   FUNCTION
@@ -135,7 +135,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
     });
 
     /**
-     * @tc.number SegmentButtonV2EnableStateAnimationTest_004
+     * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400
      * @tc.name inspector_segV2_title
      * @tc.desc inspector segV2_title
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
     });
 
     /**
-     * @tc.number SegmentButtonV2EnableStateAnimationTest_005
+     * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500
      * @tc.name driver_find_tab_text_A
      * @tc.desc Test Driver.findComponent: tab text A
      * @tc.type   FUNCTION

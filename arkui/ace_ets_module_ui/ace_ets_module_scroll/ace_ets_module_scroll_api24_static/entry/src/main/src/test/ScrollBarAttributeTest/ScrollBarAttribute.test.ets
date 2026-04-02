@@ -73,7 +73,7 @@ export default function ScrollBarAttributeTest() {
     });
 
     /**
-     * @tc.number ScrollBarAttributeTest_001
+     * @tc.number SUB_arkui_scrollbar_attribute_sb_attr_page_loads_0100
      * @tc.name sbAttr_pageLoads
      * @tc.desc Test scrollBarAttribute page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function ScrollBarAttributeTest() {
     });
 
     /**
-     * @tc.number ScrollBarAttributeTest_002
+     * @tc.number SUB_arkui_scrollbar_attribute_sb_attr_ready_flag_0200
      * @tc.name sbAttr_ready_flag
      * @tc.desc sbAttr_ready
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function ScrollBarAttributeTest() {
     });
 
     /**
-     * @tc.number ScrollBarAttributeTest_003
+     * @tc.number SUB_arkui_scrollbar_attribute_inspector_sb_attr_bar_0300
      * @tc.name inspector_sbAttr_bar
      * @tc.desc Test inspector.getInspectorByKey: node sbAttr_bar
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function ScrollBarAttributeTest() {
     });
 
     /**
-     * @tc.number ScrollBarAttributeTest_004
+     * @tc.number SUB_arkui_scrollbar_attribute_inspector_sb_attr_scroll_0400
      * @tc.name inspector_sbAttr_scroll
      * @tc.desc inspector sbAttr_scroll
      * @tc.type   FUNCTION
@@ -149,7 +149,7 @@ export default function ScrollBarAttributeTest() {
     });
 
     /**
-     * @tc.number ScrollBarAttributeTest_005
+     * @tc.number SUB_arkui_scrollbar_attribute_inspector_sb_attr_title_0500
      * @tc.name inspector_sbAttr_title
      * @tc.desc Test inspector.getInspectorByKey: node sbAttr_title
      * @tc.type   FUNCTION

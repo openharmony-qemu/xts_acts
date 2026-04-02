@@ -73,7 +73,7 @@ export default function NavigationNavDestinationTest() {
     });
 
     /**
-     * @tc.number NavigationNavDestinationTest_001
+     * @tc.number SUB_arkui_navigation_nav_destination_nav_nd_page_loads_0100
      * @tc.name navNd_pageLoads
      * @tc.desc Test navigationNavDestination page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function NavigationNavDestinationTest() {
     });
 
     /**
-     * @tc.number NavigationNavDestinationTest_002
+     * @tc.number SUB_arkui_navigation_nav_destination_on_ready_mode_0200
      * @tc.name navDestination_onReady_mode
      * @tc.desc Test NavDestination onReady: AppStorage navNd_mode
      * @tc.type   FUNCTION
@@ -117,7 +117,7 @@ export default function NavigationNavDestinationTest() {
     });
 
     /**
-     * @tc.number NavigationNavDestinationTest_003
+     * @tc.number SUB_arkui_navigation_nav_destination_inspector_nav_nd_body_0300
      * @tc.name inspector_navNd_body
      * @tc.desc inspector navNd_body
      * @tc.type   FUNCTION
@@ -136,7 +136,7 @@ export default function NavigationNavDestinationTest() {
     });
 
     /**
-     * @tc.number NavigationNavDestinationTest_004
+     * @tc.number SUB_arkui_navigation_nav_destination_inspector_nav_nd_title_0400
      * @tc.name inspector_navNd_title
      * @tc.desc Test inspector.getInspectorByKey: node navNd_title
      * @tc.type   FUNCTION
@@ -155,7 +155,7 @@ export default function NavigationNavDestinationTest() {
     });
 
     /**
-     * @tc.number NavigationNavDestinationTest_005
+     * @tc.number SUB_arkui_navigation_nav_destination_driver_find_page_text_0500
      * @tc.name driver_find_page_text
      * @tc.desc Test Driver.findComponent: NavDestination page label text
      * @tc.type   FUNCTION

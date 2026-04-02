@@ -20,7 +20,7 @@ import { ComponentContent } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Builder
-function CcApiBuilder() {
+function ccApiBuilder() {
   Text('cc').fontSize(9).height('5%');
 }
 
@@ -41,7 +41,7 @@ struct ComponentContentApi {
         .height('8%')
         .onClick(() => {
           try {
-            const cc = new ComponentContent(this.getUIContext(), wrapBuilder(CcApiBuilder));
+            const cc = new ComponentContent(this.getUIContext(), wrapBuilder(ccApiBuilder));
             AppStorage.setOrCreate<boolean>('ccApi_created', true);
             cc.dispose();
             AppStorage.setOrCreate<boolean>('ccApi_disposed', true);

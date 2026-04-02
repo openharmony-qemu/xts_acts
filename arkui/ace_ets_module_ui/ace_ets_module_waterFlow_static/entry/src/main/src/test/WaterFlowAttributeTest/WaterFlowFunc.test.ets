@@ -73,7 +73,7 @@ export default function WaterFlowFuncTest() {
     });
 
     /**
-     * @tc.number WaterFlowFuncTest_001
+     * @tc.number SUB_arkui_waterflow_func_wf_attr_page_loads_0100
      * @tc.name wfAttr_pageLoads
      * @tc.desc Test waterFlowAttribute page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function WaterFlowFuncTest() {
     });
 
     /**
-     * @tc.number WaterFlowFuncTest_002
+     * @tc.number SUB_arkui_waterflow_func_wire_get_water_flow_event_flag_0200
      * @tc.name wire_getWaterFlowEvent_flag
      * @tc.desc Test UIWaterFlowEvent wiring: click sets AppStorage wfAttr_wire
      * @tc.type   FUNCTION
@@ -116,7 +116,7 @@ export default function WaterFlowFuncTest() {
     });
 
     /**
-     * @tc.number WaterFlowFuncTest_003
+     * @tc.number SUB_arkui_waterflow_func_inspector_wf_attr_body_0300
      * @tc.name inspector_wfAttr_body
      * @tc.desc inspector wfAttr_body
      * @tc.type   FUNCTION
@@ -135,7 +135,7 @@ export default function WaterFlowFuncTest() {
     });
 
     /**
-     * @tc.number WaterFlowFuncTest_004
+     * @tc.number SUB_arkui_waterflow_func_inspector_wf_attr_title_0400
      * @tc.name inspector_wfAttr_title
      * @tc.desc Test inspector.getInspectorByKey: node wfAttr_title
      * @tc.type   FUNCTION
@@ -154,7 +154,7 @@ export default function WaterFlowFuncTest() {
     });
 
     /**
-     * @tc.number WaterFlowFuncTest_005
+     * @tc.number SUB_arkui_waterflow_func_inspector_wf_attr_wire_0500
      * @tc.name inspector_wfAttr_wire
      * @tc.desc Test inspector.getInspectorByKey: node wfAttr_wire
      * @tc.type   FUNCTION

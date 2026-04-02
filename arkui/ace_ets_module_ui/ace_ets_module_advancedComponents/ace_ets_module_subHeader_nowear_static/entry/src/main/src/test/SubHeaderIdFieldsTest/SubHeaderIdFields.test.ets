@@ -73,7 +73,7 @@ export default function SubHeaderIdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderIdFieldsTest_001
+     * @tc.number SUB_arkui_subheader_id_fields_sub_header_id_fields_page_loads_0100
      * @tc.name subHeaderIdFields_pageLoads
      * @tc.desc Test subHeaderIdFields page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -93,7 +93,7 @@ export default function SubHeaderIdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderIdFieldsTest_002
+     * @tc.number SUB_arkui_subheader_id_fields_sub_hdr_mounted_flag_0200
      * @tc.name subHdr_mounted_flag
      * @tc.desc Test AppStorage: subHdr_mounted after aboutToAppear
      * @tc.type   FUNCTION
@@ -113,7 +113,7 @@ export default function SubHeaderIdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderIdFieldsTest_003
+     * @tc.number SUB_arkui_subheader_id_fields_inspector_sub_hdr_body_0300
      * @tc.name inspector_subHdr_body
      * @tc.desc inspector subHdr_body
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function SubHeaderIdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderIdFieldsTest_004
+     * @tc.number SUB_arkui_subheader_id_fields_inspector_sub_hdr_title_0400
      * @tc.name inspector_subHdr_title
      * @tc.desc inspector subHdr_title
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function SubHeaderIdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderIdFieldsTest_005
+     * @tc.number SUB_arkui_subheader_id_fields_driver_find_primary_title_sub_header_0500
      * @tc.name driver_find_primary_title_SubHeader
      * @tc.desc Test Driver.findComponent: primary SubHeader title text
      * @tc.type   FUNCTION

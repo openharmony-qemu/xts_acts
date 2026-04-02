@@ -76,7 +76,7 @@ export default function ScrollScrollableChainTest() {
     });
 
     /**
-     * @tc.number ScrollScrollableChainTest_001
+     * @tc.number SUB_arkui_scroll_scrollable_chain_scroll_ch_page_loads_0100
      * @tc.name scrollCh_pageLoads
      * @tc.desc Test scrollScrollableChain page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -95,7 +95,7 @@ export default function ScrollScrollableChainTest() {
     });
 
     /**
-     * @tc.number ScrollScrollableChainTest_002
+     * @tc.number SUB_arkui_scroll_scrollable_chain_scroller_content_size_after_mount_0200
      * @tc.name scroller_contentSize_after_mount
      * @tc.desc Test aboutToAppear: writes AppStorage scrollCh_contentSize
      * @tc.type   FUNCTION
@@ -120,7 +120,7 @@ export default function ScrollScrollableChainTest() {
     });
 
     /**
-     * @tc.number ScrollScrollableChainTest_003
+     * @tc.number SUB_arkui_scroll_scrollable_chain_wire_get_scroll_event_flag_0300
      * @tc.name wire_getScrollEvent_flag
      * @tc.desc Test UIScrollEvent wiring and Scroller.scrollTo with canOverScroll; AppStorage scrollCh_wire and scrollCh_canOverScroll_ok
      * @tc.type   FUNCTION
@@ -145,7 +145,7 @@ export default function ScrollScrollableChainTest() {
     });
 
     /**
-     * @tc.number ScrollScrollableChainTest_004
+     * @tc.number SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_body_0400
      * @tc.name inspector_scrollCh_body
      * @tc.desc Test inspector.getInspectorByKey: node scrollCh_body
      * @tc.type   FUNCTION
@@ -164,7 +164,7 @@ export default function ScrollScrollableChainTest() {
     });
 
     /**
-     * @tc.number ScrollScrollableChainTest_005
+     * @tc.number SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_wire_btn_0500
      * @tc.name inspector_scrollCh_wire_btn
      * @tc.desc Test inspector.getInspectorByKey: node scrollCh_wire
      * @tc.type   FUNCTION

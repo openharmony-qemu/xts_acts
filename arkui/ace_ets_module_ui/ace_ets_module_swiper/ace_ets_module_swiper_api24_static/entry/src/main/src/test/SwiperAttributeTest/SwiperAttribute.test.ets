@@ -73,7 +73,7 @@ export default function SwiperAttributeTest() {
     });
 
     /**
-     * @tc.number SwiperAttributeTest_001
+     * @tc.number SUB_arkui_swiper_attribute_swiper_attr_page_loads_0100
      * @tc.name swiperAttr_pageLoads
      * @tc.desc Test swiperAttribute page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function SwiperAttributeTest() {
     });
 
     /**
-     * @tc.number SwiperAttributeTest_002
+     * @tc.number SUB_arkui_swiper_attribute_swiper_attr_ready_flag_0200
      * @tc.name swiperAttr_ready_flag
      * @tc.desc Test AppStorage: swiperAttr_ready after aboutToAppear
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function SwiperAttributeTest() {
     });
 
     /**
-     * @tc.number SwiperAttributeTest_003
+     * @tc.number SUB_arkui_swiper_attribute_inspector_swiper_attr_body_0300
      * @tc.name inspector_swiperAttr_body
      * @tc.desc inspector swiperAttr_body
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function SwiperAttributeTest() {
     });
 
     /**
-     * @tc.number SwiperAttributeTest_004
+     * @tc.number SUB_arkui_swiper_attribute_inspector_swiper_attr_title_0400
      * @tc.name inspector_swiperAttr_title
      * @tc.desc Test inspector.getInspectorByKey: node swiperAttr_title
      * @tc.type   FUNCTION
@@ -149,7 +149,7 @@ export default function SwiperAttributeTest() {
     });
 
     /**
-     * @tc.number SwiperAttributeTest_005
+     * @tc.number SUB_arkui_swiper_attribute_driver_find_page_text_p0_0500
      * @tc.name driver_find_page_text_p0
      * @tc.desc Test Driver.findComponent: swiper page p0 text
      * @tc.type   FUNCTION

@@ -29,7 +29,7 @@ import { LengthMetrics } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Builder
-function BadgeOuterAvoidHost() {
+function badgeOuterAvoidHost() {
   Text('host')
     .fontSize(10)
     .width('100%')
@@ -57,7 +57,7 @@ struct BadgeOuterStylePage {
           outerBorderWidth: LengthMetrics.vp(2),
           enableAutoAvoidance: true,
         } as BadgeStyle,
-      } as BadgeParamWithNumber, BadgeOuterAvoidHost)
+      } as BadgeParamWithNumber, badgeOuterAvoidHost)
         .width('100%')
         .height('12%')
         .id('bdgOut_host');

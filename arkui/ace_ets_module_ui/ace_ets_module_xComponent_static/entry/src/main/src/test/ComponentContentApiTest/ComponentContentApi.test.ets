@@ -75,7 +75,7 @@ export default function ComponentContentApiTest() {
     });
 
     /**
-     * @tc.number ComponentContentApiTest_001
+     * @tc.number SUB_arkui_component_content_api_cc_api_page_loads_0100
      * @tc.name ccApi_pageLoads
      * @tc.desc Test componentContentApi page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -98,7 +98,7 @@ export default function ComponentContentApiTest() {
     });
 
     /**
-     * @tc.number ComponentContentApiTest_002
+     * @tc.number SUB_arkui_component_content_api_component_content_create_dispose_0200
      * @tc.name componentContent_create_dispose
      * @tc.desc Test ComponentContent: click creates and disposes; AppStorage ccApi_created and ccApi_disposed
      * @tc.type   FUNCTION
@@ -123,7 +123,7 @@ export default function ComponentContentApiTest() {
     });
 
     /**
-     * @tc.number ComponentContentApiTest_003
+     * @tc.number SUB_arkui_component_content_api_inspector_cc_api_btn_0300
      * @tc.name inspector_ccApi_btn
      * @tc.desc Test inspector.getInspectorByKey: node ccApi_btn
      * @tc.type   FUNCTION
@@ -146,7 +146,7 @@ export default function ComponentContentApiTest() {
     });
 
     /**
-     * @tc.number ComponentContentApiTest_004
+     * @tc.number SUB_arkui_component_content_api_inspector_cc_api_title_0400
      * @tc.name inspector_ccApi_title
      * @tc.desc Test inspector.getInspectorByKey: node ccApi_title
      * @tc.type   FUNCTION
@@ -169,7 +169,7 @@ export default function ComponentContentApiTest() {
     });
 
     /**
-     * @tc.number ComponentContentApiTest_005
+     * @tc.number SUB_arkui_component_content_api_component_content_second_click_idempotent_0500
      * @tc.name componentContent_second_click_idempotent
      * @tc.desc Test ComponentContent: second click keeps ccApi_created and ccApi_disposed true
      * @tc.type   FUNCTION

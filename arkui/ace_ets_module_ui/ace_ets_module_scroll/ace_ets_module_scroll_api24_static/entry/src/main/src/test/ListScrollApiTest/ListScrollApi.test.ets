@@ -75,7 +75,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_001
+     * @tc.number SUB_arkui_list_scroll_api_list_api_page_loads_0100
      * @tc.name listApi_pageLoads
      * @tc.desc Test listScrollApi page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_002
+     * @tc.number SUB_arkui_list_scroll_api_wire_get_list_event_flag_0200
      * @tc.name wire_getListEvent_flag
      * @tc.desc Test UIListEvent setOn* wiring: AppStorage listApi_wire true after wire button
      * @tc.type   FUNCTION
@@ -118,7 +118,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_003
+     * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_body_0300
      * @tc.name inspector_listApi_body
      * @tc.desc inspector listApi_body
      * @tc.type   FUNCTION
@@ -137,7 +137,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_004
+     * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_title_0400
      * @tc.name inspector_listApi_title
      * @tc.desc Test inspector.getInspectorByKey: node listApi_title
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_005
+     * @tc.number SUB_arkui_list_scroll_api_inspector_list_api_wire_0500
      * @tc.name inspector_listApi_wire
      * @tc.desc inspector listApi_wire
      * @tc.type   FUNCTION
@@ -175,7 +175,7 @@ export default function ListScrollApiTest() {
     });
 
     /**
-     * @tc.number ListScrollApiTest_006
+     * @tc.number SUB_arkui_list_scroll_api_list_api_scroll_snap_slow_toggle_0600
      * @tc.name listApi_scrollSnap_slow_toggle
      * @tc.desc Test List scrollSnapAnimationSpeed: SLOW vs NORMAL toggle AppStorage listApi_snap_slow
      * @tc.type   FUNCTION

@@ -73,7 +73,7 @@ export default function SubHeaderV2IdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderV2IdFieldsTest_001
+     * @tc.number SUB_arkui_subheader_v2_id_fields_sub_header_v2_page_loads_0100
      * @tc.name subHeaderV2_pageLoads
      * @tc.desc Test subHeaderV2IdFields page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -93,7 +93,7 @@ export default function SubHeaderV2IdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderV2IdFieldsTest_002
+     * @tc.number SUB_arkui_subheader_v2_id_fields_sub_hdr_v2_mounted_flag_0200
      * @tc.name subHdrV2_mounted_flag
      * @tc.desc subHdrV2_mounted
      * @tc.type   FUNCTION
@@ -113,7 +113,7 @@ export default function SubHeaderV2IdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderV2IdFieldsTest_003
+     * @tc.number SUB_arkui_subheader_v2_id_fields_inspector_sub_hdr_v2_body_0300
      * @tc.name inspector_subHdrV2_body
      * @tc.desc Test inspector.getInspectorByKey: node subHdrV2_body
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function SubHeaderV2IdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderV2IdFieldsTest_004
+     * @tc.number SUB_arkui_subheader_v2_id_fields_inspector_sub_hdr_v2_title_0400
      * @tc.name inspector_subHdrV2_title
      * @tc.desc inspector subHdrV2_title
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function SubHeaderV2IdFieldsTest() {
     });
 
     /**
-     * @tc.number SubHeaderV2IdFieldsTest_005
+     * @tc.number SUB_arkui_subheader_v2_id_fields_driver_find_title_v2_0500
      * @tc.name driver_find_title_V2
      * @tc.desc Test Driver.findComponent: SubHeader V2 primary title
      * @tc.type   FUNCTION

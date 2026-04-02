@@ -72,7 +72,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_001
+     * @tc.number SUB_arkui_dialog_button_options_text_align_page_loads_0100
      * @tc.name dialogButtonOptionsTextAlign_pageLoads
      * @tc.desc Test dialogButtonOptionsTextAlign page: route loads and title node exists
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_002
+     * @tc.number SUB_arkui_dialog_button_options_text_align_primary_button_text_align_center_action_0200
      * @tc.name primaryButton_textAlign_center_action
      * @tc.desc Test AlertDialog primary button: ButtonOptions.textAlign written to AppStorage dlgBtnOpt_textAlign
      * @tc.type   FUNCTION
@@ -127,7 +127,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_003
+     * @tc.number SUB_arkui_dialog_button_options_text_align_inspector_open_button_node_0300
      * @tc.name inspector_openButton_node
      * @tc.desc Test inspector.getInspectorByKey: node dlgBtnOpt_open
      * @tc.type   FUNCTION
@@ -149,7 +149,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_004
+     * @tc.number SUB_arkui_dialog_button_options_text_align_inspector_title_node_0400
      * @tc.name inspector_title_node
      * @tc.desc Test inspector.getInspectorByKey: node dlgBtnOpt_title
      * @tc.type   FUNCTION
@@ -171,7 +171,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_005
+     * @tc.number SUB_arkui_dialog_button_options_text_align_app_storage_align_key_cleared_before_case_0500
      * @tc.name appStorage_align_key_cleared_before_case
      * @tc.desc Test AppStorage: dlgBtnOpt_textAlign undefined before opening dialog
      * @tc.type   FUNCTION
@@ -192,7 +192,7 @@ export default function DialogButtonOptionsTextAlignTest() {
     });
 
     /**
-     * @tc.number DialogButtonOptionsTextAlignTest_006
+     * @tc.number SUB_arkui_dialog_button_options_text_align_driver_find_open_button_stable_0600
      * @tc.name driver_find_open_button_stable
      * @tc.desc Test Driver.findComponent: dlgBtnOpt_open found repeatedly
      * @tc.type   FUNCTION
