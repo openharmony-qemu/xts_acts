@@ -54,6 +54,7 @@ int SubCryptoFrameworkNapiMacTest0600 ();
 int SubCryptoFrameworkNapiMacTest0700 ();
 int SubCryptoFrameworkNapiMacTest0800 ();
 int SubCryptoFrameworkNapiMacTest0900 ();
+int SubCryptoFrameworkNapiMacTest1000 ();
 int SubCryptoFrameworkNapiMacVectorTest0100 ();
 }
 #endif

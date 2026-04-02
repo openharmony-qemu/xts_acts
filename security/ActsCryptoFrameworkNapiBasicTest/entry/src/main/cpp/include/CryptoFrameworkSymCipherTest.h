@@ -61,7 +61,7 @@ int SubCryptoFrameworkNapiSymCipherTest0100 ();
 int SubCryptoFrameworkNapiSymCipherTest0200 ();
 int SubCryptoFrameworkNapiSymCipherTest0300 ();
 int SubCryptoFrameworkNapiSymCipherTest0400 ();
-int SubCryptoFrameworkNapiSymCipherTest3000 ();
+int SubCryptoFrameworkNapiSymCipherTest3100 ();
 int SubCryptoFrameworkNapiSymCipherTest0500 ();
 int SubCryptoFrameworkNapiSymCipherTest0600 ();
 int SubCryptoFrameworkNapiSymCipherTest0700 ();
@@ -85,5 +85,6 @@ int SubCryptoFrameworkNapiSymCipherTest2600 ();
 int SubCryptoFrameworkNapiSymCipherTest2700 ();
 int SubCryptoFrameworkNapiSymCipherTest2800 ();
 int SubCryptoFrameworkNapiSymCipherTest2900 ();
+int SubCryptoFrameworkNapiSymCipherTest3000 ();
 }
 #endif

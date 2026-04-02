@@ -164,7 +164,21 @@ export default function cryptoFrameworkMacTest() {
     });
 
     /**
-     * @tc.name   SubCryptoFrameworkNapiMacVectorTest0100
+     * @tc.name   SUB_CryptoFramework_Napi_Mac_Test_1000
+     * @tc.number SUB_CryptoFramework_Napi_Mac_Test_1000
+     * @tc.desc   algorithm is Mac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CryptoFramework_Napi_Mac_Test_1000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Mac_Test(9);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_CryptoFramework_Napi_MacVector_Test_0100
      * @tc.number SUB_CryptoFramework_Napi_MacVector_Test_0100
      * @tc.desc   algorithm is Mac
      * @tc.type   FUNCTION
@@ -172,7 +186,7 @@ export default function cryptoFrameworkMacTest() {
      * @tc.level  LEVEL0
      */
     it('SubCryptoFrameworkNapiMacVectorTest0100', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Mac_Test(9);
+      const result = await entry.Mac_Test(10);
       expect(result).assertEqual(0);
       done();
     });

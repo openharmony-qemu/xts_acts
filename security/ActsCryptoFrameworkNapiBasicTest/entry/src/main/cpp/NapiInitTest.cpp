@@ -43,12 +43,12 @@ static constexpr size_t CRYPTO_FRAMEWORK_ASYM_KEY_TEST_COUNT = 21;
 static constexpr size_t CRYPTO_FRAMEWORK_ASYM_KEY2_TEST_COUNT = 28;
 static constexpr size_t CRYPTO_FRAMEWORK_DIGEST_TEST_COUNT = 9;
 static constexpr size_t CRYPTO_FRAMEWORK_KDF_TEST_COUNT = 14;
-static constexpr size_t CRYPTO_FRAMEWORK_MAC_TEST_COUNT = 10;
+static constexpr size_t CRYPTO_FRAMEWORK_MAC_TEST_COUNT = 11;
 static constexpr size_t CRYPTO_FRAMEWORK_RANDOM_TEST_COUNT = 6;
 static constexpr size_t CRYPTO_FRAMEWORK_REINFORCEMENT_TEST_COUNT = 56;
 static constexpr size_t CRYPTO_FRAMEWORK_SIGNATURE_TEST_COUNT = 20;
 static constexpr size_t CRYPTO_FRAMEWORK_SIGNATURE2_TEST_COUNT = 20;
-static constexpr size_t CRYPTO_FRAMEWORK_SYM_CIPHER_TEST_COUNT = 28;
+static constexpr size_t CRYPTO_FRAMEWORK_SYM_CIPHER_TEST_COUNT = 29;
 static constexpr size_t CRYPTO_FRAMEWORK_SYM_KEY_TEST_COUNT = 11;
 static constexpr size_t CRYPTO_FRAMEWORK_VERIFY_TEST_COUNT = 28;
 static constexpr size_t PREPARE_FUNC_COUNT = 4;
@@ -280,6 +280,7 @@ static const std::array<TestHandler, CRYPTO_FRAMEWORK_MAC_TEST_COUNT> g_macTestH
     SubCryptoFrameworkNapiMacTest0700,
     SubCryptoFrameworkNapiMacTest0800,
     SubCryptoFrameworkNapiMacTest0900,
+    SubCryptoFrameworkNapiMacTest1000,
     SubCryptoFrameworkNapiMacVectorTest0100
 };
 
@@ -402,7 +403,7 @@ static const std::array<TestHandler, CRYPTO_FRAMEWORK_SYM_CIPHER_TEST_COUNT> g_s
     SubCryptoFrameworkNapiSymCipherTest0200,
     SubCryptoFrameworkNapiSymCipherTest0300,
     SubCryptoFrameworkNapiSymCipherTest0400,
-    SubCryptoFrameworkNapiSymCipherTest3000,
+    SubCryptoFrameworkNapiSymCipherTest3100,
     SubCryptoFrameworkNapiSymCipherTest0500,
     SubCryptoFrameworkNapiSymCipherTest0600,
     SubCryptoFrameworkNapiSymCipherTest0700,
@@ -425,7 +426,8 @@ static const std::array<TestHandler, CRYPTO_FRAMEWORK_SYM_CIPHER_TEST_COUNT> g_s
     SubCryptoFrameworkNapiSymCipherTest2600,
     SubCryptoFrameworkNapiSymCipherTest2700,
     SubCryptoFrameworkNapiSymCipherTest2800,
-    SubCryptoFrameworkNapiSymCipherTest2900
+    SubCryptoFrameworkNapiSymCipherTest2900,
+    SubCryptoFrameworkNapiSymCipherTest3000
 };
 
 static const std::array<TestHandler, CRYPTO_FRAMEWORK_SYM_KEY_TEST_COUNT> g_symKeyTestHandlers = {

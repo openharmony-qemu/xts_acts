@@ -780,7 +780,7 @@ static void GcmBlockTestCtxDestroy(GcmBlockTestCtx *ctx)
     HcfBlobDataClearAndFree(&ctx->decUpdate);
 }
 
-int SubCryptoFrameworkNapiSymCipherTest3000()
+int SubCryptoFrameworkNapiSymCipherTest3100()
 {
     const int symCipherSpecCount = SYM_CIPHER_GCM_DATA_COUNT;
     for (int i = 0; i < symCipherSpecCount; i++) {
@@ -821,7 +821,7 @@ int SubCryptoFrameworkNapiSymCipherTest0700()
     EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("AES128|GCM|NoPadding"), nullptr),
         CRYPTO_INVALID_PARAMS);
     EXPECT_EQ(OH_CryptoSymCipher_Create(nullptr, &encCtx), CRYPTO_INVALID_PARAMS);
-    EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("AES128|XTS|NoPadding"), &encCtx),
+    EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("AES128|XTSS|NoPadding"), &encCtx),
         CRYPTO_NOT_SUPPORTED);
     EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("aes128|GCM|NoPadding"), &encCtx),
         CRYPTO_NOT_SUPPORTED);
@@ -1021,29 +1021,31 @@ int SubCryptoFrameworkNapiSymCipherTest1300()
     OH_CryptoSymCipher *decCtx = nullptr;
     OH_CryptoSymKey *keyCtx = nullptr;
     OH_CryptoSymCipherParams *params = nullptr;
-    int32_t randomLen = 20;
-    int32_t ivLen = 16;
-    
-    OH_CryptoRand *randomObj = nullptr;
-    Crypto_DataBlob msgBlob = {0};
-    Crypto_DataBlob ivBlob = {0};
     Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
     Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
-
-    OH_CryptoRand_Create(&randomObj);
-    EXPECT_TRUE(randomObj != nullptr);
-    EXPECT_EQ(OH_CryptoRand_GenerateRandom(randomObj, randomLen, &msgBlob), HCF_SUCCESS);
-    EXPECT_EQ(OH_CryptoRand_GenerateRandom(randomObj, ivLen, &ivBlob), HCF_SUCCESS);
-    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create(reinterpret_cast<const char*>("AES128"), &genCtx), CRYPTO_SUCCESS);
-    EXPECT_EQ(OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx), CRYPTO_SUCCESS);
+    uint8_t ivData[] = {
+        0x1d, 0xe1, 0xe5, 0x14, 0x38, 0x17, 0xc3, 0x6a, 0x00, 0xc2, 0x6e, 0xeb, 0x28, 0xa3, 0x23, 0x81
+    };
+    Crypto_DataBlob ivBlob = {.data = ivData, .len = sizeof(ivData)};
+    uint8_t msgData[] = {
+        0x54, 0x22, 0x6a, 0x77, 0xd3, 0x40, 0x8c, 0x42, 0xff, 0xdb, 0x57, 0x70, 0xbd, 0x44, 0x64, 0x18,
+        0x4c, 0x3b, 0x8c, 0x35
+    };
+    Crypto_DataBlob msgBlob = {.data = msgData, .len = sizeof(msgData)};
+    uint8_t keyData[] = {
+        0xc0, 0xbb, 0xaa, 0x7c, 0x3a, 0xac, 0x43, 0xbb, 0xb8, 0x09, 0x27, 0xf5, 0x55, 0x26, 0x81, 0x38
+    };
+    Crypto_DataBlob keyBlob = {.data = keyData, .len = sizeof(keyData)};
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&keyBlob, &keyCtx), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob),
         CRYPTO_SUCCESS);
-    EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("AES128|CBC|PKCS7"), &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|CBC|PKCS7", &encCtx), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
     outUpdate.data[msgBlob.len]++;
-    EXPECT_EQ(OH_CryptoSymCipher_Create(reinterpret_cast<const char*>("AES128|CBC|PKCS7"), &decCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|CBC|PKCS7", &decCtx), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     EXPECT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_OPERTION_ERROR);
 
@@ -1053,10 +1055,7 @@ int SubCryptoFrameworkNapiSymCipherTest1300()
     OH_CryptoSymKeyGenerator_Destroy(genCtx);
     OH_CryptoSymKey_Destroy(keyCtx);
     HcfBlobDataClearAndFree((Crypto_DataBlob *)&outUpdate);
-    HcfBlobDataClearAndFree(&msgBlob);
-    HcfBlobDataClearAndFree(&ivBlob);
     HcfBlobDataClearAndFree((Crypto_DataBlob *)&decUpdate);
-    OH_CryptoRand_Destroy(randomObj);
     return 0;
 }
 
@@ -1899,4 +1898,50 @@ int SubCryptoFrameworkNapiSymCipherTest2900()
     }
     return 0;
 }
+    
+int SubCryptoFrameworkNapiSymCipherTest3000()
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    OH_CryptoSymCipherParams *params = nullptr;
+    Crypto_DataBlob outUpdate = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decUpdate = {.data = nullptr, .len = 0};
+    uint8_t ivData[] = {
+        0x04, 0xe1, 0xe2, 0xa8, 0xcc, 0x3e, 0x75, 0xa0, 0x23, 0x74, 0xbc, 0x38, 0xb2, 0xb8, 0xd3, 0x42
+    };
+    Crypto_DataBlob ivBlob = {.data = ivData, .len = sizeof(ivData)};
+    uint8_t msgData[] = {
+        0x3e, 0x31, 0x4a, 0x62, 0x68, 0xd6, 0xe0, 0x45, 0xc9, 0xe1, 0x3c, 0x36, 0x65, 0xbb, 0x18, 0x5e,
+        0x8f, 0x9c, 0xc4, 0xfc
+    };
+    Crypto_DataBlob msgBlob = {.data = msgData, .len = sizeof(msgData)};
+    uint8_t keyData[] = {
+        0x46, 0x01, 0x3c, 0xb4, 0x38, 0x9e, 0x14, 0xc4, 0xf6, 0x68, 0x2e, 0x6b, 0x95, 0x4e, 0x14, 0x8c
+    };
+    Crypto_DataBlob keyBlob = {.data = keyData, .len = sizeof(keyData)};
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Create((const char *)"AES128", &genCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymKeyGenerator_Convert(genCtx, (Crypto_DataBlob *)&keyBlob, &keyCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_Create(&params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipherParams_SetParam(params, CRYPTO_IV_DATABLOB, (Crypto_DataBlob *)&ivBlob),
+        CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|CBC|PKCS7", &encCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(encCtx, (Crypto_DataBlob *)&msgBlob, &outUpdate), CRYPTO_SUCCESS);
+    outUpdate.data[msgBlob.len]++;
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|CBC|PKCS7", &decCtx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
+    EXPECT_EQ(OH_CryptoSymCipher_Final(decCtx, &outUpdate, &decUpdate), CRYPTO_SUCCESS);
+
+    OH_CryptoSymCipherParams_Destroy(params);
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    HcfBlobDataClearAndFree((Crypto_DataBlob *)&outUpdate);
+    HcfBlobDataClearAndFree((Crypto_DataBlob *)&decUpdate);
+    return 0;
+}
+        
 } // namespace Unittest::CryptoFrameworkSymCipherNapiTest
