@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,7 +66,7 @@
         "type": "embeddedUI"
       },
       {
-        "name": "EmbeddedCreateSubWindowTrueAbility",
+        "name": "EmbeddedCreateSubWindowTrueOptionsAbility",
         "description": "$string:EntryAbility_desc",
         "label": "$string:EntryAbility_label",
         "exported": true,
@@ -74,7 +74,7 @@
         "type": "embeddedUI"
       },
       {
-        "name": "EmbeddedCreateSubWindowFalseAbility",
+        "name": "EmbeddedCreateSubWindowFalseOptionsAbility",
         "description": "$string:EntryAbility_desc",
         "label": "$string:EntryAbility_label",
         "exported": true,
@@ -116,7 +116,6 @@
     ],
     "requestPermissions": [
       {"name": "ohos.permission.PRIVACY_WINDOW"},
-      {"name": "ohos.permission.SYSTEM_FLOAT_WINDOW"},
       {
         "name": "ohos.permission.SET_WINDOW_TRANSPARENT"
       },

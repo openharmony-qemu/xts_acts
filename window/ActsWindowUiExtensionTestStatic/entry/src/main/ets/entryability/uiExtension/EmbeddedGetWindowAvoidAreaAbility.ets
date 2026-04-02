@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@ import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@ki
 import { LocalStorage } from '@ohos.arkui.stateManagement';
 
 const TAG: string = '[ExampleEmbeddedAbility]'
-export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
+export default class EmbeddedGetWindowAvoidAreaAbility extends EmbeddedUIExtensionAbility {
 
   onSessionCreate(want: Want, session: UIExtensionContentSession) {
     console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);

@@ -50,18 +50,19 @@ struct extensionCreateSubWindowWithTrueOpt {
           try {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
-              decorEnabled: false,
-              isModal:false,
-              modalityType:window.ModalityType.APPLICATION_MODALITY,
+              decorEnabled: true,
               maximizeSupported:false,
               outlineEnabled:false
             };
             // 创建子窗口
-            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsTrue', subWindowConfig, true).then(() => {
+            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsTrue', subWindowConfig, true).then((data: window.Window) => {
               console.log('success in page')
               this.message = 'success'
+              data!.resize(300, 300);
+              data!.setUIContent("pages/index2");
+              data!.showWindow();
             }).catch((err: Error) => {
-              console.log('testCreateSubWindowWithOptionsFollowFalse err in page, err : ' + JSON.stringify(err))
+              console.log('testCreateSubWindowWithOptionsFollowTrue err in page, err : ' + JSON.stringify(err))
               this.message = err.code + ''
             })
           } catch (err) {

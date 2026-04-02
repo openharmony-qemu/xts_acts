@@ -24,22 +24,22 @@ struct EmbeddedComponentPage {
   @State message: string = 'Message: '
   private want: Want = {
     bundleName: 'com.example.actswindowtest.static',
-    abilityName: 'EmbeddedCreateSubWindowFalseAbility',
+    abilityName: 'EmbeddedCreateSubWindowFalseOptionsAbility',
     parameters: {
       'ohos.extension.processMode.hostInstance': 'true',
       'reason': 'back'
     }
   }
-  @State visible: Visibility = Visibility.Hidden;
+  @State visible: Visibility = Visibility.Visible;
 
   build() {
     Row() {
       Column() {
         Text(this.message).fontSize(30)
-        Button()
+        Button('change')
           .id('changeVisibleBtn')
           .onClick(() => {
-            this.visible = Visibility.Visible;
+            this.visible = Visibility.Hidden;
           })
         EmbeddedComponent(this.want, EmbeddedType.EMBEDDED_UI_EXTENSION)
           .visibility(this.visible)

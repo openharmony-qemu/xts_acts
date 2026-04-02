@@ -81,11 +81,12 @@ struct ExtensionErrorCode {
             };
             extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions2', subWindowConfig).then(() => {
               console.log('testUIExtensionHostCreateSubWindowWithOptions2 success in createSubWindowWithOptions')
+              console.log('success in page')
+              this.message = 'success'
             }).catch((err: Error) => {
               console.log('testUIExtensionHostCreateSubWindowWithOptions2 err in page, err : ' + err.code + err.message)
+              this.message = err.code + ''
             })
-            console.log('success in page')
-            this.message = 'success'
           } catch (err) {
             console.log('testUIExtensionHostCreateSubWindowWithOptions2 err in page, err : ' + JSON.stringify(err))
             this.message = err.code + ''

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,10 +25,10 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import deviceInfo from '@ohos.deviceInfo';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
-// import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
@@ -83,12 +83,9 @@ export default function UIExtensionTest() {
         let windowclassArr:Array<window.Window>;
         let windowClass: window.Window | undefined;
         let isFreeWindowMode:boolean = false;
-        // let session:UIExtensionContentSession;
-        //let isAutoWindow: string = '';
-        //let isPCStatus: string = '';
+        let deviceType:string = deviceInfo.deviceType;
+        hilog.info(domain, tag, `deviceType: ${deviceType}`);
         beforeAll(async () => {
-            //context = AppStorage.get('context') as common.UIAbilityContext;
-            //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
@@ -96,21 +93,13 @@ export default function UIExtensionTest() {
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 windowClass = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-                // let win = windowStage!.getMainWindowSync();
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-
-            //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
-            //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-            //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
-            //isPCStatus == '0' PC设备状态栏dock融合
-            //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+            
             try{
                 windowclassArr = await windowStage!.getSubWindow();
                 hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
@@ -142,7 +131,7 @@ export default function UIExtensionTest() {
         let driver: Driver = Driver.create();
         let btn = await driver.findComponent(ON.id('Button'));
         console.log(caseName + ' btn1 : ' + btn);
-        if (btn == undefined) {
+        if (deviceType !== '2in1') {
           console.log(caseName + 'device not support')
           done()
         } else {
@@ -187,7 +176,7 @@ export default function UIExtensionTest() {
             let driver: Driver = Driver.create();
             let btn = await driver.findComponent(ON.id('button'))
             console.log(caseName + ' btn : ' + btn);
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               await btn!.click()
@@ -218,7 +207,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
@@ -253,7 +242,7 @@ export default function UIExtensionTest() {
             let driver: Driver = Driver.create();
             let btn = await driver.findComponent(ON.id('off_single'))
             console.log(caseName + ' btn : ' + btn);
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               // 点击按钮 执行两次on('rectChange')， 并执行一个off('rectchange')
@@ -284,7 +273,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
@@ -319,7 +308,7 @@ export default function UIExtensionTest() {
             let driver: Driver = Driver.create();
             let btn = await driver.findComponent(ON.id('off_all'))
             console.log(caseName + ' btn : ' + btn);
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               // 点击按钮 执行两次on('rectChange')， 并执行一个off('rectchange')
@@ -350,7 +339,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
         }
       })
@@ -397,7 +386,7 @@ export default function UIExtensionTest() {
             let longPressNumParent = await driver.findComponent(ON.id('longPressNumParent'))
   
             // 只针对pc设备
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               // 点击开启UEC组件click和longPress独占事件
@@ -445,7 +434,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
@@ -482,7 +471,7 @@ export default function UIExtensionTest() {
             let btn = await driver.findComponent(ON.id('createSubWindowWithOptions1'))
             console.log(caseName + ' btn : ' + btn);
             // 只针对pc设备
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               // 执行extensionWindow?.createSubWindowWithOptions('', null)
@@ -519,7 +508,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
@@ -556,7 +545,7 @@ export default function UIExtensionTest() {
             let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2'))
             console.log(caseName + ' btn : ' + btn);
             // 只针对pc设备
-            if (btn == undefined) {
+            if (deviceType !== '2in1') {
               console.log(caseName + 'device not support')
             } else {
               // 执行extensionWindow?.createSubWindowWithOptions('', null)
@@ -593,7 +582,7 @@ export default function UIExtensionTest() {
             }
           });
         } catch (exception) {
-          console.log(caseName + 'Failed ' + JSON.stringify(exception))
+          console.log(caseName + 'Failed ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
@@ -681,7 +670,7 @@ export default function UIExtensionTest() {
             let driver: Driver = Driver.create();
             let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsTrue'))
             console.log(caseName + ' btn : ' + btn);
-            if (btn != null) {
+            if (deviceType === '2in1') {
               await btn!.click()
               await Utils.msSleep(1000)
               // 获取接口返回信息
@@ -689,16 +678,16 @@ export default function UIExtensionTest() {
               let errorMessageText = await errorMessage!.getText()
               console.log(caseName + 'errorMessageText : ' + errorMessageText)
               if (errorMessageText == 'success') {
-                let tempWnd = window.findWindow('createSubWindowWithOptionsTrue');
-                expect(tempWnd == null).assertTrue();
+                let tempWnd = window.findWindow('testCreateSubWindowWithOptionsFollowTrue');
+                expect(tempWnd !== null).assertTrue();
                 // Uec组件显示
                 let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
                 console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
                 await Utils.msSleep(1000)
                 await changeUecVisible!.click()
                 await Utils.msSleep(1000)
-                let tempWnd2 = window.findWindow('createSubWindowWithOptionsTrue');
-                expect(tempWnd2 != null).assertTrue();
+                let subWin = await driver.findComponent(ON.id('subWin'))
+                expect(subWin === null).assertTrue();
                 await subWindowClass!.destroyWindow()
                 done();
               } else if (errorMessageText == '801') {
@@ -714,7 +703,7 @@ export default function UIExtensionTest() {
               done();
             }
           } catch (exception) {
-            console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+            console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
             await subWindowClass!.destroyWindow()
             expect().assertFail()
             done()
@@ -749,7 +738,7 @@ export default function UIExtensionTest() {
             let driver: Driver = Driver.create();
             let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsFalse'))
             console.log(caseName + ' btn : ' + btn);
-            if (btn != null) {
+            if (deviceType === '2in1') {
               await btn!.click()
               await Utils.msSleep(1000)
               // 获取接口返回信息
@@ -757,16 +746,15 @@ export default function UIExtensionTest() {
               let errorMessageText = await errorMessage!.getText()
               console.log(caseName + 'errorMessageText : ' + errorMessageText)
               if (errorMessageText == 'success') {
-                let tempWnd = window.findWindow('createSubWindowWithOptionsFalse');
-                expect(tempWnd == null).assertTrue();
-                // Uec组件显示
+                // 隐藏UEC组件
                 let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
                 console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
-                await Utils.msSleep(1000)
                 await changeUecVisible!.click()
                 await Utils.msSleep(1000)
-                let tempWnd2 = window.findWindow('createSubWindowWithOptionsFalse');
-                expect(tempWnd2 == null).assertTrue();
+                // 断言组件隐藏后子窗消失
+                let subWin = await driver.findComponent(ON.id('subWin'));
+                console.log(caseName + ' subWin : ' + subWin);
+                expect(subWin !== undefined).assertTrue();
                 await subWindowClass!.destroyWindow()
                 done();
               } else if (errorMessageText == '801') {
@@ -782,7 +770,7 @@ export default function UIExtensionTest() {
               done();
             }
           } catch (exception) {
-            console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+            console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
             await subWindowClass!.destroyWindow()
             expect().assertFail()
             done()
@@ -812,7 +800,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('getWindowAvoidAreaCUTOUT'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -841,7 +829,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -870,7 +858,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('getWindowAvoidAreaGESTURE'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -899,7 +887,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -928,7 +916,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('getWindowAvoidAreaKEYBOARD'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -957,7 +945,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -986,7 +974,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('getWindowAvoidAreaNAVIGATION_INDICATOR'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -1015,7 +1003,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -1044,7 +1032,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('windowSizeChange'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -1077,7 +1065,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -1106,7 +1094,7 @@ export default function UIExtensionTest() {
           let driver: Driver = Driver.create();
           let btn = await driver.findComponent(ON.id('rectChange'))
           console.log(caseName + ' btn : ' + btn);
-          if (btn != null) {
+          if (deviceType === '2in1') {
             await btn!.click()
             await Utils.msSleep(1000)
             // 获取接口返回信息
@@ -1139,7 +1127,7 @@ export default function UIExtensionTest() {
             done();
           }
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           await subWindowClass!.destroyWindow()
           expect().assertFail()
           done()
@@ -1170,7 +1158,7 @@ export default function UIExtensionTest() {
           expect(uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE).assertEqual(0x0001)
           done()
         } catch (exception) {
-          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
           expect().assertFail()
           done()
         }
