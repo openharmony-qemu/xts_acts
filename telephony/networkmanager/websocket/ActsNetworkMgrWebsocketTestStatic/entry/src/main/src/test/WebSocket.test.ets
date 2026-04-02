@@ -186,7 +186,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnect_static_0100
-     * @tc.number testNetworkMgrWebSocketConnect_static_0100
+     * @tc.number SUB_Network_WebSocket_Connect_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnect_static_0200
-     * @tc.number testNetworkMgrWebSocketConnect_static_0200
+     * @tc.number SUB_Network_WebSocket_Connect_0200
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testWebSocketConnectPromiseUrl_static_0100
-     * @tc.number testWebSocketConnectPromiseUrl_static_0100
+     * @tc.number SUB_Network_WebSocket_ConnectPromiseUrl_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testWebSocketConnectPromiseUrl_static_0200
-     * @tc.number testWebSocketConnectPromiseUrl_static_0200
+     * @tc.number SUB_Network_WebSocket_ConnectPromiseUrl_0200
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
-     * @tc.number testNetworkMgrWebSocketWebSocketServerCreateWebSocketServer_static_0100
+     * @tc.number SUB_Network_WebSocket_CreateWebSocketServer_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0100
-     * @tc.number testNetworkMgrWebSocketWebSocketRequestOptions_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketOpenResult_static_0100
-     * @tc.number testNetworkMgrWebSocketOpenResult_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_OpenResult_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -518,7 +518,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketServerConfig_static_0100
-     * @tc.number testNetworkMgrWebSocketServerConfig_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ServerConfig_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -558,7 +558,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketServerCert_static_0100
-     * @tc.number testNetworkMgrWebSocketServerCert_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ServerCert_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnection_static_0100
-     * @tc.number testNetworkMgrWebSocketConnection_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Connection_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function WebSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrWebSocketMessage_static_0100
-     * @tc.number testNetworkMgrWebSocketMessage_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Message_0100
      * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
