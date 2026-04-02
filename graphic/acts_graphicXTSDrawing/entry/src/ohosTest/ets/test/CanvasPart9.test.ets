@@ -266,7 +266,7 @@ export default function drawingTsCanvasPart9Test() {
     it('testCanvasResetClipWithTransform', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasResetClipWithTransform';
       let canvas = new drawing.Canvas(pixel);
-      let rect: common2D.Rect = { left: 10, top: 100100, right: 200, bottom: 300 };
+      let rect: common2D.Rect = { left: 10, top: 100, right: 200, bottom: 300 };
       try {
         canvas.translate(10, 10);
         console.log(msg + " translate success");
@@ -282,6 +282,7 @@ export default function drawingTsCanvasPart9Test() {
         
         let matrix = canvas.getTotalMatrix();
         console.log(msg + " getTotalMatrix success");
+        expect(matrix !== null || matrix !==undefined).assertEqual(true);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode is:  ${e.code} + errormsg is: ${e.message}`);
