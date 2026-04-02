@@ -21,6 +21,7 @@ import ResolveStrategyTest from './ResolveStrategyTest/ResolveStrategy.test';
 import ResolvedUIContextTest from './ResolvedUIContextTest/ResolvedUIContext.test';
 import CustomKeyboardContinueFeatureTest from './CustomKeyboardContinueFeatureTest/CustomKeyboardContinueFeature.test';
 import UIContextTest from './UIContextTest/UIContext.test';
+import GetWindowIdTest from './window/GetWindowIdTest.test';
 
 export default function testsuite() {
   OverlayManagerTest();
@@ -30,4 +31,5 @@ export default function testsuite() {
   ResolvedUIContextTest();
   UIContextTest();
   CustomKeyboardContinueFeatureTest();
+  GetWindowIdTest();
 }
