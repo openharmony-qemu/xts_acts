@@ -336,7 +336,7 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   applyNormalAttribute(instance: FormComponentAttribute): void {
     instance.restoreId(this.mRestoreId)
   }
-}}
+}
 
 export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mRestoreId: int = 2;
