@@ -110,7 +110,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_001
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0100
      * @tc.name SearchAttribute_type
      * @tc.desc Verify Search SearchType attribute
      * @tc.type   FUNCTION
@@ -129,7 +129,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_002
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0200
      * @tc.name SearchAttribute_strokeWidth
      * @tc.desc Verify Search strokeWidth
      * @tc.type   FUNCTION
@@ -171,7 +171,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_003
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0300
      * @tc.name SearchAttribute_strokeColor
      * @tc.desc Verify Search strokeColor
      * @tc.type   FUNCTION
@@ -193,7 +193,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_004
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0400
      * @tc.name SearchAttribute_onWillAttachIME
      * @tc.desc Verify Search onWillAttachIME
      * @tc.type   FUNCTION
@@ -215,7 +215,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_005
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0500
      * @tc.name SearchAttribute_enableAutoSpacing
      * @tc.desc Verify Search enableAutoSpacing
      * @tc.type   FUNCTION
@@ -251,7 +251,7 @@ export default function SearchTest(): void {
     });
 
     /**
-     * @tc.number SearchTest_006
+     * @tc.number SUB_ARKUI_SEARCH_API24_STATIC_TEST_0600
      * @tc.name SearchAttribute_enableSelectedDataDetector
      * @tc.desc Verify Search enableSelectedDataDetector
      * @tc.type   FUNCTION

@@ -108,7 +108,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number ImageSpanTest_001
+     * @tc.number SUB_ARKUI_IMAGESPAN_API24_STATIC_TEST_0100
      * @tc.name ImageSpanSupportSvg2Test001
      * @tc.desc Verify ImageSpan supportSvg2 true
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number ImageSpanTest_002
+     * @tc.number SUB_ARKUI_IMAGESPAN_API24_STATIC_TEST_0200
      * @tc.name ImageSpanSupportSvg2Test002
      * @tc.desc Verify ImageSpan supportSvg2 false
      * @tc.type   FUNCTION
@@ -152,7 +152,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number ImageSpanTest_003
+     * @tc.number SUB_ARKUI_IMAGESPAN_API24_STATIC_TEST_0300
      * @tc.name ImageSpanSupportSvg2Test003
      * @tc.desc Verify ImageSpan supportSvg2 default when unset
      * @tc.type   FUNCTION
@@ -174,7 +174,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number ImageSpanTest_004
+     * @tc.number SUB_ARKUI_IMAGESPAN_API24_STATIC_TEST_0400
      * @tc.name ImageSpanSupportSvg2Test004
      * @tc.desc Verify ImageSpan supportSvg2 undefined parameter
      * @tc.type   FUNCTION
@@ -196,7 +196,7 @@ export default function ImageSpanTest(): void {
     });
 
     /**
-     * @tc.number ImageSpanTest_005
+     * @tc.number SUB_ARKUI_IMAGESPAN_API24_STATIC_TEST_0500
      * @tc.name ImageSpanSupportSvg2Test005
      * @tc.desc Verify ImageSpan supportSvg2 default variant
      * @tc.type   FUNCTION

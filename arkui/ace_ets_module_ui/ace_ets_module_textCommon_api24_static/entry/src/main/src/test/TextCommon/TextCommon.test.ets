@@ -165,7 +165,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_001
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0100
      * @tc.name TextCommon_textContentAlign_TOP
      * @tc.desc Verify TextCommon_textContentAlign_TOP
      * @tc.type   FUNCTION
@@ -187,7 +187,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_002
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0200
      * @tc.name TextCommon_textContentAlign_CENTER
      * @tc.desc Verify TextCommon_textContentAlign_CENTER
      * @tc.type   FUNCTION
@@ -209,7 +209,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_003
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0300
      * @tc.name TextCommon_textContentAlign_BOTTOM
      * @tc.desc Verify TextCommon_textContentAlign_BOTTOM
      * @tc.type   FUNCTION
@@ -231,7 +231,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_004
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0400
      * @tc.name TextCommon_FlipDirection_DOWN
      * @tc.desc Verify TextCommon_FlipDirection_DOWN
      * @tc.type   FUNCTION
@@ -253,7 +253,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_005
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0500
      * @tc.name TextCommon_FlipDirection_UP
      * @tc.desc Verify TextCommon_FlipDirection_UP
      * @tc.type   FUNCTION
@@ -275,7 +275,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_006
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0600
      * @tc.name TextCommon_SuperscriptStyle_NORMAL
      * @tc.desc Verify TextCommon_SuperscriptStyle_NORMAL
      * @tc.type   FUNCTION
@@ -297,7 +297,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_007
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0700
      * @tc.name TextCommon_SuperscriptStyle_SUPERSCRIPT
      * @tc.desc Verify TextCommon_SuperscriptStyle_SUPERSCRIPT
      * @tc.type   FUNCTION
@@ -319,7 +319,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_008
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0800
      * @tc.name TextCommon_SuperscriptStyle_SUBSCRIPT
      * @tc.desc Verify TextCommon_SuperscriptStyle_SUBSCRIPT
      * @tc.type   FUNCTION
@@ -341,7 +341,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_009
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_0900
      * @tc.name TextCommon_TextVerticalAlign_BASELINE
      * @tc.desc Verify TextCommon_TextVerticalAlign_BASELINE
      * @tc.type   FUNCTION
@@ -363,7 +363,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_010
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1000
      * @tc.name TextCommon_TextVerticalAlign_BOTTOM
      * @tc.desc Verify TextCommon_TextVerticalAlign_BOTTOM
      * @tc.type   FUNCTION
@@ -385,7 +385,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_011
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1100
      * @tc.name TextCommon_TextVerticalAlign_CENTER
      * @tc.desc Verify TextCommon_TextVerticalAlign_CENTER
      * @tc.type   FUNCTION
@@ -407,7 +407,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_012
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1200
      * @tc.name TextCommon_TextVerticalAlign_TOP
      * @tc.desc Verify TextCommon_TextVerticalAlign_TOP
      * @tc.type   FUNCTION
@@ -429,7 +429,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_013
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1300
      * @tc.name TextCommon_TextDataDetectorConfig_enablePreviewMenu
      * @tc.desc Verify TextDataDetectorConfig.enablePreviewMenu
      * @tc.type   FUNCTION
@@ -451,7 +451,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_014
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1400
      * @tc.name TextCommon_LayoutManager_getCharacterPositionAtCoordinate
      * @tc.desc Verify LayoutManager.getCharacterPositionAtCoordinate
      * @tc.type   FUNCTION
@@ -475,7 +475,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_015
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1500
      * @tc.name TextCommon_LayoutManager_getGlyphRangeForCharacterRange
      * @tc.desc Verify LayoutManager.getGlyphRangeForCharacterRange
      * @tc.type   FUNCTION
@@ -499,7 +499,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_016
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1600
      * @tc.name TextCommon_LayoutManager_getCharacterRangeForGlyphRange
      * @tc.desc Verify LayoutManager.getCharacterRangeForGlyphRange
      * @tc.type   FUNCTION
@@ -523,7 +523,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_017
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1700
      * @tc.name TextCommon_EditMenuOptions_onPrepareMenu
      * @tc.desc Verify EditMenuOptions.onPrepareMenu
      * @tc.type   FUNCTION
@@ -545,7 +545,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_018
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1800
      * @tc.name TextCommon_DecorationStyleResult_thicknessScale
      * @tc.desc Verify DecorationStyleResult.thicknessScale from RichEditor span
      * @tc.type   FUNCTION
@@ -568,7 +568,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_019
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_1900
      * @tc.name TextCommon_LinearGradientOptions_colors
      * @tc.desc Verify LinearGradientOptions bound via Text.linearGradient
      * @tc.type   FUNCTION
@@ -590,7 +590,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_020
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2000
      * @tc.name TextCommon_RadialGradientOptions_radius
      * @tc.desc Verify RadialGradientOptions bound via Text.radialGradient
      * @tc.type   FUNCTION
@@ -612,7 +612,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_021
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2100
      * @tc.name TextCommon_NumericTextTransitionOptions_flip_and_blur
      * @tc.desc Verify NumericTextTransition with NumericTextTransitionOptions
      * @tc.type   FUNCTION
@@ -634,7 +634,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_022
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2200
      * @tc.name TextCommon_NumericTextTransitionOptions_flipDirection
      * @tc.desc Verify NumericTextTransitionOptions.flipDirection
      * @tc.type   FUNCTION
@@ -656,7 +656,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_023
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2300
      * @tc.name TextCommon_NumericTextTransitionOptions_enableBlur
      * @tc.desc Verify NumericTextTransitionOptions.enableBlur
      * @tc.type   FUNCTION
@@ -678,7 +678,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_024
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2400
      * @tc.name TextCommon_NumericTextTransition_flipDirection
      * @tc.desc Verify NumericTextTransition.flipDirection
      * @tc.type   FUNCTION
@@ -700,7 +700,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_025
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2500
      * @tc.name TextCommon_NumericTextTransition_enableBlur
      * @tc.desc Verify NumericTextTransition.enableBlur
      * @tc.type   FUNCTION
@@ -722,7 +722,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_026
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2600
      * @tc.name TextCommon_ColorShaderStyle_color
      * @tc.desc Verify ColorShaderStyle.color（与页面 CASE9 同步禁用：shaderStyle 导致白屏）
      * @tc.type   FUNCTION
@@ -749,7 +749,7 @@ export default function TextCommonTest(): void {
     // });
 
     /**
-     * @tc.number TextCommonTest_027
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2700
      * @tc.name TextCommon_TextLayoutOptions_constraintWidth
      * @tc.desc Verify TextLayoutOptions.constraintWidth
      * @tc.type   FUNCTION
@@ -771,7 +771,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_028
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2800
      * @tc.name TextCommon_IMEClient_nodeId
      * @tc.desc Verify IMEClient.nodeId
      * @tc.type   FUNCTION
@@ -798,7 +798,7 @@ export default function TextCommonTest(): void {
     });
 
     /**
-     * @tc.number TextCommonTest_029
+     * @tc.number SUB_ARKUI_TEXTCOMMON_API24_STATIC_TEST_2900
      * @tc.name TextCommon_IMEClient_setExtraConfig
      * @tc.desc Verify IMEClient.setExtraConfig
      * @tc.type   FUNCTION

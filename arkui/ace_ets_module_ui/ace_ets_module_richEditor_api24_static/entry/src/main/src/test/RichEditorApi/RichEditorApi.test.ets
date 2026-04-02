@@ -136,7 +136,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_001
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0100
      * @tc.name UndoStyle_CLEAR_STYLE
      * @tc.desc Verify UndoStyle.CLEAR_STYLE
      */
@@ -149,7 +149,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_002
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0200
      * @tc.name UndoStyle_KEEP_STYLE
      * @tc.desc Verify UndoStyle.KEEP_STYLE
      */
@@ -162,7 +162,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_003
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0300
      * @tc.name RichEditorParagraphStyle_textVerticalAlign
      * @tc.desc Verify RichEditorParagraphStyle.textVerticalAlign
      */
@@ -175,7 +175,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_004
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0400
      * @tc.name RichEditorBaseController_setTypingParagraphStyle
      * @tc.desc Verify RichEditorBaseController.setTypingParagraphStyle
      */
@@ -189,7 +189,7 @@ export default function RichEditorApiTest(): void {
 
     // 这个接口导致页面进不去
     // /**
-    //  * @tc.number RichEditorApiTest_005
+    //  * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0500
     //  * @tc.name RichEditorBaseController_setStyledPlaceholder
     //  * @tc.desc Verify RichEditorBaseController.setStyledPlaceholder
     //  */
@@ -202,7 +202,7 @@ export default function RichEditorApiTest(): void {
     // });
 
     /**
-     * @tc.number RichEditorApiTest_006
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0600
      * @tc.name RichEditorAttribute_enableSelectedDataDetector
      * @tc.desc Verify RichEditorAttribute.enableSelectedDataDetector
      */
@@ -234,7 +234,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_007
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0700
      * @tc.name RichEditorAttribute_onWillAttachIME
      * @tc.desc Verify RichEditorAttribute.onWillAttachIME (IMEClient callback)
      */
@@ -260,7 +260,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_008
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0800
      * @tc.name RichEditorAttribute_enableAutoSpacing
      * @tc.desc Verify RichEditorAttribute.enableAutoSpacing
      */
@@ -292,7 +292,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_009
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_0900
      * @tc.name RichEditorAttribute_undoStyle
      * @tc.desc Verify RichEditorAttribute.undoStyle
      */
@@ -325,7 +325,7 @@ export default function RichEditorApiTest(): void {
     });
 
     /**
-     * @tc.number RichEditorApiTest_010
+     * @tc.number SUB_ARKUI_RICHEDITOR_API24_STATIC_TEST_1000
      * @tc.name RichEditorAttribute_scrollBarColor
      * @tc.desc Verify RichEditorAttribute.scrollBarColor (ColorMetrics)
      */

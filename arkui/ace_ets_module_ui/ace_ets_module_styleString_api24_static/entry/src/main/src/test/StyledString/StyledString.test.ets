@@ -133,7 +133,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_001
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0100
      * @tc.name StyledString_Text_inspector_nonEmpty
      * @tc.desc Verify StyledString Text inspector non-empty
      * @tc.type   FUNCTION
@@ -160,7 +160,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_002
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0200
      * @tc.name StyledString_Text_strokeColor_inTree
      * @tc.desc Verify StyledString strokeColor in inspector tree
      * @tc.type   FUNCTION
@@ -186,7 +186,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_003
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0300
      * @tc.name StyledString_Text_paragraphOrAttachmentHints
      * @tc.desc Verify StyledString paragraph or attachment hints
      * @tc.type   FUNCTION
@@ -213,7 +213,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_004
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0400
      * @tc.name StyledString_TextStyle_superscript
      * @tc.desc Verify TextStyle superscript
      * @tc.type   FUNCTION
@@ -227,7 +227,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_005
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0500
      * @tc.name StyledString_GestureStyleInterface_onTouch
      * @tc.desc Verify GestureStyleInterface onTouch
      * @tc.type   FUNCTION
@@ -242,7 +242,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_006
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0600
      * @tc.name StyledString_ParagraphStyle_leadingMarginSpan
      * @tc.desc Verify ParagraphStyle leadingMarginSpan
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_007
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0700
      * @tc.name StyledString_ImageAttachment_sizeInVp
      * @tc.desc Verify ImageAttachment sizeInVp
      * @tc.type   FUNCTION
@@ -276,7 +276,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_008
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0800
      * @tc.name StyledString_LeadingMarginSpanDrawInfo_fields
      * @tc.desc Verify LeadingMarginSpanDrawInfo fields
      * @tc.type   FUNCTION
@@ -301,7 +301,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number StyledStringTest_009
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0900
      * @tc.name StyledString_LeadingMarginSpan_onDraw_getLeadingMargin
      * @tc.desc Verify LeadingMarginSpan getLeadingMargin
      * @tc.type   FUNCTION

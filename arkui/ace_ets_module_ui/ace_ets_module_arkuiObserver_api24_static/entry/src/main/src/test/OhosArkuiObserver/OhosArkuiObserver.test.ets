@@ -137,7 +137,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_001
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0100
      * @tc.name TextChangeEventInfo_id
      * @tc.desc Verify TextChangeEventInfo id global onTextChange
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_002
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0200
      * @tc.name TextChangeEventInfo_uniqueId
      * @tc.desc Verify TextChangeEventInfo uniqueId global onTextChange
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_003
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0300
      * @tc.name TextChangeEventInfo_content
      * @tc.desc Verify TextChangeEventInfo content global onTextChange
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_004
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0400
      * @tc.name TextChangeEventInfo_id_local
      * @tc.desc Verify TextChangeEventInfo id local onTextChange
      * @tc.type   FUNCTION
@@ -231,7 +231,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_005
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0500
      * @tc.name TextChangeEventInfo_uniqueId_local
      * @tc.desc Verify TextChangeEventInfo uniqueId local onTextChange
      * @tc.type   FUNCTION
@@ -255,7 +255,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_006
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0600
      * @tc.name TextChangeEventInfo_content_local
      * @tc.desc Verify TextChangeEventInfo content local onTextChange
      * @tc.type   FUNCTION
@@ -277,7 +277,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number OhosArkuiObserverTest_007
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0700
      * @tc.name textInputObserverTest_0010
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION
@@ -344,7 +344,7 @@ export default function OhosArkuiObserverTest(): void {
 
     // /**
     //  * @tc.name   textInputObserverTest_0011
-    //  * @tc.number textInputObserverTest_0011
+    //  * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0800
     //  * @tc.desc   Local observer on/off, text change observed as local:…
     //  */
     // it('textInputObserverTest_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {

@@ -125,7 +125,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_001
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0100
      * @tc.name TextAreaAttribute_type
      * @tc.desc Verify TextAreaAttribute_type
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_002
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0200
      * @tc.name TextAreaAttribute_minLines
      * @tc.desc Verify TextAreaAttribute_minLines
      * @tc.type   FUNCTION
@@ -174,7 +174,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_003
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0300
      * @tc.name TextAreaAttribute_enableAutoSpacing
      * @tc.desc Verify TextAreaAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
@@ -211,7 +211,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_004
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0400
      * @tc.name TextAreaAttribute_strokeWidth
      * @tc.desc Verify TextAreaAttribute_strokeWidth
      * @tc.type   FUNCTION
@@ -251,7 +251,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_005
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0500
      * @tc.name TextAreaAttribute_strokeColor
      * @tc.desc Verify TextAreaAttribute_strokeColor
      * @tc.type   FUNCTION
@@ -272,7 +272,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_006
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0600
      * @tc.name TextAreaAttribute_onWillAttachIME
      * @tc.desc Verify TextAreaAttribute_onWillAttachIME
      * @tc.type   FUNCTION
@@ -294,7 +294,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_007
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0700
      * @tc.name TextAreaAttribute_scrollBarColor
      * @tc.desc Verify TextAreaAttribute_scrollBarColor
      * @tc.type   FUNCTION
@@ -319,7 +319,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_008
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0800
      * @tc.name TextAreaAttribute_enableSelectedDataDetector
      * @tc.desc Verify TextAreaAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
@@ -356,7 +356,7 @@ export default function TextAreaTest(): void {
     });
 
     /**
-     * @tc.number TextAreaTest_009
+     * @tc.number SUB_ARKUI_TEXTAREA_API24_STATIC_TEST_0900
      * @tc.name TextAreaAttribute_horizontalScrolling
      * @tc.desc Verify TextAreaAttribute_horizontalScrolling
      * @tc.type   FUNCTION

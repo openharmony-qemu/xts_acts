@@ -116,7 +116,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_001
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0100
      * @tc.name TextAttribute_optimizeTrailingSpace
      * @tc.desc Verify TextAttribute_optimizeTrailingSpace
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_002
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0200
      * @tc.name TextAttribute_shaderStyle
      * @tc.desc Verify TextAttribute_shaderStyle
      * @tc.type   FUNCTION
@@ -179,7 +179,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_003
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0300
      * @tc.name TextAttribute_enableAutoSpacing
      * @tc.desc Verify TextAttribute_enableAutoSpacing
      * @tc.type   FUNCTION
@@ -215,7 +215,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_004
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0400
      * @tc.name TextAttribute_textVerticalAlign
      * @tc.desc Verify TextAttribute_textVerticalAlign
      * @tc.type   FUNCTION
@@ -250,7 +250,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_005
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0500
      * @tc.name TextAttribute_contentTransition
      * @tc.desc Verify TextAttribute_contentTransition
      * @tc.type   FUNCTION
@@ -277,7 +277,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_006
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0600
      * @tc.name TextAttribute_textContentAlign
      * @tc.desc Verify TextAttribute_textContentAlign
      * @tc.type   FUNCTION
@@ -312,7 +312,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_007
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0700
      * @tc.name TextAttribute_minLines
      * @tc.desc Verify TextAttribute_minLines
      * @tc.type   FUNCTION
@@ -345,7 +345,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_008
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0800
      * @tc.name TextAttribute_minLineHeight
      * @tc.desc Verify TextAttribute_minLineHeight
      * @tc.type   FUNCTION
@@ -368,7 +368,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_009
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_0900
      * @tc.name TextAttribute_maxLineHeight
      * @tc.desc Verify TextAttribute_maxLineHeight
      * @tc.type   FUNCTION
@@ -391,7 +391,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_010
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_1000
      * @tc.name TextAttribute_lineHeightMultiple
      * @tc.desc Verify TextAttribute_lineHeightMultiple
      * @tc.type   FUNCTION
@@ -427,7 +427,7 @@ export default function TextPageTest(): void {
     });
 
     /**
-     * @tc.number TextPageTest_011
+     * @tc.number SUB_ARKUI_TEXT_API24_STATIC_TEST_1100
      * @tc.name TextAttribute_enableSelectedDataDetector
      * @tc.desc Verify TextAttribute_enableSelectedDataDetector
      * @tc.type   FUNCTION
