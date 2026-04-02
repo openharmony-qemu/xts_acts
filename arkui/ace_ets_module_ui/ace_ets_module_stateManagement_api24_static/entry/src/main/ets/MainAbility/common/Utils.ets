@@ -17,33 +17,33 @@
 import RectValue from './Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent } from '@ohos.arkui.Test';
 
 export default class Utils {
-  static rect_left: number;
-  static rect_top: number;
-  static rect_right: number;
-  static rect_bottom: number;
-  static rect_value: RectValue = new RectValue();
+  public static rect_left: number;
+  public static rect_top: number;
+  public static rect_right: number;
+  public static rect_bottom: number;
+  public static rectValue: RectValue = new RectValue();
 
   /** 委托 CommonFunc.getInspectorByKey + parseJsonElement，避免 JSON.parse 旧接口在 Evolution 下 ESE0087。 */
-  static getComponentRect(key: string): RectValue {
+  public static getComponentRect(key: string): RectValue {
     let r: RectValue = CommonFunc.getComponentRect(key);
     CommonFunc.rect_left = r.left;
     CommonFunc.rect_top = r.top;
     CommonFunc.rect_right = r.right;
     CommonFunc.rect_bottom = r.bottom;
-    CommonFunc.rect_value = r;
+    CommonFunc.rectValue = r;
     Utils.rect_left = r.left;
     Utils.rect_top = r.top;
     Utils.rect_right = r.right;
     Utils.rect_bottom = r.bottom;
-    Utils.rect_value = r;
+    Utils.rectValue = r;
     return r;
   }
 
   /** 与 CommonFunc.sleep 一致：本工具链对 Promise 空值的 resolve 较严，用 string 占位。 */
-  static sleep(time: int): Promise<string> {
+  public static sleep(time: int): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
         resolve('ok');
@@ -54,7 +54,7 @@ export default class Utils {
     });
   }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+  public static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;

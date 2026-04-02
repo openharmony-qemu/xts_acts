@@ -21,7 +21,7 @@ import { EventQueryType, FocusWrapMode, SystemProperties } from '@ohos.arkui.com
 export default function ComponentEnumsTest(): void {
   describe('ComponentEnumsTest', () => {
     /**
-     * @tc.number ComponentEnumsTest_001
+     * @tc.number SUB_ArkUI_Enums_EventQueryType_OnClick_3800
      * @tc.name SUB_ArkUI_Enums_EventQueryType_OnClick_3800
      * @tc.desc EventQueryType ON_CLICK value 0 in enums.d.ets
      * @tc.type   FUNCTION
@@ -36,7 +36,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_002
+     * @tc.number SUB_ArkUI_Enums_FocusWrapMode_Default_3900
      * @tc.name SUB_ArkUI_Enums_FocusWrapMode_Default_3900
      * @tc.desc FocusWrapMode DEFAULT value 0 in enums.d.ets
      * @tc.type   FUNCTION
@@ -51,7 +51,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_003
+     * @tc.number SUB_ArkUI_Enums_FocusWrapMode_WrapWithArrow_4000
      * @tc.name SUB_ArkUI_Enums_FocusWrapMode_WrapWithArrow_4000
      * @tc.desc FocusWrapMode WRAP_WITH_ARROW value 1 in enums.d.ets
      * @tc.type   FUNCTION
@@ -66,7 +66,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_004
+     * @tc.number SUB_ArkUI_Enums_SystemProperties_BreakPoint_4100
      * @tc.name SUB_ArkUI_Enums_SystemProperties_BreakPoint_4100
      * @tc.desc SystemProperties BREAK_POINT string constant
      * @tc.type   FUNCTION
@@ -81,7 +81,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_005
+     * @tc.number SUB_ArkUI_Enums_SystemProperties_WindowAvoidArea_4200
      * @tc.name SUB_ArkUI_Enums_SystemProperties_WindowAvoidArea_4200
      * @tc.desc SystemProperties WINDOW_AVOID_AREA string constant
      * @tc.type   FUNCTION
@@ -96,7 +96,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_006
+     * @tc.number SUB_ArkUI_Enums_SystemProperties_WindowAvoidAreaPx_4300
      * @tc.name SUB_ArkUI_Enums_SystemProperties_WindowAvoidAreaPx_4300
      * @tc.desc SystemProperties WINDOW_AVOID_AREA_PX string constant
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_007
+     * @tc.number SUB_ArkUI_Enums_SystemProperties_WindowSize_4400
      * @tc.name SUB_ArkUI_Enums_SystemProperties_WindowSize_4400
      * @tc.desc SystemProperties WINDOW_SIZE string constant
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function ComponentEnumsTest(): void {
     });
 
     /**
-     * @tc.number ComponentEnumsTest_008
+     * @tc.number SUB_ArkUI_Enums_SystemProperties_WindowSizePx_4500
      * @tc.name SUB_ArkUI_Enums_SystemProperties_WindowSizePx_4500
      * @tc.desc SystemProperties WINDOW_SIZE_PX string constant
      * @tc.type   FUNCTION

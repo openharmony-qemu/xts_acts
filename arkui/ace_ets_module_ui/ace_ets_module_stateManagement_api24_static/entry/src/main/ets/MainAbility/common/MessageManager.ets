@@ -17,15 +17,15 @@
 import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
-  name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource = ''
+  public name: string = '';
+  public value: string | number | TextCase | TextDecorationType | boolean | Resource = '';
 }
 
-export type Callback = (message: Message) => void
+export type Callback = (message: Message) => void;
 
 export class MessageManager {
-  callback?: Callback = undefined
-  callbacks: Map<string, Callback> = new Map<string, Callback>()
+  public callback?: Callback = undefined;
+  public callbacks: Map<string, Callback> = new Map<string, Callback>();
 
   constructor() {
 

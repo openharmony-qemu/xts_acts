@@ -57,7 +57,7 @@ interface MonitorNotifyShape {
 export default function StateMgmtDecoratorShapeTest(): void {
   describe('StateMgmtDecoratorShapeTest', () => {
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_001
+     * @tc.number SUB_ArkUI_State_MakeMonitorOptions_Owner_FunctionName_5700
      * @tc.name SUB_ArkUI_State_MakeMonitorOptions_Owner_FunctionName_5700
      * @tc.desc decorator.d.ets MakeMonitorOptions optional owner and functionName for IStateMgmtFactory.makeMonitor
      * @tc.type   FUNCTION
@@ -76,7 +76,7 @@ export default function StateMgmtDecoratorShapeTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_002
+     * @tc.number SUB_ArkUI_State_EnvOptions_InitValue_5800
      * @tc.name SUB_ArkUI_State_EnvOptions_InitValue_5800
      * @tc.desc decorator.d.ets EnvOptions optional initValue passed to makeEnv
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function StateMgmtDecoratorShapeTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_003
+     * @tc.number SUB_ArkUI_State_MakeMutableStateMeta_ArgShape_5900
      * @tc.name SUB_ArkUI_State_MakeMutableStateMeta_ArgShape_5900
      * @tc.desc decorator.d.ets IStateMgmtFactory.makeMutableStateMeta(observedObject, propertyName) argument shape
      * @tc.type   FUNCTION
@@ -117,14 +117,14 @@ export default function StateMgmtDecoratorShapeTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_004
-     * @tc.name SUB_ArkUI_State_MakeEnv_ArgsShape_5950
+     * @tc.number SUB_ArkUI_State_MakeEnv_ArgsShape_6000
+     * @tc.name SUB_ArkUI_State_MakeEnv_ArgsShape_6000
      * @tc.desc decorator.d.ets IStateMgmtFactory.makeEnv name, varName, envOptions argument shape
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_State_MakeEnv_ArgsShape_5950', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_State_MakeEnv_ArgsShape_6000', Level.LEVEL1, (done: () => void) => {
       let envCall: MakeEnvCallShape = {
         typeKey: 'String',
         varName: 'myEnvVar',
@@ -138,14 +138,14 @@ export default function StateMgmtDecoratorShapeTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_005
-     * @tc.name SUB_ArkUI_State_MakeMonitor_CallbackObjectShape_6000
+     * @tc.number SUB_ArkUI_State_MakeMonitor_CallbackObjectShape_6100
+     * @tc.name SUB_ArkUI_State_MakeMonitor_CallbackObjectShape_6100
      * @tc.desc decorator.d.ets IStateMgmtFactory.makeMonitor MonitorCallback notification shape (onChange)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_State_MakeMonitor_CallbackObjectShape_6000', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_State_MakeMonitor_CallbackObjectShape_6100', Level.LEVEL1, (done: () => void) => {
       let fired: int = 0;
       let cb: MonitorNotifyShape = {
         onChange(): void {
@@ -159,7 +159,15 @@ export default function StateMgmtDecoratorShapeTest(): void {
       done();
     });
 
-    it('SUB_ArkUI_State_AppStorage_Module_6100', Level.LEVEL1, (done: () => void) => {
+    /**
+     * @tc.number SUB_ArkUI_State_AppStorage_Module_6200
+     * @tc.name SUB_ArkUI_State_AppStorage_Module_6200
+     * @tc.desc AppStorage linkage shape in StateMgmt decorator probe prep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_State_AppStorage_Module_6200', Level.LEVEL1, (done: () => void) => {
       const linkKey: string = 'hypium_state_decor_shape_probe';
       AppStorage.setOrCreate<string>(linkKey, 'probe-ok');
       expect(AppStorage.get<string>(linkKey)).assertEqual('probe-ok');
@@ -188,14 +196,14 @@ export default function StateMgmtDecoratorShapeTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtDecoratorShapeTest_007
-     * @tc.name SUB_ArkUI_State_ProbePage_AppStorage_6200
+     * @tc.number SUB_ArkUI_State_ProbePage_AppStorage_6300
+     * @tc.name SUB_ArkUI_State_ProbePage_AppStorage_6300
      * @tc.desc StateMgmtProbe page loads; AppStorage keys state_mgmt_probe_page_loaded and state_mgmt_probe_label
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_State_ProbePage_AppStorage_6200', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_State_ProbePage_AppStorage_6300', Level.LEVEL1, (done: () => void) => {
       expect(AppStorage.get<string>('state_mgmt_probe_page_loaded')).assertEqual('1');
       expect(AppStorage.get<string>('state_mgmt_probe_label')).assertEqual('state-probe');
       done();

@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage";
-import common from "@ohos.app.ability.common";
+import AbilityStage from '@ohos.app.ability.AbilityStage';
+import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
-    console.log("[Demo] MyAbilityStage onCreate")
+    console.log('[Demo] MyAbilityStage onCreate');
     AppStorage.setOrCreate<number>('stageOnCreateRun', 1);
     AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context);
   }

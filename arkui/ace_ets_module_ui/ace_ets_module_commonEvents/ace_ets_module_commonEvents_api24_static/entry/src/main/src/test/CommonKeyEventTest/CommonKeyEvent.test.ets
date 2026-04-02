@@ -56,7 +56,7 @@ export default function CommonKeyEventTest(): void {
     };
 
     /**
-     * @tc.number CommonKeyEventTest_001
+     * @tc.number SUB_ArkUI_Common_KeyEvent_IsNumLockOn_2900
      * @tc.name SUB_ArkUI_Common_KeyEvent_IsNumLockOn_2900
      * @tc.desc KeyEvent.isNumLockOn：真实 TextInput.onKeyEvent 命中后读取字段
      * @tc.type   FUNCTION
@@ -72,7 +72,7 @@ export default function CommonKeyEventTest(): void {
     });
 
     /**
-     * @tc.number CommonKeyEventTest_002
+     * @tc.number SUB_ArkUI_Common_KeyEvent_IsCapsLockOn_3000
      * @tc.name SUB_ArkUI_Common_KeyEvent_IsCapsLockOn_3000
      * @tc.desc KeyEvent.isCapsLockOn：真实 onKeyEvent
      * @tc.type   FUNCTION
@@ -89,7 +89,7 @@ export default function CommonKeyEventTest(): void {
     });
 
     /**
-     * @tc.number CommonKeyEventTest_003
+     * @tc.number SUB_ArkUI_Common_KeyEvent_IsScrollLockOn_3100
      * @tc.name SUB_ArkUI_Common_KeyEvent_IsScrollLockOn_3100
      * @tc.desc KeyEvent.isScrollLockOn：真实 onKeyEvent
      * @tc.type   FUNCTION

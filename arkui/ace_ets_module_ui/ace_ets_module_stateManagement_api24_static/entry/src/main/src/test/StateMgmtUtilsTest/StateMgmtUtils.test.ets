@@ -24,9 +24,9 @@ import { UtilsTest } from '../Util.test';
 export default function StateMgmtUtilsTest(): void {
   describe('StateMgmtUtilsRealApiTest', () => {
     /**
-     * @tc.number StateMgmtUtilsTest_001
+     * @tc.number SUB_ArkUI_StateUtils_ElementInfo_Shape_6300
      * @tc.name SUB_ArkUI_StateUtils_ElementInfo_Shape_6300
-     * @tc.desc utils.d.ets：UIUtils.canBeObserved 返回 ObservedResult.decoratorInfo[*].dependentInfo 含 ElementInfo 语义（真 API）
+     * @tc.desc utils.d.ets：UIUtils.canBeObserved 返回 ObservedResult.decoratorInfo[*].dependentInfo �?ElementInfo 语义（真 API�?
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -47,9 +47,9 @@ export default function StateMgmtUtilsTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtUtilsTest_002
+     * @tc.number SUB_ArkUI_StateUtils_DecoratorInfo_Shape_6400
      * @tc.name SUB_ArkUI_StateUtils_DecoratorInfo_Shape_6400
-     * @tc.desc DecoratorInfo 字段来自 UIUtils.canBeObserved 返回值
+     * @tc.desc DecoratorInfo 字段来自 UIUtils.canBeObserved 返回�?
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -68,7 +68,7 @@ export default function StateMgmtUtilsTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtUtilsTest_003
+     * @tc.number SUB_ArkUI_StateUtils_ObservedResult_Shape_6500
      * @tc.name SUB_ArkUI_StateUtils_ObservedResult_Shape_6500
      * @tc.desc ObservedResult.isObserved / reason / decoratorInfo 真机 API
      * @tc.type   FUNCTION
@@ -107,7 +107,7 @@ export default function StateMgmtUtilsTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtUtilsTest_004
+     * @tc.number SUB_ArkUI_StateUtils_UIUtils_CanBeObserved_Probe_6600
      * @tc.name SUB_ArkUI_StateUtils_UIUtils_CanBeObserved_Probe_6600
      * @tc.desc StateMgmtProbe aboutToAppear 调用 UIUtils.canBeObserved
      * @tc.type   FUNCTION
@@ -127,14 +127,14 @@ export default function StateMgmtUtilsTest(): void {
     });
 
     /**
-     * @tc.number StateMgmtUtilsTest_005
-     * @tc.name SUB_ArkUI_StateUtils_UIUtils_GetLifecycle_6650
+     * @tc.number SUB_ArkUI_StateUtils_UIUtils_GetLifecycle_6700
+     * @tc.name SUB_ArkUI_StateUtils_UIUtils_GetLifecycle_6700
      * @tc.desc UIUtils.getLifecycle(Component) 在探测页真实调用
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_StateUtils_UIUtils_GetLifecycle_6650', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_StateUtils_UIUtils_GetLifecycle_6700', Level.LEVEL1, (done: () => void) => {
       expect(AppStorage.get<string>('state_utils_probe_lifecycle')).assertEqual('1');
       done();
     });

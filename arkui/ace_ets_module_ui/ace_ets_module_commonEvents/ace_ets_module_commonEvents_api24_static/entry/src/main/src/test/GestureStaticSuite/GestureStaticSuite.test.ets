@@ -44,7 +44,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_001
+     * @tc.number SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayX_4600
      * @tc.name SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayX_4600
      * @tc.desc gesture.d.ets EventLocationInfo：真实 TapGesture 回调 event.tapLocation.globalDisplayX
      * @tc.type   FUNCTION
@@ -65,7 +65,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_002
+     * @tc.number SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayY_4700
      * @tc.name SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayY_4700
      * @tc.desc gesture.d.ets EventLocationInfo：真实 tapLocation.globalDisplayY
      * @tc.type   FUNCTION
@@ -85,7 +85,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_003
+     * @tc.number SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayX_4800
      * @tc.name SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayX_4800
      * @tc.desc gesture.d.ets FingerInfo：真实 PanGesture fingerInfos[].globalDisplayX
      * @tc.type   FUNCTION
@@ -108,7 +108,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_004
+     * @tc.number SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayY_4900
      * @tc.name SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayY_4900
      * @tc.desc gesture.d.ets FingerInfo：真实 Pan fingerInfos[].globalDisplayY
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_005
+     * @tc.number SUB_ArkUI_Gesture_PanGestureHandlerOptions_DistanceMap_5000
      * @tc.name SUB_ArkUI_Gesture_PanGestureHandlerOptions_DistanceMap_5000
      * @tc.desc PanGestureHandlerOptions.distanceMap 真实类型赋值；PanGestureOptions 与配置一致的方向与距离
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_006
+     * @tc.number SUB_ArkUI_Gesture_TouchRecognizer_GetEventTargetInfo_5100
      * @tc.name SUB_ArkUI_Gesture_TouchRecognizer_GetEventTargetInfo_5100
      * @tc.desc TouchRecognizer.getEventTargetInfo：探测页 Tap 回调内真实调用；PanRecognizer.getEventTargetInfo：Pan onActionStart 真实调用
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_007
+     * @tc.number SUB_ArkUI_Gesture_TouchRecognizer_CancelTouch_5200
      * @tc.name SUB_ArkUI_Gesture_TouchRecognizer_CancelTouch_5200
      * @tc.desc TapGesture.onAction：GestureEvent.target.id 与触发组件 id 一致（SDK24 onAction 无 TouchRecognizer 形参）
      * @tc.type   FUNCTION
@@ -204,7 +204,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_008
+     * @tc.number SUB_ArkUI_Gesture_PanRecognizer_GetDirection_5300
      * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDirection_5300
      * @tc.desc 水平 PanGesture：onActionEnd 时 offsetX 模长大于 0（GestureEvent，SDK24 无 PanRecognizer 回调形参）
      * @tc.type   FUNCTION
@@ -223,7 +223,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_009
+     * @tc.number SUB_ArkUI_Gesture_PanRecognizer_GetDistance_5400
      * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDistance_5400
      * @tc.desc PanRecognizer.getDistance：真实 Pan 起始回调比对页面配置 distance: 1
      * @tc.type   FUNCTION
@@ -241,7 +241,7 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     /**
-     * @tc.number GestureStaticSuiteTest_010
+     * @tc.number SUB_ArkUI_Gesture_PanRecognizer_GetDistanceMap_5500
      * @tc.name SUB_ArkUI_Gesture_PanRecognizer_GetDistanceMap_5500
      * @tc.desc PanGestureHandlerOptions.distanceMap 与页内配置一致，且 Pan 链路曾启动
      * @tc.type   FUNCTION

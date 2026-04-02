@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import RectValue from '../common/Rect';
 import inspector from '@ohos.arkui.inspector'
@@ -36,44 +35,44 @@ export default class CommonFunc {
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
+      JSON.parse<Object>(strJson, Type.of("" as Object)) as Record<string, Object>;
+    console.info('[getInspectorByKey] current component obj is: ' + JSON.stringify(obj));
+    let rectInfo: number[][] =
+      JSON.parse<Object>('[' + obj['$rect']! + ']', Type.of("" as Object)) as number[][];
+    console.info('[getInspectorByKey] rectInfo is: ' + rectInfo);
+    console.info('windowRect Left: ' + AppStorage.get<number>('winLeft') + ',' + 'windowRect Top: ' +
+    AppStorage.get<number>('winTop'));
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
     CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      'left': CommonFunc.rect_left,
+      'top': CommonFunc.rect_top,
+      'right': CommonFunc.rect_right,
+      'bottom': CommonFunc.rect_bottom
     }
   }
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
-    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+      JSON.parse<Object>(strJson, Type.of("" as Object)) as Record<string, Object>;
+    console.info('[getInspectorByKey] current component obj is: ' + JSON.stringify(obj));
+    let rectInfo: number[][] =
+      JSON.parse<Object>('[' + obj['$rect']! + ']', Type.of("" as Object)) as number[][];
+    console.info('[getInspectorByKey] rectInfo is: ' + rectInfo);
+    console.info('windowRect Left: ' + AppStorage.get<number>('winLeft') + ',' + 'windowRect Top: ' +
+    AppStorage.get<number>('winTop'));
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>('winLeft') ?? 0));
+    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>('winTop') ?? 0));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>('winLeft') ?? 0));
+    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>('winTop') ?? 0));
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      'left': CommonFunc.rect_left,
+      'top': CommonFunc.rect_top,
+      'right': CommonFunc.rect_right,
+      'bottom': CommonFunc.rect_bottom
     }
   }
 

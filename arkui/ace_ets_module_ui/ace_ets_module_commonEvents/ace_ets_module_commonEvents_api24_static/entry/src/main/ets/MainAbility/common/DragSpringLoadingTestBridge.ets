@@ -35,16 +35,16 @@ export interface SpringLoadingContextForBridge {
  * See: js-apis-arkui-dragController / onDragSpringLoading.
  */
 export class DragSpringLoadingTestBridge {
-  static scenario: int = 0;
-  static callbackCount: int = 0;
+  public static scenario: int = 0;
+  public static callbackCount: int = 0;
   /** 探针 onDragStart 被调用次数（能区分注入是否触发了拖拽开始）。 */
-  static dragStartCount: int = 0;
-  static beginState: dragController.DragSpringLoadingState = dragController.DragSpringLoadingState.BEGIN;
-  static beginSequence: int = -1;
-  static abortAfterBeginCount: int = 0;
-  static updateConfigurationExecuted: boolean = false;
-  static beginDragInfosDefined: boolean = false;
-  static beginConfigStillMs: int = -1;
+  public static dragStartCount: int = 0;
+  public static beginState: dragController.DragSpringLoadingState = dragController.DragSpringLoadingState.BEGIN;
+  public static beginSequence: int = -1;
+  public static abortAfterBeginCount: int = 0;
+  public static updateConfigurationExecuted: boolean = false;
+  public static beginDragInfosDefined: boolean = false;
+  public static beginConfigStillMs: int = -1;
 
   static reset(scenario: int): void {
     DragSpringLoadingTestBridge.scenario = scenario;

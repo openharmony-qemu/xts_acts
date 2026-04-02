@@ -37,7 +37,7 @@ export default function UIContextUIObserverApiTest(): void {
     });
 
     /**
-     * @tc.number UIContextUIObserverApiTest_001
+     * @tc.number SUB_ArkUI_UIObserver_AddGlobalGestureListener_Tap_WithPhases_1400
      * @tc.name SUB_ArkUI_UIObserver_AddGlobalGestureListener_Tap_WithPhases_1400
      * @tc.desc addGlobalGestureListener：真实点击后 GestureTriggerInfo.currentPhase 写入 AppStorage
      * @tc.type   FUNCTION
@@ -71,7 +71,7 @@ export default function UIContextUIObserverApiTest(): void {
     });
 
     /**
-     * @tc.number UIContextUIObserverApiTest_002
+     * @tc.number SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_WithCallback_1500
      * @tc.name SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_WithCallback_1500
      * @tc.desc removeGlobalGestureListener(callback)：注册后长按触点再移除，回调在移除前应触发
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function UIContextUIObserverApiTest(): void {
     });
 
     /**
-     * @tc.number UIContextUIObserverApiTest_003
+     * @tc.number SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_OmitCallback_1600
      * @tc.name SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_OmitCallback_1600
      * @tc.desc removeGlobalGestureListener(type)：无回调移除全部监听
      * @tc.type   FUNCTION
@@ -124,7 +124,7 @@ export default function UIContextUIObserverApiTest(): void {
     });
 
     /**
-     * @tc.number UIContextUIObserverApiTest_004
+     * @tc.number SUB_ArkUI_UIContext_EnableDropDisallowedBadge_TrueThenFalse_1700
      * @tc.name SUB_ArkUI_UIContext_EnableDropDisallowedBadge_TrueThenFalse_1700
      * @tc.desc UIContext.enableDropDisallowedBadge 真机连续调用（无 UI 恒真断言）
      * @tc.type   FUNCTION

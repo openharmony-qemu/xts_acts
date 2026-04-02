@@ -25,7 +25,7 @@ import {
 export default function UIContextGestureTest(): void {
   describe('UIContextGestureTest', () => {
     /**
-     * @tc.number UIContextGestureTest_001
+     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100
      * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100
      * @tc.desc Test GestureActionPhase WILL_START enum value, verify WILL_START=0
      * @tc.type   FUNCTION
@@ -40,7 +40,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_002
+     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200
      * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200
      * @tc.desc Test GestureActionPhase WILL_END enum value, verify WILL_END=1
      * @tc.type   FUNCTION
@@ -55,7 +55,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_003
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300
      * @tc.desc Test GestureListenerType TAP enum value, verify TAP=0
      * @tc.type   FUNCTION
@@ -70,7 +70,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_004
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400
      * @tc.desc Test GestureListenerType LONG_PRESS enum value, verify LONG_PRESS=1
      * @tc.type   FUNCTION
@@ -85,7 +85,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_005
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500
      * @tc.desc Test GestureListenerType PAN enum value, verify PAN=2
      * @tc.type   FUNCTION
@@ -100,7 +100,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_006
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600
      * @tc.desc Test GestureListenerType PINCH enum value, verify PINCH=3
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_007
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700
      * @tc.desc Test GestureListenerType SWIPE enum value, verify SWIPE=4
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_008
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800
      * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800
      * @tc.desc Test GestureListenerType ROTATION enum value, verify ROTATION=5
      * @tc.type   FUNCTION
@@ -145,7 +145,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_009
+     * @tc.number SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_Single_0900
      * @tc.name SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_Single_0900
      * @tc.desc Test GestureObserverConfigs with one action phase
      * @tc.type   FUNCTION
@@ -164,7 +164,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_010
+     * @tc.number SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_StartAndEnd_1000
      * @tc.name SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_StartAndEnd_1000
      * @tc.desc Test GestureObserverConfigs with WILL_START and WILL_END
      * @tc.type   FUNCTION
@@ -184,7 +184,7 @@ export default function UIContextGestureTest(): void {
     });
 
     /**
-     * @tc.number UIContextGestureTest_011
+     * @tc.number SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_Empty_1100
      * @tc.name SUB_ArkUI_UIContext_GestureObserverConfigs_ActionPhases_Empty_1100
      * @tc.desc Test GestureObserverConfigs allows empty actionPhases array shape
      * @tc.type   FUNCTION

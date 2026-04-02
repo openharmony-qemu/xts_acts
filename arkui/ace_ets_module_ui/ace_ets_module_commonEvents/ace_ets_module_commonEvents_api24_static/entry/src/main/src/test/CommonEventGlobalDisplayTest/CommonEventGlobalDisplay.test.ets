@@ -38,7 +38,7 @@ export default function CommonEventGlobalDisplayTest(): void {
     });
 
     /**
-     * @tc.number CommonEventGlobalDisplayTest_001
+     * @tc.number SUB_ArkUI_Common_ClickEvent_GlobalDisplayXY_1800
      * @tc.name SUB_ArkUI_Common_ClickEvent_GlobalDisplayXY_1800
      * @tc.desc common.d.ets ClickEvent：探测页 onClick 真实回调中的 globalDisplayX/Y
      * @tc.type   FUNCTION
@@ -61,7 +61,7 @@ export default function CommonEventGlobalDisplayTest(): void {
     });
 
     /**
-     * @tc.number CommonEventGlobalDisplayTest_002
+     * @tc.number SUB_ArkUI_Common_HoverEvent_GlobalDisplayXY_1900
      * @tc.name SUB_ArkUI_Common_HoverEvent_GlobalDisplayXY_1900
      * @tc.desc HoverEvent：真实 onHover 回调（依赖设备/输入链路能触发 hover）
      * @tc.type   FUNCTION
@@ -84,7 +84,7 @@ export default function CommonEventGlobalDisplayTest(): void {
     });
 
     /**
-     * @tc.number CommonEventGlobalDisplayTest_003
+     * @tc.number SUB_ArkUI_Common_MouseEvent_GlobalDisplayXY_2000
      * @tc.name SUB_ArkUI_Common_MouseEvent_GlobalDisplayXY_2000
      * @tc.desc MouseEvent：真实 onMouse 回调
      * @tc.type   FUNCTION
@@ -110,7 +110,7 @@ export default function CommonEventGlobalDisplayTest(): void {
     });
 
     /**
-     * @tc.number CommonEventGlobalDisplayTest_004
+     * @tc.number SUB_ArkUI_Common_AccessibilityHoverEvent_GlobalDisplayXY_2100
      * @tc.name SUB_ArkUI_Common_AccessibilityHoverEvent_GlobalDisplayXY_2100
      * @tc.desc AccessibilityHoverEvent：真实 onAccessibilityHover
      * @tc.type   FUNCTION
@@ -136,7 +136,7 @@ export default function CommonEventGlobalDisplayTest(): void {
     });
 
     /**
-     * @tc.number CommonEventGlobalDisplayTest_005
+     * @tc.number SUB_ArkUI_Common_TouchObject_GlobalDisplayXY_2200
      * @tc.name SUB_ArkUI_Common_TouchObject_GlobalDisplayXY_2200
      * @tc.desc TouchObject：真实 onTouch Down 的 changedTouches[0] globalDisplayX/Y
      * @tc.type   FUNCTION

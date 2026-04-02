@@ -48,7 +48,7 @@ export default function CommonDragEventTest(): void {
     });
 
     /**
-     * @tc.number CommonDragEventTest_001
+     * @tc.number SUB_ArkUI_Common_DragEvent_GetDragSource_2400
      * @tc.name SUB_ArkUI_Common_DragEvent_GetDragSource_2400
      * @tc.desc DragEvent.getDragSource：探测页 onDragStart 真实调用
      * @tc.type   FUNCTION
@@ -64,7 +64,7 @@ export default function CommonDragEventTest(): void {
     });
 
     /**
-     * @tc.number CommonDragEventTest_002
+     * @tc.number SUB_ArkUI_Common_DragEvent_IsRemote_2500
      * @tc.name SUB_ArkUI_Common_DragEvent_IsRemote_2500
      * @tc.desc DragEvent.isRemote：真实 onDragStart
      * @tc.type   FUNCTION
@@ -80,7 +80,7 @@ export default function CommonDragEventTest(): void {
     });
 
     /**
-     * @tc.number CommonDragEventTest_003
+     * @tc.number SUB_ArkUI_Common_DragEvent_SetDataLoadParams_2600
      * @tc.name SUB_ArkUI_Common_DragEvent_SetDataLoadParams_2600
      * @tc.desc DragEvent.setDataLoadParams：onDragStart 内真实调用
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function CommonDragEventTest(): void {
     });
 
     /**
-     * @tc.number CommonDragEventTest_004
+     * @tc.number SUB_ArkUI_Common_DragEvent_GetGlobalDisplayX_2700
      * @tc.name SUB_ArkUI_Common_DragEvent_GetGlobalDisplayX_2700
      * @tc.desc DragEvent.getGlobalDisplayX：真实 onDragStart
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function CommonDragEventTest(): void {
     });
 
     /**
-     * @tc.number CommonDragEventTest_005
+     * @tc.number SUB_ArkUI_Common_DragEvent_GetGlobalDisplayY_2800
      * @tc.name SUB_ArkUI_Common_DragEvent_GetGlobalDisplayY_2800
      * @tc.desc DragEvent.getGlobalDisplayY：真实 onDragStart
      * @tc.type   FUNCTION

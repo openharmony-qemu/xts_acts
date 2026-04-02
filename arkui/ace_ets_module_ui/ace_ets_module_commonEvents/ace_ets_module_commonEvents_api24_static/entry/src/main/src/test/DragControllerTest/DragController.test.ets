@@ -87,14 +87,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_001
-     * @tc.name dragSpringLoadingStateBegin
+     * @tc.number SUB_ArkUI_DragController_DragSpringLoadingStateBegin_0100
+     * @tc.name SUB_ArkUI_DragController_DragSpringLoadingStateBegin_0100
      * @tc.desc Test DragSpringLoadingState BEGIN enum value, verify BEGIN=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingStateBegin', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragSpringLoadingStateBegin_0100', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingStateBegin begin');
       expect(dragController.DragSpringLoadingState.BEGIN).assertEqual(0);
       console.info('DragControllerTest: dragSpringLoadingStateBegin end');
@@ -102,14 +102,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_002
-     * @tc.name dragSpringLoadingStateUpdate
+     * @tc.number SUB_ArkUI_DragController_DragSpringLoadingStateUpdate_0200
+     * @tc.name SUB_ArkUI_DragController_DragSpringLoadingStateUpdate_0200
      * @tc.desc Test DragSpringLoadingState UPDATE enum value, verify UPDATE=1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingStateUpdate', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragSpringLoadingStateUpdate_0200', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingStateUpdate begin');
       expect(dragController.DragSpringLoadingState.UPDATE).assertEqual(1);
       console.info('DragControllerTest: dragSpringLoadingStateUpdate end');
@@ -117,14 +117,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_003
-     * @tc.name dragSpringLoadingStateEnd
+     * @tc.number SUB_ArkUI_DragController_DragSpringLoadingStateEnd_0300
+     * @tc.name SUB_ArkUI_DragController_DragSpringLoadingStateEnd_0300
      * @tc.desc Test DragSpringLoadingState END enum value, verify END=2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingStateEnd', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragSpringLoadingStateEnd_0300', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingStateEnd begin');
       expect(dragController.DragSpringLoadingState.END).assertEqual(2);
       console.info('DragControllerTest: dragSpringLoadingStateEnd end');
@@ -132,14 +132,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_004
-     * @tc.name dragSpringLoadingStateCancel
+     * @tc.number SUB_ArkUI_DragController_DragSpringLoadingStateCancel_0400
+     * @tc.name SUB_ArkUI_DragController_DragSpringLoadingStateCancel_0400
      * @tc.desc Test DragSpringLoadingState CANCEL enum value, verify CANCEL=3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingStateCancel', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragSpringLoadingStateCancel_0400', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingStateCancel begin');
       expect(dragController.DragSpringLoadingState.CANCEL).assertEqual(3);
       console.info('DragControllerTest: dragSpringLoadingStateCancel end');
@@ -147,14 +147,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_005
-     * @tc.name dragInfoRequiredPointerIdOptionalDataLoadParams
+     * @tc.number SUB_ArkUI_DragController_DragInfo_PointerIdOnly_0500
+     * @tc.name SUB_ArkUI_DragController_DragInfo_PointerIdOnly_0500
      * @tc.desc Test DragInfo with required pointerId only; dataLoadParams stays absent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragInfoRequiredPointerIdOptionalDataLoadParams', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragInfo_PointerIdOnly_0500', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragInfoRequiredPointerIdOptionalDataLoadParams begin');
       let dragInfo: dragController.DragInfo = {
         pointerId: 9,
@@ -166,14 +166,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_006
-     * @tc.name dragInfoWithDataLoadParams
+     * @tc.number SUB_ArkUI_DragController_DragInfo_DataLoadParams_0600
+     * @tc.name SUB_ArkUI_DragController_DragInfo_DataLoadParams_0600
      * @tc.desc Test DragInfo optional dataLoadParams with unifiedDataChannel.DataLoadParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragInfoWithDataLoadParams', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_DragInfo_DataLoadParams_0600', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragInfoWithDataLoadParams begin');
       let dragInfo: dragController.DragInfo = {
         pointerId: 1,
@@ -197,14 +197,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_007
-     * @tc.name dragSpringLoadingConfigurationAllFields
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingConfiguration_AllFields_0700
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingConfiguration_AllFields_0700
      * @tc.desc Test DragSpringLoadingConfiguration optional int fields assignment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingConfigurationAllFields', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_SpringLoadingConfiguration_AllFields_0700', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingConfigurationAllFields begin');
       let configuration: dragController.DragSpringLoadingConfiguration = {
         stillTimeLimit: 100,
@@ -221,14 +221,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_008
-     * @tc.name dragSpringLoadingConfigurationPartialFields
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingConfiguration_PartialFields_0800
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingConfiguration_PartialFields_0800
      * @tc.desc Test DragSpringLoadingConfiguration with a single optional field
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dragSpringLoadingConfigurationPartialFields', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_SpringLoadingConfiguration_PartialFields_0800', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: dragSpringLoadingConfigurationPartialFields begin');
       let configuration: dragController.DragSpringLoadingConfiguration = {
         stillTimeLimit: 500,
@@ -240,14 +240,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_009
-     * @tc.name springLoadingDragInfosOptionalFieldsAbsent
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingDragInfos_OptionalAbsent_0900
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingDragInfos_OptionalAbsent_0900
      * @tc.desc Test SpringLoadingDragInfos with no optional properties set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('springLoadingDragInfosOptionalFieldsAbsent', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_SpringLoadingDragInfos_OptionalAbsent_0900', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: springLoadingDragInfosOptionalFieldsAbsent begin');
       let dragInfos: dragController.SpringLoadingDragInfos = {};
       expect(dragInfos.dataSummary !== undefined).assertFalse();
@@ -257,14 +257,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_010
-     * @tc.name springLoadingDragInfosExtraInfos
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingDragInfos_ExtraInfos_1000
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingDragInfos_ExtraInfos_1000
      * @tc.desc Test SpringLoadingDragInfos optional extraInfos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('springLoadingDragInfosExtraInfos', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_SpringLoadingDragInfos_ExtraInfos_1000', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: springLoadingDragInfosExtraInfos begin');
       let dragInfos: dragController.SpringLoadingDragInfos = {
         extraInfos: 'spring-loading-extra',
@@ -275,14 +275,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_011
-     * @tc.name springLoadingDragInfosDataSummary
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingDragInfos_DataSummary_1100
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingDragInfos_DataSummary_1100
      * @tc.desc Test SpringLoadingDragInfos optional dataSummary with unifiedDataChannel.Summary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('springLoadingDragInfosDataSummary', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ArkUI_DragController_SpringLoadingDragInfos_DataSummary_1100', Level.LEVEL1, (done: () => void) => {
       console.info('DragControllerTest: springLoadingDragInfosDataSummary begin');
       let summary: unifiedDataChannel.Summary = new unifiedDataChannel.Summary();
       summary.totalSize = 128;
@@ -299,14 +299,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_012
-     * @tc.name springLoadingContextRequiredFieldsAndAbort
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingContext_AbortContract_1200
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingContext_AbortContract_1200
      * @tc.desc SpringLoadingContext from onDragSpringLoading: BEGIN fields and abort()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('springLoadingContextRequiredFieldsAndAbort', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_DragController_SpringLoadingContext_AbortContract_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('DragControllerTest: springLoadingContextRequiredFieldsAndAbort START');
       try {
         await Utils.sleep(SLEEP_TIME);
@@ -327,14 +327,14 @@ export default function DragControllerTest(): void {
     });
 
     /**
-     * @tc.number DragControllerTest_013
-     * @tc.name springLoadingContextUpdateConfiguration
+     * @tc.number SUB_ArkUI_DragController_SpringLoadingContext_UpdateConfigurationContract_1300
+     * @tc.name SUB_ArkUI_DragController_SpringLoadingContext_UpdateConfigurationContract_1300
      * @tc.desc SpringLoadingContext from onDragSpringLoading: updateConfiguration() in BEGIN then abort()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('springLoadingContextUpdateConfiguration', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ArkUI_DragController_SpringLoadingContext_UpdateConfigurationContract_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('DragControllerTest: springLoadingContextUpdateConfiguration START');
       try {
         await Utils.sleep(SLEEP_TIME);
