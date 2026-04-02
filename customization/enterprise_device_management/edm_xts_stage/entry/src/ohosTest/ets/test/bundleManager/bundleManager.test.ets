@@ -6095,5 +6095,35 @@ export default function bundleManagerTest() {
       done();
       console.info(' --- test_getInstalledBundleStorageStats_1200  -------- END --------');
     })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1300
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1300  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: string[] = ['com.edm.acts.normal'];
+        let result: bundleManager.BundleStorageStats[] =
+          await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_1300 error is expected, but it done.');
+        expect(result != null).assertTrue();
+        expect(result[0]?.bundleName === 'com.edm.acts.normal').assertTrue();
+        expect(result[0]?.appSize > 0).assertTrue();
+        expect(result[0]?.dataSize >= 0).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1300 error 9200012 is expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1300  -------- END --------');
+    })
   })
 }
