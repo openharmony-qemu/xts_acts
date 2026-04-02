@@ -135,7 +135,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0601
-     * @tc.number systemAppTest_0601
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGECACHECOUNT_0100
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0602
-     * @tc.number systemAppTest_0602
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGECACHECOUNT_0200
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0603
-     * @tc.number systemAppTest_0603
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGECACHECOUNT_0300
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +189,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0604
-     * @tc.number systemAppTest_0604
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGECACHECOUNT_0400
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,7 +207,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0605
-     * @tc.number systemAppTest_0605
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGECACHECOUNT_0500
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -241,7 +241,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0701
-     * @tc.number systemAppTest_0701
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGERAWDATACACHESIZE_0100
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0702
-     * @tc.number systemAppTest_0702
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGERAWDATACACHESIZE_0200
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0703
-     * @tc.number systemAppTest_0703
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGERAWDATACACHESIZE_0300
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0704
-     * @tc.number systemAppTest_0704
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGERAWDATACACHESIZE_0400
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -313,7 +313,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0705
-     * @tc.number systemAppTest_0705
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGERAWDATACACHESIZE_0500
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0801
-     * @tc.number systemAppTest_0801
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0100
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0802
-     * @tc.number systemAppTest_0802
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0200
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -383,7 +383,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0803
-     * @tc.number systemAppTest_0803
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0300
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0804
-     * @tc.number systemAppTest_0804
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0400
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -419,7 +419,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0805
-     * @tc.number systemAppTest_0805
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0500
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -437,7 +437,7 @@ export default function systemAppJsunit() {
 
     /**
      * @tc.name   systemAppTest_0806
-     * @tc.number systemAppTest_0806
+     * @tc.number SUB_ARKUI_SYSTEMAPP_SETIMAGEFILECACHESIZE_0600
      * @tc.desc   systemAppTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
