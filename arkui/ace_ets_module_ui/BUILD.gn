@@ -109,6 +109,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_select/ace_ets_module_select_api12_static:ActsAceEtsModuleSelectApi12StaticTest",
       "ace_ets_module_select/ace_ets_module_select_api18_static:ActsAceEtsModuleSelectApi18StaticTest",
       "ace_ets_module_select/ace_ets_module_select_api20_static:ActsAceEtsModuleSelectApi20StaticTest",
+      "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_modifier_noWear_static:ActsAceEtsModuleModifierNoWearStaticTest",
       "ace_ets_module_dialog_undefined_static:ActsAceEtsModuleDialogUndefinedStaticTest",
       "ace_ets_module_common_undefined_static:ActsAceEtsModuleCommonUndefinedStaticTest",
