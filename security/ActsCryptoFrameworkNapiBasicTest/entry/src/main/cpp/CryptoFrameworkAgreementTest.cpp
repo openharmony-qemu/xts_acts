@@ -84,12 +84,14 @@ static OH_Crypto_ErrCode OHTEST_GetAgreementKeyPair(const char *algoNameA, const
     }
     ret = OH_CryptoAsymKeyGenerator_Generate(ctxB, keyPairB);
     if (ret != CRYPTO_SUCCESS) {
+        if (*keyPairA != nullptr) {
+            OH_CryptoKeyPair_Destroy(*keyPairA);
+            *keyPairA = nullptr;
+        }
         goto EXIT;
     }
 
 EXIT:
-    OH_CryptoKeyPair_Destroy(keyPairA);
-    OH_CryptoKeyPair_Destroy(keyPairB);
     OH_CryptoAsymKeyGenerator_Destroy(ctxA);
     OH_CryptoAsymKeyGenerator_Destroy(ctxB);
     return ret;
