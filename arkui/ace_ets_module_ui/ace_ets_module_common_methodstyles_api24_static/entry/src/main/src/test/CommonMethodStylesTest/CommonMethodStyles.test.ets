@@ -39,7 +39,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_Background_3200
      * @tc.name SUB_ArkUI_Common_CommonMethod_Background_3200
-     * @tc.desc CommonMethod.background：AttributeModifier.applyNormalAttribute 内真实调�?
+     * @tc.desc CommonMethod.background?AttributeModifier.applyNormalAttribute ?????
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -53,7 +53,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_EnableClickSoundEffect_3300
      * @tc.name SUB_ArkUI_Common_CommonMethod_EnableClickSoundEffect_3300
-     * @tc.desc CommonMethod.enableClickSoundEffect：同上探测链
+     * @tc.desc CommonMethod.enableClickSoundEffect??????
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -67,7 +67,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_OnDragSpringLoading_3400
      * @tc.name SUB_ArkUI_Common_CommonMethod_OnDragSpringLoading_3400
-     * @tc.desc CommonMethod.onDragSpringLoading：同�?
+     * @tc.desc CommonMethod.onDragSpringLoading???
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -81,7 +81,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_OnNeedSoftkeyboard_3500
      * @tc.name SUB_ArkUI_Common_CommonMethod_OnNeedSoftkeyboard_3500
-     * @tc.desc CommonMethod.onNeedSoftkeyboard：同�?
+     * @tc.desc CommonMethod.onNeedSoftkeyboard???
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -95,7 +95,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_DebugLine_3600
      * @tc.name SUB_ArkUI_Common_CommonMethod_DebugLine_3600
-     * @tc.desc CommonMethod.debugLine：同�?
+     * @tc.desc CommonMethod.debugLine???
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -109,7 +109,7 @@ export default function CommonMethodStylesTest(): void {
     /**
      * @tc.number SUB_ArkUI_Common_CommonMethod_OnDragSpringLoading_Null_3700
      * @tc.name SUB_ArkUI_Common_CommonMethod_OnDragSpringLoading_Null_3700
-     * @tc.desc CommonMethod.onDragSpringLoading(null, �?：单�?Modifier 页或拆分（此处与 3400 共用真实链，占位编号保留�?
+     * @tc.desc CommonMethod.onDragSpringLoading(null, ?)??? Modifier ???????? 3400 ?????????????
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

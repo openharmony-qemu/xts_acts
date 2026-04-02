@@ -25,9 +25,9 @@ import { Driver, Point } from '@kit.TestKit';
 
 async function dragFromProbeHost(): Promise<void> {
   let rect = Utils.getComponentRect('commonDragHost');
-  let cx: int = Math.floor((rect.left + rect.right) / 2) as int;
-  let cy: int = Math.floor((rect.top + rect.bottom) / 2) as int;
-  let toX: int = (cx + 60) as int;
+  let cx: int = Double.toInt(Math.floor((rect.left + rect.right) / 2));
+  let cy: int = Double.toInt(Math.floor((rect.top + rect.bottom) / 2));
+  let toX: int = Double.toInt(cx + 60);
   const driver = Driver.create();
   await driver.dragBetween({ x: cx, y: cy } as Point, { x: toX, y: cy } as Point, 3500, 1600);
   await Utils.sleep(500);

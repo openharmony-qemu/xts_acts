@@ -26,7 +26,7 @@ export default function StateMgmtUtilsTest(): void {
     /**
      * @tc.number SUB_ArkUI_StateUtils_ElementInfo_Shape_6300
      * @tc.name SUB_ArkUI_StateUtils_ElementInfo_Shape_6300
-     * @tc.desc utils.d.ets：UIUtils.canBeObserved 返回 ObservedResult.decoratorInfo[*].dependentInfo �?ElementInfo 语义（真 API�?
+     * @tc.desc utils.d.ets：UIUtils.canBeObserved 返回 ObservedResult.decoratorInfo[*].dependentInfo 含 ElementInfo 语义（真 API）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -49,7 +49,7 @@ export default function StateMgmtUtilsTest(): void {
     /**
      * @tc.number SUB_ArkUI_StateUtils_DecoratorInfo_Shape_6400
      * @tc.name SUB_ArkUI_StateUtils_DecoratorInfo_Shape_6400
-     * @tc.desc DecoratorInfo 字段来自 UIUtils.canBeObserved 返回�?
+     * @tc.desc DecoratorInfo 字段来自 UIUtils.canBeObserved 返回值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
