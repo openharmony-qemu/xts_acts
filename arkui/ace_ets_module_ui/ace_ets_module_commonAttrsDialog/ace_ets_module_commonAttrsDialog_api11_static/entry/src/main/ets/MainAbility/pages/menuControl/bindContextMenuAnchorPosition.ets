@@ -90,7 +90,7 @@ struct DirectiveMenuExample {
           this.textPosition3.y = newValue.globalPosition.y;
         })
         .bindMenu(this.MenuBuilder,
-           { anchorPosition: { x: -20, y: 20 }, showinsubwindow: false  }
+           { anchorPosition: { x: -20, y: 20 }, showInSubWindow: false  }
         )
     }
     .alignItems(HorizontalAlign.Start)
