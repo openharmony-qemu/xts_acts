@@ -80,7 +80,10 @@ export default function ScrollBarAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('sbAttr_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scrollbar_attribute_sb_attr_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +102,10 @@ export default function ScrollBarAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('sbAttr_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scrollbar_attribute_sb_attr_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('sbAttr_ready')).assertEqual(true);
         done();
@@ -118,7 +124,10 @@ export default function ScrollBarAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_sbAttr_bar', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scrollbar_attribute_inspector_sb_attr_bar_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('sbAttr_bar')) != null).assertTrue();
         done();
@@ -137,7 +146,10 @@ export default function ScrollBarAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_sbAttr_scroll', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scrollbar_attribute_inspector_sb_attr_scroll_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('sbAttr_scroll')) != null).assertTrue();
         done();
@@ -156,7 +168,10 @@ export default function ScrollBarAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_sbAttr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scrollbar_attribute_inspector_sb_attr_title_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('sbAttr_title')) != null).assertTrue();
         done();

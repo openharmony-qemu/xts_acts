@@ -82,7 +82,10 @@ export default function MeasureUtilsGetParagraphsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('muPara_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_measure_utils_get_paragraphs_mu_para_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -101,7 +104,10 @@ export default function MeasureUtilsGetParagraphsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('muPara_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_measure_utils_get_paragraphs_mu_para_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('muPara_ready') === true).assertTrue();
         done();
@@ -120,7 +126,10 @@ export default function MeasureUtilsGetParagraphsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('muPara_getParagraphs_smoke', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_measure_utils_get_paragraphs_mu_para_get_paragraphs_smoke_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         const btn = await d.findComponent(ON.id('muPara_btn'));
@@ -145,7 +154,10 @@ export default function MeasureUtilsGetParagraphsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('muPara_inspector_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('muPara_title')) != null).assertTrue();
         done();
@@ -164,7 +176,10 @@ export default function MeasureUtilsGetParagraphsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('muPara_inspector_btn', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_measure_utils_get_paragraphs_mu_para_inspector_btn_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('muPara_btn')) != null).assertTrue();
         done();

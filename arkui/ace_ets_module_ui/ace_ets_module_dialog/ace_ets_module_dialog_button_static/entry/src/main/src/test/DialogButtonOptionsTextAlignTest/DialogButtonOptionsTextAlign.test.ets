@@ -79,7 +79,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('dialogButtonOptionsTextAlign_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'dialogButtonOptionsTextAlign_pageLoads START');
       try {
         const n = await Driver.create().findComponent(ON.id(TITLE_ID));
@@ -101,7 +104,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('primaryButton_textAlign_center_action', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_primary_button_text_align_center_action_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'primaryButton_textAlign_center_action START');
       try {
         const driver = Driver.create();
@@ -134,7 +140,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_openButton_node', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_inspector_open_button_node_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_openButton_node START');
       try {
         const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgBtnOpt_open'));
@@ -156,7 +165,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_title_node', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_inspector_title_node_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_title_node START');
       try {
         const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgBtnOpt_title'));
@@ -178,7 +190,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('appStorage_align_key_cleared_before_case', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_app_storage_align_key_cleared_before_case_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'appStorage_align_key_cleared_before_case START');
       try {
         expect(AppStorage.get<string>('dlgBtnOpt_textAlign') === undefined).assertTrue();
@@ -199,7 +214,10 @@ export default function DialogButtonOptionsTextAlignTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_open_button_stable', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_dialog_button_options_text_align_driver_find_open_button_stable_0600',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'driver_find_open_button_stable START');
       try {
         const driver = Driver.create();

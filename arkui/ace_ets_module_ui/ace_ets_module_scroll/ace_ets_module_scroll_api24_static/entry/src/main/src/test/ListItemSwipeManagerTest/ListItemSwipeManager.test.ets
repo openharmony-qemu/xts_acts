@@ -80,7 +80,10 @@ export default function ListItemSwipeManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('listSwipe_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_item_swipe_manager_list_swipe_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +102,10 @@ export default function ListItemSwipeManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('expand_collapse_api_ok', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_item_swipe_manager_expand_collapse_api_ok_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const btn = await driver.findComponent(ON.id('listSwipe_btn'));
@@ -123,7 +129,10 @@ export default function ListItemSwipeManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listSwipe_item', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_item_swipe_manager_inspector_list_swipe_item_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listSwipe_item')) != null).assertTrue();
         done();
@@ -142,7 +151,10 @@ export default function ListItemSwipeManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listSwipe_list', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_item_swipe_manager_inspector_list_swipe_list_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listSwipe_list')) != null).assertTrue();
         done();
@@ -161,7 +173,10 @@ export default function ListItemSwipeManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listSwipe_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_item_swipe_manager_inspector_list_swipe_title_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listSwipe_title')) != null).assertTrue();
         done();

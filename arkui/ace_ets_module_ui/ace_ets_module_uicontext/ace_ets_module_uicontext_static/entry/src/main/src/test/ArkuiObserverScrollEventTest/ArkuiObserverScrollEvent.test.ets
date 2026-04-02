@@ -86,7 +86,10 @@ export default function ArkuiObserverScrollEventTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('obsScroll_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_observer_scroll_event_obs_scroll_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName = 'obsScroll_pageLoads';
       arkuiNewLog(SUITE, 'execute', `${caseName} START`);
       try {
@@ -111,7 +114,10 @@ export default function ArkuiObserverScrollEventTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('onScrollEvent_axis_sample_written', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_observer_scroll_event_on_scroll_event_axis_sample_written_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName = 'onScrollEvent_axis_sample_written';
       arkuiNewLog(SUITE, 'execute', `${caseName} START`);
       try {
@@ -148,7 +154,10 @@ export default function ArkuiObserverScrollEventTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_obsScroll_host', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_observer_scroll_event_inspector_obs_scroll_host_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName = 'inspector_obsScroll_host';
       arkuiNewLog(SUITE, 'execute', `${caseName} START`);
       try {
@@ -174,7 +183,10 @@ export default function ArkuiObserverScrollEventTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_obsScroll_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_observer_scroll_event_inspector_obs_scroll_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName = 'inspector_obsScroll_title';
       arkuiNewLog(SUITE, 'execute', `${caseName} START`);
       try {
@@ -199,7 +211,10 @@ export default function ArkuiObserverScrollEventTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_obsScroll_btn', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_observer_scroll_event_inspector_obs_scroll_btn_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName = 'inspector_obsScroll_btn';
       arkuiNewLog(SUITE, 'execute', `${caseName} START`);
       try {

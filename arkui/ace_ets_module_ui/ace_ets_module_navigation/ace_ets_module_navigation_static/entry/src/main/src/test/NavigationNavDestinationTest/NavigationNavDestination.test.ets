@@ -80,7 +80,10 @@ export default function NavigationNavDestinationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('navNd_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_navigation_nav_destination_nav_nd_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +102,10 @@ export default function NavigationNavDestinationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('navDestination_onReady_mode', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_navigation_nav_destination_on_ready_mode_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         await Utils.sleep(500);
         const m = AppStorage.get<string>('navNd_mode');
@@ -124,7 +130,10 @@ export default function NavigationNavDestinationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_navNd_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_navigation_nav_destination_inspector_nav_nd_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('navNd_body')) != null).assertTrue();
         done();
@@ -143,7 +152,10 @@ export default function NavigationNavDestinationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_navNd_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_navigation_nav_destination_inspector_nav_nd_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('navNd_title')) != null).assertTrue();
         done();
@@ -162,7 +174,10 @@ export default function NavigationNavDestinationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_page_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_navigation_nav_destination_driver_find_page_text_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         let t = await d.findComponent(ON.text('page', MatchPattern.EQUALS));

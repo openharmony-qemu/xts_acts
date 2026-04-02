@@ -76,7 +76,10 @@ export default function RichTextSpanSymbolBatchTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('rtsb_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_richtext_span_symbol_batch_rtsb_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -95,7 +98,10 @@ export default function RichTextSpanSymbolBatchTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('rtsb_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_richtext_span_symbol_batch_rtsb_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('rtsb_ready') === true).assertTrue();
         done();
@@ -114,7 +120,10 @@ export default function RichTextSpanSymbolBatchTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('rtsb_inspector_composite_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_composite_text_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('rtsb_text')) != null).assertTrue();
         done();
@@ -133,7 +142,10 @@ export default function RichTextSpanSymbolBatchTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('rtsb_inspector_symbol', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_richtext_span_symbol_batch_rtsb_inspector_symbol_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('rtsb_symbol')) != null).assertTrue();
         done();
@@ -152,7 +164,10 @@ export default function RichTextSpanSymbolBatchTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('rtsb_driver_symbol', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_richtext_span_symbol_batch_rtsb_driver_symbol_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id('rtsb_symbol'))).assertTrue();
         done();

@@ -80,7 +80,10 @@ export default function SubHeaderIdFieldsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('subHeaderIdFields_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_subheader_id_fields_sub_header_id_fields_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'subHeaderIdFields_pageLoads START');
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
@@ -100,7 +103,10 @@ export default function SubHeaderIdFieldsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('subHdr_mounted_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_subheader_id_fields_sub_hdr_mounted_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'subHdr_mounted_flag START');
       try {
         expect(AppStorage.get<boolean>('subHdr_mounted')).assertEqual(true);
@@ -120,7 +126,10 @@ export default function SubHeaderIdFieldsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_subHdr_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_subheader_id_fields_inspector_sub_hdr_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_subHdr_body START');
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('subHdr_body')) != null).assertTrue();
@@ -140,7 +149,10 @@ export default function SubHeaderIdFieldsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_subHdr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_subheader_id_fields_inspector_sub_hdr_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_subHdr_title START');
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('subHdr_title')) != null).assertTrue();
@@ -160,7 +172,10 @@ export default function SubHeaderIdFieldsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_primary_title_SubHeader', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_subheader_id_fields_driver_find_primary_title_sub_header_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'driver_find_primary_title_SubHeader START');
       try {
         const d = Driver.create();

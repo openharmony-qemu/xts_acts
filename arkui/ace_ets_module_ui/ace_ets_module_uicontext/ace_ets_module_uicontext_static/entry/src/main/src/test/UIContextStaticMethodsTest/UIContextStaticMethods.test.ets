@@ -80,7 +80,10 @@ export default function UIContextStaticMethodsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('uiCtxSt_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uicontext_static_methods_ui_ctx_st_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'uiCtxSt_pageLoads START');
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
@@ -100,7 +103,10 @@ export default function UIContextStaticMethodsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('static_methods_snapshot_result', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uicontext_static_methods_snapshot_result_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'static_methods_snapshot_result START');
       try {
         const driver = Driver.create();
@@ -128,7 +134,10 @@ export default function UIContextStaticMethodsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_uiCtxSt_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uicontext_static_methods_inspector_ui_ctx_st_title_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_uiCtxSt_title START');
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('uiCtxSt_title')) != null).assertTrue();
@@ -148,7 +157,10 @@ export default function UIContextStaticMethodsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_uiCtxSt_btn', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uicontext_static_methods_inspector_ui_ctx_st_btn_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_uiCtxSt_btn START');
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('uiCtxSt_btn')) != null).assertTrue();
@@ -168,7 +180,10 @@ export default function UIContextStaticMethodsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_invoke_button_twice', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uicontext_static_methods_driver_find_invoke_button_twice_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'driver_find_invoke_button_twice START');
       try {
         const d = Driver.create();

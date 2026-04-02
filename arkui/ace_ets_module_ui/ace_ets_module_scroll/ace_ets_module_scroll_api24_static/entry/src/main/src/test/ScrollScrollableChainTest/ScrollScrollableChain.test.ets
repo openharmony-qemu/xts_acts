@@ -83,7 +83,10 @@ export default function ScrollScrollableChainTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('scrollCh_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scroll_scrollable_chain_scroll_ch_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -102,7 +105,10 @@ export default function ScrollScrollableChainTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('scroller_contentSize_after_mount', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scroll_scrollable_chain_scroller_content_size_after_mount_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const sz = AppStorage.get<string>('scrollCh_contentSize');
         if(sz){
@@ -122,12 +128,16 @@ export default function ScrollScrollableChainTest() {
     /**
      * @tc.number SUB_arkui_scroll_scrollable_chain_wire_get_scroll_event_flag_0300
      * @tc.name wire_getScrollEvent_flag
-     * @tc.desc Test UIScrollEvent wiring and Scroller.scrollTo with canOverScroll; AppStorage scrollCh_wire and scrollCh_canOverScroll_ok
+     * @tc.desc UIScrollEvent wiring; Scroller.scrollTo(canOverScroll); AppStorage scrollCh_wire,
+     *     scrollCh_canOverScroll_ok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('wire_getScrollEvent_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scroll_scrollable_chain_wire_get_scroll_event_flag_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const wire = await driver.findComponent(ON.id('scrollCh_wire'));
@@ -152,7 +162,10 @@ export default function ScrollScrollableChainTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_scrollCh_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_body_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('scrollCh_body')) != null).assertTrue();
         done();
@@ -171,7 +184,10 @@ export default function ScrollScrollableChainTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_scrollCh_wire_btn', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_scroll_scrollable_chain_inspector_scroll_ch_wire_btn_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('scrollCh_wire')) != null).assertTrue();
         done();

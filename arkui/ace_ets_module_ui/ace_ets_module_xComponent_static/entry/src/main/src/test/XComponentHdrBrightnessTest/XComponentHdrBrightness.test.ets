@@ -82,7 +82,10 @@ export default function XComponentHdrBrightnessTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('xcHdr_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_xcomponent_hdr_brightness_xc_hdr_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -101,7 +104,10 @@ export default function XComponentHdrBrightnessTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('xcHdr_mounted_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_xcomponent_hdr_brightness_xc_hdr_mounted_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('xcHdr_mounted')).assertEqual(true);
         expect(AppStorage.get<boolean>('xcHdr_hdr_brightness_typed')).assertEqual(true);
@@ -121,7 +127,10 @@ export default function XComponentHdrBrightnessTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_xcHdr_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('xcHdr_body')) != null).assertTrue();
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('xcHdr_body_ai')) != null).assertTrue();
@@ -141,7 +150,10 @@ export default function XComponentHdrBrightnessTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_xcHdr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_xcomponent_hdr_brightness_inspector_xc_hdr_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('xcHdr_title')) != null).assertTrue();
         done();
@@ -160,7 +172,10 @@ export default function XComponentHdrBrightnessTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_xc_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_xcomponent_hdr_brightness_driver_find_xc_text_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id('xcHdr_body'))).assertTrue();
         done();

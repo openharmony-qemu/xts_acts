@@ -79,7 +79,10 @@ export default function RefreshAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('refreshAttr_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_refresh_attribute_refresh_attr_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -98,7 +101,10 @@ export default function RefreshAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('refreshAttr_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_refresh_attribute_refresh_attr_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('refreshAttr_ready')).assertEqual(true);
         done();
@@ -117,7 +123,10 @@ export default function RefreshAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_refreshAttr_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_refresh_attribute_inspector_refresh_attr_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('refreshAttr_body')) != null).assertTrue();
         done();
@@ -136,7 +145,10 @@ export default function RefreshAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_refreshAttr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_refresh_attribute_inspector_refresh_attr_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('refreshAttr_title')) != null).assertTrue();
         done();
@@ -155,7 +167,10 @@ export default function RefreshAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_pull_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_refresh_attribute_driver_find_pull_text_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         let t = await d.findComponent(ON.text('pull', MatchPattern.EQUALS));

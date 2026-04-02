@@ -80,7 +80,7 @@ export default function WaterFlowFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('wfAttr_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_waterflow_func_wf_attr_page_loads_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +99,10 @@ export default function WaterFlowFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('wire_getWaterFlowEvent_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_func_wire_get_water_flow_event_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const wire = await driver.findComponent(ON.id('wfAttr_wire'));
@@ -123,7 +126,10 @@ export default function WaterFlowFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_wfAttr_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_func_inspector_wf_attr_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('wfAttr_body')) != null).assertTrue();
         done();
@@ -142,7 +148,10 @@ export default function WaterFlowFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_wfAttr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_func_inspector_wf_attr_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('wfAttr_title')) != null).assertTrue();
         done();
@@ -161,7 +170,10 @@ export default function WaterFlowFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_wfAttr_wire', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_func_inspector_wf_attr_wire_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('wfAttr_wire')) != null).assertTrue();
         done();

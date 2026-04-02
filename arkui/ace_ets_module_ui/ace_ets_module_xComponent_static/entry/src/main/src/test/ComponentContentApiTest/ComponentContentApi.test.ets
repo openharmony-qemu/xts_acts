@@ -82,7 +82,10 @@ export default function ComponentContentApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ccApi_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_component_content_api_cc_api_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'ccApi_pageLoads START');
       try {
         const found = !!await Driver.create().findComponent(ON.id(TITLE_ID));
@@ -105,7 +108,10 @@ export default function ComponentContentApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('componentContent_create_dispose', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_component_content_api_component_content_create_dispose_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const btn = await driver.findComponent(ON.id('ccApi_btn'));
@@ -130,7 +136,10 @@ export default function ComponentContentApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_ccApi_btn', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_component_content_api_inspector_cc_api_btn_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_ccApi_btn START');
       try {
         const ok = JSON.parseJsonElement(inspector.getInspectorByKey('ccApi_btn')) != null;
@@ -153,7 +162,10 @@ export default function ComponentContentApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_ccApi_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_component_content_api_inspector_cc_api_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_ccApi_title START');
       try {
         const ok = JSON.parseJsonElement(inspector.getInspectorByKey('ccApi_title')) != null;
@@ -176,14 +188,22 @@ export default function ComponentContentApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('componentContent_second_click_idempotent', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_component_content_api_component_content_second_click_idempotent_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'componentContent_second_click_idempotent START');
       try {
         const driver = Driver.create();
         const btn = await driver.findComponent(ON.id('ccApi_btn'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(400);
-        arkuiNewLog(SUITE, 'step', `second_click | created=${AppStorage.get<boolean>('ccApi_created')} disposed=${AppStorage.get<boolean>('ccApi_disposed')}`);
+        arkuiNewLog(
+          SUITE,
+          'step',
+          `second_click | created=${AppStorage.get<boolean>('ccApi_created')} ` +
+            `disposed=${AppStorage.get<boolean>('ccApi_disposed')}`,
+        );
         expect(AppStorage.get<boolean>('ccApi_created')).assertEqual(true);
         expect(AppStorage.get<boolean>('ccApi_disposed')).assertEqual(true);
         arkuiNewLog(SUITE, 'execute', 'componentContent_second_click_idempotent END ok');

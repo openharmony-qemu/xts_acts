@@ -86,7 +86,10 @@ export default function UIObserverTextChangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('txtCh_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uiobserver_text_change_txt_ch_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -105,7 +108,10 @@ export default function UIObserverTextChangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('txtCh_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uiobserver_text_change_txt_ch_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('txtCh_ready') === true).assertTrue();
         done();
@@ -124,7 +130,10 @@ export default function UIObserverTextChangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('txtCh_inspector_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uiobserver_text_change_txt_ch_inspector_title_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('txtCh_title')) != null).assertTrue();
         done();
@@ -143,7 +152,10 @@ export default function UIObserverTextChangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('txtCh_on_plain_registers', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uiobserver_text_change_txt_ch_on_plain_registers_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         const btn = await d.findComponent(ON.id('txtCh_on_plain'));
@@ -167,7 +179,10 @@ export default function UIObserverTextChangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('txtCh_on_opt_registers', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_uiobserver_text_change_txt_ch_on_opt_registers_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         const btn = await d.findComponent(ON.id('txtCh_on_opt'));

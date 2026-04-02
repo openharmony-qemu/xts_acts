@@ -80,7 +80,10 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('segmentV2_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'segmentV2_pageLoads START');
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
@@ -100,7 +103,10 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('segmentV2_mounted_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'segmentV2_mounted_flag START');
       try {
         expect(AppStorage.get<boolean>('segV2_mounted')).assertEqual(true);
@@ -120,7 +126,10 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_segV2_tab_and_capsule', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV2_tab_and_capsule START');
       try {
         const tab = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_tab'));
@@ -142,7 +151,10 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_segV2_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV2_title START');
       try {
         const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_title'));
@@ -163,7 +175,10 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_tab_text_A', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'driver_find_tab_text_A START');
       try {
         const d = Driver.create();

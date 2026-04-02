@@ -76,7 +76,10 @@ export default function BadgeStyleOuterAvoidTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('bdgOut_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_badge_style_outer_avoid_bdg_out_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -95,7 +98,10 @@ export default function BadgeStyleOuterAvoidTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('bdgOut_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_badge_style_outer_avoid_bdg_out_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('bdgOut_ready') === true).assertTrue();
         done();
@@ -114,7 +120,10 @@ export default function BadgeStyleOuterAvoidTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('bdgOut_inspector_host', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_badge_style_outer_avoid_bdg_out_inspector_host_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('bdgOut_host')) != null).assertTrue();
         done();
@@ -133,7 +142,10 @@ export default function BadgeStyleOuterAvoidTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('bdgOut_inspector_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_badge_style_outer_avoid_bdg_out_inspector_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('bdgOut_title')) != null).assertTrue();
         done();
@@ -152,7 +164,10 @@ export default function BadgeStyleOuterAvoidTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('bdgOut_driver_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_badge_style_outer_avoid_bdg_out_driver_title_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id('bdgOut_title'))).assertTrue();
         done();

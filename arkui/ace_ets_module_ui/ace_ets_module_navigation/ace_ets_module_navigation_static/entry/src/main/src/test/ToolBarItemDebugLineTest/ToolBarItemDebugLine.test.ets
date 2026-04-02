@@ -80,7 +80,10 @@ export default function ToolBarItemDebugLineTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('tbDl_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_toolbar_item_debug_line_tb_dl_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +102,10 @@ export default function ToolBarItemDebugLineTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('tbDl_mounted_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_toolbar_item_debug_line_tb_dl_mounted_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('tbDl_mounted')).assertEqual(true);
         done();
@@ -118,7 +124,10 @@ export default function ToolBarItemDebugLineTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_tbDl_row', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_row_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('tbDl_row')) != null).assertTrue();
         done();
@@ -137,7 +146,10 @@ export default function ToolBarItemDebugLineTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_tbDl_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_toolbar_item_debug_line_inspector_tb_dl_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('tbDl_title')) != null).assertTrue();
         done();
@@ -156,7 +168,10 @@ export default function ToolBarItemDebugLineTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_item_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_toolbar_item_debug_line_driver_find_item_text_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         let t = await d.findComponent(ON.text('item', MatchPattern.EQUALS));

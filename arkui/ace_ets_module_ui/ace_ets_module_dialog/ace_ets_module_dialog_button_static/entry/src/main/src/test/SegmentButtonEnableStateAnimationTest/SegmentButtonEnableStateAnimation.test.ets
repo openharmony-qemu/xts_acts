@@ -80,7 +80,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('segmentV1_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_enable_state_anim_segment_v1_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'segmentV1_pageLoads START');
       try {
         const n = await Driver.create().findComponent(ON.id(TITLE_ID));
@@ -101,7 +104,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('segmentV1_mounted_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_enable_state_anim_segment_v1_mounted_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'segmentV1_mounted_flag START');
       try {
         expect(AppStorage.get<boolean>('segV1_mounted')).assertEqual(true);
@@ -121,7 +127,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_segV1_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV1_body START');
       try {
         const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV1_body'));
@@ -142,7 +151,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_segV1_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV1_title START');
       try {
         const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV1_title'));
@@ -163,7 +175,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_segment_tab_text_T1', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'driver_find_segment_tab_text_T1 START');
       try {
         const driver = Driver.create();

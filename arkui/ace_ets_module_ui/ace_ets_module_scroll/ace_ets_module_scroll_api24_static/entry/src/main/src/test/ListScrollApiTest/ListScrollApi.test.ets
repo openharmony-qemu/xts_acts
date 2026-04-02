@@ -82,7 +82,7 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('listApi_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_list_scroll_api_list_api_page_loads_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -101,7 +101,10 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('wire_getListEvent_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_scroll_api_wire_get_list_event_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const wire = await driver.findComponent(ON.id('listApi_wire'));
@@ -125,7 +128,10 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listApi_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_scroll_api_inspector_list_api_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listApi_body')) != null).assertTrue();
         done();
@@ -144,7 +150,10 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listApi_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_scroll_api_inspector_list_api_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listApi_title')) != null).assertTrue();
         done();
@@ -163,7 +172,10 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_listApi_wire', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_scroll_api_inspector_list_api_wire_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('listApi_wire')) != null).assertTrue();
         done();
@@ -182,7 +194,10 @@ export default function ListScrollApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('listApi_scrollSnap_slow_toggle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_list_scroll_api_list_api_scroll_snap_slow_toggle_0600',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
         const snapBtn = await driver.findComponent(ON.id('listApi_toggleSnap'));

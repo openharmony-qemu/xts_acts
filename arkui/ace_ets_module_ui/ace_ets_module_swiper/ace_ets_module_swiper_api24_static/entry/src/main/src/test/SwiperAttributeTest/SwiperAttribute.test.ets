@@ -80,7 +80,10 @@ export default function SwiperAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('swiperAttr_pageLoads', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_swiper_attribute_swiper_attr_page_loads_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
         done();
@@ -99,7 +102,10 @@ export default function SwiperAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('swiperAttr_ready_flag', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_swiper_attribute_swiper_attr_ready_flag_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(AppStorage.get<boolean>('swiperAttr_ready')).assertEqual(true);
         done();
@@ -118,7 +124,10 @@ export default function SwiperAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_swiperAttr_body', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_swiper_attribute_inspector_swiper_attr_body_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('swiperAttr_body')) != null).assertTrue();
         done();
@@ -137,7 +146,10 @@ export default function SwiperAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('inspector_swiperAttr_title', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_swiper_attribute_inspector_swiper_attr_title_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('swiperAttr_title')) != null).assertTrue();
         done();
@@ -156,7 +168,10 @@ export default function SwiperAttributeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('driver_find_page_text_p0', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_swiper_attribute_driver_find_page_text_p0_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
         let t = await d.findComponent(ON.text('p0', MatchPattern.EQUALS));
