@@ -68,9 +68,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -339,15 +336,7 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   applyNormalAttribute(instance: FormComponentAttribute): void {
     instance.restoreId(this.mRestoreId)
   }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRestoreId: int = 2;
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    instance.restoreId(this.mRestoreId)
-  }
-}
+}}
 
 export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mRestoreId: int = 2;
@@ -869,12 +858,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.restoreId(2)
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.restoreId(2)
   this.key(componentKey)
@@ -1273,7 +1256,6 @@ struct restoreIdPage {
   @State _restoreIdFlexMod: FlexModifier = new FlexModifier()
   @State _restoreIdFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _restoreIdFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _restoreIdFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _restoreIdGaugeMod: GaugeModifier = new GaugeModifier()
   @State _restoreIdGridMod: GridModifier = new GridModifier()
   @State _restoreIdGridColMod: GridColModifier = new GridColModifier()

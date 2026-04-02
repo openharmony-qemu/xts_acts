@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, ClickEffect, ClickEffectLevel, AlignRuleOption } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, ClickEffect, ClickEffectLevel, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -181,14 +181,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
-		instance.clickEffect(this.mClickEffect)
-	}
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.clickEffect(this.mClickEffect)
 	}
 }
@@ -710,7 +702,6 @@ struct ClickEffectPage {
 	@State _clickEffectEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _clickEffectFlexModifier: FlexModifier = new FlexModifier()
 	@State _clickEffectFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _clickEffectFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _clickEffectGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _clickEffectGridModifier: GridModifier = new GridModifier()
 	@State _clickEffectGridColModifier: GridColModifier = new GridColModifier()
@@ -813,7 +804,6 @@ struct ClickEffectPage {
 			this._clickEffectEllipseModifier.mClickEffect = value.clickEffect
 			this._clickEffectFlexModifier.mClickEffect = value.clickEffect
 			this._clickEffectFlowItemModifier.mClickEffect = value.clickEffect
-			this._clickEffectFormLinkModifier.mClickEffect = value.clickEffect
 			this._clickEffectGaugeModifier.mClickEffect = value.clickEffect
 			this._clickEffectGridModifier.mClickEffect = value.clickEffect
 			this._clickEffectGridColModifier.mClickEffect = value.clickEffect
@@ -1508,17 +1498,6 @@ struct ClickEffectPage {
 					.backgroundColor('#FFFF00')
 					
 					.attributeModifier(this._clickEffectCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					
-					.attributeModifier(this._clickEffectFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

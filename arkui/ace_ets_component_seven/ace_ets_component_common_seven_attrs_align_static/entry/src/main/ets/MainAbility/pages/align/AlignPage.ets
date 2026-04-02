@@ -21,12 +21,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -36,7 +36,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Alignment, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -141,12 +141,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: FormComponentAttribute): void {
-   instance.align(this.mAlign)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mAlign: Alignment = Alignment.Top
-  applyNormalAttribute(instance: FormLinkAttribute): void {
    instance.align(this.mAlign)
   }
 }
@@ -502,7 +496,6 @@ struct alignPage {
   @State _alignFlexMod: FlexModifier = new FlexModifier()
   @State _alignFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _alignFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _alignFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _alignGaugeMod: GaugeModifier = new GaugeModifier()
   @State _alignGridMod: GridModifier = new GridModifier()
   @State _alignGridColMod: GridColModifier = new GridColModifier()
@@ -597,7 +590,6 @@ struct alignPage {
       this._alignFlexMod.mAlign = value.align
       this._alignFlowItemMod.mAlign = value.align
       this._alignFormComponentMod.mAlign = value.align
-      this._alignFormLinkMod.mAlign = value.align
       this._alignGaugeMod.mAlign = value.align
       this._alignGridMod.mAlign = value.align
       this._alignGridColMod.mAlign = value.align

@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -337,14 +334,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.translate(this.mTranslate)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.translate(this.mTranslate)
   }
 }
@@ -894,11 +883,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1236,7 +1220,6 @@ struct TranslatePage {
   @State _translateEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _translateFlexModifier: FlexModifier = new FlexModifier()
   @State _translateFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _translateFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _translateGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _translateGridModifier: GridModifier = new GridModifier()
   @State _translateGridColModifier: GridColModifier = new GridColModifier()
@@ -1943,17 +1926,6 @@ struct TranslatePage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._translateCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._translateFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {
