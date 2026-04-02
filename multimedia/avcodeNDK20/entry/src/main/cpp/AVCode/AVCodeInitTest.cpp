@@ -379,6 +379,8 @@ static void InitPush8(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("EnumVVCProfile15", EnumVVCProfile15));
     desc.push_back(XL("EnumOHScalingMode1", EnumOHScalingMode1));
     desc.push_back(XL("EnumOHScalingMode2", EnumOHScalingMode2));
+	desc.push_back(XL("EnumOHEnableSkipSamples1", EnumOHEnableSkipSamples1));
+	desc.push_back(XL("EnumOHEnableSkipSamples2", EnumOHEnableSkipSamples2));
 }
 
 

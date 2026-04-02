@@ -2335,5 +2335,45 @@ export default function AVCodeTest3() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+	  
+    /**
+     * @tc.name   testAVCodeOHEnableSkipSamples001
+     * @tc.number SUB_AVCode_OH_EnableSkipSamples_001
+     * @tc.desc   Set OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVCodeOHEnableSkipSamples001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHEnableSkipSamples1();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHEnableSkipSamples001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+	  
+    /**
+     * @tc.name   testAVCodeOHEnableSkipSamples002
+     * @tc.number SUB_AVCode_OH_EnableSkipSamples_002
+     * @tc.desc   Set OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES disenable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVCodeOHEnableSkipSamples002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHEnableSkipSamples2();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHEnableSkipSamples002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
   })
 }
