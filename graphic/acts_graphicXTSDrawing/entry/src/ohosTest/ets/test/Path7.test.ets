@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4401
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4500
      * @tc.name      testPathConvertToSvgStringWithMoveTo
      * @tc.desc      testPathConvertToSvgStringWithMoveTo
      * @tc.size      MediumTest
@@ -78,7 +78,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4402
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4600
      * @tc.name      testPathConvertToSvgStringWithLineTo
      * @tc.desc      testPathConvertToSvgStringWithLineTo
      * @tc.size      MediumTest
@@ -104,7 +104,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4403
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4700
      * @tc.name      testPathConvertToSvgStringWithClose
      * @tc.desc      testPathConvertToSvgStringWithClose
      * @tc.size      MediumTest
@@ -130,7 +130,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4404
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4800
      * @tc.name      testPathConvertToSvgStringMultipleCalls
      * @tc.desc      testPathConvertToSvgStringMultipleCalls
      * @tc.size      MediumTest
@@ -159,7 +159,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4405
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4900
      * @tc.name      testPathConvertToSvgStringAfterReset
      * @tc.desc      testPathConvertToSvgStringAfterReset
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4500
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5000
      * @tc.name      testPathGetPointDataEmpty
      * @tc.desc      testPathGetPointDataEmpty
      * @tc.size      MediumTest
@@ -206,7 +206,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4501
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5100
      * @tc.name      testPathGetPointDataWithMoveTo
      * @tc.desc      testPathGetPointDataWithMoveTo
      * @tc.size      MediumTest
@@ -232,7 +232,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4502
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5200
      * @tc.name      testPathGetPointDataWithLineTo
      * @tc.desc      testPathGetPointDataWithLineTo
      * @tc.size      MediumTest
@@ -259,7 +259,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4503
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5300
      * @tc.name      testPathGetPointDataWithCurve
      * @tc.desc      testPathGetPointDataWithCurve
      * @tc.size      MediumTest
@@ -286,7 +286,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4504
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5400
      * @tc.name      testPathGetPointDataMultipleCalls
      * @tc.desc      testPathGetPointDataMultipleCalls
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4505
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5500
      * @tc.name      testPathGetPointDataAfterReset
      * @tc.desc      testPathGetPointDataAfterReset
      * @tc.size      MediumTest
@@ -340,7 +340,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4600
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5600
      * @tc.name      testPathGetVerbDataEmpty
      * @tc.desc      testPathGetVerbDataEmpty
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4601
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5700
      * @tc.name      testPathGetVerbDataWithMoveTo
      * @tc.desc      testPathGetVerbDataWithMoveTo
      * @tc.size      MediumTest
@@ -387,7 +387,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4602
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5800
      * @tc.name      testPathGetVerbDataWithLineTo
      * @tc.desc      testPathGetVerbDataWithLineTo
      * @tc.size      MediumTest
@@ -416,7 +416,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4603
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_5900
      * @tc.name      testPathGetVerbDataWithClose
      * @tc.desc      testPathGetVerbDataWithClose
      * @tc.size      MediumTest
@@ -445,7 +445,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4604
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6000
      * @tc.name      testPathGetVerbDataWithQuad
      * @tc.desc      testPathGetVerbDataWithQuad
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4605
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6100
      * @tc.name      testPathGetVerbDataWithCubic
      * @tc.desc      testPathGetVerbDataWithCubic
      * @tc.size      MediumTest
@@ -503,7 +503,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4606
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6200
      * @tc.name      testPathGetVerbDataWithCon
      * @tc.desc      testPathGetVerbDataWithConic
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4607
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6300
      * @tc.name      testPathGetVerbDataAllVerbs
      * @tc.desc      testPathGetVerbDataAllVerbs
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4608
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6400
      * @tc.name      testPathGetVerbDataWithDone
      * @tc.desc      testPathGetVerbDataWithDone
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4609
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6500
      * @tc.name      testPathGetVerbDataMultipleCalls
      * @tc.desc      testPathGetVerbDataMultipleCalls
      * @tc.size      MediumTest
@@ -632,7 +632,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4700
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6600
      * @tc.name      testPathGetConicWeightDataEmpty
      * @tc.desc      testPathGetConicWeightDataEmpty
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4701
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6700
      * @tc.name      testPathGetConicWeightDataWithoutConic
      * @tc.desc      testPathGetConicWeightDataWithoutConic
      * @tc.size      MediumTest
@@ -679,7 +679,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4702
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6800
      * @tc.name      testPathGetConicWeightDataWithConic
      * @tc.desc      testPathGetConicWeightDataWithConic
      * @tc.size      MediumTest
@@ -705,7 +705,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4703
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_6900
      * @tc.name      testPathGetConicWeightDataWeightZero
      * @tc.desc      testPathGetConicWeightDataWeightZero
      * @tc.size      MediumTest
@@ -729,7 +729,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4704
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7000
      * @tc.name      testPathGetConicWeightDataWeightOne
      * @tc.desc      testPathGetConicWeightDataWeightOne
      * @tc.size      MediumTest
@@ -753,7 +753,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4705
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7100
      * @tc.name      testPathGetConicWeightDataMultipleConic
      * @tc.desc      testPathGetConicWeightDataMultipleConic
      * @tc.size      MediumTest
@@ -786,7 +786,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4706
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7200
      * @tc.name      testPathGetConicWeightDataMultipleCalls
      * @tc.desc      testPathGetConicWeightDataMultipleCalls
      * @tc.size      MediumTest
@@ -815,7 +815,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4800
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7300
      * @tc.name      testPathDataMethodsConsistency
      * @tc.desc      testPathDataMethodsConsistency
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function drawingTsPath7Test() {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4801
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7400
      * @tc.name      testPathDataMethodsWithSvgConversion
      * @tc.desc      testPathDataMethodsWithSvgConversion
      * @tc.size      MediumTest
