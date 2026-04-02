@@ -1,4 +1,7 @@
 import abilityTest from "./Ability.test";
-export default function testsuite() {
+import getAssetsTest from "./photoAccessHelper/PhotoAccessHelper.test";
+
+export default function testsuite(): void {
   abilityTest();
+  getAssetsTest();
 }
