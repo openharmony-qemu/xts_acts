@@ -113,7 +113,7 @@ export default function CommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMONPAGE_API24_STATIC_TEST_0100
+     * @tc.number SUB_ARKUI_COMMONPAGE_API24_STATIC_INPUTCOUNTEROPTIONS_COUNTERTEXTCOLOR_0100
      * @tc.name InputCounterOptions_counterTextColor
      * @tc.desc Verify InputCounterOptions counterTextColor
      * @tc.type   FUNCTION
@@ -135,7 +135,7 @@ export default function CommonTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_COMMONPAGE_API24_STATIC_TEST_0200
+     * @tc.number SUB_ARKUI_COMMONPAGE_API24_STATIC_INPUTCOUNTEROPTIONS_COUNTERTEXTOVERFLOWCOLOR_0200
      * @tc.name InputCounterOptions_counterTextOverflowColor
      * @tc.desc Verify InputCounterOptions counterTextOverflowColor
      * @tc.type   FUNCTION

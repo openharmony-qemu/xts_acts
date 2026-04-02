@@ -137,7 +137,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0100
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_ID_0100
      * @tc.name TextChangeEventInfo_id
      * @tc.desc Verify TextChangeEventInfo id global onTextChange
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0200
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_UNIQUEID_0200
      * @tc.name TextChangeEventInfo_uniqueId
      * @tc.desc Verify TextChangeEventInfo uniqueId global onTextChange
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0300
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_CONTENT_0300
      * @tc.name TextChangeEventInfo_content
      * @tc.desc Verify TextChangeEventInfo content global onTextChange
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0400
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_ID_LOCAL_0400
      * @tc.name TextChangeEventInfo_id_local
      * @tc.desc Verify TextChangeEventInfo id local onTextChange
      * @tc.type   FUNCTION
@@ -231,7 +231,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0500
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_UNIQUEID_LOCAL_0500
      * @tc.name TextChangeEventInfo_uniqueId_local
      * @tc.desc Verify TextChangeEventInfo uniqueId local onTextChange
      * @tc.type   FUNCTION
@@ -255,7 +255,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0600
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTCHANGEEVENTINFO_CONTENT_LOCAL_0600
      * @tc.name TextChangeEventInfo_content_local
      * @tc.desc Verify TextChangeEventInfo content local onTextChange
      * @tc.type   FUNCTION
@@ -277,7 +277,7 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0700
+     * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEXTINPUTOBSERVERTEST_0010_0700
      * @tc.name textInputObserverTest_0010
      * @tc.desc Verify global text observer on and off
      * @tc.type   FUNCTION
@@ -342,68 +342,6 @@ export default function OhosArkuiObserverTest(): void {
       }
     });
 
-    // /**
-    //  * @tc.name   textInputObserverTest_0011
-    //  * @tc.number SUB_ARKUI_ARKUIOBSERVER_API24_STATIC_TEST_0800
-    //  * @tc.desc   Local observer on/off, text change observed as local:…
-    //  */
-    // it('textInputObserverTest_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   console.info('[textInputObserverTest_0011] START');
-    //   try {
-    //     const driver: Driver = Driver.create();
-    //     const localObserverOpenButton: Component = (await driver.findComponent(
-    //       ON.id('局部textInput(开)')
-    //     )) as Component;
-    //     await localObserverOpenButton.click();
-    //
-    //     const textInput: Component = (await driver.findComponent(ON.id(TEXT_INPUT_ID))) as Component;
-    //     await textInput.inputText('textInputObserverTest_0011');
-    //
-    //     await Utils.sleep(SLEEP);
-    //     await driver.triggerKey(2070);
-    //     await Utils.sleep(SLEEP);
-    //
-    //     const localOutputTextInput1: Component = (await driver.findComponent(
-    //       ON.id('localOutputTextInput')
-    //     )) as Component;
-    //     const localOutput1: string = await localOutputTextInput1.getText();
-    //     console.info('[textInputObserverTest_0011] textContent: ' + localOutput1);
-    //     expect(localOutput1).assertEqual('local:textInputObserverTest_0011');
-    //
-    //     const localId1: Component = (await driver.findComponent(
-    //       ON.id('observer_local_TextChangeEventInfo_id')
-    //     )) as Component;
-    //     expect((await localId1.getText())).assertEqual(`id:${TEXT_INPUT_ID}`);
-    //     const localUid1: Component = (await driver.findComponent(
-    //       ON.id('observer_local_TextChangeEventInfo_uniqueId')
-    //     )) as Component;
-    //     expectUniqueIdLine(await localUid1.getText());
-    //
-    //     const localObserverCloseButton: Component = (await driver.findComponent(
-    //       ON.id('局部textInput(关)')
-    //     )) as Component;
-    //     await localObserverCloseButton.click();
-    //
-    //     await textInput.inputText('Add');
-    //     await Utils.sleep(SLEEP);
-    //     await driver.triggerKey(2070);
-    //     await Utils.sleep(SLEEP);
-    //
-    //     const localOutputTextInput2: Component = (await driver.findComponent(
-    //       ON.id('localOutputTextInput')
-    //     )) as Component;
-    //     const localOutput2: string = await localOutputTextInput2.getText();
-    //     console.info('[textInputObserverTest_0011] textContent: ' + localOutput2);
-    //     expect(localOutput2).assertEqual('local:textInputObserverTest_0011');
-    //
-    //     console.info('[textInputObserverTest_0011] END');
-    //     done();
-    //   } catch (e) {
-    //     console.error('[textInputObserverTest_0011] error: ' + e);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // });
 
   });
 }

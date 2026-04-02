@@ -133,7 +133,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0100
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_TEXT_INSPECTOR_NONEMPTY_0100
      * @tc.name StyledString_Text_inspector_nonEmpty
      * @tc.desc Verify StyledString Text inspector non-empty
      * @tc.type   FUNCTION
@@ -160,7 +160,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0200
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_TEXT_STROKECOLOR_INTREE_0200
      * @tc.name StyledString_Text_strokeColor_inTree
      * @tc.desc Verify StyledString strokeColor in inspector tree
      * @tc.type   FUNCTION
@@ -186,7 +186,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0300
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_TEXT_PARAGRAPHORATTACHMENTHINTS_0300
      * @tc.name StyledString_Text_paragraphOrAttachmentHints
      * @tc.desc Verify StyledString paragraph or attachment hints
      * @tc.type   FUNCTION
@@ -213,7 +213,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0400
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_TEXTSTYLE_SUPERSCRIPT_0400
      * @tc.name StyledString_TextStyle_superscript
      * @tc.desc Verify TextStyle superscript
      * @tc.type   FUNCTION
@@ -227,7 +227,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0500
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_GESTURESTYLEINTERFACE_ONTOUCH_0500
      * @tc.name StyledString_GestureStyleInterface_onTouch
      * @tc.desc Verify GestureStyleInterface onTouch
      * @tc.type   FUNCTION
@@ -242,7 +242,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0600
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_PARAGRAPHSTYLE_LEADINGMARGINSPAN_0600
      * @tc.name StyledString_ParagraphStyle_leadingMarginSpan
      * @tc.desc Verify ParagraphStyle leadingMarginSpan
      * @tc.type   FUNCTION
@@ -252,13 +252,13 @@ export default function StyledStringTest(): void {
     it('StyledString_ParagraphStyle_leadingMarginSpan', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const span = new TestLeadingMarginSpan();
       const ps = new ParagraphStyle({ textVerticalAlign: TextVerticalAlign.TOP, leadingMarginSpan: span });
-      const psi: ParagraphStyleInterface = { leadingMarginSpan: span };
-      expect(ps.leadingMarginSpan !== undefined && psi.leadingMarginSpan !== undefined).assertTrue();
+      const paragraphStyleInfo: ParagraphStyleInterface = { leadingMarginSpan: span };
+      expect(ps.leadingMarginSpan !== undefined && paragraphStyleInfo.leadingMarginSpan !== undefined).assertTrue();
       done();
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0700
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_IMAGEATTACHMENT_SIZEINVP_0700
      * @tc.name StyledString_ImageAttachment_sizeInVp
      * @tc.desc Verify ImageAttachment sizeInVp
      * @tc.type   FUNCTION
@@ -276,7 +276,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0800
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_LEADINGMARGINSPANDRAWINFO_FIELDS_0800
      * @tc.name StyledString_LeadingMarginSpanDrawInfo_fields
      * @tc.desc Verify LeadingMarginSpanDrawInfo fields
      * @tc.type   FUNCTION
@@ -301,7 +301,7 @@ export default function StyledStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_TEST_0900
+     * @tc.number SUB_ARKUI_STYLESTRING_API24_STATIC_STYLEDSTRING_LEADINGMARGINSPAN_ONDRAW_GETLEADINGMARGIN_0900
      * @tc.name StyledString_LeadingMarginSpan_onDraw_getLeadingMargin
      * @tc.desc Verify LeadingMarginSpan getLeadingMargin
      * @tc.type   FUNCTION
