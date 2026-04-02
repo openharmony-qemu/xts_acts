@@ -19,6 +19,7 @@ import Context from "application.Context"
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from "@kit.BasicServicesKit";
+import Utils from './Util.test';
 
 let TAG: string = ' PhotoAccessHelperNoPermission: ';
 export default function photoAccessHelperNoPermissionStaticTest() {
@@ -77,17 +78,25 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                         predicates: predicates
                     };
                     console.info(TAG, testName + 'fetchOptions:' + fetchOptions);
+                    let trigger = false;
                     helper!.getAssets(fetchOptions, (err: BusinessError<void> | null,
                         fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
                         console.info(TAG, testName + 'getAssets failed. fetchResult:' + fetchResult + ' code:' + err?.code);
                         expect(err?.code).assertEqual(201);
+                        trigger = true;
                         done();
                     });
-                    expect().assertFail();
+                    for (let i = 0; i < 10; i++) {
+                        if (trigger) {
+                            break;
+                        }
+                        await Utils.msSleep(100);
+                    }
+                    expect(trigger).assertTrue();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    expect().assertFail();
                     done();
                 }
             })
@@ -165,16 +174,24 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     const extension = 'jpg';
+                    let trigger = false;
                     helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, extension, (err: BusinessError<void> | null, uri: string | undefined): void => {
                         console.info(TAG, testName + 'getAssets failed. uri:' + uri + ' code:' + err?.code);
                         expect(err?.code).assertEqual(201);
+                        trigger = true;
                         done();
                     });
-                    expect().assertFail();
+                    for (let i = 0; i < 10; i++) {
+                        if (trigger) {
+                            break;
+                        }
+                        await Utils.msSleep(100);
+                    }
+                    expect(trigger).assertTrue();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    expect().assertFail();
                     done();
                 }
             })
@@ -198,17 +215,25 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     let options: photoAccessHelper.CreateOptions = {
                         title: undefined
                     }
+                    let trigger = false;
                     helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, extension, options, (
                       err: BusinessError<void> | null, uri: string | undefined): void => {
                         console.info(TAG, testName + 'getAssets failed. uri:' + uri + ' code:' + err?.code);
                         expect(err?.code).assertEqual(201);
+                        trigger = true;
                         done();
                     });
-                    expect().assertFail();
+                    for (let i = 0; i < 10; i++) {
+                        if (trigger) {
+                            break;
+                        }
+                        await Utils.msSleep(100);
+                    }
+                    expect(trigger).assertTrue();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    expect().assertFail();
                     done();
                 }
             })
@@ -281,17 +306,25 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                 try {
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                    let trigger = false;
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, (
                         err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
                         console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
                         expect(err?.code).assertEqual(201);
+                        trigger = true;
                         done();
                     });
-                    expect().assertFail();
+                    for (let i = 0; i < 10; i++) {
+                        if (trigger) {
+                            break;
+                        }
+                        await Utils.msSleep(100);
+                    }
+                    expect(trigger).assertTrue();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    expect().assertFail();
                     done();
                 }
             })
@@ -316,17 +349,25 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                         fetchColumns: ['date_added', 'date_modified', 'size'],
                         predicates: predicates
                     };
+                    let trigger = false;
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
                         fetchOptions, (err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
                             console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
                             expect(err?.code).assertEqual(201);
+                            trigger = true;
                             done();
                         });
-                    expect().assertFail();
+                    for (let i = 0; i < 10; i++) {
+                        if (trigger) {
+                            break;
+                        }
+                        await Utils.msSleep(100);
+                    }
+                    expect(trigger).assertTrue();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    expect().assertFail();
                     done();
                 }
             })
@@ -344,17 +385,13 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                 const testName:string = 'photoAccessHelper_applyChanges_static_001 ';
                 console.info(TAG, testName + 'begin');
                 try {
-                    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
                     let context: Context = Hypium.get("Context") as Context;
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
+                    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
                     let extension: string = 'jpg';
-                    let options: photoAccessHelper.CreateOptions = {
-                        title: 'photoAccessHelper_applyChanges_static_001',
-                        subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
-                    }
                     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
-                        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-                    await helper!.applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
+                        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension);
+                    await helper!.applyChanges(assetChangeRequest!);
                     expect().assertFail();
                     done();
                 } catch (err) {
