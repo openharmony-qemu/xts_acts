@@ -165,6 +165,13 @@ struct WebViewEnumAndFontLibrary {
                 }
                 break;
               }
+			  
+			  case 'SwitchNextPageSaveImageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/SaveImageMenu' })
+                console.log('push URL success')
+              }
 
           }
         })
