@@ -16,8 +16,10 @@
 
 import DrawableDescriptorTest from './DrawableDescriptorTest/DrawableDescriptor.test';
 import AnimationOptionsTest from './AnimationOptionsTest/AnimationOptions.test';
+import MeasureUtilsGetParagraphsTest from './MeasureUtilsGetParagraphsTest/MeasureUtilsGetParagraphs.test';
 
 export default function testsuite() {
   DrawableDescriptorTest();
   AnimationOptionsTest();
+  MeasureUtilsGetParagraphsTest();
 }

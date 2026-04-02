@@ -1,6 +1,8 @@
 ﻿{
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/XComponent/XComponentIndex"
+    "MainAbility/pages/XComponent/XComponentIndex",
+    "MainAbility/pages/xComponentHdrBrightness/xComponentHdrBrightness",
+    "MainAbility/pages/componentContentApi/componentContentApi"
   ]
 }
