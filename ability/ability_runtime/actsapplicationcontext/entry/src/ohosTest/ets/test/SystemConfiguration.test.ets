@@ -333,7 +333,7 @@ export default function systemConfigurationTest() {
     it('SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         applicationContext.offSystemConfigurationUpdated(undefined);
-        expect(true).assertTrue();
+        expect(true).assertFalse();
         done();
       } catch (error) {
         console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0400:` + (error as BusinessError).code);
