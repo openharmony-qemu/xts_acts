@@ -119,6 +119,10 @@ static void OHTEST_DoSegmentAsymCipher(SegmentCipherContext *ctxStruct)
     Crypto_DataBlob cipherData = {.data = nullptr, .len = 0};
 
     ctxStruct->cipherText->data = static_cast<uint8_t*>(malloc(ctxStruct->cipherText->len));
+    if (ctxStruct->cipherText->data == nullptr) {
+        EXPECT_TRUE(false);
+        return;
+    }
     EXPECT_TRUE(ctxStruct->cipherText->data != nullptr);
     uint8_t *dst = ctxStruct->cipherText->data;
     EXPECT_EQ(OH_CryptoAsymCipher_Create(ctxStruct->algoName, &ctx), CRYPTO_SUCCESS);
