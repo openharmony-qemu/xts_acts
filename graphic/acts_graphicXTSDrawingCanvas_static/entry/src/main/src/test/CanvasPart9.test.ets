@@ -56,7 +56,7 @@ export default function drawingTsCanvasPart9Test(): void {
     })
     /**
      * @tc.name   testCanvasResetClipNormal2Static
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5601
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5700
      * @tc.desc   testCanvasResetClipNormal2Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function drawingTsCanvasPart9Test(): void {
     })
     /**
      * @tc.name   testCanvasResetClipNormal3Static
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5602
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5800
      * @tc.desc   testCanvasResetClipNormal3Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function drawingTsCanvasPart9Test(): void {
     })
     /**
      * @tc.name   testCanvasResetClipMultipleCallsStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5603
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5900
      * @tc.desc   testCanvasResetClipMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function drawingTsCanvasPart9Test(): void {
     })
     /**
      * @tc.name   testCanvasResetClipWithMatrixStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5604
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_6000
      * @tc.desc   testCanvasResetClipWithMatrixStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function drawingTsCanvasPart9Test(): void {
     })
     /**
      * @tc.name   testCanvasResetClipAfterDrawStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5605
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_6100
      * @tc.desc   testCanvasResetClipAfterDrawStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
