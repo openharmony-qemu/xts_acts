@@ -21,41 +21,25 @@ import Utils from './Utils'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = "ACTS_PhotoEditorExtension"
+let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function abilityTest() {
     describe('ActsAbilityTest', () => {
         let globalscribe: commonEventManager.CommonEventSubscriber|undefined = undefined;
 
-        // Defines a test suite. Two parameters are supported: test suite name and test suite function.
         beforeAll(() => {
-            // Presets an action, which is performed only once before all test cases of the test suite start.
-            // This API supports only one parameter: preset action function.
+           
         })
         beforeEach(async () => {
             hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension beforeEach start`);
 
-            let options: router.RouterOptions = {
-                url: 'testAbility/pages/p1',
-            }
-            try {
-                await router.pushUrl(options);
-                await Utils.sleep(500);
-                console.info("ACTS_PhotoEditorExtension push page suceed");
-            } catch (err) {
-                console.error("ACTS_PhotoEditorExtension push page error: " + err);
-            }
-
-            setTimeout(async () => {
-                if (globalscribe !== undefined) {
-                    Utils.unsubscribe(globalscribe)
-                }
-            }, 8000); // max wait 8s
         })
-        afterEach(() => {
-            // Presets a clear action, which is performed after each unit test case ends.
-            // The number of execution times is the same as the number of test cases defined by **it**.
-            // This API supports only one parameter: clear action function.
-        })
+        afterEach(async() => {
+ 	        hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension afterEach start`);
+ 	        commonEventManager.publish("Ability_Terminate",()=>{})
+ 	        await Utils.sleep(1000);
+ 	        hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension afterEach end`);
+ 	    })
         afterAll(() => {
             // Presets a clear action, which is performed after all test cases of the test suite end.
             // This API supports only one parameter: clear action function.
@@ -69,36 +53,44 @@ export default function abilityTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async () => {
-            // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-            const newTag = 'ACTS_PhotoEditorExtension_0100 == ';
-
-            let subscriber: commonEventManager.CommonEventSubscriber | null = null;
-            let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-                events: ['ACTS_PhotoEditorExtension_OnRemoteReady'],
-            };
-
-            await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
-                console.log(newTag + "createSubscriber data : " + JSON.stringify(data));
-                globalscribe = data;
-                commonEventManager.subscribe(globalscribe, async (err, data) => {
-                    console.log(newTag + "SubscribeInfoCallback : " + JSON.stringify(data));
-
-                    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-                    await abilityDelegator.executeShellCommand('aa dump -e').then((data) => {
-                        console.info(newTag + 'data: ' + JSON.stringify(data));
-                        let output = JSON.stringify(data);
-                        try {
-                            expect(output).assertContain("MuseEditorExtensionAbility");
-                        } catch {
-                            expect().assertFail();
-                        }
-                    });
-                });
-            }).catch((error: BusinessError) => {
-                console.log(newTag + "createSubscriber err");
-                expect().assertFail();
-            })
-        })
+        it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async (done:Function) => {
+ 	        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+ 	        const newTag = 'ACTS_PhotoEditorExtension_0100 == ';
+ 	        try{
+ 	            let subscriber: commonEventManager.CommonEventSubscriber | null = null;
+ 	            let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+ 	                events: ['ACTS_PhotoEditorExtension_OnRemoteReady'],
+ 	            };
+ 	            await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
+ 	                console.log(newTag + "createSubscriber data : " + JSON.stringify(data));
+ 	                globalscribe = data;
+ 	                commonEventManager.subscribe(globalscribe, async (err, data) => {
+ 	                    console.log(newTag + "SubscribeInfoCallback : " + JSON.stringify(data));
+ 	   
+ 	                    await abilityDelegator.executeShellCommand('aa dump -e').then((data) => {
+ 	                        console.info(newTag + 'data: ' + JSON.stringify(data));
+ 	                        let output = JSON.stringify(data);
+ 	                        try {
+ 	                            expect(output).assertContain("MuseEditorExtensionAbility");
+ 	                            commonEventManager.unsubscribe(globalscribe)
+ 	                        } catch {
+ 	                            expect().assertFail();
+ 	                        }
+ 	                        done();
+ 	                    });
+ 	                });
+ 	            }).catch((error: BusinessError) => {
+ 	                console.log(newTag + "createSubscriber err");
+ 	                expect().assertFail();
+ 	            })
+ 	            await abilityDelegator.executeShellCommand('aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100')
+                done();
+ 	        }catch{
+ 	            console.log(newTag + "createSubscriber err");
+ 	            expect().assertFail();
+                done();
+ 	        }
+ 	             
+ 	    })
     })
 }
