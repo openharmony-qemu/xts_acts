@@ -34,6 +34,11 @@ import TypeArguments_1 from "./generics/generic_instantiations/type_arguments/ty
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
+import AwaitedUtilityType from "./generics/utility_types/awaited_utility_type/AwaitedUtilityType.test";
+import NestingUtilityType from "./generics/utility_types/nesting_utility_type/NestingUtilityType.test";
+import NonNullableUtilityType from "./generics/utility_types/nonnullable_utility_type/NonNullableUtilityType.test";
+import RequiredUtilityType from "./generics/utility_types/required_utility_type/RequiredUtilityType.test";
+import PartialUtilityType from "./generics/utility_types/partial_utility_type/PartialUtilityType.test";
 
 export default function testsuite() {
   AssignmentLikeContextsTest();
@@ -58,4 +63,9 @@ export default function testsuite() {
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
   StatementsTest();
+  AwaitedUtilityType();
+  NestingUtilityType();
+  NonNullableUtilityType();
+  RequiredUtilityType();
+  PartialUtilityType();
 }

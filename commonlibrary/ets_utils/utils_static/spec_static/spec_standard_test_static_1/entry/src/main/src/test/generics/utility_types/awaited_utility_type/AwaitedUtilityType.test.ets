@@ -126,6 +126,21 @@ export default function AwaitedUtilityTypeTest() {
     })
 
     /**
+     * @tc.number    SUB_AWAITED_UTILITY_TYPE_0300
+     * @tc.name      testAwaitedUtilityType0003
+     * @tc.desc      Any occurrence of Awaited type is recursively removed until a generic, a function,
+     *               an array, or a tuple type is detected.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testAwaitedUtilityType0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i: o_3 = [1.0, 2.0];
+      expect(i[0]).assertEqual(1.0);
+      expect(i instanceof Array).assertTrue();
+    })
+
+    /**
      * @tc.number    SUB_AWAITED_UTILITY_TYPE_0400
      * @tc.name      testAwaitedUtilityType0004
      * @tc.desc      Any occurrence of Awaited type is recursively removed until a generic, a function,
@@ -135,9 +150,9 @@ export default function AwaitedUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testAwaitedUtilityType0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i: o_3 = [1.0, 2.0];
-      expect(i[0]).assertEqual(1.0);
-      expect(i instanceof Array).assertTrue();
+      let i: o_4 = {a: 3, b: "str"};
+      expect(i.b).assertEqual("str");
+      expect(i instanceof I_22).assertTrue();
     })
 
     /**
@@ -150,21 +165,6 @@ export default function AwaitedUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testAwaitedUtilityType0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i: o_4 = {a: 3, b: "str"};
-      expect(i.b).assertEqual("str");
-      expect(i instanceof I_22).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_AWAITED_UTILITY_TYPE_0600
-     * @tc.name      testAwaitedUtilityType0006
-     * @tc.desc      Any occurrence of Awaited type is recursively removed until a generic, a function,
-     *               an array, or a tuple type is detected.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testAwaitedUtilityType0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let i: o_5 = ENM_22.Red;
       expect(i).assertEqual(ENM_22.Red);
       expect(i instanceof ENM_22).assertTrue();
