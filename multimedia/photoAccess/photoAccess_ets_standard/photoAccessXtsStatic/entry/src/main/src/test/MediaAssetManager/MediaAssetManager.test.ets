@@ -19,23 +19,23 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
 import { createMovingPhoto, fetchOption, getPermission } from "../common";
 import { Context } from '@kit.ArkUI';
-import { beforeAll, describe, expect, Hypium, it, Level, Size, TAG, TestType } from '../../../../hypium';
+import { beforeAll, describe, expect, Hypium, it, Level, Size, TestType } from '../../../../hypium';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 let domain = 0x0000;
-let tag: string = 'testTag';
-let videoPahUri: string = '';
-let imagePathUri: string = '';
+let videoPathUri: string = 'test_mov_1.mp4';
+let imagePathUri: string = 'test_mov_1.jpg';
+const TAG: string = 'MediaAssetManagerTest';
 
 class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<image.ImageSource> {
   onDataPrepared(data: image.ImageSource | undefined, map?: Map<string, string>) {
-    hilog.info(domain, tag, `MediaHandler succeed`);
+    hilog.info(domain, TAG, `MediaHandler succeed`);
   }
 }
 
 class MediaHandlerArrayBuffer implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
   onDataPrepared(data: ArrayBuffer | undefined, map?: Map<string, string>) {
-    hilog.info(domain, tag, `MediaHandler succeed`);
+    hilog.info(domain, TAG, `MediaHandler succeed`);
   }
 }
 
@@ -145,7 +145,7 @@ class MovingPhotoHandlerBufferVideo implements photoAccessHelper.MediaAssetDataH
 export default function MediaAssetManagerStaticTest(): void {
   describe('MediaAssetManagerStaticTest', () => {
     beforeAll(async (): Promise<void> => {
-      hilog.info(domain, tag, 'beforeAll case');
+      hilog.info(domain, TAG, 'beforeAll case');
       await getPermission();
     });
 
@@ -978,7 +978,7 @@ export default function MediaAssetManagerStaticTest(): void {
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testContext: Context = Hypium.get('Context') as Context;
       let imageFileUri: string = 'file://' + testContext.filesDir + "/" + imagePathUri;
-      let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPahUri;
+      let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPathUri;
       try {
         let movingPhoto: photoAccessHelper.MovingPhoto =
           await photoAccessHelper.MediaAssetManager.loadMovingPhoto(testContext, imageFileUri, videoFileUri);
@@ -1002,7 +1002,7 @@ export default function MediaAssetManagerStaticTest(): void {
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testContext: Context = Hypium.get('Context') as Context;
-      let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPahUri;
+      let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPathUri;
       try {
         let movingPhoto: photoAccessHelper.MovingPhoto =
           await photoAccessHelper.MediaAssetManager.loadMovingPhoto(testContext, '', videoFileUri);
