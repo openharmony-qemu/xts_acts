@@ -36,7 +36,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0100
-     * @tc.number SUB_Selection_EXT_0100
+     * @tc.number SUB_Driver_Selection_Dyn_0100
      * @tc.desc   OH_Selection testing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0200
-     * @tc.number SUB_Selection_EXT_0200
+     * @tc.number SUB_Driver_Selection_Dyn_0200
      * @tc.desc   Test 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0300
-     * @tc.number SUB_Selection_EXT_0300
+     * @tc.number SUB_Driver_Selection_Dyn_0300
      * @tc.desc   Test 401, when parameters is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0400
-     * @tc.number SUB_Selection_EXT_0400
+     * @tc.number SUB_Driver_Selection_Dyn_0400
      * @tc.desc   Test 401, when parameters are null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0500
-     * @tc.number SUB_Selection_EXT_0500
+     * @tc.number SUB_Driver_Selection_Dyn_0500
      * @tc.desc   Test 401, when parameters is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0600
-     * @tc.number SUB_Selection_EXT_0600
+     * @tc.number SUB_Driver_Selection_Dyn_0600
      * @tc.desc   Test off success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -183,7 +183,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0700
-     * @tc.number SUB_Selection_EXT_0700
+     * @tc.number SUB_Driver_Selection_Dyn_0700
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0800
-     * @tc.number SUB_Selection_EXT_0800
+     * @tc.number SUB_Driver_Selection_Dyn_0800
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest0900
-     * @tc.number SUB_Selection_EXT_0900
+     * @tc.number SUB_Driver_Selection_Dyn_0900
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -264,7 +264,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1000
-     * @tc.number SUB_Selection_EXT_1000
+     * @tc.number SUB_Driver_Selection_Dyn_1000
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1100
-     * @tc.number SUB_Selection_EXT_1100
+     * @tc.number SUB_Driver_Selection_Dyn_1100
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1200
-     * @tc.number SUB_Selection_EXT_1200
+     * @tc.number SUB_Driver_Selection_Dyn_1200
      * @tc.desc   Test return 401, when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1300
-     * @tc.number SUB_Selection_EXT_1300
+     * @tc.number SUB_Driver_Selection_Dyn_1300
      * @tc.desc   createPanel success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -386,7 +386,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1400
-     * @tc.number SUB_Selection_EXT_1400
+     * @tc.number SUB_Driver_Selection_Dyn_1400
      * @tc.desc   destroyPanel success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -420,7 +420,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1500
-     * @tc.number SUB_Selection_EXT_1500
+     * @tc.number SUB_Driver_Selection_Dyn_1500
      * @tc.desc   Test return 401, when parameters is invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1600
-     * @tc.number SUB_Selection_EXT_1600
+     * @tc.number SUB_Driver_Selection_Dyn_1600
      * @tc.desc   Test return 401, when parameters is invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1700
-     * @tc.number SUB_Selection_EXT_1700
+     * @tc.number SUB_Driver_Selection_Dyn_1700
      * @tc.desc   test off success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1800
-     * @tc.number SUB_Selection_EXT_1800
+     * @tc.number SUB_Driver_Selection_Dyn_1800
      * @tc.desc   Test return 401, when parameters is invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -570,7 +570,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest1900
-     * @tc.number SUB_Selection_EXT_1900
+     * @tc.number SUB_Driver_Selection_Dyn_1900
      * @tc.desc   test off success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -611,7 +611,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2000
-     * @tc.number SUB_Selection_EXT_2000
+     * @tc.number SUB_Driver_Selection_Dyn_2000
      * @tc.desc   verify ERROR code 401 of setUiContent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -655,7 +655,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2100
-     * @tc.number SUB_Selection_EXT_2100
+     * @tc.number SUB_Driver_Selection_Dyn_2100
      * @tc.desc   verify ERROR code 33600002 of setUiContent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -702,7 +702,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2200
-     * @tc.number SUB_Selection_EXT_2200
+     * @tc.number SUB_Driver_Selection_Dyn_2200
      * @tc.desc   verify function of the panel moveToGlobalDisplay.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -744,7 +744,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2300
-     * @tc.number SUB_Selection_EXT_2300
+     * @tc.number SUB_Driver_Selection_Dyn_2300
      * @tc.desc   verify ERROR code 33600002 of the panel hide.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -788,7 +788,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2400
-     * @tc.number SUB_Selection_EXT_2400
+     * @tc.number SUB_Driver_Selection_Dyn_2400
      * @tc.desc   verify ERROR code 33600002 of the panel hide.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -832,7 +832,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2500
-     * @tc.number SUB_Selection_EXT_2500
+     * @tc.number SUB_Driver_Selection_Dyn_2500
      * @tc.desc   verify ERROR code 33600002 of the panel hide.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -875,7 +875,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2600
-     * @tc.number SUB_Selection_EXT_2600
+     * @tc.number SUB_Driver_Selection_Dyn_2600
      * @tc.desc   verify ERROR code 33600002 of the panel hide.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -919,7 +919,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2700
-     * @tc.number SUB_Selection_EXT_2700
+     * @tc.number SUB_Driver_Selection_Dyn_2700
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -948,7 +948,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2800
-     * @tc.number SUB_Selection_EXT_2800
+     * @tc.number SUB_Driver_Selection_Dyn_2800
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -987,7 +987,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest2900
-     * @tc.number SUB_Selection_EXT_2900
+     * @tc.number SUB_Driver_Selection_Dyn_2900
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1016,7 +1016,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3000
-     * @tc.number SUB_Selection_EXT_3000
+     * @tc.number SUB_Driver_Selection_Dyn_3000
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1045,7 +1045,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3100
-     * @tc.number SUB_Selection_EXT_3100
+     * @tc.number SUB_Driver_Selection_Dyn_3100
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1067,7 +1067,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3200
-     * @tc.number SUB_Selection_EXT_3200
+     * @tc.number SUB_Driver_Selection_Dyn_3200
      * @tc.desc   verify struct SelectionInfo.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1093,7 +1093,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3300
-     * @tc.number SUB_Selection_EXT_3300
+     * @tc.number SUB_Driver_Selection_Dyn_3300
      * @tc.desc   Test should throw BusinessError when parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1119,7 +1119,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3400
-     * @tc.number SUB_Selection_EXT_3400
+     * @tc.number SUB_Driver_Selection_Dyn_3400
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1142,7 +1142,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3500
-     * @tc.number SUB_Selection_EXT_3500
+     * @tc.number SUB_Driver_Selection_Dyn_3500
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1176,7 +1176,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3600
-     * @tc.number SUB_Selection_EXT_3600
+     * @tc.number SUB_Driver_Selection_Dyn_3600
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1211,7 +1211,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3700
-     * @tc.number SUB_Selection_EXT_3700
+     * @tc.number SUB_Driver_Selection_Dyn_3700
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1246,7 +1246,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3800
-     * @tc.number SUB_Selection_EXT_3800
+     * @tc.number SUB_Driver_Selection_Dyn_3800
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1281,7 +1281,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest3900
-     * @tc.number SUB_Selection_EXT_3900
+     * @tc.number SUB_Driver_Selection_Dyn_3900
      * @tc.desc   Test should throw BusinessError parameters are invalid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1316,7 +1316,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest4000
-     * @tc.number SUB_Selection_EXT_4000
+     * @tc.number SUB_Driver_Selection_Dyn_4000
      * @tc.desc   The code 33600005 is returned when the word content is obtained without the word division operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1340,7 +1340,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest4100
-     * @tc.number SUB_Selection_EXT_4100
+     * @tc.number SUB_Driver_Selection_Dyn_4100
      * @tc.desc   If getSelectionContent is invoked for multiple times without word division, the error code 33600004 is returned.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1375,7 +1375,7 @@ export default function SelectionManagerTest() {
 
     /**
      * @tc.name   testSelectionManagerTest4200
-     * @tc.number SUB_Selection_EXT_4200
+     * @tc.number SUB_Driver_Selection_Dyn_4200
      * @tc.desc   If getSelectionContent is invoked for multiple times without word division,33600005 is returned after the delay is added.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
