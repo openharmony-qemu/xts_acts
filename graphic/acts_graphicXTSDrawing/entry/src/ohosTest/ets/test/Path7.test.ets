@@ -772,9 +772,9 @@ export default function drawingTsPath7Test(): void {
         console.info(msg + ' getConicWeightData successes, result.length: ' + result.length);
         console.info(msg + ' getConicWeightData successes, result: ' + JSON.parse(JSON.stringify(result)));
         expect(result.length).assertEqual(3);
-        expect(result[0] >= 0.5).assertEqual(true);
-        expect(result[1] >= 0.8).assertEqual(true);
-        expect(result[2] >= 1.2).assertEqual(true);
+        expect(result[0]).assertCloseTo(0.5, 0.001);
+        expect(result[1]).assertCloseTo(0.8, 0.001);
+        expect(result[2]).assertCloseTo(1.2, 0.001);
         for (let i = 0; i < result.length; i++) {
           console.info(msg + ' result[' + i + ']: ' + result[i]);
         }
