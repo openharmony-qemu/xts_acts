@@ -23,7 +23,7 @@ export default function drawingTsCanvasPart9Test(): void {
   describe('DrawingTsCanvasPart9Test', () => {
     let pixel: image.PixelMap;
     
-    beforeAll(async (): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       const color: ArrayBuffer = new ArrayBuffer(40000);
       let opts: image.InitializationOptions = {
         editable: true,
@@ -36,7 +36,7 @@ export default function drawingTsCanvasPart9Test(): void {
       pixel = await image.createPixelMap(color, opts);
     })
     
-    beforeEach(() => {
+    beforeAll(() => {
       
     })
     
@@ -282,7 +282,7 @@ export default function drawingTsCanvasPart9Test(): void {
         
         let matrix = canvas.getTotalMatrix();
         console.log(msg + " getTotalMatrix success");
-        expect(matrix !== null ||).assertEqual(true);
+        expect(matrix !== null).assertEqual(true);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode is:  ${e.code} + errormsg is: ${e.message}`);
