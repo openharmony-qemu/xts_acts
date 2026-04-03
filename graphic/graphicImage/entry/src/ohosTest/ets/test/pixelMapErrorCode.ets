@@ -482,7 +482,7 @@ export default function imagePixelMapErrorCodeTest() {
       let pixelmap = imageSource.createPixelMapSync(decodingOptions);
       if (pixelmap != undefined) {
         console.info('www data Succeeded in creating pixelMap object.');
-        pixelmap.toSdr().then(() => {
+        await pixelmap.toSdr().then(() => {
           let imageInfo = pixelmap.getImageInfoSync();
           console.info("www data after toSdr ,imageInfo isHdr:" + imageInfo.isHdr);
           expect().assertFail();
@@ -649,7 +649,7 @@ export default function imagePixelMapErrorCodeTest() {
       let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
       let rate: number = 0.5;
       if (pixelMap != undefined) {
-        pixelMap.opacity(rate).then(async () => {
+        opacitypixelMap.opacity(rate).then(async () => {
           console.info('www data Succeeded in setting opacity.');
           await pixelMap.release();
           done();
@@ -745,14 +745,14 @@ export default function imagePixelMapErrorCodeTest() {
       };
       taskpoolTest(pixelMap);
       if (pixelMap != undefined) {
-        pixelMap.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
+        await pixelMap.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
           console.info('Succeeded in setting pixelMap metadata.');
           expect().assertFail();
           done();
-        }).catch((error: BusinessError) => {
+        }).catch(async (error: BusinessError) => {
           console.error(`Failed to set the metadata.code ${error.code},message is ${error.message}`);
           expect(Number(error) == 501).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           done();
         })
       }
@@ -806,7 +806,7 @@ export default function imagePixelMapErrorCodeTest() {
       let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
       let targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
       if (pixelMap != undefined) {
-        pixelMap.applyColorSpace(targetColorSpace).then(async () => {
+        await pixelMap.applyColorSpace(targetColorSpace).then(async () => {
           console.info('Succeeded in applying color space for pixelmap object.');
           await pixelMap.release();
           done();
@@ -863,7 +863,7 @@ export default function imagePixelMapErrorCodeTest() {
       }
       let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
       if (pixelMap != undefined) {
-        pixelMap.applyColorSpace(null).then(() => {
+        await pixelMap.applyColorSpace(null).then(() => {
           console.info('Succeeded in applying color space for pixelmap object.');
           expect().assertFail();
           done();

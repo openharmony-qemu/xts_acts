@@ -158,7 +158,7 @@ export default function graphicSendableImageInterfaceTest() {
       }
       try {
         sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
-          pixelMap.writeBufferToPixels(color).then(async () => {
+          await pixelMap.writeBufferToPixels(color).then(async () => {
             console.info("Succeeded in writing data from a buffer to a PixelMap.");
             await pixelMap.release();
             done();
@@ -401,7 +401,7 @@ export default function graphicSendableImageInterfaceTest() {
         sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let scaleX: number = 2.0;
           let scaleY: number = 1.0;
-          pixelMap.scale(scaleX, scaleY).then(async () => {
+          await pixelMap.scale(scaleX, scaleY).then(async () => {
             console.info('Sucessed in scaling pixelmap.');
             await pixelMap.release();
             done();
@@ -438,10 +438,10 @@ export default function graphicSendableImageInterfaceTest() {
         }
       }
       try {
-        sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
+        sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let translateX: number = 50.0;
           let translateY: number = 10.0;
-          pixelMap.translate(translateX, translateY).then(async () => {
+          await pixelMap.translate(translateX, translateY).then(async () => {
             console.info('Sucessed in translating pixelmap.');
             await pixelMap.release();
             done();
@@ -478,9 +478,9 @@ export default function graphicSendableImageInterfaceTest() {
         }
       }
       try {
-        sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
+        sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let angle: number = 90.0;
-          pixelMap.rotate(angle).then(async () => {
+          await pixelMap.rotate(angle).then(async () => {
             console.info('Sucessed in rotating pixelmap.');
             await pixelMap.release();
             done();
@@ -517,10 +517,10 @@ export default function graphicSendableImageInterfaceTest() {
         }
       }
       try {
-        sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
+        sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let horizontal: boolean = true;
           let vertical: boolean = false;
-          pixelMap.flip(horizontal, vertical).then(async () => {
+          await pixelMap.flip(horizontal, vertical).then(async () => {
             console.info('Sucessed in flipping pixelmap.');
             await pixelMap.release();
             done();
@@ -557,13 +557,13 @@ export default function graphicSendableImageInterfaceTest() {
         }
       }
       try {
-        sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
+        sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let region: image.Region = {
             x: 0, y: 0, size: {
               height: 2, width: 3
             }
           };
-          pixelMap.crop(region).then(async () => {
+          await pixelMap.crop(region).then(async () => {
             console.info('Succeeded in cropping pixelmap.');
             await pixelMap.release();
             done();

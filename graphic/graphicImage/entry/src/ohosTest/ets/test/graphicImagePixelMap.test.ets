@@ -84,7 +84,7 @@ export default function graphicImagePixelMapTest() {
         done();
       })
       try{
-        pixelMap!.rotate(60)
+        await pixelMap!.rotate(60)
         console.info( msg + ' Succeeded in rotate pixelMap.');
         try{
           pixelMap!.setTransferDetached(true)
@@ -1024,7 +1024,7 @@ export default function graphicImagePixelMapTest() {
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         if (pixelMap != undefined) {
-            pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(async (scaledPixelMap: image.PixelMap) => {
+            await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(async (scaledPixelMap: image.PixelMap) => {
             console.info(msg + ' Succeeded in creating scaledPixelMap.');
             await scaledPixelMap.release();
             done();

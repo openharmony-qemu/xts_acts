@@ -107,10 +107,10 @@ class MySequence implements rpc.Parcelable {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
         this.pixel_map = pixelMap;
-        pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
-          this.pixel_map.release();
-          pixelParcel.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       })
     });
@@ -138,10 +138,10 @@ class MySequence2 implements rpc.Parcelable {
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertTrue();
         this.pixel_map = pixelMap;
-        pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
-          this.pixel_map.release();
-          pixelParcel.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       })
     });
@@ -1428,9 +1428,8 @@ export default function graphicImagePixelMap1() {
         }
         let pixelMap1 = image.createPixelMapSync(opts);
         try {
-          pixelMap1.release().then(async () => {
+          await pixelMap1.release().then(async () => {
             console.info('Succeeded in releasing graphicImagePixelMap1_4700 object.');
-            await pixelMap1!.release();
             done();
           }).catch((error: BusinessError) => {
             console.error('Failed to release graphicImagePixelMap1_4700 object.');
@@ -1463,7 +1462,6 @@ export default function graphicImagePixelMap1() {
         try {
           pixelMap2.release((err: BusinessError<void> | null) => {
             console.info('Succeeded in releasing graphicImagePixelMap1_4800 object.');
-            pixelMap2!.release();
             done();
           })
         } catch (err) {
@@ -1993,7 +1991,7 @@ export default function graphicImagePixelMap1() {
         let targetPixelFormat = image.PixelMapFormat.NV12;
         if (pixelMap != undefined) {
           try {
-            pixelMap!.convertPixelFormat(targetPixelFormat);
+            await pixelMap!.convertPixelFormat(targetPixelFormat);
             console.info('www data graphicImagePixelMap1_7700 success');
             await pixelMap!.release();
             done();
@@ -2027,7 +2025,7 @@ export default function graphicImagePixelMap1() {
           alphaType: image.AlphaType.UNPREMUL
         }
         let pixelMap: image.PixelMap;
-        image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
+        image.createPixelMap(color, opts).then(async (srcPixelMap: image.PixelMap) => {
           console.error("www data 11111111");
           pixelMap = srcPixelMap;
           if (pixelMap != undefined) {
@@ -2041,7 +2039,7 @@ export default function graphicImagePixelMap1() {
               data.readParcelable(ret);
               // 获取到pixelmap。
               let unmarshPixelmap = ret.pixel_map;
-              srcPixelMap.release();
+              await srcPixelMap.release();
               done();
             } catch (error) {
               expect().assertFail();
@@ -2213,7 +2211,7 @@ export default function graphicImagePixelMap1() {
           alphaType: image.AlphaType.UNPREMUL
         }
         let pixelMap: image.PixelMap;
-        image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
+        image.createPixelMap(color, opts).then(async (srcPixelMap: image.PixelMap) => {
           pixelMap = srcPixelMap;
           if (pixelMap != undefined) {
             // 序列化。
@@ -2227,7 +2225,7 @@ export default function graphicImagePixelMap1() {
               // 获取到pixelmap。
               let unMarshPixelmap = ret.pixel_map;
               console.info('www data succeed in unMarshPixelmap' + unMarshPixelmap)
-              srcPixelMap!.release();
+              await srcPixelMap!.release();
               done();
             } catch (err) {
               console.error('www data error ' + err);
