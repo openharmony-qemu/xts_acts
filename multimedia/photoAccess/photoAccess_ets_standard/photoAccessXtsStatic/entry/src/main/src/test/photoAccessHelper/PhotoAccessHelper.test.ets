@@ -73,7 +73,7 @@ export default function getAssetsTest(): void {
         });
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
-        expect(error!.code == 13900020).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -106,7 +106,7 @@ export default function getAssetsTest(): void {
         });
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
-        expect(error!.code === 13900020).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -131,6 +131,7 @@ export default function getAssetsTest(): void {
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           console.info(TAG, `getAssets success`);
             expect(fetchResult !== undefined).assertTrue();
+            fetchResult!.close();
             done();
         });
       } catch (error) {
@@ -160,6 +161,7 @@ export default function getAssetsTest(): void {
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           console.info(TAG, `getAssets success`);
           expect(fetchResult != undefined).assertTrue();
+          fetchResult!.close();
           done();
         });
       } catch (error) {
@@ -188,6 +190,7 @@ export default function getAssetsTest(): void {
         let fetchResult = await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect(fetchResult.getCount() > 0).assertTrue();
+        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
@@ -213,7 +216,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -241,7 +244,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -271,6 +274,7 @@ export default function getAssetsTest(): void {
         let fetchResult = await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect(fetchResult != undefined).assertTrue();
+        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
@@ -295,7 +299,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -409,10 +413,8 @@ export default function getAssetsTest(): void {
       };
       try {
         let burstKey: string = 'e719d696-09fa-44f8-8e9e-ec3f215aa62a';
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
-        helper!.getBurstAssets(burstKey, fetchOptions);
+        await helper!.getBurstAssets(burstKey, fetchOptions);
         expect().assertFail();
-        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -474,7 +476,7 @@ export default function getAssetsTest(): void {
           done();
         } catch (error) {
           console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
@@ -766,7 +768,7 @@ export default function getAssetsTest(): void {
           });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       });
@@ -818,7 +820,7 @@ export default function getAssetsTest(): void {
           });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       });
@@ -901,11 +903,14 @@ export default function getAssetsTest(): void {
               if(error != undefined){
                 expect(Number(error.code)).assertEqual(401);
                 done();
+              }else {
+                expect().assertFail();
+                done();
               }
             });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
@@ -931,11 +936,14 @@ export default function getAssetsTest(): void {
             if(error != undefined){
               expect(Number(error.code)).assertEqual(401);
               done();
+            }else {
+              expect().assertFail();
+              done();
             }
           })
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
