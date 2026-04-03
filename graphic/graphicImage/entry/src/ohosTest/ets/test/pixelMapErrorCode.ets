@@ -649,7 +649,7 @@ export default function imagePixelMapErrorCodeTest() {
       let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
       let rate: number = 0.5;
       if (pixelMap != undefined) {
-        opacitypixelMap.opacity(rate).then(async () => {
+        await pixelMap.opacity(rate).then(async () => {
           console.info('www data Succeeded in setting opacity.');
           await pixelMap.release();
           done();
