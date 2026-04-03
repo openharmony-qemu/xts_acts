@@ -29,7 +29,7 @@ export default function StreamWritable08Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0100
      * @tc.name      testStreamWritable08Chapter0001
      * @tc.desc      test doWritev with normal string array
      * @tc.size      MediumTest
@@ -64,7 +64,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0200
      * @tc.name      testStreamWritable08Chapter0002
      * @tc.desc      test doWritev with Uint8Array array
      * @tc.size      MediumTest
@@ -124,7 +124,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0300
      * @tc.name      testStreamWritable08Chapter0003
      * @tc.desc      test doWritev with empty array
      * @tc.size      MediumTest
@@ -154,7 +154,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0400
      * @tc.name      testStreamWritable08Chapter0004
      * @tc.desc      test doWritev with special characters
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0500
      * @tc.name      testStreamWritable08Chapter0005
      * @tc.desc      test doWritev with unicode and emoji
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0600
      * @tc.name      testStreamWritable08Chapter0006
      * @tc.desc      test doWritev with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0700
      * @tc.name      testStreamWritable08Chapter0007
      * @tc.desc      test doWritev callback is called
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0800
      * @tc.name      testStreamWritable08Chapter0008
      * @tc.desc      test doWritev with large array
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_0900
      * @tc.name      testStreamWritable08Chapter0009
      * @tc.desc      test doWritev callback execution
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function StreamWritable08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETEST08_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTEIGHT_1000
      * @tc.name      testStreamWritable08Chapter0010
      * @tc.desc      test doWritev with empty string
      * @tc.size      MediumTest
