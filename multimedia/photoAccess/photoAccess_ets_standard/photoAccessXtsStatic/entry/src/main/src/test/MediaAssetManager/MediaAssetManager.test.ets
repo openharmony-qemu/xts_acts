@@ -729,7 +729,7 @@ export default function MediaAssetManagerStaticTest(): void {
       }
       catch (error) {
         console.error(`${testNum} failed; error: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -768,7 +768,7 @@ export default function MediaAssetManagerStaticTest(): void {
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -962,7 +962,7 @@ export default function MediaAssetManagerStaticTest(): void {
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     });
@@ -1264,9 +1264,9 @@ export default function MediaAssetManagerStaticTest(): void {
             } else {
               console.error(`photoAsset failed`);
             }
+            done();
           });
         }
-        done();
       }
       catch (error) {
         console.error(`${testNum} failed; error: ${error.code}`);
@@ -1300,8 +1300,8 @@ export default function MediaAssetManagerStaticTest(): void {
             console.info('photoAsset displayName: ', photoAsset.displayName);
             expect(photoAsset.displayName.length > 0).assertTrue();
           }
+          done();
         });
-        done();
       }
       catch (error) {
         console.error(`${testNum} failed; error: ${error.code}`);
@@ -1400,7 +1400,7 @@ export default function MediaAssetManagerStaticTest(): void {
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect(error.code).assertEqual(14000011);
+        expect(Number(error.code)).assertEqual(14000011);
         done();
       }
     });
