@@ -27,9 +27,12 @@ struct ParticleIndex {
     } catch (error) { console.info('[ARKUI_NEW] ParticleIndex error ' + error); }
   }
   build() {
-    let rippleRegion: FieldRegion = { shape: DisturbanceFieldShape.RECT, position: { x: 0, y: 0 }, size: { width: 100, height: 100 } };
-    let rippleOpts: RippleFieldOptions = { amplitude: 10.0, wavelength: 20.0, waveSpeed: 5.0, attenuation: 0.5, center: { x: 50, y: 50 }, region: rippleRegion };
-    let velRegion: FieldRegion = { shape: DisturbanceFieldShape.ELLIPSE, position: { x: 0, y: 0 }, size: { width: 200, height: 200 } };
+    let rippleRegion: FieldRegion = { shape: DisturbanceFieldShape.RECT, position: { x: 0, y: 0 },
+      size: { width: 100, height: 100 } };
+    let rippleOpts: RippleFieldOptions = { amplitude: 10.0, wavelength: 20.0, waveSpeed: 5.0,
+      attenuation: 0.5, center: { x: 50, y: 50 }, region: rippleRegion };
+    let velRegion: FieldRegion = { shape: DisturbanceFieldShape.ELLIPSE, position: { x: 0, y: 0 },
+      size: { width: 200, height: 200 } };
     let velOpts: VelocityFieldOptions = { velocity: { x: 0.5, y: 0.5 }, region: velRegion };
     Column() {
       Text('Particle Test').key('particleRoot').id('particleRoot').fontSize(20)

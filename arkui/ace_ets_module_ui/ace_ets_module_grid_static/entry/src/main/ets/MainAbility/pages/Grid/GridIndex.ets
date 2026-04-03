@@ -89,7 +89,8 @@ struct GridIndex {
       .width('100%')
       .key('gridScrollCallbacks')
       .id('gridScrollCallbacks')
-      .onWillScroll((_scrollOffset: double, _scrollState: ScrollState, _scrollSource: ScrollSource): undefined | ScrollResult => {
+      .onWillScroll((_scrollOffset: double, _scrollState: ScrollState, _scrollSource: ScrollSource):
+        undefined | ScrollResult => {
         AppStorage.setOrCreate<string>('gridOnWillScrollCalled', 'true');
         console.info('[ARKUI_NEW] Grid onWillScroll triggered');
         return undefined;
