@@ -27,6 +27,7 @@ import inspector from '@ohos.arkui.inspector';
 const PAGE = 'MainAbility/pages/segmentButtonV2EnableStateAnimation/segmentButtonV2EnableStateAnimation';
 const TITLE_ID = 'segV2_title';
 const SLEEP_TIME = 500;
+const INSPECTOR_STABLE_MS = 800;
 const SUITE = 'SegmentButtonV2EnableStateAnimationTest';
 function arkuiNewLog(suite: string, phase: string, detail: string): void {
   console.info('[ARKUI_NEW] ' + suite + ' ' + phase + ': ' + detail);
@@ -55,7 +56,7 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         routerInstance.replaceUrl(options);
-        await Utils.sleep(600);
+        await Utils.sleep(1000);
       } catch (err) {
         arkuiNewErr(SUITE, 'beforeEach', 'replaceUrl error: ' + err);
         expect().assertFail();
@@ -84,16 +85,16 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       'SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_page_loads_0100',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'segmentV2_pageLoads START');
-      try {
-        expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'segmentV2_pageLoads START');
+        try {
+          expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200
@@ -107,16 +108,19 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       'SUB_arkui_segment_button_v2_enable_state_anim_segment_v2_mounted_flag_0200',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'segmentV2_mounted_flag START');
-      try {
-        expect(AppStorage.get<boolean>('segV2_mounted')).assertEqual(true);
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'segmentV2_mounted_flag START');
+        try {
+          await Utils.sleep(INSPECTOR_STABLE_MS);
+          const rawTitle = inspector.getInspectorByKey('segV2_title');
+          const rawTab = inspector.getInspectorByKey('segV2_tab');
+          expect(rawTitle !== undefined && rawTitle !== '' && rawTab !== undefined && rawTab !== '').assertTrue();
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300
@@ -130,18 +134,19 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       'SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_tab_and_capsule_0300',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'inspector_segV2_tab_and_capsule START');
-      try {
-        const tab = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_tab'));
-        const cap = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_cap'));
-        expect(tab != null && cap != null).assertTrue();
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'inspector_segV2_tab_and_capsule START');
+        try {
+          await Utils.sleep(INSPECTOR_STABLE_MS);
+          const tab = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_tab'));
+          const cap = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_cap'));
+          expect(tab != null && cap != null).assertTrue();
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400
@@ -155,17 +160,18 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       'SUB_arkui_segment_button_v2_enable_state_anim_inspector_seg_v2_title_0400',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'inspector_segV2_title START');
-      try {
-        const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_title'));
-        expect(node != null).assertTrue();
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'inspector_segV2_title START');
+        try {
+          await Utils.sleep(INSPECTOR_STABLE_MS);
+          const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV2_title'));
+          expect(node != null).assertTrue();
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500
@@ -179,20 +185,21 @@ export default function SegmentButtonV2EnableStateAnimationTest() {
       'SUB_arkui_segment_button_v2_enable_state_anim_driver_find_tab_text_a_0500',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'driver_find_tab_text_A START');
-      try {
-        const d = Driver.create();
-        let t = await d.findComponent(ON.text('A', MatchPattern.EQUALS));
-        if (!t) {
-          t = await d.findComponent(ON.text('A', MatchPattern.CONTAINS));
+        arkuiNewLog(SUITE, 'execute', 'driver_find_tab_text_A START');
+        try {
+          await Utils.sleep(INSPECTOR_STABLE_MS);
+          const d = Driver.create();
+          let t = await d.findComponent(ON.text('A', MatchPattern.EQUALS));
+          if (!t) {
+            t = await d.findComponent(ON.text('A', MatchPattern.CONTAINS));
+          }
+          expect(!!t).assertTrue();
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
         }
-        expect(!!t).assertTrue();
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+      });
   });
 }

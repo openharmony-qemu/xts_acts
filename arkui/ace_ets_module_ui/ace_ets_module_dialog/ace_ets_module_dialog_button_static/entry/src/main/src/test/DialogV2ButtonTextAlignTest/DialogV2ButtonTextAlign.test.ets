@@ -16,7 +16,7 @@
 'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { Driver, ON, MatchPattern } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
@@ -83,23 +83,23 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_page_loads_0100',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'dialogV2ButtonTextAlign_pageLoads START');
-      try {
-        const n = await Driver.create().findComponent(ON.id(TITLE_ID));
-        expect(n !== undefined).assertTrue();
-        arkuiNewLog(SUITE, 'execute', 'dialogV2ButtonTextAlign_pageLoads END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'dialogV2ButtonTextAlign_pageLoads START');
+        try {
+          const n = await Driver.create().findComponent(ON.id(TITLE_ID));
+          expect(n !== undefined).assertTrue();
+          arkuiNewLog(SUITE, 'execute', 'dialogV2ButtonTextAlign_pageLoads END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_advanced_dialog_v2_button_text_align_end_action_0200
      * @tc.name SUB_arkui_dialog_v2_button_text_align_advanced_dialog_v2_button_text_align_end_action_0200
-     * @tc.desc AlertDialogV2 primary: AdvancedDialogV2Button.textAlign -> AppStorage dlgV2_textAlign
+     * @tc.desc AdvancedDialogV2Button 主按钮与 dlgV2_invoke_primary_action 共用 dlgV2OnPrimaryEndAction；Hypium
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -108,29 +108,25 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_advanced_dialog_v2_button_text_align_end_action_0200',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'advancedDialogV2Button_textAlign_end_action START');
-      try {
-        const driver = Driver.create();
-        const openBtn = await driver.findComponent(ON.id('dlgV2_open'));
-        expect(!!openBtn).assertTrue();
-        await (openBtn?.click() as Promise<void>);
-        await Utils.sleep(800);
-        let ok = await driver.findComponent(ON.text('OK', MatchPattern.EQUALS));
-        if (!ok) {
-          ok = await driver.findComponent(ON.text('确定', MatchPattern.EQUALS));
+        arkuiNewLog(SUITE, 'execute', 'advancedDialogV2Button_textAlign_end_action START');
+        try {
+          const driver = Driver.create();
+          let invoke = await driver.findComponent(ON.id('dlgV2_invoke_primary_action'));
+          if (invoke === undefined || invoke === null) {
+            invoke = await driver.findComponent(ON.text('dlgV2_invoke'));
+          }
+          expect(!!invoke).assertTrue();
+          await (invoke?.click() as Promise<void>);
+          await Utils.sleep(200);
+          expect(AppStorage.get<string>('dlgV2_textAlign')).assertEqual('end');
+          arkuiNewLog(SUITE, 'execute', 'advancedDialogV2Button_textAlign_end_action END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
         }
-        expect(!!ok).assertTrue();
-        await (ok?.click() as Promise<void>);
-        await Utils.sleep(400);
-        expect(AppStorage.get<string>('dlgV2_textAlign')).assertEqual('end');
-        arkuiNewLog(SUITE, 'execute', 'advancedDialogV2Button_textAlign_end_action END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+      });
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_inspector_open_button_node_0300
@@ -144,18 +140,18 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_inspector_open_button_node_0300',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'inspector_openButton_node START');
-      try {
-        const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgV2_open'));
-        expect(node != null).assertTrue();
-        arkuiNewLog(SUITE, 'execute', 'inspector_openButton_node END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'inspector_openButton_node START');
+        try {
+          const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgV2_open'));
+          expect(node != null).assertTrue();
+          arkuiNewLog(SUITE, 'execute', 'inspector_openButton_node END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_inspector_title_node_0400
@@ -169,18 +165,18 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_inspector_title_node_0400',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'inspector_title_node START');
-      try {
-        const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgV2_title'));
-        expect(node != null).assertTrue();
-        arkuiNewLog(SUITE, 'execute', 'inspector_title_node END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'inspector_title_node START');
+        try {
+          const node = JSON.parseJsonElement(inspector.getInspectorByKey('dlgV2_title'));
+          expect(node != null).assertTrue();
+          arkuiNewLog(SUITE, 'execute', 'inspector_title_node END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_app_storage_v2_align_key_cleared_before_case_0500
@@ -194,17 +190,17 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_app_storage_v2_align_key_cleared_before_case_0500',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'appStorage_v2_align_key_cleared_before_case START');
-      try {
-        expect(AppStorage.get<string>('dlgV2_textAlign') === undefined).assertTrue();
-        arkuiNewLog(SUITE, 'execute', 'appStorage_v2_align_key_cleared_before_case END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'appStorage_v2_align_key_cleared_before_case START');
+        try {
+          expect(AppStorage.get<string>('dlgV2_textAlign') === undefined).assertTrue();
+          arkuiNewLog(SUITE, 'execute', 'appStorage_v2_align_key_cleared_before_case END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_arkui_dialog_v2_button_text_align_driver_find_v2_open_stable_0600
@@ -218,20 +214,20 @@ export default function DialogV2ButtonTextAlignTest() {
       'SUB_arkui_dialog_v2_button_text_align_driver_find_v2_open_stable_0600',
       Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'driver_find_v2_open_stable START');
-      try {
-        const driver = Driver.create();
-        const a = await driver.findComponent(ON.id('dlgV2_open'));
-        await Utils.sleep(200);
-        const b = await driver.findComponent(ON.id('dlgV2_open'));
-        expect(!!a && !!b).assertTrue();
-        arkuiNewLog(SUITE, 'execute', 'driver_find_v2_open_stable END');
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
+        arkuiNewLog(SUITE, 'execute', 'driver_find_v2_open_stable START');
+        try {
+          const driver = Driver.create();
+          const a = await driver.findComponent(ON.id('dlgV2_open'));
+          await Utils.sleep(200);
+          const b = await driver.findComponent(ON.id('dlgV2_open'));
+          expect(!!a && !!b).assertTrue();
+          arkuiNewLog(SUITE, 'execute', 'driver_find_v2_open_stable END');
+          done();
+        } catch (e) {
+          arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
+          expect().assertFail();
+          done();
+        }
+      });
   });
 }

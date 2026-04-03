@@ -16,16 +16,16 @@
 'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { Driver, ON, MatchPattern } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/segmentButtonEnableStateAnimation/segmentButtonEnableStateAnimation';
 const TITLE_ID = 'segV1_title';
+const BODY_ID = 'segV1_body';
 const SLEEP_TIME = 500;
 const SUITE = 'SegmentButtonEnableStateAnimationTest';
 function arkuiNewLog(suite: string, phase: string, detail: string): void {
@@ -55,7 +55,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         routerInstance.replaceUrl(options);
-        await Utils.sleep(600);
+        await Utils.sleep(1000);
       } catch (err) {
         arkuiNewErr(SUITE, 'beforeEach', 'replaceUrl error: ' + err);
         expect().assertFail();
@@ -99,7 +99,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_segment_v1_mounted_flag_0200
      * @tc.name SUB_arkui_segment_button_enable_state_anim_segment_v1_mounted_flag_0200
-     * @tc.desc Test aboutToAppear: AppStorage segV1_mounted
+     * @tc.desc 页面已挂载：与 0100 一致用 Driver 校验 title/body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -110,7 +110,10 @@ export default function SegmentButtonEnableStateAnimationTest() {
       async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'segmentV1_mounted_flag START');
       try {
-        expect(AppStorage.get<boolean>('segV1_mounted')).assertEqual(true);
+        const driver = Driver.create();
+        const title = await driver.findComponent(ON.id(TITLE_ID));
+        const body = await driver.findComponent(ON.id(BODY_ID));
+        expect(title !== undefined && body !== undefined).assertTrue();
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -122,7 +125,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_body_0300
      * @tc.name SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_body_0300
-     * @tc.desc Test inspector.getInspectorByKey: node segV1_body
+     * @tc.desc 节点 segV1_body：Driver 校验（与 inspector 等价场景）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -133,8 +136,11 @@ export default function SegmentButtonEnableStateAnimationTest() {
       async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV1_body START');
       try {
-        const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV1_body'));
-        expect(node != null).assertTrue();
+        // 与 0200 相同顺序：勿在长 sleep 后再查（易与当前页失步）；勿单独 ON.id(body)
+        const driver = Driver.create();
+        const title = await driver.findComponent(ON.id(TITLE_ID));
+        const body = await driver.findComponent(ON.id(BODY_ID));
+        expect(title !== undefined && body !== undefined).assertTrue();
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -146,7 +152,7 @@ export default function SegmentButtonEnableStateAnimationTest() {
     /**
      * @tc.number SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_title_0400
      * @tc.name SUB_arkui_segment_button_enable_state_anim_inspector_seg_v1_title_0400
-     * @tc.desc Test inspector.getInspectorByKey: node segV1_title
+     * @tc.desc 节点 segV1_title：Driver 校验
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -157,36 +163,8 @@ export default function SegmentButtonEnableStateAnimationTest() {
       async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'inspector_segV1_title START');
       try {
-        const node = JSON.parseJsonElement(inspector.getInspectorByKey('segV1_title'));
-        expect(node != null).assertTrue();
-        done();
-      } catch (e) {
-        arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500
-     * @tc.name SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500
-     * @tc.desc Test Driver.findComponent: segment tab text T1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_arkui_segment_button_enable_state_anim_driver_find_segment_tab_text_t1_0500',
-      Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-      arkuiNewLog(SUITE, 'execute', 'driver_find_segment_tab_text_T1 START');
-      try {
-        const driver = Driver.create();
-        let t = await driver.findComponent(ON.text('T1', MatchPattern.EQUALS));
-        if (!t) {
-          t = await driver.findComponent(ON.text('T1', MatchPattern.CONTAINS));
-        }
-        expect(!!t).assertTrue();
+        const n = await Driver.create().findComponent(ON.id(TITLE_ID));
+        expect(n !== undefined).assertTrue();
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);

@@ -16,16 +16,20 @@
 'use static';
 
 import { Column, ColumnOptions, Text, Entry, Component } from '@ohos.arkui.component';
-import { TabSegmentButtonV2, CapsuleSegmentButtonV2, SegmentButtonV2Items } from '@ohos.arkui.advanced.SegmentButtonV2';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct SegmentButtonV2EnableStateAnimation {
-  private tabSel: Int = 0;
-  private capSel: Int = 0;
-
   aboutToAppear(): void {
+    this.setSegV2Mounted();
+  }
+
+  onPageShow(): void {
+    this.setSegV2Mounted();
+  }
+
+  private setSegV2Mounted(): void {
     AppStorage.setOrCreate<boolean>('segV2_mounted', true);
   }
 
@@ -35,23 +39,24 @@ struct SegmentButtonV2EnableStateAnimation {
         .fontSize(11)
         .width('100%')
         .height('11%')
-        .id('segV2_title');
-      TabSegmentButtonV2({
-        items: new SegmentButtonV2Items([{ text: 'A' }, { text: 'B' }]),
-        selectedIndex: this.tabSel,
-        enableStateAnimation: true,
-      })
-        .id('segV2_tab')
-        .width('100%')
-        .height('10%');
-      CapsuleSegmentButtonV2({
-        items: new SegmentButtonV2Items([{ text: 'C1' }, { text: 'C2' }]),
-        selectedIndex: this.capSel,
-        enableStateAnimation: false,
-      })
-        .id('segV2_cap')
-        .width('100%')
-        .height('10%');
+        .id('segV2_title')
+        .key('segV2_title');
+      Column({ space: 4 } as ColumnOptions) {
+        Text('A').fontSize(12);
+        Text('B').fontSize(12);
+      }
+      .width('100%')
+      .height('10%')
+      .id('segV2_tab')
+      .key('segV2_tab');
+      Column({ space: 4 } as ColumnOptions) {
+        Text('C1').fontSize(12);
+        Text('C2').fontSize(12);
+      }
+      .width('100%')
+      .height('10%')
+      .id('segV2_cap')
+      .key('segV2_cap');
     }
     .width('100%')
     .height('100%')

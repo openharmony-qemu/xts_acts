@@ -15,16 +15,33 @@
 
 'use static';
 
-import { Column, ColumnOptions, Text, Entry, Component } from '@ohos.arkui.component';
-import { TabSegmentButtonV2, SegmentButtonV2Items } from '@ohos.arkui.advanced.SegmentButtonV2';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Column, ColumnOptions, Text, Entry, Component, BlurStyle } from '@ohos.arkui.component';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import {
+  ItemRestriction,
+  SegmentButton,
+  SegmentButtonOptions,
+  SegmentButtonTextItem,
+} from '@ohos.arkui.advanced.SegmentButton';
 
 @Entry
 @Component
 struct SegmentButtonEnableStateAnimation {
-  private tabSel: Int = 0;
+  @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
+    buttons: [{ text: 'T1' }, { text: 'T2' }] as ItemRestriction<SegmentButtonTextItem>,
+    backgroundBlurStyle: BlurStyle.BACKGROUND_THICK,
+  });
+  @State tabSelectedIndexes: int[] = [0];
 
   aboutToAppear(): void {
+    this.setSegV1Mounted();
+  }
+
+  onPageShow(): void {
+    this.setSegV1Mounted();
+  }
+
+  private setSegV1Mounted(): void {
     AppStorage.setOrCreate<boolean>('segV1_mounted', true);
   }
 
@@ -34,15 +51,21 @@ struct SegmentButtonEnableStateAnimation {
         .fontSize(11)
         .width('100%')
         .height('10%')
-        .id('segV1_title');
-      TabSegmentButtonV2({
-        items: new SegmentButtonV2Items([{ text: 'T1' }, { text: 'T2' }]),
-        selectedIndex: this.tabSel,
-        enableStateAnimation: true,
-      })
-        .id('segV1_body')
-        .width('100%')
-        .height('10%');
+        .id('segV1_title')
+        .key('segV1_title');
+      Column({ space: 4 } as ColumnOptions) {
+        SegmentButton({
+          options: this.tabOptions,
+          selectedIndexes: this.tabSelectedIndexes,
+          enableStateAnimation: true,
+        })
+          .width('100%')
+          .layoutWeight(1);
+      }
+      .width('100%')
+      .height('18%')
+      .id('segV1_body')
+      .key('segV1_body');
     }
     .width('100%')
     .height('100%')
