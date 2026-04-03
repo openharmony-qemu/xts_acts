@@ -1482,14 +1482,22 @@ export default function abilityTest() {
                     console.info('Get device successfully');
                     let deviceInfo: avSession.DeviceInfo = device_Info.devices[0];
                     console.info(`getOutputDevice successfully ${JSON.stringify(deviceInfo)}`);
-                    if (deviceInfo && deviceInfo.castCategory !== undefined &&
-                        deviceInfo.deviceId !== undefined && deviceInfo.deviceName !== undefined &&
-                        deviceInfo.deviceType !== undefined && deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                        console.info('getOutputDevice deviceType successfully.')
-                    } else {
-                        console.info('getOutputDevice value error.')
-                        expect(false).assertTrue();
-                    }
+                    console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
+                    expect(deviceInfo?.castCategory).assertEqual(0);
+                    console.info(`${TAG}TestLog1 deviceId = ${deviceInfo?.deviceId}`);
+                    expect(deviceInfo?.deviceId).assertEqual("0");
+                    console.info(`${TAG}TestLog1 deviceName = ${deviceInfo?.deviceName}`);
+                    expect(deviceInfo?.deviceName).assertEqual("LocalDevice");
+                    console.info(`${TAG}TestLog1 deviceType = ${deviceInfo?.deviceType}`);
+                    expect(deviceInfo?.deviceType).assertEqual(0); 
+                    console.info(`${TAG}TestLog1 modelName = ${deviceInfo?.modelName}`);
+                    expect(deviceInfo?.modelName).assertEqual("");
+                    console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo?.supportedPullClients}`);
+                    expect(deviceInfo?.supportedPullClients).assertEqual(undefined);
+                    console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
+                    expect(deviceInfo?.supportedProtocols).assertEqual(0);
+                    console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
+                    expect(deviceInfo?.supportedDrmCapabilities.length).assertEqual(0);
                     done();
                 }).catch((err: Error) => {
                     console.error(`GetOutputDevice BusinessError: code: ${err.code}, message: ${err.message}`);
