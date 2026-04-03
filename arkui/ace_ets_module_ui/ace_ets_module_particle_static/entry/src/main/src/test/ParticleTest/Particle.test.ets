@@ -57,7 +57,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_001
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0100
      * @tc.name rippleFieldOptionsConstruct
      * @tc.desc Test RippleFieldOptions construction with all fields and verify field values
      * @tc.type   FUNCTION
@@ -86,7 +86,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_002
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0200
      * @tc.name velocityFieldOptionsConstruct
      * @tc.desc Test VelocityFieldOptions construction with velocity and region fields
      * @tc.type   FUNCTION
@@ -112,7 +112,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_003
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0300
      * @tc.name fieldRegionShape
      * @tc.desc Test DisturbanceFieldShape enum values: RECT=0, CIRCLE=1, ELLIPSE=2
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_004
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0400
      * @tc.name fieldRegionOptionalFields
      * @tc.desc Test FieldRegion optional fields default to undefined when not set
      * @tc.type   FUNCTION
@@ -149,7 +149,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_005
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0500
      * @tc.name particlePageRenders
      * @tc.desc Verify Particle test page renders with root node visible in inspector
      * @tc.type   FUNCTION
@@ -166,7 +166,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_006
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0600
      * @tc.name particleRippleFieldsInspector
      * @tc.desc Verify Particle component with ripple fields renders and has $attrs via inspector
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_007
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0700
      * @tc.name particleVelocityFieldsInspector
      * @tc.desc Verify Particle component with velocity fields has $attrs via inspector
      * @tc.type   FUNCTION
@@ -203,7 +203,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_008
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0800
      * @tc.name fieldRegionPositionSet
      * @tc.desc Test FieldRegion position field with explicit x/y values
      * @tc.type   FUNCTION
@@ -225,7 +225,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_009
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_0900
      * @tc.name fieldRegionSizeSet
      * @tc.desc Test FieldRegion size field with explicit width/height values
      * @tc.type   FUNCTION
@@ -247,7 +247,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_010
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_1000
      * @tc.name rippleFieldAmplitudeWavelength
      * @tc.desc Test RippleFieldOptions amplitude and wavelength with edge values (0 and negative)
      * @tc.type   FUNCTION
@@ -268,7 +268,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_011
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_1100
      * @tc.name rippleFieldWaveSpeedAttenuation
      * @tc.desc Test RippleFieldOptions waveSpeed and attenuation with edge values
      * @tc.type   FUNCTION
@@ -289,7 +289,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_012
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_1200
      * @tc.name rippleFieldCenterAndRegion
      * @tc.desc Test RippleFieldOptions center and region fields with CIRCLE shape
      * @tc.type   FUNCTION
@@ -319,7 +319,7 @@ export default function ParticleTest() {
     });
 
     /**
-     * @tc.number ParticleTest_013
+     * @tc.number SUB_ARKUI_ACE_PARTICLE_1300
      * @tc.name velocityFieldVelocityAndRegion
      * @tc.desc Test VelocityFieldOptions velocity and region with various values including negative/zero
      * @tc.type   FUNCTION

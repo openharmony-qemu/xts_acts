@@ -58,7 +58,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_001
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0100
      * @tc.name dataOperationTypeAdd
      * @tc.desc Test DataOperationType.ADD = 'add'
      * @tc.type   FUNCTION
@@ -80,7 +80,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_002
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0200
      * @tc.name dataOperationTypeDelete
      * @tc.desc Test DataOperationType.DELETE = 'delete'
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_003
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0300
      * @tc.name dataOperationTypeExchange
      * @tc.desc Test DataOperationType.EXCHANGE = 'exchange'
      * @tc.type   FUNCTION
@@ -124,7 +124,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_004
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0400
      * @tc.name dataOperationTypeMove
      * @tc.desc Test DataOperationType.MOVE = 'move'
      * @tc.type   FUNCTION
@@ -146,7 +146,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_005
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0500
      * @tc.name dataOperationTypeChange
      * @tc.desc Test DataOperationType.CHANGE = 'change'
      * @tc.type   FUNCTION
@@ -168,7 +168,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_006
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0600
      * @tc.name dataOperationTypeReload
      * @tc.desc Test DataOperationType.RELOAD = 'reload'
      * @tc.type   FUNCTION
@@ -190,7 +190,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_007
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0700
      * @tc.name lazyForEachPageRenders
      * @tc.desc Verify LazyForEach page renders
      * @tc.type   FUNCTION
@@ -213,7 +213,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_008
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0800
      * @tc.name lazyForEachListRenders
      * @tc.desc Verify LazyForEach list renders with data
      * @tc.type   FUNCTION
@@ -236,7 +236,7 @@ export default function LazyForEachTest() {
     });
 
     /**
-     * @tc.number LazyForEachTest_009
+     * @tc.number SUB_ARKUI_ACE_LAZYFOREACH_0900
      * @tc.name lazyForEachDebugLine
      * @tc.desc Verify LazyForEachAttribute.debugLine method exists
      * @tc.type   FUNCTION

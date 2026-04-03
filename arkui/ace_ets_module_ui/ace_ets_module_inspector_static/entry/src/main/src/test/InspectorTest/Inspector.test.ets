@@ -51,7 +51,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_001
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0100
      * @tc.name inspectorPageRenders
      * @tc.desc Verify Inspector test page renders with $attrs
      * @tc.type   FUNCTION
@@ -72,7 +72,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_002
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0200
      * @tc.name inspectorParentRendered
      * @tc.desc Verify inspectorParent Column with List renders with $attrs
      * @tc.type   FUNCTION
@@ -93,7 +93,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_003
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0300
      * @tc.name observerCreatedInPage
      * @tc.desc Verify UIInspector.createComponentObserver was called in page onPageShow
      * @tc.type   FUNCTION
@@ -113,7 +113,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_004
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0400
      * @tc.name onDrawChildrenRegisteredInPage
      * @tc.desc Verify onDrawChildren was registered in page onPageShow
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_005
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0500
      * @tc.name offDrawChildrenCalledInPage
      * @tc.desc Verify offDrawChildren was called after timeout in page
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function InspectorTest() {
     });
 
     /**
-     * @tc.number InspectorTest_006
+     * @tc.number SUB_ARKUI_ACE_INSPECTOR_0600
      * @tc.name inspectorRefreshButtonRendered
      * @tc.desc Verify Refresh button rendered in page
      * @tc.type   FUNCTION
