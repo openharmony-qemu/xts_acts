@@ -19,8 +19,6 @@ import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../
 import dragController from '@ohos.arkui.dragController';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {
   DragSpringLoadingTestBridge,
@@ -63,7 +61,7 @@ export default function DragControllerTest(): void {
   describe('DragControllerTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DragControllerTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {
@@ -72,12 +70,11 @@ export default function DragControllerTest(): void {
         url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
+        router.clear();
+        let pages = router.getState();
         console.info('DragControllerTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'DragSpringLoadingIndex') {
-          routerInstance.replaceUrl(options);
+          await router.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {

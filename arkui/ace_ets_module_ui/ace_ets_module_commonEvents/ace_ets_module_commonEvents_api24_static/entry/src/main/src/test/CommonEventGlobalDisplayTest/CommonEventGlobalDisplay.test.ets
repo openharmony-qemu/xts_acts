@@ -18,7 +18,6 @@
 import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest } from '../Util.test';
 import { Driver, ON, Point } from '@kit.TestKit';
@@ -31,9 +30,8 @@ export default function CommonEventGlobalDisplayTest(): void {
 
     beforeEach(async (): Promise<void> => {
       let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonEventApiProbe/CommonEventApiProbe' };
-      let r = AppStorage.get<Router>('router') as Router;
-      r.clear();
-      r.replaceUrl(ro);
+      router.clear();
+      await router.replaceUrl(ro);
       await Utils.sleep(600);
     });
 

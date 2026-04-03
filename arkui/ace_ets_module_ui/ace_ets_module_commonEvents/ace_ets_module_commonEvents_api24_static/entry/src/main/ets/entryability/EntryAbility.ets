@@ -22,6 +22,7 @@ import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
+import { setMainUIContextForStaticTest } from '../MainAbility/common/UIContextStaticTestBridge';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -61,7 +62,9 @@ class EntryAbility extends UIAbility {
           }
           // Obtain a UIContext instance.
           if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+            let ctx: UIContext = windowClass!.getUIContext();
+            AppStorage.setOrCreate<UIContext>('uiContent', ctx);
+            setMainUIContextForStaticTest(ctx);
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');

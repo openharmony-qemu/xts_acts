@@ -19,7 +19,6 @@ import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../
 import { PanGestureOptions, PanDirection, SourceTool, PanGestureHandlerOptions } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest } from '../Util.test';
 
@@ -37,9 +36,8 @@ export default function GestureStaticSuiteTest(): void {
 
     beforeEach(async (): Promise<void> => {
       let ro: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
-      let r = AppStorage.get<Router>('router') as Router;
-      r.clear();
-      r.replaceUrl(ro);
+      router.clear();
+      await router.replaceUrl(ro);
       await Utils.sleep(600);
     });
 

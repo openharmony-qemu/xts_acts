@@ -22,12 +22,13 @@ import {
   GestureObserverConfigs,
   GestureTriggerInfo,
   GestureListenerCallback,
+  UIContext,
 } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import router from '@ohos.router';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { getMainUIContextForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { invokeEnableDropDisallowedBadgeTrueThenFalse } from '../../../ets/MainAbility/common/UIContextBadgeBridge';
 
 export default function UIContextUIObserverApiTest(): void {
@@ -45,7 +46,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIObserver_AddGlobalGestureListener_Tap_WithPhases_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let uiContext = AppStorage.get<UIContext>('uiContent');
+      let uiContext = getMainUIContextForStaticTest();
       expect(uiContext !== undefined && uiContext !== null).assertTrue();
       let listener: GestureListenerCallback = (info: GestureTriggerInfo): void => {
         AppStorage.setOrCreate<string>('uio_tap_cb_count', String(Number(AppStorage.get<string>('uio_tap_cb_count') ?? '0') + 1));
@@ -56,8 +57,7 @@ export default function UIContextUIObserverApiTest(): void {
       };
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.TAP, option, listener);
       let ro: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
-      let r = AppStorage.get<Router>('router') as Router;
-      r.replaceUrl(ro);
+      await router.replaceUrl(ro);
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('gestureTapHost');
       let cx = (rect.left + rect.right) / 2;
@@ -79,7 +79,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_WithCallback_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let uiContext = AppStorage.get<UIContext>('uiContent');
+      let uiContext = getMainUIContextForStaticTest();
       expect(uiContext !== undefined && uiContext !== null).assertTrue();
       let listener: GestureListenerCallback = (_info: GestureTriggerInfo): void => {
         AppStorage.setOrCreate<string>('uio_lp_cb_count', String(Number(AppStorage.get<string>('uio_lp_cb_count') ?? '0') + 1));
@@ -89,8 +89,7 @@ export default function UIContextUIObserverApiTest(): void {
       };
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.LONG_PRESS, option, listener);
       let ro: router.RouterOptions = { url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' };
-      let r = AppStorage.get<Router>('router') as Router;
-      r.replaceUrl(ro);
+      await router.replaceUrl(ro);
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('dragSpringLoadingHost');
       let cx = (rect.left + rect.right) / 2;
@@ -111,7 +110,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIObserver_RemoveGlobalGestureListener_OmitCallback_1600', Level.LEVEL1, (done: () => void) => {
-      let uiContext = AppStorage.get<UIContext>('uiContent');
+      let uiContext = getMainUIContextForStaticTest();
       expect(uiContext !== undefined && uiContext !== null).assertTrue();
       let listener: GestureListenerCallback = (_info: GestureTriggerInfo): void => {
       };
@@ -132,7 +131,7 @@ export default function UIContextUIObserverApiTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_UIContext_EnableDropDisallowedBadge_TrueThenFalse_1700', Level.LEVEL1, (done: () => void) => {
-      let ctx = AppStorage.get<UIContext>('uiContent');
+      let ctx = getMainUIContextForStaticTest();
       expect(ctx !== undefined && ctx !== null).assertTrue();
       invokeEnableDropDisallowedBadgeTrueThenFalse(ctx!);
       done();

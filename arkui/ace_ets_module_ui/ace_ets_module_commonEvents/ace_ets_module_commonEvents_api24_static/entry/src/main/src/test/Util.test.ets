@@ -18,11 +18,12 @@ import hilog from '@ohos.hilog'
 
 const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: Int = 0x0000;
-let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
+let tag: string = 'ActsAceEtsModuleCommonEventsApi24StaticTest';
 
 class UtilsTest {
   static isloadAndSetUpUiTest: boolean = false;
-  static isStartedAbility: boolean = false;
+  /** Last bundle started via startAbility; switching bundles must run aa start again. */
+  static startedBundleName: string = '';
 
   static async msSleep(count: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -34,10 +35,10 @@ class UtilsTest {
 
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
     try {
-      if (!UtilsTest.isStartedAbility) {
+      if (UtilsTest.startedBundleName !== bundleName) {
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-        UtilsTest.isStartedAbility = true;
+        UtilsTest.startedBundleName = bundleName;
         await UtilsTest.msSleep(4000)
       }
       return true;
