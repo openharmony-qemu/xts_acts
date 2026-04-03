@@ -475,11 +475,11 @@ export default function WebSocketTest() {
             pingInterval: 50,
             pongTimeout: 50
           };
-          ExpectTrue(options.skipServerCertVerification != undefined);
-          ExpectTrue(options.proxy != undefined);
-          ExpectTrue(options.protocol != undefined);
-          ExpectTrue(options.pingInterval != undefined);
-          ExpectTrue(options.pongTimeout != undefined);
+          ExpectTrue(options.skipServerCertVerification !== undefined);
+          ExpectTrue(options.proxy !== undefined);
+          ExpectTrue(options.protocol !== undefined);
+          ExpectTrue(options.pingInterval !== undefined);
+          ExpectTrue(options.pongTimeout !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
@@ -506,8 +506,8 @@ export default function WebSocketTest() {
             status: 0,
             message: 'system'
           };
-          ExpectTrue(openResult.status != undefined);
-          ExpectTrue(openResult.message != undefined);
+          ExpectTrue(openResult.status !== undefined);
+          ExpectTrue(openResult.message !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
@@ -542,12 +542,12 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 10
           };
-          ExpectTrue(webSocketServerConfig.serverIP != undefined);
-          ExpectTrue(webSocketServerConfig.serverPort != undefined);
-          ExpectTrue(webSocketServerConfig.serverCert != undefined);
-          ExpectTrue(webSocketServerConfig.protocol != undefined);
-          ExpectTrue(webSocketServerConfig.maxConcurrentClientsNumber != undefined);
-          ExpectTrue(webSocketServerConfig.maxConnectionsForOneClient != undefined);
+          ExpectTrue(webSocketServerConfig.serverIP !== undefined);
+          ExpectTrue(webSocketServerConfig.serverPort !== undefined);
+          ExpectTrue(webSocketServerConfig.serverCert !== undefined);
+          ExpectTrue(webSocketServerConfig.protocol !== undefined);
+          ExpectTrue(webSocketServerConfig.maxConcurrentClientsNumber !== undefined);
+          ExpectTrue(webSocketServerConfig.maxConnectionsForOneClient !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
@@ -574,8 +574,8 @@ export default function WebSocketTest() {
             certPath: "",
             keyPath: ""
           }
-          ExpectTrue(serverCert.certPath != undefined);
-          ExpectTrue(serverCert.certPath != undefined);
+          ExpectTrue(serverCert.certPath !== undefined);
+          ExpectTrue(serverCert.keyPath !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
@@ -602,8 +602,8 @@ export default function WebSocketTest() {
             clientIP: "",
             clientPort: 8080
           }
-          ExpectTrue(webSocketConnection.clientIP != undefined);
-          ExpectTrue(webSocketConnection.clientPort != undefined);
+          ExpectTrue(webSocketConnection.clientIP !== undefined);
+          ExpectTrue(webSocketConnection.clientPort !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
@@ -634,8 +634,8 @@ export default function WebSocketTest() {
             data: "",
             clientConnection: webSocketConnection
           }
-          ExpectTrue(webSocketMessage.data != undefined);
-          ExpectTrue(webSocketMessage.clientConnection != undefined);
+          ExpectTrue(webSocketMessage.data !== undefined);
+          ExpectTrue(webSocketMessage.clientConnection !== undefined);
           done();
         } catch (error) {
           hilog.info(domain, tag, '%{public}s', caseName + error.code);
