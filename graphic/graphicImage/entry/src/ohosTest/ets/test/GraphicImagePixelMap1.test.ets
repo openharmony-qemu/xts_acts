@@ -1429,6 +1429,7 @@ export default function graphicImagePixelMap1() {
         let pixelMap1 = image.createPixelMapSync(opts);
         try {
           await pixelMap1.release();
+          done();
         } catch (err) {
           err = err as BusinessError;
           console.info('www data graphicImagePixelMap1_4600 error ' + JSON.stringify(err))
