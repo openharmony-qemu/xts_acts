@@ -17,7 +17,7 @@ import image from '@ohos.multimedia.image'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
-import { createMovingPhoto, fetchOption, getPermission } from "../common";
+import { createMovingPhoto, fetchOption, getPermission } from "../Common.test";
 import { Context } from '@kit.ArkUI';
 import { beforeAll, describe, expect, Hypium, it, Level, Size, TestType } from '../../../../hypium';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
@@ -968,14 +968,14 @@ export default function MediaAssetManagerStaticTest(): void {
     });
 
     /**
-     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400
-     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400
+     * @tc.name   SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400
+     * @tc.number SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400
      * @tc.desc   loadMovingPhoto
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testContext: Context = Hypium.get('Context') as Context;
       let imageFileUri: string = 'file://' + testContext.filesDir + "/" + imagePathUri;
       let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPathUri;
@@ -983,58 +983,58 @@ export default function MediaAssetManagerStaticTest(): void {
         let movingPhoto: photoAccessHelper.MovingPhoto =
           await photoAccessHelper.MediaAssetManager.loadMovingPhoto(testContext, imageFileUri, videoFileUri);
         let uri = movingPhoto.getUri();
-        console.info(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400 + loadMovingPhotoPromiseTest photo: " + uri);
+        console.info(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400 + loadMovingPhotoPromiseTest photo: " + uri);
         expect(uri != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400 + loadMoving errcode: " + error.code);
+        console.error(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2400 + loadMoving errcode: " + error.code);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500
-     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500
+     * @tc.name   SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500
+     * @tc.number SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500
      * @tc.desc   loadMovingPhoto
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testContext: Context = Hypium.get('Context') as Context;
       let videoFileUri: string = 'file://' + testContext.filesDir + "/" + videoPathUri;
       try {
         let movingPhoto: photoAccessHelper.MovingPhoto =
           await photoAccessHelper.MediaAssetManager.loadMovingPhoto(testContext, '', videoFileUri);
         let uri = movingPhoto.getUri();
-        console.info(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500 + loadMovingPhotoPromiseTest photo: " + uri);
+        console.info(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500 + loadMovingPhotoPromiseTest photo: " + uri);
         expect(uri != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500 + loadMoving errcode: " + error.code);
+        console.error(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2500 + loadMoving errcode: " + error.code);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600
-     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600
+     * @tc.name   SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600
+     * @tc.number SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600
      * @tc.desc   loadMovingPhoto
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testContext: Context = Hypium.get('Context') as Context;
       let imageFileUri: string = 'file://' + testContext.filesDir + "/" + imagePathUri;
       try {
         let movingPhoto: photoAccessHelper.MovingPhoto =
           await photoAccessHelper.MediaAssetManager.loadMovingPhoto(testContext, imageFileUri, '');
         let uri = movingPhoto.getUri();
-        console.info(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600 + loadMovingPhotoPromiseTest photo: " + uri);
+        console.info(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600 + loadMovingPhotoPromiseTest photo: " + uri);
         expect(uri != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG + "MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600 + loadMoving errcode: " + error.code);
+        console.error(TAG + "SUB_MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_STATIC_2600 + loadMoving errcode: " + error.code);
         expect().assertFail();
       }
       done();
