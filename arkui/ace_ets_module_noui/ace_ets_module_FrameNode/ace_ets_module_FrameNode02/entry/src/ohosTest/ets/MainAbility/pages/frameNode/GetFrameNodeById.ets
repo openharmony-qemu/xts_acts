@@ -142,7 +142,7 @@ struct FrameNodeGetFrameNodeById {
         .onClick(() => {
           this.myNodeController.testDuplicateNodeId();
         })
-    }.width("100%")
+    }.width('100%')
     .padding(20)
   }
 }

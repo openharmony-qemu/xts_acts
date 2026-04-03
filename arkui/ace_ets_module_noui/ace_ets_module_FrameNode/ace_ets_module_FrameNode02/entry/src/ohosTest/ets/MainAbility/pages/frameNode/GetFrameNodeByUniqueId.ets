@@ -102,7 +102,7 @@ struct FrameNodeGetFrameNodeByUniqueId {
         .onClick(() => {
           this.myNodeController.testUndefined();
         })
-    }.width("100%")
+    }.width('100%')
     .padding(20)
   }
 }
