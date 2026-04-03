@@ -1,0 +1,205 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+export default function BuiltinsArrayReduceRightTest(): void {
+  describe("BuiltinsArrayReduceRightTest", () => {
+    beforeAll(() => {
+    })
+    beforeEach(async () => {
+      await Utils.msSleep(100);
+    })
+    afterEach(() => {
+    })
+    afterAll(() => {
+    })
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0100
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0100
+     * @tc.desc    Verify reduceRight() - basic functionality with number array
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('builtinsArrayReduceRightTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.reduceRight((acc, value) => acc + value);
+      const expected = 15;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0200
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0200
+     * @tc.desc    Verify reduceRight() - empty array throws error
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('builtinsArrayReduceRightTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr = new Array<number>();
+
+      expect(() => {
+        arr.reduceRight((acc, value) => acc + value);
+      }).assertThrow("Reduce of empty array with no initial value");
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0300
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0300
+     * @tc.desc    Verify reduceRight() - single element array
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('builtinsArrayReduceRightTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr = Array.of<number>(42);
+      const result = arr.reduceRight((acc, value) => acc + value);
+      const expected = 42;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0400
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0400
+     * @tc.desc    Verify reduceRight() - using all callback parameters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<number>(1, 2, 3);
+      let indices: number[] = [];
+      const result = arr.reduceRight((acc, value, index, array) => {
+        indices.push(index);
+        return acc + value + array.length;
+      });
+      const expected = 12;
+      const expectedIndices = [1, 0];
+
+      expect(result).assertEqual(expected);
+      expect(indices.length).assertEqual(expectedIndices.length);
+      for (let i = 0; i < indices.length; i++) {
+        expect(indices[i]).assertEqual(expectedIndices[i]);
+      }
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0500
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0500
+     * @tc.desc    Verify reduceRight() - string array concatenation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<string>("a", "b", "c", "d");
+      const result = arr.reduceRight((acc, value) => acc + value);
+      const expected = "dcba";
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0600
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0600
+     * @tc.desc    Verify reduceRight() - boolean array
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<boolean>(true, false, true, true);
+      const result = arr.reduceRight((acc, value) => acc && value);
+      const expected = false;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0700
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0700
+     * @tc.desc    Verify reduceRight() - original array remains unchanged
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const original = new Array<number>(1, 2, 3, 4, 5);
+
+      arr.reduceRight((acc, value) => acc + value);
+
+      expect(arr.length).assertEqual(original.length);
+      for (let i = 0; i < arr.length; i++) {
+        expect(arr.$_get(i)).assertEqual(original.$_get(i));
+      }
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0800
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0800
+     * @tc.desc    Verify reduceRight() - complex reduction logic
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<number>(5, 3, 8, 1, 7);
+      const result = arr.reduceRight((acc, value) => {
+        return value > acc ? value : acc;
+      });
+      const expected = 8;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest0900
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_0900
+     * @tc.desc    Verify reduceRight() - multiplication
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<number>(2, 3, 4);
+      const result = arr.reduceRight((acc, value) => acc * value);
+      const expected = 24;
+
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name    builtinsArrayReduceRightTest1000
+     * @tc.number  SUB_BUILTINS_ARRAY_REDUCERIGHT_TEST_1000
+     * @tc.desc    Verify reduceRight() - subtraction (order matters)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayReduceRightTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = new Array<number>(10, 5, 3);
+      const result = arr.reduceRight((acc, value) => acc - value);
+      const expected = -12; // 3 - 5 - 10 = -12
+
+      expect(result).assertEqual(expected);
+    });
+  });
+}
