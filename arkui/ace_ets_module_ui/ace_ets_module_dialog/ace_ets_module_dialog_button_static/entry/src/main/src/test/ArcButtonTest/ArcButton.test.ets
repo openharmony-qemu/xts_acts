@@ -15,7 +15,7 @@
 
 'use static';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
@@ -128,15 +128,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_001
-     * @tc.name arcButtonPositionBottomEdge
+     * @tc.number SUB_arkui_arc_button_inspector_position_bottom_edge_0100
+     * @tc.name SUB_arkui_arc_button_inspector_position_bottom_edge_0100
      * @tc.desc Test ArcButtonPosition BOTTOM_EDGE enum value, verify arc button is bottom edge arc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('arcButtonPositionBottomEdge', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonPositionBottomEdge';
+    it('SUB_arkui_arc_button_inspector_position_bottom_edge_0100', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_inspector_position_bottom_edge_0100';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const inspectorStr = inspector.getInspectorByKey('arcButtonBottomEdge');
       arkuiNewLog(SUITE, 'execute', caseName + ' | inspectorLen=' + (inspectorStr ? inspectorStr.length : 0));
@@ -179,12 +179,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_002
-     * @tc.name arcButtonOptionsPosition
+     * @tc.number SUB_arkui_arc_button_options_position_0200
+     * @tc.name SUB_arkui_arc_button_options_position_0200
      * @tc.desc Test ArcButtonOptions position property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsPosition', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsPosition';
+    it('SUB_arkui_arc_button_options_position_0200', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_position_0200';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const inspectorStr = inspector.getInspectorByKey('arcButtonAllProperties');
       arkuiNewLog(SUITE, 'execute', caseName + ' | inspectorLen=' + (inspectorStr ? inspectorStr.length : 0));
@@ -230,12 +233,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_003
-     * @tc.name arcButtonOptionsStyleMode
+     * @tc.number SUB_arkui_arc_button_options_style_mode_0300
+     * @tc.name SUB_arkui_arc_button_options_style_mode_0300
      * @tc.desc Test ArcButtonOptions styleMode property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsStyleMode', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsStyleMode';
+    it('SUB_arkui_arc_button_options_style_mode_0300', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_style_mode_0300';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('styleMode');
@@ -248,12 +254,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_004
-     * @tc.name arcButtonOptionsStatus
+     * @tc.number SUB_arkui_arc_button_options_status_0400
+     * @tc.name SUB_arkui_arc_button_options_status_0400
      * @tc.desc Test ArcButtonOptions status property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsStatus', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsStatus';
+    it('SUB_arkui_arc_button_options_status_0400', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_status_0400';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('status');
@@ -266,12 +275,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_005
-     * @tc.name arcButtonOptionsLabel
+     * @tc.number SUB_arkui_arc_button_options_label_0500
+     * @tc.name SUB_arkui_arc_button_options_label_0500
      * @tc.desc Test ArcButtonOptions label property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsLabel', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsLabel';
+    it('SUB_arkui_arc_button_options_label_0500', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_label_0500';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idxLabel = str.indexOf('label');
@@ -285,12 +297,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_006
-     * @tc.name arcButtonOptionsBackgroundBlurStyle
+     * @tc.number SUB_arkui_arc_button_options_background_blur_style_0600
+     * @tc.name SUB_arkui_arc_button_options_background_blur_style_0600
      * @tc.desc Test ArcButtonOptions backgroundBlurStyle property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsBackgroundBlurStyle', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsBackgroundBlurStyle';
+    it('SUB_arkui_arc_button_options_background_blur_style_0600', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_background_blur_style_0600';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('backgroundBlurStyle');
@@ -303,12 +318,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_007
-     * @tc.name arcButtonOptionsBackgroundColor
+     * @tc.number SUB_arkui_arc_button_options_background_color_0700
+     * @tc.name SUB_arkui_arc_button_options_background_color_0700
      * @tc.desc Test ArcButtonOptions backgroundColor property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsBackgroundColor', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsBackgroundColor';
+    it('SUB_arkui_arc_button_options_background_color_0700', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_background_color_0700';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('backgroundColor');
@@ -319,12 +337,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_008
-     * @tc.name arcButtonOptionsShadowColor
+     * @tc.number SUB_arkui_arc_button_options_shadow_color_0800
+     * @tc.name SUB_arkui_arc_button_options_shadow_color_0800
      * @tc.desc Test ArcButtonOptions shadowColor property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsShadowColor', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsShadowColor';
+    it('SUB_arkui_arc_button_options_shadow_color_0800', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_shadow_color_0800';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('shadowColor');
@@ -337,12 +358,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_009
-     * @tc.name arcButtonOptionsShadowEnabled
+     * @tc.number SUB_arkui_arc_button_options_shadow_enabled_0900
+     * @tc.name SUB_arkui_arc_button_options_shadow_enabled_0900
      * @tc.desc Test ArcButtonOptions shadowEnabled property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsShadowEnabled', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsShadowEnabled';
+    it('SUB_arkui_arc_button_options_shadow_enabled_0900', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_shadow_enabled_0900';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('shadowEnabled');
@@ -355,12 +379,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_010
-     * @tc.name arcButtonOptionsFontSize
+     * @tc.number SUB_arkui_arc_button_options_font_size_1000
+     * @tc.name SUB_arkui_arc_button_options_font_size_1000
      * @tc.desc Test ArcButtonOptions fontSize property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsFontSize', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsFontSize';
+    it('SUB_arkui_arc_button_options_font_size_1000', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_font_size_1000';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('fontSize');
@@ -373,12 +400,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_011
-     * @tc.name arcButtonOptionsFontColor
+     * @tc.number SUB_arkui_arc_button_options_font_color_1100
+     * @tc.name SUB_arkui_arc_button_options_font_color_1100
      * @tc.desc Test ArcButtonOptions fontColor property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsFontColor', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsFontColor';
+    it('SUB_arkui_arc_button_options_font_color_1100', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_font_color_1100';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('fontColor');
@@ -391,12 +421,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_012
-     * @tc.name arcButtonOptionsPressedFontColor
+     * @tc.number SUB_arkui_arc_button_options_pressed_font_color_1200
+     * @tc.name SUB_arkui_arc_button_options_pressed_font_color_1200
      * @tc.desc Test ArcButtonOptions pressedFontColor property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsPressedFontColor', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsPressedFontColor';
+    it('SUB_arkui_arc_button_options_pressed_font_color_1200', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_pressed_font_color_1200';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('pressedFontColor');
@@ -409,12 +442,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_013
-     * @tc.name arcButtonOptionsFontStyle
+     * @tc.number SUB_arkui_arc_button_options_font_style_1300
+     * @tc.name SUB_arkui_arc_button_options_font_style_1300
      * @tc.desc Test ArcButtonOptions fontStyle property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsFontStyle', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsFontStyle';
+    it('SUB_arkui_arc_button_options_font_style_1300', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_font_style_1300';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('fontStyle');
@@ -427,12 +463,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_014
-     * @tc.name arcButtonOptionsFontFamily
+     * @tc.number SUB_arkui_arc_button_options_font_family_1400
+     * @tc.name SUB_arkui_arc_button_options_font_family_1400
      * @tc.desc Test ArcButtonOptions fontFamily property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsFontFamily', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsFontFamily';
+    it('SUB_arkui_arc_button_options_font_family_1400', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_font_family_1400';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('fontFamily');
@@ -445,12 +484,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_015
-     * @tc.name arcButtonOptionsFontMargin
+     * @tc.number SUB_arkui_arc_button_options_font_margin_1500
+     * @tc.name SUB_arkui_arc_button_options_font_margin_1500
      * @tc.desc Test ArcButtonOptions fontMargin property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsFontMargin', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsFontMargin';
+    it('SUB_arkui_arc_button_options_font_margin_1500', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_font_margin_1500';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonAllPropertiesNodeStr();
       const idx = str.indexOf('fontMargin');
@@ -463,15 +505,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_016
-     * @tc.name arcButtonOptionsOnTouch
+     * @tc.number SUB_arkui_arc_button_options_on_touch_1600
+     * @tc.name SUB_arkui_arc_button_options_on_touch_1600
      * @tc.desc Test ArcButtonOptions onTouch callback is set (via click triggering touch)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsOnTouch', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const caseName = 'arcButtonOptionsOnTouch';
+    it('SUB_arkui_arc_button_options_on_touch_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'SUB_arkui_arc_button_options_on_touch_1600';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       let driver = Driver.create();
       await driver.delayMs(500);
@@ -491,15 +533,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_017
-     * @tc.name arcButtonOptionsOnClick
+     * @tc.number SUB_arkui_arc_button_options_on_click_1700
+     * @tc.name SUB_arkui_arc_button_options_on_click_1700
      * @tc.desc Test ArcButtonOptions onClick callback is invoked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsOnClick', Level.LEVEL1, async (done: () => void) => {
-      const caseName = 'arcButtonOptionsOnClick';
+    it('SUB_arkui_arc_button_options_on_click_1700', Level.LEVEL1, async (done: () => void) => {
+      const caseName = 'SUB_arkui_arc_button_options_on_click_1700';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       let driver = Driver.create();
       await driver.delayMs(500);
@@ -518,12 +560,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_018
-     * @tc.name arcButtonProgressConfigValue
+     * @tc.number SUB_arkui_arc_button_progress_config_value_1800
+     * @tc.name SUB_arkui_arc_button_progress_config_value_1800
      * @tc.desc Test ArcButtonProgressConfig value property (API 23+)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonProgressConfigValue', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonProgressConfigValue';
+    it('SUB_arkui_arc_button_progress_config_value_1800', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_progress_config_value_1800';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonProgressConfigNodeStr();
       const idxValue = str.indexOf('value');
@@ -537,12 +582,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_019
-     * @tc.name arcButtonProgressConfigTotal
+     * @tc.number SUB_arkui_arc_button_progress_config_total_1900
+     * @tc.name SUB_arkui_arc_button_progress_config_total_1900
      * @tc.desc Test ArcButtonProgressConfig total property (API 23+)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonProgressConfigTotal', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonProgressConfigTotal';
+    it('SUB_arkui_arc_button_progress_config_total_1900', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_progress_config_total_1900';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonProgressConfigNodeStr();
       const idxTotal = str.indexOf('total');
@@ -556,12 +604,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_020
-     * @tc.name arcButtonProgressConfigColor
+     * @tc.number SUB_arkui_arc_button_progress_config_color_2000
+     * @tc.name SUB_arkui_arc_button_progress_config_color_2000
      * @tc.desc Test ArcButtonProgressConfig color property (API 23+)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonProgressConfigColor', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonProgressConfigColor';
+    it('SUB_arkui_arc_button_progress_config_color_2000', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_progress_config_color_2000';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonProgressConfigNodeStr();
       const idxColor = str.indexOf('color');
@@ -575,12 +626,15 @@ export default function ArcButtonTest() {
     });
 
     /**
-     * @tc.number ArcButtonTest_021
-     * @tc.name arcButtonOptionsProgressConfig
+     * @tc.number SUB_arkui_arc_button_options_progress_config_2100
+     * @tc.name SUB_arkui_arc_button_options_progress_config_2100
      * @tc.desc Test ArcButtonOptions progressConfig property (API 23+)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('arcButtonOptionsProgressConfig', Level.LEVEL1, (done: () => void): void => {
-      const caseName = 'arcButtonOptionsProgressConfig';
+    it('SUB_arkui_arc_button_options_progress_config_2100', Level.LEVEL1, (done: () => void): void => {
+      const caseName = 'SUB_arkui_arc_button_options_progress_config_2100';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
       const str = getArcButtonProgressConfigNodeStr();
       const idxPc = str.indexOf('progressConfig');
