@@ -37,7 +37,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0100
      * @tc.desc   Test for creating a path object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCopyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0200
      * @tc.desc   Test for copying a path with normal parameters and checking the copied path length.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCopyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0300
      * @tc.desc   Test for copying a path with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCopyInputDestroyed
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0400
      * @tc.desc   Test for copying a path and checking if the copied path is affected after the original path is destroyed.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0500
      * @tc.desc   Test for creating and destroying a path object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0600
      * @tc.desc   Test for destroying a path object with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathMoveToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0700
      * @tc.desc   Test for moving a path to a normal position with valid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathMoveToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0800
      * @tc.desc   Test for moving a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathMoveToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_0900
      * @tc.desc   Test for moving a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathMoveToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1000
      * @tc.desc   Test for moving a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathLineToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1100
      * @tc.desc   Test for adding a line to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathLineToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1200
      * @tc.desc   Test for adding a line to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathLineToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1300
      * @tc.desc   Test for moving a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathLineToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1400
      * @tc.desc   Test for moving a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathArcToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1500
      * @tc.desc   Test for adding an arc to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathArcToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1600
      * @tc.desc   Test for adding an arc to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathArcToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1700
      * @tc.desc   Test for adding an arc to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathArcToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1800
      * @tc.desc   Test for adding an arc to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathQuadToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_1900
      * @tc.desc   Test for adding a quadratic Bezier curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathQuadToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2000
      * @tc.desc   Test for adding a quadratic Bezier curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathQuadToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2100
      * @tc.desc   Test for adding a quadratic Bezier curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathQuadToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2200
      * @tc.desc   Test for adding a quadratic Bezier curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathConicToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2300
      * @tc.desc   Test for adding a conic curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathConicToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2400
      * @tc.desc   Test for adding a conic curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathConicToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2500
      * @tc.desc   Test for adding a conic curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathConicToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2600
      * @tc.desc   Test for adding a conic curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCubicToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2700
      * @tc.desc   Test for adding a cubic Bezier curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCubicToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2800
      * @tc.desc   Test for adding a cubic Bezier curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCubicToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_2900
      * @tc.desc   Test for adding a cubic Bezier curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCubicToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_3000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathBasic_3000
      * @tc.desc   Test for adding a cubic Bezier curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -427,7 +427,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRMoveToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0100
      * @tc.desc   Test for setting a relative move to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -440,7 +440,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRMoveToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0200
      * @tc.desc   Test for setting a relative move to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -453,7 +453,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRMoveToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0300
      * @tc.desc   Test for setting a relative move to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -466,7 +466,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRMoveToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0400
      * @tc.desc   Test for setting a relative move to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -479,7 +479,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRLineToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0500
      * @tc.desc   Test for adding a relative line to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -492,7 +492,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRLineToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0600
      * @tc.desc   Test for adding a relative line to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -505,7 +505,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRLineToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0700
      * @tc.desc   Test for adding a relative line to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -518,7 +518,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRLineToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0800
      * @tc.desc   Test for adding a relative line to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -531,7 +531,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRQuadToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_0900
      * @tc.desc   Test for adding a relative quadratic Bezier curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -544,7 +544,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRQuadToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1000
      * @tc.desc   Test for adding a relative quadratic Bezier curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -557,7 +557,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRQuadToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1100
      * @tc.desc   Test for adding a relative quadratic Bezier curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -570,7 +570,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRQuadToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1200
      * @tc.desc   Test for adding a relative quadratic Bezier curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -583,7 +583,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRConicToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1300
      * @tc.desc   Test for adding a relative conic curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -596,7 +596,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRConicToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1400
      * @tc.desc   Test for adding a relative conic curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -609,7 +609,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRConicToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1500
      * @tc.desc   Test for adding a relative conic curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -622,7 +622,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRConicToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1600
      * @tc.desc   Test for adding a relative conic curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -635,7 +635,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRCubicToNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1700
      * @tc.desc   Test for adding a relative cubic Bezier curve to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -648,7 +648,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRCubicToNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1800
      * @tc.desc   Test for adding a relative cubic Bezier curve to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -661,7 +661,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRCubicToAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_1900
      * @tc.desc   Test for adding a relative cubic Bezier curve to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -674,7 +674,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathRCubicToMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathRelative_2000
      * @tc.desc   Test for adding a relative cubic Bezier curve to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -688,7 +688,7 @@ export default function DrawingNativePathTest() {
     // Path Add Shape related test cases (14 cases)
     /**
      * @tc.name   testPathAddRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0100
      * @tc.desc   Test for adding a rectangle to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -701,7 +701,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0200
      * @tc.desc   Test for adding a rectangle to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -714,7 +714,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0300
      * @tc.desc   Test for adding a rectangle to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -727,7 +727,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0400
      * @tc.desc   Test for adding a rectangle to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -740,7 +740,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectWithInitialCornerNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0500
      * @tc.desc   Test for adding a rectangle to a path with initial corner and normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -753,7 +753,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectWithInitialCornerNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0600
      * @tc.desc   Test for adding a rectangle to a path with initial corner and NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -766,7 +766,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectWithInitialCornerAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0700
      * @tc.desc   Test for adding a rectangle to a path with initial corner and abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -779,7 +779,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRectWithInitialCornerMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0800
      * @tc.desc   Test for adding a rectangle to a path with initial corner and maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -792,7 +792,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRoundRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_0900
      * @tc.desc   Test for adding a round rectangle to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -805,7 +805,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddRoundRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1000
      * @tc.desc   Test for adding a round rectangle to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -818,7 +818,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalWithInitialPointNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1100
      * @tc.desc   Test for adding an oval to a path with initial point and normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -831,7 +831,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalWithInitialPointNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1200
      * @tc.desc   Test for adding an oval to a path with initial point and NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -844,7 +844,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalWithInitialPointAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1300
      * @tc.desc   Test for adding an oval to a path with initial point and abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -857,7 +857,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalWithInitialPointMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathAddShape_1400
      * @tc.desc   Test for adding an oval to a path with initial point and maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -871,7 +871,7 @@ export default function DrawingNativePathTest() {
     // Path Part2 Add related test cases (25 cases)
     /**
      * @tc.name   testPathAddArcNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0100
      * @tc.desc   Test for adding an arc to a path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -884,7 +884,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddArcNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0200
      * @tc.desc   Test for adding an arc to a path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -897,7 +897,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddArcAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0300
      * @tc.desc   Test for adding an arc to a path with abnormal data types as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -910,7 +910,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddArcMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0400
      * @tc.desc   Test for adding an arc to a path with maximal values as parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -923,7 +923,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0500
      * @tc.desc   Test for adding a path to another path with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -936,7 +936,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0600
      * @tc.desc   Test for adding a path to another path with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -949,7 +949,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithMatrixAndModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0700
      * @tc.desc   Test for adding a path to another path with matrix and mode transformations using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -962,7 +962,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithMatrixAndModeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0800
      * @tc.desc   Test for adding a path to another path with matrix and mode transformations using NULL or invalid
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -975,7 +975,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_0900
      * @tc.desc   Test for adding a path to another path with mode transformations using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -988,7 +988,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithModeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1000
      * @tc.desc   Test for adding a path to another path with mode transformations using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1001,7 +1001,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithOffsetAndModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1100
      * @tc.desc   Test for adding a path to another path with offset and mode transformations using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1014,7 +1014,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithOffsetAndModeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1200
      * @tc.desc   Test for adding a path to another path with offset and mode transformations using NULL or invalid
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1027,7 +1027,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithOffsetAndModeAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1300
      * @tc.desc   Test for adding a path to another path with offset and mode transformations using abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1040,7 +1040,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPathWithOffsetAndModeMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1400
      * @tc.desc   Test for adding a path to another path with offset and mode transformations using maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1053,7 +1053,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1500
      * @tc.desc   Test for adding an oval to a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1066,7 +1066,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddOvalNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1600
      * @tc.desc   Test for adding an oval to a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1079,7 +1079,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPolygonNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1700
      * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to true.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1092,7 +1092,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPolygonNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1800
      * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to false.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1105,7 +1105,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPolygonNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_1900
      * @tc.desc   Test for adding a polygon to a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1118,7 +1118,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPolygonAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2000
      * @tc.desc   Test for adding a polygon to a path using abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1131,7 +1131,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddPolygonMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2100
      * @tc.desc   Test for adding a polygon to a path using maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1144,7 +1144,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddCircleNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2200
      * @tc.desc   Test for adding a circle to a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1157,7 +1157,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddCircleNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2300
      * @tc.desc   Test for adding a circle to a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1170,7 +1170,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddCircleAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2400
      * @tc.desc   Test for adding a circle to a path using abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1183,7 +1183,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathAddCircleMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Add_2500
      * @tc.desc   Test for adding a circle to a path using maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1197,7 +1197,7 @@ export default function DrawingNativePathTest() {
     // Path Part2 Transform related test cases (11 cases)
     /**
      * @tc.name   testPathBuildFromSvgStringNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0100
      * @tc.desc   Test for building a path from an SVG string using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1210,7 +1210,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathBuildFromSvgStringNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0200
      * @tc.desc   Test for building a path from an SVG string using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1223,7 +1223,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathContainsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0300
      * @tc.desc   Test for checking if a path contains a specified point using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1236,7 +1236,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathContainsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0400
      * @tc.desc   Test for checking if a path contains a specified point using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1249,7 +1249,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathContainsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0500
      * @tc.desc   Test for checking if a path contains a specified point using abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1262,7 +1262,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathContainsMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0600
      * @tc.desc   Test for checking if a path contains a specified point using maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1275,7 +1275,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathTransformNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0700
      * @tc.desc   Test for transforming a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1288,7 +1288,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathTransformNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0800
      * @tc.desc   Test for transforming a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1301,7 +1301,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathTransformWithPerspectiveClipNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_0900
      * @tc.desc   Test for transforming a path with perspective clip using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1314,7 +1314,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathTransformWithPerspectiveClipNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_1000
      * @tc.desc   Test for transforming a path with perspective clip using normal parameters with false perspective clip.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1327,7 +1327,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathTransformWithPerspectiveClipNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2Transform_1100
      * @tc.desc   Test for transforming a path with perspective clip using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1341,7 +1341,7 @@ export default function DrawingNativePathTest() {
     // Path Part2 Get/Set related test cases (17 cases)
     /**
      * @tc.name   testPathSetFillTypeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0100
      * @tc.desc   Test for setting fill type of a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1354,7 +1354,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathSetFillTypeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0200
      * @tc.desc   Test for setting fill type of a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1367,7 +1367,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathSetFillTypeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0300
      * @tc.desc   Test for setting fill type of a path with multiple calls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1380,7 +1380,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetLengthNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0400
      * @tc.desc   Test for getting the length of a path using normal parameters with detailed length.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1393,7 +1393,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetLengthNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0500
      * @tc.desc   Test for getting the length of a path using normal parameters without detailed length.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1406,7 +1406,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetLengthNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0600
      * @tc.desc   Test for getting the length of a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1419,7 +1419,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetBoundsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0700
      * @tc.desc   Test for getting the bounds of a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1432,7 +1432,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetBoundsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0800
      * @tc.desc   Test for getting the bounds of a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1445,7 +1445,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCloseNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_0900
      * @tc.desc   test for testPathCloseNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1458,7 +1458,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathCloseNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1000
      * @tc.desc   Test for closing a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1471,7 +1471,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOffsetNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1100
      * @tc.desc   Test for offsetting a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1484,7 +1484,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOffsetNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1200
      * @tc.desc   Test for offsetting a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1497,7 +1497,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOffsetAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1300
      * @tc.desc   Test for offsetting a path with abnormal parameters (non-float values).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1510,7 +1510,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOffsetMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1400
      * @tc.desc   Test for offsetting a path with maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1523,7 +1523,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathResetNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1500
      * @tc.desc   Test for resetting a path using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1536,7 +1536,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathResetNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1600
      * @tc.desc   Test for resetting a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1549,7 +1549,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathResetMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart2GetSet_1700
      * @tc.desc   Test for resetting a path with multiple calls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1563,7 +1563,7 @@ export default function DrawingNativePathTest() {
     // Path Part3 Query related test cases (12 cases)
     /**
      * @tc.name   testPathIsClosedNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0100
      * @tc.desc   Test for checking if a path is closed using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1576,7 +1576,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsClosedNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0200
      * @tc.desc   Test for checking if a path is closed without closing it.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1589,7 +1589,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsClosedNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0300
      * @tc.desc   Test for checking if a path is closed with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1602,7 +1602,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetPositionTangentNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0100
      * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to true.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1615,7 +1615,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetPositionTangentNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0200
      * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to false.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1628,7 +1628,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetPositionTangentNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0300
      * @tc.desc   Test for getting position and tangent of a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1641,7 +1641,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetPositionTangentAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0400
      * @tc.desc   Test for getting position and tangent of a path with abnormal parameters (non-float values).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1654,7 +1654,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetPositionTangentMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0500
      * @tc.desc   Test for getting position and tangent of a path with maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1667,7 +1667,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOpNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0600
      * @tc.desc   Test for performing path operations using normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1680,7 +1680,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathOpNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0700
      * @tc.desc   Test for performing path operations with NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1693,7 +1693,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetMatrixNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0800
      * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to true.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1706,7 +1706,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetMatrixNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_0900
      * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to false.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1719,7 +1719,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetMatrixNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1000
      * @tc.desc   Test for getting transformation matrix of a path using NULL or invalid parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1732,7 +1732,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetMatrixAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1100
      * @tc.desc   Test for getting transformation matrix of a path with abnormal parameters (non-float values).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1745,7 +1745,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetMatrixMaximal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1200
      * @tc.desc   Test for getting transformation matrix of a path with maximal values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1758,7 +1758,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetSegmentNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1300
      * @tc.desc   Testing the enumeration traversal of the interface for extracting path segments and appending them to the
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1771,7 +1771,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetSegmentNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1400
      * @tc.desc   Tests when an interface that intercepts a path fragment and appends it to the target path passes a null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1784,7 +1784,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetSegmentAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1500
      * @tc.desc   Test cases where the function intercepts a path fragment and appends it to the destination path with an
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1797,7 +1797,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetSegmentMultiplies
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Transform_1600
      * @tc.desc   The test function intercepts the path fragment and appends it to the target path loop several times
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1811,7 +1811,7 @@ export default function DrawingNativePathTest() {
     // Path Part3 Advanced related test cases (14 cases)
     /**
      * @tc.name   testPathSetPathNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0100
      * @tc.desc   test for testPathSetPathNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1824,7 +1824,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathSetPathNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0200
      * @tc.desc   test for testPathSetPathNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1837,7 +1837,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathSetPathMulptiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0300
      * @tc.desc   test for testPathSetPathMulptiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1850,7 +1850,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsEmptyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0400
      * @tc.desc   test for testPathIsEmptyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1863,7 +1863,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsEmptyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0500
      * @tc.desc   test for testPathIsEmptyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1876,7 +1876,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsEmptyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0600
      * @tc.desc   test for testPathIsEmptyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1889,7 +1889,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0700
      * @tc.desc   test for testPathIsRectNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1902,7 +1902,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0800
      * @tc.desc   test for testPathIsRectNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1915,7 +1915,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathIsRectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_0900
      * @tc.desc   test for testPathIsRectMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1928,7 +1928,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetFillTypeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1000
      * @tc.desc   test for testPathGetFillTypeNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1941,7 +1941,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetFillTypeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1100
      * @tc.desc   test for testPathGetFillTypeNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1954,7 +1954,7 @@ export default function DrawingNativePathTest() {
 
     /**
      * @tc.name   testPathGetFillTypeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Query_1200
      * @tc.desc   test for testPathGetFillTypeMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

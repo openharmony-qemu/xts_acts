@@ -48,11 +48,11 @@ int TestRecordCmdUtilsDestroyNormal()
     DrawingRecordCmdUtilsDestroyTestSetUp();
     // 1. OH_Drawing_RecordCmdUtilsCreate
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate ();
+    OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate();
     // add assert
     EXPECT_NE(recordcmd1, nullptr);
     // 2. OH_Drawing_RecordCmdUtilsDestroy
-    drawingErrorCode = OH_Drawing_RecordCmdUtilsDestroy (recordcmd1);
+    drawingErrorCode = OH_Drawing_RecordCmdUtilsDestroy(recordcmd1);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     DrawingRecordCmdUtilsDestroyTestTearDown();
     return OH_DRAWING_SUCCESS;

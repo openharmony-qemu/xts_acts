@@ -37,7 +37,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateFromGpuContextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0100
      * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateFromGpuContextNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0200
      * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateFromGpuContextBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0300
      * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0400
      * @tc.desc   test for testSurfaceDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0500
      * @tc.desc   test for testSurfaceDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceGetCanvasNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0600
      * @tc.desc   test for testSurfaceGetCanvasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceGetCanvasNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0700
      * @tc.desc   test for testSurfaceGetCanvasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceGetCanvasBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0800
      * @tc.desc   test for testSurfaceGetCanvasBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateOnScreenNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_0900
      * @tc.desc   test for testSurfaceCreateOnScreenNormal.window
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateOnScreenNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1000
      * @tc.desc   test for testSurfaceCreateOnScreenNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceCreateOnScreenMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1100
      * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceFlushNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1200
      * @tc.desc   test for testSurfaceFlushNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceFlushNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1300
      * @tc.desc   test for testSurfaceFlushNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceFlushAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1400
      * @tc.desc   test for testSurfaceFlushAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceFlushMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1500
      * @tc.desc   test for testSurfaceFlushMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeSurfaceTest() {
 
     /**
      * @tc.name   testSurfaceFlushTiming
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingSurface_1600
      * @tc.desc   test for testSurfaceFlushTiming.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

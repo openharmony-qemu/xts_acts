@@ -37,7 +37,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0100
      * @tc.desc   Test for testPenCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenCopyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0200
      * @tc.desc   Test for testPenCopyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenCopyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0300
      * @tc.desc   Test for testPenCopyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenCopyInputDestroyed
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0400
      * @tc.desc   Test for testPenCopyInputDestroyed.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0500
      * @tc.desc   Test for testPenDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCreateDestroy_0600
      * @tc.desc   Test for testPenDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -116,7 +116,7 @@ export default function DrawingNativePenTest() {
     // Pen AntiAlias related test cases (4 cases)
     /**
      * @tc.name   testPenIsAntiAliasNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0100
      * @tc.desc   Test for testPenIsAntiAliasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -129,7 +129,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenIsAntiAliasNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0200
      * @tc.desc   Test for testPenIsAntiAliasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -142,7 +142,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAntiAliasNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0300
      * @tc.desc   Test for testPenSetAntiAliasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -155,7 +155,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAntiAliasNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAntiAlias_0400
      * @tc.desc   Test for testPenSetAntiAliasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -169,7 +169,7 @@ export default function DrawingNativePenTest() {
     // Pen Color related test cases (6 cases)
     /**
      * @tc.name   testPenGetColorNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0100
      * @tc.desc   Test for testPenGetColorNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -182,7 +182,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetColorNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0200
      * @tc.desc   Test for testPenGetColorNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -195,7 +195,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColorNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0300
      * @tc.desc   Test for testPenSetColorNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -208,7 +208,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColorNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0400
      * @tc.desc   Test for testPenSetColorNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -221,7 +221,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColorAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0500
      * @tc.desc   Test for testPenSetColorAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -234,7 +234,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColorMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenColor_0600
      * @tc.desc   Test for testPenSetColorMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -248,7 +248,7 @@ export default function DrawingNativePenTest() {
     // Pen Alpha related test cases (6 cases)
     /**
      * @tc.name   testPenGetAlphaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0100
      * @tc.desc   Test for testPenGetAlphaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -261,7 +261,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetAlphaNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0200
      * @tc.desc   Test for testPenGetAlphaNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -274,7 +274,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAlphaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0300
      * @tc.desc   Test for testPenSetAlphaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -287,7 +287,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAlphaNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0400
      * @tc.desc   Test for testPenSetAlphaNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -300,7 +300,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAlphaAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0500
      * @tc.desc   Test for testPenSetAlphaAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -313,7 +313,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetAlphaMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenAlpha_0600
      * @tc.desc   Test for testPenSetAlphaMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -327,7 +327,7 @@ export default function DrawingNativePenTest() {
     // Pen Width related test cases (8 cases)
     /**
      * @tc.name   testPenGetWidthNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0100
      * @tc.desc   Test for testPenGetWidthNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -340,7 +340,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetWidthNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0200
      * @tc.desc   Test for testPenGetWidthNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -353,7 +353,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetWidthBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0300
      * @tc.desc   Test for testPenGetWidthBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -366,7 +366,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetWidthNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0400
      * @tc.desc   Test for testPenSetWidthNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -379,7 +379,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetWidthNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0500
      * @tc.desc   Test for testPenSetWidthNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -392,7 +392,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetWidthAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0600
      * @tc.desc   Test for testPenSetWidthAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -405,7 +405,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetWidthMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0700
      * @tc.desc   Test for testPenSetWidthMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -418,7 +418,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetWidthMultipleCallsBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0800
      * @tc.desc   Test for testPenSetWidthMultipleCallsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -432,7 +432,7 @@ export default function DrawingNativePenTest() {
     // Pen MiterLimit related test cases (6 cases)
     /**
      * @tc.name   testPenGetMiterLimitNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0100
      * @tc.desc   Test for testPenGetMiterLimitNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -445,7 +445,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetMiterLimitNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0200
      * @tc.desc   Test for testPenGetMiterLimitNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -458,7 +458,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetMiterLimitNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0300
      * @tc.desc   Test for testPenSetMiterLimitNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -471,7 +471,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetMiterLimitNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0400
      * @tc.desc   Test for testPenSetMiterLimitNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -484,7 +484,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetMiterLimitAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0500
      * @tc.desc   Test for testPenSetMiterLimitAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -497,7 +497,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetMiterLimitMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0600
      * @tc.desc   Test for testPenSetMiterLimitMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -511,7 +511,7 @@ export default function DrawingNativePenTest() {
     // Pen Cap related test cases (5 cases)
     /**
      * @tc.name   testPenGetCapNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0100
      * @tc.desc   Test for testPenGetCapNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -524,7 +524,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetCapNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0200
      * @tc.desc   Test for testPenGetCapNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -537,7 +537,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetCapNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0300
      * @tc.desc   Test for testPenSetCapNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -550,7 +550,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetCapNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0400
      * @tc.desc   Test for testPenSetCapNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -563,7 +563,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetCapMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenCap_0500
      * @tc.desc   Test for testPenSetCapMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -577,7 +577,7 @@ export default function DrawingNativePenTest() {
     // Pen Join related test cases (5 cases)
     /**
      * @tc.name   testPenGetJoinNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0100
      * @tc.desc   Test for testPenGetJoinNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -590,7 +590,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetJoinNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0200
      * @tc.desc   Test for testPenGetJoinNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -603,7 +603,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetJoinNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0300
      * @tc.desc   test for testPenSetJoinNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -616,7 +616,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetJoinNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0400
      * @tc.desc   test for testPenSetJoinNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -629,7 +629,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetJoinMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenJoin_0500
      * @tc.desc   test for testPenSetJoinMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -643,7 +643,7 @@ export default function DrawingNativePenTest() {
     // Pen Effects related test cases (6 cases)
     /**
      * @tc.name   testPenSetShaderEffectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0100
      * @tc.desc   test for testPenSetShaderEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -656,7 +656,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetShaderEffectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0200
      * @tc.desc   test for testPenSetShaderEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -669,7 +669,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetShadowLayerNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0300
      * @tc.desc   test for testPenSetShadowLayerNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -682,7 +682,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetShadowLayerNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0400
      * @tc.desc   test for testPenSetShadowLayerNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -695,7 +695,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetPathEffectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0500
      * @tc.desc   test for testPenSetPathEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -708,7 +708,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetPathEffectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenEffects_0600
      * @tc.desc   test for testPenSetPathEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -722,7 +722,7 @@ export default function DrawingNativePenTest() {
     // Pen Filter related test cases (4 cases)
     /**
      * @tc.name   testPenSetFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0100
      * @tc.desc   test for testPenSetFilterNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -735,7 +735,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetFilterNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0200
      * @tc.desc   test for testPenSetFilterNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -748,7 +748,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0300
      * @tc.desc   test for testPenGetFilterNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -761,7 +761,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetFilterNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenFilter_0400
      * @tc.desc   test for testPenGetFilterNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -775,7 +775,7 @@ export default function DrawingNativePenTest() {
     // Pen BlendMode related test cases (2 cases)
     /**
      * @tc.name   testPenSetBlendModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenBlendMode_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenBlendMode_0100
      * @tc.desc   test for testPenSetBlendModeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -788,7 +788,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetBlendModeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenBlendMode_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenBlendMode_0200
      * @tc.desc   test for testPenSetBlendModeNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -802,7 +802,7 @@ export default function DrawingNativePenTest() {
     // Pen GetFillPath related test cases (2 cases)
     /**
      * @tc.name   testPenGetFillPathNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFillPath_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFillPath_0100
      * @tc.desc   test for testPenGetFillPathNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -815,7 +815,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetFillPathNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFillPath_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFillPath_0200
      * @tc.desc   test for testPenGetFillPathNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -829,7 +829,7 @@ export default function DrawingNativePenTest() {
     // Pen Reset related test cases (3 cases)
     /**
      * @tc.name   testPenResetNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0100
      * @tc.desc   test for testPenResetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -842,7 +842,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenResetNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0200
      * @tc.desc   test for testPenResetNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -855,7 +855,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenResetMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenReset_0300
      * @tc.desc   test for testPenResetMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -869,7 +869,7 @@ export default function DrawingNativePenTest() {
     // Pen GetFloat related test cases (8 cases)
     /**
      * @tc.name   testPenGetAlphaFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0100
      * @tc.desc   test for testPenGetAlphaFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -882,7 +882,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetAlphaFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0200
      * @tc.desc   test for testPenGetAlphaFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -895,7 +895,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetRedFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0300
      * @tc.desc   test for testPenGetRedFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -908,7 +908,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetRedFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0400
      * @tc.desc   test for testPenGetRedFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -921,7 +921,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetGreenFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0500
      * @tc.desc   test for testPenGetGreenFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -934,7 +934,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetGreenFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0600
      * @tc.desc   test for testPenGetGreenFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -947,7 +947,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetBlueFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0700
      * @tc.desc   test for testPenGetBlueFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -960,7 +960,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenGetBlueFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0800
      * @tc.desc   test for testPenGetBlueFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -974,7 +974,7 @@ export default function DrawingNativePenTest() {
     // Pen SetColor4f related test cases (2 cases)
     /**
      * @tc.name   testPenSetColor4fNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0100
      * @tc.desc   test for testPenSetColor4fNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -987,7 +987,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColor4fNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0200
      * @tc.desc   test for testPenSetColor4fNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1000,7 +1000,7 @@ export default function DrawingNativePenTest() {
 
     /**
      * @tc.name   testPenSetColor4fAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenSetColor4f_0300
      * @tc.desc   test for testPenSetColor4fAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

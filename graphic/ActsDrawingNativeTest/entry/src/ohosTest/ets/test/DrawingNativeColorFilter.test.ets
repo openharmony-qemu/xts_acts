@@ -37,7 +37,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateBlendModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0100
      * @tc.desc   test for testColorFilterCreateBlendModeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateBlendModeNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0200
      * @tc.desc   test for testColorFilterCreateBlendModeNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateBlendModeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0300
      * @tc.desc   test for testColorFilterCreateBlendModeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateBlendModeAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0400
      * @tc.desc   test for testColorFilterCreateBlendModeAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateBlendModeMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateBlendMode_0500
      * @tc.desc   test for testColorFilterCreateBlendModeMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateCompose related test cases
     /**
      * @tc.name   testColorFilterCreateComposeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0100
      * @tc.desc   test for testColorFilterCreateComposeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -116,7 +116,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateComposeNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0200
      * @tc.desc   test for testColorFilterCreateComposeNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -129,7 +129,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateComposeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateCompose_0300
      * @tc.desc   test for testColorFilterCreateComposeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateMatrix related test cases
     /**
      * @tc.name   testColorFilterCreateMatrixNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0100
      * @tc.desc   test for testColorFilterCreateMatrixNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -156,7 +156,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateMatrixNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0200
      * @tc.desc   test for testColorFilterCreateMatrixNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -169,7 +169,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateMatrixAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0300
      * @tc.desc   test for testColorFilterCreateMatrixAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -182,7 +182,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateMatrixMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateMatrix_0400
      * @tc.desc   test for testColorFilterCreateMatrixMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -196,7 +196,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateLinearToSrgbGamma related test cases
     /**
      * @tc.name   testColorFilterCreateLinearToSrgbGammaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLinearToSrgbGamma_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLinearToSrgbGamma_0100
      * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -209,7 +209,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateLinearToSrgbGammaMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLinearToSrgbGamma_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLinearToSrgbGamma_0200
      * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -223,7 +223,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateSrgbGammaToLinear related test cases
     /**
      * @tc.name   testColorFilterCreateSrgbGammaToLinearNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateSrgbGammaToLinear_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateSrgbGammaToLinear_0100
      * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -236,7 +236,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateSrgbGammaToLinearMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateSrgbGammaToLinear_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateSrgbGammaToLinear_0200
      * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -250,7 +250,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateLuma related test cases
     /**
      * @tc.name   testColorFilterCreateLumaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLuma_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLuma_0100
      * @tc.desc   test for testColorFilterCreateLumaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -263,7 +263,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateLumaMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLuma_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLuma_0200
      * @tc.desc   test for testColorFilterCreateLumaMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -277,7 +277,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter Destroy related test cases
     /**
      * @tc.name   testColorFilterDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterDestroy_0100
      * @tc.desc   test for testColorFilterDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -290,7 +290,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterDestroy_0200
      * @tc.desc   test for testColorFilterDestroyNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -304,7 +304,7 @@ export default function DrawingNativeColorFilterTest() {
     // ColorFilter CreateLighting related test cases
     /**
      * @tc.name   testColorFilterCreateLightingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0100
      * @tc.desc   test for testColorFilterCreateLightingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -317,7 +317,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateLightingNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0200
      * @tc.desc   test for testColorFilterCreateLightingNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -330,7 +330,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateLightingAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0300
      * @tc.desc   test for testColorFilterCreateLightingAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -343,7 +343,7 @@ export default function DrawingNativeColorFilterTest() {
 
     /**
      * @tc.name   testColorFilterCreateLightingMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorFilterCreateLighting_0400
      * @tc.desc   test for testColorFilterCreateLightingMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

@@ -37,7 +37,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0100
      * @tc.desc   test for testRegionCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCreateMoreTimes
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0200
      * @tc.desc   test for testRegionCreateMoreTimes.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0300
      * @tc.desc   test for testRegionDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0400
      * @tc.desc   test for testRegionDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionContainsInRange
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0100
      * @tc.desc   test for testRegionContainsInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionContainsXvalueNotInRange
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0200
      * @tc.desc   test for testRegionContainsXvalueNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionContainsYvalueNotInRange
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0300
      * @tc.desc   test for testRegionContainsYvalueNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionContainsAllNotInRange
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0400
      * @tc.desc   test for testRegionContainsAllNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionContainsRegionNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0500
      * @tc.desc   test for testRegionContainsRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionOpNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0500
      * @tc.desc   test for testRegionOpNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionOpRegionNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0600
      * @tc.desc   test for testRegionOpRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionOpMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0700
      * @tc.desc   test for testRegionOpMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetRectResultTrue
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0800
      * @tc.desc   test for testRegionSetRectResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetRectRegionNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0900
      * @tc.desc   test for testRegionSetRectRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetRectRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1000
      * @tc.desc   test for testRegionSetRectRectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetRectResultFalse
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1100
      * @tc.desc   test for testRegionSetRectResultFalse.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetPathResultTrue
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1200
      * @tc.desc   test for testRegionSetPathResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetPathRegionNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1300
      * @tc.desc   test for testRegionSetPathRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetPathResultFalse
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1400
      * @tc.desc   test for testRegionSetPathResultFalse.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1500
      * @tc.desc   test for testRegionCopyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1600
      * @tc.desc   test for testRegionCopyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1700
      * @tc.desc   test for testRegionCopyAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1800
      * @tc.desc   test for testRegionCopyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionEmptyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0100
      * @tc.desc   test for testRegionEmptyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionEmptyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0200
      * @tc.desc   test for testRegionEmptyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionEmptyCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0300
      * @tc.desc   test for testRegionEmptyCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundaryNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0400
      * @tc.desc   test for testRegionGetBoundaryNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundaryNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0500
      * @tc.desc   test for testRegionGetBoundaryNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundaryMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0600
      * @tc.desc   test for testRegionGetBoundaryMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0700
      * @tc.desc   test for testRegionGetBoundsNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -427,7 +427,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0800
      * @tc.desc   test for testRegionGetBoundsNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -440,7 +440,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionGetBoundsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_0900
      * @tc.desc   test for testRegionGetBoundsMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -453,7 +453,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsComplexNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1000
      * @tc.desc   test for testRegionIsComplexNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -466,7 +466,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsComplexNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1100
      * @tc.desc   test for testRegionIsComplexNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -479,7 +479,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsComplexMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1200
      * @tc.desc   test for testRegionIsComplexMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -492,7 +492,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsEmptyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1300
      * @tc.desc   test for testRegionIsEmptyNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -505,7 +505,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsEmptyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1400
      * @tc.desc   test for testRegionIsEmptyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -518,7 +518,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsEmptyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1500
      * @tc.desc   test for testRegionIsEmptyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -531,7 +531,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1600
      * @tc.desc   test for testRegionIsRectNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -544,7 +544,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1700
      * @tc.desc   test for testRegionIsRectNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -557,7 +557,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionIsRectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionPart2QueryOperations_1800
      * @tc.desc   test for testRegionIsRectMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -570,7 +570,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickContainsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0100
      * @tc.desc   test for testRegionQuickContainsNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -583,7 +583,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickContainsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0200
      * @tc.desc   test for testRegionQuickContainsNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -596,7 +596,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickContainsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0300
      * @tc.desc   test for testRegionQuickContainsAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -609,7 +609,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickContainsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0400
      * @tc.desc   test for testRegionQuickContainsMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -622,7 +622,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickRejectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0500
      * @tc.desc   test for testRegionQuickRejectNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -635,7 +635,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickRejectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0600
      * @tc.desc   test for testRegionQuickRejectNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -648,7 +648,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickRejectAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0700
      * @tc.desc   test for testRegionQuickRejectAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -661,7 +661,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionQuickRejectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0800
      * @tc.desc   test for testRegionQuickRejectMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -674,7 +674,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionTranslateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_0900
      * @tc.desc   test for testRegionTranslateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -686,7 +686,7 @@ export default function DrawingNativeRegionTest() {
     })
     /**
      * @tc.name   testRegionTranslateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_1000
      * @tc.desc   test for testRegionTranslateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -698,7 +698,7 @@ export default function DrawingNativeRegionTest() {
     })
     /**
      * @tc.name   testRegionTranslateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionAdvancedOperations_1100
      * @tc.desc   test for testRegionTranslateMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

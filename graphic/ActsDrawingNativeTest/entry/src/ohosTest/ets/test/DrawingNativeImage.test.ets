@@ -37,7 +37,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0100
      * @tc.desc   Test for creating and destroying an image object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageCreateDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0200
      * @tc.desc   Test for destroying an image object with a NULL parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageCreateDestroyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0300
      * @tc.desc   Test for multiple calls of creating and destroying an image object.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageBuildFromBitmapNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0400
      * @tc.desc   Test for building an image from a bitmap with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageBuildFromBitmapNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0500
      * @tc.desc   Test for building an image from a bitmap with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageBuildFromBitmapMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0600
      * @tc.desc   Test for multiple calls of building an image from a bitmap.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageBuildFromBitmapMultipleCallsBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0700
      * @tc.desc   Test for multiple calls of building an boundary value image from a bitmap.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetWidthHeightNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0800
      * @tc.desc   Test for getting width and height of an image with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetWidthHeightNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_0900
      * @tc.desc   Test for getting width and height of an image with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetWidthHeightMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1000
      * @tc.desc   Test for multiple calls of getting width and height of an image.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetWidthHeightMultipleCallsBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1100
      * @tc.desc   Test for multiple calls of getting width and height of an boundary value image.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1200
      * @tc.desc   Test for getting image info with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1300
      * @tc.desc   Test for getting image info with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1400
      * @tc.desc   Test for multiple calls of getting image info.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1500
      * @tc.desc   Test for getting image info with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1600
      * @tc.desc   Test for getting image info with maximum values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeImageTest() {
 
     /**
      * @tc.name   testImageGetImageInfoBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingImage_1700
      * @tc.desc   Test for getting image info with Boundary value.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

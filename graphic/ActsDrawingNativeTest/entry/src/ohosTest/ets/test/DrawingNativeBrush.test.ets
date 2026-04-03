@@ -37,7 +37,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0100
      * @tc.desc   test for testBrushCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushCopyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0200
      * @tc.desc   test for testBrushCopyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushCopyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0300
      * @tc.desc   test for testBrushCopyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushCopyInputDestroyed
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0400
      * @tc.desc   test for testBrushCopyInputDestroyed.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushCopyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0500
      * @tc.desc   test for testBrushCopyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0600
      * @tc.desc   test for testBrushDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushCreateDestroy_0700
      * @tc.desc   test for testBrushDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushIsAntiAliasNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0100
      * @tc.desc   test for testBrushIsAntiAliasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushIsAntiAliasNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0200
      * @tc.desc   test for testBrushIsAntiAliasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAntiAliasNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0300
      * @tc.desc   test for testBrushSetAntiAliasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAntiAliasNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAntiAlias_0400
      * @tc.desc   test for testBrushSetAntiAliasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetColorNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0100
      * @tc.desc   Test for testBrushGetColorNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetColorNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0200
      * @tc.desc   Test for testBrushGetColorNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColorNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0300
      * @tc.desc   Test for testBrushSetColorNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColorNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0400
      * @tc.desc   Test for testBrushSetColorNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColorAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0500
      * @tc.desc   Test for testBrushSetColorAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColorMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushColor_0600
      * @tc.desc   Test for testBrushSetColorMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetAlphaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0100
      * @tc.desc   Test for testBrushGetAlphaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetAlphaNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0200
      * @tc.desc   Test for testBrushGetAlphaNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAlphaNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0300
      * @tc.desc   Test for testBrushSetAlphaNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAlphaNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0400
      * @tc.desc   Test for testBrushSetAlphaNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAlphaAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0500
      * @tc.desc   Test for testBrushSetAlphaAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetAlphaMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushAlpha_0600
      * @tc.desc   Test for testBrushSetAlphaMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetShaderEffectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShaderEffect_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShaderEffect_0100
      * @tc.desc   Test for testBrushSetShaderEffectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetShaderEffectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShaderEffect_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShaderEffect_0200
      * @tc.desc   Test for testBrushSetShaderEffectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetShadowLayerNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShadowLayer_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShadowLayer_0100
      * @tc.desc   Test for testBrushSetShadowLayerNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetShadowLayerNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShadowLayer_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushShadowLayer_0200
      * @tc.desc   Test for testBrushSetShadowLayerNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0100
      * @tc.desc   Test for testBrushSetFilterNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetFilterNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0200
      * @tc.desc   Test for testBrushSetFilterNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0300
      * @tc.desc   Test for testBrushGetFilterNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -427,7 +427,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetFilterNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushFilter_0400
      * @tc.desc   Test for testBrushGetFilterNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -440,7 +440,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetBlendModeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushBlendMode_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushBlendMode_0100
      * @tc.desc   Test for testBrushSetBlendModeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -453,7 +453,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetBlendModeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushBlendMode_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushBlendMode_0200
      * @tc.desc   Test for testBrushSetBlendModeNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -466,7 +466,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushResetNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushReset_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushReset_0100
      * @tc.desc   Test for testBrushResetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -479,7 +479,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushResetNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushReset_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushReset_0200
      * @tc.desc   Test for testBrushResetNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -492,7 +492,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetAlphaFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0100
      * @tc.desc   Test for testBrushGetAlphaFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -505,7 +505,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetAlphaFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0200
      * @tc.desc   Test for testBrushGetAlphaFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -518,7 +518,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetRedFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0300
      * @tc.desc   Test for testBrushGetRedFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -531,7 +531,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetRedFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0400
      * @tc.desc   Test for testBrushGetRedFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -544,7 +544,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetGreenFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0500
      * @tc.desc   Test for testBrushGetGreenFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -557,7 +557,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetGreenFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0600
      * @tc.desc   Test for testBrushGetGreenFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -570,7 +570,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetBlueFloatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0700
      * @tc.desc   Test for testBrushGetBlueFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -583,7 +583,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushGetBlueFloatAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushGetFloat_0800
      * @tc.desc   Test for testBrushGetBlueFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -596,7 +596,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColor4fNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0100
      * @tc.desc   Test for testBrushSetColor4fNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -609,7 +609,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColor4fNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0200
      * @tc.desc   Test for testBrushSetColor4fNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -622,7 +622,7 @@ export default function DrawingNativeBrushTest() {
 
     /**
      * @tc.name   testBrushSetColor4fAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBrushSetColor4f_0300
      * @tc.desc   Test for testBrushSetColor4fAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

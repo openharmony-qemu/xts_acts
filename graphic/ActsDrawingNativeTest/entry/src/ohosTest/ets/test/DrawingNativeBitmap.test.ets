@@ -37,7 +37,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0100
      * @tc.desc   test for testBitmapDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0200
      * @tc.desc   test for testBitmapDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0300
      * @tc.desc   test for testBitmapCreateFromPixelsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0400
      * @tc.desc   test for testBitmapCreateFromPixelsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsMismatch
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0500
      * @tc.desc   test for testBitmapCreateFromPixelsMismatch.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0600
      * @tc.desc   test for testBitmapCreateFromPixelsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsVeryBig
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0700
      * @tc.desc   test for testBitmapCreateFromPixelsVeryBig.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapCreateFromPixelsBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0800
      * @tc.desc   test for testBitmapCreateFromPixelsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapBuildNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_0900
      * @tc.desc   test for testBitmapBuildNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapBuildNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1000
      * @tc.desc   test for testBitmapBuildNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapBuildMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1100
      * @tc.desc   test for testBitmapBuildMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapBuildBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1200
      * @tc.desc   test for testBitmapBuildBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapGetXXNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1300
      * @tc.desc   test for testBitmapGetXXNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapGetXXNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1400
      * @tc.desc   test for testBitmapGetXXNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapGetXXInputDestroyed
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1500
      * @tc.desc   test for testBitmapGetXXInputDestroyed.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapGetXXBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1600
      * @tc.desc   test for testBitmapGetXXBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapReadPixelsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1700
      * @tc.desc   test for OH_Drawing_BitmapBuild.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapReadPixelsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1800
      * @tc.desc   test for testBitmapReadPixelsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapReadPixelsInputDestroyed
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_1900
      * @tc.desc   test for testBitmapReadPixelsInputDestroyed.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapReadPixelsMismatch
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2000
      * @tc.desc   test for testBitmapReadPixelsMismatch.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapReadPixelsBoundary
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2100
      * @tc.desc   test for OH_Drawing_BitmapBuild.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeBitmapTest() {
 
     /**
      * @tc.name   testBitmapBuildMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2200
      * @tc.desc   test for testBitmapBuildMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

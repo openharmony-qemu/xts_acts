@@ -37,7 +37,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0100
      * @tc.desc   test for testShadowLayerCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerCreateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0200
      * @tc.desc   test for testShadowLayerCreateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerCreateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0300
      * @tc.desc   test for testShadowLayerCreateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerCreateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0400
      * @tc.desc   test for testShadowLayerCreateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerCreateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0500
      * @tc.desc   test for testShadowLayerCreateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0600
      * @tc.desc   test for testShadowLayerDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeShadowLayerTest() {
 
     /**
      * @tc.name   testShadowLayerDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingShadowLayer_0700
      * @tc.desc   test for testShadowLayerDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

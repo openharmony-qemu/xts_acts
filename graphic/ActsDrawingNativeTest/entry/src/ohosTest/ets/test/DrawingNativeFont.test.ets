@@ -37,7 +37,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0100
      * @tc.desc   Test for creating and destroying a font object with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCreateDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0200
      * @tc.desc   test for testFontCreateDestroyNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCreateDestroyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCreateDestroy_0300
      * @tc.desc   test for testFontCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -77,7 +77,7 @@ export default function DrawingNativeFontTest() {
     // Font SetBaselineSnap related test cases
     /**
      * @tc.name   testFontSetBaselineSnapNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0100
      * @tc.desc   test for testFontSetBaselineSnapNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -90,7 +90,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetBaselineSnapNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0200
      * @tc.desc   test for testFontSetBaselineSnapNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetBaselineSnapMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0300
      * @tc.desc   test for testFontSetBaselineSnapMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -116,7 +116,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsBaselineSnapWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetBaselineSnap_0400
      * @tc.desc   test for testFontIsBaselineSnapWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -130,7 +130,7 @@ export default function DrawingNativeFontTest() {
     // Font SetSubpixel related test cases
     /**
      * @tc.name   testFontSetSubpixelNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0100
      * @tc.desc   test for testFontSetSubpixelNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetSubpixelNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0200
      * @tc.desc   test for testFontSetSubpixelNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -156,7 +156,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetSubpixelMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0300
      * @tc.desc   test for testFontSetSubpixelMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -169,7 +169,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsSubpixelWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetSubpixel_0400
      * @tc.desc   test for testFontIsSubpixelWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function DrawingNativeFontTest() {
     // Font SetForceAutoHinting related test cases
     /**
      * @tc.name   testFontSetForceAutoHintingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0100
      * @tc.desc   test for testFontSetForceAutoHintingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -196,7 +196,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetForceAutoHintingNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0200
      * @tc.desc   test for testFontSetForceAutoHintingNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -209,7 +209,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetForceAutoHintingMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0300
      * @tc.desc   test for testFontSetForceAutoHintingMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -222,7 +222,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsForceAutoHintingWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetForceAutoHinting_0400
      * @tc.desc   test for testFontIsForceAutoHintingWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -236,7 +236,7 @@ export default function DrawingNativeFontTest() {
     // Font SetTypeface related test cases
     /**
      * @tc.name   testFontSetTypefaceNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0100
      * @tc.desc   test for testFontSetTypefaceNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -249,7 +249,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTypefaceNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0200
      * @tc.desc   test for testFontSetTypefaceNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -262,7 +262,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTypefaceMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0300
      * @tc.desc   test for testFontSetTypefaceMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -275,7 +275,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetTypefaceWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTypeface_0400
      * @tc.desc   test for testFontGetTypefaceWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -288,7 +288,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSizeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0100
      * @tc.desc   test for testFontSetTextSizeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -301,7 +301,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSizeNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0200
      * @tc.desc   test for testFontSetTextSizeNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -314,7 +314,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSizeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0300
      * @tc.desc   test for testFontSetTextSizeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -327,7 +327,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetTextSizeWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0400
      * @tc.desc   test for testFontGetTextSizeWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -340,7 +340,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSizeAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSize_0500
      * @tc.desc   test for testFontSetTextSizeAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -354,7 +354,7 @@ export default function DrawingNativeFontTest() {
     // Font CountText related test cases
     /**
      * @tc.name   testFontCountTextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0100
      * @tc.desc   test for testFontCountTextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -367,7 +367,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCountTextNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0200
      * @tc.desc   test for testFontCountTextNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -380,7 +380,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCountTextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0300
      * @tc.desc   test for testFontCountTextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -393,7 +393,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontCountTextAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontCountText_0400
      * @tc.desc   test for testFontCountTextAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -407,7 +407,7 @@ export default function DrawingNativeFontTest() {
     // Font TextToGlyphs related test cases
     /**
      * @tc.name   testFontTextToGlyphsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0100
      * @tc.desc   test for testFontTextToGlyphsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -420,7 +420,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontTextToGlyphsNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0200
      * @tc.desc   test for testFontTextToGlyphsNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -433,7 +433,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontTextToGlyphsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0300
      * @tc.desc   test for testFontTextToGlyphsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -446,7 +446,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontTextToGlyphsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0400
      * @tc.desc   test for testFontTextToGlyphsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -459,7 +459,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontTextToGlyphsMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontTextToGlyphs_0500
      * @tc.desc   test for testFontTextToGlyphsMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -473,7 +473,7 @@ export default function DrawingNativeFontTest() {
     // Font GetWidths related test cases
     /**
      * @tc.name   testFontGetWidthsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0100
      * @tc.desc   test for testFontGetWidthsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -486,7 +486,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0200
      * @tc.desc   test for testFontGetWidthsNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -499,7 +499,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0300
      * @tc.desc   test for testFontGetWidthsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -512,7 +512,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0400
      * @tc.desc   test for testFontGetWidthsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -525,7 +525,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidths_0500
      * @tc.desc   test for testFontGetWidthsMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -539,7 +539,7 @@ export default function DrawingNativeFontTest() {
     // Font SetLinearText related test cases
     /**
      * @tc.name   testFontSetLinearTextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0100
      * @tc.desc   test for testFontSetLinearTextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -552,7 +552,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetLinearTextNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0200
      * @tc.desc   test for testFontSetLinearTextNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -565,7 +565,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetLinearTextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0300
      * @tc.desc   test for testFontSetLinearTextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -578,7 +578,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsLinearTextWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetLinearText_0400
      * @tc.desc   test for testFontIsLinearTextWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -592,7 +592,7 @@ export default function DrawingNativeFontTest() {
     // Font SetTextSkewX related test cases
     /**
      * @tc.name   testFontSetTextSkewXNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0100
      * @tc.desc   test for testFontSetTextSkewXNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -605,7 +605,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSkewXNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0200
      * @tc.desc   test for testFontSetTextSkewXNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -618,7 +618,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSkewXMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0300
      * @tc.desc   test for testFontSetTextSkewXMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -631,7 +631,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetTextSkewXWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0400
      * @tc.desc   test for testFontGetTextSkewXWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -644,7 +644,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSkewXAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0500
      * @tc.desc   test for testFontSetTextSkewXAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -657,7 +657,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetTextSkewXMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetTextSkewX_0600
      * @tc.desc   test for testFontSetTextSkewXMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -671,7 +671,7 @@ export default function DrawingNativeFontTest() {
     // Font SetFakeBoldText related test cases
     /**
      * @tc.name   testFontSetFakeBoldTextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0100
      * @tc.desc   test for testFontSetFakeBoldTextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -684,7 +684,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetFakeBoldTextNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0200
      * @tc.desc   test for testFontSetFakeBoldTextNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -697,7 +697,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetFakeBoldTextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0300
      * @tc.desc   test for testFontSetFakeBoldTextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -710,7 +710,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsFakeBoldTextWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetFakeBoldText_0400
      * @tc.desc   test for testFontIsFakeBoldTextWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -724,7 +724,7 @@ export default function DrawingNativeFontTest() {
     // Font SetScaleX related test cases
     /**
      * @tc.name   testFontSetScaleXNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0100
      * @tc.desc   test for testFontSetScaleXNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -737,7 +737,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetScaleXNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0200
      * @tc.desc   test for testFontSetScaleXNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -750,7 +750,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetScaleXMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0300
      * @tc.desc   test for testFontSetScaleXMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -763,7 +763,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetScaleXWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0400
      * @tc.desc   test for testFontGetScaleXWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -776,7 +776,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetScaleXAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0500
      * @tc.desc   test for testFontSetScaleXAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -789,7 +789,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetScaleXMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetScaleX_0600
      * @tc.desc   test for testFontSetScaleXMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -803,7 +803,7 @@ export default function DrawingNativeFontTest() {
     // Font SetHinting related test cases
     /**
      * @tc.name   testFontSetHintingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0100
      * @tc.desc   test for testFontSetHintingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -816,7 +816,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetHintingNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0200
      * @tc.desc   test for testFontSetHintingNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -829,7 +829,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetHintingMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0300
      * @tc.desc   test for testFontSetHintingMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -842,7 +842,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetHintingWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetHinting_0400
      * @tc.desc   test for testFontGetHintingWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -856,7 +856,7 @@ export default function DrawingNativeFontTest() {
     // Font SetEmbeddedBitmaps related test cases
     /**
      * @tc.name   testFontSetEmbeddedBitmapsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0100
      * @tc.desc   test for testFontSetEmbeddedBitmapsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -869,7 +869,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetEmbeddedBitmapsNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0200
      * @tc.desc   test for testFontSetEmbeddedBitmapsNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -882,7 +882,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetEmbeddedBitmapsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0300
      * @tc.desc   test for testFontSetEmbeddedBitmapsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -895,7 +895,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsEmbeddedBitmapsWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEmbeddedBitmaps_0400
      * @tc.desc   test for testFontIsEmbeddedBitmapsWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -909,7 +909,7 @@ export default function DrawingNativeFontTest() {
     // Font SetEdging related test cases
     /**
      * @tc.name   testFontSetEdgingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0100
      * @tc.desc   test for testFontSetEdgingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -922,7 +922,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetEdgingNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0200
      * @tc.desc   test for testFontSetEdgingNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -935,7 +935,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetEdgingMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0300
      * @tc.desc   test for testFontSetEdgingMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -948,7 +948,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetEdgingWhenNoSet
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetEdging_0400
      * @tc.desc   test for testFontGetEdgingWhenNoSet.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -961,7 +961,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetMetricsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0100
      * @tc.desc   test for testFontGetMetricsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -974,7 +974,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetMetricsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0200
      * @tc.desc   test for testFontGetMetricsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -987,7 +987,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   TestFontGetMetricsMultiplies
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetMetrics_0300
      * @tc.desc   test for TestFontGetMetricsMultiplies.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1001,7 +1001,7 @@ export default function DrawingNativeFontTest() {
     // Font MeasureSingleCharacter related test cases
     /**
      * @tc.name   testFontMeasureSingleCharacterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0100
      * @tc.desc   test for testFontMeasureSingleCharacterNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1014,7 +1014,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureSingleCharacterNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0200
      * @tc.desc   test for testFontMeasureSingleCharacterNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1027,7 +1027,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureSingleCharacterMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0300
      * @tc.desc   test for testFontMeasureSingleCharacterMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1040,7 +1040,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureSingleCharacter
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleCharacter_0400
      * @tc.desc   test for testFontMeasureSingleCharacter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1054,7 +1054,7 @@ export default function DrawingNativeFontTest() {
     // Font Measuretext related test cases
     /**
      * @tc.name   testFontMeasuretextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0100
      * @tc.desc   test for testFontMeasuretextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1067,7 +1067,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasuretextNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0200
      * @tc.desc   test for testFontMeasuretextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1080,7 +1080,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasuretextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasuretext_0300
      * @tc.desc   test for testFontMeasuretextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1094,7 +1094,7 @@ export default function DrawingNativeFontTest() {
     // FontArguments Create related test cases
     /**
      * @tc.name   testFontArgumentsCreateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsCreate_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsCreate_0100
      * @tc.desc   Test for testFontArgumentsCreateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1108,7 +1108,7 @@ export default function DrawingNativeFontTest() {
     // FontArguments AddVariation related test cases
     /**
      * @tc.name   testFontArgumentsAddVariationNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0100
      * @tc.desc   test for testFontArgumentsAddVariationNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1121,7 +1121,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontArgumentsAddVariationNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0200
      * @tc.desc   test for testFontArgumentsAddVariationNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1134,7 +1134,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontArgumentsAddVariationAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0300
      * @tc.desc   test for testFontArgumentsAddVariationAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1147,7 +1147,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontArgumentsAddVariationMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsAddVariation_0400
      * @tc.desc   test for testFontArgumentsAddVariationMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1161,7 +1161,7 @@ export default function DrawingNativeFontTest() {
     // FontArguments Destroy related test cases
     /**
      * @tc.name   testFontArgumentsDestoryNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0100
      * @tc.desc   test for testFontArgumentsDestoryNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1174,7 +1174,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontArgumentsDestoryNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0200
      * @tc.desc   test for testFontArgumentsDestoryNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1187,7 +1187,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontArgumentsDestoryMultiplieCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontArgumentsDestroy_0300
      * @tc.desc   test for testFontArgumentsDestoryMultiplieCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1201,7 +1201,7 @@ export default function DrawingNativeFontTest() {
     // Font SetThemeFontFollowed related test cases
     /**
      * @tc.name   testFontSetThemeFontFollowedNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0100
      * @tc.desc   test for testFontSetThemeFontFollowedNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1214,7 +1214,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetThemeFontFollowedMuitipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0200
      * @tc.desc   test for testFontSetThemeFontFollowedMuitipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1227,7 +1227,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontSetThemeFontFollowedNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontSetThemeFontFollowed_0300
      * @tc.desc   test for testFontSetThemeFontFollowedNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1241,7 +1241,7 @@ export default function DrawingNativeFontTest() {
     // Font IsThemeFontFollowed related test cases
     /**
      * @tc.name   testFontIsThemeFontFollowedNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0100
      * @tc.desc   test for testFontIsThemeFontFollowedNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1254,7 +1254,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsThemeFontFollowedMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0200
      * @tc.desc   test for testFontIsThemeFontFollowedMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1267,7 +1267,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontIsThemeFontFollowedNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontIsThemeFontFollowed_0300
      * @tc.desc   test for testFontIsThemeFontFollowedNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1281,7 +1281,7 @@ export default function DrawingNativeFontTest() {
     // Font MeasureTextWithBrushOrPen related test cases
     /**
      * @tc.name   testFontMeasureTextWithBrushOrPenNormal1
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0100
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1294,7 +1294,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureTextWithBrushOrPenNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0200
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1307,7 +1307,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureTextWithBrushOrPenNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0300
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1320,7 +1320,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureTextWithBrushOrPenAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0400
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1333,7 +1333,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureTextWithBrushOrPenMultiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureTextWithBrushOrPen_0500
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1347,7 +1347,7 @@ export default function DrawingNativeFontTest() {
     // Font GetWidthsBounds related test cases
     /**
      * @tc.name   testFontGetWidthsBoundsNormal1
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0100
      * @tc.desc   test for testFontGetWidthsBoundsNormal1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1360,7 +1360,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsBoundsNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0200
      * @tc.desc   test for testFontGetWidthsBoundsNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1373,7 +1373,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsBoundsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0300
      * @tc.desc   test for testFontGetWidthsBoundsNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1386,7 +1386,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsBoundsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0400
      * @tc.desc   test for testFontGetWidthsBoundsAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1399,7 +1399,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetWidthsBoundsMultiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetWidthsBounds_0500
      * @tc.desc   test for testFontGetWidthsBoundsMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1413,7 +1413,7 @@ export default function DrawingNativeFontTest() {
     // Font GetPos related test cases
     /**
      * @tc.name   testFontGePosNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0100
      * @tc.desc   test for testFontGePosNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1426,7 +1426,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGetPosNormal1
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0200
      * @tc.desc   test for testFontGetPosNormal1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1439,7 +1439,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGePosNormal2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0300
      * @tc.desc   test for testFontGePosNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1452,7 +1452,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGePosNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0400
      * @tc.desc   test for testFontGePosNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1465,7 +1465,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGePosMultiplieCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0500
      * @tc.desc   test for testFontGePosMultiplieCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1478,7 +1478,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGePosAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetPos_0600
      * @tc.desc   test for testFontGePosAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1492,7 +1492,7 @@ export default function DrawingNativeFontTest() {
     // Font GetSpacing related test cases
     /**
      * @tc.name   testFontGeSpacingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0100
      * @tc.desc   test for testFontGeSpacingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1505,7 +1505,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGeSpacingMultiplieCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0200
      * @tc.desc   test for testFontGeSpacingMultiplieCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1518,7 +1518,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontGeSpacingNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetSpacing_0300
      * @tc.desc   test for testFontGeSpacingNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1532,7 +1532,7 @@ export default function DrawingNativeFontTest() {
     // Font MeasureSingleChaWithFeatures related test cases
     /**
      * @tc.name   testFontMeasureSingleChaWithFeaturesNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0100
      * @tc.desc   test for testFontMeasureSingleChaWithFeaturesNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1545,7 +1545,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureSingleChaWithFeaturesAbNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0200
      * @tc.desc   test for testFontMeasureSingleChaWithFeaturesAbNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1558,7 +1558,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontMeasureSingleChaWithFeaturesCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontMeasureSingleChaWithFeatures_0300
      * @tc.desc   test for testFontMeasureSingleChaWithFeaturesCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1572,7 +1572,7 @@ export default function DrawingNativeFontTest() {
     // Font Features related test cases
     /**
      * @tc.name   testFontFeaturesAddFeatureNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0100
      * @tc.desc   test for testFontFeaturesAddFeatureNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1585,7 +1585,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontFeaturesAddFeatureAbNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0200
      * @tc.desc   test for testFontFeaturesAddFeatureAbNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1598,7 +1598,7 @@ export default function DrawingNativeFontTest() {
 
     /**
      * @tc.name   testFontFeaturesandFeatureDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontFeatures_0300
      * @tc.desc   test for testFontFeaturesandFeatureDestroyNULL
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

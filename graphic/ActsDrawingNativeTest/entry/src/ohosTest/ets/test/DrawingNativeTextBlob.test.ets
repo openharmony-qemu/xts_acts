@@ -37,7 +37,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0100
      * @tc.desc   test for testTextBlobBuilderCreateDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderCreateDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0200
      * @tc.desc   test for testTextBlobBuilderCreateDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderCreateDestroyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0300
      * @tc.desc   test for testTextBlobBuilderCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromTextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0100
      * @tc.desc   test for testTextBlobCreateFromTextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromTextNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0200
      * @tc.desc   test for testTextBlobCreateFromTextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromTextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0300
      * @tc.desc   test for testTextBlobCreateFromTextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromTextAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0400
      * @tc.desc   test for testTextBlobCreateFromTextAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromPosTextNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0500
      * @tc.desc   test for testTextBlobCreateFromPosTextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromPosTextNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0600
      * @tc.desc   test for testTextBlobCreateFromPosTextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromPosTextMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0700
      * @tc.desc   test for testTextBlobCreateFromPosTextMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromPosTextAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0800
      * @tc.desc   test for testTextBlobCreateFromPosTextAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromStringNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_0900
      * @tc.desc   test for testTextBlobCreateFromStringNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromStringNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1000
      * @tc.desc   test for testTextBlobCreateFromStringNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromStringMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1100
      * @tc.desc   test for testTextBlobCreateFromStringMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobCreateFromStringAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobCreate_1200
      * @tc.desc   test for testTextBlobCreateFromStringAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobGetBoundsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0100
      * @tc.desc   test for testTextBlobGetBoundsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobGetBoundsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0200
      * @tc.desc   test for testTextBlobGetBoundsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobGetBoundsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0300
      * @tc.desc   test for testTextBlobGetBoundsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobGetBoundsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0400
      * @tc.desc   test for testTextBlobGetBoundsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobUniqueIDNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0500
      * @tc.desc   test for testTextBlobUniqueIDNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobUniqueIDNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0600
      * @tc.desc   test for testTextBlobUniqueIDNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +310,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobUniqueIDMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0700
      * @tc.desc   test for testTextBlobUniqueIDMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +323,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderAllocRunPosNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0400
      * @tc.desc   test for testTextBlobBuilderAllocRunPosNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +336,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderAllocRunPosNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0500
      * @tc.desc   test for testTextBlobBuilderAllocRunPosNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -349,7 +349,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderAllocRunPosMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0600
      * @tc.desc   test for testTextBlobBuilderAllocRunPosMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -362,7 +362,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderMakeNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0700
      * @tc.desc   test for testTextBlobBuilderMakeNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -375,7 +375,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderMakeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0800
      * @tc.desc   test for testTextBlobBuilderMakeNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -388,7 +388,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobBuilderMakeMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobBuilder_0900
      * @tc.desc   test for testTextBlobBuilderMakeMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -401,7 +401,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0800
      * @tc.desc   test for testTextBlobDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function DrawingNativeTextBlobTest() {
 
     /**
      * @tc.name   testTextBlobDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_0900
      * @tc.desc   test for testTextBlobDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

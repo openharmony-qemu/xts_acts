@@ -37,7 +37,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathApproximateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0100
      * @tc.desc   test for testPathApproximateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathApproximateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0200
      * @tc.desc   test for testPathApproximateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathApproximateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0300
      * @tc.desc   test for testPathApproximateAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathApproximateMultiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0400
      * @tc.desc   test for testPathApproximateMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathInterpolateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0500
      * @tc.desc   test for testPathInterpolateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathInterpolateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0600
      * @tc.desc   test for testPathInterpolateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathInterpolateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0700
      * @tc.desc   test for testPathInterpolateAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathInterpolateMultiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0800
      * @tc.desc   test for testPathInterpolateMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInterpolateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_0900
      * @tc.desc   test for testPathIsInterpolateNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInterpolateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_1000
      * @tc.desc   test for testPathIsInterpolateNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInterpolateMultiCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart3Advanced_1100
      * @tc.desc   test for testPathIsInterpolateMultiCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeNormalOne
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0100
      * @tc.desc   test for testPathIsInverseFillTypeNormalOne
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeNormalTwo
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0200
      * @tc.desc   test for testPathIsInverseFillTypeNormalTwo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeNormalThree
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0300
      * @tc.desc   test for testPathIsInverseFillTypeNormalThree
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeNormalFour
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0400
      * @tc.desc   test for testPathIsInverseFillTypeNormalFour
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0500
      * @tc.desc   test for testPathIsInverseFillTypeNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathToggleInverseFillTypeNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0600
      * @tc.desc   test for testPathToggleInverseFillTypeNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathIsInverseFillTypeCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0700
      * @tc.desc   test for testPathIsInverseFillTypeCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativePath2Test() {
 
     /**
      * @tc.name   testPathToggleInverseFillTypeCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4InverseFillType_0800
      * @tc.desc   test for testPathToggleInverseFillTypeCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

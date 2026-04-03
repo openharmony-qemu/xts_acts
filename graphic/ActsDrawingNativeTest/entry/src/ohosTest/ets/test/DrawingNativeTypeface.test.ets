@@ -37,7 +37,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateDefaultNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0100
      * @tc.desc   test for testTypefaceCreateDefaultNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateDefaultNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0200
      * @tc.desc   test for testTypefaceCreateDefaultNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0300
      * @tc.desc   test for testTypefaceCreateFromFileNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0400
      * @tc.desc   test for testTypefaceCreateFromFileNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromStreamNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0500
      * @tc.desc   test for testTypefaceCreateFromStreamNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromStreamNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0600
      * @tc.desc   test for testTypefaceCreateFromStreamNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0700
      * @tc.desc   test for testTypefaceCreateDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateDestroyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0800
      * @tc.desc   test for testTypefaceCreateDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileWithArugumentsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_0900
      * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileWithArugumentsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1000
      * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileWithArugumentsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1100
      * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromFileWithArugumentsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1200
      * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromCurrentNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1300
      * @tc.desc   test for testTypefaceCreateFromCurrentNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -206,7 +206,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromCurrentNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1400
      * @tc.desc   test for testTypefaceCreateFromCurrentNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -219,7 +219,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceCreateFromCurrentMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceCreate_1500
      * @tc.desc   test for testTypefaceCreateFromCurrentMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsBoldNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0100
      * @tc.desc   test for testTypefaceIsBoldNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -245,7 +245,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsBoldNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0200
      * @tc.desc   test for testTypefaceIsBoldNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +258,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsBoldMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0300
      * @tc.desc   test for testTypefaceIsBoldMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +271,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsItalicNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0400
      * @tc.desc   test for testTypefaceIsItalicNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsItalicNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0500
      * @tc.desc   test for testTypefaceIsItalicNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function DrawingNativeTypefaceTest() {
 
     /**
      * @tc.name   testTypefaceIsItalicMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTypefaceIsBoldItalic_0600
      * @tc.desc   test for testTypefaceIsItalicMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

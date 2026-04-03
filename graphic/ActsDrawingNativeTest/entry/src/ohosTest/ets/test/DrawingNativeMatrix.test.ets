@@ -37,7 +37,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0100
      * @tc.desc   Test for creating and destroying a matrix with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0200
      * @tc.desc   Test for creating and destroying a matrix with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateDestroyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0300
      * @tc.desc   Test for multiple calls of creating and destroying a matrix.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateRotationNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0400
      * @tc.desc   Test for creating a rotation matrix with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateRotationNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0500
      * @tc.desc   Test for creating a rotation matrix with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +102,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateRotationAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0600
      * @tc.desc   Test for creating a rotation matrix with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -115,7 +115,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateRotationMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0700
      * @tc.desc   Test for creating a rotation matrix with maximum values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -128,7 +128,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateRotationMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0800
      * @tc.desc   Test for multiple calls of creating a rotation matrix.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateTranslationNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_0900
      * @tc.desc   Test for creating a translation matrix with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -154,7 +154,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateTranslationNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1000
      * @tc.desc   Test for creating a translation matrix with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateTranslationAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1100
      * @tc.desc   Test for creating a translation matrix with abnormal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -180,7 +180,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateTranslationMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1200
      * @tc.desc   Test for creating a translation matrix with maximum values.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -193,7 +193,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateTranslationMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1300
      * @tc.desc   Test for multiple calls of creating a translation matrix.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -205,203 +205,8 @@ export default function DrawingNativeMatrixTest() {
     })
 
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0100
-     * @tc.desc   Test for setting and getting matrix values with normal parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMatrixMatrixSetGetMatrixNormal', Level.LEVEL0, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(0);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixMatrixSetGetMatrixNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0200
-     * @tc.desc   Test for setting and getting matrix values with NULL parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixMatrixSetGetMatrixNull', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(1);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixMatrixSetGetMatrixAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0300
-     * @tc.desc   Test for setting and getting matrix values with abnormal parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixMatrixSetGetMatrixAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(2);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixMatrixSetGetMatrixMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0400
-     * @tc.desc   Test for setting and getting matrix values with maximum values.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixMatrixSetGetMatrixMaximum', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(3);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixMatrixSetGetMatrixMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0500
-     * @tc.desc   Test for multiple calls of setting and getting matrix values.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixMatrixSetGetMatrixMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(4);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixTranslateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0600
-     * @tc.desc   Test for translating a matrix with normal parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMatrixTranslateNormal', Level.LEVEL0, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(5);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixTranslateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0700
-     * @tc.desc   Test for translating a matrix with NULL parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixTranslateNull', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(6);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixTranslateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0800
-     * @tc.desc   Test for translating a matrix with abnormal parameters.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixTranslateAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(7);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixTranslateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0900
-     * @tc.desc   Test for translating a matrix with maximum values.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixTranslateMaximum', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(8);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixTranslateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1000
-     * @tc.desc   Test for multiple calls of translating a matrix.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixTranslateMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(9);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixRotateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1100
-     * @tc.desc   test for testMatrixRotateNormal.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMatrixRotateNormal', Level.LEVEL0, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(10);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixRotateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1200
-     * @tc.desc   test for testMatrixRotateNull.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixRotateNull', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(11);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixRotateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1300
-     * @tc.desc   test for testMatrixRotateAbnormal.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixRotateAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(12);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixRotateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1400
-     * @tc.desc   test for testMatrixRotateMaximum.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixRotateMaximum', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(13);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMatrixRotateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1500
-     * @tc.desc   test for testMatrixRotateMultipleCalls.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMatrixRotateMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingMatrixTransform(14);
-      expect(result).assertEqual(0);
-    })
-
-    /**
      * @tc.name   testMatrixCreateScaleNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1400
      * @tc.desc   test for testMatrixCreateScaleNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +219,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateScaleNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1500
      * @tc.desc   test for testMatrixCreateScaleNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -427,7 +232,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateScaleAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1600
      * @tc.desc   test for testMatrixCreateScaleAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -440,7 +245,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateScaleMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1700
      * @tc.desc   test for testMatrixCreateScaleMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -453,7 +258,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCreateScaleMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixCreate_1800
      * @tc.desc   test for testMatrixCreateScaleMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -465,8 +270,203 @@ export default function DrawingNativeMatrixTest() {
     })
 
     /**
+     * @tc.name   testMatrixMatrixSetGetMatrixNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0100
+     * @tc.desc   Test for setting and getting matrix values with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMatrixMatrixSetGetMatrixNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixMatrixSetGetMatrixNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0200
+     * @tc.desc   Test for setting and getting matrix values with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixMatrixSetGetMatrixNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixMatrixSetGetMatrixAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0300
+     * @tc.desc   Test for setting and getting matrix values with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixMatrixSetGetMatrixAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixMatrixSetGetMatrixMaximum
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0400
+     * @tc.desc   Test for setting and getting matrix values with maximum values.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixMatrixSetGetMatrixMaximum', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixMatrixSetGetMatrixMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0500
+     * @tc.desc   Test for multiple calls of setting and getting matrix values.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixMatrixSetGetMatrixMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixTranslateNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0600
+     * @tc.desc   Test for translating a matrix with normal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMatrixTranslateNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixTranslateNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0700
+     * @tc.desc   Test for translating a matrix with NULL parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixTranslateNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixTranslateAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0800
+     * @tc.desc   Test for translating a matrix with abnormal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixTranslateAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixTranslateMaximum
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_0900
+     * @tc.desc   Test for translating a matrix with maximum values.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixTranslateMaximum', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixTranslateMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1000
+     * @tc.desc   Test for multiple calls of translating a matrix.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixTranslateMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixRotateNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1100
+     * @tc.desc   test for testMatrixRotateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMatrixRotateNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixRotateNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1200
+     * @tc.desc   test for testMatrixRotateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixRotateNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixRotateAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1300
+     * @tc.desc   test for testMatrixRotateAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixRotateAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixRotateMaximum
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1400
+     * @tc.desc   test for testMatrixRotateMaximum.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixRotateMaximum', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testMatrixRotateMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1500
+     * @tc.desc   test for testMatrixRotateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMatrixRotateMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingMatrixTransform(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
      * @tc.name   testMatrixScaleNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1600
      * @tc.desc   test for testMatrixScaleNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -479,7 +479,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixScaleNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1700
      * @tc.desc   test for testMatrixScaleNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -492,7 +492,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixScaleAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1800
      * @tc.desc   test for testMatrixScaleAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -505,7 +505,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixScaleMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_1900
      * @tc.desc   test for testMatrixScaleMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -518,7 +518,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixScaleMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2000
      * @tc.desc   test for testMatrixScaleMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -531,7 +531,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetRectToRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2100
      * @tc.desc   test for testMatrixSetRectToRectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -544,7 +544,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetRectToRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2200
      * @tc.desc   test for testMatrixSetRectToRectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -557,7 +557,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetRectToRectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixTransform_2300
      * @tc.desc   test for testMatrixSetRectToRectMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -571,7 +571,7 @@ export default function DrawingNativeMatrixTest() {
     // Matrix Operation related test cases
     /**
      * @tc.name   testMatrixPreRotateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0100
      * @tc.desc   test for testMatrixPreRotateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -584,7 +584,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreRotateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0200
      * @tc.desc   test for testMatrixPreRotateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -597,7 +597,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreRotateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0300
      * @tc.desc   test for testMatrixPreRotateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -610,7 +610,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreRotateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0400
      * @tc.desc   test for testMatrixPreRotateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -623,7 +623,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreRotateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0500
      * @tc.desc   test for testMatrixPreRotateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -636,7 +636,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreScaleNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0600
      * @tc.desc   test for testMatrixPreScaleNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -649,7 +649,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreScaleNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0700
      * @tc.desc   test for testMatrixPreScaleNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -662,7 +662,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreScaleAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0800
      * @tc.desc   test for testMatrixPreScaleAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -675,7 +675,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreScaleMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_0900
      * @tc.desc   test for testMatrixPreScaleMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -688,7 +688,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreScaleMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1000
      * @tc.desc   test for testMatrixPreScaleMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -701,7 +701,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreTranslateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1100
      * @tc.desc   test for testMatrixPreTranslateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -714,7 +714,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreTranslateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1200
      * @tc.desc   test for testMatrixPreTranslateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -727,7 +727,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreTranslateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1300
      * @tc.desc   test for testMatrixPreTranslateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -740,7 +740,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreTranslateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1400
      * @tc.desc   test for testMatrixPreTranslateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -753,7 +753,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreTranslateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1500
      * @tc.desc   test for testMatrixPreTranslateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -766,7 +766,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostRotateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1600
      * @tc.desc   test for testMatrixPostRotateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -779,7 +779,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostRotateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1700
      * @tc.desc   test for testMatrixPostRotateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -792,7 +792,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostRotateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1800
      * @tc.desc   test for testMatrixPostRotateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -805,7 +805,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostRotateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_1900
      * @tc.desc   test for testMatrixPostRotateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -818,7 +818,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostRotateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_2000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixOperation_2000
      * @tc.desc   test for testMatrixPostRotateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -832,7 +832,7 @@ export default function DrawingNativeMatrixTest() {
     // Matrix Part2 Transform related test cases
     /**
      * @tc.name   testMatrixPostScaleNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0100
      * @tc.desc   test for testMatrixPostScaleNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -845,7 +845,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostScaleNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0200
      * @tc.desc   test for testMatrixPostScaleNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -858,7 +858,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostScaleAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0300
      * @tc.desc   test for testMatrixPostScaleAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -871,7 +871,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostScaleMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0400
      * @tc.desc   test for testMatrixPostScaleMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -884,7 +884,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostScaleMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0500
      * @tc.desc   test for testMatrixPostScaleMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -897,7 +897,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostTranslateNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0600
      * @tc.desc   test for testMatrixPostTranslateNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -910,7 +910,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostTranslateNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0700
      * @tc.desc   test for testMatrixPostTranslateNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -923,7 +923,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostTranslateAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0800
      * @tc.desc   test for testMatrixPostTranslateAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -936,7 +936,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostTranslateMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_0900
      * @tc.desc   test for testMatrixPostTranslateMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -949,7 +949,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPostTranslateMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1000
      * @tc.desc   test for testMatrixPostTranslateMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -962,7 +962,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixResetNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1100
      * @tc.desc   test for testMatrixResetNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -975,7 +975,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixResetNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1200
      * @tc.desc   test for testMatrixResetNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -988,7 +988,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixResetMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1300
      * @tc.desc   test for testMatrixResetMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1001,7 +1001,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixConcatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1400
      * @tc.desc   test for testMatrixConcatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1014,7 +1014,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixConcatNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1500
      * @tc.desc   test for testMatrixConcatNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1027,7 +1027,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixConcatMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1600
      * @tc.desc   test for testMatrixConcatMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1040,7 +1040,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixInvertNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1700
      * @tc.desc   test for testMatrixInvertNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1053,7 +1053,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixInvertNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1800
      * @tc.desc   test for testMatrixInvertNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1066,7 +1066,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixInvertMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Transform_1900
      * @tc.desc   test for testMatrixInvertMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1079,7 +1079,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetPolyToPolyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0100
      * @tc.desc   test for testMatrixSetPolyToPolyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1092,7 +1092,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetPolyToPolyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0200
      * @tc.desc   test for testMatrixSetPolyToPolyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1105,7 +1105,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetPolyToPolyAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0300
      * @tc.desc   test for testMatrixSetPolyToPolyAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1118,7 +1118,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetPolyToPolyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0400
      * @tc.desc   test for testMatrixSetPolyToPolyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1131,7 +1131,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapPointsNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0500
      * @tc.desc   test for testMatrixMapPointsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1144,7 +1144,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapPointsNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0600
      * @tc.desc   test for testMatrixMapPointsNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1157,7 +1157,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapPointsAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0700
      * @tc.desc   test for testMatrixMapPointsAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1170,7 +1170,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapPointsMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0800
      * @tc.desc   test for testMatrixMapPointsMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1183,7 +1183,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_0900
      * @tc.desc   test for testMatrixMapRectNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1196,7 +1196,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1000
      * @tc.desc   test for testMatrixMapRectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1209,7 +1209,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixMapRectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1100
      * @tc.desc   test for testMatrixMapRectMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1222,7 +1222,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsEqualNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1200
      * @tc.desc   test for testMatrixIsEqualNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1235,7 +1235,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsEqualNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1300
      * @tc.desc   test for testMatrixIsEqualNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1248,7 +1248,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsEqualMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1400
      * @tc.desc   test for testMatrixIsEqualMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1261,7 +1261,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsIdentityNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1500
      * @tc.desc   test for testMatrixIsIdentityNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1274,7 +1274,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsIdentityNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1600
      * @tc.desc   test for testMatrixIsIdentityNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1287,7 +1287,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsIdentityMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2MapQuery_1700
      * @tc.desc   test for testMatrixIsIdentityMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1300,7 +1300,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCopyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0100
      * @tc.desc   test for testMatrixCopyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1313,7 +1313,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCopyNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0200
      * @tc.desc   test for testMatrixCopyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1326,7 +1326,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixCopyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart2Set_0300
      * @tc.desc   test for testMatrixCopyMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1339,7 +1339,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPerConcatNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0100
      * @tc.desc   test for testMatrixPerConcatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1352,7 +1352,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPerConcatNull1
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0200
      * @tc.desc   test for testMatrixPerConcatNull1.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1365,7 +1365,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPerConcatNull2
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0300
      * @tc.desc   test for testMatrixPerConcatNull2.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1378,7 +1378,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPerConcatCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0400
      * @tc.desc   test for testMatrixPerConcatCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1391,7 +1391,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsAffineNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0500
      * @tc.desc   test for testMatrixIsAffineNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1404,7 +1404,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsAffineNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0600
      * @tc.desc   test for testMatrixIsAffineNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1417,7 +1417,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixIsAffineMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0700
      * @tc.desc   test for testMatrixIsAffineMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1430,7 +1430,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreSkewNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0800
      * @tc.desc   test for testMatrixPreSkewNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1443,7 +1443,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreSkewNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_0900
      * @tc.desc   test for testMatrixPreSkewNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1456,7 +1456,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixPreSkewMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1000
      * @tc.desc   test for testMatrixPreSkewMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1469,7 +1469,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixRectStaysRectNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1100
      * @tc.desc   test for testMatrixRectStaysRectNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1482,7 +1482,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixRectStaysRectNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1200
      * @tc.desc   test for testMatrixRectStaysRectNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1495,7 +1495,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixRectStaysRectMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1300
      * @tc.desc   test for testMatrixRectStaysRectMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1508,7 +1508,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetSinCosNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1400
      * @tc.desc   test for testMatrixSetSinCosNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1521,7 +1521,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetSinCosNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1500
      * @tc.desc   test for testMatrixSetSinCosNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1534,7 +1534,7 @@ export default function DrawingNativeMatrixTest() {
 
     /**
      * @tc.name   testMatrixSetSinCosMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingMatrixPart3_1600
      * @tc.desc   test for testMatrixSetSinCosMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

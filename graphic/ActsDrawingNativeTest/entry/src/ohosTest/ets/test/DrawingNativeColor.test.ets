@@ -37,7 +37,7 @@ export default function DrawingNativeColorTest() {
 
     /**
      * @tc.name   testColorSetArgbNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0100
      * @tc.desc   test for testColorSetArgbNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeColorTest() {
 
     /**
      * @tc.name   testColorSetArgbNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0200
      * @tc.desc   test for testColorSetArgbNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeColorTest() {
 
     /**
      * @tc.name   testColorSetArgbMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0300
      * @tc.desc   test for testColorSetArgbMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function DrawingNativeColorTest() {
 
     /**
      * @tc.name   testColorSetArgbAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0400
      * @tc.desc   test for testColorSetArgbAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -89,7 +89,7 @@ export default function DrawingNativeColorTest() {
 
     /**
      * @tc.name   testColorSetArgbMaximum
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingColorSetArgb_0500
      * @tc.desc   test for testColorSetArgbMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

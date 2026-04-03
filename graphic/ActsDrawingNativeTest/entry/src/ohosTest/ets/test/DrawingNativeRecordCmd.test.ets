@@ -38,7 +38,7 @@ export default function DrawingNativeRecordCmdTest() {
     // RecordCmdUtils BeginRecording related test cases (2 cases)
     /**
      * @tc.name   testRecordCmdUtilsBeginRecordingAbnormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsBeginRecording_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsBeginRecording_0100
      * @tc.desc   test for testRecordCmdUtilsBeginRecordingAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -51,7 +51,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testRecordCmdUtilsBeginRecordingCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsBeginRecording_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsBeginRecording_0200
      * @tc.desc   test for testRecordCmdUtilsBeginRecordingCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -65,7 +65,7 @@ export default function DrawingNativeRecordCmdTest() {
     // RecordCmdUtils Destroy related test cases (1 case)
     /**
      * @tc.name   testRecordCmdUtilsDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsDestroy_0100
      * @tc.desc   test for testRecordCmdUtilsDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -79,7 +79,7 @@ export default function DrawingNativeRecordCmdTest() {
     // RecordCmdUtils FinishRecording related test cases (2 cases)
     /**
      * @tc.name   testRecordCmdUtilsFinishRecordingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsFinishRecording_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsFinishRecording_0100
      * @tc.desc   test for testRecordCmdUtilsFinishRecordingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -92,7 +92,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testRecordCmdUtilsFinishRecordingNull
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsFinishRecording_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsFinishRecording_0200
      * @tc.desc   test for testRecordCmdUtilsFinishRecordingNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -105,7 +105,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testRecordCmdDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdDestroy_0100
      * @tc.desc   test for testRecordCmdDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -118,7 +118,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testRecordCmdDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdDestroy_0200
      * @tc.desc   test for testRecordCmdDestroyNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -131,7 +131,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testCanvasDrawRecordCmdNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0100
      * @tc.desc   test for testCanvasDrawRecordCmdNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -144,7 +144,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testCanvasDrawRecordCmdABNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0200
      * @tc.desc   test for testCanvasDrawRecordCmdABNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -157,7 +157,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testCanvasDrawRecordCmdNestingNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0300
      * @tc.desc   test for testCanvasDrawRecordCmdNestingNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -170,7 +170,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testCanvasDrawRecordCmdNestingAbNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0400
      * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function DrawingNativeRecordCmdTest() {
 
     /**
      * @tc.name   testCanvasDrawRecordCmdNestingAbNormal1
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawRecordCmd_0500
      * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal1.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

@@ -37,7 +37,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterCreateDestroyNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0100
      * @tc.desc   Test for creating and destroying a filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterCreateDestroyNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0200
      * @tc.desc   Test for destroying a filter with NULL parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -63,7 +63,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterCreateDestroyMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterCreateDestroy_0300
      * @tc.desc   Test for creating and destroying a filter multiple times and in loops.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -77,7 +77,7 @@ export default function DrawingNativeFilterTest() {
     // Filter SetImageFilter related test cases
     /**
      * @tc.name   testFilterSetImageFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0100
      * @tc.desc   Test for setting an image filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -90,7 +90,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetImageFilterNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0200
      * @tc.desc   Test for setting an image filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetImageFilterMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetImageFilter_0300
      * @tc.desc   Test for setting an image filter multiple times with different objects.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -117,7 +117,7 @@ export default function DrawingNativeFilterTest() {
     // Filter SetMaskFilter related test cases
     /**
      * @tc.name   testFilterSetMaskFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0100
      * @tc.desc   Test for setting a mask filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -130,7 +130,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetMaskFilterNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0200
      * @tc.desc   Test for setting a mask filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetMaskFilterMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetMaskFilter_0300
      * @tc.desc   Test for setting a mask filter multiple times with different objects.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -157,7 +157,7 @@ export default function DrawingNativeFilterTest() {
     // Filter SetColorFilter related test cases
     /**
      * @tc.name   testFilterSetColorFilterNormal
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0100
      * @tc.desc   Test for setting a color filter with normal parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -170,7 +170,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetColorFilterNULL
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0200
      * @tc.desc   Test for setting a color filter with NULL parameters.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function DrawingNativeFilterTest() {
 
     /**
      * @tc.name   testFilterSetColorFilterMultipleCalls
-     * @tc.number   SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFilterSetColorFilter_0300
      * @tc.desc   Test for setting a color filter multiple times with different objects.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
