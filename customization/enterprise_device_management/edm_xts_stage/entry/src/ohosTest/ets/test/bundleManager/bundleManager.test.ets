@@ -5777,5 +5777,330 @@ export default function bundleManagerTest() {
       done();
       console.info(' --- installMarketApps_test_004_1  -------- END --------');
     })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0100
+     * @tc.desc   test getInstalledBundleStorageStats method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0100  -------- START --------');
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0100 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0200
+     * @tc.desc   test getInstalledBundleStorageStats method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0200  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0200 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0200 error 9200002 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0300
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and invalid userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0300  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, APP_IDS_1, INVALID_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0300 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0300 error 9200012 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0400
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0400  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: Array<string> = [ "com.edm.acts.normal" ];
+        let ret = bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
+        expect(ret != null).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0400 error is not expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0500
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0500  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(null, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0500 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0500 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0600
+     * @tc.desc   test getInstalledBundleStorageStats method with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0600  -------- START --------');
+      try {
+        await bundleManager.getInstalledBundleStorageStats(undefined, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0600 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0600 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0700
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0700  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0700 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0800
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0800  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_0800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0800 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0800  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_0900
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_0900", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_0900  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, APP_IDS_1, null);
+        console.info(' --- test_getInstalledBundleStorageStats_0900 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_0900 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_0900  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1000
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1000", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1000  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- test_getInstalledBundleStorageStats_1000 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1000 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1000  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1100
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1100  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: string[] = [];
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_1100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1100 error 9200012 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1200
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1200  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: string[] = [""];
+        await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
+        console.info(' --- test_getInstalledBundleStorageStats_1200 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1200 error 9200012 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1300
+     * @tc.desc   test getInstalledBundleStorageStats method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1300  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: string[] = ['com.edm.acts.normal'];
+        let result: bundleManager.BundleStorageStats[] =
+          await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
+        expect(result != null).assertTrue();
+        expect(result[0]?.bundleName === 'com.edm.acts.normal').assertTrue();
+        expect(result[0]?.appSize > 0).assertTrue();
+        expect(result[0]?.dataSize >= 0).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1300 error is not expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1300  -------- END --------');
+    })
   })
 }
