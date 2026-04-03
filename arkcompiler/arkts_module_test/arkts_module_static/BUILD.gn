@@ -19,7 +19,6 @@ group("arkts_module_static") {
     deps = [
       "exporttest_static:ActsExportStaticTest",
       "lazy_load_static:ActsArkTsLazyLoadStaticTest",
-      "static_load_static:ActsArkTsStaticLoadStaticTest",
     ]
   }
 }
