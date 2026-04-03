@@ -1841,5 +1841,646 @@ export default function PartialUtilityTypeTest() {
       expect(foo_53({i: 1.9}) == 2).assertTrue();
     })
 
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4300
+     * @tc.name      testPartialUtilityType0043
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(foo_54({j: "some str"}) == 3).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4400
+     * @tc.name      testPartialUtilityType0044
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(foo_55({}) == 2).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4500
+     * @tc.name      testPartialUtilityType0045
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_56({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4600
+     * @tc.name      testPartialUtilityType0046
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_57({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4700
+     * @tc.name      testPartialUtilityType0047
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_58({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4800
+     * @tc.name      testPartialUtilityType0048
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_59({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_4900
+     * @tc.name      testPartialUtilityType0049
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_60({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5000
+     * @tc.name      testPartialUtilityType0050
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_61({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5100
+     * @tc.name      testPartialUtilityType0051
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_62({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5200
+     * @tc.name      testPartialUtilityType0052
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_63({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5300
+     * @tc.name      testPartialUtilityType0053
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_64({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5400
+     * @tc.name      testPartialUtilityType0054
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_65({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5500
+     * @tc.name      testPartialUtilityType0055
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_66({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5600
+     * @tc.name      testPartialUtilityType0056
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_67({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5700
+     * @tc.name      testPartialUtilityType0057
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_68({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5800
+     * @tc.name      testPartialUtilityType0058
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_69({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_5900
+     * @tc.name      testPartialUtilityType0059
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_70({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6000
+     * @tc.name      testPartialUtilityType0060
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_71({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6100
+     * @tc.name      testPartialUtilityType0061
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_72({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6200
+     * @tc.name      testPartialUtilityType0062
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_73({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6300
+     * @tc.name      testPartialUtilityType0063
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_74({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6400
+     * @tc.name      testPartialUtilityType0064
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_75({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6500
+     * @tc.name      testPartialUtilityType0065
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_76({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6600
+     * @tc.name      testPartialUtilityType0066
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_77({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6700
+     * @tc.name      testPartialUtilityType0067
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_78({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6800
+     * @tc.name      testPartialUtilityType0068
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_79({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_6900
+     * @tc.name      testPartialUtilityType0069
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_80({i: 1.9, j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7000
+     * @tc.name      testPartialUtilityType0070
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_81({i: 1.9}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7100
+     * @tc.name      testPartialUtilityType0071
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_82({j: "some str"}) == 3 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7200
+     * @tc.name      testPartialUtilityType0072
+     * @tc.desc      Type Partial<T> constructs a type with all properties of T set to optional.
+     *               T must be a class or an interface type.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect( foo_83({}) == 2 ).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7300
+     * @tc.name      testPartialUtilityType0073
+     * @tc.desc      Type Partial<T> with static fields.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Partial<A_84> = {j:2}
+      expect(a.j).assertEqual(2)
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7400
+     * @tc.name      testPartialUtilityType0074
+     * @tc.desc      Type Partial<T> with static fields.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Partial<AC_85> = {j:2}
+      expect(a.j).assertEqual(2)
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7500
+     * @tc.name      testPartialUtilityType0075
+     * @tc.desc      'Type Partial<T> with static fields.
+
+    Static field is a part of Partial<T> class. Field becomes optional and, thus, gets
+    undefined value.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      resetFirstrun_0();
+      let a: P_0 = {j:2}
+      if(firstrun_0) {
+        expect(P_0.i).assertEqual(undefined)
+        P_0.i = 3
+        firstrun_0 = false
+      }
+      expect(P_0.i).assertEqual(3)
+      expect(A_86.i).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7600
+     * @tc.name      testPartialUtilityType0076
+     * @tc.desc      'Type Partial<T> with static fields.
+
+    Static field is a part of Partial<T> class. Field becomes optional and, thus, gets
+    undefined value.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      resetFirstrun_1();
+      let a: P_1 = {j:2}
+      if(firstrun_1) {
+        expect(P_1.i).assertEqual(undefined)
+        P_1.i = 3
+        firstrun_1 = false
+      }
+      expect(P_1.i).assertEqual(3)
+      expect(AC_87.i).assertEqual(2)
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7700
+     * @tc.name      testPartialUtilityType0077
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_88 = {i: 1.9, j: "some str"}
+      let g: RP_88 = {i: 1.9, j: "some str"}
+      expect(foo_88(f) == 3).assertTrue()
+      expect(foo_88(g) == 3).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7800
+     * @tc.name      testPartialUtilityType0078
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_89 = {i: 1.9}
+      let g: RP_89 = {i: 1.9}
+      expect(foo_89(f) == 1).assertTrue()
+      expect(foo_89(g) == 1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_7900
+     * @tc.name      testPartialUtilityType0079
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_90 = {j: "some str"}
+      let g: RP_90 = {j: "some str"}
+      expect(foo_90(f) == 2).assertTrue()
+      expect(foo_90(g) == 2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8000
+     * @tc.name      testPartialUtilityType0080
+     * @tc.desc      Using custom type of Partial<T)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_91 = {}
+      let g: RP_91 = {}
+      expect(foo_91(f) == 0).assertTrue()
+      expect(foo_91(g) == 0).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8100
+     * @tc.name      testPartialUtilityType0081
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_92 = {i: 1.9, j: "some str"}
+      let g: RP_92 = {i: 1.9, j: "some str"}
+      expect(foo_92(f) == 3).assertTrue()
+      expect(foo_92(g) == 3).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8200
+     * @tc.name      testPartialUtilityType0082
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_93 = {i: 1.9}
+      let g: RP_93 = {i: 1.9}
+      expect(foo_93(f) == 1).assertTrue()
+      expect(foo_93(g) == 1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8300
+     * @tc.name      testPartialUtilityType0083
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_94 = {j: "some str"}
+      let g: RP_94 = {j: "some str"}
+      expect(foo_94(f) == 2).assertTrue()
+      expect(foo_94(g) == 2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8400
+     * @tc.name      testPartialUtilityType0084
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_95 = {}
+      let g: RP_95 = {}
+      expect(foo_95(f) == 0).assertTrue()
+      expect(foo_95(g) == 0).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8500
+     * @tc.name      testPartialUtilityType0085
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_96 = {i: 1.9, j: "some str"}
+      let g: RP_96 = {i: 1.9, j: "some str"}
+      expect(foo_96(f) == 3).assertTrue()
+      expect(foo_96(g) == 3).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8600
+     * @tc.name      testPartialUtilityType0086
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_97 = {i: 1.9}
+      let g: RP_97 = {i: 1.9}
+      expect(foo_97(f) == 1).assertTrue()
+      expect(foo_97(g) == 1).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8700
+     * @tc.name      testPartialUtilityType0087
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_98 = {j: "some str"}
+      let g: RP_98 = {j: "some str"}
+      expect(foo_98(f) == 2).assertTrue()
+      expect(foo_98(g) == 2).assertTrue()
+    })
+
+    /**
+     * @tc.number    SUB_PARTIAL_UTILITY_TYPE_8800
+     * @tc.name      testPartialUtilityType0088
+     * @tc.desc      Using custom type of Partial<T>
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPartialUtilityType0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let f: T_99 = {}
+      let g: RP_99 = {}
+      expect(foo_99(f) == 0).assertTrue()
+      expect(foo_99(g) == 0).assertTrue()
+    })
   });
 }

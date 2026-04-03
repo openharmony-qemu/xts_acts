@@ -39,6 +39,10 @@ import NestingUtilityType from "./generics/utility_types/nesting_utility_type/Ne
 import NonNullableUtilityType from "./generics/utility_types/nonnullable_utility_type/NonNullableUtilityType.test";
 import RequiredUtilityType from "./generics/utility_types/required_utility_type/RequiredUtilityType.test";
 import PartialUtilityType from "./generics/utility_types/partial_utility_type/PartialUtilityType.test";
+import GenericClassesConstraint from "./generics/type_parameters/type_parameter_constraint/generic_classes/GenericClassesConstraint.test";
+import GenericFunctionsConstraint from "./generics/type_parameters/type_parameter_constraint/generic_functions/GenericFunctionsConstraint.test";
+import GenericMethodsConstraint from "./generics/type_parameters/type_parameter_constraint/generic_methods/GenericMethodsConstraint.test";
+import GenericTypeAliasConstraint from "./generics/type_parameters/type_parameter_constraint/generic_type_alias/GenericTypeAliasConstraint.test";
 
 export default function testsuite() {
   AssignmentLikeContextsTest();
@@ -68,4 +72,8 @@ export default function testsuite() {
   NonNullableUtilityType();
   RequiredUtilityType();
   PartialUtilityType();
+  GenericClassesConstraint();
+  GenericFunctionsConstraint();
+  GenericMethodsConstraint();
+  GenericTypeAliasConstraint();
 }
