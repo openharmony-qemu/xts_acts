@@ -60,7 +60,7 @@ export default function BlankTest() {
     });
 
     /**
-     * @tc.number BlankTest_001
+     * @tc.number SUB_ARKUI_ACE_BLANK_0100
      * @tc.name blankNoArgs
      * @tc.desc Test Blank() with no arguments
      * @tc.type   FUNCTION
@@ -86,7 +86,7 @@ export default function BlankTest() {
     });
 
     /**
-     * @tc.number BlankTest_002
+     * @tc.number SUB_ARKUI_ACE_BLANK_0200
      * @tc.name blankMinDouble
      * @tc.desc Test Blank(100) with double min value
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function BlankTest() {
     });
 
     /**
-     * @tc.number BlankTest_003
+     * @tc.number SUB_ARKUI_ACE_BLANK_0300
      * @tc.name blankMinString
      * @tc.desc Test Blank('50vp') with string min value
      * @tc.type   FUNCTION
@@ -144,7 +144,7 @@ export default function BlankTest() {
     });
 
     /**
-     * @tc.number BlankTest_004
+     * @tc.number SUB_ARKUI_ACE_BLANK_0400
      * @tc.name blankMinZero
      * @tc.desc Test Blank(0) with zero min value
      * @tc.type   FUNCTION
@@ -173,7 +173,7 @@ export default function BlankTest() {
     });
 
     /**
-     * @tc.number BlankTest_005
+     * @tc.number SUB_ARKUI_ACE_BLANK_0500
      * @tc.name blankMinUndefined
      * @tc.desc Test Blank(undefined) with undefined min value
      * @tc.type   FUNCTION
