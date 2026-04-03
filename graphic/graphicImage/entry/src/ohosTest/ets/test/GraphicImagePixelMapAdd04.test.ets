@@ -2846,7 +2846,7 @@ export default function graphicImagePixelMapAdd04() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
         expect(pixelMap.isEditable).assertTrue();
 
         const buffer = new ArrayBuffer(16);
