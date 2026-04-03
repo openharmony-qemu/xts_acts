@@ -25,122 +25,122 @@ import {
 export default function UIContextGestureTest(): void {
   describe('UIContextGestureTest', () => {
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100
-     * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100
+     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillStart_0100
+     * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillStart_0100
      * @tc.desc Test GestureActionPhase WILL_START enum value, verify WILL_START=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100 begin');
+    it('SUB_ArkUI_UIContext_GestureActionPhase_WillStart_0100', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillStart_0100 begin');
       expect(GestureActionPhase.WILL_START).assertEqual(0);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillStart_Value0_0100 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillStart_0100 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200
-     * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200
+     * @tc.number SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_0200
+     * @tc.name SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_0200
      * @tc.desc Test GestureActionPhase WILL_END enum value, verify WILL_END=1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200 begin');
+    it('SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_0200', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_0200 begin');
       expect(GestureActionPhase.WILL_END).assertEqual(1);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_Value1_0200 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureActionPhase_WillEnd_0200 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Tap_0300
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Tap_0300
      * @tc.desc Test GestureListenerType TAP enum value, verify TAP=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_Tap_0300', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Tap_0300 begin');
       expect(GestureListenerType.TAP).assertEqual(0);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Tap_Value0_0300 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Tap_0300 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_LongPress_0400
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_LongPress_0400
      * @tc.desc Test GestureListenerType LONG_PRESS enum value, verify LONG_PRESS=1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_LongPress_0400', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_LongPress_0400 begin');
       expect(GestureListenerType.LONG_PRESS).assertEqual(1);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_LongPress_Value1_0400 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_LongPress_0400 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pan_0500
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pan_0500
      * @tc.desc Test GestureListenerType PAN enum value, verify PAN=2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_Pan_0500', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pan_0500 begin');
       expect(GestureListenerType.PAN).assertEqual(2);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pan_Value2_0500 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pan_0500 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Pinch_0600
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Pinch_0600
      * @tc.desc Test GestureListenerType PINCH enum value, verify PINCH=3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_Pinch_0600', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pinch_0600 begin');
       expect(GestureListenerType.PINCH).assertEqual(3);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pinch_Value3_0600 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Pinch_0600 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Swipe_0700
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Swipe_0700
      * @tc.desc Test GestureListenerType SWIPE enum value, verify SWIPE=4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_Swipe_0700', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Swipe_0700 begin');
       expect(GestureListenerType.SWIPE).assertEqual(4);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Swipe_Value4_0700 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Swipe_0700 end');
       done();
     });
 
     /**
-     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800
-     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800
+     * @tc.number SUB_ArkUI_UIContext_GestureListenerType_Rotation_0800
+     * @tc.name SUB_ArkUI_UIContext_GestureListenerType_Rotation_0800
      * @tc.desc Test GestureListenerType ROTATION enum value, verify ROTATION=5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800', Level.LEVEL1, (done: () => void) => {
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800 begin');
+    it('SUB_ArkUI_UIContext_GestureListenerType_Rotation_0800', Level.LEVEL1, (done: () => void) => {
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Rotation_0800 begin');
       expect(GestureListenerType.ROTATION).assertEqual(5);
-      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Rotation_Value5_0800 end');
+      console.info('UIContextGestureTest: SUB_ArkUI_UIContext_GestureListenerType_Rotation_0800 end');
       done();
     });
 
