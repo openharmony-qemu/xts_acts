@@ -31,12 +31,12 @@ export default function setAssetCompatibleCapabilityTest () {
     });
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100
-     * @tc.desc      : supportedHighResolution is true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100
+     * @tc.desc        supportedHighResolution is true
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0100';
@@ -56,12 +56,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200
-     * @tc.desc      : supportedHighResolution is false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200
+     * @tc.desc        supportedHighResolution is false
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0200';
@@ -79,12 +79,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300
-     * @tc.desc      : supportedHighResolution is undefined, error code is: 23800151
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300
+     * @tc.desc        supportedHighResolution is undefined, error code is: 23800151
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300';
@@ -104,12 +104,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400
-     * @tc.desc      : supportedHighResolution is null, error code is: 23800151
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400
+     * @tc.desc        supportedHighResolution is null, error code is: 23800151
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400';
@@ -129,12 +129,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500
-     * @tc.desc      : supportedHighResolution is true twice
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500
+     * @tc.desc        supportedHighResolution is true twice
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500';
@@ -153,12 +153,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600
-     * @tc.desc      : supportedHighResolution is false twice
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600
+     * @tc.desc        supportedHighResolution is false twice
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600';
@@ -177,12 +177,12 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700
-     * @tc.name      : SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700
-     * @tc.desc      : supportedHighResolution is false and true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number      SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700
+     * @tc.name        SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700
+     * @tc.desc        supportedHighResolution is false and true
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700';
