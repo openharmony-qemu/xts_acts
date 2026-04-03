@@ -58,7 +58,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_001
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0100
      * @tc.name lifecyclePageRenders
      * @tc.desc Verify lifecycle test page renders correctly
      * @tc.type   FUNCTION
@@ -84,7 +84,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_002
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0200
      * @tc.name lifecycleTestCompRendered
      * @tc.desc Verify LifecycleTestComp (@ComponentV2) renders in page
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_003
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0300
      * @tc.name lifecycleGetCurrentState
      * @tc.desc Test CustomComponentLifecycle.getCurrentState() returns valid state
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_004
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0400
      * @tc.name lifecycleAddObserver
      * @tc.desc Test CustomComponentLifecycle.addObserver() is called successfully
      * @tc.type   FUNCTION
@@ -158,7 +158,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_005
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0500
      * @tc.name lifecycleRemoveObserver
      * @tc.desc Test CustomComponentLifecycle.removeObserver() is called successfully
      * @tc.type   FUNCTION
@@ -183,7 +183,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_006
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0600
      * @tc.name lifecycleObserverAboutToAppear
      * @tc.desc Test CustomComponentLifecycleObserver.aboutToAppear default method is callable
      * @tc.type   FUNCTION
@@ -214,7 +214,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_007
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0700
      * @tc.name lifecycleObserverOnDidBuild
      * @tc.desc Test CustomComponentLifecycleObserver.onDidBuild default method is callable
      * @tc.type   FUNCTION
@@ -245,7 +245,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_008
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0800
      * @tc.name lifecycleObserverAboutToDisappear
      * @tc.desc Test CustomComponentLifecycleObserver.aboutToDisappear default method is callable
      * @tc.type   FUNCTION
@@ -276,7 +276,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_009
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_0900
      * @tc.name lifecycleObserverAboutToReuse
      * @tc.desc Test CustomComponentLifecycleObserver.aboutToReuse default method is callable
      * @tc.type   FUNCTION
@@ -307,7 +307,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_010
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_1000
      * @tc.name lifecycleObserverAboutToRecycle
      * @tc.desc Test CustomComponentLifecycleObserver.aboutToRecycle default method is callable
      * @tc.type   FUNCTION
@@ -338,7 +338,7 @@ export default function CustomComponentLifecycleTest() {
     });
 
     /**
-     * @tc.number CustomComponentLifecycleTest_011
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_LIFECYCLE_1100
      * @tc.name lifecycleCompOnDidBuild
      * @tc.desc Verify LifecycleTestComp onDidBuild lifecycle was called
      * @tc.type   FUNCTION

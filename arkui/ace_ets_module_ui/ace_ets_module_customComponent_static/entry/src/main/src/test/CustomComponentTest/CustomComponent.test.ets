@@ -58,7 +58,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_001
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0100
      * @tc.name lifecycleStateInit
      * @tc.desc Test CustomComponentLifecycleState.INIT = 0
      * @tc.type   FUNCTION
@@ -83,7 +83,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_002
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0200
      * @tc.name lifecycleStateAppeared
      * @tc.desc Test CustomComponentLifecycleState.APPEARED = 1
      * @tc.type   FUNCTION
@@ -108,7 +108,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_003
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0300
      * @tc.name lifecycleStateBuilt
      * @tc.desc Test CustomComponentLifecycleState.BUILT = 2
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_004
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0400
      * @tc.name lifecycleStateRecycled
      * @tc.desc Test CustomComponentLifecycleState.RECYCLED = 3
      * @tc.type   FUNCTION
@@ -158,7 +158,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_005
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0500
      * @tc.name lifecycleStateDisappeared
      * @tc.desc Test CustomComponentLifecycleState.DISAPPEARED = 4
      * @tc.type   FUNCTION
@@ -183,7 +183,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_006
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0600
      * @tc.name invokeOptionsDefaultSClass
      * @tc.desc Test CustomComponentInvokeOptions.sClass is undefined by default
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_007
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0700
      * @tc.name customComponentPageRenders
      * @tc.desc Verify custom component test page renders
      * @tc.type   FUNCTION
@@ -233,7 +233,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_008
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0800
      * @tc.name childV2CompRendered
      * @tc.desc Verify @ComponentV2 ChildV2Comp renders in page
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_009
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_0900
      * @tc.name childV2AboutToAppearCalled
      * @tc.desc Verify ChildV2Comp aboutToAppear lifecycle was called
      * @tc.type   FUNCTION
@@ -282,7 +282,7 @@ export default function CustomComponentTest() {
     });
 
     /**
-     * @tc.number CustomComponentTest_010
+     * @tc.number SUB_ARKUI_ACE_CUSTOMCOMPONENT_1000
      * @tc.name childV2OnDidBuildCalled
      * @tc.desc Verify ChildV2Comp onDidBuild lifecycle was called
      * @tc.type   FUNCTION
