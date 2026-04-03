@@ -1,3 +1,17 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -26,7 +40,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
@@ -38,8 +52,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -51,7 +63,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -82,8 +94,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -97,7 +107,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -118,8 +128,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -132,7 +140,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -153,8 +161,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -167,7 +173,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -188,8 +194,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -202,7 +206,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -223,8 +227,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -237,7 +239,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -260,8 +262,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -274,7 +274,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -305,8 +305,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -319,7 +317,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -342,8 +340,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    expect(true).assertTrue();
-                    done();
                 }
             }
         })
@@ -356,7 +352,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 videoProcessingEngine.initializeEnvironment();
@@ -367,8 +363,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -380,7 +374,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 videoProcessingEngine.initializeEnvironment();
@@ -392,8 +386,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -405,7 +397,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -437,8 +429,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
 
@@ -450,7 +440,7 @@ export default function abilityTest() {
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -486,8 +476,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                expect(true).assertTrue();
-                done();
             }
         })
     })

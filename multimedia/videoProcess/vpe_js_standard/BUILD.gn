@@ -17,7 +17,7 @@ ohos_js_app_static_suite("ActsAceEtsModuleXNodeNoWearApi12Test") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "XTS_DEMO"
-  part_name = "XTS_DEMO"
-  subsystem_name = "XTS_DEMO"
+  hap_name = "ActsVideoProcessingEngineTest"
+  part_name = "video_processing_engine"
+  subsystem_name = "multimedia"
 }
