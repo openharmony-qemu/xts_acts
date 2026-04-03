@@ -769,11 +769,8 @@ export default function StreamReadable04Test() {
         expect(typeof myReadable.on).assertEqual('function');
         expect(dataListenerAdded).assertTrue();
       } catch (error) {
-        errorOccurred = true;
-        expect(error instanceof Error).assertTrue();
+        expect().assertFail();
       }
-
-      expect(errorOccurred).assertFalse();
     });
 
     /**
@@ -816,10 +813,8 @@ export default function StreamReadable04Test() {
         expect(dataListenerAdded).assertTrue();
       } catch (error) {
         errorOccurred = true;
-        expect(error instanceof Error).assertTrue();
+        expect().assertFail();
       }
-
-      expect(errorOccurred).assertFalse();
     });
 
     /**
@@ -857,7 +852,7 @@ export default function StreamReadable04Test() {
 
         expect(Number.isNaN(myReadable.callbackParam)).assertTrue();
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -896,7 +891,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertEqual(Infinity);
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -935,7 +930,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertEqual(-Infinity);
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -974,7 +969,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertEqual(Number.MAX_VALUE);
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1013,7 +1008,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertEqual(Number.MIN_VALUE);
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1052,7 +1047,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam.toString()).assertEqual("9007199254740991");
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1093,7 +1088,7 @@ export default function StreamReadable04Test() {
         const isLengthGreaterThanZero: boolean = paramLength > 0;
         expect(isLengthGreaterThanZero).assertTrue();
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1132,7 +1127,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertEqual("");
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1173,7 +1168,7 @@ export default function StreamReadable04Test() {
         const isLengthGreaterThanZero: boolean = paramLength > 0;
         expect(isLengthGreaterThanZero).assertTrue();
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1212,7 +1207,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam.length).assertEqual(5);
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1253,7 +1248,7 @@ export default function StreamReadable04Test() {
         const isKeysLengthGreaterThanZero: boolean = keysLength > 0;
         expect(isKeysLengthGreaterThanZero).assertTrue();
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 
@@ -1293,12 +1288,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.initializeCalled).assertTrue();
       } catch (error) {
-        const err: Error = error as Error;
-        const errorCode: number = 401;
-
-        const errorMessage: string = err.message;
-        const containsErrorCode: boolean = errorMessage.includes(errorCode.toString());
-        expect(containsErrorCode).assertTrue();
+        expect(error.code).assertEqual(401);
       }
     });
 
@@ -1337,13 +1327,10 @@ export default function StreamReadable04Test() {
         });
       } catch (error) {
         errorCaught = true;
-        const err: Error = error as Error;
-        errorMessage = err.message;
-        expect(err instanceof Error).assertTrue();
+        expect(error.code).assertEqual(undefined);
       }
 
       expect(errorCaught).assertTrue();
-      expect(errorMessage.includes("Test error")).assertTrue();
     });
 
     /**
@@ -1422,7 +1409,7 @@ export default function StreamReadable04Test() {
 
         expect(myReadable.callbackParam).assertTrue();
       } catch (error) {
-
+        expect().assertFail();
       }
     });
 

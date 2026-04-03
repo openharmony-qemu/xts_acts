@@ -983,7 +983,7 @@ export default function StreamTest_03() {
           });
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.indexOf('chunk must be string or Uint8Array').equals(true)).assertEqual(true);
+          expect(err.code).assertEqual(401);
         }
 
       });
@@ -1004,7 +1004,7 @@ export default function StreamTest_03() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.includes('encoding must be a string')).assertEqual(false);
+          expect(err.code).assertEqual(401);
         }
 
       });
@@ -1026,7 +1026,7 @@ export default function StreamTest_03() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.includes('Unsupported encoding')).assertEqual(false);
+          expect(err.code).assertEqual(401);
         }
 
       });
@@ -1283,7 +1283,7 @@ export default function StreamTest_03() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.includes('The type of null must be string or UintArray')).assertEqual(true);
+          expect(err.code).assertEqual(401);
         }
 
       });
@@ -1306,7 +1306,7 @@ export default function StreamTest_03() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.includes('Unknown encoding: utf16')).assertEqual(true);
+          expect(err.code).assertEqual(401);
         }
 
       });

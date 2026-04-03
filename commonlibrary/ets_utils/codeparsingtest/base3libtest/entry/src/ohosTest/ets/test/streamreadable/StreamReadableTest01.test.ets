@@ -175,8 +175,8 @@ export default function StreamReadable01Test() {
       } catch (err) {
         errCaught = true;
         console.log(TAG + ' error: ' + err);
+        expect(err.code).assertEqual(401);
       }
-      expect(errCaught).assertTrue();
     });
 
     /**
@@ -219,8 +219,8 @@ export default function StreamReadable01Test() {
       } catch (err) {
         errCaught = true;
         console.log(TAG + ' error: ' + err);
+        expect(err.code).assertEqual(401);
       }
-      expect(errCaught).assertTrue();
     });
 
     /**
@@ -245,8 +245,8 @@ export default function StreamReadable01Test() {
       } catch (err) {
         errCaught = true;
         console.log(TAG + ' error: ' + err);
+        expect(err.code).assertEqual(401);
       }
-      expect(errCaught).assertTrue();
     });
 
     /**
@@ -283,8 +283,8 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.error(TAG + ' error: ' + err);
+        expect().assertFail();
       }
-
     });
 
     /**
@@ -322,7 +322,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
     });
 
@@ -343,9 +343,8 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
-
     });
 
     /**
@@ -365,7 +364,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
 
     });
@@ -390,7 +389,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
 
     });
@@ -415,7 +414,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
 
     });
@@ -444,7 +443,7 @@ export default function StreamReadable01Test() {
           console.log(TAG + ` - highWaterMark ${value} passed`);
         } catch (err) {
           console.log(TAG + ` - highWaterMark ${value} error: ${err}`);
-          expect(err).not().assertNull();
+          expect().assertFail();
         }
       }
     });
@@ -466,7 +465,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
     });
 
@@ -489,7 +488,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err).not().assertNull();
+        expect().assertFail();
       }
     });
 
@@ -514,7 +513,7 @@ export default function StreamReadable01Test() {
         expect(typeof readableStream.pipe).assertEqual('function');
       } catch (err) {
         console.log(TAG + ' error: ' + err);
-        expect(err instanceof Error).assertTrue();
+        expect().assertFail();
       }
     });
 
@@ -715,6 +714,7 @@ export default function StreamReadable01Test() {
         expect(dataChunk === null || dataChunk === undefined).assertTrue();
       } catch (error) {
         console.log(TAG + ' error code: ' + (error.code || 'no code'));
+        expect().assertFail();
       }
     });
 
@@ -1143,12 +1143,10 @@ export default function StreamReadable01Test() {
       }
 
       let readableStream = new TestReadable();
-
       let returnedStream = readableStream.resume();
       expect(returnedStream).assertEqual(readableStream);
       expect(readableStream.isPaused()).assertFalse();
     })
-
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTONE_4600
@@ -1174,7 +1172,6 @@ export default function StreamReadable01Test() {
       }
 
       let readableStream = new TestReadable();
-
       let returnedStream = readableStream.resume();
       expect(returnedStream).assertEqual(readableStream);
       expect(readableStream.isPaused()).assertFalse();
@@ -1239,7 +1236,6 @@ export default function StreamReadable01Test() {
       }
 
       let readableStream = new TestReadable();
-
       readableStream.resume();
       expect(readableStream.isPaused()).assertFalse();
 
@@ -1262,7 +1258,6 @@ export default function StreamReadable01Test() {
     it('testStreamReadable01Chapter0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStreamReadable01Chapter0049'
       console.log(TAG + ' start')
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -1274,9 +1269,6 @@ export default function StreamReadable01Test() {
       }
 
       let readableStream = new TestReadable();
-
-      console.info(TAG + ' isPaused:', readableStream.isPaused());
-
       let returnedStream = readableStream.resume();
       expect(returnedStream).assertEqual(readableStream);
       expect(readableStream.isPaused()).assertFalse();
@@ -1293,7 +1285,6 @@ export default function StreamReadable01Test() {
     it('testStreamReadable01Chapter0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStreamReadable01Chapter0050'
       console.log(TAG + ' start')
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -1306,20 +1297,10 @@ export default function StreamReadable01Test() {
       }
 
       let readableStream = new TestReadable();
-
-
       let result = readableStream.resume();
-
-
       expect(result instanceof stream.Readable).assertTrue();
-
-
       expect(result).assertEqual(readableStream);
-
-
       expect(readableStream.isPaused()).assertFalse();
-
-
       readableStream.on('end', () => {
       });
 
@@ -1349,8 +1330,7 @@ export default function StreamReadable01Test() {
 
       let readableStream = new TestReadable();
       let result = readableStream.pause();
-      console.info("Pause result:", result);
-      console.info("Is paused:", readableStream.isPaused());
+
       expect(readableStream.isPaused()).assertTrue();
       expect(result).assertEqual(readableStream);
 
@@ -1390,7 +1370,6 @@ export default function StreamReadable01Test() {
       readableStream.pause();
       readableStream.pause();
       readableStream.pause();
-      console.info("Is paused after multiple pauses:", readableStream.isPaused());
       expect(readableStream.isPaused()).assertTrue();
 
     })

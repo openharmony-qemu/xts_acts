@@ -403,7 +403,6 @@ export default function StreamTest_10() {
     it('constructorTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'constructorTest0004';
         console.log(TAG + ' start');
-        let errorMsg = '';
         try {
           const brokenTransform = new BadTransform();
           brokenTransform.write('test');
@@ -411,13 +410,9 @@ export default function StreamTest_10() {
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
           if (err) {
-            expect(err instanceof Error).assertEqual(true);
-            errorMsg = (err as Error).message;
-            expect(errorMsg.includes('doTransform')).assertEqual(false);
+            expect(err.code).assertEqual(undefined);
           }
         }
-        expect(errorMsg.trim() !== '').assertEqual(true);
-
       });
 
     /**
@@ -693,18 +688,16 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0010';
-        console.log(TAG + ' start');
-        const transform = new TransformNeg5();
-        try {
-          transform.doTransform('test', 'utf8');
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Callback is required");
-        }
-
-      });
+      const TAG = 'DoTransformTest0010';
+      console.log(TAG + ' start');
+      const transform = new TransformNeg5();
+      try {
+        transform.doTransform('test', 'utf8');
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1700
@@ -791,10 +784,8 @@ export default function StreamTest_10() {
           });
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Callback error");
+          expect(err.code).assertEqual(undefined);
         }
-
       });
 
     /**

@@ -594,7 +594,6 @@ export default function StreamTest_02() {
       await new Promise<void>((resolve) => {
         writableStream.end('The second time ended', 'utf8', (err: Error | null | undefined) => {
           if (err) {
-            console.log(`${TAG} expected error: ${err.message}`);
             expect((err as Error).message.length > 0).assertTrue();
             resolve();
           } else {

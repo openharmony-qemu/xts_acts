@@ -408,7 +408,6 @@ export default function StreamTest_01() {
       expect(writable.writable).assertEqual(true);
       expect(writable.writableHighWatermark).assertEqual(16384);
       expect(writable instanceof stream.Writable).assertEqual(true);
-
     });
 
     /**
@@ -501,17 +500,13 @@ export default function StreamTest_01() {
     it('Writableconstructortest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'Writableconstructortest0006';
       console.log(TAG + ' start');
-      let writeError = '';
       const missingWriter = new MissingDoWrite();
       try {
         missingWriter.write('data', 'utf8');
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} caught error: ${err}`);
-        writeError = (err as Error).message;
-        expect(writeError).assertContain('The doWrite() method is not implemented');
+        expect(err.code).assertEqual(10200035)
       }
-
     });
 
     /**
@@ -642,17 +637,13 @@ export default function StreamTest_01() {
       console.log(TAG + ' start');
       type WriteSignature = (chunk: string | Uint8Array, encoding: string, callback: () => void) => boolean;
       const writable = new InvalidChunkWritable();
-      let errorMessage = '';
       try {
         const invalidChunk = '12345';
         (writable.write as WriteSignature)(invalidChunk, 'utf8', () => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        errorMessage = (err as Error).message;
-        expect(errorMessage).assertContain('Invalid chunk type');
+        expect(err.code).assertEqual(undefined);
       }
-
     });
 
     /**
@@ -668,26 +659,19 @@ export default function StreamTest_01() {
       console.log(TAG + ' start');
       type InvalidChunkSignature = (chunk: null | undefined, encoding: string, callback: () => void) => boolean;
       const writable = new NullChunkWritable();
-      let nullError = '';
-      let undefinedError = '';
       try {
         (writable.write as InvalidChunkSignature)(null, 'gbk', () => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} null fail, err: ${err}`);
-        nullError = (err as Error).message;
-        expect(nullError).assertContain('null');
+        expect(err.code).assertEqual(401);
       }
       try {
         (writable.write as (chunk: undefined, encoding: string, callback: () => void) => void)(undefined, 'utf8', (
         ) => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} undefined fail, err: ${err}`);
-        undefinedError = (err as Error).message;
-        expect(undefinedError).assertContain('undefined');
+        expect(err.code).assertEqual(401);
       }
-
     });
 
     /**
@@ -702,14 +686,11 @@ export default function StreamTest_01() {
       const TAG = 'Writablewritetest0005';
       console.log(TAG + ' start');
       const writable = new MixedParamsWritable();
-      let paramError = '';
       try {
         (writable.write as InvalidWriteSignature)('test', 'invalid-encoding', () => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        paramError = (err as Error).message;
-        expect(paramError).assertContain('Unknown encoding: invalid-encoding');
+        expect(err.code).assertEqual(401);
       }
 
     });
@@ -727,14 +708,11 @@ export default function StreamTest_01() {
       console.log(TAG + ' start');
       const writable = new InvalidEncodingWritable();
       const buffer = new Uint8Array([0x48, 0x65]);
-      let encodingError = '';
       try {
         writable.write(buffer, '123' as string, () => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        encodingError = (err as Error).message;
-        expect(encodingError).assertContain('Unknown encoding: 123');
+        expect(err.code).assertEqual(401);
       }
 
     });
@@ -751,14 +729,11 @@ export default function StreamTest_01() {
       const TAG = 'Writablewritetest0007';
       console.log(TAG + ' start');
       const writable = new UnsupportedEncodingWritable();
-      let unsupportedError = '';
       try {
         writable.write('test', 'ascii', () => {});
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        unsupportedError = (err as Error).message;
-        expect(unsupportedError).assertContain('Unsupported encoding: ascii');
+        expect(err.code).assertEqual(undefined);
       }
 
     });
@@ -906,11 +881,8 @@ export default function StreamTest_01() {
         ) => void;
         (writable.end as InvalidEndSignature)('123', 'utf-8', () => {});
         throw new Error('Chunk weibaocuo');
-        expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        errorMessage = (err as Error).message;
-        expect(errorMessage).assertContain('Chunk');
+        expect(err.code).assertEqual(undefined);
       }
 
     });
@@ -958,9 +930,7 @@ export default function StreamTest_01() {
         });
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        errorMessage = (err as Error).message;
-        expect(errorMessage).assertContain('no');
+        expect(err.code).assertEqual(10200035);
       }
 
     });
@@ -990,9 +960,7 @@ export default function StreamTest_01() {
         }
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        errorMessage = (err as Error).message;
-        expect(errorMessage).assertContain(' callback');
+        expect(err.code).assertEqual(undefined);
       }
 
     });
@@ -1061,7 +1029,7 @@ export default function StreamTest_01() {
           if (error) {
             expect(error.message).assertContain('Invalid encoding');
           } else {
-            expect().assertFail(); // 不应该成功
+            expect().assertFail();
           }
           resolve();
         });

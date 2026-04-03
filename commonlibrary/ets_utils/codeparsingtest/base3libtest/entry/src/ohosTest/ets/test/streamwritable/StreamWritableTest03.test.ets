@@ -261,7 +261,6 @@ export default function StreamWritable03Test() {
 
       let writableStream = new TestWritable();
       writableStream.end('0', 'utf-8');
-      // The doWrite method already contains an assertion for chunk type
     });
 
     /**
@@ -652,7 +651,6 @@ export default function StreamWritable03Test() {
 
       let writableStream = new TestWritable();
       writableStream.end('NaN', 'utf-8');
-      // The doWrite method already contains an assertion for chunk type
     });
 
     /**

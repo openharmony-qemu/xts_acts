@@ -599,6 +599,7 @@ export default function StreamDuplex03Test() {
             let result = duplexStream.setDefaultEncoding(enc);
             expect(result).assertEqual(false);
           } catch (err) {
+            expect(err.code).assertEqual(401);
           }
         }
       });
@@ -631,6 +632,7 @@ export default function StreamDuplex03Test() {
           try {
             let result = duplexStream.setDefaultEncoding(enc);
           } catch (err) {
+            expect(err.code).assertEqual(401);
           }
         }
       });
@@ -1014,7 +1016,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(null));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1044,7 +1046,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(undefined));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1074,7 +1076,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(123));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1104,7 +1106,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(true));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1134,7 +1136,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(false));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1164,7 +1166,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(['utf8', 'gbk']));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1194,7 +1196,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String({ encoding: 'utf8' }));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1224,7 +1226,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding('Symbol(utf8)');
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 
@@ -1254,7 +1256,7 @@ export default function StreamDuplex03Test() {
           let result = duplexStream.setDefaultEncoding(String(() => 'utf8'));
           expect(result).assertEqual(false);
         } catch (err) {
-          expect(err !== undefined).assertTrue();
+          expect(err.code).assertEqual(401);
         }
     });
 

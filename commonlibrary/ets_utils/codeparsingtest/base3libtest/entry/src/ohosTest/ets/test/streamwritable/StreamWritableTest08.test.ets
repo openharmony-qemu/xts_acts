@@ -87,7 +87,6 @@ export default function StreamWritable08Test() {
           console.info("doWritev called with chunks count:", chunks.length);
           this.doWritevCalled = true;
 
-          // 使用循环代替展开运算符
           for (let i = 0; i < chunks.length; i++) {
             this.receivedChunks.push(chunks[i]);
           }

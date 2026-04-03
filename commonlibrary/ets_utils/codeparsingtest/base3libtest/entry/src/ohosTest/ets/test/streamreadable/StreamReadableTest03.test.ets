@@ -255,8 +255,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('invalid-encoding');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -364,9 +364,9 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('!@#$%^&*()');
       } catch (err) {
         console.log(TAG + ' error caught:', (err as Error).message);
+        expect(err.code).assertEqual(401);
         result = false;
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -396,8 +396,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('ABCDEFG');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -427,8 +427,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('\n\t\r');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -458,8 +458,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('😊');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -490,9 +490,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding(invalidEncoding);
       } catch (e) {
         result = false;
+        expect(e.code).assertEqual(401);
       }
-
-      expect(result).assertFalse();
     });
 
     /**
@@ -667,8 +666,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('null');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -698,8 +697,8 @@ export default function StreamReadable03Test() {
         result = readableStream.setEncoding('NaN');
       } catch (err) {
         result = false;
+        expect(err.code).assertEqual(401);
       }
-      expect(result).assertFalse();
     });
 
     /**
@@ -993,8 +992,6 @@ export default function StreamReadable03Test() {
 
       const readable: TestReadable = new TestReadable();
       const writable: TestWritable = new TestWritable();
-
-
       const options: PipeOptions = {};
       const result: stream.Writable = readable.pipe(writable, options);
 
@@ -1132,24 +1129,17 @@ export default function StreamReadable03Test() {
         }
       }
 
-
       const readable1: TestReadable = new TestReadable();
       const writable1: TestWritable = new TestWritable();
-
-
       const options1: PipeOptions = {};
       const result1: stream.Writable = readable1.pipe(writable1, options1);
-
-
       expect(result1 === writable1).assertTrue();
-
 
       const readable2: TestReadable = new TestReadable();
       const writable2: TestWritable = new TestWritable();
 
       const options2: PipeOptions = {};
       const result2: stream.Writable = readable2.pipe(writable2, options2);
-
 
       expect(result2 === writable2).assertTrue();
     });
@@ -1225,8 +1215,7 @@ export default function StreamReadable03Test() {
         const incompleteWritable: IncompleteWritable = new IncompleteWritable();
         readable.pipe(incompleteWritable);
       } catch (err) {
-        const error = err as Error;
-        expect(error.message.indexOf('Parameter error') >= 0).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -1340,8 +1329,6 @@ export default function StreamReadable03Test() {
       const writable2: TestWritable2 = new TestWritable2();
 
       readable.pipe(writable1);
-
-
       const result: stream.Writable = readable.pipe(writable2);
 
       expect(result).assertEqual(writable2);

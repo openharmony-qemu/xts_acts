@@ -67,8 +67,7 @@ export default function StreamWritable05Test() {
         expect(writable).not().assertUndefined();
       } catch (err) {
         const actualError = err as ApiError;
-        expect(typeof actualError.message).assertEqual('string');
-        expect(actualError.code).not().assertUndefined();
+        expect(actualError.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -108,8 +107,7 @@ export default function StreamWritable05Test() {
         expect(writable).not().assertUndefined();
       } catch (err) {
         const actualError = err as ApiError;
-        expect(typeof actualError.message).assertEqual('string');
-        expect(actualError.code).not().assertUndefined();
+        expect(actualError.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -149,8 +147,7 @@ export default function StreamWritable05Test() {
         expect(writable).not().assertUndefined();
       } catch (err) {
         const actualError = err as ApiError;
-        expect(typeof actualError.message).assertEqual('string');
-        expect(actualError.code).not().assertUndefined();
+        expect(actualError.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -190,8 +187,7 @@ export default function StreamWritable05Test() {
         expect(writable).not().assertUndefined();
       } catch (err) {
         const actualError = err as ApiError;
-        expect(typeof actualError.message).assertEqual('string');
-        expect(actualError.code).not().assertUndefined();
+        expect(actualError.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -1281,7 +1277,7 @@ export default function StreamWritable05Test() {
         writableStream.off('!');
         expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -1312,7 +1308,7 @@ export default function StreamWritable05Test() {
         writableStream.off('!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~');
         expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -1343,7 +1339,7 @@ export default function StreamWritable05Test() {
         writableStream.off('!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~');
         expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -1375,7 +1371,7 @@ export default function StreamWritable05Test() {
         writableStream.off(bellChar);
         expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 

@@ -25,7 +25,6 @@ class TestDuplex extends stream.Duplex {
   constructor() {
     super();
     this.on('error', (err) => {
-      const errorMsg = (err as Error).message;
     });
   }
 

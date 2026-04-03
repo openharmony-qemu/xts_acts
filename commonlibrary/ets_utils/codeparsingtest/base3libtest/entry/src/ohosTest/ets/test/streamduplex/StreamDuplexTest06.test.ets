@@ -1198,11 +1198,10 @@ export default function StreamDuplex06Test() {
           });
         });
       } catch (err) {
-        const error = err as Error;
-        if (error.message && error.message.includes('Unknown encoding')) {
+        if (err.code === 401) {
           console.log(TAG + ' base64 encoding not supported, skipping test');
         } else {
-          throw error;
+          throw err as Error;
         }
       }
     });
@@ -1249,11 +1248,10 @@ export default function StreamDuplex06Test() {
           });
         });
       } catch (err) {
-        const error = err as Error;
-        if (error.message && error.message.includes('Unknown encoding')) {
+        if (err.code === 401) {
           console.log(TAG + ' hex encoding not supported, skipping test');
         } else {
-          throw error;
+          throw err as Error;
         }
       }
     });
@@ -1300,11 +1298,10 @@ export default function StreamDuplex06Test() {
           });
         });
       } catch (err) {
-        const error = err as Error;
-        if (error.message && error.message.includes('Unknown encoding')) {
+        if (err.code === 401) {
           console.log(TAG + ' latin1 encoding not supported, skipping test');
         } else {
-          throw error;
+          throw err as Error;
         }
       }
     });
@@ -1670,7 +1667,7 @@ export default function StreamDuplex06Test() {
         });
       } catch (err) {
         errorThrown = true;
-        expect(err.message).assertEqual('Synchronous error in doWrite');
+        expect(err.code).assertEqual(undefined);
       }
       expect(errorThrown).assertTrue();
     });

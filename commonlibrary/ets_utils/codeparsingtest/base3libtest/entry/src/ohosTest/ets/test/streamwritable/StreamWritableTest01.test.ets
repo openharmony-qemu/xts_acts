@@ -40,11 +40,10 @@ export default function StreamWritable01Test() {
       const TAG = 'testStreamWritable01Chapter0001'
       console.log(TAG + ' start')
       let writableStream = new stream.Writable()
-      console.log(`writableStream created successfully`)
+
       expect(writableStream != null).assertTrue()
       expect(typeof writableStream.write === 'function').assertTrue()
       expect(typeof writableStream.end === 'function').assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0200
@@ -58,9 +57,8 @@ export default function StreamWritable01Test() {
       const TAG = 'testStreamWritable01Chapter0002'
       console.log(TAG + ' start')
       let writableStream1 = new stream.Writable()
-      console.log(`First writableStream created`)
       let writableStream2 = new stream.Writable()
-      console.log(`Second writableStream created`)
+
       expect(writableStream1 != null).assertTrue()
       expect(writableStream2 != null).assertTrue()
       expect(writableStream1 === writableStream2).assertFalse()
@@ -68,7 +66,6 @@ export default function StreamWritable01Test() {
       expect(typeof writableStream2.write === 'function').assertTrue()
       expect(typeof writableStream1.end === 'function').assertTrue()
       expect(typeof writableStream2.end === 'function').assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0300
@@ -82,10 +79,9 @@ export default function StreamWritable01Test() {
       const TAG = 'testStreamWritable01Chapter0003'
       console.log(TAG + ' start')
       let writableStream = new stream.Writable()
-      console.log(`writableStream created`)
+
       expect(writableStream instanceof stream.Writable).assertTrue()
       expect(writableStream instanceof Object).assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0400
@@ -103,7 +99,6 @@ export default function StreamWritable01Test() {
       let writableStream = new stream.Writable()
       expect(writableStream != null).assertTrue()
       expect(typeof writableStream.write === 'function').assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0500
@@ -121,10 +116,9 @@ export default function StreamWritable01Test() {
         return new stream.Writable()
       }
       let writableStream = createWritableInStrictMode()
-      console.log(`writableStream created in strict mode`)
+
       expect(writableStream != null).assertTrue()
       expect(typeof writableStream.write === 'function').assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0600
@@ -139,10 +133,9 @@ export default function StreamWritable01Test() {
       console.log(TAG + ' start')
       const WritableConstructor = stream.Writable
       let writableStream = new WritableConstructor()
-      console.log(`writableStream created via variable`)
+
       expect(writableStream != null).assertTrue()
       expect(writableStream instanceof stream.Writable).assertTrue()
-      console.log(TAG + ' done')
     })
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_0700
@@ -163,14 +156,13 @@ export default function StreamWritable01Test() {
         expect(writableStream != null).assertTrue()
         expect(typeof writableStream.write === 'function').assertTrue()
       }
-      console.log(`Created ${instances.length} Writable instances`)
+
       for (let i = 0; i < instances.length; i++) {
         for (let j = i + 1; j < instances.length; j++) {
           expect(instances[i] === instances[j]).assertFalse()
         }
       }
       instances.length = 0
-      console.log(TAG + ' done')
     })
 
     /**
@@ -184,7 +176,6 @@ export default function StreamWritable01Test() {
     it('testStreamWritable01Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStreamWritable01Chapter0008';
       console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         private receivedData: string = '';
 
@@ -196,7 +187,7 @@ export default function StreamWritable01Test() {
           if (typeof chunk === 'string') {
             this.receivedData += chunk;
           }
-          console.log(TAG + ' doWrite called with chunk');
+
           callback();
         }
 
@@ -220,7 +211,6 @@ export default function StreamWritable01Test() {
     it('testStreamWritable01Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStreamWritable01Chapter0009';
       console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         private receivedData: Uint8Array[] = [];
 
@@ -258,7 +248,6 @@ export default function StreamWritable01Test() {
     it('testStreamWritable01Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStreamWritable01Chapter0010';
       console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         private writeCalled: boolean = false;
 
@@ -285,7 +274,6 @@ export default function StreamWritable01Test() {
       try {
         const result = writableStream.write('');
         writeSuccess = result;
-        console.log(TAG + ' write returned:', result);
         expect(typeof result).assertEqual('boolean');
       } catch (error) {
         console.log(TAG + ' error caught');
@@ -324,7 +312,6 @@ export default function StreamWritable01Test() {
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
           this.receivedEncoding = encoding;
-          console.log(TAG + ' encoding received:', encoding);
           callback();
         }
 
@@ -359,7 +346,6 @@ export default function StreamWritable01Test() {
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
           this.receivedEncoding = encoding;
-          console.log(TAG + ' encoding received:', encoding);
           callback();
         }
 
@@ -394,7 +380,6 @@ export default function StreamWritable01Test() {
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
           this.receivedEncoding = encoding;
-          console.log(TAG + ' encoding received:', encoding);
           callback();
         }
 
@@ -429,7 +414,6 @@ export default function StreamWritable01Test() {
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
           this.receivedEncoding = encoding;
-          console.log(TAG + ' encoding received:', encoding);
           callback();
         }
 
@@ -464,7 +448,6 @@ export default function StreamWritable01Test() {
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
           this.encodingReceived = encoding;
-          console.log(TAG + ' doWrite called with encoding:', encoding);
           callback();
         }
 
@@ -480,23 +463,20 @@ export default function StreamWritable01Test() {
       try {
         const result = writableStream.write('test', testEncoding);
         writeSuccess = result;
-        console.log(TAG + ' write returned:', result);
       } catch (error) {
         console.log(TAG + ' error caught');
         errorCaught = true;
         const errMsg: string = error.toString();
-        console.log(TAG + ' error message:', errMsg);
         expect(errMsg.includes('401')).assertTrue();
       }
       if (!errorCaught) {
         expect(writeSuccess).assertTrue();
         setTimeout(() => {
           const receivedEncoding = writableStream.getEncodingReceived();
-          console.log(TAG + ' received encoding:', receivedEncoding);
           expect(receivedEncoding !== '').assertTrue();
         }, 10);
       } else {
-
+        expect().assertFail();
       }
     });
     /**
@@ -534,7 +514,6 @@ export default function StreamWritable01Test() {
       let callbackExecuted = false;
       const result = writableStream.write('test', 'utf8', () => {
         callbackExecuted = true;
-        console.log(TAG + ' callback executed');
       });
       setTimeout(() => {
         expect(result).assertTrue();

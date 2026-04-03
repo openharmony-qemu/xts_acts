@@ -943,12 +943,7 @@ export default function StreamWritable07Test() {
         expect(writableStream.writable).assertFalse()
 
       } catch (err) {
-        console.info("Error caught with invalid encoding:", err.message)
-        if (err.code) {
-          expect(typeof err.code).assertEqual('number')
-        } else {
-          expect(err.message).assertContain('encoding')
-        }
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -990,9 +985,7 @@ export default function StreamWritable07Test() {
         writableStream.end()
 
       } catch (err) {
-        console.info("Error caught with null chunk:", err.message)
-        expect(err == null).assertFalse()
-        expect(typeof err.message).assertEqual('string')
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1034,9 +1027,7 @@ export default function StreamWritable07Test() {
         writableStream.end()
 
       } catch (err) {
-        console.info("Error caught with undefined chunk:", err.message)
-        expect(err == null).assertFalse()
-        expect(typeof err.message).assertEqual('string')
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1075,7 +1066,6 @@ export default function StreamWritable07Test() {
         expect(writableStream.writable).assertFalse()
 
       } catch (err) {
-        console.info("Unexpected error caught:", err.message)
         expect(err).assertUndefined()
       }
     })
@@ -1121,9 +1111,7 @@ export default function StreamWritable07Test() {
         expect(writableStream.writable).assertFalse()
 
       } catch (err) {
-        console.info("Error caught with empty encoding:", err.message)
-        expect(err == null).assertFalse()
-        expect(typeof err.message).assertEqual('string')
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1157,7 +1145,6 @@ export default function StreamWritable07Test() {
       let errorCaught = false
       writableStream.on('error', (data: Object) => {
         const err = data as Error
-        console.info(`Error caught: ${err.message}`)
         errorCaught = true
       })
       writableStream.write('test data', 'utf8')

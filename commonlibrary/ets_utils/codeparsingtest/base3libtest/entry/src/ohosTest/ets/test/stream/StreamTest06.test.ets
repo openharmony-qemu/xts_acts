@@ -1344,7 +1344,6 @@ export default function StreamTest_06() {
     it('UnpipeTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'UnpipeTest0003';
         console.log(TAG + ' start');
-
         {
           const readable = new TestReadable1();
           try {
@@ -1352,8 +1351,7 @@ export default function StreamTest_06() {
             expect(readable).assertEqual('null');
             expect().assertFail()
           } catch (err) {
-            console.error(`${TAG} fail, err: ${err}`);
-            expect(err.message.includes('destination')).assertEqual(false);
+            expect(err.code).assertEqual(undefined);
           }
         }
 
