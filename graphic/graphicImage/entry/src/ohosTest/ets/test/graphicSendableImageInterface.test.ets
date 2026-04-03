@@ -158,7 +158,7 @@ export default function graphicSendableImageInterfaceTest() {
       }
       try {
         sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
-          await pixelMap.writeBufferToPixels(color).then(async () => {
+          pixelMap.writeBufferToPixels(color).then(async () => {
             console.info("Succeeded in writing data from a buffer to a PixelMap.");
             await pixelMap.release();
             done();
@@ -441,7 +441,7 @@ export default function graphicSendableImageInterfaceTest() {
         sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let translateX: number = 50.0;
           let translateY: number = 10.0;
-          await pixelMap.translate(translateX, translateY).then(async () => {
+          pixelMap.translate(translateX, translateY).then(async () => {
             console.info('Sucessed in translating pixelmap.');
             await pixelMap.release();
             done();
@@ -520,7 +520,7 @@ export default function graphicSendableImageInterfaceTest() {
         sendableImage.createPixelMap(color, opts).then(async (pixelMap: sendableImage.PixelMap) => {
           let horizontal: boolean = true;
           let vertical: boolean = false;
-          await pixelMap.flip(horizontal, vertical).then(async () => {
+          pixelMap.flip(horizontal, vertical).then(async () => {
             console.info('Sucessed in flipping pixelmap.');
             await pixelMap.release();
             done();
@@ -563,7 +563,7 @@ export default function graphicSendableImageInterfaceTest() {
               height: 2, width: 3
             }
           };
-          await pixelMap.crop(region).then(async () => {
+          pixelMap.crop(region).then(async () => {
             console.info('Succeeded in cropping pixelmap.');
             await pixelMap.release();
             done();

@@ -1299,7 +1299,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
 
-        await pixelMap.createScaledPixelMap(1.0, 3.0).then(async (scaledMap) => {
+        pixelMap.createScaledPixelMap(1.0, 3.0).then(async (scaledMap) => {
             console.info(
               `${LOG_PREFIX} createScaledPixelMap001: Scaled isEditable = ${scaledMap.isEditable}, isStrideAlignment = `
                 + `${scaledMap.isStrideAlignment}`
@@ -1420,7 +1420,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
 
-        await pixelMap.createScaledPixelMap(0.5, 0.5).then(async (scaledMap) => {
+        pixelMap.createScaledPixelMap(0.5, 0.5).then(async (scaledMap) => {
             console.info(
               `${LOG_PREFIX} createScaledPixelMap003: Succeeded .`,
               scaledMap.isEditable,
@@ -1524,7 +1524,7 @@ export default function GraphicImagePixelMapAdd01() {
         console.info(`${LOG_PREFIX} createScaledPixelMapInvalid002: Starting test with zero scale.`);
         expect(pixelMap.isEditable).assertTrue();
 
-        await pixelMap.createScaledPixelMap(0, 0).then(async (scaledMap) => {
+        pixelMap.createScaledPixelMap(0, 0).then(async (scaledMap) => {
             console.info(`${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`, scaledMap.isEditable);
             console.info(
               `${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`,

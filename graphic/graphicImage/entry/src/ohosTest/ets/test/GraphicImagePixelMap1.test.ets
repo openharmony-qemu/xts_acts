@@ -107,7 +107,7 @@ class MySequence implements rpc.Parcelable {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
         this.pixel_map = pixelMap;
-        await pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
+        pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
           await this.pixel_map.release();
           await pixelParcel.release();
@@ -138,7 +138,7 @@ class MySequence2 implements rpc.Parcelable {
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertTrue();
         this.pixel_map = pixelMap;
-        await pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
+        pixelMap.getImageInfo().then(async (imageInfo: image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
           await this.pixel_map.release();
           await pixelParcel.release();
@@ -1428,14 +1428,7 @@ export default function graphicImagePixelMap1() {
         }
         let pixelMap1 = image.createPixelMapSync(opts);
         try {
-          await pixelMap1.release().then(async () => {
-            console.info('Succeeded in releasing graphicImagePixelMap1_4700 object.');
-            done();
-          }).catch((error: BusinessError) => {
-            console.error('Failed to release graphicImagePixelMap1_4700 object.');
-            expect().assertFail();
-            done();
-          })
+          await pixelMap1.release();
         } catch (err) {
           err = err as BusinessError;
           console.info('www data graphicImagePixelMap1_4600 error ' + JSON.stringify(err))

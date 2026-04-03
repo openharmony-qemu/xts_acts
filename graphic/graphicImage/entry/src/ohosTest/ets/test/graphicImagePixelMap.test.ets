@@ -1024,7 +1024,7 @@ export default function graphicImagePixelMapTest() {
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         if (pixelMap != undefined) {
-            await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(async (scaledPixelMap: image.PixelMap) => {
+            pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(async (scaledPixelMap: image.PixelMap) => {
             console.info(msg + ' Succeeded in creating scaledPixelMap.');
             await scaledPixelMap.release();
             done();
