@@ -215,7 +215,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0100
-     * @tc.number test_SymbolDateTimeFormat_0100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0100
      * @tc.desc test SymbolDateTimeFormat with empty SymbolDateTimeFormatOptions param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -237,7 +237,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0200
-     * @tc.number test_SymbolDateTimeFormat_0200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0200
      * @tc.desc test SymbolDateTimeFormat with undefined SymbolDateTimeFormatOptions param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -258,7 +258,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0300
-     * @tc.number test_SymbolDateTimeFormat_0300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0300
      * @tc.desc test SymbolDateTimeFormat with custom PM character
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -281,7 +281,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0400
-     * @tc.number test_SymbolDateTimeFormat_0400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0400
      * @tc.desc test SymbolDateTimeFormat with custom AM character
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -304,7 +304,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0500
-     * @tc.number test_SymbolDateTimeFormat_0500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0500
      * @tc.desc test SymbolDateTimeFormat with resolvedOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -326,7 +326,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0600
-     * @tc.number test_SymbolDateTimeFormat_0600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0600
      * @tc.desc test SymbolDateTimeFormat with empty amPMSymbol param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -348,7 +348,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolDateTimeFormat_0700
-     * @tc.number test_SymbolDateTimeFormat_0700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0700
      * @tc.desc test SymbolDateTimeFormat with undefined amPMSymbol param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -370,7 +370,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0100
-     * @tc.number test_SymbolNumberFormat_0100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0800
      * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -392,7 +392,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0200
-     * @tc.number test_SymbolNumberFormat_0200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0900
      * @tc.desc test SymbolNumberFormat with undefined SymbolNumberFormatOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -413,7 +413,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0300
-     * @tc.number test_SymbolNumberFormat_0300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1000
      * @tc.desc test SymbolNumberFormat with custom 0 character
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -435,7 +435,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0400
-     * @tc.number test_SymbolNumberFormat_0400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1100
      * @tc.desc test SymbolNumberFormat with
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -457,7 +457,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0500
-     * @tc.number test_SymbolNumberFormat_0500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1200
      * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -479,7 +479,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0600
-     * @tc.number test_SymbolNumberFormat_0600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1300
      * @tc.desc test SymbolNumberFormat with undefined SymbolNumberFormatOptions param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -501,7 +501,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0700
-     * @tc.number test_SymbolNumberFormat_0700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1400
      * @tc.desc test SymbolNumberFormat with custom null character
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -523,7 +523,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0800
-     * @tc.number test_SymbolNumberFormat_0800
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1500
      * @tc.desc test SymbolNumberFormat with resolvedOptions function
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -545,7 +545,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_0900
-     * @tc.number test_SymbolNumberFormat_0900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1600
      * @tc.desc test SymbolNumberFormat with empty nan option
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -567,7 +567,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1000
-     * @tc.number test_SymbolNumberFormat_1000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1700
      * @tc.desc test SymbolNumberFormat with undefined nan option
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -589,7 +589,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1100
-     * @tc.number test_SymbolNumberFormat_1100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1800
      * @tc.desc test SymbolNumberFormat with custom minusSign character
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -611,7 +611,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1200
-     * @tc.number test_SymbolNumberFormat_1200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1900
      * @tc.desc test SymbolNumberFormat with resolvedOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -633,7 +633,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1300
-     * @tc.number test_SymbolNumberFormat_1300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2000
      * @tc.desc test SymbolNumberFormat with empty minusSign param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -655,7 +655,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1400
-     * @tc.number test_SymbolNumberFormat_1400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2100
      * @tc.desc test SymbolNumberFormat with undefined minusSign param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -677,7 +677,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1500
-     * @tc.number test_SymbolNumberFormat_1500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2200
      * @tc.desc test SymbolNumberFormat with custom plusSign param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -699,7 +699,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1600
-     * @tc.number test_SymbolNumberFormat_1600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2300
      * @tc.desc test SymbolNumberFormat with resolveOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -721,7 +721,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1700
-     * @tc.number test_SymbolNumberFormat_1700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2400
      * @tc.desc test SymbolNumberFormat with empty plusSign param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -743,7 +743,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1800
-     * @tc.number test_SymbolNumberFormat_1800
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2500
      * @tc.desc test SymbolNumberFormat with empty plusSign param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -765,7 +765,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_1900
-     * @tc.number test_SymbolNumberFormat_1900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2600
      * @tc.desc test SymbolNumberFormat with custom infinity symbol
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -787,7 +787,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2000
-     * @tc.number test_SymbolNumberFormat_2000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2700
      * @tc.desc test SymbolNumberFormat with resolvedOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -809,7 +809,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2100
-     * @tc.number test_SymbolNumberFormat_2100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2800
      * @tc.desc test SymbolNumberFormat with resolvedOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -831,7 +831,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2200
-     * @tc.number test_SymbolNumberFormat_2200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2900
      * @tc.desc test SymbolNumberFormat with undefined infinity param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -853,7 +853,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2300
-     * @tc.number test_SymbolNumberFormat_2300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3000
      * @tc.desc test SymbolNumberFormat with undefined infinity param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -875,7 +875,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2400
-     * @tc.number test_SymbolNumberFormat_2400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3100
      * @tc.desc test SymbolNumberFormat with groupingSeparator
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -897,7 +897,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name test_SymbolNumberFormat_2600
-     * @tc.number test_SymbolNumberFormat_2600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3200
      * @tc.desc test SymbolNumberFormat with empty groupingSeparator param
      * @tc.type FUNCTION
      * @tc.size MEDIUM
