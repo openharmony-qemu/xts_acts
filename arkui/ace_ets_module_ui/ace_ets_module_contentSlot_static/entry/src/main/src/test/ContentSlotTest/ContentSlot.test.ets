@@ -57,7 +57,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_001
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0100
      * @tc.name contentSlotPageRenders
      * @tc.desc Verify ContentSlot page renders with $attrs
      * @tc.type   FUNCTION
@@ -83,7 +83,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_002
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0200
      * @tc.name contentSlotNodeAdded
      * @tc.desc Verify ContentSlot page onPageShow sets status correctly
      * @tc.type   FUNCTION
@@ -107,7 +107,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_003
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0300
      * @tc.name contentSlotStatusCheck
      * @tc.desc Verify ContentSlot status updated after node addition
      * @tc.type   FUNCTION
@@ -131,7 +131,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_004
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0400
      * @tc.name contentSlotAddButton
      * @tc.desc Verify Add Node button rendered in page
      * @tc.type   FUNCTION
@@ -157,7 +157,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_005
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0500
      * @tc.name contentSlotDebugLine
      * @tc.desc Verify ContentSlotAttribute.debugLine is called and ContentSlot component still renders normally.
      *          debugLine sets source code redirection info; its correctness is verified by confirming the
@@ -185,7 +185,7 @@ export default function ContentSlotTest() {
     });
 
     /**
-     * @tc.number ContentSlotTest_006
+     * @tc.number SUB_ARKUI_ACE_CONTENTSLOT_0600
      * @tc.name inspectorTreeNotEmpty
      * @tc.desc Verify inspector tree exists
      * @tc.type   FUNCTION

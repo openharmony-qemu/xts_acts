@@ -58,7 +58,7 @@ export default function CommonTest() {
     });
 
     /**
-     * @tc.number CommonTest_001
+     * @tc.number SUB_ARKUI_ACE_COMMON_0100
      * @tc.name layoutSafeAreaEdgeTopEnum
      * @tc.desc Test LayoutSafeAreaEdge.TOP enum value
      * @tc.type   FUNCTION
@@ -76,7 +76,7 @@ export default function CommonTest() {
     });
 
     /**
-     * @tc.number CommonTest_002
+     * @tc.number SUB_ARKUI_ACE_COMMON_0200
      * @tc.name layoutSafeAreaEdgeBottomEnum
      * @tc.desc Test LayoutSafeAreaEdge.BOTTOM enum value
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function CommonTest() {
     });
 
     /**
-     * @tc.number CommonTest_003
+     * @tc.number SUB_ARKUI_ACE_COMMON_0300
      * @tc.name ignoresLayoutSafeAreaEdgesFieldSet
      * @tc.desc Test BackgroundOptions.ignoresLayoutSafeAreaEdges field can be set
      * @tc.type   FUNCTION
@@ -122,7 +122,7 @@ export default function CommonTest() {
     });
 
     /**
-     * @tc.number CommonTest_004
+     * @tc.number SUB_ARKUI_ACE_COMMON_0400
      * @tc.name commonPageRenders
      * @tc.desc Verify common test page renders
      * @tc.type   FUNCTION

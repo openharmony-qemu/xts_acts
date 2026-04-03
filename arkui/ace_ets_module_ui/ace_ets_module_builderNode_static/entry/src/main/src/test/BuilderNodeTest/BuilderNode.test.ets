@@ -55,7 +55,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_001
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0100
      * @tc.name nodeRenderTypeDisplay
      * @tc.desc Test NodeRenderType.RENDER_TYPE_DISPLAY enum value from AppStorage
      * @tc.type   FUNCTION
@@ -79,7 +79,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_002
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0200
      * @tc.name nodeRenderTypeTexture
      * @tc.desc Test NodeRenderType.RENDER_TYPE_TEXTURE enum value from AppStorage
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_003
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0300
      * @tc.name competitionStrategyEnum
      * @tc.desc Test CompetitionStrategy enum values from AppStorage
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_004
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0400
      * @tc.name builderNodePageRenders
      * @tc.desc Verify BuilderNode test page root component renders
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_005
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0500
      * @tc.name builderNodeInstanceCreated
      * @tc.desc Verify BuilderNode instance was created and built
      * @tc.type   FUNCTION
@@ -180,7 +180,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_006
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0600
      * @tc.name builderNodeGetFrameNode
      * @tc.desc Verify BuilderNode.getFrameNode was called
      * @tc.type   FUNCTION
@@ -204,7 +204,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_007
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0700
      * @tc.name builderNodePostTouchEvent
      * @tc.desc Verify BuilderNode.postTouchEvent was called
      * @tc.type   FUNCTION
@@ -228,7 +228,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_008
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0800
      * @tc.name builderNodePostInputEvent
      * @tc.desc Verify BuilderNode.postInputEvent was called
      * @tc.type   FUNCTION
@@ -252,7 +252,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_009
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_0900
      * @tc.name builderNodeDispose
      * @tc.desc Verify BuilderNode.dispose was called
      * @tc.type   FUNCTION
@@ -276,7 +276,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_010
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_1000
      * @tc.name builderNodeIsDisposed
      * @tc.desc Verify BuilderNode.isDisposed was called after dispose
      * @tc.type   FUNCTION
@@ -300,7 +300,7 @@ export default function BuilderNodeTest() {
     });
 
     /**
-     * @tc.number BuilderNodeTest_011
+     * @tc.number SUB_ARKUI_ACE_BUILDERNODE_1100
      * @tc.name builderNodeButtonRendered
      * @tc.desc Verify Button component rendered in page
      * @tc.type   FUNCTION

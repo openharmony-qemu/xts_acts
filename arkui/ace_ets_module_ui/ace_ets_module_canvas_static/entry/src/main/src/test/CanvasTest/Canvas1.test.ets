@@ -59,7 +59,7 @@ export default function Canvas1Test() {
     });
 
     /**
-     * @tc.number CanvasTest_001
+     * @tc.number SUB_ARKUI_ACE_CANVAS_0100
      * @tc.name canvasComponentExists
      * @tc.desc Verify Canvas component renders
      * @tc.type   FUNCTION
@@ -82,7 +82,7 @@ export default function Canvas1Test() {
     });
 
     /**
-     * @tc.number CanvasTest_002
+     * @tc.number SUB_ARKUI_ACE_CANVAS_0200
      * @tc.name canvasAntialiasGet
      * @tc.desc Test CanvasRenderer.antialias getter returns a value
      * @tc.type   FUNCTION
@@ -106,7 +106,7 @@ export default function Canvas1Test() {
     });
 
     /**
-     * @tc.number CanvasTest_003
+     * @tc.number SUB_ARKUI_ACE_CANVAS_0300
      * @tc.name canvasAntialiasSetTrue
      * @tc.desc Test CanvasRenderer.antialias setter with true
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function Canvas1Test() {
     });
 
     /**
-     * @tc.number CanvasTest_004
+     * @tc.number SUB_ARKUI_ACE_CANVAS_0400
      * @tc.name canvasAntialiasSetFalse
      * @tc.desc Test CanvasRenderer.antialias setter with false
      * @tc.type   FUNCTION
@@ -154,7 +154,7 @@ export default function Canvas1Test() {
     });
 
     /**
-     * @tc.number CanvasTest_005
+     * @tc.number SUB_ARKUI_ACE_CANVAS_0500
      * @tc.name canvasAntialiasSetUndefined
      * @tc.desc Test CanvasRenderer.antialias setter with undefined
      * @tc.type   FUNCTION
