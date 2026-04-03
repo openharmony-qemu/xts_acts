@@ -27,9 +27,9 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathConvertToSvgStringEmptyPathStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     LEVEL1
+     * @tc.level     LEVEL0
      */
-    it('testPathConvertToSvgStringEmptyPathStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testPathConvertToSvgStringEmptyPathStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathConvertToSvgStringEmptyPathStatic';
       let path: drawing.Path = new drawing.Path();
       try {
@@ -74,9 +74,9 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathConvertToSvgStringWithLineToStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     LEVEL1
+     * @tc.level     LEVEL0
      */
-    it('testPathConvertToSvgStringWithLineToStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testPathConvertToSvgStringWithLineToStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathConvertToSvgStringWithLineToStatic';
       let path: drawing.Path = new drawing.Path();
       path.moveTo(10, 10);
@@ -100,9 +100,9 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathConvertToSvgStringWithQuadToStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     LEVEL1
+     * @tc.level     LEVEL0
      */
-    it('testPathConvertToSvgStringWithQuadToStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testPathConvertToSvgStringWithQuadToStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathConvertToSvgStringWithQuadToStatic';
       let path: drawing.Path = new drawing.Path();
       path.moveTo(10.0, 10.0);
@@ -248,9 +248,9 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathGetPointDataEmptyPathStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     LEVEL1
+     * @tc.level     LEVEL0
      */
-    it('testPathGetPointDataEmptyPathStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testPathGetPointDataEmptyPathStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathGetPointDataEmptyPathStatic';
       let path: drawing.Path = new drawing.Path();
       try {
@@ -664,7 +664,7 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathGetVerbDataAllVerbsStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetVerbDataAllVerbsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetVerbDataAllVerbsStatic';
@@ -700,7 +700,7 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathGetVerbDataWithDoneStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetVerbDataWithDoneStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetVerbDataWithDoneStatic';
@@ -937,7 +937,7 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathGetConicWeightDataMultipleCallsStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetConicWeightDataMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetConicWeightDataMultipleCallsStatic';
@@ -965,7 +965,7 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathDataMethodsConsistencyStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level3
+     * @tc.level     LEVEL3
      */
     it('testPathDataMethodsConsistencyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathDataMethodsConsistencyStatic';
@@ -1000,7 +1000,7 @@ export default function drawingTsPath7Test(): void {
      * @tc.desc      testPathDataMethodsWithSvgConversionStatic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level3
+     * @tc.level     LEVEL3
      */
     it('testPathDataMethodsWithSvgConversionStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathDataMethodsWithSvgConversionStatic';
