@@ -63,7 +63,7 @@ export default function MechanicManagerAPI() {
       done();
     });
 
-        /**
+    /**
      * @tc.name   SUB_DH_MechanicManager_on_0900
      * @tc.number SUB_DH_MechanicManager_on_0900
      * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参type为null
@@ -73,6 +73,24 @@ export default function MechanicManagerAPI() {
      */
         it("SUB_DH_MechanicManager_on_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_0900 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0900_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0900_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0900 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_0900_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0900_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0900_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0900_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.AttachStateChangeInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -85,7 +103,21 @@ export default function MechanicManagerAPI() {
             expect(error.code == 401).assertTrue();
             console.info("-----------------SUB_DH_MechanicManager_on_0900 end-----------------");
           }
-        });
+        }
+        let SUB_DH_MechanicManager_on_0900_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_0900 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0900 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0900 end------------------")
+        }
 
         /**
      * @tc.name   SUB_DH_MechanicManager_on_1000
@@ -95,8 +127,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_on_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1000 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_1000_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_1000_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_1000 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_1000_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_1000_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_1000_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_1000_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.AttachStateChangeInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -109,7 +160,21 @@ export default function MechanicManagerAPI() {
             expect(error.code == 401).assertTrue();
             console.info("-----------------SUB_DH_MechanicManager_on_1000 end-----------------");
           }
-        });
+        }
+        let SUB_DH_MechanicManager_on_1000_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1000 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1000 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_1000 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0100
@@ -119,21 +184,51 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_DH_MechanicManager_on_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      console.log("-----------------SUB_DH_MechanicManager_on_0100 begin-----------------");
-      let flag = 0;
-      try {
-        mechanicManager.on("attachStateChange", (data) => {
-          console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
+
+        it("SUB_DH_MechanicManager_on_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0100 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0100_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0100_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0100 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
         });
-        console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success");
-        expect(flag == 0).assertTrue();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_on_0100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      console.log("-----------------SUB_DH_MechanicManager_on_0100 end-----------------");
-    });
+
+        let SUB_DH_MechanicManager_on_0100_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0100_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0100_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0100_CheckSuccess = () => {
+          try {
+            mechanicManager.on("attachStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0100_CheckReturnError1 = () => {
+          try {
+            mechanicManager.on("attachStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0100 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0100 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0200
@@ -143,18 +238,48 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_on_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_on_0200 begin-----------------");
-      try {
-        mechanicManager.on("attachStateChange", null);
-        console.info("SUB_DH_MechanicManager_on_0200 mechanicManager.on success" + ",expect fail");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_on_0200 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-        console.info("-----------------SUB_DH_MechanicManager_on_0200 end-----------------");
-      }
-    });
+
+        it("SUB_DH_MechanicManager_on_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0200 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0200_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0200_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0200 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_0200_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0200_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0200_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0200_CheckSuccess = () => {
+          try {
+            mechanicManager.on("attachStateChange", null);
+            console.info("SUB_DH_MechanicManager_on_0200 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0200 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_0200 end-----------------");
+          }
+        }
+        let SUB_DH_MechanicManager_on_0200_CheckReturnError1 = () => {
+          try {
+            mechanicManager.on("attachStateChange", null);
+            console.info("SUB_DH_MechanicManager_on_0200 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0200 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0200 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0300
@@ -164,18 +289,47 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_on_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_on_0300 begin-----------------");
-      try {
-        mechanicManager.on("attachStateChange", undefined);
-        console.info("SUB_DH_MechanicManager_on_0300 mechanicManager.on success" + ",expect fail");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_on_0300 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_on_0300 end-----------------");
-    });
+
+        it("SUB_DH_MechanicManager_on_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0300 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0300_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0300_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0300 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_0300_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0300_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0300_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0300_CheckSuccess = () => {
+          try {
+            mechanicManager.on("attachStateChange", undefined);
+            console.info("SUB_DH_MechanicManager_on_0300 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0300 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0300_CheckReturnError1 = () => {
+          try {
+            mechanicManager.on("attachStateChange", undefined);
+            console.info("SUB_DH_MechanicManager_on_0300 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0300 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0300 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0100
@@ -185,21 +339,51 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_DH_MechanicManager_off_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0100 begin-----------------");
-      let flag = 0;
-      try {
-        mechanicManager.off("attachStateChange", (data) => {
-          console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
+
+        it("SUB_DH_MechanicManager_off_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0100 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0100_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0100_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0100 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
         });
-        console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success");
-        expect(flag == 0).assertTrue();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0100 end-----------------");
-    });
+
+        let SUB_DH_MechanicManager_off_0100_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0100_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0100_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0100_CheckSuccess = () => {
+          try {
+            mechanicManager.off("attachStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0100_CheckReturnError1 = () => {
+          try {
+            mechanicManager.off("attachStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0100 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0100 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0200
@@ -230,18 +414,47 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_off_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0300 begin-----------------");
-      try {
-        mechanicManager.off("attachStateChange", null);
-        console.log("SUB_DH_MechanicManager_off_0300 mechanicManager.off success");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0300 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0300 end-----------------");
-    });
+
+        it("SUB_DH_MechanicManager_off_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0300 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0300_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0300_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0300 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_0300_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0300_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0300_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0300_CheckSuccess = () => {
+          try {
+            mechanicManager.off("attachStateChange", null);
+            console.log("SUB_DH_MechanicManager_off_0300 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0300 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0300_CheckReturnError1 = () => {
+          try {
+            mechanicManager.off("attachStateChange", null);
+            console.log("SUB_DH_MechanicManager_off_0300 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0300 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0300 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0900
@@ -251,8 +464,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_off_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0900 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0900_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0900_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0900 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_0900_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0900_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0900_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0900_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.AttachStateChangeInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -264,8 +496,21 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0900 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
-          console.info("-----------------SUB_DH_MechanicManager_off_0900 end-----------------");
-    });
+        }
+        let SUB_DH_MechanicManager_off_0900_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_0900 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0900 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0900 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_1000
@@ -275,8 +520,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_off_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1000 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_1000_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_1000_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_1000 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_1000_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_1000_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_1000_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_1000_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.AttachStateChangeInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -288,8 +552,21 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1000 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
-          console.info("-----------------SUB_DH_MechanicManager_off_1000 end-----------------");
-    });
+        }
+        let SUB_DH_MechanicManager_off_1000_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1000 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1000 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_1000 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0400
@@ -299,18 +576,54 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_off_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0400 begin-----------------");
-      try {
-        mechanicManager.off("attachStateChange", undefined);
-        console.log("SUB_DH_MechanicManager_off_0400 mechanicManager.off success");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0400 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0400 end-----------------");
-    });
+
+        it("SUB_DH_MechanicManager_off_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0400 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0400_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0400_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0400 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_0400_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0400_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0400_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0400_CheckSuccess = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_off_0400 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0400 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_off_0400 end-----------------");
+          }
+        }
+        let SUB_DH_MechanicManager_off_0400_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_off_0400 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0400 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0400 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_getAttachedMechDevices_0100
@@ -525,18 +838,48 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_on_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_on_0500 begin-----------------");
-      try {
-        mechanicManager.on("trackingStateChange", null);
-        console.info("SUB_DH_MechanicManager_on_0500 mechanicManager.on success" + ",expect fail");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_on_0500 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-        console.info("-----------------SUB_DH_MechanicManager_on_0500 end-----------------");
-      }
-    });
+
+        it("SUB_DH_MechanicManager_on_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0500 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0500_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0500_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0500 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_0500_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0500_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0500_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0500_CheckSuccess = () => {
+          try {
+            mechanicManager.on("trackingStateChange", null);
+            console.info("SUB_DH_MechanicManager_on_0500 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0500 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_0500 end-----------------");
+          }
+        }
+        let SUB_DH_MechanicManager_on_0500_CheckReturnError1 = () => {
+          try {
+            mechanicManager.on("trackingStateChange", null);
+            console.info("SUB_DH_MechanicManager_on_0500 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0500 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0500 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_1100
@@ -546,8 +889,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_on_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1100 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_1100_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_1100_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_1100 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_1100_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_1100_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_1100_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_1100_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.TrackingEventInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -560,7 +922,21 @@ export default function MechanicManagerAPI() {
             expect(error.code == 401).assertTrue();
             console.info("-----------------SUB_DH_MechanicManager_on_1100 end-----------------");
           }
-    });
+        }
+        let SUB_DH_MechanicManager_on_1100_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_1100 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1100 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_1100 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_1200
@@ -570,8 +946,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_on_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1200 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_1200_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_1200_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_1200 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_1200_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_1200_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_1200_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_1200_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.TrackingEventInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -584,7 +979,21 @@ export default function MechanicManagerAPI() {
             expect(error.code == 401).assertTrue();
             console.info("-----------------SUB_DH_MechanicManager_on_1200 end-----------------");
           }
-    });
+        }
+        let SUB_DH_MechanicManager_on_1200_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1200 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1200 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_1200 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0600
@@ -594,18 +1003,48 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_on_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_on_0600 begin-----------------");
-      try {
-        mechanicManager.on("trackingStateChange", undefined);
-        console.info("SUB_DH_MechanicManager_on_0600 mechanicManager.on success" + ",expect fail");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_on_0600 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-        console.info("-----------------SUB_DH_MechanicManager_on_0600 end-----------------");
-      }
-    });
+
+        it("SUB_DH_MechanicManager_on_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0600 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_on_0600_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_on_0600_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_on_0600 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_on_0600_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_on_0600_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_on_0600_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_on_0600_CheckSuccess = () => {
+          try {
+            mechanicManager.on("trackingStateChange", undefined);
+            console.info("SUB_DH_MechanicManager_on_0600 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0600 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_0600 end-----------------");
+          }
+        }
+        let SUB_DH_MechanicManager_on_0600_CheckReturnError1 = () => {
+          try {
+            mechanicManager.on("trackingStateChange", undefined);
+            console.info("SUB_DH_MechanicManager_on_0600 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0600 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_on_0600 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0700
@@ -682,21 +1121,52 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_DH_MechanicManager_off_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0500 begin-----------------");
-      let flag = 0;
-      try {
-        mechanicManager.off("trackingStateChange", (data) => {
-          console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
+
+        it("SUB_DH_MechanicManager_off_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0500 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0500_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0500_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0500 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
         });
-        console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success");
-        expect(flag == 0).assertTrue();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0500 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0100 end-----------------");
-    });
+
+        let SUB_DH_MechanicManager_off_0500_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0500_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0500_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0500_CheckSuccess = () => {
+          try {
+            mechanicManager.off("trackingStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0500 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0500_CheckReturnError1 = () => {
+          try {
+            mechanicManager.off("trackingStateChange", (data) => {
+              console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
+            });
+            console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success");
+            expect(flag == 0).assertTrue();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0500 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0500 end------------------")
+        }
+
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0600
      * @tc.number SUB_DH_MechanicManager_off_0600
@@ -726,18 +1196,47 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_off_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0700 begin-----------------");
-      try {
-        mechanicManager.off("trackingStateChange", null);
-        console.log("SUB_DH_MechanicManager_off_0700 mechanicManager.off success");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0700 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0700 end-----------------");
-    });
+
+        it("SUB_DH_MechanicManager_off_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0700 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0700_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0700_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0700 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_0700_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0700_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0700_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0700_CheckSuccess = () => {
+          try {
+            mechanicManager.off("trackingStateChange", null);
+            console.log("SUB_DH_MechanicManager_off_0700 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0700 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0700_CheckReturnError1 = () => {
+          try {
+            mechanicManager.off("trackingStateChange", null);
+            console.log("SUB_DH_MechanicManager_off_0700 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0700 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0700 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_1100
@@ -747,8 +1246,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_off_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1100 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_1100_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_1100_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_1100 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_1100_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_1100_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_1100_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_1100_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.TrackingEventInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -760,8 +1278,21 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
-          console.info("-----------------SUB_DH_MechanicManager_off_1100 end-----------------");
-    });
+        }
+        let SUB_DH_MechanicManager_off_1100_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_1100 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1100 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_1100 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_1200
@@ -771,8 +1302,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
         it("SUB_DH_MechanicManager_off_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1200 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_1200_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_1200_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_1200 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_1200_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_1200_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_1200_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_1200_CheckSuccess = () => {
           try {
             let callback = (result: mechanicManager.TrackingEventInfo) => {
               console.info(`'callback result:' ${result}`);
@@ -784,8 +1334,21 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
-          console.info("-----------------SUB_DH_MechanicManager_off_1200 end-----------------");
-    });
+        }
+        let SUB_DH_MechanicManager_off_1200_CheckReturnError1 = () => {
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1200 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1200 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_1200 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0800
@@ -795,18 +1358,47 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_DH_MechanicManager_off_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_off_0800 begin-----------------");
-      try {
-        mechanicManager.off("trackingStateChange", undefined);
-        console.log("SUB_DH_MechanicManager_off_0800 mechanicManager.off success");
-        expect().assertFail();
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_off_0800 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_off_0800 end-----------------");
-    });
+
+        it("SUB_DH_MechanicManager_off_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0800 begin-----------------");
+          if (deviceInfo.deviceType === 'tablet') {
+            SUB_DH_MechanicManager_off_0800_CheckSuccess();
+          } else if (deviceInfo.deviceType === 'phone') {
+            SUB_DH_MechanicManager_off_0800_CheckReturnError1();
+          } else {
+            console.info(`====>SUB_DH_MechanicManager_off_0800 end fail====` + deviceInfo.deviceType);
+            except().assertFail();
+          }
+        });
+
+        let SUB_DH_MechanicManager_off_0800_CheckReturnError1 = () => {
+          if (totalMem > 9437184) {
+            SUB_DH_MechanicManager_off_0800_CheckSuccess();
+          } else {
+            SUB_DH_MechanicManager_off_0800_CheckReturnError1();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0800_CheckSuccess = () => {
+          try {
+            mechanicManager.off("trackingStateChange", undefined);
+            console.log("SUB_DH_MechanicManager_off_0800 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0800 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+        }
+        let SUB_DH_MechanicManager_off_0800_CheckReturnError1 = () => {
+          try {
+            mechanicManager.off("trackingStateChange", undefined);
+            console.log("SUB_DH_MechanicManager_off_0800 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0800 failed2, code is ${error.code}, message is ${error.message}`);
+            except(error.code == 33300001).assertTrue();
+          }
+          console.log("-----------------SUB_DH_MechanicManager_off_0800 end------------------")
+        }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingLayout_0100
