@@ -47,6 +47,8 @@ int VideoAv1DecFunction0013();
 int VideoAv1DecFunction0015();
 int VideoAv1DecFunction0016();
 
+// CINEPAK Function Tests
+int VideoCinepakDecFunction0022();
 } // namespace Media
 } // namespace OHOS
 

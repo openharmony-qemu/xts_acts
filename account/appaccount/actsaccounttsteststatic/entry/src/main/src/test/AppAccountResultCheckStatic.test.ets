@@ -47,7 +47,6 @@ export default function AppAccountResultCheckStatic() {
         hilog.info(0x0000, tag, logTag + "appAccountManager is: " + JSON.stringify(appAccountManager));
         expect(appAccountManager).not().assertUndefined();
       } catch (err) {
-          err = err as BusinessError;
         hilog.info(0x0000, tag, logTag + "catch err: " + err.code);
         expect().assertFail();
       }
@@ -113,7 +112,6 @@ export default function AppAccountResultCheckStatic() {
         expect().assertFail();
         done();
       } catch (err) {
-          err = err as BusinessError;
         hilog.info(0x0000, tag, "catch err: " + err.code);
         expect(err.code).assertEqual(12300002);
         done();

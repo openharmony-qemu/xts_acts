@@ -65,7 +65,7 @@ export default function WebOnNativeEmbedObjectParamChange() {
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
-        Utils.emitEvent('SwitchNextPageStatic', 10)
+        Utils.emitEvent('SwitchNextPageStatic7', 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('updateButton', 10, '');
         await Utils.msSleep(3000);

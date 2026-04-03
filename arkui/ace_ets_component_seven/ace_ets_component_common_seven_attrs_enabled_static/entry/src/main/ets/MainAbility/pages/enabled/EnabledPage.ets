@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, AlignRuleOption } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -182,14 +182,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mEnabled: boolean = true
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
-		instance.enabled(this.mEnabled)
-	}
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mEnabled: boolean = true
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.enabled(this.mEnabled)
 	}
 }
@@ -711,7 +703,6 @@ struct EnabledPage {
 	@State _enabledEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _enabledFlexModifier: FlexModifier = new FlexModifier()
 	@State _enabledFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _enabledFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _enabledGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _enabledGridModifier: GridModifier = new GridModifier()
 	@State _enabledGridColModifier: GridColModifier = new GridColModifier()
@@ -814,7 +805,6 @@ struct EnabledPage {
 			this._enabledEllipseModifier.mEnabled = value.enabled
 			this._enabledFlexModifier.mEnabled = value.enabled
 			this._enabledFlowItemModifier.mEnabled = value.enabled
-			this._enabledFormLinkModifier.mEnabled = value.enabled
 			this._enabledGaugeModifier.mEnabled = value.enabled
 			this._enabledGridModifier.mEnabled = value.enabled
 			this._enabledGridColModifier.mEnabled = value.enabled
@@ -1511,17 +1501,6 @@ struct EnabledPage {
 					.backgroundColor('#FFFF00')
 					
 					.attributeModifier(this._enabledCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					
-					.attributeModifier(this._enabledFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

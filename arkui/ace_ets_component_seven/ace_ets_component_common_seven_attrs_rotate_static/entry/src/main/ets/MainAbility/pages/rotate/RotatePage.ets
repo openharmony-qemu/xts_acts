@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -481,22 +478,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.rotate(this.mRotate)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRotate: RotateOptions = {
-    x: 13,
-    y: 17,
-    z: 31,
-    centerX: 37,
-    centerY: 41,
-    angle: 3,
-    perspective: 11
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.rotate(this.mRotate)
   }
 }
@@ -1517,11 +1498,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1859,7 +1835,6 @@ struct RotatePage {
   @State _rotateEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _rotateFlexModifier: FlexModifier = new FlexModifier()
   @State _rotateFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _rotateFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _rotateGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _rotateGridModifier: GridModifier = new GridModifier()
   @State _rotateGridColModifier: GridColModifier = new GridColModifier()
@@ -2574,17 +2549,6 @@ struct RotatePage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._rotateCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._rotateFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

@@ -129,6 +129,13 @@ struct WebOnFullScreenEnter {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
             }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebMediaPlayGestureAccess' })
+              console.log('push URL success')
+              break;
+            }
           }
         })
       }

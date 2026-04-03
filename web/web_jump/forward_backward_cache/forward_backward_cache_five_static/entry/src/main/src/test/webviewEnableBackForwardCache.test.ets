@@ -58,13 +58,13 @@ export default function ActsAceWebviewEnableBackForwardCache() {
 
     /**
      * @tc.name   testWebviewEnableBackForwardCacheStatic
-     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0001
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_000124
      * @tc.desc   test webviewEnableBackForwardCache
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebviewEnableBackForwardCacheStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebviewEnableBackForwardCacheStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewEnableBackForwardCache'
         Utils.emitEvent(emitKey, 10);
@@ -79,13 +79,13 @@ export default function ActsAceWebviewEnableBackForwardCache() {
 
     /**
      * @tc.name   testWebviewBFCacheNativeEmbedStatic
-     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0002
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_24085
      * @tc.desc   test webviewBFCacheNativeEmbed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebviewBFCacheNativeEmbedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebviewBFCacheNativeEmbedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewBFCacheNativeEmbed'
         Utils.emitEvent(emitKey, 10);
@@ -100,13 +100,13 @@ export default function ActsAceWebviewEnableBackForwardCache() {
 
     /**
      * @tc.name   testWebviewBFCacheMediaTakeOverStatic
-     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0003
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_1004
      * @tc.desc   test webviewBFCacheMediaTakeOver
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebviewBFCacheMediaTakeOverStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebviewBFCacheMediaTakeOverStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = 'emitWebviewBFCacheMediaTakeOver'
         Utils.emitEvent(emitKey, 10);
@@ -119,14 +119,134 @@ export default function ActsAceWebviewEnableBackForwardCache() {
       })
 
     /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic001
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0001321
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic001'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic001', 'success', 260326101, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic002
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0002
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic002'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic002', 'success', 260326102, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic003
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0003
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic003'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic003', 'success', 260326103, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic004
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0004
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic004'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic004', 'success', 260326104, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic005
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0005
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic005'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic005', 'success', 260326105, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name   testWebviewEnableBackForwardCacheStatic006
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0006
+     * @tc.desc   test webviewEnableBackForwardCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebviewEnableBackForwardCacheStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebviewEnableBackForwardCacheStatic006'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testWebviewEnableBackForwardCacheStatic006', 'success', 260326106, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
      * @tc.name   SwitchNextPageStatic
      * @tc.number SwitchNextPageStatic
      * @tc.desc   SwitchNextPageStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

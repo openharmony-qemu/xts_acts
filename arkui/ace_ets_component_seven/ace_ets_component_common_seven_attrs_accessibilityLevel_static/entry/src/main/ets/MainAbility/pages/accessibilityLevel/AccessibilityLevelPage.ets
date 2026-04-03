@@ -117,7 +117,6 @@ import {
   HorizontalAlign,
   ButtonAttribute,
   FlowItemAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   SideBarContainerType,
   ClickEvent,
@@ -260,12 +259,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAccessibilityLevel : string = ''
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    instance.accessibilityLevel(this.mAccessibilityLevel)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mAccessibilityLevel : string = ''
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.accessibilityLevel(this.mAccessibilityLevel)
   }
 }
@@ -611,7 +604,6 @@ struct accessibilityLevelDropPage {
   @State _accessibilityLevelFlexMod: FlexModifier = new FlexModifier()
   @State _accessibilityLevelFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _accessibilityLevelFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _accessibilityLevelFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _accessibilityLevelGaugeMod: GaugeModifier = new GaugeModifier()
   @State _accessibilityLevelGridMod: GridModifier = new GridModifier()
   @State _accessibilityLevelGridColMod: GridColModifier = new GridColModifier()

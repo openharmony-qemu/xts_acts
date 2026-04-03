@@ -88,6 +88,7 @@ group("multimedia") {
       "avsession/avsession_js_standard/avsessionExtendedDisplayCast:avsession_ExtendedDisplayCast_js_hap",
       "avsession/avsession_js_standard/avsessionManagerStatic:avsession_framework_js_static_hap",
       "avsession/avsession_js_standard/avsessionVoiceCallStatic:avsession_voicecall_js_static_hap",
+      "avsession/avsession_js_standard/avsessionCoreStatic:avsession_core_static_hap",
       "avsession/avsession_ndk_standard/avsession_ndk_stage:avsession_ndk_ohosTest",
       "avsession/avsession_ndk_standard/avsessionkit:ActsAVSession20Test",
       "avsource:ActsAVCodecTest",

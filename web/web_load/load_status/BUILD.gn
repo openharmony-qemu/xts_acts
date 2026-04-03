@@ -19,6 +19,7 @@ group("ActsWebLoadStatusTest") {
       "ace_load_status_cloudservice_webController_five_static:ActsWebLoadStatusCloudServiceWebControllerFiveStaticTest",
       "ace_load_status_cloudservice_webController_group_eight:ActsWebLoadStatusCloudServiceWebControllerGroupEightTest",
       "ace_load_status_dev:ActsWebLoadStatusDevTest",
+      "ace_load_status_dev_static:ActsWebLoadStatusDevStaticTest",
       "ace_load_status_enhanced_four_static:ActsWebLoadStatusEnhancedFourStaticTest",
       "ace_load_status_dev_static:ActsWebLoadStatusDevStaticTest",
       "ace_load_status_enhanced_one:ActsWebLoadStatusEnhancedTest",

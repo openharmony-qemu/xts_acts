@@ -52,7 +52,6 @@ export default function ActsAANoPermissionTestStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>checkDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -77,7 +76,6 @@ export default function ActsAANoPermissionTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>checkDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -112,7 +110,6 @@ export default function ActsAANoPermissionTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -137,7 +134,6 @@ export default function ActsAANoPermissionTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>checkDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();

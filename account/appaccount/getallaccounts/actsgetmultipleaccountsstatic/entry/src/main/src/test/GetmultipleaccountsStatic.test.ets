@@ -233,7 +233,6 @@ export default function ActsGetMultipleAccountsStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAllAccounts 0200 err: " + JSON.stringify(err));
           expect().assertFail();
           done();

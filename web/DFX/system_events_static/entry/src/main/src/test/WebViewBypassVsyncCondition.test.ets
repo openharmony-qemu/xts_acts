@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,22 +28,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function WebViewBypassVsyncCondition() {
   describe('WebViewWebViewBypassVsyncConditionTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.systemeventstest.static')
-      await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
     beforeEach(async () => {
@@ -52,11 +37,11 @@ export default function WebViewBypassVsyncCondition() {
 
     /**
     * @tc.name         emitBypassVsyncConditionStatic01
-    * @tc.number       SUB_WEB_BYPASSVSYNCCONDITION_0100
+    * @tc.number       SUB_WEB_BYPASSVSYNCCONDITION_STATIC_183010
     * @tc.desc         emitBypassVsyncCondition01
     * @tc.size         MediumTest
     * @tc.type         Function
-    * @tc.level        Level 0
+    * @tc.level        LEVEL0
     */
     it('emitBypassVsyncConditionStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -71,11 +56,11 @@ export default function WebViewBypassVsyncCondition() {
 
     /**
     * @tc.name         emitBypassVsyncConditionStatic02
-    * @tc.number       SUB_WEB_BYPASSVSYNCCONDITION_0200
+    * @tc.number       SUB_WEB_BYPASSVSYNCCONDITION_STATIC_0200
     * @tc.desc         emitBypassVsyncCondition02
     * @tc.size         MediumTest
     * @tc.type         Function
-    * @tc.level        Level 0
+    * @tc.level        LEVEL0
     */
     it('emitBypassVsyncConditionStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);

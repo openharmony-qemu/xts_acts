@@ -24,6 +24,7 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
+import { Driver, ON } from '@ohos.UiTest';
 
 import inspector from '@ohos.arkui.inspector';
 import { FileSelectorMode } from '@ohos.arkui.component'
@@ -31,6 +32,7 @@ import { FileSelectorMode } from '@ohos.arkui.component'
 let domain: Int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
+const driver = Driver.create();
 
 export default function webViewController() {
 
@@ -46,14 +48,14 @@ export default function webViewController() {
     })
 
     /**
-     * @tc.number      SUB_WEB_ONSHOWFILESELECTOR_0100
      * @tc.name        testOnShowFileSelectorStatic001
+     * @tc.number      SUB_WEB_ONSHOWFILESELECTOR_0100
      * @tc.desc        test onShowFileSelector
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testOnShowFileSelectorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOnShowFileSelectorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnShowFileSelector001', 10)
         await Utils.sleep(2000);
@@ -64,14 +66,68 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
+     * @tc.name        testFileSelectorResultStatic
+     * @tc.number      SUB_WEB_FILESELECTORESULT_0100
+     * @tc.desc        test onShowFileSelector
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testFileSelectorResultStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorResult', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorResult', true, 310291, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testFileSelectorParamStatic
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_0100
+     * @tc.desc        test onShowFileSelector
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testFileSelectorParamStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testFileSelectorParam', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testFileSelectorParam', true, 310292, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnShowFileSelectorUndefinedStatic
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_0200
+     * @tc.desc        test onShowFileSelector
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnShowFileSelectorUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testOnShowFileSelectorUndefined', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('testOnShowFileSelectorUndefined', true, 310293, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
      * @tc.name        testFileSelectorParamGetTitleStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
      * @tc.desc        test FileSelectorParam getTitle
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetTitleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetTitleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetTitle001', 10)
         await Utils.sleep(2000);
@@ -82,14 +138,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMODE_0100
      * @tc.name        testFileSelectorParamGetModeStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMODE_0100
      * @tc.desc        test FileSelectorParam getMode
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetMode001', 10)
         await Utils.sleep(2000);
@@ -104,14 +160,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
      * @tc.name        testFileSelectorParamGetAcceptTypeStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
      * @tc.desc        test FileSelectorParam getAcceptType
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetAcceptTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetAcceptTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetAcceptType001', 10)
         await Utils.sleep(2000);
@@ -122,14 +178,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_ISCAPTURE_0100
      * @tc.name        testFileSelectorParamIsCaptureStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_ISCAPTURE_31033
      * @tc.desc        test FileSelectorParam isCapture
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamIsCaptureStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamIsCaptureStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamIsCapture001', 10)
         await Utils.sleep(2000);
@@ -140,14 +196,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_0100
      * @tc.name        testFileSelectorResultHandleFileListStatic001
+     * @tc.number      SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_31034
      * @tc.desc        test FileSelectorResult handleFileList
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorResultHandleFileListStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorResultHandleFileListStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorResultHandleFileList001', 10)
         await Utils.sleep(2000);
@@ -158,14 +214,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_0100
      * @tc.name        testFileSelectorParamGetMimeTypesStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_31035
      * @tc.desc        test FileSelectorParam getMimeTypes
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetMimeTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetMimeTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetMimeTypes001', 10)
         await Utils.sleep(2000);
@@ -176,14 +232,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETSUGGESTEDNAME_0100
      * @tc.name        testFileSelectorParamGetSuggestedNameStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETSUGGESTEDNAME_0100
      * @tc.desc        test FileSelectorParam getSuggestedName
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetSuggestedNameStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetSuggestedNameStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetSuggestedName001', 10)
         await Utils.sleep(2000);
@@ -194,14 +250,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDEFAULTPATH_0100
      * @tc.name        testFileSelectorParamGetDefaultPathStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDEFAULTPATH_0100
      * @tc.desc        test FileSelectorParam getDefaultPath
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetDefaultPathStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetDefaultPathStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetDefaultPath001', 10)
         await Utils.sleep(2000);
@@ -212,14 +268,48 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDESCRIPTIONS_0100
+     * @tc.name        testOnShowFileSelectorStatic05
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_0500
+     * @tc.desc        test FileSelectorParam getMimeTypes
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnShowFileSelectorStatic05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let buttonOne = await driver.findComponent(ON.text('保存文件'));
+        if(buttonOne)
+        {
+          await buttonOne.click();
+          console.log("✅ 成功点击「保存文件」按钮");
+        }
+        let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+        if (buttonTwo) {
+          await buttonTwo.click()
+        } else {
+          let buttonThree = await driver.findComponent(ON.text('取消'));
+          if (buttonThree) {
+            await buttonThree.click()
+          }
+
+        }
+        Utils.emitEvent('emitOnShowFileSelector05', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnShowFileSelector05', 'video/*', 20260109, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
      * @tc.name        testFileSelectorParamGetDescriptionsStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETDESCRIPTIONS_0100
      * @tc.desc        test FileSelectorParam getDescriptions
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetDescriptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetDescriptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetDescriptions001', 10)
         await Utils.sleep(2000);
@@ -230,14 +320,14 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_ISACCEPTALLOPTIONEXCLUDED_0100
      * @tc.name        testFileSelectorParamIsAcceptAllOptionExcludedStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_ISACCEPTALLOPTIONEXCLUDED_0100
      * @tc.desc        test FileSelectorParam isAcceptAllOptionExcluded
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamIsAcceptAllOptionExcludedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamIsAcceptAllOptionExcludedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamIsAcceptAllOptionExcluded001', 10)
         await Utils.sleep(2000);
@@ -248,18 +338,52 @@ export default function webViewController() {
       })
 
     /**
-     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETACCEPTABLEFILETYPES_0100
      * @tc.name        testFileSelectorParamGetAcceptableFileTypesStatic001
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETACCEPTABLEFILETYPES_0100
      * @tc.desc        test FileSelectorParam getAcceptableFileTypes
      * @tc.size        MediumTest
      * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.level       LEVEL0
      */
-    it('testFileSelectorParamGetAcceptableFileTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testFileSelectorParamGetAcceptableFileTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetAcceptableFileTypes001', 10)
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetAcceptableFileTypes001', 0, 31040, done);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnShowFileSelectorStatic06
+     * @tc.number      SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_0600
+     * @tc.desc        test FileSelectorParam getMimeTypes
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnShowFileSelectorStatic06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let buttonOne = await driver.findComponent(ON.text('保存文件'));
+        if(buttonOne)
+        {
+          await buttonOne.click();
+          console.log("✅ 成功点击「保存文件」按钮");
+        }
+        let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+        if (buttonTwo) {
+          await buttonTwo.click()
+        } else {
+          let buttonThree = await driver.findComponent(ON.text('取消'));
+          if (buttonThree) {
+            await buttonThree.click()
+          }
+
+        }
+        Utils.emitEvent('emitOnShowFileSelector06', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnShowFileSelector06', '[".mp4",".ogm",".wmv",".mpg"]', 20260110, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
         await Utils.sleep(3000)
         done()
@@ -272,5 +396,4 @@ export default function webViewController() {
       inspector.sendEventByKey('WebViewControllerButton', 10, '');
     })
   })
-
 }

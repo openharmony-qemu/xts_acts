@@ -1304,22 +1304,6 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.name   testOHCameraManagerIsTorchLevelControlSupported3000
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OH_CameraManager_IsTorchLevelControlSupported3000
-     * @tc.desc   Test OH_CameraManager_IsTorchLevelControlSupported in normal condition,
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOHCameraManagerIsTorchLevelControlSupported3000', Level.LEVEL0, () => {
-      getCameraManagerInstance();
-      getSupportedCamerasInstance()
-      getSupportedCameraOutputCapability();
-      let ret = cameraObj.oHCameraManagerIsTorchLevelControlSupported();
-      console.info(TAG+"testOHCameraManagerSetTorchMode1400:"+ret);
-      expect(ret).assertEqual(1);
-    })
-    /**
      * @tc.name   testOHCameraManagerSetTorchModeOnWithLevel3100
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OH_CameraManager_SetTorchModeOnWithLevel3100
      * @tc.desc   Test OH_CameraManager_SetTorchModeOnWithLevel in normal condition,

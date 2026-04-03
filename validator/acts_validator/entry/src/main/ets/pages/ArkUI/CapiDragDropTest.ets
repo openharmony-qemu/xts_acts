@@ -33,7 +33,7 @@ struct CapiDragDrop {
   @State width1: string = '100%'
   @State fillColor: string = '#FF000000';
   @State name: string = 'CapiDragDrop';
-  @State stepTips: string = '操作步骤:\n' + '1.长按文字从左侧拖拽到右侧落入区域\n' +
+  @State stepTips: string = '拖拽操作不支持手表设备:\n' +'操作步骤:\n' + '1.长按文字从左侧拖拽到右侧落入区域\n' +
   '2.观察动效\n' +'3.点击复位按钮,点击动效关闭按钮\n' +'4.重新将左侧文字拖拽到右侧落入区域\n' +'5.观察动效\n' +
   '预期结果：\n' + '1.动效开启时动效为收缩淡出动效\n' +
   '2.动效关闭时无动效\n'

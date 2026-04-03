@@ -39,6 +39,7 @@ import AssignmentLikeContextsTest from "./contextsandconversions/AssignmentLikeC
 import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
+import optionalChainingTest from "./ChainingOperator/NotEmptyOptional.test";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -82,4 +83,6 @@ export default function testsuite() {
   AttemptInvalidTypeConversionTest();
   NumericOperatorContextsTest();
   StringOperatorContextsTest();
+  
+  optionalChainingTest();
 }
