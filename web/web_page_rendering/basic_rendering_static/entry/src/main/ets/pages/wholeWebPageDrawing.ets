@@ -92,8 +92,12 @@ struct Index {
               }
               break;
             }
-
-
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webOnFirstScreenPaint' })
+              console.log('push URL success')
+            }
           }
         })
       }

@@ -178,7 +178,7 @@ function initResourceLoader(avPlayer: media.AVPlayer | undefined, config: PreDow
       } else {
         config.respondDataCount -= 1;
         console.info(`case in loadingError ${config.loadingError}`);
-        if (config.loadingError == media.LoadingRequestError.LOADING_ERROR_NOT_READY as number) {
+        if (config.loadingError == Number(media.LoadingRequestError.LOADING_ERROR_NOT_READY)) {
           finishLoading(uuid, config);
           config.loadingError = 0;
           return;
@@ -186,7 +186,7 @@ function initResourceLoader(avPlayer: media.AVPlayer | undefined, config: PreDow
         console.info(`case in respondData uuid: ${uuid}, requestedOffset: ${requestedOffset}, requestedLength: ${requestedLength}`);
         respondData(uuid, requestedOffset, requestedLength);
         if ((requestedOffset + requestedLength) == FILE_LENGTH
-          && (config.loadingError == media.LoadingRequestError.LOADING_ERROR_SUCCESS as number)) {
+          && (config.loadingError == Number(media.LoadingRequestError.LOADING_ERROR_SUCCESS))) {
             console.info(`case in finishLoading uuid: ${uuid}`);
           finishLoading(uuid, config);
         }

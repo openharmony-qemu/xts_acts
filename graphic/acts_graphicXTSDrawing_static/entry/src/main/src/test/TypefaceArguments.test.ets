@@ -282,6 +282,13 @@ export default function typefaceTest() {
         console.info(msg + ` addVariation 11w× errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(25900001)
       }
+      try {
+        typeFaceArgument.addVariation('', 100);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` addVariation '' errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
     });
   })
 }

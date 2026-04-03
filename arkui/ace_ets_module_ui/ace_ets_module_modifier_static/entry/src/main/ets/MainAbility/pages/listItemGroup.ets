@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,7 @@ struct ListItemGroupExample {
         .borderRadius(20)
       }
       .width('90%')
-      .sticky((StickyStyle.Header | StickyStyle.Footer) as StickyStyle)
+      .sticky(StickyStyle.fromValue(StickyStyle.Header | StickyStyle.Footer))
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 } as Padding)
   }
 }

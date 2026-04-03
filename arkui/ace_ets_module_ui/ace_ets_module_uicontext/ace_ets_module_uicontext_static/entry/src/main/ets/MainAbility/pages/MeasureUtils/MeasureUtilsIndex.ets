@@ -37,6 +37,7 @@ struct MeasureUtilsIndex {
     Column() {
       Button('measureText')
         .id('measureTextBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let options: MeasureOptions = { textContent: 'MeasureUtilsText', fontSize: 20 };
@@ -48,7 +49,7 @@ struct MeasureUtilsIndex {
           }
         });
 
-      Text(this.measureTextStatus).key('measureTextStatus');
+      Text(this.measureTextStatus).key('measureTextStatus').height('5%');
     }
     .width('100%')
     .height('100%');

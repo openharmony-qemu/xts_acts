@@ -817,7 +817,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(100);
     })
 
@@ -1415,7 +1415,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateChecksum = (data: Uint8ClampedArray) => {
-        return data.reduce((sum, val) => (sum + val) % 256, 0);
+        return data.reduce((sum, val) => (sum + val) % 256, 0.);
       };
 
       const data = new Uint8ClampedArray([0x10, 0x20, 0x30, 0x40]);
@@ -1542,7 +1542,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([2, 3, 4]);
-      const product = arr.reduceRight((acc, val) => acc * val, 1);
+      const product = arr.reduceRight((acc, val) => acc * val, 1.);
       expect(product).assertEqual(24);
     })
 
@@ -1653,7 +1653,7 @@ export default function typeArrayUint8ClampedArrayTest() {
         return data
           .map(v => v * 2)
           .filter(v => v > 100)
-          .reduce((a, b) => a + b, 0);
+          .reduce((a, b) => a + b, 0.);
       };
 
       const data = new Uint8ClampedArray([100, 150, 50]);
@@ -2219,7 +2219,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateXorChecksum = (data: Uint8ClampedArray): number => {
-        return data.reduce((checksum, value) => checksum ^ value, 0);
+        return data.reduce((checksum, value) => checksum ^ value, 0.);
       };
 
       const data = new Uint8ClampedArray([0x10, 0x20, 0x30, 0x40]);

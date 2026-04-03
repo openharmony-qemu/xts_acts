@@ -1355,6 +1355,24 @@ int SubMediaDemuxerProcess2400()
 }
 
 /**
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2500
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SubMediaDemuxerProcess2500()
+{
+    const char *uri = "http://192.168.3.11:8080/share/index.m3u8";
+    source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
+    if (source != nullptr) {
+        return -1;
+    }
+    return 0;
+}
+
+/**
  * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2600
  * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2600
  * @tc.desc   function test

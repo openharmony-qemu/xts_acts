@@ -605,7 +605,7 @@ export default function taskTest() {
             return null;
           });
           await taskpool.execute(task).then((value)=> {
-            expect(value).assertEqual(1);
+            expect(value as number).assertEqual(1);
           });
           expect(taskValue).assertEqual(11);
         } catch (error) {

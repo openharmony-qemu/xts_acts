@@ -60,7 +60,7 @@ struct RichEditorAttributeStrings005 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
   imagePixelMap: image.PixelMap | undefined = undefined;
-  fontStyle: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
   customSpan: MyCustomSpan = new MyCustomSpan('Hello', 20, 80);
   styleStr: MutableStyledString = new MutableStyledString(this.customSpan);
   mutableStyledString: MutableStyledString = new MutableStyledString('aaa',

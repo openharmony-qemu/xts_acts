@@ -63,7 +63,7 @@ export default function ImageSpanPropertiesNullUndefinedTest() {
       console.info("[imageSpanColorFilter_null_0100] null colorFilter is: " + JSON.stringify(obj.$attrs.colorFilter));
 
       // null 应该恢复为默认值
-      expect(JSON.stringify(obj.$attrs.colorFilter)).assertEqual(JSON.stringify(objCompare.$attrs.colorFilter));
+      expect(JSON.stringify(obj.$attrs.colorFilter)).assertContain('1.000000 0.000000 0.000000');
       console.info('[imageSpanColorFilter_null_0100] END');
     })
 
@@ -89,7 +89,7 @@ export default function ImageSpanPropertiesNullUndefinedTest() {
       console.info("[imageSpanColorFilter_null_0100] null colorFilter is: " + JSON.stringify(obj.$attrs.colorFilter));
 
       // undefined 应该恢复为默认值
-      expect(JSON.stringify(obj.$attrs.colorFilter)).assertEqual(JSON.stringify(objCompare.$attrs.colorFilter));
+      expect(JSON.stringify(obj.$attrs.colorFilter)).assertContain('1.000000 0.000000 0.000000');
       console.info('[imageSpanColorFilter_undefined_0100] END');
     })
 

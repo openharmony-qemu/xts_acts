@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ import { StorageLink } from '@ohos.arkui.stateManagement'
 
 export const textPickerThemeProperty: string = `TextPickerThemeProperty`;
 
-export const textPickerThemeSetProperty: string = `TextPickerThemeSetProperty`
+export const textPickerThemeSetProperty: string = `TextPickerThemeSetProperty`;
 
 export class TextPickerKeys {
   public static readonly textPickerSingleSystem = `TextPicker_Single_System`;
@@ -85,8 +85,8 @@ struct TextPickerPage {
       ]
     }
   );
-  @StorageLink(textPickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(textPickerThemeSetProperty) themeSet: boolean | undefined = true
+  @StorageLink('TextPickerThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('TextPickerThemeSetProperty') themeSet: boolean | undefined = true
 
   build() {
     Scroll() {

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import {
   StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef,Provide,PropRef
 } from '@ohos.arkui.stateManagement'
 
-enum MemberType {
+export enum MemberType {
   first = 1,
   second = 2
 }
@@ -57,7 +57,7 @@ class TestObservedV2 {
   }
 }
 
-class TestObserved1 {
+export class TestObserved1 {
   public name: string;
 
   constructor(n: string) {
@@ -158,7 +158,7 @@ export struct V2ToV1ComponentCorrect_TestV1child1 {
 }
 
 
-class TestSet {
+export class TestSet {
   public value: Set<string> = new Set<string>()
 }
 

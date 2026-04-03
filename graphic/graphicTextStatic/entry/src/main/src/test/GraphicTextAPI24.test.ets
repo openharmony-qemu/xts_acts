@@ -138,6 +138,7 @@ export default function GraphicTextAPI24() {
         }
         expect(textLayoutResult.fitStrRange.length).assertLarger(0);
         expect(Math.round(textLayoutResult.correctRect.width * 100) / 100).assertEqual(194.98);
+        expect(textLayoutResult.correctRect.width).assertLarger(194);
         expect(textLayoutResult.correctRect.height).assertEqual(69);
         expect(textLayoutResult.fitStrRange[0].start).assertEqual(0);
         expect(textLayoutResult.fitStrRange[0].end).assertEqual(39);
@@ -394,6 +395,149 @@ export default function GraphicTextAPI24() {
         }
         done();
       })
+
+    /**
+     * @tc.name   graphicTextAPI24TestStatic_1500
+     * @tc.number graphicTextAPI24TestStatic_1500
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24TestStatic_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let msgStr  = "====www data graphicTextAPI24TestStatic_1500===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.ALIAS,
+          fontVariations: [{ axis: 'aaa', value: 2, isNormalized: false }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<int,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        arrRunMetrics.forEach((value, key) => {
+          let textStyle = value.textStyle;
+          console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+          console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+          expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.ALIAS);
+        })
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   graphicTextAPI24TestStatic_1600
+     * @tc.number graphicTextAPI24TestStatic_1600
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24TestStatic_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let msgStr  = "====graphicTextAPI24TestStatic_1600===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.ANTI_ALIAS,
+          fontVariations: [{ axis: 'aaa', value: 2, isNormalized: true }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+          orphanCharOptimization: true
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<int,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        arrRunMetrics.forEach((value, key) => {
+          let textStyle = value.textStyle;
+          console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+          console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+          expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.ANTI_ALIAS);
+        })
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   graphicTextAPI24TestStatic_1700
+     * @tc.number graphicTextAPI24TestStatic_1700
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24TestStatic_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let msgStr  = "====graphicTextAPI24TestStatic_1700===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20,
+          fontEdging: drawing.FontEdging.SUBPIXEL_ANTI_ALIAS,
+          fontVariations: [{ axis: '', value: 2, isNormalized: false }]
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          lineSpacing: 15,
+          orphanCharOptimization: false
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let arrLineMetric: Array<text.LineMetrics> =  paragraph.getLineMetrics();
+        let arrRunMetrics: Map<int,text.RunMetrics> = arrLineMetric[0].runMetrics;
+        let arr: number[] = [];
+        for (let key of arrRunMetrics.keys()) {
+          arr.push(key);
+        }
+        arrRunMetrics.forEach((value, key) => {
+          let textStyle = value.textStyle;
+          console.info(msgStr + 'textStyle success ' + JSON.stringify(textStyle));
+          console.info(msgStr + 'textStyle fontEdging ' + JSON.stringify(textStyle?.fontEdging));
+          expect(textStyle?.fontEdging).assertEqual(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
+        })
+        done();
+      } catch(err){
+        console.info(msgStr + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
     
   })
 }

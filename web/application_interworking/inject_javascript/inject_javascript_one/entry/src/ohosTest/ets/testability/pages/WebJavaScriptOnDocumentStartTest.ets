@@ -69,8 +69,8 @@ struct WebJavaScriptOnDocumentStartTest {
         Button("WebJavaScriptOnDocumentStartTest click")
           .key('WebJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             switch (this.str) {
@@ -101,7 +101,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   ];
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)
@@ -123,7 +123,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   this.useNullScripts = true;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)
@@ -148,7 +148,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   this.useUndefinedScripts = true;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)
@@ -173,7 +173,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   this.useEmptyScripts = true;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)

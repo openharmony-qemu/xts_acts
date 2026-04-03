@@ -6,7 +6,7 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Scroll, Margin
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyIndexModifier implements AttributeModifier<SwiperAttribute> {
+export class MyIndexModifier implements AttributeModifier<SwiperAttribute> {
   public isIndexModifier : Boolean = false
 
   applyNormalAttribute(instance: SwiperAttribute): void {

@@ -4,6 +4,7 @@
     "MainAbility/pages/Context/IsFollowingSystemFontScaleTrueTest",
     "MainAbility/pages/getUIContext/GetUIContextTest",
     "MainAbility/pages/uiContext/SetResourceManagerCacheNullUndefinedTest",
-    "MainAbility/pages/column/ColumnAllowForceDarkTest"
+    "MainAbility/pages/column/ColumnAllowForceDarkTest",
+    "MainAbility/pages/getUIContext/PostDelayedFrameCallbackParamTest"
   ]
 }

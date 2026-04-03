@@ -232,5 +232,66 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.msSleep(3000);
       done();
     })
+
+    /**
+     * @tc.name   testWebViewSuspendTypeEnumStatic001
+     * @tc.number SUB_ACE_WEB_SUSPENDTYPE_0010
+     * @tc.desc   test SuspendType
+     * @tc.type   EnumValue
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewSuspendTypeEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSuspendTypeEnum001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitSuspendTypeEnum001", 0, 361080, done);
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewSuspendTypeEnumStatic002
+     * @tc.number SUB_ACE_WEB_SUSPENDTYPE_0020
+     * @tc.desc   test SuspendType
+     * @tc.type   EnumValue
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewSuspendTypeEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSuspendTypeEnum002', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitSuspendTypeEnum002", 1, 361081, done);
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewSuspendTypeEnumStatic003
+     * @tc.number SUB_ACE_WEB_SUSPENDTYPE_0030
+     * @tc.desc   test SuspendType
+     * @tc.type   EnumValue
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewSuspendTypeEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSuspendTypeEnum003', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitSuspendTypeEnum003", 2, 361082, done);
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('webViewNativeMediaPlayerProps', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
   })
 }

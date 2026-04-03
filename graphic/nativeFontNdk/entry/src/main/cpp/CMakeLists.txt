@@ -11,8 +11,9 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(nativeFontNdk SHARED nativeFontNdk.cpp nativeFontNdk1.cpp nativeFontNdk2.cpp NativeFontNdk3Test.cpp 
-    NativeFontNdk4Test.cpp NativeFontNdk5Test.cpp font_common.h native_common.h common.h log_common.h)
+add_library(nativeFontNdk SHARED nativeFontNdk.cpp nativeFontNdk1.cpp nativeFontNdk2.cpp NativeFontNdk3Test.cpp
+    NativeFontNdk4Test.cpp NativeFontNdk5Test.cpp NativeFontNdk6Test.cpp font_common.h native_common.h common.h
+    log_common.h)
 
 find_library(
     # Sets the name of the path variable.

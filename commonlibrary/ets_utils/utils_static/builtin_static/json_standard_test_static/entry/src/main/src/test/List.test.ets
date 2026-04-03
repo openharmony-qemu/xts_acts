@@ -18,10 +18,19 @@ import Json4Test from "./Json/Json2.test";
 import Json2Test from "./Json/Json4.test";
 import Json1Test from "./Json/Json5.test";
 import JsonElement1Test from "./Json/JsonElement1.test";
+import JSONStringifyBasicTest from "./JsonStringify/JSONStringifyBasicTest"
+import JSONStringifyClassTest from "./JsonStringify/JSONStringifyClassTest"
+import JSONStringifyReplacerTest from "./JsonStringify/JSONStringifyReplacerTest"
+import JSONStringifyAdvancedScenarios from "./JsonStringify/JSONStringifyAdvancedScenarios"
+
 export default function testsuite() {
   Json1Test()
   Json2Test();
   Json4Test();
   Json5Test();
   JsonElement1Test();
+  JSONStringifyBasicTest();
+  JSONStringifyClassTest();
+  JSONStringifyReplacerTest();
+  JSONStringifyAdvancedScenarios();
 }

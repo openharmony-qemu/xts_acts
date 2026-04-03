@@ -18,7 +18,7 @@ function buildTextWithParams(params: Params) {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private builderNode ?: BuilderNode<Params>;
   private uiContext?: UIContext;
   private params: string = 'update with Params';

@@ -1365,5 +1365,119 @@ export default function HttpMultiFormDataListTest() {
       }
       console.info(`${caseName} test End`);
     });
+    /**
+     * @tc.name   testHttpMultiFormDataList2700
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_2700
+     * @tc.desc   test multiFormDataList with  filePath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpMultiFormDataList2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = "testHttpMultiFormDataList2700";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(
+              ADDR_TEST_DOMAIN_HTTPS,
+              {
+                method: http.RequestMethod.POST,
+                header: {
+                  "Content-type": "multipart/form-data",
+                },
+                multiFormDataList: [
+                  {
+                    name: "multiTest",
+                    remoteFileName: "xtsRemoteTest",
+                    contentType: "text/plain",
+                    data: "xtsTest",
+                    filePath: "",
+                  },
+                ],
+              },
+              (err: BusinessError, responseCode: number) => {
+                if (err) {
+                  console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                  ExpectFail();
+                  httpRequest.destroy();
+                  done();
+                } else {
+                  console.info(`${caseName} httpRequest success, responseCode: ${responseCode}`);
+                  ExpectTrue(responseCode == 200);
+                  httpRequest.destroy();
+                  done();
+                }
+              }
+            );
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
+    /**
+     * @tc.name   testHttpMultiFormDataList2800
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_2800
+     * @tc.desc   test multiFormDataList with  filePath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpMultiFormDataList2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = "testHttpMultiFormDataList2800";
+      console.info(`${caseName} test Start`);
+      let httpRequest: http.HttpRequest = http.createHttp();
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, {
+              method: http.RequestMethod.POST,
+              header: {
+                "Content-type": "multipart/form-data",
+              },
+              multiFormDataList: [
+                {
+                  name: "multiTest",
+                  remoteFileName: "xtsRemoteTest",
+                  contentType: "text/plain",
+                  data: "xtsTest",
+                  filePath: "",
+                },
+              ],
+            }).then((responseCode: number) => {
+              console.info(`${caseName} httpRequest success, responseCode: ${responseCode}`);
+              ExpectTrue(responseCode == 200);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} httpRequest fail err ${JSON.stringify(err)}`);
+              ExpectFail();
+              httpRequest.destroy();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
   });
 }

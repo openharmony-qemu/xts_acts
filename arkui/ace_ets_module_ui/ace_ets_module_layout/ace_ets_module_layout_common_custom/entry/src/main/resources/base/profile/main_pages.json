@@ -43,6 +43,12 @@
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaSyncNullUndefined",
         "MainAbility/pages/CommonCustom/pixelRoundNullUndefined",
         "MainAbility/pages/CommonCustom/getContext2DFromDrawingContextNullUndefined",
-        "MainAbility/pages/CommonCustom/CommonApiNullUndefined"
+        "MainAbility/pages/CommonCustom/CommonApiNullUndefined",
+
+        "MainAbility/pages/CommonCustom/DynamicLayoutColumn",
+        "MainAbility/pages/CommonCustom/DynamicLayoutRow",
+        "MainAbility/pages/CommonCustom/DynamicLayoutStack",
+        "MainAbility/pages/CommonCustom/DynamicLayoutGrid",
+        "MainAbility/pages/CommonCustom/DynamicLayoutCustom"
     ]
 }

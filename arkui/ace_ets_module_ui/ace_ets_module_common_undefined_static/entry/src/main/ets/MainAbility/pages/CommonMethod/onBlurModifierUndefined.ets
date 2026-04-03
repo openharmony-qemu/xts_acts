@@ -15,7 +15,7 @@ import { AttributeModifier, CommonAttribute } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class FocusButtonModifier implements AttributeModifier<CommonAttribute> {
+export class FocusButtonModifier implements AttributeModifier<CommonAttribute> {
   @State public change: boolean = true
   @State public buttonColor: string = '#87CEFA'
 

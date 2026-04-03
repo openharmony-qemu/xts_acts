@@ -44,7 +44,7 @@ let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = null;
 let predicates: dataSharePredicates.DataSharePredicates | null = null;
 
 export default function photoAccessHelperTest() {
-  describe('PhotoAccessHelperTest', () => {
+  describe('PhotoAccessHelperTestAdapt001', () => {
     beforeAll(async () => {
       let testContext: Context = Hypium.get('context') as Context;
       console.info("getContext", testContext);

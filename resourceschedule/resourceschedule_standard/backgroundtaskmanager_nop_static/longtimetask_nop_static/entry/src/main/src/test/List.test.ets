@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import ActsLongTimeTaskNopStaticTest from "./ActsLongTimeTaskNopStaticTest.test";
+import ActsBackgroundProcessManagerNopStaticTest from "./ActsBackgroundProcessManagerNopStaticTest.test";
 export default function testsuite() {
   ActsLongTimeTaskNopStaticTest();
+  ActsBackgroundProcessManagerNopStaticTest();
 }

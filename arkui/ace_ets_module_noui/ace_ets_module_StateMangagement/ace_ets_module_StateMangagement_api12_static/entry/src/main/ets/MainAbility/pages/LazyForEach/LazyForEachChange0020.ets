@@ -52,7 +52,7 @@ interface Dta {
   index: number
   key: string
 }
-class BasicDataSourceChange0020 implements IDataSource<string> {
+export class BasicDataSourceChange0020 implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -86,7 +86,7 @@ class BasicDataSourceChange0020 implements IDataSource<string> {
   }
 }
 
-class MyDataSourceChange0020 extends BasicDataSourceChange0020 {
+export class MyDataSourceChange0020 extends BasicDataSourceChange0020 {
   public dataArray: string[] = [];
 
   public totalCount(): int {

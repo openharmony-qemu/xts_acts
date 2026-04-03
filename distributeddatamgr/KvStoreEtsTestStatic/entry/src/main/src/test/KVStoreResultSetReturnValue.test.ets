@@ -79,7 +79,7 @@ export default function KVStoreResultSetReturnValue(){
     beforeEach(async (done: () => void): Promise<void> =>  {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
 

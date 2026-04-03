@@ -59,7 +59,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           hilog.error(0x0000, tag, '====>context is undefined====');
         }
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>beforeAll failed, err: " + JSON.stringify(err));
       }
     });
@@ -128,7 +127,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_notset");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_0200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 0200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -211,7 +209,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_settrue");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_0400 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 0400 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -290,7 +287,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_setfalse");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_0600 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 0600 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -380,7 +376,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_truefalse");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_0800 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 0800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -465,7 +460,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_truefalse");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_1000 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 1000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -555,7 +549,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           await accountManager.removeAccount("syncenable_promise_truetrue");
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_1200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 1200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -610,7 +603,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setDataSyncEnabled 1400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_1400 end====");
@@ -667,7 +659,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>checkDataSyncEnabled 1600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>ActsSetCheckDataSyncEnabled_1600 end====");
@@ -734,7 +725,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -794,7 +784,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -858,7 +847,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, logTag + "end====");
@@ -917,7 +905,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, logTag + "end====");
@@ -970,7 +957,6 @@ export default function ActsSetCheckDataSyncEnabledStatic() {
           expect(id).not().assertUndefined();
           hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
         }
         done();

@@ -23,7 +23,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<PatternLockAttribute> {
+export class MyPointModifier implements AttributeModifier<PatternLockAttribute> {
   public isSkipUnselectedPoint: boolean = true;
   public isActivateCircleStyle: boolean = true;
   public isAutoReset: boolean = true;

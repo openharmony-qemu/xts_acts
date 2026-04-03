@@ -26,7 +26,7 @@ import {
 
 
 @Observed
-class MyModifier implements AttributeModifier<ButtonAttribute> {
+export class MyModifier implements AttributeModifier<ButtonAttribute> {
   public isUndefined: boolean = true;
   public count: int = 0;
 

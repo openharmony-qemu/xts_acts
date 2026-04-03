@@ -80,7 +80,7 @@ import rdbStorePredicatesParamErrTest from "./RdbStorePredicatesParamErr.test";
 import rdbStoreAttachErrorTest from "./RdbStoreAttachError.test";
 
 import RdbStoreArkGetRdbStoreSyncTest from "./RdbStoreArkGetRdbStoreSyncEts.test";
-
+import RdbStoreArkGetRdbStoreSyncAddTest from "./RdbStoreArkGetRdbStoreSyncEtsAdd.test"
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -165,4 +165,5 @@ export default function testsuite() {
   rdbStoreAttachErrorTest();
 
   RdbStoreArkGetRdbStoreSyncTest();
+  RdbStoreArkGetRdbStoreSyncAddTest();
 }

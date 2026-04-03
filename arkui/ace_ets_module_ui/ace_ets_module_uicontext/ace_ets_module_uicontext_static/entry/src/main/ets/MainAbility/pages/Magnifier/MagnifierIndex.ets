@@ -44,10 +44,12 @@ struct MagnifierIndex {
         .id(TARGET_ID)
         .key('magnifierTargetText')
         .fontSize(20)
-        .margin({ bottom: 10 });
+        .height('5%')
+        .margin({ bottom: '1%' });
 
       Button('bind')
         .id('bindMagnifier')
+        .height('8%')
         .onClick(() => {
           try {
             this.magnifier.bind(TARGET_ID);
@@ -58,10 +60,11 @@ struct MagnifierIndex {
           }
         });
 
-      Text(this.bindStatus).key('bindStatus');
+      Text(this.bindStatus).key('bindStatus').height('5%');
 
       Button('show')
         .id('showMagnifier')
+        .height('8%')
         .onClick(() => {
           try {
             this.magnifier.show(20, 20);
@@ -72,10 +75,11 @@ struct MagnifierIndex {
           }
         });
 
-      Text(this.showStatus).key('showStatus');
+      Text(this.showStatus).key('showStatus').height('5%');
 
       Button('unbind')
         .id('unbindMagnifier')
+        .height('8%')
         .onClick(() => {
           try {
             this.magnifier.unbind();
@@ -86,7 +90,7 @@ struct MagnifierIndex {
           }
         });
 
-      Text(this.unbindStatus).key('unbindStatus');
+      Text(this.unbindStatus).key('unbindStatus').height('5%');
     }
     .width('100%')
     .height('100%');

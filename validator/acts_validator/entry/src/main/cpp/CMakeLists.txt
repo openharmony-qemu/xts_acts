@@ -80,6 +80,12 @@ add_library(nativeDragDrop SHARED
  	draganddrop/DragDropTest.cpp
  	NativeDragDropTest.cpp )
 
+add_library(nativeonDigitalCrown SHARED
+ 	onDigitalCrown/PluginManagerTest.cpp
+ 	onDigitalCrown/onDigitalCrownTest.cpp
+ 	NativeOnDigitalCrownTest.cpp 
+    component/component.cpp )
+
 find_library(
     # Sets the name of the path variable.
     hilog-lib
@@ -144,7 +150,9 @@ target_link_libraries(nativeGrid PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 target_link_libraries(nativeDragDrop PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
-
+target_link_libraries(nativeonDigitalCrown PUBLIC
+    ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
+    
 target_link_libraries(nativeDragEvent PUBLIC libace_napi.z.so)
 target_link_libraries(nativeDragEvent PUBLIC libace_ndk.z.so)
 target_link_libraries(nativeDragEvent PUBLIC libnative_drawing.so)

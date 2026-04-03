@@ -1,7 +1,7 @@
 'use static'
 
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider
 
 //array数组类型
 @ObservedV2
-class ArrayInfo{
+export class ArrayInfo{
   @Trace public arrayValue: int[] = UIUtils.makeObserved([1, 2, 3, 4, 5]);
   public arrayMonitor?: IMonitorDecoratedVariable;
   @Trace public text: string = '';

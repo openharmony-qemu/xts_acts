@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import HilogTsTest from "./Hilog.test";
+import HilogStrongTest from "./HilogStatic.test"
 
 export default function testsuite() {
   HilogTsTest();
+  HilogStrongTest();
 };

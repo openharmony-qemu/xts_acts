@@ -1213,5 +1213,135 @@ export default function Font2Test() {
         }
     );
 
+    // cpp6
+    // OH_Drawing_TypographyLayoutWithConstraintsWithBuffer tests
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0100
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0100();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0200
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with large constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0200();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0300
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with small constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0300();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0400
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with zero width constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0400();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0500
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with zero height constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0500();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0600
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with Chinese text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0600();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0700
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with empty text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0700();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
+    /**
+     * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0800
+     * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with multiline text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingTypographyLayoutWithConstraintsWithBuffer0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+            let result: number = nativeFontNdk.ohDrawingTypographyLayoutWithConstraintsWithBuffer0800();
+            expect(result).assertEqual(0);
+            done();
+        }
+    );
+
   })
 }

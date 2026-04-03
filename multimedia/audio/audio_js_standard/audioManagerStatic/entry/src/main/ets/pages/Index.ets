@@ -15,11 +15,13 @@
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
+import { AVVolumePanel } from '@ohos.multimedia.avVolumePanel';
 
 @Entry
 @Component
 struct MyStateSample {
   @State stateVar: string = 'state var';
+  @State volume: int = 0;
   message: string = 'var';
   changeValue() {
     this.stateVar+='~'
@@ -34,6 +36,15 @@ struct MyStateSample {
         })
       Text(this.stateVar).fontSize(20)
       Child({stateVar: this.stateVar} as __Options_Child)
+      AVVolumePanel({
+        volumeLevel: this.volume,
+        volumeParameter: {
+          position: {
+            x: 200,
+            y: 200
+          }
+        }
+      })      
     }
   }
 }

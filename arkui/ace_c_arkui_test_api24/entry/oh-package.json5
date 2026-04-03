@@ -16,7 +16,8 @@
   "license": "",
   "devDependencies": {
     "@types/libnativefunc.so": "file:./src/main/cpp/types/libnativefunc",
-    "@types/libnativerender.so": "file:./src/main/cpp/types/libnativerender"
+    "@types/libnativerender.so": "file:./src/main/cpp/types/libnativerender",
+    "@types/libarkuicapigen.so": "file:./src/main/cpp/types/libarkuicapigen"
   },
   "author": "",
   "name": "entry",

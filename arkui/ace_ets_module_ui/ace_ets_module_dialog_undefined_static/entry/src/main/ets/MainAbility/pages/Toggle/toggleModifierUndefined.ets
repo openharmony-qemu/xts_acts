@@ -42,7 +42,7 @@ import promptAction from '@ohos.promptAction'
 import { LevelOrder, LevelMode } from '@ohos.promptAction'
 
 @Observed
-class MyToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class MyToggleModifier implements AttributeModifier<ToggleAttribute> {
   public isSwitchStyle: boolean = false;
   public isSwitchPointColor: boolean = false;
   public isSelectedColor: boolean = true;
@@ -67,7 +67,7 @@ class MyToggleModifier implements AttributeModifier<ToggleAttribute> {
 
 
 @Observed
-class MyToggleModifier2 implements AttributeModifier<ToggleAttribute> {
+export class MyToggleModifier2 implements AttributeModifier<ToggleAttribute> {
   public isSwitchPointColor: boolean = false;
 
   applyNormalAttribute(instance: ToggleAttribute): void {

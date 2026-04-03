@@ -19,4 +19,4 @@ import InterceptionTest from './InterceptionTest/InterceptionTest.test'
 export default function testsuite() {
   NavigationTest();
   InterceptionTest();
-} 
+}

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import ChipGroupItemOptionsPage2Test from './ChipGroupTest/ChipGroupItemOptions2Test.test';
 import chipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
 import ChipGroupItemOptionsTest from './ChipGroupTest/ChipGroupItemOptionsTest.test';
 import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
@@ -40,6 +41,7 @@ import ChipOptionsPaddingTest from './ChipTest/ChipOptionsPaddingTest.test';
 import ChipOptionsFontSizeTest from './ChipTest/ChipOptionsFontSizeTest.test';
 
 export default function testsuite() {
+  ChipGroupItemOptionsPage2Test();
   chipGroupIconItemOptionsTest();
   ChipGroupItemOptionsTest();
   ChipGroupSymbolItemOptionsTest();

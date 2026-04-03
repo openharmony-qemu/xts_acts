@@ -118,7 +118,7 @@ export default function RegularExpressions09Test() {
         const re82: RegExp = new RegExp("a{5,2}");
         expect(false).assertTrue();
       } catch (e) {
-        expect((e as Error).message.toString()).assertEqual("Invalid repetition count");
+        expect((e as Error).message.toString()).assertEqual("Invalid regular expression: /a{5,2}/: numbers out of order in {} quantifier");
       }
     });
 

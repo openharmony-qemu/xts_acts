@@ -188,7 +188,7 @@ struct cameraOrientation {
             Image($r('app.media.ic_public_back'))
               .width('20vp')
               .height('18vp')
-              .margin({ left: '20vp' })
+              .margin({ left: '1vp' })
           }
           .backgroundColor(Color.Black)
           .size({ width: '40vp', height: '30vp' })
@@ -208,30 +208,29 @@ struct cameraOrientation {
             .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .height('20%')
-        .width('160%')
+        .height('10%')
+        .width('100%')
         .justifyContent(FlexAlign.Center)
       }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
       Scroll() {
         Column() {
           Row() {
-            Column(){
-              Button(`设备无相机`)
-                .borderRadius(8)
-                .backgroundColor(0x317aff)
-                .width('50%')
-                .onClick(()=>{
-                  this.Vue = false;
-                  router.back({
-                    url: 'pages/Camera/Camera_index',
-                    params: { result: 'false', title: this.name }
-                  });
-                  promptAction.showToast({
-                    message: '当前设备无相机', duration: 1000
-                  });
-                })
-            }
+            Button(`设备无相机`)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width('50%')
+              .height('10%')
+              .onClick(()=>{
+                this.Vue = false;
+                router.back({
+                  url: 'pages/Camera/Camera_index',
+                  params: { result: 'false', title: this.name }
+                });
+                promptAction.showToast({
+                  message: '当前设备无相机', duration: 1000
+                });
+              })
           }
           Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround }) {
             Column() {
@@ -312,7 +311,8 @@ struct cameraOrientation {
             }.justifyContent(FlexAlign.SpaceEvenly)
 
             Text(`提示：不同拍照分辨率下进行拍摄，图片拍摄成功且与预览画面一致则选择pass，否则选择fail`)
-              .fontSize('16fp')
+              .fontSize('8fp')
+              .height('10%')
               .fontColor(Color.White)
               .margin({ top: 20 })
           }.size({ width: '80%', height: '20%' })
@@ -394,7 +394,7 @@ struct cameraOrientation {
           .height('10%')
         }
       }
-      .height('65%')
+      .height('75%')
       .scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
       .margin({ bottom: '-10vp' })

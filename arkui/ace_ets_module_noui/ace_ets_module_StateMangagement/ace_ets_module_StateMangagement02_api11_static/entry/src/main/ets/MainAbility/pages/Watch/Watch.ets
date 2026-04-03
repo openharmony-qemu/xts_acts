@@ -30,7 +30,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class PurchaseItem {
+export class PurchaseItem {
   static nextId: number = 0;
   public id: number;
   public price: number;

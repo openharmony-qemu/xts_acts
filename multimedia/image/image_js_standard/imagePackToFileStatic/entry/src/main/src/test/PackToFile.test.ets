@@ -57,7 +57,7 @@ export default function imagePackToFile() {
     }
 
     const getPixelMapData = () => {
-      let opts: image.InitializationOptions = { editable: true, pixelFormat: 2 as image.PixelMapFormat, size: { height: 4, width: 6 } };
+      let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: { height: 4, width: 6 } };
       const Color = new ArrayBuffer(96);
       let pixelmap = image.createPixelMapSync(Color, opts);
       return pixelmap;

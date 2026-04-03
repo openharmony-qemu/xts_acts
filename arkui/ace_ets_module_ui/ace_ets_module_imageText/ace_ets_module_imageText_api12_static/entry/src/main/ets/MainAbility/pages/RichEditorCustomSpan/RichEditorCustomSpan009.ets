@@ -72,8 +72,8 @@ struct RichEditorCustomSpan009 {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
-  fontStyleAttr1: TextStyle = { fontColor: Color.Red } as TextStyle
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
+  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Red });
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
 

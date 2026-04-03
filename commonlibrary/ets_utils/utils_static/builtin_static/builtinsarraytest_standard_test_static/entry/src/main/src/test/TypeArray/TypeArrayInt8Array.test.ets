@@ -930,7 +930,7 @@ export default function typeArrayInt8ArrayTest() {
      */
     it('TypeArrayInt8ArrayTest0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const int8Arr: Int8Array = new Int8Array([1, 2, 3, 4]);
-      const total: number = int8Arr.reduce((acc, val) => acc + val, 0);
+      const total: number = int8Arr.reduce((acc, val) => acc + val, 0.);
       let errorMsg: string = '';
 
       if (total !== 10) {

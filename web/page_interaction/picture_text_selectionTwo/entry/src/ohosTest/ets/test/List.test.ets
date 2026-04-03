@@ -20,6 +20,7 @@ import WebViewEnumAndSetWebController from './WebViewEnumAndSetWebController.tes
 import webViewMenuShowResult from './webViewMenuShowResult.test'
 import webViewHasImageJsunit from './webViewHasImageJsunit.test'
 import WebViewBypassVsyncCondition from './WebViewBypassVsyncCondition.test'
+import WebViewEnableDefaultContextMenu from './WebViewEnableDefaultContextMenu.test'
 
 
 export default function testsuite() {
@@ -29,5 +30,6 @@ export default function testsuite() {
   webViewMenuShowResult()
   webViewHasImageJsunit()
   WebViewBypassVsyncCondition()
+  WebViewEnableDefaultContextMenu()
 
 }

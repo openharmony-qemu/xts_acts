@@ -127,7 +127,7 @@ struct ExtensionErrorCode {
             console.log('success in getWindowAvoidAreaNAVIGATION_INDICATOR :' + JSON.stringify(avoidArea))
             if (avoidArea!.visible === true && avoidArea!.topRect.width === 0 && avoidArea!.topRect.height === 0 && avoidArea!.topRect.top === 0 && avoidArea!.topRect.left === 0
               && avoidArea!.rightRect.width === 0 && avoidArea!.rightRect.height === 0 && avoidArea!.rightRect.top === 0 && avoidArea!.rightRect.left === 0
-              && avoidArea!.bottomRect.width === 0 && avoidArea!.bottomRect.height === 0 && avoidArea!.bottomRect.top === 0 && avoidArea!.bottomRect.left === 0
+              && avoidArea!.bottomRect.width >= 0 && avoidArea!.bottomRect.height >= 0 && avoidArea!.bottomRect.top >= 0 && avoidArea!.bottomRect.left >= 0
               && avoidArea!.leftRect.width === 0 && avoidArea!.leftRect.height === 0 && avoidArea!.leftRect.top === 0 && avoidArea!.leftRect.left === 0
             ) {
               this.flag = true;

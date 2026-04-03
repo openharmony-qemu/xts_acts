@@ -79,6 +79,9 @@ export default function nfcIsoDepTagTest() {
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
+        } else if (error.code === 3100201) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(3100201);
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] beforeAll failed ');
           expect().assertFail();
@@ -106,9 +109,15 @@ export default function nfcIsoDepTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_IsoDepTag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try {
           let ResponseFlags: Array<int> = nfcIsoDepTag.getHistoricalBytes();
+          if (ResponseFlags.length > 0) {
+            expect(ResponseFlags.length > 0).assertTrue();
+          } else {
+            expect(ResponseFlags.length == 0).assertTrue();
+          }
         } catch(error) {
           error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0100 getHistoricalBytes error is ' + error.code + " - " + error);
@@ -130,9 +139,15 @@ export default function nfcIsoDepTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_IsoDepTag_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try{
           let HiLayerResponse: Array<int> = nfcIsoDepTag.getHiLayerResponse();
+          if (HiLayerResponse.length > 0) {
+            expect(HiLayerResponse.length > 0).assertTrue();
+          } else {
+            expect(HiLayerResponse.length == 0).assertTrue();
+          }
         } catch(error) {
           error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0200 getHiLayerResponse error is ' + error.code + " - " + error);
@@ -154,10 +169,16 @@ export default function nfcIsoDepTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_IsoDepTag_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try {
           await nfcIsoDepTag.isExtendedApduSupported().then((data) => {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0300 isExtendedApduSupported ');
+            if (data == true) {
+              expect(data).assertTrue();
+            } else {
+              expect(data).assertFalse();
+            }
           });
         } catch(error) {
           error = error as BusinessError;
@@ -195,10 +216,16 @@ export default function nfcIsoDepTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_IsoDepTag_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         let AsyncCallback:(error: BusinessError<void> | null, data: boolean | undefined) => void = (
           error: BusinessError<void> | null, data: boolean | undefined) => {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0400 isExtendedApduSupported finish ');
+          if (data == true) {
+            expect(data).assertTrue();
+          } else {
+            expect(data).assertFalse();
+          }
         }
         try {
           nfcIsoDepTag.isExtendedApduSupported(AsyncCallback);

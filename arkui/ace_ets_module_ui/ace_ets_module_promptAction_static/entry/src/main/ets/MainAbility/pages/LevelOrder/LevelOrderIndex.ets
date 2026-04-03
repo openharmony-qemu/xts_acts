@@ -36,6 +36,7 @@ struct LevelOrderIndex {
     Column() {
       Button('clamp')
         .id('levelOrderClampBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let order = LevelOrder.clamp(100);
@@ -44,7 +45,7 @@ struct LevelOrderIndex {
             this.clampStatus = 'clamp_fail';
           }
         });
-      Text(this.clampStatus).key('levelOrderClampStatus');
+      Text(this.clampStatus).key('levelOrderClampStatus').height('5%');
     }
     .width('100%')
     .height('100%');

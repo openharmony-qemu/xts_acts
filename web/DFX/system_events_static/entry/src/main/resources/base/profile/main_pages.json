@@ -1,5 +1,8 @@
 {
   "src": [
-    "pages/onFirstContentfulPaint"
+    "pages/onFirstContentfulPaint",
+    "pages/WebOnDataResubmitted",
+    "pages/WebViewBlankScreenDetectionConfig",
+    "pages/WebViewBypassVsyncCondition"
   ]
 }

@@ -32,6 +32,9 @@ import localizedTextPadding from './segmentButton/localizedTextPadding.test';
 import SegmentButtonBorderTest from './segmentButton/SegmentButtonBorderTest.test';
 import segmentButtonDirectionTest from './segmentButton/segmentbuttonDirection.test';
 import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
+import SegmentButtonItemOptionsArrayTest from './segmentButton/SegmentButtonItemOptionsArray.test';
+import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnableStateAnimation.test';
+import CapsuleSegementButtonV2Animation from './capsuleSegmentButtonV2/CapsuleSegementButtonV2Animation.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -52,4 +55,7 @@ export default function testsuite() {
   SegmentButtonBorderTest();
   segmentButtonDirectionTest();
   SegmentBtnItemTest0010();
+  SegmentButtonItemOptionsArrayTest();
+  segmentButtonEnableStateAnimation();
+  CapsuleSegementButtonV2Animation();
 }

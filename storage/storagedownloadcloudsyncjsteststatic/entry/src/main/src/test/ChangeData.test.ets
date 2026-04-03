@@ -183,5 +183,30 @@ export default function changeDatetest() {
         expect((e as BusinessError).code === 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
       }
     });
+
+    /**
+     * @tc.name   cloudSync_test_ChangeData_Uris_static_007
+     * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0700
+     * @tc.desc   function of API, Test ChangeData Uris interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('cloudSync_test_ChangeData_Uris_static_007', Level.LEVEL3, async (): Promise<void> => {
+      try {
+        let onCallback1 = (changeData: cloudSync.ChangeData) => {
+          if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
+            hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_007 added changeData:' + changeData.uris);
+          } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
+            hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_007 removed changeData:' + changeData.uris);
+          }
+        }
+        cloudSync.registerChange("", false, onCallback1);
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_007 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 401).assertTrue();
+      }
+    });
   });
 }

@@ -92,6 +92,7 @@ export default function displayTest() {
     let isSupportRotate = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let displayClass = display.getDefaultDisplaySync();
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -257,30 +258,30 @@ export default function displayTest() {
       }
     });
 
-        /**
-    * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_0100
-    * @tc.name   testOnChange_setPreferOrientation_0100
-    * @tc.desc   旋转后屏幕改变监听
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
+    /**
+* @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_0100
+* @tc.name   testOnChange_setPreferOrientation_0100
+* @tc.desc   旋转后屏幕改变监听
+* @tc.type   FUNCTION
+* @tc.size   MEDIUMTEST
+* @tc.level  LEVEL0
+*/
     it('testOnChange_setPreferOrientation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOnChange_setPreferOrientation_0100';
-      let msgStr : string = 'jsunittest ' + caseName + ' ';
-      let windowClass:window.Window = windowStage!.getMainWindowSync();
+      let msgStr: string = 'jsunittest ' + caseName + ' ';
+      let windowClass: window.Window = windowStage!.getMainWindowSync();
       let dis = display.getDefaultDisplaySync();
       try {
-        if(isSupportRotate === true){
+        if (isSupportRotate === true) {
           let index1 = 0;
           let index2 = 0;
-          const callback1 = (res: number)=>{
+          const callback1 = (res: number) => {
             console.info(caseName + ' callback1 res: ' + res);
             expect(res).assertEqual(dis.id);
             index1++;
             console.info(caseName + ' callback1 index1: ' + index1);
           }
-          const callback2 = (res: number)=>{
+          const callback2 = (res: number) => {
             console.info(caseName + ' callback2 res: ' + res);
             expect(res).assertEqual(dis.id);
             index2++;
@@ -288,15 +289,15 @@ export default function displayTest() {
           }
           display.on('change', callback1);
           display.on('change', callback2);
-          console.info(caseName + ' on change success' );
+          console.info(caseName + ' on change success');
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-          console.info(caseName + ' etPreferredOrientation(window.Orientation.LANDSCAPE) success' );
+          console.info(caseName + ' etPreferredOrientation(window.Orientation.LANDSCAPE) success');
           await sleep(3000);
           console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
           console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
           expect(index1).assertLarger(0);
           expect(index2).assertLarger(0);
-          display.off('change',callback1);
+          display.off('change', callback1);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
           await sleep(3000);
           console.info(caseName + ' setOrientation index1: ' + index1);
@@ -310,7 +311,7 @@ export default function displayTest() {
           expect(index1).assertLarger(0);
           expect(index2).assertLarger(0);
           done();
-        }else{
+        } else {
           done();
         }
 
@@ -1265,14 +1266,14 @@ export default function displayTest() {
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
           if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -1284,14 +1285,14 @@ export default function displayTest() {
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
           if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -2039,7 +2040,7 @@ export default function displayTest() {
         expect(result?.length).assertLarger(0);
         await sleep(2000);
         await display.destroyVirtualScreen(screenId).then(() => {
-            console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+          console.info(caseName + 'Succeeded in destroyVirtualScreen1');
         }).catch((err: BusinessError) => {
           console.info(caseName + 'Failed in destroyVirtualScreen1');
         })
@@ -2452,29 +2453,46 @@ export default function displayTest() {
       console.log(msgStr + 'begin.');
       try {
         let result = display.isFoldable();
+        let cap: string = displayClass.getDisplayCapability();
         console.log(`${caseName} isFoldable: ${result}`);
         let defaultDisplay = display.getDefaultDisplaySync();
         console.log(`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
+        let mode: display.FoldDisplayMode = display.getFoldDisplayMode();
+        console.info(msgStr + `Succeeded in obtaining fold display mode. Data: ${mode}`);
         let region = defaultDisplay.getLiveCreaseRegion();
         console.log(`${caseName} region: ${JSON.stringify(region)}`);
         expect(region.displayId).assertEqual(0)
-        if (result) {
-          if (region.creaseRects.length == 0) {
-            done();
-          } else {
-            for (let i = 0; i < region.creaseRects.length; i++) {
-              expect(region.creaseRects[i].left).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].top).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].width).assertLargerOrEqual(0);
-              expect(region.creaseRects[i].height).assertLargerOrEqual(0);
-              done();
-            }
+        if (deviceType === '2in1' && result) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
           }
+          done();
+        } else if (deviceType === 'phone' && result && JSON.parse(cap).foldScreenType.split(',').map(Number)[0] !== 2 && mode === 1) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+          }
+          done();
+        } else if (deviceType === 'phone' && result && JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 2 && mode === 2) {
+          expect(region.creaseRects.length).assertLarger(0);
+          for (let i = 0; i < region.creaseRects.length; i++) {
+            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+          }
+          done();
         } else {
           expect(region.creaseRects.length).assertEqual(0)
           done();
         }
-
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
@@ -3207,30 +3225,28 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
             }
-            let windowStageStart = await startAbility(caseName, context, options);
-            let windowClass = windowStageStart.getMainWindowSync();
-            await windowClass.setWindowFocusable(true);
-            await terminateAbility(caseName);
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (err.code == 801) {
-              expect(err.code).assertEqual(801)
+            if (deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet') {
+              let windowStageStart = await startAbility(caseName, context, options);
+              let windowClass = windowStageStart.getMainWindowSync();
+              await windowClass.setWindowFocusable(true);
+              await terminateAbility(caseName);
+              await display.destroyVirtualScreen(displayId);
               done();
             } else {
-              await terminateAbility(caseName);
-              expect(false).assertTrue();
+              await display.destroyVirtualScreen(displayId);
               done();
             }
-          })
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport || deviceType === 'wearable') {
+
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3238,6 +3254,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3268,30 +3294,27 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
             }
-            let windowStageStart = await startAbility(caseName, context, options);
-            let windowClass = windowStageStart.getMainWindowSync();
-            await windowClass.setWindowFocusable(true);
-            await terminateAbility(caseName);
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (err.code == 801) {
-              expect(err.code).assertEqual(801)
+            if (deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet') {
+              let windowStageStart = await startAbility(caseName, context, options);
+              let windowClass = windowStageStart.getMainWindowSync();
+              await windowClass.setWindowFocusable(true);
+              await terminateAbility(caseName);
+              await display.destroyVirtualScreen(displayId);
               done();
             } else {
-              await terminateAbility(caseName);
-              expect(false).assertTrue();
+              await display.destroyVirtualScreen(displayId);
               done();
             }
-          })
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport|| deviceType === 'wearable') {
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3299,6 +3322,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3328,30 +3361,27 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
             }
-            let windowStageStart = await startAbility(caseName, context, options);
-            let windowClass = windowStageStart.getMainWindowSync();
-            await windowClass.setWindowFocusable(true);
-            await terminateAbility(caseName);
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (err.code == 801) {
-              expect(err.code).assertEqual(801)
+            if (deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet') {
+              let windowStageStart = await startAbility(caseName, context, options);
+              let windowClass = windowStageStart.getMainWindowSync();
+              await windowClass.setWindowFocusable(true);
+              await terminateAbility(caseName);
+              await display.destroyVirtualScreen(displayId);
               done();
             } else {
-              await terminateAbility(caseName);
-              expect(false).assertTrue();
+              await display.destroyVirtualScreen(displayId);
               done();
             }
-          })
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport|| deviceType === 'wearable') {
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+           await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3359,6 +3389,16 @@ export default function displayTest() {
             expect(false).assertTrue();
             done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+          
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3389,36 +3429,42 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
+          console.log(caseName + 'succeeded in createVirtualScreen');
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
               displayId: displayId
             }
-            let windowStageStart = await startAbility(caseName, context, options);
-            let windowClass = windowStageStart.getMainWindowSync();
-            await windowClass.setWindowFocusable(true);
-            await terminateAbility(caseName);
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            display.destroyVirtualScreen(displayId);
-            if (err.code == 801) {
-              expect(err.code).assertEqual(801)
-              done();
-            } else {
-              expect(err.code).assertEqual(1300002)
+            if (deviceType === 'phone' || deviceType === '2in1' || deviceType === 'tablet') {
+              let windowStageStart = await startAbility(caseName, context, options);
+              let windowClass = windowStageStart.getMainWindowSync();
+              await windowClass.setWindowFocusable(true);
+              await terminateAbility(caseName);
+              await display.destroyVirtualScreen(displayId);
               done();
             }
-          })
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport|| deviceType === 'wearable') {
+            else {
+              await display.destroyVirtualScreen(displayId);
+              done();
+            }
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            await display.destroyVirtualScreen(displayId);
+            if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
-            expect(err.code).assertEqual(1300002)
-            done();
+           expect(err.code).assertEqual(1300002)
+          done();
           }
+
+          })
+
+
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          expect(err.code).assertEqual(1300002)
+          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -4122,14 +4168,14 @@ export default function displayTest() {
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
           if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -4141,14 +4187,14 @@ export default function displayTest() {
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
           if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -4158,7 +4204,7 @@ export default function displayTest() {
     });
 
 
-    
+
 
   })
 }

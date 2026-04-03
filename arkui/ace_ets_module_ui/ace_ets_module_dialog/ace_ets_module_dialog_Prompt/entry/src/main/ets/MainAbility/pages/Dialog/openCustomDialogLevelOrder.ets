@@ -23,7 +23,7 @@ struct openCustomDialogLevelOrder {
   @Builder
   customDialogComponent() {
     Column() {
-      Button('确认')
+      Button('??')
         .height('8%')
         .id('close')
         .onClick(() => {
@@ -59,6 +59,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(100),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -87,6 +88,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(100001),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -117,6 +119,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(-100001),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -144,6 +147,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(undefined),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -173,6 +177,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(100000),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -200,6 +205,7 @@ struct openCustomDialogLevelOrder {
                 this.customDialogComponent()
               },
               levelOrder: LevelOrder.clamp(-100000),
+              offset: { dx: 0, dy: 30 },
               alignment: DialogAlignment.Center,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
                 console.info('reason' + JSON.stringify(dismissDialogAction.reason))
@@ -223,6 +229,7 @@ struct openCustomDialogLevelOrder {
     }
     .width('100%')
     .height('100%')
+    .margin({top:20})
     .justifyContent(FlexAlign.Start)
   }
 }

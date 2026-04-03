@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,FullScreenExitHandler} from '@ohos.arkui.component'
+import { Entry, Component, Column, Row, Button, ClickEvent, Web,FullScreenEnterEvent,FullScreenExitHandler} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import webView from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
@@ -32,6 +32,8 @@ struct WebOnFullScreenEnter {
   stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   handler?: FullScreenExitHandler
+  videoWidth?: int;
+  videoHeight?: int;
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -40,6 +42,7 @@ struct WebOnFullScreenEnter {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State onFullScreenEnterCalled: boolean = false;
+  @State handlerExitFullScreenCalled: boolean = false;
   @State checkEleResult: string = '';
 
   aboutToAppear() {
@@ -65,42 +68,78 @@ struct WebOnFullScreenEnter {
     Column() {
       Row() {
         Button('web click').key('OnFullScreenEnterTestButton').onClick( (e:ClickEvent) => {
-          this.stringObj.str = 'emitOnFullScreenEnter'
           console.info('key==>' +  this.stringObj.str)
           switch (this.stringObj.str) {
             case 'emitOnFullScreenEnter': {
               try {
                 inspector.sendEventByKey('OnFullScreenEnterTestWeb', 10, '');
-
                 setTimeout(() => {
-                  inspector.sendEventByKey('OnFullScreenEnterTestWeb', 10, '');
-                }, 2000)
-
-                setTimeout(() => {
-                this.controller.runJavaScript('checkIsFullScreen()', (error, result) => {
-                  if (error) {
-                    console.log(`The checkIsFullScreen() return error is: ${error}`);
-                  }
-                  this.checkEleResult = JSON.stringify(result)
-                  console.log(`The checkIsFullScreen() return value is: ${result}`);
                   Utils.emitEvent(this.onFullScreenEnterCalled , 442)
-                })
                 }, 4000)
-
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-
               break;
             }
-
-
+            case 'emitOnFullScreenEnter_handler': {
+              try {
+                setTimeout(() => {
+                  console.log('this.handler: ' + this.handler)
+                  Utils.emitEvent((this.handler ?? 0) != 0 , 443)
+                }, 4000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitOnFullScreenEnter_handler_exitFullScreen': {
+              try {
+                setTimeout(() => {
+                  console.log('this.handlerExitFullScreenCalled: ' + this.handlerExitFullScreenCalled)
+                  Utils.emitEvent(this.handlerExitFullScreenCalled , 444)
+                }, 4000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitOnFullScreenEnter_videoWidth': {
+              try {
+                setTimeout(() => {
+                  console.log('this.videoWidth: ' + this.videoWidth)
+                  Utils.emitEvent((this.videoWidth ?? 0) > 0 , 445)
+                }, 4000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitOnFullScreenEnter_videoHeight': {
+              try {
+                setTimeout(() => {
+                  console.log('this.videoHeight: ' + this.videoHeight)
+                  Utils.emitEvent((this.videoHeight ?? 0) > 0 , 446)
+                }, 4000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+            }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebMediaPlayGestureAccess' })
+              console.log('push URL success')
+              break;
+            }
           }
         })
       }
-
-      Web({ src: 'resource://rawfile/webFullScreenTest.html', controller: this.controller })
+      Web({ src: 'resource://rawfile/videoTest1.html', controller: this.controller })
         .key('OnFullScreenEnterTestWeb')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
@@ -108,11 +147,27 @@ struct WebOnFullScreenEnter {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-        .onFullScreenEnter((event) => {
+        .onFullScreenEnter((event: FullScreenEnterEvent): void => {
           console.log('onFullScreenEnter...')
           this.handler = event.handler
-          console.log('this.handler: ' + JSON.stringify(this.handler))
+          this.videoWidth = event.videoWidth
+          this.videoHeight = event.videoHeight
+          console.log('event.handler: ' + JSON.stringify(event.handler))
+          console.log('event.videoWidth: ' + JSON.stringify(event.videoWidth))
+          console.log('event.videoHeight: ' + JSON.stringify(event.videoHeight))
           this.onFullScreenEnterCalled = true
+          try {
+            setTimeout(() => {
+              this.handler?.exitFullScreen()
+              this.handlerExitFullScreenCalled = true
+            }, 2000)
+          } catch (error) {
+            error = error as BusinessError;
+            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+          }
+        })
+        .onFullScreenExit((): void => {
+          console.log('onFullScreenExit...')
         })
     }
   }

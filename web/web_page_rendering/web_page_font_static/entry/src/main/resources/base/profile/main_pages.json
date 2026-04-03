@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/webFantasyFont",
-    "pages/enableFollowSystemFontWeight"
+    "pages/enableFollowSystemFontWeight",
+    "pages/webViewMinLogicalFontSize"
   ]
 }

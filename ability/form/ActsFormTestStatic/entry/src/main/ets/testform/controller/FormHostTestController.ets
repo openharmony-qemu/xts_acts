@@ -90,7 +90,7 @@ export class FormHostTestController {
 
   getTestEvent(evId: EventIdMap): emitter.InnerEvent {
     let event: emitter.InnerEvent = {
-      eventId: evId as Long,
+      eventId: evId,
       priority: emitter.EventPriority.IMMEDIATE
     }
     return event;
@@ -98,7 +98,7 @@ export class FormHostTestController {
 
   getFinishEvent(evId: EventIdMap): emitter.InnerEvent { 
     let event: emitter.InnerEvent = {
-      eventId: (evId + TEST_FINISH_OFFSET) as Long,
+      eventId: evId + TEST_FINISH_OFFSET,
       priority: emitter.EventPriority.IMMEDIATE
     }
     return event;
@@ -106,7 +106,7 @@ export class FormHostTestController {
 
   getFalseTestEvent(evId: EventIdMap): emitter.InnerEvent { 
     let event: emitter.InnerEvent = {
-      eventId: (evId + FALSE_TEST_OFFSET) as Long,
+      eventId: evId + FALSE_TEST_OFFSET,
       priority: emitter.EventPriority.IMMEDIATE
     }
     return event;

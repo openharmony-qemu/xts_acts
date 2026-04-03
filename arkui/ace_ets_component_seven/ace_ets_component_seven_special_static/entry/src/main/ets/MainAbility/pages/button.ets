@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, AttributeModifier, ButtonAttribute, ButtonType, FontWeight, FontStyle, TextOverflow, Column, Color, Button } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.type(ButtonType.Circle)
       .stateEffect(true)
@@ -28,7 +28,7 @@ class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({overflow: TextOverflow.Clip})
   }

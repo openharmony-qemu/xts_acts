@@ -24,7 +24,7 @@ import {
   Component,
   Image,
   $r,
-  ClickEvent
+  FlexAlign
 } from '@ohos.arkui.component';
 import componentSnapshot from '@ohos.arkui.componentSnapshot';
 import { DynamicRangeMode } from '@ohos.arkui.component';
@@ -71,105 +71,75 @@ struct colorModeOptions {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test ColorModeOptions - colorSpace')
+    Column({ space: 1 } as ColumnOptions) {
+      Button('色域')
         .id('btnColorModeColorSpace')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test colorSpace property
           let colorModeOptions: componentSnapshot.ColorModeOptions = {
             colorSpace: colorSpaceManager.ColorSpace.SRGB
           };
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsColorSpace', colorModeOptions);
         })
-
-      Button('Test ColorModeOptions - isAuto true')
+      Button('isAuto·T')
         .id('btnColorModeIsAutoTrue')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test isAuto - true
-          let colorModeOptions: componentSnapshot.ColorModeOptions = {
-            isAuto: true
-          };
+          let colorModeOptions: componentSnapshot.ColorModeOptions = { isAuto: true };
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsIsAutoTrue', colorModeOptions);
         })
-
-      Button('Test ColorModeOptions - isAuto false')
+      Button('isAuto·F')
         .id('btnColorModeIsAutoFalse')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test isAuto - false
-          let colorModeOptions: componentSnapshot.ColorModeOptions = {
-            isAuto: false
-          };
+          let colorModeOptions: componentSnapshot.ColorModeOptions = { isAuto: false };
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsIsAutoFalse', colorModeOptions);
         })
-
-      Button('Test DynamicRangeModeOptions - HIGH')
+      Button('DR·HIGH')
         .id('btnDynamicRangeModeHigh')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test dynamicRangeMode - HIGH
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
             dynamicRangeMode: DynamicRangeMode.HIGH
           };
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsHigh', dynamicRangeModeOptions);
         })
-
-      Button('Test DynamicRangeModeOptions - CONSTRAINT')
+      Button('DR·CST')
         .id('btnDynamicRangeModeConstraint')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test dynamicRangeMode - CONSTRAINT
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
             dynamicRangeMode: DynamicRangeMode.CONSTRAINT
           };
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsConstraint', dynamicRangeModeOptions);
         })
-
-      Button('Test DynamicRangeModeOptions - STANDARD')
+      Button('DR·STD')
         .id('btnDynamicRangeModeStandard')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test dynamicRangeMode - STANDARD
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
             dynamicRangeMode: DynamicRangeMode.STANDARD
           };
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsStandard', dynamicRangeModeOptions);
         })
-
-      Button('Test DynamicRangeModeOptions - isAuto true')
+      Button('DR自·T')
         .id('btnDynamicRangeIsAutoTrue')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test isAuto - true
-          let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
-            isAuto: true
-          };
+          let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = { isAuto: true };
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsIsAutoTrue', dynamicRangeModeOptions);
         })
-
-      Button('Test DynamicRangeModeOptions - isAuto false')
+      Button('DR自·F')
         .id('btnDynamicRangeIsAutoFalse')
-        .width(300)
-        .height(50)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '11%' }).fontSize(9)
         .onClick(() => {
-          // Test isAuto - false
-          let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
-            isAuto: false
-          };
+          let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = { isAuto: false };
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsIsAutoFalse', dynamicRangeModeOptions);
         })
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

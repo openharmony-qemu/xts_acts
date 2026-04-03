@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function alertDialogTest() {
-  describe('alertDialogTest', () => {
+  describe('alertDialogTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
       console.info("alertDialogTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.advancedDialogV2.test.static", "EntryAbility")

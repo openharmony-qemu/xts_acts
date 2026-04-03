@@ -160,4 +160,4 @@ async function signAbortProcess(authUri: string, srcData: Uint8Array, flag: stri
   }
 }
 
-export { signVerifyNormalProcess, signAbortProcess, verifyAbortProcess }
+export { signVerifyNormalProcess, signAbortProcess, verifyAbortProcess, initProcess }

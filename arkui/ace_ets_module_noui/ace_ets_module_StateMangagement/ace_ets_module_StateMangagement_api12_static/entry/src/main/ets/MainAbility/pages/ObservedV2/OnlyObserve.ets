@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,10 +36,10 @@ import {
 } from '@ohos.arkui.stateManagement'
 
 @ObservedV2
-class Son5{
+export class Son5{
   age :number =18
 }
-class Father5 {
+export class Father5 {
   son:Son5 = new Son5()
 }
 @Entry

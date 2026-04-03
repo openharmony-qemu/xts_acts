@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage2",
     "MainAbility/pages/ChipGroup/ChipGroupIconItemOptionsPage",
     "MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage",
     "MainAbility/pages/ChipGroup/ChipGroupSymbolItemOptionsPage",

@@ -24,7 +24,10 @@ import {
   Button,
   Text,
   FlexAlign,
-  PopupOptions
+  PopupOptions,
+  HorizontalAlign,
+  ColumnOptions,
+  TextOverflow
 } from '@ohos.arkui.component'
 import { AvoidanceMode } from '@kit.ArkUI';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -43,8 +46,8 @@ struct PopupOptionsIndex {
   @Builder
   buildPopupContent() {
     Column() {
-      Text('Popup Content')
-        .fontSize(24)
+      Text('Pop')
+        .fontSize(12)
         .key('popupContentNew')
     }
     .width(200)
@@ -62,11 +65,13 @@ struct PopupOptionsIndex {
   }
 
   build() {
-    Column() {
-      Button('Open Popup')
+    Column({ space: 4 } as ColumnOptions) {
+      Button('Popup')
         .id('btnOpenPopupNew')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(10)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
         .bindPopup(this.showBindPopup, {
           message: 'PopupOptions',
           avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
@@ -96,31 +101,53 @@ struct PopupOptionsIndex {
 
       Text(this.openPopupResult)
         .key('openPopupResultNew')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillAppearResult)
         .key('onWillAppearResultNew')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidAppearResult)
         .key('onDidAppearResultNew')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillDisappearResult)
         .key('onWillDisappearResultNew')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidDisappearResult)
         .key('onDidDisappearResultNew')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

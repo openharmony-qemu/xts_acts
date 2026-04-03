@@ -34,8 +34,8 @@ struct SourceTypeIndex {
 
   build() {
     Column() {
-      Text(this.keyValue).key('sourceTypeKeyValue');
-      Text(this.joystickValue).key('sourceTypeJoystickValue');
+      Text(this.keyValue).key('sourceTypeKeyValue').height('5%');
+      Text(this.joystickValue).key('sourceTypeJoystickValue').height('5%');
     }
     .width('100%')
     .height('100%');

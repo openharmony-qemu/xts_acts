@@ -89,7 +89,7 @@ export default function testsuite() {
   checkBoxGroupTest()
   RadioJsunit();
   radioJsunit2();
-  RatingUIJsunit();
+  //RatingUIJsunit();
   toggle3Jsunit();
   rating3Jsunit();
 

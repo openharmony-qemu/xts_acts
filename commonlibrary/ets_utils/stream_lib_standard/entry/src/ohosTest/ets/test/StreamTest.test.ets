@@ -2299,7 +2299,7 @@ export default function StreamTest() {
           if (!chunk) {
             break;
           }
-          expect(chunk.toString()).assertEqual('content');
+          expect((chunk as Object).toString()).assertEqual('content');
         }
       });
       readableStream.push('content');
@@ -2322,7 +2322,7 @@ export default function StreamTest() {
         let chunk;
         while ((chunk = readableStream.read()) !== null) {
           count++;
-          expect(chunk.toString()).assertEqual('content');
+          expect((chunk as Object).toString()).assertEqual('content');
         }
       });
       readableStream.on('end', () => {

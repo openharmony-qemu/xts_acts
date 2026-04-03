@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,10 +58,10 @@ export default function lastExitReasonStaticTest() {
         let launchParam = AppStorage.get<AbilityConstant.LaunchParam>("launchParam");
         hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchParam: ' + JSON.stringify(launchParam));
         if (launchParam) {
-          let launchReason = launchParam.launchReason as number
+          let launchReason: number = launchParam.launchReason
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchReason: ' + launchReason);
           expect(launchReason + '').assertEqual('1');
-          let lastExitReason = launchParam.lastExitReason as number
+          let lastExitReason: number = launchParam.lastExitReason
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 lastExitReason: ' + lastExitReason);
           expect(lastExitReason + '').assertEqual(AbilityConstant.LastExitReason.NORMAL + '');
           let lastExitMessage = launchParam.lastExitMessage as string

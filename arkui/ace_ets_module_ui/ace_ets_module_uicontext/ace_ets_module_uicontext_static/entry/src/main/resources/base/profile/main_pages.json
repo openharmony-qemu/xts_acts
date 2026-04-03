@@ -7,6 +7,7 @@
     "MainAbility/pages/ResolveStrategy/ResolveStrategyIndex",
     "MainAbility/pages/ResolvedUIContext/ResolvedUIContextIndex",
     "MainAbility/pages/CustomKeyboardContinueFeature/CustomKeyboardContinueFeatureIndex",
-    "MainAbility/pages/UIContext/UIContextIndex"
+    "MainAbility/pages/UIContext/UIContextIndex",
+    "MainAbility/pages/window/GetWindowIdTest"
   ]
 }

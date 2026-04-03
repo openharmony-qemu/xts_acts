@@ -30,7 +30,7 @@ export class GlobalContext {
   }
 
   getObject<T>(value: string): Value1<T> | undefined {
-    return AppStorage.get(value);
+    return AppStorage.get<Value1<T>>(value);
   }
 
   setObject(key: string, objectClass: Object): void {

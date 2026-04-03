@@ -128,6 +128,93 @@ export default function HttpDeleteTest() {
             console.info(`${caseName}---End `);
         });
 
+    /**
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0300
+     * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0300';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ': Please connect to the network');
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  Network connected ');
+              let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(undefined);
+              httpResponseCache.delete((err: BusinessError<void> | null) => {
+                if (err?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s',
+                    caseName + ': delete success httpResponseCache ->' + JSON.stringify(httpResponseCache));
+                  ExpectTrue(httpResponseCache != null);
+                  done();
+                }
+              });
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0400
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0400
+     * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ': Please connect to the network');
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  Network connected ');
+              let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
+              ExpectTrue(typeof httpResponseCache == 'object');
+              httpResponseCache.delete((err: BusinessError<void> | null) => {
+                if (err?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s',
+                    caseName + ': delete success httpResponseCache ->' + JSON.stringify(httpResponseCache));
+                  ExpectTrue(httpResponseCache != null);
+                  done();
+                }
+              });
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          done();
+        }
+      });
+
 
     })
 

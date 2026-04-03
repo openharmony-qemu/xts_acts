@@ -13,6 +13,14 @@
 
 import("//test/xts/tools/build/suite.gni")
 
+ohos_app_assist_suite("ActsObjectLibTest") {
+  hap_name = "ActsObjectLibTest"
+  testonly = true
+  part_name = "ets_utils"
+  subsystem_name = "commonlibrary"
+  certificate_profile = "signature/openharmony_sx.p7b"
+}
+
 ohos_js_app_suite("ActsObjectTest") {
   test_hap = true
   testonly = true
@@ -24,4 +32,5 @@ ohos_js_app_suite("ActsObjectTest") {
 
   # 子系统名称，真实数据，需要部件对应
   subsystem_name = "commonlibrary"
+  deps = [ ":ActsObjectLibTest" ]
 }

@@ -24,7 +24,8 @@ import {
   Component,
   Image,
   $r,
-  ClickEvent
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component';
 import {
   AnimationOptions,
@@ -75,11 +76,13 @@ struct animationOptions {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test AnimationOptions - frameDurations')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('帧时长')
         .id('btnFrameDurations')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Test frameDurations property
@@ -92,10 +95,12 @@ struct animationOptions {
           }
         })
 
-      Button('Test AnimationOptions - autoPlay')
+      Button('自动播')
         .id('btnAutoPlay')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Test autoPlay property
@@ -108,10 +113,12 @@ struct animationOptions {
           }
         })
 
-      Button('Test AnimationController - start/stop/pause/resume/getStatus')
+      Button('控制器')
         .id('btnAnimationController')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, create AnimatedDrawableDescriptor via constructor
@@ -137,15 +144,27 @@ struct animationOptions {
               AppStorage.setOrCreate<boolean>('animationControllerStart', false);
               return;
             }
-            // Create pixelMaps array
-            let pixelMaps: image.PixelMap[] = [pixelMap];
-            // Create AnimationOptions
+            // 帧动画至少两帧时，部分设备上 getAnimationController() 才非空（单帧常为 undefined，导致 startResult=false）
+            let pixelMaps: image.PixelMap[] = [pixelMap, pixelMap];
             let options: AnimationOptions = { duration: 1000, iterations: 1 };
-            // Create AnimatedDrawableDescriptor via constructor
             let animatedDrawableDescriptor = new AnimatedDrawableDescriptor(pixelMaps, options);
             let controller: AnimationController | undefined = animatedDrawableDescriptor.getAnimationController();
             if (!controller) {
+              try {
+                console.info('[ARKUI_NEW] animationController - retry with resource-based AnimatedDrawableDescriptor');
+                let fromRes = new AnimatedDrawableDescriptor($r('sys.media.ohos_ic_public_voice'), options);
+                controller = fromRes.getAnimationController();
+              } catch (err) {
+                console.error('[ARKUI_NEW] animationController - resource ctor failed: ' + err);
+              }
+            }
+            if (!controller) {
+              console.error('[ARKUI_NEW] animationController - getAnimationController() still undefined');
               AppStorage.setOrCreate<boolean>('animationControllerStart', false);
+              AppStorage.setOrCreate<number>('animationControllerStatus', -1);
+              AppStorage.setOrCreate<boolean>('animationControllerPause', false);
+              AppStorage.setOrCreate<boolean>('animationControllerResume', false);
+              AppStorage.setOrCreate<boolean>('animationControllerStop', false);
               return;
             }
             // Test start
@@ -161,9 +180,9 @@ struct animationOptions {
             }
 
             // Test getStatus
-            // getStatus may fail if called right after start(); check controller still valid
             try {
-              console.info('[ARKUI_NEW] animationController - calling controller.getStatus(), controller is: ' + (controller !== undefined ? 'defined' : 'undefined'));
+              console.info('[ARKUI_NEW] animationController - calling controller.getStatus(), controller is: ' +
+                (controller !== undefined ? 'defined' : 'undefined'));
               if (controller) {
                 let status: number = controller.getStatus();
                 console.info('[ARKUI_NEW] animationController - controller.getStatus() succeeded, status: ' + status);
@@ -174,7 +193,6 @@ struct animationOptions {
               }
             } catch (error) {
               console.error('[ARKUI_NEW] controller.getStatus error: ' + error);
-              // getStatus failure does not affect others; set default
               AppStorage.setOrCreate<number>('animationControllerStatus', -1);
             }
 
@@ -231,43 +249,54 @@ struct animationOptions {
           }
         })
 
-      Button('Test AnimatedDrawableDescriptor - getAnimationController')
+      Button('取控制器')
         .id('btnGetAnimationController')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(9)
         .onClick(() => {
+          let getControllerOk: boolean = false;
+          let getControllerWithIdOk: boolean = false;
           try {
             // Per API, create AnimatedDrawableDescriptor via constructor
-            // Get pixelMap first
             let resManager = this.getUIContext().getHostContext()?.resourceManager;
             let drawableDescriptor: DrawableDescriptor | undefined =
               resManager?.getDrawableDescriptor($r('sys.media.ohos_ic_public_voice').id) as DrawableDescriptor;
             if (drawableDescriptor) {
               let pixelMap: image.PixelMap | undefined = drawableDescriptor.getPixelMap();
               if (pixelMap) {
-                // Create pixelMaps array
-                let pixelMaps: image.PixelMap[] = [pixelMap];
-                // Create AnimationOptions
+                let pixelMaps: image.PixelMap[] = [pixelMap, pixelMap];
                 let options: AnimationOptions = { duration: 1000, iterations: 1 };
-                // Create AnimatedDrawableDescriptor via constructor
                 let animatedDrawableDescriptor = new AnimatedDrawableDescriptor(pixelMaps, options);
                 let controller: AnimationController | undefined = animatedDrawableDescriptor.getAnimationController();
-                AppStorage.setOrCreate<boolean>('animatedDrawableDescriptorGetController', controller !== undefined);
+                let holder: AnimatedDrawableDescriptor = animatedDrawableDescriptor;
+                if (!controller) {
+                  try {
+                    holder = new AnimatedDrawableDescriptor($r('sys.media.ohos_ic_public_voice'), options);
+                    controller = holder.getAnimationController();
+                  } catch (err) {
+                    console.error('[ARKUI_NEW] getAnimationController resource ctor: ' + err);
+                  }
+                }
+                getControllerOk = controller !== undefined;
                 if (controller) {
                   let controllerWithId: AnimationController | undefined =
-                    animatedDrawableDescriptor.getAnimationController('testId');
-                  AppStorage.setOrCreate<boolean>('animatedDrawableDescriptorGetControllerWithId',
-                    controllerWithId !== undefined);
+                    holder.getAnimationController('testId');
+                  getControllerWithIdOk = controllerWithId !== undefined;
                 }
               }
             }
           } catch (error) {
             console.error('[ARKUI_NEW] getAnimationController error: ' + error);
           }
+          AppStorage.setOrCreate<boolean>('animatedDrawableDescriptorGetController', getControllerOk);
+          AppStorage.setOrCreate<boolean>('animatedDrawableDescriptorGetControllerWithId', getControllerWithIdOk);
         })
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

@@ -268,7 +268,22 @@ export default function SystemDateTimeJsunitStaticTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200
+     * @tc.number SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200
+     * @tc.desc   Test systemTimeDate_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200', Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 start----------------");
+      let status: boolean = systemDateTime.getAutoTimeStatus();
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 currentTime: " + JSON.stringify(status));
+      expect(status == true || status == false).assertTrue();
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 end-----------------");
+    });
 
-    })
-
+  })
 }

@@ -41,11 +41,6 @@ struct Webdoubleinnernucleus {
           this.isReceive = -1;
           console.info("key==>" + this.emitKey)
           switch (this.emitKey) {
-            // case "emitWebDoubleInnerNucleus001": {
-            //     await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
-            //     Utils.emitEvent(webview.WebviewController.isActiveWebEngineEvergreen(),20250901)
-            //     break;
-            // }
             case "emitWebDoubleInnerNucleus001": {
               await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
               Utils.emitEvent(webview.WebviewController.getActiveWebEngineVersion(),162010)

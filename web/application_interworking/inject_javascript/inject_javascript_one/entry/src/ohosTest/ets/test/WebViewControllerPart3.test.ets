@@ -43,7 +43,7 @@ export default function webViewControllerPart3Test() {
       } catch (err) {
         console.error('push WebViewControllerPart3 page error: ' + err);
       }
-      await driver.waitForComponent(ON.id("WebViewControllerTestButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebViewControllerTestButton');
       done()
     });
 

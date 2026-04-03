@@ -466,7 +466,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == stat.size).assertTrue();
           ws.write(data);
@@ -515,7 +515,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 2).assertTrue();
           ws.write(data);
@@ -564,7 +564,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 8).assertTrue();
           ws.write(data);
@@ -1012,7 +1012,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 10).assertTrue();
           ws.write(data);

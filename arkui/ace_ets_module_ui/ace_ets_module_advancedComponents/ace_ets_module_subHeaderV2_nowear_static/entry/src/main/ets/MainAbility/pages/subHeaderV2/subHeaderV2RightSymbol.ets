@@ -15,9 +15,10 @@
  */
 
 import {
-  Entry, ComponentV2, $r, Column, SymbolGlyphModifier, SymbolEffectStrategy, SymbolRenderingStrategy, FontWeight,
+  Entry, ComponentV2, $r, Column, SymbolEffectStrategy, SymbolRenderingStrategy, FontWeight,
   Color, Local
 } from '@kit.ArkUI';
+import { SymbolGlyphModifier, TextModifier } from '@ohos.arkui.modifier';
 import {
   SubHeaderV2OperationType, SubHeaderV2, SubHeaderV2Title, SubHeaderV2OperationItem, SubHeaderV2Select
 } from '@ohos.arkui.advanced.SubHeaderV2';

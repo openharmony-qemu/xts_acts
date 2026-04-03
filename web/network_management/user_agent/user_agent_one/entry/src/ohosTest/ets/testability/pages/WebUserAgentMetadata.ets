@@ -56,8 +56,8 @@ struct webUserAgentMetadata {
         Button('webUserAgentMetadata click')
           .key('WebUserAgentMetadataButton')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
-            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
@@ -93,6 +93,17 @@ struct webUserAgentMetadata {
                   } else {
                     Utils.emitEvent(String(error.code), 174200);
                   }
+                }
+                break;
+              }
+              case 'emitSetUserAgentMetadataFirstParamEmpty': {
+                try {
+                  let metaData = new webView.UserAgentMetadata();
+                  this.controller.setUserAgentMetadata('', metaData);
+                  Utils.emitEvent('no_error', 26032507);
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032507);
                 }
                 break;
               }
@@ -195,6 +206,16 @@ struct webUserAgentMetadata {
                   } else {
                     Utils.emitEvent(String(error.code), 174260);
                   }
+                }
+                break;
+              }
+              case 'emitGetUserAgentMetadataParamEmpty': {
+                try {
+                  this.controller.getUserAgentMetadata('');
+                  Utils.emitEvent('no_error', 26032508);
+                } catch (error) {
+                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 26032508);
                 }
                 break;
               }

@@ -28,16 +28,15 @@ export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
   }
 
-  public onPrepare:()=> void = () => {
+  public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
   }
-
-  public onRun:() => void = () => {
-    console.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
+  public onRun: () => void = () => {
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    console.info(domain, tag, '%{public}s', 'start run testcase!!!');
+    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-    console.info(domain, tag, '[Boruto-F]:%{public}s', 'OpenHarmonyTestRunner onRun end');
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }

@@ -948,7 +948,7 @@ export default function IndexedCollections05Test() {
       async (done: () => void): Promise<void> => {
         console.log('test_Array_ReduceEmptyWithInitial_0006 start');
         const arr6: number[] = [];
-        const result6 = arr6.reduce((acc, cur) => acc + cur, 0);
+        const result6 = arr6.reduce((acc, cur) => acc + cur, 0.);
         let result: boolean = result6 === 0;
         expect(result).assertTrue();
 
@@ -1271,7 +1271,7 @@ export default function IndexedCollections05Test() {
         for (let i = 0; i < 10000; i++) {
           arr21.push(i);
         }
-        const sum21 = arr21.reduce((acc, cur) => acc + cur, 0);
+        const sum21 = arr21.reduce((acc, cur) => acc + cur, 0.);
         let result: boolean = sum21 === 49995000;
         expect(result).assertTrue();
 

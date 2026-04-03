@@ -55,7 +55,7 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       const numbers: readonly number[] = [1, 2, 3];
       const sum = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, 0);
+      }, 0.);
       console.log(`${sum}`);
       expect(6).assertEqual(sum);
       done();
@@ -110,7 +110,7 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       const numbers: readonly number[] = [];
       const result = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, 0);
+      }, 0.);
       console.log(`${result}`);
       expect(0).assertEqual(result);
       done();
@@ -144,7 +144,7 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       const numbers: readonly number[] = [5];
       const result = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue
-      }, 0);
+      }, 0.);
       console.log(`${result}`);
       expect(5).assertEqual(result);
       done();
@@ -256,7 +256,7 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       }, Math.floor(1.5));
       const result2 = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, -0);
+      }, -0.);
       const result3 = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
       }, Number.EPSILON);
@@ -277,13 +277,13 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       }, 123.456);
       const result10 = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, 0x0102);
+      }, 0x0102.toDouble());
       const result11 = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, 0x01020304);
+      }, 0x01020304.toDouble());
       const result12 = numbers.reduceRight((accumulator, currentValue) => {
         return accumulator + currentValue;
-      }, 0x3);
+      }, 0x3.toDouble());
       console.log(`=====${result1}`);
       console.log(`=====${result2}`);
       console.log(`=====${result3}`);

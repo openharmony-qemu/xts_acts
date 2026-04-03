@@ -13,18 +13,13 @@ import { buffer, Decimal } from "@kit.ArkTS";
 import { sensor } from '@kit.SensorServiceKit';
 
 // 权限列表
-let permission: Permissions[] = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
-  'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
+let permission: Permissions[] = [
   'ohos.permission.CAMERA',
   'ohos.permission.MICROPHONE',
   'ohos.permission.MEDIA_LOCATION',
-  'ohos.permission.READ_MEDIA',
-  'ohos.permission.WRITE_MEDIA',
-  'ohos.permission.START_ABILIIES_FROM_BACKGROUND',
-  'ohos.permission.START_INVISIBLE_ABILITY',
-  'ohos.permission.ABILITY_BACKGROUND_COMMUNICATION',
-  'ohos.permission.READ_IMAGEVIDEO',
-  'ohos.permission.WRITE_IMAGEVIDEO'];
+  "ohos.permission.READ_IMAGEVIDEO",
+  "ohos.permission.WRITE_IMAGEVIDEO"
+];
 
 // 接收图片资产的回调函数
 let photoAccessArray: Array<photoAccessHelper.PhotoAsset> = []
@@ -847,7 +842,7 @@ export function getSuppotredZoomRatioRange(photoSession: ESObject) {
   try {
     zoomRatioRange = photoSession.getZoomRatioRange();
     if (zoomRatioRange == undefined) {
-      return [];
+      return undefined;
     }
     if (zoomRatioRange!.length > 1) {
       if (zoomRatioRange![1] > 1) {
@@ -986,7 +981,7 @@ export async function onPreviewOutputFrameStart(previewOutput: camera.PreviewOut
     await sleep(20);
     let previewOutputFrameEndTime = Date.now();
     if (previewOutputFrameEndTime - previewOutputFrameStartTime > 60000) {
-      console.info('预览画面帧输出超时')
+      console.info('预览画面帧输出超时');
       expect().assertFail();
     }
   }
@@ -1185,17 +1180,17 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
     expect().assertFail()
     return;
   }
-  console.info('photoOutPutCallBack photoAssetAvailable photoAsset.uri is ' + photoAsset.uri);
+  console.info('photoAssetAvailableCallback photoAssetAvailable photoAsset.uri is ' + photoAsset.uri);
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
     new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
 
   assetChangeRequest.saveCameraPhoto();
   await photoHelper.applyChanges(assetChangeRequest)
   let asset: photoAccessHelper.PhotoAsset = assetChangeRequest.getAsset()
-  console.info('error is asset.uri' + asset.uri);
-  console.info('error is asset.displayName' + asset.displayName);
+  console.info('photoAssetAvailableCallback asset.uri is ' + asset.uri);
+  console.info('photoAssetAvailableCallback asset.displayName is ' + asset.displayName);
   realCapturePhotoNum++;
-  console.info('realCapturePhotoNum is ' + realCapturePhotoNum);
+  console.info('photoAssetAvailableCallback realCapturePhotoNum is ' + realCapturePhotoNum);
   let tmpTime = Date.now();
   if (tmpTime > endTime) {
     endTime = tmpTime;
@@ -1255,8 +1250,17 @@ export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.Phot
  * @param { number } increaseAssets 增加的资产数量
  */
 export async function expectEqualPhotoCount(beforeCount: number, increaseAssets: number) {
-  const afterCount = await getAllPhotoAssetsCount();
+  let afterCount = await getAllPhotoAssetsCount();
   try {
+    let startTime = Date.now();
+    while (afterCount < beforeCount + increaseAssets) {
+      await sleep(200);
+      afterCount = await getAllPhotoAssetsCount();
+      if (Date.now() - startTime > 60000) {
+        console.info('拍照出图超时');
+        expect().assertFail();
+      }
+    }
     expect(beforeCount + increaseAssets == afterCount).assertTrue();
     console.info(`afterCount is equal ${beforeCount + increaseAssets}`);
   } catch (error) {
@@ -1386,47 +1390,6 @@ export async function waitForStatus(status: string) {
 }
 
 /**
- * @desc 判断支持预配置能力
- * @param { camera.PhotoSession|camera.VideoSession } Session 会话对象
- * @param { camera.PreconfigType } preconfigType
- * @param { camera.PreconfigRatio } preconfigRatio
- */
-export function isSupportPreconfig(session: camera.PhotoSession|camera.VideoSession,
-  preconfigType: camera.PreconfigType, preconfigRatio: camera.PreconfigRatio) : boolean {
-  // 查询Preconfig能力
-  try {
-    let isPreconfigSupport = session.canPreconfig(preconfigType,preconfigRatio);
-    if (!isPreconfigSupport) {
-      console.error('error is PhotoSession canPreconfig check fail.');
-      return false;
-    }
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error('error is Failed to call canPreconfig. errorCode = ' + err.code);
-    return false;
-  }
-  return true;
-}
-
-/**
- * @desc 判断下发预配置能力
- * @param { camera.PhotoSession|camera.VideoSession } Session 会话对象
- * @param { camera.PreconfigType } preconfigType
- * @param { camera.PreconfigRatio } preconfigRatio
- */
-export function setPreconfig(session: camera.PhotoSession|camera.VideoSession,
-  preconfigType: camera.PreconfigType, preconfigRatio: camera.PreconfigRatio) : boolean {
-  try {
-    session.preconfig(preconfigType, preconfigRatio);
-    return true;
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error('Failed to call preconfig. errorCode = ' + err.code);
-    return false;
-  }
-}
-
-/**
  * @desc 获取拍照输出流
  * @param { camera.CameraManager } cameraManager
  * @returns { camera.PhotoOutput }
@@ -1467,113 +1430,6 @@ export function getPreviewOutput(cameraManager: camera.CameraManager) {
     return;
   }
   return previewOutput
-}
-
-/**
- * @desc PhotoOut.on的photoAvailable回调
- * @param { camera.Photo } photo
- * @param { BusinessError } errCode
- *
- */
-export function photoAvailableCallback(errCode: BusinessError, photo: camera.Photo) {
-  console.info("error is  into photoAvailableCallback ");
-  let imageObj: image.Image = photo.main;
-  let context = getContext();
-  imageObj.getComponent(image.ComponentType.JPEG, async (errCode: BusinessError, component: image.Component) => {
-    if (errCode || component === undefined) {
-      console.error('getComponent failed');
-      return;
-    }
-    const buffer: ArrayBuffer = component.byteBuffer;
-    if (!buffer) {
-      console.error('byteBuffer is null');
-      return;
-    }
-    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-    let extension: string = 'jpg';
-    let options: photoAccessHelper.CreateOptions = {
-      title: 'testPhoto'
-    }
-    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-      photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-    assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, buffer)
-    assetChangeRequest.saveCameraPhoto();
-    realCapturePhotoNum++;
-    console.info('realCapturePhotoNum is ' + realCapturePhotoNum);
-    let accessHelper: photoAccessHelper.PhotoAccessHelper =
-      photoAccessHelper.getPhotoAccessHelper(context);
-    await accessHelper.applyChanges(assetChangeRequest);
-    let imageSource = image.createImageSource(buffer);
-    let pixelmap = imageSource.createPixelMapSync();
-    // callback(pixelmap, assetChangeRequest.getAsset().uri);
-    let tmpTime = Date.now();
-    if (tmpTime > endTime) {
-      endTime = tmpTime;
-    }
-    photoAccessArray.push(assetChangeRequest.getAsset());
-    accessHelper.release();
-    imageObj.release();
-  });
-}
-
-
-/**
- * @desc 设置拍照出图回调开启
- * @param { camera.PhotoOutput } photoOutput
- * @param { photoAccessHelper.PhotoAccessHelper } helperInstance
- *
- */
-export function onPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput,
-  helperInstance: photoAccessHelper.PhotoAccessHelper): void {
-  photoHelper = helperInstance;
-
-  photoOutput.on('photoAvailable', photoAvailableCallback);
-}
-
-
-/**
- * @desc 关闭拍照出图回调
- * @param { camera.PhotoOutput } photoOutput
- * @param { number } capturePhotoNum
- * @param { Array<string> } fileNames
- * @param { boolean } isCapture
- * @returns { Array<photoAccessHelper.PhotoAsset> }
- */
-export async function offPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput, capturePhotoNum: number,
-  fileNames: Array<string>, isCapture: boolean = false): Promise<Array<photoAccessHelper.PhotoAsset>> {
-  while (realCapturePhotoNum < capturePhotoNum) {
-    await sleep(2);
-    let tmpTime = Date.now();
-    if (tmpTime - beginTime > 150000) {
-      beginTime = 0;
-      console.info('delay fail realCapturePhotoNum is ' + realCapturePhotoNum)
-      console.info('delay fail capturePhotoNum is' + capturePhotoNum)
-      // expect().assertFail();
-      break;
-    }
-  }
-  while (photoAccessArray.length < capturePhotoNum) {
-    await sleep(2);
-  }
-  if (isCapture) {
-    expect(realCapturePhotoNum == capturePhotoNum && photoAccessArray.length == capturePhotoNum).assertTrue();
-  } else {
-    expect(realCapturePhotoNum >= capturePhotoNum).assertTrue();
-  }
-  realCapturePhotoNum = 0;
-  photoOutput.off('photoAvailable', photoAvailableCallback);
-  for (let i = 0; i < photoAccessArray.length; i++) {
-    fileNames.push(photoAccessArray[i].displayName);
-    let isWhitePicture = await checkCameraPhotoIsWhitePicture(photoAccessArray[i])
-    if (isWhitePicture) {
-      console.error('CameraPhoto is whilePicture');
-      realCapturePhotoNum = 0;
-      //expect().assertFail();
-    }
-  }
-  let temp = photoAccessArray
-  photoAccessArray = []
-  return temp;
 }
 
 /**
@@ -1662,145 +1518,6 @@ export function createPreviewOutput(cameraManager: camera.CameraManager,
     return;
   }
   return previewOutput
-}
-
-
-/**
- * @desc 创建图像接收对象
- * @param { camera.Profile } photoProfile
- * @returns { camera.ImageReceiver }
- */
-export function getImageReceiver(photoProfile: camera.Profile) {
-  let photoReceiver: image.ImageReceiver | undefined;
-  try {
-    photoReceiver = image.createImageReceiver(photoProfile.size.width, photoProfile.size.height, photoProfile.format, 8);
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error(`error is Failed to createImageReceiver. error: ${JSON.stringify(err)}`);
-    expect().assertFail()
-  }
-  return photoReceiver;
-}
-
-/**
- * @desc 获取拍照输出流
- * @param { camera.Profile } photoProfile
- * @returns { camera.ImageReceiver }
- */
-export async function getPhotoOutputBySurfaceId(cameraManager: camera.CameraManager, photoProfile: camera.Profile
-  , helperInstance: photoAccessHelper.PhotoAccessHelper, photoReceiver: ESObject): Promise<camera.PhotoOutput> {
-  let photoOutput: camera.PhotoOutput | undefined = undefined;
-  try {
-    // 创建 PhotoOutput 时指定格式
-    photoHelper = helperInstance;
-    await photoReceiver.getReceivingSurfaceId().then((surfaceId: string) => {
-      photoOutput = cameraManager?.createPhotoOutput(photoProfile, surfaceId)
-      if (!photoOutput) {
-        console.error('cameraManager.createPhotoOutput on error')
-      }
-      console.log('cameraManager.createPhotoOutput success')
-      photoOutput?.on("captureStart", (err, captureId) => {
-        console.log('error is photoOutput.on captureStart')
-      })
-    }).catch((err: Error) => {
-      console.error('photoReceiver.getReceivingSurfaceId on error:' + err)
-    })
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error(`error is Failed to createPhotoOutput. error: ${JSON.stringify(err)}`);
-    expect().assertFail()
-  }
-  return photoOutput!;
-}
-
-/**
- * @desc 开启ImageArrival监听
- * @param { image.ImageReceiver } receiver
- *
- */
-export function onImageArrival(receiver: image.ImageReceiver): void {
-  // 注册imageArrival监听。
-  receiverinstance = receiver;
-  receiver.on('imageArrival', ImageArrivalCallback);
-}
-
-let receiverinstance: image.ImageReceiver;
-
-
-/**
- * @desc ImageArrival监听回调接收图片
- *
- */
-function ImageArrivalCallback() {
-  // 获取图像。
-  console.log("error is into imageArrival");
-  let context = getContext();
-  receiverinstance.readNextImage((err: BusinessError, nextImage: image.Image) => {
-    if (err || nextImage === undefined) {
-      console.error('readNextImage failed');
-      return;
-    }
-    // 解析图像内容。
-    nextImage.getComponent(image.ComponentType.JPEG, async (errCode: BusinessError, component: image.Component) => {
-      if (errCode || component === undefined) {
-        console.error('getComponent failed');
-        return;
-      }
-      const buffer: ArrayBuffer = component.byteBuffer;
-      if (!buffer) {
-        console.error('byteBuffer is null');
-        return;
-      }
-      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-      let extension: string = 'jpg';
-      let options: photoAccessHelper.CreateOptions = {
-        title: 'testPhoto'
-      }
-      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-      assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, buffer)
-      assetChangeRequest.saveCameraPhoto();
-      console.info('realCapturePhotoNum is ' + realCapturePhotoNum);
-      let accessHelper: photoAccessHelper.PhotoAccessHelper =
-        photoAccessHelper.getPhotoAccessHelper(context);
-      await accessHelper.applyChanges(assetChangeRequest);
-      realCapturePhotoNum++;
-      let imageSource = image.createImageSource(buffer);
-      let pixelmap = imageSource.createPixelMapSync();
-      // callback(pixelmap, assetChangeRequest.getAsset().uri);
-      let tmpTime = Date.now();
-      if (tmpTime > endTime) {
-        endTime = tmpTime;
-      }
-      photoAccessArray.push(assetChangeRequest.getAsset());
-      accessHelper.release();
-      nextImage.release();
-    })
-  })
-}
-
-/**
- * @desc 关闭ImageArrival监听
- * @param { image.ImageReceiver } receiver
- * @param { number } capturePhotoNum
- *
- */
-export async function offImageArrival(receiver: image.ImageReceiver, capturePhotoNum: number) {
-  // 注册imageArrival监听。
-  beginTime = Date.now();
-  while (realCapturePhotoNum < capturePhotoNum) {
-    await sleep(200);
-    let tmpTime = Date.now();
-    if (tmpTime - beginTime > 150000) {
-      beginTime = 0;
-      console.info('delay fail realCapturePhotoNum is' + realCapturePhotoNum)
-      console.info('delay fail capturePhotoNum is' + capturePhotoNum)
-      expect().assertFail();
-      break;
-    }
-  }
-  receiver.off('imageArrival');
-  realCapturePhotoNum = 0;
 }
 
 /**
@@ -1937,285 +1654,6 @@ export async function expectEqualMovingPhotoVideoNum(originalVideoNum: number, i
 }
 
 /**
- * @desc 获取进程的内存
- * @param { string } proName 进程名, 必须是全名
- * @returns { number } 内存值
- */
-export async function getMemOfProcess(proName: string ="camera_service"): Promise<number> {
-  // 先查询进程pid
-  let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  let cmd1 = `pidof ${proName}`;
-  console.info(`get pid, exec cmd: ${cmd1}`);
-  let resultStr = await abilityDelegator.executeShellCommand(cmd1, 10);
-  let pid = resultStr.stdResult.toString().trim();
-  if (!pid) {  // 如果没有这个进程，返回 0
-    console.error(`process ${proName} is not exists`);
-    return 0;
-  }
-  if (pid.includes(" ")) { // 如果进程pid有多个，则取第一个
-    pid = pid.split(" ")[0]
-  }
-  console.info(`pid of ${proName} is: ${pid}`);
-  // 根据pid查询内存值
-  let cmd2 = `hidumper --mem ${pid} | grep Total`;
-  console.info(`get mem, exec cmd: ${cmd2}`);
-  resultStr = await abilityDelegator.executeShellCommand(cmd2, 10);
-  let pssStr = resultStr.stdResult.toString().trim();
-  if (pssStr.split("\n").length < 2) {
-    console.error("系统错误， hidumper --mem 格式变更，请联系管理员处理")
-    return 0
-  }
-  let pss = pssStr.split("\n")[1].trim().split(/\s+/)[1]
-  console.info(`mem of ${proName} is: ${pss}`);
-  return parseInt(pss)
-}
-
-/**
- * @desc 清空日志目录
- * @param { string } path 日志目录，默认清空故障日志的目录：/data/log/faultlog/faultlogger/
- */
-export async function clearLogger(path: string ="/data/log/faultlog/faultlogger/") {
-  let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  let cmd1 = `rm -f ${path}`;
-  console.info(`clear logger, exec cmd: ${cmd1}`);
-  await abilityDelegator.executeShellCommand(cmd1, 10);
-}
-
-/**
- * @desc 检查是否有故障日志
- * @param { string } path 日志目录，默认清空故障日志的目录：/data/log/faultlog/faultlogger/
- * @returns { boolean } false: 没有故障日志, true: 有故障日志
- */
-export async function hasFaultLogger(path: string ="/data/log/faultlog/faultlogger/") {
-  // 故障日志类型
-  let logList = ["jscrash-com.huawei.hnos.camera", "cppcrash--com.huawei.hmos.camera",
-    "appfreeze-com.huawei.hmos.camera", "cppcrash-CameraDaemon,appfreeze-CameraDaemon",
-    "appfreeze-CameraDaemon", "cpperash-camera_service", "sysfreeze-camera_service"]
-  // 查看故障日志目录
-  let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  let cmd1 = `ls ${path}`;
-  console.info(`check whether has fault log, exec cmd: ${cmd1}`);
-  let resultStr = await abilityDelegator.executeShellCommand(cmd1, 10);
-  let files = resultStr.stdResult.toString().trim();
-  if (files != "" && !files.includes("No such file or directory")) {
-    for (let file of files.split("\n")) {
-      for (let log of logList) {
-        if (file.includes(log)){
-          console.warn(`found crash log: ${file}`)
-          return true
-        }
-      }
-    }
-  }
-  console.info(`not found crash log: ${files}`)
-  return false
-}
-
-/**
- * @desc 创建拍照预览输出流
- * @param { camera.CameraManager } cameraManager
- * @param { camera.CameraOutputCapability } cameraOutputCapability
- * @returns { camera.PreviewOutput }
- */
-export async function createPreviewOutputBySurfaceId(cameraManager: camera.CameraManager, profile: camera.Profile
-  , helperInstance: photoAccessHelper.PhotoAccessHelper, photoReceiver: ESObject) {
-
-  // 创建预览输出流,其中参数 surfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
-  let previewOutput: camera.PreviewOutput | undefined = undefined;
-  try {
-    photoHelper = helperInstance;
-    console.log("Profile is " + JSON.stringify(profile));
-    await photoReceiver.getReceivingSurfaceId().then((surfaceId: string) => {
-      previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
-    });
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error(`Failed to create the PreviewOutput instance. error code: ${err.code}`);
-    expect().assertFail()
-  }
-  if (previewOutput === undefined) {
-    return;
-  }
-  return previewOutput
-}
-
-// Image格式与PixelMap格式映射关系。
-let formatToPixelMapFormatMap = new Map<number, image.PixelMapFormat>([
-  [12, image.PixelMapFormat.RGBA_8888],
-  [25, image.PixelMapFormat.NV21],
-  [35, image.PixelMapFormat.YCBCR_P010],
-  [36, image.PixelMapFormat.YCRCB_P010]
-]);
-// PixelMapFormat格式的单个像素点大小映射关系。
-let pixelMapFormatToSizeMap = new Map<image.PixelMapFormat, number>([
-  [image.PixelMapFormat.RGBA_8888, 4],
-  [image.PixelMapFormat.NV21, 1.5],
-  [image.PixelMapFormat.YCBCR_P010, 3],
-  [image.PixelMapFormat.YCRCB_P010, 3]
-]);
-
-/**
- * @desc 开启previewOutput的ImageArrival监听
- * @param { image.ImageReceiver } receiver
- *
- */
-export function onPreviewImageArrival(receiver: image.ImageReceiver, capturePhotoNum: number, beforCount: number): void {
-  receiverinstance = receiver;
-  receviceImagenum = capturePhotoNum;
-  beforeCount = beforCount;
-  receiver.on('imageArrival', PreviewImageArrivalCallback);
-}
-
-let imageArrivalNum = 0 ;
-/**
- * @desc PreviewOutputImageArrival监听回调接收图片
- *
- */
-function PreviewImageArrivalCallback() {
-  let context = getContext();
-    // 获取图像。
-  imageArrivalNum++;
-  receiverinstance.readNextImage((err: BusinessError, nextImage: image.Image) => {
-    if (err || nextImage === undefined) {
-      console.error('readNextImage failed');
-      return;
-    }
-    // 解析图像内容。
-    nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError, imgComponent: image.Component) => {
-      if (err || imgComponent === undefined) {
-        console.error('getComponent failed');
-      }
-      if (imgComponent.byteBuffer) {
-        // 详情见下方解析图片buffer数据参考，本示例以方式一为例。
-        let width = nextImage.size.width; // 获取图片的宽。
-        let height = nextImage.size.height; // 获取图片的高。
-        let stride = imgComponent.rowStride; // 获取图片的stride。
-        let imageFormat = nextImage.format; // 获取图片的format。
-        let pixelMapFormat = formatToPixelMapFormatMap.get(imageFormat) ?? image.PixelMapFormat.NV21;
-        let mSize = pixelMapFormatToSizeMap.get(pixelMapFormat) ?? 1.5;
-        console.info(`getComponent with width:${width} height:${height} stride:${stride}`);
-        // pixelMap创建时使用的size、srcPixelFormat需要与相机预览输出流previewProfile中的size、format保持一致。
-        // stride与width一致。
-        if (stride == width) {
-          try {
-              let pixelMap = await image.createPixelMap(imgComponent.byteBuffer, {
-              size: { height: height, width: width },
-              srcPixelFormat: pixelMapFormat,
-            })
-            if (realCapturePhotoNum <= receviceImagenum){
-              await savePixelMapToAlbum(pixelMap);
-            }
-          } catch (err) {
-            console.error("getComponent 2 failed err is "+JSON.stringify(err))
-          }
-        } else {
-          // stride与width不一致。
-          const dstBufferSize = width * height * mSize
-          const dstArr = new Uint8Array(dstBufferSize)
-          for (let j = 0; j < height * mSize; j++) {
-            const srcBuf = new Uint8Array(imgComponent.byteBuffer, j * stride, width)
-            dstArr.set(srcBuf, j * width)
-          }
-            let pixelMap = await image.createPixelMap(dstArr.buffer, {
-            size: { height: height, width: width },
-            srcPixelFormat: pixelMapFormat,
-          })
-          if (realCapturePhotoNum <= receviceImagenum){
-            await savePixelMapToAlbum(pixelMap);
-          }
-        }
-      } else {
-        console.error('getComponent byteBuffer is null');
-      }
-      // 确保当前buffer没有在使用的情况下，可进行资源释放。
-      // 如果对buffer进行异步操作，需要在异步操作结束后再释放该资源（nextImage.release()）。
-      nextImage.release();
-    })
-  })
-}
-
-/**
- * @desc PreviewOutputImageArrival监听出图5张后
- * @param { image.ImageReceiver } receiver
- *
- */
-export async function awaitingImageCapture(capturePhotoNum: number): Promise<void> {
-  beginTime = Date.now();
-  while (realCapturePhotoNum < capturePhotoNum) {
-    await sleep(200);
-    let tmpTime = Date.now();
-    if (tmpTime - beginTime > 150000) {
-      beginTime = 0;
-      console.info('delay fail realCapturePhotoNum is' + realCapturePhotoNum)
-      console.info('delay fail capturePhotoNum is' + capturePhotoNum)
-      expect().assertFail();
-      break;
-    }
-  }
-}
-//时间戳_分辨率_格式
-async function savePixelMapToAlbum(pixelMap: image.PixelMap) {
-  let uri = await photoHelper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
-  try {
-    let file = await fs.open(uri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    let imagePackerApi = image.createImagePacker();
-    let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-    imagePackerApi.packToFile(pixelMap, file.fd, packOpts, (err: BusinessError) => {
-      if (err) {
-        console.error(`getComponent Failed to pack the image to file.code ${err.code},message is ${err.message}`);
-      } else {
-        console.info('getComponent Succeeded in packing the image to file.');
-        imagePackerApi.release((err: BusinessError) => {
-          if (err) {
-            console.error(`Failed to release the image source instance.code ${err.code},message is ${err.message}`);
-          } else {
-            console.info('Succeeded in releasing the image source instance.');
-            fs.close(file.fd);
-          }
-        })
-      }
-      realCapturePhotoNum++
-      console.log("getComponent realCapturePhotoNum is " + realCapturePhotoNum);
-    })
-  } catch (err) {
-    console.error("getComponent failed err is " + JSON.stringify(err))
-  }
-}
-
-/**
- * @desc 创建预览图像接收对象
- * @param { camera.Profile } previewProfile
- * @returns { camera.ImageReceiver }
- */
-export function getPreviewImageReceiver(previewProfile: camera.Profile) {
-  let photoReceiver: image.ImageReceiver | undefined;
-  try {
-    let size: image.Size = { width: previewProfile.size.width, height: previewProfile.size.height };
-    photoReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-  } catch (error) {
-    let err = error as BusinessError;
-    console.error(`error is Failed to createImageReceiver. error: ${JSON.stringify(err)}`);
-    expect().assertFail()
-  }
-  return photoReceiver;
-}
-
-/**
- * @desc 获取当前时间, 时间格式固定为：年月日_时分秒
- */
-function getDateStringWithTimeStamp(timestamp: number): string {
-  let date = new Date(timestamp);
-  const year = date.getFullYear();
-  const month = ('0' + (date.getMonth() + 1)).slice(-2);
-  const day = ('0' + date.getDate()).slice(-2);
-  const hour = date.getHours();
-  const min = date.getMinutes();
-  const sec = date.getSeconds();
-  return `${year}${month}${day}_${hour}${min}${sec}`;
-}
-
-
-/**
  * @desc 根据用例信息, 生成录像或图片文件的名称
  * @param { camera.SceneMode } mode 相机模式
  * @param { camera.CameraDevice } cameraId 相机信息
@@ -2226,7 +1664,8 @@ export async function generateNameForAsset(
   mode: camera.SceneMode,
   cameraId: camera.CameraDevice,
   videoOrPhotoProfile: camera.Profile,
-  previewProfile: camera.Profile
+  previewProfile: camera.Profile,
+  frameRate?: number
 ) {
   // hdr信息
   let hdrInfo = "Photo"
@@ -2245,90 +1684,36 @@ export async function generateNameForAsset(
   let videoOrPhotoInfo = `f${videoOrPhotoProfile.format}_${videoOrPhotoProfile.size.width}x${videoOrPhotoProfile.size.height}`
   // 预览分辨率
   let previewInfo = `f${previewProfile.format}_${previewProfile.size.width}x${previewProfile.size.height}`
+  // 帧率
+  let frameRateInfo = ""
+  if (frameRate) {
+    frameRateInfo = `${frameRate.toString().split(".")[0]}fps_`
+  }
 
-  return `${hdrInfo}_${cameraInfo}_${timeInfo}_${videoOrPhotoInfo}_${previewInfo}`
+  return `${hdrInfo}_${cameraInfo}_${timeInfo}_${frameRateInfo}${videoOrPhotoInfo}_${previewInfo}`
 }
 
 /**
- * @desc 比较cameraManager的监听回调（CameraStatusInfo）与CameraDevice在相同index下内容是否一致
+ * @desc 获取当前时间, 时间格式固定为：年月日_时分秒
  */
-export async function CameraStatusInfoComparisonsCameraDevice(context: Context, done: Function) {
-  // 创建CameraManager对象。
-  let cameraManager: camera.CameraManager = camera.getCameraManager(context);
-  if (!cameraManager) {
-    console.error("camera.getCameraManager error");
-    return;
-  }
-
-  // 获取相机列表。
-  let cameraArray: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
-  if (cameraArray.length <= 0) {
-    console.error("cameraManager.getSupportedCameras error");
-    return;
-  }
-
-  let is_status_3: boolean = false; 
-  let deviceIndex = 0;
-  // 监听相机状态变化。
-  cameraManager.on('cameraStatus', (err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo) => {
-    if (err !== undefined && err.code !== 0) {
-      console.error('cameraStatus with errorCode = ' + err.code);
-      return;
-    }
-    if (cameraStatusInfo.status == 3) {
-      is_status_3 = true;
-      let matchedCamera = cameraArray[deviceIndex];
-      console.info('cameraManager.on cameraId: ' + cameraStatusInfo.camera.cameraId + ', matchedCamera cameraId: ' + matchedCamera?.cameraId);
-      console.info('cameraManager.on cameraPosition: ' + cameraStatusInfo.camera.cameraPosition + ', matchedCamera cameraPosition: ' + matchedCamera?.cameraPosition);
-      console.info('cameraManager.on cameraType: ' + cameraStatusInfo.camera.cameraType + ', matchedCamera cameraType: ' + matchedCamera?.cameraType);
-      console.info('cameraManager.on connectionType: ' + cameraStatusInfo.camera.connectionType + ', matchedCamera connectionType: ' + matchedCamera?.connectionType);
-      console.info('cameraManager.on cameraOrientation: ' + cameraStatusInfo.camera.cameraOrientation + ', matchedCamera cameraOrientation: ' + matchedCamera?.cameraOrientation);
-      console.info(`cameraManager.on status: ${cameraStatusInfo.status}`);
-      expect(cameraStatusInfo.camera.cameraId).assertEqual(matchedCamera?.cameraId);
-      expect(cameraStatusInfo.camera.cameraPosition).assertEqual(matchedCamera?.cameraPosition);
-      expect(cameraStatusInfo.camera.cameraType).assertEqual(matchedCamera?.cameraType);
-      expect(cameraStatusInfo.camera.connectionType).assertEqual(matchedCamera?.connectionType);
-      expect(cameraStatusInfo.camera.cameraOrientation).assertEqual(matchedCamera?.cameraOrientation);
-      deviceIndex += 1;
-    }
-  });
-
-  for (let index = 0; index < cameraArray.length; index++) {
-    // 创建相机输入流。
-    let cameraInput: camera.CameraInput | undefined = undefined;
-    try {
-      cameraInput = cameraManager.createCameraInput(cameraArray[index]);
-    } catch (error) {
-      let err = error as BusinessError;
-      console.error('Failed to createCameraInput errorCode = ' + err.code);
-    }
-    if (cameraInput === undefined) {
-      return;
-    }
-
-    // 监听cameraInput错误信息。
-    let cameraDevice: camera.CameraDevice = cameraArray[index];
-    cameraInput.on('error', cameraDevice, (error: BusinessError) => {
-      console.error(`Camera input error code: ${error.code}`);
-    })
-
-    // 打开相机。
-    try {
-      console.info('cameraId : ' + cameraArray[index].cameraId);                          // 获取相机ID。
-      console.info('cameraPosition : ' + cameraArray[index].cameraPosition);              // 获取相机位置。
-      console.info('cameraType : ' + cameraArray[index].cameraType);                      // 获取相机类型。
-      console.info('connectionType : ' + cameraArray[index].connectionType);              // 获取相机连接类型。
-      console.info('cameraOrientation : ' + cameraArray[index].cameraOrientation);        // 获取镜头的安装角度。
-      await cameraInput.open();
-    } catch (e) {
-      console.info(`error is: ${e.code} ${e.message}`);
-      expect(false).assertTrue;
-    }
-    // 释放相机输入流。
-    await cameraInput.close();
-  }
-  cameraManager.off('cameraStatus');
-  expect(is_status_3).assertTrue;
-  done();
+function getDateStringWithTimeStamp(timestamp: number): string {
+  let date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = ('0' + (date.getMonth() + 1)).slice(-2);
+  const day = ('0' + date.getDate()).slice(-2);
+  const hour = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
+  return `${year}${month}${day}_${hour}${min}${sec}`;
 }
+
+
+
+
+
+
+
+
+
+
 

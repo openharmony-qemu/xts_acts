@@ -140,6 +140,7 @@ struct UIContextIndex {
     Column({ space: 5 } as ColumnOptions) {
       Button('resolveUIContext')
         .id('uiContextResolveUIContextBtn')
+        .height('4%')
         .onClick(() => {
           try {
             const resolved: ResolvedUIContext = UIContext.resolveUIContext();
@@ -148,10 +149,11 @@ struct UIContextIndex {
             this.resolveUIContextStatus = 'resolveUIContext_fail';
           }
         });
-      Text(this.resolveUIContextStatus).key('uiContextResolveUIContextStatus');
+      Text(this.resolveUIContextStatus).key('uiContextResolveUIContextStatus').height('3%');
 
       Button('getMagnifier')
         .id('uiContextGetMagnifierBtn')
+        .height('4%')
         .onClick(() => {
           try {
             const magnifier = this.getUIContext().getMagnifier();
@@ -160,10 +162,11 @@ struct UIContextIndex {
             this.getMagnifierStatus = 'getMagnifier_fail';
           }
         });
-      Text(this.getMagnifierStatus).key('uiContextGetMagnifierStatus');
+      Text(this.getMagnifierStatus).key('uiContextGetMagnifierStatus').height('3%');
 
       Button('getMeasureUtils')
         .id('uiContextGetMeasureUtilsBtn')
+        .height('4%')
         .onClick(() => {
           try {
             const measureUtils = this.getUIContext().getMeasureUtils();
@@ -172,10 +175,11 @@ struct UIContextIndex {
             this.getMeasureUtilsStatus = 'getMeasureUtils_fail';
           }
         });
-      Text(this.getMeasureUtilsStatus).key('uiContextGetMeasureUtilsStatus');
+      Text(this.getMeasureUtilsStatus).key('uiContextGetMeasureUtilsStatus').height('3%');
 
       Button('animateToImmediately')
         .id('uiContextAnimateToImmediatelyBtn')
+        .height('4%')
         .onClick(() => {
           try {
             this.getUIContext().animateToImmediately({ duration: 10 }, () => {
@@ -185,10 +189,11 @@ struct UIContextIndex {
             this.animateToImmediatelyStatus = 'animateToImmediately_fail';
           }
         });
-      Text(this.animateToImmediatelyStatus).key('uiContextAnimateToImmediatelyStatus');
+      Text(this.animateToImmediatelyStatus).key('uiContextAnimateToImmediatelyStatus').height('3%');
 
       Button('vp2px')
         .id('uiContextVp2pxBtn')
+        .height('4%')
         .onClick(() => {
           try {
             const px: number = this.getUIContext().vp2px(10);
@@ -197,10 +202,11 @@ struct UIContextIndex {
             this.vp2pxStatus = 'vp2px_fail';
           }
         });
-      Text(this.vp2pxStatus).key('uiContextVp2pxStatus');
+      Text(this.vp2pxStatus).key('uiContextVp2pxStatus').height('3%');
 
       Button('getWindowId')
         .id('uiContextGetWindowIdBtn')
+        .height('4%')
         .onClick(() => {
           try {
             const windowId = this.getUIContext().getWindowId();
@@ -209,31 +215,35 @@ struct UIContextIndex {
             this.getWindowIdStatus = 'getWindowId_fail';
           }
         });
-      Text(this.getWindowIdStatus).key('uiContextGetWindowIdStatus');
+      Text(this.getWindowIdStatus).key('uiContextGetWindowIdStatus').height('3%');
 
       Button('openBindSheet')
         .id('uiContextOpenBindSheetBtn')
+        .height('4%')
         .onClick(() => {
           this.openBindSheetAsync();
         });
-      Text(this.openBindSheetStatus).key('uiContextOpenBindSheetStatus');
+      Text(this.openBindSheetStatus).key('uiContextOpenBindSheetStatus').height('3%');
 
       Button('updateBindSheet')
         .id('uiContextUpdateBindSheetBtn')
+        .height('4%')
         .onClick(() => {
           this.updateBindSheetAsync();
         });
-      Text(this.updateBindSheetStatus).key('uiContextUpdateBindSheetStatus');
+      Text(this.updateBindSheetStatus).key('uiContextUpdateBindSheetStatus').height('3%');
 
       Button('closeBindSheet')
         .id('uiContextCloseBindSheetBtn')
+        .height('4%')
         .onClick(() => {
           this.closeBindSheetAsync();
         });
-      Text(this.closeBindSheetStatus).key('uiContextCloseBindSheetStatus');
+      Text(this.closeBindSheetStatus).key('uiContextCloseBindSheetStatus').height('3%');
 
       Button('setCustomKeyboardContinueFeature')
         .id('uiContextSetCustomKeyboardContinueFeatureBtn')
+        .height('4%')
         .onClick(() => {
           try {
             this.getUIContext().setCustomKeyboardContinueFeature(CustomKeyboardContinueFeature.ENABLED);
@@ -242,7 +252,7 @@ struct UIContextIndex {
             this.setCustomKeyboardContinueFeatureStatus = 'setCustomKeyboardContinueFeature_fail';
           }
         });
-      Text(this.setCustomKeyboardContinueFeatureStatus).key('uiContextSetCustomKeyboardContinueFeatureStatus');
+      Text(this.setCustomKeyboardContinueFeatureStatus).key('uiContextSetCustomKeyboardContinueFeatureStatus').height('3%');
     }
     .width('100%')
     .height('100%');
