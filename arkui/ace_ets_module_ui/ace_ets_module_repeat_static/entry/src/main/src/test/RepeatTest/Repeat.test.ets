@@ -67,7 +67,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_001
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0100
      * @tc.name repeatPageRenders
      * @tc.desc Verify Repeat test page renders
      * @tc.type   FUNCTION
@@ -90,7 +90,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_002
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0200
      * @tc.name repeatListRenders
      * @tc.desc Verify Repeat list renders with items
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_003
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0300
      * @tc.name virtualScrollOptionsDefault
      * @tc.desc Test VirtualScrollOptions default fields
      * @tc.type   FUNCTION
@@ -140,7 +140,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_004
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0400
      * @tc.name virtualScrollOptionsWithValues
      * @tc.desc Test VirtualScrollOptions with explicit values
      * @tc.type   FUNCTION
@@ -165,7 +165,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_005
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0500
      * @tc.name repeatItemInterface
      * @tc.desc Test RepeatItem interface fields
      * @tc.type   FUNCTION
@@ -189,7 +189,7 @@ export default function RepeatTest() {
     });
 
     /**
-     * @tc.number RepeatTest_006
+     * @tc.number SUB_ARKUI_ACE_REPEAT_0600
      * @tc.name repeatDebugLine
      * @tc.desc Verify RepeatAttribute.debugLine method exists
      * @tc.type   FUNCTION

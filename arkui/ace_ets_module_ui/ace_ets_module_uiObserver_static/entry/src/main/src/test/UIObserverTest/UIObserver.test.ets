@@ -52,7 +52,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_001
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0100
      * @tc.name nodeRenderStateAboutToRenderIn
      * @tc.desc Test NodeRenderState.ABOUT_TO_RENDER_IN enum value
      * @tc.type   FUNCTION
@@ -72,7 +72,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_002
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0200
      * @tc.name nodeRenderStateAboutToRenderOut
      * @tc.desc Test NodeRenderState.ABOUT_TO_RENDER_OUT enum value
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_003
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0300
      * @tc.name uiObserverPageRenders
      * @tc.desc Verify UIObserver page renders
      * @tc.type   FUNCTION
@@ -113,7 +113,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_004
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0400
      * @tc.name uiObserverListRendered
      * @tc.desc Verify List component in UIObserver page renders
      * @tc.type   FUNCTION
@@ -134,7 +134,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_005
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0500
      * @tc.name uiObserverInstanceCreated
      * @tc.desc Verify UIObserver was obtained via getUIObserver in page
      * @tc.type   FUNCTION
@@ -154,7 +154,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_006
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0600
      * @tc.name nodeRenderStateValuesFromPage
      * @tc.desc Verify NodeRenderState values stored by page in AppStorage
      * @tc.type   FUNCTION
@@ -175,7 +175,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_007
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0700
      * @tc.name onNodeRenderStateRegistered
      * @tc.desc Verify onNodeRenderState was called in page onPageShow
      * @tc.type   FUNCTION
@@ -195,7 +195,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_008
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0800
      * @tc.name offNodeRenderStateCalled
      * @tc.desc Verify offNodeRenderState was called after timeout
      * @tc.type   FUNCTION
@@ -215,7 +215,7 @@ export default function UIObserverTest() {
     });
 
     /**
-     * @tc.number UIObserverTest_009
+     * @tc.number SUB_ARKUI_ACE_UIOBSERVER_0900
      * @tc.name observedTargetRendered
      * @tc.desc Verify observedTarget Text component renders
      * @tc.type   FUNCTION

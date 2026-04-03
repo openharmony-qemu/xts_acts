@@ -63,7 +63,7 @@ export default function TabsNestedTest() {
     });
 
     /**
-     * @tc.number TabsNestedTest_001
+     * @tc.number SUB_ARKUI_ACE_TABSNESTED_0100
      * @tc.name tabsNestedSelfOnlyEnum
      * @tc.desc TabsNestedScrollMode.SELF_ONLY equals 0
      * @tc.type   FUNCTION
@@ -85,7 +85,7 @@ export default function TabsNestedTest() {
     });
 
     /**
-     * @tc.number TabsNestedTest_002
+     * @tc.number SUB_ARKUI_ACE_TABSNESTED_0200
      * @tc.name tabsNestedSelfFirstEnum
      * @tc.desc TabsNestedScrollMode.SELF_FIRST equals 1
      * @tc.type   FUNCTION
@@ -107,7 +107,7 @@ export default function TabsNestedTest() {
     });
 
     /**
-     * @tc.number TabsNestedTest_003
+     * @tc.number SUB_ARKUI_ACE_TABSNESTED_0300
      * @tc.name tabsNestedSelfOnly
      * @tc.desc Inspector: Tabs with nestedScroll(SELF_ONLY)
      * @tc.type   FUNCTION
@@ -134,7 +134,7 @@ export default function TabsNestedTest() {
     });
 
     /**
-     * @tc.number TabsNestedTest_004
+     * @tc.number SUB_ARKUI_ACE_TABSNESTED_0400
      * @tc.name tabsNestedSelfFirst
      * @tc.desc Inspector: Tabs with nestedScroll(SELF_FIRST)
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function TabsNestedTest() {
     });
 
     /**
-     * @tc.number TabsNestedTest_005
+     * @tc.number SUB_ARKUI_ACE_TABSNESTED_0500
      * @tc.name tabsNestedUndefined
      * @tc.desc Inspector: Tabs with nestedScroll(undefined)
      * @tc.type   FUNCTION
