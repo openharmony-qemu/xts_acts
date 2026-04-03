@@ -18,7 +18,7 @@ import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function drawingTsPath7Test() {
+export default function drawingTsPath7Test(): void {
   describe('DrawingTsPath7Test', () => {
     beforeEach(() => {
       
@@ -38,7 +38,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringEmpty
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level0
+     * @tc.level     LEVEL0
      */
     it('testPathConvertToSvgStringEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathConvertToSvgStringEmpty';
@@ -60,7 +60,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringWithMoveTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathConvertToSvgStringWithMoveTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathConvertToSvgStringWithMoveTo';
@@ -83,7 +83,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringWithLineTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathConvertToSvgStringWithLineTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathConvertToSvgStringWithLineTo';
@@ -109,7 +109,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringWithClose
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathConvertToSvgStringWithClose', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathConvertToSvgStringWithClose';
@@ -135,7 +135,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringMultipleCalls
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathConvertToSvgStringMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathConvertToSvgStringMultipleCalls';
@@ -164,7 +164,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathConvertToSvgStringAfterReset
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathConvertToSvgStringAfterReset', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathConvertToSvgStringAfterReset';
@@ -189,7 +189,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataEmpty
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level0
+     * @tc.level     LEVEL0
      */
     it('testPathGetPointDataEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathGetPointDataEmpty';
@@ -211,7 +211,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataWithMoveTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetPointDataWithMoveTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetPointDataWithMoveTo';
@@ -237,7 +237,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataWithLineTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetPointDataWithLineTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetPointDataWithLineTo';
@@ -264,7 +264,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataWithCurve
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetPointDataWithCurve', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetPointDataWithCurve';
@@ -291,7 +291,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataMultipleCalls
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetPointDataMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetPointDataMultipleCalls';
@@ -320,7 +320,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetPointDataAfterReset
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetPointDataAfterReset', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetPointDataAfterReset';
@@ -345,7 +345,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataEmpty
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level0
+     * @tc.level     LEVEL0
      */
     it('testPathGetVerbDataEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathGetVerbDataEmpty';
@@ -367,7 +367,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithMoveTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetVerbDataWithMoveTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithMoveTo';
@@ -392,7 +392,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithLineTo
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetVerbDataWithLineTo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithLineTo';
@@ -421,7 +421,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithClose
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetVerbDataWithClose', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithClose';
@@ -450,7 +450,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithQuad
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level         Level1
+     * @tc.level         LEVEL1
      */
     it('testPathGetVerbDataWithQuad', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithQuad';
@@ -479,7 +479,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithCubic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetVerbDataWithCubic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithCubic';
@@ -508,7 +508,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithConic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetVerbDataWithConic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetVerbDataWithConic';
@@ -537,7 +537,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataAllVerbs
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetVerbDataAllVerbs', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetVerbDataAllVerbs';
@@ -574,7 +574,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataWithDone
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetVerbDataWithDone', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetVerbDataWithDone';
@@ -608,7 +608,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetVerbDataMultipleCalls
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetVerbDataMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetVerbDataMultipleCalls';
@@ -637,7 +637,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataEmpty
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level0
+     * @tc.level     LEVEL0
      */
     it('testPathGetConicWeightDataEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathGetConicWeightDataEmpty';
@@ -659,7 +659,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataWithoutConic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetConicWeightDataWithoutConic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetConicWeightDataWithoutConic';
@@ -684,7 +684,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataWithConic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetConicWeightDataWithConic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetConicWeightDataWithConic';
@@ -710,7 +710,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataWeightZero
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetConicWeightDataWeightZero', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetConicWeightDataWeightZero';
@@ -734,7 +734,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataWeightOne
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.level     LEVEL1
      */
     it('testPathGetConicWeightDataWeightOne', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testPathGetConicWeightDataWeightOne';
@@ -758,7 +758,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataMultipleConic
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetConicWeightDataMultipleConic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetConicWeightDataMultipleConic';
@@ -791,7 +791,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathGetConicWeightDataMultipleCalls
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level2
+     * @tc.level     LEVEL2
      */
     it('testPathGetConicWeightDataMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathGetConicWeightDataMultipleCalls';
@@ -820,7 +820,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathDataMethodsConsistency
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level3
+     * @tc.level     LEVEL3
      */
     it('testPathDataMethodsConsistency', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathDataMethodsConsistency';
@@ -855,7 +855,7 @@ export default function drawingTsPath7Test() {
      * @tc.desc      testPathDataMethodsWithSvgConversion
      * @tc.size      MediumTest
      * @tc.type      Function
-     * @tc.level     Level3
+     * @tc.level     LEVEL3
      */
     it('testPathDataMethodsWithSvgConversion', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathDataMethodsWithSvgConversion';
