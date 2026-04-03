@@ -29,7 +29,7 @@ export default function StreamDuplex05Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0100
      * @tc.name      testStreamDuplex05Chapter0001
      * @tc.desc      Test uncork method of Duplex stream, write null and uncork
      * @tc.size      MediumTest
@@ -62,7 +62,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0200
      * @tc.name      testStreamDuplex05Chapter0002
      * @tc.desc      Test uncork method of Duplex stream, write undefined and uncork
      * @tc.size      MediumTest
@@ -95,7 +95,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0300
      * @tc.name      testStreamDuplex05Chapter0003
      * @tc.desc      Test uncork method of Duplex stream, write special characters and uncork
      * @tc.size      MediumTest
@@ -125,7 +125,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0400
      * @tc.name      testStreamDuplex05Chapter0004
      * @tc.desc      Test uncork method of Duplex stream, write escape characters and uncork
      * @tc.size      MediumTest
@@ -155,7 +155,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0500
      * @tc.name      testStreamDuplex05Chapter0005
      * @tc.desc      Test uncork method of Duplex stream, write emoji characters and uncork
      * @tc.size      MediumTest
@@ -185,7 +185,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0600
      * @tc.name      testStreamDuplex05Chapter0006
      * @tc.desc      Test uncork method of Duplex stream, write large data and uncork
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0700
      * @tc.name      testStreamDuplex05Chapter0007
      * @tc.desc      Test uncork method of Duplex stream, write different typed arrays and uncork
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0800
      * @tc.name      testStreamDuplex05Chapter0008
      * @tc.desc      Test uncork method of Duplex stream, check writableCorked never goes negative
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0900
      * @tc.name      testStreamDuplex05Chapter0009
      * @tc.desc      Test uncork method of Duplex stream, interleaved cork and uncork calls
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function StreamDuplex05Test() {
       expect(duplexStream.writableCorked).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1000
      * @tc.name      testStreamDuplex05Chapter0010
      * @tc.desc      Test uncork method with Int8Array boundary values (-128, 127, -129, 128)
      * @tc.size      MediumTest
@@ -341,7 +341,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1100
      * @tc.name      testStreamDuplex05Chapter0011
      * @tc.desc      Test uncork method with Uint8Array boundary values (0, 255, -1, 256)
      * @tc.size      MediumTest
@@ -380,7 +380,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1200
      * @tc.name      testStreamDuplex05Chapter0012
      * @tc.desc      Test uncork method with Uint8ClampedArray boundary values
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1300
      * @tc.name      testStreamDuplex05Chapter0013
      * @tc.desc      Test uncork method with Int16Array boundary values
      * @tc.size      MediumTest
@@ -446,7 +446,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1400
      * @tc.name      testStreamDuplex05Chapter0014
      * @tc.desc      Test uncork method with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -479,7 +479,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1500
      * @tc.name      testStreamDuplex05Chapter0015
      * @tc.desc      Test uncork method with Int32Array boundary values
      * @tc.size      MediumTest
@@ -512,7 +512,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1600
      * @tc.name      testStreamDuplex05Chapter0016
      * @tc.desc      Test uncork method with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1700
      * @tc.name      testStreamDuplex05Chapter0017
      * @tc.desc      Test uncork method with Float32Array special values (Infinity, -Infinity, NaN)
      * @tc.size      MediumTest
@@ -578,7 +578,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1800
      * @tc.name      testStreamDuplex05Chapter0018
      * @tc.desc      Test uncork method with Float64Array special values (Infinity, -Infinity, NaN)
      * @tc.size      MediumTest
@@ -621,7 +621,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_1900
      * @tc.name      testStreamDuplex05Chapter0019
      * @tc.desc      Test uncork method with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2000
      * @tc.name      testStreamDuplex05Chapter0020
      * @tc.desc      Test uncork method with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2100
      * @tc.name      testStreamDuplex05Chapter0021
      * @tc.desc      Test uncork method with string containing all ASCII characters
      * @tc.size      MediumTest
@@ -733,7 +733,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2200
      * @tc.name      testStreamDuplex05Chapter0022
      * @tc.desc      Test uncork method with repeated special characters
      * @tc.size      MediumTest
@@ -764,7 +764,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2300
      * @tc.name      testStreamDuplex05Chapter0023
      * @tc.desc      Test uncork method with escape characters
      * @tc.size      MediumTest
@@ -795,7 +795,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2400
      * @tc.name      testStreamDuplex05Chapter0024
      * @tc.desc      Test uncork method with illegal Unicode encoding
      * @tc.size      MediumTest
@@ -826,7 +826,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2500
      * @tc.name      testStreamDuplex05Chapter0025
      * @tc.desc      Test uncork method with keyword strings
      * @tc.size      MediumTest
@@ -859,7 +859,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2600
      * @tc.name      testStreamDuplex05Chapter0026
      * @tc.desc      Test uncork method with treeString type
      * @tc.size      MediumTest
@@ -898,7 +898,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2700
      * @tc.name      testStreamDuplex05Chapter0027
      * @tc.desc      Test uncork method with sliceString type
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2800
      * @tc.name      testStreamDuplex05Chapter0028
      * @tc.desc      Test uncork method with very large string (memory test)
      * @tc.size      MediumTest
@@ -962,7 +962,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2900
      * @tc.name      testStreamDuplex05Chapter0029
      * @tc.desc      Test uncork method with number type strings (various formats)
      * @tc.size      MediumTest
@@ -1012,7 +1012,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3000
      * @tc.name      testStreamDuplex05Chapter0030
      * @tc.desc      Test uncork method with boolean type strings
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3100
      * @tc.name      testStreamDuplex05Chapter0031
      * @tc.desc      Test uncork method with array type data
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3200
      * @tc.name      testStreamDuplex05Chapter0032
      * @tc.desc      Test uncork method with object type data
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3300
      * @tc.name      testStreamDuplex05Chapter0033
      * @tc.desc      Test uncork method with special arrays containing NaN/Infinity
      * @tc.size      MediumTest
@@ -1195,7 +1195,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3400
      * @tc.name      testStreamDuplex05Chapter0034
      * @tc.desc      Test uncork method in async context
      * @tc.size      MediumTest
@@ -1230,7 +1230,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3500
      * @tc.name      testStreamDuplex05Chapter0035
      * @tc.desc      Test uncork method with multiple async writes
      * @tc.size      MediumTest
@@ -1269,7 +1269,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3600
      * @tc.name      testStreamDuplex05Chapter0036
      * @tc.desc      Test uncork method with object property manipulation scenario
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3700
      * @tc.name      testStreamDuplex05Chapter0037
      * @tc.desc      Test uncork method with performance timing for multiple calls
      * @tc.size      MediumTest
@@ -1320,7 +1320,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3800
      * @tc.name      testStreamDuplex05Chapter0038
      * @tc.desc      Test uncork method with large data
      * @tc.size      MediumTest
@@ -1353,7 +1353,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_3900
      * @tc.name      testStreamDuplex05Chapter0039
      * @tc.desc      Test uncork method with large data creation and release scenario
      * @tc.size      MediumTest
@@ -1389,7 +1389,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4000
      * @tc.name      testStreamDuplex05Chapter0040
      * @tc.desc      Test uncork method with try-catch error handling
      * @tc.size      MediumTest
@@ -1412,7 +1412,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4100
      * @tc.name      testStreamDuplex05Chapter0041
      * @tc.desc      Test uncork method with finally block cleanup
      * @tc.size      MediumTest
@@ -1435,7 +1435,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4200
      * @tc.name      testStreamDuplex05Chapter0042
      * @tc.desc      Test uncork method in strict mode context
      * @tc.size      MediumTest
@@ -1454,7 +1454,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4300
      * @tc.name      testStreamDuplex05Chapter0043
      * @tc.desc      Test uncork method with stream immutability scenario
      * @tc.size      MediumTest
@@ -1482,7 +1482,7 @@ export default function StreamDuplex05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4400
      * @tc.name      testStreamDuplex05Chapter0044
      * @tc.desc      Test uncork method basic functionality
      * @tc.size      MediumTest
@@ -1501,7 +1501,7 @@ export default function StreamDuplex05Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST05_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_4500
      * @tc.name      testStreamDuplex05Chapter0045
      * @tc.desc      Test uncork method with multiple cork and uncork operations
      * @tc.size      MediumTest

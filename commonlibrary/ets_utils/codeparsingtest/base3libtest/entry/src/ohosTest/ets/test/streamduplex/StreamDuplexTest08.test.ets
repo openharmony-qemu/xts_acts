@@ -29,7 +29,7 @@ export default function StreamDuplex08Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0100
      * @tc.name      testStreamDuplex08Chapter0001
      * @tc.desc      Test doWritev with extremely large string causing potential overflow
      * @tc.size      MediumTest
@@ -84,7 +84,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0200
      * @tc.name      testStreamDuplex08Chapter0002
      * @tc.desc      Test doWritev with null and undefined values (negative test)
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0300
      * @tc.name      testStreamDuplex08Chapter0003
      * @tc.desc      Test doWritev with different encoding parameter values
      * @tc.size      MediumTest
@@ -202,7 +202,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0400
      * @tc.name      testStreamDuplex08Chapter0004
      * @tc.desc      Test doWritev with empty string and empty Uint8Array (negative test)
      * @tc.size      MediumTest
@@ -262,7 +262,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0500
      * @tc.name      testStreamDuplex08Chapter0005
      * @tc.desc      Test doWritev with invalid encoding types (negative test)
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0600
      * @tc.name      testStreamDuplex08Chapter0006
      * @tc.desc      Test doWritev with extremely large chunk causing memory issues (negative test)
      * @tc.size      MediumTest
@@ -387,7 +387,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0700
      * @tc.name      testStreamDuplex08Chapter0007
      * @tc.desc      Test doWritev with invalid callback usage (negative test)
      * @tc.size      MediumTest
@@ -451,7 +451,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0800
      * @tc.name      testStreamDuplex08Chapter0009
      * @tc.desc      Test doWritev with various string and Uint8Array types
      * @tc.size      MediumTest
@@ -516,7 +516,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0900
      * @tc.name      testStreamDuplex08Chapter0010
      * @tc.desc      Test doWritev with multiple uncork calls (negative test)
      * @tc.size      MediumTest
@@ -572,7 +572,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1000
      * @tc.name      testStreamDuplex08Chapter0011
      * @tc.desc      Test doWritev with rapid cork/uncork cycles (negative test)
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1100
      * @tc.name      testStreamDuplex08Chapter0012
      * @tc.desc      Test doWritev with concurrent writes from multiple sources
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1200
      * @tc.name      testStreamDuplex08Chapter0013
      * @tc.desc      Test doWritev with invalid data types (negative test)
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1300
      * @tc.name      testStreamDuplex08Chapter0014
      * @tc.desc      Test doWritev with corrupted or malformed data
      * @tc.size      MediumTest
@@ -826,7 +826,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1400
      * @tc.name      testStreamDuplex08Chapter0015
      * @tc.desc      Test doWritev with edge case operations
      * @tc.size      MediumTest
@@ -891,7 +891,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1500
      * @tc.name      testStreamDuplex08Chapter0016
      * @tc.desc      Test doWritev with very small buffer size (negative test)
      * @tc.size      MediumTest
@@ -958,7 +958,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1600
      * @tc.name      testStreamDuplex08Chapter0018
      * @tc.desc      Test doWritev with destroyed stream (negative test)
      * @tc.size      MediumTest
@@ -1027,7 +1027,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1700
      * @tc.name      testStreamDuplex08Chapter0019
      * @tc.desc      Test doWritev with comprehensive error recovery
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1800
      * @tc.name      testStreamDuplex08Chapter0020
      * @tc.desc      Test doWritev with callback errors propagation (negative test)
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function StreamDuplex08Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTEST08_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1900
      * @tc.name      testStreamDuplex08Chapter0021
      * @tc.desc      Test doWritev with multiple end calls (negative test)
      * @tc.size      MediumTest

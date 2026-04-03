@@ -394,7 +394,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0100
      * @tc.name      Writableconstructortest0001
      * @tc.desc      Verify Writable basic instantiation properties.
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0200
      * @tc.name      Writableconstructortest0002
      * @tc.desc      Verify Writable write Uint8Array data with callback.
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0300
      * @tc.name      Writableconstructortest0003
      * @tc.desc      Verify Writable end method callback trigger.
      * @tc.size      MediumTest
@@ -453,7 +453,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0400
      * @tc.name      Writableconstructortest0004
      * @tc.desc      Verify Writable close event trigger after end.
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0500
      * @tc.name      Writableconstructortest0005
      * @tc.desc      Verify Writable write return value is true.
      * @tc.size      MediumTest
@@ -491,7 +491,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0600
      * @tc.name      Writableconstructortest0006
      * @tc.desc      Verify error when write to Writable missing doWrite.
      * @tc.size      MediumTest
@@ -515,7 +515,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0700
      * @tc.name      Writableconstructortest0007
      * @tc.desc      Verify Writable end method callback execution.
      * @tc.size      MediumTest
@@ -535,7 +535,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0800
      * @tc.name      Writableconstructortest0008
      * @tc.desc      Verify error event trigger for invalid encoding.
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_0900
      * @tc.name      Writableconstructortest0009
      * @tc.desc      Verify Writable end method execute only once.
      * @tc.size      MediumTest
@@ -574,7 +574,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1000
      * @tc.name      Writableconstructortest0010
      * @tc.desc      Verify Writable write with custom encoding.
      * @tc.size      MediumTest
@@ -592,7 +592,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1100
      * @tc.name      Writablewritetest0001
      * @tc.desc      Verify Writable write string with default utf8 encoding.
      * @tc.size      MediumTest
@@ -611,7 +611,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1200
      * @tc.name      Writablewritetest0002
      * @tc.desc      Verify Writable write string with gbk encoding.
      * @tc.size      MediumTest
@@ -630,7 +630,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1300
      * @tc.name      Writablewritetest0003
      * @tc.desc      Verify error when write invalid number type chunk to Writable.
      * @tc.size      MediumTest
@@ -656,7 +656,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1400
      * @tc.name      Writablewritetest0004
      * @tc.desc      Verify error when write null/undefined chunk to Writable.
      * @tc.size      MediumTest
@@ -691,7 +691,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1500
      * @tc.name      Writablewritetest0005
      * @tc.desc      Verify error when pass invalid encoding parameter.
      * @tc.size      MediumTest
@@ -715,7 +715,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1600
      * @tc.name      Writablewritetest0006
      * @tc.desc      Verify error when write Uint8Array with invalid number encoding.
      * @tc.size      MediumTest
@@ -740,7 +740,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1700
      * @tc.name      Writablewritetest0007
      * @tc.desc      Verify error when write with unsupported ascii encoding.
      * @tc.size      MediumTest
@@ -764,7 +764,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1800
      * @tc.name      Writablewritetest0009
      * @tc.desc      Verify Writable write with case-insensitive encoding and Uint8Array.
      * @tc.size      MediumTest
@@ -782,7 +782,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_1900
      * @tc.name      writableend0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -803,7 +803,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2000
      * @tc.name      writableend0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -820,7 +820,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2100
      * @tc.name      writableend0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2200
      * @tc.name      writableend0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -865,7 +865,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2300
      * @tc.name      writableend0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -886,7 +886,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2400
      * @tc.name      writableend0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -916,7 +916,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2500
      * @tc.name      writableend0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -938,7 +938,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2600
      * @tc.name      writableend0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -966,7 +966,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2700
      * @tc.name      writableend0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -998,7 +998,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2800
      * @tc.name      writableend0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1025,7 +1025,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_2900
      * @tc.name      writableend0011
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1044,7 +1044,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3000
      * @tc.name      writableend0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1069,7 +1069,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3100
      * @tc.name      setDefaultEncodingTest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1086,7 +1086,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3200
      * @tc.name      setDefaultEncodingTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1106,7 +1106,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3300
      * @tc.name      setDefaultEncodingTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1123,7 +1123,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3400
      * @tc.name      setDefaultEncodingTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3500
      * @tc.name      setDefaultEncodingTest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3600
      * @tc.name      setDefaultEncodingTest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1175,7 +1175,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3700
      * @tc.name      setDefaultEncodingTest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3800
      * @tc.name      setDefaultEncodingTest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1209,7 +1209,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_3900
      * @tc.name      setDefaultEncodingTest0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1226,7 +1226,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4000
      * @tc.name      setDefaultEncodingTest0013
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1242,7 +1242,7 @@ export default function StreamTest_01() {
 
     })
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4100
      * @tc.name      setDefaultEncodingTest0014
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function StreamTest_01() {
 
     })
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4200
      * @tc.name      setDefaultEncodingTest0015
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1275,7 +1275,7 @@ export default function StreamTest_01() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4300
      * @tc.name      corkTest0001
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -1303,7 +1303,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4400
      * @tc.name      corkTest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1339,7 +1339,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4500
      * @tc.name      corkTest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1369,7 +1369,7 @@ export default function StreamTest_01() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTEST01_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTONE_4600
      * @tc.name      corkTest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
