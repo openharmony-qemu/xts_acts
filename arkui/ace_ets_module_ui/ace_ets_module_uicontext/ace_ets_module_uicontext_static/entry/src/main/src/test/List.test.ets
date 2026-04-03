@@ -24,6 +24,7 @@ import UIContextTest from './UIContextTest/UIContext.test';
 import ArkuiObserverScrollEventTest from './ArkuiObserverScrollEventTest/ArkuiObserverScrollEvent.test';
 import UIObserverTextChangeTest from './UIObserverTextChangeTest/UIObserverTextChange.test';
 import UIContextStaticMethodsTest from './UIContextStaticMethodsTest/UIContextStaticMethods.test';
+import GetWindowIdTest from './window/GetWindowIdTest.test';
 
 export default function testsuite() {
   OverlayManagerTest();
@@ -36,4 +37,5 @@ export default function testsuite() {
   ArkuiObserverScrollEventTest();
   UIObserverTextChangeTest();
   UIContextStaticMethodsTest();
+  GetWindowIdTest();
 }

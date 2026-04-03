@@ -44,7 +44,7 @@ export default function graphicImagePixelMapAPI22() {
         let id1 = pixelMap.getUniqueId();
         console.info('www data getUniqueId', id1);
         expect(id1).assertLargerOrEqual(0);
-        pixelMap.release();
+        await pixelMap.release();
         let flag2 = pixelMap.isReleased();
         console.info('www data isReleased', flag2);
         expect(flag2).assertTrue();
@@ -160,7 +160,7 @@ export default function graphicImagePixelMapAPI22() {
       }
       let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
       let pixelMap = image.createPixelMapSync(color, opts);
-      pixelMap.release();
+      await pixelMap.release();
       try {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
@@ -292,7 +292,7 @@ export default function graphicImagePixelMapAPI22() {
       }
       let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
       let pixelMap = image.createPixelMapSync(color, opts);
-      pixelMap.release();
+      await pixelMap.release();
       try {
         await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
           console.info('www data createCroppedAndScaledPixelMap pass');
