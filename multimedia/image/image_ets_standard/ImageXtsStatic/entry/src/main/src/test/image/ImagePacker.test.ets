@@ -1246,7 +1246,7 @@ export default function ImagePackerStaticTest(): void {
 
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_static_0100
      * @tc.name   SUB_MEDIA_IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_static_0100
      * @tc.desc   delayTimeList非空数组覆盖，test_exif_v2.jpg
      * @tc.type   FUNCTION
