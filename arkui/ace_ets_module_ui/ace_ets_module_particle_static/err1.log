@@ -1,0 +1,73 @@
+> hvigor ERROR: Failed :entry:default@CompileArkTSEvolution... 
+> hvigor ERROR: Simultaneous build failed.
+1 ERROR: 11410001 Compile abc files failed.
+Error Message: Failed to proceed to ES2PANDA_STATE_CHECKED
+
+1 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for rippleRegion because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\ets\MainAbility\pages\Particle\ParticleIndex.ets:16:9
+
+2 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for rippleOpts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\ets\MainAbility\pages\Particle\ParticleIndex.ets:17:9
+
+3 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for velRegion because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\ets\MainAbility\pages\Particle\ParticleIndex.ets:18:9
+
+4 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for velOpts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\ets\MainAbility\pages\Particle\ParticleIndex.ets:19:9
+
+5 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("ParticleTest", (() => void)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:16:3
+
+6 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("rippleFieldOptionsConstruct", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:57:5
+
+7 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for region because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:61:13
+
+8 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:62:13
+
+9 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("velocityFieldOptionsConstruct", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:86:5
+
+10 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for region because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:90:13
+
+11 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:91:13
+
+12 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("rippleFieldAmplitudeWavelength", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:281:5
+
+13 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:285:13
+
+14 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts2 because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:288:13
+
+15 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("rippleFieldWaveSpeedAttenuation", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:308:5
+
+16 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:312:13
+
+17 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts2 because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:315:13
+
+18 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("rippleFieldCenterAndRegion", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:335:5
+
+19 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:340:13
+
+20 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("velocityFieldVelocityAndRegion", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:362:5
+
+21 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:367:13
+
+22 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for opts2 because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_particle_static\entry\src\main\src\test\ParticleTest\Particle.test.ets:371:13
+
+
+COMPILE RESULT:FAIL {ERROR:2 WARN:2 INFO:13}
