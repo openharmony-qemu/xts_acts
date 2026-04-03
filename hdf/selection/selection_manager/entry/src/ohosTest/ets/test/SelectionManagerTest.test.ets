@@ -362,7 +362,7 @@ export default function SelectionManagerTest() {
       console.info(`testSelectionManagerTest1300 throw abilityDelegator: ${JSON.stringify(abilityDelegator)}`);
       let context = abilityDelegator.getAppContext();
       console.info(`testSelectionManagerTest1300 throw context: ${JSON.stringify(context)}`);
-      context.stageMode= true;
+      context.stageMode = true;
       try {
         let panelInfo: PanelInfo = {
           panelType: PanelType.MAIN_PANEL,
@@ -1317,7 +1317,7 @@ export default function SelectionManagerTest() {
     /**
      * @tc.name   testSelectionManagerTest4000
      * @tc.number SUB_Selection_EXT_4000
-     * @tc.desc   The code 31400005 is returned when the word content is obtained without the word division operation.
+     * @tc.desc   The code 33600005 is returned when the word content is obtained without the word division operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1341,7 +1341,7 @@ export default function SelectionManagerTest() {
     /**
      * @tc.name   testSelectionManagerTest4100
      * @tc.number SUB_Selection_EXT_4100
-     * @tc.desc   If getSelectionContent is invoked for multiple times without word division, the error code 31400004 is returned.
+     * @tc.desc   If getSelectionContent is invoked for multiple times without word division, the error code 33600004 is returned.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1376,7 +1376,7 @@ export default function SelectionManagerTest() {
     /**
      * @tc.name   testSelectionManagerTest4200
      * @tc.number SUB_Selection_EXT_4200
-     * @tc.desc   If getSelectionContent is invoked for multiple times without word division,31400005 is returned after the delay is added.
+     * @tc.desc   If getSelectionContent is invoked for multiple times without word division,33600005 is returned after the delay is added.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1405,7 +1405,7 @@ export default function SelectionManagerTest() {
         done();
       }
       await new Promise<void>(resolve => setTimeout(resolve, 500));
-      console.info('************* selectionfwk_get_selection_content_003 Test end***`**********');
+      console.info('************* selectionfwk_get_selection_content_003 Test end*************');
       done();
     });
   })
