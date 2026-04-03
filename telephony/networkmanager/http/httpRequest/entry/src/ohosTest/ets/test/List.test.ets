@@ -27,6 +27,10 @@ import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirec
 import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
 import HttpRequestSniTest from './HttpRequestSni.test';
 import HttpRequestCustomResponseHeaderTest from './HttpRequestCustomResponseHeader.test';
+import HttpRequestInactivityMsTest from './HttpRequestInactivityMs.test';
+import HttpRequestPatchTest from './HttpRequestPatch.test';
+import HttpRequestSyncTest from './HttpRequestSync.test';
+import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
@@ -43,6 +47,10 @@ export default function testsuite() {
     HttpRequestOptionsTest();
     HttpRequestSniTest();
     httpErrorCodeTest();
+    HttpRequestInactivityMsTest();
+    HttpRequestPatchTest();
+    HttpRequestSyncTest();
+    HttpRequestReuseConnectionsTest();
   } else {
     EmptyTest()
   }
