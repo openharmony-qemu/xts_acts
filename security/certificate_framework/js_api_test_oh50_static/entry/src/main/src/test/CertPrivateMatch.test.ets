@@ -346,7 +346,7 @@ export default function certFrameworkMatchPrivateTestUnit() {
           expect(ret).assertTrue();
           if (chainResult.validationResult.trustAnchor.CACert) {
             let iRet = chainResult.validationResult.trustAnchor.CACert?.match(param.certMatchParameters);
-            expect(ret).assertTrue();
+            expect(iRet).assertTrue();
           }
         } catch (error) {
           console.error(`Match_PrivKey_Func_1000 1.2 ${error}, error code: ${error.code}`);
