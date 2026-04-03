@@ -28,13 +28,13 @@ struct EnumsIndex {
       AppStorage.setOrCreate<Router>('router', routerInstance);
     } catch (error) { console.info('[ARKUI_NEW] EnumsIndex error ' + error); }
 
-    this.enumInfo = 'DDM_SCREEN=' + DialogDisplayMode.SCREEN_BASED +
-      ',DDM_WINDOW=' + DialogDisplayMode.WINDOW_BASED +
-      ',FWM_DEFAULT=' + FocusWrapMode.DEFAULT +
-      ',FWM_WRAP=' + FocusWrapMode.WRAP_WITH_ARROW +
-      ',EQT_CLICK=' + EventQueryType.ON_CLICK +
-      ',CS_DEFAULT=' + CompetitionStrategy.DEFAULT +
-      ',CS_COMP=' + CompetitionStrategy.COMPETITION;
+    this.enumInfo = 'DDM_SCREEN=' + DialogDisplayMode.SCREEN_BASED
+      + ',DDM_WINDOW=' + DialogDisplayMode.WINDOW_BASED
+      + ',FWM_DEFAULT=' + FocusWrapMode.DEFAULT
+      + ',FWM_WRAP=' + FocusWrapMode.WRAP_WITH_ARROW
+      + ',EQT_CLICK=' + EventQueryType.ON_CLICK
+      + ',CS_DEFAULT=' + CompetitionStrategy.DEFAULT
+      + ',CS_COMP=' + CompetitionStrategy.COMPETITION;
 
     AppStorage.setOrCreate<string>('enumValues', this.enumInfo);
   }
