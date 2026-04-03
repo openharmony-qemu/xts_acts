@@ -54,7 +54,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_001
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0100
      * @tc.name uiStateNormal
      * @tc.desc Test UIState.NORMAL enum value equals 0
      * @tc.type   FUNCTION
@@ -69,7 +69,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_002
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0200
      * @tc.name uiStatePressed
      * @tc.desc Test UIState.PRESSED enum value equals 1
      * @tc.type   FUNCTION
@@ -84,7 +84,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_003
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0300
      * @tc.name uiStateFocused
      * @tc.desc Test UIState.FOCUSED enum value equals 2
      * @tc.type   FUNCTION
@@ -99,7 +99,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_004
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0400
      * @tc.name uiStateDisabled
      * @tc.desc Test UIState.DISABLED enum value equals 4
      * @tc.type   FUNCTION
@@ -114,7 +114,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_005
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0500
      * @tc.name uiStateSelected
      * @tc.desc Test UIState.SELECTED enum value equals 8
      * @tc.type   FUNCTION
@@ -129,7 +129,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_006
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0600
      * @tc.name frameNodeOptionsConstruct
      * @tc.desc Test FrameNodeOptions supportMultiThread field with true/false/undefined values
      * @tc.type   FUNCTION
@@ -149,7 +149,7 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number FrameNodeTest_007
+     * @tc.number SUB_ARKUI_ACE_FRAMENODE_0700
      * @tc.name frameNodePageRenders
      * @tc.desc Verify FrameNode test page renders with root node visible in inspector
      * @tc.type   FUNCTION

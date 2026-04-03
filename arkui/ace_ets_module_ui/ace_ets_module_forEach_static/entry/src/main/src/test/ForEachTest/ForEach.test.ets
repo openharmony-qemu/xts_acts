@@ -57,7 +57,7 @@ export default function ForEachTest() {
     });
 
     /**
-     * @tc.number ForEachTest_001
+     * @tc.number SUB_ARKUI_ACE_FOREACH_0100
      * @tc.name forEachPageRenders
      * @tc.desc Verify ForEach test page renders
      * @tc.type   FUNCTION
@@ -80,7 +80,7 @@ export default function ForEachTest() {
     });
 
     /**
-     * @tc.number ForEachTest_002
+     * @tc.number SUB_ARKUI_ACE_FOREACH_0200
      * @tc.name forEachContainerRenders
      * @tc.desc Verify ForEach container renders with items
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function ForEachTest() {
     });
 
     /**
-     * @tc.number ForEachTest_003
+     * @tc.number SUB_ARKUI_ACE_FOREACH_0300
      * @tc.name forEachInspectorTreeExists
      * @tc.desc Verify inspector tree for ForEach page exists (debugLine called internally)
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function ForEachTest() {
     });
 
     /**
-     * @tc.number ForEachTest_004
+     * @tc.number SUB_ARKUI_ACE_FOREACH_0400
      * @tc.name forEachDebugLine
      * @tc.desc Verify ForEachAttribute.debugLine method exists
      * @tc.type   FUNCTION

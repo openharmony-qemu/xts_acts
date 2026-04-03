@@ -60,7 +60,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_001
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0100
      * @tc.name dialogDisplayModeScreenBased
      * @tc.desc Test DialogDisplayMode.SCREEN_BASED enum value
      * @tc.type   FUNCTION
@@ -82,7 +82,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_002
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0200
      * @tc.name dialogDisplayModeWindowBased
      * @tc.desc Test DialogDisplayMode.WINDOW_BASED enum value
      * @tc.type   FUNCTION
@@ -104,7 +104,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_003
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0300
      * @tc.name focusWrapModeDefault
      * @tc.desc Test FocusWrapMode.DEFAULT enum value
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_004
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0400
      * @tc.name focusWrapModeWrapWithArrow
      * @tc.desc Test FocusWrapMode.WRAP_WITH_ARROW enum value
      * @tc.type   FUNCTION
@@ -148,7 +148,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_005
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0500
      * @tc.name eventQueryTypeOnClick
      * @tc.desc Test EventQueryType.ON_CLICK enum value
      * @tc.type   FUNCTION
@@ -170,7 +170,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_006
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0600
      * @tc.name competitionStrategyDefault
      * @tc.desc Test CompetitionStrategy.DEFAULT enum value
      * @tc.type   FUNCTION
@@ -192,7 +192,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_007
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0700
      * @tc.name competitionStrategyCompetition
      * @tc.desc Test CompetitionStrategy.COMPETITION enum value
      * @tc.type   FUNCTION
@@ -214,7 +214,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_008
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0800
      * @tc.name systemPropertiesBreakPoint
      * @tc.desc Test SystemProperties.BREAK_POINT string value
      * @tc.type   FUNCTION
@@ -236,7 +236,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_009
+     * @tc.number SUB_ARKUI_ACE_ENUMS_0900
      * @tc.name systemPropertiesWindowAvoidArea
      * @tc.desc Test SystemProperties.WINDOW_AVOID_AREA string value
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_010
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1000
      * @tc.name systemPropertiesWindowAvoidAreaPx
      * @tc.desc Test SystemProperties.WINDOW_AVOID_AREA_PX string value
      * @tc.type   FUNCTION
@@ -280,7 +280,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_011
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1100
      * @tc.name systemPropertiesWindowSize
      * @tc.desc Test SystemProperties.WINDOW_SIZE string value
      * @tc.type   FUNCTION
@@ -302,7 +302,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_012
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1200
      * @tc.name systemPropertiesWindowSizePx
      * @tc.desc Test SystemProperties.WINDOW_SIZE_PX string value
      * @tc.type   FUNCTION
@@ -324,7 +324,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_013
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1300
      * @tc.name enumsListRendered
      * @tc.desc Verify List component in Enums page renders with enum values
      * @tc.type   FUNCTION
@@ -345,7 +345,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_014
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1400
      * @tc.name enumsDividerRendered
      * @tc.desc Verify Divider component in Enums page renders
      * @tc.type   FUNCTION
@@ -366,7 +366,7 @@ export default function EnumsTest() {
     });
 
     /**
-     * @tc.number EnumsTest_015
+     * @tc.number SUB_ARKUI_ACE_ENUMS_1500
      * @tc.name enumValuesFromPage
      * @tc.desc Verify enum values stored by page in AppStorage
      * @tc.type   FUNCTION
