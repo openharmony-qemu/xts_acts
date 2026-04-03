@@ -28,6 +28,8 @@ import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
 import FrameNodeMethodNullUndefinedTest from './frameNodeTest/FrameNodeMethodNullUndefined.test';
 import CustomPropertyNullUndefinedTest from './frameNodeTest/CustomPropertyNullUndefined.test';
 import AddComponentContentNullUndefinedTest from './frameNodeTest/AddComponentContentNullUndefined.test';
+import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
+import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -46,4 +48,6 @@ export default function testsuite() {
   FrameNodeMethodNullUndefinedTest()
   CustomPropertyNullUndefinedTest()
   AddComponentContentNullUndefinedTest()
+  GetFrameNodeByIdTest()
+  GetFrameNodeByUniqueIdTest()
 }

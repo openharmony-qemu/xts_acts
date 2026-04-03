@@ -15,6 +15,8 @@
         "MainAbility/pages/nodeAdapter/NodeAdapter001",
         "MainAbility/pages/frameNode/FrameNodeMethodNullUndefined",
         "MainAbility/pages/frameNode/CustomPropertyNullUndefined",
-        "MainAbility/pages/frameNode/AddComponentContentNullUndefined"
+        "MainAbility/pages/frameNode/AddComponentContentNullUndefined",
+        "MainAbility/pages/frameNode/GetFrameNodeById",
+        "MainAbility/pages/frameNode/GetFrameNodeByUniqueId"
     ]
 }
