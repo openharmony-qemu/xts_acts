@@ -31,15 +31,15 @@ export default function setAssetCompatibleCapabilityTest () {
     });
 
     /**
-     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0000
-     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0000
+     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100
+     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100
      * @tc.desc      : supportedHighResolution is true
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0000', Level.LEVEL0, async (done: Function) => {
-        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0000';
+    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100', Level.LEVEL0, async (done: Function) => {
+        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100';
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
                 supportedHighResolution: true,
@@ -56,15 +56,15 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100
-     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100
+     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200
+     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200
      * @tc.desc      : supportedHighResolution is false
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100', Level.LEVEL0, async (done: Function) => {
-        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100';
+    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200', Level.LEVEL0, async (done: Function) => {
+        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200';
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
                 supportedHighResolution: false,
@@ -79,41 +79,16 @@ export default function setAssetCompatibleCapabilityTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200
-     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0200
-     * @tc.desc      : supportedHighResolution is undefined, error code is: 23800151
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100', Level.LEVEL0, async (done: Function) => {
-        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0100';
-        let abnormalResolution: ESObject = undefined;
-        try {
-            let cfg : photoAccessHelper.AssetCompatibleCapability = {
-                supportedHighResolution: abnormalResolution,
-            };
-            await helper.setAssetCompatibleCapability(cfg);
-            expect().assertFalse();
-            done();
-        } catch (error) {
-            console.error(`${testNum} fail, error is ${error}, ${error.code}`);
-            expect(Number(error.code)).assertEqual(23800151);
-            done();
-        }
-    })
-
-    /**
      * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0300
      * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0300
-     * @tc.desc      : supportedHighResolution is null, error code is: 23800151
+     * @tc.desc      : supportedHighResolution is undefined, error code is: 23800151
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0300', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0300';
-        let abnormalResolution: ESObject = null;
+        let abnormalResolution: ESObject = undefined;
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
                 supportedHighResolution: abnormalResolution,
@@ -131,23 +106,24 @@ export default function setAssetCompatibleCapabilityTest () {
     /**
      * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0400
      * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0400
-     * @tc.desc      : supportedHighResolution is true twice
+     * @tc.desc      : supportedHighResolution is null, error code is: 23800151
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.level     : Level 2
      */
     it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0400', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0400';
+        let abnormalResolution: ESObject = null;
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
-                supportedHighResolution: true,
+                supportedHighResolution: abnormalResolution,
             };
             await helper.setAssetCompatibleCapability(cfg);
-            await helper.setAssetCompatibleCapability(cfg);
+            expect().assertFalse();
             done();
         } catch (error) {
             console.error(`${testNum} fail, error is ${error}, ${error.code}`);
-            expect(false).assertTrue();
+            expect(Number(error.code)).assertEqual(23800151);
             done();
         }
     })
@@ -155,7 +131,7 @@ export default function setAssetCompatibleCapabilityTest () {
     /**
      * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0500
      * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0500
-     * @tc.desc      : supportedHighResolution is false twice
+     * @tc.desc      : supportedHighResolution is true twice
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 1
@@ -179,13 +155,37 @@ export default function setAssetCompatibleCapabilityTest () {
     /**
      * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0600
      * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0600
-     * @tc.desc      : supportedHighResolution is false and true
+     * @tc.desc      : supportedHighResolution is false twice
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
     it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0600', Level.LEVEL0, async (done: Function) => {
         let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0600';
+        try {
+            let cfg : photoAccessHelper.AssetCompatibleCapability = {
+                supportedHighResolution: true,
+            };
+            await helper.setAssetCompatibleCapability(cfg);
+            await helper.setAssetCompatibleCapability(cfg);
+            done();
+        } catch (error) {
+            console.error(`${testNum} fail, error is ${error}, ${error.code}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.number    : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0700
+     * @tc.name      : Sub_PhotoAccess_setAssetCompatibleCapability_Test_0700
+     * @tc.desc      : supportedHighResolution is false and true
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('Sub_PhotoAccess_setAssetCompatibleCapability_Test_0700', Level.LEVEL0, async (done: Function) => {
+        let testNum: string = 'Sub_PhotoAccess_setAssetCompatibleCapability_Test_0700';
         try {
             let firstCfg : photoAccessHelper.AssetCompatibleCapability = {
                 supportedHighResolution: false,
