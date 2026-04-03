@@ -174,7 +174,7 @@ export default function webViewEventResult() {
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
-        Utils.emitEvent('SwitchNextPageStatic', 10)
+        Utils.emitEvent('SwitchNextPageStatic8', 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webViewWebViewEventResultButton', 10, '');
         await Utils.msSleep(3000);

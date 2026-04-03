@@ -84,7 +84,6 @@ export default function ActsAccountRemoveAccountStatic() {
         await accountManager.removeAccount("removeAccount_name_promise_first");
         hilog.info(0x0000, tag, "====>ActsAccountRemoveAccount_0200 end====");
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(0x0000, tag, "====>delete account ActsAccountRemoveAccount_0200 err: " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -134,7 +133,6 @@ export default function ActsAccountRemoveAccountStatic() {
         hilog.info(0x0000, tag, "====>run err");
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>delete account ActsAccountRemoveAccount_0400 err: " + JSON.stringify(err));
         expect(err.code).assertEqual(12300003);
         hilog.info(0x0000, tag, "====>ActsAccountRemoveAccount_0400 end====");
@@ -196,7 +194,6 @@ export default function ActsAccountRemoveAccountStatic() {
         hilog.info(0x0000, tag, "====>run err");
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>delete account ActsAccountRemoveAccount_0600 err: " + JSON.stringify(err));
         expect(err.code).assertEqual(12300003);
         hilog.info(0x0000, tag, "====>ActsAccountRemoveAccount_0600 end====");
@@ -255,7 +252,6 @@ export default function ActsAccountRemoveAccountStatic() {
         hilog.info(0x0000, tag, "====>run err");
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>delete account ActsAccountRemoveAccount_0800 err: " + JSON.stringify(err));
         expect(err.code).assertEqual(12300002);
         hilog.info(0x0000, tag, "====>ActsAccountRemoveAccount_0800 end====");
@@ -306,7 +302,6 @@ export default function ActsAccountRemoveAccountStatic() {
         hilog.info(0x0000, tag, "====>run err");
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>delete account ActsAccountRemoveAccount_1000 err: " + JSON.stringify(err));
         expect(err.code).assertEqual(12300002);
         hilog.info(0x0000, tag, "====>ActsAccountRemoveAccount_1000 end====");

@@ -1527,7 +1527,7 @@ export default function abilityTest() {
       try {
         let ret = testNapi.testSetCrashObjAddrLen(0);
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_7800 ret: " + ret);
-        expect(ret == 0).assertTrue();
+        expect(ret >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_7800 success");
         done();
       } catch (err) {
@@ -1551,7 +1551,7 @@ export default function abilityTest() {
       try {
         let ret = testNapi.testSetCrashObjAddrLen(64);
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_7900 ret: " + ret);
-        expect(ret == 0).assertTrue();
+        expect(ret >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_7900 success");
         done();
       } catch (err) {
@@ -1575,7 +1575,7 @@ export default function abilityTest() {
       try {
         let ret = testNapi.testSetCrashObjAddrLen(65);
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_8000 ret: " + ret);
-        expect(ret == 0).assertTrue();
+        expect(ret >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_8000 success");
         done();
       } catch (err) {

@@ -24,6 +24,7 @@ import application from '@ohos.app.ability.application';
 import insightIntent from '@ohos.app.ability.insightIntent';
 import dialogRequest from '@ohos.app.ability.dialogRequest';
 import completionHandlerForAbilityStartCallback from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
+import bundleManager from '@ohos.bundle.bundleManager';
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
@@ -905,6 +906,84 @@ export default function ApiCoverTest() {
      */
     it('SUB_Ability_AbilityBase_AbilityConstant_2700', Level.LEVEL0, async (done: Function) => {
       expect(1).assertEqual(abilityConstant.PrepareTermination.CANCEL);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2800
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2800
+     * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_UI_HIDDEN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_2800', Level.LEVEL0, async (done: Function) => {
+      expect(3).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_UI_HIDDEN);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2900
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2900
+     * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_MODERATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_2900', Level.LEVEL0, async (done: Function) => {
+      expect(4).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_MODERATE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3000
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3000
+     * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_LOW.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3000', Level.LEVEL0, async (done: Function) => {
+      expect(5).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_LOW);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3100
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3100
+     * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_CRITICAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3100', Level.LEVEL0, async (done: Function) => {
+      expect(6).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_CRITICAL);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ExtensionAbilityType_0100
+     * @tc.number SUB_Ability_AbilityBase_ExtensionAbilityType_0100
+     * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_ExtensionAbilityType_0100', Level.LEVEL0, async (done: Function) => {
+      expect(37).assertEqual(bundleManager.ExtensionAbilityType.AGENT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ExtensionAbilityType_0200
+     * @tc.number SUB_Ability_AbilityBase_ExtensionAbilityType_0200
+     * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT_UI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_ExtensionAbilityType_0200', Level.LEVEL0, async (done: Function) => {
+      expect(38).assertEqual(bundleManager.ExtensionAbilityType.AGENT_UI);
       done();
     })
 

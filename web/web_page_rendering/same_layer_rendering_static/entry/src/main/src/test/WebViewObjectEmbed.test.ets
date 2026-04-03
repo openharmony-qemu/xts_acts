@@ -69,6 +69,10 @@ export default function webViewObjectEmbed() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewObjectEmbedButton', 10, '');
       await Utils.msSleep(5000);
+      Utils.emitEvent('emitonSwitchNextPage3', 10)
+      await Utils.msSleep(1000);
+      inspector.sendEventByKey('webViewObjectEmbedButton', 10, '');
+      await Utils.msSleep(5000);
       done();
     })
 

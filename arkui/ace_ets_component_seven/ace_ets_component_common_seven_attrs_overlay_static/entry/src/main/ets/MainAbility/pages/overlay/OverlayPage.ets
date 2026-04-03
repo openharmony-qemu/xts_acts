@@ -67,9 +67,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -358,15 +355,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.overlay(this.mValue, this.options)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mValue: string = 'Test Title'
-  options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.overlay(this.mValue, this.options)
   }
 }
@@ -973,11 +961,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1315,7 +1298,6 @@ struct OverlayPage {
   @State _overlayEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _overlayFlexModifier: FlexModifier = new FlexModifier()
   @State _overlayFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _overlayFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _overlayGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _overlayGridModifier: GridModifier = new GridModifier()
   @State _overlayGridColModifier: GridColModifier = new GridColModifier()
@@ -2023,17 +2005,6 @@ struct OverlayPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._overlayCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._overlayFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

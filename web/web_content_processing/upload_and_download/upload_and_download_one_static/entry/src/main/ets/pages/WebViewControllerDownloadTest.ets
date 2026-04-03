@@ -64,6 +64,7 @@ struct WebViewControllerDownloadTest {
   @State start: boolean = true;
   @State savePath: string = '/data/storage/el2/base/cache/web/';
   downloadingItem: webview.WebDownloadItem = new webview.WebDownloadItem();
+  downloadItemErrorCode:  webview.WebDownloadItem = new webview.WebDownloadItem();
   downloadItem: webview.WebDownloadItem = new webview.WebDownloadItem();
   @State currentDownloadState: number = -1;
   @State testCompleted: boolean = false;
@@ -569,6 +570,7 @@ struct WebViewControllerDownloadTest {
             case 'testResumeDownload001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
+                webview.WebDownloadManager.setDownloadDelegate(this.delegate);
                 for (let i=0;i++;i<3) {
                   if (this.downloadingItem) {
                     this.downloadingItem.cancel()
@@ -587,6 +589,17 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
+
+            case "testResumeDownloadErrorCode001": {
+              try {
+                webview.WebDownloadManager.resumeDownload(this.downloadItemErrorCode)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 114070)
+              }
+              break;
+            }
+
           }
         })
       }
@@ -602,6 +615,7 @@ struct WebViewControllerDownloadTest {
           if (!this.hasSetDownloadDelegate) {
             try {
               this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.onBeforeDownloadCalled = true;
                 if(this.onBeforeDownloadCalled) {
                   Utils.emitEvent(true, 79700)
@@ -672,6 +686,7 @@ struct WebViewControllerDownloadTest {
                 }
               })
               this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.downloadingItem = webDownloadItem;
                 this.onDownloadUpdatedCalled = true;
                 this.currentDownloadState = webDownloadItem.getState();
@@ -760,6 +775,7 @@ struct WebViewControllerDownloadTest {
 
               })
               this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.downloadItem = webDownloadItem;
                 this.onDownloadFailedCalled = true;
                 console.info('this.currentDownloadState onDownloadFailed before ' + this.currentDownloadState)
@@ -823,6 +839,7 @@ struct WebViewControllerDownloadTest {
                 this.isDownloadFail = true;
               })
               this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.downloadItem = webDownloadItem;
                 this.onDownloadFinishCalled = true;
                 Utils.emitEvent(this.onDownloadFinishCalled, 79704)
@@ -882,7 +899,6 @@ struct WebViewControllerDownloadTest {
               })
 
               this.controller.setDownloadDelegate(this.delegate);
-              webview.WebDownloadManager.setDownloadDelegate(this.delegate);
               this.hasSetDownloadDelegate = true
             } catch (error) {
               console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
