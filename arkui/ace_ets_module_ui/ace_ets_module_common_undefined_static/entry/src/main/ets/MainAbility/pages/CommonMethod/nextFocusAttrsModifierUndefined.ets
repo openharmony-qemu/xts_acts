@@ -18,7 +18,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ButtonAttribute> {
+export class MyModifier implements AttributeModifier<ButtonAttribute> {
   @State public isNextFocusUndefined: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {

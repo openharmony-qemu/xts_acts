@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ enum ENUM {
 }
 
 @ObservedV2
-class ChildInfo extends Info {
+export class ChildInfo extends Info {
   @Monitor(['t2'])
   onT2Change(monitor: IMonitor) {
     testSample.res1 = "测试1：Success"

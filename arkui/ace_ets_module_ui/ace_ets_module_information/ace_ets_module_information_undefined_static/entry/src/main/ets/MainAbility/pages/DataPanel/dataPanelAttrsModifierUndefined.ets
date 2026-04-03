@@ -20,7 +20,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<DataPanelAttribute> {
+export class MyModifier implements AttributeModifier<DataPanelAttribute> {
   public color1: LinearGradient =
     new LinearGradient([{ color: '#65EEC9A3', offset: 0 }, { color: '#FFEF629F', offset: 1 }])
   public color2: LinearGradient =

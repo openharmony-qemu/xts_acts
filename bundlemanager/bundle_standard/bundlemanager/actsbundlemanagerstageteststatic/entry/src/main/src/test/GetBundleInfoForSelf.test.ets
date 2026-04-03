@@ -737,7 +737,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0.0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(32);
+        expect(extensionList.length).assertEqual(33);
         let count = 0;
         for (let i = 0; i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -927,10 +927,16 @@ export default function getBundleInfoForSelf() {
                 .assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 33
               break;
+            case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType)
+                .assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 34
+              break;
           }
           hilog.info(domain, tag, "count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(508);
+        expect(count).assertEqual(542);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);

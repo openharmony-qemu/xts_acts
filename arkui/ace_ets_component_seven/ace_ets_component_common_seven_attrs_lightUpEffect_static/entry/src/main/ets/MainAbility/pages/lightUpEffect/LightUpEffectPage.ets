@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mLightUpEffect: number = 1
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
-   instance.lightUpEffect(this.mLightUpEffect)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
@@ -316,238 +309,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
    instance.lightUpEffect(this.mLightUpEffect)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mLightUpEffect: number = 1
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`lightUpEffect page show ${JSON.stringify(this.mLightUpEffect)}`)
@@ -576,7 +569,6 @@ struct lightUpEffectPage {
   @State _lightUpEffectFlexMod: FlexModifier = new FlexModifier()
   @State _lightUpEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _lightUpEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _lightUpEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _lightUpEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _lightUpEffectGridMod: GridModifier = new GridModifier()
   @State _lightUpEffectGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct lightUpEffectPage {
       this._lightUpEffectFlexMod.mLightUpEffect = value.lightUpEffect
       this._lightUpEffectFlowItemMod.mLightUpEffect = value.lightUpEffect
       this._lightUpEffectFormComponentMod.mLightUpEffect = value.lightUpEffect
-      this._lightUpEffectFormLinkMod.mLightUpEffect = value.lightUpEffect
       this._lightUpEffectGaugeMod.mLightUpEffect = value.lightUpEffect
       this._lightUpEffectGridMod.mLightUpEffect = value.lightUpEffect
       this._lightUpEffectGridColMod.mLightUpEffect = value.lightUpEffect

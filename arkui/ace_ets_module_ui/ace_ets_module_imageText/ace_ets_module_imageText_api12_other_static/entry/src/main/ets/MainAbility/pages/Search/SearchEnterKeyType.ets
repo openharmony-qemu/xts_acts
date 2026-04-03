@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
 
-class SearchEnterKeyTypeModifier  implements AttributeModifier<SearchAttribute> {
+export class SearchEnterKeyTypeModifier  implements AttributeModifier<SearchAttribute> {
     enterKeyType: EnterKeyType | undefined = undefined;
     applyNormalAttribute(instance: SearchAttribute): void {
       instance.enterKeyType( this.enterKeyType );

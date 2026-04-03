@@ -1124,6 +1124,44 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0100
+         * @tc.desc 20251113API22用例覆盖 GattServer-getService input is error.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let returu_gattservice: bluetooth.GattService = gattServer.getService(undefined);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] gattServer getService input is null, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0200
+         * @tc.desc 20251113API22用例覆盖 GattServer-getService input is error.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let returu_gattservice: bluetooth.GattService = gattServer.getService("");
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] gattServer getService input is null, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
          * @tc.desc 20251113API22用例覆盖 GattServer-getServices.
@@ -1895,6 +1933,160 @@ export default function bluetoothBleTest() {
         })
 
         /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2000
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2000
+         * @tc.desc API23 server readPhy 入参不合法 401 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let data: bluetooth.PhyValue  = await gattServer.readPhy('');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server readPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]readPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2100
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await gattServer.setPhy("", phyValue9);
+                console.info('[bt_arkts] client setPhy is success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]setPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2200
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await gattServer.setPhy(null , phyValue9);
+                console.info('[bt_arkts] client setPhy is success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]setPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2300
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await gattServer.setPhy(undefined , phyValue9);
+                console.info('[bt_arkts] client setPhy is success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]setPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2400
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2400
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await gattServer.setPhy(deviceId , null);
+                console.info('[bt_arkts] client setPhy is success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]setPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2500
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2500
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await gattServer.setPhy(deviceId , undefined);
+                console.info('[bt_arkts] client setPhy is success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]setPhy is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1800
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1800
          * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
@@ -1930,6 +2122,31 @@ export default function bluetoothBleTest() {
         it('SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 device = bluetooth.createGattClientDevice(undefined);
+                console.info('createGattClientDevice result:' + JSON.stringify(device));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] createGattClientDevice failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_2000
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_2000
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device = bluetooth.createGattClientDevice("");
                 console.info('createGattClientDevice result:' + JSON.stringify(device));
                 expect().assertFail();
             } catch (error) {

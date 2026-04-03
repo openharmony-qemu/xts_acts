@@ -232,14 +232,14 @@ export default function textBlob2Test() {
 
 
     /**
-     * @tc.name   testTextBlobMakeFromPosTextNormal
+     * @tc.name   testTextBlobMakeFromPosTextNormalAdapt001
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0300
      * @tc.desc   testTextBlobMakeFromPosTextNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobMakeFromPosTextNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+    it('testTextBlobMakeFromPosTextNormalAdapt001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromPosTextNormal';
       let font = new drawing.Font();
 
@@ -259,14 +259,14 @@ export default function textBlob2Test() {
 
 
     /**
-     * @tc.name   testTextBlobMakeFromPosTextMultipleCalls
+     * @tc.name   testTextBlobMakeFromPosTextMultipleCallsAdapt001
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0303
      * @tc.desc   testTextBlobMakeFromPosTextMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobMakeFromPosTextMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+    it('testTextBlobMakeFromPosTextMultipleCallsAdapt001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromPosTextMultipleCalls';
       let font = new drawing.Font();
 

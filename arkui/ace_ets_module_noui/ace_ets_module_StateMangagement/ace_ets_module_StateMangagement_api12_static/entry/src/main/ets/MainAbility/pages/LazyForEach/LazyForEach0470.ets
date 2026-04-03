@@ -35,7 +35,7 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-class BasicDataSource0470 implements IDataSource<string> {
+export class BasicDataSource0470 implements IDataSource<string> {
   private listeners: DataChangeListener[] = new Array<DataChangeListener>();
   private originDataArray: string[] = new Array<string>();
 
@@ -93,7 +93,7 @@ class BasicDataSource0470 implements IDataSource<string> {
   }
 }
 
-class LazyForEachData0470 extends BasicDataSource0470 {
+export class LazyForEachData0470 extends BasicDataSource0470 {
   public dataArray: string[] = new Array<string>();
 
   public totalCount(): int {

@@ -217,7 +217,7 @@ export default function getTaskTest() {
         let terminate = false;
         taskpool.execute(getTaskResult, task.taskId).then((res) => {
           terminate = true;
-          expect(res).assertFalse();
+          expect(res as boolean).assertFalse();
         })
         while (!terminate) {
           await sleep(100);
@@ -238,7 +238,7 @@ export default function getTaskTest() {
         let terminate = false;
         taskpool.execute(getCreateTaskId).then((res) => {
           terminate = true;
-          let task: taskpool.Task | undefined = taskpool.getTask(res as number);
+          let task: taskpool.Task | undefined = taskpool.getTask((res as number).toInt());
           expect(task).assertEqual(undefined);
         })
         while (!terminate) {

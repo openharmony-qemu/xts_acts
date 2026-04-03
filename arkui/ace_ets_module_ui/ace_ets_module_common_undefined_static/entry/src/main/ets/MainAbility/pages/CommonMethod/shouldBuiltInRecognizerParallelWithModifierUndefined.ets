@@ -31,7 +31,7 @@ import { AttributeModifier, CommonAttribute, VisibleAreaChangeCallback } from '@
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class ShouldParallelModifier implements AttributeModifier<CommonAttribute> {
+export class ShouldParallelModifier implements AttributeModifier<CommonAttribute> {
   @State public change: Boolean = true
   @State public count: Int = 0
   private childRecognizer: GestureRecognizer = new GestureRecognizer();

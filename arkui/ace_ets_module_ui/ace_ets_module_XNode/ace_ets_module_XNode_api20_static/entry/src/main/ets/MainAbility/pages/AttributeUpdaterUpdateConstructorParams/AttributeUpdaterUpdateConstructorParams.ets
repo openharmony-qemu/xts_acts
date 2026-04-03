@@ -29,7 +29,7 @@ import { State } from '@ohos.arkui.stateManagement';
 // 自定义Text组件的AttributeUpdater
 import { AttributeUpdater } from '@ohos.arkui.modifier';
 
-class MyTextModifier extends AttributeUpdater<TextAttribute> {
+export class MyTextModifier extends AttributeUpdater<TextAttribute> {
   initializeModifier(instance: TextAttribute) {
   }
 }

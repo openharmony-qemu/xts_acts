@@ -1304,6 +1304,27 @@ export default function CameraManagerTest() {
       }
     })
     /**
+     * @tc.name   testOHCameraManagerSetTorchModeOnWithLevel3100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OH_CameraManager_SetTorchModeOnWithLevel3100
+     * @tc.desc   Test OH_CameraManager_SetTorchModeOnWithLevel in normal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchModeOnWithLevel3100', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      let ret = cameraObj.oHCameraManagerIsTorchLevelControlSupported();
+      let ret2 = 0;
+      if (ret) {
+        let level = 0.5;
+        ret2 = cameraObj.oHCameraManagerSetTorchModeOnWithLevel(level);
+      }
+      console.info(TAG+"testOHCameraManagerSetTorchModeOnWithLevel3100:"+ret);
+      expect(ret2).assertEqual(0);
+    })
+    /**
      * @tc.name   testOHCameraManagerRegisterTorchStatusCallback0100
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0100
      * @tc.desc   test OH_CameraManager_RegisterTorchStatusCallback in normal condition.

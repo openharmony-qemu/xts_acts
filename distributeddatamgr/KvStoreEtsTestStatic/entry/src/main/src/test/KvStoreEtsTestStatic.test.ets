@@ -833,7 +833,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start getKvstore");
-        let store = await kvManager!.getKVStore("", singleOptions);
+        let store = await kvManager!.getKVStore<Any>("", singleOptions);
         hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 getKvstore end");
         expect().assertFail();
       } catch (e) {

@@ -544,6 +544,62 @@ function setPlayerMediaMuted(avPlayer: media.AVPlayer | undefined) {
   })
 }
 
+function setPlayerMediaMuted1(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_UNSUPPORTED, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted2(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_VID, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted3(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_SUBTITLE, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted4(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_ATTACHMENT, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted5(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_DATA, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted6(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_TIMED_METADATA, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted7(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_AUXILIARY, true).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
+function setPlayerMediaMuted8(avPlayer: media.AVPlayer | undefined){
+  avPlayer?.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, false).catch((error: Error) => {
+    console.error(`setMediaMuted failed, err code ${(error as BusinessError).code} msg ${error.message}`)
+    expect().assertFail();
+  })
+}
+
 function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
@@ -1286,6 +1342,69 @@ async function testOnOffTrackInfoUpdate(src: media.AVFileDescriptor, avPlayer: m
   });
 }
 
+async function testGetCurrentPresentationTimestamp(src: string | media.AVFileDescriptor, done: () => void){
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      getCurrentPresentationTimestamp(avPlayer!, done);
+      setSource(avPlayer!!, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+function getCurrentPresentationTimestamp(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer?.onStateChange((state, reason: media.StateChangeReason | undefined) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer!!.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer!!.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        avPlayer?.getCurrentPresentationTimestamp();
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -1677,5 +1796,52 @@ export default function AVPlayerLocalTest() {
           testAvPlayerDataSrc(fileDescriptor!, avPlayer, done);
         }
       })
+
+      /**
+      * @tc.number   MEDIA_VIDEO_PLAYER_SEEK_004
+      * @tc.name MEDIA_VIDEO_PLAYER_SEEK_004
+      * @tc.desc   Callback
+      * @tc.size   MEDIUM
+      * @tc.type   Fuction
+      * @tc.level  Level1
+      */
+      it('MEDIA_VIDEO_PLAYER_SEEK_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        const testName = 'MEDIA_VIDEO_PLAYER_SEEK_004';
+        const seekMode: media.SeekMode = media.SeekMode.SEEK_CLOSEST;
+        try {
+          let avPlayer = await media.createAVPlayer();
+          expect(avPlayer).not().assertNull();
+          console.info(TAG,'avPlayer')
+          let timeMs: int = 1000;
+          console.info(TAG,'timeMs')
+          avPlayer!.seek(timeMs, seekMode);
+          console.info(TAG,'succeed seek')
+          avPlayer!.release();
+          done();
+        } catch (error) {
+          console.info(TAG, testName, `Undefined region test failed; error: ${error}, code: ${error.code}`);
+          expect().assertFail()
+          done();
+        }
+      })
+      /**
+      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
+      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
+      * @tc.desc   Local Video getCurrentPresentationTimestamp control test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetCurrentPresentationTimestamp(fileDescriptor!, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
   })
 }

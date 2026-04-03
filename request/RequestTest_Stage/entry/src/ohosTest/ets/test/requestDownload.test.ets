@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import Server from '../common/ServerDownload'
 
 export default function requestDownloadJSUnit() {
   describe('requestDownloadJSUnit', () => {
@@ -31,6 +32,9 @@ export default function requestDownloadJSUnit() {
      */
     beforeAll((done: Function) => {
       try {
+        console.info('====>beforeAll: startServer');
+        new Server().startServer();
+        console.info('====>beforeAll: startServer success!');
         let context: common.Context | undefined = AppStorage.get('context');
         if (context !== undefined){
           baseContext = context;
@@ -103,7 +107,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_downloadFile_STAGE_API_CALLBACK_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_downloadFile_STAGE_API_CALLBACK_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -142,7 +146,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_downloadFile_STAGE_API_PROMISE_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_downloadFile_STAGE_API_PROMISE_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -186,7 +190,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_DELETE_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_DELETE_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -241,7 +245,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_DELETE_0002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_DELETE_0002.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -292,7 +296,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_SUSPEND_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_SUSPEND_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -345,7 +349,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_SUSPEND_0002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_SUSPEND_0002.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -392,7 +396,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_RESTORE_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_RESTORE_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -445,7 +449,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_RESTORE_0002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_RESTORE_0002.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -495,7 +499,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -570,7 +574,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKINFO_0002.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -720,7 +724,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKMIMETYPE_0002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_REQUEST_DOWNLOAD_API_GETTASKMIMETYPE_0002.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -780,7 +784,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_001.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -835,7 +839,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_002.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -891,7 +895,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_003.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_Download_Notice_Task_003.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -947,7 +951,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_DownloadManagement_0003.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_DownloadManagement_0003.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -988,7 +992,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `/data/app/el2/100/base/com.example.myapplication/haps/entry_test/cache/SUB_Misc_Request_DownloadManagement_0004.txt`
       console.info("====>downloadFileConfig: " + `${downloadFilePath}`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1023,7 +1027,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `/data/app/el2/100/base/com.example.myapplication/haps/entry_test/cache/SUB_Misc_Request_DownloadManagement_0014.txt`
       console.info("====>downloadFileConfig: " + `${downloadFilePath}`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1129,7 +1133,7 @@ export default function requestDownloadJSUnit() {
     it('SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>---------------------SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001 is starting---------------------");
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1153,7 +1157,7 @@ export default function requestDownloadJSUnit() {
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001 complete success');
               await downloadTask.delete();
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_001 delete downloadTask');
-              fs.unlinkSync(`${baseContext.cacheDir}/test.hap`);
+              fs.unlinkSync(`${baseContext.cacheDir}/127.0.0.1:3374`);
               console.info('====>SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002 delete files success');
               expect(downloadTask !== undefined).assertTrue();
               done();
@@ -1183,7 +1187,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_Download_SupportSystem_DownloadSuccess_002.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1239,7 +1243,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_Misc_Request_Download_SupportSystem_ConflictDownload_001.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/SUB_Misc_Request_Download_SupportSystem_ConflictDownload_001.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1329,7 +1333,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/Download_Test_0400.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/Download_Test_0400.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1444,7 +1448,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/Download_Test_0700.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/Download_Test_0700.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1518,7 +1522,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath2 = `${baseContext.tempDir}/Download_Test2_1100.txt`
       console.info("====>downloadFileConfig:" + `${baseContext.tempDir}/Download_Test_1100.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header: {
           headers: 'http'
         },
@@ -1608,7 +1612,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DownloadManagement_Download_0500.txt`;
       console.info('====>downloadFileConfig:' + `${baseContext.tempDir}/SUB_REQUEST_DownloadManagement_Download_0500.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         description: 'XTS download test!',
         networkType: request.NETWORK_WIFI,
         filePath: downloadFilePath,
@@ -1782,7 +1786,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_DownloadManagement_DownloadSuccess_0100.txt`;
       console.info('====>downloadFileConfig:' + `${baseContext.tempDir}/SUB_REQUEST_DownloadManagement_DownloadSuccess_0100.txt`);
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         description: 'XTS download test!',
         networkType: request.NETWORK_WIFI,
         filePath: downloadFilePath,
@@ -1830,7 +1834,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath1 = `${baseContext.tempDir}/downloadFilePath1.txt`;
       let downloadFilePath2 = `${baseContext.tempDir}/downloadFilePath2.txt`;
       let downloadFileConfig1: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         description: 'XTS download test!',
         networkType: request.NETWORK_WIFI,
         filePath: downloadFilePath1,
@@ -1839,7 +1843,7 @@ export default function requestDownloadJSUnit() {
       }
 
       let downloadFileConfig2: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         description: 'XTS download test!',
         networkType: request.NETWORK_WIFI,
         filePath: downloadFilePath2,
@@ -1896,7 +1900,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.tempDir}/SUB_REQUEST_SupportSystem_DownloadSuccess_0300.txt`
       console.info('====>downloadFileConfig:' + `${baseContext.tempDir}/SUB_REQUEST_SupportSystem_DownloadSuccess_0300.txt`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         header:{
           'Content-Type': 'application/octet-stream'
         },
@@ -1947,7 +1951,7 @@ export default function requestDownloadJSUnit() {
       let downloadFilePath = `${baseContext.cacheDir}/test.hap`
       console.info('====>downloadFileConfig:' + `${baseContext.cacheDir}/test.hap`)
       let downloadFileConfig: request.DownloadConfig = {
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         filePath: undefined,
         header: undefined,
         enableMetered: undefined,

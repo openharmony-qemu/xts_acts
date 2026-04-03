@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import Server from '../common/ServerDownload'
 
 export default function requestSupplementalDownTest() {
   describe('requestSupplementalDownJSTest', () => {
@@ -46,6 +47,9 @@ export default function requestSupplementalDownTest() {
      */
     beforeAll(async (done: Function) => {
       try {
+        console.info('====>beforeAll: startServer');
+        new Server().startServer();
+        console.info('====>beforeAll: startServer success!');
         let context: common.Context | undefined = AppStorage.get('context');
         await sleep(2000);
         if (context !== undefined){
@@ -1389,7 +1393,7 @@ export default function requestSupplementalDownTest() {
       console.info("====>-----------------------SUB_Request_download_Supplemental_5100 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test005.hap',
+        url: 'http://127.0.0.1:3374',
         data:'',
         saveas: './SUB_Request_download_Supplemental_5100.txt',
         network: request.agent.Network.ANY,
@@ -1445,7 +1449,7 @@ export default function requestSupplementalDownTest() {
       console.info("====>-----------------------SUB_Request_download_Supplemental_5200 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test006.hap',
+        url: 'http://127.0.0.1:3374',
         data:'',
         saveas: './SUB_Request_download_Supplemental_5200.txt',
         network: request.agent.Network.ANY,

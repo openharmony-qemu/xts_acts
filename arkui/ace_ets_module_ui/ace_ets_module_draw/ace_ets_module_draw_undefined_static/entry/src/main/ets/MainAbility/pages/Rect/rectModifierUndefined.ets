@@ -22,7 +22,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<RectAttribute> {
+export class MyPointModifier implements AttributeModifier<RectAttribute> {
   public isRadiusWidth: boolean = true;
   public isRadiusHeight: boolean = true;
 
@@ -35,7 +35,7 @@ class MyPointModifier implements AttributeModifier<RectAttribute> {
 }
 
 @Observed
-class MyPointModifier2 implements AttributeModifier<RectAttribute> {
+export class MyPointModifier2 implements AttributeModifier<RectAttribute> {
   public isRadius: boolean = true;
 
   applyNormalAttribute(instance: RectAttribute): void {

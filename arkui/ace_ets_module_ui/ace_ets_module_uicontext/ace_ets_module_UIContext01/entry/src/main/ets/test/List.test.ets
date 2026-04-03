@@ -34,6 +34,8 @@ import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 import IdTest from './UIContext/IdTest.test';
+import ArkUIEnumValueTest from './ArkUIEnumValue.test';
+import UIContextIsEasySplitTest from './UIContext/UIContextIsEasySplit.test';
 
 export default function testsuite() {
   UIContextApi1();
@@ -58,5 +60,6 @@ export default function testsuite() {
   PixelUnitsConversion();
   atomicServiceBarTest();
   IdTest();
-
+  ArkUIEnumValueTest();
+  UIContextIsEasySplitTest();
 }

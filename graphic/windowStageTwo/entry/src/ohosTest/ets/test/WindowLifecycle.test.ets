@@ -3053,7 +3053,7 @@ export default function WindowLifecycle() {
      * @tc.level  LEVEL0
      */
     it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = "testGetMainWindowSnapshot_1100";
+      let caseName = "testGetMainWindowSnapshot_1200";
       console.log(caseName + " begin");
       let windowClass = windowStage.getMainWindowSync();
       let windowId = windowClass.getWindowProperties().id;
@@ -3079,6 +3079,7 @@ export default function WindowLifecycle() {
         try {
           let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
           console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          done();
         } catch (exception) {
           console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
           expect(exception.code).assertEqual(801)
@@ -3913,6 +3914,75 @@ export default function WindowLifecycle() {
         }
       })
 
+     /**
+     * @tc.number  testCreateWindowCallbackwithContextUndefined
+     * @tc.name    testCreateWindowCallbackwithContextUndefined
+     * @tc.desc   调用createWindow callback接口，ctx设置为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreateWindowCallbackwithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testCreateWindowCallbackwithContextUndefined';
+      let config: window.Configuration = {
+        name: 'dialog',
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: undefined
+      };
+      try {
+        window.createWindow(config, async (err: BusinessError, data: window.Window) => {
+          if (err && err.code) {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300006);
+            expect((err.message as string).length > 0).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} Succeeded in creating the window.`);
+            await data.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });  
+
+    /**
+     * @tc.number  testCreateWindowPromisewithContextUndefined
+     * @tc.name    testCreateWindowPromisewithContextUndefined
+     * @tc.desc   调用createWindow promise接口，ctx设置为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreateWindowPromisewithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testCreateWindowPromisewithContextUndefined';
+      let config: window.Configuration = {
+        name: 'dialog',
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: undefined
+      };
+      try {
+        window.createWindow(config).then(async (data: window.Window) => {
+          console.info(`${caseName} Succeeded in creating the window.`);
+          await data.destroyWindow();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300006);
+          expect((err.message as string).length > 0).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
   })

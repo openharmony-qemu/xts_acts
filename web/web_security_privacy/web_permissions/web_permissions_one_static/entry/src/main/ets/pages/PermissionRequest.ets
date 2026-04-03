@@ -33,6 +33,7 @@ import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessC
 @Component
 struct WebOnPermissionRequest {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
+  controller2: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
   @State flag: boolean = false
   @State deny: boolean = false
@@ -113,6 +114,9 @@ struct WebOnPermissionRequest {
               }
             }
           })
+
+        Web({ src: 'resource://rawfile/PermissionRequest.html', controller: this.controller2 })
+          .onPermissionRequest(undefined)
 
         Text(this.denyResult).id('deny_result');
         Text(this.grantResult).id('grant_result');

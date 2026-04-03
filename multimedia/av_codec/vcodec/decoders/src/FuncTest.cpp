@@ -62,6 +62,7 @@ protected:
     const char *ginpDirAv1High =  "/data/test/media/av1_high_L3.0_854x480.ivf";
     const char *ginpDirAv1Main8bit = "/data/test/media/av1_main_L4.0_1920x1080.ivf";
     const char *ginpDirAv1High8bit =  "/data/test/media/av1_high_L4.0_1920x1080.ivf";
+    const char *ginpDirCinepak =  "/data/test/media/cinepak_720_480_25.mkv";
 };
 
 static OH_AVCapability *g_capVc1 = nullptr;
@@ -71,6 +72,7 @@ static OH_AVCapability* g_capWmv3 = nullptr;
 static OH_AVCapability* g_capVp8 = nullptr;
 static OH_AVCapability* g_capVp9 = nullptr;
 static OH_AVCapability* g_capAv1 = nullptr;
+static OH_AVCapability* g_capCinepak = nullptr;
 static string g_codecNameVc1 = "";
 static string g_codecNameMjpeg = "";
 static string g_codecNameMsvideo1 = "";
@@ -78,6 +80,7 @@ static string g_codecNameWmv3 = "";
 static string g_codecNameVp8 = "";
 static string g_codecNameVp9 = "";
 static string g_codecNameAv1 = "";
+static string g_codecNameCinepak = "";
 constexpr uint32_t FRAMESIZE60 = 60;
 constexpr uint32_t FRAMESIZE30 = 30;
 constexpr uint32_t FRAMESIZE98 = 98;
@@ -85,6 +88,7 @@ constexpr uint32_t FRAMESIZE52 = 52;
 constexpr uint32_t FRAMESIZE100 = 100;
 constexpr uint32_t FRAMESIZE180 = 180;
 constexpr uint32_t FRAMESIZE45 = 45;
+constexpr uint32_t FRAMESIZE5 = 5;
 void DecFuncNdkTest::SetUpTestCase()
 {
     g_capVc1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
@@ -121,6 +125,11 @@ void DecFuncNdkTest::SetUpTestCase()
     if (g_capAv1 != nullptr) {
         g_codecNameAv1 = OH_AVCapability_GetName(g_capAv1);
         cout << "g_codecNameAv1: " << g_codecNameAv1 << endl;
+    }
+    g_capCinepak = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_CINEPAK, false, SOFTWARE);
+    if (g_capCinepak != nullptr) {
+        g_codecNameCinepak = OH_AVCapability_GetName(g_capCinepak);
+        cout << "g_codecNameCinepak: " << g_codecNameCinepak << endl;
     }
 }
 
@@ -593,4 +602,28 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VP8DEC_FUNCTION_0021, TestSize.Level0)
     }
 }
 
+/**
+ * @tc.name   VIDEO_CINEPAKDEC_FUNCTION_0200
+ * @tc.number SUB_VIDEO_CINEPAKDEC_FUNCTION_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DecFuncNdkTest, VIDEO_CINEPAKDEC_FUNCTION_0200, TestSize.Level0)
+{
+    if (g_capVc1 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirCinepak;
+        vDecSample->getFormat(file);
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameCinepak));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE5, vDecSample->outFrameCount);
+    }
+}
 } // namespace

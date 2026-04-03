@@ -23,7 +23,7 @@ import { AttributeModifier, CommonAttribute, TextTimerAttribute } from '@ohos.ar
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   public change: boolean | undefined = true;
   public text: String = ''
   public flag: boolean = true

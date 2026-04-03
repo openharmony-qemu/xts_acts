@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, EffectComponentAttribute,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mContrast: number = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
-    instance.contrast(this.mContrast)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
@@ -316,238 +309,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
     instance.contrast(this.mContrast)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mContrast: number = 10
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`contrast page show ${JSON.stringify(this.mContrast)}`)
@@ -576,7 +569,6 @@ struct contrastPage {
   @State _contrastFlexMod: FlexModifier = new FlexModifier()
   @State _contrastFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _contrastFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _contrastFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _contrastGaugeMod: GaugeModifier = new GaugeModifier()
   @State _contrastGridMod: GridModifier = new GridModifier()
   @State _contrastGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct contrastPage {
       this._contrastFlexMod.mContrast = value.contrast
       this._contrastFlowItemMod.mContrast = value.contrast
       this._contrastFormComponentMod.mContrast = value.contrast
-      this._contrastFormLinkMod.mContrast = value.contrast
       this._contrastGaugeMod.mContrast = value.contrast
       this._contrastGridMod.mContrast = value.contrast
       this._contrastGridColMod.mContrast = value.contrast

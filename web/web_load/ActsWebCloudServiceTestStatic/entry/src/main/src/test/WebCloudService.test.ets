@@ -497,6 +497,64 @@ export default function webCloudServiceTest() {
             hilog.info(domain, tag, '%{public}s', 'testWebview_cookieManager end');
         })
 
-    })
+        /**
+         * @tc.name   testWebviewController_postUrl_static02
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_POSTURL_0002
+         * @tc.desc   test PostUrl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testWebviewController_postUrl_static02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            Utils.emitEvent("PostUrl002", 10);
+            Utils.registerEvent("testWebviewController_postUrl02_static", "", 10636161, done);
+            await Utils.msSleep(2000);
+            try {
+                let driver = Driver.create();
+                await driver.delayMs(1000);
+                let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
+                expect(button != null).assertTrue();
+                await driver.delayMs(500);
+                if (button != null) {
+                    await button.click();
+                }
+            } catch(error) {
+                hilog.info(domain, tag, `testPinchOut error, ${JSON.stringify(error)} `);
+                expect().assertFail();
+            }
+            await Utils.msSleep(5000);
+            done();
+            hilog.info(domain, tag, '%{public}s', 'testWebviewController_postUrl end');
+        })
 
+        /**
+         * @tc.name   testWebviewController_postUrl_static03
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_POSTURL_0003
+         * @tc.desc   test PostUrl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testWebviewController_postUrl_static03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            Utils.emitEvent("PostUrl003", 10);
+            Utils.registerEvent("testWebviewController_postUrl03_static", "17100001", 10636162, done);
+            await Utils.msSleep(2000);
+            try {
+                let driver = Driver.create();
+                await driver.delayMs(1000);
+                let button = await driver.findComponent(ON.text('WebviewContrllerTestButton'));
+                expect(button != null).assertTrue();
+                await driver.delayMs(500);
+                if (button != null) {
+                    await button.click();
+                }
+            } catch(error) {
+                hilog.info(domain, tag, `testPinchOut error, ${JSON.stringify(error)} `);
+                expect().assertFail();
+            }
+            await Utils.msSleep(5000);
+            done();
+            hilog.info(domain, tag, '%{public}s', 'testWebviewController_postUrl end');
+        })
+    })
 }

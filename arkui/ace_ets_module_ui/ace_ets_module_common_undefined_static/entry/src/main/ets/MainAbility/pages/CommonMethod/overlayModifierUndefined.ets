@@ -22,7 +22,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ImageAttribute> {
+export class MyModifier implements AttributeModifier<ImageAttribute> {
   public isOverlay: boolean = true;
 
   applyNormalAttribute(instance: ImageAttribute): void {

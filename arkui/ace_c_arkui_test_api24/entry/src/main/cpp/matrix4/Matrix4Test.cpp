@@ -337,28 +337,20 @@ static void OnEventReceive(ArkUI_NodeEvent *event)
 	auto eventId = OH_ArkUI_NodeEvent_GetTargetId(event);
 	if (eventId == case1) {
 		SetMatrixSkew();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case2) {
 		SetMatrixTranslate();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case3) {
 		SetMatrixScale();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case4) {
 		SetMatrixRotate();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case5) {
 		SetMatrixCombine();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case6) {
 		SetMatrixInvert();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case7) {
 		SetMatrixTransformPoint();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	} else if (eventId == case8) {
 		SetMatrixPolyToPoly();
-		nodeAPI->setAttribute(image2, NODE_TRANSFORM, &item1);
 	}
 }
 

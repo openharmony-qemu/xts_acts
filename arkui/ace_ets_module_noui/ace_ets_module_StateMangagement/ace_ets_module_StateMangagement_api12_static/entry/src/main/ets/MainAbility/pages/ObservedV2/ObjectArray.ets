@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import {
 
 let nextId:number=0
 @ObservedV2
-class Person4{
+export class Person4{
   @Trace age:number = 0
 
   constructor(age:number) {
@@ -45,7 +45,7 @@ class Person4{
   }
 }
 @ObservedV2
-class Info2{
+export class Info2{
   id:number=0
   @Trace personList:Person4[]=[]
 

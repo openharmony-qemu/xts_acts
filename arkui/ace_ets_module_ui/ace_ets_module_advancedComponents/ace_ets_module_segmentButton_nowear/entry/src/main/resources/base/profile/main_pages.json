@@ -21,6 +21,10 @@
     "MainAbility/pages/index/Index",
     "MainAbility/pages/segmentButton/SegmentButtonBorder",
     "MainAbility/pages/defaultValue/SegBtnSelectBackgrountColor",
-    "MainAbility/pages/segmentButton/SegmentBtnMaterial0070"
+    "MainAbility/pages/segmentButton/SegmentBtnMaterial0070",
+    "MainAbility/pages/migratedActs/EnableStateAnimationIndex",
+    "MainAbility/pages/segmentButton/segmentButtonEnableStateAnimation",
+    "MainAbility/pages/segmentButtonV2/CapsuleSegmentButtonV2Animation",
+    "MainAbility/pages/segmentButtonV2/TabSegmentButtonV2Animation"
   ]
 }

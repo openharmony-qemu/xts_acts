@@ -1688,7 +1688,7 @@ export default function atomicsStoreTest() {
             return Atomics.store(arr, idx as int, vals[i] as long);
           })
         );
-        return storedVals.reduce((acc, val) => acc + val, 0);
+        return storedVals.reduce((acc, val) => acc + val, 0.);
       };
 
       const sum = await batchStoreAndSum(ta, indices, values);

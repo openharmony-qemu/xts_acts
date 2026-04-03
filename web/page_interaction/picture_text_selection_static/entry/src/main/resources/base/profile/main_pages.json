@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/WebInitTest",
-    "pages/WebContextMenuEditStateFlagTest"
+    "pages/WebContextMenuEditStateFlagTest",
+    "pages/WebEnableDataDetector"
   ]
 }

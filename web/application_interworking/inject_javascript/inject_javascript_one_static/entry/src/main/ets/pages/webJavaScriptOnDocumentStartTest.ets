@@ -26,6 +26,10 @@ class StringFields {
   public str: string = '';
 }
 
+function checkResult(result: Array<string>): Boolean{
+  return result.includes('push new js on start called');
+}
+
 @Entry
 @Component
 struct WebJavaScriptOnDocumentStartTest {
@@ -35,6 +39,10 @@ struct WebJavaScriptOnDocumentStartTest {
   @State javaScriptAccess: boolean = true;
   @State pageEnd: string = "";
   @State switchCase: number = 0;
+  @State message: Array<string> = [] as Array<string>;
+  @State isPageEnd: number = -1;
+  private jsStart: string =
+    'console.log("push new js on start called")';
   @State scripts: Array<ScriptItem> = [
     { script: "if (typeof(Storage) !== 'undefined') {" +
       "   localStorage.setItem('color', 'Red');" +
@@ -87,12 +95,39 @@ struct WebJavaScriptOnDocumentStartTest {
                 break;
               }
 
+              case "testJavaScriptOnDocumentStart003": {
+                try {
+                  this.scripts = [
+                    { script: "if (typeof(Storage) !== 'undefined') {" +
+                      "   localStorage.setItem('color', 'Blue');" +
+                      "}", scriptRules: ["123"] }
+                  ];
+                  this.controller.loadUrl("resource://rawfile//javaScriptOnDocumentStart.html");
+                  this.controller.runJavaScript("getResult()", (error, result) => {
+                    if (error) {
+                      console.info('getResult() return error: ' + error)
+                    }
+                    if (result) {
+                      console.log("testJavaScriptOnDocumentStart003 get result = ", result);
+                      console.info('getResult() return result: ' + result)
+                      Utils.emitEvent(result, 172230)
+                    }
+                  })
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
 
+              case "testJavaScriptOnDocumentStart004": {
+                Utils.emitEvent(checkResult(this.message), 172240)
+                break;
+              }
 
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
-                router.pushUrl({ url: 'pages/webtwo' })
+                router.pushUrl({ url: 'pages/webtwo'})
                 console.log('push URL success')
               }
 
@@ -104,10 +139,24 @@ struct WebJavaScriptOnDocumentStartTest {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .javaScriptOnDocumentStart(this.scripts)
+        .onControllerAttached(() => {
+          this.scripts.push({ script: this.jsStart, scriptRules: ['*'] });
+          console.log('javaScriptOnDocumentStart scripts==>' + JSON.stringify(this.scripts));
+        })
         .onPageEnd((event: OnPageEndEvent): void => {
+          console.log("javaScriptOnDocumentStart in onPageEnd");
           if (event) {
-            console.log('url:' + event.url)
+            this.isPageEnd = 0;
+            console.log('javaScriptOnDocumentStart onPageEnd url:' + event.url);
           }
+        })
+        .onConsole((event) => {
+          if (event) {
+            let msg = event.message.getMessage();
+            this.message.push(msg);
+            console.log('javaScriptOnDocumentStart message===>' + this.message);
+          }
+          return false
         })
         .width('100%')
         .height('100%')

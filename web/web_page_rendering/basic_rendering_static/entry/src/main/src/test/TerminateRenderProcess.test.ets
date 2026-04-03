@@ -111,6 +111,7 @@ export default function webviewTerminateRenderProcess() {
         let button = await driver.findComponent(ON.id('TerminateRenderProcess'));
         await Utils.msSleep(2000);
         button?.click();
+        await Utils.msSleep(5000);
         done();
       })
   })

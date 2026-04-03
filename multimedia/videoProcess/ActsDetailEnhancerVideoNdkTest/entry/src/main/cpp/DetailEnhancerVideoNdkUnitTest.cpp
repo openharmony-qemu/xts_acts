@@ -96,14 +96,38 @@ uint32_t FlushSurf(OHNativeWindowBuffer* ohNativeWindowBuffer, OHNativeWindow* w
  */
 int VpeVideoNdk01()
 {
+    if (SRC_INFO.metadataType != OH_VIDEO_HDR_HDR10) {
+        return -1;
+    }
+    if (SRC_INFO.colorSpace != OH_COLORSPACE_BT2020_PQ_LIMIT) {
+        return -1;
+    }
+    if (SRC_INFO.pixelFormat != NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP) {
+        return -1;
+    }
+    if (DST_INFO.metadataType != OH_VIDEO_HDR_HLG) {
+        return -1;
+    }
+    if (DST_INFO.colorSpace != OH_COLORSPACE_BT2020_PQ_LIMIT) {
+        return -1;
+    }
+    if (DST_INFO.pixelFormat != NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP) {
+        return -1;
+    }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
     ret = OH_VideoProcessing_Create(&instance, CREATE_TYPE);
-    EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return -1;
+    }
     ret = OH_VideoProcessing_Destroy(instance);
-    EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return -1;
+    }
     ret = OH_VideoProcessing_DeinitializeEnvironment();
-    EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return -1;
+    }
     return VIDEO_PROCESSING_SUCCESS;
 }
 

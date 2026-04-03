@@ -155,6 +155,67 @@ export default function webStorageTest() {
         })
 
         /**
+         * @tc.name   testGetOriginUsage_static_003
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0003
+         * @tc.desc   test getOriginUsage with empty string origin (return error code 17100011 as usage)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetOriginUsage_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            const emptyOrigin = "";
+            try {
+                webView.WebStorage.getOriginUsage(emptyOrigin, (error: BusinessError<void> | null, usage: number | undefined) => {
+                    console.log("3. 进入getOriginUsage回调函数");
+                    console.log("4. usage值:", usage, "，类型:", typeof usage);
+
+                    if (usage === undefined || usage === null) {
+                        hilog.error(domain, tag, '%{public}s', 'testGetOriginUsage_static_003 usage is null/undefined!');
+                        expect(false).assertTrue();
+                        return;
+                    }
+
+                    const isExpectedUsage = usage === 17100011;
+                    hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_003 usage: ' + usage);
+                    expect(isExpectedUsage).assertTrue();
+                })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_003 has failed for ' + JSON.stringify(e));
+                expect(false).assertTrue();
+            }
+        })
+
+        /**
+         * @tc.name   testGetOriginUsage_static_004
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0004
+         * @tc.desc   test getOriginUsage with empty string origin
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetOriginUsage_static_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            const emptyOrigin = "";
+            try {
+                webView.WebStorage.getOriginUsage(emptyOrigin)
+                    .then((usage: number) => {
+                        hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_004 usage: ' + usage);
+                        expect(usage === 17100011).assertTrue();
+                    })
+                    .catch((error) => {
+                        hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_004 error: ' + JSON.stringify(error));
+                        const errorStr = JSON.stringify(error);
+                        expect(errorStr.includes("17100011") || errorStr.includes("401") ||
+                        errorStr.includes("Invalid origin") || errorStr.includes("Parameter error")).assertTrue();
+                    })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_004 has failed for ' + JSON.stringify(e));
+                expect(false).assertTrue();
+            }
+        })
+
+        /**
          * @tc.name   testGetOriginQuota_static_001
          * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0001
          * @tc.desc   test getOriginQuota
@@ -205,6 +266,62 @@ export default function webStorageTest() {
         })
 
         /**
+         * @tc.name   testGetOriginQuota_static_003
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0003
+         * @tc.desc   test getOriginQuota with empty string origin (return error code 17100011 as quota)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetOriginQuota_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            const emptyOrigin = "";
+            try {
+                webView.WebStorage.getOriginQuota(emptyOrigin, (error: BusinessError<void> | null, quota: number | undefined) => {
+                    if (quota !== undefined && quota !== null) {
+                        expect(quota === 17100011).assertTrue();
+                        hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_003 quota: ' + quota);
+                        return;
+                    }
+
+                    hilog.error(domain, tag, '%{public}s', 'testGetOriginQuota_static_003: quota is null/undefined!');
+                    expect(false).assertTrue();
+                })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_003 has failed for: ' + JSON.stringify(e));
+                expect(false).assertTrue();
+            }
+        })
+
+
+        /**
+         * @tc.name   testGetOriginQuota_static_004
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0004
+         * @tc.desc   test getOriginQuota with empty string origin (return error code 17100011)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetOriginQuota_static_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            const emptyOrigin = "";
+            try {
+                webView.WebStorage.getOriginQuota(emptyOrigin)
+                    .then((quota : number) => {
+                        hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_004 quota: ' + quota);
+                        expect(quota === 17100011).assertTrue();
+                    })
+                    .catch((error) => {
+                        hilog.error(domain, tag, '%{public}s', 'testGetOriginQuota_static_004 unexpected error: ' + JSON.stringify(error));
+                        expect(false).assertTrue();
+                    })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_004 has failed for ' + JSON.stringify(e));
+                expect(false).assertTrue();
+            }
+        })
+
+        /**
          * @tc.name   testDeleteOrigin_static_001
          * @tc.number SUB_WEB_WEBSTORAGE_DELETEORIGIN_0001
          * @tc.desc   test deleteOrigin
@@ -227,6 +344,32 @@ export default function webStorageTest() {
                 expect(false).assertTrue();
             }
         })
+
+        /**
+         * @tc.name   testDeleteOrigin_static_002
+         * @tc.number SUB_WEB_WEBSTORAGE_DELETEORIGIN_0002
+         * @tc.desc   test deleteOrigin with empty string parameter (return error code 17100011)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testDeleteOrigin_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            const emptyOrigin = "";
+            webView.WebStorage.deleteOrigin(emptyOrigin);
+            await Utils.msSleep(2000);
+
+            webView.WebStorage.getOriginUsage(emptyOrigin)
+                .then((usage: number) => {
+                    hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_002 usage: ' + usage);
+                    expect(usage === 17100011).assertTrue();
+                })
+                .catch((error) => {
+                    hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_002 has failed for' + JSON.stringify(error));
+                    expect(false).assertTrue();
+                });
+        })
+
 
         /**
          * @tc.name   testDeleteAllData_static_001

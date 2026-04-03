@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,9 +57,9 @@ const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
 AppStorage.setOrCreate<Router>('router', router);
 
-enum He {Q = 1, W, E}
+export enum He {Q = 1, W, E}
 
-class ModeLinkTwo {
+export class ModeLinkTwo {
   value: number
 
   constructor(value: number) {

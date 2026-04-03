@@ -163,7 +163,7 @@ export default function textAreaJsunit() {
       let strJsonNew = getInspectorByKey('textArea');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("textAreaTest_008 component  is: " + JSON.stringify(objNew.$attrs));
-      expect(objNew.$attrs.selectionMenuHidden).assertEqual(undefined);
+      expect(objNew.$attrs.selectionMenuHidden).assertEqual('true');
       console.info('textAreaTest_008 END');
       done();
     });
@@ -181,7 +181,7 @@ export default function textAreaJsunit() {
       let strJsonNew = getInspectorByKey('textArea');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("textAreaTest_009 component  is: " + JSON.stringify(objNew.$attrs));
-      expect(objNew.$attrs.enableKeyboardOnFocus).assertEqual(undefined);
+      expect(objNew.$attrs.enableKeyboardOnFocus).assertEqual('true');
       console.info('textAreaTest_009 END');
       done();
     });

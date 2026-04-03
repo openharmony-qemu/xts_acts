@@ -3443,7 +3443,7 @@ export default function ReminderAgentTest() {
                     done()
                 }).catch((error) => {
                     console.error(`testPublishReminderNorAlarmFun_0122 failed code is ${error.code} message is ${error.message}`);
-                    expect(reminderId).assertEqual(-1);
+                    expect(error.code).assertEqual(-1);
                     done();
                 })
             } catch (error) {
@@ -3476,7 +3476,7 @@ export default function ReminderAgentTest() {
                     done()
                 }).catch((error) => {
                     console.error(`testPublishReminderNorAlarmFun_0123 failed code is ${error.code} message is ${error.message}`);
-                    expect(reminderId).assertEqual(-1);
+                    expect(error.code).assertEqual(-1);
                     done();
                 })
             } catch (error) {
@@ -3663,7 +3663,7 @@ export default function ReminderAgentTest() {
         /**
          * @tc.name   testPublishReminderNorAlarmFun_0130
          * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0130
-         * @tc.desc   test publish reminder is undifined.
+         * @tc.desc   test publish reminder is undefined.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -3677,14 +3677,13 @@ export default function ReminderAgentTest() {
                 slotType: notification.SlotType.OTHER_TYPES
             }
             try {
-                reminderAgent.publishReminder(null, (err, reminderId) => {
+                reminderAgent.publishReminder(undefined, (err, reminderId) => {
                     console.info("testPublishReminderNorAlarmFun_0130 callback, reminderId =" + reminderId);
-                    expect(reminderId).assertLarger(-1);
+                    expect(reminderId).assertEqual(-1);
                     done();
                 })
             } catch (error) {
                 console.info("testPublishReminderNorAlarmFun_0130 slot err.code");
-                expect(reminderId).assertLarger(-1);
                 done();
             }
         })

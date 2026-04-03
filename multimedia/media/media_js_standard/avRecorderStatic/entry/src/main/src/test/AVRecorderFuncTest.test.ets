@@ -2383,6 +2383,7 @@ export default function avRecorderTest() {
       expect(Number(media.AacProfile.AAC_LC)).assertEqual(0);
       expect(Number(media.AacProfile.AAC_HE)).assertEqual(1);
       expect(Number(media.AacProfile.AAC_HE_V2)).assertEqual(2);
+      expect(String(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
       done();
     });
   })

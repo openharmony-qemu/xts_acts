@@ -59,7 +59,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   if (i % 2 === 0) {
@@ -130,7 +130,7 @@ export default function AtomicsTest() {
         try {
           const worker1Promise = new Promise<string>((resolve, reject) => {
             worker1.start()
-            worker1.run(() => {
+            worker1.run<void>(() => {
               try {
                 const localArray: BigInt64Array = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
@@ -148,7 +148,7 @@ export default function AtomicsTest() {
 
           const worker2Promise = new Promise<string>((resolve, reject) => {
             worker2.start()
-            worker2.run(() => {
+            worker2.run<void>(() => {
               try {
                 const localArray = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
@@ -308,7 +308,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.store(inputArray, 0, 2);
                 resolve(inputArray);
@@ -365,7 +365,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1n);
                 Atomics.notify(inputArray, 0);
@@ -458,7 +458,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<void>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.and(array, i, i);
@@ -539,7 +539,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.exchange(array, i, 1);
@@ -623,7 +623,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.store(array, i, 1);
@@ -710,7 +710,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.sub(array, i, 1n);
@@ -801,7 +801,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1);
                 Atomics.notify(inputArray, 0);
@@ -954,7 +954,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = await new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.notify(inputArray, 0);
                 setTimeout(() => {

@@ -879,12 +879,12 @@ export default function abilityTest() {
             await session!.destroy()
             await Utils.msSleep(500)
             controller!.getLaunchAbility((err: BusinessError | null, agent: object | undefined) => {
-            if (err) {
-                console.error(`GetLaunchAbility11 BusinessError: code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(6600102);
-            } else {
-                console.info(`GetLaunchAbility11 : SUCCESS : wantAgent : ${agent}`);
-            }
+                if (err) {
+                    console.error(`GetLaunchAbility11 BusinessError: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600102);
+                } else {
+                    console.info(`GetLaunchAbility11 : SUCCESS : wantAgent : ${agent}`);
+                }
             });
             session = null;
             done();
@@ -2137,7 +2137,7 @@ export default function abilityTest() {
                 console.info(`session on_customDataChange Successfully ${data}`);
                 flag = true;
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             console.info(`Testlog:flag = ${flag}`);
             expect(flag).assertTrue();
@@ -2181,7 +2181,7 @@ export default function abilityTest() {
                 console.info(`session on_customDataChange Successfully ${data}`)
                 flag = true;
             })
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
             console.info(`Testlog:flag = ${flag}`);
             expect(flag).assertTrue();
@@ -2212,6 +2212,43 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
+         * @tc.desc   Testing session.on(customDataChange) callback return
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100]';
+            session!.onCustomDataChange((data: Record<string, Object>) => {
+                console.info(`${TAG}session on_customDataChange Successfully ${data}`)
+                expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
+            })
+            await controller!.sendCustomData(customdata);
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
+         * @tc.desc   Testing controller.on(customDataChange) callback return
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            controller!.onCustomDataChange((data: Record<string, Object>) => {
+                console.info(`session on_customDataChange Successfully ${data}`)
+                expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
+            })
+            await session!.sendCustomData(customdata);
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0100
          * @tc.desc   Testing call off(customDataChange) of session
@@ -2225,9 +2262,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            session!.offCustomDataChange();
+            session!.offCustomDataChange((data: Record<string, Object>) => {
+                console.info(`session off_customDataChange Successfully ${data}`);
+            });
             console.info('session off_customDataChange end')
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2266,9 +2305,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            controller!.offCustomDataChange();
+            controller!.offCustomDataChange((data: Record<string, Object>) => {
+                console.info('controller off_customDataChange Successfully')
+            });
             console.info('controller off_customDataChange end')
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })

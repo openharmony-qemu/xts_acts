@@ -126,6 +126,10 @@ struct WebMediaOption{
               }, 2000)
               break;
             }
+            case 'emitOnAudioStateChangedEvent001': {
+              Utils.emitEvent(this.playing, 416);
+              break;
+            }
 
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();

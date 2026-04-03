@@ -26,7 +26,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 
 @Observed
-class MyModifier1 implements AttributeModifier<TimePickerAttribute> {
+export class MyModifier1 implements AttributeModifier<TimePickerAttribute> {
   public dateTimeOptionsValue: boolean = true;
   public useMilitaryTimeValue: boolean = true;
   public loopValue: boolean = true;
@@ -55,7 +55,7 @@ class MyModifier1 implements AttributeModifier<TimePickerAttribute> {
 
 
 @Observed
-class MyModifier2 implements AttributeModifier<TimePickerAttribute> {
+export class MyModifier2 implements AttributeModifier<TimePickerAttribute> {
   public msg: string = 'hello';
   public isOnChange: boolean = true;
   public isOnEnterSelectedArea: boolean = true;

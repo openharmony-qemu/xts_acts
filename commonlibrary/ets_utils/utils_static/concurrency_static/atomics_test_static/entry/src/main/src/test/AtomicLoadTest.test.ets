@@ -1810,7 +1810,7 @@ export default function atomicsLoadTest() {
             return Atomics.load(arr, idx as int);
           })
         );
-        return values.reduce((acc, val) => acc + val, 0);
+        return values.reduce((acc, val) => acc + val, 0.);
       };
 
       const sum = await batchLoadAndSum(ta, [0, 1]);

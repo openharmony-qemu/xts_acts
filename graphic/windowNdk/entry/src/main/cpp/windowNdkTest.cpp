@@ -58,6 +58,17 @@ constexpr int32_t FIVE = 5;
 constexpr int32_t SIX = 6;
 constexpr int32_t TEN = 10;
 
+bool g_isFirstDrawFrame;
+uint64_t g_inputHandlingDuration;
+uint64_t g_duration;
+uint64_t g_timestamp;
+
+uint64_t g_frameMetricsCbCount;
+bool g_isFirstDrawFrameReturn;
+uint64_t g_inputDurationReturn;
+uint64_t g_durationReturn;
+uint64_t g_timestampReturn;
+
 static napi_value filterKeyCode(napi_env env, napi_callback_info info){
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -707,6 +718,143 @@ static napi_value TestInjectTouchEventwithDestoryedSubwindow(napi_env env, napi_
     napi_value resultValue;
     napi_create_int32(env, res, &resultValue);
     return resultValue;
+}
+
+static void OnFrameMetricsMeasured(int32_t windowId, const OH_WindowManager_FrameMetrics* metrics)
+{
+    if (metrics == nullptr) {
+        return;
+    }
+    (void)windowId;
+
+    g_frameMetricsCbCount++;
+    
+    OH_WindowManager_FrameMetrics_IsFirstDrawFrame(metrics, &g_isFirstDrawFrame);
+    OH_WindowManager_FrameMetrics_GetInputHandlingDuration(metrics, &g_inputHandlingDuration);
+    OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(metrics, &g_duration);
+    OH_WindowManager_FrameMetrics_GetVsyncTimestamp(metrics, &g_timestamp);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured isFirstDrawFrame=%{public}d", g_isFirstDrawFrame);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured inputHandlingDuration=%{public}llu", g_inputHandlingDuration);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured duration=%{public}llu", g_duration);
+    OH_LOG_INFO(LOG_APP, "OnFrameMetricsMeasured timestamp=%{public}llu", g_timestamp);
+}
+
+static napi_value getFrameMetricsCBCount(napi_env env, napi_callback_info info)
+{
+    napi_value index;
+    OH_LOG_INFO(LOG_APP, "getFrameMetricsCBCount count:%{public}d", g_frameMetricsCbCount);
+    napi_create_uint32(env, g_frameMetricsCbCount, &index);
+    return index;
+}
+
+static napi_value getFrameMetrics(napi_env env, napi_callback_info info)
+{
+    g_isFirstDrawFrameReturn = g_isFirstDrawFrame;
+    g_inputDurationReturn = g_inputHandlingDuration;
+    g_durationReturn = g_duration;
+    g_timestampReturn = g_timestamp;
+    OH_LOG_INFO(LOG_APP, "get g_isFirstDrawFrameReturn=%{public}d", g_isFirstDrawFrameReturn);
+    OH_LOG_INFO(LOG_APP, "get g_inputDurationReturn=%{public}llu", g_inputDurationReturn);
+    OH_LOG_INFO(LOG_APP, "get g_durationReturn=%{public}llu", g_durationReturn);
+    OH_LOG_INFO(LOG_APP, "get g_timestampReturn=%{public}llu", g_timestampReturn);
+    napi_value result;
+    napi_create_object(env, &result);
+    napi_value return_isFirstDrawFrame;
+    napi_get_boolean(env, g_isFirstDrawFrameReturn, &return_isFirstDrawFrame);
+    napi_set_named_property(env, result, "isFirstDrawFrame", return_isFirstDrawFrame);
+    napi_value return_inputHandlingDuration;
+    napi_create_int64(env, g_inputDurationReturn, &return_inputHandlingDuration);
+    napi_set_named_property(env, result, "inputHandlingDuration", return_inputHandlingDuration);
+    napi_value return_duration;
+    napi_create_int64(env, g_durationReturn, &return_duration);
+    napi_set_named_property(env, result, "duration", return_duration);
+    napi_value return_timestamp;
+    napi_create_int64(env, g_timestampReturn, &return_timestamp);
+    napi_set_named_property(env, result, "timestamp", return_timestamp);
+
+    return result;
+}
+
+static napi_value RegisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
+{
+    g_frameMetricsCbCount = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_RegisterFrameMetricsMeasuredCallback(windowId, OnFrameMetricsMeasured);
+            OH_LOG_INFO(LOG_APP, "RegisterFrameMetricsMeasuredCallback return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value UnregisterFrameMetricsMeasuredCallback(napi_env env, napi_callback_info info)
+{
+    g_frameMetricsCbCount = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_UnregisterFrameMetricsMeasuredCallback(windowId, OnFrameMetricsMeasured);
+            OH_LOG_INFO(LOG_APP, "UnregisterFrameMetricsMeasuredCallback return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value RegisterFrameMetricsMeasuredCallbackNullptr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_RegisterFrameMetricsMeasuredCallback(windowId, nullptr);
+            OH_LOG_INFO(LOG_APP, "RegisterFrameMetricsMeasuredCallbackNullptr return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value UnregisterFrameMetricsMeasuredCallbackNullptr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t result = WINDOW_MANAGER_ERRORCODE_INVALID_PARAM;
+    if (argc == 1) {
+        int32_t windowId = -1;
+        if (napi_get_value_int32(env, args[0], &windowId) == napi_ok) {
+            result = OH_WindowManager_UnregisterFrameMetricsMeasuredCallback(windowId, nullptr);
+            OH_LOG_INFO(LOG_APP, "UnregisterFrameMetricsMeasuredCallbackNullptr return Code:  %{public}d", result);
+        }
+    }
+
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
 }
 
 static napi_value TestInjectTouchEventwithWindowXWindowYBeyondScreen(napi_env env, napi_callback_info info)
@@ -1516,6 +1664,10 @@ static napi_value windowEnumInit(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         {"testWindowManager_ErrorCode_enum", nullptr,
             TestWindowManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "getFrameMetrics", nullptr, getFrameMetrics,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getFrameMetricsCBCount", nullptr, getFrameMetricsCBCount,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
@@ -1558,6 +1710,14 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testInjectTouchEventwithDestoryedSubwindow", nullptr, TestInjectTouchEventwithDestoryedSubwindow,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "registerFrameMetricsMeasuredCallback", nullptr, RegisterFrameMetricsMeasuredCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "unregisterFrameMetricsMeasuredCallback", nullptr, UnregisterFrameMetricsMeasuredCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "registerFrameMetricsMeasuredCallbackNullptr", nullptr, RegisterFrameMetricsMeasuredCallbackNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "unregisterFrameMetricsMeasuredCallbackNullptr", nullptr, UnregisterFrameMetricsMeasuredCallbackNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

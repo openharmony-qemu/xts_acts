@@ -107,7 +107,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("EnvPropText")
         .onClick((e: ClickEvent) => {
-          let enable: boolean | undefined = AppStorage.get("accessibilityEnabled");
+          let enable: boolean | undefined = AppStorage.get<Boolean>("accessibilityEnabled");
           try {
             let backData: events_emitter.EventData = {
               data: {

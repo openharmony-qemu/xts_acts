@@ -1400,5 +1400,31 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(3);
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0100
+     * @tc.desc   OH_AVScreenCapture_SetPrivacyProtectCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.OH_AVScreenCapture_SetPrivacyProtectCallback0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0101
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0101
+     * @tc.desc   OH_AVScreenCapture_SetPrivacyProtectCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PRIVACY_PROTECT_0101', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.OH_AVScreenCapture_SetPrivacyProtectCallback0101();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

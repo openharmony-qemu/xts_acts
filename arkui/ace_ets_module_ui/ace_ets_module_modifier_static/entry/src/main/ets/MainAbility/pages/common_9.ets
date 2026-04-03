@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { CommonModifier } from "@ohos.arkui.modifier";
 
-class CustomModifier extends CommonModifier {
+export class CustomModifier extends CommonModifier {
   applyNormalAttribute(instance: CommonAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }

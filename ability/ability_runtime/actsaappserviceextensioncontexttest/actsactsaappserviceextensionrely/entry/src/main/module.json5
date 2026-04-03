@@ -109,6 +109,12 @@
         "srcEntry": "./ets/ServiceExtension/ServiceExtAbility.ets",
         "type": "service",
         "exported": false
+      },
+      {
+        "name": "AgentExtAbility",
+        "srcEntry": "./ets/AgentExtAbility/AgentExtAbility.ets",
+        "type": "agent",
+        "exported": true
       }
     ],
     "requestPermissions": [

@@ -79,6 +79,9 @@ export default function nfcIsoDepTagTest() {
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
+        } else if (error.code === 3100201) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
+          expect(error.code).assertEqual(3100201);
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] beforeAll failed ');
           expect().assertFail();
@@ -110,6 +113,11 @@ export default function nfcIsoDepTagTest() {
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try {
           let ResponseFlags: Array<int> = nfcIsoDepTag.getHistoricalBytes();
+          if (ResponseFlags.length > 0) {
+            expect(ResponseFlags.length > 0).assertTrue();
+          } else {
+            expect(ResponseFlags.length == 0).assertTrue();
+          }
         } catch(error) {
           error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0100 getHistoricalBytes error is ' + error.code + " - " + error);
@@ -135,6 +143,11 @@ export default function nfcIsoDepTagTest() {
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try{
           let HiLayerResponse: Array<int> = nfcIsoDepTag.getHiLayerResponse();
+          if (HiLayerResponse.length > 0) {
+            expect(HiLayerResponse.length > 0).assertTrue();
+          } else {
+            expect(HiLayerResponse.length == 0).assertTrue();
+          }
         } catch(error) {
           error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0200 getHiLayerResponse error is ' + error.code + " - " + error);

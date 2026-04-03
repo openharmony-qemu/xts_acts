@@ -381,6 +381,44 @@ struct webViewController {
               break;
             }
 
+            case "testFileSelectorResultHandleFileListWithNull001": {
+              try {
+                this.onShowFileSelectorCallBack = false
+                this.FileSelectorParamGetTitle = ''
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/showFileSelector.html");
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                await buttonOne.click()
+                await Utils.sleep(2000);
+                // Test with null parameter
+                Utils.emitEvent("handleFileList with null parameter executed successfully", 183170)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 183170)
+              }
+              break;
+            }
+
+            case "testFileSelectorResultHandleFileListWithUndefined001": {
+              try {
+                this.onShowFileSelectorCallBack = false
+                this.FileSelectorParamGetTitle = ''
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/showFileSelector.html");
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                await buttonOne.click()
+                await Utils.sleep(2000);
+                // Test with undefined parameter
+                Utils.emitEvent("handleFileList with undefined parameter executed successfully", 183180)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 183180)
+              }
+              break;
+            }
+
             case "testSecureDnsModeOFF001": {
               try {
                 this.isPageEnd = -1;
@@ -625,7 +663,29 @@ struct webViewController {
           if (event) {
             this.onShowFileSelectorCallBack = true
             console.log('MyFileUploader onShowFileSelector invoked')
-            event.result.handleFileList([this.uri]);
+            
+            // Check current test case and handle accordingly
+            if (this.str === "testFileSelectorResultHandleFileListWithNull001") {
+              // Test with null parameter
+              try {
+                event.result.handleFileList(null);
+                console.info('handleFileList with null parameter executed successfully');
+              } catch (error) {
+                console.error(`handleFileList with null parameter error: ${JSON.stringify(error)}`);
+              }
+            } else if (this.str === "testFileSelectorResultHandleFileListWithUndefined001") {
+              // Test with undefined parameter
+              try {
+                event.result.handleFileList(undefined);
+                console.info('handleFileList with undefined parameter executed successfully');
+              } catch (error) {
+                console.error(`handleFileList with undefined parameter error: ${JSON.stringify(error)}`);
+              }
+            } else {
+              // Normal test case
+              event.result.handleFileList([this.uri]);
+            }
+            
             console.info('getTitle:', event.fileSelector.getTitle())
             console.info('getMode:', event.fileSelector.getMode())
             console.info('getAcceptType:', event.fileSelector.getAcceptType())

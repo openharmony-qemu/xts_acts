@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import {
 import { MessageManagerBase, CallbackBase,MessageBase } from '../../common/MessageManager2';
 
 @Observed
-class TextDecorationModifier  implements AttributeModifier<TextAttribute> {
+export class TextDecorationModifier  implements AttributeModifier<TextAttribute> {
   textDecorationType: TextDecorationType|undefined  = TextDecorationType.LineThrough;
   textDecorationColor: ResourceColor|undefined = '#FFEEAF';
 

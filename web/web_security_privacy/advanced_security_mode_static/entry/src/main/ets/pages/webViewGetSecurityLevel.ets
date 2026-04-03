@@ -40,6 +40,7 @@ class StringFields {
 struct webViewGetSecurityLevel {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
   @State emitKey: string = '';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -48,7 +49,7 @@ struct webViewGetSecurityLevel {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State isFrameResourceType: boolean = false
-
+  @State isPageEnd: number = -1;
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -78,6 +79,7 @@ struct webViewGetSecurityLevel {
             switch (this.stringObj.str) {
               case 'emitWebViewGetSecurityLevel01': {
                 try {
+                  this.isPageEnd = -1;
                   let securityLevel = this.controller.getSecurityLevel();
                   console.log('securityLevel===>'+securityLevel)
                   if (securityLevel === 0) {
@@ -91,6 +93,69 @@ struct webViewGetSecurityLevel {
                 }
                 break;
               }
+
+              case 'emitWebViewGetSecurityLevel02': {
+                try {
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('https://www.baidu.com');
+                  setTimeout(() => {
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 80081);
+                  }, 5000)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewGetSecurityLevel03': {
+                try {
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl("http://www.example.com");
+                  setTimeout(() => {
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 80082);
+                  }, 5000)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewGetSecurityLevel04': {
+                try {
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl("https://expired.badssl.com/");
+                  setTimeout(() => {
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 80083);
+                  }, 5000)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewGetSecurityLevel05': {
+                try {
+                  this.isPageEnd = -1;
+                  this.controllerOne.loadUrl("www.baidu.com");
+                  let securityLevel = this.controllerOne.getSecurityLevel();
+                  console.log('securityLevel===>'+securityLevel)
+                  Utils.emitEvent(securityLevel, 80084);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 370241);
+                }
+                break;
+              }
             }
           })
       }
@@ -101,6 +166,9 @@ struct webViewGetSecurityLevel {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }
