@@ -21,7 +21,7 @@ import {
   it,
   expect,
   Level
-} from '@ohos/hypium';
+} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import i18n from '@ohos.i18n'
@@ -182,31 +182,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name test_SymbolDateTimeFormat_0700
-     * @tc.number test_SymbolDateTimeFormat_0700
-     * @tc.desc test SymbolDateTimeFormat with undefined amPMSymbol param
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolDateTimeFormat_0700', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
-      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": undefined };
-      try {
-        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
-        symbolFormat.resolvedOptions();
-        console.log('test_SymbolDateTimeFormat_0700 result:');
-        expect(false).assertTrue();
-      } catch (e) {
-        console.log('test_SymbolDateTimeFormat_0700 catch error:', e.code + e.message);
-        expect(Number(e.code) === 401).assertTrue();
-      }
-    })
-
-    /**
      * @tc.name test_SymbolNumberFormat_0100
      * @tc.number test_SymbolNumberFormat_0100
-
      * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -248,28 +225,6 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name test_SymbolNumberFormat_0300
-     * @tc.number test_SymbolNumberFormat_0300
-     * @tc.desc test SymbolNumberFormat with custom 0 character
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_0300', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
-      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let numberFormat = symbolFormat.format(12345.06);
-        console.log('test_SymbolNumberFormat_0300 result:', numberFormat);
-        expect(numberFormat === '12,34545.B6').assertTrue();
-      } catch (e) {
-        console.log('test_SymbolNumberFormat_0300 catch error:', e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
      * @tc.name test_SymbolNumberFormat_0400
      * @tc.number test_SymbolNumberFormat_0400
      * @tc.desc test SymbolNumberFormat with
@@ -287,28 +242,6 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(options.zero === 'B').assertTrue();
       } catch (e) {
         console.log('test_SymbolNumberFormat_0400 catch error:', e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
-     * @tc.name test_SymbolNumberFormat_0500
-     * @tc.number test_SymbolNumberFormat_0500
-     * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions param
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_0500', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
-      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "" };
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_0500 result:', options.zero);
-        expect(options.zero === '').assertTrue();
-      } catch (e) {
-        console.log('test_SymbolNumberFormat_0500 catch error:', e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -380,28 +313,6 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name test_SymbolNumberFormat_0900
-     * @tc.number test_SymbolNumberFormat_0900
-     * @tc.desc test SymbolNumberFormat with empty nan option
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_0900', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
-      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": "" };
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_0900 result:', options.nan);
-        expect(options.nan === '').assertTrue();
-      } catch (e) {
-        console.log('test_SymbolNumberFormat_0900 catch error:', e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
      * @tc.name test_SymbolNumberFormat_1000
      * @tc.number test_SymbolNumberFormat_1000
      * @tc.desc test SymbolNumberFormat with undefined nan option
@@ -468,30 +379,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name test_SymbolNumberFormat_1300
-     * @tc.number test_SymbolNumberFormat_1300
-     * @tc.desc test SymbolNumberFormat with empty minusSign param
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_1300', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
-      let customSymbol: i18n.SymbolNumberFormatOptions = { "minusSign": "" };
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1300 result:', options.minusSign);
-        expect(options.minusSign === '').assertTrue();
-      } catch (e) {
-        console.log('test_SymbolNumberFormat_1300 catch error:', e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
-     * @tc
-.name test_SymbolNumberFormat_1400
+     * @tc.name test_SymbolNumberFormat_1400
      * @tc.number test_SymbolNumberFormat_1400
      * @tc.desc test SymbolNumberFormat with undefined minusSign param
      * @tc.type FUNCTION
@@ -504,10 +392,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1400 result:', + options.minusSign);
+        console.log('test_SymbolNumberFormat_1400 result:' + options.minusSign);
         expect(options.minusSign === '-').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1400 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1400 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -526,10 +414,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(12345.06);
-        console.log('test_SymbolNumberFormat_1500 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_1500 result:' + numberFormat);
         expect(numberFormat === 'B12,345.06').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1500 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1500 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -548,32 +436,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1600 result:', + options.plusSign);
+        console.log('test_SymbolNumberFormat_1600 result:' + options.plusSign);
         expect(options.plusSign === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1600 catch error:', + e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
-     * @tc.name test_SymbolNumberFormat_1700
-     * @tc.number test_SymbolNumberFormat_1700
-     * @tc.desc test SymbolNumberFormat with empty plusSign param
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_1700', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
-      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': ""};
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1700 result:', + options.plusSign);
-        expect(options.plusSign === '').assertTrue();
-      }catch(e){
-        console.log('test_SymbolNumberFormat_1700 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1600 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -592,10 +458,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1800 result:', + options.plusSign);
+        console.log('test_SymbolNumberFormat_1800 result:' + options.plusSign);
         expect(options.plusSign === '+').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1800 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1800 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -614,10 +480,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(Infinity);
-        console.log('test_SymbolNumberFormat_1900 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_1900 result:' + numberFormat);
         expect(numberFormat === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1900 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1900 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -636,32 +502,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2000 result:', + options.infinity);
+        console.log('test_SymbolNumberFormat_2000 result:' + options.infinity);
         expect(options.infinity === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2000 catch error:', + e.code + e.message);
-        expect(false).assertTrue();
-      }
-    })
-
-    /**
-     * @tc.name test_SymbolNumberFormat_2100
-     * @tc.number test_SymbolNumberFormat_2100
-     * @tc.desc test SymbolNumberFormat with resolvedOptions
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('test_SymbolNumberFormat_2100', Level.LEVEL2, async (): Promise<void> => {
-      let locale = new Intl.Locale('en-US');
-      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': '' };
-      try {
-        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-        let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2100 result:', + options.infinity);
-        expect(options.infinity === '').assertTrue();
-      }catch(e){
-        console.log('test_SymbolNumberFormat_2100 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2000 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -678,13 +522,12 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let locale = new Intl.Locale('en-US');
       let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': undefined };
       try {
-        let symbolFormat = new i18n
-.SymbolNumberFormat(locale, customSymbol);
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2200 result:', + options.infinity);
+        console.log('test_SymbolNumberFormat_2200 result:' + options.infinity);
         expect(options.infinity === '∞').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2200 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2200 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -703,10 +546,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(123456);
-        console.log('test_SymbolNumberFormat_2300 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_2300 result:' + numberFormat);
         expect(numberFormat === '123-456').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2300 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2300 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -725,10 +568,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2400 result:', + options.groupingSeparator);
+        console.log('test_SymbolNumberFormat_2400 result:' + options.groupingSeparator);
         expect(options.groupingSeparator === '-').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2400 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2400 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -747,14 +590,13 @@ export default function SevenPointZeroI18nStageStaticTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2600 result:', + options.groupingSeparator);
+        console.log('test_SymbolNumberFormat_2600 result:' + options.groupingSeparator);
         expect(options.groupingSeparator === ',').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2600 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2600 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
-
 
   })
 }

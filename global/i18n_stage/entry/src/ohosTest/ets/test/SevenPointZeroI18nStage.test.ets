@@ -213,7 +213,6 @@ export default function SevenPointZeroI18nStageTest() {
       expect(info.confidence).assertEqual(0);
     })
 
-
     /**
      * @tc.name test_SymbolDateTimeFormat_0100
      * @tc.number test_SymbolDateTimeFormat_0100
@@ -668,10 +667,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1400 result:', + options.minusSign);
+        console.log('test_SymbolNumberFormat_1400 result:' + options.minusSign);
         expect(options.minusSign === '-').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1400 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1400 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -690,10 +689,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(12345.06);
-        console.log('test_SymbolNumberFormat_1500 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_1500 result:' + numberFormat);
         expect(numberFormat === 'B12,345.06').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1500 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1500 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -712,10 +711,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1600 result:', + options.plusSign);
+        console.log('test_SymbolNumberFormat_1600 result:' + options.plusSign);
         expect(options.plusSign === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1600 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1600 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -734,10 +733,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1700 result:', + options.plusSign);
+        console.log('test_SymbolNumberFormat_1700 result:' + options.plusSign);
         expect(options.plusSign === '').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1700 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1700 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -756,10 +755,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_1800 result:', + options.plusSign);
+        console.log('test_SymbolNumberFormat_1800 result:' + options.plusSign);
         expect(options.plusSign === '+').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1800 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1800 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -778,10 +777,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(Infinity);
-        console.log('test_SymbolNumberFormat_1900 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_1900 result:' + numberFormat);
         expect(numberFormat === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_1900 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_1900 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -800,10 +799,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2000 result:', + options.infinity);
+        console.log('test_SymbolNumberFormat_2000 result:' + options.infinity);
         expect(options.infinity === 'B').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2000 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2000 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -822,10 +821,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2100 result:', + options.infinity);
+        console.log('test_SymbolNumberFormat_2100 result:' + options.infinity);
         expect(options.infinity === '').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2100 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2100 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -844,10 +843,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2200 result:', + options.infinity);
+        console.log('test_SymbolNumberFormat_2200 result:' + options.infinity);
         expect(options.infinity === '∞').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2200 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2200 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -866,10 +865,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let numberFormat = symbolFormat.format(123456);
-        console.log('test_SymbolNumberFormat_2300 result:', + numberFormat);
+        console.log('test_SymbolNumberFormat_2300 result:' + numberFormat);
         expect(numberFormat === '123-456').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2300 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2300 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -888,10 +887,10 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2400 result:', + options.groupingSeparator);
+        console.log('test_SymbolNumberFormat_2400 result:' + options.groupingSeparator);
         expect(options.groupingSeparator === '-').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2400 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2400 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
@@ -910,14 +909,13 @@ export default function SevenPointZeroI18nStageTest() {
       try {
         let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
         let options = symbolFormat.resolvedOptions();
-        console.log('test_SymbolNumberFormat_2600 result:', + options.groupingSeparator);
+        console.log('test_SymbolNumberFormat_2600 result:' + options.groupingSeparator);
         expect(options.groupingSeparator === ',').assertTrue();
       }catch(e){
-        console.log('test_SymbolNumberFormat_2600 catch error:', + e.code + e.message);
+        console.log('test_SymbolNumberFormat_2600 catch error:' + e.code + e.message);
         expect(false).assertTrue();
       }
     })
-
 
   })
 }
