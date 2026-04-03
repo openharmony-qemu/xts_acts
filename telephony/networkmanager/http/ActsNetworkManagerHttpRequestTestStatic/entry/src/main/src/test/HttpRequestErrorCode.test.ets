@@ -1059,7 +1059,7 @@ export default function httpRequestErrorCodeTest() {
                 done();
               }).catch((error: Error) => {
                 hilog.info(domain, tag, '%{public}s', caseName + '  get error code is ' + error.code);
-                ExpectTrue(error?.code == 2300005);
+                ExpectTrue(error?.code === 2300005);
                 httpRequest.destroy();
                 hilog.info(domain, tag, '%{public}s', caseName + '---test end');
                 done();
