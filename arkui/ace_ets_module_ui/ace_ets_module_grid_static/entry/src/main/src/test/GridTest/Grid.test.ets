@@ -59,7 +59,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_001
+     * @tc.number SUB_ARKUI_ACE_GRID_0100
      * @tc.name focusWrapModeDefaultEnum
      * @tc.desc Test FocusWrapMode.DEFAULT enum value equals 0
      * @tc.type   FUNCTION
@@ -74,7 +74,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_002
+     * @tc.number SUB_ARKUI_ACE_GRID_0200
      * @tc.name focusWrapModeWrapEnum
      * @tc.desc Test FocusWrapMode.WRAP_WITH_ARROW enum value equals 1
      * @tc.type   FUNCTION
@@ -89,7 +89,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_003
+     * @tc.number SUB_ARKUI_ACE_GRID_0300
      * @tc.name gridFocusDefault
      * @tc.desc Verify Grid with default focusWrap renders and has $attrs via inspector
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_004
+     * @tc.number SUB_ARKUI_ACE_GRID_0400
      * @tc.name gridFocusWrap
      * @tc.desc Verify Grid with WRAP_WITH_ARROW focusWrap renders and has $attrs via inspector
      * @tc.type   FUNCTION
@@ -129,7 +129,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_005
+     * @tc.number SUB_ARKUI_ACE_GRID_0500
      * @tc.name gridUndefined
      * @tc.desc Verify Grid with undefined focusWrap renders via inspector
      * @tc.type   FUNCTION
@@ -147,7 +147,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_006
+     * @tc.number SUB_ARKUI_ACE_GRID_0600
      * @tc.name gridSyncLoadTrue
      * @tc.desc Verify Grid with syncLoad(true) renders via inspector
      * @tc.type   FUNCTION
@@ -165,7 +165,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_007
+     * @tc.number SUB_ARKUI_ACE_GRID_0700
      * @tc.name gridSyncLoadFalse
      * @tc.desc Verify Grid with syncLoad(false) renders via inspector
      * @tc.type   FUNCTION
@@ -183,7 +183,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_008
+     * @tc.number SUB_ARKUI_ACE_GRID_0800
      * @tc.name gridOnWillScrollCallback
      * @tc.desc Verify Grid onWillScroll callback is triggered when scrolling
      * @tc.type   FUNCTION
@@ -208,7 +208,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_009
+     * @tc.number SUB_ARKUI_ACE_GRID_0900
      * @tc.name gridOnDidScrollCallback
      * @tc.desc Verify Grid onDidScroll callback is triggered when scrolling
      * @tc.type   FUNCTION
@@ -233,7 +233,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_010
+     * @tc.number SUB_ARKUI_ACE_GRID_1000
      * @tc.name gridOnScrollIndexCallback
      * @tc.desc Verify Grid onScrollIndex callback is triggered when scrolling
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_011
+     * @tc.number SUB_ARKUI_ACE_GRID_1100
      * @tc.name uiGridEventSetOnWillScroll
      * @tc.desc Verify UIGridEvent.setOnWillScroll - grid with callbacks renders via inspector
      * @tc.type   FUNCTION
@@ -277,7 +277,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_012
+     * @tc.number SUB_ARKUI_ACE_GRID_1200
      * @tc.name uiGridEventSetOnDidScroll
      * @tc.desc Verify UIGridEvent.setOnDidScroll - grid with callbacks has $attrs via inspector
      * @tc.type   FUNCTION
@@ -298,7 +298,7 @@ export default function GridTest() {
     });
 
     /**
-     * @tc.number GridTest_013
+     * @tc.number SUB_ARKUI_ACE_GRID_1300
      * @tc.name uiGridEventSetOnScrollIndex
      * @tc.desc Verify UIGridEvent.setOnScrollIndex callback is triggered when scrolling
      * @tc.type   FUNCTION
