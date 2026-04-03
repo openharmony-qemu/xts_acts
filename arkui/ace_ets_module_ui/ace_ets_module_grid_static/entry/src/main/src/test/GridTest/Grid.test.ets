@@ -58,6 +58,14 @@ export default function GridTest() {
       await Utils.sleep(SLEEP_TIME);
     });
 
+    /**
+     * @tc.number GridTest_001
+     * @tc.name focusWrapModeDefaultEnum
+     * @tc.desc Test FocusWrapMode.DEFAULT enum value equals 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('focusWrapModeDefaultEnum', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(FocusWrapMode.DEFAULT).assertEqual(0);
@@ -65,6 +73,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_002
+     * @tc.name focusWrapModeWrapEnum
+     * @tc.desc Test FocusWrapMode.WRAP_WITH_ARROW enum value equals 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('focusWrapModeWrapEnum', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(FocusWrapMode.WRAP_WITH_ARROW).assertEqual(1);
@@ -72,6 +88,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_003
+     * @tc.name gridFocusDefault
+     * @tc.desc Verify Grid with default focusWrap renders and has $attrs via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridFocusDefault', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -84,6 +108,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_004
+     * @tc.name gridFocusWrap
+     * @tc.desc Verify Grid with WRAP_WITH_ARROW focusWrap renders and has $attrs via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridFocusWrap', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -96,6 +128,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_005
+     * @tc.name gridUndefined
+     * @tc.desc Verify Grid with undefined focusWrap renders via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -106,6 +146,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_006
+     * @tc.name gridSyncLoadTrue
+     * @tc.desc Verify Grid with syncLoad(true) renders via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridSyncLoadTrue', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -116,6 +164,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_007
+     * @tc.name gridSyncLoadFalse
+     * @tc.desc Verify Grid with syncLoad(false) renders via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridSyncLoadFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -126,6 +182,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_008
+     * @tc.name gridOnWillScrollCallback
+     * @tc.desc Verify Grid onWillScroll callback is triggered when scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridOnWillScrollCallback', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -143,6 +207,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_009
+     * @tc.name gridOnDidScrollCallback
+     * @tc.desc Verify Grid onDidScroll callback is triggered when scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridOnDidScrollCallback', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -160,6 +232,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_010
+     * @tc.name gridOnScrollIndexCallback
+     * @tc.desc Verify Grid onScrollIndex callback is triggered when scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridOnScrollIndexCallback', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -177,6 +257,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_011
+     * @tc.name uiGridEventSetOnWillScroll
+     * @tc.desc Verify UIGridEvent.setOnWillScroll - grid with callbacks renders via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiGridEventSetOnWillScroll', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -188,6 +276,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_012
+     * @tc.name uiGridEventSetOnDidScroll
+     * @tc.desc Verify UIGridEvent.setOnDidScroll - grid with callbacks has $attrs via inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiGridEventSetOnDidScroll', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -201,6 +297,14 @@ export default function GridTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number GridTest_013
+     * @tc.name uiGridEventSetOnScrollIndex
+     * @tc.desc Verify UIGridEvent.setOnScrollIndex callback is triggered when scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiGridEventSetOnScrollIndex', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);

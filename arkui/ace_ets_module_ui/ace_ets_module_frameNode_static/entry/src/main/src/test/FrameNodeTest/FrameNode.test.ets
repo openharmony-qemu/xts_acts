@@ -53,6 +53,14 @@ export default function FrameNodeTest() {
       await Utils.sleep(SLEEP_TIME);
     });
 
+    /**
+     * @tc.number FrameNodeTest_001
+     * @tc.name uiStateNormal
+     * @tc.desc Test UIState.NORMAL enum value equals 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStateNormal', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(UIState.NORMAL).assertEqual(0);
@@ -60,6 +68,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_002
+     * @tc.name uiStatePressed
+     * @tc.desc Test UIState.PRESSED enum value equals 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStatePressed', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(UIState.PRESSED).assertEqual(1);
@@ -67,6 +83,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_003
+     * @tc.name uiStateFocused
+     * @tc.desc Test UIState.FOCUSED enum value equals 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStateFocused', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(UIState.FOCUSED).assertEqual(2);
@@ -74,6 +98,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_004
+     * @tc.name uiStateDisabled
+     * @tc.desc Test UIState.DISABLED enum value equals 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStateDisabled', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(UIState.DISABLED).assertEqual(4);
@@ -81,6 +113,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_005
+     * @tc.name uiStateSelected
+     * @tc.desc Test UIState.SELECTED enum value equals 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStateSelected', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(UIState.SELECTED).assertEqual(8);
@@ -88,6 +128,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_006
+     * @tc.name frameNodeOptionsConstruct
+     * @tc.desc Test FrameNodeOptions supportMultiThread field with true/false/undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('frameNodeOptionsConstruct', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let opts: FrameNodeOptions = { supportMultiThread: true };
@@ -100,6 +148,14 @@ export default function FrameNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number FrameNodeTest_007
+     * @tc.name frameNodePageRenders
+     * @tc.desc Verify FrameNode test page renders with root node visible in inspector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('frameNodePageRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
