@@ -53,7 +53,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_001
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0100
      * @tc.name animationStopModeFirstFrame
      * @tc.desc Test AnimationStopMode.FIRST_FRAME enum value
      * @tc.type   FUNCTION
@@ -70,7 +70,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_002
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0200
      * @tc.name animationStopModeLastFrame
      * @tc.desc Test AnimationStopMode.LAST_FRAME enum value
      * @tc.type   FUNCTION
@@ -87,7 +87,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_003
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0300
      * @tc.name animationOptionsStopModeDefault
      * @tc.desc Test AnimationOptions stopMode field defaults to undefined
      * @tc.type   FUNCTION
@@ -105,7 +105,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_004
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0400
      * @tc.name animationOptionsStopModeFirstFrame
      * @tc.desc Test AnimationOptions with stopMode FIRST_FRAME
      * @tc.type   FUNCTION
@@ -124,7 +124,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_005
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0500
      * @tc.name animationOptionsStopModeLastFrame
      * @tc.desc Test AnimationOptions with stopMode LAST_FRAME
      * @tc.type   FUNCTION
@@ -143,7 +143,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_006
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0600
      * @tc.name drawableDescriptorImageRendered
      * @tc.desc Verify Image component renders in page
      * @tc.type   FUNCTION
@@ -164,7 +164,7 @@ export default function DrawableDescriptorTest() {
     });
 
     /**
-     * @tc.number DrawableDescriptorTest_007
+     * @tc.number SUB_ARKUI_ACE_DRAWABLEDESCRIPTOR_0700
      * @tc.name animStopModeFromPage
      * @tc.desc Verify AnimationStopMode values stored by page in AppStorage
      * @tc.type   FUNCTION

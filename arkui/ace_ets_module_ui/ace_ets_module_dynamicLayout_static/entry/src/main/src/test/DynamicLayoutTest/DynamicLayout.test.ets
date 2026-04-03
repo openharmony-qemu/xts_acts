@@ -52,7 +52,7 @@ export default function DynamicLayoutTest() {
     });
 
     /**
-     * @tc.number DynamicLayoutTest_001
+     * @tc.number SUB_ARKUI_ACE_DYNAMICLAYOUT_0100
      * @tc.name dynamicLayoutComponentRendered
      * @tc.desc Verify DynamicLayout component renders in page
      * @tc.type   FUNCTION
@@ -78,7 +78,7 @@ export default function DynamicLayoutTest() {
     });
 
     /**
-     * @tc.number DynamicLayoutTest_002
+     * @tc.number SUB_ARKUI_ACE_DYNAMICLAYOUT_0200
      * @tc.name dynamicLayoutAttributeModifierUndefined
      * @tc.desc Verify DynamicLayout.attributeModifier(undefined) renders normally
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function DynamicLayoutTest() {
     });
 
     /**
-     * @tc.number DynamicLayoutTest_003
+     * @tc.number SUB_ARKUI_ACE_DYNAMICLAYOUT_0300
      * @tc.name dynamicLayoutWithoutModifier
      * @tc.desc Verify DynamicLayout without attributeModifier renders normally
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function DynamicLayoutTest() {
     });
 
     /**
-     * @tc.number DynamicLayoutTest_004
+     * @tc.number SUB_ARKUI_ACE_DYNAMICLAYOUT_0400
      * @tc.name dynamicLayoutChildContentRendered
      * @tc.desc Verify DynamicLayout child content (CustomBuilder) rendered
      * @tc.type   FUNCTION
@@ -154,7 +154,7 @@ export default function DynamicLayoutTest() {
     });
 
     /**
-     * @tc.number DynamicLayoutTest_005
+     * @tc.number SUB_ARKUI_ACE_DYNAMICLAYOUT_0500
      * @tc.name dynamicLayoutPageShown
      * @tc.desc Verify page onPageShow was triggered
      * @tc.type   FUNCTION

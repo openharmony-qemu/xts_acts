@@ -63,7 +63,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_001
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0100
      * @tc.name dividerDefault
      * @tc.desc Divider default — verify node exists via inspector
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_002
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0200
      * @tc.name dividerVerticalTrue
      * @tc.desc Divider vertical true — verify node exists, check attrs
      * @tc.type   FUNCTION
@@ -124,7 +124,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_003
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0300
      * @tc.name dividerVerticalFalse
      * @tc.desc Divider vertical false — verify node exists
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_004
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0400
      * @tc.name dividerColorRed
      * @tc.desc Divider color red — verify node exists
      * @tc.type   FUNCTION
@@ -188,7 +188,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_005
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0500
      * @tc.name dividerStrokeWidth5
      * @tc.desc Divider strokeWidth 5 — verify node exists
      * @tc.type   FUNCTION
@@ -220,7 +220,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_006
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0600
      * @tc.name dividerStrokeWidth10px
      * @tc.desc Divider strokeWidth 10px — verify node exists
      * @tc.type   FUNCTION
@@ -252,7 +252,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_007
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0700
      * @tc.name dividerLineCapButt
      * @tc.desc Divider lineCap Butt — LineCapStyle.Butt == 0, inspector
      * @tc.type   FUNCTION
@@ -285,7 +285,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_008
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0800
      * @tc.name dividerLineCapRound
      * @tc.desc Divider lineCap Round — LineCapStyle.Round == 1
      * @tc.type   FUNCTION
@@ -318,7 +318,7 @@ export default function DividerTest() {
     });
 
     /**
-     * @tc.number DividerTest_009
+     * @tc.number SUB_ARKUI_ACE_DIVIDER_0900
      * @tc.name dividerLineCapSquare
      * @tc.desc Divider lineCap Square — LineCapStyle.Square == 2
      * @tc.type   FUNCTION
