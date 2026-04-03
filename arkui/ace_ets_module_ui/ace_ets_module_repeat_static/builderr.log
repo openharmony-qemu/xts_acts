@@ -1,0 +1,18 @@
+> hvigor ERROR: Failed :entry:default@CompileArkTSEvolution... 
+> hvigor ERROR: Simultaneous build failed.
+1 ERROR: 11410001 Compile abc files failed.
+Error Message: Failed to proceed to ES2PANDA_STATE_CHECKED
+
+1 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("RepeatTest", (() => void)) At File: F:\strongerxts\2\ace_ets_module_repeat_static\entry\src\main\src\test\RepeatTest\Repeat.test.ets:16:3
+
+2 ERROR: Semantic error ESE0127
+Error Message: No matching call signature for ("repeatItemInterface", Int, ((p1: (() => void)) => Promise<void>)) At File: F:\strongerxts\2\ace_ets_module_repeat_static\entry\src\main\src\test\RepeatTest\Repeat.test.ets:153:5
+
+3 ERROR: Semantic error ESE0174
+Error Message: Cannot infer type for ri because class composite needs an explicit target type At File: F:\strongerxts\2\ace_ets_module_repeat_static\entry\src\main\src\test\RepeatTest\Repeat.test.ets:157:13
+
+
+
+
+COMPILE RESULT:FAIL {ERROR:2 WARN:2 INFO:14}
