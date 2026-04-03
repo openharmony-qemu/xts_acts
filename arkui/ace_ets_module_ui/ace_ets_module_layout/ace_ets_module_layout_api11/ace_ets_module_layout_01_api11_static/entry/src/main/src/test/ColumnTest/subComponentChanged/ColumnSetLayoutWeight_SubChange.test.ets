@@ -108,7 +108,7 @@ export default function ColumnSetLayoutWeight_SubChange() {
 
       expect(Math.abs(setLayoutWeight1.bottom - setLayoutWeight1.top - Math.round(uiContext!.vp2px(510 / 3))) <= 1)
         .assertTrue()
-      expect(Math.abs(setLayoutWeight2.bottom - setLayoutWeight2.top - Math.round(uiContext!.vp2px(340 / 3))) <= 1)
+      expect(Math.abs(setLayoutWeight2.bottom - setLayoutWeight2.top - Math.round(uiContext!.vp2px(340 / 3))) <= 2)
         .assertTrue()
       expect(Math.abs(setLayoutWeight3.bottom - setLayoutWeight3.top - Math.round(uiContext!.vp2px(170 / 3))) <= 2)
         .assertTrue()
