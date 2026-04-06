@@ -43,15 +43,15 @@ export default function TextInputOnNeedSoftkeyboardTest() {
     })
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_001
-     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_001
+     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_0100
+     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_0100
      * @tc.desc   Test TextInput onNeedSoftkeyboard callback with true
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_001', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_001 START');
+    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_0100', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('Button_onNeedSoftkeyboard_true'))
@@ -59,7 +59,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('onNeedSoftkeyboard_true')).assertEqual('true');
       AppStorage.delete('onNeedSoftkeyboard_true')
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_001 END');
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_TRUE_PARAM_0100 END');
     });
 
     /**
@@ -83,15 +83,15 @@ export default function TextInputOnNeedSoftkeyboardTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_003
-     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_003
+     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0300
+     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0300
      * @tc.desc   Test Button onNeedSoftkeyboard callback with undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_003', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_003 START');
+    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0300', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0300 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('Button_onNeedSoftkeyboard_undefined'))
@@ -100,19 +100,19 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let strJson: string = getInspectorByKey('Button_onNeedSoftkeyboard_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.onNeedSoftkeyboard).assertEqual(undefined);
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_003 END');
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0300 END');
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_004
-     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_004
+     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400
+     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400
      * @tc.desc   Test TextInput onNeedSoftkeyboard callback with undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_004', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_004 START');
+    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('TextInput_onNeedSoftkeyboard_undefined'))
@@ -121,7 +121,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let strJson: string = getInspectorByKey('TextInput_onNeedSoftkeyboard_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.onNeedSoftkeyboard).assertEqual(undefined);
-      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_004 END');
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400 END');
     });
   });
 }
