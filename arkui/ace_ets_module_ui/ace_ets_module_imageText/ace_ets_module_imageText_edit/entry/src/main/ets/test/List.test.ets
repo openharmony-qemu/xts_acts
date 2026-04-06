@@ -141,6 +141,7 @@ import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelect
 import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
 import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
+import TextInputOnNeedSoftkeyboardTest from './TextInputApi24Test/TextInputOnNeedSoftkeyboard.test';
 
 import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
 import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
@@ -284,4 +285,5 @@ export default function testsuite() {
   TextInputSelectAllNullUndefinedTest();
   TextInputSelectionMenuHiddenNullUndefinedTest();
   TextInputContentTypeParamTest();
+  TextInputOnNeedSoftkeyboardTest();  // Api24
 }
