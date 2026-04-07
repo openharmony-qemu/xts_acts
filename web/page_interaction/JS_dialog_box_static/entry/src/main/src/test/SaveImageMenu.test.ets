@@ -72,6 +72,7 @@ export default function SaveImageMenuJsunit() {
           await Utils.msSleep(1000);
           buttonOne.click();
         }
+        done();
       })
 
     /**
