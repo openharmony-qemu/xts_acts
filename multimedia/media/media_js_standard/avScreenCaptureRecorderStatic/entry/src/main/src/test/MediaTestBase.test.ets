@@ -39,6 +39,8 @@ export default class MediaTestBase {
   CREATE_EVENT = 'create';
   INIT_EVENT = 'init';
   STARTRECORDER_EVENT = 'start';
+  PAUSERECORDER_EVENT = 'pause';
+  RESUMERECORDER_EVENT = 'resume';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
@@ -174,6 +176,32 @@ export default class MediaTestBase {
         setTimeout(() => {
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }, recorderTime);
+
+        break;
+      case 'pause':
+        steps.shift();
+        await avScreenCaptureRecorder!!.pauseRecording().then(() => {
+          console.info('avScreenCaptureRecorder pause success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder pause failed, error: ' + err.message);
+          expect().assertFail()
+        })
+
+        await this.msleepAsync(recorderTime);
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+
+        break;
+      case 'resume':
+        steps.shift();
+        await avScreenCaptureRecorder!!.resumeRecording().then(() => {
+          console.info('avScreenCaptureRecorder resume success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder resume failed, error: ' + err.message);
+          expect().assertFail()
+        })
+
+        await this.msleepAsync(recorderTime);
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
 
         break;
       case 'skipPrivacyMode':
