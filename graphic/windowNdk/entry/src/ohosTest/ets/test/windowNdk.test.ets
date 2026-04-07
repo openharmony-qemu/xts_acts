@@ -941,14 +941,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_setBackgroundColor_#FF00FF00
+     * @tc.name   test_setBackgroundColor_FF00FF00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3100
      * @tc.desc   test_setBackgroundColor_#FF00FF00
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_setBackgroundColor_#FF00FF00', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_setBackgroundColor_FF00FF00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setBackgroundColor_#FF00FF00";
       let result = windowNdkTest.setBackgroundColor(windowId, '#FF00FF00');
       console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
@@ -1056,14 +1056,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_SetBrightness_0.0
+     * @tc.name   test_SetBrightness_00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3800
      * @tc.desc   test_SetBrightness_0.0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SetBrightness_0.0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_SetBrightness_00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_SetBrightness_0.0";
       let result = windowNdkTest.setBrightness(windowId, 0.0);
       console.info(`${caseName}: setBrightness result: ${JSON.stringify(result)}`);
