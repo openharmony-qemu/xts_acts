@@ -8743,7 +8743,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest168
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_16800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0100
      * @tc.desc   TypeDescriptor length is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8765,7 +8765,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest169
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_16900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0200
      * @tc.desc   TypeDescriptor length is 256
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8788,7 +8788,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest170
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0300
      * @tc.desc   TypeDescriptor length is 257
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8811,7 +8811,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest171
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0400
      * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8832,7 +8832,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest172
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0500
      * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 256
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8854,7 +8854,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest173
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0600
      * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 257
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8876,7 +8876,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest174
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0700
      * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8897,7 +8897,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest175
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0800
      * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 256
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8919,7 +8919,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest176
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0900
      * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 257
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8941,7 +8941,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest177
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1000
      * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8962,7 +8962,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest178
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1100
      * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 256
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8984,7 +8984,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest179
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_17900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1200
      * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 257
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9006,7 +9006,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest180
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_18000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1300
      * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9027,7 +9027,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest181
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_18100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1400
      * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9048,7 +9048,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest182
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_18200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1500
      * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 256
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9070,7 +9070,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest183
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_18300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1600
      * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 257
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9092,7 +9092,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest184
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_18400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1700
      * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
