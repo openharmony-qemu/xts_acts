@@ -2863,6 +2863,46 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100
+         * @tc.desc   Testing onDesktopLyricVisibilityChanged
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100';
+            const isSupported: boolean = await avSession.isDesktopLyricSupported();
+            if (!isSupported) {
+                done();
+                return;
+            }
+            let state1 = avSession.DesktopLyricState = { isLocked : true};
+            let state2 = avSession.DesktopLyricState = { isLocked : false};
+            let callbackState: boolean = false;
+            let callback = (data: avSession.DesktopLyricState) => {
+                callbackState = data;
+                console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+            }
+            try {
+                await session!.enableDesktopLyric(true);
+                session!.onDesktopLyricVisibilityChanged(callback);
+
+                await session!.setDesktopLyricVisible(state1);
+                await Utils.msSleep(200);
+                expect(callbackTriggered).assertTrue();
+
+                await session!.setDesktopLyricVisible(state2);
+                await Utils.msSleep(200);
+                expect(callbackTriggered).assertFalse();
+            } catch (err) {
+                console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            }
+            done();
+        });
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_0200
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_0200
          * @tc.desc   Testing onDesktopLyricVisibilityChanged when session not exit (throw 6600102)
