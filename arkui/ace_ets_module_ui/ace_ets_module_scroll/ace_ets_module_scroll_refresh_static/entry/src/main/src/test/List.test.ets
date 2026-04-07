@@ -15,7 +15,9 @@
  */
 
 import refreshTest from './RefreshTest/Refresh.test';
+import RefreshAttributeTest from './RefreshAttributeTest/RefreshAttribute.test';
 
 export default function testsuite() {
   refreshTest();
+  RefreshAttributeTest();
 }
