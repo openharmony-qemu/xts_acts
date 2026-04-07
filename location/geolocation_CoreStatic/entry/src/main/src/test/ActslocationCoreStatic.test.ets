@@ -54,6 +54,7 @@ export default function actslocationTest() {
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
+          await changedLocationMode()
           let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
           if(!isWifiActive){
             console.info("======> wifi_test/enable wifi:" );
