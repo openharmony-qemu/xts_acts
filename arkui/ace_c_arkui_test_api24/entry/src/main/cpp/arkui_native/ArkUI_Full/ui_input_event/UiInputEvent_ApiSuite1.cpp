@@ -21,7 +21,11 @@ namespace ArkUICapiTest {
 // Ensure UI input event CAPI module is initialized before PointerEvent APIs (reduces flaky crash on Destroy).
 static inline void EnsureArkUiUiInputEventModuleLoaded()
 {
-    (void)OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_UIInputEvent");
+    void *ptr = OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_UIInputEvent");
+    if (ptr == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "EnsureArkUiUiInputEventModuleLoaded",
+            "OH_ArkUI_QueryModuleInterfaceByName returned nullptr for ArkUI_UIInputEvent");
+    }
 }
 
 /*
