@@ -26,328 +26,592 @@ namespace {
 constexpr int32_t BUF_SIZE = 1024;
 constexpr int32_t errorCodes_SIZE = 8;
 
-static napi_value TestOHContentEmbedExtensionRegisterOnCreateFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnCreateFunc_NullExtensionNullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 1;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnCreateFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED  && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnCreateFunc_NullExtensionNullCallback failed code: %{public}d",
+        code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnDestroyFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnCreateFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 2;
+    ContentEmbed_ExtensionInstanceHandle extension = reinterpret_cast<ContentEmbed_ExtensionInstanceHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnCreateFunc(extension, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnCreateFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnDestroyFunc_NullExtensionNullCallback(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDestroyFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnDestroyFunc_NullExtensionNullCallback failed code: %{public}d",
+        code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnObjectAttachFunc(napi_env env,
+static napi_value TestExtensionRegisterOnDestroyFunc_NullCallback(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ExtensionInstanceHandle extension = reinterpret_cast<ContentEmbed_ExtensionInstanceHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDestroyFunc(extension, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnDestroyFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnObjectAttachFunc_NullExtensionNullCallback(napi_env env,
     napi_callback_info info)
 {
-    int32_t testId = 3;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnObjectAttachFunc_NullExtensionNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionUnRegisterOnObjectAttachFunc(napi_env env,
-    napi_callback_info info)
+static napi_value TestExtensionRegisterOnObjectAttachFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 4;
+    ContentEmbed_ExtensionInstanceHandle extension = reinterpret_cast<ContentEmbed_ExtensionInstanceHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(extension, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnObjectAttachFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionUnRegisterOnObjectAttachFunc_NullExtension(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc(nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionUnRegisterOnObjectAttachFunc_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnObjectDetachFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnObjectDetachFunc_NullExtensionNullCallback(napi_env env,
+    napi_callback_info info)
 {
-    int32_t testId = 5;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnObjectDetachFunc_NullExtensionNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionUnRegisterOnObjectDetachFunc(napi_env env,
-    napi_callback_info info)
+static napi_value TestExtensionRegisterOnObjectDetachFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 6;
+    ContentEmbed_ExtensionInstanceHandle extension = reinterpret_cast<ContentEmbed_ExtensionInstanceHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(extension, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnObjectDetachFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionUnRegisterOnObjectDetachFunc_NullExtension(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc(nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionUnRegisterOnObjectDetachFunc_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnWriteToDataStreamFunc(napi_env env,
+static napi_value TestExtensionRegisterOnWriteToDataStreamFunc_NullObjectNullCallback(napi_env env,
     napi_callback_info info)
 {
-    int32_t testId = 7;
-    ContentEmbed_ErrorCode code =
-        OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc(nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnWriteToDataStreamFunc_NullObjectNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnGetSnapshotFunc(napi_env env,
+static napi_value TestExtensionRegisterOnWriteToDataStreamFunc_NullCallback(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnWriteToDataStreamFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnGetSnapshotFunc_NullObjectNullCallback(napi_env env,
     napi_callback_info info)
 {
-    int32_t testId = 8;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnGetSnapshotFunc_NullObjectNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnDoEditFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnGetSnapshotFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 9;
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(object, nullptr);
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnGetSnapshotFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnDoEditFunc_NullObjectNullCallback(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDoEditFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnDoEditFunc_NullObjectNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnGetEditStatusFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnDoEditFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 10;
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDoEditFunc(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnDoEditFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnGetEditStatusFunc_NullObjectNullCallback(napi_env env,
+    napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnGetEditStatusFunc_NullObjectNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionRegisterOnGetCapabilityFunc(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnGetEditStatusFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 11;
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnGetEditStatusFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionRegisterOnGetCapabilityFunc_NullObjectNullCallback(napi_env env,
+    napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionRegisterOnGetCapabilityFunc_NullObjectNullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionGetContentEmbedContext(napi_env env, napi_callback_info info)
+static napi_value TestExtensionRegisterOnGetCapabilityFunc_NullCallback(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 12;
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionRegisterOnGetCapabilityFunc_NullCallback failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionGetContentEmbedContext_NullExtension(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ExtensionContextHandle ceContext = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedContext(nullptr, &ceContext);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContentEmbedContext_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionGetContext(napi_env env, napi_callback_info info)
+static napi_value TestExtensionGetContentEmbedContext_NullContext(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 13;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedContext(nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContentEmbedContext_NullContext failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionGetContext_NullExtension(napi_env env, napi_callback_info info)
+{
     AbilityRuntime_ContextHandle context = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContext(nullptr, &context);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContext_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionGetExtensionInstance(napi_env env, napi_callback_info info)
+static napi_value TestExtensionGetContext_NullContext(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 14;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContext(nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContext_NullContext failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionGetExtensionInstance_NullExtension(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ExtensionInstanceHandle ceInstance = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetExtensionInstance(nullptr, &ceInstance);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetExtensionInstance_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionGetContentEmbedDocument(napi_env env, napi_callback_info info)
+static napi_value TestExtensionGetExtensionInstance_NullInstance(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 15;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetExtensionInstance(nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetExtensionInstance_NullInstance failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionGetContentEmbedDocument_NullObject(napi_env env, napi_callback_info info)
+{
     ContentEmbed_Document *ceDocument = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedDocument(nullptr, &ceDocument);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContentEmbedDocument_NullObject failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionCallbackToOnUpdate(napi_env env, napi_callback_info info)
+static napi_value TestExtensionGetContentEmbedDocument_NullDocument(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 16;
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedDocument(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionGetContentEmbedDocument_NullDocument failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionCallbackToOnUpdate_NullObject(napi_env env, napi_callback_info info)
+{
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnUpdate(nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionCallbackToOnUpdate_NullObject failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionCallbackToOnError(napi_env env, napi_callback_info info)
+static napi_value TestExtensionCallbackToOnError_NullObject(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 17;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnError(nullptr, CE_ERR_OK);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionCallbackToOnError_NullObject failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionCallbackToOnEditingFinished(napi_env env, napi_callback_info info)
+static napi_value TestExtensionCallbackToOnEditingFinished_NullObject(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 18;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnEditingFinished(nullptr, false);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionCallbackToOnEditingFinished_NullObject failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionCallbackToOnExtensionStopped(napi_env env, napi_callback_info info)
+static napi_value TestExtensionCallbackToOnExtensionStopped_NullExtension(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 19;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionCallbackToOnExtensionStopped_NullExtension failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionSetSnapshot(napi_env env, napi_callback_info info)
+static napi_value TestExtensionSetSnapshot_NullObject(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 20;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_SetSnapshot(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    OH_LOG_ERROR(LOG_APP, "TestExtensionSetSnapshot_NullObject failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
-static napi_value TestOHContentEmbedExtensionContextStartSelfUIAbility(napi_env env, napi_callback_info info)
+static napi_value TestExtensionSetSnapshot_NullPixelMap(napi_env env, napi_callback_info info)
 {
-    int32_t testId = 21;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextStartSelfUIAbility(nullptr, nullptr);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_PARAM_INVALID) {
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_SetSnapshot(object, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionSetSnapshot_NullPixelMap failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
-        napi_create_int32(env, testId, &result);
-        OH_LOG_ERROR(LOG_APP, "test%{public}d failed code: %{public}d", testId, code);
+        napi_create_int32(env, code, &result);
         return result;
     }
     napi_value result;
-    napi_create_int32(env, 0, &result);
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionContextStartSelfUIAbility_NullContextNullWant(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextStartSelfUIAbility(nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionContextStartSelfUIAbility_NullContextNullWant failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionContextStartSelfUIAbility_NullWant(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ExtensionContextHandle context = reinterpret_cast<ContentEmbed_ExtensionContextHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextStartSelfUIAbility(context, nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionContextStartSelfUIAbility_NullWant failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionContextStartSelfUIAbilityWithStartOptions_NullContextNullWantNullOptions(
+    napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithStartOptions(
+        nullptr, nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionContextStartSelfUIAbilityWithStartOptions_NullContextNullWantNullOptions code: %{public}d",
+        code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionContextStartSelfUIAbilityWithStartOptions_NullWantNullOptions(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_ExtensionContextHandle context = reinterpret_cast<ContentEmbed_ExtensionContextHandle>(env);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithStartOptions(
+        context, nullptr, nullptr);
+    OH_LOG_ERROR(LOG_APP,
+        "TestExtensionContextStartSelfUIAbilityWithStartOptions_NullWantNullOptions code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestExtensionContextTerminateAbility_NullContext(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_ContextTerminateAbility(nullptr);
+    OH_LOG_ERROR(LOG_APP, "TestExtensionContextTerminateAbility_NullContext failed code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
@@ -355,64 +619,118 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"TestOHContentEmbedExtensionRegisterOnCreateFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnCreateFunc,
+        {"TestExtensionRegisterOnCreateFunc_NullExtensionNullCallback", nullptr,
+            TestExtensionRegisterOnCreateFunc_NullExtensionNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnDestroyFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnDestroyFunc,
+        {"TestExtensionRegisterOnCreateFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnCreateFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnObjectAttachFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnObjectAttachFunc,
+        {"TestExtensionRegisterOnDestroyFunc_NullExtensionNullCallback", nullptr,
+            TestExtensionRegisterOnDestroyFunc_NullExtensionNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionUnRegisterOnObjectAttachFunc", nullptr,
-            TestOHContentEmbedExtensionUnRegisterOnObjectAttachFunc,
+        {"TestExtensionRegisterOnDestroyFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnDestroyFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnObjectDetachFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnObjectDetachFunc,
+        {"TestExtensionRegisterOnObjectAttachFunc_NullExtensionNullCallback", nullptr,
+            TestExtensionRegisterOnObjectAttachFunc_NullExtensionNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionUnRegisterOnObjectDetachFunc", nullptr,
-            TestOHContentEmbedExtensionUnRegisterOnObjectDetachFunc,
+        {"TestExtensionRegisterOnObjectAttachFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnObjectAttachFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnWriteToDataStreamFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnWriteToDataStreamFunc,
+        {"TestExtensionUnRegisterOnObjectAttachFunc_NullExtension", nullptr,
+            TestExtensionUnRegisterOnObjectAttachFunc_NullExtension,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnGetSnapshotFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnGetSnapshotFunc,
+        {"TestExtensionRegisterOnObjectDetachFunc_NullExtensionNullCallback", nullptr,
+            TestExtensionRegisterOnObjectDetachFunc_NullExtensionNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnDoEditFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnDoEditFunc,
+        {"TestExtensionRegisterOnObjectDetachFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnObjectDetachFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnGetEditStatusFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnGetEditStatusFunc,
+        {"TestExtensionUnRegisterOnObjectDetachFunc_NullExtension", nullptr,
+            TestExtensionUnRegisterOnObjectDetachFunc_NullExtension,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionRegisterOnGetCapabilityFunc", nullptr,
-            TestOHContentEmbedExtensionRegisterOnGetCapabilityFunc,
+        {"TestExtensionRegisterOnWriteToDataStreamFunc_NullObjectNullCallback", nullptr,
+            TestExtensionRegisterOnWriteToDataStreamFunc_NullObjectNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionGetContentEmbedContext", nullptr,
-            TestOHContentEmbedExtensionGetContentEmbedContext,
+        {"TestExtensionRegisterOnWriteToDataStreamFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnWriteToDataStreamFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionGetContext", nullptr, TestOHContentEmbedExtensionGetContext,
+        {"TestExtensionRegisterOnGetSnapshotFunc_NullObjectNullCallback", nullptr,
+            TestExtensionRegisterOnGetSnapshotFunc_NullObjectNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionGetExtensionInstance", nullptr,
-            TestOHContentEmbedExtensionGetExtensionInstance,
+        {"TestExtensionRegisterOnGetSnapshotFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnGetSnapshotFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionGetContentEmbedDocument", nullptr,
-            TestOHContentEmbedExtensionGetContentEmbedDocument,
+        {"TestExtensionRegisterOnDoEditFunc_NullObjectNullCallback", nullptr,
+            TestExtensionRegisterOnDoEditFunc_NullObjectNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionCallbackToOnUpdate", nullptr, TestOHContentEmbedExtensionCallbackToOnUpdate,
+        {"TestExtensionRegisterOnDoEditFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnDoEditFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionCallbackToOnError", nullptr, TestOHContentEmbedExtensionCallbackToOnError,
+        {"TestExtensionRegisterOnGetEditStatusFunc_NullObjectNullCallback", nullptr,
+            TestExtensionRegisterOnGetEditStatusFunc_NullObjectNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionCallbackToOnEditingFinished", nullptr,
-            TestOHContentEmbedExtensionCallbackToOnEditingFinished,
+        {"TestExtensionRegisterOnGetEditStatusFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnGetEditStatusFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionCallbackToOnExtensionStopped", nullptr,
-            TestOHContentEmbedExtensionCallbackToOnExtensionStopped,
+        {"TestExtensionRegisterOnGetCapabilityFunc_NullObjectNullCallback", nullptr,
+            TestExtensionRegisterOnGetCapabilityFunc_NullObjectNullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionSetSnapshot", nullptr, TestOHContentEmbedExtensionSetSnapshot,
+        {"TestExtensionRegisterOnGetCapabilityFunc_NullCallback", nullptr,
+            TestExtensionRegisterOnGetCapabilityFunc_NullCallback,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestOHContentEmbedExtensionContextStartSelfUIAbility", nullptr,
-            TestOHContentEmbedExtensionContextStartSelfUIAbility, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContentEmbedContext_NullExtension", nullptr,
+            TestExtensionGetContentEmbedContext_NullExtension,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContentEmbedContext_NullContext", nullptr,
+            TestExtensionGetContentEmbedContext_NullContext,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContext_NullExtension", nullptr, TestExtensionGetContext_NullExtension,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContext_NullContext", nullptr, TestExtensionGetContext_NullContext,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetExtensionInstance_NullExtension", nullptr,
+            TestExtensionGetExtensionInstance_NullExtension,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetExtensionInstance_NullInstance", nullptr,
+            TestExtensionGetExtensionInstance_NullInstance,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContentEmbedDocument_NullObject", nullptr,
+            TestExtensionGetContentEmbedDocument_NullObject,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionGetContentEmbedDocument_NullDocument", nullptr,
+            TestExtensionGetContentEmbedDocument_NullDocument,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionCallbackToOnUpdate_NullObject", nullptr, TestExtensionCallbackToOnUpdate_NullObject,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionCallbackToOnError_NullObject", nullptr, TestExtensionCallbackToOnError_NullObject,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionCallbackToOnEditingFinished_NullObject", nullptr,
+            TestExtensionCallbackToOnEditingFinished_NullObject,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionCallbackToOnExtensionStopped_NullExtension", nullptr,
+            TestExtensionCallbackToOnExtensionStopped_NullExtension,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionSetSnapshot_NullObject", nullptr,
+            TestExtensionSetSnapshot_NullObject,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionSetSnapshot_NullPixelMap", nullptr, TestExtensionSetSnapshot_NullPixelMap,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionContextStartSelfUIAbility_NullContextNullWant", nullptr,
+            TestExtensionContextStartSelfUIAbility_NullContextNullWant,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionContextStartSelfUIAbility_NullWant", nullptr,
+            TestExtensionContextStartSelfUIAbility_NullWant,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionContextStartSelfUIAbilityWithStartOptions_NullContextNullWantNullOptions", nullptr,
+            TestExtensionContextStartSelfUIAbilityWithStartOptions_NullContextNullWantNullOptions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionContextStartSelfUIAbilityWithStartOptions_NullWantNullOptions", nullptr,
+            TestExtensionContextStartSelfUIAbilityWithStartOptions_NullWantNullOptions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestExtensionContextTerminateAbility_NullContext", nullptr,
+            TestExtensionContextTerminateAbility_NullContext,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
