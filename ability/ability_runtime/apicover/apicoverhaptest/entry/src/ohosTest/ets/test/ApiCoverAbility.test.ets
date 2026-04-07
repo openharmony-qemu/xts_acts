@@ -1354,6 +1354,7 @@ export default function ApiCoverTest() {
       expect(bundleName).assertEqual('com.example.apicoverhaptest');
       expect(moduleName).assertEqual('entry_test');
       expect(abilityName).assertEqual('TestAbility');
+      done();
     })
   })
 }
